@@ -1,0 +1,16 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5050
+Press CTRL+C to quit
+127.0.0.1 - - [08/Sep/2026 13:35:50] "GET /api/catalogue HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 13:35:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 13:35:50] "GET /library/dossiers HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 13:35:54] "GET /library/career-hub HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 13:35:54] "GET /library/interview-masterclass HTTP/1.1" 404 -
+127.0.0.1 - - [08/Sep/2026 13:35:54] "GET /interview-masterclass HTTP/1.1" 404 -
+127.0.0.1 - - [08/Sep/2026 13:35:54] "GET /api/opportunities HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 13:35:54] "GET /api/scan-options HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 13:37:53] "GET /library/dossiers HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 13:47:58] "GET /library/dossiers HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 14:53:41] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 14:53:41] "GET /api/catalogue HTTP/1.1" 200 -
+127.0.0.1 - - [08/Sep/2026 14:58:36] "GET /api/status HTTP/1.1" 200 -

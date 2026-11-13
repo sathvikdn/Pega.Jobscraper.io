@@ -1,0 +1,930 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-09-08",
+  "scope": "Independent public consulting/SI and specialist Pega professional research, Bengaluru first, with role-specific remote checks. Bounded follow-up outside the portal.",
+  "candidate_context": {
+    "experience_years": 4,
+    "certifications_as_provided": [
+      "CSA",
+      "CSSA"
+    ],
+    "background_as_provided": [
+      "Auto-finance collections",
+      "Pega",
+      "Kafka",
+      "REST",
+      "Production support"
+    ],
+    "salary_goal_lpa_total_ctc": 35,
+    "search_floor_lpa_total_ctc": 20
+  },
+  "method": {
+    "access": "Public web search index and public LinkedIn pages only; no login or access bypass.",
+    "attribution": "Only profile About, named employer/experience, certifications, attributed own posts and explicitly attributed recommendations were used for people. Likes, reposts and same-name suggestions were not silently converted into personal experience.",
+    "vacancies": "People are not vacancies; employee movement never establishes a backfill. Employer-labelled LinkedIn postings are distinguished from a verified employer career-site application.",
+    "dates": "checked_at is this research date. Unknown publication dates remain null; relative display labels are preserved separately. Crawl age is not source publication date.",
+    "privacy": "Professional identity, role, employer, work topics and public profile URLs only. No personal contact details, credential IDs or sensitive traits collected.",
+    "novelty": "Existing independent-map names were read only to identify additions; old claims were not evidence for these records."
+  },
+  "queries": [
+    {
+      "query": "site:linkedin.com/in/ \"Pega\" \"Bengaluru\" \"Rulesware\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No defensible Rulesware employment/location match in the returned index; activity and same-name suggestions were excluded."
+    },
+    {
+      "query": "site:linkedin.com/in/ \"Pega\" \"Bangalore\" \"Bits In Glass\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Direct Bits In Glass profile candidates found; some apparent Bangalore or hiring matches belonged to liked posts and were excluded."
+    },
+    {
+      "query": "site:linkedin.com/in/ \"Pega\" \"India\" \"Quavo\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "A Quavo employee profile with Pega experience was found in Texas; India-remote or current Bengaluru eligibility not established."
+    },
+    {
+      "query": "site:linkedin.com/in/ \"Pega\" \"Bengaluru\" \"HashedIn\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Three HashedIn by Deloitte profiles with Pega self-descriptions found; two show Bengaluru consistently and one has a Hyderabad role-location conflict."
+    },
+    {
+      "query": "site:linkedin.com/in/ \"Pega\" \"Bengaluru\" \"Evoke\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Evoke profile evidence found; one apparently relevant profile has conflicting Mphasis/Evoke employer text and is kept under a conflict flag."
+    },
+    {
+      "query": "site:linkedin.com/in/ \"Pega\" \"Bengaluru\" \"Hexaware\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Hexaware Bengaluru profile with Pega credentials found; liked certifications or third-party POCs on other profiles were excluded."
+    },
+    {
+      "query": "site:linkedin.com/company/ \"Bits In Glass\" \"Pega\" \"India\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Bits In Glass company jobs index and further direct profiles found. The company page index is stale/inconsistent with its opened card list."
+    },
+    {
+      "query": "site:linkedin.com/in/ \"Pega\" \"Bengaluru\" \"Exavalu\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No defensible Exavalu employment match obtained from the pooled result set; no negative claim about its Pega practice is made."
+    },
+    {
+      "query": "site:linkedin.com/jobs/view/ \"Pega\" \"remote\" \"India\" \"Rulesware\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No India-remote Rulesware vacancy established. Returned Bits In Glass remote language applies only to unspecified select roles."
+    },
+    {
+      "query": "site:linkedin.com/jobs/view/ HashedIn Pega Bengaluru",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No reliable current HashedIn Pega job established. Pooled results surfaced additional consulting vacancies and a historical non-Pega HashedIn post."
+    },
+    {
+      "query": "site:bitsinglass.com careers Pega India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No usable official Bits In Glass career page returned in this bounded query batch; public LinkedIn profile/job evidence retained separately."
+    },
+    {
+      "query": "site:evoketechnologies.com Pega Bangalore careers",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No usable official Evoke practice/career page returned in this bounded query batch; no employer-page claim added."
+    }
+  ],
+  "checks": [
+    {
+      "url": "https://in.linkedin.com/jobs/view/pega-constellation-professionals-%E2%80%94-csa-cssa-development-production-support-at-innofissionai-4460636056",
+      "checked_at": "2026-09-08",
+      "source": "direct page check",
+      "outcome": "Readable public listing; three role families and mandatory hands-on Constellation verified. No salary or universal remote policy disclosed."
+    },
+    {
+      "url": "https://in.linkedin.com/jobs/view/senior-pega-developer-with-kafka-at-haparz-4461122511",
+      "checked_at": "2026-09-08",
+      "source": "direct page check",
+      "outcome": "Readable exact page explicitly states No longer accepting applications; supersedes the open-looking search index."
+    },
+    {
+      "url": "https://pa.linkedin.com/company/bits-in-glass/jobs",
+      "checked_at": "2026-09-08",
+      "source": "direct page check",
+      "outcome": "Readable company jobs page shows non-Pega cards, unlike the indexed Pega LSA/Decisioning cards. Old cards remain unverified."
+    }
+  ],
+  "companies": [
+    {
+      "id": "bits-in-glass",
+      "name": "Bits In Glass",
+      "category": "services",
+      "aliases": [
+        "Bits In Glass (India & UK)",
+        "Bits In Glass (India & UK), Formerly Crochet"
+      ],
+      "new_to_independent_map": true,
+      "claims": [
+        {
+          "type": "project",
+          "text": "Named profiles provide separate professional accounts of Smart Dispute, Smart Investigate and field-service work; they do not establish one current team or a shared reporting line.",
+          "source_url": "https://in.linkedin.com/in/althea-magdalena-perpetua-da-costa-48682675",
+          "source_title": "Althea Magdalena Perpetua Da Costa — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "id": "big-mukesh-joshi",
+          "name": "Mukesh Joshi",
+          "title": null,
+          "employer_as_stated": "Bits In Glass (India & UK), Formerly Crochet",
+          "location_as_stated": "Sahibzada Ajit Singh Nagar, Punjab, India",
+          "profile_url": "https://in.linkedin.com/in/mukesh-joshi-87444b163",
+          "source_url": "https://in.linkedin.com/in/mukesh-joshi-87444b163",
+          "source_title": "Mukesh Joshi — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists Pega CSA and CSSA credentials.",
+          "work_summary": "About section states employment with Bits In Glass; no client project was exposed.",
+          "limitations": [
+            "Public search-index observation; current employment and project assignment were not independently confirmed."
+          ],
+          "role_location_as_stated": "India"
+        },
+        {
+          "id": "big-dhanashri-hulawale",
+          "name": "Dhanashri Hulawale",
+          "title": null,
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Pune Division, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/dhanashri-hulawale-8bb2931b8",
+          "source_url": "https://in.linkedin.com/in/dhanashri-hulawale-8bb2931b8",
+          "source_title": "Dhanashri Hulawale — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists Pega CSA and CSSA credentials.",
+          "work_summary": "About section describes an IT professional with Pega architecture experience.",
+          "limitations": [
+            "Public search-index observation; current employment and project assignment were not independently confirmed."
+          ],
+          "role_location_as_stated": "Pune, Maharashtra, India"
+        },
+        {
+          "id": "big-mrudul-mekala",
+          "name": "Mrudul Mekala",
+          "title": "Pega CSA / CSSA / PCDC Developer (About self-description)",
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Rajahmundry, Andhra Pradesh, India",
+          "profile_url": "https://in.linkedin.com/in/mrudul-mekala-0abbbb16a",
+          "source_url": "https://in.linkedin.com/in/mrudul-mekala-0abbbb16a",
+          "source_title": "Mrudul Mekala — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Pega developer self-description and CSA, CSSA and Decisioning Consultant credentials.",
+          "work_summary": "About section identifies Pega development and a search for opportunities; this is not evidence of a departure or vacancy.",
+          "limitations": [
+            "Profile header and employer-role locations differ. Older work-from-home entries cannot be assigned to this employer.",
+            "Exact current role title and employment status are not independently confirmed."
+          ],
+          "role_location_as_stated": "Hyderabad, Telangana, India"
+        },
+        {
+          "id": "big-nikhil-bhirud",
+          "name": "Nikhil Bhirud",
+          "title": null,
+          "employer_as_stated": "Bits In Glass (India & UK)",
+          "location_as_stated": "Pune Division, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/nikhil-bhirudpega",
+          "source_url": "https://in.linkedin.com/in/nikhil-bhirudpega",
+          "source_title": "Nikhil Bhirud — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "About section and own post describe Pega PRPC and dispute management.",
+          "work_summary": "An attributed own post describes Pega PRPC and Smart Dispute for Issuers work across UK, Hong Kong, APAC and MENA during an Infosys/Bits In Glass career.",
+          "limitations": [
+            "The post does not allocate each regional project to a particular employer.",
+            "Seeking work is not proof of a departure or a backfill vacancy."
+          ],
+          "source_date_text": "Own post displayed 3mo; profile date unknown."
+        },
+        {
+          "id": "big-mandeep-rawat",
+          "name": "Mandeep Rawat .",
+          "title": null,
+          "employer_as_stated": "Bits In Glass (India & UK), Formerly Crochet",
+          "location_as_stated": "Chandigarh, India",
+          "profile_url": "https://in.linkedin.com/in/mandeep-singh-rawat",
+          "source_url": "https://in.linkedin.com/in/mandeep-singh-rawat",
+          "source_title": "Mandeep Rawat . — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists Certified Pega Lead System Architect and Senior System Architect credentials.",
+          "work_summary": "No specific client or delivery project was exposed.",
+          "limitations": [
+            "Header and employer-role locations differ; current office attendance is unknown."
+          ],
+          "role_location_as_stated": "Pune, Maharashtra, India"
+        },
+        {
+          "id": "big-rama-vaddiraju",
+          "name": "Rama Narasimha Vaddiraju",
+          "title": "Senior Software Engineer (About self-description)",
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Hyderabad, Telangana, India",
+          "profile_url": "https://in.linkedin.com/in/ramanarasimhavaddiraju",
+          "source_url": "https://in.linkedin.com/in/ramanarasimhavaddiraju",
+          "source_title": "Rama Narasimha Vaddiraju — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists CSA/CSSA; the Pega project account is a third-party recommendation on the profile.",
+          "work_summary": "A named professional recommendation describes work on an HSBC Pega Smart Dispute team, upgrades, new-market onboarding, cloud migration and production support.",
+          "limitations": [
+            "Recommendation content is attributed testimony, not an employer-confirmed current assignment.",
+            "Header and employer-role locations differ."
+          ],
+          "role_location_as_stated": "Mohali district"
+        },
+        {
+          "id": "big-rajnish-mallick",
+          "name": "RAJNISH KUMAR M.",
+          "title": "Solution Architect / Technical Lead (About self-description)",
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Hyderabad, Telangana, India",
+          "profile_url": "https://in.linkedin.com/in/rajnishkumarmallick",
+          "source_url": "https://in.linkedin.com/in/rajnishkumarmallick",
+          "source_title": "RAJNISH KUMAR M. — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists CSSA, Decisioning/Marketing credentials and CLSA Part 1.",
+          "work_summary": "Recommendations describe Pega development, integrations, security and performance across financial and healthcare work.",
+          "limitations": [
+            "CLSA Part 1 is not represented as the completed CLSA credential.",
+            "Recommendations do not confirm a current client or hiring-manager role."
+          ],
+          "role_location_as_stated": "Hyderabad, Telangana, India"
+        },
+        {
+          "id": "big-diptendu-nath",
+          "name": "Diptendu Nath",
+          "title": "Tech Lead (Organizations entry)",
+          "employer_as_stated": "Bits In Glass (India & UK)",
+          "location_as_stated": "Kolkata, West Bengal, India",
+          "profile_url": "https://in.linkedin.com/in/diptendu-nath-0b03a7112",
+          "source_url": "https://in.linkedin.com/in/diptendu-nath-0b03a7112",
+          "source_title": "Diptendu Nath — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Pega PRPC in About and a Pega CSA credential.",
+          "work_summary": "About section describes mainframe and Pega PRPC experience; the Organizations entry names Bits In Glass from April 2022 to Present.",
+          "limitations": [
+            "An undated profile’s Present label was not independently revalidated.",
+            "A differently worded senior Pega credential was not normalized into an assumed certification."
+          ]
+        },
+        {
+          "id": "big-vinay-vaishnav",
+          "name": "Vinay Vaishnav",
+          "title": "Senior Pega Developer (About self-description)",
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Mumbai, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/vinay-vaishnav-1106",
+          "source_url": "https://in.linkedin.com/in/vinay-vaishnav-1106",
+          "source_title": "Vinay Vaishnav — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Pega developer self-description and CSA/CSSA/Marketing credentials.",
+          "work_summary": "About section describes building Pega applications.",
+          "limitations": [
+            "Constellation, DX and AI items marked Liked by were not treated as this person’s projects."
+          ]
+        },
+        {
+          "id": "big-anirudhaa-sur",
+          "name": "Anirudhaa Sur",
+          "title": "Pega developer (About self-description)",
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Kolkata, West Bengal, India",
+          "profile_url": "https://in.linkedin.com/in/anirudhaa-sur-0496b6106",
+          "source_url": "https://in.linkedin.com/in/anirudhaa-sur-0496b6106",
+          "source_title": "Anirudhaa Sur — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Pega development, Data Scientist and Decisioning Consultant credentials.",
+          "work_summary": "About section describes hands-on Pega 6/7 experience.",
+          "limitations": [
+            "The older platform-version statement may be stale; current stack and client are unknown."
+          ],
+          "role_location_as_stated": "West Bengal, India"
+        },
+        {
+          "id": "big-althea-da-costa",
+          "name": "Althea Magdalena Perpetua Da Costa",
+          "title": null,
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Pune, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/althea-magdalena-perpetua-da-costa-48682675",
+          "source_url": "https://in.linkedin.com/in/althea-magdalena-perpetua-da-costa-48682675",
+          "source_title": "Althea Magdalena Perpetua Da Costa — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists a completed Pega Certified Lead System Architect credential.",
+          "work_summary": "Projects list Smart Investigate in July 2025 and Field Services Management for TRICON Residential, October 2023–June 2025.",
+          "limitations": [
+            "Project entries are historical self-reports; present client allocation is unknown."
+          ],
+          "role_location_as_stated": "Pune, Maharashtra, India"
+        },
+        {
+          "id": "big-sameer-gavandi",
+          "name": "Sameer Gavandi",
+          "title": "Hiring manager (self-description in a public post)",
+          "employer_as_stated": "Bits In Glass",
+          "location_as_stated": "Pune District, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/sameer-gavandi",
+          "source_url": "https://in.linkedin.com/in/sameer-gavandi",
+          "source_title": "Sameer Gavandi — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Public Pega recruiting activity; this does not establish a hands-on developer role.",
+          "work_summary": "Own/shared posts discuss recruiting for Pega Core, Customer Service/Constellation, CLM/KYC and Smart Dispute.",
+          "limitations": [
+            "Exact official job title is not exposed.",
+            "Other .NET or Power Automate remote posts were not applied to Pega roles."
+          ],
+          "role_location_as_stated": "Pune District, Maharashtra, India"
+        }
+      ],
+      "hiring_signals": [
+        {
+          "id": "big-core-cs-clm-post",
+          "kind": "recruiter_post",
+          "title": "Pega Core / Constellation and Customer Service / CLM-KYC recruiting",
+          "description": "An own post on Sameer Gavandi’s profile lists Pega hiring with 5–8 years of experience and immediate/short-notice preference.",
+          "url": "https://in.linkedin.com/in/sameer-gavandi",
+          "source_title": "Pega Core / Constellation and Customer Service / CLM-KYC recruiting",
+          "location": "Pune, Mohali, Hyderabad, Bengaluru, Chennai",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_date_text": "5mo on the indexed post",
+          "access": "search_index",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "salary": null,
+          "india_remote_eligible": null,
+          "limitations": [
+            "No exact requisition or active application page was verified.",
+            "The date is relative text from an indexed profile, not a confirmed publication date."
+          ],
+          "experience_min_years": 5,
+          "experience_max_years": 8,
+          "candidate_fit": "Experience stretch for a four-year candidate."
+        },
+        {
+          "id": "big-smart-dispute-shared-post",
+          "kind": "recruiter_post",
+          "title": "Pega Smart Dispute recruiting",
+          "description": "A repost attributed to Neha Kawale seeks issuing/acquiring Smart Dispute experience and 5+ years.",
+          "url": "https://in.linkedin.com/in/sameer-gavandi",
+          "source_title": "Pega Smart Dispute recruiting",
+          "location": "Pune, Mohali, Hyderabad",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_date_text": "1mo on the indexed repost",
+          "access": "search_index",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "salary": null,
+          "india_remote_eligible": null,
+          "limitations": [
+            "Hiring lead only; an active requisition and its current terms need confirmation."
+          ],
+          "experience_min_years": 5,
+          "candidate_fit": "Experience stretch; auto-finance collections is adjacent, not proof of dispute-framework experience."
+        },
+        {
+          "id": "big-specialist-remote-shared-post",
+          "kind": "recruiter_post",
+          "title": "Pega specialist recruiting; select roles remote",
+          "description": "A shared Bits In Glass hiring post lists Core/PRPC, Customer Service/Constellation, CDH, CLM/KYC and Smart Dispute among its Pega needs.",
+          "url": "https://in.linkedin.com/in/nikhil-bhirudpega",
+          "source_title": "Pega specialist recruiting; select roles remote",
+          "location": "Pune, Hyderabad, Mohali; remote for select roles",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_date_text": "3mo on the indexed shared post",
+          "access": "search_index",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "salary": null,
+          "india_remote_eligible": null,
+          "limitations": [
+            "Which roles are remote, permitted countries, requisition status and contractual employer were not verified.",
+            "A company-wide hiring post is not a separate confirmed opening for each skill."
+          ]
+        },
+        {
+          "id": "big-indexed-lsa-decisioning",
+          "kind": "employer_job",
+          "title": "Indexed Pega LSA and Decisioning Consultant cards",
+          "description": "Search index displayed two Pune-area Pega cards. Opening the same company jobs URL returned different non-Pega cards.",
+          "url": "https://pa.linkedin.com/company/bits-in-glass/jobs",
+          "source_title": "Indexed Pega LSA and Decisioning Consultant cards",
+          "location": "Pune, Maharashtra, India",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_date_text": "Index showed a relative two-week label; crawl metadata was several months old.",
+          "access": "search_index",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "salary": null,
+          "india_remote_eligible": null,
+          "limitations": [
+            "Not confirmed on the opened company page; do not display these as active vacancies.",
+            "Absence from the opened short card list alone does not prove the requisitions closed."
+          ]
+        }
+      ],
+      "limitations": [
+        "No total Pega team size was verified. The sampled profiles mainly name Pune, Hyderabad, Mohali/Chandigarh and other Indian cities.",
+        "A public recruiting post lists Bengaluru, but this pass did not establish a current Bengaluru-based Bits In Glass Pega employee from an unambiguous profile.",
+        "Select-role remote wording in a shared employer post does not establish India-remote eligibility for every Pega vacancy.",
+        "The opened company jobs page differed from its indexed snapshot; old Pega cards are retained only as unverified audit evidence."
+      ]
+    },
+    {
+      "id": "hashedin-by-deloitte",
+      "name": "HashedIn by Deloitte",
+      "category": "services",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [
+        {
+          "type": "bangalore_team",
+          "text": "Two profiles state Bengaluru both in the profile header and employer experience alongside Pega self-descriptions.",
+          "source_url": "https://in.linkedin.com/in/nikhil-br",
+          "source_title": "Nikhil B R — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "id": "hashedin-malli-gorakati",
+          "name": "Malli Gorakati",
+          "title": "Pega Developer (About self-description)",
+          "employer_as_stated": "HashedIn by Deloitte",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/malli-gorakati-9270aa1ba",
+          "source_url": "https://in.linkedin.com/in/malli-gorakati-9270aa1ba",
+          "source_title": "Malli Gorakati — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "About describes Pega/CSSA work; CSA/CSSA credentials are listed.",
+          "work_summary": "A July 2021 project entry describes a Telenet Customer Service application/Agent Desktop; an award narrative links Telenet work to Infosys.",
+          "limitations": [
+            "Do not attribute the historical Telenet project to HashedIn.",
+            "Header says Bengaluru while the employer-role entry says Hyderabad."
+          ],
+          "role_location_as_stated": "Hyderabad, Telangana, India"
+        },
+        {
+          "id": "hashedin-nikhil-br",
+          "name": "Nikhil B R",
+          "title": "Pega Developer (About self-description)",
+          "employer_as_stated": "HashedIn by Deloitte",
+          "location_as_stated": "Greater Bengaluru Area",
+          "profile_url": "https://in.linkedin.com/in/nikhil-br",
+          "source_url": "https://in.linkedin.com/in/nikhil-br",
+          "source_title": "Nikhil B R — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Pega developer self-description and CSA credential.",
+          "work_summary": "About describes designing and implementing Pega rules.",
+          "limitations": [
+            "Exact official title and a current client assignment are not exposed."
+          ],
+          "role_location_as_stated": "Bengaluru, Karnataka, India"
+        },
+        {
+          "id": "hashedin-amreen-s",
+          "name": "AMREEN S",
+          "title": null,
+          "employer_as_stated": "HashedIn by Deloitte",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/amreen-s-2ba959173",
+          "source_url": "https://in.linkedin.com/in/amreen-s-2ba959173",
+          "source_title": "AMREEN S — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Pega professional self-description; listed training/certification entries use TalentSprint as issuer.",
+          "work_summary": "About describes Pega application design experience.",
+          "limitations": [
+            "Training-provider entries were not independently verified as Pegasystems-issued credentials.",
+            "Liked awards and onboarding posts were not attributed to this person."
+          ],
+          "role_location_as_stated": "Bengaluru, Karnataka, India"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "The subdivision was absent from the existing named list, but Deloitte was already present; it must not be counted as a separate newly discovered corporate group.",
+        "Three profile observations do not establish headcount, a single project team or any active vacancy."
+      ],
+      "parent_company": "Deloitte",
+      "new_corporate_group": false
+    },
+    {
+      "id": "hexaware-technologies",
+      "name": "Hexaware Technologies",
+      "category": "services",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [],
+      "people": [
+        {
+          "id": "hexaware-saran-kumar",
+          "name": "Saran Kumar",
+          "title": "Experienced Senior Team Lead (About self-description)",
+          "employer_as_stated": "Hexaware Technologies",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/saran-kumar-71621996",
+          "source_url": "https://in.linkedin.com/in/saran-kumar-71621996",
+          "source_title": "Saran Kumar — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists Pega System Architect and Business Architect credentials.",
+          "work_summary": "The profile describes a quality/testing background; current Hexaware client work is not exposed.",
+          "limitations": [
+            "A Pega-certified employee is evidence of professional capability, not proof of a present dedicated Pega delivery team."
+          ],
+          "role_location_as_stated": "Bengaluru, Karnataka, India"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public professional profiles are self-reported and can be stale; they do not establish a complete team roster or team size."
+      ]
+    },
+    {
+      "id": "evoke-technologies",
+      "name": "Evoke Technologies",
+      "category": "services",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [],
+      "people": [
+        {
+          "id": "evoke-prabha-kandala",
+          "name": "Prabha Kandala",
+          "title": null,
+          "employer_as_stated": "Evoke Technologies",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/prabha-kandala",
+          "source_url": "https://in.linkedin.com/in/prabha-kandala",
+          "source_title": "Prabha Kandala — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists Pegasystems System Architect and Senior System Architect credentials.",
+          "work_summary": "No attributable current client project was exposed.",
+          "limitations": [
+            "Liked Evoke CRM/maps content was not treated as the person’s own implementation."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public professional profiles are self-reported and can be stale; they do not establish a complete team roster or team size."
+      ]
+    },
+    {
+      "id": "mphasis",
+      "name": "Mphasis",
+      "category": "services",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [],
+      "people": [
+        {
+          "id": "mphasis-akshay-patgaonkar",
+          "name": "Akshay Patgaonkar",
+          "title": null,
+          "employer_as_stated": "Mphasis",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/akshay-patgaonkar-90496aa5",
+          "source_url": "https://in.linkedin.com/in/akshay-patgaonkar-90496aa5",
+          "source_title": "Akshay Patgaonkar — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Profile lists Pega CSA and CSSA credentials.",
+          "work_summary": "The profile header/experience names Mphasis; an older About sentence says Evoke Senior Associate. Organizations entries separately date Evoke to 2018–2020.",
+          "limitations": [
+            "Employer conflict is unresolved: Mphasis in header/experience versus Evoke in About. Do not count this as a current Evoke team member.",
+            "No departure, hiring need or completed LSA credential was inferred from activity."
+          ],
+          "role_location_as_stated": "Bengaluru, Karnataka, India"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public professional profiles are self-reported and can be stale; they do not establish a complete team roster or team size."
+      ]
+    },
+    {
+      "id": "quavo-fraud-disputes",
+      "name": "Quavo Fraud & Disputes",
+      "category": "global",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [],
+      "people": [
+        {
+          "id": "quavo-nishchitha-ravindra",
+          "name": "Nishchitha Ravindra",
+          "title": null,
+          "employer_as_stated": "Quavo Fraud & Disputes",
+          "location_as_stated": "Leander, Texas, United States",
+          "profile_url": "https://www.linkedin.com/in/nishchitha-ravindra-425445137",
+          "source_url": "https://www.linkedin.com/in/nishchitha-ravindra-425445137",
+          "source_title": "Nishchitha Ravindra — LinkedIn professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "confidence": "direct",
+          "pega_connection": "Pega BPM self-description and CSA/CSSA credentials.",
+          "work_summary": "About describes requirements analysis, design and development with Pega BPM.",
+          "limitations": [
+            "Bengaluru appeared only in older experience, not the current location.",
+            "No current title, India remote permission or vacancy was verified."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "The discovered professional is based in Texas. This pass did not verify a current Bengaluru Quavo team or an India-eligible remote requisition.",
+        "Use as an international watchlist lead, not an India-remote opportunity."
+      ]
+    },
+    {
+      "id": "innofissionai",
+      "name": "InnoFissionAI",
+      "category": "services",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "A public employer-labelled listing seeks Pega development and production-support capability, including Constellation and API integration.",
+          "source_url": "https://in.linkedin.com/jobs/view/pega-constellation-professionals-%E2%80%94-csa-cssa-development-production-support-at-innofissionai-4460636056",
+          "source_title": "Pega Constellation Professionals — CSA / CSSA (Development & Production Support)",
+          "source_kind": "employer",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "id": "innofissionai-pega-4460636056",
+          "kind": "employer_job",
+          "title": "Pega Constellation Professionals — CSA / CSSA (Development & Production Support)",
+          "description": "The readable posting covers three role families. All require 1–2 years of hands-on Constellation, active Pega certification and API integration skills.",
+          "url": "https://in.linkedin.com/jobs/view/pega-constellation-professionals-%E2%80%94-csa-cssa-development-production-support-at-innofissionai-4460636056",
+          "source_title": "Pega Constellation Professionals — CSA / CSSA (Development & Production Support)",
+          "location": "Bangalore and Pune preferred; other locations welcome",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_date_text": "5 days ago on the opened page",
+          "access": "page",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "salary": null,
+          "india_remote_eligible": null,
+          "limitations": [
+            "One public posting, three role families; do not inflate into three independently confirmed requisitions.",
+            "No salary, headcount, client or guaranteed remote arrangement is disclosed."
+          ],
+          "job_page_available": true,
+          "application_observation": "The page gives an application route in its text; this pass did not verify an active employer career-site Apply workflow.",
+          "roles": [
+            {
+              "title": "Pega System Architect (CSA)",
+              "experience_min_years": 3,
+              "experience_max_years": 5,
+              "fit": "Numeric experience fits four years; mandatory hands-on Constellation remains an unverified candidate gap."
+            },
+            {
+              "title": "Senior Pega Developer / System Architect (CSSA)",
+              "experience_min_years": 5,
+              "fit": "Experience stretch for four years."
+            },
+            {
+              "title": "Pega Production Support Engineer (Senior)",
+              "experience_min_years": 5,
+              "fit": "Background-processing and incident skills are relevant; experience and Constellation requirements are gaps to check."
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Discovered through a public employer-labelled LinkedIn posting; employer identity was not separately authenticated against its own website.",
+        "Other locations welcome is not an explicit fully remote policy.",
+        "No named employee roster or team size was established."
+      ]
+    },
+    {
+      "id": "haparz",
+      "name": "Haparz",
+      "category": "services",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "id": "haparz-pega-kafka-4461122511",
+          "kind": "employer_job",
+          "title": "Senior Pega Developer with Kafka",
+          "description": "The listing combines Pega background processing, Kafka, REST/SOAP, SQL, API testing and production troubleshooting; the exact opened page explicitly stops accepting applications.",
+          "url": "https://in.linkedin.com/jobs/view/senior-pega-developer-with-kafka-at-haparz-4461122511",
+          "source_title": "Senior Pega Developer with Kafka",
+          "location": "Devanahalli, Karnataka in the header; Bangalore in the description",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_date_text": "3 days ago on the opened page",
+          "access": "page",
+          "status": "closed",
+          "vacancy_confirmed": false,
+          "salary": {
+            "raw": "Budget- 1.20lac per month",
+            "amount": 120000,
+            "currency": "INR",
+            "period": "month",
+            "annual_ctc_lpa": null,
+            "meets_20_lpa_ctc": null,
+            "limitations": [
+              "The post does not define whether this is gross salary, fixed pay, total cost or another budget measure."
+            ]
+          },
+          "india_remote_eligible": null,
+          "limitations": [
+            "Search-index Apply/relative-time text was superseded by the exact page saying No longer accepting applications.",
+            "Monthly budget is not converted into or presented as annual total CTC."
+          ],
+          "experience_min_years": 5,
+          "candidate_fit": "Strong skill overlap, but 5+ years requested and the listing is closed."
+        }
+      ],
+      "limitations": [
+        "Employer/client identity and payroll entity were not independently authenticated.",
+        "The exact public vacancy is closed; retain only as a skill-market example and company watchlist signal."
+      ]
+    },
+    {
+      "id": "pgc-digital-india",
+      "name": "PGC Digital (India): CMMI Level 3 Company",
+      "category": "services",
+      "aliases": [],
+      "new_to_independent_map": true,
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "id": "pgc-pega-qa-4460570956",
+          "kind": "employer_job",
+          "title": "Pega QA Engineer",
+          "description": "The public indexed job asks for Pega functional/exploratory testing, regression, integrations and defect management.",
+          "url": "https://in.linkedin.com/jobs/view/pega-qa-engineer-at-pgc-digital-india-cmmi-level-3-company-4460570956",
+          "source_title": "Pega QA Engineer",
+          "location": "Bangalore",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_date_text": "24 minutes ago in index; not treated as a reliable publication timestamp.",
+          "access": "search_index",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "salary": null,
+          "india_remote_eligible": null,
+          "limitations": [
+            "Exact job page was not opened in this bounded pass.",
+            "Do not treat a public indexed Apply label as a verified active employer application."
+          ],
+          "experience_min_years": 5.6,
+          "experience_max_years": 7,
+          "candidate_fit": "QA-focused and beyond four years; not a primary developer-role match."
+        }
+      ],
+      "limitations": [
+        "Pega QA role evidence does not establish a Pega developer vacancy or a verified CMMI assessment. The displayed company name is retained as stated."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "name": "Rulesware search matches",
+      "reason": "Rulesware appeared in other people’s activity or unrelated suggestions; no defensible current Bengaluru/India-remote finding."
+    },
+    {
+      "name": "Exavalu search matches",
+      "reason": "No attributable relevant match in the returned bounded result set."
+    },
+    {
+      "name": "Suresh Babu / Sheetal Bansal / Sunil Kovid / Baskar Dharmalingam / Srikar Gondala",
+      "reason": "Employer/location matches alone plus liked or shared Pega activity did not establish these people’s own Pega experience in the inspected snippets."
+    },
+    {
+      "name": "Akshata Sharma and other reposted departures",
+      "reason": "A liked or shared departure cannot be attributed to the profile owner or converted into a hiring vacancy."
+    },
+    {
+      "name": "Historical HashedIn general hiring post",
+      "reason": "The result displayed a four-year-old general technology post; it was not evidence of present Pega hiring."
+    }
+  ],
+  "limitations": [
+    "This bounded pass is not a complete scrape of LinkedIn or a complete consulting-market inventory.",
+    "All 19 professional profile observations are public-index evidence, not freshly authenticated employee records.",
+    "No team headcount, hiring odds, attrition rate, guaranteed referral, salary band or best-team ranking is inferred.",
+    "Profile observations can support a public professional research directory; current employment, reporting lines and willingness to refer remain unknown.",
+    "No role in this pass is verified as offering at least ₹20 LPA annual total CTC. No global/remote statement is assumed to permit India employment."
+  ],
+  "summary": {
+    "queries": 12,
+    "direct_page_checks": 3,
+    "company_records": 9,
+    "profile_records": 19,
+    "hiring_signal_records": 7,
+    "closed_signals": 1,
+    "confirmed_employer_website_vacancies": 0
+  }
+}

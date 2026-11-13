@@ -1,0 +1,178 @@
+{
+  "note": "LIFESTYLE EVIDENCE LEDGER - deliberately NOT a score. Lifestyle perks vary by role, grade, shift and year, and sources openly contradict each other, so any numeric index would imply precision the evidence cannot support. Each claim therefore carries its own status and sources. Keep the 100-point engineering score (gcc_ranking_scores.json) separate and unmodified: that one rests on verifiable architecture and tenure evidence, this one does not.",
+  "asOf": "2026-10",
+  "status_legend": {
+    "VERIFIED": "Stated on an official company careers/benefits page or official company blog, and applicable to the India/Bengaluru location.",
+    "VERIFIED_GLOBAL_POLICY": "Stated on an official global page, but the page does not confirm it applies to the India office. Confirm with the recruiter.",
+    "CONTESTED_BY_ROLE": "Credible sources disagree, typically because the benefit depends on grade, shift or year. Treat as a question to ask, not a fact.",
+    "UNVERIFIED": "Commonly repeated but not found on an official source during this pass. Do not rely on it.",
+    "NOT_RESEARCHED": "No lifestyle research performed for this company yet. Absence here is not a negative signal."
+  },
+  "companies": [
+    {
+      "company_name": "Cisco India",
+      "engineering_score": 65,
+      "lifestyle_intelligence": {
+        "food_and_commute": {
+          "claim": "Subsidised multi-cuisine cafeterias on the Bangalore campus. No official confirmation of free daily meals or blanket AC cab routes was found.",
+          "status": "UNVERIFIED",
+          "sources": ["Cisco Bangalore campus blog (blogs.cisco.com)", "no official India food/transport policy page located"]
+        },
+        "insurance_perks": {
+          "claim": "LifeConnections Health Center on the Bangalore campus (BGL-15) - a full onsite medical facility with physicians, specialists and mental-health professionals. Bangalore is one of only THREE Cisco campuses worldwide with this, alongside San Jose and Research Triangle Park.",
+          "status": "VERIFIED",
+          "sources": ["cisco.com Purpose Reporting Hub - Benefits", "blogs.cisco.com Cisco Bangalore campus tour"]
+        },
+        "office_mandate": {
+          "claim": "Hybrid, but no specific India day-count mandate was found on an official source.",
+          "status": "NOT_RESEARCHED",
+          "sources": []
+        },
+        "the_flex": {
+          "claim": "Time2Give: 10 paid volunteer days per year. Four 'Days for Me' designated days off. A paid day off for your birthday. Two gyms plus an onsite massage facility (BGL-16) on the Bangalore campus. Employee Stock Purchase Plan available in 70+ countries at a discount.",
+          "status": "VERIFIED",
+          "sources": ["careers.cisco.com/global/en/benefits-and-perks", "cisco.com Purpose Reporting Hub", "blogs.cisco.com Bangalore campus tour"]
+        },
+        "espp_discount_rate": {
+          "claim": "A 10% ESPP discount is widely cited, but official Cisco pages state only 'at a discount' without a percentage.",
+          "status": "UNVERIFIED",
+          "sources": ["careers.cisco.com states discount without rate"]
+        }
+      },
+      "standout_fun_perk": "An onsite full medical centre that exists at only three Cisco sites on earth, and Bangalore is one of them.",
+      "lead_assessment": "The best-documented India lifestyle package in this ledger, and the claims are officially sourced rather than review-driven."
+    },
+    {
+      "company_name": "Booking Holdings India",
+      "engineering_score": 45,
+      "lifestyle_intelligence": {
+        "food_and_commute": {
+          "claim": "Official careers page offers lunch benefits and game rooms 'in some of our locations' - it does NOT confirm Bangalore specifically. Third-party listings cite on-site meals, coffee and snacks including vegan options.",
+          "status": "VERIFIED_GLOBAL_POLICY",
+          "sources": ["careers.booking.com/hybrid-ways-of-working/", "Welcome to the Jungle / Otta company listing"]
+        },
+        "insurance_perks": {
+          "claim": "Health insurance, life insurance, disability insurance, pension plan, Global Employee Assistance Program, and free Headspace access for employee and loved ones. India-specific parental-insurance detail not confirmed.",
+          "status": "VERIFIED_GLOBAL_POLICY",
+          "sources": ["careers.booking.com/benefits/", "Welcome to the Jungle listing"]
+        },
+        "office_mandate": {
+          "claim": "Explicit hybrid model: 'We want you to do your best work and we know that doesn't always mean working from an office.' No fixed India day-count published.",
+          "status": "VERIFIED_GLOBAL_POLICY",
+          "sources": ["careers.booking.com/hybrid-ways-of-working/"]
+        },
+        "the_flex": {
+          "claim": "Working from Abroad up to 20 days per calendar year, conditional on legal right to work in that country and no tax or social-security consequences. Parent leave 22 weeks. Grandparent leave 10 days. Care leave 10 days. Bereavement up to 4 weeks. Booking Cares: 2 paid volunteer/learning days. Anniversary leave. Work-from-home furniture and ergonomic support.",
+          "status": "VERIFIED",
+          "sources": ["careers.booking.com/benefits/", "careers.booking.com/hybrid-ways-of-working/"]
+        }
+      },
+      "standout_fun_perk": "Working from Abroad - up to 20 days a year from another country, published as official policy rather than an informal arrangement.",
+      "lead_assessment": "Strongest published flexibility and family policy of any company in this ledger. The 20-day abroad policy carries real conditions, so confirm eligibility for an India contract before valuing it."
+    },
+    {
+      "company_name": "Goldman Sachs",
+      "engineering_score": 45,
+      "lifestyle_intelligence": {
+        "food_and_commute": {
+          "claim": "Not free. Lunch is roughly 50% subsidised; breakfast, dinner and late-night meals are free only on extended or overnight shifts. Transport is provided within about 30km of the office, but as late-hours drops rather than blanket all-day AC cab routes. The official benefits page describes 'reimbursement for certain entertainment, meals, communication, and transportation' - reimbursement, not complimentary provision.",
+          "status": "CONTESTED_BY_ROLE",
+          "sources": ["goldmansachs.com/careers/benefits (reimbursement wording)", "GS official Guide to Bengaluru PDF (transport within 30km)", "AmbitionBox reviews 2022-2024 (some report free food/transport)", "Taro Associate Software Engineer review Sep 2023 ('almost no free benefits; everything is to be paid for')", "Quora employee threads (investment-bank 'no free lunches' norm)"]
+        },
+        "insurance_perks": {
+          "claim": "Medical, dental, short- and long-term disability, life, accidental death and business travel accident insurance, explicitly varying by office location. Onsite health clinics and onsite childcare are reported at the Bengaluru campus. Day-1 no-co-pay parental cover was NOT confirmed.",
+          "status": "VERIFIED_GLOBAL_POLICY",
+          "sources": ["goldmansachs.com/careers/benefits", "AmbitionBox office-perks listing"]
+        },
+        "office_mandate": {
+          "claim": "Strict return-to-office, widely reported as 5 days per week, at Helios Business Park on Outer Ring Road.",
+          "status": "VERIFIED",
+          "sources": ["GS official Guide to Bengaluru PDF (Helios Business Park, LEED Platinum)", "tech forum and review consensus 2024"]
+        },
+        "the_flex": {
+          "claim": "Elite base pay, LEED Platinum campus at Helios Business Park, onsite gym and health facilities. The trade is compensation and facilities in exchange for low flexibility.",
+          "status": "VERIFIED",
+          "sources": ["GS official Guide to Bengaluru PDF", "goldmansachs.com/careers/benefits"]
+        }
+      },
+      "standout_fun_perk": "A purpose-built LEED Platinum campus with onsite clinics and childcare - strong facilities, weak flexibility.",
+      "lead_assessment": "The widely repeated 'free gourmet meals and free AC cabs' claim does not survive checking and must not be used as a tiebreaker. Budget for your own commute and lunch, and assume 5-day office attendance. Engineering fit is nonetheless excellent: two Bengaluru Pega CLSA VPs on Marcus Collections & Recoveries."
+    },
+    {
+      "company_name": "Pegasystems India",
+      "engineering_score": 50,
+      "lifestyle_intelligence": {
+        "food_and_commute": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "insurance_perks": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "office_mandate": {
+          "claim": "Fully remote India roles were recorded earlier in this hub's remote-work table, but that entry is flagged as an unrevalidated historical lead.",
+          "status": "UNVERIFIED",
+          "sources": ["hub remote/hybrid table - flagged as historical, needs revalidation"]
+        },
+        "the_flex": {
+          "claim": "Strong ESPP and good work-life balance are commonly reported, but no official source was checked in this pass.",
+          "status": "UNVERIFIED",
+          "sources": []
+        }
+      },
+      "standout_fun_perk": "Owning stock in the product you build - attractive, but the ESPP terms were not verified here.",
+      "lead_assessment": "Deliberately left thin rather than filled from reputation. Note also that Pegasystems is the product vendor, not a GCC, so it is a different career track from the rest of this ledger."
+    },
+    {
+      "company_name": "Ford Motor Company",
+      "engineering_score": 100,
+      "lifestyle_intelligence": {
+        "food_and_commute": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "insurance_perks": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "office_mandate": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "the_flex": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] }
+      },
+      "standout_fun_perk": "Unknown - not researched.",
+      "lead_assessment": "Ranks first on engineering evidence (100/100) but has ZERO lifestyle research. This is the single highest-value gap in the ledger: the top engineering pick is the one you know least about as a place to actually live."
+    },
+    {
+      "company_name": "Commonwealth Bank",
+      "engineering_score": 85,
+      "lifestyle_intelligence": {
+        "food_and_commute": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "insurance_perks": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "office_mandate": { "claim": "Hybrid, Manyata Tech Park Bengaluru, per a 2024 internal hiring post found earlier in this research.", "status": "UNVERIFIED", "sources": ["Rishabh Raj CBA hiring post Oct 2024 - describes hybrid, Manyata Tech Park"] },
+        "the_flex": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] }
+      },
+      "standout_fun_perk": "Unknown - not researched.",
+      "lead_assessment": "Second on engineering evidence; lifestyle essentially unresearched beyond a hybrid/location hint from a hiring post."
+    },
+    {
+      "company_name": "Vodafone / VOIS",
+      "engineering_score": 85,
+      "lifestyle_intelligence": {
+        "food_and_commute": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "insurance_perks": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "office_mandate": { "claim": "Hybrid, Pune, per a March 2025 Pega hiring post found earlier in this research.", "status": "UNVERIFIED", "sources": ["Yogesh Dixit VOIS hiring post Mar 2025 - 'permanent positions, Pune, hybrid'"] },
+        "the_flex": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] }
+      },
+      "standout_fun_perk": "Unknown - not researched.",
+      "lead_assessment": "Joint second on engineering evidence and the closest match to your 4-7 year experience band, but Pune-based and lifestyle-unresearched."
+    },
+    {
+      "company_name": "Sun Life",
+      "engineering_score": 80,
+      "lifestyle_intelligence": {
+        "food_and_commute": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "insurance_perks": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] },
+        "office_mandate": { "claim": "Gurugram / Bengaluru per Jun 2025 hiring posts; attendance policy unknown.", "status": "UNVERIFIED", "sources": ["Anil Kumar Pal Sun Life hiring post Jun 2025 - job IDs JR00110363, JR00110359"] },
+        "the_flex": { "claim": "Not researched in this pass.", "status": "NOT_RESEARCHED", "sources": [] }
+      },
+      "standout_fun_perk": "Unknown - not researched.",
+      "lead_assessment": "Fourth on engineering evidence; lifestyle unresearched."
+    }
+  ],
+  "coverage": {
+    "companies_with_verified_lifestyle_evidence": 3,
+    "companies_with_partial_or_unverified": 2,
+    "companies_not_researched": 4,
+    "total_in_ledger": 8,
+    "engineering_ranking_total": 89,
+    "warning": "Lifestyle research covers 8 of 89 ranked companies. Do not read an absent or thin lifestyle entry as a negative signal - it means no research has been done. The three companies with genuinely verified India-applicable evidence are Cisco India, Booking Holdings India and Goldman Sachs."
+  }
+}

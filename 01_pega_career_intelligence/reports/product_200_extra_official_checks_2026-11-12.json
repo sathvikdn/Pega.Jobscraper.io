@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-11-13T07:39:54.768Z",
+  "checks": [
+    {
+      "label": "Pegasystems",
+      "url": "https://www.pega.com/about/careers/24123/software-engineer-genai-engineering-pega-developer-csa-cssa",
+      "status": "checked",
+      "checkedAt": "2026-11-13T07:39:53.409Z",
+      "searchStatus": "official-live-role",
+      "jobs": [
+        {
+          "title": "Software Engineer, GenAI Engineering (Pega Developer CSA, CSSA)",
+          "reqId": "24123",
+          "location": "Bengaluru",
+          "url": "https://www.pega.com/about/careers/24123/software-engineer-genai-engineering-pega-developer-csa-cssa",
+          "posted": null,
+          "closes": null,
+          "relevance": "2-4 years Pega; CSA and CSSA; GenAI agents, evaluations, guardrails and observability"
+        }
+      ]
+    },
+    {
+      "label": "ANZ",
+      "url": "https://careers.anz.com/search/?q=pega",
+      "status": "checked",
+      "checkedAt": "2026-11-13T07:39:54.142Z",
+      "searchStatus": "official-search-no-bengaluru-pega-match",
+      "note": "ANZ search lists two Docklands/Australia results as of this request, not a Bengaluru requisition."
+    },
+    {
+      "label": "Cohere Health",
+      "url": "https://boards-api.greenhouse.io/v1/boards/coherehealth/jobs?content=true",
+      "status": "checked",
+      "checkedAt": "2026-11-13T07:39:54.758Z",
+      "searchStatus": "official-search-checked",
+      "boardSize": 66,
+      "pegaMatches": 0,
+      "note": "No Pega mention on current Greenhouse board"
+    }
+  ]
+}

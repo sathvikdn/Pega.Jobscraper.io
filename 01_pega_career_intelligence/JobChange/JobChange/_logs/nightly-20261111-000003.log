@@ -1,0 +1,280 @@
+2026-11-11 00:00:03,411  INFO      ============================================================
+2026-11-11 00:00:03,412  INFO      NIGHTLY SCAN STARTING
+2026-11-11 00:00:03,412  INFO      ============================================================
+2026-11-11 00:00:04,255  INFO      Reusing portal instance VEkcESpP0DnB3RY9-Sy8IOY7krbfKnN8
+2026-11-11 00:00:04,914  INFO      Starting full scan (all targets, fresh)...
+2026-11-11 00:00:11,902  INFO      Scan started: 408 targets
+2026-11-11 00:00:22,018  INFO      Progress: 0/408 [parallel_scan] 
+2026-11-11 00:00:52,262  INFO      Progress: 3/408 [parallel_scan] 
+2026-11-11 00:01:02,407  INFO      Progress: 52/408 [parallel_scan] CBA
+2026-11-11 00:01:12,718  INFO      Progress: 122/408 [parallel_scan] Empower India
+2026-11-11 00:01:22,941  INFO      Progress: 194/408 [parallel_scan] Fidelity India
+2026-11-11 00:01:33,253  INFO      Progress: 255/408 [parallel_scan] Merkle (dentsu)
+2026-11-11 00:01:43,511  INFO      Progress: 323/408 [parallel_scan] Fidelity Investments
+2026-11-11 00:01:53,635  INFO      Progress: 395/408 [parallel_scan] Volvo Cars
+2026-11-11 00:02:03,708  INFO      Progress: 408/408 [parallel_scan] 
+2026-11-11 00:02:23,878  INFO      Progress: 1/377 [career_portals] ANZ Bank
+2026-11-11 00:03:44,597  INFO      Progress: 2/377 [career_portals] Cisco
+2026-11-11 00:04:14,743  INFO      Progress: 3/377 [career_portals] Accenture
+2026-11-11 00:05:05,157  INFO      Progress: 4/377 [career_portals] CSC (Corporation Service Company)
+2026-11-11 00:05:35,313  INFO      Progress: 6/377 [career_portals] Credera
+2026-11-11 00:06:05,467  INFO      Progress: 10/377 [career_portals] Commonwealth Bank
+2026-11-11 00:06:35,619  INFO      Progress: 11/377 [career_portals] Danske Bank
+2026-11-11 00:07:05,753  INFO      Progress: 12/377 [career_portals] Instellars
+2026-11-11 00:07:15,803  INFO      Progress: 13/377 [career_portals] Lloyds Banking Group
+2026-11-11 00:07:35,895  INFO      Progress: 16/377 [career_portals] A.P. Moller - Maersk
+2026-11-11 00:07:55,985  INFO      Progress: 17/377 [career_portals] BT Group India
+2026-11-11 00:08:56,284  INFO      Progress: 18/377 [career_portals] Aaseya
+2026-11-11 00:09:06,338  INFO      Progress: 19/377 [career_portals] Daimler Truck India
+2026-11-11 00:09:36,474  INFO      Progress: 20/377 [career_portals] Daimler Truck Innovation Center India
+2026-11-11 00:09:56,572  INFO      Progress: 21/377 [career_portals] Virtusa
+2026-11-11 00:10:06,622  INFO      Progress: 22/377 [career_portals] Intel India
+2026-11-11 00:11:06,941  INFO      Progress: 23/377 [career_portals] JPMorgan Chase & Co.
+2026-11-11 00:11:17,023  INFO      Progress: 25/377 [career_portals] Levi Strauss & Co. India
+2026-11-11 00:11:27,090  INFO      Progress: 28/377 [career_portals] Societe Generale GSC India
+2026-11-11 00:12:37,459  INFO      Progress: 29/377 [career_portals] Tesco Bengaluru
+2026-11-11 00:12:57,573  INFO      Progress: 30/377 [career_portals] Cognizant
+2026-11-11 00:13:07,618  INFO      Progress: 31/377 [career_portals] Wells Fargo India
+2026-11-11 00:13:47,829  INFO      Progress: 34/377 [career_portals] Wells Fargo
+2026-11-11 00:14:28,010  INFO      Progress: 36/377 [career_portals] HSBC
+2026-11-11 00:16:18,566  INFO      Progress: 37/377 [career_portals] Standard Chartered
+2026-11-11 00:16:48,956  INFO      Progress: 38/377 [career_portals] Coforge
+2026-11-11 00:16:59,065  INFO      Progress: 39/377 [career_portals] Goldman Sachs
+2026-11-11 00:17:19,296  INFO      Progress: 41/377 [career_portals] Barclays
+2026-11-11 00:17:49,549  INFO      Progress: 42/377 [career_portals] Citi India
+2026-11-11 00:17:59,595  INFO      Progress: 43/377 [career_portals] Deloitte
+2026-11-11 00:18:29,743  INFO      Progress: 44/377 [career_portals] Deutsche Bank
+2026-11-11 00:19:20,306  INFO      Progress: 45/377 [career_portals] UBS
+2026-11-11 00:19:40,525  INFO      Progress: 47/377 [career_portals] ANZ
+2026-11-11 00:21:00,952  INFO      Progress: 48/377 [career_portals] CBA
+2026-11-11 00:21:31,195  INFO      Progress: 50/377 [career_portals] Lloyds Banking
+2026-11-11 00:22:11,390  INFO      Progress: 52/377 [career_portals] Societe Generale
+2026-11-11 00:23:11,703  INFO      Progress: 53/377 [career_portals] Inadev
+2026-11-11 00:23:31,797  INFO      Progress: 54/377 [career_portals] NAB
+2026-11-11 00:24:22,304  INFO      Progress: 57/377 [career_portals] Synchrony
+2026-11-11 00:24:42,415  INFO      Progress: 58/377 [career_portals] KPMG India
+2026-11-11 00:24:52,473  INFO      Progress: 60/377 [career_portals] Kotak Mahindra Bank
+2026-11-11 00:25:22,632  INFO      Progress: 62/377 [career_portals] Allianz Technology
+2026-11-11 00:26:22,952  INFO      Progress: 64/377 [career_portals] Aflac India
+2026-11-11 00:27:43,561  INFO      Progress: 67/377 [career_portals] CNO Financial
+2026-11-11 00:28:53,902  INFO      Progress: 68/377 [career_portals] Truviq Systems
+2026-11-11 00:29:34,354  INFO      Progress: 69/377 [career_portals] Optum / UHG India
+2026-11-11 00:30:15,224  INFO      Progress: 70/377 [career_portals] Elevance Health
+2026-11-11 00:31:45,726  INFO      Progress: 71/377 [career_portals] V2Soft
+2026-11-11 00:32:25,970  INFO      Progress: 72/377 [career_portals] GE Healthcare India
+2026-11-11 00:34:16,758  INFO      Progress: 73/377 [career_portals] Roche India
+2026-11-11 00:35:17,053  INFO      Progress: 74/377 [career_portals] Verizon India
+2026-11-11 00:36:27,618  INFO      Progress: 76/377 [career_portals] Vodafone / VOIS India
+2026-11-11 00:37:49,481  INFO      Progress: 77/377 [career_portals] Telstra India
+2026-11-11 00:38:49,820  INFO      Progress: 81/377 [career_portals] HashedIn by Deloitte
+2026-11-11 00:38:59,872  INFO      Progress: 84/377 [career_portals] Hexaware Technologies
+2026-11-11 00:39:19,961  INFO      Progress: 85/377 [career_portals] Nike India
+2026-11-11 00:40:10,205  INFO      Progress: 87/377 [career_portals] Mphasis
+2026-11-11 00:40:50,407  INFO      Progress: 88/377 [career_portals] Siemens India
+2026-11-11 00:41:20,585  INFO      Progress: 90/377 [career_portals] NTT DATA Services
+2026-11-11 00:41:30,660  INFO      Progress: 91/377 [career_portals] John Deere India
+2026-11-11 00:41:40,721  INFO      Progress: 95/377 [career_portals] DHL India
+2026-11-11 00:41:50,800  INFO      Progress: 96/377 [career_portals] Tech Mahindra
+2026-11-11 00:42:10,911  INFO      Progress: 97/377 [career_portals] Unilever India
+2026-11-11 00:44:01,464  INFO      Progress: 98/377 [career_portals] Mondelez India
+2026-11-11 00:45:21,893  INFO      Progress: 99/377 [career_portals] Unisys
+2026-11-11 00:46:12,264  INFO      Progress: 100/377 [career_portals] Mastercard India
+2026-11-11 00:46:53,048  INFO      Progress: 102/377 [career_portals] PayPal India
+2026-11-11 00:47:33,298  INFO      Progress: 103/377 [career_portals] Broadridge India
+2026-11-11 00:48:13,502  INFO      Progress: 104/377 [career_portals] Deloitte India
+2026-11-11 00:48:33,628  INFO      Progress: 105/377 [career_portals] FIS India
+2026-11-11 00:50:04,124  INFO      Progress: 106/377 [career_portals] Global Payments India
+2026-11-11 00:51:04,416  INFO      Progress: 107/377 [career_portals] EY India
+2026-11-11 00:52:04,720  INFO      Progress: 108/377 [career_portals] Fiserv India
+2026-11-11 00:52:54,999  INFO      Progress: 109/377 [career_portals] Empower India
+2026-11-11 00:53:35,228  INFO      Progress: 111/377 [career_portals] U.S. Bank India
+2026-11-11 00:55:05,674  INFO      Progress: 112/377 [career_portals] Capital One India
+2026-11-11 00:55:15,739  INFO      Progress: 114/377 [career_portals] PNC India
+2026-11-11 00:55:35,823  INFO      Progress: 120/377 [career_portals] Evernorth / Cigna India
+2026-11-11 00:56:26,077  INFO      Progress: 121/377 [career_portals] enGen / Highmark India
+2026-11-11 00:56:56,256  INFO      Progress: 123/377 [career_portals] Pfizer India
+2026-11-11 00:57:16,363  INFO      Progress: 124/377 [career_portals] Novartis India
+2026-11-11 00:58:36,763  INFO      Progress: 127/377 [career_portals] Philips India
+2026-11-11 00:59:27,406  INFO      Progress: 128/377 [career_portals] Publicis Sapient
+2026-11-11 01:00:27,878  INFO      Progress: 129/377 [career_portals] Mercedes-Benz R&D India
+2026-11-11 01:00:48,011  INFO      Progress: 130/377 [career_portals] Renault-Nissan Tech India
+2026-11-11 01:01:08,145  INFO      Progress: 132/377 [career_portals] Bosch India (BGSW)
+2026-11-11 01:01:58,515  INFO      Progress: 135/377 [career_portals] Maersk India
+2026-11-11 01:02:18,699  INFO      Progress: 136/377 [career_portals] UPS India
+2026-11-11 01:02:49,027  INFO      Progress: 137/377 [career_portals] Wipro
+2026-11-11 01:04:09,712  INFO      Progress: 138/377 [career_portals] Comcast India
+2026-11-11 01:04:49,928  INFO      Progress: 139/377 [career_portals] Amdocs India
+2026-11-11 01:05:40,421  INFO      Progress: 141/377 [career_portals] Shell India
+2026-11-11 01:06:20,677  INFO      Progress: 144/377 [career_portals] Dell Technologies India
+2026-11-11 01:08:21,259  INFO      Progress: 145/377 [career_portals] Toyota India
+2026-11-11 01:09:11,912  INFO      Progress: 146/377 [career_portals] LTIMindtree
+2026-11-11 01:09:42,075  INFO      Progress: 147/377 [career_portals] General Motors India
+2026-11-11 01:10:52,412  INFO      Progress: 148/377 [career_portals] Procter & Gamble India
+2026-11-11 01:11:02,475  INFO      Progress: 150/377 [career_portals] Johnson & Johnson India
+2026-11-11 01:12:12,863  INFO      Progress: 151/377 [career_portals] Merck India
+2026-11-11 01:12:43,016  INFO      Progress: 152/377 [career_portals] NTT DATA
+2026-11-11 01:12:53,066  INFO      Progress: 153/377 [career_portals] Coca-Cola India
+2026-11-11 01:13:53,628  INFO      Progress: 154/377 [career_portals] AT&T India
+2026-11-11 01:14:54,049  INFO      Progress: 155/377 [career_portals] Synechron
+2026-11-11 01:15:24,294  INFO      Progress: 156/377 [career_portals] FedEx India
+2026-11-11 01:17:04,786  INFO      Progress: 157/377 [career_portals] CVS Health India
+2026-11-11 01:18:35,586  INFO      Progress: 159/377 [career_portals] Lockheed Martin India
+2026-11-11 01:19:46,021  INFO      Progress: 160/377 [career_portals] S&P Global India
+2026-11-11 01:19:56,132  INFO      Progress: 161/377 [career_portals] Persistent Systems
+2026-11-11 01:20:16,228  INFO      Progress: 162/377 [career_portals] Zurich Insurance India
+2026-11-11 01:20:36,331  INFO      Progress: 163/377 [career_portals] LPL Financial India
+2026-11-11 01:21:06,684  INFO      Progress: 167/377 [career_portals] Birlasoft
+2026-11-11 01:21:37,229  INFO      Progress: 168/377 [career_portals] Voya Financial India
+2026-11-11 01:22:07,388  INFO      Progress: 170/377 [career_portals] DXC Technology
+2026-11-11 01:22:57,617  INFO      Progress: 171/377 [career_portals] Ameriprise India
+2026-11-11 01:23:47,846  INFO      Progress: 173/377 [career_portals] Hexaware
+2026-11-11 01:24:07,960  INFO      Progress: 174/377 [career_portals] ICICI Bank
+2026-11-11 01:25:48,843  INFO      Progress: 175/377 [career_portals] Fidelity India
+2026-11-11 01:26:59,233  INFO      Progress: 176/377 [career_portals] Zensar Technologies
+2026-11-11 01:27:39,439  INFO      Progress: 177/377 [career_portals] Charles Schwab India
+2026-11-11 01:28:19,629  INFO      Progress: 178/377 [career_portals] State Street India
+2026-11-11 01:28:59,808  INFO      Progress: 179/377 [career_portals] Areteans / Credera
+2026-11-11 01:29:19,904  INFO      Progress: 185/377 [career_portals] Genpact
+2026-11-11 01:29:50,070  INFO      Progress: 186/377 [career_portals] Cisco India
+2026-11-11 01:30:20,245  INFO      Progress: 188/377 [career_portals] Eviden (Atos)
+2026-11-11 01:31:00,447  INFO      Progress: 189/377 [career_portals] Marsh McLennan India (MMGS)
+2026-11-11 01:31:40,781  INFO      Progress: 191/377 [career_portals] Aaseya (YASH)
+2026-11-11 01:32:00,896  INFO      Progress: 192/377 [career_portals] Mizuho Global Services India (MGS)
+2026-11-11 01:32:20,992  INFO      Progress: 194/377 [career_portals] Maantic
+2026-11-11 01:32:31,040  INFO      Progress: 197/377 [career_portals] BlueRose Technologies
+2026-11-11 01:32:41,089  INFO      Progress: 199/377 [career_portals] ITC Limited
+2026-11-11 01:33:01,193  INFO      Progress: 200/377 [career_portals] Inadev India
+2026-11-11 01:33:21,286  INFO      Progress: 202/377 [career_portals] Barclays India
+2026-11-11 01:33:51,453  INFO      Progress: 204/377 [career_portals] Citi / Citi India
+2026-11-11 01:34:01,503  INFO      Progress: 205/377 [career_portals] Innova ESI
+2026-11-11 01:34:11,553  INFO      Progress: 209/377 [career_portals] Evernorth / Cigna
+2026-11-11 01:34:51,771  INFO      Progress: 210/377 [career_portals] Hartford India GCC
+2026-11-11 01:35:01,821  INFO      Progress: 214/377 [career_portals] Siemens
+2026-11-11 01:35:31,990  INFO      Progress: 215/377 [career_portals] Verizon
+2026-11-11 01:36:42,356  INFO      Progress: 222/377 [career_portals] Bosch
+2026-11-11 01:37:22,545  INFO      Progress: 223/377 [career_portals] Nous Infosystems
+2026-11-11 01:37:32,609  INFO      Progress: 225/377 [career_portals] Cargill
+2026-11-11 01:37:52,728  INFO      Progress: 226/377 [career_portals] Sopra Steria India
+2026-11-11 01:38:53,026  INFO      Progress: 227/377 [career_portals] DHL IT Services
+2026-11-11 01:39:03,080  INFO      Progress: 233/377 [career_portals] Lloyds Technology Centre India
+2026-11-11 01:39:23,213  INFO      Progress: 235/377 [career_portals] Merkle (dentsu)
+2026-11-11 01:39:53,502  INFO      Progress: 236/377 [career_portals] Mercedes-Benz Mobility AG
+2026-11-11 01:40:13,598  INFO      Progress: 238/377 [career_portals] Sonata Software
+2026-11-11 01:40:33,716  INFO      Progress: 239/377 [career_portals] NAB Innovation Centre India
+2026-11-11 01:41:24,201  INFO      Progress: 241/377 [career_portals] Cyient
+2026-11-11 01:41:44,380  INFO      Progress: 242/377 [career_portals] Standard Chartered India
+2026-11-11 01:42:24,601  INFO      Progress: 243/377 [career_portals] BD / Becton Dickinson
+2026-11-11 01:43:04,857  INFO      Progress: 244/377 [career_portals] Cohere Health
+2026-11-11 01:43:35,016  INFO      Progress: 245/377 [career_portals] MSD / Merck Sharp & Dohme
+2026-11-11 01:44:05,163  INFO      Progress: 246/377 [career_portals] Thryve Digital
+2026-11-11 01:44:45,413  INFO      Progress: 248/377 [career_portals] Columbia Sportswear Company
+2026-11-11 01:45:25,637  INFO      Progress: 249/377 [career_portals] Artech LLC
+2026-11-11 01:46:25,948  INFO      Progress: 250/377 [career_portals] Mizuho
+2026-11-11 01:46:46,065  INFO      Progress: 252/377 [career_portals] Collabera
+2026-11-11 01:46:56,115  INFO      Progress: 253/377 [career_portals] MetLife India GCC
+2026-11-11 01:47:46,434  INFO      Progress: 254/377 [career_portals] Vodafone / VOIS
+2026-11-11 01:49:18,439  INFO      Progress: 255/377 [career_portals] Mastech Holdings
+2026-11-11 01:50:09,092  INFO      Progress: 256/377 [career_portals] BT Group
+2026-11-11 01:51:09,396  INFO      Progress: 258/377 [career_portals] Quess Corp
+2026-11-11 01:51:49,616  INFO      Progress: 259/377 [career_portals] Maersk GSC
+2026-11-11 01:52:09,742  INFO      Progress: 260/377 [career_portals] enGen / Highmark
+2026-11-11 01:52:39,886  INFO      Progress: 261/377 [career_portals] Anlage Infotech
+2026-11-11 01:53:10,047  INFO      Progress: 262/377 [career_portals] Lloyds Banking Group India
+2026-11-11 01:53:30,156  INFO      Progress: 263/377 [career_portals] MetLife MGCC
+2026-11-11 01:54:20,416  INFO      Progress: 265/377 [career_portals] Carelon / Elevance
+2026-11-11 01:55:51,486  INFO      Progress: 266/377 [career_portals] Optum / UHG
+2026-11-11 01:56:31,728  INFO      Progress: 269/377 [career_portals] Comcast
+2026-11-11 01:57:01,899  INFO      Progress: 270/377 [career_portals] Nike India (ITC)
+2026-11-11 01:58:02,183  INFO      Progress: 271/377 [career_portals] Unilever / UniOps
+2026-11-11 01:59:53,736  INFO      Progress: 272/377 [career_portals] Bosch / BGSW
+2026-11-11 02:00:33,928  INFO      Progress: 274/377 [career_portals] EvonSys
+2026-11-11 02:00:44,167  INFO      Progress: 275/377 [career_portals] Renault-Nissan Tech
+2026-11-11 02:01:04,339  INFO      Progress: 276/377 [career_portals] Navistar / International Motors
+2026-11-11 02:01:14,644  INFO      Progress: 277/377 [career_portals] UPS
+2026-11-11 02:01:24,775  INFO      Progress: 278/377 [career_portals] Estes Express
+2026-11-11 02:01:54,944  INFO      Progress: 279/377 [career_portals] Credit Suisse / UBS India
+2026-11-11 02:02:25,096  INFO      Progress: 282/377 [career_portals] Ameriprise Financial India
+2026-11-11 02:03:15,370  INFO      Progress: 283/377 [career_portals] EY
+2026-11-11 02:04:05,932  INFO      Progress: 284/377 [career_portals] Optum / UnitedHealth Group India
+2026-11-11 02:04:46,570  INFO      Progress: 285/377 [career_portals] Elevance Health India
+2026-11-11 02:06:07,224  INFO      Progress: 289/377 [career_portals] MassMutual India
+2026-11-11 02:07:47,858  INFO      Progress: 290/377 [career_portals] ING
+2026-11-11 02:08:08,046  INFO      Progress: 291/377 [career_portals] AIG
+2026-11-11 02:08:38,214  INFO      Progress: 292/377 [career_portals] AstraZeneca
+2026-11-11 02:10:18,827  INFO      Progress: 294/377 [career_portals] DP World
+2026-11-11 02:10:59,225  INFO      Progress: 295/377 [career_portals] T-Mobile / TMUS Global Solutions
+2026-11-11 02:12:40,506  INFO      Progress: 296/377 [career_portals] Randstad Digital
+2026-11-11 02:13:11,039  INFO      Progress: 297/377 [career_portals] Deutsche Telekom Digital Labs
+2026-11-11 02:13:41,672  INFO      Progress: 299/377 [career_portals] Schneider Electric
+2026-11-11 02:14:22,020  INFO      Progress: 300/377 [career_portals] Honeywell
+2026-11-11 02:14:32,069  INFO      Progress: 301/377 [career_portals] Tenth Revolution Group
+2026-11-11 02:15:12,430  INFO      Progress: 302/377 [career_portals] Airbus
+2026-11-11 02:15:42,909  INFO      Progress: 303/377 [career_portals] CVS Health / Aetna
+2026-11-11 02:16:53,723  INFO      Progress: 304/377 [career_portals] VMC Soft Technologies
+2026-11-11 02:17:44,002  INFO      Progress: 305/377 [career_portals] Prime Therapeutics
+2026-11-11 02:17:54,063  INFO      Progress: 306/377 [career_portals] State Street
+2026-11-11 02:18:44,392  INFO      Progress: 309/377 [career_portals] ExxonMobil India
+2026-11-11 02:19:24,622  INFO      Progress: 310/377 [career_portals] Revolent Group
+2026-11-11 02:19:51,195  INFO      Progress: 311/377 [career_portals] Charter / Spectrum
+2026-11-11 02:20:01,303  INFO      Progress: 313/377 [career_portals] Process360 Ltd
+2026-11-11 02:20:21,445  INFO      Progress: 315/377 [career_portals] Deutsche Bank India
+2026-11-11 02:21:22,152  INFO      Progress: 316/377 [career_portals] Target in India
+2026-11-11 02:21:32,757  INFO      Progress: 317/377 [career_portals] Walmart Global Tech India
+2026-11-11 02:22:13,189  INFO      Progress: 319/377 [career_portals] Vodafone Idea
+2026-11-11 02:22:23,238  INFO      Progress: 320/377 [career_portals] Navistar
+2026-11-11 02:22:33,384  INFO      Progress: 321/377 [career_portals] BMW Financial Services
+2026-11-11 02:23:13,915  INFO      Progress: 324/377 [career_portals] Unilever
+2026-11-11 02:24:55,078  INFO      Progress: 327/377 [career_portals] Mphasis India
+2026-11-11 02:25:45,488  INFO      Progress: 328/377 [career_portals] FIS (TSYS)
+2026-11-11 02:27:06,214  INFO      Progress: 329/377 [career_portals] Fiserv
+2026-11-11 02:27:36,506  INFO      Progress: 332/377 [career_portals] Goldman Sachs India
+2026-11-11 02:27:56,693  INFO      Progress: 333/377 [career_portals] Virtusa India
+2026-11-11 02:28:06,742  INFO      Progress: 334/377 [career_portals] Citibank India
+2026-11-11 02:28:16,791  INFO      Progress: 335/377 [career_portals] HSBC India
+2026-11-11 02:29:57,449  INFO      Progress: 336/377 [career_portals] CGI India
+2026-11-11 02:30:58,003  INFO      Progress: 337/377 [career_portals] Societe Generale India
+2026-11-11 02:32:08,828  INFO      Progress: 338/377 [career_portals] Optum / UnitedHealth India
+2026-11-11 02:32:49,118  INFO      Progress: 341/377 [career_portals] Global Payments / TSYS India
+2026-11-11 02:33:49,688  INFO      Progress: 342/377 [career_portals] Synchrony India
+2026-11-11 02:34:09,779  INFO      Progress: 346/377 [career_portals] Commonwealth Bank India
+2026-11-11 02:34:50,054  INFO      Progress: 348/377 [career_portals] ANZ Bank India
+2026-11-11 02:36:10,739  INFO      Progress: 349/377 [career_portals] Allianz Technology India
+2026-11-11 02:36:41,026  INFO      Progress: 350/377 [career_portals] IFFCO Tokio India
+2026-11-11 02:36:51,173  INFO      Progress: 351/377 [career_portals] Dell India
+2026-11-11 02:38:52,911  INFO      Progress: 352/377 [career_portals] Estes Express India
+2026-11-11 02:39:23,346  INFO      Progress: 353/377 [career_portals] Levi Strauss India
+2026-11-11 02:39:34,329  INFO      Progress: 354/377 [career_portals] Marsh McLennan India
+2026-11-11 02:40:04,709  INFO      Progress: 355/377 [career_portals] Daimler AG (Mercedes parent)
+2026-11-11 02:40:24,806  INFO      Progress: 356/377 [career_portals] Qualcomm
+2026-11-11 02:40:54,974  INFO      Progress: 357/377 [career_portals] Airtel
+2026-11-11 02:41:35,191  INFO      Progress: 358/377 [career_portals] Lowe’s
+2026-11-11 02:42:35,619  INFO      Progress: 359/377 [career_portals] JLR
+2026-11-11 02:43:35,952  INFO      Progress: 360/377 [career_portals] BMW TechWorks
+2026-11-11 02:44:16,216  INFO      Progress: 361/377 [career_portals] VW Digital Solutions
+2026-11-11 02:44:26,262  INFO      Progress: 365/377 [career_portals] BP
+2026-11-11 02:45:16,703  INFO      Progress: 366/377 [career_portals] Chevron
+2026-11-11 02:45:47,062  INFO      Progress: 367/377 [career_portals] ExxonMobil
+2026-11-11 02:46:17,245  INFO      Progress: 368/377 [career_portals] SLB
+2026-11-11 02:47:17,852  INFO      Progress: 369/377 [career_portals] Boeing
+2026-11-11 02:47:58,200  INFO      Progress: 370/377 [career_portals] Rolls-Royce
+2026-11-11 02:49:18,887  INFO      Progress: 371/377 [career_portals] ABB
+2026-11-11 02:49:49,440  INFO      Progress: 373/377 [career_portals] CNH
+2026-11-11 02:49:59,491  INFO      Progress: 374/377 [career_portals] Komatsu
+2026-11-11 02:50:39,699  INFO      Progress: 375/377 [career_portals] Carrier
+2026-11-11 02:51:09,845  INFO      Progress: 376/377 [career_portals] JCI
+2026-11-11 02:51:40,008  INFO      Progress: 377/377 [career_portals] Target
+2026-11-11 02:51:50,060  INFO      Progress: 1/4 [job_boards] Shine.com
+2026-11-11 02:52:20,223  INFO      Scan complete.
+2026-11-11 02:52:26,395  INFO      Results: 332 jobs from 75 companies
+2026-11-11 02:52:26,396  INFO      Recommendations: {'excluded': 86, 'recommended': 23, 'review': 163, 'stretch': 60}
+2026-11-11 02:52:26,445  INFO      Career portals: 37/345 found jobs (10.7%)
+2026-11-11 02:52:26,445  INFO        navigation_failed: 113 failures
+2026-11-11 02:52:26,445  INFO        no_pega_results: 56 failures
+2026-11-11 02:52:26,445  INFO        no_search_executed: 139 failures
+2026-11-11 02:52:26,477  INFO      Job boards: 56 additional listings
+2026-11-11 02:52:26,478  INFO      Total runtime: 172.4 minutes
+2026-11-11 02:52:26,478  INFO      Log saved to: C:\Users\DNSATHV\Desktop\calude\01_pega_career_intelligence\JobChange\JobChange\_logs\nightly-20261111-000003.log
+2026-11-11 02:52:26,480  INFO      ============================================================
+2026-11-11 02:52:26,480  INFO      NIGHTLY SCAN COMPLETE — starting portal server
+2026-11-11 02:52:26,480  INFO      ============================================================
+2026-11-11 02:52:26,501  INFO      Reusing portal instance VEkcESpP0DnB3RY9-Sy8IOY7krbfKnN8

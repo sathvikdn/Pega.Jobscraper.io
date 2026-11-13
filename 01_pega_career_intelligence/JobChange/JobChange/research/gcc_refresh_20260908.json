@@ -1,0 +1,1043 @@
+{
+  "research_date": "2026-09-08",
+  "scope": "Independent public LinkedIn and primary employer/Pega research: Bengaluru in-house teams, professional contacts and India-eligible remote leads.",
+  "methodology": {
+    "queries_and_checks": 19,
+    "search_queries": 14,
+    "public_page_checks": 5,
+    "access": "Public search index plus openly retrievable employer/event pages only.",
+    "date_note": "checked_at is the research date. Search crawl ages are not publication dates. Relative post ages were not converted to exact dates.",
+    "evidence_rules": [
+      "Certifications, liked posts, former employer history and current implementation work remain separate.",
+      "Named professional samples are not team headcounts.",
+      "Global Pega use is not Bengaluru team proof; remote elsewhere on a page is not the role's remote eligibility.",
+      "No outreach, applications, login bypass or contact enrichment was performed."
+    ]
+  },
+  "queries": [
+    {
+      "id": "gcc-refresh-01",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"Lowe\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No directly relevant Lowe's Pega professional was established in returned results.",
+      "result_urls": []
+    },
+    {
+      "id": "gcc-refresh-02",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"Target\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Target result matched a liked Pega certification post, not the person's own Pega credentials or work.",
+      "result_urls": [
+        "https://in.linkedin.com/in/shishuvendra-tiwari"
+      ]
+    },
+    {
+      "id": "gcc-refresh-03",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"Tesco\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Tesco contacts with Pega credentials found; current Pega work unconfirmed. Recruiting and liked-post matches rejected.",
+      "result_urls": [
+        "https://in.linkedin.com/in/naidu-vm-911986395",
+        "https://in.linkedin.com/in/mahar89",
+        "https://in.linkedin.com/in/sowmyakey"
+      ]
+    },
+    {
+      "id": "gcc-refresh-04",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"IKEA\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "IKEA employee profile exposes Pega certifications and Bengaluru Experience location, but no current Pega assignment.",
+      "result_urls": [
+        "https://in.linkedin.com/in/priyanka-p-9b4b38168"
+      ]
+    },
+    {
+      "id": "gcc-refresh-05",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"Danske\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Danske Bank Bengaluru profile exposes CPBA credentials; direct local Pega work not established.",
+      "result_urls": [
+        "https://in.linkedin.com/in/charu-n-58714877"
+      ]
+    },
+    {
+      "id": "gcc-refresh-06",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"Maersk\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Maersk hits concern old certification, former Pega employment or liked posts; not current team proof.",
+      "result_urls": [
+        "https://in.linkedin.com/in/abhilasha-das-95bbb5145",
+        "https://in.linkedin.com/in/yrkapil",
+        "https://in.linkedin.com/in/yeshnanjundappa"
+      ]
+    },
+    {
+      "id": "gcc-refresh-07",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"H&M\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No directly relevant H&M in-house Pega professional was established in returned results.",
+      "result_urls": []
+    },
+    {
+      "id": "gcc-refresh-08",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"Cargill\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Cargill employee with mixed Java/Pega/MDM/ETL historical skills found; current Pega assignment unconfirmed.",
+      "result_urls": [
+        "https://in.linkedin.com/in/yadagiripalla"
+      ]
+    },
+    {
+      "id": "gcc-refresh-09",
+      "query": "\"Vandana Mala Boddeti\" \"Booking\" Pega",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No original profile/post for this named Booking professional was returned; no direct work claim promoted from a liked-post wrapper.",
+      "result_urls": []
+    },
+    {
+      "id": "gcc-refresh-10",
+      "query": "site:in.linkedin.com/in \"Pega\" \"Bengaluru\" \"Cisco\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Cisco profile gives specific dated Pega upgrades and API case work; additional certification-only contacts distinguished.",
+      "result_urls": [
+        "https://in.linkedin.com/in/dharani-murugan-99a392184",
+        "https://in.linkedin.com/in/vijay-sethi",
+        "https://in.linkedin.com/in/athulyadasm",
+        "https://in.linkedin.com/in/mohammad-shoaib-jah-05b78a228"
+      ]
+    },
+    {
+      "id": "gcc-refresh-11",
+      "query": "site:jobs.smartrecruiters.com \"Pega\" \"India\" \"Remote\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No useful direct SmartRecruiters role was retained from the combined search response.",
+      "result_urls": []
+    },
+    {
+      "id": "gcc-refresh-12",
+      "query": "site:pega.com \"IKEA\" OR \"Cargill\" OR \"Danske\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "No distinct primary employer-use result was retained from this combined query; Danske primary sources subsequently checked separately.",
+      "result_urls": []
+    },
+    {
+      "id": "gcc-refresh-13",
+      "query": "\"Pega\" \"remote\" \"India\" \"careers\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer sources surfaced explicit Inadev Pan India remote role, Ness hybrid roles and weaker remote-policy/post signals.",
+      "result_urls": [
+        "https://www.inadev.com/careers/india-jobs/",
+        "https://jobs.jobvite.com/ness/search/?c=UI&p=0",
+        "https://www.linkedin.com/company/pegaone",
+        "https://www.hessodigital.com/careers"
+      ]
+    },
+    {
+      "id": "gcc-refresh-14",
+      "query": "\"Danske Bank\" site:pega.com/customers",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Official Pega resources establish Danske mortgage/onboarding use globally and additional 2024 event customers.",
+      "result_urls": [
+        "https://www.pega.com/insights/resources/danske-bank-speeds-delivery-cycles-pega",
+        "https://www.pega.com/events/pega-community-forum-2024"
+      ]
+    },
+    {
+      "id": "gcc-refresh-15",
+      "query": "https://in.linkedin.com/in/dharani-murugan-99a392184",
+      "checked_at": "2026-09-08",
+      "source": "web open",
+      "outcome": "Direct LinkedIn open denied by robots.txt. No login, hidden endpoint or workaround attempted.",
+      "result_urls": [
+        "https://in.linkedin.com/in/dharani-murugan-99a392184"
+      ]
+    },
+    {
+      "id": "gcc-refresh-16",
+      "query": "https://www.inadev.com/careers/india-jobs/",
+      "checked_at": "2026-09-08",
+      "source": "web open",
+      "outcome": "Employer page successfully opened; Pega CS Developer explicitly listed Full Time / Pan India / Remote.",
+      "result_urls": [
+        "https://www.inadev.com/careers/india-jobs/"
+      ]
+    },
+    {
+      "id": "gcc-refresh-17",
+      "query": "https://jobs.jobvite.com/ness/search/?c=UI&p=0",
+      "checked_at": "2026-09-08",
+      "source": "web open",
+      "outcome": "Employer ATS successfully opened; current titles include Pega Automation Engineer and Senior Pega Constellation Developer.",
+      "result_urls": [
+        "https://jobs.jobvite.com/ness/search/?c=UI&p=0"
+      ]
+    },
+    {
+      "id": "gcc-refresh-18",
+      "query": "Open Ness Pega - Automation Engineer from employer listing",
+      "source": "web click",
+      "checked_at": "2026-09-08",
+      "outcome": "Individual employer job page opened; 3–5 years and QA automation requirements read.",
+      "result_urls": [
+        "https://jobs.jobvite.com/ness/job/os3tAfwi"
+      ]
+    },
+    {
+      "id": "gcc-refresh-19",
+      "query": "Open Ness Senior Pega Constellation Developer from employer listing",
+      "source": "web click",
+      "checked_at": "2026-09-08",
+      "outcome": "Individual job detail returned cache miss; employer listing evidence retained with unknown experience/pay.",
+      "result_urls": [
+        "https://jobs.jobvite.com/ness/job/oJJzAfwl"
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "name": "Cisco",
+      "category": "gcc",
+      "aliases": [
+        "Cisco Systems",
+        "Cisco Systems (India) Private Limited, Bangalore"
+      ],
+      "assessment": "Public professional work evidence for Bengaluru; not a live roster.",
+      "claims": [
+        {
+          "type": "project",
+          "text": "Dharani Murugan's profile lists Pega 8.8 to 24.1.2 upgrade work in March 2025 and API-driven case operations in February 2024.",
+          "source_url": "https://in.linkedin.com/in/dharani-murugan-99a392184",
+          "source_title": "Dharani Murugan — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "The same profile lists Cisco in Bengaluru; this supports one professional's local employment alongside recorded Pega work, not current team size.",
+          "source_url": "https://in.linkedin.com/in/dharani-murugan-99a392184",
+          "source_title": "Dharani Murugan — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Dharani Murugan",
+          "title": "Data Engineer (About self-description)",
+          "employer_as_stated": "Cisco",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/dharani-murugan-99a392184",
+          "source_url": "https://in.linkedin.com/in/dharani-murugan-99a392184",
+          "source_title": "Dharani Murugan — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile awards describe Pega upgrades and integrating external APIs to create, update and delete cases.",
+          "work_summary": "Profile awards describe Pega upgrades and integrating external APIs to create, update and delete cases.",
+          "limitations": [
+            "Experience title was not exposed. Work examples are dated 2024–2025. Direct page open was blocked by robots.txt; retained evidence comes from the public search index.",
+            "Do not infer current Pega-only responsibilities from an About section focused on data engineering."
+          ],
+          "experience_location_as_stated": "Bengaluru, Karnataka, India",
+          "source_dates": [
+            "2024-02",
+            "2025-03",
+            "2025-07"
+          ],
+          "title_scope": "About section"
+        },
+        {
+          "name": "Vijay Sethi",
+          "title": "Technical Leader (About self-description)",
+          "employer_as_stated": "Cisco Systems (India) Private Limited, Bangalore",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/vijay-sethi",
+          "source_url": "https://in.linkedin.com/in/vijay-sethi",
+          "source_title": "Vijay Sethi — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "A received professional recommendation describes knowledge of Pega and analytics; another describes leading Cisco IT's Release Bridge project.",
+          "work_summary": "A received professional recommendation describes knowledge of Pega and analytics; another describes leading Cisco IT's Release Bridge project.",
+          "limitations": [
+            "Pega attribution is a third-party recommendation on his profile, not a dated first-person description of current Pega work.",
+            "The retrieved current Experience job title is blank; Technical Leader is exposed in About."
+          ],
+          "title_scope": "About section",
+          "connection_strength": "recommendation_only"
+        },
+        {
+          "name": "Athulyadas M, PMPÂ®",
+          "title": null,
+          "employer_as_stated": "Cisco",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/athulyadasm",
+          "source_url": "https://in.linkedin.com/in/athulyadasm",
+          "source_title": "Athulyadas M, PMPÂ® — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists Pega Certified System Architect, issued May 2019, and Pega System Architect Essentials courses.",
+          "work_summary": "Profile lists Pega Certified System Architect, issued May 2019, and Pega System Architect Essentials courses.",
+          "limitations": [
+            "Current Pega application work was not established. About concerns supply-chain product operations.",
+            "Certification is not evidence that Cisco's current role uses Pega."
+          ],
+          "connection_strength": "certification_only"
+        },
+        {
+          "name": "Mohammad Shoaib Jah",
+          "title": null,
+          "employer_as_stated": "Cisco",
+          "location_as_stated": "Hyderabad, Telangana, India",
+          "profile_url": "https://in.linkedin.com/in/mohammad-shoaib-jah-05b78a228",
+          "source_url": "https://in.linkedin.com/in/mohammad-shoaib-jah-05b78a228",
+          "source_title": "Mohammad Shoaib Jah — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists CSSA v8.8 issued February 2024 and CSA v8.8 issued June 2023.",
+          "work_summary": "Profile lists CSSA v8.8 issued February 2024 and CSA v8.8 issued June 2023.",
+          "limitations": [
+            "Profile location says Hyderabad while Cisco Experience location says Bengaluru; do not silently replace one with the other.",
+            "No current Pega project or job title was exposed."
+          ],
+          "experience_location_as_stated": "Bengaluru, Karnataka, India",
+          "connection_strength": "certification_only"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "No current Cisco vacancy was established by these profile searches.",
+        "Do not infer a reporting hierarchy from titles or recommendations."
+      ]
+    },
+    {
+      "name": "Danske Bank",
+      "category": "gcc",
+      "aliases": [
+        "Danske Bank UK"
+      ],
+      "assessment": "Pega use established globally; Bengaluru contact is certification-only.",
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Pega's customer resource describes Danske Bank using Pega while modernizing digital channels and delivery.",
+          "source_url": "https://www.pega.com/insights/resources/danske-bank-speeds-delivery-cycles-pega",
+          "source_title": "Danske Bank speeds up delivery cycles with Pega",
+          "source_kind": "event",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "The Danske Bank UK forum presentation discusses mortgage and onboarding transformation and customer journeys launched since 2022.",
+          "source_url": "https://www.pega.com/insights/resources/pega-community-forum-danske-bank-uk-empowering-change-role-pega-saas-our-digital",
+          "source_title": "Danske Bank UK: Pega SaaS digital journey",
+          "source_kind": "event",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Charu N",
+          "title": null,
+          "employer_as_stated": "Danske Bank",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/charu-n-58714877",
+          "source_url": "https://in.linkedin.com/in/charu-n-58714877",
+          "source_title": "Charu N — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists Pega Business Architect 8.1 issued January 2021 and 7.1 issued October 2015.",
+          "work_summary": "Profile lists Pega Business Architect 8.1 issued January 2021 and 7.1 issued October 2015.",
+          "limitations": [
+            "No current Pega assignment or Experience title was exposed.",
+            "Do not attach the bank's global Pega projects to this individual without separate evidence."
+          ],
+          "connection_strength": "certification_only"
+        },
+        {
+          "name": "Liam Curran",
+          "title": "CIO",
+          "employer_as_stated": "Danske Bank UK",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.pega.com/insights/resources/pega-community-forum-danske-bank-uk-empowering-change-role-pega-saas-our-digital",
+          "source_title": "Danske Bank UK: Pega SaaS digital journey",
+          "source_kind": "event",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Named speaker on the bank's mortgage and onboarding transformation using Pega.",
+          "work_summary": "Discusses the bank's digital transformation and Pega SaaS journey.",
+          "limitations": [
+            "Title is as stated in this event resource, not a current employment verification.",
+            "No India or Bengaluru location is supplied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Bank-wide Pega usage does not establish an in-house Bengaluru development team or current hiring."
+      ]
+    },
+    {
+      "name": "IKEA",
+      "category": "gcc",
+      "aliases": [],
+      "assessment": "Contact lead only; current Pega use not established.",
+      "claims": [],
+      "people": [
+        {
+          "name": "Priyanka P",
+          "title": null,
+          "employer_as_stated": "IKEA",
+          "location_as_stated": "Chennai, Tamil Nadu, India",
+          "profile_url": "https://in.linkedin.com/in/priyanka-p-9b4b38168",
+          "source_url": "https://in.linkedin.com/in/priyanka-p-9b4b38168",
+          "source_title": "Priyanka P — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists CSSA issued February 2023 and Pega System Architect 8.7; a self-authored certification post is visible.",
+          "work_summary": "Profile lists CSSA issued February 2023 and Pega System Architect 8.7; a self-authored certification post is visible.",
+          "limitations": [
+            "IKEA Experience location says Bengaluru while profile header says Chennai.",
+            "Current title, project and use of Pega at IKEA are not exposed."
+          ],
+          "experience_location_as_stated": "Bengaluru",
+          "connection_strength": "certification_only"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Do not turn a certification held by an employee into proof of an IKEA Pega implementation."
+      ]
+    },
+    {
+      "name": "Cargill",
+      "category": "gcc",
+      "aliases": [],
+      "assessment": "Professional contact with historical Pega skills; current project unconfirmed.",
+      "claims": [],
+      "people": [
+        {
+          "name": "Yadagiri Palla",
+          "title": null,
+          "employer_as_stated": "Cargill",
+          "location_as_stated": "India",
+          "profile_url": "https://in.linkedin.com/in/yadagiripalla",
+          "source_url": "https://in.linkedin.com/in/yadagiripalla",
+          "source_title": "Yadagiri Palla — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "About describes 14+ years across Java, Pega, MDM, ETL and data quality.",
+          "work_summary": "About describes 14+ years across Java, Pega, MDM, ETL and data quality.",
+          "limitations": [
+            "Cargill Experience location says Bengaluru, but the exposed work history does not tie Pega to a particular current Cargill assignment.",
+            "No current title was exposed; mixed technology history is not current team proof."
+          ],
+          "experience_location_as_stated": "Bengaluru, Karnataka, India",
+          "connection_strength": "historical_skills"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "No Cargill Pega vacancy or current team claim was verified."
+      ]
+    },
+    {
+      "name": "Tesco Bengaluru",
+      "category": "gcc",
+      "aliases": [
+        "Tesco"
+      ],
+      "assessment": "Certification-related contacts; current internal Pega work unconfirmed.",
+      "claims": [],
+      "people": [
+        {
+          "name": "Rajat Mahajan",
+          "title": "Solution Architect (About self-description)",
+          "employer_as_stated": "Tesco",
+          "location_as_stated": "Bengaluru North, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/mahar89",
+          "source_url": "https://in.linkedin.com/in/mahar89",
+          "source_title": "Rajat Mahajan — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists Pega System Architect certification issued November 2013 and a Pegasystems award in May 2014.",
+          "work_summary": "Profile lists Pega System Architect certification issued November 2013 and a Pegasystems award in May 2014.",
+          "limitations": [
+            "The Pega references are historical and do not demonstrate current Tesco Pega work.",
+            "About title is exposed but its full employer-specific sentence is truncated."
+          ],
+          "experience_location_as_stated": "Bengaluru, Karnataka, India",
+          "connection_strength": "historical_certification",
+          "title_scope": "About section"
+        },
+        {
+          "name": "Naidu vm",
+          "title": null,
+          "employer_as_stated": "Tesco Bengaluru",
+          "location_as_stated": "Visakhapatnam, Andhra Pradesh, India",
+          "profile_url": "https://in.linkedin.com/in/naidu-vm-911986395",
+          "source_url": "https://in.linkedin.com/in/naidu-vm-911986395",
+          "source_title": "Naidu vm — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists Pega certified system architect issued March 2026.",
+          "work_summary": "Profile lists Pega certified system architect issued March 2026.",
+          "limitations": [
+            "Experience location says Bengaluru while the profile header says Visakhapatnam.",
+            "Liked hiring posts are not the person's own hiring activity or proof of Tesco vacancies."
+          ],
+          "experience_location_as_stated": "Bengaluru, Karnataka, India",
+          "connection_strength": "certification_only"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Other Tesco search hits matched liked Pega posts or previous Wipro recruiting recommendations, which were not accepted as Tesco Pega evidence."
+      ]
+    },
+    {
+      "name": "A.P. Moller - Maersk",
+      "category": "gcc",
+      "aliases": [
+        "Maersk",
+        "Maersk Global Service Centre India Private Limited"
+      ],
+      "assessment": "Contact with old Pega credential; present work is described as SAP.",
+      "claims": [],
+      "people": [
+        {
+          "name": "Abhilasha Das",
+          "title": "Functional consultant (About self-description)",
+          "employer_as_stated": "A.P. Moller - Maersk",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/abhilasha-das-95bbb5145",
+          "source_url": "https://in.linkedin.com/in/abhilasha-das-95bbb5145",
+          "source_title": "Abhilasha Das — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists Pega System Architect v6.2 issued March 2013; About describes SAP functional consulting.",
+          "work_summary": "Profile lists Pega System Architect v6.2 issued March 2013; About describes SAP functional consulting.",
+          "limitations": [
+            "The exposed current work is SAP-oriented, not proof of a Maersk Pega team.",
+            "Experience location is India; exact current title was not separately exposed."
+          ],
+          "experience_location_as_stated": "India",
+          "connection_strength": "historical_certification",
+          "title_scope": "About section"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Former Pegasystems employment and liked event posts found in other profiles were not treated as current Maersk Pega implementation evidence."
+      ]
+    },
+    {
+      "name": "Pegasystems",
+      "category": "global",
+      "aliases": [
+        "Pega"
+      ],
+      "assessment": "Employer confirms Bangalore/Hyderabad presence; individual roles vary.",
+      "claims": [
+        {
+          "type": "bangalore_team",
+          "text": "Pega's India careers page identifies teams in Hyderabad and Bangalore.",
+          "source_url": "https://www.pega.com/de/about/careers/pega-india",
+          "source_title": "Pega careers in India",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "remote_policy",
+          "text": "The employer careers listing includes an India - Remote location option; this does not establish that every listed job is remotely eligible.",
+          "source_url": "https://www.pega.com/ja/about/careers/job-listings",
+          "source_title": "Pega Job Listings",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Chandana Kulkarni",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/chandana-kulkarni-08a4b1138",
+          "source_url": "https://in.linkedin.com/in/chandana-kulkarni-08a4b1138",
+          "source_title": "Chandana Kulkarni — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile awards describe JMeter performance testing and test leadership for Service Management MLP2 and Sales Compensation releases in 2022.",
+          "work_summary": "Profile awards describe JMeter performance testing and test leadership for Service Management MLP2 and Sales Compensation releases in 2022.",
+          "limitations": [
+            "This establishes recorded internal IT testing work, not a current SSA vacancy or Pega application-developer role.",
+            "Current Experience title is not exposed."
+          ],
+          "experience_location_as_stated": "Bengaluru, Karnataka, India",
+          "source_dates": [
+            "2022-08",
+            "2022-09"
+          ],
+          "connection_strength": "dated_professional_work"
+        },
+        {
+          "name": "Jithesh Devadiga",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/jithesh-devadiga-07038661",
+          "source_url": "https://in.linkedin.com/in/jithesh-devadiga-07038661",
+          "source_title": "Jithesh Devadiga — LinkedIn",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile identifies Pegasystems employment; the About specialization is truncated.",
+          "work_summary": "Profile identifies Pegasystems employment; the About specialization is truncated.",
+          "limitations": [
+            "No exact title or current project is visible, so none is inferred.",
+            "Liked certifications and workplace posts are excluded from work attribution."
+          ],
+          "connection_strength": "employer_only"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Generic remote-work policy and a careers location filter do not establish eligibility for any specific developer role."
+      ]
+    },
+    {
+      "name": "Inadev",
+      "category": "services",
+      "aliases": [
+        "INADEV"
+      ],
+      "assessment": "Employer-listed Pega role with explicit Pan India remote location.",
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "The employer India careers page lists a Pega CS Developer position.",
+          "source_url": "https://www.inadev.com/careers/india-jobs/",
+          "source_title": "Careers Inadev India",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "title": "Pega CS Developer",
+          "url": "https://www.inadev.com/careers/india-jobs/",
+          "source_url": "https://www.inadev.com/careers/india-jobs/",
+          "source_title": "Careers Inadev India",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "location": "Pan India",
+          "work_mode": "remote",
+          "remote_eligibility": "india_remote",
+          "employment_type": "Full Time",
+          "status": "employer_listed",
+          "vacancy_confirmed": false,
+          "open_listing_observed": true,
+          "salary": null,
+          "experience_min": null,
+          "description": "The employer page lists a full-time Pega CS Developer role as Pan India and Remote; its application link points to Naukri.",
+          "limitations": [
+            "No experience range, salary, posting date or full description appears on this listing. The external application page was not checked."
+          ]
+        }
+      ],
+      "limitations": [
+        "Remote eligibility is explicit on the employer listing; current recruiter confirmation and job requirements remain outstanding."
+      ]
+    },
+    {
+      "name": "Ness Digital Engineering",
+      "category": "services",
+      "aliases": [
+        "Ness"
+      ],
+      "assessment": "Current employer ATS exposes Bengaluru hybrid Pega roles.",
+      "claims": [
+        {
+          "type": "bangalore_team",
+          "text": "Two Pega-related listings on the employer ATS are located in Bangalore with hybrid working.",
+          "source_url": "https://jobs.jobvite.com/ness/search/?c=UI&p=0",
+          "source_title": "Ness Digital Engineering Careers",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "title": "Pega - Automation Engineer",
+          "url": "https://jobs.jobvite.com/ness/job/os3tAfwi",
+          "source_url": "https://jobs.jobvite.com/ness/job/os3tAfwi",
+          "source_title": "Ness: Pega - Automation Engineer",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "location": "Hybrid Remote, Bangalore, India",
+          "work_mode": "hybrid",
+          "remote_eligibility": "unknown",
+          "status": "open",
+          "vacancy_confirmed": true,
+          "salary": null,
+          "experience_min": 3,
+          "experience_max": 5,
+          "description": "QA role requiring 3–5 years of Java/Selenium/BDD/Cucumber automation and Pega application testing. Work includes API/integration testing, SQL and CI/CD. The body calls it a Java Selenium Web Automation Test engineer.",
+          "fit": "possible",
+          "limitations": [
+            "This is a testing role, not an SSA development position. Java/Selenium and framework ownership need candidate confirmation.",
+            "Hybrid working is not fully remote. Salary is unpublished."
+          ]
+        },
+        {
+          "kind": "employer_job",
+          "title": "Senior Pega Constellation Developer",
+          "url": "https://jobs.jobvite.com/ness/job/oJJzAfwl",
+          "source_url": "https://jobs.jobvite.com/ness/search/?c=UI&p=0",
+          "source_title": "Ness current job listing",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "location": "Hybrid Remote, Bangalore, India",
+          "work_mode": "hybrid",
+          "remote_eligibility": "unknown",
+          "status": "employer_listed",
+          "vacancy_confirmed": false,
+          "open_listing_observed": true,
+          "salary": null,
+          "experience_min": null,
+          "description": "The employer's current job list includes a Senior Pega Constellation Developer role in Bangalore.",
+          "limitations": [
+            "The individual description could not be retrieved: cache miss. Senior title is not an experience-range substitute.",
+            "Hybrid working is not fully remote."
+          ]
+        }
+      ],
+      "limitations": [
+        "The opened employer listing differed from the search-index title Pega Developer; the live listed titles take precedence."
+      ]
+    },
+    {
+      "name": "PegaOne",
+      "category": "services",
+      "aliases": [],
+      "assessment": "Employer-authored LinkedIn hiring signals; application requirements need confirmation.",
+      "claims": [
+        {
+          "type": "project",
+          "text": "An employer-authored hiring post describes Pega delivery for insurance clients and combined business-analysis/testing responsibilities.",
+          "source_url": "https://www.linkedin.com/company/pegaone",
+          "source_title": "PegaOne — LinkedIn",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_post",
+          "title": "Pega SSA",
+          "url": "https://www.linkedin.com/company/pegaone",
+          "source_url": "https://www.linkedin.com/company/pegaone",
+          "source_title": "PegaOne — LinkedIn",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "location": "Bangalore (Hybrid)",
+          "work_mode": "hybrid",
+          "remote_eligibility": "unknown",
+          "status": "indexed_only",
+          "source_relative_date": "1mo",
+          "salary": null,
+          "description": "Employer post seeks Pega SSA and separately Pega LSA Part 2-certified applicants in Bangalore.",
+          "limitations": [
+            "Relative date is reproduced as shown; no exact posting date or dedicated requisition URL was exposed."
+          ]
+        },
+        {
+          "kind": "employer_post",
+          "title": "Business Analyst + Senior Pega Test Engineer (Insurance Domain)",
+          "url": "https://www.linkedin.com/company/pegaone",
+          "source_url": "https://www.linkedin.com/company/pegaone",
+          "source_title": "PegaOne — LinkedIn",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "location": "Remote",
+          "work_mode": "remote",
+          "remote_eligibility": "unknown",
+          "status": "indexed_only",
+          "source_relative_date": "1mo Edited",
+          "salary": null,
+          "description": "Employer post describes full-time remote work spanning insurance requirements, Pega testing and UAT.",
+          "limitations": [
+            "India appears as a hashtag, which is insufficient to establish candidate residence eligibility."
+          ]
+        }
+      ],
+      "limitations": [
+        "Do not infer total headcount or vacant replacements from employer welcome posts."
+      ]
+    },
+    {
+      "name": "Hesso Digital",
+      "category": "services",
+      "aliases": [],
+      "assessment": "Pega Architect listing exists; it is not labelled remote.",
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer careers page lists a Pega Architect role and tags Pega, BPM and DX API.",
+          "source_url": "https://www.hessodigital.com/careers",
+          "source_title": "Careers — Hesso Digital",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "title": "Pega Architect",
+          "url": "https://www.hessodigital.com/careers",
+          "source_url": "https://www.hessodigital.com/careers",
+          "source_title": "Careers — Hesso Digital",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "location": "Hyderabad",
+          "work_mode": "unknown",
+          "remote_eligibility": "unknown",
+          "status": "indexed_only",
+          "salary": null,
+          "description": "Full-time Pega Architect role, Hyderabad; Pega/BPM/DX API tags.",
+          "limitations": [
+            "Remote labels apply to separate front-end/design vacancies, not this Pega role. No experience range or pay exposed."
+          ]
+        }
+      ],
+      "limitations": [
+        "Search snippets can misleadingly combine remote labels from unrelated roles."
+      ]
+    },
+    {
+      "name": "Deutsche Kreditbank (DKB)",
+      "category": "global",
+      "aliases": [],
+      "assessment": "Global event/customer evidence only.",
+      "claims": [
+        {
+          "type": "project",
+          "text": "Customer self-service built around Pega Constellation is the subject of an event replay.",
+          "source_url": "https://www.pega.com/events/pega-community-forum-2024",
+          "source_title": "Pega Community Forum 2024 Replays",
+          "source_kind": "event",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [],
+      "limitations": [
+        "The 2024 event page does not establish an India team, current vacancy or India-remote eligibility."
+      ]
+    },
+    {
+      "name": "Erste Group Bank AG",
+      "category": "global",
+      "aliases": [],
+      "assessment": "Global event/customer evidence only.",
+      "claims": [
+        {
+          "type": "project",
+          "text": "A session describes automating guarantee issuance with Pega and straight-through processing.",
+          "source_url": "https://www.pega.com/events/pega-community-forum-2024",
+          "source_title": "Pega Community Forum 2024 Replays",
+          "source_kind": "event",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [],
+      "limitations": [
+        "The 2024 event page does not establish an India team, current vacancy or India-remote eligibility."
+      ]
+    },
+    {
+      "name": "UNIQA",
+      "category": "global",
+      "aliases": [],
+      "assessment": "Global event/customer evidence only.",
+      "claims": [
+        {
+          "type": "project",
+          "text": "The insurer is named in a Pega Center of Excellence panel with Siemens and Deutsche Telekom.",
+          "source_url": "https://www.pega.com/events/pega-community-forum-2024",
+          "source_title": "Pega Community Forum 2024 Replays",
+          "source_kind": "event",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [],
+      "limitations": [
+        "The 2024 event page does not establish an India team, current vacancy or India-remote eligibility."
+      ]
+    },
+    {
+      "name": "Siemens",
+      "category": "global",
+      "aliases": [],
+      "assessment": "Global event/customer evidence only.",
+      "claims": [
+        {
+          "type": "project",
+          "text": "A session discusses credit and collections workflows using Pega.",
+          "source_url": "https://www.pega.com/events/pega-community-forum-2024",
+          "source_title": "Pega Community Forum 2024 Replays",
+          "source_kind": "event",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [],
+      "limitations": [
+        "The 2024 event page does not establish an India team, current vacancy or India-remote eligibility."
+      ]
+    }
+  ],
+  "excluded_matches": [
+    {
+      "name": "Shishuvendra Tiwari",
+      "employer": "Target",
+      "source_url": "https://in.linkedin.com/in/shishuvendra-tiwari",
+      "reason": "Pega certification appeared in a liked post, not the profile's own credentials or work."
+    },
+    {
+      "name": "Sowmya Dinesh",
+      "employer": "Tesco Bengaluru",
+      "source_url": "https://in.linkedin.com/in/sowmyakey",
+      "reason": "Pega recruiting recommendation explicitly concerned previous Wipro work; not current Tesco Pega hiring."
+    },
+    {
+      "name": "Ram Kapil",
+      "employer": "Maersk Global Service Centre India Private Limited",
+      "source_url": "https://in.linkedin.com/in/yrkapil",
+      "reason": "Pega event text was a liked post; exposed project was unrelated."
+    },
+    {
+      "name": "Yesh Nanjundappa",
+      "employer": "A.P. Moller - Maersk",
+      "source_url": "https://in.linkedin.com/in/yeshnanjundappa",
+      "reason": "Pegasystems Chairman's Award is historical employer affiliation, not Maersk implementation proof."
+    },
+    {
+      "name": "Shivani Pahwa",
+      "employer": "Cisco",
+      "source_url": "https://in.linkedin.com/in/shivani-pahwa-32963b94",
+      "reason": "Booking.com Pega award text belonged to a liked post, not the Cisco professional's own work."
+    },
+    {
+      "name": "Hariprasanth V",
+      "employer": null,
+      "source_url": "https://in.linkedin.com/in/hariprasanth-v-40a304233",
+      "reason": "Cisco was a credential issuer, not a visible employer; academic Pega projects do not establish a Cisco team."
+    }
+  ],
+  "limitations": [
+    "This is a bounded discovery pass, not an exhaustive employee roster or vacancy inventory.",
+    "Most public LinkedIn Experience titles are blank in the search index. Null titles are deliberate.",
+    "Some searches were batched; the log reports useful evidence retained, not guaranteed exhaustive per-query search-engine recall.",
+    "No salary guarantee or current team-size estimate is made."
+  ]
+}

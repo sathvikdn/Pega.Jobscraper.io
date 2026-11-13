@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch03 · Constellation and React | LTIM Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="index.html">Study Pack Index</a>
+  <a class="btn" href="ch02_pega_customer_service.html">← Previous Chapter</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 03 · LTIM Pega Study Pack</div>
+    <h1>Constellation and React: Architecture, DX API, DX Components, SDK</h1>
+    <p class="subtitle">The UI lineage and the 8.8 renaming, the architectural break from section-based rendering, the Constellation UI Service, the two DX APIs compared, Web Embed and coexistence, the three distinct levels at which React appears, the minimum React you need, debugging, governance, and a one-week ramp plan with an honest claim at the end of it.</p>
+    <div class="meta">
+      <div><strong>16</strong><span>Sections</span></div>
+      <div><strong>16</strong><span>Interview Q&amp;A</span></div>
+      <div><strong>9.3k</strong><span>Words</span></div>
+      <div><strong>~60</strong><span>Min read</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <div class="toc">
+      <a href="#s3-1">3.1 The UI lineage and the 8.8 renaming<span>UI Kit, Theme Cosmos, Cosmos React, Constellation</span></a>
+      <a href="#s3-2">3.2 The architectural break<span>View-based rendering, MVC, stateless requestors</span></a>
+      <a href="#s3-3">3.3 The Constellation UI Service<span>Static content microservice</span></a>
+      <a href="#s3-4">3.4 Constellation DX API versus Traditional DX API<span>The full comparison and when each is right</span></a>
+      <a href="#s3-5">3.5 Web Embed, coexistence and hybrid adoption<span>Mashups replaced; why the UI cannot be flipped</span></a>
+      <a href="#s3-6">3.6 The three levels at which React appears<span>Do not conflate them</span></a>
+      <a href="#s3-7">3.7 Level 1: the design system is React<span>You consume it, you do not write it</span></a>
+      <a href="#s3-8">3.8 Level 2: Constellation DX Components<span>Custom React, published to the server, used by low-code authors</span></a>
+      <a href="#s3-9">3.9 Level 3: the Constellation React SDK<span>A bridge to a non-Pega design system</span></a>
+      <a href="#s3-10">3.10 The minimum React you need<span>Components, props, JSX, hooks, toolchain</span></a>
+      <a href="#s3-11">3.11 Debugging Constellation<span>Network tab, why Tracer cannot see the client</span></a>
+      <a href="#s3-12">3.12 Governance: every custom component is a future upgrade cost<span>Every custom component is a future upgrade cost</span></a>
+      <a href="#s3-13">3.13 The LTM workshop syllabus, and Blueprint<span>Mapping the likely interview surface</span></a>
+      <a href="#s3-14">3.14 The ramp plan: one week to an honest claim<span>One week, and the honest claim at the end</span></a>
+      <a href="#s3-15">3.15 Interview Q&amp;A<span>16 questions</span></a>
+      <a href="#s3-ref">3.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+    <div class="warning"><strong>The gap, stated plainly.</strong> Sathvik has zero hands-on Constellation, zero DX API, zero DX Components, zero React SDK and zero React. The advertised requisition asks for the Constellation DX API on Infinity 24x. This is a genuine gap, not a framing problem. This chapter makes him conceptually conversant and gives him a ramp plan. Every model answer is understanding plus a plan, never experience. After the one-week plan in 3.14 the honest claim is "I have built a sample DX component against the SDK", never "I have delivered Constellation in production".</div>
+    <div class="note"><strong>Honest scope.</strong> Chapter 04 of the FCB pack covers the traditional UI stack and gives groundwork on Constellation and the DX API; this chapter does not repeat it and goes deeper: <a href="../FCB_Study_Pack/ch04_ui_constellation_dx.html">FCB Study Pack, Chapter 04</a>. His production experience is on 8.x. Constellation became Pega's recommended UI for new applications from Pega Platform '23, so every statement here is about a release family he has not used; verify release-specific details in the documentation for the deployed version.</div>
+    <div class="note"><strong>Accuracy convention.</strong> Pega's UI stack is release-sensitive. This chapter states the architecture, the concepts and the names that are documented, and describes behaviour by function where exact labels, endpoint paths or configuration screens vary. It deliberately gives no endpoint paths and no component API signatures. Confirm every exact string against the documentation for the deployed release. Facts that came from primary Pega pages are cited in 3.R with the bundle or release they were read from.</div>
+  </section>
+
+  <section id="s3-1" class="pagebreak">
+    <h2>3.1 The UI lineage and the 8.8 renaming</h2>
+    <h3>Why the history is worth knowing</h3>
+    <p>Pega's user-interface story has had several names, and the names overlapped. Interviewers use them loosely. Knowing the lineage lets you translate whatever vocabulary the interviewer uses into the current one, which is the quickest way to sound current without claiming experience.</p>
+    <table>
+      <tr><th>Generation</th><th>What it was</th><th>Rendering model</th></tr>
+      <tr><td><strong>UI Kit</strong></td><td>The long-standing traditional UI: harnesses, sections, layouts, skins</td><td>Server generates HTML from UI rules</td></tr>
+      <tr><td><strong>Theme Cosmos</strong></td><td>A modernised look for the traditional, section-based UI</td><td>Still server-generated, section-based</td></tr>
+      <tr><td><strong>Cosmos React</strong></td><td>A React-based realisation of the Cosmos design system, driven by a client-side orchestration approach and a view-based API</td><td>Client-rendered; the precursor of the architecture now called Constellation</td></tr>
+      <tr><td><strong>Constellation</strong></td><td>The consolidated name for the new UI technology: architecture, design system, API and SDKs</td><td>Client-rendered from view metadata</td></tr>
+    </table>
+    <h3>The 8.8 renaming</h3>
+    <p>Pega states that, to simplify concepts, it bundled all new UI technology under the single name Constellation. After the release of Pega Platform 8.8, what was referred to as <strong>Cosmos React became the Constellation design system</strong>, <strong>DX API v2 became the Constellation DX API</strong>, and <strong>SDKs became Constellation SDKs</strong>. This is a documented fact, stated in Pega's Constellation UI Service documentation. It is also the mapping used in the FCB pack.</p>
+    <table>
+      <tr><th>Component type</th><th>Previous name</th><th>Current name</th></tr>
+      <tr><td colspan="3"><strong>Traditional UI</strong></td></tr>
+      <tr><td>Architecture</td><td>Section-based architecture</td><td>Traditional UI architecture</td></tr>
+      <tr><td>Design system</td><td>Theme Cosmos / UI Kit</td><td>Theme Cosmos / UI Kit (unchanged)</td></tr>
+      <tr><td>API</td><td>DX API v1</td><td>Traditional DX API</td></tr>
+      <tr><td>SDK</td><td>DX Starter Pack</td><td>Traditional Starter Packs</td></tr>
+      <tr><td colspan="3"><strong>Constellation</strong></td></tr>
+      <tr><td>Architecture</td><td>Constellation</td><td>Constellation architecture</td></tr>
+      <tr><td>Design system</td><td>Cosmos React</td><td>Constellation design system</td></tr>
+      <tr><td>API</td><td>DX API v2</td><td>Constellation DX API</td></tr>
+      <tr><td>SDK</td><td>DX SDK</td><td>Constellation SDKs</td></tr>
+    </table>
+    <div class="flow">THE LINEAGE, AND WHAT 8.8 CONSOLIDATED
+   UI Kit  ---&gt; Theme Cosmos  (server-rendered, section-based; still supported)
+                  |
+   Cosmos React ------------+
+   DX API v2 ---------------+--&gt;  after Pega Platform 8.8:  "Constellation"
+   DX SDK ------------------+        = Constellation design system + Constellation DX API + Constellation SDKs
+                                      (client-rendered from view metadata)</div>
+    <h3>Direction of travel</h3>
+    <p>From Pega Platform '23 Constellation is the recommended UI for new applications, and the traditional UI remains fully supported. Pega Customer Service follows the same pattern: the Constellation Interaction Portal was introduced with Pega Customer Service 23 (Chapter 02, 2.4). A requisition that asks for Constellation on Infinity 24x is asking for the current default.</p>
+    <h3>Interview framing</h3>
+    <div class="answer"><strong>How to say this in the room.</strong> "The naming was consolidated at 8.8. What had been called Cosmos React became the Constellation design system, DX API v2 became the Constellation DX API, and the SDKs became the Constellation SDKs. The traditional, section-based stack is still supported. Constellation is the recommended UI for new applications from Pega '23." Say it as something you have read, not something you have used.</div>
+  </section>
+
+  <section id="s3-2" class="pagebreak">
+    <h2>3.2 The architectural break</h2>
+    <h3>Plain-English definition</h3>
+    <p>In the traditional UI the <strong>server</strong> decides how a screen looks. It resolves harness, section and layout rules, assembles HTML, CSS and JavaScript, and sends them to the browser. In Constellation the server describes the screen as <strong>view metadata</strong>, structured data saying what content, fields and actions belong in this step, and a client-side engine in the browser, using the Constellation design system, renders that metadata. Pega describes the architecture as client-side orchestration.</p>
+    <h3>Why it exists</h3>
+    <p>The server-rendered model coupled UI to server state: every refresh was a round trip that regenerated HTML for a region, and every customisation (custom controls, JavaScript, deep skins) became a regression burden on upgrade. A metadata contract between server and client breaks that coupling. The client owns presentation; the server owns data, process and rules; the contract between them is explicit.</p>
+    <table>
+      <tr><th>Aspect</th><th>Traditional UI</th><th>Constellation</th></tr>
+      <tr><td>Who renders</td><td>Server generates HTML</td><td>Browser renders from metadata with the design system</td></tr>
+      <tr><td>Unit of UI authoring</td><td>Harness, section, layout, control</td><td>View, from prescribed templates and regions</td></tr>
+      <tr><td>Where UI is authored</td><td>Dev Studio and App Studio</td><td>Primarily App Studio, with live preview</td></tr>
+      <tr><td>Server state per user</td><td>Stateful requestor, clipboard held across interactions</td><td>Stateless requestor; clipboard released after each DX API call</td></tr>
+      <tr><td>Customisation</td><td>Custom HTML, JavaScript, skins</td><td>Prescribed templates; DX Components for genuine gaps</td></tr>
+      <tr><td>Debugging</td><td>Tracer, clipboard viewer, UI inspector</td><td>Browser developer tools on the DX API calls, plus server-side Tracer for the server portion</td></tr>
+    </table>
+    <h3>MVC, microservices and stateless requestors</h3>
+    <p>Three architectural ideas explain Constellation's behaviour. First, a Model-View-Controller separation: the data and process are the model on the server, the view metadata is the description of presentation, and the client engine is the controller and renderer. Second, a microservices approach: the static front-end content is served by its own service (3.3), separate from the Pega application server. Third, <strong>stateless</strong> operation: the server does not keep continuing client state between calls.</p>
+    <p>Pega's Constellation FAQ describes the stateless idea as on-demand access rather than continuous connection: each request is processed independently, and everything needed is included in each request. In practice the DX API uses a stateless requestor, and the <strong>clipboard is released after each DX API call</strong>. A Case is opened, worked on and saved within the call, and the persisted case data, not a lingering session, carries the state.</p>
+    <div class="flow">STATEFUL VERSUS STATELESS
+   TRADITIONAL (stateful):
+     browser --&gt; requestor holds clipboard and thread over many interactions --&gt; user keeps a server-side session
+   CONSTELLATION (stateless):
+     browser --&gt; DX API call --&gt; stateless requestor opens case, applies the action, saves --&gt; clipboard released
+          ^                                                                                 |
+          +--- next call carries the identity (token) and what the server needs; state lives in the case, not the session</div>
+    <h3>The consequences, spelled out</h3>
+    <table>
+      <tr><th>Consequence</th><th>Why</th><th>What to remember</th></tr>
+      <tr><td>No session affinity needed at the load balancer, except for Studios</td><td>Any node can serve any call because no per-user server state is kept for DX API traffic</td><td>Scales horizontally more easily. The Studios (developer tooling) still behave in the stateful way, so affinity may still be configured for them</td></tr>
+      <tr><td>Multiple browser tabs do not multiply threads</td><td>Pega's FAQ states that opening multiple tabs does not increase the number of threads or memory usage on the server, because the DX API uses a stateless requestor</td><td>A user with five tabs open does not cost five server threads, which was a real concern in the traditional UI</td></tr>
+      <tr><td>Locking is handled per call</td><td>The DX API locks a case automatically according to the case's configured locking strategy</td><td>Understand the locking strategy; the framework does not remove locking, it manages it per request</td></tr>
+      <tr><td>When rules run server-side; expressions run client-side</td><td>Visibility conditions defined as when rules are evaluated on the server and their result delivered with the metadata; simple expressions can be evaluated in the browser</td><td>A change to a when rule takes effect without a client change; expressions are lighter but bound to what the client can compute</td></tr>
+      <tr><td>Background processing is unchanged</td><td>The FAQ states that case data is still recorded as it was in the traditional UI and that background processing can still open cases in the clipboard, for example with Obj-Open</td><td>Your queue processors, data flows and agents behave the same way. Only the interactive front end changed</td></tr>
+      <tr><td>Data page caching depends on request identity</td><td>Pega's FAQ describes a <code>psync_id</code> carried in the JWT token used to match requests to their requestor context, usable for locking and data page caching</td><td>Do not assume the traditional per-session data page behaviour; confirm requestor-scoped data page behaviour in the documentation for the release</td></tr>
+    </table>
+    <div class="answer"><strong>Lead-level framing.</strong> "The break is that the server stopped rendering. It describes a view as metadata and a client engine renders it, and the DX API is stateless, so the clipboard is released after each call and state lives in the case. That is why affinity matters less, why extra tabs are cheap, and why my queue processors and data flows are unaffected. What I would verify per release is the data-page and locking behaviour."</div>
+  </section>
+
+  <section id="s3-3" class="pagebreak">
+    <h2>3.3 The Constellation UI Service</h2>
+    <h3>Plain-English definition</h3>
+    <p>Pega's documentation describes the <strong>Constellation UI Service</strong> as a static content microservice that delivers front-end components and other static content to the browser. Constellation applications rely on it. To obtain configuration, context and data, the client interacts with the server exclusively through DX APIs. The documentation notes that keeping the Constellation container separate from other services avoids dependencies, gives developers the tools to create new UI components without interfering with other work, and improves overall application performance. When creating a new application you can choose between a view-based Constellation UI and a section-based traditional UI, which can be extended with hybrid components.</p>
+    <h3>Provisioning</h3>
+    <p>On Pega Cloud the Constellation UI Service is provisioned automatically. In a client-managed deployment someone must stand it up, and the mechanism varies by release; confirm it in the version's documentation.</p>
+    <div class="flow">WHERE THE SERVICE SITS
+   Browser
+     |  1 load app shell and design-system bundles ------------&gt; Constellation UI Service (static content)
+     |  2 API calls (JSON) with a token  -----------------------&gt; Pega application server: Constellation DX API
+     |       &lt;---- data + UI metadata + available actions
+     |  3 render with design system; custom DX Components loaded from the service
+     v
+   Pega engine: cases, flows, rules, data pages, decisioning, database (unchanged by the UI choice)</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "The UI Service is a static-content microservice. The browser gets the design system and components from it and talks to the application server only through the DX API for data and metadata. On Pega Cloud it is auto-provisioned; on a client-managed estate someone has to stand it up, so I would put that on the platform checklist early."</div>
+  </section>
+
+  <section id="s3-4" class="pagebreak">
+    <h2>3.4 Constellation DX API versus Traditional DX API</h2>
+    <h3>Plain-English definition</h3>
+    <p>The <strong>Digital Experience (DX) API</strong> is Pega's REST API family for building front ends on top of the case engine. It exposes case-management semantics (create a case, get the assignment, perform an action, get the worklist) rather than raw data, and the platform enforces security, validation, locking and process rules on each call. There are two generations, and Pega's documentation has a page comparing them. The comparison below follows it.</p>
+    <h3>The comparison</h3>
+    <table>
+      <tr><th>Aspect</th><th>Traditional DX API</th><th>Constellation DX API</th></tr>
+      <tr><td>UI model</td><td>Harness and section based. It directly translates the state of the screen in Pega UI to a REST message, allowing use of standard assets such as sections and harnesses</td><td>View based, centred on App Studio and React-based view authoring instead of harnesses and sections</td></tr>
+      <tr><td>Intended scenario</td><td>Designed for a mashup-like use case: integrating Pega processes into existing channels with complete control over how the external site renders the experience. Described as the optimal choice for existing applications</td><td>Improves on the traditional API with a significantly different approach that optimises the number of messages (chattiness) and their structure</td></tr>
+      <tr><td>Message structure</td><td>Reflects screen state</td><td>Clearly separates data and layout, which improves API binding and allows technologies such as Redux to be used more efficiently</td></tr>
+      <tr><td>Navigation</td><td>Client sequences resource calls</td><td>Introduces HATEOAS (Hypermedia as the Engine of Application State), so responses provide references to the available actions</td></tr>
+      <tr><td>Client effort</td><td>Higher where the client must reproduce UI</td><td>Reduced effort for alternative UI stacks through DX JavaScript APIs and starter-kit structural components</td></tr>
+      <tr><td>Chattiness</td><td>More calls to assemble a screen</td><td>Fewer, richer calls; one response can carry data, view and actions for the step</td></tr>
+      <tr><td>Availability</td><td>Available as a comprehensive version from release 8.3.2 onwards, per the documentation</td><td>Part of the Constellation architecture introduced in later releases</td></tr>
+      <tr><td>Starter material</td><td>React, Vue and Angular starter packs on the Pega Marketplace</td><td>The Constellation SDKs (3.9)</td></tr>
+      <tr><td>Coverage</td><td>Does not support all Pega UI capabilities out of the box</td><td>Only applications built on Constellation can use every endpoint, although some endpoints can be used with a traditional application</td></tr>
+      <tr><td>Extra endpoints (functional)</td><td>Fewer case-lifecycle conveniences</td><td>Additional case-oriented operations such as following and unfollowing a case and changing a case's stage</td></tr>
+    </table>
+    <h3>What a Constellation DX API response contains</h3>
+    <p>Pega's response documentation describes elements that depend on the endpoint. Common examples: a <code>data</code> element holding the case and assignment details (for example case information and referenced users); a <code>uiResources</code> element holding the UI metadata needed to render a page or form; information about the next assignment; and <code>links</code> in HATEOAS format describing the actions the user may take. The <code>content</code> element carries only the fields configured in the view returned by the endpoint, so each view can have different content. The documentation also notes that a view-type parameter can select what is returned.</p>
+    <div class="flow">ANATOMY OF A CONSTELLATION RESPONSE (conceptual; not the literal schema)
+   {
+     data:           case and assignment details (the values)
+     uiResources:    the metadata to render this step (which view, which fields, which are editable or required)
+     nextAssignment: what comes after, if the step completes
+     links:          HATEOAS references to the actions available now (for example submit, refresh, change stage)
+   }
+   The client renders uiResources against data, and offers only the actions in links.
+   Changing a view or flow on the server changes what the client renders with no client code change.</div>
+    <div class="warning"><strong>Do not quote the schema.</strong> The block above is a teaching sketch of the elements named in Pega's documentation. Do not present it as the literal payload, and do not quote an endpoint path. Say the response carries data, view metadata and available actions together, and that you would confirm the exact schema in the release's API documentation.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "The Traditional DX API mirrors screen state and suits existing section-based applications; the Constellation DX API is view-based, separates data from layout, uses HATEOAS so responses carry available actions, and needs fewer calls. I would choose by the application's UI architecture, not by preference, and I would never use either as a system-to-system contract. I have built Service-REST contracts for that, but I have not built against the DX API."</div>
+  </section>
+
+  <section id="s3-5" class="pagebreak">
+    <h2>3.5 Web Embed, coexistence and hybrid adoption</h2>
+    <h3>Mashups are replaced by Web Embed</h3>
+    <p>The traditional way to place Pega inside another web page was the <strong>mashup</strong>: a snippet that pulled a Pega-rendered gadget into the host page. For Constellation, the equivalent is <strong>Web Embed</strong>: a way of embedding a Constellation-rendered Pega experience in an external web page without building a full custom front end. The practical statement is that mashups are replaced by Web Embed for Constellation applications. The LTM workshop syllabus includes "Web Embed and its use cases" (3.13), so expect a question on it.</p>
+    <table>
+      <tr><th>Option</th><th>What you get</th><th>Who owns the front end</th><th>When it fits</th></tr>
+      <tr><td>Standard Constellation portal</td><td>The Pega-rendered portal</td><td>Pega design system</td><td>Internal operations; fastest and most upgrade-safe</td></tr>
+      <tr><td>Web Embed</td><td>A Pega experience (for example a case or a view) placed inside another site's page</td><td>The host page owns the surroundings; Pega owns the embedded experience</td><td>Adding a Pega-driven step to an existing portal without rebuilding it</td></tr>
+      <tr><td>Constellation DX API with a custom front end</td><td>Full control of the UI using the API</td><td>The digital team</td><td>A bespoke or heavily branded channel</td></tr>
+      <tr><td>React SDK</td><td>A React application connecting the Constellation engine to a non-Pega design system (3.9)</td><td>The digital team, using the SDK's components</td><td>The client's design system is mandated and cannot be Pega's</td></tr>
+    </table>
+    <h3>Coexistence and hybrid adoption</h3>
+    <p>Real estates are rarely all-or-nothing. Pega's documentation supports several coexistence forms. A traditional, section-based application can use the Constellation UI Service to host Constellation landing pages, tables and Constellation Cases inside the section-based application, a hybrid arrangement the documentation presents as a way to adopt Constellation progressively. In Pega Customer Service the Constellation Interaction Portal can run service requests that were built with the UI Kit (Chapter 02, 2.4), so the agent desktop can move first while individual service request types migrate over time.</p>
+    <h3>Why an app's UI architecture cannot be casually flipped</h3>
+    <p>An existing section-based application cannot be switched to Constellation by changing a setting. Existing sections, harnesses and custom controls do not carry over; forms are rebuilt as views, custom controls are replaced or become DX Components, and portals and landing pages are rebuilt. This is covered in FCB Chapter 04 (4.4). The implication for you: a client with a long-lived traditional application will almost certainly be in a hybrid or phased state, and "what stage of Constellation adoption is the client at" is the right question (Chapter 01, 1.11).</p>
+    <div class="dont"><strong>Anti-patterns:</strong> promising a client that a traditional app moves to Constellation "in a sprint"; embedding with Web Embed what should be a first-class view; forking the whole UI into a custom front end when the standard portal would do; assuming a hybrid configuration works because a documentation page says it is possible, without checking the release's supported combinations.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "Mashups are replaced by Web Embed. For adoption I think in stages: standard Constellation portal for internal users; Web Embed to put a Pega step in someone else's page; the API or SDK only when the client's design system demands it. Coexistence lets a traditional app host Constellation pieces, and lets the Constellation Interaction Portal run UI Kit service requests, which is how large estates actually migrate."</div>
+  </section>
+
+  <section id="s3-6" class="pagebreak">
+    <h2>3.6 The three levels at which React appears</h2>
+    <h3>Why this section matters most</h3>
+    <p>React shows up in three different places in the Constellation story, and candidates who have not worked with it conflate them. Interviewers who have will notice within a sentence. Keep these apart.</p>
+    <table>
+      <tr><th>Level</th><th>What it is</th><th>Who writes React</th><th>What you do</th><th>What it needs</th></tr>
+      <tr><td><strong>1. The design system</strong></td><td>The Constellation design system is itself built with React</td><td>Pega</td><td>You consume it. You author views; you do not write its code</td><td>Nothing: it is delivered with the platform</td></tr>
+      <tr><td><strong>2. Constellation DX Components</strong></td><td>Custom React components built with the Constellation DX Component Builder, published back to the server, and then used by low-code authors in App Studio like out-of-the-box components</td><td>You or your team</td><td>Build, test, publish, maintain</td><td>React, npm and Git, plus the DX Component Builder</td></tr>
+      <tr><td><strong>3. The Constellation React SDK</strong></td><td>A React bridge from the ConstellationJS Orchestration Engine to a non-Pega design system (the reference implementation uses Material UI)</td><td>You or your team, as the front-end application</td><td>Build a React front end application that renders Constellation through the SDK</td><td>React, npm, Git, Node, and a Constellation-enabled Infinity server</td></tr>
+    </table>
+    <div class="flow">THREE LEVELS, ONE PICTURE
+   LEVEL 1  Constellation design system (React, written by Pega)
+              ^ consumed by every Constellation view
+   LEVEL 2  DX Component (your React)  --publish--&gt;  Pega server / Constellation UI Service
+              ^ used in App Studio by low-code authors; runs inside native Pega UI, Web Embed, or a React SDK app
+   LEVEL 3  React SDK app (your React front end)  --&gt; ConstellationJS engine --&gt; Constellation DX API --&gt; Pega
+              ^ the design system here is NOT Pega's: it is Material UI in the reference implementation</div>
+    <h3>Common confusions</h3>
+    <div class="warning"><strong>Three statements candidates wrongly merge.</strong> "I would build a DX Component" does not mean you are building a React front end; the component lives inside Pega's UI. "I would use the React SDK" does not mean you are writing DX Components for App Studio authors, although in the SDK context DX components are the mechanism for connecting the alternative design system. "Constellation is React" is true of Level 1 only; most developers using Constellation never write a line of React.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "There are three places React appears: the design system, which Pega writes and I consume; DX Components, custom React that I would publish into Pega so low-code authors can use it; and the React SDK, which bridges the Constellation engine to a different design system for a separate front-end application. Most Constellation delivery needs none of the last two, so I would ask which level the engagement actually involves."</div>
+  </section>
+
+  <section id="s3-7" class="pagebreak">
+    <h2>3.7 Level 1: the design system is React</h2>
+    <h3>Plain-English definition</h3>
+    <p>The Constellation design system is the library of prescribed UI components and templates that renders every Constellation view. It is built in React, but you do not write it. Your interface to it is <strong>authoring</strong>: you choose a template, fill regions with fields, and the design system decides spacing, alignment, responsive collapse, accessibility behaviour and interaction patterns.</p>
+    <h3>What "opinionated" costs and gives</h3>
+    <p>The design system decides layout, so you lose arbitrary CSS, one-off controls and direct reuse of old sections. In exchange you get upgrade-safe screens, consistent behaviour, built-in accessibility and responsive behaviour, and fast authoring. The FCB pack covers this trade in more depth (FCB Chapter 04, 4.3).</p>
+    <div class="answer"><strong>Lead-level framing.</strong> "At the authoring level I need views, templates, regions and conditions, not React. I treat any requirement that drives me out of the prescribed components as an exception to be justified, because that is where React, a build pipeline and an upgrade cost enter."</div>
+  </section>
+
+  <section id="s3-8" class="pagebreak">
+    <h2>3.8 Level 2: Constellation DX Components</h2>
+    <h3>Plain-English definition</h3>
+    <p>A <strong>Constellation DX Component</strong> is a custom React component, built with Pega's <strong>Constellation DX Component Builder</strong> (DXCB), published to the Pega server, and then used by low-code authors in App Studio exactly like an out-of-the-box component. It is Pega's sanctioned extension point for needs the design system does not meet. A DX Component can be used in native Pega UI, in Web Embed, or in a React SDK application. Building one needs React, npm and Git.</p>
+    <h3>Why it exists</h3>
+    <p>In the traditional UI the extension mechanism was custom controls and HTML rules with JavaScript, which were powerful and fragile. Constellation closes that route in the standard path and offers DX Components instead: a bounded, versioned, publishable unit that Pega's tooling understands.</p>
+    <h3>Types of component</h3>
+    <p>Pega's DXCB documentation lists four types of component sample, each with sub-types: layout templates, widgets, fields and presentation components. The older shorthand "templates, widgets and controls" maps onto this: what some material calls a control is a <em>field</em> component in the current documentation. Use the current names.</p>
+    <table>
+      <tr><th>Type</th><th>What it does</th><th>Typical use</th></tr>
+      <tr><td>Field</td><td>Renders and edits a single property value in a custom way</td><td>A specialised picker, a branded rating control</td></tr>
+      <tr><td>Widget</td><td>Adds a self-contained feature to a page or panel; documentation mentions configuring a widget for the Utilities panel</td><td>A chart, a summary tile, a custom utility</td></tr>
+      <tr><td>Layout template</td><td>Defines how content is arranged in form, details and page contexts</td><td>A bespoke arrangement not offered by the standard templates</td></tr>
+      <tr><td>Presentation component</td><td>Renders content in a non-input, display way</td><td>A formatted display element</td></tr>
+    </table>
+    <div class="note"><strong>Not every App Studio component can be built.</strong> The documentation states that DXCB supports selected App Studio components, not all, and advises choosing the type and sub-type closest to the behaviour you want.</div>
+    <h3>The workflow, as documented</h3>
+    <div class="flow">DX COMPONENT LIFECYCLE (functional; verify commands in the Component Builder documentation)
+ 1 Create the component from a DXCB sample of the right type (field, widget, layout template, presentation)
+ 2 Edit it: React code that receives data and configuration from the engine and renders UI
+ 3 Mock and test it in Storybook with sample data, with no Pega server needed
+ 4 Build it: assets are bundled and packaged with Webpack into a gzipped package
+ 5 Authenticate to the Pega Infinity server, then publish
+ 6 The Builder uses a Pega service to create or update a Rule-UI-Component instance; a declare trigger on it
+   performs the onward publish to the Constellation UI Service
+ 7 Configure it for App Studio so authors can see it in the component palette
+ 8 Authors use it like any other component; test it with Pega
+ NOTE: authentication can expire during publishing and must be refreshed</div>
+    <h3>A worked example, conceptual</h3>
+    <p>A requirement says the case needs a numeric "confidence" display as a coloured bar instead of a plain number. The standard design system does not offer it. After checking that no standard component fits (3.12), a team creates a field component from a sample, edits the React code so it reads the value and draws a bar, mocks three values in Storybook (low, medium, high) and checks colour contrast, builds and publishes it, configures it for App Studio, and an author then selects it for the field in the view like any other component. The decisions that matter are not the React lines: they are why this could not be met by a standard component, who owns it, and how it is tested for accessibility.</p>
+    <div class="warning"><strong>Honest framing.</strong> You have not built a DX Component. The truthful line today: "I understand the lifecycle: build from a DXCB sample, test in Storybook, publish through a Rule-UI-Component to the Constellation Service, and then author-use it. I have not built one yet and have a plan (3.14). I would own the case types and data, and I would pair with front-end capacity for the React." After the ramp plan, the honest claim is that you built a sample component.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "A DX Component is the sanctioned escape hatch: bounded, versioned and usable by low-code authors, but code I now own. Before building I would ask whether a standard component after a small UX concession meets the need, whether it is reusable, who owns it and how it is tested for accessibility and upgrade. The build is the easy part."</div>
+  </section>
+
+  <section id="s3-9" class="pagebreak">
+    <h2>3.9 Level 3: the Constellation React SDK</h2>
+    <h3>Plain-English definition</h3>
+    <p>The <strong>Constellation React SDK</strong> lets a team build a React front end that uses Pega's Constellation orchestration against a <em>non-Pega</em> design system. Pega's repository describes it as providing the ability to build DX components that connect Pega's ConstellationJS Engine APIs with a design system other than the Pega Constellation design system. The alternative design system used in the reference implementation is Material UI. The SDK combined with Pega's client orchestration APIs gives a guided, iterative workflow for integrating the Constellation DX API with an alternative, non-Pega UI.</p>
+    <h3>What you get</h3>
+    <table>
+      <tr><th>Piece</th><th>Detail</th></tr>
+      <tr><td>Repositories</td><td><code>pegasystems/react-sdk</code> (the application and tooling) and <code>pegasystems/react-sdk-components</code> (the component library)</td></tr>
+      <tr><td>npm packages</td><td><code>@pega/react-sdk-components</code> and <code>@pega/react-sdk-overrides</code></td></tr>
+      <tr><td>Sample application</td><td>MediaCo, a sample application already configured as a Constellation application, shipped with the SDK download together with its OAuth 2.0 client registration records</td></tr>
+      <tr><td>Alternative design system</td><td>Material UI in the reference implementation</td></tr>
+      <tr><td>Prerequisite</td><td>A Pega Infinity server running a Constellation-enabled application using the Constellation UI service</td></tr>
+      <tr><td>Toolchain</td><td>Node and npm at versions the README states it was tested with; check the README for the current versions</td></tr>
+      <tr><td>Licence</td><td>Apache 2.0 per the repository</td></tr>
+      <tr><td>Version coupling</td><td>SDK releases are matched to Infinity releases through release branches. At the time of reading, the README announced a release stated to be compatible only with Pega Infinity '26, and the prerequisites referred to an Infinity server of version 25 or later. Always match the SDK branch to the server version</td></tr>
+    </table>
+    <h3>Embedded versus portal use</h3>
+    <p>The SDK documentation distinguishes two use cases. Treat the descriptions below as the framing; confirm the details in the SDK documentation for the version.</p>
+    <table>
+      <tr><th>Use case</th><th>What it is</th><th>When it fits</th></tr>
+      <tr><td><strong>Embedded</strong> (the most common)</td><td>Pega work embedded into an existing React-based web application: the host application owns navigation, login context and page chrome, and Pega cases or views appear inside it</td><td>The client already has a customer or employee web application and wants Pega-driven steps inside it</td></tr>
+      <tr><td><strong>Portal</strong></td><td>The SDK application acts as a portal, rendering the full Pega experience (worklist, case creation, case views) in the alternative design system</td><td>The client wants Pega's whole experience in its own design system</td></tr>
+    </table>
+    <div class="flow">SDK ARCHITECTURE (conceptual)
+   Your React application (host)
+        |  uses @pega/react-sdk-components and @pega/react-sdk-overrides
+        v
+   ConstellationJS Orchestration Engine (client side)  --&gt; maps Pega view metadata to SDK components (Material UI)
+        |  authenticated calls (OAuth 2.0 client registration)
+        v
+   Constellation DX API --&gt; Pega Infinity (Constellation-enabled application)
+   EMBEDDED: the host app embeds Pega work in its pages.   PORTAL: the SDK app is the whole front end.</div>
+    <h3>How the SDK relates to DX Components</h3>
+    <p>In the SDK, "DX components" are the mechanism that merges the alternative design system with Pega's client orchestration APIs: a DX component contains logic and presentation tags. The README also refers to a DX Component Builder for SDK features. That overlap is the source of the Level 2 versus Level 3 confusion in 3.6. The clean rule: Level 2 components run <em>inside</em> Pega UIs and are authored by low-code authors in App Studio; Level 3 is a <em>separate React application</em> that renders Constellation against another design system.</p>
+    <div class="warning"><strong>Honest framing.</strong> You have not built an SDK application. The truthful line: "I understand the SDK model: a React bridge from the Constellation engine to a non-Pega design system, with an embedded and a portal pattern. I have not built one. I would own the case types, data model, validations and APIs, and partner with the front-end team." After the ramp plan: "I have cloned the repository and run the MediaCo sample."</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "The SDK is justified only when the client's design system is mandatory. It brings a React application, a Node toolchain, an SDK version pinned to the Infinity release, and an upgrade cost. If the standard portal or Web Embed satisfies the need I would choose those first."</div>
+  </section>
+
+  <section id="s3-10" class="pagebreak">
+    <h2>3.10 The minimum React you need</h2>
+    <h3>Why a Pega server-side developer finds it unfamiliar</h3>
+    <p>Your daily model is rules on a server: a rule is resolved, an activity or data transform runs, the clipboard holds the state, and the UI is a consequence. React is the opposite. State lives in the browser, the UI is a function of that state, and a screen is a tree of small components that re-render when their inputs change. You do not "run" a screen; you declare what it looks like for a given state and the library reconciles the page. The mental shift is from <em>procedural server logic</em> to <em>declarative client rendering</em>.</p>
+    <h3>A generic illustration</h3>
+    <p>The block below is plain React, not the Pega component contract. It exists only to show the shapes you will meet. Do not present it as Pega code.</p>
+    <div class="flow">// GENERIC REACT, NOT THE PEGA COMPONENT API
+import { useState, useEffect } from 'react';
+
+function ConfidenceBar({ value, label }) {            // props: value and label come from the parent
+  const [percent, setPercent] = useState(0);          // state: owned by this component
+
+  useEffect(() => {                                   // effect: runs after render when 'value' changes
+    setPercent(Math.max(0, Math.min(100, value)));
+  }, [value]);
+
+  return (                                            // JSX: describes the UI for the current state
+    &lt;div aria-label={label}&gt;
+      &lt;div className="bar" data-percent={percent} /&gt;
+    &lt;/div&gt;
+  );
+}
+export default ConfidenceBar;</div>
+    <p>Reading it: the function is the component; it receives props; it keeps a piece of state; an effect synchronises that state when the prop changes; it returns JSX. In a Pega DX Component the engine supplies the inputs and callbacks to a component of this general shape, but the exact interface is defined by the Builder samples and documentation, which you must read rather than assume.</p>
+    <h3>The toolchain, briefly</h3>
+    <p>Node runs JavaScript outside the browser and npm installs the packages named in the package file; the lock file pins exact versions so builds are reproducible. A bundler (Webpack in the DX Component flow) combines modules into the files a browser loads, Storybook previews a component in isolation with mock data, and Git holds the source. Treat every one of those as something a component owner maintains.</p>
+    <h3>What you do not need</h3>
+    <p>You do not need to be a front-end specialist to work well on Constellation. You need to read a component, run the build, understand props and state, and know when to bring in front-end capacity. A realistic, honest position for a Pega lead is: "I own the case model, data, validations and APIs, and I can read and review a DX Component; a front-end engineer writes the non-trivial React."</p>
+    <div class="answer"><strong>Lead-level framing.</strong> "React is declarative client-side rendering: components, props, state, effects and JSX. As a server-side developer I think in rules and a clipboard, so the shift is that the UI is a function of client state. I can read a component and run the build; for non-trivial React I would pair with a front-end engineer, and I would be explicit with a client about that boundary."</div>
+  </section>
+
+  <section id="s3-11" class="pagebreak">
+    <h2>3.11 Debugging Constellation</h2>
+    <h3>Why your tools change</h3>
+    <p>In the traditional UI, Tracer, the clipboard viewer and the UI inspector all live on the server and show you what the server rendered. In Constellation the server returns data and metadata and the browser renders, so a large part of what you used to inspect on the server now happens in the browser. Tracer does not see client-side rendering. That is not a defect; it is the architecture.</p>
+    <table>
+      <tr><th>Symptom</th><th>Where to look first</th><th>Why</th></tr>
+      <tr><td>A field does not appear, is read-only, or is required unexpectedly</td><td>Browser network tab: the DX API response's view metadata and data for that step</td><td>The server decided what to send; read what it sent</td></tr>
+      <tr><td>A when-rule-based condition behaves wrongly</td><td>The server side: Tracer or logs for the evaluation, then the response</td><td>When rules run on the server</td></tr>
+      <tr><td>An expression-based condition behaves wrongly</td><td>The browser: the expression runs client-side, so the data and the console matter</td><td>Expressions run in the client</td></tr>
+      <tr><td>A submit fails or validation messages are wrong</td><td>Network tab for the request and response, then Tracer for the server-side validation and flow action</td><td>Validation runs on the server</td></tr>
+      <tr><td>A custom component misbehaves</td><td>Browser console and debugger, Storybook reproduction, then the published version</td><td>It is your React code</td></tr>
+      <tr><td>A 401 or 403 on an API call</td><td>Token, authentication and access group, then server logs</td><td>Security rejected the request before it reached case logic</td></tr>
+    </table>
+    <div class="flow">A DEBUGGING ROUTE FOR "THE SCREEN IS WRONG"
+   1 Browser network tab: find the DX API call for this step
+   2 Read the response: is the data right? is the view metadata right? are the available actions right?
+        |-- metadata or data wrong --&gt; the problem is server side: Tracer, logs, rules, data pages, when rules
+        |-- response right, screen wrong --&gt; client side: expression, component code, design-system behaviour
+   3 For server-side traces, use Tracer on the request; the server portion is still fully traceable
+   4 For performance, compare network time with server time (PAL, logs) before deciding where to tune</div>
+    <h3>Where the server portion is still traceable</h3>
+    <p>Everything the server does in response to a DX API call remains observable with the tools you already know: Tracer, PAL, logs and PDC. A flow action, validation, data page load or decision rule runs on the server and shows up there. What you lose is visibility of rendering, and you replace it with the browser's developer tools. The LTM workshop listed "debugging concepts and best practices in Constellation" as its seventh topic, which suggests this is a practical, examinable area.</p>
+    <div class="note"><strong>Where your experience applies.</strong> You use Tracer, PAL, PDC and logs in production already. The new skill is reading network traffic as the first step. The reasoning (find where the wrong value first appears, then fix at that layer) is the same discipline you apply to an integration.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "My first step would be the browser network tab, to see what the DX API returned for the step, because that tells me whether the problem is on the server or in the client. Tracer cannot see client rendering, but the server portion of every call is still traceable with Tracer, PAL and logs, which I already use. I have not debugged a Constellation app myself; I would practise this on the MediaCo sample."</div>
+  </section>
+
+  <section id="s3-12" class="pagebreak">
+    <h2>3.12 Governance: every custom component is a future upgrade cost</h2>
+    <h3>The argument</h3>
+    <p>The FCB pack makes the argument about custom controls in the traditional UI: each is code you must test and migrate on every platform upgrade. The same argument applies, with the same force, to DX Components and to SDK applications. Constellation's value proposition is upgrade-safe UI. Every custom component you add is a hole in that protection: it is code Pega's regression tests do not cover.</p>
+    <h3>A decision gate</h3>
+    <table>
+      <tr><th>Question</th><th>If yes</th></tr>
+      <tr><td>Can a standard component meet the need after a small UX concession?</td><td>Do that; do not build</td></tr>
+      <tr><td>Is it reused by many screens?</td><td>Stronger case</td></tr>
+      <tr><td>Is it a regulatory or brand requirement?</td><td>Document, approve, then build</td></tr>
+      <tr><td>Is there an owner, a test pipeline and an accessibility check?</td><td>Required before building</td></tr>
+      <tr><td>Is there a retirement trigger (for example when Pega ships an equivalent)?</td><td>Record it</td></tr>
+    </table>
+    <div class="dont"><strong>Anti-patterns:</strong> building a component to avoid a conversation about UX; porting old traditional custom JavaScript into a component line for line; publishing without Storybook states and accessibility checks; leaving a component without an owner; choosing the SDK because the team prefers React rather than because the design system is mandated.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "Every custom component is a future upgrade project, so I would keep a register of them: purpose, owner, test coverage, accessibility result and a retirement trigger. The default answer to 'can we build a custom component' is 'what does the standard component lack, and can we live with it'."</div>
+  </section>
+
+  <section id="s3-13" class="pagebreak">
+    <h2>3.13 The LTM workshop syllabus, and Blueprint</h2>
+    <h3>The syllabus as an interview surface</h3>
+    <p>As Chapter 01 (1.9) explains, a three-day Constellation Adoption and Blueprint workshop was run at LTI Mindtree, according to a facilitator's post dated 25 December 2025, with seven topics. Treat it as evidence of enablement, not as a statement about any client delivery, and treat the topics as the likely interview surface. Each topic maps to a section of this chapter (UI evolution to 3.1 and 3.2, Web Embed to 3.5, DX APIs to 3.4, SDK fundamentals to 3.9, DX Components to 3.8, debugging to 3.11), and this section covers Blueprint.</p>
+    <h3>Pega Blueprint, conceptually</h3>
+    <p>Blueprint, as referenced in the workshop topic, is Pega's AI-assisted design approach for generating an application's design (for example case types, data and personas) from a description of the business need, which a team then refines and moves into a Pega environment. Describe it functionally and confirm current behaviour on docs.pega.com: it is recent, changes quickly, and you have no hands-on experience with it.</p>
+    <div class="warning"><strong>Not your experience.</strong> You have not used Pega Blueprint. Do not describe its output as something you have reviewed. The honest line: "I understand Blueprint as design acceleration: it proposes a starting application design that the team then reviews against its standards. I have not used it, and I would treat its output as a draft that still goes through the same design review and guardrails."</div>
+    <h3>The release question, again</h3>
+    <p>The advertised requisition asks for Infinity 24x. Constellation capability, Blueprint and the SDK all move per release. Your honest position (Chapter 01, 1.10) is that you know the platform, not the release, and verify release-specific features in the documentation. State it here too: if a Constellation question depends on a feature of a specific release, say that you would check the documentation for that release rather than guess.</p>
+    <div class="answer"><strong>Lead-level framing.</strong> "I used the workshop topics as my checklist. For each of the seven I can explain the concept; for DX Components and the SDK I have a hands-on plan, and for Blueprint I understand it as design acceleration whose output still goes through review. I would be explicit about which of those I have done and which I have planned."</div>
+  </section>
+
+  <section id="s3-14" class="pagebreak">
+    <h2>3.14 The ramp plan: one week to an honest claim</h2>
+    <h3>The goal</h3>
+    <p>Give you something you can genuinely say you have done within a week, and be explicit about the size of the claim. The honest claim after this week is: <strong>"I have built a sample DX component against the SDK."</strong> It is not "I have delivered Constellation in production", and you should never let it drift toward that.</p>
+    <div class="warning"><strong>Check each prerequisite before relying on the plan.</strong> The plan assumes you can obtain a Constellation-enabled Pega Infinity environment (a Personal or Community Edition, a trial, or one provided by an employer), that you can download the SDK material, and that you have a machine where you can install Node. Environment availability, edition terms and download locations change; confirm on the Pega Community and documentation pages in 3.R. Where an environment is not available, the plan degrades to the repository, Storybook and documentation work, and the claim shrinks accordingly.</div>
+    <table>
+      <tr><th>Day</th><th>Activity</th><th>Outcome you can state</th></tr>
+      <tr><td>1</td><td>Read the Constellation UI Service, architecture and DX API comparison pages; take the Pega Academy Constellation topics (search the Academy for Constellation and DX Components)</td><td>You can explain the architecture and the two DX APIs in the product's own words</td></tr>
+      <tr><td>2</td><td>Obtain a Constellation-enabled environment; build a small Constellation case type in App Studio (a simple form, a stage, a view) and open it in the browser</td><td>"I have built a small Constellation case type in a sandbox." Observe the network tab on each step: this is also your first debugging practice</td></tr>
+      <tr><td>3</td><td>Read the React fundamentals you need (3.10) using a short official React tutorial; install Node; clone <code>pegasystems/react-sdk</code>; read its README and the Constellation SDK documentation</td><td>You can run npm scripts and read a component</td></tr>
+      <tr><td>4</td><td>Follow the documented steps to prepare the server and run the <strong>MediaCo</strong> sample application through the SDK, including the OAuth 2.0 client registration records that ship with it</td><td>"I have cloned the React SDK and run the MediaCo sample."</td></tr>
+      <tr><td>5</td><td>Use the DX Component Builder to create one trivial component (a field that renders a value as a coloured bar or badge); mock it in Storybook</td><td>You have a working component in isolation</td></tr>
+      <tr><td>6</td><td>Build, authenticate and publish it; configure it for App Studio; place it on a field in a view; confirm it renders in the browser</td><td>"I built and published a sample DX component and used it in a view."</td></tr>
+      <tr><td>7</td><td>Debug it deliberately: break a value, trace the DX API response in the network tab, fix it. Write a one-page note: what a standard component lacked, what you built, what you would test, what it costs to own</td><td>A rehearsal aid and evidence of governance thinking</td></tr>
+    </table>
+    <div class="flow">THE WEEK AS A LADDER (and what each rung lets you honestly say)
+   Day 1   read + Academy            --&gt; "I understand the architecture"
+   Day 2   Constellation case type   --&gt; "I built a small Constellation case type in a sandbox"
+   Day 4   SDK + MediaCo running     --&gt; "I cloned the React SDK and ran the MediaCo sample"
+   Day 6   component published       --&gt; "I built and published a sample DX component"
+   Never   --&gt; "I delivered Constellation in production"</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "I have a week-one plan that ends in a published sample component, and I would tell you exactly what I did and did not do. What I bring to a real engagement is the case design, data and Kafka and queue processor expertise; the Constellation delivery experience I would build on a real project with a front-end peer."</div>
+  </section>
+
+  <section id="s3-15" class="pagebreak">
+    <h2>3.15 Interview Q&amp;A (Sathvik's voice)</h2>
+    <p class="small muted">Every answer is conceptual understanding plus a plan. None claims Constellation, DX API, DX Component, SDK or React experience.</p>
+
+    <div class="qa"><span class="q">Q1. Explain Constellation.</span>
+    <p>"Constellation replaces server-generated HTML with view metadata that a client-side engine renders using the Constellation design system. I author views from prescribed templates and regions in App Studio. The front end is served as static content by the Constellation UI Service and talks to the server through the Constellation DX API, which is stateless. The trade is design freedom for upgrade safety, consistency and speed. I understand it conceptually; I have not delivered it in production."</p></div>
+
+    <div class="qa"><span class="q">Q2. What changed at Pega 8.8?</span>
+    <p>"Pega consolidated the new UI technology under the name Constellation. Cosmos React became the Constellation design system, DX API v2 became the Constellation DX API, and the SDKs became the Constellation SDKs. The traditional UI stayed, with the DX API v1 now called the Traditional DX API. Constellation has been the recommended UI for new applications since Pega '23."</p></div>
+
+    <div class="qa"><span class="q">Q3. What does stateless mean for Constellation, and what are the consequences?</span>
+    <p>"Each DX API call is processed independently by a stateless requestor, and the clipboard is released after the call, so state lives in the case. The consequences are that the load balancer does not need session affinity except for the Studios, extra browser tabs do not multiply server threads, and background processing such as queue processors is unchanged. I would verify the data-page and locking behaviour per release."</p></div>
+
+    <div class="qa"><span class="q">Q4. What is the Constellation UI Service?</span>
+    <p>"A static-content microservice that delivers the front-end components to the browser, separate from the application server. It is auto-provisioned on Pega Cloud; on a client-managed estate someone has to set it up. A published custom DX Component ends up there too."</p></div>
+
+    <div class="qa"><span class="q">Q5. Constellation DX API versus Traditional DX API: what is the difference?</span>
+    <p>"The Traditional DX API mirrors screen state and suits existing section-based applications and mashup-style use. The Constellation DX API is view-based, separates data from layout, uses HATEOAS so responses reference available actions, and reduces chattiness. Only Constellation applications can use every endpoint, though some work with a traditional application. I would confirm paths and schemas in the release documentation, and I would not use either as a system-to-system contract."</p></div>
+
+    <div class="qa"><span class="q">Q6. What is in a Constellation DX API response?</span>
+    <p>"The data for the case and assignment, UI metadata describing the view to render, information about the next assignment, and HATEOAS links to the actions available. So the client does not duplicate rules like which fields are required; the server evaluates them. I know this from the documentation, not from building against it."</p></div>
+
+    <div class="qa"><span class="q">Q7. What is Web Embed and how does it differ from a mashup?</span>
+    <p>"Web Embed places a Constellation-rendered Pega experience inside an external web page; it is the Constellation-era replacement for mashups. It fits when a client wants a Pega-driven step inside its own page without a full custom front end. For a different design system entirely I would consider the React SDK instead."</p></div>
+
+    <div class="qa"><span class="q">Q8. Can we migrate our traditional application to Constellation?</span>
+    <p>"Not by changing a setting. It is a UI re-platforming: forms become views, custom controls are replaced or become DX Components, portals are rebuilt. Rules, data and integrations are unaffected. Coexistence helps: Constellation pieces can be hosted in a traditional app, and in Pega Customer Service the Constellation Interaction Portal can run UI Kit service requests. I would inventory, classify, pilot one case type and phase the cutover."</p></div>
+
+    <div class="qa"><span class="q">Q9. Where does React appear in Constellation?</span>
+    <p>"At three levels. The design system is built with React, which Pega writes and I consume. DX Components are custom React components built with the DX Component Builder and published so low-code authors can use them in App Studio. The React SDK is a bridge from the Constellation engine to a non-Pega design system for a separate front-end application. Most Constellation work needs none of the last two."</p></div>
+
+    <div class="qa"><span class="q">Q10. What is a DX Component and when would you build one?</span>
+    <p>"A custom React component built with the DX Component Builder, published to the server through a Rule-UI-Component and the Constellation UI Service, and used in App Studio like any other. Types include fields, widgets, layout templates and presentation components. I would build one only when a standard component cannot meet a documented requirement and there is an owner, tests, an accessibility check and a retirement trigger. I have not built one yet; I have a plan to build a sample."</p></div>
+
+    <div class="qa"><span class="q">Q11. What is the React SDK and when would you use it?</span>
+    <p>"A React bridge from the ConstellationJS engine to a non-Pega design system, Material UI in the reference implementation, shipped as packages <code>@pega/react-sdk-components</code> and <code>@pega/react-sdk-overrides</code>, with MediaCo as the sample. Embedded use, placing Pega work inside an existing React application, is the most common; portal use renders the whole experience. I would only use it when the client's design system is mandatory, and I would pin the SDK to the Infinity release. I have not built an SDK application."</p></div>
+
+    <div class="qa"><span class="q">Q12. How much React do you know?</span>
+    <p>"Honestly, none hands-on. I understand components, props, state and effects, JSX and the npm and bundling toolchain conceptually, and I can read a component. My plan is to learn by building a sample DX component against the SDK. On a real engagement I would own the case model, data, validations and APIs and pair with a front-end engineer for non-trivial React."</p></div>
+
+    <div class="qa"><span class="q">Q13. How would you debug a Constellation screen that shows the wrong thing?</span>
+    <p>"Start in the browser network tab: find the DX API call for the step and check the data, the view metadata and the available actions. If those are wrong, the problem is on the server and I use Tracer, logs and the rules, because when rules and validation run on the server. If the response is right and the screen is wrong, it is client side: an expression or a component. Tracer cannot see client rendering. I have not debugged a Constellation app yet and would practise on the MediaCo sample."</p></div>
+
+    <div class="qa"><span class="q">Q14. What are the governance risks of custom components?</span>
+    <p>"Each custom component is a future upgrade project: regression on each release, security and accessibility review, ownership, toolchain drift and, for SDK applications, version coupling to Infinity. I would keep a register with purpose, owner, tests and a retirement trigger, and I would approve a component only after confirming no standard component fits. It is the same argument as for custom controls in the traditional UI."</p></div>
+
+    <div class="qa"><span class="q">Q15. The role asks for Constellation DX API on Infinity 24x. You have neither. Why consider you?</span>
+    <p>"I am an exact match on the Kafka, queue processor and CSSA-at-this-experience parts, and the back end of Constellation delivery is still case design, data and asynchronous processing. The two gaps I will close are the Constellation DX API and the 24 release. I know the platform, not the release, and verify release behaviour in the documentation. My plan: Academy topics, a Constellation case type in a sandbox, the React SDK and MediaCo sample, and a sample DX component. After that I can say I have built a sample, not that I have delivered Constellation."</p></div>
+
+    <div class="qa"><span class="q">Q16. How would you decide between the standard portal, Web Embed, the DX API and the SDK?</span>
+    <p>"By who owns the experience. Internal operations with Pega's design acceptable: the standard Constellation portal, the cheapest and most upgrade-safe. A step inside someone else's page: Web Embed. A bespoke channel: a custom client on the Constellation DX API. A mandated client design system in React: the SDK. I would default to the first and treat each step down as an exception with an owner, tests and an upgrade cost."</p></div>
+  </section>
+
+  <section id="s3-ref" class="pagebreak">
+    <h2>3.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source supports. Release or bundle shown is where the page was served from when read during research; Pega documentation is release-sensitive, so confirm against the deployed release. The LTM workshop row is in Chapter 01's references.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / effective date</th><th>What it supports here</th></tr>
+      <tr><td>Differences between Traditional DX API and Constellation DX API <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/dx-api/page/platform/dx-api/differences-between-v1-v2.html</td><td>DX API bundle, current release at time of reading</td><td>The comparison in 3.4: mashup-like use versus view-based; availability from 8.3.2; starter packs; separate data and layout; HATEOAS; endpoint coverage</td></tr>
+      <tr><td>Understanding a Constellation DX API response <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/dx-api/page/platform/dx-api/understand-dx-api-response.html</td><td>DX API bundle, current release at time of reading</td><td>The response elements named in 3.4: data, uiResources, next assignment, HATEOAS links, content</td></tr>
+      <tr><td>Constellation architecture FAQ <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/platform-25/page/platform/user-experience/architecture-c11n-faq.html</td><td>Pega Platform 25 bundle</td><td>Stateless UI; multiple tabs not increasing server threads; the identifier in the token; automatic case locking; background processing unchanged</td></tr>
+      <tr><td>Constellation UI Service <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/user-experience/constellation-service.html</td><td>Pega Platform 24.2 bundle</td><td>The static-content microservice; the 8.8 renaming statement; choosing view-based or section-based architecture for a new application</td></tr>
+      <tr><td>Types of Constellation DX components <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/constellation-dx-components/page/constellation-dx-components/custom-components/types-constellation-dx-components.html</td><td>Constellation DX components bundle, current release at time of reading</td><td>The four component types: layout templates, widgets, fields, presentation components; DXCB supports selected App Studio components</td></tr>
+      <tr><td>Publishing standalone Constellation DX components, and Publishing the widget <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/constellation-dx-components/page/constellation-dx-components/custom-components/publish-custom-components.html ; https://docs.pega.com/bundle/constellation-dx-components/page/constellation-dx-components/custom-components/publishing-widget.html</td><td>Constellation DX components bundle, current release at time of reading</td><td>Webpack gzipped package; Rule-UI-Component instance; declare trigger and onward publish to the Constellation Service; Storybook mocking; authentication can expire</td></tr>
+      <tr><td>pegasystems/react-sdk (repository and README) <span class="tag">Pega-owned repository</span></td><td>https://github.com/pegasystems/react-sdk</td><td>README at time of reading announced a release matched to Pega Infinity '26 and referred to an Infinity 25+ prerequisite; Apache 2.0</td><td>The SDK purpose; Material UI; the MediaCo sample and its OAuth 2.0 client registration records; tested Node and npm versions; the version-matched release branches; upgrade guidance</td></tr>
+      <tr><td>pegasystems/react-sdk-components <span class="tag">Pega-owned repository</span></td><td>https://github.com/pegasystems/react-sdk-components</td><td>Repository, release-matched to the SDK</td><td>The component library repository and the <code>@pega/react-sdk-components</code> and <code>@pega/react-sdk-overrides</code> package names as captured in research; confirm on npm</td></tr>
+      <tr><td>Constellation SDKs documentation and MediaCo sample <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/constellation-sdk/page/constellation-sdks/sdks/constellation-sdks.html ; https://docs.pega.com/bundle/constellation-sdk/page/constellation-sdks/sdks/mediaco-sample-application.html</td><td>Constellation SDK bundle, as linked from the repository README</td><td>The SDK overview and the sample application; embedded and portal use cases as captured in research, confirm in the bundle</td></tr>
+      <tr><td>Pega Community marketplace, React SDK <span class="tag">Pega Community</span></td><td>https://community.pega.com/marketplace/components/react-sdk</td><td>Release-sensitive</td><td>Where the README states the SDK download is available, for the ramp plan</td></tr>
+      <tr><td>Pega Academy root <span class="tag">training</span></td><td>https://academy.pega.com</td><td>Release-sensitive</td><td>Search by Constellation and DX Component topic titles for the ramp plan</td></tr>
+      <tr><td>FCB Study Pack Chapter 04 <span class="tag">companion text</span></td><td>../FCB_Study_Pack/ch04_ui_constellation_dx.html</td><td>Companion pack</td><td>Traditional UI groundwork; the 8.8 naming table; the migration steps</td></tr>
+    </table>
+    <p class="small muted">Blueprint is described functionally and was not verified against a specific Pega page for this pack; confirm on docs.pega.com. No endpoint path or component API signature is cited because they are release-specific.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch02_pega_customer_service.html">← Previous: Chapter 02</a><a href="index.html">Index →</a></div>
+
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch11 · PostgreSQL &amp; SQL Deep Dive | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch10_security_devops_monitoring.html">&larr; Chapter 10</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch12_deposits_banking_domain.html">Next: Chapter 12 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 11 &middot; Data and domain</div>
+    <h1>PostgreSQL &amp; SQL Deep Dive</h1>
+    <p class="subtitle">Most of the evidence in Chapter 10 ended in a database. This chapter builds one small deposits dataset around the ledger, Dana's two accounts, Victor and Harlow Freight, and then answers business questions against it: for each, the input rows, the query, the result and why it is correct. Joins, aggregates and window functions arrive as answers to harder questions. Concurrency is taught through two named sessions acting on Dana's row, which is where a Pega case lock is separated from a database row lock; and one execution plan is read, changed and explained.</p>
+    <div class="meta">
+      <div><strong>19</strong><span>Sections</span></div>
+      <div><strong>18,227</strong><span>Words</span></div>
+      <div><strong>1</strong><span>Dataset used throughout</span></div>
+      <div><strong>14</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section id="s11-1">
+    <h2>11.1 One dataset, one dialect at a time</h2>
+    <p>Chapter 10 ended with a sequential scan on a work table and a question about what a database does with a query. Every example here runs against the same ten-row-scale dataset, so a reader can type it into PostgreSQL and see the results printed beside each query. The dataset is a teaching dataset: its structure follows the ledger of <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>, Dana's two accounts carry the ledger's figures, and the other customers' balances, holds and dates are invented for illustration.</p>
+    <div class="warning"><strong>Dialect discipline.</strong> PostgreSQL and SQL Server differ in many small ways that are easy to mix up under pressure. Every code block in this chapter is <strong>PostgreSQL</strong> unless it is explicitly headed "SQL Server", and each block says which it is. When an equivalent exists, the difference is shown next to it, never blended into one statement.</div>
+    <table>
+      <tr><th>Concern</th><th>PostgreSQL</th><th>SQL Server (T-SQL)</th></tr>
+      <tr><td>Limit rows</td><td><code>LIMIT 10</code> (and <code>OFFSET n</code>); also <code>FETCH FIRST 10 ROWS ONLY</code></td><td><code>SELECT TOP 10 ...</code>; or <code>OFFSET n ROWS FETCH NEXT 10 ROWS ONLY</code> (requires ORDER BY)</td></tr>
+      <tr><td>Auto-number column</td><td><code>BIGINT GENERATED ALWAYS AS IDENTITY</code> (or <code>BIGSERIAL</code>)</td><td><code>BIGINT IDENTITY(1,1)</code></td></tr>
+      <tr><td>Current timestamp</td><td><code>now()</code>, <code>CURRENT_TIMESTAMP</code>; <code>clock_timestamp()</code> for wall clock</td><td><code>SYSDATETIME()</code>, <code>GETDATE()</code>, <code>SYSUTCDATETIME()</code></td></tr>
+      <tr><td>Time zone type</td><td><code>TIMESTAMPTZ</code> (stored as UTC, displayed in session zone)</td><td><code>DATETIMEOFFSET</code>; <code>DATETIME2</code> has no zone</td></tr>
+      <tr><td>Text, boolean, concatenation</td><td><code>TEXT</code>/<code>VARCHAR(n)</code>; <code>BOOLEAN</code>; <code>||</code> or <code>concat()</code></td><td><code>VARCHAR(n)</code>/<code>NVARCHAR(n)</code>; <code>BIT</code>; <code>+</code> or <code>CONCAT()</code> (<code>+</code> with NULL yields NULL)</td></tr>
+      <tr><td>Null substitution</td><td><code>COALESCE(a,b)</code></td><td><code>ISNULL(a,b)</code> or <code>COALESCE</code></td></tr>
+      <tr><td>Date arithmetic</td><td><code>d + INTERVAL '30 days'</code>, <code>date_trunc('month', d)</code></td><td><code>DATEADD(day,30,d)</code>, <code>DATETRUNC</code> (newer)</td></tr>
+      <tr><td>Upsert</td><td><code>INSERT ... ON CONFLICT ... DO UPDATE</code>; <code>MERGE</code> only in PostgreSQL 15 and later</td><td><code>MERGE ... USING ... WHEN MATCHED ... WHEN NOT MATCHED ...;</code> (must end with a semicolon)</td></tr>
+      <tr><td>Return changed rows</td><td><code>... RETURNING cols</code></td><td><code>OUTPUT inserted.col, deleted.col</code></td></tr>
+      <tr><td>Row locking</td><td><code>SELECT ... FOR UPDATE [SKIP LOCKED | NOWAIT]</code></td><td>Table hints: <code>WITH (UPDLOCK, ROWLOCK, READPAST)</code></td></tr>
+      <tr><td>Default isolation</td><td>READ COMMITTED (MVCC; readers never block writers)</td><td>READ COMMITTED (locking by default; row versioning via READ_COMMITTED_SNAPSHOT)</td></tr>
+      <tr><td>Temporary tables, bulk load</td><td><code>CREATE TEMP TABLE</code>; <code>COPY</code></td><td><code>#t</code>; <code>BULK INSERT</code>, <code>bcp</code></td></tr>
+      <tr><td>String case, aggregate filter</td><td>Case-sensitive by default (<code>ILIKE</code>); <code>count(*) FILTER (WHERE ...)</code></td><td>Collation-dependent (commonly case-insensitive); <code>SUM(CASE WHEN ... THEN 1 ELSE 0 END)</code></td></tr>
+      <tr><td>Identifier folding</td><td>Unquoted identifiers fold to lower case (so Pega's <code>pyID</code> is <code>pyid</code>)</td><td>Case preserved per collation</td></tr>
+      <tr><td>Execution plan</td><td><code>EXPLAIN (ANALYZE, BUFFERS)</code></td><td>Actual execution plan in tooling; <code>SET STATISTICS IO, TIME ON</code></td></tr>
+    </table>
+    <p>PostgreSQL is described precisely; Pega's physical table and column names vary by release and configuration, so §11.12 uses names that are stable in concept and marks the rest as illustrative. None of the example SQL is run against a production Pega schema without the DBA.</p>
+  </section>
+
+  <section>
+    <h2>Chapter map</h2>
+    <div class="toc">
+      <a href="#s11-2">11.2 The dataset<span>DDL and INSERTs, run once</span></a>
+      <a href="#s11-3">11.3 Types, NULL and keys<span>Through three small questions</span></a>
+      <a href="#s11-4">11.4 Which accounts does Dana hold?<span>Joins, from simple to outer</span></a>
+      <a href="#s11-5">11.5 What can each account actually spend?<span>Aggregates, fan-out, CTEs, HAVING, CASE</span></a>
+      <a href="#s11-6">11.6 What happened in order?<span>Window functions</span></a>
+      <a href="#s11-7">11.7 A snapshot arrives twice, and late<span>Upsert and MERGE</span></a>
+      <a href="#s11-7b">11.7b Set-based against row-by-row<span>The staging pattern, with numbers</span></a>
+      <a href="#s11-8">11.8 Marcus and Priya touch Dana's row<span>Transactions, isolation, MVCC, lost update</span></a>
+      <a href="#s11-9">11.9 Locks, deadlocks and the Pega commit<span>Case lock against row lock</span></a>
+      <a href="#s11-10">11.10 One slow query, one index<span>Reading EXPLAIN ANALYZE</span></a>
+      <a href="#s11-11">11.11 What keeps the table healthy<span>Vacuum, bloat, partitioning, pooling</span></a>
+      <a href="#s11-12">11.12 The Pega database<span>BLOB, exposed columns, Declare Index</span></a>
+      <a href="#s11-13">11.13 Operational SQL for support<span>Segregation of duties, reconciliation, elapsed time</span></a>
+      <a href="#s11-14">11.14 Backup, recovery, replicas</a>
+      <a href="#s11-15">11.15 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s11-recap">11.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s11-ref">11.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+  </section>
+
+  <section id="s11-2" class="pagebreak">
+    <h2>11.2 The dataset</h2>
+    <p>The tables are few: customers, their accounts, a ledger of transactions, holds, a balance summary, and a small case history that mirrors <code>AM-10417</code>. The balances for Dana's checking account follow the ledger: $4,418.55 ledger at 07:30 on 9 March, with a $200.00 card authorisation outstanding, so $4,218.55 available. Amounts are <code>NUMERIC(14,2)</code>, never floating point.</p>
+    <div class="flow">-- POSTGRESQL: SCHEMA
+CREATE TABLE customers (
+    customer_id   INTEGER PRIMARY KEY,
+    customer_ref  TEXT UNIQUE,                       -- NULL where the reference is not in this teaching set
+    full_name     TEXT NOT NULL
+);
+
+CREATE TABLE accounts (
+    account_id      INTEGER PRIMARY KEY,
+    account_number  VARCHAR(17) NOT NULL UNIQUE,
+    customer_id     INTEGER NOT NULL REFERENCES customers(customer_id),
+    product_code    TEXT NOT NULL,
+    status          TEXT NOT NULL CHECK (status IN ('ACTIVE','DORMANT','FROZEN','CLOSED')),
+    opened_on       DATE NOT NULL,
+    closed_on       DATE                             -- NULL while the account is open
+);
+
+CREATE TABLE transactions (
+    txn_id      INTEGER PRIMARY KEY,
+    account_id  INTEGER NOT NULL REFERENCES accounts(account_id),
+    posted_on   DATE NOT NULL,
+    amount      NUMERIC(14,2) NOT NULL,              -- signed: credits positive, debits negative
+    txn_type    TEXT NOT NULL
+);
+
+CREATE TABLE holds (
+    hold_id         INTEGER PRIMARY KEY,
+    account_id      INTEGER NOT NULL REFERENCES accounts(account_id),
+    hold_type       TEXT NOT NULL,                   -- CARD_AUTH, LEGAL, DEPOSIT
+    amount          NUMERIC(14,2) NOT NULL CHECK (amount &gt;= 0),
+    status          TEXT NOT NULL CHECK (status IN ('ACTIVE','RELEASED')),
+    legal_order_no  TEXT                             -- only for LEGAL holds
+);
+
+CREATE TABLE balances (                              -- a maintained summary (denormalised), used for the concurrency examples
+    account_id      INTEGER PRIMARY KEY REFERENCES accounts(account_id),
+    ledger_balance  NUMERIC(14,2) NOT NULL,
+    row_version     INTEGER NOT NULL DEFAULT 1
+);
+
+CREATE TABLE case_history (                          -- the history of case AM-10417, as it would be recorded
+    hist_id  INTEGER PRIMARY KEY,
+    case_id  TEXT NOT NULL,
+    actor    TEXT NOT NULL,
+    action   TEXT NOT NULL,
+    at_ts    TIMESTAMP NOT NULL                      -- shown without a zone to keep the example short
+);</div>
+    <div class="flow">-- POSTGRESQL: DATA
+INSERT INTO customers VALUES (1,'CUS-4417','Dana Whitfield'), (2,NULL,'Victor Osei'), (3,NULL,'Harlow Freight Co.');
+
+INSERT INTO accounts VALUES
+ (1,'CHK-8842-0117',1,'CHK01','ACTIVE','2019-04-12',NULL),
+ (2,'SAV-8842-0233',1,'SAV01','ACTIVE','2019-04-12',NULL),
+ (3,'CHK-8842-0719',2,'CHK01','ACTIVE','2021-09-30',NULL),
+ (4,'CHK-8842-1055',3,'CHK01','ACTIVE','2018-01-08',NULL);
+
+INSERT INTO transactions VALUES
+ (1,1,'2026-03-02', 2500.00,'ACH_CR'),  (2,1,'2026-03-03', -120.45,'CHECK'),
+ (3,1,'2026-03-04', 2100.00,'ACH_CR'),  (4,1,'2026-03-05',  -61.00,'CARD'),
+ (5,2,'2026-03-02',12000.00,'ACH_CR'),  (6,2,'2026-03-06',   40.00,'INTEREST'),
+ (7,3,'2026-03-02', 2500.00,'ACH_CR'),  (8,3,'2026-03-04', -189.60,'CHECK'),
+ (9,4,'2026-03-02',60000.00,'ACH_CR'),  (10,4,'2026-03-05',-1100.00,'ACH_DR');
+
+INSERT INTO holds VALUES
+ (1,1,'CARD_AUTH', 200.00,'ACTIVE',  NULL),
+ (2,3,'LEGAL',    1500.00,'ACTIVE', 'LO-20331'),
+ (3,2,'DEPOSIT',   500.00,'RELEASED',NULL);
+
+INSERT INTO balances VALUES (1,4418.55,1), (2,12040.00,1), (3,2310.40,1), (4,58900.00,1);
+
+INSERT INTO case_history VALUES
+ (1,'AM-10417','portal','CREATE', '2026-03-02 08:40'),
+ (2,'AM-10417','mreed', 'SUBMIT', '2026-03-02 10:15'),
+ (3,'AM-10417','praman','REJECT', '2026-03-02 15:20'),
+ (4,'AM-10417','mreed', 'SUBMIT', '2026-03-03 09:10'),
+ (5,'AM-10417','praman','APPROVE','2026-03-03 11:30');</div>
+    <p>Two properties of the data are chosen on purpose and worth noticing before any query is written. Customers 2 and 3 have a NULL <code>customer_ref</code>, which sets up a NULL trap in 11.3. And the <code>balances</code> table is a denormalised summary of the ledger: a maintained copy that must always equal the sum of <code>transactions</code>, which is why a reconciliation query appears in 11.13. Denormalising is a deliberate copy for read speed, with one owner of the write path, because every copy can drift.</p>
+  </section>
+
+  <section id="s11-3" class="pagebreak">
+    <h2>11.3 Types, NULL and keys, through three small questions</h2>
+    <p>A relational database stores data in <strong>tables</strong> of typed <strong>columns</strong> and <strong>rows</strong>, linked by <strong>keys</strong>, and SQL is declarative: the query says <em>what</em> result is wanted and the <strong>optimiser</strong> decides <em>how</em> to get it. That separation of the logical view from physical storage, together with integrity rules, concurrent-access control and a standard language, is why banks rely on it: balances, holds and legal orders must be consistent, auditable and recoverable.</p>
+    <p><strong>Question 1: how does money behave?</strong> The first rule of the schema is the type. <code>NUMERIC(p,s)</code> is exact decimal arithmetic; <code>REAL</code> and <code>DOUBLE PRECISION</code> are binary floating point, which cannot represent 0.10 exactly, so 0.1 + 0.2 is not 0.3. Money is therefore always <code>NUMERIC</code>.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT 0.1::double precision + 0.2::double precision = 0.3::double precision AS float_equal,
+       0.1::numeric          + 0.2::numeric          = 0.3::numeric          AS numeric_equal;
+
+ float_equal | numeric_equal
+-------------+---------------
+ f           | t
+
+WHY: binary floating point stores 0.1 and 0.2 as nearby binary fractions, so their sum is not exactly the nearest double to 0.3; NUMERIC keeps decimal digits.</div>
+    <p>The other types that matter in deposits are <code>BIGINT</code> and <code>INTEGER</code> for surrogate keys and counters (account numbers are not stored as integers: leading zeros, check digits and length changes), <code>VARCHAR</code>/<code>TEXT</code> for numbers and codes (trailing spaces and case differences break equality joins, so values are normalised on write), <code>DATE</code> for business dates such as a maturity or response due date (no time zone, which is right for a business date and wrong for an instant), <code>TIMESTAMPTZ</code> for instants (the zone-less <code>TIMESTAMP</code> is ambiguous), <code>BOOLEAN</code> (three values including NULL), <code>BYTEA</code> for binary data such as Pega's BLOB column, which SQL cannot filter, and <code>JSONB</code> for semi-structured payloads, which are indexable with GIN and are no substitute for modelling.</p>
+    <p><strong>Question 2: which customers are not Dana?</strong> This looks trivial, and it returns the wrong answer.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT customer_id, full_name FROM customers WHERE customer_ref &lt;&gt; 'CUS-4417';
+
+ customer_id | full_name
+-------------+-----------
+(0 rows)
+
+SELECT customer_id, full_name FROM customers WHERE customer_ref IS DISTINCT FROM 'CUS-4417' ORDER BY customer_id;
+
+ customer_id |     full_name
+-------------+--------------------
+           2 | Victor Osei
+           3 | Harlow Freight Co.
+
+WHY: NULL means "unknown", not zero or empty. NULL &lt;&gt; 'CUS-4417' is not true or false but UNKNOWN, and WHERE keeps only rows whose condition is true,
+so both customers whose reference is NULL are silently dropped. IS DISTINCT FROM is the null-safe inequality.</div>
+    <p>SQL has three truth values, and the rules to remember are these. <code>NULL = NULL</code> is unknown, so <code>IS NULL</code> or <code>IS NOT DISTINCT FROM</code> is used. <code>NULL AND false</code> is false and <code>NULL OR true</code> is true, since some combinations resolve despite the unknown, but <code>NOT (NULL)</code> is unknown. <code>x NOT IN (1, 2, NULL)</code> is never true, the classic trap that makes <code>NOT IN</code> return no rows when the list contains a NULL; prefer <code>NOT EXISTS</code>. <code>COUNT(*)</code> counts rows while <code>COUNT(col)</code> skips NULLs. <code>SUM</code> and <code>AVG</code> ignore NULLs, and the sum of all-NULL is NULL, so <code>COALESCE(SUM(x),0)</code> where a zero is wanted. Two dialect differences follow: a <code>UNIQUE</code> constraint allows multiple NULLs in PostgreSQL and only one in SQL Server, and ascending <code>ORDER BY</code> sorts NULLs last in PostgreSQL and first in SQL Server.</p>
+    <p><strong>Question 3: what stops bad data entering?</strong> Constraints are the cheapest and most reliable control. A primary key identifies a row uniquely; a unique constraint prevents duplicates (<code>account_number</code>), a foreign key prevents orphans, a CHECK constraint enforces a row-level rule (<code>amount &gt;= 0</code>), and NOT NULL and DEFAULT enforce mandatory and default values. Using a surrogate primary key plus a unique natural key is safer than the natural key alone, because an account number can change format and a surrogate does not. Banks rarely cascade deletes of financial records and use RESTRICT with soft deletes (a status). A unique constraint on <code>(interface_name, sha256)</code> in a file registry (Chapter 07 §7.10) prevents a duplicate file even when two nodes race, which an application check alone cannot.</p>
+    <div class="flow">-- POSTGRESQL: a constraint refusing what an application check might miss
+INSERT INTO holds VALUES (4, 1, 'CARD_AUTH', -50.00, 'ACTIVE', NULL);
+ERROR:  new row for relation "holds" violates check constraint "holds_amount_check"
+
+INSERT INTO accounts VALUES (5,'CHK-8842-0117',1,'CHK01','ACTIVE','2026-03-09',NULL);
+ERROR:  duplicate key value violates unique constraint "accounts_account_number_key"</div>
+    <p>Normalisation is the discipline behind a schema like this. First normal form wants each column atomic, with no repeating groups (<code>signers = 'A, B'</code> in one column becomes a table). Second normal form wants every non-key column to depend on the whole key, which matters for composite keys. Third normal form wants non-key columns to depend only on the key and not on other non-key columns (a product name depends on the product code, so it belongs in a <code>products</code> table). Sensible denormalisation is a deliberate, measured copy for performance or history: a stored running balance, a maintained summary like <code>balances</code>, a snapshot of the customer's address on a legal order at the time of processing (it must not change when the customer later moves), and exposed columns in Pega work tables (Chapter 03 §3.3).</p>
+    <h3>Design decisions on this schema, and what breaks without them</h3>
+    <p>Each choice in the dataset is a decision with a failure behind it, and it is worth making the failure visible once.</p>
+    <p><strong>Why money is NUMERIC.</strong> Summing ten amounts of 0.10 should give exactly 1.00. With binary floating point it does not.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT sum(0.1::double precision) AS as_float, sum(0.1::numeric) AS as_numeric FROM generate_series(1,10);
+
+       as_float        | as_numeric
+-----------------------+------------
+ 0.9999999999999999    |        1.0
+
+WHY: each 0.1 is stored as the nearest binary fraction, and the tiny errors accumulate; NUMERIC keeps decimal digits and adds them exactly. On a ledger of millions of rows, float drift is a reconciliation break
+with no cause anyone can find. NUMERIC(14,2) also enforces two decimal places and a ceiling, so a corrupt amount is refused at insert.</div>
+    <p><strong>Why instants are TIMESTAMPTZ.</strong> A zone-less <code>TIMESTAMP</code> records a wall-clock reading with no instant behind it, so the same text can mean two moments across a daylight-saving change or across the India and US teams. <code>TIMESTAMPTZ</code> stores a single instant (internally UTC) and renders it in the session's zone, so everyone agrees on <em>when</em> and differs only in how it is displayed. Priya's Monday afternoon rejection can be stored once and shown to each reader in their own zone.</p>
+    <div class="flow">-- POSTGRESQL: one stored instant, displayed in the zone of the reader
+SELECT TIMESTAMPTZ '2026-03-02 20:20:00+00' AT TIME ZONE 'America/New_York' AS eastern_wall_clock;
+
+  eastern_wall_clock
+---------------------
+ 2026-03-02 15:20:00
+
+WHY: Eastern Standard Time is five hours behind UTC on 2 March (daylight saving began on 8 March), so 20:20 UTC is 15:20 in New York, Monday afternoon. A business DATE (a due date, a maturity date) is a different thing and correctly has no zone.</div>
+    <p><strong>Why holds are their own table.</strong> A hold is not a transaction: it does not change the ledger balance, it has a lifecycle (ACTIVE, then RELEASED), several can exist at once, and its history matters (the released $500.00 deposit hold on Dana's savings is still a fact). Putting a single <code>held_amount</code> column on the account row would lose the history, make two concurrent holds update the same row, and make "what was held last Tuesday" unanswerable. As a separate table it is queried with <code>SUM(...) WHERE status = 'ACTIVE'</code>, as in 11.5, and each hold keeps its own legal order reference.</p>
+    <p><strong>What breaks if the balance is denormalised, and what protects it.</strong> The <code>balances</code> table is a copy of what the ledger says. If one code path inserts a transaction and forgets to update it, the copy drifts silently.</p>
+    <div class="flow">-- POSTGRESQL (inside a transaction that is rolled back, to leave the dataset unchanged)
+BEGIN;
+INSERT INTO transactions VALUES (11, 1, '2026-03-09', -25.00, 'FEE');       -- a fee posted, but balances not updated
+
+SELECT a.account_number, b.ledger_balance AS summary, SUM(t.amount) AS from_ledger, b.ledger_balance - SUM(t.amount) AS difference
+FROM   balances b JOIN accounts a ON a.account_id = b.account_id JOIN transactions t ON t.account_id = b.account_id
+GROUP  BY a.account_number, b.ledger_balance HAVING b.ledger_balance &lt;&gt; SUM(t.amount);
+
+ account_number | summary | from_ledger | difference
+----------------+---------+-------------+------------
+ CHK-8842-0117  | 4418.55 |     4393.55 |      25.00
+ROLLBACK;
+
+WHY: the copy says 4418.55 and the ledger now says 4393.55. A denormalised column is acceptable only with one owner of the write path (one stored procedure or one service that updates both in one transaction) and a reconciliation that proves it (11.13). Without those, every extra copy is a future break.</div>
+    <p>Keys follow the same logic: each table has a surrogate-style integer key, and the natural identifiers (<code>account_number</code>, <code>customer_ref</code>) are unique constraints, so an account number can change format without breaking a foreign key. Foreign keys should also be indexed on the child side (<code>transactions.account_id</code>, <code>holds.account_id</code>), because without that index a join, or a delete on the parent, scans the whole child table.</p>
+    <h3>Normalisation, as design choices on this schema</h3>
+    <p>Normal forms are the discipline that made this schema look the way it does, and each is a rule with a visible violation. <strong>First normal form</strong> wants each column to hold one atomic value with no repeating groups. A column <code>signers = 'D. Whitfield, V. Osei'</code> on <code>accounts</code> violates it: finding every account Victor can use needs a string search, and removing one signer rewrites the text. The fix is a separate table with one row per account and holder, which is why Dana's two accounts hang off <code>customer_id</code> and a joint holder would be another row, not another comma. <strong>Second normal form</strong> wants every non-key column to depend on the whole key, which matters for composite keys: in an <code>account_holders(account_id, customer_id, holder_role, customer_name)</code> table, <code>customer_name</code> depends only on <code>customer_id</code>, so it is repeated on every account the customer holds and updated in many places; it belongs in <code>customers</code>. <strong>Third normal form</strong> wants non-key columns to depend only on the key and not on each other: if <code>accounts</code> carried both <code>product_code</code> and <code>product_name</code>, the name depends on the code, so a rename must touch every account, and a <code>products</code> table holds it once.</p>
+    <p>Denormalising is then a measured exception, made for a stated read benefit with one owner of the write path: a stored running balance on a ledger row for fast statements and audit, a maintained summary like <code>balances</code> (with the reconciliation that proves it), a snapshot of the customer's address on a legal order at processing time (so the order records where the customer lived then), and exposed columns on Pega work tables (Chapter 03 §3.3). The rule that unites them is that every copy can drift, so a copy needs an owner and a check.</p>
+  </section>
+
+  <section id="s11-4" class="pagebreak">
+    <h2>11.4 Which accounts does Dana hold? Joins, from simple to outer</h2>
+    <p><strong>Business question.</strong> Marcus has Dana's customer reference <code>CUS-4417</code> on <code>AM-10417</code> and needs her accounts with their ledger balances. The input rows are Dana's customer row, her two account rows and their six transactions. A join combines rows from two tables where a condition matches; the order of tables does not matter to correctness, only to how it is read.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT a.account_number, a.product_code
+FROM   customers c
+JOIN   accounts  a ON a.customer_id = c.customer_id
+WHERE  c.customer_ref = 'CUS-4417'
+ORDER  BY a.account_number;
+
+ account_number | product_code
+----------------+--------------
+ CHK-8842-0117  | CHK01
+ SAV-8842-0233  | SAV01
+
+WHY CORRECT: the join condition a.customer_id = c.customer_id pairs each account with its owner; the WHERE keeps only Dana's customer row, so only her two accounts pair. An inner join drops rows with no match on either side.</div>
+    <p>The join types are best understood by which unmatched rows they keep. An <strong>inner join</strong> keeps only matching pairs. A <strong>left outer join</strong> keeps every row of the left table and fills the right side with NULLs where there is no match. A <strong>right outer join</strong> is the mirror and is rarely used (swap the tables and use a left join). A <strong>full outer join</strong> keeps unmatched rows from both. A <strong>cross join</strong> pairs every row with every row and is almost always a mistake outside generating a calendar. A <strong>semi-join</strong> (<code>EXISTS</code>) asks only whether a match exists and does not multiply rows, and an <strong>anti-join</strong> (<code>NOT EXISTS</code>, or a left join filtered to NULL) finds rows with no match.</p>
+    <p><strong>Harder question.</strong> Which customers have no active hold on any account? The input rows are three customers, four accounts and three holds, one of which is released.</p>
+    <div class="flow">-- POSTGRESQL: anti-join with NOT EXISTS (null-safe, and cannot multiply rows)
+SELECT c.full_name
+FROM   customers c
+WHERE  NOT EXISTS (
+         SELECT 1
+         FROM   accounts a JOIN holds h ON h.account_id = a.account_id
+         WHERE  a.customer_id = c.customer_id AND h.status = 'ACTIVE')
+ORDER  BY c.customer_id;
+
+      full_name
+--------------------
+ Harlow Freight Co.
+
+WHY CORRECT: Dana has an ACTIVE hold (the 200.00 card authorisation) and Victor an ACTIVE legal hold. Her released DEPOSIT hold on the savings account does not count
+because the status filter is inside the subquery. Only Harlow has no active hold on any account.
+
+-- the same result with a left join (read it as "customers whose join to active holds found nothing")
+SELECT c.full_name
+FROM   customers c
+LEFT   JOIN accounts a ON a.customer_id = c.customer_id
+LEFT   JOIN holds    h ON h.account_id  = a.account_id AND h.status = 'ACTIVE'
+GROUP  BY c.customer_id, c.full_name
+HAVING COUNT(h.hold_id) = 0;
+-- NOTE the status filter is in the ON clause, not WHERE: in WHERE it would turn the left join back into an inner join and drop the customer.</div>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>In the left-join version above, a developer moves <code>h.status = 'ACTIVE'</code> from the <code>ON</code> clause to a <code>WHERE</code> clause. What does the query return for the three customers, and why?</p>
+      <p><strong>Answer.</strong> It returns no rows at all. For Harlow, the left join produces a row with NULL in every <code>h</code> column; the <code>WHERE h.status = 'ACTIVE'</code> is then unknown for that row and the row is dropped, along with every other row that has no matching active hold, so the outer join has behaved as an inner join and the <code>HAVING COUNT(...) = 0</code> has nothing left to test. Conditions on the optional side of an outer join belong in the <code>ON</code> clause. This is true for outer joins in both dialects; it is a property of how NULLs and WHERE interact, not of PostgreSQL.</p></div>
+  </section>
+
+  <section id="s11-5" class="pagebreak">
+    <h2>11.5 What can each account actually spend? Aggregates, fan-out, CTEs, HAVING and CASE</h2>
+    <p><strong>Business question.</strong> For every account, what are the ledger balance, the amount currently held and the available balance? This is the number a teller or the closure screen needs. The input rows are the ten transactions and the three holds, one of them released. Aggregation collapses rows into groups: <code>SUM(amount)</code> per account gives the ledger, and the available balance is the ledger minus active holds. The obvious attempt joins both tables at once, and it is wrong in a way that is worth seeing.</p>
+    <div class="flow">-- POSTGRESQL: THE WRONG WAY (fan-out)
+SELECT a.account_number, SUM(t.amount) AS ledger, SUM(h.amount) AS held
+FROM   accounts a
+JOIN   transactions t ON t.account_id = a.account_id
+LEFT   JOIN holds h   ON h.account_id = a.account_id AND h.status = 'ACTIVE'
+WHERE  a.account_number = 'CHK-8842-0117'
+GROUP  BY a.account_number;
+
+ account_number | ledger  |  held
+----------------+---------+--------
+ CHK-8842-0117  | 4418.55 | 800.00        &lt;-- the hold is 200.00
+
+WHY WRONG: the account has 4 transactions and 1 hold. Joining both multiplies them: 4 x 1 = 4 rows, each carrying the 200.00 hold, so SUM(h.amount) = 800.00.
+The ledger happened to survive because there is only one hold row; with two active holds, SUM(t.amount) would be doubled as well. Never aggregate two independent one-to-many branches in one join.</div>
+    <p>The fix is to aggregate each branch to one row per account <em>before</em> joining, with a common table expression (CTE), a named subquery that reads top to bottom like steps.</p>
+    <div class="flow">-- POSTGRESQL: THE RIGHT WAY
+WITH ledger AS (
+    SELECT account_id, SUM(amount) AS ledger_balance
+    FROM   transactions
+    GROUP  BY account_id
+), held AS (
+    SELECT account_id, SUM(amount) AS held_amount
+    FROM   holds
+    WHERE  status = 'ACTIVE'
+    GROUP  BY account_id
+)
+SELECT a.account_number,
+       l.ledger_balance,
+       COALESCE(h.held_amount, 0)                    AS held_amount,
+       l.ledger_balance - COALESCE(h.held_amount, 0) AS available
+FROM   accounts a
+JOIN   ledger l      ON l.account_id = a.account_id
+LEFT   JOIN held h   ON h.account_id = a.account_id
+ORDER  BY a.account_id;
+
+ account_number | ledger_balance | held_amount | available
+----------------+----------------+-------------+-----------
+ CHK-8842-0117  |        4418.55 |      200.00 |   4218.55
+ SAV-8842-0233  |       12040.00 |        0.00 |  12040.00
+ CHK-8842-0719  |        2310.40 |     1500.00 |    810.40
+ CHK-8842-1055  |       58900.00 |        0.00 |  58900.00
+
+WHY CORRECT: each CTE yields exactly one row per account, so the joins cannot multiply rows. The LEFT JOIN keeps accounts with no active hold (their held_amount is NULL, which COALESCE turns into 0).
+The released 500.00 hold on the savings account is excluded by WHERE status = 'ACTIVE'. Dana's checking figure, 4,218.55, is the available balance in the ledger.
+Check by hand: 2500.00 - 120.45 + 2100.00 - 61.00 = 4418.55; minus the 200.00 authorisation = 4218.55.</div>
+    <p>Aggregate functions summarise a group (<code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code>), <code>GROUP BY</code> defines the groups, and <code>HAVING</code> filters groups after aggregation as <code>WHERE</code> filters rows before it. A question that needs <code>HAVING</code>: <em>which customers have more than $10,000 on deposit in total?</em></p>
+    <div class="flow">-- POSTGRESQL
+SELECT c.full_name, SUM(t.amount) AS total_on_deposit
+FROM   customers c
+JOIN   accounts a     ON a.customer_id = c.customer_id
+JOIN   transactions t ON t.account_id  = a.account_id
+GROUP  BY c.customer_id, c.full_name
+HAVING SUM(t.amount) &gt; 10000
+ORDER  BY total_on_deposit DESC;
+
+      full_name       | total_on_deposit
+----------------------+------------------
+ Harlow Freight Co.   |         58900.00
+ Dana Whitfield       |         16458.55
+
+WHY CORRECT: Dana's two accounts sum to 4418.55 + 12040.00 = 16458.55; Victor's 2310.40 fails the HAVING test. There is a single branch (transactions) in this join, so no fan-out.</div>
+    <p>Two further tools finish the section. <code>CASE</code> classifies rows (<code>CASE WHEN available &lt; 1000 THEN 'LOW' WHEN available &lt; 10000 THEN 'STANDARD' ELSE 'HIGH' END</code> labels Victor's 810.40 as LOW and Dana's checking as STANDARD) and conditional aggregates count or sum inside one pass (<code>count(*) FILTER (WHERE status = 'ACTIVE')</code> in PostgreSQL; <code>SUM(CASE WHEN status = 'ACTIVE' THEN 1 ELSE 0 END)</code> in SQL Server). Set operations combine whole result sets: <code>UNION</code> removes duplicates and <code>UNION ALL</code> keeps them and is faster (the right default), <code>INTERSECT</code> keeps rows in both, and <code>EXCEPT</code> (<code>MINUS</code> in Oracle, <code>EXCEPT</code> in SQL Server) keeps rows in the first but not the second, which is a compact way to express "in the file but not in the ledger" during reconciliation. A correlated subquery (one that refers to the outer row) is run conceptually once per outer row and is usually clearer or faster rewritten as a join or <code>EXISTS</code>.</p>
+  </section>
+
+  <section id="s11-6" class="pagebreak">
+    <h2>11.6 What happened in order? Window functions</h2>
+    <p><strong>Business question.</strong> Priya wants Dana's checking statement with the balance after each transaction. Aggregation cannot answer it, because <code>GROUP BY</code> collapses the rows, and the question needs every row kept and a running figure beside each. A <strong>window function</strong> computes over a set of related rows, the window, without collapsing them. The input rows are the four transactions on account 1.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT posted_on, txn_type, amount,
+       SUM(amount) OVER (ORDER BY posted_on, txn_id) AS balance_after
+FROM   transactions
+WHERE  account_id = 1
+ORDER  BY posted_on, txn_id;
+
+ posted_on  | txn_type |  amount  | balance_after
+------------+----------+----------+---------------
+ 2026-03-02 | ACH_CR   |  2500.00 |       2500.00
+ 2026-03-03 | CHECK    |  -120.45 |       2379.55
+ 2026-03-04 | ACH_CR   |  2100.00 |       4479.55
+ 2026-03-05 | CARD     |   -61.00 |       4418.55
+
+WHY CORRECT: OVER (ORDER BY ...) turns SUM into a running sum over every row up to and including the current one in that order (the default frame is "unbounded preceding to current row", and
+including txn_id as a tie-breaker makes the order deterministic). The last value, 4418.55, equals the ledger balance computed by GROUP BY in 11.5, which is the cross-check.</div>
+    <p>A window has three parts: <code>PARTITION BY</code> (the groups the function restarts in, such as per account), <code>ORDER BY</code> (the order within each partition) and an optional frame (which rows relative to the current row are included). The same pattern answers harder questions. <em>What was the latest transaction on every account?</em> numbers the rows within each account and keeps number one.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT account_number, posted_on, txn_type, amount
+FROM (
+    SELECT a.account_number, t.posted_on, t.txn_type, t.amount,
+           ROW_NUMBER() OVER (PARTITION BY t.account_id ORDER BY t.posted_on DESC, t.txn_id DESC) AS rn
+    FROM   transactions t JOIN accounts a ON a.account_id = t.account_id
+) x
+WHERE  rn = 1
+ORDER  BY account_number;
+
+ account_number | posted_on  | txn_type |  amount
+----------------+------------+----------+----------
+ CHK-8842-0117  | 2026-03-05 | CARD     |   -61.00
+ CHK-8842-0719  | 2026-03-04 | CHECK    |  -189.60
+ CHK-8842-1055  | 2026-03-05 | ACH_DR   | -1100.00
+ SAV-8842-0233  | 2026-03-06 | INTEREST |    40.00
+
+WHY CORRECT: ROW_NUMBER restarts at 1 for each account (PARTITION BY) and counts from the newest transaction (ORDER BY ... DESC), so rn = 1 is each account's latest row. A window function cannot be filtered in the
+same SELECT's WHERE (it is evaluated after WHERE), which is why the filter is on an outer query. The txn_id tie-breaker prevents two same-day rows from both claiming rn = 1.</div>
+    <table>
+      <tr><th>Function</th><th>What it answers</th><th>On this dataset</th></tr>
+      <tr><td><code>ROW_NUMBER()</code></td><td>A unique sequence per partition: the latest row, de-duplication keeping one</td><td>The newest transaction per account (above)</td></tr>
+      <tr><td><code>RANK()</code> and <code>DENSE_RANK()</code></td><td>Ranking with ties: RANK leaves gaps after ties, DENSE_RANK does not</td><td>Ranking accounts by balance: Harlow 1, Dana's savings 2, Dana's checking 3, Victor 4</td></tr>
+      <tr><td><code>LAG(x)</code> and <code>LEAD(x)</code></td><td>The previous or next row's value: gaps, elapsed time, change since last row</td><td>Days since the previous transaction on account 1: NULL, 1, 1, 1</td></tr>
+      <tr><td><code>SUM() OVER</code>, <code>AVG() OVER</code></td><td>Running totals and moving averages</td><td>The running balance (above)</td></tr>
+      <tr><td><code>NTILE(n)</code>, <code>FIRST_VALUE</code>, <code>LAST_VALUE</code></td><td>Quartiles; the first or last value in the frame (note LAST_VALUE needs an explicit full frame to return the partition's last row)</td><td>Bucketing accounts by balance</td></tr>
+    </table>
+    <p>The business use that matters operationally is elapsed time between events, and <code>LAG</code> answers it directly: how long did each step of <code>AM-10417</code> take? That query is in 11.13 against the case history.</p>
+    <h3>Frames: ROWS against RANGE, and why ties matter</h3>
+    <p>The running balance in 11.6 relied on a tie-breaker, and the reason is the window frame. <code>SUM(...) OVER (ORDER BY posted_on)</code> uses by default a <code>RANGE</code> frame, which treats rows with the same <code>posted_on</code> as peers and gives all of them the same running total. Suppose two transactions posted on the same day on one account.</p>
+    <div class="flow">-- POSTGRESQL (illustrative extra rows on one account, same posted_on)
+ txn | posted_on  | amount
+-----+------------+--------
+  a  | 2026-03-04 | 100.00
+  b  | 2026-03-04 | -30.00
+
+SELECT txn, SUM(amount) OVER (ORDER BY posted_on)                                                       AS range_default,
+            SUM(amount) OVER (ORDER BY posted_on, txn ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)  AS rows_frame
+FROM t;
+
+ txn | range_default | rows_frame
+-----+---------------+------------
+  a  |         70.00 |     100.00
+  b  |         70.00 |      70.00
+
+WHY: with RANGE the two same-day rows are peers, so each shows the total including both (70.00). With ROWS and a unique ordering, each row shows the balance after exactly that row. A statement needs the second; always order by a unique tiebreaker and use ROWS.</div>
+    <h3>Correlated subquery against join</h3>
+    <p>A correlated subquery refers to the outer row and is conceptually run once per outer row. <em>Which accounts have an active hold larger than their latest transaction's absolute amount?</em> can be written correlated, but the same logic reads better as a join to a pre-aggregated or windowed set, and the optimiser plans joins and <code>EXISTS</code> more reliably than correlated scalar subqueries. The rule of thumb is to use <code>EXISTS</code> or <code>NOT EXISTS</code> for presence tests and a join to an aggregated CTE for comparisons, and to read a correlated scalar subquery in a hot query as a candidate for rewrite.</p>
+    <h3>Set operations, with a reconciliation use</h3>
+    <div class="flow">-- POSTGRESQL: accounts that have transactions but have never had any hold (EXCEPT keeps rows in the first set and not the second)
+SELECT account_id FROM transactions
+EXCEPT
+SELECT account_id FROM holds
+ORDER BY account_id;
+
+ account_id
+------------
+          4
+
+WHY CORRECT: accounts 1, 2 and 3 each appear in holds (one released), so only Harlow's account 4 has transactions and no hold, ever. UNION removes duplicates and UNION ALL keeps them (faster, and the right default); INTERSECT keeps rows in both;
+EXCEPT is a compact way to say "in the file but not in the ledger" during reconciliation. (Oracle calls it MINUS.)</div>
+  </section>
+
+  <section id="s11-7" class="pagebreak">
+    <h2>11.7 A snapshot arrives twice, and late: upsert and MERGE</h2>
+    <p><strong>Business question.</strong> Chapter 07 loaded the 07:30 balance file, and Chapter 06's <code>EVT-55121</code> carried the 09:40 settlement. Both write to the same summary row for <code>CHK-8842-0117</code>. How should the summary be written so that it holds the newest balance whether events arrive in order, twice, or late? The statement for "insert if absent, update if present" is an <strong>upsert</strong>, and the guard that makes it safe for snapshots is the as-of comparison from Chapter 06 §6.3.</p>
+    <div class="flow">-- POSTGRESQL
+CREATE TABLE balance_snapshot (
+    account_number   VARCHAR(17) PRIMARY KEY,
+    ledger_balance   NUMERIC(14,2) NOT NULL,
+    available        NUMERIC(14,2) NOT NULL,
+    as_of            TIMESTAMPTZ   NOT NULL
+);
+
+-- the upsert (PostgreSQL idiom): needs a unique key to arbitrate; the WHERE makes it a latest-wins guard, legal for full-state snapshots only
+INSERT INTO balance_snapshot (account_number, ledger_balance, available, as_of)
+VALUES ('CHK-8842-0117', 4418.55, 4218.55, '2026-03-09 07:30:00+00')
+ON CONFLICT (account_number) DO UPDATE
+   SET ledger_balance = EXCLUDED.ledger_balance,
+       available      = EXCLUDED.available,
+       as_of          = EXCLUDED.as_of
+ WHERE EXCLUDED.as_of &gt; balance_snapshot.as_of;
+
+-- 1. the 07:30 file row arrives first:       INSERT 0 1      row: 4418.55 / 4218.55 / 07:30
+-- 2. EVT-55121 (09:40) arrives:              same statement with 4218.55, 4218.55, '2026-03-09 09:40:00+00'      INSERT 0 1      row: 4218.55 / 4218.55 / 09:40
+-- 3. the 07:30 row is delivered AGAIN, late: same statement as step 1                                              INSERT 0 0      row unchanged: 4218.55 / 4218.55 / 09:40
+
+ account_number | ledger_balance | available |         as_of
+----------------+----------------+-----------+------------------------
+ CHK-8842-0117  |        4218.55 |   4218.55 | 2026-03-09 09:40:00+00
+
+WHY CORRECT: ON CONFLICT names the key that decides "already present". On a conflict, DO UPDATE runs only if its WHERE is true; in step 3 EXCLUDED.as_of (07:30) is not greater than the stored 09:40,
+so nothing changes and the command reports 0 rows affected. The write is idempotent (repeating step 2 changes nothing) and order-independent for snapshots.
+THE LIMIT: this guard is wrong for deltas. A table of debits cannot be written with "latest wins", because every debit is independently meaningful (Chapter 06 §6.3).</div>
+    <p>The same intent is written differently by dialect, and the two must never be blended. PostgreSQL 15 and later also supports the standard <code>MERGE</code>; SQL Server has had it far longer.</p>
+    <div class="flow">-- POSTGRESQL 15+ (MERGE)
+MERGE INTO balance_snapshot t
+USING (VALUES ('CHK-8842-0117', 4218.55, 4218.55, TIMESTAMPTZ '2026-03-09 09:40:00+00')) AS s(account_number, ledger_balance, available, as_of)
+   ON t.account_number = s.account_number
+WHEN MATCHED AND s.as_of &gt; t.as_of THEN
+     UPDATE SET ledger_balance = s.ledger_balance, available = s.available, as_of = s.as_of
+WHEN NOT MATCHED THEN
+     INSERT (account_number, ledger_balance, available, as_of) VALUES (s.account_number, s.ledger_balance, s.available, s.as_of);
+
+-- SQL SERVER (T-SQL)
+MERGE balance_snapshot AS t
+USING (VALUES ('CHK-8842-0117', 4218.55, 4218.55, CAST('2026-03-09T09:40:00Z' AS datetimeoffset))) AS s(account_number, ledger_balance, available, as_of)
+   ON t.account_number = s.account_number
+WHEN MATCHED AND s.as_of &gt; t.as_of THEN
+     UPDATE SET t.ledger_balance = s.ledger_balance, t.available = s.available, t.as_of = s.as_of
+WHEN NOT MATCHED THEN
+     INSERT (account_number, ledger_balance, available, as_of) VALUES (s.account_number, s.ledger_balance, s.available, s.as_of);   -- the semicolon is mandatory</div>
+    <p>Two failure modes apply to both. A statement whose source contains <em>duplicate keys</em> fails differently: SQL Server <code>MERGE</code> raises an error if a target row matches more than one source row, and PostgreSQL <code>ON CONFLICT DO UPDATE</code> cannot affect the same row twice in one command, so the staged set is de-duplicated by key (keeping the newest as-of) first. And both need a unique key to arbitrate concurrency: without it, two sessions can both decide "absent" and both insert. Table and column names cannot be bound parameters, so dynamic SQL for a metadata-driven loader (Chapter 05 §5.8) takes identifiers from an allow-list, quoted with <code>format('%I', name)</code> in PostgreSQL and <code>QUOTENAME()</code> in SQL Server, and values only as bind parameters.</p>
+    <p>For the file's 14,207 rows the same mechanics apply at volume: rows are bulk-loaded to staging (<code>COPY</code> in PostgreSQL, <code>BULK INSERT</code> or <code>bcp</code> in SQL Server), de-duplicated, then upserted in one set-based statement per chunk. The bulk load is not failure-free: NOT NULL, CHECK, unique and foreign-key violations, type conversion and encoding can all reject rows or the batch, depending on the load method and transaction scope.</p>
+  </section>
+
+  <section id="s11-7b" class="pagebreak">
+    <h2>11.7b Set-based against row-by-row: the staging pattern, with numbers</h2>
+    <p>Chapter 05 §5.8 described staging then one MERGE per chunk. The reason is a way of thinking, and this dataset shows it. <strong>Business question.</strong> The 07:30 file carries 14,207 balance rows; how should they reach the summary table? The row-by-row answer is the one an application loop writes naturally: for each row, read the current row, compare, and update or insert.</p>
+    <div class="flow">ROW-BY-ROW (the application loop)                               SET-BASED (staging, then one statement per chunk)
+ for each of 14,207 rows:                                       1 bulk-load all rows into a staging table (COPY / batch insert, ~29 chunks of 500)
+    SELECT current row                 -&gt; 1 round trip          2 validate and reject in the database (one UPDATE ... WHERE for each rule)
+    compare as_of                                               3 de-duplicate by key, keeping the newest as_of
+    UPDATE or INSERT                   -&gt; 1 round trip          4 one upsert statement per chunk (11.7)
+ = about 28,400 round trips and 14,207 transactions            5 reconcile counts: staged = applied + rejected + failed
+   (a commit per row, or one huge transaction)                  = about 60 statements, each handling hundreds of rows
+ At an illustrative 1 ms per round trip: ~28 s of waiting      At the same illustrative cost: well under a second of waiting, and the work runs inside the
+ before any database work is done, and one failure mid-loop    database next to the data. A failed chunk is retried or isolated without redoing the rest.
+ leaves a half-applied file with no clean restart point.</div>
+    <p>The set-based path has four concrete steps, each a query on the staging table, and each is checkable.</p>
+    <div class="flow">-- POSTGRESQL
+CREATE TABLE stg_balance_rows (
+    stg_id          BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    file_id         INTEGER       NOT NULL,
+    line_no         INTEGER       NOT NULL,
+    account_number  TEXT,
+    ledger_balance  TEXT,                          -- raw text on purpose: parsing happens in SQL, where a bad value becomes a reject and not an abort
+    available       TEXT,
+    as_of           TEXT,
+    row_status      TEXT NOT NULL DEFAULT 'NEW',   -- NEW, VALID, REJECTED, APPLIED
+    reject_reason   TEXT
+);
+
+-- 1. validate: mark rows that cannot be applied, with the reason (one UPDATE per rule)
+UPDATE stg_balance_rows SET row_status = 'REJECTED', reject_reason = 'BALANCE_NOT_NUMERIC'
+WHERE  file_id = 42 AND row_status = 'NEW' AND ledger_balance !~ '^-?[0-9]+(\.[0-9]{1,2})?$';
+
+UPDATE stg_balance_rows SET row_status = 'REJECTED', reject_reason = 'UNKNOWN_ACCOUNT'
+WHERE  file_id = 42 AND row_status = 'NEW' AND account_number NOT IN (SELECT account_number FROM accounts);
+
+UPDATE stg_balance_rows SET row_status = 'VALID' WHERE file_id = 42 AND row_status = 'NEW';
+
+-- 2. the count that must tie out before anything is applied
+SELECT row_status, count(*) FROM stg_balance_rows WHERE file_id = 42 GROUP BY row_status ORDER BY row_status;
+
+ row_status | count
+------------+-------
+ REJECTED   |     6
+ VALID      | 14201
+
+-- 3. de-duplicate (keep the newest as_of per account), then one upsert per chunk using the guarded INSERT ... ON CONFLICT of 11.7
+-- 4. final reconciliation: 14,207 staged = 14,199 applied + 6 rejected + 2 failed (the figures of Chapter 07 §7.10)
+
+WHY CORRECT: business-rule rejection moved into the database as set-based UPDATEs, so a bad row is a counted, reasoned reject and the batch continues. The bulk load itself is not failure-free (constraints, type
+conversion, encoding and partial failure can all reject rows or the batch), which is why the staging columns are text and the checks are explicit rather than assumed.</div>
+    <p>The principle to carry out of this section is that the database is good at doing one operation to many rows and poor at being asked a question per row over a network. The same reasoning applies to Pega's own design: a Report Definition or Connect-SQL statement that selects, joins and aggregates in the database beats an activity that opens each case in a loop (Chapter 06 §6.8, where removing per-item round trips was the largest lever), and a data flow that stages and merges beats thousands of <code>Obj-Save</code> calls.</p>
+  </section>
+
+  <section id="s11-8" class="pagebreak">
+    <h2>11.8 Marcus and Priya touch Dana's row: transactions, isolation, MVCC and the lost update</h2>
+    <p>Everything so far read data. Now two people write to it, and the interesting failures only appear with two sessions. Session <strong>M</strong> is Marcus and session <strong>P</strong> is Priya, both working on Dana's checking summary row (<code>balances</code>, account 1, ledger $4,418.55). A <strong>transaction</strong> groups statements so they take effect together or not at all (atomicity), leave the database valid (consistency), do not see each other's partial work to a degree set by the isolation level (isolation), and survive a crash once committed because the write-ahead log is flushed (durability).</p>
+    <table>
+      <tr><th>Property</th><th>Meaning</th><th>Deposits example</th></tr>
+      <tr><td>Atomicity</td><td>All of a transaction's statements take effect or none do</td><td>Debit one account and credit another: never only one</td></tr>
+      <tr><td>Consistency</td><td>The database moves from one valid state to another, respecting constraints</td><td>A hold cannot reference a missing account (foreign key); an amount is never negative (check)</td></tr>
+      <tr><td>Isolation</td><td>Concurrent transactions do not see each other's partial work, to a degree set by the isolation level</td><td>A balance report does not show a half-posted transfer</td></tr>
+      <tr><td>Durability</td><td>A committed change survives a crash (the write-ahead log is flushed)</td><td>A committed hold is not lost in a restart</td></tr>
+    </table>
+    <div class="flow">-- POSTGRESQL: an explicit transaction, a transfer between Dana's two accounts with an overdraft guard
+BEGIN;
+UPDATE balances SET ledger_balance = ledger_balance - 500, row_version = row_version + 1 WHERE account_id = 1 AND ledger_balance &gt;= 500;   -- atomic check-and-update, no separate SELECT
+-- the application checks rows affected = 1; if 0, ROLLBACK (insufficient funds)
+UPDATE balances SET ledger_balance = ledger_balance + 500, row_version = row_version + 1 WHERE account_id = 2;
+INSERT INTO transactions VALUES (11,1,'2026-03-09',-500.00,'XFER'), (12,2,'2026-03-09',500.00,'XFER');
+COMMIT;                                       -- all of it or none of it
+-- SQL SERVER: BEGIN TRANSACTION ... COMMIT TRANSACTION; check @@ROWCOUNT; SET XACT_ABORT ON.</div>
+    <p><strong>The lost update.</strong> Marcus applies a $25.00 fee and Priya a $10.00 adjustment, and each, being careful, reads the balance first and writes back a value they computed.</p>
+    <table>
+      <tr><th>Time</th><th>Session M (Marcus)</th><th>Session P (Priya)</th><th>Row value</th></tr>
+      <tr><td>t1</td><td><code>SELECT ledger_balance</code> returns 4418.55</td><td></td><td>4418.55</td></tr>
+      <tr><td>t2</td><td></td><td><code>SELECT ledger_balance</code> returns 4418.55</td><td>4418.55</td></tr>
+      <tr><td>t3</td><td><code>UPDATE ... SET ledger_balance = 4393.55</code>; <code>COMMIT</code></td><td></td><td>4393.55</td></tr>
+      <tr><td>t4</td><td></td><td><code>UPDATE ... SET ledger_balance = 4428.55</code>; <code>COMMIT</code></td><td><strong>4428.55</strong></td></tr>
+    </table>
+    <p>The correct final balance is 4418.55 - 25.00 + 10.00 = <strong>4403.55</strong>. Priya's write used a value computed from a stale read and silently overwrote Marcus's, so his $25.00 fee has vanished with no error. This is the lost update, and nothing about READ COMMITTED prevents it, because each session's statements were individually correct. The fix is to let the database do the arithmetic inside one statement.</p>
+    <div class="flow">-- POSTGRESQL: THE ATOMIC UPDATE (safe at READ COMMITTED)
+-- Session M:
+UPDATE balances SET ledger_balance = ledger_balance - 25.00, row_version = row_version + 1 WHERE account_id = 1;   -- takes the row lock
+-- Session P (runs while M's transaction is still open): the same statement with + 10.00 BLOCKS on the row lock until M commits,
+-- then re-evaluates "ledger_balance + 10.00" against the newly committed value (4393.55):
+COMMIT;   -- M
+-- P resumes:  4393.55 + 10.00 = 4403.55   -&gt; final 4403.55, whichever session goes first
+
+-- OVERDRAFT GUARD WITHOUT A SEPARATE SELECT: check and update in one statement
+UPDATE balances SET ledger_balance = ledger_balance - :amt WHERE account_id = :id AND ledger_balance &gt;= :amt;   -- check rows affected = 1, else ROLLBACK (insufficient funds)
+
+-- OPTIMISTIC ALTERNATIVE (the model of Chapter 01 §1.11): carry the version you read
+UPDATE balances SET ledger_balance = :new, row_version = row_version + 1 WHERE account_id = 1 AND row_version = :seen;
+-- 0 rows updated means someone changed it since you read: reload and retry
+-- SQL SERVER: BEGIN TRANSACTION ... COMMIT TRANSACTION; check @@ROWCOUNT; SET XACT_ABORT ON so any error rolls back the whole transaction.</div>
+    <p>When the logic needs more than one statement, the options are pessimistic or optimistic. <code>SELECT ... FOR UPDATE</code> locks the rows read, so a second session's <code>FOR UPDATE</code> or <code>UPDATE</code> waits until the first commits: it serialises the read-modify-write at the price of waiting. The version-column check above never waits and lets the loser retry. A <strong>write skew</strong> is the subtler cousin: two sessions each read overlapping data, make disjoint writes based on what they read, and together break an invariant neither breaks alone. If the rule is that active holds on an account may not exceed its balance, and each of two sessions checks that a new $600 hold fits a $1,000 balance with no existing holds, both pass and the total is $1,200. The fixes are to lock the parent row first (<code>SELECT ... FROM balances WHERE account_id = :id FOR UPDATE</code>, then sum holds, then insert), to use <code>SERIALIZABLE</code> and retry on failure, or to let a unique constraint arbitrate (an idempotency key on holds prevents two holds for one request regardless of timing).</p>
+    <table>
+      <tr><th>Anomaly</th><th>Definition</th><th>Deposits illustration</th></tr>
+      <tr><td>Dirty read</td><td>Reading another transaction's uncommitted change</td><td>A report shows a hold that is then rolled back</td></tr>
+      <tr><td>Non-repeatable read</td><td>Reading the same row twice in a transaction and getting different committed values</td><td>The balance read at the start of an approval differs when read again after another posting commits</td></tr>
+      <tr><td>Phantom read</td><td>A range query re-run in one transaction returns a different set of rows</td><td>The count of active holds changes because another session inserted one</td></tr>
+      <tr><td>Lost update</td><td>Two sessions read, compute and write, and the second overwrites the first</td><td>The fee and adjustment above</td></tr>
+      <tr><td>Write skew</td><td>Disjoint writes based on overlapping reads together violate an invariant</td><td>Two $600 holds against a $1,000 balance</td></tr>
+    </table>
+    <table>
+      <tr><th>Level</th><th>Prevents</th><th>PostgreSQL</th><th>SQL Server</th></tr>
+      <tr><td>READ UNCOMMITTED</td><td>Nothing in the standard</td><td>Accepted but treated as READ COMMITTED: PostgreSQL never allows dirty reads</td><td>Allows dirty reads (the NOLOCK hint); avoid for financial data</td></tr>
+      <tr><td>READ COMMITTED (default in both)</td><td>Dirty reads</td><td>Each <em>statement</em> sees a snapshot of data committed before it began; readers never block writers; an atomic <code>x = x - n</code> is safe</td><td>Default uses shared locks released immediately, so readers can block on writers; with <code>READ_COMMITTED_SNAPSHOT</code> it behaves like row versioning</td></tr>
+      <tr><td>REPEATABLE READ</td><td>Dirty and non-repeatable reads</td><td>The whole <em>transaction</em> sees one snapshot taken at its first statement; phantoms are also prevented; a second updater of the same row gets a serialization failure (40001) and must retry; write skew still possible</td><td>Holds shared locks until commit: prevents non-repeatable reads, phantoms possible, more blocking</td></tr>
+      <tr><td>SERIALIZABLE</td><td>All of the above, including write skew</td><td>Serializable Snapshot Isolation: detects dangerous patterns and aborts one transaction with 40001; the application must retry</td><td>Range locks: heavy blocking and deadlocks; SNAPSHOT isolation is the alternative</td></tr>
+    </table>
+    <p>The standard defines levels by the anomalies they allow, but products implement them differently, so the answer always names the database. PostgreSQL has effectively three levels and uses MVCC snapshots; SQL Server's default is locking at read committed.</p>
+    <h3>Isolation levels, one by one, on Dana's row</h3>
+    <p>The levels are defined by what each permits, and each is easiest to see as two sessions on the same row. Dana's summary row (<code>balances</code>, account 1) holds 4418.55. Session M (Marcus) changes it; session P (Priya) reads it.</p>
+    <div class="flow">READ COMMITTED (the default in both products): a NON-REPEATABLE READ is possible
+ P: BEGIN;                                       -- default isolation: each statement sees what was committed before THAT statement began
+ P: SELECT ledger_balance FROM balances WHERE account_id = 1;       -&gt; 4418.55
+ M: UPDATE balances SET ledger_balance = ledger_balance - 25.00 WHERE account_id = 1;  COMMIT;
+ P: SELECT ledger_balance FROM balances WHERE account_id = 1;       -&gt; 4393.55      (the same query in one transaction, a different answer)
+ P: COMMIT;
+ A PHANTOM is the same thing for a set of rows: P counts ACTIVE holds on account 1 (1), M inserts and commits a hold, P counts again and gets 2.
+ No DIRTY READ ever happens in PostgreSQL, because P never sees M's change before M commits.
+
+REPEATABLE READ: one snapshot for the whole transaction
+ P: BEGIN ISOLATION LEVEL REPEATABLE READ;
+ P: SELECT ledger_balance FROM balances WHERE account_id = 1;       -&gt; 4418.55      (snapshot taken here)
+ M: UPDATE ... - 25.00;  COMMIT;
+ P: SELECT ledger_balance FROM balances WHERE account_id = 1;       -&gt; 4418.55      (still: the snapshot does not move; phantoms are prevented too)
+ P: UPDATE balances SET ledger_balance = ledger_balance + 10.00 WHERE account_id = 1;
+    ERROR:  could not serialize access due to concurrent update       (SQLSTATE 40001)
+ -&gt; P cannot overwrite a row that changed after its snapshot; it must ROLLBACK and retry the whole transaction, which then reads 4393.55 and applies +10.00 = 4403.55.
+    This is how REPEATABLE READ prevents the lost update that READ COMMITTED permits with read-modify-write.
+
+SERIALIZABLE: even WRITE SKEW is prevented
+ Rule: active holds on an account must not exceed its ledger balance (4418.55; there is already one 200.00 hold).
+ M: BEGIN ISOLATION LEVEL SERIALIZABLE; SELECT sum(amount) FROM holds WHERE account_id = 1 AND status = 'ACTIVE';   -&gt; 200.00   -- 200 + 3000 &lt;= 4418.55, so insert
+ P: BEGIN ISOLATION LEVEL SERIALIZABLE; SELECT sum(amount) FROM holds WHERE account_id = 1 AND status = 'ACTIVE';   -&gt; 200.00   -- same reasoning
+ M: INSERT INTO holds VALUES (4,1,'LEGAL',3000.00,'ACTIVE','LO-9001');  COMMIT;   -- ok
+ P: INSERT INTO holds VALUES (5,1,'LEGAL',3000.00,'ACTIVE','LO-9002');  COMMIT;
+    ERROR:  could not serialize access due to read/write dependencies among transactions     (SQLSTATE 40001)
+ -&gt; the two transactions each read what the other wrote, which no serial order could produce; PostgreSQL aborts one and the application retries it (and then sees 3,200.00 and refuses).
+    At READ COMMITTED or REPEATABLE READ both inserts succeed and the account carries 6,200.00 of holds against a 4,418.55 balance. (The order numbers LO-9001 and LO-9002 are placeholders for this demonstration.)</div>
+    <p>The practical rules that follow: READ COMMITTED with atomic statements is the default and sufficient for most work; REPEATABLE READ gives a stable snapshot for a report that must be internally consistent and turns a lost update into a retryable error; SERIALIZABLE protects invariants that span several rows at the price of retries, so every transaction at that level must be wrapped in retry logic for SQLSTATE 40001. SQL Server behaves differently at each level, as the table shows: its default READ COMMITTED uses locks and blocks readers behind writers unless row versioning (<code>READ_COMMITTED_SNAPSHOT</code>) is enabled, and its SERIALIZABLE uses range locks, which block and deadlock far more than PostgreSQL's detection-based approach.</p>
+    <div class="flow">MVCC TIMELINE: Dana's balance row, PostgreSQL
+   t0  tuple v1: balance 4418.55   xmin=T10 (committed)   xmax=-
+   t1  Session M: BEGIN (T20); UPDATE balance = 4393.55  -&gt; writes tuple v2 (xmin=T20) and marks v1 xmax=T20   (uncommitted)
+   t2  Session P: SELECT balance  -&gt; its snapshot predates T20's commit -&gt; sees v1 = 4418.55  (no blocking, no dirty read)
+   t3  Session M: COMMIT
+   t4  Session P (READ COMMITTED): the next statement takes a new snapshot -&gt; sees v2 = 4393.55
+       Session P (REPEATABLE READ): the same transaction keeps seeing 4418.55 until it ends
+   t5  VACUUM later reclaims v1 (a dead tuple) once no snapshot can still see it
+   CONSEQUENCES: readers do not block writers and writers do not block readers; two writers to the SAME row do block each other (a row lock);
+                 dead tuples accumulate and need VACUUM (11.11); long-running transactions keep old versions alive and cause bloat</div>
+    <p>Multi-version concurrency control means an update never overwrites a row in place: it writes a new version (a tuple) and marks the old one ended, each tuple recording the transaction that created it (<code>xmin</code>) and the one that superseded it (<code>xmax</code>). A snapshot is the list of transactions committed at a point in time, and a query sees only tuple versions created inside its snapshot and not superseded within it. The mistakes to avoid are reading a balance, computing in the application and writing back an absolute value, relying on READ COMMITTED for multi-row invariants, assuming SERIALIZABLE never fails (it aborts and the application retries), NOLOCK or READ UNCOMMITTED for balances, and transactions that span user think time.</p>
+  </section>
+
+  <section id="s11-9" class="pagebreak">
+    <h2>11.9 Locks, deadlocks, and the Pega commit: a case lock is not a row lock</h2>
+    <p>Row locking is how the blocked statement in 11.8 waited. <code>SELECT ... FOR UPDATE</code> locks the selected rows against update, delete and other <code>FOR UPDATE</code>; <code>FOR NO KEY UPDATE</code> is weaker (it allows concurrent foreign-key checks, and is what a plain <code>UPDATE</code> takes); <code>FOR SHARE</code> and <code>FOR KEY SHARE</code> block modification while allowing other readers; <code>NOWAIT</code> fails immediately if a row is locked instead of waiting; and <code>SKIP LOCKED</code> skips rows locked by others, which is how many workers claim distinct batches without blocking. Table-level locks matter for DDL: <code>ACCESS EXCLUSIVE</code>, taken by many DDL commands, blocks all access, and a DDL statement queues behind long transactions and then blocks everyone queued behind it, which is why DDL on a busy table is dangerous.</p>
+    <div class="flow">-- POSTGRESQL: QUEUE-CLAIM PATTERN WITH SKIP LOCKED (many workers take distinct batches without blocking or double-processing)
+WITH batch AS (
+   SELECT stg_id
+   FROM   stg_balance_rows
+   WHERE  file_id = 42 AND row_status = 'VALID'
+          AND (claimed_at IS NULL OR claimed_at &lt; now() - interval '10 minutes')   -- a dead worker's claim becomes recoverable
+   ORDER  BY stg_id
+   LIMIT  500
+   FOR UPDATE SKIP LOCKED
+)
+UPDATE stg_balance_rows s SET claimed_at = now()
+FROM   batch WHERE s.stg_id = batch.stg_id
+RETURNING s.stg_id, s.account_number, s.ledger_balance;
+-- SQL SERVER: SELECT TOP (500) ... FROM stg_balance_rows WITH (UPDLOCK, ROWLOCK, READPAST) ...</div>
+    <p><strong>Two kinds of lock, two lifetimes.</strong> While Marcus has <code>AM-10417</code> open in his screen, Pega holds a <em>case lock</em> for him: a logical lock in a lock table, with its own timeout, that stops Priya modifying the case (she can open it read-only) for as long as he holds the screen, which can be minutes. A database <em>row lock</em> is held only for the duration of a database transaction, in milliseconds. They have different lifetimes, timeouts and failure modes, and confusing them leads to wrong diagnoses: a case lock explains "the case is locked by mreed", and a row lock explains a blocked statement in <code>pg_stat_activity</code>. The two also interact with saving. A Pega <code>Obj-Save</code> does not necessarily write immediately: the save is held pending until a commit (an explicit commit, or the platform's commit at the end of the interaction or unit of work), and a "write now" option writes within the open transaction. Until commit, the change is a <em>deferred save</em>: invisible to other sessions and to SQL run by anyone else, and rollback-able.</p>
+    <table>
+      <tr><th>Situation</th><th>What Priya sees from SQL or the UI</th><th>Why</th></tr>
+      <tr><td>Marcus has the case open (case lock), no save yet</td><td>The case opens read-only for Priya; a SQL read shows the last committed values</td><td>The case lock is a logical lock with a timeout; nothing has been written</td></tr>
+      <tr><td>Marcus saves; the change is deferred, no commit yet</td><td>SQL and other sessions still see the old values</td><td>A deferred save is pending in the requestor, not yet written or committed</td></tr>
+      <tr><td>The commit happens (at the unit-of-work boundary)</td><td>The change becomes visible; row locks taken by the write are released</td><td>Committed data is visible to later statements under MVCC</td></tr>
+      <tr><td>Marcus's save is written but a slow connector call runs before commit</td><td>Priya's statement on the same row blocks on the database row lock for the whole network wait</td><td>Locks are held until commit: a remote call inside the transaction turns a slow partner into a platform stall</td></tr>
+    </table>
+    <div class="flow">DANGEROUS ORDER                                       SAFE ORDER (outbox style, Chapter 05 §5.9)
+ 1 Obj-Open case (lock)                                1 call the connector FIRST (no locks held) or queue it
+ 2 Obj-Save status = 'Pending'  (write pending/locks)  2 Obj-Open case (lock), Obj-Save outcome, queue item, Commit -- short, local
+ 3 Connect-REST to core  (waits up to 10 s ...)        3 slow work happens in a Queue Processor without a case lock
+ 4 Obj-Save result, Commit                             Keep the unit of work: lock, change, commit in milliseconds.
+ During step 3 every session needing that row waits; if the core is down, every attempt waits the full timeout while holding locks.
+ The exact semantics of Pega's save, commit and deferred write depend on the release and how the requestor and activity are configured: find the commit boundary and verify with Tracer and database tooling in a lower environment.</div>
+    <p><strong>Deadlock.</strong> A deadlock is a cycle of waits, and Dana's two accounts produce one easily. Marcus transfers $100 from checking (account 1) to savings (account 2) while Priya, at the same moment, transfers $50 from savings to checking.</p>
+    <table>
+      <tr><th>Time</th><th>Session M: 1 to 2</th><th>Session P: 2 to 1</th></tr>
+      <tr><td>t1</td><td><code>UPDATE balances ... WHERE account_id = 1</code> (locks row 1)</td><td><code>UPDATE balances ... WHERE account_id = 2</code> (locks row 2)</td></tr>
+      <tr><td>t2</td><td><code>UPDATE balances ... WHERE account_id = 2</code> WAITS for P</td><td><code>UPDATE balances ... WHERE account_id = 1</code> WAITS for M</td></tr>
+      <tr><td>t3</td><td colspan="2">After <code>deadlock_timeout</code> (default one second) PostgreSQL finds the cycle and aborts one session: <code>ERROR: deadlock detected</code> (SQLSTATE 40P01); SQL Server reports error 1205, "chosen as the deadlock victim". The other proceeds; the victim has rolled back and must retry</td></tr>
+    </table>
+    <div class="flow">-- POSTGRESQL: FIX 1, CONSISTENT LOCK ORDERING (always lock the lower account_id first, whatever the business direction)
+SELECT account_id FROM balances WHERE account_id IN (1,2) ORDER BY account_id FOR UPDATE;
+-- then apply both updates: M and P now queue instead of crossing
+-- FIX 2 keep transactions short (no remote calls or user waits between the first lock and commit)   FIX 3 take all needed locks in one statement
+-- FIX 4 retry on 40P01 and 40001 with a small randomised delay and bounded attempts                  FIX 5 reduce contention (chunks, avoid one hot counter row, index foreign keys)
+-- FIX 6 set lock_timeout and statement_timeout so a stuck wait fails instead of hanging
+-- SQL SERVER: with locking read committed, readers can also deadlock; enabling row versioning (RCSI) removes many reader-writer deadlocks.</div>
+    <h3>Diagnosing a deadlock from the error output</h3>
+    <p>Lock ordering is the prevention; the diagnosis starts from what the database logged. For the transfer deadlock above, PostgreSQL's server log contains this (process IDs and transaction IDs vary).</p>
+    <div class="flow">ERROR:  deadlock detected
+DETAIL:  Process 4121 waits for ShareLock on transaction 90311; blocked by process 4130.
+         Process 4130 waits for ShareLock on transaction 90310; blocked by process 4121.
+         Process 4121: UPDATE balances SET ledger_balance = ledger_balance + 100.00 WHERE account_id = 2
+         Process 4130: UPDATE balances SET ledger_balance = ledger_balance + 50.00 WHERE account_id = 1
+HINT:  See server log for query details.
+CONTEXT:  while updating tuple (0,2) in relation "balances"
+
+READING IT
+ 1 two processes, each "waits for ... blocked by" the other: that is the cycle (4121 -&gt; 4130 -&gt; 4121); a longer cycle lists more processes
+ 2 "ShareLock on transaction N" means the process is waiting for transaction N to finish: it is waiting on a row that transaction has locked
+ 3 the two statements show the crossing order: 4121 is updating account 2 (having already locked account 1 earlier in its transaction); 4130 is updating account 1 (having locked account 2)
+ 4 "tuple ... in relation balances" names the table, so the hot rows are the account rows in `balances`
+ 5 only the statement that triggered detection is shown here: the EARLIER statements in each transaction (the ones that took the first locks) come from application logs or from log_statement
+FIX AND PROVE: lock in a consistent order (11.9), then replay the two transfers concurrently in a lower environment and confirm the error no longer occurs; keep the retry for 40P01 as a safety net.
+
+LIVE WAITS (before anything is aborted): who is blocked by whom
+SELECT pid, pg_blocking_pids(pid) AS blocked_by, wait_event_type, wait_event, state, left(query, 80) AS query
+FROM   pg_stat_activity WHERE cardinality(pg_blocking_pids(pid)) &gt; 0;
+
+SQL SERVER: error 1205 "Transaction (Process ID n) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction."
+ The deadlock graph (from Extended Events or the system_health session) names the victim, lists each process with its input buffer (the statement), and the resources (keys or pages) each holds and waits for;
+ reading it is the same exercise: find the cycle, then the two statements, then the crossing lock order. Row versioning (RCSI) removes many reader-writer deadlocks.</div>
+    <p>A long-running transaction does damage beyond waiting. Its row locks are held until commit and others queue behind them; the connection is unavailable to others, so a pool can be exhausted; replication cleanup is delayed and replica queries can conflict; a failure after hours rolls back hours of work; and very old transactions delay freezing of transaction IDs, a rare but serious PostgreSQL maintenance risk. The vacuum effect has a precise qualifier: a long-running transaction holding an <em>old snapshot</em> holds back the xmin horizon, so vacuum cannot remove dead tuples newer than it and tables and indexes bloat. <code>idle in transaction</code> is the dangerous state; a plain idle connection with no open transaction does not hold the horizon back.</p>
+    <div class="flow">-- POSTGRESQL: FIND LONG TRANSACTIONS AND BLOCKERS (read-only diagnostics)
+SELECT a.pid, a.usename, a.state, now() - a.xact_start AS xact_age, now() - a.state_change AS idle_for,
+       pg_blocking_pids(a.pid) AS blocked_by, left(a.query, 120) AS query
+FROM   pg_stat_activity a
+WHERE  a.datname = current_database() AND a.xact_start IS NOT NULL
+ORDER  BY xact_age DESC
+LIMIT  20;
+
+-- WHO IS WAITING ON WHOM
+SELECT w.pid AS waiting_pid, left(w.query,80) AS waiting_query, b.pid AS blocking_pid, left(b.query,80) AS blocking_query, b.state
+FROM   pg_stat_activity w
+JOIN   LATERAL unnest(pg_blocking_pids(w.pid)) AS bp(pid) ON true
+JOIN   pg_stat_activity b ON b.pid = bp.pid;
+
+-- GUARDRAILS (set per role or database by the DBA): idle_in_transaction_session_timeout, statement_timeout, lock_timeout
+-- SQL SERVER: sys.dm_exec_requests (blocking_session_id), sys.dm_tran_locks, and the deadlock graph from Extended Events.</div>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Priya reports that she cannot edit <code>AM-10417</code> and the screen says it is locked by <code>mreed</code>. A colleague checks <code>pg_stat_activity</code> and finds no blocked statements and no long transaction. Is something broken?</p>
+      <p><strong>Answer.</strong> No: that combination is exactly what a Pega case lock looks like. The case lock is a logical lock held for Marcus's requestor while his screen is open, and it holds no database row lock, so the database shows nothing. The fix is to ask Marcus to close or save the case, or to wait for the lock timeout, or for a supervisor to release a stale lock through the controlled procedure. This diagnosis would be wrong if Marcus's save had been written but not committed behind a slow connector call, in which case the database would show a long transaction and a blocked statement; the two look different in <code>pg_stat_activity</code>, which is the point of distinguishing them.</p></div>
+  </section>
+
+  <section id="s11-10" class="pagebreak">
+    <h2>11.10 One slow query, one index: indexing in depth and reading EXPLAIN ANALYZE</h2>
+    <p>A ten-row table cannot show a plan problem, so this section scales the problem up and labels it. Suppose <code>transactions</code> holds five million rows and Priya's dashboard runs the statement below, which asks for one account's recent activity. The plan numbers are illustrative of a typical shape and are not measurements.</p>
+    <div class="dont"><strong><code>EXPLAIN ANALYZE</code> executes the statement.</strong> That includes <code>UPDATE</code>, <code>DELETE</code> and <code>INSERT</code>: the rows really change. Wrap data-changing statements in <code>BEGIN; EXPLAIN ANALYZE ...; ROLLBACK;</code>, or use plain <code>EXPLAIN</code>, and try it in a lower environment first. Plain <code>EXPLAIN</code> shows the plan the optimiser intends to use, with estimates; <code>EXPLAIN (ANALYZE, BUFFERS)</code> runs it and shows actual time, actual rows and buffer use.</div>
+    <div class="flow">-- POSTGRESQL: BEFORE (illustrative plan; only the primary key is indexed)
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT txn_id, posted_on, amount FROM transactions WHERE account_id = 1 AND posted_on &gt;= DATE '2026-03-01';
+
+ Gather  (cost=1000.00..71840.22 rows=18 width=18) (actual time=1.9..411.7 rows=4 loops=1)
+   Workers Planned: 2   Workers Launched: 2
+   -&gt;  Parallel Seq Scan on transactions  (cost=0.00..70838.42 rows=8 width=18) (actual time=205.0..409.1 rows=1 loops=3)
+         Filter: ((account_id = 1) AND (posted_on &gt;= '2026-03-01'::date))
+         Rows Removed by Filter: 1666666
+         Buffers: shared hit=1204 read=26710
+ Planning Time: 0.2 ms
+ Execution Time: 412.8 ms
+
+-- THE CHANGE: one composite index, equality column first, range column second
+CREATE INDEX CONCURRENTLY ix_txn_account_posted ON transactions (account_id, posted_on);
+
+-- AFTER
+ Index Scan using ix_txn_account_posted on transactions  (cost=0.43..8.58 rows=4 width=18) (actual time=0.03..0.05 rows=4 loops=1)
+   Index Cond: ((account_id = 1) AND (posted_on &gt;= '2026-03-01'::date))
+   Buffers: shared hit=5
+ Planning Time: 0.1 ms
+ Execution Time: 0.09 ms</div>
+    <p>How to read it. A plan is a tree read from the innermost node outward, each node showing an estimated <code>cost</code> and <code>rows</code> and, with ANALYZE, <code>actual time</code> and <code>rows</code> (per loop: multiply by <code>loops</code> when it is above one); a node's time includes its children. In the before plan, the <code>Parallel Seq Scan</code> reads every page, <code>Rows Removed by Filter: 1,666,666</code> per worker is the tell (it read five million rows to keep four), and <code>read=26710</code> buffers show disk I/O. After the index, the engine seeks to account 1 and reads a contiguous range of recent rows, touching five buffers. The access path changed from reading all the data to seeking the few rows wanted.</p>
+    <h3>What an index is, and what it costs</h3>
+    <p>An index is a separate, sorted structure mapping column values to row locations, so the database can find rows without reading the whole table, as a book's index avoids reading every page. It speeds reads and taxes writes: every insert, delete and update of an indexed column must also maintain each index, and indexes occupy storage and memory. Indexes are therefore added for a measured query, not speculatively, and unused ones are removed (<code>pg_stat_user_indexes.idx_scan = 0</code> over a representative period). A table with fifteen indexes ingests slowly.</p>
+    <table>
+      <tr><th>Index type (PostgreSQL)</th><th>Good for</th><th>Deposits example</th><th>SQL Server analogue</th></tr>
+      <tr><td>B-tree (default)</td><td>Equality, range, sorting, <code>ORDER BY</code>, prefix <code>LIKE 'abc%'</code></td><td><code>ix_txn_account_posted (account_id, posted_on)</code></td><td>Non-clustered B-tree; the clustered index defines physical order (PostgreSQL has no automatically maintained clustered index; <code>CLUSTER</code> is a one-time reorder)</td></tr>
+      <tr><td>Hash</td><td>Equality only</td><td>Rarely better than B-tree; crash-safe since PostgreSQL 10</td><td>Memory-optimised hash indexes</td></tr>
+      <tr><td>GIN</td><td>Containment in multi-valued data: JSONB, arrays, full-text search</td><td>Searching event payloads (<code>payload @&gt; '{"reasonCode":"R01"}'</code>)</td><td>Full-text and JSON indexing differ</td></tr>
+      <tr><td>GiST / SP-GiST</td><td>Ranges, geometry, nearest-neighbour</td><td>Overlapping hold validity periods (range types)</td><td>Spatial indexes</td></tr>
+      <tr><td>BRIN</td><td>Very large tables whose physical order correlates with the column</td><td><code>posted_at</code> on a multi-hundred-million-row append-only ledger: a tiny, coarse but cheap index</td><td>No direct equivalent</td></tr>
+      <tr><td>Partial index</td><td>Only rows matching a predicate</td><td><code>ix_holds_active ON holds (account_id) WHERE status = 'ACTIVE'</code>: small, and exactly the hot query</td><td>Filtered index</td></tr>
+      <tr><td>Expression index</td><td>The result of an expression</td><td><code>CREATE INDEX ON customers (lower(full_name))</code> for <code>WHERE lower(full_name) = ...</code></td><td>Computed column plus index</td></tr>
+      <tr><td>Covering index (<code>INCLUDE</code>, PostgreSQL 11+)</td><td>Non-key columns carried in the index so a query is answered from it alone</td><td><code>(account_id, posted_on) INCLUDE (amount)</code></td><td><code>INCLUDE</code> columns in non-clustered indexes</td></tr>
+      <tr><td>Unique index</td><td>Enforces uniqueness (what unique constraints create)</td><td>Business keys: <code>account_number</code></td><td>Same</td></tr>
+    </table>
+    <h3>Designing a composite index</h3>
+    <p>The <strong>leftmost-prefix rule</strong>: an index on <code>(account_id, posted_on)</code> serves filters on <code>account_id</code> alone or on both, and does not efficiently serve a filter on <code>posted_on</code> alone, because the entries are sorted by account first. <strong>Equality columns come first, the range column last</strong>: <code>WHERE account_id = 1 AND posted_on &gt;= ...</code> matches <code>(account_id, posted_on)</code>, and the reverse order would scan a wide date range across every account. <strong>Selectivity</strong> decides whether an index helps at all: it must narrow the search to a small fraction of the table, so a column with four values (<code>status</code>) is a poor index by itself, and works as a partial index or as a trailing column. An index that returns rows <strong>already sorted</strong> avoids a sort: <code>(account_id, posted_on DESC)</code> answers "latest transactions for this account" directly. <strong>Foreign key columns</strong> on the child side are indexed, since without them joins and parent deletes scan the child. And indexes are designed from the actual predicates, joins and sorts (Chapter 03 §3.3 for Pega Report Definitions).</p>
+    <div class="flow">-- POSTGRESQL: A COVERING INDEX AND AN INDEX-ONLY SCAN (illustrative plan)
+CREATE INDEX ix_txn_acct_posted_amt ON transactions (account_id, posted_on) INCLUDE (amount);
+EXPLAIN (ANALYZE, BUFFERS) SELECT posted_on, amount FROM transactions WHERE account_id = 1 AND posted_on &gt;= DATE '2026-03-01';
+
+ Index Only Scan using ix_txn_acct_posted_amt on transactions  (cost=0.43..4.50 rows=4 width=14) (actual time=0.02..0.03 rows=4 loops=1)
+   Index Cond: ((account_id = 1) AND (posted_on &gt;= '2026-03-01'::date))
+   Heap Fetches: 0
+   Buffers: shared hit=3
+
+WHY IT IMPROVES AGAIN: the query needs only posted_on and amount, both stored in the index, so the table is never visited ("Heap Fetches: 0"). A high Heap Fetches count on an Index Only Scan means the visibility map is stale and VACUUM is needed.
+THE PRICE: a wider index, more write cost and more memory; a covering index is for a hot, narrow query, not a default.
+
+-- A PARTIAL INDEX FOR THE HOT QUERY ON HOLDS
+CREATE INDEX ix_holds_active ON holds (account_id) WHERE status = 'ACTIVE';
+-- used by:  SELECT sum(amount) FROM holds WHERE account_id = 1 AND status = 'ACTIVE';  The index holds only active holds, so it stays small while released holds accumulate.</div>
+    <h3>Why an index is not used</h3>
+    <table>
+      <tr><th>Non-sargable form</th><th>Why it fails</th><th>Sargable rewrite</th></tr>
+      <tr><td><code>WHERE posted_at::date = '2026-03-09'</code></td><td>A function applied to the column: the index on <code>posted_at</code> cannot be used</td><td><code>WHERE posted_at &gt;= '2026-03-09' AND posted_at &lt; '2026-03-10'</code></td></tr>
+      <tr><td><code>WHERE lower(full_name) = 'dana whitfield'</code></td><td>An index on <code>full_name</code> does not match the expression</td><td>Create an expression index, or store a normalised column</td></tr>
+      <tr><td><code>WHERE account_number = 100000001</code> (number against text)</td><td>An implicit cast of the column disables the index</td><td>Compare text to text, and keep identifiers consistently typed in Pega-to-database mappings</td></tr>
+      <tr><td><code>WHERE full_name LIKE '%whitfield'</code></td><td>A leading wildcard needs a scan</td><td>A trigram index (<code>pg_trgm</code>) with GIN or GiST if search is required</td></tr>
+      <tr><td><code>WHERE status &lt;&gt; 'CLOSED'</code> on a mostly active table</td><td>Not selective</td><td>A partial index, or restate positively</td></tr>
+      <tr><td><code>WHERE a = 1 OR b = 2</code></td><td>May need a bitmap OR of two indexes or fall back to a scan</td><td>Index both columns, or <code>UNION ALL</code> two queries</td></tr>
+      <tr><td><code>WHERE amount + 10 &gt; 100</code></td><td>Arithmetic on the column</td><td><code>WHERE amount &gt; 90</code></td></tr>
+    </table>
+    <p>An index is also legitimately ignored when it would not help: on a small table, or where the filter returns a large fraction of the rows, the planner correctly prefers a sequential scan, because reading everything once is cheaper than thousands of random index lookups. Dana's ten-row dataset always scans, and that is right.</p>
+    <h3>Scan types and join algorithms</h3>
+    <table>
+      <tr><th>Scan</th><th>When the planner chooses it</th><th>Warning signs</th></tr>
+      <tr><td>Seq Scan</td><td>A small table, or a large fraction of rows needed, or no usable index</td><td>A large "Rows Removed by Filter" on a big table; many "read" buffers</td></tr>
+      <tr><td>Index Scan</td><td>A selective predicate; rows needed in index order</td><td>Many loops with random heap access can be slower than a bitmap</td></tr>
+      <tr><td>Bitmap Heap (with Bitmap Index) Scan</td><td>Medium selectivity; combining several indexes (BitmapOr, BitmapAnd); it visits each page once in physical order</td><td>"Heap Blocks: lossy" means the bitmap exceeded memory (<code>work_mem</code>)</td></tr>
+      <tr><td>Index Only Scan</td><td>The query's columns are fully covered by the index</td><td>A high "Heap Fetches" means a stale visibility map</td></tr>
+    </table>
+    <table>
+      <tr><th>Join algorithm</th><th>How it works</th><th>Best when</th><th>Warning signs</th></tr>
+      <tr><td>Nested Loop</td><td>For each outer row, probe the inner input (ideally an index lookup)</td><td>The outer side is small and the inner side indexed on the join key</td><td>A large outer side with <code>loops=</code> in the hundreds of thousands, or an inner Seq Scan repeated per row (catastrophic)</td></tr>
+      <tr><td>Hash Join</td><td>Build a hash table from the smaller input, probe it with the larger</td><td>Large inputs, an equality join, no useful sort order or index</td><td>"Batches: &gt; 1" and a spill to disk when the hash does not fit <code>work_mem</code>; a hash built on the larger side because estimates were wrong</td></tr>
+      <tr><td>Merge Join</td><td>Sort both inputs on the join key and merge</td><td>Inputs already sorted (by index order) or very large equal-sized sets</td><td>Explicit sorts of huge inputs; "external merge" on disk</td></tr>
+    </table>
+    <h3>Estimated against actual rows: the stale-statistics signal</h3>
+    <p>The optimiser chooses plans from estimates derived from table statistics (sampled value distributions in <code>pg_stats</code>). If estimates and actual rows differ by orders of magnitude, the plan was chosen on a false premise, and this is the single most useful thing to look for. A common cause is a bulk load that the statistics have not yet caught up with.</p>
+    <div class="flow">-- STALE STATISTICS (illustrative): after bulk-loading 3 million rows into a staging table, ANALYZE has not yet run
+Nested Loop  (cost=0.43..120.5 rows=2 width=64) (actual time=0.05..48210.0 rows=2950000 loops=1)
+  -&gt;  Seq Scan on file_registry f  (cost=0..1.1 rows=1 width=16) (actual time=0.01..0.02 rows=1 loops=1)
+  -&gt;  Index Scan using ix_stg_status on stg_balance_rows s  (cost=0.43..119.0 rows=2 width=48) (actual time=0.02..41.0 rows=2950000 loops=1)
+        Index Cond: ((file_id = f.file_id) AND (row_status = 'NEW'::text))
+
+SIGNAL: estimated rows = 2, actual rows = 2,950,000 (a factor of about 1.5 million). The planner believed the file had almost no rows, chose a nested loop with random index access, and took 48 seconds instead of about 3.
+FIXES: run ANALYZE on the staging table at the end of the bulk-load step; raise default_statistics_target for skewed columns (ALTER TABLE ... ALTER COLUMN ... SET STATISTICS 500);
+       CREATE STATISTICS on correlated columns; lower the autovacuum analyze scale factor on large hot tables; ANALYZE a temporary set before joining it.
+SQL SERVER: the same idea with UPDATE STATISTICS; compare estimated and actual rows in the actual plan; parameter sniffing is the related plan-reuse problem.</div>
+    <table>
+      <tr><th>Plan symptom</th><th>Likely cause</th><th>Action</th></tr>
+      <tr><td>Estimated rows far below actual</td><td>Stale or missing statistics; correlated predicates</td><td><code>ANALYZE</code>; extended statistics; a higher statistics target</td></tr>
+      <tr><td>Estimated rows far above actual</td><td>Stale statistics after deletes; skew</td><td><code>ANALYZE</code></td></tr>
+      <tr><td>Seq Scan with huge "Rows Removed by Filter"</td><td>A missing index or a non-sargable predicate</td><td>Add or fix the index; rewrite the predicate</td></tr>
+      <tr><td>Nested Loop with a large outer side and Seq Scan inner</td><td>A missing index on the join key; bad estimates</td><td>Index the join key; fix statistics</td></tr>
+      <tr><td>Sort or Hash "external merge" or "Batches &gt; 1"</td><td>Not enough <code>work_mem</code> for the operation</td><td>Reduce data earlier; raise <code>work_mem</code> for that query or role (careful: it is per operation per session)</td></tr>
+      <tr><td>High "Heap Fetches" on an Index Only Scan</td><td>The visibility map is not current</td><td><code>VACUUM</code></td></tr>
+      <tr><td>Many "read" buffers against "hit"</td><td>The working set is not in cache; a cold start</td><td>Touch fewer pages with better indexes; memory sizing with the DBA</td></tr>
+      <tr><td>Planning time larger than execution</td><td>Many partitions or complex joins</td><td>Prepared statements; reduce complexity</td></tr>
+      <tr><td>The plan differs between environments</td><td>Different data volume or statistics</td><td>Test with production-like data volume (Chapter 06 §6.8)</td></tr>
+    </table>
+    <p><code>CREATE INDEX CONCURRENTLY</code> builds without blocking writes, at the cost of a slower build, and cannot run inside a transaction block; a plain <code>CREATE INDEX</code> blocks writes. The same method applies to the Pega case: a Report Definition filtering on an unexposed column forces a scan of the BLOB-heavy table, and exposing and indexing the column is the same change as above (Chapter 03 §3.3, Chapter 10 §10.13).</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>A developer adds <code>CREATE INDEX ON transactions (posted_on)</code> to speed the dashboard query that filters on <code>account_id = 1 AND posted_on &gt;= '2026-03-01'</code>. The plan still shows a sequential scan. What are the possible reasons?</p>
+      <p><strong>Answer.</strong> The query filters first on <code>account_id</code>, which is not in the new index, so the index narrows only by date; if recent dates cover a large share of the table, the planner correctly prefers a sequential scan. The better index is <code>(account_id, posted_on)</code>, with the equality column first. Other possible causes are stale statistics making the planner misjudge the date range, and a function or cast on the column that disables the index. The way to tell is to compare estimated and actual rows in <code>EXPLAIN (ANALYZE, BUFFERS)</code> and check the filter's selectivity, rather than adding indexes until one works.</p></div>
+  </section>
+
+  <section id="s11-11" class="pagebreak">
+    <h2>11.11 What keeps the table healthy: vacuum, bloat, partitioning and pooling</h2>
+    <p>Because MVCC writes new row versions (11.8), updated and deleted rows leave dead tuples that nothing can see and that must be reclaimed. <strong>VACUUM</strong> marks their space reusable and updates the visibility map and free-space map; autovacuum runs automatically when dead tuples exceed a threshold (a base number plus a fraction of the table, by default about 20 per cent); and <code>ANALYZE</code> refreshes the statistics the optimiser plans with. Bloat is the accumulation of dead space when vacuum cannot keep up or is blocked, and the precise cause of the most serious kind is the one from 11.9: a long-running transaction holding an old snapshot keeps the xmin horizon back, so dead tuples newer than it cannot be removed, tables and indexes grow and queries slow. An idle connection with no open transaction does not do that; <code>idle in transaction</code> does.</p>
+    <table>
+      <tr><th>Term</th><th>Meaning and action</th></tr>
+      <tr><td>Dead tuples</td><td>Obsolete row versions, visible in <code>pg_stat_user_tables.n_dead_tup</code></td></tr>
+      <tr><td>Table bloat</td><td>Table files larger than the live data needs because dead space is not reclaimed fast enough or never returned to the operating system; scans slow down and caches are less efficient</td></tr>
+      <tr><td>Index bloat</td><td>Indexes with many dead entries or half-empty pages; fixed with <code>REINDEX CONCURRENTLY</code> (PostgreSQL 12+)</td></tr>
+      <tr><td>VACUUM (plain)</td><td>Non-blocking; reclaims space for reuse inside the table; runs concurrently with reads and writes</td></tr>
+      <tr><td>VACUUM FULL</td><td>Rewrites the whole table and takes an <code>ACCESS EXCLUSIVE</code> lock for the duration, blocking all access: avoided on live tables, with extensions such as <code>pg_repack</code> or planned windows instead</td></tr>
+      <tr><td>Autovacuum tuning for large hot tables</td><td>The default 20 per cent threshold on a 500-million-row table means 100 million dead tuples before vacuum starts: lower <code>autovacuum_vacuum_scale_factor</code> (for example to 0.01) per table and raise cost limits so it keeps up</td></tr>
+      <tr><td>HOT updates and fillfactor</td><td>An update that changes no indexed column and fits in the same page avoids index churn: leave free space with a lower <code>fillfactor</code> on frequently updated tables (for example 85 to 90)</td></tr>
+      <tr><td>Transaction ID wraparound</td><td>Transaction IDs are 32-bit and must be frozen, which autovacuum does; neglecting vacuum, or a very old open transaction, can force an emergency shutdown to protect data. Monitor <code>age(datfrozenxid)</code></td></tr>
+    </table>
+    <div class="flow">-- POSTGRESQL: BLOAT AND VACUUM HEALTH (read-only)
+SELECT relname, n_live_tup, n_dead_tup,
+       round(100.0 * n_dead_tup / NULLIF(n_live_tup + n_dead_tup, 0), 1) AS dead_pct, last_autovacuum, last_autoanalyze
+FROM   pg_stat_user_tables ORDER BY n_dead_tup DESC LIMIT 15;
+
+-- a per-table autovacuum override for a huge, frequently updated staging table (DBA-approved)
+ALTER TABLE stg_balance_rows SET (autovacuum_vacuum_scale_factor = 0.01, autovacuum_analyze_scale_factor = 0.005, fillfactor = 85);
+-- SQL SERVER analogue: index REORGANIZE or REBUILD for fragmentation, UPDATE STATISTICS; row-version cleanup is automatic in tempdb.</div>
+    <p><strong>Partitioning</strong> splits one logical table into physical partitions by range, list or hash; the optimiser skips irrelevant partitions (partition pruning), and old data is removed instantly by dropping a partition instead of a huge <code>DELETE</code> that creates dead tuples and bloat. A ledger partitioned by month makes retention a metadata operation.</p>
+    <div class="flow">-- POSTGRESQL (10+ declarative partitioning): range-partition the ledger by month
+CREATE TABLE transactions_p (
+    txn_id     BIGINT GENERATED ALWAYS AS IDENTITY,
+    account_id BIGINT        NOT NULL,
+    posted_at  TIMESTAMPTZ   NOT NULL,
+    amount     NUMERIC(14,2) NOT NULL,
+    txn_type   TEXT          NOT NULL,
+    PRIMARY KEY (txn_id, posted_at)             -- a primary or unique key MUST include the partition key
+) PARTITION BY RANGE (posted_at);
+CREATE TABLE transactions_p_2026_03 PARTITION OF transactions_p FOR VALUES FROM ('2026-03-01') TO ('2026-04-01');
+CREATE INDEX ON transactions_p (account_id, posted_at);       -- created on each partition
+
+-- retention: detach and archive or drop a whole month in milliseconds
+ALTER TABLE transactions_p DETACH PARTITION transactions_p_2019_03;   -- then archive, then DROP TABLE
+-- SQL SERVER: partition functions and schemes, with SWITCH PARTITION for the same effect.</div>
+    <table>
+      <tr><th>Benefit</th><th>Cost and caution</th></tr>
+      <tr><td>Pruning: queries with the partition key scan only relevant partitions</td><td>Queries without the key scan all partitions; planning is slower with hundreds of partitions</td></tr>
+      <tr><td>Fast retention (drop or detach a partition)</td><td>Unique constraints must include the partition key; foreign keys to and from partitioned tables have limits by version</td></tr>
+      <tr><td>Smaller indexes and vacuum units</td><td>Partition creation must be automated (a scheduler creates next month's partition)</td></tr>
+      <tr><td>A good fit: ledger, history, audit, logs, ACH detail</td><td>Not for small tables; in a Pega database, partitioning large history and audit tables is a DBA-led decision with Pega's support position checked first, since the application does not know about partitions</td></tr>
+    </table>
+    <p><strong>Connection pooling.</strong> Each PostgreSQL connection is a server process with memory, and thousands of connections degrade performance, so a pool reuses a limited number. The application pool (the JDBC pool in each Pega node's data source) means total demand is nodes times pool size, which must stay below <code>max_connections</code> with headroom for administration and jobs, interactive and background nodes both counting. An external pooler such as PgBouncer multiplexes many client connections onto few server connections, but transaction-pooling mode breaks session state (session-level settings, <code>SET</code> commands, advisory locks and some prepared-statement use), so compatibility with Pega's use of the connection is verified first. A sizing rule of thumb is active connections near the core count times two to four for CPU-bound work, since more connections do not increase throughput past saturation, and queueing in the pool is better than thrashing in the database. The symptoms of exhaustion are threads waiting for a connection and "unable to get connection" errors across many requests, usually caused by long transactions or a slow query holding connections, not by a pool that is too small (Chapter 10 §10.9). The failures to avoid are <code>VACUUM FULL</code> on a live table, disabling autovacuum "to improve performance", deleting a year of history in one statement instead of dropping partitions, raising <code>max_connections</code> instead of fixing long transactions, and a per-node pool sized without counting nodes.</p>
+  </section>
+
+  <section id="s11-12" class="pagebreak">
+    <h2>11.12 The Pega database</h2>
+    <p>Chapter 10's incident ended in the physical table behind a Pega work class, and this section describes what a support engineer or DBA sees there. The conventions below are the long-standing ones; exact table and column names vary by release, schema and how a client maps its own classes, so a name is verified in the target database and in the Database Table instances before it is quoted. PostgreSQL folds unquoted names to lower case, so the property <code>pyStatusWork</code> appears as the column <code>pystatuswork</code>.</p>
+    <table>
+      <tr><th>Family</th><th>Typical prefix or pattern</th><th>Contents</th></tr>
+      <tr><td>Rule tables</td><td><code>pr4_rule_*</code> (one per rule family)</td><td>The rules as rows, with exposed columns for name, class, ruleset and version and a BLOB (<code>pzPVStream</code>) holding the definition, in the <strong>rules schema</strong></td></tr>
+      <tr><td>Work and assignment tables</td><td><code>pc_work</code> (or a mapped work table per class group), <code>pc_assign_worklist</code>, <code>pc_assign_workbasket</code></td><td>Cases and assignments (worklist for an operator, workbasket for a queue), each with key columns, status, urgency, timestamps, the exposed columns you chose, and the BLOB</td></tr>
+      <tr><td>History and audit tables</td><td><code>pc_history_*</code>, attachment link tables</td><td>Case history, field audit, attachment links; usually the largest tables</td></tr>
+      <tr><td>System tables</td><td><code>pr_sys_*</code>, <code>pr_*</code></td><td>Internal state: locks, queue and scheduling information, requestor and node information</td></tr>
+      <tr><td>Index tables</td><td><code>pr_index_*</code> or client-named tables from <code>Index-</code> classes</td><td>Rows maintained by Declare Index rules for page-list elements</td></tr>
+      <tr><td>Your own tables</td><td>Client-defined</td><td>Staging, file registry, reconciliation, reference data accessed by Connect-SQL or mapped as data classes</td></tr>
+    </table>
+    <table>
+      <tr><th>Concept</th><th>What it is</th><th>Why it matters</th></tr>
+      <tr><td>Database instances (commonly one for the rules, one for the data)</td><td>Pega records that point to JDBC data sources (the rules and data database instances)</td><td>They define which physical database or schema a class's table lives in, which allows the split schema below</td></tr>
+      <tr><td>Database Table instance</td><td>A record that maps a class (or class group) to a physical table, naming the schema, table and key columns</td><td>It is how <code>FCB-Dep-Work</code> cases land in a work table; changing it changes where Pega reads and writes</td></tr>
+      <tr><td>Split schema</td><td>Rules in one schema (changed only by deployments), runtime data in another (changed by the application)</td><td>Regulated environments run the application as a data-schema user that cannot change rules or run DDL; deployments use a separate privileged user; the DBA approves schema scripts</td></tr>
+      <tr><td>Application runtime database user</td><td>The account the nodes use</td><td>Least privilege: no DDL in production if policy requires; Pega generates DDL scripts for the DBA to run</td></tr>
+    </table>
+    <p>Pega maps classes to tables through <em>Database Table</em> instances, pointing at <em>database instances</em> that name the JDBC data sources, and regulated environments often use a <strong>split schema</strong>: rules in one schema changed only by deployments, runtime data in another, with the application's runtime user unable to run DDL and Pega generating scripts for the DBA to review. A case row looks like this physically.</p>
+    <div class="flow">PHYSICAL ROW IN A PEGA WORK TABLE (illustrative columns; see Chapter 03 §3.3 for design)
+  pzinskey            : 'FCB-DEP-WORK AM-10417'                 primary key
+  pxobjclass          : 'FCB-Dep-Work-AccountMaintenance'
+  pyid                : 'AM-10417'
+  pystatuswork        : 'Resolved-Completed'                    exposed (the column name equals the property name; Pega maps a property to a column with the matching name)
+  pxcreatedatetime    : 2026-03-02 08:40:00+00                  system columns
+  pxupdatedatetime    : 2026-03-03 11:30:00+00
+  account_number      : 'CHK-8842-0117'                         exposed business property (you chose to expose it)
+  pzpvstream          : bytea  ~ 18 KB compressed               the BLOB: the page tree (page lists, embedded pages, unexposed properties), serialised and compressed
+  SQL CAN filter, sort, index and join on the exposed columns.  SQL CANNOT see inside pzpvstream (opaque compressed binary).
+  Pega reads the BLOB to rebuild the case on open; it writes BOTH the BLOB and the exposed columns on every save.</div>
+    <p>Pega stores a BLOB for flexibility (a new property needs no schema change, and any page structure saves in one row) and for speed (one row read rebuilds the whole case). The consequence for SQL work is that selection, reporting and batch queries use exposed columns or Declare Index tables, and that <code>SELECT *</code> on a case table drags the BLOB across the network for every row and is never used. To expose a property, decide the property and class, use the property optimisation tool in Dev Studio (labelled approximately "Optimize for reporting"), which proposes the column and type and either alters the table or produces DDL; in regulated environments hand the generated script to the DBA through change control; backfill existing rows, which are NULL until re-saved; index the column if it will be filtered or joined; and confirm the Report Definition's generated SQL uses it in <code>WHERE</code> and <code>ORDER BY</code>. Each exposed column adds write cost on every save, so the list is a deliberate design artefact reviewed with the DBA. A Declare Index maintains index-table rows (for example one per signer) joined back to the case by key; rows written by direct SQL, or cases saved before the rule existed, are missing, and reindexing is a controlled, heavy operation.</p>
+    <table>
+      <tr><th>Option</th><th>What it is</th><th>Use when</th></tr>
+      <tr><td>Report Definition</td><td>A Pega rule that generates SQL against mapped classes; declarative, privilege-secured; limited SQL features and reliant on exposed, indexed columns</td><td>Standard case, assignment and data reporting</td></tr>
+      <tr><td>Connect-SQL</td><td>Hand-written SQL against a configured database; full SQL power and bind parameters; bypasses class security; you own performance and injection safety; dialect-specific</td><td>Staging, reconciliation, set-based and external databases (Chapter 05 §5.8)</td></tr>
+      <tr><td>Database view</td><td>A DBA-created view mapped to a class for read access; complex joins in the database; not updatable through Pega; schema changes need database change control</td><td>Heavy analytical reporting a Report Definition cannot express</td></tr>
+      <tr><td>Warehouse or replica</td><td>A reporting copy outside the transactional database; no load on it, with latency and separate security</td><td>Management information at scale</td></tr>
+    </table>
+    <p>Direct DDL and DML on Pega tables is dangerous for reasons specific to how Pega works. Pega caches table metadata in node memory and maps properties to columns by name, so a hand-dropped or renamed exposed column breaks saves and reports and nodes can disagree until caches refresh; generated DDL keeps names and types matching. An <code>UPDATE</code> of an exposed column in SQL to fix a status is the classic mistake, with a qualifier that must be stated precisely: for a <em>BLOB-backed</em> class, Pega treats the BLOB as authoritative when the case opens, so the UI shows the old value, the next save overwrites the SQL change from the BLOB, and no history, declarative rules, SLA recalculation, audit trail or index maintenance occurs. Not every class is BLOB-backed (external or mapped classes and Pega-managed system tables), so this has exceptions, and the rule is to verify the storage of the class in question before any direct change. <code>DELETE</code> from work, assignment or history tables orphans assignments, history and index rows and destroys audit evidence. Long DDL on a live case table takes <code>ACCESS EXCLUSIVE</code> locks, queues behind long transactions and stalls every session behind it, so it is done in a window with <code>lock_timeout</code> set, with online-safe forms (adding a nullable column without a default is quick; a volatile default or a type change rewrites the table) and <code>CREATE INDEX CONCURRENTLY</code>. And reports run directly on production case tables at peak compete with the application: use a replica or off-peak windows, read-only and with a limit.</p>
+    <div class="flow">THE SAFE ROUTE FOR PEGA DATA CORRECTIONS
+   needs data fixed (for example 400 cases with a wrong exposed value)?
+     1 First choice: use Pega itself: a Queue Processor activity or a Data Flow that opens, corrects and saves each case (BLOB + columns + history + declaratives stay consistent),
+                      through the controlled replay/requeue tooling with audit (Chapter 06 §6.11)
+     2 Only for non-Pega tables (staging, reconciliation): SQL under change control, dual control, a backup or rollback script prepared, run with row-count checks inside a transaction
+     3 Never: UPDATE/DELETE on pc_work-style tables to "fix" cases; if there is no alternative, the DBA and Pega support agree a documented procedure that also updates the BLOB
+              through Pega (or marks the cases for re-save), and the data change is recorded as evidence.</div>
+  </section>
+
+  <section id="s11-13" class="pagebreak">
+    <h2>11.13 Operational SQL for support</h2>
+    <p>Three questions a support engineer or an auditor actually asks of this dataset show the pattern. <strong>First: did anyone approve their own work?</strong> The control of Chapter 10 §10.4 is "target zero", and the detection query is the daily proof. The input rows are the five history rows of <code>AM-10417</code>.</p>
+    <div class="flow">-- POSTGRESQL: segregation-of-duties detection (maker and checker the same person on one case)
+SELECT case_id, actor
+FROM   case_history
+WHERE  action IN ('SUBMIT','APPROVE')
+GROUP  BY case_id, actor
+HAVING COUNT(DISTINCT action) = 2;
+
+ case_id | actor
+---------+-------
+(0 rows)
+
+WHY CORRECT: mreed only submitted and praman only approved, so no actor has both actions on the same case; zero rows is the healthy result. If an actor had both, they would appear. A zero is only meaningful if the query is known to be able to return a row: test it once against a seeded violation.</div>
+    <p><strong>Second: how long did each step take?</strong> Elapsed time between consecutive events is a <code>LAG</code> over the case's history.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT action, actor, at_ts,
+       at_ts - LAG(at_ts) OVER (PARTITION BY case_id ORDER BY at_ts) AS since_previous
+FROM   case_history
+WHERE  case_id = 'AM-10417'
+ORDER  BY at_ts;
+
+  action  | actor  |        at_ts        | since_previous
+----------+--------+---------------------+----------------
+ CREATE   | portal | 2026-03-02 08:40:00 |
+ SUBMIT   | mreed  | 2026-03-02 10:15:00 | 01:35:00
+ REJECT   | praman | 2026-03-02 15:20:00 | 05:05:00
+ SUBMIT   | mreed  | 2026-03-03 09:10:00 | 17:50:00
+ APPROVE  | praman | 2026-03-03 11:30:00 | 02:20:00
+
+WHY CORRECT: LAG looks one row back within the partition (this case) in time order, so each row subtracts the previous event's time; the first has no previous row, so NULL. The 17:50:00 between Priya's
+rejection on Monday afternoon and Marcus's resubmission on Tuesday morning is mostly overnight, which is why SLA clocks use business time (Chapter 02).</div>
+    <p><strong>Third: does the summary table still agree with the ledger?</strong> Reconciliation compares a maintained copy with the source of truth, and it should return nothing.</p>
+    <div class="flow">-- POSTGRESQL
+SELECT a.account_number, b.ledger_balance AS summary, SUM(t.amount) AS from_ledger, b.ledger_balance - SUM(t.amount) AS difference
+FROM   balances b
+JOIN   accounts a     ON a.account_id = b.account_id
+JOIN   transactions t ON t.account_id = b.account_id
+GROUP  BY a.account_number, b.ledger_balance
+HAVING b.ledger_balance &lt;&gt; SUM(t.amount);
+
+ account_number | summary | from_ledger | difference
+----------------+---------+-------------+------------
+(0 rows)
+
+WHY CORRECT: every account's summary matches its transactions (4418.55, 12040.00, 2310.40, 58900.00). After the lost update in 11.8, the summary would be 4428.55 against a ledger of 4418.55 plus the unrecorded fee and adjustment,
+and this query would return that account: the reconciliation catches the silent error that no exception reported.</div>
+    <h3>The reconciliation pattern: core end-of-day against the Pega side</h3>
+    <p>The third query above compared a copy with its source inside one database. The reconciliation that Chapter 12 and Chapter 13 depend on compares two <em>systems</em>: the core's end-of-day balances, which arrive as a file and are staged (Chapter 07), against the Pega-side balances. The result is not a yes or a no but a list of breaks, each with a type, because each type has a different owner and a different cure. <strong>Business question.</strong> For business date 6 March, where does the core disagree with the summary table? The input rows are the four Pega-side balances and a staged core file with five rows, including one the Pega side has never heard of.</p>
+    <div class="flow">-- POSTGRESQL
+CREATE TABLE core_eod (account_number VARCHAR(17) PRIMARY KEY, ledger_balance NUMERIC(14,2) NOT NULL, business_date DATE NOT NULL);
+INSERT INTO core_eod VALUES
+ ('CHK-8842-0117', 4418.55,'2026-03-06'), ('SAV-8842-0233',12040.00,'2026-03-06'),
+ ('CHK-8842-0719', 2810.40,'2026-03-06'), ('CHK-8842-1055',58900.00,'2026-03-06'),
+ ('CHK-8842-0888',  150.00,'2026-03-06');
+
+SELECT * FROM (
+    SELECT COALESCE(c.account_number, p.account_number) AS account_number,
+           c.ledger_balance AS core_balance, p.ledger_balance AS pega_balance,
+           c.ledger_balance - p.ledger_balance AS difference,
+           CASE WHEN p.account_number IS NULL THEN 'MISSING_IN_PEGA'
+                WHEN c.account_number IS NULL THEN 'MISSING_IN_CORE'
+                ELSE 'AMOUNT_DIFFERS' END AS break_type
+    FROM   core_eod c FULL JOIN (SELECT a.account_number, b.ledger_balance FROM balances b JOIN accounts a ON a.account_id = b.account_id) p
+           ON p.account_number = c.account_number
+) x
+WHERE  core_balance IS DISTINCT FROM pega_balance
+ORDER  BY account_number;
+
+ account_number | core_balance | pega_balance | difference |   break_type
+----------------+--------------+--------------+------------+-----------------
+ CHK-8842-0719  |      2810.40 |      2310.40 |     500.00 | AMOUNT_DIFFERS
+ CHK-8842-0888  |       150.00 |              |            | MISSING_IN_PEGA
+
+WHY CORRECT: a FULL OUTER JOIN keeps rows present on only one side, so the two failure shapes that an inner join would hide (an account the core has and Pega does not, and the reverse) become rows with a NULL on one side. IS DISTINCT FROM is the null-safe
+inequality, so a missing balance counts as a difference; a plain &lt;&gt; would drop those rows (11.3). The three matching accounts produce no output. Victor's 500.00 difference is a candidate timing break: compare it with the holds and
+transactions around the business date before raising a case.</div>
+    <p>The query is one set-based statement over the staged file, so it runs in the same way for 14,207 rows or fourteen million, and it follows the staging pattern of 11.7b: load, validate, then compare in the database. A break then flows through its own lifecycle. Breaks are classified (amount differs, missing on either side, duplicate, timing), a tolerance and a timing window are applied (a difference explained by an item in flight on the business date is not yet a break), each remaining break becomes a case with an owner and an age, aged breaks escalate, and write-offs need approval and dual control (Chapter 10 §10.4). The controls around reconciliation are that the reconciliation is itself reconciled (the count of core rows loaded equals the count in the file trailer), that it runs on a fixed schedule with an alert if it does not, that its output is retained as audit evidence, and that the people who post transactions are not the people who clear breaks.</p>
+    <h3>More operational queries, in the same shape</h3>
+    <p><strong>Stuck work.</strong> A queue-claim pattern (11.9) records <code>claimed_at</code>; a worker that dies leaves a claim that never completes. The query that finds them is a plain filter on state and age.</p>
+    <div class="flow">-- POSTGRESQL (against the staging table of 11.7b; illustrative rows)
+SELECT stg_id, account_number, claimed_at, now() - claimed_at AS claimed_for
+FROM   stg_balance_rows
+WHERE  row_status = 'VALID' AND claimed_at &lt; now() - interval '10 minutes'
+ORDER  BY claimed_at
+LIMIT  50;
+
+ stg_id | account_number | claimed_at          | claimed_for
+--------+----------------+---------------------+-------------
+   9812 | CHK-8842-0719  | 2026-03-09 07:41:12 | 00:23:40
+(1 row)
+
+WHY CORRECT: a claim older than the ten-minute expiry on a row that is still VALID (not APPLIED) means the worker never finished; the claim-expiry rule of 11.9 makes the row eligible for re-claim, and this query lists what is waiting, with an index on (row_status, claimed_at) to keep it cheap.</div>
+    <p><strong>Cases about to breach.</strong> SLA-at-risk work is a selection on an exposed, indexed due column, never on the BLOB.</p>
+    <div class="flow">-- POSTGRESQL (a work table with exposed columns, as in 11.12; illustrative)
+SELECT pyid, pystatuswork, due_at, due_at - now() AS time_left
+FROM   dep_work_case
+WHERE  pystatuswork NOT LIKE 'Resolved%' AND due_at &lt; now() + interval '4 hours'
+ORDER  BY due_at
+LIMIT  100;
+-- never SELECT * here (it would drag the BLOB across the network for every row); the bounded LIMIT and the indexed due_at keep it safe to run against production at peak</div>
+    <p><strong>Duplicates.</strong> A duplicate is a group on the business key with more than one row, and the cure is a constraint so the database refuses it from then on.</p>
+    <div class="flow">-- POSTGRESQL: any file hash recorded twice for one interface (should be impossible with the unique constraint of Chapter 07 §7.10, so zero rows is the expected, checked result)
+SELECT interface_name, sha256, count(*) FROM file_registry GROUP BY interface_name, sha256 HAVING count(*) &gt; 1;</div>
+    <h3>Deadline arithmetic in SQL: Dana's dispute <code>DS-10915</code></h3>
+    <p>Chapter 12 makes every regulatory deadline a computed record on a named calendar. The calendar is data, and SQL can compute it. <strong>Business question.</strong> Dana gave notice on Monday 8 December 2025; on the institution's Reg E calendar (weekdays only, with its own holidays), what is ten business days later, and what is 45 calendar days later? The input is the notice date and a small holiday table.</p>
+    <div class="flow">-- POSTGRESQL
+CREATE TABLE institution_holidays (holiday DATE PRIMARY KEY);     -- the institution's own Reg E calendar (Chapter 12 §12.10)
+INSERT INTO institution_holidays VALUES ('2025-12-25'), ('2026-01-01');
+
+-- the 10th business day after the notice: generate candidate days, keep weekdays that are not holidays, take the tenth
+SELECT d::date AS tenth_business_day
+FROM   generate_series(DATE '2025-12-09', DATE '2026-02-28', INTERVAL '1 day') AS g(d)
+WHERE  extract(isodow FROM d) &lt; 6                                             -- 1 = Monday ... 5 = Friday
+  AND  d::date NOT IN (SELECT holiday FROM institution_holidays)
+ORDER  BY d
+OFFSET 9 LIMIT 1;                                                              -- OFFSET 9 skips the first nine, leaving the tenth
+
+ tenth_business_day
+--------------------
+ 2025-12-22
+
+-- the 45-day investigation deadline is CALENDAR days, so it is plain date arithmetic, with no calendar table
+SELECT DATE '2025-12-08' + 45 AS investigation_due;
+
+ investigation_due
+-------------------
+ 2026-01-22
+
+WHY CORRECT: counting forward from 9 December, the weekdays are 9, 10, 11, 12 (four), 15 to 19 (nine) and 22 (ten), with no holiday in between, so the tenth is Monday 22 December 2025. Adding 45 to the date counts calendar days, which is what Reg E specifies for the investigation;
+adding 45 <em>business</em> days would use the same generate_series query with OFFSET 44 and would give a much later, wrong date. The two clocks must be typed (business or calendar) and stored with their calendar and inputs, never recomputed silently.
+SQL SERVER: DATEADD(day, 45, '2025-12-08') for the calendar clock, and a calendar table (or a recursive CTE) joined with a weekday and holiday filter for the business clock.</div>
+    <p>In practice the generated series is replaced by a permanent calendar table with one row per date and flags for weekday and holiday per calendar (one for Reg E, one for the Reg CC statutory list, one for the ACH operator), so a deadline is a lookup, not a computation, and the calendar can be audited and versioned. That is the SQL shape of "calendar as an input to the deadline".</p>
+    <h3>Dynamic SQL for a metadata-driven loader</h3>
+    <p>The metadata-driven loader of Chapter 05 §5.8 builds statements from a table describing each target. Values are always bind parameters; names cannot be bound, so they are quoted safely and taken only from an allow-list of validated metadata.</p>
+    <div class="flow">-- POSTGRESQL (PL/pgSQL): identifiers quoted with %I, values passed with USING
+DO $$
+DECLARE tbl text := 'balance_snapshot';           -- from validated metadata, never from a file or a user
+        acct text := 'CHK-8842-0117';
+        n int;
+BEGIN
+  EXECUTE format('SELECT count(*) FROM %I WHERE account_number = $1', tbl) INTO n USING acct;
+  RAISE NOTICE 'rows: %', n;
+END $$;
+
+-- SQL SERVER: QUOTENAME() for the identifier and sp_executesql with parameters for the value
+DECLARE @tbl sysname = N'balance_snapshot', @sql nvarchar(max);
+SET @sql = N'SELECT count(*) FROM ' + QUOTENAME(@tbl) + N' WHERE account_number = @acct';
+EXEC sp_executesql @sql, N'@acct varchar(17)', @acct = 'CHK-8842-0117';</div>
+    <p>Concatenating a value into the text, instead of binding it, is SQL injection, and an identifier that has not been validated against the catalogue is the same hole in a different place (Chapter 10 §10.6).</p>
+    <h3>Conditional aggregates, and a constraint that forbids overlap</h3>
+    <div class="flow">-- POSTGRESQL: one pass, several counts (SQL Server: SUM(CASE WHEN ... THEN 1 ELSE 0 END))
+SELECT count(*)                                   AS holds_total,
+       count(*) FILTER (WHERE status = 'ACTIVE')  AS holds_active,
+       sum(amount) FILTER (WHERE status = 'ACTIVE') AS active_amount
+FROM   holds;
+
+ holds_total | holds_active | active_amount
+-------------+--------------+---------------
+           3 |            2 |       1700.00
+
+WHY: of the three holds, the released DEPOSIT hold is excluded from both active measures; the active ones are Dana's 200.00 card authorisation and Victor's 1,500.00 legal hold, 1,700.00 in total.
+
+-- POSTGRESQL: an exclusion constraint makes "two active restraints overlapping in time on one account" impossible (needs the btree_gist extension)
+-- ALTER TABLE holds ADD COLUMN active_during tstzrange;
+-- ALTER TABLE holds ADD CONSTRAINT no_overlap EXCLUDE USING gist (account_id WITH =, active_during WITH &amp;&amp;) WHERE (hold_type = 'LEGAL');</div>
+    <p>The exclusion constraint is the strongest form of the rule that a constraint beats an application check: the database refuses the second overlapping restraint even if two sessions race, which is the problem the write-skew example of 11.8 could only avoid with serialisable retries.</p>
+    <p>Other operational queries have the same form and are stated in words: stuck queue items are rows claimed more than a threshold ago and not completed; SLA-at-risk cases are open cases whose due time is within a window, selected on an exposed, indexed column; duplicates are groups with <code>COUNT(*) &gt; 1</code> on the business key (a file hash, an event ID, an order number plus version), and the fix is a unique constraint so that the database refuses them in future. Every such query is read-only, bounded by a limit or date range, and run against a replica where there is one.</p>
+  </section>
+
+  <section id="s11-14" class="pagebreak">
+    <h2>11.14 Backup, point-in-time recovery and replicas</h2>
+    <p>The last question about data is how it comes back, and the answer has more than one layer. A <strong>backup</strong> is a copy from which the database can be rebuilt, and in PostgreSQL a base backup plus the archive of write-ahead log lets recovery stop at any chosen moment: <strong>point-in-time recovery</strong>. That is the answer to "restore to just before the bad data change", and it is a disaster tool, not a rollback tool, because everything committed after the chosen moment is lost unless it is replayed from another source. A <strong>replica</strong> (streaming replication) maintains a second copy that can serve read-only reporting and take over after a failure; replication lag means a replica is briefly behind, and long queries on a replica can conflict with the cleanup that replication must apply. Replication is not a backup, since a mistaken <code>DELETE</code> replicates. Recovery objectives are stated as a recovery point (how much data may be lost) and a recovery time (how long it may take); both are tested by actually restoring, because an untested backup is an assumption. Backup retention is aligned with deletion obligations, and backups are encrypted (Chapter 10 §10.7).</p>
+    <table>
+      <tr><th>Mechanism</th><th>What it gives</th><th>What it does not</th></tr>
+      <tr><td>Logical dump (<code>pg_dump</code>)</td><td>A portable copy of selected objects; useful for migration and for recovering one table</td><td>Point-in-time recovery of the whole cluster; speed on very large databases</td></tr>
+      <tr><td>Base backup plus WAL archive</td><td>Restore to a chosen moment (point-in-time recovery): the answer to "just before the bad change"</td><td>Protection against losing the archive itself; recovery of changes made after the chosen moment</td></tr>
+      <tr><td>Streaming replica</td><td>Fast failover and a read-only reporting copy</td><td>Protection from a mistaken delete, which replicates</td></tr>
+      <tr><td>Restore test</td><td>Evidence that the backup works and how long recovery takes</td><td>Nothing, if it is never run: an untested backup is an assumption</td></tr>
+    </table>
+  </section>
+
+  <section id="s11-15" class="pagebreak">
+    <h2>11.15 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. Why does <code>WHERE status &lt;&gt; 'CLOSED'</code> miss some rows?</span>
+    <p>"NULL comparisons are unknown, not true or false, and WHERE keeps only true. Rows with a NULL status are dropped. I use IS DISTINCT FROM, or handle NULL explicitly, and prefer NOT EXISTS to NOT IN because a NULL in the list makes NOT IN return nothing."</p></div>
+
+    <div class="qa"><span class="q">Q2. A report sums holds and transactions together and the held amount is too big. Why?</span>
+    <p>"Fan-out: joining two independent one-to-many branches multiplies rows, so each hold is counted once per transaction. I aggregate each branch to one row per account in CTEs first and then join, so the joins cannot multiply."</p></div>
+
+    <div class="qa"><span class="q">Q3. How do you get a running balance, and the latest transaction per account?</span>
+    <p>"Window functions: SUM(amount) OVER (ORDER BY date, id) for the running balance, and ROW_NUMBER() OVER (PARTITION BY account ORDER BY date DESC) filtered to 1 in an outer query for the latest row. A tie-breaker keeps the order deterministic, and the last running value should equal the grouped total."</p></div>
+
+    <div class="qa"><span class="q">Q4. How do you write a safe upsert for snapshots?</span>
+    <p>"INSERT ... ON CONFLICT on the unique key with DO UPDATE ... WHERE excluded.as_of is newer than the stored one, so it is idempotent and order-independent. That guard is only legal for full-state snapshots, never for deltas. PostgreSQL 15 adds MERGE and SQL Server has its own MERGE, and I label the dialect and never mix them; duplicate source keys must be de-duplicated first."</p></div>
+
+    <div class="qa"><span class="q">Q5. Two sessions both read a balance, change it and write it back. What goes wrong and how do you fix it?</span>
+    <p>"A lost update: the second write overwrites the first with a value computed from a stale read. I make the arithmetic atomic in one statement (balance = balance - n), use SELECT FOR UPDATE for multi-step logic, or a version column with retry. For multi-row invariants, write skew needs a parent-row lock, SERIALIZABLE with retry, or a unique constraint."</p></div>
+
+    <div class="qa"><span class="q">Q6. How is a Pega case lock different from a database row lock?</span>
+    <p>"A case lock is a logical lock held for a requestor while the case is open, with its own timeout, and the database shows nothing. A row lock is held for the length of a database transaction. A deferred save is pending and invisible to SQL until commit. The danger is a connector call between the write and the commit, which holds row locks across the network wait."</p></div>
+
+    <div class="qa"><span class="q">Q7. What causes a deadlock and how do you prevent it?</span>
+    <p>"A cycle of waits, for example two transfers locking the same two accounts in opposite order. I lock in a consistent global order, keep transactions short, take locks up front, set lock and statement timeouts, and retry on 40P01 and 40001 with bounded attempts."</p></div>
+
+    <div class="qa"><span class="q">Q8. How do you read EXPLAIN ANALYZE, and what is the warning about it?</span>
+    <p>"I read from the innermost node outward, compare estimated and actual rows, and look for sequential scans with large 'rows removed by filter', then the access path and buffers. A composite index with the equality column first and the range column second turns a scan into a seek. EXPLAIN ANALYZE executes the statement, so UPDATE, DELETE and INSERT really change rows: I wrap them in a transaction I roll back, or use plain EXPLAIN."</p></div>
+
+    <div class="qa"><span class="q">Q9. What stops vacuum from reclaiming dead tuples?</span>
+    <p>"A long-running transaction holding an old snapshot holds back the xmin horizon, so dead tuples newer than it cannot be removed and tables bloat. The dangerous state is idle in transaction; a plain idle connection with no open transaction does not do it. I look at the oldest transaction age and set idle-in-transaction timeouts."</p></div>
+
+    <div class="qa"><span class="q">Q10. Can you fix a Pega case's status with a SQL UPDATE?</span>
+    <p>"Not safely. For a BLOB-backed class the BLOB is authoritative when the case opens, so the UI shows the old value and the next save overwrites the change, with no history, SLA recalculation or index maintenance. Not every class is BLOB-backed, so I verify the storage first, and the correction is made through Pega with a queue processor or data flow that opens, corrects and saves, under change control."</p></div>
+
+    <div class="qa"><span class="q">Q11. Why is a loop that updates 14,207 rows one at a time the wrong design, and what replaces it?</span>
+    <p>"Because the cost is the round trips and the per-row transactions, not the work: about 28,000 round trips, and a failure mid-loop leaves a half-applied file. I stage the rows with a bulk load, validate and reject in the database with set-based updates, de-duplicate, apply with one guarded upsert per chunk, and reconcile that staged equals applied plus rejected plus failed. Bad rows become counted rejects and the batch continues."</p></div>
+
+    <div class="qa"><span class="q">Q12. You added an index and the planner still scans. Why?</span>
+    <p>"Usually the index does not match the predicate: the equality column must lead and the range column follow, a function or cast on the column disables it, or the filter is not selective enough and a sequential scan really is cheaper. Stale statistics can also mislead the planner, so I compare estimated and actual rows in EXPLAIN (ANALYZE, BUFFERS). A covering index can then remove the table visit entirely, at the price of a wider index and write cost."</p></div>
+
+    <div class="qa"><span class="q">Q13. How would you reconcile the core's end-of-day balances against the Pega-side balances?</span>
+    <p>"Stage the core file, then one full outer join on account number and keep the rows where the balances are distinct from each other, null-safe. That yields typed breaks: amount differs, missing in Pega, missing in core. I apply a timing window and tolerance, turn the remainder into cases with an owner and age, escalate aged ones, and reconcile the reconciliation itself against the file trailer count. The people who post are not the people who clear breaks."</p></div>
+
+    <div class="qa"><span class="q">Q14. How do you compute a Reg E deadline in SQL, and what mistake do you avoid?</span>
+    <p>"Ten business days is a lookup on the institution's calendar (weekdays minus its own holidays), so the tenth business day after 8 December 2025 is Monday 22 December 2025, whereas 45 days is plain calendar arithmetic and gives 22 January 2026. The mistake is adding 45 business days, which is later than the law allows. Each deadline is stored with its type, calendar and inputs and is never recomputed silently."</p></div>
+  </section>
+
+  <section id="s11-recap">
+    <h2>11.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>The data behind the application can be questioned precisely: Dana's accounts, her available balance, a running statement, the elapsed time of each step of <code>AM-10417</code>, a segregation-of-duties check and a reconciliation that should return nothing. Concurrent writes to her row are safe, a late snapshot cannot overwrite a newer one, and a slow query has a method for diagnosis and a fix.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Typed, constrained tables; joins and aggregates that avoid fan-out; window functions; idempotent upserts with an as-of guard; MVCC with atomic updates, row locks and consistent lock order; Pega's case lock and deferred save as separate things from database locks; plans read from the innermost node, with an index that changes the access path; vacuum and its horizon; and the discipline of correcting Pega data through Pega.</p>
+    <h3>What it still cannot do</h3>
+    <p>All the SQL assumes the figures mean what the business says they mean. A "hold", an "available balance", a "business day" and a response deadline are defined by regulation and by policy, not by the database. What the rules are, in what order a deposit account lives and which clocks apply to which action, is Chapter 12.</p>
+  </section>
+
+  <section id="s11-ref" class="pagebreak">
+    <h2>11.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. The plan numbers in 11.10 are illustrative and are not taken from these sources.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>PostgreSQL: INSERT <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/sql-insert.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td><code>ON CONFLICT DO UPDATE</code> with a WHERE condition</td></tr>
+      <tr><td>PostgreSQL: MERGE <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/sql-merge.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td><code>MERGE</code> syntax, available from PostgreSQL 15</td></tr>
+      <tr><td>PostgreSQL: Concurrency control (MVCC) <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/mvcc.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>Isolation levels, snapshots, row-level locks, serialization failures</td></tr>
+      <tr><td>PostgreSQL: Routine vacuuming <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/routine-vacuuming.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>Dead tuples, the xmin horizon and long-running transactions, wraparound</td></tr>
+      <tr><td>PostgreSQL: Using EXPLAIN <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/using-explain.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>Reading plans; EXPLAIN ANALYZE executes the statement</td></tr>
+      <tr><td>PostgreSQL: SELECT (locking clause) <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/sql-select.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td><code>FOR UPDATE</code>, <code>NOWAIT</code>, <code>SKIP LOCKED</code></td></tr>
+      <tr><td>PostgreSQL: Numeric types <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/datatype-numeric.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>Exact <code>NUMERIC</code> versus floating-point types</td></tr>
+      <tr><td>PostgreSQL: Date/time types <span class="tag">vendor documentation</span></td><td>https://www.postgresql.org/docs/current/datatype-datetime.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td><code>DATE</code>, <code>TIMESTAMP</code> and <code>TIMESTAMPTZ</code></td></tr>
+    </table>
+    <p class="small muted">The Pega table conventions in 11.12 are described from long-standing practice and are not sourced to a retrieved page; exact names are taken from the target database.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch10_security_devops_monitoring.html">&larr; Previous: Chapter 10</a><a href="ch12_deposits_banking_domain.html">Next: Chapter 12 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

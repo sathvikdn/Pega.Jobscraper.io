@@ -1,0 +1,1287 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-09-09",
+  "checked_at": "2026-09-09T02:55:15+00:00",
+  "scope": "Targeted GCC people refresh: managers, programme leaders, architects, leads and developers; Bengaluru placement checked separately.",
+  "methodology": [
+    "Manually reviewed public LinkedIn search-index pages, distinguishing own profile text and authored posts from reactions to other people.",
+    "Direct LinkedIn attempts encountered HTTP 999, HTTP 429, robots denial or unavailable cached pages; no signed-in profile scraping or access-control bypass was used.",
+    "Role groups reflect stated roles or explicitly labelled historical work. Certifications alone do not become current job titles.",
+    "First Citizens, ANZ and Wells Fargo customer programme evidence was cross-checked against official Pega pages.",
+    "No reporting lines, team sizes or job openings were inferred from staff changes. No private contact data collected.",
+    "Additive observations only; preserve all older people, company profiles and their provenance."
+  ],
+  "queries": [
+    {
+      "query": "site:linkedin.com/in Citi Pega Bangalore manager architect",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"First Citizens\" Pega Bangalore",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"Wells Fargo\" Pega Bangalore architect",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in Barclays Pega India lead",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"Citi\" \"Pega\" \"Bengaluru\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"First Citizens\" \"Pega\" architect Bangalore",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"UBS\" \"Pega\" architect",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"ANZ\" \"Pega\" \"Bengaluru\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"Mercedes-Benz\" \"Pega\" architect",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"NatWest\" \"Pega\" lead",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Mercedes\" \"Pega\" \"site:linkedin.com/in\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Citi\" \"Pega\" \"Vice President\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Wells Fargo\" \"Pega\" \"Bengaluru\" \"manager\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Barclays\" \"Pega\" \"Lead\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Mercedes-Benz Research\" \"Pega\" person",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"MBRDI\" \"Pega\" LinkedIn",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Wells Fargo\" \"Pega\" \"Bangalore\" \"Manager\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"UBS\" \"Pega\" \"Lead\" \"Pune\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:pega.com \"NatWest\" \"Jürgen\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:pega.com \"ANZ\" \"Andrew Calyvopoulos\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:pega.com \"Wells Fargo\" \"Marcia\" \"2026\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"NatWest\" \"Pega\" \"Product Owner\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:pega.com \"NatWest\" \"Speaker\" \"2026\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "site:linkedin.com/in \"Mercedes-Benz Mobility\" \"Pega\"",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Sanjoy Sarkar\" \"First Citizens\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Andrew Calyvopoulos\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Justine Cook\" \"First Citizens\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Giles Richardson\" \"Wells Fargo\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    },
+    {
+      "query": "\"Marcia Osborne\" \"Wells Fargo\" site:linkedin.com/in",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "source": "public web search index"
+    }
+  ],
+  "access_checks": [
+    {
+      "url": "https://in.linkedin.com/in/tushar-banerjee-139366166",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "HTTP 999; direct profile blocked"
+    },
+    {
+      "url": "https://in.linkedin.com/in/vishwanatha-bs-b795838",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "Cache miss; direct profile unavailable"
+    },
+    {
+      "url": "https://in.linkedin.com/in/abheek-chattopadhyay-5344b358",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "Fetch denied by robots.txt"
+    },
+    {
+      "url": "https://in.linkedin.com/in/vijaya-vardhana-reddy-gundam-90b69868",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "HTTP 429; subsequent direct LinkedIn fetches stopped"
+    },
+    {
+      "url": "https://in.linkedin.com/in/manishcs00",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "Cache miss; direct profile unavailable"
+    },
+    {
+      "url": "https://in.linkedin.com/in/deepak-shahi-337470a3",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "Fetch denied by robots.txt"
+    },
+    {
+      "url": "https://www.linkedin.com/in/sujoymukherjee1267",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "HTTP 999; direct profile blocked"
+    },
+    {
+      "url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "Page read"
+    },
+    {
+      "url": "https://www.pega.com/customers/anz-bank-platform",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "Page read"
+    },
+    {
+      "url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "method": "public direct page open",
+      "outcome": "Page read"
+    }
+  ],
+  "companies": [
+    {
+      "name": "First Citizens Bank",
+      "company_id": "fresh-firstcitizensbank",
+      "category": "gcc",
+      "aliases": [
+        "First Citizens India",
+        "First Citizens Bank India"
+      ],
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "people": [
+        {
+          "name": "Sanjoy Sarkar",
+          "title": "SVP, Senior Director | Head of Enterprise Workflow Automation & Robotics (CoE)",
+          "employer_as_stated": "First Citizens Bank",
+          "location_as_stated": "Round Rock, Texas, United States",
+          "profile_url": "https://www.linkedin.com/in/iamsanjoysarkar",
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "source_date": "2026-06-09",
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "direct_page",
+          "profile_access": "search_index",
+          "source_kind": "event_session",
+          "source_title": "Sanjoy Sarkar - public professional evidence",
+          "snippet": "Enterprise Workflow Automation",
+          "pega_connection": "Official 2026 customer session identifies him as the bank workflow and robotics CoE head.",
+          "work_summary": "Customer speaker for equipment-finance servicing, delinquency recovery and AI-assisted decisions. His own indexed profile also describes representing the bank at PegaWorld 2026.",
+          "role_group": "managers",
+          "role_basis": "official_event_title",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Global leadership context; no evidence that he is the Bengaluru hiring manager.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+              "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": "2026-06-09",
+              "access": "direct_page",
+              "excerpt": "Enterprise Workflow Automation",
+              "excerpt_kind": "short_verbatim"
+            },
+            {
+              "url": "https://www.linkedin.com/in/iamsanjoysarkar",
+              "source_url": "https://www.linkedin.com/in/iamsanjoysarkar",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Public profile associates this identity with the employer and location.",
+              "excerpt_kind": "paraphrase"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "2139732c72105f6f9f"
+        },
+        {
+          "name": "Justine Cook",
+          "title": "Director, Operations",
+          "employer_as_stated": "First Citizens Bank",
+          "location_as_stated": "Neptune Beach, Florida, United States",
+          "profile_url": "https://www.linkedin.com/in/justine-cook-a888a766",
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "source_date": "2026-06-09",
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "direct_page",
+          "profile_access": "search_index",
+          "source_kind": "event_session",
+          "source_title": "Justine Cook - public professional evidence",
+          "snippet": "Director, Operations",
+          "pega_connection": "Named bank operations speaker alongside Sanjoy Sarkar at PegaWorld 2026.",
+          "work_summary": "Represents the operations side of the equipment-finance transformation; the session covers servicing, recoveries and a future remarketing portal.",
+          "role_group": "project_leaders",
+          "role_basis": "official_event_title",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Event participation does not establish a reporting line to Sanjoy Sarkar or any India developer.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+              "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": "2026-06-09",
+              "access": "direct_page",
+              "excerpt": "Director, Operations",
+              "excerpt_kind": "short_verbatim"
+            },
+            {
+              "url": "https://www.linkedin.com/in/justine-cook-a888a766",
+              "source_url": "https://www.linkedin.com/in/justine-cook-a888a766",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Public profile associates this identity with the employer and location.",
+              "excerpt_kind": "paraphrase"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "3e2557d71ec707dad1"
+        },
+        {
+          "name": "Tushar Banerjee",
+          "title": "Pega UI/UX Lead Software Engineer",
+          "employer_as_stated": "First Citizens India",
+          "location_as_stated": "West Bengal, India",
+          "profile_url": "https://in.linkedin.com/in/tushar-banerjee-139366166",
+          "source_url": "https://in.linkedin.com/in/tushar-banerjee-139366166",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Tushar Banerjee - public professional evidence",
+          "snippet": "Pega UI/UX Lead Software Engineer",
+          "pega_connection": "His own indexed post announces a Pega UI/UX lead role at First Citizens India; CSSA credentials also appear.",
+          "work_summary": "Specialises in Pega interface development and user experience. The profile identifies the new employer but does not name the bank application or local squad.",
+          "role_group": "leads",
+          "role_basis": "first_person_role_announcement",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Profile location is West Bengal; Bengaluru employment is not established.",
+            "The post uses a relative age of five months in the index; no exact publication date was established.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/tushar-banerjee-139366166",
+              "source_url": "https://in.linkedin.com/in/tushar-banerjee-139366166",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Pega UI/UX Lead Software Engineer",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "c0ea6e8dd6862f0142"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public search index; profile employment dates and reporting relationships have not been independently verified.",
+        "Named people are a discovered sample, not a full team roster or a headcount."
+      ]
+    },
+    {
+      "name": "Citi",
+      "company_id": "fresh-citi",
+      "category": "gcc",
+      "aliases": [
+        "Citi / Citi India",
+        "Citibank India"
+      ],
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "people": [
+        {
+          "name": "Sujoy Mukherjee",
+          "title": null,
+          "employer_as_stated": "Citi",
+          "location_as_stated": "Jersey City, New Jersey, United States",
+          "profile_url": "https://www.linkedin.com/in/sujoymukherjee1267",
+          "source_url": "https://www.linkedin.com/in/sujoymukherjee1267",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Sujoy Mukherjee - public professional evidence",
+          "snippet": "cloud strategy and Pega roadmap implementation journey",
+          "pega_connection": "Authored public posts describe Citi cloud strategy, its Pega roadmap and a visit to the Service Case Management team in Pune.",
+          "work_summary": "Useful contact for understanding Citi service-case management and Pega modernisation. One older post promotes a Chennai architecture vacancy; current vacancy status was not checked.",
+          "role_group": "other",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "The advertised PEGA Architecture Vice President role is a vacancy in his post, not evidence of his own title.",
+            "The post connects him to the program but does not establish project ownership or Bangalore placement.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://www.linkedin.com/in/sujoymukherjee1267",
+              "source_url": "https://www.linkedin.com/in/sujoymukherjee1267",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "cloud strategy and Pega roadmap implementation journey",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        },
+        {
+          "name": "Darshan Murudappanavara",
+          "title": "Vice President",
+          "employer_as_stated": "Citi",
+          "location_as_stated": "Prosper, Texas, United States",
+          "profile_url": "https://www.linkedin.com/in/darshan-murudappanavara-716a6455",
+          "source_url": "https://www.linkedin.com/in/darshan-murudappanavara-716a6455",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Darshan Murudappanavara - public professional evidence",
+          "snippet": "Vice President at Citi",
+          "pega_connection": "About section self-identifies a Citi vice president and Pega certified lead architect.",
+          "work_summary": "Provides senior Pega architecture context at Citi; specific application ownership and India team relationships are not exposed.",
+          "role_group": "managers",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Vice President is a bank grade; direct people management or hiring authority is not established.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://www.linkedin.com/in/darshan-murudappanavara-716a6455",
+              "source_url": "https://www.linkedin.com/in/darshan-murudappanavara-716a6455",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Vice President at Citi",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        },
+        {
+          "name": "Archana Parthasarathy",
+          "title": null,
+          "employer_as_stated": "Citi",
+          "location_as_stated": "Chennai, Tamil Nadu, India",
+          "profile_url": "https://in.linkedin.com/in/archana-parthasarathy-19975119",
+          "source_url": "https://in.linkedin.com/in/archana-parthasarathy-19975119",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Archana Parthasarathy - public professional evidence",
+          "snippet": "Certified Lead System Architect",
+          "pega_connection": "Citi experience is listed with Pega LSA, decisioning, marketing, UI and CSSA certifications.",
+          "work_summary": "Public achievements include Pega hackathon solutions and architecture credentials. The indexed profile does not identify her current Citi project.",
+          "role_group": "other",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Certification is evidence of qualification, not her present job title.",
+            "Earlier Bengaluru experience does not prove a current Bengaluru placement.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/archana-parthasarathy-19975119",
+              "source_url": "https://in.linkedin.com/in/archana-parthasarathy-19975119",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Certified Lead System Architect",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public search index; profile employment dates and reporting relationships have not been independently verified.",
+        "Named people are a discovered sample, not a full team roster or a headcount."
+      ]
+    },
+    {
+      "name": "ANZ Bank",
+      "company_id": "fresh-anzbank",
+      "category": "gcc",
+      "aliases": [
+        "ANZ",
+        "ANZ Bank India"
+      ],
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "people": [
+        {
+          "name": "Andrew Calyvopoulos",
+          "title": "Product Area Lead",
+          "employer_as_stated": "ANZ Bank",
+          "location_as_stated": "Greater Melbourne Area",
+          "profile_url": "https://au.linkedin.com/in/andrew-calyvopoulos-b4659746",
+          "source_url": "https://www.pega.com/customers/anz-bank-platform",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "direct_page",
+          "profile_access": "search_index",
+          "source_kind": "event_session",
+          "source_title": "Andrew Calyvopoulos - public professional evidence",
+          "snippet": "Product Area Lead",
+          "pega_connection": "The official ANZ customer case study names him in its Pega Cloud modernisation account.",
+          "work_summary": "The program consolidates legacy applications into five stacks, introduces a shared workflow model and uses Blueprint for fraud and scams. His own indexed post discusses standard case types and cloud migration.",
+          "role_group": "project_leaders",
+          "role_basis": "official_customer_case_study",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Global program contact; no direct reporting link to the Bengaluru people below was established.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://www.pega.com/customers/anz-bank-platform",
+              "source_url": "https://www.pega.com/customers/anz-bank-platform",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "direct_page",
+              "excerpt": "Product Area Lead",
+              "excerpt_kind": "short_verbatim"
+            },
+            {
+              "url": "https://au.linkedin.com/in/andrew-calyvopoulos-b4659746",
+              "source_url": "https://au.linkedin.com/in/andrew-calyvopoulos-b4659746",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Public profile associates this identity with the employer and location.",
+              "excerpt_kind": "paraphrase"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "f06a395bbacaa07325"
+        },
+        {
+          "name": "Vishwanatha BS",
+          "title": "Product Owner",
+          "employer_as_stated": "ANZ",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/vishwanatha-bs-b795838",
+          "source_url": "https://in.linkedin.com/in/vishwanatha-bs-b795838",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Vishwanatha BS - public professional evidence",
+          "snippet": "As a Product Owner at ANZ since April 2023",
+          "pega_connection": "About section explicitly links his ANZ product-owner role to implementation of Pega workflows.",
+          "work_summary": "Direct functional ownership signal for ANZ Pega workflow work in Bengaluru. The specific application and reporting manager are not exposed.",
+          "role_group": "project_leaders",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": true,
+          "limitations": [
+            "A liked post about leaving ANZ belongs to another author and was not treated as his departure.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/vishwanatha-bs-b795838",
+              "source_url": "https://in.linkedin.com/in/vishwanatha-bs-b795838",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "As a Product Owner at ANZ since April 2023",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        },
+        {
+          "name": "Bhavya Choudhary",
+          "title": null,
+          "employer_as_stated": "ANZ",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/bhavya-choudhary-b04724182",
+          "source_url": "https://in.linkedin.com/in/bhavya-choudhary-b04724182",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Bhavya Choudhary - public professional evidence",
+          "snippet": "Pega engineer, specifically in Disputes",
+          "pega_connection": "ANZ experience and Pega CSA/CSSA credentials are listed; a recommendation describes her work as a Pega engineer in disputes.",
+          "work_summary": "A professional recommendation links her to ANZ disputes delivery for the Australia business. That is historical project evidence, not confirmation of the current assignment.",
+          "role_group": "developers",
+          "role_basis": "historical_professional_recommendation",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": true,
+          "limitations": [
+            "Indexed organisation entries still include Cognizant; exact employment dates need confirmation.",
+            "Developer grouping comes from a historical colleague recommendation, not a verified current title.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/bhavya-choudhary-b04724182",
+              "source_url": "https://in.linkedin.com/in/bhavya-choudhary-b04724182",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Pega engineer, specifically in Disputes",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        },
+        {
+          "name": "Naveen Gowd",
+          "title": null,
+          "employer_as_stated": "ANZ",
+          "location_as_stated": "Bangalore Urban district, India",
+          "profile_url": "https://in.linkedin.com/in/naveen-gowd-834a9a6",
+          "source_url": "https://in.linkedin.com/in/naveen-gowd-834a9a6",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Naveen Gowd - public professional evidence",
+          "snippet": "optimal automation using tools like PEGA",
+          "pega_connection": "About section describes business-process transformation using Pega, and experience associates him with ANZ.",
+          "work_summary": "Local Pega automation practitioner evidence. Neither a specific ANZ project nor his current seniority is exposed.",
+          "role_group": "other",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": true,
+          "limitations": [
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/naveen-gowd-834a9a6",
+              "source_url": "https://in.linkedin.com/in/naveen-gowd-834a9a6",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "optimal automation using tools like PEGA",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public search index; profile employment dates and reporting relationships have not been independently verified.",
+        "Named people are a discovered sample, not a full team roster or a headcount."
+      ]
+    },
+    {
+      "name": "Barclays",
+      "company_id": "fresh-barclays",
+      "category": "gcc",
+      "aliases": [
+        "Barclays India"
+      ],
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "people": [
+        {
+          "name": "Vijaya Vardhana Reddy Gundam",
+          "title": "Pega Application Development/Technical Manager",
+          "employer_as_stated": "Barclays",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/vijaya-vardhana-reddy-gundam-90b69868",
+          "source_url": "https://in.linkedin.com/in/vijaya-vardhana-reddy-gundam-90b69868",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Vijaya Vardhana Reddy Gundam - public professional evidence",
+          "snippet": "Pega Application Development/Technical Manager",
+          "pega_connection": "About section identifies a Pega application-development/technical manager and experience lists Barclays in Bengaluru.",
+          "work_summary": "Named local management-level Pega professional. Current product ownership, team size and reporting lines are not exposed.",
+          "role_group": "managers",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": true,
+          "limitations": [
+            "The public headline is a self-description; exact current HR title and hiring authority are unconfirmed.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/vijaya-vardhana-reddy-gundam-90b69868",
+              "source_url": "https://in.linkedin.com/in/vijaya-vardhana-reddy-gundam-90b69868",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Pega Application Development/Technical Manager",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        },
+        {
+          "name": "Abheek Chattopadhyay",
+          "title": "Assistant Vice President and Senior Pega Development Lead",
+          "employer_as_stated": "Barclays",
+          "location_as_stated": "Pune District, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/abheek-chattopadhyay-5344b358",
+          "source_url": "https://in.linkedin.com/in/abheek-chattopadhyay-5344b358",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Abheek Chattopadhyay - public professional evidence",
+          "snippet": "Senior Pega Developer | Development Lead",
+          "pega_connection": "About section and organisation entry identify senior Pega development leadership at Barclays.",
+          "work_summary": "His own public posts discuss Pega event learning including Infinity 24.2, Constellation and GenAI. These support technical interests, not production adoption of every feature.",
+          "role_group": "leads",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Pune location is explicit; no Bengaluru team placement was established.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/abheek-chattopadhyay-5344b358",
+              "source_url": "https://in.linkedin.com/in/abheek-chattopadhyay-5344b358",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Senior Pega Developer | Development Lead",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "3772973af6505fda0d"
+        },
+        {
+          "name": "Niranjan Kale",
+          "title": null,
+          "employer_as_stated": "Barclays",
+          "location_as_stated": "Pune Division, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/niranjan-kale-aa9aa9200",
+          "source_url": "https://in.linkedin.com/in/niranjan-kale-aa9aa9200",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Niranjan Kale - public professional evidence",
+          "snippet": "Developing Application using Pega",
+          "pega_connection": "About section describes Pega application development; Barclays experience and CSSA certification are present.",
+          "work_summary": "Useful Pega developer-level contact in the Pune footprint. Application, manager and current engineering grade are not exposed.",
+          "role_group": "developers",
+          "role_basis": "self_reported_development_work",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "A liked Risk Manager promotion and a liked CLSA announcement are not this person's own title or certification.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/niranjan-kale-aa9aa9200",
+              "source_url": "https://in.linkedin.com/in/niranjan-kale-aa9aa9200",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Developing Application using Pega",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "047e8da176046e6b48"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public search index; profile employment dates and reporting relationships have not been independently verified.",
+        "Named people are a discovered sample, not a full team roster or a headcount."
+      ]
+    },
+    {
+      "name": "UBS",
+      "company_id": "catalogue-ubsindia",
+      "category": "gcc",
+      "aliases": [
+        "Credit Suisse / UBS India"
+      ],
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "people": [
+        {
+          "name": "Manish Kumar",
+          "title": "Solution Architect",
+          "employer_as_stated": "UBS",
+          "location_as_stated": "Pune City, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/manishcs00",
+          "source_url": "https://in.linkedin.com/in/manishcs00",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Manish Kumar - public professional evidence",
+          "snippet": "Solution Architect",
+          "pega_connection": "About section says Solution Architect; the profile lists UBS Pune and Pega LSA Parts I and II.",
+          "work_summary": "Evidence supports senior solution-architecture experience and Pega qualification. The current UBS application, reporting structure and hiring role are not exposed.",
+          "role_group": "architects",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "A liked Managing Director promotion is another person's post and was not attributed to him.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/manishcs00",
+              "source_url": "https://in.linkedin.com/in/manishcs00",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Solution Architect",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": false
+        },
+        {
+          "name": "Ankit Dangaich",
+          "title": null,
+          "employer_as_stated": "UBS",
+          "location_as_stated": "India",
+          "profile_url": "https://in.linkedin.com/in/ankit-dangaich-483a8713a",
+          "source_url": "https://in.linkedin.com/in/ankit-dangaich-483a8713a",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Ankit Dangaich - public professional evidence",
+          "snippet": "Certified Lead System Architect Pega 7",
+          "pega_connection": "UBS experience and a Pega 7 lead-architect certification are visible in the index.",
+          "work_summary": "Named UBS professional with Pega architecture credentials. No current title, office or specific project is exposed.",
+          "role_group": "other",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "A certification is not confirmation of a current Lead System Architect job.",
+            "India is stated; Bengaluru and Pune are not established by this evidence.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/ankit-dangaich-483a8713a",
+              "source_url": "https://in.linkedin.com/in/ankit-dangaich-483a8713a",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Certified Lead System Architect Pega 7",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "bb86adea482c85e32e"
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public search index; profile employment dates and reporting relationships have not been independently verified.",
+        "Named people are a discovered sample, not a full team roster or a headcount."
+      ]
+    },
+    {
+      "name": "NatWest Group",
+      "company_id": "catalogue-natwestgroup",
+      "category": "gcc",
+      "aliases": [
+        "NatWest Group India",
+        "NatWest"
+      ],
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "people": [
+        {
+          "name": "Deepak Shahi",
+          "title": null,
+          "employer_as_stated": "NatWest Group",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/deepak-shahi-337470a3",
+          "source_url": "https://in.linkedin.com/in/deepak-shahi-337470a3",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Deepak Shahi - public professional evidence",
+          "snippet": "diverse development experience in Pega",
+          "pega_connection": "NatWest Bengaluru experience, a Pega-development self-description and January 2025 CLSA certification appear.",
+          "work_summary": "Local engineering and architecture qualification signal. The indexed page does not name the current application or role grade.",
+          "role_group": "developers",
+          "role_basis": "self_reported_development_work",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": true,
+          "limitations": [
+            "Liked LSA and CSSA vacancies were not treated as this person's own hiring posts.",
+            "CLSA qualification does not prove an LSA job title.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/deepak-shahi-337470a3",
+              "source_url": "https://in.linkedin.com/in/deepak-shahi-337470a3",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "diverse development experience in Pega",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "8522b23516782ffe46"
+        },
+        {
+          "name": "Hitesh Chauhan",
+          "title": "Pega Decisioning Scientist",
+          "employer_as_stated": "NatWest Group",
+          "location_as_stated": "Wallington, England, United Kingdom",
+          "profile_url": "https://uk.linkedin.com/in/hitesh-chauhan-6367792b0",
+          "source_url": "https://uk.linkedin.com/in/hitesh-chauhan-6367792b0",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Hitesh Chauhan - public professional evidence",
+          "snippet": "Pega Decisioning Scientist at NatWest Group",
+          "pega_connection": "About section explicitly identifies a NatWest Pega decisioning scientist.",
+          "work_summary": "Decisioning specialist evidence for the UK organisation. No India team relationship or specific decisioning application is established.",
+          "role_group": "other",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Liked recruiting posts were not treated as authored vacancies or hiring authority.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://uk.linkedin.com/in/hitesh-chauhan-6367792b0",
+              "source_url": "https://uk.linkedin.com/in/hitesh-chauhan-6367792b0",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Pega Decisioning Scientist at NatWest Group",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        },
+        {
+          "name": "Sherin Metilda",
+          "title": null,
+          "employer_as_stated": "NatWest Group",
+          "location_as_stated": "Chennai, Tamil Nadu, India",
+          "profile_url": "https://in.linkedin.com/in/sherin-metilda-88543525",
+          "source_url": "https://in.linkedin.com/in/sherin-metilda-88543525",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Sherin Metilda - public professional evidence",
+          "snippet": "Certified Pega Data Scientist",
+          "pega_connection": "NatWest Chennai experience is listed with Pega data-science, decisioning and marketing qualifications.",
+          "work_summary": "Potential decisioning practitioner contact. Current project and HR title are not exposed.",
+          "role_group": "other",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Product Owner/Product Manager certification is not proof of a current product-owner position.",
+            "Liked Pega event posts were not attributed as authored participation statements.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/sherin-metilda-88543525",
+              "source_url": "https://in.linkedin.com/in/sherin-metilda-88543525",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Certified Pega Data Scientist",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public search index; profile employment dates and reporting relationships have not been independently verified.",
+        "Named people are a discovered sample, not a full team roster or a headcount."
+      ]
+    },
+    {
+      "name": "Wells Fargo",
+      "company_id": "fresh-wellsfargo",
+      "category": "gcc",
+      "aliases": [
+        "Wells Fargo India",
+        "Wells Fargo India Solutions"
+      ],
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "people": [
+        {
+          "name": "Marcia Osborne",
+          "title": "Consumer Banking and Lending Marketing Senior Executive",
+          "employer_as_stated": "Wells Fargo",
+          "location_as_stated": "New York, New York, United States",
+          "profile_url": "https://www.linkedin.com/in/marcia-osborne-b3b21710",
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+          "source_date": "2026-06-09",
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "direct_page",
+          "profile_access": "search_index",
+          "source_kind": "event_session",
+          "source_title": "Marcia Osborne - public professional evidence",
+          "snippet": "Consumer Banking",
+          "pega_connection": "Official PegaWorld 2026 speaker associated with the bank's Customer Decision Hub programme.",
+          "work_summary": "Executive business context for personalised customer engagement at bank scale. The session does not identify a Bengaluru engineering owner.",
+          "role_group": "managers",
+          "role_basis": "official_event_title",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "Global business executive; not established as a local Pega hiring manager.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+              "source_url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": "2026-06-09",
+              "access": "direct_page",
+              "excerpt": "Consumer Banking",
+              "excerpt_kind": "short_verbatim"
+            },
+            {
+              "url": "https://www.linkedin.com/in/marcia-osborne-b3b21710",
+              "source_url": "https://www.linkedin.com/in/marcia-osborne-b3b21710",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Public profile associates this identity with the employer and location.",
+              "excerpt_kind": "paraphrase"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "7153d8eda9fd912bc8"
+        },
+        {
+          "name": "Giles Richardson",
+          "title": "Executive Vice President of Marketing Strategy and Delivery",
+          "employer_as_stated": "Wells Fargo",
+          "location_as_stated": "Bellevue, Washington, United States",
+          "profile_url": "https://www.linkedin.com/in/gilesrichardson",
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+          "source_date": "2026-06-09",
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "direct_page",
+          "profile_access": "search_index",
+          "source_kind": "event_session",
+          "source_title": "Giles Richardson - public professional evidence",
+          "snippet": "Marketing Strategy",
+          "pega_connection": "Official customer speaker on the bank's Pega CDH implementation; his indexed post names the Customer Engagement Engine team.",
+          "work_summary": "Public program context spans technology, product and strategy in the Customer Engagement Engine. No named India reporting line or staffing count is established.",
+          "role_group": "managers",
+          "role_basis": "official_event_title",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": false,
+          "limitations": [
+            "LinkedIn self-description includes AI Delivery; the displayed title follows the dated 2026 event.",
+            "Global programme contact; no local hiring authority was established.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+              "source_url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": "2026-06-09",
+              "access": "direct_page",
+              "excerpt": "Marketing Strategy",
+              "excerpt_kind": "short_verbatim"
+            },
+            {
+              "url": "https://www.linkedin.com/in/gilesrichardson",
+              "source_url": "https://www.linkedin.com/in/gilesrichardson",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Public profile associates this identity with the employer and location.",
+              "excerpt_kind": "paraphrase"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "4939ee0aa21e3533b8"
+        },
+        {
+          "name": "Ravi kiran N G",
+          "title": null,
+          "employer_as_stated": "Wells Fargo",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+          "source_url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Ravi kiran N G - public professional evidence",
+          "snippet": "Pega Certified Lead System Architect Part 1 (8.8)",
+          "pega_connection": "Wells Fargo Bengaluru experience is listed alongside CSSA and Pega LSA Part 1 credentials.",
+          "work_summary": "Local Pega-qualified professional. The current job title, application and team lead are not exposed.",
+          "role_group": "other",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": true,
+          "limitations": [
+            "LSA Part 1 is not a completed full CLSA credential or proof of an architect position.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+              "source_url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Pega Certified Lead System Architect Part 1 (8.8)",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": true,
+          "identity_seen_in_prior_catalog": true,
+          "existing_person_id": "dc111ee26d68bf43a6"
+        },
+        {
+          "name": "Bishwadeep Dhar",
+          "title": "Vice President - Lead Digital Product Manager",
+          "employer_as_stated": "Wells Fargo",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/bishwadeep-dhar-cspo%C2%AE-csm%C2%AE-cpba%C2%AE-34681514",
+          "source_url": "https://in.linkedin.com/in/bishwadeep-dhar-cspo%C2%AE-csm%C2%AE-cpba%C2%AE-34681514",
+          "source_date": null,
+          "checked_at": "2026-09-09T02:55:15+00:00",
+          "access": "search_index",
+          "profile_access": "search_index",
+          "source_kind": "professional_profile",
+          "source_title": "Bishwadeep Dhar - public professional evidence",
+          "snippet": "Vice President - Lead Digital Product Manager",
+          "pega_connection": "Profile combines a Wells Fargo product-management self-description with CPBA and historical Pega CSFS/Pega Call project evidence.",
+          "work_summary": "The Pega contact-centre project is explicitly for an unnamed Australian bank in 2016-2018. It is relevant experience, but must not be presented as his current Wells Fargo project.",
+          "role_group": "project_leaders",
+          "role_basis": "self_reported_profile",
+          "current_employment_verified": false,
+          "bangalore_experience_as_stated": true,
+          "limitations": [
+            "Pega ownership at current employer is unconfirmed; the technical project evidence is historical client work.",
+            "Public search index; profile employment dates and reporting relationships have not been independently verified."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/bishwadeep-dhar-cspo%C2%AE-csm%C2%AE-cpba%C2%AE-34681514",
+              "source_url": "https://in.linkedin.com/in/bishwadeep-dhar-cspo%C2%AE-csm%C2%AE-cpba%C2%AE-34681514",
+              "checked_at": "2026-09-09T02:55:15+00:00",
+              "source_date": null,
+              "access": "search_index",
+              "excerpt": "Vice President - Lead Digital Product Manager",
+              "excerpt_kind": "short_verbatim"
+            }
+          ],
+          "name_seen_in_previous_catalog": false,
+          "identity_seen_in_prior_catalog": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Public search index; profile employment dates and reporting relationships have not been independently verified.",
+        "Named people are a discovered sample, not a full team roster or a headcount."
+      ]
+    }
+  ],
+  "unresolved_companies": [
+    {
+      "name": "Mercedes-Benz R&D India",
+      "company_id": "catalogue-mercedesbenzrdindiambrdi",
+      "checked_at": "2026-09-09T02:55:15+00:00",
+      "outcome": "No named current MBRDI Pega manager or developer was established in this bounded public search.",
+      "limitations": [
+        "A supplier-hosted resume and unrelated graduate-placement tables are insufficient for a current internal team map.",
+        "A historical Mercedes-Benz Mobility endorsement by a now freelance professional is not proof of current MBRDI staffing."
+      ]
+    }
+  ],
+  "excluded_attributions": [
+    {
+      "name": "Nimalan Peter",
+      "company": "First Citizens India",
+      "reason": "Liked Tushar Banerjee's new Pega UI/UX lead announcement; do not assign Tushar's title to Nimalan. His profile separately contains employer and Pega Robotics qualification evidence."
+    },
+    {
+      "name": "Hussain Khan",
+      "company": "Wells Fargo",
+      "reason": "Pega certification and manager vacancy terms appeared in liked posts. No own Pega role established in this pass."
+    },
+    {
+      "name": "RAKESH MOHAPATRA",
+      "company": "Citi",
+      "reason": "Citi VP/Pega lead announcement is liked content; own employer shown as Tata Consultancy Services."
+    },
+    {
+      "name": "Suman Pyne",
+      "company": "UBS",
+      "reason": "UBS project was historical Cognizant client work in 2010; own current employer is Credera."
+    }
+  ],
+  "counts": {
+    "companies_with_people": 7,
+    "people_reviewed": 22,
+    "public_linkedin_profiles_reviewed": 22,
+    "official_customer_pages_read": 3,
+    "direct_linkedin_profile_attempts": 7,
+    "people_with_stated_bengaluru_location": 7,
+    "names_not_in_prior_catalog": 10,
+    "queries": 29,
+    "identities_matched_in_prior_catalog": 11,
+    "identities_not_matched_in_prior_catalog": 11
+  }
+}

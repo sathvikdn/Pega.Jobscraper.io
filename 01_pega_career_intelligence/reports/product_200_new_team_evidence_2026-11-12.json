@@ -1,0 +1,55 @@
+{
+  "asOf": "2026-11-12",
+  "notes": "A new office, Pega-related profile, or third-party listing is not a new Pega squad. Only a cluster of employer requisitions establishes active hiring; exact headcount and squad allocation need employer confirmation.",
+  "signals": [
+    {
+      "id": "commonwealth bank",
+      "verdict": "Strongest confirmed build-out",
+      "evidence": "Four current official Bengaluru requisitions explicitly reference the ASB partnership: Executive Manager REQ266311, Pega Engineering Manager REQ266820 and Senior Software Engineers REQ266821/822. A separate Staff Engineer and Corp Tech Manager also mention Pega but do not establish additional ASB Pega seats.",
+      "sourceUrl": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Senior-Software-Engineer_REQ266822",
+      "nextAction": "Confirm which req your interview is attached to; prioritize both Senior SWE seats, and ask which ASB product journeys the India squad will own."
+    },
+    {
+      "id": "pegasystems",
+      "verdict": "Confirmed product role; expansion is broader than one new Pega team",
+      "evidence": "Pega's employer-hosted CSA/CSSA GenAI Engineering role 24123 loaded successfully. It asks for 2-4 years of Pega and works on agents, developer assistant, evaluation, guardrails and observability.",
+      "sourceUrl": "https://www.pega.com/about/careers/24123/software-engineer-genai-engineering-pega-developer-csa-cssa",
+      "nextAction": "Apply if interested in platform-product engineering; it is not a bank Customer Service delivery role."
+    },
+    {
+      "id": "booking",
+      "verdict": "Plausible squad growth; no employer-verified open Pega seat",
+      "evidence": "Three dated profile starts in the Top 50 (two Pega-labelled, one engineering manager) and a mirrored 'newly formed Trips Pega Delivery Team' description. The recruiter/vendor SA ad and Engineering Manager aggregator copy were not matched to a live Booking employer requisition.",
+      "sourceUrl": "https://careers.booking.com/teams/engineering/",
+      "nextAction": "Ask a current Booking Pega peer which CS Tech/Trips squads are hiring on direct Booking payroll; request a first-party job link."
+    },
+    {
+      "id": "siemens",
+      "verdict": "Capability-building hint, open engineering seat unverified",
+      "evidence": "An indexed Siemens Lead Pega Architect role (514440, posted July 2026) speaks of building Pega capability; a September Senior Lead role (523881) mentions a Pega Nearshore Consulting team. Siemens direct job-detail URLs returned HTTP 403. November Pega mentions found on Siemens job pages are order-operations roles using Pega, not developer openings.",
+      "sourceUrl": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/514440",
+      "nextAction": "Request a live Siemens Pega engineer requisition and payroll/entity before treating the project descriptions as a new internal product squad."
+    },
+    {
+      "id": "broadridge",
+      "verdict": "Conflicting signal; employer feed has no Pega match",
+      "evidence": "A third-party Pega Developer post claims Hyderabad/Bengaluru and Constellation, but the checked Broadridge Workday career site's Pega search returned no matching roles. Do not call the third-party post an approved direct seat.",
+      "sourceUrl": "https://broadridge.wd5.myworkdayjobs.com/en-US/Careers",
+      "nextAction": "Ask Broadridge TA for the first-party requisition ID, location and payroll."
+    },
+    {
+      "id": "anz bank",
+      "verdict": "Bengaluru Pega team exists; recent SSA requisition closed",
+      "evidence": "ANZ Pega SSA req 126222 in Bengaluru advertised Digital Sales Experience integration and outbound CDH; the copied ad says it ended 28 October 2026. The current official ANZ Pega search returned two Docklands (Australia) matches, not a Bengaluru requisition.",
+      "sourceUrl": "https://careers.anz.com/search/?q=pega",
+      "nextAction": "Set an official ANZ alert; do not apply using the still-indexed 126222 mirror."
+    },
+    {
+      "id": "natwest group",
+      "verdict": "New Bengaluru office, not evidence of a new Pega team",
+      "evidence": "NatWest's official Bengaluru office page says the hub opened in 2025. Current local software-engineering search results are mainly Java/AWS/DevOps and do not substantiate Pega engineering vacancies.",
+      "sourceUrl": "https://jobs.natwestgroup.com/pages/bengaluru",
+      "nextAction": "Monitor Pega-specific requisitions separately from general Bengaluru office hiring."
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBA India · ASB Pega squad · Interview dossier</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--brand:#ffcc00;--navy:#102642;--ok:#166534;--warn:#92400e;--bad:#991b1b}
+*{box-sizing:border-box}body{margin:0;font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#f8fafc}
+header{background:var(--navy);color:#fff;padding:28px 24px;border-bottom:6px solid var(--brand)}
+header h1{margin:0 0 6px;font-size:28px;line-height:1.3}header p{margin:0;color:#cbd5e1}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 24px;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;z-index:2}
+nav a{color:var(--navy);text-decoration:none;font-weight:600}nav a:hover{text-decoration:underline}
+main{max-width:1100px;margin:0 auto;padding:24px;overflow-wrap:anywhere}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:0 0 22px;scroll-margin-top:70px}
+h2{margin:0 0 12px;font-size:22px;border-left:6px solid var(--brand);padding-left:10px}h3{font-size:17px;margin:20px 0 8px}
+table{width:100%;border-collapse:collapse;font-size:15px}th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}th{background:var(--navy);color:#fff;font-size:13px}
+tbody tr:nth-child(even){background:#f1f5f9}.wrap{overflow-x:auto}
+.note{background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:12px 14px;margin:12px 0;font-size:15px}
+.good{background:#f0fdf4;border-color:#86efac}.bad{background:#fef2f2;border-color:#fca5a5}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:6px}
+.t-fact{background:#dcfce7;color:var(--ok)}.t-rep{background:#fef3c7;color:var(--warn)}.t-inf{background:#e0e7ff;color:#3730a3}
+details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;background:#fff}summary{cursor:pointer;font-weight:700}
+ul,ol{padding-left:22px}li{margin:4px 0}code{background:#f1f5f9;padding:1px 5px;border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.box{border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.box b{display:block;font-size:24px;color:var(--navy)}
+@media print{nav{display:none}section{break-inside:avoid-page;border:none}body{background:#fff}details{border:none}details>*{display:block}}
+</style>
+</head>
+<body>
+<header>
+<h1>Commonwealth Bank India · Pega squad for ASB · Interview dossier</h1>
+<p>Prepared 10 November 2026 for Sathvik DN (CSSA, about 4 years 3 months Pega at Mercedes-Benz R&amp;D India). Role assumed: <strong>Senior Software Engineer – Pega Development</strong> (REQ266821 / REQ266822, Bengaluru, Manyata Tech Park). If your call is for a different role, confirm the requisition with the recruiter; the org, people and values sections still apply.</p>
+</header>
+<nav aria-label="Sections">
+<a href="CBA_Study_Pack/ch01_cba_asb_architecture_blueprints.html" style="color:#b45309">Architecture blueprint ↗</a><a href="#tldr">TL;DR</a><a href="#org">Org &amp; team</a><a href="#people">People</a><a href="#work">What you'd build</a><a href="#kafka">Kafka?</a><a href="#process">Interview process</a><a href="#fit">Your fit</a><a href="#tech">Technical Q&amp;A</a><a href="#design">Design scenarios</a><a href="#behaviour">Values &amp; behaviour</a><a href="#ask">Questions to ask</a><a href="#pay">Pay &amp; level</a><a href="#plan">48-hour plan</a><a href="#sources">Sources</a>
+</nav>
+<main>
+
+<section id="tldr">
+<h2>TL;DR</h2>
+<p>Evidence labels: <span class="tag t-fact">Fact</span> published by CBA, ASB or the person · <span class="tag t-rep">Reported</span> from candidate or employee reviews · <span class="tag t-inf">Inference</span> my reading, to confirm.</p>
+<ul>
+<li><span class="tag t-fact">Fact</span> <strong>ASB is a wholly owned CBA subsidiary.</strong> CBA India is building ASB's <em>India engineering capability</em>, a new organisation rather than a support desk. Squads sit inside ASB's tribes and chapters hold the engineering craft (REQ266311, Oct 2026).</li>
+<li><span class="tag t-fact">Fact</span> The ASB modernisation agenda explicitly includes <strong>"scaling Pega across decisioning, workflow, lending and financial crime"</strong>, alongside core banking (SAP), cards, payments, data and integration re-platforming.</li>
+<li><span class="tag t-fact">Fact</span> On 14 Oct 2026 CBA posted the full squad at once: an <strong>Engineering Manager (REQ266820)</strong> and Senior Software Engineers <strong>REQ266821 and REQ266822</strong>. You'd be a founding member.</li>
+<li><span class="tag t-fact">Fact</span> On the NZ side, ASB is setting up a <strong>Pega Centre of Excellence</strong> and advertised <strong>20+ Pega roles</strong>. Its Pega estate includes Customer Service (the largest in NZ), KYC/CLM, lending, payments, Pega Cloud migration, Kafka and Constellation.</li>
+<li><strong>Your best hooks:</strong> you have already shipped for <strong>AU and NZ markets</strong>; your Kafka, Queue Processor and replay work maps straight to "events, async patterns, error handling, resiliency, observability"; collections/lending is a target domain; and you have done production support.</li>
+<li><strong>Your gaps:</strong> 5+ years asked (you have about 4.3 years); Constellation, Pega Cloud, KYC/CLM, Smart Disputes and Customer Service are listed as preferred. Acknowledge them, show a ramp plan, and don't bluff.</li>
+<li><strong>Level risk:</strong> they may down-level you to "Software Engineer" (median about ₹24–26L) instead of "Senior Software Engineer" (about ₹33–40L). Decide your walk-away number before the HR round.</li>
+</ul>
+</section>
+
+<section id="org">
+<h2>The org: how this team is structured</h2>
+<div class="wrap"><table>
+<thead><tr><th>Layer</th><th>What it is</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>CBA Group</td><td>Australia's largest bank. Purpose "Building a brighter future for all". Values: Care, Courage, Commitment.</td><td><span class="tag t-fact">Fact</span> CommBank careers pages</td></tr>
+<tr><td>CBA India (Bengaluru, Manyata)</td><td>The GCC, led by MD &amp; CEO Shubha Iyer. Hybrid with about 40% office attendance a month; cabs and shuttles.</td><td><span class="tag t-fact">Fact</span> LinkedIn showcase · <span class="tag t-rep">Reported</span> 40% from Glassdoor/Blind</td></tr>
+<tr><td>ASB (Auckland, NZ)</td><td>Wholly owned CBA subsidiary. Organised in tribes (for example the Customer Tribe owns CLM/KYC). Running a "generational modernisation".</td><td><span class="tag t-fact">Fact</span> REQ266311, ASB LSA posting</td></tr>
+<tr><td>CBA India for ASB</td><td>New India engineering capability led by an Executive Manager – Technology Modernisation. Squads embed into ASB tribes with named outcomes, shared tribe cadence and common standards. "Not a resource pool."</td><td><span class="tag t-fact">Fact</span> REQ266311</td></tr>
+<tr><td>Your squad</td><td>A Pega squad: one Engineering Manager (Pega architecture owner) plus Senior Software Engineers, working "closely with ASB". The QA/testers and the craft chapter are probably shared.</td><td><span class="tag t-fact">Fact</span> REQ266820/1/2 · <span class="tag t-inf">Inference</span> squad shape</td></tr>
+<tr><td>Engineering foundations</td><td>"Golden Pathways" (paved-road CI/CD), DevSecOps, automation-first testing, cloud-first, "AI-powered engineering at scale".</td><td><span class="tag t-fact">Fact</span> REQ266311</td></tr>
+</tbody></table></div>
+<div class="note"><strong>Why this matters in the interview:</strong> they are hiring people who will <em>own</em> ASB outcomes from Bengaluru while working across the NZ time zone (NZ is 6.5–7.5 hours ahead, so expect early-morning overlap rather than late nights). Show that you can work directly with product owners and architects in another country. Your Mercedes APAC work (7 markets including AU and NZ) is exactly that.</div>
+</section>
+
+<section id="people">
+<h2>People worth knowing (index-supported profiles, not contacted)</h2>
+<p>Treat these as context, not a guaranteed panel. <span class="tag t-inf">Inference</span> The panel is most likely the new Engineering Manager (if already hired) or an existing CBA India Pega leader, plus one or two senior engineers, with possible ASB involvement later.</p>
+<div class="wrap"><table>
+<thead><tr><th>Person</th><th>Role</th><th>Why relevant</th></tr></thead>
+<tbody>
+<tr><td>Muniprakash Ganji</td><td>Senior Engineering Manager, CBA India (since 2021)</td><td>Built the Bengaluru Pega CoE from scratch (about 20 developers and QA), set up the onshore–offshore model and Sydney knowledge transfer, and delivered 620+ Next Best Conversations on CDH. Also knows Pega CLM/KYC. Doing a GenAI/agentic programme (IIT Roorkee) and Claude 101.</td></tr>
+<tr><td>Gurushankar C N</td><td>Engineering Manager / Chapter Lead – Pega Engineering (Fraud &amp; Scam Tech), CLSA</td><td>A senior Pega craft leader in Bengaluru; chapter leads usually join interviews to assess craft.</td></tr>
+<tr><td>Resmi Raveendran</td><td>Manager – Pega, CBA (since 2022), CSSA, CPDC, CSPO</td><td>Another Pega manager in Bengaluru.</td></tr>
+<tr><td>Shaju Thomas</td><td>Crew Tech Lead (SVP Engineering), CBA India</td><td>Hired the previous Pega Engineering Manager (2024), so he is senior in the Pega reporting line.</td></tr>
+<tr><td>Carl Le Vert (ASB, NZ)</td><td>Customer Experience Lead – Workflow</td><td>Leads ASB's Pega Platform capability and product owners across Customer Service, KYC, Lending and Payments. Previously ran "Pega Mahi Tahi" (5 squads with an onshore/offshore blend).</td></tr>
+<tr><td>Matthew Hall (ASB, NZ)</td><td>Lead System Architect</td><td>Technical lead on ASB's Pega Customer Service, "the biggest and most complicated in NZ"; earlier ASB Pega apps covered onboarding, FATCA, payment exceptions, credit cards and loans.</td></tr>
+<tr><td>Mathan Santhosh Kumar (ASB, NZ)</td><td>Software Consultant (Pega)</td><td>Customer Service app for frontline staff and brokers (500+ users), Kafka and MS Graph integrations, Pega Cloud migration.</td></tr>
+<tr><td>Pratheeb Kannan, Jurico Ong, Shantanu N. (ASB)</td><td>Pega technology leaders and consultants</td><td>Posting ASB's LSA and SSA roles in 2026; part of the Pega CoE build.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="work">
+<h2>What you would actually build</h2>
+<h3>From your job description <span class="tag t-fact">Fact</span></h3>
+<ul>
+<li>Design, build, test and deploy Pega applications in an Agile squad, turning requirements into secure, maintainable configuration.</li>
+<li>Case management workflows, reusable components, user experiences and <strong>integrations</strong>.</li>
+<li>Code and design reviews, automated testing, release activities and <strong>production support</strong> (incidents, defects, vulnerabilities, performance).</li>
+<li>Preferred: Pega Cloud, Constellation, KYC/CLM, Smart Disputes/Investigate, Customer Service or AIM.</li>
+</ul>
+<h3>From the Engineering Manager job description (the architecture you'll work within) <span class="tag t-fact">Fact</span></h3>
+<ul>
+<li>Class structure, case hierarchy, data models, <strong>ruleset strategy</strong> and reusable components.</li>
+<li>Case design standards: stages, processes, assignments, SLAs, routing, data pages, decision rules and <strong>background processing</strong>.</li>
+<li>Integrations: APIs, REST, <strong>events and asynchronous patterns</strong>, error handling, resiliency, <strong>observability</strong> and service reuse.</li>
+<li>Performance, scalability, availability, security and recovery.</li>
+</ul>
+<h3>Likely ASB workstreams <span class="tag t-inf">Inference</span></h3>
+<div class="grid">
+<div class="box"><b>Lending</b>Loan origination and fulfilment, hardship, and possibly collections. This is your domain, so lead with it.</div>
+<div class="box"><b>Financial crime</b>CLM/KYC onboarding, periodic reviews, screening, and FATCA/CRS checks.</div>
+<div class="box"><b>Customer Service</b>Interaction portal, service cases, frontline and broker journeys ("Mahi Tahi").</div>
+<div class="box"><b>Payments &amp; decisioning</b>Payment exceptions and investigations; NBA patterns learnt from CBA's Customer Engagement Engine.</div>
+</div>
+<h3>Background worth name-dropping <span class="tag t-fact">Fact</span></h3>
+<p>CBA's <strong>Customer Engagement Engine</strong> runs on Pega Customer Decision Hub: about 200 machine-learning models, "next best conversation" decisions in about 200 ms, tens of millions of decisions a day, and 50 million next-best conversations delivered in branch and contact centre. You don't need CDH for this role, but knowing CBA is one of the world's best-known Pega shops shows research.</p>
+</section>
+
+<section id="kafka">
+<h2>Are they heavy on Kafka?</h2>
+<p><strong>Short answer:</strong> the <em>bank</em> is very Kafka-heavy, while the <em>Pega role</em> treats Kafka as an important plus rather than the centre of the job. The job ads say "APIs, REST services, events and asynchronous patterns" and never name Kafka.</p>
+<div class="wrap"><table>
+<thead><tr><th>Where</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>CBA enterprise</td><td><span class="tag t-fact">Fact</span> Kafka since 2016. The Kafka "Event Hub" is mission-critical and "the core component of our event-driven architecture strategy", with 70+ projects by 2018 and use cases including <em>workflow initiation</em>, onboarding notifications, payments and fraud. A Bengaluru EventHub team runs <strong>10+ Confluent Kafka clusters</strong> (AWS MSK, Schema Registry, KRaft). CBA presented at Kafka Summit Bangalore 2024, and the Customer Engagement Engine is fed by Kafka events.</td></tr>
+<tr><td>CBA Pega engineers</td><td><span class="tag t-fact">Fact</span> (profiles): a home-loan rewards engine with "real-time Kafka-based communications between teams" (8M customers a month); CDH real-time customer data via Kafka; other CBA Pega developers list Kafka integration.</td></tr>
+<tr><td>ASB (NZ)</td><td><span class="tag t-fact">Fact</span> ASB is building a <strong>new Confluent/Datastax event-streaming platform</strong> with SDKs for internal teams. The ASB Pega LSA ad asks for "REST APIs, <strong>Kafka</strong>", and the SSA ad asks for "event-driven services". An ASB Pega consultant built Kafka integrations for the Customer Service app.</td></tr>
+<tr><td>What ASB Pega ads stress more</td><td><span class="tag t-fact">Fact</span> Constellation, DX API, GenAI, Knowledge Buddy, GenAI Coach, Blueprint, Agents, case management, security and test automation.</td></tr>
+</tbody></table></div>
+<h3>Pega people working on event streaming (index-supported profiles, not contacted)</h3>
+<div class="wrap"><table>
+<thead><tr><th>Person</th><th>Where / role</th><th>Pega + event-streaming evidence</th></tr></thead>
+<tbody>
+<tr><td>Priyodob Kundu</td><td>CBA Bengaluru · Lead Engineer (since Apr 2024), CSSA, PCDC, CLSA Part 1</td><td>Built a home-loan cashback and rewards engine on Pega case management plus decisioning, evaluating about 8M customers a month, with "real-time Kafka-based communications between several teams". Now leads Bankwest Nudge Studio (real-time NBA for 1.2M customers, 24.1 to 24.2 upgrade, Deployment Manager). <strong>The closest Bengaluru example of Pega and Kafka.</strong></td></tr>
+<tr><td>Sukan T S</td><td>CBA Bengaluru · Platform Engineer (since Apr 2026), CSSA, CSA, PCDC, AWS</td><td>Hands-on Kafka integration; Smart Investigate and CLM; Service-JMS, OAuth 2.0. About 4.3 years, <strong>the same level as you</strong>, so a natural peer to ask what the work is like.</td></tr>
+<tr><td>Ravikumar Reddy</td><td>CBA Sydney · Principal Engineer (since Jul 2023)</td><td>CDH real-time customer data changes via Kafka, Kafka integration, customer data ingestion, Pega clusters above 1000 TPS, ex-Pega DSM product engineer. The most senior Pega-plus-Kafka person found at CBA.</td></tr>
+<tr><td>Prabhu Subramani</td><td>CBA Sydney · Staff Software Engineer, CLSA</td><td>Pega Smart Dispute and Decisioning plus AWS, Kafka and C# systems.</td></tr>
+<tr><td>Seshagiri Jogineedi</td><td>CBA Sydney · Senior Engineer – Pega CDH (CommBank Yello)</td><td>The same benefits and rewards programme as Priyodob's engine: large-volume customer data processing. Kafka not named explicitly.</td></tr>
+<tr><td>Mathan Santhosh Kumar</td><td>ASB Auckland · Software Consultant (Pega)</td><td>Kafka, API and MS Graph integrations for the Customer Service app (500+ frontline and broker users); Pega Cloud migration.</td></tr>
+<tr><td>Vishnu S.</td><td>ASB Auckland · Software Specialist – Pega (since Jan 2025)</td><td>At BNZ previously: "Pega-Kafka for event publishing as well as consumption", plus lending NLP and KiwiSaver workflows.</td></tr>
+<tr><td>Mason (Yun) Chen · Michael Panganiban · Boris Khasanov</td><td>ASB Auckland · Kafka platform (not Pega), joined Sep 2025–Aug 2026</td><td>Confluent Cloud Kafka, Datastax, Schema Registry, connectors, ksqlDB/Flink. They build the <strong>new ASB event-streaming platform</strong> that Pega squads will consume.</td></tr>
+<tr><td>Premkumar Ganesan</td><td>Ex-CBA Pega CoE Lead (left Dec 2025)</td><td>Posts on real-time BIX extraction using Declare Trigger, Queue Processor and a Kafka dataset (May 2026). Worth reading as prep; reposted by CBA's Nalini Landge.</td></tr>
+</tbody></table></div>
+<div class="note good"><strong>How to use this:</strong> Kafka is your differentiator, so lead with it, but frame it the way CBA thinks about it:
+<ul>
+<li><strong>Duplicates and idempotency.</strong> CBA's own Kafka lessons call message duplication their biggest problem. Say how your Connect-SQL merge and business-key checks make reprocessing safe.</li>
+<li><strong>Platform vs consumer.</strong> At CBA a central platform team owns the clusters. You own the Pega side: Kafka dataset, real-time data flow, partitions to threads, offsets, dead-letter queue and replay, schema changes.</li>
+<li><strong>Kafka for workflow.</strong> Show an event <em>starting or updating a case</em>, not just loading data. That's the Pega use case they care about.</li>
+<li><strong>Observability.</strong> Your dashboard and pager are a direct answer to "how do you know it's healthy?"</li>
+</ul>
+Then pivot: "and I'm ramping on Constellation and Pega GenAI, which is where ASB's Pega roadmap is going."</div>
+</section>
+
+<section id="process">
+<h2>Interview process: what candidates report</h2>
+<ol>
+<li><strong>Recruiter or hiring-manager screen</strong> (15–30 minutes): motivation, notice period, current and expected CTC, office location. <span class="tag t-rep">Reported</span></li>
+<li><strong>Technical round 1</strong> (about 1 hour, often 2 senior engineers plus the hiring manager): self-introduction, <strong>deep dive on your resume projects</strong>, Pega concepts, scenario questions; some candidates had SQL or pseudo-code on screen-share. <span class="tag t-rep">Reported</span></li>
+<li><strong>Technical round 2 / design</strong> (about 1–1.5 hours, staff engineer or senior manager): design a case or integration end to end, trade-offs, failure handling. <span class="tag t-rep">Reported</span></li>
+<li><strong>Managerial / "bar raiser"</strong>: values, ownership, stakeholder handling, conflict, "why CBA". <span class="tag t-rep">Reported</span></li>
+<li><strong>HR</strong>: salary, perks and joining date. Feedback is often same or next day; the whole process took 2–4 weeks for most. <span class="tag t-rep">Reported</span></li>
+</ol>
+<div class="note bad"><strong>Heads-up from reviews:</strong> a few candidates said interviewers drilled one narrow concept or weren't clear about the role. If that happens, steer gently: "In my project I solved this using X; happy to go deeper into Y if that's what this squad uses." Ask the recruiter <em>now</em> who the panel is and which areas they'll cover.</div>
+</section>
+
+<section id="fit">
+<h2>Your fit: job description to evidence to how to say it</h2>
+<div class="wrap"><table>
+<thead><tr><th>They want</th><th>Your evidence (from your resume)</th><th>Say it like this</th></tr></thead>
+<tbody>
+<tr><td>Case management, rules, data modelling</td><td>30+ case types, flows and enhancements for collections, recovery, remarketing and customer service across 7 APAC markets; reusable data models, decision rules, circumstancing</td><td>"I design case types for business-managed change: circumstancing per market rather than copies, decision rules owned by the business."</td></tr>
+<tr><td>Integrations, events, async patterns</td><td>Pega integration layer for 50+ Kafka topics (Data Flows, Datasets, Queue Processors); replaced SSIS batch, bringing data from about 25 hours to near real time; 10+ REST/SOAP APIs, Connect-SQL</td><td>Walk through the event flow: topic, dataset, data flow, queue processor, idempotent merge, failure, replay.</td></tr>
+<tr><td>Error handling, resiliency, observability</td><td>Service-REST replay API (dead-letter recovery cut from about 2 hours to under 2 minutes); Pega operations dashboard; real-time pager with SMS and escalation</td><td>"I treat failures as a first-class path: dead-letter queue, correlation ID, one-click requeue, alerting. Recovery time is my metric."</td></tr>
+<tr><td>Performance</td><td>200,000 records in 15 minutes after bottleneck analysis; PAL, Tracer, PDC</td><td>Explain what the bottleneck <em>was</em> (be ready: threads, partitions, DB merge, commit size).</td></tr>
+<tr><td>Testing, deployment, release</td><td>20+ production releases, 95+ guardrail score, Deployment Manager</td><td>Branch, merge, pipeline, environment promotion and rollback. Mention unit-test discipline honestly.</td></tr>
+<tr><td>Production support</td><td>L2/L3 across 7 markets; Japan SFTP go-live with no integration defects</td><td>Tell one incident story in STAR form, including the root cause and the permanent fix.</td></tr>
+<tr><td>Work with ASB (NZ)</td><td>Shipped for AU and NZ markets at Mercedes-Benz</td><td>"I already work across APAC time zones with country product owners, including NZ and AU."</td></tr>
+<tr><td>Constellation, Pega Cloud <em>(preferred)</em></td><td>Learning: listed on your resume plus your study-pack chapters; no production Constellation yet</td><td>"I know the centre-out model, views and DX API, and I'm ramping. Here's what I'd do in the first 30 days." Don't claim production use.</td></tr>
+<tr><td>KYC/CLM, Customer Service, Smart Disputes <em>(preferred)</em></td><td>Not used</td><td>Show domain transfer: collections and customer service cases map to service requests; regulated workflows map to KYC controls.</td></tr>
+<tr><td>5+ years</td><td>About 4 years 3 months (Aug 2022–now), all hands-on Pega</td><td>Don't apologise. Lead with ownership: "I've owned design to production for a multi-market platform."</td></tr>
+</tbody></table></div>
+<div class="note"><strong>Resume honesty check:</strong> your v2 resume states estimated savings (for example $250K+, $200K, $50K, £20K). Interviewers at a bank <em>will</em> ask how you measured them. Prepare one sentence per figure (what was retired, its cost, who confirmed it), call them "estimated", and never inflate them in the room. Bring only claims you can defend line by line.</div>
+</section>
+
+<section id="tech">
+<h2>Technical questions to rehearse (with answer outlines)</h2>
+<details open><summary>1. Walk me through your Kafka integration end to end.</summary><p>Kafka topic → Kafka dataset (instance, topic, JSON) → real-time Data Flow (partitions match topic partitions) → transform/validate → Connect-SQL merge or case update → failure path: Queue Processor with retries and backoff → dead-letter queue → Service-REST replay API → dashboard plus pager alerts. Cover <strong>idempotency</strong> (business key or offset check before merge), <strong>ordering</strong> (per-key partition), and <strong>backpressure</strong> (thread count, batch size). Close with measurable outcomes.</p></details>
+<details><summary>2. Queue Processor vs Job Scheduler vs Agent: when do you use each?</summary><p>Queue Processor: event-driven, per-item, retries and dead-letter, scalable across nodes (asynchronous work like a notification after case update). Job Scheduler: time-based batch (nightly reconciliation). Legacy agents: avoid in new work. Mention node classification and how you monitor queues in Admin Studio and PDC.</p></details>
+<details><summary>3. Explain rule resolution, and design an enterprise class structure for ASB lending.</summary><p>Rule resolution: class and ruleset hierarchy, availability, circumstance, date/time, access group/ruleset list, then the best match, and cache. Class layers for ASB: <code>ASB-</code> (organisation) → <code>ASB-FW-Lending-</code> (reusable framework) → <code>ASB-Lending-Work-HomeLoan</code> (implementation), with data classes shared at the organisation layer and integration classes in <code>ASB-Int-</code>. Explain why: reuse across products, specialisation, ruleset governance.</p></details>
+<details><summary>4. Data Page scopes and refresh strategies; how do you avoid stale data?</summary><p>Thread, requestor and node scope; editable vs read-only; parameterised/keyed pages; refresh on reload, timeout or a "do not reload when" condition; async loading. Example: node-level reference data with a timeout, requestor-level customer profile, thread-level case-specific lookups.</p></details>
+<details><summary>5. Data Transform vs Activity vs Declare Expression.</summary><p>Prefer declarative (forward chaining) and data transforms for mapping; activities only for what's left over (for example complex Connect-SQL or obj-methods), with guardrail justification. Mention performance traps with chained declare expressions.</p></details>
+<details><summary>6. Design SLAs and routing for a hardship or collections case.</summary><p>Goal, deadline and passed-deadline intervals; escalation actions (reassign to supervisor, notify); work queues by market or skill; Get Next Work with urgency; SLA calendars per market (NZ public holidays!). Talk about your real collections experience.</p></details>
+<details><summary>7. An external API times out in production. What do you do?</summary><p>Triage: PDC alerts → Tracer/logs → check the connector (timeout, retry, circuit) → quick fix (route to a manual work queue, stop the retry storm) → root cause → permanent fix (async queue processor with retry and backoff, idempotent call, fallback status on the case, alert) → post-incident review. Use your replay-API story.</p></details>
+<details><summary>8. Securing a Pega app in a bank.</summary><p>Access groups, roles, privileges; Access When / ABAC for data-level rules (for example a staff member sees only their branch's customers); auth via SSO (SAML/OIDC) and OAuth 2.0 for APIs; mTLS for service-to-service; no secrets in rules (use authentication profiles and keystores); audit trail; field-level encryption or masking for PII. Mention production rule-set locking.</p></details>
+<details><summary>9. Performance tuning: where do you start?</summary><p>PAL counters (DB time, rules executed, clipboard size), alerts in PDC, expose columns used in report filters, add indexes, avoid loading large pages, use paging in reports, tune Data Flow threads and partitions. Use your 200,000-in-15-minutes example: what you measured and what you changed.</p></details>
+<details><summary>10. Release and branching on a squad.</summary><p>Branch rulesets per story → merge with conflict review → Deployment Manager pipeline (Dev → QA → Staging → Prod) with guardrail and test gates → rollback. Add PegaUnit for decision and data-transform logic and scenario tests for key journeys. "Automation-first testing" is a CBA foundation, so show you value it.</p></details>
+<details><summary>11. Constellation in 60 seconds (even without production use).</summary><p>Centre-out: business logic in case types and data; the UI is generated from views via the DX API v2, rendered by a React-based client; fewer custom sections, more out-of-the-box patterns; extend with DX components. Why banks move: upgradeability, consistent UX, Pega Cloud fit. Then your ramp plan: build one case type with views and a REST data page in a personal Infinity '25 environment and complete the Constellation mission on Pega Academy.</p></details>
+<details><summary>12. Pega Customer Service and KYC basics.</summary><p>CS: interaction case → service requests (intents) → Interaction Portal, composite customer view, knowledge, next-best-action. KYC/CLM: onboarding case, KYC types and rules engine, due-diligence levels, periodic review, screening integrations. Say honestly that you'd map your service and collections case experience onto them.</p></details>
+<details><summary>13. How do you use AI in your engineering work?</summary><p>CBA emphasises "AI-powered engineering at scale". Use your AI-assisted mapping utility (four weeks to ten minutes <em>with human review</em>) and AI-assisted bottleneck analysis. Stress validation, review and no customer data in prompts. Knowing Pega GenAI (GenAI Connect, Coach, Knowledge Buddy) is a plus.</p></details>
+<details><summary>14. Possible SQL or pseudo-code on screen-share.</summary><p>Practise: join cases to customers with aggregates; find duplicates with GROUP BY/HAVING; window function for the latest record per account; a MERGE/upsert; and pseudo-code for a REST endpoint with validation and idempotency. (Your <code>learnings\SQL</code> 30-day lab covers this.)</p></details>
+</section>
+
+<section id="design">
+<h2>Design scenarios to practise out loud (15 minutes each)</h2>
+<ol>
+<li><strong>Home-loan hardship request for ASB:</strong> case stages (Intake → Assess → Decide → Fulfil → Monitor), customer documents, affordability decision via a decision table/strategy, core-banking update via an async event, SLA per regulation, maker-checker approval, audit trail.</li>
+<li><strong>KYC periodic review:</strong> batch trigger (Job Scheduler) creates review cases, screening via REST with retries, high-risk routing to a specialist queue, an outcome event to downstream systems, and evidence retained.</li>
+<li><strong>Payment exception from Kafka:</strong> topic → data flow → case per exception (deduplicated by payment ID) → auto-resolve rules → manual queue → replay/fix → status event back to payments.</li>
+</ol>
+<p>For each: state the <strong>assumptions</strong>, draw the <strong>boundary</strong> (what's Pega vs other systems), name the <strong>failure modes</strong>, and finish with <strong>how you'd test and observe</strong> it. That structure matches the Engineering Manager job description almost word for word.</p>
+</section>
+
+<section id="behaviour">
+<h2>Values &amp; behaviour: prepare 6 STAR stories</h2>
+<p><span class="tag t-fact">Fact</span> CommBank values: <strong>Care</strong> ("we care about our customers and each other – we serve with humility and transparency"), <strong>Courage</strong> ("step in, speak up and lead by example"), <strong>Commitment</strong> ("we do what's right and work together to get things done"). Leadership principles: <strong>Obsess over customers · Lead as an owner · Be curious and humble · Create exceptional teams</strong>. The Code of Conduct asks "Must we? Can we? Should we?"</p>
+<div class="wrap"><table>
+<thead><tr><th>Theme</th><th>Your story (suggested)</th></tr></thead>
+<tbody>
+<tr><td>Courage: raised a risk</td><td>The SSIS-to-Kafka migration: a failure-recovery gap you flagged and fixed with the replay API before it hurt operations.</td></tr>
+<tr><td>Care: customer or colleague</td><td>Localised SMS/correspondence that made collections communication clearer and cheaper; or how the pager and dashboard spared the L1 team manual checks.</td></tr>
+<tr><td>Commitment: did what's right</td><td>Japan SFTP go-live with no integration defects: the extra testing you insisted on.</td></tr>
+<tr><td>Lead as an owner</td><td>Built the operations dashboard on your own initiative; investigation went from hours to seconds.</td></tr>
+<tr><td>Curious and humble</td><td>Learning Constellation and GenAI on your own (study packs, AI-assisted tooling with human review); a time you got feedback and changed.</td></tr>
+<tr><td>Conflict or disagreement</td><td>A design disagreement with a market or onshore stakeholder: how you used data and reached a decision.</td></tr>
+</tbody></table></div>
+<h3>"Why CBA and this role?" (about 45 seconds)</h3>
+<p>"Three reasons. First, CBA is one of the most serious Pega shops in the world: the Customer Engagement Engine is a reference case, and ASB is now scaling Pega across lending, financial crime and workflow. Second, this squad is new and owns ASB outcomes from Bengaluru, which suits me because I've spent four years shipping Pega for seven APAC markets including New Zealand and Australia. Third, my strength is the integration and reliability side, with Kafka, async processing and recovery, which is exactly what a modernisation programme needs. I also want to grow into Constellation and Pega Cloud, and this is the place to do that properly."</p>
+</section>
+
+<section id="ask">
+<h2>Questions to ask them (pick 3–4)</h2>
+<ul>
+<li>Which ASB tribe and product will this squad serve first: lending, financial crime/KYC, customer service, or payments?</li>
+<li>Is ASB's Pega on Pega Cloud or on-premises today, and which Infinity version? Is Constellation used for new builds?</li>
+<li>How does the squad work with ASB day to day: shared ceremonies, NZ product owner, overlap hours?</li>
+<li>How is the split between new development and production support? Is there an on-call rotation?</li>
+<li>Who owns the Pega architecture: the Engineering Manager here, or ASB's CoE in NZ?</li>
+<li>How are engineers levelled and promoted at CBA India (the engineering skills framework), and what would make someone outstanding in the first 6 months?</li>
+</ul>
+</section>
+
+<section id="pay">
+<h2>Pay, level &amp; logistics</h2>
+<div class="grid">
+<div class="box"><b>₹25–40L</b>Glassdoor total-pay band, Senior Software Engineer, Bengaluru (99 salaries, Sept 2026); average base about ₹33.5L plus about ₹8L additional. <span class="tag t-rep">Reported</span></div>
+<div class="box"><b>₹35.8–39.6L</b>AmbitionBox average, Senior Software Engineer (6–13 years, 641 salaries, Nov 2026). <span class="tag t-rep">Reported</span></div>
+<div class="box"><b>₹23.5–26L</b>AmbitionBox average, Software Engineer (3–8 years). The <strong>down-level risk</strong>. <span class="tag t-rep">Reported</span></div>
+</div>
+<ul>
+<li>Your earlier framework (hub): floor ₹20L, target ₹24–27L, goal ₹35L. <strong>For the senior title, the market supports asking above your old target.</strong> Anchor on the role band, not on your current CTC.</li>
+<li>If they offer "Software Engineer", ask what the gap to senior is and whether a 6-month level review can be written into the offer.</li>
+<li>Expect a bonus or STI component and possibly shares. Ask about fixed vs variable, joining bonus and notice-period buyout.</li>
+<li>Logistics <span class="tag t-rep">Reported</span>: Manyata Tech Park; about 40% office per month; cab/shuttle; no free meals; "life leave" and generous leave mentioned by employees.</li>
+</ul>
+</section>
+
+<section id="plan">
+<h2>48-hour prep plan</h2>
+<ol>
+<li><strong>Today (2 hours):</strong> ask the recruiter for the panel, the round format and which REQ the call is for. Re-read REQ266821/2 and the EM job description (REQ266820). Write your 60-second intro.</li>
+<li><strong>Today (2 hours):</strong> rehearse technical questions 1, 2, 7, 3 and 10 out loud. Draw your Kafka-to-replay architecture on one page.</li>
+<li><strong>Tomorrow (2 hours):</strong> design scenario 1 (hardship) on a whiteboard in 15 minutes; then scenario 3.</li>
+<li><strong>Tomorrow (1 hour):</strong> 6 STAR stories, 2 minutes each, plus "Why CBA". Prepare one sentence of evidence for every number on your resume.</li>
+<li><strong>Tomorrow (1 hour):</strong> Constellation and Customer Service fast refresh (your FCB pack ch04 and LTIM pack ch02/ch03). Write a 30-day ramp plan.</li>
+<li><strong>Interview day:</strong> camera and audio check, resume open, a notepad for architecture sketches, questions ready. Think aloud, and confirm assumptions before designing.</li>
+</ol>
+</section>
+
+<section id="sources">
+<h2>Sources</h2>
+<ul>
+<li><a href="https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Senior-Software-Engineer_REQ266821" target="_blank" rel="noopener noreferrer">CBA REQ266821 Senior Software Engineer – Pega Development</a> · <a href="https://cba.wd3.myworkdayjobs.com/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Senior-Software-Engineer_REQ266822" target="_blank" rel="noopener noreferrer">REQ266822</a> · <a href="https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Engineering-Manager_REQ266820" target="_blank" rel="noopener noreferrer">REQ266820 Engineering Manager</a></li>
+<li><a href="https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Executive-Manager---Technology-Modernisation_REQ266311" target="_blank" rel="noopener noreferrer">CBA REQ266311 Executive Manager – Technology Modernisation (ASB India capability)</a></li>
+<li><a href="https://careers.asbgroup.co.nz/jobdetails/ajid/wqi0x/Pega-System-Architect-Software-Engineer-,AUSTRACT2SB165562.html" target="_blank" rel="noopener noreferrer">ASB Pega System Architect posting (Pega CoE)</a> · <a href="https://www.linkedin.com/posts/pratheeb-kannan-a4ba6674_we-are-hiring-huge-opportunity-for-pega-activity-7501072295273291777-gFFY" target="_blank" rel="noopener noreferrer">ASB "20+ Pega opportunities" post</a> · <a href="https://www.linkedin.com/posts/shantanu-n-499523b_amazing-opportunity-for-pega-lsas-activity-7476937628270006272-X-B2" target="_blank" rel="noopener noreferrer">ASB CLM/KYC LSA post</a></li>
+<li><a href="https://linkedin.com/in/muniprakashganji" target="_blank" rel="noopener noreferrer">Muniprakash Ganji</a> · <a href="https://linkedin.com/in/gurushankar-c-n-a1752a47" target="_blank" rel="noopener noreferrer">Gurushankar C N</a> · <a href="https://linkedin.com/in/resmi-raveendran" target="_blank" rel="noopener noreferrer">Resmi Raveendran</a> · <a href="https://www.linkedin.com/posts/shajuthomas_this-is-an-exciting-role-for-which-i-am-hiring-activity-7218573688298725376-AMCF" target="_blank" rel="noopener noreferrer">Shaju Thomas post</a> · <a href="https://linkedin.com/in/carllevert" target="_blank" rel="noopener noreferrer">Carl Le Vert</a> · <a href="https://linkedin.com/in/matthew-hall-48897416" target="_blank" rel="noopener noreferrer">Matthew Hall</a> · <a href="https://linkedin.com/in/mathan-k" target="_blank" rel="noopener noreferrer">Mathan Santhosh Kumar</a> (search-index profiles)</li>
+<li><a href="https://www.pega.com/customers/cba-marketing" target="_blank" rel="noopener noreferrer">Pega customer story: CBA next best conversations</a> · <a href="https://www.commbank.com.au/articles/newsroom/2022/06/CBA-artificial-intelligence-usages.html" target="_blank" rel="noopener noreferrer">CommBank newsroom: Customer Engagement Engine</a></li>
+<li>Kafka: <a href="https://www.itnews.com.au/news/cba-is-building-digital-twins-of-its-money-management-in-the-app-607852" target="_blank" rel="noopener noreferrer">iTnews: CBA Event Hub on Kafka</a> · <a href="https://www.slideshare.net/slideshow/kafka-in-the-enterprisea-twoyear-journey-to-build-a-data-streaming-platform-from-scratch/120398509" target="_blank" rel="noopener noreferrer">CBA Kafka Summit talk (duplication lessons)</a> · <a href="https://www.mncjobsindia.com/jobs/senior-platform-engineer-ka-3961832" target="_blank" rel="noopener noreferrer">CBA EventHub platform role, Bengaluru</a> · <a href="https://nz.linkedin.com/jobs/view/lead-kafka-software-engineer-at-asb-bank-4200636983" target="_blank" rel="noopener noreferrer">ASB Lead Kafka Software Engineer</a> · <a href="https://careers.asbgroup.co.nz/jobdetails/ajid/FRdXw/Senior-Software-Engineer-Pega,AUSTRACT2SB165445.html" target="_blank" rel="noopener noreferrer">ASB Senior Software Engineer – Pega ad</a> · <a href="https://linkedin.com/in/priyodob-kundu-a76bb8100" target="_blank" rel="noopener noreferrer">Priyodob Kundu (CBA, Kafka + Pega)</a></li>
+<li><a href="https://www.commbank.com.au/about-us/careers/working-with-us.html" target="_blank" rel="noopener noreferrer">CommBank values and leadership principles</a> · <a href="https://www.commbank.com.au/about-us/careers/india.html" target="_blank" rel="noopener noreferrer">CommBank India careers</a></li>
+<li><a href="https://www.glassdoor.co.in/Interview/Commonwealth-Bank-of-Australia-Senior-Software-Engineer-Interview-Questions-EI_IE7922.0,30_KO31,55.htm" target="_blank" rel="noopener noreferrer">Glassdoor: CBA SSE interviews</a> · <a href="https://www.geeksforgeeks.org/interview-experiences/commonwealth-bank-of-australia-interview-experience-for-software-engineer-full-time/" target="_blank" rel="noopener noreferrer">GeeksforGeeks: CBA SE interview</a> · <a href="https://www.ambitionbox.com/interviews/commonwealth-bank-of-australia-india-interview-questions" target="_blank" rel="noopener noreferrer">AmbitionBox: CBA India interviews</a></li>
+<li><a href="https://www.glassdoor.co.in/Salary/Commonwealth-Bank-of-Australia-Senior-Software-Engineer-Bengaluru-Salaries-EJI_IE7922.0,30_KO31,55_IL.56,65_IC2940587.htm" target="_blank" rel="noopener noreferrer">Glassdoor: SSE salaries Bengaluru</a> · <a href="https://www.ambitionbox.com/salaries/commonwealth-bank-of-australia-india-salaries" target="_blank" rel="noopener noreferrer">AmbitionBox: CBA India salaries</a> · <a href="https://www.glassdoor.com.au/Benefits/Commonwealth-Bank-of-Australia-Work-from-home-India-BNFT155_E7922_N115.htm" target="_blank" rel="noopener noreferrer">Glassdoor: WFH benefit India</a></li>
+</ul>
+<p class="note">Limits: profiles are search-index text, not live LinkedIn checks; review-site figures are self-reported; panel composition and workstream are inferences. No one was contacted.</p>
+</section>
+</main>
+</body>
+</html>

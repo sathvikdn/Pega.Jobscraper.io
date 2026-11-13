@@ -1,0 +1,759 @@
+{
+  "as_of": "2026-09-08",
+  "salary_goal": {
+    "total_ctc_inr": 3500000,
+    "broad_search_floor_inr": 2000000,
+    "note": "Team-depth priorities evaluate work and learning evidence; they do not establish a salary budget or vacancy."
+  },
+  "team_depth": [
+    {
+      "id": "depth-first-citizens",
+      "company": "First Citizens Bank",
+      "match_names": [
+        "First Citizens Bank",
+        "First Citizens India",
+        "First Citizens Bank (US)",
+        "First Citizens India (FC Global Services India LLP)"
+      ],
+      "category": "gcc",
+      "team_focus": "Equipment-finance servicing, collections and decisioning.",
+      "what_they_build": [
+        "Customer Service, Collections and CDH combined across equipment-finance servicing and recovery.",
+        "The 2026 presentation describes delinquency-to-litigation workflows and a planned external remarketing portal."
+      ],
+      "technologies": [
+        "Pega Customer Service",
+        "Pega Collections",
+        "Pega Customer Decision Hub",
+        "Pega Cloud (session product area)"
+      ],
+      "learning_value": [
+        "Strong domain overlap with auto-finance collections; investigate ownership of case lifecycles, integrations and recovery decisions.",
+        "Potential route from implementation work to end-to-end servicing architecture; this is an inference from the program scope."
+      ],
+      "ownership_evidence": "A customer-led session names the bank’s workflow CoE leader and operations director. It establishes a bank-owned program, while implementation staffing and Bengaluru component ownership remain unproven.",
+      "bangalore_scope": "Separate employer-indexed Bengaluru Pega development, lead and test-engineering roles support local capability. They do not establish that the local squad owns the equipment-finance program. Some referenced requisitions are expired.",
+      "people": [
+        {
+          "name": "Sanjoy Sarkar",
+          "title": "SVP, Senior Director; Head of Enterprise Workflow Automation & Robotics (CoE)",
+          "location": null,
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "connection_to_team": "Named customer speaker for this program on 9 June 2026; not identified as a Bengaluru manager."
+        },
+        {
+          "name": "Justine Cook",
+          "title": "Director, Operations",
+          "location": null,
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "connection_to_team": "Named customer speaker for the equipment-finance program; workplace not specified."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "title": "First Citizens equipment-finance session, PegaWorld 2026",
+          "source_type": "event_session",
+          "checked_at": "2026-09-08",
+          "event_date": "2026-06-09",
+          "excerpt": "The customer session links servicing, recovery and AI decisioning and names both bank speakers."
+        },
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "title": "First Citizens India: Software Engineer I — PEGA Developer, 24759",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed employer posting lists a full-time Pega developer role in Bangalore, India.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Bangalore-India/Software-Test-Engineer-II_24712-1",
+          "title": "First Citizens India: Software Test Engineer II — Pega, 24712",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed employer posting places Pega test engineering in Bangalore, India.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Bangalore-India/Lead-Software-Engineer---Pega-Developer_24727-1",
+          "title": "First Citizens India: Lead Software Engineer — Pega Developer, 24727",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Additional Bangalore Pega lead-engineering posting had an application deadline of 12 August 2026."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Closest researched business-domain match to the candidate’s collections experience.",
+          "Separate local developer and test roles make a targeted team discussion worthwhile."
+        ],
+        "tradeoffs": [
+          "Global program evidence is stronger than the link to a specific Bengaluru squad.",
+          "A presentation does not establish an open role or a ₹35 LPA budget."
+        ],
+        "questions_to_ask": [
+          "Does the Bengaluru team own the equipment-finance collections platform or another application?",
+          "Who owns integration design, production releases and the remarketing portal?",
+          "What engineering level and approved compensation band match a four-year CSSA candidate?"
+        ]
+      }
+    },
+    {
+      "id": "depth-booking",
+      "company": "Booking Holdings / Booking.com",
+      "match_names": [
+        "Booking Holdings",
+        "Booking Holdings India",
+        "Booking Holdings / Booking.com",
+        "Booking.com"
+      ],
+      "category": "gcc",
+      "team_focus": "Customer-service case workflows, release engineering and production performance.",
+      "what_they_build": [
+        "A travel-support application with cancellation and partner/guest approval journeys.",
+        "A 2025 customer session describes API-driven regression tests, CI/CD quality gates and performance testing."
+      ],
+      "technologies": [
+        "Pega Customer Service",
+        "Pega case and assignment APIs",
+        "JSON",
+        "CI/CD",
+        "Pega Cloud",
+        "UIKit at the time of the 2025 session"
+      ],
+      "learning_value": [
+        "Strong environment to investigate for integration, automation, performance and release-ownership depth.",
+        "API-focused testing complements production automation experience; infer learning potential, not a guaranteed assignment."
+      ],
+      "ownership_evidence": "The customer’s engineering manager describes release controls and performance work across the application. The session also names an implementation partner, so internal and partner responsibilities must be separated.",
+      "bangalore_scope": "Previously checked public profiles connect Pega architecture with Booking Holdings in Bengaluru, including rental cars. The global Booking.com presentation does not establish their squad assignment or legal employing entity.",
+      "people": [
+        {
+          "name": "Harneek Singh",
+          "title": "Engineering Manager, Testing at Customer Service (2025 session)",
+          "location": "Netherlands (self-described in session)",
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-2025-chaos-control-testing-releasing-dynamic-pega-app-smart-test",
+          "connection_to_team": "Customer presenter responsible for the quality of the Pega customer-service application; not a Bengaluru team lead."
+        },
+        {
+          "name": "Datta Vandana T.",
+          "title": "Pega System Architect",
+          "location": "Bengaluru, Karnataka, India",
+          "source_url": "https://in.linkedin.com/in/datta-vandana-t",
+          "connection_to_team": "Own About section explicitly ties this role to Booking Holdings; employer experience is Bengaluru. Cache was approximately four months old. Previously checked 2026-09-07; current employment remains unconfirmed."
+        },
+        {
+          "name": "Navya Chatrati",
+          "title": "Pega Senior System Architect",
+          "location": "Bengaluru, Karnataka, India",
+          "source_url": "https://in.linkedin.com/in/navya-chatrati-6a9b3a82",
+          "connection_to_team": "Own About section describes a Pega SSA in the rental-cars space; indexed experience lists Booking Holdings in Bengaluru. Cache was approximately four months old. Previously checked 2026-09-07; current employment remains unconfirmed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pega.com/insights/resources/pegaworld-2025-chaos-control-testing-releasing-dynamic-pega-app-smart-test",
+          "title": "Booking.com release automation, PegaWorld 2025",
+          "source_type": "event_session",
+          "checked_at": "2026-09-08",
+          "event_date": "2025",
+          "excerpt": "The customer presenter explains API regression, automated deployment gates and cloud performance engineering."
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/pegainnovate-hyd-2025-breakout-session-delivering-brilliance-customer-service",
+          "title": "Booking customer-service modernization, PegaInnovate 2025",
+          "source_type": "event_session",
+          "checked_at": "2026-09-08",
+          "event_date": "2025",
+          "excerpt": "Soumyadeep Bandyopadhyay from Booking discusses customer-service modernization; Hyderabad is the event location."
+        },
+        {
+          "url": "https://in.linkedin.com/in/datta-vandana-t",
+          "title": "Datta Vandana T. — Booking Holdings",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed About text identifies Pega System Architect work at Booking Holdings; profile and employer experience show Bengaluru."
+        },
+        {
+          "url": "https://in.linkedin.com/in/navya-chatrati-6a9b3a82",
+          "title": "Navya Chatrati — Booking Holdings",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed About text describes Pega senior architecture in rental cars; employer experience lists Booking Holdings, Bengaluru."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Concrete evidence of substantial software engineering around Pega.",
+          "Local architecture profile claims give a starting point for scoped conversations."
+        ],
+        "tradeoffs": [
+          "Booking Holdings and Booking.com are not interchangeable legal employers.",
+          "Historical UIKit and testing details may have changed; verify today’s architecture."
+        ],
+        "questions_to_ask": [
+          "Which Bengaluru squads own customer service versus rental cars?",
+          "How much work covers feature architecture, integrations and performance versus test execution?",
+          "How are internal engineers and partners divided, and who controls releases?"
+        ]
+      }
+    },
+    {
+      "id": "depth-wells-fargo",
+      "company": "Wells Fargo",
+      "match_names": [
+        "Wells Fargo",
+        "Wells Fargo (US)"
+      ],
+      "category": "gcc",
+      "team_focus": "Real-time customer decisioning and enterprise Pega workflow engineering.",
+      "what_they_build": [
+        "A CDH-based customer-engagement system learning from interactions across banking channels.",
+        "The 2026 keynote describes large-scale personalization and exploration of agentic marketing capabilities."
+      ],
+      "technologies": [
+        "Pega Customer Decision Hub",
+        "AI decisioning",
+        "Pega case management (separate Bengaluru role)",
+        "REST / SOAP (separate Bengaluru role)"
+      ],
+      "learning_value": [
+        "Potential learning in decision strategy, channel integration and production-scale operations.",
+        "Confirm whether the role is CDH decisioning, core workflow development or a mixed platform team."
+      ],
+      "ownership_evidence": "Named bank executives explain the customer-engagement program in a 2026 keynote. This proves customer-side program leadership, not that any particular India role owns the decision engine.",
+      "bangalore_scope": "An employer-indexed Bengaluru Pega engineering role and a cached local professional profile support local capability. The cited August 2026 role is expired; its work cannot automatically be mapped to the global keynote.",
+      "people": [
+        {
+          "name": "Marcia Osborne",
+          "title": "Consumer Banking and Lending Marketing Senior Executive (2026 keynote)",
+          "location": null,
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+          "connection_to_team": "Bank speaker on its CDH program; not a verified Bengaluru engineering manager."
+        },
+        {
+          "name": "Giles Richardson",
+          "title": "Executive Vice President of Marketing Strategy and Delivery (2026 keynote)",
+          "location": null,
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+          "connection_to_team": "Bank speaker describing marketing decisioning; location not stated."
+        },
+        {
+          "name": "Ravi kiran N G",
+          "title": "Lead Pega developer (About section)",
+          "location": "Bengaluru, Karnataka, India",
+          "source_url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+          "connection_to_team": "Indexed About section describes a lead Pega developer; employer experience lists Wells Fargo. Search cache was approximately four months old. Other people's liked posts were excluded. Previously checked 2026-09-07; current employment remains unconfirmed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+          "title": "Wells Fargo customer-decisioning keynote, PegaWorld 2026",
+          "source_type": "event_session",
+          "checked_at": "2026-09-08",
+          "event_date": "2026-06-09",
+          "excerpt": "Bank executives describe CDH-based personalization and ongoing AI development."
+        },
+        {
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "title": "Wells Fargo: Lead Software Engineer (Pega), R-565488",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Bengaluru Pega engineering role posted 24 August 2026, with a 30 August deadline; direct URL now returns 404."
+        },
+        {
+          "url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+          "title": "Ravi kiran N G — Wells Fargo",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Profile's own About section describes lead Pega development; the indexed profile places the professional and Wells Fargo experience in Bengaluru."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Recent customer evidence of meaningful Pega scale.",
+          "Separate Bengaluru engineering evidence supports a focused local search."
+        ],
+        "tradeoffs": [
+          "CDH roles may require decisioning skills beyond CSSA case management.",
+          "A recently closed job is team evidence, not availability evidence."
+        ],
+        "questions_to_ask": [
+          "Is this squad part of the CDH program or another banking workflow?",
+          "What decisioning certification or adaptive-model experience is expected?",
+          "Will I own integrations and production outcomes or mainly implement predefined rules?"
+        ]
+      }
+    },
+    {
+      "id": "depth-cba",
+      "company": "Commonwealth Bank / CommBank India",
+      "match_names": [
+        "CBA",
+        "Commonwealth Bank",
+        "Commonwealth Bank / CommBank India",
+        "CBA (Australia)"
+      ],
+      "category": "gcc",
+      "team_focus": "Customer engagement decisioning, with separately evidenced India Pega application engineering.",
+      "what_they_build": [
+        "A Customer Engagement Engine using CDH to select context-aware conversations across banking channels.",
+        "A Bengaluru employer-indexed role separately describes Pega/Java application development and integration."
+      ],
+      "technologies": [
+        "Pega Customer Decision Hub",
+        "Real-time decisioning",
+        "Java / JEE (local role)",
+        "REST APIs (local role)",
+        "CI/CD (local role)"
+      ],
+      "learning_value": [
+        "Potential exposure to decisioning and channel integration alongside broader Java engineering.",
+        "Useful transition toward platform ownership if the local squad has design and release authority."
+      ],
+      "ownership_evidence": "The customer case study describes a bank-operated engagement capability. The public source does not identify the India team responsible for it.",
+      "bangalore_scope": "Workday REQ261027 explicitly places Pega/Java engineering at Bangalore Manyata Tech Park in the previously checked index. It does not prove that this position owns the Customer Engagement Engine.",
+      "people": [],
+      "sources": [
+        {
+          "url": "https://www.pega.com/customers/cba-marketing",
+          "title": "CBA Customer Engagement Engine case study",
+          "source_type": "vendor_customer_story",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Pega’s customer story describes CDH-powered conversations across digital and assisted banking channels."
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers/job/Senior-Software-Engineer_REQ261027",
+          "title": "CommBank: Senior Software Engineer, REQ261027",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed employer role places Pega and Java application development, integrations and production support at Bangalore Manyata Tech Park.",
+          "status": "search_index_only"
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Substantial customer decisioning program and separate local technical-role evidence.",
+          "Integration and Java responsibilities could broaden engineering depth."
+        ],
+        "tradeoffs": [
+          "The customer story is undated historical material; do not treat its metrics as current.",
+          "No current named Bengaluru squad lead was verified."
+        ],
+        "questions_to_ask": [
+          "Which customer or internal platforms does the Bengaluru Pega squad own?",
+          "Is the opening CDH-heavy or workflow/integration-heavy?",
+          "How are architecture decisions and on-call responsibilities shared across Australia and India?"
+        ]
+      }
+    },
+    {
+      "id": "depth-jpmorgan",
+      "company": "JPMorgan Chase",
+      "match_names": [
+        "JPMorganChase",
+        "JPMorgan Chase",
+        "JPMorgan Chase & Co.",
+        "JPMorgan Chase (US)"
+      ],
+      "category": "gcc",
+      "team_focus": "Payments investigations, sanctions alert workflows and controlled automation.",
+      "what_they_build": [
+        "Pega workflows handling sanctions alerts and AI-assisted false-positive processing.",
+        "The 2024 customer session connects the solution to payment investigations and Swift requests for information."
+      ],
+      "technologies": [
+        "Pega workflow automation",
+        "AI-assisted alert processing",
+        "Swift integration",
+        "Payment investigation workflows"
+      ],
+      "learning_value": [
+        "Potential depth in regulated integrations, exception handling and auditable automation.",
+        "A useful domain expansion from collections, if the role includes design and production ownership."
+      ],
+      "ownership_evidence": "The customer’s global sanctions and client-screening technology head presents an operational Pega solution. This establishes global technology ownership, not the precise India delivery split.",
+      "bangalore_scope": "A cached public profile identifies a Bengaluru Senior Associate/Pega Developer. It does not place that person in the sanctions or payments team; no such assignment is inferred.",
+      "people": [
+        {
+          "name": "Brian Gashi",
+          "title": "Managing Director; Global Head of Sanctions and Client Screening Technology (2024 session)",
+          "location": null,
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+          "connection_to_team": "Customer speaker describing the sanctions platform; current role and Bengaluru responsibilities are not verified."
+        },
+        {
+          "name": "Sumana Roy",
+          "title": "Senior Associate (Pega Developer)",
+          "location": "Bengaluru, Karnataka, India",
+          "source_url": "https://in.linkedin.com/in/sumana-roy-a7698080",
+          "connection_to_team": "Title and employer are stated together in the indexed About section. Profile cache was approximately four months old; direct profile fetch failed. Previously checked 2026-09-07; current employment remains unconfirmed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+          "title": "JPMorgan sanctions automation, PegaWorld 2024",
+          "source_type": "event_session",
+          "checked_at": "2026-09-08",
+          "event_date": "2024",
+          "excerpt": "Customer technology leadership explains AI-supported sanctions alerts and Pega payment-investigation integration."
+        },
+        {
+          "url": "https://in.linkedin.com/in/sumana-roy-a7698080",
+          "title": "Sumana Roy — JPMorgan Chase & Co.",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed About text connects Senior Associate/Pega Developer with JPMorgan Chase; profile location is Bengaluru."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Clearly described mission-critical workflow and integration work.",
+          "Local Pega profile evidence supports further investigation."
+        ],
+        "tradeoffs": [
+          "The session is from 2024.",
+          "A generic Associate title does not identify the squad, level or compensation."
+        ],
+        "questions_to_ask": [
+          "Is this role in sanctions, payment investigations, onboarding or another Pega application?",
+          "Does the India team own architecture, integration contracts and releases?",
+          "What production-support load accompanies development ownership?"
+        ]
+      }
+    },
+    {
+      "id": "depth-anz",
+      "company": "ANZ",
+      "match_names": [
+        "ANZ",
+        "ANZ Bank",
+        "ANZ Bank (Australia)"
+      ],
+      "category": "gcc",
+      "team_focus": "Modernizing the Pega estate and digitizing bank workflows.",
+      "what_they_build": [
+        "Migration of legacy Pega applications to Pega Cloud and simpler upgrade/maintenance processes.",
+        "The customer story describes Blueprint-assisted fraud/scams workflow design; a separate ANZ Plus session describes CDH coaching."
+      ],
+      "technologies": [
+        "Pega Cloud",
+        "Pega Blueprint",
+        "Pega Customer Decision Hub (ANZ Plus)",
+        "Workflow integration"
+      ],
+      "learning_value": [
+        "Potential experience in upgrades, architecture simplification, cloud operations and business workflow design.",
+        "Good adjacent path for production automation experience, conditional on the actual squad remit."
+      ],
+      "ownership_evidence": "A named customer product-area lead discusses modernization and collaboration with business stakeholders. This is global program evidence.",
+      "bangalore_scope": "A verified Bengaluru intelligent-automation analyst role lists Pega among multiple acceptable backgrounds. It does not prove that the advertised squad currently develops Pega or owns the global cloud migration.",
+      "people": [
+        {
+          "name": "Andrew Calyvopoulos",
+          "title": "Product Area Lead (customer case-study attribution)",
+          "location": null,
+          "source_url": "https://www.pega.com/customers/anz-bank-platform",
+          "connection_to_team": "Customer representative for the modernization program; local team location not stated."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pega.com/customers/anz-bank-platform",
+          "title": "ANZ Pega Cloud modernization case study",
+          "source_type": "vendor_customer_story",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "The bank modernized its Pega estate and used Blueprint to improve fraud/scams workflow design."
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/pegaworld-2025-cloud-modernization-anz-bank-transforms-legacy-future-proof-pega",
+          "title": "ANZ cloud modernization, PegaWorld 2025",
+          "source_type": "event_session",
+          "checked_at": "2026-09-08",
+          "event_date": "2025",
+          "excerpt": "Customer session discusses migration from on-premises Pega and faster platform maintenance."
+        },
+        {
+          "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+          "title": "ANZ: Analyst (Systems/Tech Analyst), requisition 123198",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Bengaluru intelligent-automation analyst role lists Pega among platform alternatives; the page gives an 11 September 2026 posting deadline."
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "Concrete modernization work offers relevant technical learning."
+        ],
+        "tradeoffs": [
+          "Bengaluru Pega squad ownership remains unresolved.",
+          "The known local role is systems analysis rather than a dedicated Pega developer posting."
+        ],
+        "questions_to_ask": [
+          "Which Bangalore squads actively build Pega applications today?",
+          "Does this role own workflow implementation, platform upgrades or requirements analysis?",
+          "Are the fraud/scams and ANZ Plus programs separate teams?"
+        ]
+      }
+    },
+    {
+      "id": "depth-pega",
+      "company": "Pegasystems",
+      "match_names": [
+        "Pegasystems",
+        "Pegasystems India",
+        "Pegasystems (Pega)",
+        "Pegasystems (US HQ)"
+      ],
+      "category": "product",
+      "team_focus": "Direct vendor consulting, distinct from product engineering.",
+      "what_they_build": [
+        "Customer solutions across design, implementation and testing in the Bengaluru consulting team.",
+        "The SSA description requires prior end-to-end delivery of a substantial solution component."
+      ],
+      "technologies": [
+        "Pega Platform",
+        "Integration techniques",
+        "Application servers",
+        "Relational and non-relational databases",
+        "Agile / Scrum"
+      ],
+      "learning_value": [
+        "Potential mentoring and architecture exposure across customer implementations.",
+        "Clarify whether the desired opening belongs to consulting, internal applications or core product engineering."
+      ],
+      "ownership_evidence": "Official requisition23920 explicitly describes customer delivery, technical leadership and client mentoring. It supports component ownership, not ownership of Pega’s core platform roadmap.",
+      "bangalore_scope": "The official SSA page directly identifies Bangalore and the Pega Consulting team. It requires five years with a bachelor’s degree or three with a master’s, plus CSSA.",
+      "people": [],
+      "sources": [
+        {
+          "url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "title": "Pegasystems Bangalore Senior System Architect,23920",
+          "source_type": "employer_role",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Employer description covers customer solution delivery, component ownership, technical leadership and mentoring."
+        },
+        {
+          "url": "https://www.pega.com/about/careers/22043/senior-software-engineer-pega-development",
+          "title": "Pega: Senior Software Engineer, Pega Development — 22043",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed Bangalore product-engineering role describes the Let's Get Insights scrum team and Pega enterprise application development."
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+          "title": "Pega: Senior System Architect (Pega CSSA) — 23927",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Indexed consulting role covers Bangalore and Hyderabad and describes designing, developing, implementing and testing Pega customer solutions."
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "Direct employer description of meaningful technical responsibility."
+        ],
+        "tradeoffs": [
+          "The bachelor’s-degree experience threshold exceeds four years.",
+          "Consulting delivery and product engineering have different work and career paths; pay is undisclosed."
+        ],
+        "questions_to_ask": [
+          "Is four-year experience acceptable for this role or a neighboring level?",
+          "Which team owns this position and what percentage is implementation versus advisory work?",
+          "What design authority and mentorship will be available?"
+        ]
+      }
+    },
+    {
+      "id": "depth-cisco",
+      "company": "Cisco",
+      "match_names": [
+        "Cisco",
+        "Cisco India"
+      ],
+      "category": "gcc",
+      "team_focus": "Customer-service orchestration and order-process automation.",
+      "what_they_build": [
+        "Guided customer-service workflows and intent-based routing.",
+        "A customer story connects Customer Service and CDH to order automation and a consolidated agent experience."
+      ],
+      "technologies": [
+        "Pega Customer Service",
+        "Pega Customer Decision Hub",
+        "Workflow automation",
+        "Predictive analytics"
+      ],
+      "learning_value": [
+        "Potential exposure to enterprise order integrations and customer-service orchestration.",
+        "Treat this as a program to investigate, rather than an established Bengaluru hiring team."
+      ],
+      "ownership_evidence": "A named Cisco digitalization leader describes the business transformation. The case study does not explain internal-versus-partner engineering staffing.",
+      "bangalore_scope": "Global Pega usage is established. The reviewed material does not establish a Bengaluru Pega engineering squad, named local developer or current local opening.",
+      "people": [
+        {
+          "name": "Steve Power",
+          "title": "Senior Director, Digitalization (case-study attribution)",
+          "location": null,
+          "source_url": "https://www.pega.com/customers/cisco-customer-service",
+          "connection_to_team": "Customer representative for the transformation; current role and India team responsibility are not confirmed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.pega.com/customers/cisco-customer-service",
+          "title": "Cisco digital customer engagement case study",
+          "source_type": "vendor_customer_story",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Cisco connects customer-service workflows, decisioning and automation to a more consistent order/service experience."
+        }
+      ],
+      "assessment": {
+        "priority": "watch",
+        "reasons": [
+          "Substantial and relevant customer-service automation exists at enterprise level."
+        ],
+        "tradeoffs": [
+          "Local delivery and hiring ownership remain unknown.",
+          "Case-study benefits and spokesperson roles are historical, not current staffing evidence."
+        ],
+        "questions_to_ask": [
+          "Does a Bengaluru internal team own this Pega platform or is delivery partner-led?",
+          "What portion of the work is integration, feature development and platform operations?",
+          "Who owns the application roadmap and production releases?"
+        ]
+      }
+    },
+    {
+      "id": "depth-john-deere",
+      "company": "John Deere",
+      "match_names": [
+        "John Deere",
+        "John Deere India",
+        "John Deere India (JDTCI)"
+      ],
+      "category": "gcc",
+      "team_focus": "Historical professional evidence of Pega integrations and platform operations.",
+      "what_they_build": [
+        "A self-identified John Deere technical lead discussed connecting Pega Digital Messaging to Microsoft Teams.",
+        "Other dated posts discuss Pega Cloud storage and application access using OKTA; production deployment and business application names remain unknown."
+      ],
+      "technologies": [
+        "Pega Digital Messaging",
+        "REST services",
+        "Pega Cloud",
+        "OKTA (historical professional post)"
+      ],
+      "learning_value": [
+        "The technical questions suggest integration and platform challenges worth asking about.",
+        "Learning potential is conditional: forum participation is not confirmation of a current team roadmap."
+      ],
+      "ownership_evidence": "Direct first-person technical questions from a professional displaying John Deere employment support historical hands-on involvement. They are self-reported, not an employer-authored team charter.",
+      "bangalore_scope": "The professional profile displays India, without a city. Current Bengaluru Pega delivery and team ownership were not established.",
+      "people": [
+        {
+          "name": "Sandip Pattalwar",
+          "title": "Senior Lead Software Engineer II (displayed public community profile)",
+          "location": "India; city not specified",
+          "source_url": "https://support.pega.com/comment/938991",
+          "connection_to_team": "Authored technical questions about a Pega/Microsoft Teams integration; historical posts do not establish current employment or deployed functionality."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://support.pega.com/comment/938991",
+          "title": "John Deere-associated professional: Pega messaging integration",
+          "source_type": "public_professional_post",
+          "checked_at": "2026-09-08",
+          "event_date": "2023-07-05",
+          "excerpt": "A self-identified technical lead discusses implementing Microsoft Teams integration with Pega Digital Messaging."
+        },
+        {
+          "url": "https://support.pega.com/comment/1006696",
+          "title": "John Deere-associated professional: Pega Cloud storage",
+          "source_type": "public_professional_post",
+          "checked_at": "2026-09-08",
+          "event_date": "2024-07-19",
+          "excerpt": "The same publicly identified professional asks about Pega Cloud storage and retention."
+        },
+        {
+          "url": "https://support.pega.com/comment/980276",
+          "title": "John Deere-associated professional: application access",
+          "source_type": "public_professional_post",
+          "checked_at": "2026-09-08",
+          "event_date": "2024-02-27",
+          "excerpt": "A dated first-person question describes country-based Pega access with OKTA authentication."
+        },
+        {
+          "url": "https://in.linkedin.com/in/vivek-gautam-b36492104",
+          "title": "VIVEK GAUTAM — John Deere India Pvt. Ltd. (JDTCI)",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "event_date": null,
+          "excerpt": "Search extract associates a professional with John Deere and mentions Pega experience; current local Pega responsibilities were not established."
+        }
+      ],
+      "assessment": {
+        "priority": "watch",
+        "reasons": [
+          "More specific technical signals than certification or event attendance alone."
+        ],
+        "tradeoffs": [
+          "Evidence is historical and self-reported.",
+          "Business domain, city, production status and current hiring remain unresolved."
+        ],
+        "questions_to_ask": [
+          "Which current John Deere product or business process uses this Pega application?",
+          "Is delivery based in Bengaluru, Pune or elsewhere?",
+          "Does the role own integrations and cloud operations, and is the team still investing in Pega?"
+        ]
+      }
+    }
+  ],
+  "methodology": [
+    "Primary vendor-hosted customer sessions, employer role descriptions and first-person professional posts were reviewed. Source excerpts are paraphrases.",
+    "Bengaluru role/profile evidence previously checked on2026-09-07 is retained with that date; it was not silently refreshed to the event-research date.",
+    "Learning value and investigation priority are reasoned assessments, not verified employment conditions.",
+    "Event speaker location, event attendance and liked posts do not prove Bengaluru team membership. Named speakers are attributed to their source date, not asserted to hold the same title today.",
+    "No current team-size, opening, compensation or willingness-to-refer claim is inferred.",
+    "The PegaFest Bangalore page identifies4November2025; no public attendee roster was used. It does not establish a2026event or local employer team."
+  ],
+  "context_sources": [
+    {
+      "url": "https://www.pega.com/events/pegafest/bangalore",
+      "title": "PegaFest Bangalore event page",
+      "source_type": "event_page",
+      "checked_at": "2026-09-08",
+      "event_date": "2025-11-04",
+      "excerpt": "The official event page is dated4November2025. No attendee roster was established."
+    }
+  ],
+  "limitations": [
+    "This bounded pass prioritized9 firms with concrete technical evidence. MBRDI and Nokia remain in the full directory and earlier team research; their specific public project ownership was not strengthened here.",
+    "Customer stories describe global programs; India employment relationships and responsibilities require direct confirmation.",
+    "Support-community posts carry self-reported employer labels and are weaker than employer-authored evidence."
+  ]
+}

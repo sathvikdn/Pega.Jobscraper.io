@@ -1,0 +1,696 @@
+{
+  "research_date": "2026-09-08",
+  "queries": [
+    {
+      "query": "site.linkedin.com/in \"Kavitha Murthy\" \"Intel\" \"Pega\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "site.linkedin.com/in \"Hemant\" \"Levi\" \"Pega\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "site.linkedin.com/in \"Wax Park\" \"ITC\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Kavitha\" \"Intel\" \"Pega\" linkedin",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Wax Park\" \"Pega\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Pega\" \"Corporation Service Company\" Bangalore",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"poonam-shaw-908605115\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"pratik-raj-mishra-51472449\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"manomit-das-4b354a16\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"ITC\" \"Pega\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Poonam Shaw\" \"Pega\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Pratik Raj Mishra\" \"Pega\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Manomit Das\" \"Pega\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Pega\" \"Bangalore\" \"CSC\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "Mercedes Benz Pega collections Kafka Constellation",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Intel\" \"Pega\" Bangalore",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"CSC\" \"Pega\" \"Bengaluru\" developer",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Mercedes-Benz\" \"Pega Developer\"",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Disha Kukreja\" Pega Levi",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "query": "\"Kavitha Murthy\" Intel",
+      "source": "public web search",
+      "checked_at": "2026-09-08"
+    },
+    {
+      "url": "https://in.linkedin.com/in/hemant-mohanan",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "direct fetch failed; index retained"
+    },
+    {
+      "url": "https://www.linkedin.com/in/poonam-shaw-908605115",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "direct fetch failed; index retained"
+    },
+    {
+      "url": "https://www.linkedin.com/in/manomit-das-4b354a16",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "direct fetch failed"
+    },
+    {
+      "url": "https://www.itcinfotech.com/capabilities/operations-enablement-adm/low-code-no-code-services/",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "page read"
+    },
+    {
+      "url": "https://www.linkedin.com/in/davidstearrett",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "direct fetch failed; index retained"
+    },
+    {
+      "url": "https://lk.linkedin.com/in/anuradha-rathnayake-7a950532",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "direct fetch failed; index retained"
+    },
+    {
+      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-csc-4400844336",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "web open failed; subsequent public guest role endpoint read"
+    },
+    {
+      "url": "https://support.pega.com/comment/972966",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "web open failed; index retained"
+    },
+    {
+      "url": "https://in.linkedin.com/in/ajk2098",
+      "source": "public page check",
+      "checked_at": "2026-09-08",
+      "outcome": "direct fetch failed; index retained"
+    },
+    {
+      "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4400844336",
+      "final_url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4400844336",
+      "http_status": 200,
+      "checked_at": "2026-09-08T07:40:32+00:00",
+      "source": "Python public LinkedIn job detail",
+      "outcome": "read"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Intel India",
+      "category": "gcc",
+      "aliases": [
+        "Intel Corporation"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "Ajith Kumar has an indexed Intel Bengaluru experience entry and Pega credentials. This supports one professional connection; it does not validate the older five-person current headcount.",
+          "source_url": "https://in.linkedin.com/in/ajk2098",
+          "source_title": "Ajith Kumar public professional profile",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "5+ confirmed Pega developers on direct Intel payroll; Kavitha Murthy has 7+ years Pega tenure.",
+          "verdict": "partially_supported"
+        },
+        {
+          "type": "crosscheck",
+          "text": "A same-name Intel Bengaluru profile is discoverable, but the inspected content does not expose a Pega role or the claimed tenure. Keep the named lead pending identity and role confirmation.",
+          "source_url": "https://in.linkedin.com/in/kavitha-murthy-713b241b",
+          "source_title": "Kavitha Murthy public professional profile",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Kavitha Murthy: Pega Developer / Project Manager, September 2018 to present.",
+          "verdict": "not_verified"
+        },
+        {
+          "type": "crosscheck",
+          "text": "The inspected Poonam Shaw profile now presents EPAM Bengaluru and Pega experience. It does not establish her Intel exit date or an approved Intel replacement vacancy.",
+          "source_url": "https://in.linkedin.com/in/poonam-shaw-908605115",
+          "source_title": "Poonam Shaw public professional profile",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Attrition in 2025 means replacement hiring is likely.",
+          "verdict": "not_verified"
+        }
+      ],
+      "people": [
+        {
+          "name": "Ajith Kumar",
+          "profile_url": "https://in.linkedin.com/in/ajk2098",
+          "source_url": "https://in.linkedin.com/in/ajk2098",
+          "employer_as_stated": "Intel India",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "title": null,
+          "work_summary": "Indexed experience lists Intel. Credentials include CSA (2019), CSSA (2020) and Decisioning Consultant (2024); exact job title and dates are hidden.",
+          "pega_connection": "Indexed experience lists Intel. Credentials include CSA (2019), CSSA (2020) and Decisioning Consultant (2024); exact job title and dates are hidden.",
+          "certifications": [
+            "CSA",
+            "CSSA",
+            "Pega Certified Decisioning Consultant"
+          ],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        },
+        {
+          "name": "Kavitha Murthy",
+          "profile_url": "https://in.linkedin.com/in/kavitha-murthy-713b241b",
+          "source_url": "https://in.linkedin.com/in/kavitha-murthy-713b241b",
+          "employer_as_stated": "Intel India",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "title": null,
+          "work_summary": "Same-name Intel professional; public content discusses product management and Scrum. The older Pega title and tenure remain unverified.",
+          "pega_connection": null,
+          "certifications": [],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "EPAM Systems",
+      "category": "services",
+      "aliases": [],
+      "claims": [],
+      "people": [
+        {
+          "name": "Poonam Shaw",
+          "profile_url": "https://in.linkedin.com/in/poonam-shaw-908605115",
+          "source_url": "https://in.linkedin.com/in/poonam-shaw-908605115",
+          "employer_as_stated": "EPAM Systems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "title": null,
+          "work_summary": "Profile shows EPAM Bengaluru and describes Pega PRPC 8.x development/testing; CSSA 7.2 issued in December 2018. Exact current job title and prior Intel dates are not exposed.",
+          "pega_connection": "Profile shows EPAM Bengaluru and describes Pega PRPC 8.x development/testing; CSSA 7.2 issued in December 2018. Exact current job title and prior Intel dates are not exposed.",
+          "certifications": [
+            "CSSA 7.2"
+          ],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "Levi Strauss & Co. India",
+      "category": "gcc",
+      "aliases": [
+        "Levi Strauss & Co."
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "Hemant M lists Levi Strauss in Bengaluru and Pega certifications. The inspected profile does not name his current application, role dates or the total team size.",
+          "source_url": "https://in.linkedin.com/in/hemant-mohanan",
+          "source_title": "Hemant M public professional profile",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Two current Bengaluru Pega developers; retail/customer-service/order-management project scope.",
+          "verdict": "partially_supported"
+        },
+        {
+          "type": "crosscheck",
+          "text": "The old record provides only a name-search link. Targeted searches did not identify a profile tying this name to Levi and Pega; several unrelated same-name people appeared. None has been substituted for the original record.",
+          "source_url": "https://www.linkedin.com/search/results/people/?keywords=Disha%20Kukreja%20Levi%20Strauss%20%26%20Co.%20Pega",
+          "source_title": "Original name-search lead; attempted cross-checks are recorded in the research log",
+          "source_kind": "research_audit",
+          "access": "unknown",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Disha Kukreja: Senior Pega Developer, February 2021 to present.",
+          "verdict": "not_verified"
+        }
+      ],
+      "people": [
+        {
+          "name": "Hemant M",
+          "profile_url": "https://in.linkedin.com/in/hemant-mohanan",
+          "source_url": "https://in.linkedin.com/in/hemant-mohanan",
+          "employer_as_stated": "Levi Strauss & Co. India",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "title": null,
+          "work_summary": "Profile lists Levi experience and CSA (2015), CSSA (2017), Customer Service Architect (2017), Decisioning Consultant (October 2025) and UI Specialist credentials.",
+          "pega_connection": "Profile lists Levi experience and CSA (2015), CSSA (2017), Customer Service Architect (2017), Decisioning Consultant (October 2025) and UI Specialist credentials.",
+          "certifications": [
+            "CSA 7.1",
+            "CSSA 7.1",
+            "CCSA 7.2",
+            "Pega Decisioning Consultant",
+            "CUIS"
+          ],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "ITC Limited",
+      "category": "gcc",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "Public employer evidence found belongs to ITC Infotech and lists Pega among its low-code capabilities. It does not substantiate ITC Limited's internal Pega implementation or the Wax Park contact; the targeted name search produced no corroborating professional source.",
+          "source_url": "https://www.itcinfotech.com/capabilities/operations-enablement-adm/low-code-no-code-services/",
+          "source_title": "ITC Infotech low-code services",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "ITC Limited directly uses Pega; Wax Park is its Gurugram Pega developer.",
+          "verdict": "not_verified"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "ITC Infotech",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "ITC Infotech lists Pega among its low-code platform capabilities. This is employer capability evidence, not a named client implementation or a current vacancy.",
+          "source_url": "https://www.itcinfotech.com/capabilities/operations-enablement-adm/low-code-no-code-services/",
+          "source_title": "ITC Infotech low-code services",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "satish kumar methre",
+          "profile_url": null,
+          "source_url": "https://support.pega.com/comment/576136",
+          "employer_as_stated": "ITC Infotech",
+          "location_as_stated": "India (forum country field)",
+          "title": "Pega SSA (forum header)",
+          "work_summary": "A February 2019 Pega support contribution shows ITC Infotech and Pega SSA in the contributor header. It is a historical community observation, not current employment verification.",
+          "pega_connection": "A February 2019 Pega support contribution shows ITC Infotech and Pega SSA in the contributor header. It is a historical community observation, not current employment verification.",
+          "certifications": [],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2019-02-07",
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "CSC (Corporation Service Company)",
+      "category": "gcc",
+      "aliases": [
+        "CSC",
+        "Corporation Service Company"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "The exact public Senior Software Engineer description was read successfully. It names Bengaluru, Pega delivery/production support and a minimum five years of BPM experience. This is a stretch against the known four years; acceptance and salary are unconfirmed.",
+          "source_url": "https://www.linkedin.com/jobs/view/4400844336",
+          "source_title": "CSC Senior Software Engineer 4400844336",
+          "source_kind": "public_source",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "CSC Bengaluru Pega opportunity fits a four-year developer.",
+          "verdict": "partially_supported"
+        },
+        {
+          "type": "project",
+          "text": "An EvonSys technical lead describes a CSC Client Prepared Filings implementation from February 2019 to August 2022 using Pega asynchronous processing, REST and JMS/MQ. This is historical client work, not proof of a current Bengaluru assignment.",
+          "source_url": "https://lk.linkedin.com/in/anuradha-rathnayake-7a950532",
+          "source_title": "Anuradha Rathnayake project history",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2019-02 to 2022-08",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "David Stearrett",
+          "profile_url": "https://www.linkedin.com/in/davidstearrett",
+          "source_url": "https://www.linkedin.com/in/davidstearrett",
+          "employer_as_stated": "CSC (Corporation Service Company)",
+          "location_as_stated": "Wilmington, Delaware, United States",
+          "title": "Senior Product Manager (About)",
+          "work_summary": "About names a CSC senior product manager. An older authored team post describes Pega-based fulfilment workflows; the US post is historical hiring evidence.",
+          "pega_connection": "About names a CSC senior product manager. An older authored team post describes Pega-based fulfilment workflows; the US post is historical hiring evidence.",
+          "certifications": [],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "public_job_card",
+          "title": "Senior Software Engineer",
+          "url": "https://www.linkedin.com/jobs/view/4400844336",
+          "location": "Bengaluru, Karnataka, India",
+          "description": "Pega design/development, production support and mentoring; minimum five years BPM. Salary not stated. Exact public description read; current application acceptance unconfirmed.",
+          "experience_min": 5,
+          "access": "page",
+          "checked_at": "2026-09-08T07:40:32+00:00",
+          "vacancy_confirmed": false,
+          "status": "candidate"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "name": "EvonSys",
+      "category": "services",
+      "aliases": [],
+      "claims": [],
+      "people": [
+        {
+          "name": "Anuradha Rathnayake",
+          "profile_url": "https://lk.linkedin.com/in/anuradha-rathnayake-7a950532",
+          "source_url": "https://lk.linkedin.com/in/anuradha-rathnayake-7a950532",
+          "employer_as_stated": "EvonSys",
+          "location_as_stated": "Colombo, Western Province, Sri Lanka",
+          "title": "Offshore Technical Lead (historical CSC project)",
+          "work_summary": "Profile lists EvonSys and dated CSC client delivery. Offshore technical leadership and CLSA are stated; no Bengaluru assignment is shown.",
+          "pega_connection": "Profile lists EvonSys and dated CSC client delivery. Offshore technical leadership and CLSA are stated; no Bengaluru assignment is shown.",
+          "certifications": [
+            "CLSA 7.4",
+            "CSSA 5.5"
+          ],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "Mercedes-Benz R&D India",
+      "category": "gcc",
+      "aliases": [
+        "MBRDI",
+        "Mercedes-Benz R&D India (MBRDI)"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "The inspected public sources do not substantiate those exact MBRDI claims. A Mercedes-Benz Mobility contributor discusses Collections architecture, but that does not establish an MBRDI migration, local team size, traffic volume or savings.",
+          "source_url": "https://support.pega.com/comment/972966",
+          "source_title": "Mercedes-Benz Mobility contributor discussion on Pega Support",
+          "source_kind": "public_source",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2024-03",
+          "confidence": "direct",
+          "previous_claim": "Constellation migration is underway; 15–25-person Pega team; $250K annual savings and 50+ Kafka topics.",
+          "verdict": "not_verified"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "Mercedes-Benz Mobility AG",
+      "category": "gcc",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "employee_move",
+          "text": "Vivek Shivashankar's authored post states that his Mercedes-Benz Mobility chapter ended on 30 November 2025. A comment mentions earlier Pega collaboration in Singapore. Neither establishes a Bengaluru replacement vacancy.",
+          "source_url": "https://www.linkedin.com/posts/vivek-shivashankar-a6b25037_nearly-a-decade-complex-programs-enterprise-level-activity-7432318662029545472-SJXI",
+          "source_title": "Vivek Shivashankar authored career update",
+          "source_kind": "public_source",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2025-11-30",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Andreas Seiler",
+          "profile_url": null,
+          "source_url": "https://support.pega.com/comment/972966",
+          "employer_as_stated": "Mercedes-Benz Mobility AG",
+          "location_as_stated": "Germany (forum country field)",
+          "title": null,
+          "work_summary": "A March 2024 Pega Support contributor header names Mercedes Benz Mobility AG. The contributor requests Collections for Financial Services architecture information; this indicates technical interest, not proof of deployment or India delivery.",
+          "pega_connection": "A March 2024 Pega Support contributor header names Mercedes Benz Mobility AG. The contributor requests Collections for Financial Services architecture information; this indicates technical interest, not proof of deployment or India delivery.",
+          "certifications": [],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2024-03",
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": []
+    },
+    {
+      "name": "Pegasystems",
+      "category": "gcc",
+      "aliases": [
+        "Pegasystems India"
+      ],
+      "claims": [],
+      "people": [
+        {
+          "name": "Shivangi Shukla",
+          "profile_url": "https://in.linkedin.com/in/shivangi-shukla-pega-engineer",
+          "source_url": "https://in.linkedin.com/in/shivangi-shukla-pega-engineer",
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru (employer experience entry)",
+          "title": null,
+          "work_summary": "Profile lists Pegasystems Bengaluru and CSA/CSSA/Decisioning credentials. Current title and dates are hidden; liked Constellation and hiring posts are not her project ownership.",
+          "pega_connection": "Profile lists Pegasystems Bengaluru and CSA/CSSA/Decisioning credentials. Current title and dates are hidden; liked Constellation and hiring posts are not her project ownership.",
+          "certifications": [
+            "CSA",
+            "CSSA",
+            "Pega Decisioning Consultant"
+          ],
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "limitations": [
+            "Public source observation; no complete current roster or local vacancy is implied."
+          ]
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": []
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "9579e3f9cc407a67dac0",
+      "company": "CSC",
+      "title": "Senior Software Engineer",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.linkedin.com/jobs/view/4400844336",
+      "source": "LinkedIn public jobs",
+      "checked_at": "2026-09-08T07:40:32+00:00",
+      "posted_at": null,
+      "track": "pega",
+      "fit": "stretch",
+      "fit_reasons": [
+        "Pega/PRPC experience aligns with the known profile."
+      ],
+      "requirements_unknown": [
+        "Recruiter acceptance and current application status",
+        "Joining timeline",
+        "Experience wording includes 5+ years; exceeds the known four years. Check whether mandatory or preferred.",
+        "No explicit annual INR compensation extracted"
+      ],
+      "experience_min": 5,
+      "salary": null,
+      "pay_bucket": "unknown",
+      "remote_eligibility": "unknown",
+      "status": "uncertain",
+      "verification_status": "candidate",
+      "search_presence": "found",
+      "last_seen_at": "2026-09-08T07:40:32+00:00",
+      "evidence_scope": "role_description",
+      "job_detail_checked_at": "2026-09-08T07:40:32+00:00",
+      "job_detail_diagnostic": {
+        "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4400844336",
+        "final_url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4400844336",
+        "http_status": 200,
+        "checked_at": "2026-09-08T07:40:32+00:00"
+      },
+      "job_detail_status": "read",
+      "description_identity": "title_and_endpoint",
+      "skills": [
+        "Pega",
+        "CSSA"
+      ],
+      "experience_evidence": [
+        {
+          "minimum_years": 5,
+          "maximum_years": 5,
+          "source_text": "5+ years equivalent IT experience",
+          "source_scope": "description"
+        },
+        {
+          "minimum_years": 5,
+          "maximum_years": 5,
+          "source_text": "Minimum 5 years of experience",
+          "source_scope": "description"
+        }
+      ],
+      "relevance": "pega",
+      "summary": "Individual public role description read. Technologies mentioned: Pega, CSSA. Skill mentions are evidence of role content, not proof every item is mandatory. Application availability still needs confirmation.",
+      "evidence": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4400844336",
+          "title": "CSC — Senior Software Engineer",
+          "source_type": "Public individual job description",
+          "checked_at": "2026-09-08T07:40:32+00:00",
+          "excerpt": "Individual public role description read. Technologies mentioned: Pega, CSSA. Skill mentions are evidence of role content, not proof every item is mandatory. Application availability still needs confirmation.",
+          "status": "candidate"
+        }
+      ]
+    }
+  ],
+  "crosscheck_summary": {
+    "companies_with_crosschecks": 5,
+    "assertions_reviewed": 8
+  },
+  "limitations": [
+    "Research is bounded; missing public information is not proof a person or team does not exist. Same-name profiles are not substituted without identity evidence.",
+    "Direct LinkedIn profile fetches were unavailable; professional evidence is labelled search_index."
+  ]
+}

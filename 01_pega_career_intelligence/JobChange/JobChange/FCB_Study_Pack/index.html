@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FCB Pega Deposits Study Pack | Index</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch01_pega_platform_core.html">Start: Chapter 01 &rarr;</a>
+  <a class="btn" href="ch14_interview_question_bank.html">Question Bank</a>
+</div>
+
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Study Pack &middot; First Citizens Bank India &middot; Deposits &amp; Shared Services</div>
+    <h1>Pega Software Engineer II<br>Interview Study Pack</h1>
+    <p class="subtitle">One deposits application, built and operated across thirteen chapters, then turned into answers in the
+      fourteenth. Each chapter starts from a problem the previous one left open and introduces the Pega feature that
+      closes it, so the platform, the integrations, the data, the regulations and the operational discipline are learned
+      in the order the application needs them.</p>
+    <div class="meta">
+      <div><strong>14</strong><span>Chapters</span></div>
+      <div><strong>100+</strong><span>Interview Q&amp;A</span></div>
+      <div><strong>A4</strong><span>Print ready</span></div>
+      <div><strong>CSSA</strong><span>Level: P2 / lead-track</span></div>
+    </div>
+  </div>
+
+  <main>
+
+    <section>
+      <h2>How to use this pack</h2>
+      <div class="note"><strong>About the worked example.</strong> Every chapter in this pack follows one
+        application: <strong>Deposit Servicing</strong>, built for a fictional US bank called
+        <strong>Riverbend</strong>. The customers, accounts, balances, case IDs, staff, policies,
+        thresholds, SLAs and architecture are <strong>invented for teaching</strong>. They are not First
+        Citizens' architecture, data or policy, and nothing here should be read as describing any real
+        bank's internal processes. Where a figure is a legal requirement rather than an invented policy,
+        it is cited to the regulation. Class names keep the <code>FCB-Dep-</code> prefix purely so the
+        rule-resolution examples stay consistent across chapters.</div>
+      <p>Chapters 01 to 13 are written to be read in order. A customer, Dana Whitfield, asks Riverbend to change her
+        address; the request needs rules to run, a journey to travel, data to act on, a screen to be seen on, a core
+        system to be updated, events and files to keep it current, and eventually controls, a database to report from,
+        a regulatory reason for each rule, and an architecture that holds all of it together. Each chapter picks up the
+        problem the last one ended on, makes the application able to do one more thing, and closes with a short recap
+        of what it can now do and what it still cannot.</p>
+      <p>The reference tables that used to open every concept are still there, but they now come after the explanation
+        that makes each field meaningful, and the exhaustive ones sit in blocks marked as reference so a first reading
+        can skip them. Chapter 14 is different: it is a revision chapter of short model answers that point back to the
+        chapters for the teaching.</p>
+      <div class="note"><strong>Suggested path.</strong> Read 01 to 04 for the platform, 05 to 07 for how the application
+        talks to everything outside it, 08 and 09 for the adjacent capabilities worth understanding even if you have not
+        shipped them, 10 and 11 for operating and querying it, and 12 and 13 for the domain and the architecture. Keep
+        chapter 14 for the last day.</div>
+    </section>
+
+    <section class="pagebreak">
+      <h2>Chapters</h2>
+
+      <h3>Part I &mdash; Platform foundation</h3>
+      <div class="toc">
+        <a href="ch01_pega_platform_core.html">01 &middot; Pega Platform Core &amp; Rule Resolution
+          <span>Dana's address-change request arrives and must behave correctly for her market and product: rules, classes,
+            inheritance, rulesets and the five-phase rule-resolution walkthrough, then the clipboard, requestors, locking,
+            guardrails, testing and packaging.</span></a>
+        <a href="ch02_case_management_bpm.html">02 &middot; Case Management, BPM, SLAs, Routing, Correspondence
+          <span>The same request travels through intake, review, approval and fulfilment: stages, assignments, routing, a
+            rejection and a late document, urgency and SLAs, how the SLA engine actually fires, correspondence.</span></a>
+        <a href="ch03_data_model_decisioning.html">03 &middot; Data Model, Data Pages, Declaratives, Decisioning
+          <span>The case needs account data it does not own: one lookup through a data page, scope and refresh, writing back
+            through a savable page, exposed columns and the BLOB, declaratives, decision rules, circumstancing, validation.</span></a>
+        <a href="ch04_ui_constellation_dx.html">04 &middot; UI: Traditional, Constellation, DX API
+          <span>Marcus opens the case, edits a field and submits it: traditional UI and Constellation as two separate
+            implementation paths, and the DX API carrying the same change from the web channel.</span></a>
+      </div>
+
+      <h3>Part II &mdash; Integration and event processing</h3>
+      <div class="toc">
+        <a href="ch05_integration_rest_soap_esb.html">05 &middot; Integration &amp; Authentication
+          <span>Reading Dana's account from the core and asking it to change: mapping, authentication, then a slow core, a
+            rejecting core and a core that loses its response, and what timeouts, idempotency and retries must do about each.</span></a>
+        <a href="ch06_kafka_dataflow_queue_processors.html">06 &middot; Kafka, Data Flows, Queue Processors, Job Schedulers
+          <span>Balances that are a day old, and one balance event followed from topic to acknowledgement; duplicates,
+            ordering, a crash, a backlog and a replay.</span></a>
+        <a href="ch07_file_email_listeners.html">07 &middot; File Listener / SFTP / Parse Rules, Email Listener / Channel
+          <span>A partner that can only send files, and a request that arrives by email: readiness, parsing, per-row
+            isolation, duplicate protection and reconciliation.</span></a>
+      </div>
+
+      <h3>Part III &mdash; Adjacent capability</h3>
+      <div class="toc">
+        <a href="ch08_pega_ai_genai_decisioning.html">08 &middot; Pega AI, GenAI, Knowledge Buddy, Agentic AI, CDH
+          <span>Finding the right procedure and classifying documents: deterministic rules, predictive models, retrieval and
+            agents as different tools, with a bank's governance questions attached to each.</span></a>
+        <a href="ch09_pega_rpa.html">09 &middot; Pega RPA &amp; Intelligent Automation
+          <span>One legacy screen with no API: how a queued work item reaches a robot and returns, why bots break, and how
+            to argue for replacing one.</span></a>
+      </div>
+
+      <h3>Part IV &mdash; Engineering hygiene</h3>
+      <div class="toc">
+        <a href="ch10_security_devops_monitoring.html">10 &middot; Security, Okta/SAML, Splunk, PDC, CI/CD
+          <span>Marcus tries to approve his own change: access control, segregation of duties, deployment and an incident
+            worked from symptom to prevention.</span></a>
+        <a href="ch11_postgresql_sql_deep.html">11 &middot; PostgreSQL &amp; SQL for Pega Engineers
+          <span>A business question about the deposits data, answered with progressively harder queries, concurrency on
+            Dana's row and one execution plan.</span></a>
+      </div>
+
+      <h3>Part V &mdash; Domain, architecture and revision</h3>
+      <div class="toc">
+        <a href="ch12_deposits_banking_domain.html">12 &middot; Deposit Operations Domain
+          <span>The account lifecycle first, then a payment, a hold, a dispute and a closure as separate journeys, each with
+            its regulation, clock and evidence.</span></a>
+        <a href="ch13_fcb_architecture_blueprints.html">13 &middot; FCB Target Architecture &amp; Case Blueprints
+          <span>The application revisited as a whole: one request through every layer, then scale, failure, deployment and
+            recovery.</span></a>
+        <a href="ch14_interview_question_bank.html">14 &middot; Master Interview Question Bank
+          <span>Understanding turned into answers: the direct answer, the mechanism, one example, two likely follow-ups and
+            the common mistake &mdash; plus the design scenarios, the first-90-days plan and the r&eacute;sum&eacute;
+            mapping.</span></a>
+      </div>
+    </section>
+
+    <section id="evidence-register" class="pagebreak">
+      <h2>Evidence register: what the r&eacute;sum&eacute; does and does not support</h2>
+      <p>Chapters 01 to 13 teach through an invented application and carry no personal claims. Anything that is a claim
+        about Sathvik's own experience is collected here, once, with the r&eacute;sum&eacute; line that supports it and
+        what he should be able to say if asked. Chapter 14 repeats a tag beside a model answer only where the answer makes
+        a personal claim.</p>
+      <p>Categories: <strong>A</strong> a confirmed personal implementation (only he can promote a claim to this);
+        <strong>B</strong> a claim on the r&eacute;sum&eacute; whose method, scope or measurement is not recorded;
+        <strong>C</strong> a number derived for teaching; <strong>D</strong> something he would build, not something he
+        built; <strong>E</strong> conceptual knowledge. Nothing below is category A until he confirms it.</p>
+      <table>
+        <tr><th>#</th><th>Claim</th><th>R&eacute;sum&eacute; evidence</th><th>Cat.</th><th>What to confirm</th></tr>
+        <tr><td>1</td><td>200,000 records in 5 minutes</td><td>"Tuned Queue Processor &amp; Job Scheduler-based bulk processing to handle 200,000 records in 5 minutes"</td><td>B</td><td>Environment, processing boundary, concurrency, error rate, measurement method. Say "about five minutes on that pipeline" and let the interviewer ask for the boundary</td></tr>
+        <tr><td>2</td><td>~6 threads, ~9 ms per record</td><td>Not on the r&eacute;sum&eacute;</td><td>C</td><td>Arithmetic derived from claim 1 for teaching only; never a first-person figure</td></tr>
+        <tr><td>3</td><td>Metadata-driven Connect-SQL MERGE</td><td>Line 228: "runtime-resolved Dataset mappings, dynamic JSON-to-SQL mapping, and Connect-SQL MERGE to populate target tables"</td><td>B</td><td>The staging table and one-MERGE-per-chunk are not recorded: confirm or drop them and keep the MERGE</td></tr>
+        <tr><td>4</td><td>50+ Kafka topics</td><td>Line 225: "50+ topics across seven markets"</td><td>B</td><td>Topic design, keying, how mappings were generated</td></tr>
+        <tr><td>5</td><td>Seven APAC markets</td><td>Summary, line 196: "across seven APAC markets"</td><td>B</td><td>What differed per market and who decided</td></tr>
+        <tr><td>6</td><td>$200K annual infrastructure savings</td><td>"contributing to $200K estimated annual infrastructure savings"</td><td>B</td><td>Both hedges stay: contributory, not sole; estimated, not measured. Never "I saved $200K"</td></tr>
+        <tr><td>7</td><td>$250K+ total savings</td><td>Impact card: $200K infrastructure plus $50K monitoring</td><td>B</td><td>Same treatment as claim 6</td></tr>
+        <tr><td>8</td><td>~24 hours to real time</td><td>Line 196 and the Kafka bullets</td><td>B</td><td>What was 24 hours old, and what "real time" meant in practice</td></tr>
+        <tr><td>9</td><td>100% reduction in manual write-back</td><td>Line 261: "reducing manual writeback by 100%"</td><td>B</td><td>An absolute that invites challenge: define exactly what was eliminated and over what scope</td></tr>
+        <tr><td>10</td><td>10+ REST/SOAP/Connect-SQL integrations</td><td>Line 261</td><td>B</td><td>Which ones, and which he led</td></tr>
+        <tr><td>11</td><td>20+ production releases, guardrails 95+</td><td>Line 262: "Led 20+ production releases (95+ Guardrail score)"</td><td>B</td><td>How the score was measured and held</td></tr>
+        <tr><td>12</td><td>Kafka replay / requeue dashboard</td><td>Line 239: "one-click Service-REST requeue, KPI comparisons, and automated incident reports"; Data Pages dashboard bullet</td><td>B</td><td>The dashboard is his own build, not a Pega feature: what it showed and how "hours to seconds" was measured</td></tr>
+        <tr><td>13</td><td>Deployment Manager</td><td>Skills line 211 only; no described usage</td><td>E</td><td>Teach as understood design; do not tell a first-person pipeline story</td></tr>
+        <tr><td>14</td><td>PostgreSQL production experience</td><td>Skills line 211 and Stack line 305 only</td><td>E</td><td>Chapter 11 teaches PostgreSQL fully but he must not imply he ran it in production</td></tr>
+        <tr><td>15</td><td>Splunk</td><td>Skills line "Splunk (log analysis)"; line 239 says patterns "applicable to Splunk-based production monitoring"</td><td>E</td><td>The r&eacute;sum&eacute; itself declines to claim it</td></tr>
+        <tr><td>16</td><td>Okta / SAML / OAuth work</td><td>Skills line 210 and Stack line 305 only</td><td>E</td><td>Understanding of the Pega-side wiring, not Okta administration</td></tr>
+        <tr><td>17</td><td>Mentoring / coaching achievements</td><td>Absent from the r&eacute;sum&eacute;</td><td>none</td><td>Unsupported: answer only as "how I would approach it"</td></tr>
+        <tr><td>18</td><td>AI-assisted mapping utility, 50+ tables in 10 minutes</td><td>Line 231</td><td>B</td><td>Which AI tool; the verification steps actually applied</td></tr>
+        <tr><td>19</td><td>Zero-defect go-lives</td><td>Line 196: "a track record of zero-defect go-lives"</td><td>B</td><td>An absolute: across how many releases, and how a defect was defined</td></tr>
+        <tr><td>20</td><td>Monitoring app, real-time SMS alerting, 15+ stakeholders, $50K</td><td>Line 286, verbatim</td><td>B</td><td>The $50K keeps both hedges, "contributing to" and "estimated". The app is his own build</td></tr>
+        <tr><td>21</td><td>Localized Correspondence frameworks (SMS, email, letters)</td><td>Line 259: "replacing 4 external messaging solutions"</td><td>B</td><td>A different project from the monitoring app's SMS alerting; never merge the two</td></tr>
+        <tr><td>22</td><td>AI for bottleneck analysis and code review</td><td>Lines 209 and 301, skill-line entries only</td><td>B (weak)</td><td>One sentence each; neither supports a story. Failure-pattern detection has a described context inside the monitoring app</td></tr>
+        <tr><td>23</td><td>File Listener / SFTP integration, Japan market</td><td>Line 258 and the SFTP impact card (line 273): zero go-live defects, legacy server retired</td><td>B</td><td>The arrangement used for SFTP, volumes and what went wrong in testing</td></tr>
+        <tr><td>24</td><td>Email Listener / Email Channel</td><td>Line 258: configured for automated case creation from inbound requests</td><td>B</td><td>The NLP side is category E: understood, not shipped</td></tr>
+      </table>
+      <div class="note"><strong>How to read the tags in chapter 14.</strong>
+        <span class="tag green">CONFIRMED</span> a confirmed personal implementation;
+        <span class="tag amber">CLAIM &mdash; NEEDS DETAIL</span> on the r&eacute;sum&eacute; as an outcome, method not recorded;
+        <span class="tag">ILLUSTRATIVE</span> a number derived for teaching;
+        <span class="tag">PROPOSED DESIGN</span> what he would build, in the future tense;
+        <span class="tag">CONCEPTUAL</span> studied, not operated;
+        <span class="tag amber">CUSTOM BUILD</span> built by the team, not a Pega built-in;
+        <span class="tag amber">assumed Riverbend policy</span> an invented figure, not law;
+        <span class="tag">8.8 / traditional UI</span> and <span class="tag">Infinity / Constellation</span> the release scope of a statement.</div>
+      <div class="warning"><strong>The honesty rule.</strong> Not built or administered: Knowledge Buddy, agentic AI, Pega Blueprint, Prediction
+        Studio models, CDH and Next-Best-Action, Pega RPA bots, Okta and Splunk administration, Kafka broker operations and
+        TIBCO flow authoring. Understanding them and saying so reads as more senior than a bluff, and chapter 14 gives the exact
+        wording for each.</div>
+    </section>
+
+    <section>
+      <h2>Pack contents on disk</h2>
+      <div class="flow">FCB_Study_Pack\
+  index.html                                  this page
+  assets\sourcebook.css                       shared stylesheet (screen + A4 print)
+  ch01_pega_platform_core.html / .pdf
+  ch02_case_management_bpm.html / .pdf
+  ch03_data_model_decisioning.html / .pdf
+  ch04_ui_constellation_dx.html / .pdf
+  ch05_integration_rest_soap_esb.html / .pdf
+  ch06_kafka_dataflow_queue_processors.html / .pdf
+  ch07_file_email_listeners.html / .pdf
+  ch08_pega_ai_genai_decisioning.html / .pdf
+  ch09_pega_rpa.html / .pdf
+  ch10_security_devops_monitoring.html / .pdf
+  ch11_postgresql_sql_deep.html / .pdf
+  ch12_deposits_banking_domain.html / .pdf
+  ch13_fcb_architecture_blueprints.html / .pdf
+  ch14_interview_question_bank.html / .pdf</div>
+      <p class="small muted">Every chapter prints to A4 cleanly via the toolbar button, which is hidden in print output.
+        The PDFs are generated from these same HTML files.</p>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FCB Pega Deposits Learning Sourcebook | Sathvik DN</title>
+<style>
+  :root{--ink:#102033;--muted:#52677a;--navy:#0f2f4a;--blue:#17649a;--soft:#eaf2f8;--line:#c8d6e2;--paper:#fff;--canvas:#eef3f7;--green:#0f766e;--amber:#9a5b00;--red:#b42318;--code:#0f172a}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;background:var(--canvas)}body{font:400 14px/1.62 "Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--canvas)}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .toolbar{position:sticky;top:0;z-index:10;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:12px;background:rgba(238,243,247,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.toolbar button{border:0;border-radius:6px;background:var(--navy);color:white;padding:10px 16px;font-weight:800;cursor:pointer}.toolbar button:hover{background:var(--blue)}
+  .book{width:210mm;margin:18px auto;background:var(--paper);box-shadow:0 18px 50px rgba(16,32,51,.14)}.cover{padding:25mm 17mm 18mm;background:linear-gradient(135deg,#102033,#17466a);color:white}.kicker{font-size:11px;text-transform:uppercase;letter-spacing:1.8px;font-weight:900;color:#b8def7;margin-bottom:8px}h1{font-size:35px;line-height:1.05;letter-spacing:-1.2px;margin-bottom:10px}.subtitle{font-size:16px;max-width:155mm;color:#e4f2fb}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px}.meta div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:10px;border-radius:6px}.meta strong{display:block;font-size:18px;color:white}.meta span{font-size:11px;color:#d7ebf7;text-transform:uppercase;letter-spacing:.7px}
+  main{padding:11mm 14mm 16mm}section{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}section:first-child{margin-top:0;border-top:0}h2{font-size:22px;color:var(--navy);margin-bottom:8px;letter-spacing:-.3px}h3{font-size:17px;color:var(--blue);margin:15px 0 6px}h4{font-size:14px;color:var(--ink);margin:11px 0 4px}p{margin:6px 0;color:#23384c}ul,ol{margin:7px 0 7px 20px}li{margin:4px 0}.muted{color:var(--muted)}.small{font-size:12px}.pagebreak{break-before:page;page-break-before:always}
+  .toc{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.toc a{display:block;padding:9px 10px;background:var(--soft);border-left:4px solid var(--blue);font-weight:800;border-radius:4px;color:var(--navy)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.card{background:#f7fafc;border:1px solid var(--line);border-radius:7px;padding:12px}.card.blue{background:var(--soft);border-color:#bad4e8}.card.green{background:#ecfdf5;border-color:#b8ead8}.card.amber{background:#fff7ed;border-color:#fed7aa}.card.red{background:#fff1f2;border-color:#fecdd3}
+  .tag{display:inline-block;margin:2px 4px 2px 0;padding:3px 7px;border-radius:999px;background:#e8eff6;color:var(--navy);font-size:12px;font-weight:800}.tag.green{background:#dff7ed;color:#075e54}.tag.amber{background:#fff2d7;color:#774000}.tag.red{background:#ffe0e0;color:#9b1c1c}
+  .answer{border-left:4px solid var(--green);padding:8px 10px;background:#f0fdfa;margin:8px 0}.warning{border-left:4px solid var(--amber);padding:8px 10px;background:#fff7ed;margin:8px 0}.dont{border-left:4px solid var(--red);padding:8px 10px;background:#fff1f2;margin:8px 0}.note{border-left:4px solid var(--blue);padding:8px 10px;background:var(--soft);margin:8px 0}
+  .flow{font-family:Consolas,"Courier New",monospace;background:var(--code);color:#dbeafe;padding:12px;border-radius:7px;white-space:pre-wrap;font-size:12px;line-height:1.45;margin:8px 0;overflow:auto}.formula{font-family:Consolas,"Courier New",monospace;background:#f1f5f9;border:1px solid var(--line);padding:8px;border-radius:6px;color:#0f172a;margin:6px 0}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}th,td{border:1px solid var(--line);padding:7px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--navy)}.qa{background:#f8fafc;border:1px solid var(--line);border-radius:7px;padding:10px;margin:8px 0}.qa strong{color:var(--navy)}
+  @media print{html,body{background:#fff}.toolbar{display:none}.book{width:210mm;margin:0;box-shadow:none}.cover{padding:18mm 13mm 14mm}main{padding:8mm 11mm 12mm}h2,h3{break-after:avoid}.card,.answer,.warning,.dont,.note,table,.flow,.qa{break-inside:avoid}.toc{grid-template-columns:repeat(2,1fr)}@page{size:A4;margin:0}}
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button><button onclick="location.href='#all-skills'">All Skills Map</button><button onclick="location.href='#interview-bank'">Interview Answers</button><button onclick="location.href='#domain-sourcebook'">Deposits Domain</button></div>
+<div class="book">
+<div class="cover">
+  <div class="kicker">Learning Sourcebook, Not Just a Plan</div>
+  <h1>FCB Pega Deposits &amp; Shared Services<br>Complete Interview Source Material</h1>
+  <p class="subtitle">This is the actual study material for every skill in the FCB resume and JD: definitions, architecture, Pega implementation flows, examples, pitfalls, and interview-ready explanations. Use this as your source of truth before the interview.</p>
+  <div class="meta"><div><strong>4.5 yrs</strong><span>Experience angle</span></div><div><strong>CSSA</strong><span>Your edge</span></div><div><strong>P2/P3</strong><span>Readiness</span></div><div><strong>Deposits</strong><span>Target domain</span></div></div>
+</div>
+<main>
+<section id="all-skills">
+<h2>0. Complete Skills Map Covered in This Sourcebook</h2>
+<p>This document covers everything currently included in the resume and everything the FCB Pega Deposits JD/leadership is likely to care about.</p>
+<div class="grid">
+  <div class="card green"><h3>Strongly Owned Skills</h3><p><span class="tag green">Case Management</span><span class="tag green">BPM</span><span class="tag green">Kafka</span><span class="tag green">REST/SOAP</span><span class="tag green">Connect-SQL</span><span class="tag green">Data Pages</span><span class="tag green">Data Transforms</span><span class="tag green">Decision Tables</span><span class="tag green">SLAs</span><span class="tag green">Correspondence</span><span class="tag green">Queue Processors</span><span class="tag green">Job Schedulers</span><span class="tag green">File Listener/SFTP</span><span class="tag green">PDC/Tracer/PAL</span></p></div>
+  <div class="card amber"><h3>Know Conceptually / Ramp-up Skills</h3><p><span class="tag amber">Constellation UI</span><span class="tag amber">DX API</span><span class="tag amber">Pega GenAI</span><span class="tag amber">Knowledge Buddy</span><span class="tag amber">Agentic AI</span><span class="tag amber">Prediction Studio</span><span class="tag amber">CDH/NBA</span><span class="tag amber">Pega RPA</span><span class="tag amber">Okta/SAML</span><span class="tag amber">Splunk</span><span class="tag amber">ServiceNow</span><span class="tag amber">TIBCO ESB</span></p></div>
+</div>
+<div class="toc">
+<a href="#positioning">1. How to Talk About Yourself</a><a href="#pega-core">2. Pega Platform Core</a><a href="#case-bpm">3. Case Management &amp; BPM</a><a href="#decisioning">4. Decisioning, Rules, Data Model</a><a href="#ui">5. Constellation UI &amp; DX API</a><a href="#integration-sourcebook">6. Integration Sourcebook</a><a href="#kafka-sourcebook">7. Kafka &amp; Background Processing</a><a href="#file-email-sourcebook">8. File/SFTP &amp; Email Sourcebook</a><a href="#ai-sourcebook">9. AI / GenAI / Prediction Studio / CDH</a><a href="#rpa-sourcebook">10. Pega RPA Sourcebook</a><a href="#ops-sourcebook">11. Infra, Security, Support Tools</a><a href="#domain-sourcebook">12. Banking Deposits Domain</a><a href="#fcb-architecture">13. FCB Architecture Mapping</a><a href="#deep-playbooks">14. Deep Implementation Playbooks</a><a href="#interview-bank">15. Interview Answer Bank</a></div>
+</section>
+
+<section id="positioning" class="pagebreak">
+<h2>1. How to Talk About Yourself Without Overclaiming</h2>
+<p>You need to sound senior enough for P2, but accurate enough that you do not get trapped in follow-up questions. Your strongest story is not “I know every Pega product.” Your strongest story is: <strong>I have delivered production-grade Pega workflows, integrations, Kafka ingestion, background processing, SFTP, correspondence and operations tooling in a financial-services environment.</strong></p>
+<div class="answer"><strong>Interview intro:</strong><br>I am a Pega CSSA with 4.5 years of hands-on experience building financial-services workflow automation at MBRDI across seven APAC markets. My core strength is turning operational processes into production-grade Pega case flows with integrations, SLAs, correspondence, background processing and supportability. Recently I worked on Kafka-to-Pega event ingestion for 50+ topics, replacing 24-hour batch data availability with real-time streaming and tuning Queue Processor processing to 200K records in 5 minutes. I also built operational dashboards and replay APIs for production recovery. For FCB Deposits, I can apply the same patterns to account servicing, legal process orders, payment exceptions, reconciliation and core banking integrations through ESB.</div>
+<h3>How to answer AI/RPA questions honestly</h3>
+<div class="warning"><strong>Say this:</strong> I have leveraged AI practically for mapping generation, bottleneck analysis, failure pattern detection and code review. I have not yet implemented Knowledge Buddy or Agentic AI in production, but I understand the architecture and can ramp up quickly because those capabilities sit on top of concepts I already use: channels, case creation, routing, data extraction, decisioning and integration.</div>
+<div class="dont"><strong>Do not say:</strong> I built Knowledge Buddy, Agentic AI, Prediction Studio models, CDH strategies or RPA bots in production unless you actually did. Say you understand them and know where they fit.</div>
+</section>
+
+<section id="pega-core" class="pagebreak">
+<h2>2. Pega Platform Core Source Material</h2>
+<h3>2.1 What Pega Is</h3>
+<p>Pega is a model-driven, rules-based low-code platform used to build workflow, case management, decisioning, customer service and automation applications. In normal Java/Spring development, logic is spread across controllers, services, repositories, database scripts, workflow engines and UI code. In Pega, much of this is represented as rules: case types, flows, assignments, data transforms, data pages, decision tables, SLAs, connectors, service rules, correspondence and security rules.</p>
+<p>The platform resolves which rule to run at runtime based on class hierarchy, ruleset version, circumstancing, access group and application stack. That is why Pega development is less about writing large blocks of code and more about choosing the correct rule type, class, ruleset and reuse pattern.</p>
+<div class="flow">User / Event / API / File / Email
+  → Pega receives request
+  → Case type or service rule starts processing
+  → Flow routes work through stages and assignments
+  → Data Pages fetch reference/external data
+  → Decision rules choose business path
+  → Connectors update downstream systems
+  → Queue Processors handle async work
+  → SLAs, audit, correspondence and reports track the outcome</div>
+<h3>2.2 Pega Infinity / PRPC</h3>
+<p>PRPC historically means PegaRULES Process Commander. Pega Infinity is the modern platform branding. When a JD says PRPC 8.x / Infinity 24.x, they expect you to understand classic Dev Studio rule configuration and modern App Studio / Constellation direction.</p>
+<table><tr><th>Area</th><th>What to know</th><th>Interview angle</th></tr><tr><td>Dev Studio</td><td>Detailed rule authoring, class structure, integrations, debugging.</td><td>You have production hands-on here.</td></tr><tr><td>App Studio</td><td>Low-code case lifecycle, views, channels, data objects.</td><td>Useful for Constellation and business collaboration.</td></tr><tr><td>Admin Studio</td><td>Nodes, listeners, queue processors, system health.</td><td>Important for production support.</td></tr><tr><td>Prediction Studio</td><td>AI predictions, text analytics, adaptive models.</td><td>Know conceptually for FCB AI roadmap.</td></tr></table>
+<h3>2.3 Rule Resolution</h3>
+<p>Rule resolution is how Pega decides which rule instance to execute. It checks class hierarchy, ruleset list, version, availability, circumstance, date/time qualifiers and access context. This matters because bugs often happen when the wrong version or class-specific rule is picked.</p>
+<div class="formula">Rule selected = Best match by class + ruleset + version + circumstance + availability + access context</div>
+<h4>Production troubleshooting example</h4>
+<p>If a data transform behaves differently in one market, check whether there is a market-specific circumstanced version, branch rule override or ruleset version mismatch.</p>
+<h3>2.4 Rulesets, Branches and Deployment</h3>
+<p>Rulesets package rules. Versions control release changes. Branches support parallel development. In enterprise delivery, you normally develop in branches, merge, package, promote through Dev/QA/UAT/Prod and use guardrail/tests as gates.</p>
+<div class="answer"><strong>P2-level answer:</strong> I do not treat a rule change as isolated. I check class impact, ruleset version, dependent rules, integration contracts, regression scope, deployment sequence and rollback plan.</div>
+</section>
+
+<section id="case-bpm" class="pagebreak">
+<h2>3. Case Management, BPM, SLAs and Correspondence</h2>
+<h3>3.1 Case Management</h3>
+<p>A case is a unit of work created to achieve a business outcome. In FCB Deposits, examples are Account Maintenance, Account Closure, Legal Process Order, Payment Exception and Reconciliation Exception. A case type defines the lifecycle; a case instance is the actual work item.</p>
+<table><tr><th>Pega Concept</th><th>Meaning</th><th>Deposits Example</th></tr><tr><td>Case Type</td><td>Reusable process template</td><td>LegalProcessOrder</td></tr><tr><td>Stage</td><td>Major phase</td><td>Intake → Review → Execute → Notify → Close</td></tr><tr><td>Process</td><td>Set of steps inside a stage</td><td>Validate Order, Place Hold, Notify Customer</td></tr><tr><td>Assignment</td><td>Human work item</td><td>Compliance analyst review</td></tr><tr><td>Flow Action</td><td>User action on assignment</td><td>Approve Hold, Request More Info</td></tr><tr><td>Child Case</td><td>Sub-case for parallel work</td><td>DocumentVerification under AccountOpening</td></tr></table>
+<h3>3.2 BPM</h3>
+<p>BPM is the orchestration of people, systems, rules and time. In Pega, BPM is implemented with case lifecycle, flows, assignment routing, decisioning, SLAs, integrations and audit. For a bank, BPM is not just convenience; it enforces regulatory discipline and operational consistency.</p>
+<div class="flow">Deposit Account Maintenance Case
+  1. Intake request from email/portal/branch
+  2. Load customer/account data from core banking
+  3. Validate request and required documents
+  4. Route to maker/checker if risk condition is met
+  5. Call ESB/API to update core banking
+  6. Generate customer correspondence
+  7. Close case with audit trail</div>
+<h3>3.3 SLA Deep Dive</h3>
+<p>SLAs define urgency and escalation over time. Pega SLAs usually have goal, deadline and passed-deadline behavior. In banking workflows, some SLAs are soft operational targets, while others are hard legal or compliance deadlines.</p>
+<table><tr><th>SLA Part</th><th>Meaning</th><th>Example</th></tr><tr><td>Goal</td><td>Expected completion time</td><td>Address change completed in same business day</td></tr><tr><td>Deadline</td><td>Maximum allowed time</td><td>Legal hold placed within 24 hours</td></tr><tr><td>Passed Deadline</td><td>Action after deadline breach</td><td>Escalate to supervisor and compliance queue</td></tr><tr><td>Urgency</td><td>Priority score increase</td><td>Higher urgency moves item up queue</td></tr></table>
+<h4>Implementation notes</h4>
+<ul><li>Configure SLA at assignment or case level depending on scope.</li><li>Use calendar rules for business-day calculations.</li><li>Use escalation activities carefully; they should be idempotent.</li><li>Expose SLA status in manager dashboards.</li><li>Audit escalation events for compliance workflows.</li></ul>
+<h3>3.4 Correspondence</h3>
+<p>Correspondence rules generate communication: email, SMS, letters and notifications. In deposits, correspondence is central because customers and agencies must receive formal notices for account changes, legal actions, missing documents, closure confirmations and payment exceptions.</p>
+<table><tr><th>Correspondence Type</th><th>Deposits Example</th><th>Data Needed</th></tr><tr><td>Email</td><td>Address change confirmation</td><td>Customer name, account mask, effective date</td></tr><tr><td>Letter/PDF</td><td>Garnishment notification</td><td>Order type, court, amount, exempt rules</td></tr><tr><td>SMS</td><td>Document missing reminder</td><td>Case ID, due date, secure link</td></tr><tr><td>Internal notification</td><td>SLA escalation</td><td>Case ID, queue, deadline, owner</td></tr></table>
+<div class="answer"><strong>Your story:</strong> I built localized SMS, email and correspondence frameworks that replaced external messaging solutions. For FCB, this experience maps to customer notices, legal response packages and account service communications.</div>
+</section>
+
+<section id="decisioning" class="pagebreak">
+<h2>4. Decisioning, Data Model, Data Pages and Declarative Rules</h2>
+<h3>4.1 Decision Rules</h3>
+<p>Decisioning is about separating business logic from procedural code. In Pega, decision rules make changing policy easier and safer. In deposits, rules change by product, customer segment, state, risk category, channel or legal order type.</p>
+<table><tr><th>Rule Type</th><th>Use</th><th>Deposits Example</th></tr><tr><td>Decision Table</td><td>Matrix-style condition to result</td><td>State + order type + account type → exemption rule</td></tr><tr><td>Decision Tree</td><td>Nested branching</td><td>If customer risk high, then enhanced approval path</td></tr><tr><td>When Rule</td><td>Boolean reusable condition</td><td>IsHighRiskMaintenance</td></tr><tr><td>Map Value</td><td>Two-dimensional mapping</td><td>Product + channel → fee code</td></tr><tr><td>Circumstancing</td><td>Rule variant by property/date</td><td>Texas garnishment logic vs California garnishment logic</td></tr></table>
+<h3>4.2 Data Transforms</h3>
+<p>Data Transforms initialize or map data on clipboard pages. They are declarative and preferred over activities for simple mapping because they are easier to read and guardrail-compliant.</p>
+<div class="flow">Use Data Transform for:
+  - Initialize case fields
+  - Map API response to case properties
+  - Copy user input to data object
+  - Set defaults
+  - Normalize values before save
+Avoid using it for:
+  - Complex loops requiring heavy logic
+  - External calls
+  - Long procedural processing</div>
+<h3>4.3 Declarative Rules</h3>
+<p>Declarative rules react to property changes or maintain derived values. They reduce manual recalculation.</p>
+<table><tr><th>Declarative Rule</th><th>Meaning</th><th>Example</th></tr><tr><td>Declare Expression</td><td>Auto-calculate property</td><td>TotalDue = Principal + Interest + Fees</td></tr><tr><td>Declare Constraint</td><td>Validation rule</td><td>Closure amount cannot be negative</td></tr><tr><td>Declare OnChange</td><td>Trigger logic when value changes</td><td>If account status changes to frozen, notify queue</td></tr><tr><td>Declare Trigger</td><td>Database-trigger-like logic</td><td>Create audit record after insert/update</td></tr></table>
+<h3>4.4 Data Pages</h3>
+<p>A Data Page is a reusable data source abstraction. It can source data from report definitions, connectors, lookup data, activities or data transforms. It can be read-only or editable, parameterized or non-parameterized, and scoped to node/requestor/thread.</p>
+<table><tr><th>Scope</th><th>Use</th><th>Example</th></tr><tr><td>Node</td><td>Shared reference data</td><td>D_StateLegalRules</td></tr><tr><td>Requestor</td><td>User session data</td><td>D_UserProfile</td></tr><tr><td>Thread</td><td>Current case context</td><td>D_AccountDetails[AccountID]</td></tr></table>
+<h4>Performance considerations</h4>
+<ul><li>Use refresh strategy to avoid stale data.</li><li>Parameterize correctly; wrong parameters cause cache misses.</li><li>Avoid loading huge lists unless needed.</li><li>Use node scope for stable reference data only.</li><li>For external APIs, handle timeout/failure gracefully.</li></ul>
+<h3>4.5 Data Model and Class Structure</h3>
+<p>Class structure is the backbone of maintainability. Separate work classes, data classes and integration classes.</p>
+<div class="flow">FCB-Deposits-Work
+FCB-Deposits-Work-AccountMaintenance
+FCB-Deposits-Work-LegalProcessOrder
+FCB-Deposits-Work-PaymentException
+
+FCB-Deposits-Data-Customer
+FCB-Deposits-Data-Account
+FCB-Deposits-Data-LegalOrder
+
+FCB-Deposits-Int-Fiserv
+FCB-Deposits-Int-Flexcube
+FCB-Deposits-Int-OFAC</div>
+<div class="answer"><strong>P2 answer:</strong> I design class structure around reuse and separation of concerns. Work classes model business cases, data classes model reusable business objects, and integration classes isolate external request/response schemas.</div>
+</section>
+
+<section id="ui" class="pagebreak">
+<h2>5. Constellation UI, Traditional UI and DX API</h2>
+<h3>5.1 Traditional UI</h3>
+<p>Traditional Pega UI uses sections, harnesses, flow actions, layouts, controls and skins. It is highly flexible and common in older Pega applications. Many Pega developers have deep experience here through Customer Service, CPM and older PRPC applications.</p>
+<h3>5.2 Constellation UI</h3>
+<p>Constellation is Pega's modern, view-based UI architecture. It uses a prescribed design system and React-based runtime. Instead of heavily customizing sections, developers configure views and use standardized components. This improves upgradeability and consistency.</p>
+<table><tr><th>Traditional UI</th><th>Constellation UI</th></tr><tr><td>Section/harness-based</td><td>View-based</td></tr><tr><td>More custom layout freedom</td><td>More standardized UX</td></tr><tr><td>Custom JS/control common</td><td>Prefer OOTB components</td></tr><tr><td>Can become maintenance-heavy</td><td>Better upgrade path</td></tr></table>
+<h3>5.3 DX API</h3>
+<p>DX API exposes Pega case and assignment data plus UI metadata to external front ends. Traditional APIs usually return only business data; DX API can return data, layout, actions and view metadata. This lets React/Angular/custom UI render Pega-driven workflows while Pega remains the case engine.</p>
+<div class="flow">External UI / Constellation runtime
+  → Calls DX API
+  → Receives case data + view metadata + available actions
+  → User submits assignment
+  → DX API sends action to Pega
+  → Pega advances case lifecycle</div>
+<div class="answer"><strong>Interview answer:</strong> I have stronger hands-on in traditional UI/Customer Service patterns, but I understand Constellation as Pega's recommended modern architecture. For a greenfield FCB app I would prefer Constellation unless there is a strong custom UI requirement, because it keeps the app closer to guardrails and future platform direction.</div>
+</section>
+
+<section id="integration-sourcebook" class="pagebreak">
+<h2>6. Integration Sourcebook: REST, SOAP, JMS, ESB, Connect-SQL, Microservices</h2>
+<h3>6.1 Integration Design Principles</h3>
+<p>In enterprise banking, Pega is usually not the system of record. Core banking, payments, KYC, AML, GL and document systems own data. Pega orchestrates work, captures audit, routes assignments and calls external systems through integration layers.</p>
+<div class="flow">Pega Case Data
+  → Data Transform maps request
+  → Connector / Service / Listener
+  → External System or ESB
+  → Response mapping
+  → Case status update
+  → Error handling and audit</div>
+<h3>6.2 REST in Pega</h3>
+<p>REST uses HTTP methods and usually JSON. Pega uses Connect-REST to call external APIs and Service-REST to expose Pega APIs.</p>
+<table><tr><th>Rule</th><th>Direction</th><th>Example</th></tr><tr><td>Connect-REST</td><td>Pega → external</td><td>Call TIBCO ESB to update account address</td></tr><tr><td>Service-REST</td><td>External → Pega</td><td>External system creates PaymentException case</td></tr></table>
+<h4>Production-grade REST checklist</h4>
+<ul><li>Timeout configured.</li><li>Authentication handled securely: OAuth/basic/mTLS depending on enterprise standard.</li><li>Request/response mapped through data transforms.</li><li>HTTP 4xx vs 5xx handled differently.</li><li>Correlation ID logged.</li><li>Retry only for retryable errors.</li><li>Sensitive data masked in logs.</li></ul>
+<h3>6.3 SOAP</h3>
+<p>SOAP is XML-based and uses WSDL/XSD contracts. It is common in older enterprise systems. In Pega, Connect-SOAP consumes WSDL and maps XML request/response to clipboard structures.</p>
+<p>Know: SOAP envelope, body, header, WSDL, XSD, namespaces, SOAP fault. For FCB, SOAP may appear through legacy banking or compliance services.</p>
+<h3>6.4 JMS</h3>
+<p>JMS is a Java messaging API for queues and topics. TIBCO EMS is a common enterprise messaging implementation. JMS supports asynchronous communication, decoupling Pega from downstream availability.</p>
+<table><tr><th>Concept</th><th>Meaning</th></tr><tr><td>Queue</td><td>Point-to-point; one consumer processes each message</td></tr><tr><td>Topic</td><td>Publish-subscribe; multiple subscribers can receive message</td></tr><tr><td>Durable subscriber</td><td>Receives messages even after temporary disconnection</td></tr><tr><td>Dead-letter queue</td><td>Failed messages after retries</td></tr></table>
+<h3>6.5 ESB / TIBCO Middleware</h3>
+<p>An ESB mediates between systems. It handles routing, transformation, protocol conversion, validation and sometimes orchestration. In FCB Deposits, Pega likely calls TIBCO endpoints; TIBCO talks to Fiserv, Flexcube or legacy systems.</p>
+<div class="flow">Pega Connect-REST request
+  → TIBCO ESB
+  → Validate and transform payload
+  → Route to Fiserv/Flexcube/Compliance system
+  → Transform response to canonical format
+  → Return to Pega</div>
+<h4>Why ESB matters</h4>
+<ul><li>Pega does not need direct knowledge of every core banking protocol.</li><li>ESB provides canonical data model.</li><li>Downstream system changes can be hidden behind ESB contract.</li><li>Centralizes security, logging and routing.</li></ul>
+<h3>6.6 Connect-SQL</h3>
+<p>Connect-SQL runs SQL against external databases. You used it for metadata-driven MERGE operations. In interviews, position it carefully: APIs are preferred for service boundaries, but Connect-SQL is valid for controlled database integration, reporting or bulk operations when approved.</p>
+<div class="warning">Banking caution: Never use direct DB updates casually against systems of record. Mention approvals, transaction control, audit, parameterization and performance testing.</div>
+<h3>6.7 Microservices</h3>
+<p>Microservices are small independently deployable services around business capabilities. Pega consumes microservices for specific functions: customer lookup, account update, OFAC screening, document storage, notification delivery.</p>
+</section>
+
+<section id="kafka-sourcebook" class="pagebreak">
+<h2>7. Kafka and Pega Background Processing Sourcebook</h2>
+<h3>7.1 Kafka Core</h3>
+<p>Kafka is an event streaming platform. It is used when systems need real-time or near-real-time event exchange at scale. A producer writes events to a topic. Topics have partitions. Consumers read events and commit offsets.</p>
+<table><tr><th>Term</th><th>Meaning</th><th>Your angle</th></tr><tr><td>Topic</td><td>Named stream of events</td><td>You integrated 50+ topics</td></tr><tr><td>Partition</td><td>Parallelism unit inside topic</td><td>Impacts throughput/order</td></tr><tr><td>Offset</td><td>Position in partition</td><td>Used for replay/recovery concept</td></tr><tr><td>Consumer group</td><td>Consumers sharing topic processing</td><td>Horizontal scaling</td></tr><tr><td>Dead-letter topic/queue</td><td>Failed event storage</td><td>You built replay API</td></tr></table>
+<h3>7.2 Kafka to Pega Flow</h3>
+<div class="flow">Producer publishes customer/account event
+  → Kafka topic receives event
+  → Pega Dataset connects to topic
+  → Data Flow reads event
+  → Data Transform maps JSON payload
+  → Queue Processor handles async processing
+  → Case/data updated
+  → Failures go to error/dead-letter handling
+  → Dashboard shows health and replay options</div>
+<h3>7.3 Queue Processors</h3>
+<p>Queue Processors run background tasks asynchronously. They are critical for performance when user-facing processing should not wait for heavy work. They also support retries and scalable processing.</p>
+<table><tr><th>Use case</th><th>Why Queue Processor helps</th></tr><tr><td>Bulk case creation</td><td>Do not block user/API thread</td></tr><tr><td>External system update</td><td>Retry transient downstream failures</td></tr><tr><td>Kafka event processing</td><td>Process records at scale</td></tr><tr><td>Notification sending</td><td>Send correspondence asynchronously</td></tr></table>
+<h4>Your throughput story</h4>
+<div class="answer">I tuned Queue Processor and Job Scheduler-based processing to handle 200,000 records in 5 minutes. The key was moving heavy work out of synchronous flow, processing in controlled batches, reducing repeated lookups, standardizing mappings and adding operational monitoring for failures.</div>
+<h3>7.4 Job Schedulers</h3>
+<p>Job Schedulers run at configured times or intervals. They are used for nightly batches, reconciliation, reporting, cleanup and polling external queues.</p>
+<div class="flow">Nightly Reconciliation Job Scheduler
+  → Fetch file/extract data
+  → Create batch control case
+  → Queue individual records
+  → Compare records
+  → Create exception cases
+  → Generate report</div>
+<h3>7.5 Data Flows and Datasets</h3>
+<p>Datasets define the source/destination. Data Flows define processing. Together they allow streaming or batch pipelines in Pega.</p>
+<table><tr><th>Component</th><th>Role</th></tr><tr><td>Dataset</td><td>Kafka topic, database, decision data or stream endpoint</td></tr><tr><td>Data Flow</td><td>Reads source, transforms, filters, writes destination</td></tr><tr><td>Queue Processor</td><td>Processes resulting work asynchronously</td></tr></table>
+<h3>7.6 Kafka Dashboard Source Material</h3>
+<p>Your Kafka dashboard is a major differentiator. Learn to tell it like a product story, not just a technical bullet.</p>
+<div class="flow">Problem:
+  Production support lacked real-time visibility into Kafka failures and node health.
+
+Design:
+  - Data Pages loaded pipeline status and failed queue records.
+  - Dashboard showed topic/queue health, node health and KPI comparison.
+  - Service-REST replay API reprocessed dead-letter records.
+  - Automated HTML reports supported stakeholder communication.
+
+Impact:
+  - Investigation reduced from hours to seconds.
+  - MTTR reduced from ~2 hours to under 2 minutes.
+  - Support effort reduced and reliability improved.</div>
+</section>
+
+<section id="file-email-sourcebook" class="pagebreak">
+<h2>8. File Listener, SFTP, Parse Rules, Email Listener and Email Channel</h2>
+<h3>8.1 File Listener</h3>
+<p>A File Listener monitors a directory/repository/SFTP location for files. When a matching file appears, Pega moves it into processing, invokes a Service File rule, parses the content and processes each record.</p>
+<div class="flow">External SFTP folder
+  → File Listener scans for matching file pattern
+  → Moves file into work folder
+  → Service File rule is invoked
+  → Parse rule reads file content
+  → Service activity maps clipboard and creates/updates data
+  → File moved to completed/error folder
+  → Report/log generated</div>
+<h4>Configuration concepts</h4>
+<table><tr><th>Item</th><th>Meaning</th></tr><tr><td>File pattern</td><td>Which files to pick, e.g., ACH_RETURN_*.txt</td></tr><tr><td>Polling interval</td><td>How often listener checks for files</td></tr><tr><td>Service package</td><td>Security and access context for service</td></tr><tr><td>Service File</td><td>Rule invoked for file processing</td></tr><tr><td>Parse rule</td><td>Delimited/fixed/XML parser</td></tr><tr><td>Error folder</td><td>Where failed files go</td></tr></table>
+<h3>8.2 SFTP</h3>
+<p>SFTP is secure file transfer over SSH. Banks still use SFTP for ACH/NACHA files, statements, settlement files, regulatory reports, reconciliation extracts and legacy interfaces. SFTP is less real-time than APIs/Kafka but reliable and common for batch banking operations.</p>
+<h4>Operational controls</h4>
+<ul><li>File naming convention and timestamp.</li><li>Manifest or control totals.</li><li>Archive processed files.</li><li>Retry failed transfers.</li><li>Audit arrival/processed count/error count.</li><li>Credential/key rotation.</li></ul>
+<h3>8.3 Parse Rules</h3>
+<table><tr><th>Parse Type</th><th>Use</th><th>Example</th></tr><tr><td>Parse Delimited</td><td>CSV/pipe files</td><td>customer_id|account|amount</td></tr><tr><td>Parse Structured</td><td>Fixed-width records</td><td>NACHA-style positional file</td></tr><tr><td>Parse XML</td><td>XML documents</td><td>Manifest file or legacy XML</td></tr><tr><td>JSON mapping</td><td>JSON payload</td><td>Kafka event or REST response</td></tr></table>
+<h3>8.4 Email Listener</h3>
+<p>Email Listener monitors an email inbox and routes messages to Service Email. It can create or update cases, save attachments and trigger downstream processing.</p>
+<div class="flow">Incoming email
+  → Email account / mailbox
+  → Email Listener monitors folder
+  → Service Email rule receives message
+  → Map From/To/Subject/Body/Attachments
+  → Create case or update existing case
+  → Send auto-response if needed
+  → Route work based on content</div>
+<h3>8.5 Email Channel</h3>
+<p>Email Channel is the higher-level App Studio channel used for intelligent email handling. It can use NLP/text predictions to detect topic, sentiment, language and entities.</p>
+<table><tr><th>Capability</th><th>Meaning</th><th>Deposits example</th></tr><tr><td>Topic detection</td><td>Classify intent</td><td>"Close account" → AccountClosure</td></tr><tr><td>Entity extraction</td><td>Extract structured fields</td><td>Account number, amount, date</td></tr><tr><td>Sentiment</td><td>Detect emotional tone</td><td>Angry customer → urgent routing</td></tr><tr><td>Attachment processing</td><td>Save and parse attached files</td><td>Legal order PDF</td></tr></table>
+<div class="answer">Your story: I configured Email Listener / Email Channel for automated intake and File Listener / SFTP for batch ingestion. For FCB, those map directly to legal order intake, payment exceptions, deposit maintenance requests and reconciliation files.</div>
+</section>
+
+<section id="ai-sourcebook" class="pagebreak">
+<h2>9. AI, GenAI, Knowledge Buddy, Agentic AI, Prediction Studio and CDH</h2>
+<h3>9.1 Your Actual AI Usage</h3>
+<p>Your resume should say you leveraged AI, not that you built every Pega AI product. Your real use cases are valuable:</p>
+<ul><li><strong>Mapping generation:</strong> AI generated draft mapping logic from table metadata and payload samples.</li><li><strong>Bottleneck analysis:</strong> AI helped compare performance symptoms and identify likely bottlenecks.</li><li><strong>Failure detection:</strong> AI-assisted pattern analysis for recurring failures.</li><li><strong>Code review:</strong> AI reviewed logic or suggested improvements, then you manually validated.</li></ul>
+<div class="answer">Strong answer: I use AI as an accelerator, not as an authority. I validate every output against Pega guardrails, data model, test cases and production constraints.</div>
+<h3>9.2 Knowledge Buddy</h3>
+<p>Knowledge Buddy is Pega's enterprise knowledge assistant. It uses Retrieval Augmented Generation (RAG): approved enterprise content is ingested, chunked, embedded and retrieved to ground LLM responses.</p>
+<div class="flow">SOPs / PDFs / Policy docs / Knowledge articles
+  → Ingest into Knowledge Buddy
+  → Chunk content
+  → Generate embeddings
+  → Store in vector database
+  → User asks question
+  → Retrieve relevant chunks
+  → LLM generates answer based on source content
+  → Return answer with references and security filtering</div>
+<h4>Why it matters in deposits</h4>
+<p>Deposit operations involve many procedures: account closure, deceased customer handling, legal orders, KYC exceptions, state-specific garnishments, ACH disputes. Agents cannot memorize everything. Knowledge Buddy can answer operational questions based on approved SOPs.</p>
+<div class="qa"><strong>Question:</strong> How would Knowledge Buddy help a legal process order team?<br><strong>Answer:</strong> It can ingest legal SOPs and state-specific policy documents. When an agent asks how to process a Texas garnishment, it retrieves the relevant procedure and returns grounded steps with references, reducing manual searching and inconsistent handling.</div>
+<h3>9.3 Agentic AI</h3>
+<p>Agentic AI goes beyond Q&amp;A. It interprets intent, plans next steps and can call tools/actions under guardrails. In Pega, the likely use is not unrestricted autonomous agents but controlled AI-powered workflow assistance.</p>
+<table><tr><th>Traditional Workflow</th><th>Agentic AI-Assisted Workflow</th></tr><tr><td>User manually selects case type</td><td>AI classifies email/document intent</td></tr><tr><td>User manually copies fields</td><td>AI extracts account number, date, amount</td></tr><tr><td>Fixed routing only</td><td>AI recommends routing, rules validate final path</td></tr><tr><td>Manual SOP lookup</td><td>AI suggests next action with reference</td></tr></table>
+<h3>9.4 Pega Blueprint</h3>
+<p>Pega Blueprint generates an application design from natural language: case types, stages, personas, data objects and workflows. It is useful for greenfield discovery, but final architecture must be reviewed by an architect.</p>
+<div class="answer">Good answer: Blueprint can accelerate early design for FCB Deposits, but I would still validate class structure, reuse, integration patterns, security, data model and guardrails before implementation.</div>
+<h3>9.5 Prediction Studio</h3>
+<p>Prediction Studio is where Pega predictions are configured and monitored. For email/chat text analytics, it can detect topics, entities, sentiment and language.</p>
+<table><tr><th>Prediction Outcome</th><th>Meaning</th><th>Example</th></tr><tr><td>Topic</td><td>Intent/subject</td><td>Account closure, address change, legal order</td></tr><tr><td>Entity</td><td>Extracted data</td><td>Customer name, account number, amount</td></tr><tr><td>Sentiment</td><td>Emotional tone</td><td>Negative sentiment escalates case</td></tr><tr><td>Language</td><td>Language detection</td><td>Route based on supported language</td></tr></table>
+<h3>9.6 CDH / Next Best Action</h3>
+<p>Customer Decision Hub chooses the next best action using business rules and AI. Key concepts are actions, treatments, engagement policies, constraints, adaptive models, propensity and arbitration.</p>
+<div class="formula">Final Priority = Propensity × Context Weighting × Business Value × Business Levers</div>
+<table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Action</td><td>Offer or recommendation</td></tr><tr><td>Treatment</td><td>Channel-specific presentation of action</td></tr><tr><td>Engagement Policy</td><td>Eligibility/applicability/suitability rules</td></tr><tr><td>Constraint</td><td>Contact limit or suppression rule</td></tr><tr><td>Adaptive Model</td><td>Learns from responses</td></tr><tr><td>Arbitration</td><td>Ranks eligible actions</td></tr></table>
+<p>For deposits, CDH may recommend retention offers, document requests, servicing next steps or proactive outreach.</p>
+</section>
+
+<section id="rpa-sourcebook" class="pagebreak">
+<h2>10. Pega RPA Sourcebook</h2>
+<h3>10.1 What RPA Is</h3>
+<p>RPA automates repetitive work in systems where APIs may not exist. Bots interact with screens, files, PDFs, browsers and desktop applications. In banking, RPA is common because many legacy systems are hard to integrate directly.</p>
+<h3>10.2 Attended vs Unattended</h3>
+<table><tr><th>Type</th><th>Definition</th><th>Banking example</th></tr><tr><td>Attended bot</td><td>Runs on user's desktop; human triggers it</td><td>Agent enters address once, bot updates multiple legacy systems</td></tr><tr><td>Unattended bot</td><td>Runs without human on VM/schedule</td><td>Nightly bot extracts balances for reconciliation</td></tr></table>
+<h3>10.3 Pega Robotics Components</h3>
+<table><tr><th>Component</th><th>Role</th></tr><tr><td>Robot Studio</td><td>Build automation projects</td></tr><tr><td>Robot Runtime</td><td>Runs automation package</td></tr><tr><td>Robot Manager</td><td>Schedules, deploys, monitors bots</td></tr><tr><td>RPA Service</td><td>Starts unattended robot sessions</td></tr><tr><td>Credential Store</td><td>Secure credentials for bot login</td></tr></table>
+<h3>10.4 How Pega Case Talks to Robot</h3>
+<div class="flow">Pega case reaches automation step
+  → Pega triggers robotic automation
+  → Robot Runtime receives command
+  → Bot opens legacy app / reads screen / enters data
+  → Bot returns status/data
+  → Pega updates case or creates exception</div>
+<h3>10.5 OCR</h3>
+<p>OCR extracts text from images, scanned PDFs or screen regions. In deposits, OCR can read legal orders, tax levy notices, ID documents or forms.</p>
+<div class="flow">Scanned legal order PDF
+  → OCR extracts text
+  → Text analytics identifies order type and entities
+  → Pega creates LegalProcessOrder case
+  → Analyst verifies extracted data
+  → Hold/update sent to core banking</div>
+<div class="warning">Positioning: You understand RPA concepts and case integration points. Do not claim you built bots if you have not. Say you can design Pega-side workflow, exception handling and integration around robot outputs.</div>
+</section>
+
+<section id="ops-sourcebook" class="pagebreak">
+<h2>11. Infra, Security, Monitoring and Delivery Sourcebook</h2>
+<h3>11.1 PDC, Tracer, Clipboard, PAL</h3>
+<table><tr><th>Tool</th><th>Purpose</th><th>How you use it</th></tr><tr><td>Tracer</td><td>Step-by-step rule execution</td><td>Find wrong rule, failed data transform, connector step</td></tr><tr><td>Clipboard</td><td>Runtime data inspection</td><td>Check pages/properties/parameter values</td></tr><tr><td>PAL</td><td>Performance metrics</td><td>DB time, elapsed time, CPU, rule count</td></tr><tr><td>PDC</td><td>System health and diagnostics</td><td>Production alerts, exceptions, guardrail issues</td></tr></table>
+<h3>11.2 Splunk</h3>
+<p>Splunk centralizes logs. Even if you used Pega logs/PDC more, know how Splunk would fit.</p>
+<ul><li>Search by case ID, correlation ID, operator ID, node, API endpoint.</li><li>Monitor connector failures and response times.</li><li>Create alerts for error spikes.</li><li>Build dashboards for queue lag, failed cases and SLA breaches.</li></ul>
+<h3>11.3 Okta / SAML</h3>
+<p>Okta is an Identity Provider. Pega is the Service Provider. SAML assertion tells Pega the authenticated identity and attributes.</p>
+<div class="flow">User opens Pega
+  → Redirect to Okta
+  → MFA/login
+  → Okta sends signed SAML assertion
+  → Pega validates signature
+  → Operator/access group resolved
+  → User enters portal</div>
+<h3>11.4 ServiceNow</h3>
+<p>ServiceNow is used for incident, change, problem and request management. In production support, incidents may start in ServiceNow and link to Pega case IDs/log evidence. Releases may require ServiceNow change approvals.</p>
+<h3>11.5 Deployment Manager / CI-CD</h3>
+<p>Pega Deployment Manager supports automated promotion through environments. Know branches, rulesets, RAPs, quality gates, approvals and rollback planning.</p>
+<h3>11.6 Databases: PostgreSQL and SQL Server</h3>
+<p>Know core SQL: joins, indexes, transactions, stored procedures, MERGE, deadlocks. Your Connect-SQL MERGE story is strong because it shows bulk data engineering plus Pega integration.</p>
+</section>
+
+<section id="domain-sourcebook" class="pagebreak">
+<h2>12. Banking Deposits Domain Sourcebook</h2>
+<h3>12.1 What Deposit Operations Means</h3>
+<p>Deposits are liabilities for a bank: customer money held in checking, savings, money market, term deposits or CDs. Deposit operations manages opening, servicing, maintenance, restrictions, legal holds, interest, fees, closure, statements, exceptions and reconciliation.</p>
+<h3>12.2 Account Opening</h3>
+<div class="flow">Application Intake
+  → Customer identity capture
+  → KYC / AML / OFAC checks
+  → Product eligibility
+  → Initial funding
+  → Core banking account creation
+  → Welcome correspondence
+  → Case closure</div>
+<h3>12.3 Account Maintenance</h3>
+<p>Maintenance includes address change, signer update, beneficiary update, tax form update, overdraft opt-in/out, product conversion and account restrictions.</p>
+<table><tr><th>Request</th><th>Risk</th><th>Pega control</th></tr><tr><td>Address change</td><td>Fraud/social engineering</td><td>Identity verification + correspondence</td></tr><tr><td>Signer update</td><td>Unauthorized account access</td><td>Dual approval + document verification</td></tr><tr><td>Beneficiary update</td><td>Legal/ownership risk</td><td>Document checklist + audit</td></tr><tr><td>Account closure</td><td>Unsettled transactions/holds</td><td>Balance/hold check + final notice</td></tr></table>
+<h3>12.4 Legal Process Orders</h3>
+<p>Legal orders require strict processing and audit. They can freeze, seize or request information about customer accounts.</p>
+<table><tr><th>Order</th><th>Meaning</th><th>Pega automation</th></tr><tr><td>Garnishment</td><td>Creditor seeks funds from account</td><td>Classify order, calculate exempt amount, place hold</td></tr><tr><td>Tax levy</td><td>Government claim</td><td>Priority processing, hold/remit workflow</td></tr><tr><td>Subpoena</td><td>Request account records</td><td>Pull records, package response, legal review</td></tr><tr><td>Court freeze/seizure</td><td>Restrict account</td><td>Urgent SLA, dual approval, core update</td></tr></table>
+<h3>12.5 KYC, AML, OFAC</h3>
+<p>KYC verifies customer identity and purpose. AML detects money laundering risk. OFAC checks sanctions lists. Pega orchestrates these checks through APIs, routes exceptions and keeps audit.</p>
+<h3>12.6 Payment Exceptions</h3>
+<ul><li><strong>ACH return:</strong> NSF, unauthorized, closed account, duplicate.</li><li><strong>Stop payment:</strong> customer blocks check/ACH.</li><li><strong>Wire exception:</strong> invalid routing, missing info, sanctions hit.</li><li><strong>OFAC hit:</strong> compliance review required before release/block.</li></ul>
+<h3>12.7 Reconciliation</h3>
+<p>Reconciliation compares transactions or balances between systems. Differences become exception cases.</p>
+<div class="flow">Core banking extract + GL extract + payment file
+  → Normalize records
+  → Match by account/date/amount/reference
+  → Identify missing/duplicate/mismatch
+  → Create ReconciliationException case
+  → Analyst resolves
+  → Adjustment/report generated</div>
+<div class="answer">Your fit: Kafka ingestion, Connect-SQL MERGE, Queue Processor throughput and dashboard monitoring directly apply to reconciliation workloads.</div>
+</section>
+
+<section id="fcb-architecture" class="pagebreak">
+<h2>13. FCB Deposits Architecture Mapping</h2>
+<div class="flow">Inbound Channels
+  Email, Portal, Branch, Phone, SFTP, Batch Files, Core Events
+        ↓
+Pega Platform
+  Case Types: AccountMaintenance, AccountClosure, LegalProcessOrder, PaymentException, ReconciliationException
+  BPM: Stages, assignments, routing, approvals, SLAs
+  Decisioning: decision tables, circumstancing, when rules
+  Communication: correspondence, email, SMS, notices
+  Background: Queue Processors, Job Schedulers, Data Flows
+  UI: Constellation / Agent Desktop / Dashboards
+        ↓
+Integration Layer
+  TIBCO ESB, REST, SOAP, JMS/EMS, Kafka, SFTP, Connect-SQL
+        ↓
+Systems of Record
+  Fiserv Signature, Oracle Flexcube, KYC/AML, OFAC, GL, Payments, ServiceNow, Splunk</div>
+<h3>Where Your Resume Maps</h3>
+<table><tr><th>Your skill</th><th>FCB need</th></tr><tr><td>Kafka 50+ topics</td><td>Real-time payment/account events</td></tr><tr><td>File Listener/SFTP</td><td>NACHA/reconciliation/legal document intake</td></tr><tr><td>Email Listener/Channel</td><td>Customer and agency request intake</td></tr><tr><td>Correspondence</td><td>Customer notices and legal response packages</td></tr><tr><td>Queue Processor 200K/5 min</td><td>High-volume batch and exception processing</td></tr><tr><td>Dashboard/replay API</td><td>Production support and operational reliability</td></tr><tr><td>PDC/Tracer/PAL</td><td>24/7 support and incident resolution</td></tr></table>
+</section>
+
+<section id="deep-playbooks" class="pagebreak">
+<h2>14. Deep Implementation Playbooks: How to Actually Build These Things</h2>
+<p>This section is the practical source material you asked for. Use it to learn the implementation sequence, rule types, configuration decisions, error handling, security, database basics and lead-level design trade-offs. The goal is not to memorize every screen; the goal is to understand how a senior/lead Pega developer thinks through implementation.</p>
+
+<h3>14.1 Lead-Level Mindset: How to Think Like P2/P3 Even With 4.5 Years</h3>
+<p>A junior developer usually asks: “Which rule should I create?” A P2/P3 developer asks: “What is the right architecture, what can fail, how will this be supported, and how will this scale?” For FCB, this is what matters. The Deposits team is greenfield, so they need people who can build and also think about maintainability.</p>
+<table><tr><th>Area</th><th>Junior thinking</th><th>Lead thinking</th></tr><tr><td>Case design</td><td>Create stages and steps from story</td><td>Identify reusable parent cases, child cases, audit, SLA, routing, exceptions and future extension points</td></tr><tr><td>Integration</td><td>Call API and map response</td><td>Define canonical contract, timeout, retry, correlation ID, idempotency, failure routing and monitoring</td></tr><tr><td>File processing</td><td>Configure listener</td><td>Design file naming, duplicate detection, manifest/control totals, archive, reprocessing and operational dashboard</td></tr><tr><td>Production issue</td><td>Fix failing rule</td><td>Find root cause, scope impact, protect data integrity, add monitoring, prevent recurrence</td></tr><tr><td>Performance</td><td>Make it pass test data</td><td>Think throughput, locking, DB commits, queue depth, parallelism and back-pressure</td></tr></table>
+<div class="answer"><strong>How to say this in interview:</strong> I try to design Pega work as an operational system, not just a case flow. For every feature I think about audit, SLA, supportability, integration failure, replay, monitoring and guardrail compliance.</div>
+
+<h3>14.2 Deep File Listener + SFTP Implementation Playbook</h3>
+<p>File Listener is one of the most important banking integration patterns. It is used when data arrives in files rather than APIs/events. In deposits, this can be NACHA ACH return files, reconciliation files, legal order batches, GL extracts, statement files or legacy core banking files.</p>
+<h4>A. End-to-end architecture</h4>
+<div class="flow">External system / bank partner / core banking
+  → Places file on SFTP location
+  → Pega File Listener polls the location
+  → Listener locks/moves file into processing directory
+  → Service File rule receives file stream
+  → Parse rule reads rows/segments
+  → Service activity or data transform validates each record
+  → Valid records create/update Pega cases/data
+  → Invalid records go to error table / exception case
+  → File archived to completed/error folder
+  → Processing summary generated and support alerted if needed</div>
+<h4>B. Rules and data instances you need</h4>
+<table><tr><th>Artifact</th><th>Purpose</th><th>Example name</th></tr><tr><td>FTP Server / Repository data instance</td><td>Defines SFTP host, port, credentials/key, folder path</td><td>FCBDepositsSFTP</td></tr><tr><td>Service Package</td><td>Security/access context for service execution</td><td>DepositsFileServices</td></tr><tr><td>Service File rule</td><td>Entry point for file processing</td><td>ProcessACHReturnFile</td></tr><tr><td>File Listener</td><td>Polls location and invokes Service File</td><td>ACHReturnFileListener</td></tr><tr><td>Parse Delimited / Structured / XML</td><td>Maps file content to clipboard</td><td>ParseNACHARecord</td></tr><tr><td>Data Transform</td><td>Maps parsed row to data/case model</td><td>MapACHReturnToPaymentException</td></tr><tr><td>Activity / Queue Processor</td><td>Validates and processes records asynchronously</td><td>QueueACHReturnRecord</td></tr><tr><td>Report Definition / Dashboard</td><td>Operational visibility</td><td>ACHFileProcessingSummary</td></tr></table>
+<h4>C. Implementation sequence</h4>
+<ol><li><strong>Understand file contract:</strong> file format, delimiter/fixed width/XML, encoding, header/trailer, control totals, mandatory fields, max size, frequency and SLA.</li><li><strong>Create data model:</strong> staging class for file header, record class for each row, error class for failed records and final business case class.</li><li><strong>Configure SFTP access:</strong> host, port 22, folder, authentication mode, credentials/SSH key and network allowlist if needed.</li><li><strong>Create Service Package:</strong> define access group and authentication. For internal listeners this often uses an application service access group with limited permissions.</li><li><strong>Create Service File:</strong> set service method, request parsing, parse rule and service activity.</li><li><strong>Create Parse Rule:</strong> map each column/segment to properties. For fixed-width files define start and length. For delimited files define delimiter, quote handling and record mapping.</li><li><strong>Create File Listener:</strong> configure source location, file pattern, polling interval, service package, service file, processing folder, completed folder and error behavior.</li><li><strong>Add validation:</strong> required fields, duplicate file detection, duplicate record detection, amount/date format validation, account existence and control total validation.</li><li><strong>Queue heavy work:</strong> do not process 200K rows synchronously inside the listener thread. Stage records and queue them using Queue Processor.</li><li><strong>Add reconciliation summary:</strong> total records, success count, failed count, duplicate count, processing duration and file status.</li><li><strong>Add replay strategy:</strong> reprocess failed records after data correction; do not blindly reprocess whole file if partial processing already happened.</li><li><strong>Add monitoring:</strong> alert if expected file missing, file fails, error count exceeds threshold, queue backlog grows or processing exceeds SLA.</li></ol>
+<h4>D. File format examples</h4>
+<div class="flow">Delimited ACH return sample:
+RecordType|TraceNumber|AccountNumber|Amount|ReturnCode|EffectiveDate
+ACH_RETURN|1234567890|987654321|250.00|R01|2026-10-10
+
+Fixed-width example:
+Positions 1-10   TraceNumber
+Positions 11-22  AccountNumber
+Positions 23-32  Amount
+Positions 33-35  ReturnCode
+Positions 36-43  EffectiveDate</div>
+<h4>E. Staging table design</h4>
+<table><tr><th>Table</th><th>Purpose</th><th>Key columns</th></tr><tr><td>deposit_file_batch</td><td>One row per file</td><td>batch_id, file_name, checksum, received_ts, status, total_count, success_count, error_count</td></tr><tr><td>deposit_file_record</td><td>One row per parsed record</td><td>record_id, batch_id, line_no, account_no, amount, status, error_code</td></tr><tr><td>deposit_file_error</td><td>Error details</td><td>error_id, record_id, error_type, error_message, raw_payload</td></tr></table>
+<h4>F. Duplicate prevention</h4>
+<p>Banking file processing must be idempotent. Idempotency means processing the same file/record twice should not create duplicate financial actions.</p>
+<ul><li>Calculate file checksum or use file name + date + control number.</li><li>Store batch ID and reject duplicate file unless explicitly reprocessed.</li><li>Use business key for records: trace number + account + amount + effective date.</li><li>Use unique constraint in staging table if possible.</li><li>For case creation, check if case already exists for record key before creating new case.</li></ul>
+<h4>G. Error handling pattern</h4>
+<table><tr><th>Error</th><th>Action</th></tr><tr><td>Invalid file name</td><td>Move to error folder, alert support</td></tr><tr><td>Malformed row</td><td>Save row error, continue if allowed</td></tr><tr><td>Control total mismatch</td><td>Mark file failed; do not post records until reviewed</td></tr><tr><td>Account not found</td><td>Create exception record/case</td></tr><tr><td>Downstream API timeout</td><td>Retry through Queue Processor; dead-letter after max retry</td></tr></table>
+<div class="answer"><strong>Interview answer:</strong> For high-volume banking files, I would not put all logic directly inside the File Listener. I would use the listener to securely ingest and stage data, validate file-level controls, then process records asynchronously through Queue Processors with idempotency, replay and monitoring.</div>
+
+<h3>14.3 Deep Email Listener / Email Channel Implementation Playbook</h3>
+<p>Email intake is useful for customer requests, agency notices, legal orders and operational mailboxes. FCB can use this for deposits requests and legal process orders.</p>
+<h4>A. Core architecture</h4>
+<div class="flow">Shared mailbox: deposits-ops@bank.com
+  → Email Listener polls inbox
+  → Service Email maps message headers/body/attachments
+  → Optional text prediction classifies topic/entities/sentiment
+  → Case created or existing case updated
+  → Attachments saved to case
+  → Auto acknowledgment sent
+  → Work routed to queue with SLA</div>
+<h4>B. Rules/data instances</h4>
+<table><tr><th>Artifact</th><th>Purpose</th></tr><tr><td>Email Account</td><td>SMTP/IMAP/Microsoft Graph connection details</td></tr><tr><td>Email Listener</td><td>Polls inbox/folder</td></tr><tr><td>Service Email</td><td>Maps email to clipboard and invokes logic</td></tr><tr><td>Case Type</td><td>Created/updated from email</td></tr><tr><td>Text Prediction</td><td>Topic/entity/sentiment/language extraction</td></tr><tr><td>Correspondence</td><td>Auto acknowledgement or response</td></tr></table>
+<h4>C. Implementation sequence</h4>
+<ol><li><strong>Create mailbox strategy:</strong> decide mailbox per process or shared mailbox with topic routing.</li><li><strong>Configure email account:</strong> inbound protocol, OAuth/Graph or IMAP, outbound SMTP/Graph, certificate/secret as per enterprise policy.</li><li><strong>Create Email Listener:</strong> folder, polling interval, message format, listener node, service rule.</li><li><strong>Create Service Email:</strong> map From, To, Subject, Body, ReceivedDate, MessageID and attachments.</li><li><strong>Threading design:</strong> use case ID or secure token in subject/body to attach replies to existing case.</li><li><strong>Auto-reply filtering:</strong> suppress out-of-office and system-generated emails to avoid loops.</li><li><strong>Attachment handling:</strong> save PDFs/images/forms, virus scan if enterprise provides, enforce max size.</li><li><strong>NLP/text prediction:</strong> classify topic such as AccountClosure, AddressChange, LegalOrder, Complaint.</li><li><strong>Routing:</strong> route to work queue based on topic, customer segment, risk, sentiment and SLA.</li><li><strong>Audit:</strong> save original email content and attachment references for legal/compliance traceability.</li></ol>
+<h4>D. Email routing design example</h4>
+<table><tr><th>Email condition</th><th>Detected topic/entity</th><th>Case action</th></tr><tr><td>Subject contains “garnishment” + PDF</td><td>LegalProcessOrder</td><td>Create LegalProcessOrder, attach PDF, SLA 24h</td></tr><tr><td>Body says “close my savings account”</td><td>AccountClosure</td><td>Create AccountClosure, request verification</td></tr><tr><td>Negative sentiment + complaint keywords</td><td>Complaint</td><td>Route to priority customer care queue</td></tr><tr><td>Case ID token found</td><td>Existing case reply</td><td>Attach email to existing case and reopen if needed</td></tr></table>
+<div class="warning"><strong>Security caution:</strong> Never trust email content blindly. Email can be spoofed. For sensitive requests like account closure or signer updates, Pega should create an intake case and require identity verification before core banking changes.</div>
+
+<h3>14.4 Authentication and Authorization Deep Dive</h3>
+<p>Authentication proves who the user/system is. Authorization decides what they can do. FCB will care about this because banking apps require strict access control, audit and segregation of duties.</p>
+<h4>A. Human user authentication: Okta + SAML</h4>
+<div class="flow">1. User opens Pega portal
+2. Pega redirects user to Okta IdP
+3. User completes password + MFA
+4. Okta sends signed SAML assertion to Pega ACS URL
+5. Pega validates certificate/signature and assertion conditions
+6. Pega maps NameID/email/attributes to Operator ID
+7. Access Group determines portal, roles and privileges</div>
+<table><tr><th>Term</th><th>Meaning</th></tr><tr><td>IdP</td><td>Identity Provider; Okta authenticates the user</td></tr><tr><td>SP</td><td>Service Provider; Pega consumes the identity assertion</td></tr><tr><td>SAML Assertion</td><td>Signed XML token containing user identity and attributes</td></tr><tr><td>ACS URL</td><td>Pega endpoint where Okta posts assertion</td></tr><tr><td>Metadata</td><td>XML containing certificates, endpoints and entity IDs</td></tr></table>
+<h4>B. Service authentication patterns</h4>
+<table><tr><th>Pattern</th><th>Used for</th><th>What to know</th></tr><tr><td>Basic Auth</td><td>Legacy internal APIs</td><td>Simple but weaker; credentials must be stored securely</td></tr><tr><td>OAuth 2.0 Client Credentials</td><td>Service-to-service APIs</td><td>Pega obtains token from authorization server and sends Bearer token</td></tr><tr><td>mTLS</td><td>High-security enterprise integrations</td><td>Client and server validate certificates</td></tr><tr><td>API Key</td><td>Some external services</td><td>Should be secret-managed and rotated</td></tr><tr><td>SFTP SSH Key</td><td>File transfer</td><td>Private key auth, key rotation and folder restrictions</td></tr></table>
+<h4>C. OAuth 2.0 client credentials flow</h4>
+<div class="flow">Pega Connect-REST needs to call ESB API
+  → Pega calls token endpoint with client_id/client_secret
+  → Auth server returns access_token
+  → Pega calls ESB API with Authorization: Bearer token
+  → ESB validates token and scopes
+  → API response returned to Pega</div>
+<h4>D. Authorization in Pega</h4>
+<table><tr><th>Pega security object</th><th>Purpose</th></tr><tr><td>Access Group</td><td>Application, portal, roles, rulesets for user</td></tr><tr><td>Access Role</td><td>Collection of permissions</td></tr><tr><td>Privilege</td><td>Fine-grained permission check</td></tr><tr><td>Access of Role to Object</td><td>Class-level create/read/update/delete permissions</td></tr><tr><td>Work queue permissions</td><td>Controls who can view/process assignments</td></tr></table>
+<div class="answer"><strong>Lead-level answer:</strong> For deposit operations, I would design role-based access around least privilege: maker, checker, supervisor, compliance, read-only auditor and support roles. Sensitive actions like placing legal holds should require privileges and possibly dual approval.</div>
+
+<h3>14.5 PostgreSQL / SQL Server Source Material for Pega Developers</h3>
+<p>You do not need to become a DBA, but for P2/P3 interviews you should understand SQL, indexing, transactions and performance because Pega runs on relational databases and your resume includes Connect-SQL and MERGE.</p>
+<h4>A. Core relational concepts</h4>
+<table><tr><th>Concept</th><th>Meaning</th><th>Pega relevance</th></tr><tr><td>Table</td><td>Rows and columns storing data</td><td>Case tables, history, assignments, custom data</td></tr><tr><td>Primary key</td><td>Unique row identifier</td><td>pzInsKey or business keys</td></tr><tr><td>Foreign key</td><td>Relationship to another table</td><td>Batch to records, customer to accounts</td></tr><tr><td>Index</td><td>Structure that speeds lookup</td><td>Report definitions and case searches</td></tr><tr><td>Transaction</td><td>Atomic unit of work</td><td>Commit/rollback during case processing</td></tr><tr><td>Lock</td><td>Controls concurrent updates</td><td>Case locking, deadlocks, concurrent processing</td></tr></table>
+<h4>B. SQL basics you should know</h4>
+<div class="flow">-- Select records
+SELECT account_no, status, updated_ts
+FROM deposit_account
+WHERE status = 'FROZEN';
+
+-- Join batch and record tables
+SELECT b.file_name, r.line_no, r.status, r.error_message
+FROM deposit_file_batch b
+JOIN deposit_file_record r ON r.batch_id = b.batch_id
+WHERE b.status = 'FAILED';
+
+-- Aggregate processing counts
+SELECT batch_id, status, COUNT(*) AS record_count
+FROM deposit_file_record
+GROUP BY batch_id, status;</div>
+<h4>C. MERGE / upsert concept</h4>
+<p>MERGE updates existing rows and inserts missing rows. PostgreSQL often uses <code>INSERT ... ON CONFLICT DO UPDATE</code>. SQL Server supports <code>MERGE</code>. Your resume mentions Connect-SQL MERGE, so be ready to explain the idea rather than syntax only.</p>
+<div class="flow">-- PostgreSQL-style upsert example
+INSERT INTO deposit_account_snapshot(account_no, balance, status, updated_ts)
+VALUES (:accountNo, :balance, :status, CURRENT_TIMESTAMP)
+ON CONFLICT (account_no)
+DO UPDATE SET
+  balance = EXCLUDED.balance,
+  status = EXCLUDED.status,
+  updated_ts = CURRENT_TIMESTAMP;</div>
+<h4>D. Indexing basics</h4>
+<table><tr><th>Index type/use</th><th>When useful</th></tr><tr><td>Single-column index</td><td>Frequent filter by one column, e.g., case_status</td></tr><tr><td>Composite index</td><td>Frequent filter by multiple columns, e.g., batch_id + status</td></tr><tr><td>Unique index</td><td>Prevent duplicates, e.g., file checksum or record business key</td></tr><tr><td>Partial index</td><td>Index only subset, e.g., failed records</td></tr></table>
+<h4>E. Pega DB performance basics</h4>
+<ul><li>Do not load huge lists into clipboard if pagination/filtering can be done in DB.</li><li>Use indexed columns in report filters.</li><li>Avoid unbounded report definitions in production portals.</li><li>Commit in controlled batches for large processing.</li><li>Be careful with Obj-Browse over huge tables.</li><li>Use Queue Processors to break large work into smaller units.</li><li>Do not expose sensitive columns in logs or reports.</li></ul>
+<h4>F. Transaction and locking interview answer</h4>
+<div class="answer">A database transaction should keep related changes atomic. In Pega, I avoid long-running transactions that hold locks while calling external systems. For heavy work, I queue records and commit in smaller units. For duplicate prevention I use business keys and idempotency checks so replay does not create duplicate financial actions.</div>
+
+<h3>14.6 Deep Kafka + Queue Processor Implementation Design</h3>
+<h4>A. Event contract design</h4>
+<p>Before coding, define event contract: event name, key, schema, required fields, version, producer, consumer, retry behavior and idempotency key.</p>
+<table><tr><th>Contract field</th><th>Example</th></tr><tr><td>Topic</td><td>deposits.account.status.changed</td></tr><tr><td>Key</td><td>accountNumber</td></tr><tr><td>Event type</td><td>ACCOUNT_FROZEN</td></tr><tr><td>Schema version</td><td>v1</td></tr><tr><td>Correlation ID</td><td>uuid from producer</td></tr><tr><td>Idempotency key</td><td>eventId or account+eventType+timestamp</td></tr></table>
+<h4>B. Pega processing pattern</h4>
+<div class="flow">Kafka Dataset reads event
+  → Data Flow maps event envelope
+  → Validate required fields
+  → Check idempotency table/event store
+  → Queue Processor processes business logic
+  → Load account/customer using Data Pages
+  → Create/update case
+  → Save event processed status
+  → If failure: retry or dead-letter with reason</div>
+<h4>C. Retry strategy</h4>
+<table><tr><th>Failure</th><th>Retry?</th><th>Reason</th></tr><tr><td>Temporary ESB timeout</td><td>Yes</td><td>Transient downstream issue</td></tr><tr><td>Invalid JSON schema</td><td>No</td><td>Bad producer payload; send to dead-letter</td></tr><tr><td>Account not found</td><td>Maybe</td><td>Could be timing issue; limited retry then exception</td></tr><tr><td>Duplicate event</td><td>No</td><td>Mark ignored/idempotent success</td></tr><tr><td>Database deadlock</td><td>Yes</td><td>Retry with backoff</td></tr></table>
+<h4>D. Queue Processor tuning concepts</h4>
+<ul><li><strong>Batch size:</strong> Too small means overhead; too large can increase memory/lock time.</li><li><strong>Parallelism:</strong> More threads can improve throughput but may create lock contention.</li><li><strong>Commit frequency:</strong> Commit after manageable units, not after enormous transactions.</li><li><strong>Payload size:</strong> Store large payload externally or compress/archive if needed.</li><li><strong>Back-pressure:</strong> If downstream is slow, queue grows; monitor queue depth and throttle if needed.</li><li><strong>Idempotency:</strong> Essential for replay and duplicate event protection.</li></ul>
+
+<h3>14.7 Deep REST/ESB Integration Implementation</h3>
+<h4>A. Pega Connect-REST design steps</h4>
+<ol><li>Understand API contract: endpoint, method, request body, response body, errors, auth and timeout.</li><li>Create integration class for request/response structures.</li><li>Create authentication profile/token retrieval if needed.</li><li>Create Connect-REST rule.</li><li>Create request Data Transform from case data to integration request.</li><li>Create response Data Transform from integration response to case/data model.</li><li>Implement error handling: HTTP codes, timeout, malformed response.</li><li>Log correlation ID and response status, not sensitive payloads.</li><li>Wrap call in Queue Processor if operation is heavy/retryable.</li><li>Create unit/integration test cases with success/failure payloads.</li></ol>
+<h4>B. Canonical model pattern</h4>
+<p>In ESB-heavy banks, Pega should map to a canonical request, not every downstream-specific format. TIBCO transforms canonical request to Fiserv/Flexcube-specific messages.</p>
+<div class="flow">Pega Case Model
+  → Pega Canonical AccountUpdateRequest
+  → TIBCO ESB transforms
+  → Fiserv/Flexcube native format
+  → Response transformed back to canonical response
+  → Pega maps to case</div>
+<h4>C. Integration error classes</h4>
+<table><tr><th>Error category</th><th>Example</th><th>Pega action</th></tr><tr><td>Business validation</td><td>Account closed</td><td>Show user/route exception</td></tr><tr><td>Authentication</td><td>401/403</td><td>Alert support/security; do not retry blindly</td></tr><tr><td>Timeout</td><td>ESB not responding</td><td>Retry async; show pending status</td></tr><tr><td>System error</td><td>500</td><td>Retry limited times then dead-letter</td></tr><tr><td>Bad request</td><td>400 schema error</td><td>Fix mapping; mark as implementation/data issue</td></tr></table>
+
+<h3>14.8 Case Type Implementation Blueprint for FCB Deposits</h3>
+<h4>A. Account Maintenance case</h4>
+<div class="flow">Case: AccountMaintenance
+Stages:
+  1. Intake
+     - Capture request type: address/signature/beneficiary/tax/overdraft
+     - Identify customer and account
+  2. Validate
+     - Required documents
+     - KYC status
+     - Fraud/risk checks
+  3. Approve
+     - Maker/checker for high-risk changes
+     - Supervisor approval based on decision table
+  4. Execute
+     - Connect-REST to ESB → core banking update
+     - Queue Processor if async
+  5. Notify
+     - Correspondence email/letter/SMS
+  6. Close
+     - Audit summary, case resolution</div>
+<h4>B. Legal Process Order case</h4>
+<div class="flow">Case: LegalProcessOrder
+Stages:
+  1. Intake
+     - Email Listener/File Listener/Portal
+     - Attach PDF/order document
+  2. Classify
+     - Garnishment / levy / subpoena / freeze
+     - Extract entities manually or through OCR/text analytics
+  3. Locate Accounts
+     - Search customer/account across core systems
+  4. Determine Action
+     - Decision table for state/order/product rules
+     - Calculate exempt amount if applicable
+  5. Approval
+     - Legal/compliance review
+     - Dual control for hold/seizure
+  6. Execute
+     - ESB call to place hold/freeze/debit
+  7. Correspondence
+     - Customer notice, agency response
+  8. Close / Report
+     - Audit trail and compliance report</div>
+<h4>C. Payment Exception case</h4>
+<div class="flow">Case: PaymentException
+Sources:
+  - Kafka event from payment system
+  - SFTP ACH return file
+  - Manual operations intake
+Process:
+  - Validate payment reference
+  - Classify exception type: NSF, unauthorized, duplicate, OFAC hit
+  - Apply SLA based on type
+  - Auto-resolve simple exceptions if rules allow
+  - Route complex cases to analyst/compliance
+  - Update payment/core systems
+  - Notify customer/internal team</div>
+
+<h3>14.9 Production Support Runbook You Can Explain</h3>
+<p>Production support maturity is a major lead signal. Use this runbook when asked how you handle incidents.</p>
+<ol><li><strong>Confirm impact:</strong> which market, users, case type, integration, topic, file or queue is affected?</li><li><strong>Preserve evidence:</strong> case ID, correlation ID, timestamp, operator, node, request payload reference, error ID.</li><li><strong>Check dashboards:</strong> PDC, queue status, listener status, Kafka dashboard, Splunk/logs.</li><li><strong>Classify failure:</strong> data issue, rule issue, integration issue, infra issue, downstream issue, access issue.</li><li><strong>Contain:</strong> pause listener/queue if duplicate financial impact risk exists.</li><li><strong>Recover:</strong> replay failed records, restart listener, rerun job, correct data, deploy hotfix if needed.</li><li><strong>Validate:</strong> confirm successful processing and no duplicate side effects.</li><li><strong>Communicate:</strong> update ServiceNow/stakeholders with impact, ETA, workaround.</li><li><strong>Prevent recurrence:</strong> add validation, alert, retry, dashboard metric or test coverage.</li></ol>
+<div class="answer"><strong>Lead-style answer:</strong> I separate recovery from root-cause prevention. First I restore service safely, then I identify why controls failed and add monitoring or validation so the issue does not repeat.</div>
+
+<h3>14.10 What to Learn Hands-On If You Get Time</h3>
+<p>This is not a plan section; these are practical exercises that turn the theory above into muscle memory.</p>
+<table><tr><th>Exercise</th><th>What to build</th><th>What you learn</th></tr><tr><td>File Listener mini-lab</td><td>CSV file → Parse Delimited → create cases</td><td>Listener, Service File, Parse Rule, error handling</td></tr><tr><td>Email Listener mini-lab</td><td>Email inbox → Service Email → create case</td><td>Email account, listener, mapping, attachments</td></tr><tr><td>Queue Processor lab</td><td>Queue 10K dummy records and process asynchronously</td><td>Throughput, retry, logging</td></tr><tr><td>Connect-REST lab</td><td>Call mock API and map response</td><td>Request/response DT, errors, auth</td></tr><tr><td>Postgres lab</td><td>Create staging table and upsert data</td><td>SQL, indexes, idempotency</td></tr></table>
+</section>
+
+<section id="interview-bank" class="pagebreak">
+<h2>15. Interview Answer Bank</h2>
+<div class="qa"><strong>Q: Tell me about your Kafka project.</strong><br><strong>A:</strong> We had legacy SSIS-style batch pipelines causing roughly 24-hour data availability delay. I worked on Kafka-to-Pega ingestion for 50+ topics across seven APAC markets using Datasets, Data Flows and Queue Processors. We moved to real-time event streaming, tuned processing to 200K records in 5 minutes, built metadata-driven mappings and added dead-letter recovery through a Service-REST replay API. This reduced recovery from around 2 hours to under 2 minutes.</div>
+<div class="qa"><strong>Q: How would you design a Legal Process Order case?</strong><br><strong>A:</strong> Intake can come from email, portal or SFTP. The case should classify order type, extract customer/account/order details, validate required documents, apply decision tables/circumstancing for state-specific rules, set hard SLAs, route to legal/compliance queue, update core banking through ESB to place holds, generate correspondence and maintain full audit.</div>
+<div class="qa"><strong>Q: Explain File Listener.</strong><br><strong>A:</strong> A File Listener monitors a configured location for matching files. When a file arrives, it invokes a Service File rule, which uses Parse rules to read records and a service activity/data transform to map values. It can create/update cases or data records, move processed files to completed/error folders and generate logs. I used this pattern for SFTP batch integration with zero go-live defects.</div>
+<div class="qa"><strong>Q: Explain Email Listener vs Email Channel.</strong><br><strong>A:</strong> Email Listener is the lower-level mechanism that monitors an inbox and routes messages to Service Email. Email Channel is the higher-level channel configuration that can include routing, case creation, NLP topic/entity/sentiment detection and automated responses.</div>
+<div class="qa"><strong>Q: Have you done Pega GenAI?</strong><br><strong>A:</strong> I have not implemented Knowledge Buddy in production yet. I have leveraged AI for mapping generation, bottleneck analysis, failure pattern detection and code review. I understand Pega GenAI capabilities conceptually: Knowledge Buddy uses RAG over enterprise documents, Agentic AI helps classify/intake/orchestrate work, and Blueprint accelerates application design. I can ramp up quickly because these build on channels, case creation, decisioning and integration patterns I already use.</div>
+<div class="qa"><strong>Q: What is your production support approach?</strong><br><strong>A:</strong> First reproduce or identify scope, then check PDC/logs, correlation ID, case history, queue status and connector responses. I use Tracer/Clipboard in lower environments, PAL for performance, and dashboards/log analysis for production patterns. I separate transient downstream failures from data/config defects, apply safe retry/replay when possible and provide hotfix only after root cause is understood.</div>
+<div class="qa"><strong>Q: Why are you suitable for P2?</strong><br><strong>A:</strong> Although I have 4.5 years instead of exactly 5, I bring CSSA certification, production ownership, Kafka-scale integration, Queue Processor tuning, File/SFTP integration, correspondence frameworks, dashboards, release coordination and 24/7 support. These are P2-level responsibilities, not only junior development tasks.</div>
+</section>
+
+<section class="pagebreak">
+<h2>15. Final One-Page Revision Sheet</h2>
+<div class="grid">
+<div class="card green"><h3>Your strongest proof points</h3><ul><li>4.5 years Pega + CSSA.</li><li>50+ Kafka topics.</li><li>24-hour batch to real-time Kafka.</li><li>200K records in 5 minutes.</li><li>Service-REST dead-letter replay API.</li><li>10+ case types/flows.</li><li>File Listener/SFTP zero defects.</li><li>Correspondence framework.</li><li>20+ production releases.</li><li>PDC/Tracer/PAL L2/L3 support.</li></ul></div>
+<div class="card amber"><h3>Say carefully</h3><ul><li>AI: leveraged for developer productivity and analysis.</li><li>Knowledge Buddy: understand RAG, not implemented.</li><li>Agentic AI: understand controlled workflow automation.</li><li>RPA: understand attended/unattended and Pega integration.</li><li>Splunk/Okta/ServiceNow: working knowledge, ready to use.</li><li>TIBCO: understand ESB pattern; Pega calls ESB APIs.</li></ul></div>
+</div>
+<div class="answer"><strong>Closing line:</strong> What excites me about FCB Deposits is that it needs exactly the kind of Pega delivery I have done: workflow automation, integration, background processing, correspondence, dashboards and production reliability. I can contribute immediately on case and integration development while ramping up on FCB-specific deposit operations, TIBCO standards and Pega AI/RPA capabilities.</div>
+</section>
+</main>
+</div>
+</body>
+</html>

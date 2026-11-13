@@ -1,0 +1,12 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5050
+Press CTRL+C to quit
+127.0.0.1 - - [09/Sep/2026 08:40:36] "GET /api/catalogue HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 08:40:36] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 08:40:37] "GET /api/intelligence/companies/fresh-firstcitizensbank/people/c0ea6e8dd6862f0142 HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 09:31:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 09:31:12] "GET /static/original-scanner.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 09:31:12] "GET /api/bootstrap HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 09:31:12] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 09:31:12] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [09/Sep/2026 09:31:12] "GET /api/scan-options HTTP/1.1" 200 -

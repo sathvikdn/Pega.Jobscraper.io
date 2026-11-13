@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch06 · Kafka, Data Flows, Queue Processors, Job Schedulers | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch05_integration_rest_soap_esb.html">&larr; Chapter 05</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch07_file_email_listeners.html">Next: Chapter 07 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 06 &middot; Integration and event processing</div>
+    <h1>Kafka, Data Flows, Queue Processors &amp; Job Schedulers</h1>
+    <p class="subtitle">Balances in Pega are up to a day old. This chapter follows one balance event, <code>EVT-55121</code>, from the topic that carries it to the acknowledgement that says it was processed, and then does to that event what production does: delivers it twice, delivers it late, crashes while handling it, backs it up behind a slow database and replays it. Queue Processors and Job Schedulers are taught as related but distinct tools, with the throughput arithmetic presented honestly as a reconstruction a reader could test.</p>
+    <div class="meta">
+      <div><strong>19</strong><span>Sections</span></div>
+      <div><strong>14,310</strong><span>Words</span></div>
+      <div><strong>1</strong><span>Event followed throughout</span></div>
+      <div><strong>11</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 05 ended with every call being the application asking the core for something, and balances still going stale between batch runs, because nothing pushes a change to Pega when the core's data moves. This chapter makes the application receive changes as they happen. The ledger, including the topic and the three event IDs, is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s6-1">6.1 One event on a log<span>Kafka fundamentals through EVT-55121</span></a>
+      <a href="#s6-2">6.2 Why the key is the account number<span>Partitioning and ordering</span></a>
+      <a href="#s6-3">6.3 Delivered twice, late, or while the consumer crashes<span>Semantics, idempotency, ordering, the atomic boundary</span></a>
+      <a href="#s6-4">6.4 A backlog behind the event<span>Consumer groups, lag, retention, compaction</span></a>
+      <a href="#s6-5">6.5 How Pega reads the topic<span>Datasets, data flows, node types</span></a>
+      <a href="#s6-6">6.6 Data flow runs and resilience<span>Poison versus outage</span></a>
+      <a href="#s6-7">6.7 Handing the event to a queue processor<span>Standard versus dedicated, item lifecycle</span></a>
+      <a href="#s6-8">6.8 Two hundred thousand records in five minutes<span>A designed experiment</span></a>
+      <a href="#s6-9">6.9 Job Schedulers and legacy agents<span>Related but distinct</span></a>
+      <a href="#s6-10">6.10 The event contract<span>Schema and its evolution</span></a>
+      <a href="#s6-11">6.11 Dead letters and replay<span>What Pega does not provide</span></a>
+      <a href="#s6-12">6.12 The decision record<span>Batch to events</span></a>
+      <a href="#s6-13">6.13 Monitoring and paging<span>Signals and thresholds</span></a>
+      <a href="#s6-14">6.14 Capacity arithmetic<span>Sizing and catch-up</span></a>
+      <a href="#s6-15">6.15 Deposits uses of the pattern<span>Where this reappears</span></a>
+      <a href="#s6-16">6.16 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s6-recap">6.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s6-ref">6.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+    <p class="small muted">Kafka's own concepts (partitions, offsets, consumer groups, retention, compaction, delivery guarantees) are stable and stated precisely. Pega's Kafka dataset, data flow and queue processor layers sit on top, and their option labels and defaults vary by release, so they are described functionally. Kafka broker administration is outside this chapter; it treats the cluster as the platform team's.</p>
+  </section>
+
+  <section id="s6-1" class="pagebreak">
+    <h2>6.1 One event on a log: Kafka fundamentals through <code>EVT-55121</code></h2>
+    <p>At 09:40 on Monday 9 March 2026 the $200.00 merchant authorisation on <code>CHK-8842-0117</code> settles, and the core's ledger balance falls from $4,418.55 to $4,218.55. Riverbend wants Pega to know within seconds, so the core publishes an event. This one is <code>EVT-55121</code>, sequence 882 for that account, carrying the account's new balances, onto the topic <code>rb.deposits.account.balance.v1</code>. Understanding where that event goes next needs a handful of precise terms.</p>
+    <p><strong>Apache Kafka</strong> is a distributed, durable, append-only log. Producers write records to named logs called <em>topics</em>; consumers read at their own pace and remember where they were. Unlike a traditional queue, a record is not removed when it is read; it stays for a configured retention period, so many independent consumers can read the same data and a consumer can go back and read again. That is why banks put account events on it: traditional integration was either point-to-point calls (tightly coupled, failing together) or nightly batch files (stale by up to a day, all-or-nothing), whereas Kafka decouples producers from consumers in time and availability. The producer writes once and carries on, consumers process when they can, a consumer outage means lag and not data loss, and a new consumer added later can replay history.</p>
+    <table>
+      <tr><th>Term</th><th>Definition</th><th>For EVT-55121</th></tr>
+      <tr><td>Broker, cluster</td><td>A Kafka server that stores partitions; a set of brokers is the cluster, the unit of availability</td><td>Several brokers, so one failing does not lose the event</td></tr>
+      <tr><td>Topic</td><td>A named stream of records, split into partitions</td><td><code>rb.deposits.account.balance.v1</code></td></tr>
+      <tr><td>Partition</td><td>An ordered, immutable, append-only sequence within a topic; the unit of parallelism and of ordering</td><td>Partition 3, where every event for <code>CHK-8842-0117</code> lands</td></tr>
+      <tr><td>Offset</td><td>The sequential position of a record within a partition</td><td>A number consumers track; replay means resetting it</td></tr>
+      <tr><td>Record</td><td>Key, value, headers, timestamp</td><td>Key <code>CHK-8842-0117</code>; value the balance snapshot; headers carrying the correlation ID and schema version</td></tr>
+      <tr><td>Replication factor, leader, ISR</td><td>Copies of each partition across brokers (commonly 3); one is the leader; the in-sync replicas are those caught up with it</td><td>With <code>acks=all</code> and a minimum in-sync count, a write is acknowledged only when enough replicas hold it</td></tr>
+      <tr><td>Consumer group</td><td>Consumers sharing a group ID cooperatively read a topic; each partition goes to exactly one consumer in the group at a time</td><td>Scales consumption and gives each application its own read position</td></tr>
+      <tr><td>Retention</td><td>How long, or how much, a topic keeps regardless of consumption</td><td>Defines the replay window and the longest outage a consumer survives</td></tr>
+      <tr><td>Log compaction</td><td>A cleanup policy keeping at least the latest record per key</td><td>For "current state per key" topics; not for event history</td></tr>
+    </table>
+    <div class="flow">TOPIC rb.deposits.account.balance.v1  (partitions 0..n, replication factor 3)
+
+ Producer --key=CHK-8842-0117--&gt; hash(key) mod partitions = 3 --&gt; Partition 3 :  ... | EVT-55120 (seq 881) | EVT-55121 (seq 882) | EVT-55122 (seq 883) | ...
+                                                                       (all events for this account, IN ORDER)
+ Each partition: Leader on broker A, followers on brokers B and C (ISR = {A,B,C})
+ Consumer group "pega-dep-ingest":   one consumer reads partition 3 at a time
+ Another application, group "analytics", reads the same topic independently with its own offsets</div>
+    <p>It is worth placing Kafka against its neighbours, because interviewers do. After consumption a Kafka record stays until retention expires, whereas a JMS-style queue removes it on acknowledge and a database queue table updates or deletes the row. Several independent consumers are native in Kafka and awkward in the others. Replay is an offset reset in Kafka, generally impossible with a queue and possible with a table only if rows were kept. Ordering is per partition in Kafka. Throughput is very high because of sequential I/O and batching. What Kafka lacks is rich routing, per-message priority and delay, which queues and tables provide. The matching failure modes are treating Kafka as a database for queries, one giant topic for unrelated events, assuming global ordering across a topic, consuming without monitoring lag, storing megabyte payloads in events instead of references, and trusting default retention without checking that it covers the worst outage plus a replay window.</p>
+  </section>
+
+  <section id="s6-2" class="pagebreak">
+    <h2>6.2 Why the key is the account number: partitioning and ordering</h2>
+    <p>The producer chose partition 3 for <code>EVT-55121</code> because of the key. Kafka guarantees order <strong>only within a single partition</strong>. Records with the same key go to the same partition (with the default partitioner, so long as the partition count does not change), so all events for one key are ordered relative to each other. There is no ordering guarantee across partitions, and so none across the topic as a whole: a consumer reading partitions 0, 1 and 2 may see an event from partition 2 that was produced earlier or later than one from partition 0, in any order.</p>
+    <p>That shapes the key choice for deposits. Events for one account must be applied in order (open, deposit, hold placed, hold released, close), so the account number is the key, putting every event for that account in one partition and one consumer thread. Events for different accounts have no ordering relationship and run in parallel on different partitions, which is where scale comes from. A transfer between two accounts has no ordering across them, so the event carries both sides or processing is made commutative and idempotent, never assuming the debit is seen before the credit. A key that is too coarse, such as a market code, creates hot partitions in which one market's volume lands on one consumer and parallelism collapses. A random or absent key spreads the load evenly but gives up per-account ordering, so two events for one account can be reordered.</p>
+    <p>Account number is the right key because it is the natural unit of consistency (balances, holds and status belong to one account and must apply in order), it has high cardinality so volume spreads evenly, and it lets a consumer keep per-account state without cross-partition coordination. A very hot account, such as a corporate sweep account with millions of events, is still a hot key; the response is to monitor partition skew and, if needed, move that event type to its own topic.</p>
+    <p>The partition count is a decision to make early. Consumers beyond the partition count sit idle, so the count caps parallelism: plan for peak throughput divided by per-consumer throughput, plus headroom. Adding partitions later changes <code>hash(key) mod N</code>, so new events for a key can land in a different partition from old ones, breaking per-key ordering across the change; choose a count with growth headroom and coordinate any increase with a drain. Too many partitions bring more open files, replication traffic, longer rebalances and leader elections. And skew is watched through per-partition lag and rate, because one hot partition dominates total time.</p>
+    <div class="flow">ORDERING SCENARIO: account events  E1 deposit +500   E2 hold 300   E3 hold released   E4 withdrawal -200
+
+ GOOD (key = account number):   all four land in one partition in produce order -&gt; one consumer processes E1,E2,E3,E4 in order.
+ BAD  (no key / random):        E1-&gt;P2, E2-&gt;P0, E3-&gt;P2, E4-&gt;P1 -&gt; parallel consumers may apply E3 before E2:
+                                "release a hold that does not exist yet" -&gt; error or silently lost release.
+ DEFENCE even with a key:       - include a per-account sequence number in each event
+                                - consumer applies only if seq &gt; lastAppliedSeq (snapshot topics only; deltas need event-ID de-duplication, see 6.3)
+                                - producer retries must not reorder: idempotent producer and a limit on in-flight requests per Kafka guidance</div>
+    <p>One caveat has to be carried through the rest of the chapter. Kafka orders per partition, but once Pega pulls records into a data flow and queues them to a queue processor, independent threads can reorder work <em>after</em> Kafka (6.3 returns to this), and the partition-to-thread behaviour inside Pega is release-dependent, so strict ordering is never promised on the strength of the key alone.</p>
+  </section>
+
+  <section id="s6-3" class="pagebreak">
+    <h2>6.3 Delivered twice, late, or while the consumer crashes <span class="tag">pattern</span></h2>
+    <p>A consumer reads <code>EVT-55121</code>, updates the account's balance row in Pega's database, and the process dies before it tells Kafka it finished. On restart Kafka, which has no record that the event was handled, delivers it again. Nothing has malfunctioned; this is the delivery guarantee working as designed. The three possible guarantees explain why, and why banks choose the one that produces this behaviour.</p>
+    <table>
+      <tr><th>Semantics</th><th>Meaning</th><th>How it happens</th><th>Failure outcome</th></tr>
+      <tr><td>At-most-once</td><td>Each record is processed zero or one times</td><td>The consumer commits the offset <em>before</em> processing</td><td>A crash after the commit and before finishing loses the record</td></tr>
+      <tr><td>At-least-once</td><td>Each record is processed one or more times</td><td>The consumer commits the offset <em>after</em> processing succeeds</td><td>A crash after processing and before the commit redelivers the record: a duplicate</td></tr>
+      <tr><td>Exactly-once</td><td>Each record's effect happens once</td><td>Kafka transactions give exactly-once <em>within Kafka</em>; effects on external systems need an idempotent consumer or a transactional outbox</td><td>Achievable end to end only by making the effect idempotent</td></tr>
+    </table>
+    <div class="flow">CONSUMER LOOP AND WHERE THE GUARANTEE COMES FROM
+   poll() -&gt; records [offset 100..199]
+   AT-MOST-ONCE :  commit(offset 200)  -&gt; process 100..199   crash mid-way =&gt; 150..199 LOST (committed but never processed)
+   AT-LEAST-ONCE:  process 100..199    -&gt; commit(offset 200)  crash before commit =&gt; restart from 100 =&gt; 100..199 PROCESSED AGAIN
+   EXACTLY-ONCE EFFECT = AT-LEAST-ONCE delivery + IDEMPOTENT PROCESSING
+        processing of an event keyed by (account, eventId) is a no-op the second time:
+        MERGE with key + timestamp guard,  unique constraint on eventId,  "if status already Closed then ignore"</div>
+    <p>At-most-once loses money events: a lost "hold released" or "payment returned" is a customer-impact and reconciliation incident, and a bank cannot accept silent loss. True exactly-once is not generally available once a side effect leaves Kafka (a database write, a REST call to the core), and a claim of exactly-once for external effects hides an idempotency mechanism somewhere. At-least-once is simple, cheap and robust, with duplicates a known and bounded problem, and making consumers idempotent is a discipline needed anyway for retries and replays, which then become safe. So the design is at-least-once delivery with idempotent processing.</p>
+    <p>The word "idempotent" has been used loosely in event-driven designs, and three different things hide inside it. A design that solves one and assumes the other two came free is the usual source of defects.</p>
+    <table>
+      <tr><th>#</th><th>Concern</th><th>Question it answers</th><th>Mechanism</th><th>What it does <em>not</em> give you</th></tr>
+      <tr><td>1</td><td><strong>Duplicate-event detection</strong></td><td>"Have I seen this exact event before?"</td><td>An event ID with a unique constraint; a processed-events table</td><td>Nothing about whether applying it twice would be harmful, and nothing about ordering</td></tr>
+      <tr><td>2</td><td><strong>Idempotent state change</strong></td><td>"If I apply this twice, is the end state the same?"</td><td>Absolute writes (<code>SET balance = 500</code>), latest-wins guards, <code>WHEN MATCHED AND source_ts &gt; target_ts</code></td><td>Safety for <em>relative</em> operations: <code>balance = balance - 50</code> is not idempotent however clean the guard</td></tr>
+      <tr><td>3</td><td><strong>Safe business operation</strong></td><td>"Is it acceptable to the business if this happens twice?"</td><td>Natural keys and business invariants: "an account can only be closed once", "one levy hold per order number"</td><td>Protection against two <em>different</em> events racing to a contradictory state</td></tr>
+    </table>
+    <p>The sentence that captures it: de-duplication stops the same event being processed twice, idempotent state changes make it harmless if it is, and a safe business operation means the outcome is correct even so. All three are designed for, because event-ID de-duplication alone fails the moment a retry arrives after the de-duplication record has aged out.</p>
+
+    <h3>The crash, and where the duplicate must be caught</h3>
+    <p>Back to the crash. For the redelivered <code>EVT-55121</code> to be harmless, recording "I have seen this event" and applying its effect must happen in the <strong>same</strong> transaction. Split them and the bug appears in one direction or the other.</p>
+    <table>
+      <tr><th>Order</th><th>Crash in the gap</th><th>Result</th></tr>
+      <tr><td>Record the event ID, commit; then apply the effect</td><td>After the first commit</td><td><strong>Lost update.</strong> The retry sees the ID, concludes "already processed" and skips. The effect never happens, silently</td></tr>
+      <tr><td>Apply the effect, commit; then record the event ID</td><td>After the first commit</td><td><strong>Duplicate.</strong> The retry does not see the ID and applies the effect again</td></tr>
+      <tr><td><strong>Both in one transaction</strong></td><td>Anywhere</td><td><strong>Correct.</strong> Either both happened or neither did; the retry is clean</td></tr>
+    </table>
+    <p>When the effect is a <em>local</em> database write, this is easy: one transaction inserts the event ID and the business row together, and the unique constraint on event ID is the de-duplication. When the effect is a <em>remote</em> call it is impossible, and the design falls back to an idempotency key the remote side honours plus reconciliation (Chapter 05 §5.9). Knowing which of the two situations one is in is the whole design. Kafka's own transactions do not change this: they give atomicity <strong>within Kafka</strong>, across writes to topics and partitions and the consumer offset commit, but a row in the database or a REST call to the core is outside that transaction, and there is no two-phase commit between Kafka and the core.</p>
+    <p>The same constraint answers a second scenario: the same event arriving twice <em>at the same instant</em> on two nodes. Both check "have I seen this event ID?", both see no, both proceed. A read-then-write check cannot fix this however carefully it is written; the window between the read and the write is the bug. The fix is a unique constraint on the event ID so that the database arbitrates: one transaction commits and the other receives a constraint violation, which it treats as a duplicate. In Pega, the case lock does the same job when the work is keyed to a case.</p>
+
+    <h3>The event arrives late: what shape it has decides what is legal</h3>
+    <p>Now suppose <code>EVT-55120</code> (sequence 881), the snapshot from before the settlement, reaches the consumer <em>after</em> <code>EVT-55121</code> (882). Applied naively, it would overwrite the new balance with the old one. The obvious guard is "apply only if the sequence is newer than what I have", and whether that guard is correct depends entirely on what kind of event is on the topic.</p>
+    <table>
+      <tr><th>Event shape</th><th>Payload</th><th>Safe to drop a stale one?</th><th>Correct guard</th></tr>
+      <tr><td><strong>Full-state snapshot</strong></td><td>The entire current state of the entity</td><td><strong>Yes.</strong> A newer snapshot fully supersedes an older one</td><td>Latest-wins on source sequence. Dropping the older event loses nothing</td></tr>
+      <tr><td><strong>Partial update</strong></td><td>Only the fields that changed</td><td><strong>No, not per entity.</strong> Only per <em>field</em></td><td>Per-field version or sequence, or merge semantics. A row-level latest-wins silently discards a different field's valid update</td></tr>
+      <tr><td><strong>Transactional / delta event</strong></td><td>A change to apply, not a state to assume (a $50 debit)</td><td><strong>Never.</strong> Every event is independently meaningful</td><td>De-duplicate by event ID and apply <em>all</em> survivors. Latest-wins here destroys money</td></tr>
+    </table>
+    <p>For the balance topic, whose events are full snapshots, discarding the late 881 is exactly right. The same guard applied to a topic of payment deltas is the most dangerous single line in event-driven banking: two debits of $50 and $30 on one account in the same second are both valid, and a latest-wins guard keeps one and silently drops the other, so the ledger is wrong by $50 with no error anywhere. Before writing a latest-wins guard, say aloud which of the three shapes the topic carries; if a topic mixes shapes, that is the defect.</p>
+    <p>The partial-update case is the quiet one. Sequence 5 changes an address and sequence 6 changes a phone number; they arrive as 6 then 5. A row-level guard rejects 5 because 5 is less than 6, and the address change is lost, though the two events never conflicted and nothing reports it. The options are per-field sequence tracking, publishing full-state snapshots instead of partial updates (usually the right answer), or merging non-overlapping fields and applying latest-wins per field.</p>
+    <p>The ordering metadata itself needs care. A timestamp is a poor ordering key because the producer's clock is authoritative for nothing: two producers, or one after a time correction, can emit a "newer" event with an older timestamp, and millisecond resolution collides under load so that <code>&gt;</code> drops a valid event and <code>&gt;=</code> reapplies one. The remedy is a <strong>source sequence number</strong>, issued by the system of record and monotonic per key, with the timestamp kept as diagnostic. A gap (sequence 7 arrives when 5 was the last applied) must be decided explicitly, by parking with a timeout or applying and flagging, never silently accepted. A late arrival is discarded for snapshots; for deltas it must still be applied, which means the state model tolerates out-of-order arithmetic or the event goes to a repair queue.</p>
+    <p>And there is a place where ordering is lost that the key does not protect. Kafka's guarantee stops at the data flow: the partition is read in order, but once the data flow queues work to a queue processor, independent threads execute the items and can commit them in either order.</p>
+    <div class="flow">Kafka partition (ordered)      -&gt;   Data Flow reads in order       -&gt;   OK so far
+                                    |
+                                    v
+                        Queue-For-Processing / queue items
+                                    |
+                 +------------------+------------------+
+                 v                  v                  v
+            QP thread 1        QP thread 2        QP thread 3     &lt;-- INDEPENDENT execution
+                 |                  |                  |
+                 +------------------+------------------+
+                                    v
+                            ORDER IS NOW LOST</div>
+    <p>So "I keyed by account number, therefore ordering is safe" is incomplete: the key puts the events in one partition in order and does nothing about what happens after dispatch. If strict per-account order must survive, one of three things is needed: processing inline in the data flow without re-queueing; a per-key lock so only one thread handles an account at a time (Pega's case lock gives this when the key is the case); or, usually, a consumer designed not to need order, using the sequence guard for snapshots.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>A payment topic carries $50 and $30 debit events for one account, keyed by account number, and a developer adds the sequence guard "apply only if newer" that works well on the balance topic. What goes wrong, and what is the right design?</p>
+      <p><strong>Answer.</strong> Each debit is a delta, independently meaningful, so dropping a "stale" one loses money: if the $30 arrives before the $50 the guard discards the $50 with no error. The right design de-duplicates by event ID in the same transaction as the effect and applies every survivor, with the state model tolerating arithmetic applied out of order (or a repair queue for what cannot be). This assumes the debits can be applied in any order; if a business rule depends on order (an overdraft check), the topic needs per-account serialisation, which Chapter 11's locking material provides.</p></div>
+
+    <h3>The core succeeds and the response is lost, again</h3>
+    <p>When the consumer's effect is a call to the core rather than a database write, the crash scenario changes character. Pega posts a debit; the core applies it; the gateway times out. This is Chapter 05's unknown outcome, and the same resolution applies: move to <code>Unknown</code> and resolve by status lookup on the correlation ID, a contractually safe retry, or reconciliation against the core's end-of-day file. "Retry with the idempotency key" is the wrong answer unless the contract also guarantees de-duplication for that endpoint.</p>
+
+    <h3>The replay that arrives after newer events</h3>
+    <p>Support replays yesterday's events at 14:00 to recover a gap, and account <code>CHK-8842-0117</code> has already received today's. What happens depends on shape again. For snapshots the sequence guard discards the stale replay, which is safe. For deltas the replayed debit is a <em>real</em> debit, event-ID de-duplication is the only thing between the replay and double-posting, and if the de-duplication window has aged out the effect is applied again. Therefore the de-duplication retention must be at least as long as the replay window, and replay is scoped by key and time range, not "replay the topic". The replay mechanism, a scoped endpoint with its audit, is something a team builds (6.11).</p>
+
+    <h3>Is Queue-For-Processing a transactional outbox?</h3>
+    <p>A transactional outbox requires that the queued item commit in the <em>same database transaction</em> as the business write. Whether Pega's <code>Queue-For-Processing</code> does that, rather than committing independently, is release- and configuration-dependent and is not asserted here. It matters enormously: if the queue write commits separately, there is a dual write, and either the business row or the queue item can survive alone. The question is settled on the deployed version with a ten-minute experiment in a lower environment: run an activity that performs a business write, then <code>Queue-For-Processing</code>, then deliberately throws before any explicit commit, and inspect whether the queue item exists; repeat with the rollback after the commit point. The reason for hedging here, unlike a regulatory figure that has a citation, is that the answer genuinely cannot be known without the deployed system, which is why the experiment is supplied. If the item survives, the outbox has to be an explicit table written in the same transaction as the business change, with a separate dispatcher; Pega does not provide that as a built-in.</p>
+
+    <h3>Making a consumer idempotent</h3>
+    <table>
+      <tr><th>Technique</th><th>How</th><th>Example</th></tr>
+      <tr><td>Natural upsert</td><td>The operation sets state to a value rather than applying a delta</td><td>Set account status = Closed (repeating is harmless); contrast <code>balance = balance + 500</code></td></tr>
+      <tr><td>Event ID de-duplication</td><td>Store processed event IDs (unique constraint or a processed-events table with a TTL); skip if seen</td><td>Insert the event ID; a unique violation means duplicate</td></tr>
+      <tr><td>Version or sequence guard</td><td>Apply only if the event's sequence is newer than the stored one</td><td>SQL Server (or PostgreSQL 15+): <code>MERGE ... WHEN MATCHED AND s.source_ts &gt; t.source_ts</code>; PostgreSQL idiom: <code>INSERT ... ON CONFLICT ... DO UPDATE ... WHERE EXCLUDED.source_ts &gt; t.source_ts</code>. Snapshot topics only</td></tr>
+      <tr><td>Convert deltas into absolute state</td><td>Events carry the resulting balance and sequence, not only the change</td><td>A "balanceAfter" field plus sequence</td></tr>
+      <tr><td>Idempotency key on downstream calls</td><td>Pass the event ID as the key to the core</td><td>Chapter 05 §5.9</td></tr>
+      <tr><td>Business-key uniqueness</td><td>A unique index on the business identity of the created thing</td><td>One case per (account, eventId)</td></tr>
+    </table>
+    <p>On the producer side, <code>acks</code> chooses how many replicas must acknowledge a write (all of them, with a minimum in-sync count of at least two on a replication factor of three, is the banking choice); the idempotent producer setting makes the broker de-duplicate producer retries so a retry does not create a duplicate record; retries and the delivery timeout are generous but bounded; and transactions suit Kafka-to-Kafka processing and are not a substitute for idempotent external effects. On the consumer side, auto-commit commits offsets on a timer regardless of processing success and risks at-most-once behaviour, so commit after successful processing; the maximum poll interval is the time between polls before the broker considers the consumer dead and rebalances, so a batch that takes longer than it gets the consumer evicted, causing rebalance storms and duplicates; the auto offset reset decides what happens with no committed offset, and <code>latest</code> skips history while <code>earliest</code> replays everything, so it is chosen deliberately for a new group; and the isolation level should be read-committed when producers use transactions.</p>
+    <p>These are Kafka's settings, and in Pega one of the most useful operational facts about them is that the usual playbook does not apply. The standard Kafka answer to "we need to reprocess" is to reset the consumer group's offset and let the consumer read again. Pega's documentation states why that does not work: <em>the consumer group in the Kafka Data Set is used only for monitoring purposes</em>, to track the offset and the lag for each partition; assigning partitions to consumers is still done by a data flow, and the data flow also tracks the current offsets and controls which messages are processed next. In its words, it is not possible to make the data flow reprocess or skip messages by manually changing offsets on the consumer group, because consumers are not being subscribed to consumer groups. When a Kafka dataset is the source of a data flow, the group name that appears in Kafka is the configured prefix followed by the data flow run ID, which is why lag is read against that name and why it changes with each run.</p>
+    <p>The consequence is the reason a replay mechanism has to be built rather than operated. If resetting offsets cannot reprocess history, then recovering from a gap, a bad mapping fixed after the fact, or a dead-lettered batch needs something the team creates: a dead-letter store that preserved the payloads, and a scoped, audited replay path that re-injects them (6.11). Two related facts from the same documentation help with planning. A Kafka dataset can be migrated to a new Kafka cluster while preserving consumer offsets, so a cluster move does not by itself force a reprocessing. And version alignment is a release matter: Pega Platform '26 moves to the Apache Kafka client 4.x line, which is not fully compatible with older brokers, so client and broker versions are aligned before an upgrade. Which other Kafka settings are surfaced in Pega, and their labels, depend on the release, so the design discipline is to configure the group naming, the starting position and the resilience settings, and to make the downstream processing idempotent so redelivery is safe.</p>
+    <p>Each of these claims is testable, and the tests are the same list: publish the same event ID twice and kill the node between the effect and the offset commit, then assert row counts and balances are unchanged; fire the same event from two threads at once and assert exactly one effect; deliver a snapshot pair and a two-field partial-update pair in reverse and two deltas with equal timestamps and assert the newest state, both fields, and both deltas respectively; add an optional field to a topic and then remove a required one, and assert the compatible change flows while the breaking one is rejected to the dead-letter path with its payload preserved; run a poison item, then an outage, then a replay scoped by key and time range; and load-test at production-like volume and target-table size against criteria agreed first.</p>
+  </section>
+
+  <section id="s6-4" class="pagebreak">
+    <h2>6.4 A backlog behind the event: consumer groups, lag, retention and compaction</h2>
+    <p>The settlement event is one of thousands. At 09:41 the database behind Pega slows, the consumer falls behind the producers, and a growing line of unprocessed events builds up behind <code>EVT-55121</code>. This is where Kafka's group mechanics matter. Within a consumer group each partition goes to exactly one consumer: three consumers on six partitions get two each; eight consumers on six partitions leave two idle, because parallelism is capped by the partition count. A consumer that stops sending heartbeats is removed after the session timeout, the group rebalances, its partitions are reassigned and its uncommitted work is redelivered. A consumer that takes too long between polls is treated as failed, with the same effect, and its in-flight batch is processed again by another consumer, a duplicate. A new consumer joining triggers a rebalance. Two applications with different group IDs each receive everything; two instances accidentally sharing a group ID that should be separate each see only part of the data, a classic misconfiguration when development and production share a cluster.</p>
+    <div class="flow">REBALANCE STORM (what it looks like and why)
+  consumers: pega-node-1, pega-node-2, pega-node-3   max.poll.interval = 5 min
+  batch processing slows (downstream DB slow) -&gt; node-2 does not poll within 5 min
+  broker removes node-2 -&gt; REBALANCE: partitions of node-2 -&gt; node-1/node-3 (all pause briefly)
+  node-2 comes back, re-joins -&gt; REBALANCE again
+  while rebalancing, nobody processes; in-flight batches are redone -&gt; duplicates; lag climbs; processing slows further -&gt; repeat
+  FIX: shrink batch size or per-batch work, raise max.poll.interval deliberately, fix the slow dependency (the real cause),
+       use cooperative rebalancing where available, avoid GC pauses/heap pressure on nodes</div>
+    <p>The primary health metric for all of this is <strong>consumer lag</strong>: for a partition, the log end offset minus the group's committed offset, the number of records written but not yet processed, summed across partitions. Lag in records is useful; lag converted to time, how old is the oldest unprocessed record, is what the business feels. Its shape diagnoses the cause: flat near zero is healthy; a sawtooth that rises and drains is bursts processed within tolerance, to be checked against the SLA; steadily rising on all partitions means consumers are slower than producers (a slow dependency, too few threads or nodes, database contention, a stopped data flow); rising on one partition only means skew or a stuck record (a hot key, a poison message retried forever, one slow node); flat but non-zero and not moving means the consumer stopped committing (the data flow crashed, the group ID changed, authentication failed); and a sudden fall to zero with nothing processed means offsets were reset to latest or retention deleted unconsumed data.</p>
+    <p>That last case is why retention must be sized against outages. Retention has to cover the longest tolerable consumer outage plus the time to detect and fix it plus the replay window. With seven days of retention, a consumer that is down from Friday 18:00 and noticed on Monday 09:00 (63 hours) loses nothing, and the lag drains once it is fixed. With 24 hours, Friday-night data starts expiring on Saturday evening and by Monday part of the weekend is gone. Time-based and size-based limits both apply, whichever is hit first, so a high-volume topic with a size cap can expire data sooner than the time setting.</p>
+    <p>Compaction is the other cleanup policy. A compacted topic keeps at least the latest record per key, older versions are eventually removed, and a record with a key and a null value (a tombstone) deletes that key. It suits a current-state changelog such as account master data or reference data, used to rebuild a cache or table by reading from the beginning, and it must not be used where each event matters on its own, such as an audit trail, since a consumer starting late will not see the removed intermediates. The failures to avoid are auto-commit with slow processing, unmonitored lag, default retention unchecked against weekend and holiday outages, consumers sharing a group ID across environments, resetting offsets in production without an idempotency plan, and ignoring one stuck partition because average lag looks fine.</p>
+  </section>
+
+  <section id="s6-5" class="pagebreak">
+    <h2>6.5 How Pega reads the topic: datasets, data flows and node types</h2>
+    <p>So far the consumer has been generic. In Pega it is built from a small number of rules, and the shape of that machinery is what the rest of the chapter works on. Pega's streaming layer has changed across releases, so the building blocks below are stable in concept and their exact names and labels are confirmed against the version in use.</p>
+    <p>A <strong>Kafka configuration instance</strong> (a Data-Admin record) defines the connection to a Kafka cluster: bootstrap servers, security protocol, credentials and truststore references, and optional extra client properties; it is one per cluster or environment. A <strong>Kafka Dataset</strong> represents a topic as a Pega source or sink: the topic, the key and value serialisation (JSON, Avro or another format), the partition key fields used when writing, the consumer group prefix (used for monitoring, as 6.3 explained), and the class that records map into. It is a source of a data flow when it reads and a destination when it writes. Pega's documentation notes that Kafka datasets require an external Kafka service that is independent of the Kafka service Pega itself uses for its own streaming; reading a bank's topic is done with a Kafka Dataset, not with Pega's internal stream.</p>
+    <p>That internal <strong>stream service</strong> is a different thing: a Pega-managed stream (itself built on Kafka) used inside the platform for queueing, real-time processing and, in many releases, Queue Processors. Other datasets exist (database table, file and repository datasets for batch ingestion, decisioning stores that a deposits ingestion pipeline mostly does not use). A <strong>Data Flow</strong> rule is a visual pipeline with one source, shapes and one or more destinations, and a data flow <em>run</em> executes it on a service node pool. The shapes are: source; convert (change the page's class, mapping properties); filter (drop records that fail a condition); compose (enrich by joining with another source on a key); data transform; merge (combine two flows); strategy and event strategy (decisioning, out of scope here); and destination (a dataset, case creation, an activity, another flow, or an abstract destination for reuse), including an exception-handling path that receives records that fail processing so that one bad record does not stop the run. Nodes are classified to run this work: real-time nodes and batch nodes for data flow runs, stream nodes for the internal stream service, and background processing nodes for queue processors, job schedulers and agents.</p>
+    <div class="flow">INGESTION DATA FLOW (illustrative)
+
+ Source: Kafka Dataset  "AccountBalanceEvents"  (topic rb.deposits.account.balance.v1, consumer group prefix pega-dep-ingest-prod)
+    |
+    v  Convert / Data transform : JSON event -&gt; canonical FCB-Dep-Data-AccountEvent (map fields, validate mandatory, unknown type -&gt; error path)
+    |
+    v  Filter : drop events not relevant to Pega
+    |
+    v  Destination A: Activity / Queue-For-Processing -&gt; Queue Processor "BalanceEventApply"  (apply with the snapshot guard; update reference data or case state)
+    v  Destination B (error path): Database or Kafka dataset "AccountBalanceEvents_DLT" (dead letter) with error reason, original payload, offset, correlation ID
+
+ Run: real-time data flow run on real-time service nodes; monitored: input rate, throughput, failed records, lag (from Kafka)</div>
+    <p>For <code>EVT-55121</code> that means: the Kafka dataset delivers it into the run; a transform maps the JSON to a canonical event page and validates it; filter drops anything not wanted; and the destination hands it to a queue processor that applies it under the snapshot guard, while anything that fails mapping goes to a dead-letter destination with its payload and offset. A dataset can also resolve parameters at run time, so one rule can serve many topics. The failures to avoid are one data flow rule per topic copy-pasted fifty times, no error destination, heavy business logic inside the data flow instead of a hand-off to a queue processor, reading and writing the case table row by row from the data flow, sharing a consumer group between environments, and running data flow work on web nodes.</p>
+  </section>
+
+  <section id="s6-6" class="pagebreak">
+    <h2>6.6 Data flow runs and resilience: poison versus outage</h2>
+    <p>The data flow now has to decide what to do when the event cannot be handled. A <em>batch</em> data flow run has a finite source (a table, report or file), starts, processes everything and completes, runs on batch service nodes, and fails by being restarted with progress tracked per partition of the run. A <em>real-time</em> run has an unbounded source such as a Kafka topic, keeps running until stopped, runs on real-time nodes, and fails according to its resilience settings; because nobody is "waiting for it to finish", it must be alerted on.</p>
+    <p>Resilience settings decide behaviour on failure, and their labels vary by release, but their concepts are fixed. On node failure, a run can resume on another node from the last checkpoint, which makes a node restart invisible for real-time ingestion at the price of possible reprocessing since the checkpoint (which is why idempotency matters), or it can fail. A record-level error threshold decides whether the run stops after N failed records or continues and sends failures to an error destination: an ingestion pipeline never stops because of one bad record, and stops only on a high error rate, which signals a systemic contract break. Checkpoint frequency trades reprocessing against overhead. The starting position (earliest, latest, committed) is decided deliberately for a new group, since replaying months of data into production is a classic mistake. Auto-restart should be capped and alerted, since infinite silent restarts hide a poison message. Parallelism is bounded by the topic's partitions.</p>
+    <div class="flow">ERROR POLICY FOR A REAL-TIME INGESTION RUN
+  record fails mapping/validation       -&gt; error destination (dead letter) with reason + payload + offset; run continues
+  record fails because DB is down       -&gt; transient: bounded retry/backoff; if persists, STOP consuming (commit nothing) rather than dead-letter every record
+  error rate &gt; threshold (e.g. 5% over 5 min) -&gt; systemic: stop run, page on-call (contract break or downstream outage), do not flood the DLT
+  node dies                             -&gt; run resumes elsewhere from last checkpoint; duplicates possible; consumers idempotent
+  Distinguish: POISON (this record is bad)  vs  OUTAGE (everything fails). Dead-letter poison; pause on outage.</div>
+    <p>The distinction in the last line is the one to hold on to. A <em>poison</em> record is bad in itself, and parking it lets the pipeline continue. An <em>outage</em> makes everything fail, and dead-lettering every record would flood the dead-letter store with thousands of good events that then need replay; the right behaviour is to pause consumption. The anti-patterns are a run that stops on the first bad record, a run that dead-letters every record during a database outage, starting a new group at "earliest" in production by accident, and no alert on a stopped real-time run.</p>
+  </section>
+
+  <section id="s6-7" class="pagebreak">
+    <h2>6.7 Handing the event to a queue processor</h2>
+    <p>The data flow reads quickly and should do little work; the application of the event belongs somewhere that has retries, concurrency control and a place to park failures. That somewhere is a <strong>Queue Processor</strong>: Pega's mechanism for asynchronous background processing of individual work items. Logic puts an item on a queue (<code>Queue-For-Processing</code>); a queue processor picks items up, one at a time per thread, and runs an activity for each, with automatic retry on failure and a place to park items that keep failing. It replaced agents that polled work lists on a timer with limited retry, scaling and visibility: items are persisted, processing is distributed across nodes with controlled concurrency, failures are retried with delay, exhausted items are retained as broken items for inspection and requeue, and the whole is monitored in Admin Studio.</p>
+    <p>Pega distinguishes two kinds, and the difference is isolation. A <strong>standard</strong> queue processor (Pega's documentation names <code>pzStandardProcessor</code>) is a system-provided, general-purpose one that is used when an item is queued without naming a processor: its settings are shared, it cannot be tuned for a workload, it shares capacity with every other user of it including Pega's own background work, and it suits light, occasional processing that does not need high throughput. A <strong>dedicated</strong> queue processor is a rule created for a specific job, with its own activity, thread count, retry settings, delay behaviour and node-type association, so a slow job cannot starve others and it scales independently. Anything with volume, an SLA or special retry needs, such as the ingestion apply here, core calls, notification dispatch or bulk reconciliation, uses a dedicated one.</p>
+    <p>A dedicated processor's rule carries a handful of settings that are the tuning levers. The activity that runs per item receives the item's saved parameters, and it must be thin, idempotent and handle its own exceptions. Threads per node set the concurrent items processed on each node, so total concurrency is threads times eligible nodes (subject to platform limits) and is the main throughput lever. The maximum attempts decide how many times an item is tried before it is considered failed, and should match the error classes: transient errors deserve several attempts and permanent errors should not burn them. The initial delay and retry interval control the wait before a retry and, depending on the release, may grow; for exact exponential backoff with jitter, compute the delay and re-queue yourself (Chapter 05 §5.9). Items can be processed immediately or at a future time, and delayed queueing is how timed retries and scheduled follow-ups are done; throttle options pause intentionally to respect an ESB limit. The associated node type is normally background processing, never web nodes. The access group sets the ruleset list and roles, with least privilege. And a processor can be enabled or disabled, which has to be re-verified after maintenance.</p>
+    <div class="flow">QUEUE ITEM LIFECYCLE
+ Producer logic (flow, data flow destination, service, scheduler)
+    Queue-For-Processing  (processor = BalanceEventApply, parameters = {eventId, accountNo, payload ref, attempt:0}, optional delay)
+        |  item persisted (platform queue store; in many releases built on the stream service)
+        v
+ READY  --&gt; picked by a free thread on a node of the right type  --&gt; IN PROCESS (activity runs, parameters restored)
+        |-- success                         --&gt; item removed (COMPLETED)
+        |-- failure, attempts &lt; max         --&gt; DELAYED retry (re-queued with delay)  --&gt; READY again
+        |-- failure, attempts = max         --&gt; BROKEN (retained with error details; visible in Admin Studio)
+ BROKEN: support can inspect the error, fix the cause, REQUEUE (single or bulk) or delete
+ Metrics to watch: ready (waiting) count, oldest item age, delayed count, broken count, throughput per minute, thread utilisation</div>
+    <p>Two flags qualify that picture. Whether <code>Queue-For-Processing</code> enlists in the surrounding database transaction, and how items are stored (stream service or database table), varies with the release, and it affects the outbox pattern, as 6.3 showed. And which processors a node runs depends on node-type classification: a dedicated processor with no eligible node simply never runs, a quiet and common failure.</p>
+    <p>Six design rules keep queue processor activities healthy. They are idempotent, because an item can run more than once. They take small parameters, keys and small values, not whole case pages, loading data inside the activity. Each item is one unit of work with its own commit, never ten thousand records in one item, because a failure repeats all of it. They distinguish failure types: throw only for transient errors that deserve retry, and for permanent errors record the outcome and complete the item or route it to a human queue, otherwise it burns retries and ends up broken. They avoid long locks, holding no case locks across slow calls. And they avoid per-item expensive setup, reusing node-scope read-only data pages for reference data. One caution on ordering: items are processed concurrently and retried later, so a queue processor does not preserve order.</p>
+    <table>
+      <tr><th>Need</th><th>Use</th></tr>
+      <tr><td>Process each of many items asynchronously with retry</td><td>Queue Processor</td></tr>
+      <tr><td>Run something on a schedule</td><td>Job Scheduler (6.9), which often <em>queues</em> items for a queue processor</td></tr>
+      <tr><td>Continuously consume a stream or bulk-transform a dataset</td><td>Data Flow</td></tr>
+      <tr><td>Wait inside a case for a time or event</td><td>Wait shape or SLA</td></tr>
+    </table>
+    <p>The mistakes here are an activity that loops over a large list internally, a non-idempotent activity, passing the full payload in the item, relying on the standard processor for volume, assuming ordering, and never looking at the broken-items list until a customer complains.</p>
+  </section>
+
+  <section id="s6-8" class="pagebreak">
+    <h2>6.8 Two hundred thousand records in five minutes: a designed experiment</h2>
+    <p>Suppose the application must apply a file of 200,000 balance records, or work off a backlog that size, inside a five-minute window. Whether that is achievable is a question of arithmetic first, and the arithmetic is worth doing before touching any configuration. It is a reconstruction of how to reason, and a designed experiment that a reader could run in a lower environment; it is not a measurement of anything that happened.</p>
+    <p>The required rate is 200,000 records over 300 seconds, about <strong>667 records per second</strong>. For item-at-a-time processing, throughput is threads divided by seconds per item, and by Little's law the concurrency required is the target rate multiplied by the time each item spends in the system. At roughly 170 milliseconds per item, 667 per second needs over a hundred threads, which is impractical. At roughly ten milliseconds per item it needs about seven threads: if six or seven threads each handled a record in about ten milliseconds, the throughput would land near the target. That is how a target is sanity-checked, not a description of what any system did. The conclusion is that the job is not "add threads": it is to cut the per-item cost by more than an order of magnitude and only then size the threads.</p>
+    <div class="formula">200,000 records / 300 seconds  =  ~667 records per second required
+
+Throughput  = threads / seconds per item          (item-at-a-time processing)
+Threads     = target rate x seconds per item      (Little's law: concurrency = rate x time in system)
+
+  at ~170 ms per item:   667 x 0.170  =  ~113 threads   -&gt; impractical
+  at ~10 ms per item:    667 x 0.010  =  ~7 threads     -&gt; realistic
+This is an order-of-magnitude reconstruction, not a measurement.</div>
+    <p>A plausible starting point, before tuning, spends its time in five places per item: opening the target record (one database round trip, BLOB decompression and a lock attempt, in the order of ten milliseconds); a per-item connector call for enrichment (network latency and downstream capacity per item, which dominates, in the order of a hundred milliseconds); mapping and decision logic in a heavy activity (page copies, declaratives firing, ten or so milliseconds); a save and commit per item (index and BLOB write and a commit flush, tens of milliseconds); and queue overhead per item (a few milliseconds). Summed, that is in the neighbourhood of a few hundred milliseconds per item, a handful of items per second per thread, and with a few threads on the order of an hour for 200,000 records. The precise figures are not the point; the shape is, with one connector call dominating.</p>
+    <table>
+      <tr><th>#</th><th>Lever</th><th>What changes</th><th>Effect (order of magnitude)</th></tr>
+      <tr><td>1</td><td>Eliminate per-item connector calls</td><td>Carry the needed attributes in the event payload, load reference data once per batch or from a node-scope read-only data page; where a call is unavoidable, use a batch endpoint with a list of keys</td><td>Removes the dominant cost, perhaps 70 per cent of the total, and takes the downstream's rate limit off the critical path</td></tr>
+      <tr><td>2</td><td>Eliminate per-item database round trips</td><td>Replace open-then-save per record with set-based SQL: bulk insert into a staging table in chunks, then one MERGE per chunk (Chapter 05 §5.8)</td><td>Tens of milliseconds per item become around a millisecond amortised</td></tr>
+      <tr><td>3</td><td>Batch in the queue design</td><td>One queue item is a chunk (a few hundred records identified by keys or a staging batch ID), with one commit per chunk</td><td>Queue overhead and commit cost fall by roughly the chunk size</td></tr>
+      <tr><td>4</td><td>Exposed, indexed columns</td><td>Selection, matching and update use exposed columns with indexes (Chapter 03 §3.3), never BLOB reads</td><td>Lookups move from scans to index seeks; the MERGE join stays fast as the table grows</td></tr>
+      <tr><td>5</td><td>Slim the activity logic</td><td>One data transform, no unnecessary page copies, no declaratives triggered on the staging page, no Tracer or heavy logging, no per-item data page loads</td><td>Several milliseconds saved per record</td></tr>
+      <tr><td>6</td><td>Node classification</td><td>Dedicated background nodes, isolated from web users, right-sized heap</td><td>Predictable CPU and heap, no interference, no GC thrash</td></tr>
+      <tr><td>7</td><td>Thread and partition sizing</td><td>Enough threads to use the cores without exceeding the database's concurrency, typically a handful per node across a few nodes</td><td>Near-linear scaling until the database is the limit</td></tr>
+      <tr><td>8</td><td>A Job Scheduler as orchestrator</td><td>The scheduler wakes at batch time, creates the chunks and queues chunk items; it does not process records itself</td><td>The scheduler run takes seconds; the work spreads across threads and nodes</td></tr>
+    </table>
+    <p>After the levers, the amortised per-record cost is made of parsing and mapping (a few milliseconds), a hundredth of a millisecond or so of queue overhead, sub-millisecond shares of the staging insert, the MERGE and the commit, cache-hit reference lookups, and an allowance of a few milliseconds for garbage collection, logging and contention. Totalled, that is near ten milliseconds per record, around a hundred records per second per thread, so six or seven threads give roughly 667 per second and 200,000 records in about five minutes. The same arithmetic run on the starting design gives tens of minutes to an hour. The improvement is more than an order of magnitude, with fewer threads needed, and that is the story the experiment is meant to let a reader reproduce.</p>
+    <div class="formula">After:   ~7 threads x ~100 records/s per thread  =  ~700 records/s  ~  667/s target
+         200,000 / 700 ~ 290 s  ~ 5 minutes
+Before:  a few threads at a handful of records/s each  =  tens of records/s  -&gt;  tens of minutes to ~an hour
+Sanity check against Little's law: concurrency = 667/s x 0.010 s = ~7 threads  OK</div>
+    <p>The question that separates this from a recital of a number is what limits it next. The database write path comes first: MERGE lock contention, index maintenance and log throughput show as rising lock waits and commit latency as threads increase, with throughput no longer scaling; the mitigations are smaller chunks, consistent key ordering within chunks, fewer indexes on the target, partitioned tables and DBA-reviewed indexing and statistics. Connection pool limits come next (threads waiting for a connection), then JVM heap and garbage collection (long pauses, a sawtooth in throughput, timeouts and rebalances), then queue and stream infrastructure capacity, then the Kafka partition count when the source is Kafka (idle consumers, uneven per-partition lag), then any downstream dependency creeping back into the path (429s or rising latency on a per-chunk call), then single-threaded steps such as chunk creation, and finally hot keys and business-level lock conflicts when many chunk items update one account. The method is to tune the largest cost first and ask what is next.</p>
+    <p>How to run it as an experiment: establish a repeatable benchmark (a fixed 10,000-record sample in a lower environment with production-like volume in the target table); profile with PAL and Tracer on the sample, never at volume in production, counting database interactions and connector calls per record, where an interaction count per item shows the N+1 pattern at once; check the database (slow-statement log, an execution plan for the MERGE and lookups, lock waits; Chapter 11); change one lever at a time and re-measure, recording each result, which is how a reliable before and after is obtained; load-test at full volume off-peak with production-like node classification, watching the database, heap and GC, queue depth and thread utilisation; and add dashboards and alerts so regression is visible.</p>
+    <div class="flow">TUNING LOOP
+  baseline -&gt; measure per-record cost breakdown (PAL: DB calls, connector calls, CPU) -&gt; remove biggest cost
+     -&gt; re-measure -&gt; next lever -&gt; ... until the required rate is met with headroom (target 2x peak)
+  THEN: scale threads/nodes only to the point the DB tolerates; stop; document the knee of the curve</div>
+    <p>The ways to get it wrong are adding threads to hide a connector call of a hundred milliseconds per item, committing every record, leaving Tracer on during a load test, tuning with ten records, measuring only the average (the slowest chunk and the 99th-percentile item determine the finish time), and declaring victory without checking the database.</p>
+  </section>
+
+  <section id="s6-9" class="pagebreak">
+    <h2>6.9 Job Schedulers and legacy agents: related but distinct</h2>
+    <p>Chunks do not create themselves. Something must wake at the batch time, find the work and queue it, and that role belongs to a different rule. A <strong>Job Scheduler</strong> runs an activity on a schedule: every N minutes, daily at a time, weekly, monthly or at several defined times. Agents were the original scheduled background mechanism; Pega moved to Job Schedulers for time-based work and Queue Processors for item-based work because agents were hard to scale, hard to monitor and tied to per-node schedule configuration. The three differ clearly.</p>
+    <table>
+      <tr><th>Aspect</th><th>Legacy Agent</th><th>Job Scheduler</th><th>Queue Processor</th></tr>
+      <tr><td>Trigger</td><td>Timer polling, or queue-based polling of work lists</td><td>A time schedule</td><td>An item queued by logic</td></tr>
+      <tr><td>Distribution</td><td>Per-node schedule configuration, manual</td><td>Runs on one node or on all, per setting</td><td>Distributed across eligible nodes automatically</td></tr>
+      <tr><td>Retry</td><td>Little, or custom</td><td>The next scheduled run; custom within the activity</td><td>Built-in retry and broken items</td></tr>
+      <tr><td>Monitoring</td><td>Agent management landing page</td><td>Admin Studio view of schedulers, status and last run</td><td>Admin Studio queue views</td></tr>
+      <tr><td>Status</td><td>Legacy; avoid in new design</td><td>Preferred for scheduled jobs</td><td>Preferred for asynchronous item processing</td></tr>
+    </table>
+    <p>A scheduler's rule names the activity to run (kept thin: create work and queue items, not process millions of records inside), the schedule with an explicit time zone (daylight saving shifts local-time schedules), the node association (normally background processing) and whether it runs on any one node or on all associated nodes, the access group to run as, and an enabled switch. "Any one node" suits jobs that must run once per cluster, such as generating CD maturity notices; "all nodes" is only for per-node concerns such as a local cache refresh and never for jobs that create business records, which would be done N times over. If the activity overruns its interval, overlap behaviour is release-dependent, so it is protected with its own lock or an "already running" check. If no node of the required type is running, the job never fires, silently, so the last successful run time is monitored. A missed run after downtime may or may not be made up depending on release and settings, so the activity processes "everything due since the last successful run" rather than assuming it ran at each tick, and it is designed so that a double or late fire is harmless: select work by status and mark it claimed, process by key ranges, or queue items with unique business keys.</p>
+    <table>
+      <tr><th>Job</th><th>Schedule</th><th>What it does</th><th>Pattern</th></tr>
+      <tr><td>CD maturity notices</td><td>Daily, early morning</td><td>Finds CDs maturing in N days (report on an exposed <code>MaturityDate</code>) and queues one item per CD to a dedicated processor that creates a maturity case and correspondence</td><td>Scheduler selects and queues; the queue processor works</td></tr>
+      <tr><td>Dormancy scan</td><td>Daily or monthly</td><td>Identifies accounts with no customer-initiated activity beyond the threshold; queues dormancy cases and notices</td><td>Chunked selection by key range</td></tr>
+      <tr><td>Stuck-case sweeper</td><td>Every 5 to 15 minutes</td><td>Finds cases in "Pending core" beyond a threshold and queues a status check; raises alerts</td><td>Safety net for asynchronous callbacks (Chapter 05 §5.7)</td></tr>
+      <tr><td>Reconciliation load</td><td>Nightly, after core end-of-day</td><td>Triggers staging loads and MERGE, then break detection</td><td>Orchestrates; heavy work in queue processors</td></tr>
+      <tr><td>Reference data refresh</td><td>Hourly or on release</td><td>Reloads node-scope data pages</td><td>All-nodes job (per-node cache)</td></tr>
+      <tr><td>Health and breaker probe</td><td>Every 30 to 60 seconds</td><td>Calls a cheap health endpoint and updates the breaker flag</td><td>Single node</td></tr>
+    </table>
+    <div class="flow">SCHEDULER + QUEUE PROCESSOR (the standard bulk pattern)
+ Job Scheduler "CDMaturityDaily"  (02:00 US/Eastern, single node, background nodes)
+    activity: report definition -&gt; keys of CDs maturing in 10 days (exposed, indexed MaturityDate)  [seconds]
+    for each chunk of 500 keys -&gt; Queue-For-Processing(CDMaturityWorker, {chunkId, keys})          [fast]
+ Queue Processor "CDMaturityWorker" (a handful of threads x N nodes)
+    per chunk: load needed data in bulk, create maturity cases / queue correspondence, commit once per chunk
+ Monitoring: scheduler last-run time, queue depth and oldest age, broken count, cases created vs CDs selected (reconciliation)</div>
+    <p>The anti-patterns are new development on legacy agents, a scheduler activity that processes the whole batch itself in one transaction, an all-nodes job that creates cases, a local-time schedule that ignores daylight saving, no monitoring of last successful run, and a job that cannot catch up after downtime.</p>
+  </section>
+
+  <section id="s6-10" class="pagebreak">
+    <h2>6.10 The event contract: schema and its evolution</h2>
+    <p>One more thing can break <code>EVT-55121</code> without any infrastructure failing: the producer team renames a field. Kafka does not enforce what is inside a record, so without a written contract a producer can add, rename or re-type a field and every consumer breaks, often silently (a field now null, a number now a string). An <strong>event contract</strong> is the agreed, documented shape and meaning of the events on a topic: the topic name, key, headers, payload fields and types, allowed values, semantics (what the event means and when it is emitted), delivery expectations, ownership and versioning rules. It is the integration equivalent of an API specification.</p>
+    <div class="flow">TOPIC NAME   : rb.deposits.account.balance.v1            (domain.entity.type.version; one event family per topic)
+KEY          : accountNumber (string, normalised, no leading/trailing space)       -&gt; per-account ordering
+HEADERS      : correlationId, eventId (UUID), eventType, schemaVersion, producer, traceparent (if used)
+VALUE (JSON) :
+{
+  "eventId":       "EVT-55121",                              unique, used for de-duplication
+  "eventType":     "BALANCE_SNAPSHOT",                       enumerated and documented
+  "schemaVersion": "1.2",
+  "occurredAt":    "2026-03-09T09:40:12.123Z",               business time at source (ISO 8601, UTC)
+  "publishedAt":   "2026-03-09T09:40:12.456Z",
+  "sequence":      882,                                      per-account monotonically increasing (issued by the source of record)
+  "correlationId": "...",
+  "market":        "US",
+  "account":       { "accountNumber": "CHK-8842-0117", "productCode": "CHK01" },
+  "payload":       { "ledgerBalance": "4218.55", "availableBalance": "4218.55", "currency": "USD" }
+}
+RULES: money as string or integer minor units (never binary float); timestamps in UTC; enumerations documented; unknown extra fields ignored by consumers;
+       no personal data beyond what the consumer needs (reference IDs rather than names or tax IDs); payload small (kilobytes).</div>
+    <p>A contract only works if change is governed. A <em>backward-compatible</em> change lets new consumers read old data (adding an optional field with a default); a <em>forward-compatible</em> change lets old consumers read new data (adding optional fields, which they ignore); full compatibility is both, and means adding optional fields and almost nothing else. Renaming or re-typing a field, adding a required field with no default or changing the meaning of an existing field are breaking changes, and a breaking change publishes a new topic version (<code>.v2</code>) and runs both during migration, with <code>.v1</code> deprecated by date, never an edit in place. Consumers are tolerant readers: they ignore unknown fields and handle missing optional ones, and they route unknown event types to quarantine with an alert and do not drop them. Where the bank runs a schema registry (commonly Avro, Protobuf or JSON Schema), compatibility is enforced at publish time; whether a given bank has one is a question to ask, not to assume. Any contract change goes through review with all consumers, a compatibility check and a rollout order, consumers first for backward-compatible additions.</p>
+    <p>Three boundaries carry contracts: upstream (source system or ESB to topic: schema, key, ordering and delivery guarantees, volume and burst expectations, retention, correction and replay policy, how deletes are represented), Pega's consumption (consumer group naming, offset policy, idempotency approach, error and dead-letter policy, the SLA from publish to applied) and downstream (events Pega publishes, such as case resolved, with the Pega team as producer). In the consumer, conditions are handled by detection and response: a duplicate (event ID seen, or sequence not greater than the last applied) is ignored with a counter and not treated as an error; an out-of-order event is handled by the guard that is legal for its shape (6.3); a gap is parked briefly for strict domains and raised if it persists, while state-carrying events are simply applied; a late arrival, hours after occurrence, is applied by business-time rules, and a late "hold placed" for an account since closed is a business decision routed to review; and a poison message that fails deserialisation or validation every time is dead-lettered after limited attempts with full context.</p>
+  </section>
+
+  <section id="s6-11" class="pagebreak">
+    <h2>6.11 Dead letters and replay: what Pega does not provide</h2>
+    <p>Some records cannot be processed: malformed JSON, a missing mandatory field, an unknown enumeration, a rule failure or a downstream error that persists. If the consumer retries one forever it blocks the partition, since a poison message holds up every later event behind it, and if it drops the record, data is lost silently. The need is a place for failures that preserves them, explains them and lets them be reprocessed after the fix. Pega has no built-in dead-letter store, no replay API and no requeue dashboard, and, as 6.3 showed, the standard Kafka recovery of resetting a consumer group's offset does not work with a Kafka dataset, so these are something you build, from a Kafka topic or a table, a Service-REST and data pages.</p>
+    <p>The <strong>dead-letter store</strong> is a dedicated topic per source topic (for example <code>rb.deposits.account.balance.v1.dlt</code>) or a database table. A topic keeps original ordering and is replayable by tooling; a table is easy to query and report on; many designs do both, with the topic for replay and a table projection for the dashboard. It stores the original payload exactly as received (so it can be replayed unchanged), the source topic, partition, offset, key, headers, received time, error class, error message, a trace ID, retry count, correlation ID, consumer group and application version. The error classes are deserialisation, validation or contract, mapping, business, a downstream transient that exhausted its retries, and unknown event type. Retention is long enough for investigation and replay (weeks), and longer than the source topic's if the dead-letter store is the only copy. Because payloads may contain personal data, access is restricted, the dashboard masks, and replays are audited.</p>
+    <div class="flow">THE RETRY / DEAD-LETTER / REPLAY LOOP
+
+ SOURCE TOPIC --&gt; Data Flow consumer --&gt; map/validate --&gt; Queue Processor apply (idempotent)
+        |                    |                                  |
+        |                    | invalid / unmappable             | transient failure
+        |                    v                                  v
+        |             DEAD-LETTER (class=CONTRACT/MAPPING)   QP retry with delay (max N)  --exhausted--&gt;  DEAD-LETTER (class=EXHAUSTED) / broken item
+        |                    |                                  |
+        |                    +----------------+-----------------+
+        |                                     v
+        |                      DLT store + dashboard (Data Pages): counts by error class, topic, market, age; top error messages
+        |                                     |
+        |                  triage: root cause (bad producer data? our mapping bug? outage?)
+        |                                     |
+        |                         FIX the cause (mapping, metadata, downstream) and DEPLOY
+        |                                     |
+        |                      REPLAY API (Service-REST, authenticated, authorised, audited)
+        |                         - replay by DLT record IDs, by error class + time window, by source offset range
+        |                         - dry-run mode: validate without applying
+        |                         - re-injects the ORIGINAL payload into the same processing path (or the source topic with a replay header)
+        |                         - idempotent apply means replaying an already-applied event is harmless
+        |                                     |
+        +&lt;---------------- processed OK --------+   or fails again -&gt; stays in DLT with retryCount+1 and reason
+ Close the loop: every replay logged (who, when, what, outcome); DLT age and count alarm if not trending to zero</div>
+    <p>The replay endpoint is where the safety of everything else is cashed in. It lists dead-letter items (filtered and paged), gets one, replays selected items or those matching criteria, and reports replay status; a "one-click requeue" in a dashboard calls it. It is token-authenticated with a specific privilege for replay and a separate one for bulk replay, with dual control for bulk replay in production if policy requires it. It is safe by design: replay is idempotent, there is a dry-run option, batch size and rate are limited so a replay does not starve live traffic, and counts are confirmed before a bulk run. Replayed messages go back into the same processing entry point with headers marking them as replays, so that metrics and ordering logic can tell them apart; an old replayed event can arrive after newer ones for the same key, which the latest-wins guard handles for snapshots; and every replay records who, which items, when and the result per item as evidence. On success the item is removed or marked resolved; on failure it stays with an incremented retry count.</p>
+    <div class="flow">REPLAY API SKETCH (functional shape, not literal paths)
+  list    : GET  .../deadletters?topic=...&amp;errorClass=MAPPING&amp;from=...&amp;to=...&amp;page=1&amp;size=50
+  detail  : GET  .../deadletters/{id}                    -&gt; payload (masked in UI), error, offsets, retryCount, history
+  replay  : POST .../deadletters/replay   { "ids": [...], "dryRun": false, "reason": "TKT-1234 mapping fixed v1.4" }
+            response 202 { "replayId": "...", "accepted": 120, "rejected": 0 }
+  status  : GET  .../deadletters/replay/{replayId}       -&gt; counts of succeeded / failed / pending
+  rules   : idempotency by eventId; throttle N per second; privilege REPLAY; every call audited with operator and reason</div>
+    <p>A supervisor's dashboard on the same data answers the operational questions: consumer lag per topic and partition (from Kafka metrics through a connector, cached in a short-lived data page), throughput in and out per topic, queue depth with delayed and broken counts per processor, dead-letter counts by error class, market and age, node health (is a node type missing from the pool?), same-hour comparisons against last week to catch anomalies without static thresholds, the one-click requeue, and an automated incident report for hand-off and root-cause analysis. It is tooling the team builds on data pages and a Service-REST. The mistakes are retrying a poison message forever, dropping failures with only a log line, dead-lettering during an outage, a dead-letter store with no owner or age alarm (it becomes a graveyard), replay that is not idempotent, replay with no audit or privilege control, and storing only the error text and not the original payload.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>The database behind the ingestion is down for twenty minutes. The data flow dead-letters every event it cannot apply, so 18,000 good balance events are in the dead-letter store when the database returns. What should have happened, and what does cleaning up involve?</p>
+      <p><strong>Answer.</strong> An outage is not poison: when everything fails the right behaviour is to stop consuming and commit nothing, so the events wait on the topic (retention covers them) and are processed in order when the database returns. Dead-lettering them instead means 18,000 good events must be replayed, in a scoped, throttled, audited replay. The replay is safe only if apply is idempotent, and ordering is protected by the snapshot sequence guard, which holds here because the topic carries snapshots. The distinction rests on being able to tell the two apart quickly, by an error-rate threshold; where the failures look like individual bad records but are in fact the database, the threshold is what stops the flood.</p></div>
+  </section>
+
+  <section id="s6-12" class="pagebreak">
+    <h2>6.12 The decision record: batch to events</h2>
+    <p>Everything in this chapter exists because of a decision that a design review has to be able to defend: why replace a nightly balance load with streaming events at all. An architecture decision record puts the reasoning in one place. This one is Riverbend's, an invented example of the standard form.</p>
+    <h3>ADR-001: Replace nightly balance batch with event streaming into Pega</h3>
+    <table>
+      <tr><th>Section</th><th>Content</th></tr>
+      <tr><td>Status</td><td>Accepted</td></tr>
+      <tr><td>Context</td><td>Account balances reach Pega through a nightly batch extract: data is up to about 24 hours old, the batch window is large and growing, a failed run is all-or-nothing, and servicing decisions (closure disbursement, hold checks) need fresher data. Processes that must react to settlements and status changes the same day cannot do so.</td></tr>
+      <tr><td>Constraints</td><td>Events must not be lost or duplicated in effect; the pipeline must be operable by a small team 24/7; it must be introduced without a big-bang cutover; Pega is the consumer and case engine; audit and reconciliation requirements remain.</td></tr>
+      <tr><td>Options considered</td><td>A) Run the batch more often (hourly micro-batches). B) Change-data-capture from source databases into staging tables. C) Event streaming through Kafka topics consumed by Pega data flows and queue processors. D) Direct API calls from sources into a Pega Service-REST.</td></tr>
+      <tr><td>Decision</td><td>Option C: event streaming, with data flows ingesting the topics, queue processors applying events idempotently, a metadata-driven mapping and MERGE path for relational targets (Chapter 05 §5.8), standardised dead-letter handling and a monitoring dashboard.</td></tr>
+    </table>
+    <table>
+      <tr><th>Criterion</th><th>A: faster batch</th><th>B: CDC to staging</th><th>C: Kafka events</th><th>D: direct API push</th></tr>
+      <tr><td>Data freshness</td><td>Minutes to an hour, still batch-shaped</td><td>Near real-time</td><td>Real-time</td><td>Real-time</td></tr>
+      <tr><td>Decoupling of source and Pega</td><td>Moderate</td><td>Tight to source schema</td><td>High: the topic is the buffer</td><td>Low: either side down breaks the call</td></tr>
+      <tr><td>Failure isolation and buffering</td><td>Batch reruns</td><td>Depends on tooling</td><td>Retention absorbs outages: lag, not loss</td><td>The source must implement retry or an outbox</td></tr>
+      <tr><td>Replay</td><td>Rerun the batch</td><td>Limited</td><td>Offset reset; a built replay endpoint</td><td>Source resend, if supported</td></tr>
+      <tr><td>Multiple consumers</td><td>Duplicated pipelines</td><td>Possible</td><td>Native</td><td>The source calls each consumer</td></tr>
+      <tr><td>Operational complexity</td><td>Familiar</td><td>Medium to high</td><td>Higher: lag, partitions, offsets, monitoring</td><td>Lower infrastructure, higher coupling</td></tr>
+      <tr><td>Ordering control</td><td>By batch sort</td><td>By log sequence</td><td>Per key, with partitioning discipline</td><td>None guaranteed</td></tr>
+    </table>
+    <table>
+      <tr><th>Gain</th><th>Cost or risk</th><th>Mitigation</th></tr>
+      <tr><td>Data in real time instead of up to a day old</td><td>Continuous pipelines must be monitored 24/7; failures are visible immediately</td><td>Dashboard, alerts, runbooks, on-call</td></tr>
+      <tr><td>Failure isolation: a downstream issue creates lag, not lost data</td><td>Lag can build silently if unmonitored; retention limits the safe outage</td><td>Lag as the primary metric; retention checked against outage scenarios</td></tr>
+      <tr><td>New markets or products onboarded by configuration</td><td>Metadata errors can break many pipelines</td><td>Metadata validation, a promotion process, tests</td></tr>
+      <tr><td>Replay and audit</td><td>At-least-once means duplicates</td><td>Idempotent apply, event-ID de-duplication, the shape-appropriate guard</td></tr>
+      <tr><td>Decoupled producers and consumers</td><td>Contract governance needed</td><td>Event contract and compatibility rules (6.10)</td></tr>
+    </table>
+    <p>The decision reads as a trade: freshness of about a day was the constraint, faster batch only shrinks the problem, CDC ties the consumer to source schemas, direct pushes couple availability, and events with a buffer decouple them. The cost accepted is operational complexity, bought back with monitoring, idempotent consumers and a replay path. What a design review should add from day one is schema governance and a lag objective, which are cheaper to start with than to retrofit.</p>
+  </section>
+
+  <section id="s6-13" class="pagebreak">
+    <h2>6.13 Monitoring and paging</h2>
+    <p>A pipeline that fails visibly is easier to run than one that degrades silently, so the signals matter. Consumer lag, in records and as the age of the oldest unprocessed record, says whether processing keeps up. Data flow run status and throughput say whether the run is alive. Queue depth, oldest-item age, delayed count and broken count say where the backlog and failures are at each processor. Throughput per minute against the baseline for the same hour reveals silent slowdowns. Dead-letter count and age by error class show bad data, a contract break or neglected items. Node health and node types present show whether a needed background or stream node is missing. Database lock waits, slow statements and connection pool use are usually the real bottleneck. JVM heap and garbage-collection pauses explain timeouts and rebalances. The job scheduler's last successful run shows whether scheduled jobs actually ran, and reconciliation counts (selected, applied, broken) show whether anything was lost.</p>
+    <table>
+      <tr><th>Condition</th><th>Severity</th><th>Action</th></tr>
+      <tr><td>Consumer lag age over 5 minutes for 10 minutes on a real-time topic</td><td>Warning, notify the on-call channel</td><td>Check the data flow run, queue depth, database, node health</td></tr>
+      <tr><td>Lag age over 30 minutes, or growing for 30 minutes</td><td>Critical, page on-call</td><td>Incident: restore consumption, then drain</td></tr>
+      <tr><td>Data flow run stopped or failed</td><td>Critical, page</td><td>Restart with root cause; check for a poison message</td></tr>
+      <tr><td>Throughput zero for 5 minutes where the baseline is above zero</td><td>Critical, page</td><td>Silent stall; check upstream producers too</td></tr>
+      <tr><td>Queue oldest-item age exceeds the processing SLA</td><td>Critical, page</td><td>Scale or fix the dependency</td></tr>
+      <tr><td>Broken items above 0 and growing</td><td>Warning; critical above a threshold</td><td>Inspect the error class; fix and requeue</td></tr>
+      <tr><td>Dead-letter growth above baseline, or error rate above 5 per cent over 5 minutes</td><td>Critical (systemic)</td><td>Likely a contract break: stop and engage the producer</td></tr>
+      <tr><td>Oldest dead-letter item older than the agreed target (for example 24 hours)</td><td>Warning (daytime)</td><td>Owner follow-up</td></tr>
+      <tr><td>Expected background node type absent</td><td>Critical</td><td>Restore the node or classification</td></tr>
+      <tr><td>Scheduler has not run successfully for 2 intervals</td><td>Warning to critical by job</td><td>Investigate the node and the activity</td></tr>
+      <tr><td>Certificate or secret expiring in 30 days</td><td>Warning</td><td>Rotation runbook (Chapter 05 §5.14)</td></tr>
+    </table>
+    <p class="small muted">Thresholds are starting points to tune from data, not standards.</p>
+    <p>What wakes a person is a separate decision from what is monitored. Page when customer or regulatory impact is imminent or ongoing (lag growing, a pipeline stopped, an SLA-bearing queue ageing, legal-order processing stalled), when there is a risk of data loss (retention about to expire on unconsumed data), when the error rate is systemic, or when a control has failed (sanctions screening unavailable, a breaker open on a compliance dependency). Batch into a daily report small numbers of poison messages with known causes, a slow latency trend within its objective, single-item business failures routed to a human queue, and certificate expiry beyond thirty days. The principle is that every page must be actionable and rare; alerts that fire daily and are ignored teach a team to ignore the one that matters, so alert noise is reviewed monthly and thresholds tuned from data.</p>
+    <div class="flow">ALERT-TO-ACTION (first 15 minutes) for "lag rising on topic X"
+  1 Confirm: lag trend by partition (all or one?) and consumer group state (active members)
+  2 Is the data flow run alive? Restart? (check the last error)
+  3 Queue depth and broken items at the apply processor: is the bottleneck downstream of the data flow?
+  4 Database health: lock waits, connection pool, slow queries (PDC, DBA)
+  5 Nodes: are background/real-time nodes present and healthy? heap/GC?
+  6 Upstream: has volume spiked (burst) or has the producer changed the contract (DLT filling)?
+  7 Contain: pause non-critical consumers, throttle replays, scale threads only if the database has headroom
+  8 Communicate: status to stakeholders every 30 minutes; record the timeline for the RCA</div>
+  </section>
+
+  <section id="s6-14" class="pagebreak">
+    <h2>6.14 Capacity arithmetic <span class="tag">ILLUSTRATIVE</span></h2>
+    <p>Sizing starts from the peak, not the average, and from how long it takes to recover. The example below is an invented balance feed, with a per-record cost of about ten milliseconds per thread taken as an assumption in the spirit of 6.8, not as a measurement.</p>
+    <div class="formula">Given (illustrative deposits event feed):  avg 400 events/s, peak 3x = 1,200 events/s, average event 1.5 KB, retention 7 days, replication factor 3
+
+Peak ingest      = 1,200 x 1.5 KB = 1.8 MB/s
+Daily volume     = 400 x 86,400 = 34.6 million events/day  x 1.5 KB = 51.8 GB/day (before compression)
+Retention 7 d    = 51.8 x 7 = 362.6 GB  x replication 3 = 1.09 TB cluster storage (plus 20-30 percent headroom, minus compression)
+Consumer work    : assume ~10 ms/record/thread  -&gt;  one thread = ~100 records/s
+Threads needed at peak = 1,200 / 100 = 12  -&gt; 15 threads (headroom) -&gt; partitions &gt;= 15; choose 24 (growth, balanced across 3-4 consumers x threads)
+Burst recovery   : after a 30-minute outage at peak, backlog = 1,200 x 1,800 = 2.16 million records
+                   drain capacity above arrival = (15 threads x 100) - 400 average arrival = 1,100/s  -&gt; 2.16M / 1,100 = ~1,960 s = ~33 min
+                   -&gt; is a 33-minute catch-up acceptable? If not, add threads (until the DB limit) or accept an SLA exception</div>
+    <table>
+      <tr><th>Question</th><th>Formula or method</th></tr>
+      <tr><td>How many partitions?</td><td>max(peak rate / per-consumer rate, expected consumers x threads) with growth headroom; avoid later changes (ordering)</td></tr>
+      <tr><td>How many threads and nodes?</td><td>Peak rate x per-item seconds (Little's law), plus 30 to 50 per cent headroom, bounded by database capacity</td></tr>
+      <tr><td>Does the database cope?</td><td>Rows per second x average write cost; index count; lock behaviour measured at full volume; I/O and log rate</td></tr>
+      <tr><td>Is retention enough?</td><td>Worst outage + detection + fix + replay window (6.4)</td></tr>
+      <tr><td>How long to catch up?</td><td>Backlog / (capacity minus arrival rate)</td></tr>
+      <tr><td>What is the batch window?</td><td>Records / throughput must be less than the window with margin</td></tr>
+      <tr><td>What breaks first at 2x?</td><td>Identify the next bottleneck (6.8) and test it</td></tr>
+    </table>
+    <div class="formula">Nightly ACH return file: 150,000 records, window 60 min (end-of-day processing must finish before opening)
+Required rate = 150,000 / 3,600 = ~42 records/s    (one thread at ~100/s suffices; use 4 for headroom and fault tolerance)
+Growth 10x (1.5M records): ~417/s -&gt; 5 threads at ~100/s = 500/s meets it; the database MERGE path must be validated first
+Dormancy scan: 5,000,000 accounts, selection by an exposed, indexed LastActivityDate; ~1% qualify = 50,000 keys -&gt; 100 chunks of 500
+Per chunk (illustrative, ~10 ms/record) = ~5 s; 100 chunks on 6 threads = 100 x 5 / 6 = ~83 s of processing; the index-driven selection query dominates, so validate it with an execution plan</div>
+    <p>The errors are sizing from the average rate, ignoring recovery time after an outage, picking partition counts without a consumer plan, testing with a tenth of the production volume in the target table, and assuming linear scaling forever.</p>
+  </section>
+
+  <section id="s6-15" class="pagebreak">
+    <h2>6.15 Deposits uses of the pattern</h2>
+    <p>The pattern in this chapter, a source of work (an event, a file, a schedule), idempotent processors that execute it and monitoring that proves nothing was lost, reappears throughout the application. It is listed here so the later chapters can refer back to it.</p>
+    <table>
+      <tr><th>Use case</th><th>Trigger and design</th><th>Key controls</th></tr>
+      <tr><td>Account event ingestion (open, status change, hold placed or released, closed)</td><td>An event keyed by account; a data flow to a queue processor; idempotent apply; update Pega-side state or reference data</td><td>Sequence guard where the shape allows it, dead-letter store, lag alert</td></tr>
+      <tr><td>ACH return processing</td><td>A return file or event; one queue item per return; a payment-exception case; correspondence per reason code</td><td>Reason-code mapping as reference data; deadline SLA; reconcile file counts to cases</td></tr>
+      <tr><td>CD maturity and rollover</td><td>A scheduler selects CDs maturing in N days; a queue processor creates cases and notices</td><td>Notice timing; reconciliation of selected against created</td></tr>
+      <tr><td>Dormancy and escheatment</td><td>A scheduler scans by last activity date; staged notices; state-specific timers</td><td>Chunked scans; audit; per-state circumstancing (Chapter 03 §3.10)</td></tr>
+      <tr><td>Reconciliation breaks</td><td>Staging loads and MERGE (Chapter 05 §5.8), set-based break detection, cases for breaks</td><td>Counts, ageing, dual control for write-offs</td></tr>
+      <tr><td>Legal order holds</td><td>Intake queue; per-account hold placement as queued, idempotent core calls</td><td>Idempotency key, breaker, audit (Chapter 05 §5.15)</td></tr>
+      <tr><td>Operational dashboards</td><td>Data pages over lag, queue and dead-letter statistics</td><td>Alert thresholds (6.13)</td></tr>
+    </table>
+    <p>NACHA return codes and their deadlines are Chapter 12's subject; here the point is architectural.</p>
+  </section>
+
+  <section id="s6-16" class="pagebreak">
+    <h2>6.16 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. Explain Kafka to someone who only knows queues and databases.</span>
+    <p>"Kafka is a distributed append-only log. Producers write events to topics; each topic is split into partitions, which are ordered sequences identified by offsets. Consumers read at their own pace and remember their offset, and records stay for a retention period, so several applications can read the same stream independently and one can replay by resetting its offset. Partitions give parallelism and, with a key, per-key ordering; replication with an in-sync replica set gives durability. Unlike a queue, reading does not delete."</p></div>
+
+    <div class="qa"><span class="q">Q2. What does Kafka guarantee about ordering, and what does it mean for account events?</span>
+    <p>"Order is guaranteed only within a partition. Keying by account number puts all events for an account in one partition, in order, while different accounts run in parallel. The key does not protect ordering once Pega dispatches to a queue processor, where independent threads can reorder, so I use a sequence guard for snapshots, event-ID de-duplication for deltas, or serialise per account."</p></div>
+
+    <div class="qa"><span class="q">Q3. What delivery semantics do you choose for a bank, and why?</span>
+    <p>"At-least-once with idempotent processing. At-most-once loses money events, and true exactly-once ends at Kafka's boundary: a database write or a core call is outside a Kafka transaction. So I accept duplicates and make the effect idempotent, which also makes replay safe. I separate three things that get called idempotency: duplicate-event detection, idempotent state change, and a safe business operation."</p></div>
+
+    <div class="qa"><span class="q">Q4. A consumer crashes after updating the database but before the offset commit. What happens?</span>
+    <p>"The event is redelivered, which is at-least-once working. It is harmless only if the event ID and the business effect are written in the same transaction, so the retry hits the unique constraint and commits the offset without reapplying. If the event ID is recorded separately, the order of the two commits decides whether I get a lost update or a duplicate."</p></div>
+
+    <div class="qa"><span class="q">Q5. Is a 'only apply if the timestamp is newer' guard safe?</span>
+    <p>"Only for full-state snapshots, where a newer event supersedes an older one. For partial updates it discards a different field's valid update, and for deltas it destroys money: two debits in the same second are both valid and the guard keeps one. I say which shape the topic carries before writing the guard, and I prefer a source-issued sequence number to a timestamp."</p></div>
+
+    <div class="qa"><span class="q">Q6. Does queueing in Pega give you a transactional outbox?</span>
+    <p>"I would not assume so. It depends on whether Queue-For-Processing commits in the same transaction as the business write on that release, so I would test it in a lower environment by throwing before the commit and checking whether the item exists. If it does not, the outbox is an explicit table written in the same transaction with a separate dispatcher, which is a custom build."</p></div>
+
+    <div class="qa"><span class="q">Q7. Lag is rising. How do you diagnose it?</span>
+    <p>"I look at the lag shape: all partitions rising means consumers are slower than producers, one partition means skew or a poison message, flat and not moving means the consumer stopped. Then the data flow run, queue depth and broken items at the apply processor, database lock waits, node types and heap, and whether upstream volume spiked or the contract changed. I contain, then communicate on a cadence."</p></div>
+
+    <div class="qa"><span class="q">Q8. Standard or dedicated queue processor, and how do you tune one?</span>
+    <p>"Dedicated for anything with volume, an SLA or special retry, because it isolates capacity and has its own threads, retries and node association; the standard one is shared and untunable. Throughput is threads times eligible nodes, but the first lever is cutting per-item cost: no per-item connector calls, chunked items, set-based database work, exposed and indexed columns, thin activities and background nodes. Then I size threads to the database's tolerance."</p></div>
+
+    <div class="qa"><span class="q">Q9. How would you reason about processing 200,000 records in five minutes?</span>
+    <p>"That is about 667 records a second. By Little's law, at ten milliseconds a record I need roughly seven threads, and at a few hundred milliseconds I would need a hundred or more, so the work is to cut per-record cost, mostly by removing per-item connector and database round trips with chunked staging and one MERGE per chunk. It is a sizing argument and a designed experiment, not a measurement; I would benchmark a sample, change one lever at a time, and watch the database, which is the next limit."</p></div>
+
+    <div class="qa"><span class="q">Q10. Can you replay Kafka events into Pega by resetting the consumer group offset? And design a dead-letter and replay mechanism.</span>
+    <p>"Not with a Kafka dataset: the consumer group there is for monitoring only, the data flow assigns partitions and tracks offsets, and changing offsets on the group will not make it reprocess or skip, so replay has to be built."</p>
+    <p>"Poison records go to a dead-letter store with the original payload, topic, partition, offset, error class and correlation ID, while the pipeline continues; an outage pauses consumption instead of dead-lettering good events. A dashboard shows counts by class, market and age. Replay is an authorised, audited, throttled endpoint, with a dry run, scoped by key and time range, re-injecting into the same idempotent path, with de-duplication retained at least as long as the replay window. Pega provides none of this; it is built."</p></div>
+
+    <div class="qa"><span class="q">Q11. Job Scheduler, queue processor or data flow?</span>
+    <p>"A scheduler for time-based triggers, which creates chunks and queues items; a queue processor for processing items with retry and concurrency control; a data flow for continuously consuming a stream or bulk-transforming a dataset. A scheduler should orchestrate, not process, and it is single-node for jobs that create business records."</p></div>
+  </section>
+
+  <section id="s6-recap">
+    <h2>6.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>Balances now reach Pega within seconds, not a day later. <code>EVT-55121</code> travels from the topic to a data flow, a queue processor and the database, is safe against being delivered twice, late or while a consumer crashes, and leaves a trail in a dashboard that tells support when a pipeline is stalled and lets them replay what failed.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>A keyed topic gives per-account order within a partition; at-least-once delivery with idempotent processing, in which the duplicate check and the effect share a transaction, gives the effect once; the event's shape decides which ordering guard is legal; a data flow reads, a dedicated queue processor applies, and a job scheduler orchestrates; poison is parked while an outage pauses; and lag, queue age and dead-letter age are the signals that page a human.</p>
+    <h3>What it still cannot do</h3>
+    <p>Events cover the partner that publishes them. Another partner can only send a file, and a third communicates by email. A file such as <code>RB_BAL_20260309_0730.csv</code> must be recognised as complete, parsed, validated row by row, applied and reconciled, and an inbound email must become a case without being created twice. That is Chapter 07.</p>
+  </section>
+
+  <section id="s6-ref" class="pagebreak">
+    <h2>6.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. docs.pega.com pages are JavaScript-rendered and not directly retrievable; their content was obtained through search-engine indexing.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>Apache Kafka documentation <span class="tag">vendor documentation</span></td><td>https://kafka.apache.org/documentation/</td><td>URL verified 2026-10-12 (HTTP 200); the #design, #semantics, #producerconfigs and #consumerconfigs sections are the relevant anchors</td><td>Per-partition ordering, delivery semantics, transactions within Kafka, producer and consumer settings, retention and compaction</td></tr>
+      <tr><td>Pega docs: Connecting to Kafka through a Kafka Data Set <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform/page/platform/decision-management/kafka-data-set.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Kafka Data Sets as source and destination of real-time data flows; the requirement for an external Kafka service independent of Pega's own stream service</td></tr>
+      <tr><td>Pega docs: Creating a Kafka Data Set <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform/page/platform/decision-management/create-kafka-data-set.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>The consumer group on a Kafka Data Set is used for monitoring only; the data flow assigns partitions and tracks offsets; offsets cannot be changed on the group to reprocess or skip</td></tr>
+      <tr><td>Pega docs: Queue processor Rules <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform/page/platform/background-processing/queue-processor-rules.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Standard processor (<code>pzStandardProcessor</code>) versus dedicated processors for high-throughput, delayed and distributed processing; the Admin Studio landing page</td></tr>
+      <tr><td>Pega docs: Queue-For-Processing method <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/background-processing/queue-processing-method.html</td><td>Platform 24.2 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Standard and dedicated queueing; the date/time property for delayed processing on dedicated processors; the authentication option for the background context</td></tr>
+    </table>
+    <p class="small muted">The throughput arithmetic, the breaker thresholds, the dead-letter store and the replay endpoint are engineering reasoning, not Pega features, and are not sourced to documentation.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch05_integration_rest_soap_esb.html">&larr; Previous: Chapter 05</a><a href="ch07_file_email_listeners.html">Next: Chapter 07 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

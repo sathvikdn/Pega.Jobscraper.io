@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch09 · Pega RPA &amp; Intelligent Automation | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch08_pega_ai_genai_decisioning.html">&larr; Chapter 08</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch10_security_devops_monitoring.html">Next: Chapter 10 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 09 &middot; Intelligence and automation</div>
+    <h1>Pega RPA &amp; Intelligent Automation</h1>
+    <p class="subtitle">One legacy screen at Riverbend has no API, and the work item that needs it is queued. This chapter follows that item into a robot and back to the case, then breaks it twice: the screen changes, and separately the robot times out after possibly completing the action, which is Chapter 05's unknown-outcome problem in a new guise. Controls, reconciliation and eventual replacement are taught through that one scenario, with the decision framework, document processing, governance and business case around it.</p>
+    <div class="meta">
+      <div><strong>20</strong><span>Sections</span></div>
+      <div><strong>11,152</strong><span>Words</span></div>
+      <div><strong>1</strong><span>Legacy screen followed</span></div>
+      <div><strong>10</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section id="s9-1">
+    <h2>9.1 The screen with no API</h2>
+    <div class="note"><strong>Scope of this chapter.</strong> RPA is treated here as a conceptual topic: it is explained from the integration and case-management side (where it fits, how a case hands work to a robot and gets a result back, why bots are fragile, what auditors ask) and not from the side of building or operating robots. Product names and screens are described by function; Pega's robotics tooling has changed across releases, and dollar and time figures in worked examples are illustrative arithmetic, not benchmarks.</div>
+    <p>On Monday 9 March, as <code>AC-10882</code> moves toward disbursement, one more step is needed. Riverbend's branch teller platform keeps its own restraint list, separate from the core that the ESB fronts, and closing an account in the core without marking it on the teller platform leaves a branch able to hand out cash against an account that is closing. The teller platform is an old thick-client application. It has screens, a terminal-style navigation and a field for a restraint reference. It has no API, no batch interface and no one willing to fund one this year. Today an analyst reads the approved details from the case and keys them into that screen, three to five minutes each, and writes the reference back into the case.</p>
+    <p>That is the problem this chapter takes: a step in an otherwise automated process that can only be done through a user interface. It looks small, and it forces nearly every concern of the previous chapters to reappear, because a robot driving a screen has the same needs as an integration (idempotency, retries, classification, evidence) with far weaker signals to work with. Marcus's work item is <code>AC-10882-R1</code>, and the rest of the chapter follows it.</p>
+  </section>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 08 ended with assistance for judgement tasks, and the observation that all of it assumes a system with an interface. This chapter is about the system without one. The ledger is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s9-1">9.1 The screen with no API<span>The problem and the work item</span></a>
+      <a href="#s9-2">9.2 What RPA is and why it exists<span>Systems with no interface</span></a>
+      <a href="#s9-3">9.3 Robot, API or workflow<span>The decision framework applied to the screen</span></a>
+      <a href="#s9-4">9.4 Attended and unattended<span>RDA and RPA</span></a>
+      <a href="#s9-5">9.5 The robotics toolchain<span>Studio, Runtime, Manager, queues, pools</span></a>
+      <a href="#s9-6">9.6 The work item travels<span>The case-to-bot loop</span></a>
+      <a href="#s9-7">9.7 The screen changes<span>Adapters, interrogation and why bots break</span></a>
+      <a href="#s9-8">9.8 The robot times out after possibly finishing<span>Unknown outcome, exceptions, evidence, retry</span></a>
+      <a href="#s9-9">9.9 When the input is a document<span>OCR and document processing</span></a>
+      <a href="#s9-10">9.10 A privileged non-human user<span>Credentials, segregation of duties, audit</span></a>
+      <a href="#s9-11">9.11 Operating the robot<span>Infrastructure, monitoring, the 2 a.m. runbook</span></a>
+      <a href="#s9-12">9.12 Other candidates<span>The framework on four more processes</span></a>
+      <a href="#s9-13">9.13 The business case<span>Run cost, break-even</span></a>
+      <a href="#s9-14">9.14 Replacing the robot<span>API first, a time-boxed bridge, decommissioning</span></a>
+      <a href="#s9-15">9.15 Building and delivering an automation<span>The lifecycle</span></a>
+      <a href="#s9-16">9.16 Governance and a Centre of Excellence<span>Register, tiers, metrics</span></a>
+      <a href="#s9-17">9.17 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s9-recap">9.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s9-ref">9.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+  </section>
+
+  <section id="s9-2" class="pagebreak">
+    <h2>9.2 What RPA is and why it exists</h2>
+    <p><strong>Robotic Process Automation (RPA)</strong> is software that operates other applications through their <em>user interface</em>, the way a person would: opening a screen, reading values, typing into fields, clicking buttons, copying results. The robot is a program that sees and manipulates the screen elements (or a terminal emulator session) of an application that offers no better way in. It exists because integration normally means calling an API, reading a file or querying a database, and many systems in banking were built before APIs were common or were never given one. Replacing them is a multi-year, high-risk programme, and in the meantime staff re-key data between screens. RPA automates that human work without modifying the target system, because the robot uses the same front door a person does.</p>
+    <p>The teller platform is one of a recognisable family of places where no-API systems appear in a bank.</p>
+    <table>
+      <tr><th>System type</th><th>Why there is no API</th><th>What staff do manually today</th></tr>
+      <tr><td>Green-screen and mainframe terminal applications (3270 and 5250 style emulators)</td><td>Decades-old transaction systems with screen-based transactions only, or APIs that are restricted, unstable or not licensed</td><td>Type transaction codes and field values into a terminal session</td></tr>
+      <tr><td>Legacy teller and branch platforms</td><td>Thick-client desktop applications with no external interface</td><td>Re-key customer instructions between the case system and the teller screen</td></tr>
+      <tr><td>Core front ends where the batch interface is file-only</td><td>The vendor exposes only screens and nightly batch</td><td>Place a hold or update a flag one account at a time</td></tr>
+      <tr><td>Vendor and agency portals</td><td>Third-party web portals built for humans: statement download, unclaimed-property portals, court or agency sites</td><td>Log in, search, download, rename, upload to the case</td></tr>
+      <tr><td>Applications with APIs unavailable to this team</td><td>Ownership, licensing, queue times or security restrictions</td><td>Work around through the UI</td></tr>
+      <tr><td>Spreadsheet-driven processes</td><td>Office documents are the integration point</td><td>Copy rows between workbooks and applications</td></tr>
+    </table>
+    <p>What it is good at follows from its nature: high-volume, repetitive, rule-based steps with structured inputs; stable target screens that rarely change; systems with no practical API for the foreseeable future; a short-lived bridge while an API or replacement is built; work that tolerates asynchronous completion and retry; and well-understood processes with clear exception rules. It is a poor fit for judgement on unstructured information, targets in frequent flux (vendor portals redesigned every quarter), systems that already have a usable API, permanent architecture for core processing, real-time customer interactions needing millisecond response, and poorly documented processes in which humans handle many variations.</p>
+  </section>
+
+  <section id="s9-3" class="pagebreak">
+    <h2>9.3 Robot, API or workflow: the decision framework applied to the screen</h2>
+    <p>The first question about the teller screen is not how to automate it but whether a robot is the right way to reach it at all, and the framework for that question is the most reusable thing in the chapter. Three technologies do three different jobs. <strong>BPM and case management</strong> orchestrate the work: stages, assignments, SLAs, approvals, audit, who does what and when. <strong>API and data integration</strong> exchange data and trigger actions between systems programmatically and reliably (REST, SOAP, SQL, messaging, files). <strong>RPA</strong> performs an action in a system that offers no programmatic interface by driving its UI. They are not alternatives for the same job: BPM orchestrates, and APIs and RPA are two ways to <em>reach</em> a system, so the decision is API versus RPA for the integration step, inside a case.</p>
+    <table>
+      <tr><th>Criterion</th><th>API integration</th><th>RPA (UI automation)</th></tr>
+      <tr><td>Reliability</td><td>High: contract-based, versioned</td><td>Lower: depends on screen layout, timing, session state</td></tr>
+      <tr><td>Speed to build</td><td>Slower if the API must be built or negotiated</td><td>Faster to a first working version (days or weeks)</td></tr>
+      <tr><td>Maintenance</td><td>Low and predictable; contract changes are announced</td><td>High: any UI change can break it; silent breakage risk</td></tr>
+      <tr><td>Throughput and latency</td><td>Milliseconds to seconds; scales horizontally</td><td>Seconds to minutes per transaction; limited by robot machines and sessions</td></tr>
+      <tr><td>Error semantics</td><td>Status codes, structured faults, idempotency keys</td><td>Screen text, timeouts, unexpected dialogs; hard to classify</td></tr>
+      <tr><td>Idempotency and safe retry</td><td>Designable (keys, status checks)</td><td>Hard: a half-completed UI transaction may or may not have saved</td></tr>
+      <tr><td>Security and audit</td><td>Service identities, tokens, scopes, mTLS; request and response logs with correlation IDs</td><td>A user identity on a desktop; credentials in a vault; screen recordings and screenshots; actions appear as a user</td></tr>
+      <tr><td>Scalability and cost over five years</td><td>Easy; higher upfront, lower run cost</td><td>Costly (licences, VMs, sessions); lower upfront, higher run cost</td></tr>
+      <tr><td>Change to the target system</td><td>Needs the target owner's cooperation</td><td>None required</td></tr>
+      <tr><td>Strategic direction</td><td>Aligns with modernisation</td><td>Entrenches the legacy system if left permanent</td></tr>
+    </table>
+    <div class="flow">DECISION: how should this integration step reach the target system?
+
+ Q1. Does the target system expose a usable, supported API or batch interface (REST, SOAP, SQL view, file, message)?
+      YES -&gt; USE THE INTEGRATION (Chapters 05, 06, 07). Stop. (Even a nightly file is better than a robot.)
+      NO  -&gt; Q2
+
+ Q2. Can the owner of the target system provide one within an acceptable time (build an API, expose a service, add a batch file)?
+      YES, within the business need window -&gt; WAIT/BUILD the API; use a manual process or temporary workaround meanwhile
+      YES, but too slow for the business need -&gt; RPA AS A TIME-BOXED BRIDGE (with a decommission plan, 9.14) -&gt; Q3
+      NO (end-of-life, vendor refuses, contract) -&gt; RPA may be the long-term reality: apply strict controls -&gt; Q3
+
+ Q3. Is the process suitable for a robot?
+      volume high enough to justify the cost (9.13)?  steps rule-based and well documented?  inputs structured?  target UI stable?
+      exceptions manageable by a human queue?  data sensitivity and audit acceptable?
+      ALL YES -&gt; build the bot BEHIND a case (the case owns state, SLA, audit; the bot is a worker)
+      ANY NO  -&gt; fix the process first, or keep it manual with better tooling
+
+ Q4. Control checklist before go-live: unique bot identity, vault credentials, least privilege, dual control preserved, evidence capture, monitoring,
+      owner for maintenance, change-detection test, fallback to manual, decommission trigger and date.</div>
+    <p>Applied to the teller platform: there is no API and no batch interface (Q1 is no); the owner will not provide one this year, though the closure volume needs relief now (Q2 gives a time-boxed bridge); the restraint entry is rule-based, the inputs are structured, the screen has been stable, and exceptions can go to a human queue (Q3 is yes); and so a robot behind the case is justified, with the controls of Q4 and a written end date. The mistakes in tool choice are using RPA because it is the tool the team has when a REST endpoint exists, using it to avoid a conversation with the system owner, automating a broken process (a robot does the wrong thing faster), building bots for processes that change monthly, and having no owner or budget for maintenance.</p>
+  </section>
+
+  <section id="s9-4" class="pagebreak">
+    <h2>9.4 Attended and unattended automation</h2>
+    <p>The same screen can be driven in two ways, and the choice is a control decision as much as a technical one. In <em>attended</em> automation (robotic desktop automation) the robot runs on the employee's own desktop and is triggered by the human: it pre-fills fields, copies data between screens, fetches data to display and validates entries, under the employee's own session and identity, with the human handling any exception on the spot. In <em>unattended</em> automation the robot runs on a server or virtual machine with no one present, triggered by a schedule, a queue of work items or a case assignment, using a dedicated robot identity from a vault, and any exception has to be routed to a human work queue. Pega's documentation draws the same line: unattended automations perform work without human intervention, typically back-office tasks submitted to a queue and processed in batch, while attended automations run on a user's desktop, for example retrieving customer information from several applications, presenting it, allowing changes and updating the original applications.</p>
+    <table>
+      <tr><th>Aspect</th><th>Attended (RDA)</th><th>Unattended (RPA proper)</th></tr>
+      <tr><td>Where it runs</td><td>On the employee's desktop</td><td>On a server, virtual machine or dedicated robot desktop</td></tr>
+      <tr><td>Who triggers it</td><td>The human, from within their workflow</td><td>A schedule, a work queue, or a case assignment</td></tr>
+      <tr><td>Credentials</td><td>The employee's own session and identity</td><td>A dedicated robot identity from a vault</td></tr>
+      <tr><td>Exception handling</td><td>The human handles it on the spot</td><td>Must be routed to a human work queue</td></tr>
+      <tr><td>Good for</td><td>Agent desktop: staff who must look up and key data into several legacy applications during a call</td><td>Back-office batch: nightly updates, bulk re-keying, vendor portal retrieval</td></tr>
+      <tr><td>Control profile</td><td>A human remains accountable; actions attributable to the user</td><td>The robot is accountable by identity; needs strong governance and evidence</td></tr>
+    </table>
+    <p>The common bank pattern is hybrid: an unattended robot does the routine majority and routes exceptions to a human queue inside the case, while an attended robot helps the human resolve the exception. For Riverbend's restraint entry the sensible order is attended first (the analyst presses a button, the screen is pre-filled, the analyst confirms), because it preserves a human actor on a money-adjacent transaction and simplifies maker-checker and attribution, and unattended later, with the strongest controls of 9.10. Some banks restrict unattended automation on money-affecting screens to read-only or non-financial updates.</p>
+  </section>
+
+  <section id="s9-5" class="pagebreak">
+    <h2>9.5 The robotics toolchain</h2>
+    <p>Pega's robotics products (descended from technology Pega acquired) have had name and packaging changes, and three components are the stable mental model. <strong>Robot Studio</strong> is the development environment where automations are built: connect to the target applications, identify (interrogate) their screen controls, design the logic visually, test and package. <strong>Robot Runtime</strong> executes an automation on a machine, attended on a user's desktop or unattended on a robot virtual machine. <strong>Robot Manager</strong> is the server-side management application: it deploys and versions automations to runtime machines, schedules runs, manages work queues and work items for robots, assigns work, monitors robots, and collects logs and screenshots. Current names, licence metrics and capabilities are confirmed in the documentation before being quoted.</p>
+    <p>Supporting concepts connect it to the case. An automation project is the versioned deployable unit. Adapters and interrogation (9.7) are how a robot connects to an application and recognises its controls. A work queue holds items for robots to process, each with input data and a status. A work item is one unit of robot work, mapping to one case-level request. A robot pool is a group of runtime machines taking work from a queue, so more machines process more items in parallel. Pega's documentation describes the case-side integration: work is assigned to a robot through Case Management using the <em>Assign to robot queue</em> smart shape (or through data pages), and in Robot Manager robots are configured to subscribe to work groups associated with work queues, in single-purpose or multi-purpose arrangements. A credential store for robots is part of the product family.</p>
+    <div class="flow">PEGA ROBOTICS ARCHITECTURE (conceptual)
+
+   PEGA PLATFORM (case engine, system of record)
+        |  case step: "Mark restraint on the teller platform"  -&gt; creates a robot work item (payload: account, reason, reference, correlation ID)
+        v
+   ROBOT MANAGER  (server)
+        |  holds work queue "TellerRestraints": items PENDING
+        |  assigns items to available robots, tracks status, retries, logs
+        v
+   ROBOT RUNTIME on robot VM 1..N  (unattended; each logs into the teller application with a vaulted robot identity)
+        |  runs the AUTOMATION built in ROBOT STUDIO:
+        |    opens the application session -&gt; navigates -&gt; enters data -&gt; verifies confirmation text -&gt; captures a screenshot
+        v
+   TELLER PLATFORM (thick client / terminal)  -- no API --
+        ^
+        |  result: SUCCESS (reference number) | BUSINESS EXCEPTION (account closed) | SYSTEM EXCEPTION (screen not found, timeout)
+   ROBOT MANAGER records result, evidence (screenshot), attempts  -&gt;  returns the result to PEGA (callback or polling)
+   PEGA: the case updates status, history entry with an evidence link; business exceptions -&gt; human assignment; system exceptions -&gt; retry/alert</div>
+    <table>
+      <tr><th>Component or concept</th><th>Role</th><th>Who uses it</th><th>Analogy</th></tr>
+      <tr><td>Robot Studio</td><td>Builds automations: interrogate application controls, design logic, test and package</td><td>Robotics developer</td><td>The IDE</td></tr>
+      <tr><td>Robot Runtime</td><td>Executes an automation on a machine, attended on a desktop or unattended on a robot VM</td><td>The robot machine (no human for unattended)</td><td>The JVM that runs the program</td></tr>
+      <tr><td>Robot Manager</td><td>Deploys and versions automations, schedules runs, manages queues and work items, assigns work, monitors robots, collects logs and screenshots</td><td>Robotics operations</td><td>The orchestrator and control tower</td></tr>
+      <tr><td>Work queue and work item</td><td>A queue of items for robots, each with input data, status (pending, in progress, completed, failed), attempts and result</td><td>Fed from a Pega case or other sources</td><td>The handoff mechanism, with retry, priority and monitoring</td></tr>
+      <tr><td>Logging and screenshots</td><td>Step logs and optional screen captures during runs</td><td>Operations and audit</td><td>Evidence for audit and debugging</td></tr>
+      <tr><td>Process discovery and task mining (adjacent products)</td><td>Observe how work is done to find automation candidates</td><td>Analysts</td><td>Candidate selection, distinct from the robots themselves</td></tr>
+    </table>
+    <table>
+      <tr><th>Operational concern</th><th>Detail</th><th>Practice</th></tr>
+      <tr><td>Robot infrastructure</td><td>Dedicated virtual machines (often Windows) with the target application clients installed</td><td>A golden image, patch cadence, locked-down configuration, separate from user desktops, an environment per stage</td></tr>
+      <tr><td>Session management</td><td>Robots need a logged-in desktop session that can disconnect, lock or time out; targets may cap concurrent sessions per account</td><td>Keep-alive and recovery handling; one account per concurrent robot where required; a clean start state per item</td></tr>
+      <tr><td>Licence and concurrency limits</td><td>Robot licences and target session licences cap parallel robots</td><td>Capacity planned as items per hour per robot times the number of robots against the SLA</td></tr>
+      <tr><td>Scheduling and windows</td><td>Targets have maintenance windows and end-of-day batches</td><td>A calendar of target availability; robots pause outside it and items queue</td></tr>
+    </table>
+    <p>The roles around it are the process owner (definition, exceptions, acceptance), the robotics developer (automations in Robot Studio), the Pega developer on the case side (work item creation, results, exceptions, SLAs), robotics operations (Robot Manager, runtime machines, monitoring, incidents), security and identity (robot identities, vault, access reviews), the target system owner (informing of UI changes and release schedules, which is critical for stability) and audit and compliance (control design and evidence review).</p>
+  </section>
+
+  <section id="s9-6" class="pagebreak">
+    <h2>9.6 The work item travels: the case-to-bot loop</h2>
+    <p>The design principle that makes the whole arrangement governable is that the case owns state and the bot is a worker. A robot has no memory of the business context, no SLA, and no audit trail beyond logs; the Pega case has all of those. So the case decides what to do and records the outcome, and the bot performs one bounded UI task and reports a structured result. That keeps process logic out of the bot, where it is expensive to change and hard to audit, and in rules, where it is testable and governed.</p>
+    <div class="flow">THE RESTRAINT MARKED ON THE TELLER PLATFORM (the loop)
+
+ [1] PEGA CASE (closure case AC-10882)               stage: Fulfil; the teller platform has no API for restraints
+      - business validation done (closure approved, maker-checker complete, core hold confirmed: Chapter 05)
+      - decision: "target system = TellerPlatform (UI only)" -&gt; route via robot
+      - Assign-to-robot-queue step: create ROBOT WORK ITEM in queue "TellerRestraints"
+            payload { workItemId: AC-10882-R1, accountNo: CHK-8842-0117, reasonCode: CLOSURE, orderRef: AC-10882, requestedBy, correlationId, idempotencyRef }
+      - case status "Pending-Robot"; SLA clock running; Wait shape (the case waits for the result)
+ [2] ROBOT MANAGER
+      - item PENDING in queue; picks an available robot (Runtime VM 3) from the pool; marks IN PROGRESS; increments the attempt count
+ [3] ROBOT RUNTIME (unattended) runs the AUTOMATION
+      a  log in to the teller application with the vaulted robot identity (the session may already exist)
+      b  PRE-CHECK idempotency: search the account's existing restraints for orderRef AC-10882; if found -&gt; return SUCCESS(existing ref) without keying again
+      c  navigate to the restraint screen; verify the expected screen title and fields (guards against landing on the wrong screen)
+      d  key account, reason, order reference
+      e  submit; read the confirmation text and reference number; VERIFY it against the expected pattern; capture a screenshot as evidence
+      f  log out or return to a known home screen (so the next item starts from a clean state)
+ [4] RESULT (structured)
+      SUCCESS            { status: "SUCCESS",   tellerRef: "R-558201", screenshotId, completedAt }
+      BUSINESS EXCEPTION { status: "BUSINESS_EX", code: "ACCOUNT_ALREADY_CLOSED", message }   -&gt; not retried
+      SYSTEM EXCEPTION   { status: "SYSTEM_EX", code: "SCREEN_NOT_FOUND" | "TIMEOUT" | "LOGIN_FAILED", screenshotId } -&gt; retried per policy, then escalated
+ [5] ROBOT MANAGER updates the work item (completed/failed), stores logs and the screenshot, makes the result available
+ [6] PEGA receives the result (callback via Service-REST, or polling by a scheduler or queue processor)
+      SUCCESS            -&gt; the case records tellerRef and the evidence link; status "Teller-Confirmed"; history entry (robot identity, time); the flow advances
+      BUSINESS EXCEPTION -&gt; assignment to Deposit Ops: "Restraint not possible: account already closed"; no retry
+      SYSTEM EXCEPTION   -&gt; retry (max N with delay) -&gt; if exhausted: ops assignment with the screenshot; alert robotics operations; SLA escalation continues
+      NO RESULT BY T+X   -&gt; stuck-item sweeper (scheduler) flags and checks Robot Manager; escalates (robot down? queue stalled?)
+ [7] RECONCILIATION: end of day: items created == completed + business exceptions + system exceptions unresolved; compare restraints in the teller report vs Pega records</div>
+    <table>
+      <tr><th>Concern</th><th>Design</th></tr>
+      <tr><td>Create the work item</td><td>From the case via a robotic automation step or an integration call to Robot Manager; the payload is minimal (keys and values the robot must type), not the whole case</td></tr>
+      <tr><td>Idempotency</td><td>The work item ID is deterministic and the robot checks for an existing result before acting (step b), because a UI transaction may be interrupted after saving</td></tr>
+      <tr><td>Result return</td><td>A callback to an authenticated, idempotent Service-REST endpoint, or polling; a correlation ID ties logs across Pega, Robot Manager and screenshots (Chapter 05 §5.10)</td></tr>
+      <tr><td>Synchronous or asynchronous</td><td>Attended automations return in-session; unattended ones are asynchronous, so the case waits with an SLA and never blocks a user thread</td></tr>
+      <tr><td>Timeouts and stuck items</td><td>A robot VM can crash mid-item; Robot Manager should detect and requeue, and Pega runs an independent sweeper as a second line</td></tr>
+      <tr><td>Priority and capacity</td><td>Queue priority and robot pool size match the SLA; the closure restraint queue must not be starved by low-priority statement downloads, so queues and pools are separate (a bulkhead, Chapter 05 §5.9)</td></tr>
+    </table>
+    <p>Each design choice in that loop is an answer to a failure covered later. The work item ID is deterministic and the robot checks for an existing result before acting (step b), because a UI transaction may be interrupted after saving. The payload is minimal, keys and values the robot must type, not the whole case. Results return by callback to an authenticated, idempotent Service-REST endpoint, or by polling, with a correlation ID tying logs across Pega, Robot Manager and screenshots (Chapter 05 §5.10). Unattended automations are asynchronous, so the case waits with an SLA and never blocks a user thread. A robot VM can crash mid-item, so Robot Manager should detect and requeue, and Pega keeps an independent sweeper as a second line. Queue priority and robot pool size match the SLA, and the closure restraint queue must not be starved by low-priority statement downloads, which is Chapter 05's bulkhead applied to robots with separate queues and pools.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Why is the approval of <code>AC-10882</code> performed in the Pega case before the work item exists, and not as a step the robot performs on the teller screen?</p>
+      <p><strong>Answer.</strong> The teller platform treats the robot as an ordinary user, so the robot has no way to know whether a second person approved. If the approval lived in the robot, maker-checker would depend on a screen the robot could bypass or mis-key. Doing the approval in the case makes it a governed, audited rule with a human actor, and the work item then carries a reference to it, so the robot executes only approved items and an auditor can trace from the screen action back to the approval. The limit is that this only holds if the robot's role in the target application cannot itself approve anything, which is why its role is restricted to entry (9.10).</p></div>
+  </section>
+
+  <section id="s9-7" class="pagebreak">
+    <h2>9.7 The screen changes: adapters, interrogation and why UI changes break bots</h2>
+    <p>The first thing that goes wrong in practice has nothing to do with the work item. The teller platform vendor ships a patch over a weekend, and on Monday morning the restraint screen has a new "confirm identity" banner and the account field has moved one row down. Nobody told the robotics team, because from the vendor's side nothing contractual changed: a screen has no versioned contract the way an API does. That is the structural reason RPA carries a higher maintenance cost and a higher risk of silent failure, and understanding how a robot finds things on a screen explains exactly how it breaks.</p>
+    <p>A robot cannot read a screen visually the way a person does. It connects to an application through an <strong>adapter</strong> suited to the application technology and then <strong>interrogates</strong> it: it inspects the application's UI structure and records each control (a text box, a button, a table cell) with <strong>match rules</strong>, the set of properties used to find that control again at run time. A web adapter works with the page's document structure and matches on element IDs, names, classes, text and position. A Windows desktop adapter works with native controls exposed by the operating system and matches on window class, control name and automation ID. Java and other framework adapters work with component class, name and hierarchy. A terminal or mainframe adapter works with the character grid of a session: row and column positions, screen text patterns and field coordinates. Virtualised applications (remote desktop, Citrix) often expose only pixels and keystrokes, so image recognition and coordinates are the most brittle approach of all. Office, email and file adapters work with cell addresses, headers and files.</p>
+    <table>
+      <tr><th>Change in the target</th><th>Effect on the bot</th><th>How it shows up</th></tr>
+      <tr><td>A web element's ID or class changes in a vendor release</td><td>The match rule no longer finds the control</td><td>A "control not found" error, or worse, a match to a different control</td></tr>
+      <tr><td>Layout rearranged (a field moved, a tab added)</td><td>Position-based matches hit the wrong field</td><td>Silent mis-keying: data typed into the wrong field</td></tr>
+      <tr><td>A new popup, banner, consent dialog or session timeout page</td><td>An unexpected state</td><td>A stall, or a click in the wrong place</td></tr>
+      <tr><td>A terminal screen layout changed after a core patch</td><td>Row and column coordinates are now wrong</td><td>Wrong values in wrong fields; the transaction rejected or, worse, accepted</td></tr>
+      <tr><td>Slower response under load</td><td>Fixed waits too short</td><td>Intermittent failures that disappear on retry</td></tr>
+      <tr><td>Screen resolution, scaling or language changes on the robot VM</td><td>Image and coordinate matching fails</td><td>Environment-specific failures</td></tr>
+      <tr><td>A password policy or multi-factor step introduced on the target</td><td>The login step no longer works</td><td>A total outage of the bot</td></tr>
+      <tr><td>A target application upgrade or migration</td><td>Everything may change</td><td>Re-interrogation and retest</td></tr>
+    </table>
+    <p>Of these, the dangerous ones are the silent failures. A "control not found" error stops the robot and tells someone, which is a good failure. A layout change that makes position-based matching type a restraint reference into the wrong field produces no error, and the first sign is a wrong record. Every defence is therefore aimed at making a robot refuse to proceed on a state it does not recognise. It prefers stable match properties (IDs and names rather than positions, and image recognition only when nothing else exists). It verifies state at every critical step: before typing, the expected screen title and field labels; after submit, a confirmation pattern; failing rather than guessing. It waits for conditions, not fixed delays, with a timeout. It handles known dialogs explicitly (session timeout, "are you sure", banners). It runs a canary against a non-production or low-risk record on a schedule and alerts if match rules fail, and it subscribes to the target's release calendar. It keeps a regression pack of test data and expected results that is run after any target release or robot change, and keeps UI-specific logic in small reusable blocks so one screen change is fixed in one place. On money-affecting screens it never retries blindly and stops the queue on an unexpected state, and the governance includes a named owner, a notice agreement with the target system owner and version control of automations.</p>
+    <p>The failures here are coordinate or image matching where controls exist, fixed sleeps, no verification of what was typed, processing continuing after an unexpected screen, no notice agreement with the target owner, and bots built against a production-only environment with no test target. In the example, the identity banner makes the robot's screen-title check fail on item <code>AC-10882-R1</code>; it stops, captures a screenshot, and the item becomes a system exception rather than a mis-keyed restraint.</p>
+  </section>
+
+  <section id="s9-8" class="pagebreak">
+    <h2>9.8 The robot times out after possibly finishing: unknown outcome, exceptions, evidence and retry</h2>
+    <p>The second failure is different in kind, and it is the most important idea in the chapter. Suppose the screen did not change. The robot logs in, finds the restraint screen, keys the account, reason and reference, and presses submit. The teller platform saves the restraint. Then the confirmation never renders, because the session drops, or the application hangs, or the robot's VM is reset. The robot's timeout fires. From the robot's side nothing was confirmed. From the teller platform's side, a restraint may now exist.</p>
+    <p>This is the unknown outcome of Chapter 05 §5.9 again, in a new guise. There, a core call timed out after the request was sent and Pega held no information about whether the hold had been placed; here, a UI action timed out after the submit and the robot holds no information about whether the restraint was saved. The two wrong reactions are the same. Retrying blindly can key a second restraint, so the account shows duplicate restraint records. Marking the item failed can lose a restraint that exists, so the branch believes the account is not restrained when it is. And the same three resolution routes apply, translated to a screen: a <em>status lookup</em> (search the account's existing restraints for the order reference, which is the idempotency pre-check of step b in 9.6); a <em>contractually safe retry</em> (not available, because the teller platform makes no promise to de-duplicate, which is why the pre-check is performed by the robot and not assumed of the target); and <em>reconciliation</em> (the end-of-day report of restraints from the teller platform compared with the case records). What is worse than with an API is the quality of signal: a bot has screen text, timeouts and dialogs, not structured status codes, so the verification step (read back the confirmation) and the pre-check carry more weight than they would in an integration.</p>
+    <table>
+      <tr><th>Failure</th><th>Immediate effect</th><th>Recovery</th></tr>
+      <tr><td>Login failure (password rotated, account locked)</td><td>All items fail fast</td><td>Alert immediately (systemic); stop the queue to avoid locking more; fix credentials in the vault; resume</td></tr>
+      <tr><td>Screen not found or control not matched</td><td>The item fails at a step; a screenshot is captured</td><td>Usually a UI change: stop processing, notify the developer and target owner, route items to manual handling until fixed</td></tr>
+      <tr><td>Timeout waiting for the application, before submit</td><td>The item fails or hangs; nothing was saved</td><td>Retry with a limit; check availability (a maintenance window?)</td></tr>
+      <tr><td>Timeout or crash <em>after</em> submit</td><td><strong>Unknown outcome</strong>: the restraint may exist</td><td>Treat as unknown; pre-check by order reference on any retry; if still uncertain, route to human verification rather than re-keying</td></tr>
+      <tr><td>Unexpected dialog or popup</td><td>The automation stalls</td><td>Handle known dialogs; screenshot unknown ones; fail the item</td></tr>
+      <tr><td>Robot VM crash or session disconnect</td><td>The item is stuck in progress, possibly half-completed</td><td>Requeue after a timeout; the pre-check prevents a duplicate</td></tr>
+      <tr><td>Invalid payload</td><td>A business exception</td><td>Validate the payload in Pega before queuing, so this is rare</td></tr>
+      <tr><td>Robot Manager unavailable</td><td>No new items assigned</td><td>The case-side queue holds requests; alert; fall back to manual per the runbook</td></tr>
+    </table>
+    <p>The exception handling follows the same classification discipline as Chapter 05 §5.10. A <em>business exception</em> means the data or the business situation prevents completion and the automation worked correctly (account already closed, amount over a limit, account not found, duplicate restraint already exists): it is never retried and returns a structured code to the case, which routes it to a human with the reason. A <em>system exception</em> means the automation or environment failed (login failure, control not found, timeout, an application error dialog, a VM crash): it is retried with a limit and delay, only for safe operations, with a screenshot, an alert if systemic, then manual routing. Retries are limited to two or three attempts with a delay, so a struggling legacy system is not hammered and accounts are not locked by repeated bad logins; idempotency is ensured before any retry; an unknown outcome on a money-affecting transaction is never retried without verification; and a circuit-breaker rule stops the queue if N consecutive items fail with the same system exception, because continuing wastes items and can lock credentials.</p>
+    <table>
+      <tr><th>Evidence item</th><th>What it proves</th><th>Retention and protection</th></tr>
+      <tr><td>Screenshot before submit and after confirmation</td><td>What was keyed and what the target answered</td><td>Stored with work item and correlation ID; contains personal data, so access-restricted with a retention period</td></tr>
+      <tr><td>Step log (masked)</td><td>The sequence of actions and their results</td><td>Account numbers and personal values masked; tamper-resistant storage</td></tr>
+      <tr><td>Case history entry</td><td>That a robot with a named identity performed the action, under which approval</td><td>Kept with the case for the case's retention period</td></tr>
+      <tr><td>Target-system report</td><td>The independent record that the restraint exists</td><td>Compared with case records at end of day; breaks raised as reconciliation cases</td></tr>
+    </table>
+    <div class="flow">ROBOT EXCEPTION ROUTING
+   result from the bot
+     SUCCESS                     -&gt; verify the read-back reference is present -&gt; case confirmed
+     BUSINESS EXCEPTION          -&gt; human work queue (reason code, evidence)   NO retry
+     SYSTEM EXCEPTION            -&gt; attempts &lt; max?  YES -&gt; delay, pre-check state, retry   NO -&gt; human queue + alert
+     TIMEOUT AFTER SUBMIT        -&gt; status UNKNOWN: pre-check by order reference; if still unclear -&gt; human verification, never re-key
+     N consecutive same SYSTEM EXCEPTIONs -&gt; STOP QUEUE, page robotics ops (probable UI change, credential problem, or outage)
+     NO RESULT within timeout    -&gt; sweeper checks the Robot Manager item state -&gt; requeue or escalate</div>
+    <p>Evidence is what makes any of this provable. Screenshots are captured at defined points (before submit, after confirmation) and on every failure, stored with the work item and correlation ID and retained per policy. A step log records each action with a timestamp and result, without the sensitive values typed, with account numbers and personal data masked. A screenshot of a customer record is itself sensitive data, so storage is protected, access restricted, retention set and, where the tool supports it, regions masked. Case history records that the action was done by a robot with the robot identity, work item ID and evidence reference, so an auditor can trace from the case to the screen. And an independent report from the target system, the restraints created today, compared with the case records, proves the bot did what it claimed.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Item <code>AC-10882-R1</code> times out after submit. The robot's retry logic, written by a developer who treats "timeout" as "retry", runs the item again and keys the restraint. The pre-check was left out because "the screen rejects duplicates". What happens, and what is the right design?</p>
+      <p><strong>Answer.</strong> If the screen does not in fact reject duplicates, the account now has two restraint records, and the branch will later have to find and clear one of them, or a release will clear the first and leave the account apparently unrestrained. The right design never assumes the target's behaviour: the robot searches the account's existing restraints for the order reference before keying, returns the existing reference if found, and routes to human verification if the search itself fails. It depends on the reference being searchable on that screen, and if it is not, the only safe alternatives are human verification of every unknown outcome and end-of-day reconciliation. The decision to leave out the pre-check is exactly the assumption Chapter 05 warns about with APIs.</p></div>
+  </section>
+
+  <section id="s9-9" class="pagebreak">
+    <h2>9.9 When the input is a document: OCR and intelligent document processing</h2>
+    <p>Many manual processes begin with a document: a scanned legal order, an ID card, a signed form, a statement PDF. A robot cannot read an image, so <strong>optical character recognition (OCR)</strong> converts the image of text into machine-readable text, and <strong>intelligent document processing (IDP)</strong> goes further, classifying the document type and extracting named fields (order number, due date, amount, names) using templates or machine learning. The approaches trade predictability for flexibility: template-based extraction (fixed zones or anchor text) is accurate on a fixed form and breaks when the layout varies; machine-learning extraction handles variation such as different courts' formats but needs labelled training data and monitoring and produces probabilistic errors; LLM-assisted extraction (Chapter 08 §8.7) is flexible for unstructured documents with hallucination risk, governance needs and a mandatory verification step; and a hybrid of OCR, rules and ML with validation checks is the practical choice.</p>
+    <table>
+      <tr><th>Approach</th><th>How it works</th><th>Strength</th><th>Weakness</th></tr>
+      <tr><td>Template-based extraction</td><td>Fixed zones or anchor text locate fields on a known form layout</td><td>Accurate and predictable for fixed forms</td><td>Breaks when the layout varies; needs a template per form</td></tr>
+      <tr><td>Machine-learning extraction</td><td>A trained model locates and reads fields across layouts</td><td>Handles variation (different courts' formats)</td><td>Needs labelled training data and monitoring; probabilistic errors</td></tr>
+      <tr><td>LLM-assisted extraction (Chapter 08 §8.7)</td><td>A language model reads the recognised text and returns structured fields</td><td>Flexible for unstructured documents</td><td>Hallucination risk; governance; must be verified</td></tr>
+      <tr><td>Hybrid</td><td>OCR plus rules plus ML, with validation checks</td><td>Practical</td><td>More components to run</td></tr>
+    </table>
+    <p>Every extracted field carries a confidence score, and the control design uses confidence and validation rules to decide whether a human must look. An order number is checked against a format pattern and a uniqueness check, and is always verified by a person for legal orders until measured accuracy proves otherwise. An amount is numeric, within a plausible range, matches the words-amount if present, and is human-verified whenever it drives a restraint. A due date is a valid date, not in the past beyond tolerance and after the service date, human-verified because it drives the SLA. Names and identifiers are matched against customer data with fuzzy rules, and ambiguous or low-confidence matches go to a human because of the wrong-customer risk. A document with low overall confidence or poor image quality goes entirely to manual keying.</p>
+    <div class="flow">DOCUMENT -&gt; DATA PIPELINE WITH HUMAN GATE
+   scan/email attachment -&gt; image quality check (skew, resolution) -&gt; classify the document type (court order / levy / subpoena / proof of address / other)
+     -&gt; OCR + field extraction with confidence scores -&gt; validation rules (format, ranges, cross-field)
+     -&gt; ALL fields pass validation AND confidence &gt;= threshold AND the document type is allowed for straight-through?  -&gt; pre-populate the case, still require human confirmation for legal orders
+     -&gt; otherwise -&gt; human data-entry task showing the image beside extracted fields with low-confidence fields highlighted
+     -&gt; human confirmation recorded (who, when, which fields corrected) -&gt; feedback to improve extraction
+   Metrics: field-level accuracy, straight-through rate, correction rate by field, processing time; sampled QA review</div>
+    <p>Legal orders are high-consequence: a misread amount or a wrong customer match causes a wrong restraint or a missed deadline. A sensible policy is human verification of key fields for the foreseeable future, with automation reducing typing effort and highlighting uncertainty and not removing the human check. Treating extraction as a model also brings it under model risk governance (Chapter 08 §8.11).</p>
+  </section>
+
+  <section id="s9-10" class="pagebreak">
+    <h2>9.10 A privileged non-human user: credentials, least privilege, segregation of duties and audit</h2>
+    <p>Once the robot works, an auditor arrives. Controls in banking assume that every action on a system is attributable to an accountable person, and that critical actions need two different people. A bot logs in and performs actions that look, to the target system, exactly like a user, so the questions are who is accountable for what the robot does, whose identity it uses and whether that identity is shared, whether a robot developer can also approve and run transactions, whether the robot bypasses a control a human would face, how the bank proves what it did and that it did only what was authorised, and who reviews its access and when.</p>
+    <table>
+      <tr><th>Control area</th><th>Requirement</th><th>Implementation</th></tr>
+      <tr><td>Bot identity</td><td>A unique, named, non-human identity per robot or robot role; never a shared human account or a developer's own credentials</td><td>A service account naming convention that marks it as a robot; an owner assigned; documented</td></tr>
+      <tr><td>Credential storage</td><td>Never hard-coded in the automation, a script, a file or a rule</td><td>A privileged access vault; the robot retrieves the credential at run time through the platform's credential mechanism; rotation; retrieval limited to the robot runtime identity</td></tr>
+      <tr><td>Least privilege</td><td>The account can perform only the screens and transactions the automation needs</td><td>A dedicated role in the target application with only the restraint-entry function, no approval, no admin; periodic recertification</td></tr>
+      <tr><td>Segregation of duties</td><td>Whoever builds or changes the robot cannot also run it with production credentials or approve what it does</td><td>Separate roles: developer (no production credential access), operations (deploy and run), approver (change approval); production credential checkout controlled and logged</td></tr>
+      <tr><td>Maker-checker preserved</td><td>The bot must not bypass dual control</td><td>Approval happens in the Pega case before the work item is created; the bot executes only approved items; the payload references the approval; the target's own approval workflow is honoured or the compensating control documented</td></tr>
+      <tr><td>Change control</td><td>Robot changes follow the software change process</td><td>Version control, peer review, test evidence, approval, release through the pipeline; no editing in production</td></tr>
+      <tr><td>Evidence and logging</td><td>A complete trace of what the robot did</td><td>Step logs, screenshots, work item history, case history, correlation IDs; tamper-resistant storage; retention</td></tr>
+      <tr><td>Monitoring for misuse</td><td>Detect a robot account used interactively or outside its schedule</td><td>Alerts on interactive logins by robot IDs, logins outside the run window and unusual volumes</td></tr>
+      <tr><td>Access reviews and sessions</td><td>Regular recertification; controlled sessions</td><td>Quarterly review of robot accounts, roles, owners and vault access; dedicated, locked-down, patched VMs with no internet browsing, session timeouts and disconnect handling</td></tr>
+      <tr><td>Data protection and scope limits</td><td>Screens, screenshots and logs contain personal data; bound the blast radius</td><td>Encryption at rest, restricted evidence access, masking, retention and purge; per-run and per-day volume caps and amount limits; a circuit breaker; a kill switch to stop the queue</td></tr>
+    </table>
+    <table>
+      <tr><th>Audit finding</th><th>Root cause</th><th>Fix</th></tr>
+      <tr><td>The robot used a shared service account also known to developers</td><td>Convenience</td><td>A unique robot identity; the vault; developers have no production password</td></tr>
+      <tr><td>The robot could approve its own transactions</td><td>An over-broad role in the target application</td><td>A role limited to entry; approval remains in the case with a human</td></tr>
+      <tr><td>No evidence of what the robot did on a date</td><td>Logging off or short retention</td><td>Mandatory screenshots and logs retained per policy</td></tr>
+      <tr><td>The robot changed in production without a ticket</td><td>No pipeline</td><td>Controlled deployment through Robot Manager versions with approvals</td></tr>
+      <tr><td>Credentials in an automation script</td><td>A quick build</td><td>Credential retrieval from the vault; scan repositories for secrets</td></tr>
+      <tr><td>Orphan robot accounts after a project ended</td><td>No owner</td><td>Ownership and expiry for each account; access reviews</td></tr>
+    </table>
+    <p>The audit question reduces to "can you show who authorised this and what the robot did", and the answer is the case history linking the approval, the work item and the screenshot.</p>
+  </section>
+
+  <section id="s9-11" class="pagebreak">
+    <h2>9.11 Operating the robot: infrastructure, sessions, licences, monitoring and the 2 a.m. runbook</h2>
+    <p>A robot in production is infrastructure with a dependency on someone else's screen. Unattended robots run on dedicated virtual machines (often Windows) with the target application clients installed, from a golden image with a patch cadence, locked down and separate from user desktops, with an environment per stage. Robots need a logged-in desktop session, which can disconnect, lock or time out, and target applications may allow only a limited number of concurrent sessions per account, so session keep-alive and recovery are handled, one account is used per concurrent robot where the target forbids concurrent sessions, and each item starts from a clean state. Robot licences and target session licences cap parallel robots, so capacity is planned as items per hour per robot times the number of robots against the SLA: at four minutes an item and five robots that is 75 items an hour, so 600 restraints overnight take eight hours, not one. Targets have maintenance windows and end-of-day batches during which the UI is unavailable or slow, so a calendar of target availability pauses robots outside the window and items queue.</p>
+    <p>Monitoring covers queue depth and oldest item age, robot heartbeat, success and failure rate, average item time, login failures and failure screenshots, in Robot Manager and the case system, alerting robotics operations and integrating with the bank's monitoring (Chapter 10). Change coordination subscribes to the target's release calendar, runs a canary after a release and keeps the ability to roll back the robot version. Business continuity treats robots as a dependency with a tested manual fallback, trained staff and a documented recovery time. Versions are deployed through the manager and recorded on each work item result, and documentation (process design, exception catalogue, runbook, owners) is maintained as part of the release.</p>
+    <div class="flow">TRIGGER: alert "TellerRestraints queue: 0 completions in 30 min, 47 pending, 12 failed"
+
+ 1 ASSESS SCOPE (5 min)
+     Is it one robot or all?  all failing with the same error?  which step/screen?  since when?  is the target application reachable (a person tries manually)?
+     Is the queue being drained at all? are credentials locked? is Robot Manager healthy?
+ 2 CONTAIN (before debugging)
+     if systemic and money-adjacent: STOP the queue (kill switch) to prevent mis-keying, credential lockouts or duplicate transactions
+     notify the business owner: closure restraints are SLA-bearing; switch to the MANUAL FALLBACK (named staff key the restraints from the case work queue)
+ 3 CAPTURE EVIDENCE: failure screenshots, step logs, last successful run time, robot VM status, recent target release or credential change tickets
+ 4 DIAGNOSE by symptom
+     LOGIN_FAILED on all robots      -&gt; password rotated or account locked: security/vault team; do NOT retry blindly (lockout)
+     SCREEN_NOT_FOUND / control not matched since a specific time -&gt; the target UI changed (patch or release): the robotics developer re-interrogates; the target owner confirms the change
+     TIMEOUTS                         -&gt; the target is slow or in a maintenance window; check target health; pause
+     ONE robot only                   -&gt; VM issue (session disconnected, disk, patch): restart or remove from the pool
+     Robot Manager unreachable        -&gt; platform incident
+ 5 FIX AND VERIFY: fix on a non-production target if possible; run a canary item on a low-risk or test record; confirm the screenshot and reference
+ 6 RESUME AND DRAIN: resume the queue at limited concurrency; reconcile items completed manually against queued (the pre-check prevents duplicates)
+ 7 CLOSE: RCA, preventive action (change notification agreement, canary, better match rules), update the runbook; record the SLA impact</div>
+    <p>The runbook's order is the discipline: contain first, capture evidence, fall back to manual, fix, verify with a canary, drain safely and reconcile. It is the incident model of Chapter 10 applied to a robot, with the added step of checking by hand whether the target is up before blaming the robot.</p>
+  </section>
+
+  <section id="s9-12" class="pagebreak">
+    <h2>9.12 Other candidates: the framework on four more processes</h2>
+    <p>The teller restraint is one case of a general question, and the same framework (what is the manual task, is there an API, how fragile is the target, what are the controls, what is the exit) gives different answers elsewhere.</p>
+    <table>
+      <tr><th>Candidate</th><th>Manual task and API position</th><th>Risk</th><th>Verdict</th></tr>
+      <tr><td>Restraint entry on a legacy screen (the worked example)</td><td>An analyst keys approved restraint details; assume no API, but ask the vendor and ESB team first, since many platforms have restraint services or batch loads</td><td>High consequence: a mis-keyed restraint harms a customer</td><td>Integration preferred. If a bot is the only option: attended first, then unattended with pre-check, read-back, volume and amount caps, approved items only, screenshot evidence, reconciliation. Exit when an API or batch interface exists</td></tr>
+      <tr><td>Vendor-portal statement retrieval</td><td>An analyst logs into a third-party portal, searches, downloads a PDF, renames and attaches it. Ask the vendor for SFTP delivery or an API; a scheduled file through the File Listener (Chapter 07) beats a robot</td><td>Lower consequence (read-only), but the portal changes without notice and may use CAPTCHA or MFA, which a bot must never circumvent; terms of service may forbid automation</td><td>Negotiate SFTP first; a bot only as a read-only fallback with the vendor's written permission and credentials in a vault</td></tr>
+      <tr><td>ACH exception re-keying</td><td>After a return is processed (Chapter 07 §7.12), an analyst re-keys return details into a legacy payments or ledger screen; a posting interface or batch file probably exists</td><td>High: money posting by UI automation creates reconciliation breaks</td><td>Integrate with a file or API and idempotency (Chapter 05 §5.9); a bot only as a temporary bridge with all money controls and reconciliation</td></tr>
+      <tr><td>Dormancy flag updates</td><td>Staff update a dormancy status flag on a legacy screen after a stage; a maintenance service or batch update likely exists</td><td>Medium: status affects customer access and escheatment timelines</td><td>Integrate by batch or API; a bot only if neither exists</td></tr>
+    </table>
+    <p>The anti-patterns are a bot that defeats CAPTCHA or multi-factor authentication, a bot that scrapes a vendor portal against its terms, automating money posting through the UI when a batch interface exists, and going live without reconciliation against the target's own report.</p>
+  </section>
+
+  <section id="s9-13" class="pagebreak">
+    <h2>9.13 The business case</h2>
+    <p>The business wants the teller restraint automated this quarter, and RPA proposals are often justified by labour saved while ignoring run cost. A lead does the full arithmetic and compares it with the API alternative. The figures below are invented to show the structure.</p>
+    <div class="formula">Illustrative process: restraints keyed manually
+  Volume = 300 per week = 15,600 per year ; manual time = 4 min each ; analyst cost = $45/hour (loaded)
+  Manual cost/year = 15,600 x (4/60) h x $45 = $46,800
+  Bot time = 2 min each, unattended; exceptions 8% handled manually at 6 min each (review + fix)
+  Bot-handled share = 92%  -&gt; manual effort after = 15,600 x [0.92 x 0 + 0.08 x 6 min] = 15,600 x 0.48 min = 7,488 min = 124.8 h = $5,616
+  Gross saving = 46,800 - 5,616 = $41,184 / year
+  RUN COSTS (illustrative): robot licence + VM $18,000 ; monitoring/support 0.2 FTE $15,000 ; maintenance after UI changes (2 breakages/yr x 40 h x $90) $7,200
+  Run cost = $40,200 / year
+  Net saving = 41,184 - 40,200 = $984 / year  -&gt; essentially break-even, BEFORE build cost (say $60,000) and risk cost.
+  Payback on build alone: never within 5 years at this volume.
+Compare an API/batch interface: build $80,000 once, run $6,000/year, saving about $46,800 - $6,000 - residual manual = ~ $38,000/year -&gt; payback about 2.1 years, and reliability and audit are better.</div>
+    <table>
+      <tr><th>Cost element often missed</th><th>Effect</th></tr>
+      <tr><td>Maintenance after target changes</td><td>Often the largest hidden cost</td></tr>
+      <tr><td>Exception handling effort</td><td>Bots rarely reach 100 per cent straight-through</td></tr>
+      <tr><td>Infrastructure and licences, including target session licences</td><td>Scales with parallel robots</td></tr>
+      <tr><td>Monitoring and support, including on-call</td><td>Operational headcount</td></tr>
+      <tr><td>Audit and control costs</td><td>Access reviews, evidence retention, change control</td></tr>
+      <tr><td>Risk cost</td><td>One mis-keyed restraint can exceed a year of savings</td></tr>
+      <tr><td>Decommission cost</td><td>Planned in, not forgotten</td></tr>
+    </table>
+    <div class="formula">Break-even volume ~ run cost / (manual cost per item - residual exception cost per item)
+ With run cost $40,200, per-item manual $3.00 (4 min at $45/h) and residual $0.36 per item: break-even = 40,200 / 2.64 = 15,227 items/year (about 293 per week)
+ Below that volume the bot loses money; above it the margin grows, if maintenance really is two breakages a year.</div>
+    <p>The lesson to state is that the full run cost, including maintenance and exceptions, is asked for and compared with the API alternative before anyone agrees that RPA saves money.</p>
+  </section>
+
+  <section id="s9-14" class="pagebreak">
+    <h2>9.14 Replacing the robot: API first, a time-boxed bridge and a decommission plan</h2>
+    <p>The business wants relief this quarter and the architect wants the API; a lead reconciles the two instead of choosing a side. The manual pain is real, the cost and risk of a permanent bot are real, and the answer is a bridge with an end date, written before the first line of automation.</p>
+    <table>
+      <tr><th>Objection from the business</th><th>Response</th></tr>
+      <tr><td>"The API will take a year; we need this now."</td><td>"Agreed, the pain is real. We can run an attended automation in six to eight weeks to remove the re-keying, with a written decommission date tied to the API delivery milestone."</td></tr>
+      <tr><td>"The bot is cheaper."</td><td>"Cheaper to start. Let's compare five-year cost including maintenance, exceptions, licences and audit. At our volume the API pays back in about two years."</td></tr>
+      <tr><td>"Why not just keep the bot?"</td><td>"Every vendor release can break it silently, and a bot acting as a user is an audit finding waiting to happen. We keep it only while the interface does not exist."</td></tr>
+      <tr><td>"The vendor says no API."</td><td>"Then we ask for a batch file load or a controlled database interface, and record the vendor constraint as a risk on the modernisation roadmap with an owner."</td></tr>
+      <tr><td>"It's only keying, how risky can it be?"</td><td>"A mis-keyed restraint is a customer harm and a regulatory event. The controls (dual control before the work item, read-back verification, caps, reconciliation) are the price of automating it."</td></tr>
+    </table>
+    <p>The <strong>bridge charter</strong> is the document that makes the bridge a bridge. It states purpose and scope (which process and screens, and what is explicitly out of scope), a named business owner and technical owner accountable for maintenance and retirement, the interface alternative being pursued with its owner, milestone and date, a time box with a review date and a hard end date (for example twelve months) and an explicit process to extend it, and the decommission trigger, the condition that ends the bot (the ESB restraint service passing UAT, or the end date arriving). The decommission plan lists the steps: cut over to the API for new items, drain the robot queue, disable the robot schedule, revoke robot credentials and vault entries, remove the VMs and licences, archive automation versions and evidence per retention, update the process documentation and close the access-review entries. It also carries the controls of 9.10, success and stop criteria (straight-through rate, failure rate, incidents, and a stop rule such as two money-affecting incidents in a quarter pausing the bot), cost tracking against the business case, and an entry in the automation registry with its owner and expiry, so that expiring entries trigger a review.</p>
+    <div class="flow">RPA BRIDGE LIFECYCLE
+  Month 0   : approve the charter (owner, end date, API milestone) ; attended pilot on 1 process
+  Month 2   : unattended for approved items with caps; reconciliation daily
+  Month 3-9 : the API/batch interface is built in parallel (funded and scheduled BEFORE the bot goes live)
+  Month 9   : API in UAT ; dual-run: API and bot results compared
+  Month 10  : cut over new items to the API; drain the bot queue
+  Month 11  : disable the robot, revoke credentials, release licences/VMs, archive evidence
+  Month 12  : close the bridge; lessons learned; entry removed from the automation inventory
+  If the API slips: a formal extension decision by the sponsor with updated risk and cost, not silent drift.</div>
+    <p>The principle is API-first without dogmatism: a bank has systems with no interface, and a person re-keying all day is also a risk, so the bridge is funded together with the API and nothing ends up as a permanent bot that nobody owns. In Riverbend's example, the teller restraint robot is retired when the teller platform's replacement offers a restraint service, and the case simply starts creating an integration call in place of a robot work item, because the case, not the robot, owned the process all along.</p>
+  </section>
+
+  <section id="s9-15" class="pagebreak">
+    <h2>9.15 Building and delivering an automation: the lifecycle</h2>
+    <p>A lead is expected to understand the delivery lifecycle well enough to estimate, review and govern an automation, and it is the same lifecycle whether the work is attended or unattended.</p>
+    <table>
+      <tr><th>#</th><th>Step</th><th>Activity</th><th>Output and control</th></tr>
+      <tr><td>1</td><td>Candidate selection and process discovery</td><td>Identify high-volume, rule-based, stable tasks; observe how staff actually do them (workshops, recordings, task-mining tools); capture variations and exceptions</td><td>A candidate list with volume, time per item, error rate, target system and stability, API availability (apply 9.3)</td></tr>
+      <tr><td>2</td><td>Process design document</td><td>Write the step-by-step flow with screen and field names, validations, business rules, an exception catalogue and expected results; decide what the case does against what the robot does</td><td>A signed-off design; exception handling rules; a data definition for the work item payload</td></tr>
+      <tr><td>3</td><td>Environment and access</td><td>Obtain a non-production instance of the target, test accounts, a robot VM, vault entries, network paths, licences</td><td>A test target with realistic but masked data; the robot identity requested through access governance</td></tr>
+      <tr><td>4</td><td>Interrogation and automation build</td><td>In the studio tool, connect through the right adapter, interrogate controls, define match rules, build logic with verification steps, structured results and logging</td><td>A versioned automation project in source control</td></tr>
+      <tr><td>5</td><td>Case-side integration</td><td>Build the case step that creates the work item, the callback or polling for results, exception routing, SLA, history entries and the stuck-item sweeper</td><td>Rules in a branch with PegaUnit tests using a simulated robot response</td></tr>
+      <tr><td>6</td><td>Testing</td><td>Unit test on the test target; end-to-end tests with the case; negative tests (business exceptions, wrong screen, timeouts including after submit, login failure, duplicate item); idempotency and volume tests; security tests</td><td>Test evidence; defect log; a regression pack for later UI changes</td></tr>
+      <tr><td>7</td><td>Control review</td><td>Audit and security review of identity, least privilege, segregation of duties, evidence capture, caps and kill switch; operational readiness of the runbook and monitoring</td><td>An approved control checklist (9.10)</td></tr>
+      <tr><td>8</td><td>Pilot and parallel run</td><td>Run attended or on a small volume with staff verifying every result; compare bot output with manual output for a defined period</td><td>Accuracy metrics; sign-off to scale</td></tr>
+      <tr><td>9</td><td>Deployment</td><td>Deploy the automation version through the manager and the case rules through the pipeline (Chapter 10); enable the queue with caps</td><td>Release evidence</td></tr>
+      <tr><td>10</td><td>Hypercare and operations</td><td>Intensive monitoring; tune retries and waits; handover; agree change notification with the target owner</td><td>Operational acceptance</td></tr>
+      <tr><td>11</td><td>Maintenance and review</td><td>Handle UI-change breakages; quarterly access review; review metrics and the business case; check the decommission trigger</td><td>A review record</td></tr>
+      <tr><td>12</td><td>Retirement</td><td>Execute the decommission plan (9.14)</td><td>A closure record; the automation inventory updated</td></tr>
+    </table>
+    <table>
+      <tr><th>Item</th><th>Rough effort driver (illustrative)</th></tr>
+      <tr><td>Simple read-only retrieval from a stable web portal</td><td>Small: days to build, with a maintenance risk if the portal changes</td></tr>
+      <tr><td>Keying a single money-affecting transaction into a terminal screen</td><td>Medium to large: verification, idempotency, controls and reconciliation dominate the effort, not the keystrokes</td></tr>
+      <tr><td>A process with many exception paths</td><td>Large: the exception catalogue is the real scope</td></tr>
+      <tr><td>Each additional target application</td><td>Adds adapter work, environments, accounts and a new change-coordination relationship</td></tr>
+      <tr><td>Controls and evidence</td><td>Often 30 to 50 per cent of total effort in a regulated bank</td></tr>
+    </table>
+    <p>Effort estimates therefore follow the risk and not the keystrokes: verification, idempotency, controls and the exception catalogue are the scope.</p>
+  </section>
+
+  <section id="s9-16" class="pagebreak">
+    <h2>9.16 Governance and a Centre of Excellence</h2>
+    <p>Organisations that adopt RPA without governance accumulate unmanaged bots, shadow automations built on user desktops with personal credentials, and audit findings. A small governance function prevents that. A Centre of Excellence provides a single intake for automation ideas with API-first screening at the door, scored by value, risk, stability and API availability; standards and reusable components (naming, logging, exceptions, credentials, evidence, login handling, screenshots, structured results); a mandatory control framework aligned with audit, security and, where AI or OCR is involved, model risk; an inventory (an automation register) recording owner, purpose, target systems, identity, risk tier, volumes, cost, expiry and decommission trigger; shared operations, monitoring, incident process, capacity and licence management; change management with target system owners through a release calendar and notice agreements; skills and training; benefits tracking of measured savings against the business case including run cost; and retirement reviews that retire bots when APIs arrive or processes change.</p>
+    <table>
+      <tr><th>Tier</th><th>Characteristics</th><th>Required controls</th></tr>
+      <tr><td>Tier 1 (high)</td><td>Money-affecting, customer-affecting or legal actions; writes to core or payment systems</td><td>All controls in 9.10; dual control before execution; volume and amount caps; kill switch; independent review; daily reconciliation; quarterly access review; a board-level inventory entry</td></tr>
+      <tr><td>Tier 2 (medium)</td><td>Non-financial updates to internal systems; data movement with personal data</td><td>A unique identity and vault; least privilege; evidence; change control; periodic review</td></tr>
+      <tr><td>Tier 3 (low)</td><td>Read-only, non-sensitive retrieval; internal convenience</td><td>Basic identity and vault; logging; an owner; an expiry date</td></tr>
+    </table>
+    <p>A CoE reports a short set of metrics: the straight-through rate (items completed without human intervention), the exception rate by class (business against system) and its trend, mean time to repair after a break, UI-change breakages per quarter per bot (a fragility measure that informs retire-or-replace decisions), run cost per item including maintenance and support, the number of bots with an API alternative in progress, and control findings and aged items. The anti-patterns are bots built by individual teams on personal desktops with personal credentials, no register of bots, no owner after the project, savings tracked without costs, and a CoE that cannot say no to RPA when an API exists. The restraint robot of this chapter is a Tier 1 automation.</p>
+  </section>
+
+  <section id="s9-17" class="pagebreak">
+    <h2>9.17 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. When would you use RPA instead of an API?</span>
+    <p>"Only when the target has no usable interface, the owner cannot provide one within the business need window, and the process is high-volume, rule-based and stable enough to justify the run cost. Even then I treat the bot as a bridge with a decommission date. If a REST endpoint, a SQL view or even a nightly file exists, I use that, because it is reliable, versioned, idempotent and auditable."</p></div>
+
+    <div class="qa"><span class="q">Q2. How does a case hand work to a robot and get the result back?</span>
+    <p>"The case owns state and the bot is a worker. After validation and approval, the case creates a work item with a minimal payload and a deterministic ID in a robot queue, waits with an SLA, and the robot performs one bounded task and returns a structured result: success with a reference, business exception, or system exception. The result comes back by callback or polling, and the case records the evidence, routes exceptions to humans and has a sweeper for items with no result."</p></div>
+
+    <div class="qa"><span class="q">Q3. A robot times out after submitting a transaction. What do you do?</span>
+    <p>"It is an unknown outcome, the same problem as a timed-out API write: retrying can double-post and marking it failed can lose a real transaction. I look up the state first, by searching the target for the unique reference the robot keyed, which is the idempotency pre-check; if that is not possible I route to human verification instead of re-keying, and reconcile against the target's end-of-day report. The robot's error signals are weaker than an API's, so read-back verification and the pre-check matter more."</p></div>
+
+    <div class="qa"><span class="q">Q4. Why do bots break, and how do you defend against it?</span>
+    <p>"A screen has no versioned contract, so any change in IDs, layout, dialogs, terminal coordinates or login can break the match rules, and the worst case is silent mis-keying. I use stable match properties, verify the screen state before typing and the confirmation after, wait on conditions, handle known dialogs, run a canary, subscribe to the target's release calendar, keep a regression pack, and stop the queue on an unexpected state."</p></div>
+
+    <div class="qa"><span class="q">Q5. How do you control a robot so an auditor is satisfied?</span>
+    <p>"It is a privileged non-human user: a unique named identity from a vault, least-privilege role without approval rights, no developer access to production credentials, the approval done in the case before the work item exists, volume and amount caps with a kill switch, and complete evidence tied to the case. The audit answer is the case history linking the approval, the work item and the screenshot."</p></div>
+
+    <div class="qa"><span class="q">Q6. Attended or unattended?</span>
+    <p>"Attended keeps a human actor on the transaction, so attribution and maker-checker are simpler, and it suits agent-desktop work. Unattended suits back-office batch but needs the strongest controls on money-affecting screens. For a risky screen I start attended, then move to unattended with caps, pre-checks and read-back."</p></div>
+
+    <div class="qa"><span class="q">Q7. Is RPA cheaper than an API?</span>
+    <p>"Cheaper to start, often not over five years. I include licences, VMs, session licences, monitoring, exception handling, maintenance after UI changes and audit costs, and compare with the API's build and run cost. In an illustrative example at 300 items a week the bot is break-even before build cost, while the API pays back in about two years."</p></div>
+
+    <div class="qa"><span class="q">Q8. How do you handle document inputs to a robot?</span>
+    <p>"OCR or document extraction with a confidence score on every field, validation rules, and a mandatory human verification of key fields, such as order number, amount and due date, for legal orders until measured accuracy proves otherwise. Low-confidence documents go to manual keying, the human confirmation is recorded, and the extraction is governed as a model."</p></div>
+
+    <div class="qa"><span class="q">Q9. How do you retire a bot?</span>
+    <p>"Plan it before building: a charter with a named owner, end date, the API milestone and a stop rule. At cutover, send new items to the API, drain the queue, disable the schedule, revoke credentials and vault entries, release VMs and licences, archive evidence per retention and close the access-review entries. Because the case owned the process, the change is the case calling an integration instead of creating a work item."</p></div>
+
+    <div class="qa"><span class="q">Q10. What would you do at 2 a.m. when a robot queue stalls?</span>
+    <p>"Assess scope (one robot or all, which error, since when), contain first by stopping the queue if it is systemic and money-adjacent, switch to the manual fallback, capture evidence, diagnose by symptom (login, screen not found, timeout, one VM), fix and verify with a canary, resume at limited concurrency, reconcile manual against queued with the idempotency pre-check, then run an RCA with a prevention action."</p></div>
+  </section>
+
+  <section id="s9-recap">
+    <h2>9.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>The one step with no API is no longer a gap. A queued work item for <code>AC-10882</code> goes to a robot, which verifies the screen, checks for an existing restraint, keys it, reads back the confirmation and returns a structured result the case records with evidence; a changed screen stops the robot instead of mis-keying; an ambiguous timeout is treated as unknown and verified; and there is a written plan for retiring the robot when an interface exists.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>A framework for choosing between an interface and a robot; attended and unattended modes; Robot Studio, Runtime and Manager with work queues and pools; a case that owns state with a bot as worker; adapters and match rules; classification of business and system exceptions, with an unknown outcome handled by pre-check, verification and reconciliation; a controlled identity with least privilege and dual control in the case; and a bridge charter with a decommission plan.</p>
+    <h3>What it still cannot do</h3>
+    <p>The application now takes in files, events, emails and screens, and it is time to ask who is allowed to do what with all of it, how it is deployed and how it is watched. Access control, identity, deployment pipelines, monitoring and incident handling are Chapter 10.</p>
+  </section>
+
+  <section id="s9-ref" class="pagebreak">
+    <h2>9.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. docs.pega.com pages are JavaScript-rendered and not directly retrievable; their content was obtained through search-engine indexing.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>Pega docs: Integrating unattended robots with Pega Platform <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/robotic-automation-221/page/robotic-automation/attended-unattended/integrate-unattended-robot-pega-platform.html</td><td>Robotic automation 22.1 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Assigning work to a robot through Case Management with the Assign to robot queue smart shape or data pages; robots subscribing to work groups tied to work queues</td></tr>
+      <tr><td>Pega docs: Attended and unattended automations <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/robotic-automation-221/page/robotic-automation/attended-unattended/attended-unattended-automations.html</td><td>Robotic automation 22.1 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>The distinction between attended automations on a user's desktop and unattended automations processing queued work; both built in Robot Studio and run by Robot Runtime</td></tr>
+      <tr><td>Pega docs: Using Pega Robot Manager <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/robot-manager/page/robot-manager/content/using-robot-manager.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Robot Manager's role: deploying automation packages, monitoring robot health and throughput, managing robot lifecycle and scheduling</td></tr>
+    </table>
+    <p class="small muted">The decision framework, business-case arithmetic, bridge charter and control design are engineering and governance reasoning, not sourced to Pega documentation.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch08_pega_ai_genai_decisioning.html">&larr; Previous: Chapter 08</a><a href="ch10_security_devops_monitoring.html">Next: Chapter 10 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

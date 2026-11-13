@@ -1,0 +1,893 @@
+{
+  "as_of": "2026-09-07",
+  "opportunities": [
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 3,
+      "experience_max": null,
+      "skills": [
+        "Pega PRPC",
+        "CSA",
+        "Kafka",
+        "REST",
+        "SOAP",
+        "JMS",
+        "Pega AI",
+        "Java",
+        "SQL",
+        "Production support"
+      ],
+      "fit_reasons": [
+        "Four years of Pega, integrations and production operations align with the core work.",
+        "Kafka, REST and case management are explicit requirements."
+      ],
+      "gaps": [
+        "Pega AI/Knowledge Buddy/Agentic AI, banking frameworks and Java/web depth need confirmation.",
+        "24/7 on-call rotation; pay undisclosed.",
+        "ATS content was available through its search index only; verify Apply before tailoring."
+      ],
+      "salary": null,
+      "id": "firstcitizens-24759",
+      "company": "First Citizens India (FC Global Services India LLP)",
+      "title": "Software Engineer I - PEGA Developer",
+      "requisition_id": "24759",
+      "location": "Bengaluru",
+      "employer_type": "gcc",
+      "fit": "strong",
+      "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+      "summary": "Bengaluru Deposits and Shared Services engineering. The three-year overall and Pega minimum makes this a closer experience match than requisition 24726.",
+      "evidence": [
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "title": "First Citizens India (FC Global Services India LLP) — Software Engineer I - PEGA Developer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer ATS index lists hybrid Bangalore, three years of application development and three Pega years, CSA, Kafka/REST/SOAP, Pega AI and on-call support. Direct ATS rendering returned no readable job content.",
+          "status": "search_index_only"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 4,
+      "experience_max": null,
+      "skills": [
+        "Kafka",
+        "Confluent",
+        "Kafka Connect",
+        "Production troubleshooting",
+        "Linux",
+        "Java/JVM",
+        "Incident response"
+      ],
+      "fit_reasons": [
+        "Four-year threshold and Kafka/production incident work overlap the candidate's experience."
+      ],
+      "gaps": [
+        "Linux/networking, distributed-system internals and operational Java/JVM depth are not established by Pega experience.",
+        "Confirm shifts, work mode and salary."
+      ],
+      "salary": null,
+      "id": "ibm-confluent-4452809825",
+      "company": "IBM",
+      "title": "Technical Support Engineer - Confluent",
+      "requisition_id": null,
+      "location": "Bengaluru",
+      "employer_type": "product",
+      "fit": "possible",
+      "url": "https://in.linkedin.com/jobs/view/technical-support-engineer-confluent-at-ibm-4452809825",
+      "summary": "Adjacent production engineering route using Kafka and enterprise troubleshooting; deeper infrastructure skills are required.",
+      "evidence": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/technical-support-engineer-confluent-at-ibm-4452809825",
+          "title": "IBM — Technical Support Engineer - Confluent",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "IBM-attributed LinkedIn job page displays Apply, Bengaluru and 4+ years of production/customer-facing troubleshooting. Responsibilities cover Kafka/Confluent, logs, reproduction and support; Linux and programming skills are required.",
+          "status": "verified"
+        }
+      ],
+      "track": "adjacent"
+    },
+    {
+      "country": "India",
+      "work_mode": "remote",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "Linux",
+        "Ruby",
+        "Bash",
+        "Git",
+        "CI/CD",
+        "Technical support",
+        "Root cause analysis"
+      ],
+      "fit_reasons": [
+        "Production triage, customer communication and root cause analysis transfer to the support work."
+      ],
+      "gaps": [
+        "Strong Linux, Ruby/Bash, Rails/MVC and Git/CI/CD skills must be demonstrated; Pega alone does not establish qualification.",
+        "Application asks whether the candidate lives in Bengaluru; this is not unrestricted worldwide remote.",
+        "No numerical salary or experience range was disclosed."
+      ],
+      "salary": null,
+      "id": "gitlab-8687026002",
+      "company": "GitLab",
+      "title": "Intermediate Support Engineer",
+      "requisition_id": null,
+      "location": "Bengaluru (remote; city residence required)",
+      "employer_type": "product",
+      "fit": "possible",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8687026002",
+      "summary": "Employer-confirmed remote role tied to Bengaluru residence. A possible transition from enterprise support, with substantial Linux and code troubleshooting expectations.",
+      "evidence": [
+        {
+          "url": "https://job-boards.greenhouse.io/gitlab/jobs/8687026002",
+          "title": "GitLab — Intermediate Support Engineer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "GitLab's Greenhouse page shows Apply and states its roles are remote; this job is Bangalore, India and the application specifically asks about Bengaluru residence. Requirements include Linux troubleshooting, scripting and Git/CI/CD.",
+          "status": "verified"
+        }
+      ],
+      "track": "adjacent",
+      "remote_eligibility": "india_remote",
+      "remote_restrictions": "Bengaluru (remote; city residence required)"
+    },
+    {
+      "country": "India",
+      "work_mode": "remote",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-07-30",
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "APIs",
+        "SDKs",
+        "Technical support",
+        "SQL",
+        "Webhooks",
+        "cURL",
+        "Customer troubleshooting"
+      ],
+      "fit_reasons": [
+        "Production issue diagnosis, REST integration and SQL are transferable.",
+        "Karnataka is explicitly included in permitted remote locations."
+      ],
+      "gaps": [
+        "Email infrastructure/product depth and complete eligibility requirements need confirmation; extracted content did not expose a numerical experience minimum.",
+        "EMEA shifts are noon–9pm or 1–10pm IST; five-day roster may include weekends.",
+        "Occasional travel/in-person meetings; pay undisclosed. Direct job page rendered configuration only, so live status remains indexed."
+      ],
+      "salary": null,
+      "id": "twilio-1099554941788",
+      "company": "Twilio",
+      "title": "Technical Support Engineer 2 — Email Infra, EMEA",
+      "requisition_id": null,
+      "location": "Remote — India (Karnataka, Tamil Nadu, Telangana, Maharashtra, Delhi)",
+      "employer_type": "product",
+      "fit": "possible",
+      "url": "https://jobs.twilio.com/careers/job/1099554941788",
+      "summary": "Explicit India remote support opportunity, including Karnataka. Technical support and API troubleshooting provide an adjacent path.",
+      "evidence": [
+        {
+          "url": "https://jobs.twilio.com/careers/job/1099554941788",
+          "title": "Twilio — Technical Support Engineer 2 — Email Infra, EMEA",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-07-30",
+          "excerpt": "Official indexed posting dated July 30, 2026 identifies Email Infra EMEA, remote in five named Indian states/territories, APIs/SDKs, SQL/webhooks and shift/weekend arrangements.",
+          "status": "search_index_only"
+        }
+      ],
+      "track": "adjacent",
+      "remote_eligibility": "india_remote",
+      "remote_restrictions": "Remote — India (Karnataka, Tamil Nadu, Telangana, Maharashtra, Delhi)"
+    },
+    {
+      "country": "India",
+      "work_mode": "remote",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-07-08",
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "REST APIs",
+        "Cloud troubleshooting",
+        "Billing support",
+        "Web technology",
+        "Customer communication",
+        "Zuora"
+      ],
+      "fit_reasons": [
+        "REST troubleshooting, incident resolution and stakeholder communication overlap.",
+        "Karnataka is expressly eligible for remote work."
+      ],
+      "gaps": [
+        "Telecom/web-stack and Zuora or another financial management system experience are requested and not established.",
+        "No numeric experience threshold or pay extracted; confirm shift and complete requirements.",
+        "Direct page rendered configuration only; recheck current application availability."
+      ],
+      "salary": null,
+      "id": "twilio-1099553734601",
+      "company": "Twilio",
+      "title": "Technical Support Engineer 2 — Accounts & Billing",
+      "requisition_id": null,
+      "location": "Remote — India (Karnataka, Tamil Nadu, Telangana, Maharashtra, Delhi)",
+      "employer_type": "product",
+      "fit": "possible",
+      "url": "https://jobs.twilio.com/careers/job/1099553734601",
+      "summary": "Explicit India remote opportunity for API and billing support. Relevant troubleshooting strengths, with a financial-product knowledge gap.",
+      "evidence": [
+        {
+          "url": "https://jobs.twilio.com/careers/job/1099553734601",
+          "title": "Twilio — Technical Support Engineer 2 — Accounts & Billing",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-07-08",
+          "excerpt": "Official indexed posting dated July 8, 2026 describes Accounts & Billing support, REST/cloud issues, telecom and financial management software, and remote work in five named Indian states/territories.",
+          "status": "search_index_only"
+        }
+      ],
+      "track": "adjacent",
+      "remote_eligibility": "india_remote",
+      "remote_restrictions": "Remote — India (Karnataka, Tamil Nadu, Telangana, Maharashtra, Delhi)"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-09-04",
+      "closing_at": null,
+      "experience_min": 4,
+      "experience_max": null,
+      "skills": [
+        "Boomi AtomSphere",
+        "REST",
+        "SOAP",
+        "Kafka",
+        "JMS",
+        "SQL",
+        "API security",
+        "Integration operations"
+      ],
+      "fit_reasons": [
+        "REST/SOAP, Kafka/JMS, SQL, retries and production troubleshooting overlap the existing skill base."
+      ],
+      "gaps": [
+        "Four-plus years in integration is preferred with significant Boomi experience; Pega experience is not equivalent.",
+        "Boomi implementation, EDI/X12 and enterprise app integration depth must be demonstrated.",
+        "Salary undisclosed."
+      ],
+      "salary": null,
+      "id": "yara-25733",
+      "company": "Yara",
+      "title": "Software Engineer (Boomi)",
+      "requisition_id": "25733",
+      "location": "Bengaluru",
+      "employer_type": "gcc",
+      "fit": "stretch",
+      "url": "https://jobs.yara.com/job/Bengaluru-Software-Engineer-(Boomi)-KA/1433701733/",
+      "summary": "Recent Bengaluru integration engineering opening. The integration and operations overlap is useful, but significant hands-on Boomi is a material platform gap.",
+      "evidence": [
+        {
+          "url": "https://jobs.yara.com/job/Bengaluru-Software-Engineer-(Boomi)-KA/1433701733/",
+          "title": "Yara — Software Engineer (Boomi)",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-09-04",
+          "excerpt": "Employer page dated September 4, 2026 lists Bengaluru, requisition 25733, permanent work and office/home flexibility. It requests integration experience with substantial Boomi, APIs, messaging, SQL and operational recovery.",
+          "status": "verified"
+        }
+      ],
+      "track": "adjacent"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "Pega",
+        "UiPath",
+        "RPA infrastructure",
+        "Cloud",
+        "CI/CD",
+        "Deployment",
+        "Production support"
+      ],
+      "fit_reasons": [
+        "Pega environment support, deployments and incident diagnosis align with part of the responsibilities."
+      ],
+      "gaps": [
+        "Hands-on UiPath and platform infrastructure work are required and not established.",
+        "Hyderabad hybrid: three days office, two days home; not Bengaluru or fully remote.",
+        "No numeric experience range or salary extracted. Official ATS was readable through its index only."
+      ],
+      "salary": null,
+      "id": "evernorth-26001700",
+      "company": "Evernorth (The Cigna Group)",
+      "title": "Infrastructure Engineering Analyst — HIH",
+      "requisition_id": "26001700",
+      "location": "Hyderabad",
+      "employer_type": "gcc",
+      "fit": "stretch",
+      "url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/HIH---Infrastructure-Engineering-Analyst---HIH---Evernorth_26001700",
+      "summary": "Workflow/RPA platform operations opportunity in Hyderabad. Pega is relevant, with additional UiPath and infrastructure requirements.",
+      "evidence": [
+        {
+          "url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/HIH---Infrastructure-Engineering-Analyst---HIH---Evernorth_26001700",
+          "title": "Evernorth (The Cigna Group) — Infrastructure Engineering Analyst — HIH",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer ATS index describes the intelligent automation platform team, hands-on Pega and UiPath, deployment/environment support and a Hyderabad three-office/two-home schedule.",
+          "status": "search_index_only"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": "2026-09-11",
+      "experience_min": 5,
+      "experience_max": null,
+      "skills": [
+        "Workflow automation",
+        "Pega",
+        "Case management",
+        "Requirements analysis",
+        "REST",
+        "Production support",
+        "Agile"
+      ],
+      "fit_reasons": [
+        "Employer explicitly welcomes engineers moving into analysis; workflow and production experience are relevant.",
+        "Bengaluru intelligent automation role includes APIs and Pega among platform examples."
+      ],
+      "gaps": [
+        "Five-plus relevant years required: candidate has approximately four.",
+        "Requirements workshops, process mapping and demand prioritisation need evidence.",
+        "Pega is one of several relevant platforms, not a dedicated Pega developer vacancy; salary undisclosed."
+      ],
+      "salary": null,
+      "id": "anz-123198",
+      "company": "ANZ",
+      "title": "Analyst (Systems/Tech Analyst)",
+      "requisition_id": "123198",
+      "location": "Bengaluru",
+      "employer_type": "gcc",
+      "fit": "possible",
+      "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+      "summary": "Business-facing systems analysis in document automation; a potential move beyond development. Deadline is September 11, 2026, 11:59pm Melbourne time.",
+      "evidence": [
+        {
+          "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+          "title": "ANZ — Analyst (Systems/Tech Analyst)",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "ANZ's live careers page shows Apply, requisition 123198, Bengaluru hybrid, 5+ years and document/workflow systems analysis. Pega and REST appear in relevant experience; closing date is September 11, 2026.",
+          "status": "verified"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "Pega",
+        "CSSA",
+        "Smart Disputes",
+        "REST",
+        "SOAP",
+        "Queue Processors",
+        "SQL",
+        "PDC",
+        "Production troubleshooting"
+      ],
+      "fit_reasons": [
+        "CSSA, Pega integrations, background processing and production troubleshooting are relevant."
+      ],
+      "gaps": [
+        "Mandatory Smart Disputes Issuers/card chargeback knowledge is not established.",
+        "Page labels work hybrid remote, not fully remote.",
+        "No numeric experience threshold or pay; unusual administrative category on the page merits checking requisition availability."
+      ],
+      "salary": null,
+      "id": "ness-ozfjafwh",
+      "company": "Ness Digital Engineering",
+      "title": "Pega Developer — Smart Disputes",
+      "requisition_id": null,
+      "location": "Bengaluru",
+      "employer_type": "services",
+      "fit": "stretch",
+      "url": "https://jobs.jobvite.com/ness/job/oZfJAfwh",
+      "summary": "Pega engineering role with strong integration overlap, but Smart Disputes Issuers experience is mandatory.",
+      "evidence": [
+        {
+          "url": "https://jobs.jobvite.com/ness/job/oZfJAfwh",
+          "title": "Ness Digital Engineering — Pega Developer — Smart Disputes",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Ness's Jobvite page provides the Pega Smart Disputes job description and Apply. It specifies Bangalore hybrid remote, mandatory CSSA and Smart Disputes Issuers, plus APIs, SQL and performance support.",
+          "status": "verified"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 3.5,
+      "experience_max": null,
+      "skills": [
+        "Pega Infinity",
+        "CSA/CSSA",
+        "Theme Cosmos",
+        "UI Kit",
+        "Cosmos React",
+        "Unit testing",
+        "Troubleshooting"
+      ],
+      "fit_reasons": [
+        "Pega experience and CSSA meet the stated baseline; development and troubleshooting align."
+      ],
+      "gaps": [
+        "Pega Infinity 8.7+ and expertise across Theme Cosmos, UI Kit and Cosmos React need confirmation.",
+        "Employer-attributed LinkedIn listing remains accessible with Apply, but its age is unclear; verify requisition and work mode.",
+        "Salary undisclosed."
+      ],
+      "salary": null,
+      "id": "kpmg-4367631013",
+      "company": "KPMG India",
+      "title": "Senior - Pega",
+      "requisition_id": null,
+      "location": "Bengaluru",
+      "employer_type": "services",
+      "fit": "strong",
+      "url": "https://in.linkedin.com/jobs/view/senior-pega-at-kpmg-india-4367631013",
+      "summary": "Bengaluru Pega development opening with a 3.5-year threshold and CSA/CSSA requirement.",
+      "evidence": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/senior-pega-at-kpmg-india-4367631013",
+          "title": "KPMG India — Senior - Pega",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "The KPMG-attributed job page displays Apply and requests minimum 3.5 years of Pega, Infinity 8.7+, modern Pega UI frameworks and CSA or CSSA. This exact listing's requirements were used, not another similarly titled requisition.",
+          "status": "verified"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 3,
+      "experience_max": null,
+      "skills": [
+        "Pega PRPC",
+        "CSA/CSSA",
+        "Production support",
+        "PDC",
+        "Case management",
+        "Rule resolution",
+        "Incident management"
+      ],
+      "fit_reasons": [
+        "Three-plus years overall and two-plus Pega support align with four years of Pega/operations work.",
+        "Case/integration diagnosis, deployment validation and root cause analysis are relevant."
+      ],
+      "gaps": [
+        "Ghansoli/Navi Mumbai location, outside the Bengaluru preference; no fully remote claim.",
+        "Requests immediate to 30-day joining and willingness to relocate; confirm compatibility.",
+        "Pay and work mode undisclosed; public LinkedIn listing age is unclear."
+      ],
+      "salary": null,
+      "id": "mizuho-4401853049",
+      "company": "Mizuho Global Services",
+      "title": "Pega Support Engineer",
+      "requisition_id": null,
+      "location": "Ghansoli, Navi Mumbai",
+      "employer_type": "gcc",
+      "fit": "possible",
+      "url": "https://in.linkedin.com/jobs/view/pega-support-engineer-at-mizuho-4401853049",
+      "summary": "Close technical match for Pega application support, with relocation and joining-time constraints.",
+      "evidence": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/pega-support-engineer-at-mizuho-4401853049",
+          "title": "Mizuho Global Services — Pega Support Engineer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Mizuho-attributed posting shows Apply, Ghansoli, 3+ years overall, 2+ Pega support and CSA. It describes incident/performance work and requests immediate-to-30-day availability.",
+          "status": "verified"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 3,
+      "experience_max": 5,
+      "skills": [
+        "Pega",
+        "CSSA",
+        "Constellation",
+        "ABAC/RBAC",
+        "Queue Processors",
+        "Job Schedulers",
+        "GenAI",
+        "REST"
+      ],
+      "fit_reasons": [
+        "CSSA, Pega development and integrations match the stated baseline.",
+        "Smart Disputes/framework experience is optional in this description despite the listing title."
+      ],
+      "gaps": [
+        "Constellation UI/debugging, advanced reports/data processing and Blueprint/GenAI experience need confirmation.",
+        "Hybrid three office days; project/client requirements can affect location.",
+        "Salary undisclosed."
+      ],
+      "salary": null,
+      "id": "credera-4418967021",
+      "company": "Credera",
+      "title": "Pega CSSA Developer (Smart Dispute Framework)",
+      "requisition_id": null,
+      "location": "Bengaluru / Hyderabad / Chennai / Kolkata",
+      "employer_type": "services",
+      "fit": "possible",
+      "url": "https://in.linkedin.com/jobs/view/pega-cssa-developer-smart-dispute-framework-at-credera-4418967021",
+      "summary": "Senior Consultant/SSA opening with a 3–5-year Pega band. Bengaluru appears in the job description despite the Hyderabad page header.",
+      "evidence": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/pega-cssa-developer-smart-dispute-framework-at-credera-4418967021",
+          "title": "Credera — Pega CSSA Developer (Smart Dispute Framework)",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Credera-attributed page shows Apply and lists Bengaluru among four locations, hybrid three days, mandatory CSSA and 3–5 Pega years. Constellation and GenAI are core expectations; framework experience appears under optional qualifications.",
+          "status": "verified"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "remote",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-09-02",
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "Release management",
+        "QA governance",
+        "Murex MX.3",
+        "Workflow",
+        "Pega",
+        "CI/CD"
+      ],
+      "fit_reasons": [
+        "Release coordination and production operations transfer to some responsibilities; Pega workflow is listed as useful."
+      ],
+      "gaps": [
+        "Murex MX.3 exposure is mandatory, and banking QA/program coordination are central; current Pega experience does not establish eligibility.",
+        "No numeric experience threshold or salary disclosed."
+      ],
+      "salary": null,
+      "id": "luxoft-vr124022",
+      "company": "Luxoft",
+      "title": "IT PM (QA/Release)",
+      "requisition_id": "VR-124022",
+      "location": "Remote — India",
+      "employer_type": "services",
+      "fit": "stretch",
+      "url": "https://career.luxoft.com/jobs/it-pm-qarelease-26072",
+      "summary": "Explicit India remote role in QA/release coordination; a substantial career shift with mandatory Murex exposure.",
+      "evidence": [
+        {
+          "url": "https://career.luxoft.com/jobs/it-pm-qarelease-26072",
+          "title": "Luxoft — IT PM (QA/Release)",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-09-02",
+          "excerpt": "Luxoft's employer page dated September 2, 2026 shows Remote India, VR-124022 and application access. Work focuses on QA/release governance and Murex; Pega workflow and CI/CD are additional useful skills.",
+          "status": "verified"
+        }
+      ],
+      "track": "pega",
+      "remote_eligibility": "india_remote",
+      "remote_restrictions": "Remote — India"
+    },
+    {
+      "country": "India",
+      "work_mode": "onsite",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 5,
+      "experience_max": null,
+      "skills": [
+        "Pega 23+",
+        "CSSA",
+        "Kafka",
+        "REST APIs",
+        "Pega UI",
+        "Integrations"
+      ],
+      "fit_reasons": [
+        "CSSA, Kafka and API integration overlap the candidate's strengths."
+      ],
+      "gaps": [
+        "One-year experience gap and Pega 23+ depth need confirmation.",
+        "In-person role. Salary and availability were observed in Indeed's index; direct page could not be read."
+      ],
+      "salary": {
+        "amount_min": 2000000,
+        "amount_max": 2500000,
+        "currency": "INR",
+        "period": "annual",
+        "basis": "total_ctc",
+        "source_url": "https://in.indeed.com/viewjob?jk=1fa3766c673409e6",
+        "notes": "Advertisement lists ₹20–25 lakh annual pay and explicitly caps CTC at ₹25 lakh. Fixed/variable breakdown is unavailable; no offer is guaranteed."
+      },
+      "id": "clockedge-1fa3766c673409e6",
+      "company": "Clock Edge Technologies Pvt Ltd",
+      "title": "Pega Developer",
+      "requisition_id": null,
+      "location": "Bengaluru / Hyderabad",
+      "employer_type": "services",
+      "fit": "possible",
+      "url": "https://in.indeed.com/viewjob?jk=1fa3766c673409e6",
+      "summary": "Advertised ₹20–25L annual range with an explicit ₹25L maximum CTC. Relevant Pega/Kafka stack, but five-plus years are requested.",
+      "evidence": [
+        {
+          "url": "https://in.indeed.com/viewjob?jk=1fa3766c673409e6",
+          "title": "Clock Edge Technologies Pvt Ltd — Pega Developer",
+          "source_type": "recruiter",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Clock Edge's Indeed ad lists Bangalore/Hyderabad, 5+ Pega years, CSSA, Pega 23+, Kafka/API work, ₹20–25 lakh yearly pay and maximum CTC ₹25 lakh.",
+          "status": "search_index_only"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 5,
+      "experience_max": 10,
+      "skills": [
+        "Pega",
+        "REST",
+        "SOAP",
+        "BPM",
+        "CRM",
+        "ITSM",
+        "CI/CD",
+        "Cloud"
+      ],
+      "fit_reasons": [
+        "Pega, APIs and workflow integration overlap the current experience."
+      ],
+      "gaps": [
+        "Four years is below the five-year requirement; the upper range may correspond to greater experience.",
+        "Hybrid with two office days. Confirm actual budget and fixed/variable components."
+      ],
+      "salary": {
+        "amount_min": 1500000,
+        "amount_max": 3000000,
+        "currency": "INR",
+        "period": "annual",
+        "basis": "unknown",
+        "source_url": "https://cutshort.io/job/PEGA-Developer-Bengaluru-Bangalore-Fx31labs-Uqktc8Jh",
+        "notes": "Cutshort advertises ₹15–30 lakh yearly. It does not establish fixed pay or total CTC; only part of the range exceeds ₹20 lakh."
+      },
+      "id": "fx31-uqktc8jh",
+      "company": "FX31LABS",
+      "title": "PEGA Developer",
+      "requisition_id": null,
+      "location": "Bengaluru",
+      "employer_type": "services",
+      "fit": "possible",
+      "url": "https://cutshort.io/job/PEGA-Developer-Bengaluru-Bangalore-Fx31labs-Uqktc8Jh",
+      "summary": "Advertised ₹15–30L range overlaps the target; it is not a verified ₹20L minimum. Five-plus years and broader Pega delivery are requested.",
+      "evidence": [
+        {
+          "url": "https://cutshort.io/job/PEGA-Developer-Bengaluru-Bangalore-Fx31labs-Uqktc8Jh",
+          "title": "FX31LABS — PEGA Developer",
+          "source_type": "recruiter",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Cutshort's FX31LABS role page displays Apply, Bengaluru hybrid, 5–10 years and ₹15–30 lakh annual pay. The JD covers Pega, APIs, enterprise workflows and deployment; compensation components are not specified.",
+          "status": "verified"
+        }
+      ],
+      "track": "pega"
+    },
+    {
+      "country": "India",
+      "work_mode": "remote",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 5,
+      "experience_max": null,
+      "skills": [
+        "Pega",
+        "Case management",
+        "REST",
+        "SOAP",
+        "ABAC/RBAC",
+        "CDH",
+        "CLM/KYC"
+      ],
+      "fit_reasons": [
+        "Core Pega development, workflows and API integration are relevant."
+      ],
+      "gaps": [
+        "Five-plus Pega years requested; four years falls short.",
+        "CDH/CLM-KYC experience is not established.",
+        "Remote/India comes from a recruitment board, not employer confirmation; verify India payroll and whether Bengaluru residence is accepted.",
+        "Pay undisclosed; direct page unavailable to research tool."
+      ],
+      "salary": null,
+      "id": "engineering-513603",
+      "company": "Engineering Industries eXcellence",
+      "title": "Pega Developer",
+      "requisition_id": null,
+      "location": "New Delhi, India — advertised remote",
+      "employer_type": "services",
+      "fit": "possible",
+      "url": "https://www.iitjobs.com/job/pega-developer-new-delhi-delhi-india-513603",
+      "summary": "Recruiter-indexed Pega remote listing with an India location. Employer confirmation and hiring-territory checks are still needed.",
+      "evidence": [
+        {
+          "url": "https://www.iitjobs.com/job/pega-developer-new-delhi-delhi-india-513603",
+          "title": "Engineering Industries eXcellence — Pega Developer",
+          "source_type": "recruiter",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "iitjobs search index names Engineering Industries eXcellence, Pega Developer, New Delhi, full-time remote and 5+ years. It lists Pega case management, APIs, access controls and decisioning/framework skills.",
+          "status": "search_index_only"
+        }
+      ],
+      "track": "pega",
+      "remote_eligibility": "india_remote",
+      "remote_restrictions": "New Delhi, India — advertised remote"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "closed",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "Pega 7/8",
+        "CSA/CSSA",
+        "REST",
+        "SOAP",
+        "SQL"
+      ],
+      "fit_reasons": [
+        "Historical ad covered Pega development, integrations and SQL."
+      ],
+      "gaps": [
+        "Indeed explicitly says this job expired; no closing date was supplied.",
+        "No verified current opening, current budget or fixed/variable breakdown. Do not submit through an expired listing."
+      ],
+      "salary": {
+        "amount_min": 2000000,
+        "amount_max": 3200000,
+        "currency": "INR",
+        "period": "annual",
+        "basis": "unknown",
+        "source_url": "https://in.indeed.com/q-pega-developer-l-bengaluru%2C-karnataka-jobs.html?vjk=d0e0e12f93a5910c",
+        "notes": "Expired advertisement listed ₹20–32 lakh annual pay. Fixed versus total CTC is unspecified. Historical budget evidence only, not an active opening."
+      },
+      "id": "jobskey-d0e0e12f93a5910c",
+      "company": "Jobskey",
+      "title": "Pega Developer — expired salary reference",
+      "requisition_id": null,
+      "location": "Bengaluru",
+      "employer_type": "services",
+      "fit": "possible",
+      "url": "https://in.indeed.com/q-pega-developer-l-bengaluru%2C-karnataka-jobs.html?vjk=d0e0e12f93a5910c",
+      "summary": "Closed advertisement retained solely as a quantified salary reference. Do not treat it as a current vacancy.",
+      "evidence": [
+        {
+          "url": "https://in.indeed.com/q-pega-developer-l-bengaluru%2C-karnataka-jobs.html?vjk=d0e0e12f93a5910c",
+          "title": "Jobskey — Pega Developer — expired salary reference",
+          "source_type": "recruiter",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "The selected Indeed Jobskey advertisement says the job expired and lists ₹20–32 lakh yearly for Bengaluru Pega work. A generic search listing still showing the role does not override its explicit expiry.",
+          "status": "search_index_only"
+        }
+      ],
+      "track": "pega"
+    }
+  ],
+  "methodology": [
+    "Expansion checked public employer ATS pages, employer-attributed LinkedIn job posts and identified recruitment ads on September 7, 2026.",
+    "Open means the correct role description and an application entry point were observed; indexed_only means job-specific indexed evidence was available but direct content was not readable. Neither status guarantees continued hiring.",
+    "Fit assesses overlap with approximately four years of Pega/CSSA, Kafka/REST/SQL and production operations. Adjacent platform or analyst roles are possible/stretch leads, not verified qualifications.",
+    "India remote eligibility is stated only where the specific posting names Indian locations. GitLab requires Bengaluru residence; Twilio names five states/territories. The iitjobs remote lead is explicitly unconfirmed by its employer.",
+    "Salary objects preserve advertised INR annual amounts and distinguish explicit total CTC from unitemized pay. Undisclosed salary is null and does not establish a ₹20 lakh package.",
+    "Jobskey's expired ad is intentionally closed and retained only as historical salary evidence; it must be excluded from actionable-opening totals."
+  ],
+  "limitations": [
+    "This is a researched expansion, not an exhaustive census of the full target catalog. It contains no employee/team headcount estimates.",
+    "Search-index crawl/posting ages can be stale; relative ages were not converted to calendar dates.",
+    "Third-party and LinkedIn employer-attributed posts should be checked against employer recruitment before submission.",
+    "None of the unitemized salary ranges establishes fixed pay or take-home pay, and no published range guarantees an individual offer.",
+    "Foreign-country remote jobs were not added without a useful, explicit country/work-authorization match; no overseas role was assumed India-eligible.",
+    "No applications, recruiter messages, personal-profile queries or contact outreach were performed."
+  ]
+}

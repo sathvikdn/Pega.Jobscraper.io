@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch01 · Architecture: How It All Fits for a CBA India Pega squad serving ASB | CBA Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+<style>
+/* Chapter-local: on phones, let wide tables scroll inside themselves instead of widening the page. */
+@media (max-width:820px){table{display:block;overflow-x:auto}}
+/* The shared code chip is light-on-light on the dark cover; give it contrast there only. */
+.cover code{background:rgba(255,255,255,.18);color:#fff}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="../CBA_ASB_Pega_Interview_Dossier.html">Interview dossier</a>
+  <a class="btn" href="../FCB_Study_Pack/ch13_fcb_architecture_blueprints.html">FCB Ch13 (the same method)</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">CBA Study Pack &middot; Chapter 01 &middot; Architecture blueprint</div>
+    <h1>Architecture: How It All Fits</h1>
+    <p class="subtitle">A Pega squad in Bengaluru, embedded in a New Zealand bank's lending tribe, on an event-streaming backbone. This chapter justifies every boundary by naming the failure that appears without it. It then walks one complete request, Aroha's hardship application <code>HA-20417</code>, from the mobile app through Kafka, the case engine, a core-banking timeout and an event confirmation, to the notice and the audit trail. Other case types follow as variations, then scale, failure, deployment, recovery and the India–NZ working model.</p>
+    <div class="meta">
+      <div><strong>20</strong><span>Sections</span></div>
+      <div><strong>19</strong><span>Interfaces</span></div>
+      <div><strong>9,787</strong><span>Words</span></div>
+      <div><strong>12</strong><span>Interview prompts</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <div class="note"><strong>About the worked example.</strong> This chapter follows one application: <strong>Lending Care</strong>, built for a fictional New Zealand bank called <strong>Tōtara Bank</strong>. Tōtara is owned by a fictional Australian group and engineered partly from a Bengaluru capability centre. Its customers, accounts, balances, case IDs, staff, topics, thresholds, SLAs and the architecture itself are <strong>invented for teaching</strong>. They are <strong>not</strong> CBA's or ASB's architecture, data or policy. The shape of the example is chosen to match what CBA and ASB have said <em>publicly</em> (listed in 1.0), so the reasoning transfers to the interview. The specifics do not, so never present them as facts about CBA or ASB.</div>
+    <div class="toc">
+      <a href="#s1-0">1.0 What is public, and what is invented<span>The line you must not cross in the interview</span></a>
+      <a href="#s1-1">1.1 What we built, and why every boundary exists<span>Each boundary, justified by the failure it prevents</span></a>
+      <a href="#s1-2">1.2 The architecture brief<span>Problem, actors, neighbours, assumptions, principles</span></a>
+      <a href="#s1-3">1.3 Context diagram</a>
+      <a href="#s1-4">1.4 The integration boundary<span>A pattern per interface, and one contract each</span></a>
+      <a href="#s1-5">1.5 The layered application<span>Rulesets, classes, the one-layer trap</span></a>
+      <a href="#s1-6">1.6 The canonical model and the event envelope</a>
+      <a href="#s1-7">1.7 Event streaming, in depth<span>Topics, keys, ordering, duplicates, replay, ownership</span></a>
+      <a href="#s1-walk">1.8 One request end to end: Aroha's hardship, HA-20417<span>Eight hops, one unknown outcome, one event confirmation</span></a>
+      <a href="#s1-var">1.9 The other case types, as variations<span>Arrears, KYC periodic review, payment exception, service</span></a>
+      <a href="#s1-10">1.10 The shared frameworks</a>
+      <a href="#s1-11">1.11 Scale, failure, deployment and recovery<span>Consequences of the design</span></a>
+      <a href="#s1-12">1.12 The India–NZ working model<span>Squads, tribes, chapters, time zones, decision rights</span></a>
+      <a href="#s1-13">1.13 Migration and rollout</a>
+      <a href="#s1-14">1.14 Risk register</a>
+      <a href="#s1-15">1.15 Using this in the interview<span>The five-minute whiteboard, and twelve prompts</span></a>
+      <a href="#s1-recap">1.Z Where we are now</a>
+      <a href="#s1-inv">1.R1 Reference: the integration inventory</a>
+      <a href="#s1-bp">1.R2 Reference: the case blueprints</a>
+      <a href="#s1-ref">1.R Authoritative references</a>
+    </div>
+  </section>
+
+  <section id="s1-0" class="pagebreak">
+    <h2>1.0 What is public, and what is invented</h2>
+    <p>An architecture chapter about a bank you have not yet joined has one honesty rule: anything you say in the room must be either something the bank has published or something you clearly present as your own design reasoning. The table below is the boundary. The left-hand column is what you may cite. Everything else in this chapter, including the bank, the people, the topics and every number, is the teaching example.</p>
+    <table>
+      <tr><th>Publicly stated (you may cite it, with "I read that…")</th><th>Source</th><th>How the example uses it</th></tr>
+      <tr><td>ASB is a wholly owned CBA subsidiary; CBA India is building ASB's India engineering capability, with squads inside ASB tribes and chapters holding the craft. "Not a resource pool."</td><td>CBA REQ266311</td><td>The Bengaluru squad in 1.12 sits inside Tōtara's Lending tribe.</td></tr>
+      <tr><td>ASB's agenda includes "scaling Pega across decisioning, workflow, lending and financial crime", core migration to SAP, cards, payments, a cloud data platform and integration re-platforming.</td><td>CBA REQ266311</td><td>Lending Care is a lending workflow case engine that cooperates with decisioning and financial-crime cases.</td></tr>
+      <tr><td>CBA Group engineering foundations: cloud-first, "Golden Pathways", DevSecOps, automation-first testing, AI-powered engineering.</td><td>CBA REQ266311</td><td>The pipeline in 1.11 is a paved road with mandatory gates.</td></tr>
+      <tr><td>The Bengaluru Pega squad partners with ASB: one Engineering Manager and Senior Software Engineers; case management, integrations "using APIs, REST services, events and asynchronous patterns", resiliency and observability.</td><td>CBA REQ266820 / 266821 / 266822</td><td>The squad's ownership and the integration patterns of 1.4.</td></tr>
+      <tr><td>ASB is establishing a Pega Centre of Excellence; ASB Pega roles stress Constellation, DX API, GenAI, Knowledge Buddy, Blueprint, Agents, and "REST APIs, Kafka" or "event-driven services".</td><td>ASB careers postings</td><td>Constellation UI, the CoE's decision rights in 1.12, GenAI kept behind a human decision.</td></tr>
+      <tr><td>ASB is building a new Confluent/Datastax event-streaming platform with SDKs for internal teams.</td><td>ASB Lead Kafka Software Engineer posting</td><td>The event platform in 1.7, owned by a platform team and not by the squad.</td></tr>
+      <tr><td>CBA has run a Kafka "Event Hub" since 2016, described as the core of its event-driven architecture; its own lessons call out message duplication and the need for idempotent consumers.</td><td>iTnews; CBA Kafka Summit talk</td><td>Every consumer in 1.7 is idempotent, and duplication is designed for.</td></tr>
+      <tr><td>CBA's Customer Engagement Engine runs on Pega Customer Decision Hub (next best conversation in about 200 ms) and has been used for same-day support after natural disasters.</td><td>Pega customer story; CommBank newsroom</td><td>The decisioning boundary in 1.1 and the flood surge in 1.11.</td></tr>
+      <tr><td>NZ hardship law: a debtor may apply in writing; the creditor must acknowledge within 5 working days, request any needed information within 10 working days, and decide within 20 working days.</td><td>CCCFA 2003 s55–57A; Consumer Protection NZ</td><td>The SLA clocks of hops 3 and 5.</td></tr>
+    </table>
+    <div class="warning"><strong>Do not say:</strong> "ASB's topics are called…", "ASB uses data page D_LoanAccount…", or "CBA's core times out after 8 seconds". Those are invented. <strong>Do say:</strong> "If I were designing hardship on Pega with an event backbone, I'd put the boundaries here, and here is the failure each one prevents."</div>
+  </section>
+
+  <section id="s1-1" class="pagebreak">
+    <h2>1.1 What we built, and why every boundary exists</h2>
+    <p>Lending Care handles the moments when a home-loan customer is in trouble: a hardship application, an arrears follow-up, a payment arrangement, a promise to pay, and the regulatory clocks around them. It is built on Pega by a squad in Bengaluru for a lending tribe in Auckland, and it lives on a bank-wide event backbone. Every boundary below is stated with the failure that appears when it is removed, because a boundary that is not justified by a failure is just ceremony.</p>
+    <p><strong>The integration boundary.</strong> Pega never calls the core directly and never binds to its payloads. Reads go through the API gateway, writes go through an integration framework with an outbox, and business events come in and go out through the event platform. Without that boundary, every case type contains core-specific calls. A change to the core's contract, which is certain during an SAP core migration, then becomes a change to every flow, and a slow core becomes an outage of every case that touches it. With it, the timeouts, the idempotency key, the single retry owner and the error classification live in one framework, and the core's failure is contained in one place.</p>
+    <p><strong>The event boundary.</strong> Facts about loans (an instalment missed, an arrangement booked, a balance changed) arrive as events, and Pega's own decisions leave as events. Without it, Pega would poll the core for "anything new" or receive point-to-point calls from every system that cares. Polling is late and expensive; point-to-point means the collections system, the decisioning engine and the customer app each need a bespoke integration to learn that a hardship was approved. With it, the case engine publishes <em>one</em> event stream, <code>hardship-status</code> (received, under assessment, approved, declined, withdrawn), and every interested system subscribes. A new consumer next year needs no change in Pega. The cost of the boundary is that events can be duplicated, delayed and reordered, and the design must say what happens in each case (1.7).</p>
+    <p><strong>The canonical model and its translation point.</strong> Between the vendor payload or event schema and the case sits a canonical model, and translation happens in the integration layer. Without it, a renamed field in the core's new SAP-based API breaks forty rules that happened to read it, and the migration doubles every flow. With it, a schema change touches one mapping and its unit test, unknown codes become an explicit <code>Unknown</code> with an alert instead of a silent default, and the case stores keys, deltas and decisions, never a copy of the loan.</p>
+    <p><strong>The layered ruleset stack.</strong> Rules are organised in organisation, framework, implementation and application layers whose dependencies run one way. Without it, the first case type is built in one ruleset, the third copies rules because nothing is shared, and a change to the arrears letter header edits thirty rules. With it, shared frameworks sit low, true differences sit high, reference data changes without a code release, and a hotfix is not a full release.</p>
+    <p><strong>The case-type split.</strong> Hardship, arrears, KYC periodic review, payment exception and service request are separate case types sharing frameworks, linked by keys. Without the split, one case carries every process's stages and clocks. A KYC escalation then cannot pause a hardship cleanly, and access cannot be restricted for financial-crime work. With it, each has its own clock, authority and access, and the types interact through events, tickets and child cases.</p>
+    <p><strong>The asynchronous boundaries.</strong> Writes that matter commit an intent locally and complete through a queue processor; long operations complete by callback or event with a sweeper; notices go through a queue. Without them, a connector call sits inside a transaction holding locks for the length of a network wait, so a slow core becomes a platform stall, and a lost response leaves the case unable to know whether to act again. With them, the decision and its intent commit in milliseconds and the effect completes on someone else's clock, with an honest status in between.</p>
+    <p><strong>The decisioning boundary.</strong> The case engine decides <em>process</em> (is the application complete, is it within authority, which option is lawful). A separate decisioning application decides <em>conversations</em> (which message, offer or nudge to show). Without the split, offer logic leaks into the hardship case, and the bank can end up showing a credit-card upgrade to a customer in hardship. With it, the hardship status is an event the decisioning engine consumes to suppress sales offers and switch to support messages, which is the "care" outcome.</p>
+    <p><strong>The reference-data boundary.</strong> Rules own policy; data owns numbers. Hardship options, authority bands, NZ public holidays and letter templates are effective-dated reference data changed through a maker-checker case. Without it, a threshold change needs a developer release and cannot be effective-dated, so reprocessing an old application uses today's rule.</p>
+    <p><strong>The audit boundary.</strong> Every decision records the rule version, its inputs, the approver and the event IDs that informed it. Evidence reconstructed afterwards is evidence that can be challenged, and in hardship the customer can take the decision to a dispute-resolution scheme.</p>
+    <p><strong>The ownership boundary.</strong> The squad owns the Pega application end to end; a platform team owns the Kafka clusters, the schema registry and the gateway; the core team owns the core; the CoE owns Pega standards. Without it, every incident starts with "whose is this?" With it, an alert has one owner and one runbook, at 02:00 in either country.</p>
+  </section>
+
+  <section id="s1-2" class="pagebreak">
+    <h2>1.2 The architecture brief</h2>
+    <h3>The problem statement</h3>
+    <p>Design a Pega application for Tōtara Bank's Lending tribe to handle home-loan hardship and arrears servicing in New Zealand. It replaces a mix of email, spreadsheets and a legacy workflow tool. It must meet the statutory hardship clocks, cooperate with collections, decisioning and financial-crime systems through events, survive a core-banking migration without rework, run on Pega Cloud with a Constellation UI, and be built and supported by a squad in Bengaluru working with product owners in Auckland.</p>
+    <h3>Actors</h3>
+    <table>
+      <tr><th>Actor</th><th>What they do</th><th>Channel and access</th></tr>
+      <tr><td>Customers</td><td>Apply for hardship, upload evidence, track status, accept an arrangement</td><td>Mobile app and internet banking, via a backend-for-frontend calling Pega; never a Pega portal</td></tr>
+      <tr><td>Contact centre (Auckland)</td><td>Take hardship requests by phone, record the written application, answer status questions</td><td>Constellation agent view; Maker role; masked PII</td></tr>
+      <tr><td>Lending care specialists</td><td>Assess applications, request information, propose options</td><td>Constellation work portal; Maker role</td></tr>
+      <tr><td>Team leaders</td><td>Approve within authority, monitor clocks and backlog</td><td>Checker role; dashboards</td></tr>
+      <tr><td>Financial-crime analysts</td><td>Handle KYC escalations raised by or alongside lending cases</td><td>Restricted case types and access groups</td></tr>
+      <tr><td>Brokers (later phase)</td><td>Lodge hardship on behalf of a customer with consent</td><td>Broker portal via API; consent record mandatory</td></tr>
+      <tr><td>Bengaluru squad engineers</td><td>Build, release, operate, take the India-hours on-call</td><td>Developer and pipeline roles; production read-only except via runbook</td></tr>
+      <tr><td>Auditors and risk</td><td>Read-only evidence review</td><td>Auditor role</td></tr>
+    </table>
+    <h3>Surrounding systems (invented for Tōtara; shaped by the public facts in 1.0)</h3>
+    <table>
+      <tr><th>System</th><th>Status in the example</th><th>Role</th></tr>
+      <tr><td>Core banking (SAP-based, mid-migration)</td><td>Assumed</td><td>System of record for loans, balances, repayment schedules and arrangements</td></tr>
+      <tr><td>API gateway</td><td>Assumed</td><td>Authentication (OAuth 2.0 client credentials plus mTLS), throttling, routing, correlation IDs</td></tr>
+      <tr><td>Event platform (managed Kafka with a schema registry)</td><td>Assumed, owned by a platform team</td><td>Business events in and out; Avro schemas with compatibility rules</td></tr>
+      <tr><td>Collections system</td><td>Assumed</td><td>Dunning contact strategy; must pause when hardship is under assessment</td></tr>
+      <tr><td>Decisioning application (Pega CDH)</td><td>Assumed</td><td>Next-best-action; must suppress sales offers for customers in hardship</td></tr>
+      <tr><td>Document management</td><td>Assumed</td><td>Evidence, letters and signed variations</td></tr>
+      <tr><td>Notification service</td><td>Assumed</td><td>Push, SMS, email; delivery receipts</td></tr>
+      <tr><td>Identity provider</td><td>Assumed</td><td>Staff SSO with group claims mapped to access groups</td></tr>
+      <tr><td>Observability platform</td><td>Assumed</td><td>Logs, metrics, traces keyed by correlation ID; paging for both countries</td></tr>
+      <tr><td>Data platform</td><td>Assumed</td><td>Reporting and analytics fed by events, not by reading Pega tables</td></tr>
+    </table>
+    <h3>Working assumptions (stated so they can be corrected)</h3>
+    <ol>
+      <li>The core is the system of record for every loan fact; Pega stores keys, the snapshot an approver relied on, and evidence. It never becomes a second loan master.</li>
+      <li>Pega Infinity on Pega Cloud, Constellation for all new staff UI; the exact release is to confirm, and release-sensitive behaviour is labelled where it matters.</li>
+      <li>Kafka clusters, topic creation, ACLs and schema compatibility are owned by the platform team; the squad owns its producers, consumers and their behaviour.</li>
+      <li>The core offers REST APIs for reads and arrangement writes, accepts an idempotency key on writes, and publishes loan-state events after it commits.</li>
+      <li>Hardship policy (options, authority bands, evidence rules) is owned by the Lending tribe and Risk, delivered as reference data under change control.</li>
+      <li>NZ working days and public holidays govern the statutory clocks; Bengaluru calendars govern only the squad's support rota.</li>
+    </ol>
+    <h3>Architecture principles</h3>
+    <table>
+      <tr><th>Principle</th><th>Meaning in practice</th></tr>
+      <tr><td>Core is the master; Pega is the workbench</td><td>Read through data pages with explicit refresh, write through idempotent integrations, store only keys, snapshots and evidence</td></tr>
+      <tr><td>Events are facts, not commands</td><td>Consume events to learn what happened; publish events to say what Pega decided; never "tell another system what to do" over a topic</td></tr>
+      <tr><td>Every consumer is idempotent</td><td>A duplicated or replayed event changes nothing the second time</td></tr>
+      <tr><td>Design for failure</td><td>Every interface has a timeout, a classification of errors, one retry owner, a degraded mode and a replay path</td></tr>
+      <tr><td>Clocks are law</td><td>Statutory deadlines are computed on NZ working days from the date of the written application, stored on the case, and visible</td></tr>
+      <tr><td>Care by construction</td><td>A customer in hardship is automatically excluded from collections contact and sales offers while the application is open</td></tr>
+      <tr><td>Evidence by default</td><td>Every decision stores rule version, inputs, approver and event IDs</td></tr>
+      <tr><td>Paved road</td><td>One pipeline, mandatory guardrail, unit and scenario test gates; no hand-deployed rules</td></tr>
+      <tr><td>One owner per alert</td><td>Every alert names an owning team, a runbook and a follow-the-sun handover</td></tr>
+    </table>
+  </section>
+
+  <section id="s1-3" class="pagebreak">
+    <h2>1.3 Context diagram</h2>
+    <div class="flow">                         TOTARA BANK · LENDING CARE · SYSTEM CONTEXT (teaching example)
+
+ ACTORS                 CHANNELS                PEGA CLOUD (case engine)                    INTEGRATION                 SYSTEMS OF RECORD / NEIGHBOURS
++----------------+     +------------------+    +-------------------------------------+     +------------------+       +------------------------------+
+| Customer (app) |----&gt;| Mobile app + BFF |---&gt;| Case types: Hardship, Arrears,      |     |   API gateway    |------&gt;| Core banking (SAP-based)     |
+| Contact centre |     +------------------+    |   KYC Periodic Review, Payment      |----&gt;| OAuth2 + mTLS,   |       |  loans, schedules,           |
+| Care specialist|----&gt;| Constellation    |---&gt;|   Exception, Service Request        |     | throttle, corr-ID|       |  arrangements                |
+| Team leader    | SSO | staff portal     |    | Frameworks: NZ calendar + SLA,      |     +------------------+       +------------------------------+
+| Fin-crime      |     +------------------+    |   authority matrix, correspondence, |                                | Document management          |
+| Auditor        |                             |   audit, reference data,            |     +------------------+       | Notification service         |
++----------------+                             |   integration (outbox + QP),        |&lt;---&gt;|  EVENT PLATFORM  |       +------------------------------+
+                                               |   event consumer/producer           |     |  managed Kafka + |&lt;-----&gt;| Collections system           |
+                                               +-------------------------------------+     |  schema registry |       | Decisioning (Pega CDH)       |
+                                                       |                    ^              +------------------+       | Data platform                |
+                                                       v                    |                                         +------------------------------+
+                                               +-------------------------------------+
+                                               | Observability: logs, metrics,       |   paged to NZ hours on-call and Bengaluru hours on-call
+                                               | traces by correlation ID            |
+                                               +-------------------------------------+</div>
+    <p>Three things in this picture matter more than the boxes. First, Pega has exactly two doors to the outside: the gateway for request–response and the event platform for facts. Second, the customer never sees Pega; the app's backend-for-frontend calls it, so a Pega release cannot break the app's contract. Third, the arrows from the event platform to collections and decisioning do not pass through Pega at all. Pega publishes a decision once, and those systems react on their own.</p>
+  </section>
+
+  <section id="s1-4" class="pagebreak">
+    <h2>1.4 The integration boundary: a pattern per interface, and why</h2>
+    <p>Each interface gets exactly one pattern, chosen by two questions: <em>does the caller need the answer now?</em> and <em>is the operation safe to repeat?</em></p>
+    <table>
+      <tr><th>Pattern</th><th>Use when</th><th>Mechanism in Pega</th><th>Failure handling</th></tr>
+      <tr><td><code>SYNC-READ</code></td><td>The user needs data now and a read is safe to repeat</td><td>Data page (thread or requestor scope) sourced by Connect-REST via the gateway; explicit refresh strategy</td><td>Short timeout, no retry on the interactive path, show cached value with its as-of time or wait</td></tr>
+      <tr><td><code>SYNC+Q</code></td><td>A write that matters; the user need not wait for the effect</td><td>Commit case status + outbox row in one transaction; a queue processor makes the call with an idempotency key</td><td>Timeout on a write is an <strong>unknown outcome</strong>: look up by key, never re-post with a new key</td></tr>
+      <tr><td><code>ASYNC-CB</code></td><td>The effect completes on the partner's clock (end-of-day posting)</td><td>Post with key, receive 202 + tracking ID, complete via Service-REST callback</td><td>Sweeper job scheduler asks for status past a threshold; callback is idempotent on tracking ID</td></tr>
+      <tr><td><code>EVENT-IN</code></td><td>Pega must learn facts published by others</td><td>Kafka data set consumed by a real-time data flow; persisted snapshot plus dedupe record</td><td>Idempotent on event ID; ordering guard on sequence per key; poison events to a dead-letter topic</td></tr>
+      <tr><td><code>EVENT-OUT</code></td><td>Others must learn what Pega decided</td><td>Outbox row committed with the decision; queue processor publishes to the topic</td><td>At-least-once delivery; consumers dedupe on event ID; publish failures retry from the outbox</td></tr>
+      <tr><td><code>DOC</code></td><td>Evidence and letters</td><td>Store in document management, keep the reference and hash on the case</td><td>Upload retried from a queue; case never blocks on the document store for a decision</td></tr>
+    </table>
+    <h3>Standard integration contract (one page per operation, agreed with the owning team)</h3>
+    <table>
+      <tr><th>Field</th><th>Example for "create payment arrangement"</th></tr>
+      <tr><td>Operation and owner</td><td><code>POST /loans/{loanId}/arrangements</code>, owned by the core team</td></tr>
+      <tr><td>Idempotency</td><td>Header <code>Idempotency-Key: HA-20417-ARR-1</code>; a repeat returns the stored response; key retention 30 days <span class="tag amber">assumed Tōtara policy</span></td></tr>
+      <tr><td>Timeouts</td><td>Connect 2 s, read 8 s; the caller treats a read timeout on this write as unknown <span class="tag amber">assumed Tōtara policy</span></td></tr>
+      <tr><td>Status lookup</td><td><code>GET /arrangements?idempotencyKey=…</code> returns <code>NOT_FOUND</code>, <code>IN_PROGRESS</code>, <code>BOOKED</code> or <code>REJECTED</code></td></tr>
+      <tr><td>Error classes</td><td>400/422 business rejection to a fix assignment; 409 duplicate returns stored response; 429/503 transient with backoff; 401/403 configuration alert, no retry</td></tr>
+      <tr><td>Event emitted</td><td><code>loan-arrangement</code> v2 after the core commits, keyed by loan ID</td></tr>
+      <tr><td>Correlation</td><td><code>X-Correlation-ID</code> = case ID, propagated to logs and events</td></tr>
+      <tr><td>Security</td><td>OAuth 2.0 client credentials scoped to <code>arrangements:write</code>; mTLS between gateway and Pega Cloud</td></tr>
+    </table>
+  </section>
+
+  <section id="s1-5" class="pagebreak">
+    <h2>1.5 The layered application, and the "everything in one layer" trap</h2>
+    <h3>The trap</h3>
+    <p>A new squad under deadline builds the first case type in one ruleset because it is fastest. By the third case type, the arrears letter, the NZ holiday calendar and the gateway connector have been copied twice, each copy slightly different. When the core migrates, three connectors change instead of one. When a holiday is added, two calendars are updated and one is missed, and a statutory deadline is computed wrongly for one case type only. The trap is invisible for six months and expensive for years.</p>
+    <h3>The proposed layers</h3>
+    <table>
+      <tr><th>Layer</th><th>Ruleset (example)</th><th>Class prefix</th><th>Contains</th></tr>
+      <tr><td>Organisation</td><td><code>TOT</code></td><td><code>TOT-</code></td><td>Canonical data classes (Party, LoanAccount, Arrangement), the event envelope, shared properties</td></tr>
+      <tr><td>Frameworks</td><td><code>TOTFWCalendar</code>, <code>TOTFWInt</code>, <code>TOTFWAudit</code>, <code>TOTFWComms</code></td><td><code>TOT-FW-*</code></td><td>NZ working-day calendar and SLA helpers; integration framework (outbox, status lookup, error classes); event consumer and producer; audit; correspondence</td></tr>
+      <tr><td>Lending implementation</td><td><code>TOTLend</code></td><td><code>TOT-Lend-Work-*</code>, <code>TOT-Lend-Data-*</code></td><td>Case types Hardship, Arrears, PaymentException; lending-specific data</td></tr>
+      <tr><td>Financial crime implementation</td><td><code>TOTFinCrime</code></td><td><code>TOT-FC-Work-*</code></td><td>KYC Periodic Review, with its own access groups</td></tr>
+      <tr><td>Reference data</td><td><code>TOTRef</code> (data-only, maker-checker)</td><td><code>TOT-Ref-*</code></td><td>Hardship options, authority bands, public holidays, letter variants, effective-dated</td></tr>
+      <tr><td>Application</td><td>Lending Care application rule</td><td>n/a</td><td>Ruleset stack, Constellation portals, access groups</td></tr>
+    </table>
+    <h3>Rules that keep the layers honest</h3>
+    <ul>
+      <li>Dependencies run downward only. A framework ruleset never references a lending class, enforced by a pipeline check on rule references.</li>
+      <li>A copy of a framework rule into a higher layer needs a design-review comment explaining the difference; a report lists every override.</li>
+      <li>Connectors live only in <code>TOTFWInt</code>; a case flow calls an integration <em>activity or data page</em>, never a connector directly.</li>
+      <li>Constellation views live with the case type that owns them; shared views (customer summary, loan summary) live at the organisation layer and are reused, not copied.</li>
+      <li>Reference data is changed by a maker-checker case, effective-dated, and never by a developer release.</li>
+    </ul>
+  </section>
+
+  <section id="s1-6" class="pagebreak">
+    <h2>1.6 The canonical model and the event envelope</h2>
+    <h3>Core entities (canonical, in <code>TOT-Data-*</code>)</h3>
+    <table>
+      <tr><th>Entity</th><th>Key</th><th>Owned by</th><th>What the case keeps</th></tr>
+      <tr><td>Party</td><td><code>PartyID</code></td><td>Customer master</td><td>The key, the verified contact preference, consent flags</td></tr>
+      <tr><td>LoanAccount</td><td><code>LoanID</code></td><td>Core</td><td>The key and the snapshot an approver relied on (balance, instalment, arrears days, as-of)</td></tr>
+      <tr><td>Arrangement</td><td><code>ArrangementID</code></td><td>Core</td><td>The reference, type, start and end dates, and the idempotency key that created it</td></tr>
+      <tr><td>HardshipApplication</td><td>Case ID</td><td>Pega</td><td>Everything: reason, written-application date, clocks, evidence, decisions</td></tr>
+      <tr><td>LoanStateSnapshot</td><td><code>LoanID</code></td><td>Pega (derived from events)</td><td>The latest state with its sequence number and as-of time, used by data pages and guards</td></tr>
+    </table>
+    <h3>The event envelope (one shape for every topic)</h3>
+    <div class="flow">{
+  "eventId":        "6f1c9a2e-0b7d-4b8e-9d0e-2a51f0c4d118",   // unique per event; the dedupe key
+  "eventType":      "loan-state.changed",
+  "schemaVersion":  3,                                     // Avro schema id resolved via the registry
+  "key":            "HL-55210-01",                         // partition key = LoanID, so one loan's events stay in order
+  "sequence":       10442,                                 // per-key, monotonically increasing, set by the producer
+  "occurredAt":     "2026-11-16T09:12:04+13:00",           // business time, NZDT
+  "producedAt":     "2026-11-16T09:12:05+13:00",
+  "source":         "core-lending",
+  "correlationId":  "HA-20417",                            // present when the change was caused by a Pega request
+  "payload":        { "loanId": "HL-55210-01", "arrearsDays": 16, "instalmentNZD": 742.00, "balanceNZD": 412300.55 }
+}</div>
+    <p><strong>Why each field exists.</strong> <code>eventId</code> makes duplicates harmless. <code>key</code> keeps every event for one loan on one partition, so they arrive in the order they were produced. <code>sequence</code> lets a consumer refuse a stale event even when ordering is broken by a replay or a producer bug. <code>occurredAt</code> is the business time a clock may depend on, distinct from when the platform saw it. <code>correlationId</code> lets an engineer in Bengaluru trace an Auckland complaint from the app, through Pega, to the core and back in one search.</p>
+    <h3>The translation boundary</h3>
+    <p>The core's API and its events use their own field names. Mapping happens in <code>TOTFWInt</code>: one data transform per message and version, each with a unit test containing a real (masked) sample. A new schema version adds a new transform; it does not edit the old one, so replaying an old event still maps correctly. Unknown enumeration values map to <code>Unknown</code> and raise an alert, because a silent default in hardship is a wrong letter to a customer.</p>
+  </section>
+
+  <section id="s1-7" class="pagebreak">
+    <h2>1.7 Event streaming, in depth</h2>
+    <p>This is the part an interviewer can push hardest on, and the part where your own Kafka work transfers directly. The section answers seven questions in order: which topics, who owns what, how Pega consumes, how ordering is kept, how duplicates are made harmless, what happens to a poison event, and how replay works.</p>
+    <h3>Topics (invented names)</h3>
+    <table>
+      <tr><th>Topic</th><th>Direction</th><th>Key</th><th>Produced by / consumed by</th><th>Why Lending Care cares</th></tr>
+      <tr><td><code>tot.lending.loan-state.v3</code></td><td>In</td><td>LoanID</td><td>Core → Pega, collections, data platform</td><td>Arrears days, instalment, balance; opens arrears cases; feeds data pages</td></tr>
+      <tr><td><code>tot.lending.arrangement.v2</code></td><td>In</td><td>LoanID</td><td>Core → Pega</td><td>Confirms that an arrangement Pega requested is booked</td></tr>
+      <tr><td><code>tot.lending.hardship-status.v1</code></td><td>Out</td><td>LoanID</td><td>Pega → collections, decisioning, app, data platform</td><td>Pauses dunning, suppresses offers, updates the app's status</td></tr>
+      <tr><td><code>tot.party.contact-preference.v1</code></td><td>In</td><td>PartyID</td><td>Customer master → Pega</td><td>Where to send letters; respect opt-outs</td></tr>
+      <tr><td><code>*.dlq</code> per consumed topic</td><td>Out</td><td>Original key</td><td>Pega → itself (replay tool)</td><td>Holds events that could not be processed, with the reason</td></tr>
+    </table>
+    <h3>Who owns what</h3>
+    <table>
+      <tr><th>Concern</th><th>Platform team</th><th>Squad (you)</th></tr>
+      <tr><td>Clusters, brokers, upgrades, capacity</td><td>Owns</td><td>Raises capacity needs</td></tr>
+      <tr><td>Topic creation, partitions, retention, ACLs</td><td>Owns and approves</td><td>Requests through the paved road, with justification</td></tr>
+      <tr><td>Schema registry and compatibility mode</td><td>Owns the registry</td><td>Owns its schemas, evolves them backward-compatibly</td></tr>
+      <tr><td>Consumer group offsets</td><td>Can reset on request, with change control</td><td>Never relies on offset resets for business correctness</td></tr>
+      <tr><td>Consumer behaviour: dedupe, ordering guard, DLQ, replay, alerts</td><td>Provides SDK guidance</td><td><strong>Owns completely</strong></td></tr>
+      <tr><td>Producer behaviour: outbox, retry, event content</td><td>Provides SDK guidance</td><td><strong>Owns completely</strong></td></tr>
+    </table>
+    <h3>How Pega consumes</h3>
+    <p>A Kafka data set points at the external cluster and topic, with the schema registry configured for Avro deserialisation. A real-time data flow reads it continuously and, for each event, runs a strategy or activity that (1) checks the dedupe table for <code>eventId</code>, (2) compares <code>sequence</code> with the stored snapshot for the key, (3) maps the payload through the canonical transform, and (4) writes the snapshot and the dedupe row in one commit. Only after that does it raise downstream work (open an arrears case, confirm an outbox row). The external Kafka is separate from the stream service Pega uses internally for its own queue processors; mixing the two up is a common interview slip.</p>
+    <p><span class="tag amber">release-sensitive</span> How data-flow partitions map to node threads, and how offsets are committed relative to your processing, depend on the Pega release and configuration. The design does not depend on them: whatever is redelivered is made harmless by the dedupe and sequence guard.</p>
+    <h3>Ordering</h3>
+    <p>Kafka orders events within a partition, and the key decides the partition. Keying every lending topic by <code>LoanID</code> means "instalment missed" and "arrangement booked" for the same loan arrive in the order the core produced them. Ordering is <em>not</em> guaranteed across loans, and does not need to be. The sequence guard covers the cases where ordering still breaks (a replay, a producer that retried out of order): an event whose sequence is not newer than the stored snapshot is recorded and ignored, never applied.</p>
+    <h3>Duplicates</h3>
+    <p>Delivery is at least once. A consumer can process an event, crash before its offset is committed, and see the same event again; a producer can retry and publish twice. The dedupe row on <code>eventId</code>, written in the same commit as the effect, makes the second delivery a no-op. CBA has said publicly that message duplication was one of its hardest Kafka lessons, so saying this unprompted shows you understand their world.</p>
+    <h3>Poison events and the dead-letter topic</h3>
+    <p>An event that fails mapping (a new enum, a missing field, a schema the consumer cannot read) must not stop the partition behind it. The consumer writes it to the topic's DLQ with the error class, the original offset and the correlation ID, raises an alert to the owning engineer, and moves on. A loan whose event is in the DLQ is flagged on its snapshot as "state uncertain", so a specialist working its case sees a banner rather than a stale balance.</p>
+    <h3>Replay</h3>
+    <p>Replay is built, not assumed. The squad's replay tool reads selected DLQ events (or a time window from the source topic, through a dedicated replay consumer), re-runs them through the same consumer logic, and records the outcome. Because consumers are idempotent and sequence-guarded, a replay is safe to run twice. A platform-level offset reset is reserved for disasters and coordinated with the platform team. This is your Mercedes-Benz replay API, generalised: say so.</p>
+    <h3>Producing safely: the outbox</h3>
+    <p>When Pega decides a hardship, the case update and an outbox row for <code>hardship-status</code> commit in one transaction. A queue processor publishes the outbox row and marks it sent. If publishing fails, the row stays and is retried; the decision is never "made but not announced". Duplicated publishes are possible and acceptable because consumers dedupe on <code>eventId</code>, which is generated once when the outbox row is written. <span class="tag amber">release-sensitive</span> Whether a queue item enqueued from a flow commits atomically with the case write depends on how it is enqueued (immediate or deferred). Verify on the target release; if in doubt, write the outbox row as a data instance in the same commit and let a scheduler or queue processor sweep it.</p>
+  </section>
+
+  <section id="s1-walk" class="pagebreak">
+    <h2>1.8 One request end to end: Aroha's hardship, <code>HA-20417</code></h2>
+    <p>The test of an architecture is whether its boundaries hold under one real request. Aroha Ngata (<code>PTY-30981</code>) has a home loan <code>HL-55210-01</code> with Tōtara: balance NZ$412,300.55, weekly instalment NZ$742.00. She was made redundant on 30 October 2026 and has missed two instalments. Mere Tane is the lending care specialist in Auckland, Liam Walker is her team leader and the checker, and Ananya Rao is the Bengaluru squad engineer on the India-hours rota. For every hop the walkthrough states the trigger, what runs, what data enters, what is committed, whether it is synchronous, what people see, and what happens when the hop fails. Times are New Zealand Daylight Time (UTC+13) with India Standard Time (UTC+5:30) in brackets, because the squad lives 7.5 hours behind the customer. Thresholds marked <span class="tag amber">assumed Tōtara policy</span> are the example's own; the statutory clocks are cited in 1.R.</p>
+
+    <h3>Hop 0: the arrears event that came first</h3>
+    <p><strong>Trigger.</strong> At 06:00 (22:30 Sunday IST) the core's overnight cycle publishes <code>loan-state.changed</code> for <code>HL-55210-01</code>: sequence 10442, partition 7 of <code>tot.lending.loan-state.v3</code>, <code>arrearsDays: 16</code>. <strong>What runs.</strong> The real-time data flow dedupes on <code>eventId</code>, confirms 10442 is newer than the stored 10439, maps the payload, and commits the snapshot plus the dedupe row. A rule on the snapshot opens arrears case <code>AR-88120</code> because arrears crossed 14 days <span class="tag amber">assumed Tōtara policy</span>. <strong>If it fails.</strong> If the arrears case creation fails after the snapshot commits, the case is created from a sweeper that finds snapshots with arrears and no open case, so the event is never the only chance. If the same event is redelivered at 06:03, the dedupe row makes it a no-op, and no second arrears case is opened. That is the whole reason the dedupe and the effect share one commit.</p>
+
+    <h3>Hop 1: Aroha applies in the app</h3>
+    <p><strong>Trigger.</strong> At 09:12 (01:42 IST) Aroha completes the hardship form in the mobile app: reason "loss of employment", request "postpone payments for three months", consent to share her redundancy letter. The Act requires the application to be in writing and to state the reasonable cause; a completed in-app form with her authenticated identity is the written application in the example's policy. <strong>What runs.</strong> The app's backend-for-frontend calls Pega's Service-REST <code>POST /hardship</code> through the gateway with a client-generated request ID as the idempotency key. Pega validates against the canonical model and creates <code>HA-20417</code> in class <code>TOT-Lend-Work-Hardship</code>, linked to <code>LoanID</code>, <code>PartyID</code> and the open arrears case <code>AR-88120</code>. <strong>What is committed, in one transaction.</strong> The case row (exposed columns for status, loan ID, received date and the three statutory due dates), the first history entry, the evidence reference for the uploaded consent, and an outbox row for <code>hardship-status</code> = <code>RECEIVED</code>. <strong>Sync or async.</strong> Synchronous, because Aroha is waiting; under 800 ms p95 <span class="tag amber">assumed Tōtara policy</span>. <strong>What Aroha sees.</strong> "We've received your request" with reference <code>HA-20417</code>. <strong>If it fails.</strong> A validation failure returns a field-level message and commits nothing. If the response is lost and the app retries, the request ID returns the same case instead of creating <code>HA-20418</code>. A duplicate application is a hop-1 problem, solved at hop 1.</p>
+
+    <h3>Hop 2: the case reads what it does not own</h3>
+    <p><strong>Trigger.</strong> The Intake stage needs the loan's state and repayment schedule. <strong>What runs.</strong> <code>D_LoanState[LoanID]</code> reads the persisted snapshot (sequence 10442, as-of 06:00); <code>D_RepaymentSchedule[LoanID]</code> calls the core through the gateway (<code>SYNC-READ</code>). An eligibility decision checks the contract type is a consumer credit contract, the application is not a repeat within four months on the same grounds, and the default-length rule from the regulator's guidance <span class="tag green">cited</span>. <strong>What is committed.</strong> Only the eligibility outcome and the snapshot the decision relied on: balance, instalment, arrears days and the snapshot's sequence and as-of time. The loan itself is never copied. <strong>If it fails.</strong> If the schedule read times out, the interactive path does not retry; Intake shows the snapshot with its as-of stamp and a banner, and a queue processor completes the read. The case never proceeds on a value it cannot date. If the snapshot is flagged "state uncertain" because an event is in the DLQ (1.7), the eligibility step waits for a human.</p>
+
+    <h3>Hop 3: the statutory clocks start, and the bank stops chasing</h3>
+    <p><strong>Trigger.</strong> Intake completes. <strong>What runs.</strong> The NZ calendar framework computes the three deadlines from the received date, Monday 16 November, on working days: acknowledgement by Monday 23 November (5 working days), any information request by Monday 30 November (10), decision by Monday 14 December (20). Working days follow the Act's definition, implemented from reference data. <span class="tag amber">confirm the definition with Legal</span> The correspondence framework queues the acknowledgement letter at once, because policy is to acknowledge the same day even though law allows five. The queue processor publishes the outbox row: <code>hardship-status</code> = <code>RECEIVED</code> for key <code>HL-55210-01</code>. <strong>What changes elsewhere, without Pega calling anyone.</strong> The collections system consumes the event and pauses the dunning strategy for the loan, so nobody phones Aroha about arrears while she is in hardship assessment. The decisioning application consumes it and suppresses sales offers, switching her next-best-action to support content. The arrears case <code>AR-88120</code> is moved to "Covered by hardship" by a ticket from <code>HA-20417</code>. <strong>If it fails.</strong> If publishing fails, the outbox row remains and is retried; an alert fires if any outbox row is older than 5 minutes <span class="tag amber">assumed Tōtara policy</span>, because a delayed RECEIVED means a possible collections call to a customer in hardship. That is a customer-harm alert and pages whichever country is on duty: at 09:14 NZDT that is the Auckland rota, not Ananya.</p>
+
+    <h3>Hop 4: assessment, an information request, and evidence</h3>
+    <p><strong>Trigger.</strong> At 10:30 Mere takes the assignment via Get Next Work. <strong>What runs.</strong> The Constellation assessment view shows the snapshot, the clocks and the customer's stated reason. Mere asks the policy assistant (Pega GenAI Knowledge Buddy over Tōtara's hardship policy) whether a three-month postponement needs a redundancy letter; it answers with a citation to the policy page, and Mere decides. The assistant never decides and its answer is logged with its citation. On Tuesday 17 November Mere sends an information request (inside the 10-working-day limit) for the redundancy letter and a statement of expected income. On Thursday 19 November Aroha uploads both in the app; the <code>DOC</code> pattern stores them in document management, and the case keeps references and hashes. An affordability decision table, keyed by option and income band from reference data, recommends the three-month postponement with the term extended to keep the instalment unchanged afterwards. <strong>What is committed.</strong> The request, the uploads' references, the decision outcome with the decision-table version, and Mere's proposal. <strong>If it fails.</strong> If the upload service is down, the app queues the upload and the case shows "awaiting evidence"; the information-request clock is already satisfied by the request, not by the response.</p>
+
+    <h3>Hop 5: maker, checker, and the arrangement write that times out</h3>
+    <p><strong>Trigger.</strong> At 13:50 on Friday 20 November Mere submits; at 14:04 Liam approves. Four layers stop a maker approving her own work: routing excludes her, an Access Deny on <code>ApproveHardship</code> when maker equals operator, a server-side validation on the approve action, and a daily detective report that must return zero. Liam's approval records his operator ID, the snapshot he saw and the authority-table version. <strong>What runs next.</strong> The integration framework, pattern <code>SYNC+Q</code>: in one commit the case moves to <code>Pending-Core</code>, writes history, and writes an outbox row for <code>POST /loans/HL-55210-01/arrangements</code> with idempotency key <code>HA-20417-ARR-1</code>. A queue processor makes the call at 14:05:02 (06:35 IST).</p>
+    <p><strong>The failure.</strong> At 14:05:10 the read timeout elapses. A timeout on a <em>write that may have succeeded</em> is not transient; it is an unknown outcome. The core may have booked the arrangement and lost the response, or never received the request. The processor therefore does <strong>not</strong> re-post. It marks the outbox row <code>Unknown</code>, leaves the case in Pending-Core, and calls the status lookup by key. At 14:05:16 the answer is <code>IN_PROGRESS</code>; it schedules another lookup with backoff. What it must never do is send a new request with a new key, because the key identifies the <em>intent</em>, not the attempt: a new key is a second arrangement on the same loan. Mere sees Pending-Core, "confirming with the core", with the attempt count. Other failures have their own handling. A business rejection (an existing arrangement, a legal hold) becomes a fix assignment with the reason. A 409 duplicate returns the stored response. A sustained outage opens a breaker and routes to a dual-control manual fallback, so the statutory decision date is never at risk because of a system.</p>
+
+    <h3>Hop 6: the confirmation arrives as an event</h3>
+    <p><strong>Trigger.</strong> At 14:06:10 the core commits the arrangement and publishes <code>arrangement.booked</code> on <code>tot.lending.arrangement.v2</code>, key <code>HL-55210-01</code>, with <code>correlationId: HA-20417</code> and the arrangement reference <code>ARR-771304</code>. <strong>What runs.</strong> The consumer dedupes, checks sequence, persists, and finds the outbox row in <code>Unknown</code> for that correlation. The next status lookup returns <code>BOOKED</code> with the same reference; either signal alone is enough, and here they agree. The outbox row moves to <code>Confirmed</code>, the case stores <code>ARR-771304</code> and moves to Notify. At 14:09 a duplicate of the same event arrives (the producer retried); the dedupe row ignores it. A <code>loan-state.changed</code> event (sequence 10451) then shows the next instalment date as 22 February 2027, and the snapshot updates. <strong>Sync or async.</strong> Asynchronous; nobody waits. <strong>If it fails.</strong> If neither the event nor the lookup resolves within 30 minutes <span class="tag amber">assumed Tōtara policy</span>, a sweeper raises an alert to the on-call engineer with the key, correlation ID and last lookup result, and a runbook step. The case shows the honest status throughout.</p>
+
+    <h3>Hop 7: decision, notice, and the bank's other systems</h3>
+    <p><strong>Trigger.</strong> Notify stage. <strong>What runs.</strong> In one commit: status <code>Approved</code>, the decision letter queued through the correspondence framework (variation details, the new instalment date, how to contact the bank, and the dispute-resolution scheme), and an outbox row for <code>hardship-status</code> = <code>APPROVED</code> with the arrangement end date. The decision is made on the fourth working day of a 20-working-day window. <strong>What changes elsewhere.</strong> Collections keeps the strategy paused until the arrangement ends; decisioning keeps the support journey; the app shows "Approved, payments postponed until 22 February 2027". <strong>If it fails.</strong> A letter-gateway failure cannot undo the approval, because the letter is queued, not sent inline; a bounced email falls back to post per contact preference.</p>
+
+    <h3>Hop 8: the audit trail and the trace</h3>
+    <p>Everything above shares one correlation ID. A complaint on Monday, "did the bank call me after I applied?", is answered by one search in the observability platform: the app request at 09:12, the outbox publish of <code>RECEIVED</code> at 09:12:03, collections' consumer lag of 2 seconds and its pause at 09:12:05, and no outbound calls afterwards. The case itself holds the decision evidence: inputs, rule versions, approver, event IDs 10442 and 10451, arrangement <code>ARR-771304</code> and key <code>HA-20417-ARR-1</code>. The arrears case <code>AR-88120</code> closes as "resolved by arrangement" when the next instalment is paid. <strong>Why this matters for the squad.</strong> The trace is what lets Ananya, at 10:00 IST on Monday, answer an Auckland question asked at 17:30 NZDT the same day, without waking anyone.</p>
+  </section>
+
+  <section id="s1-var" class="pagebreak">
+    <h2>1.9 The other case types, as variations on hardship</h2>
+    <p>Each variation states only what differs from <code>HA-20417</code>; the frameworks, boundaries and failure handling are the same.</p>
+    <table>
+      <tr><th>Case type</th><th>Created by</th><th>What differs</th><th>Events</th></tr>
+      <tr><td><strong>Arrears follow-up</strong> (<code>TOT-Lend-Work-Arrears</code>)</td><td>Event: <code>loan-state</code> arrears crosses a threshold</td><td>Created by a consumer, not a person, so the dedupe key is <code>LoanID + arrears cycle</code>, not event ID alone: two events for the same cycle must open one case. Contact attempts follow the collections strategy, unless a hardship ticket covers it. Promise-to-pay subprocess with its own SLA.</td><td>In: loan-state. Out: <code>arrears-status</code> for the data platform.</td></tr>
+      <tr><td><strong>KYC periodic review</strong> (<code>TOT-FC-Work-KYCReview</code>)</td><td>Job scheduler from risk-rating due dates</td><td>Owned by the financial-crime implementation with restricted access groups. Integrates with screening and identity verification. A review outcome of "insufficient information" can restrict new lending, but never blocks a hardship decision, because hardship is a customer right, not a new facility. The two cases link by party, not by loan.</td><td>Out: <code>kyc-status</code>; in: <code>party</code> changes.</td></tr>
+      <tr><td><strong>Payment exception</strong> (<code>TOT-Lend-Work-PaymentException</code>)</td><td>Event from the payments platform (dishonoured direct debit)</td><td>Dedupe on payment ID; auto-resolve rules for known reasons (insufficient funds becomes an arrears input), manual queue for others. Very high volume, so the consumer is sized separately (1.11).</td><td>In: payment-returned. Out: none; feeds arrears.</td></tr>
+      <tr><td><strong>Service request</strong> (Pega Customer Service interaction)</td><td>Contact centre interaction</td><td>An interaction case with intents ("I want to apply for hardship", "where is my letter?"). The hardship intent <em>creates</em> <code>HA-*</code> through the same API as the app, so there is one creation path. Status intents read the case, never the core.</td><td>None of its own.</td></tr>
+      <tr><td><strong>Broker-lodged hardship</strong> (phase 3)</td><td>Broker portal API</td><td>Same case type; the difference is a mandatory consent record and broker identity on the case, and letters to both the customer and the broker per consent.</td><td>Same as hardship.</td></tr>
+    </table>
+    <h3>Build order</h3>
+    <p>Hardship first: it has the strictest clocks, the clearest customer benefit and exercises every boundary. Arrears second, because it depends on the event consumer proven in phase 1. Payment exception third (volume test). KYC review is built by the financial-crime squad on the same frameworks. Broker lodgement last, because it needs external consent and identity work.</p>
+  </section>
+
+  <section id="s1-10" class="pagebreak">
+    <h2>1.10 The shared frameworks, specified</h2>
+    <table>
+      <tr><th>Framework</th><th>Responsibility</th><th>Interface to case types</th><th>Test that proves it</th></tr>
+      <tr><td>NZ calendar and SLA</td><td>Working days, public holidays, statutory and policy clocks, effective-dated</td><td><code>AddWorkingDays(date, n, calendar)</code>; SLA rules referencing computed dates</td><td>Unit tests across holiday edges and year end</td></tr>
+      <tr><td>Integration</td><td>Connectors, outbox, idempotency keys, status lookup, error classes, breaker, retries</td><td>Integration activities per operation; never a raw connector in a flow</td><td>Contract tests against a mock; a timeout test that asserts no re-post</td></tr>
+      <tr><td>Event consumer</td><td>Deserialise, dedupe, sequence guard, map, persist, DLQ, raise work</td><td>Per-topic configuration and a mapping transform per schema version</td><td>Duplicate, out-of-order and poison-event tests</td></tr>
+      <tr><td>Event producer</td><td>Outbox row, envelope, publish, retry, mark sent</td><td><code>PublishEvent(type, key, payload)</code> called inside the case commit</td><td>Publish-failure test that asserts the row survives</td></tr>
+      <tr><td>Authority matrix</td><td>Who may approve what, effective-dated, maker-checker</td><td>Decision rule returning required role and band</td><td>Maker-equals-checker denial test at UI and API</td></tr>
+      <tr><td>Correspondence</td><td>Templates, channel by preference, queueing, bounce handling, copy on case</td><td><code>QueueLetter(template, case)</code></td><td>Letter content snapshot tests per variant</td></tr>
+      <tr><td>Audit</td><td>Decision log: inputs, rule versions, approver, event IDs</td><td>Called by every decision step</td><td>Audit completeness report returns zero gaps</td></tr>
+      <tr><td>Replay tool</td><td>Select DLQ or windowed events, re-run through consumer logic, record outcome</td><td>Ops portal with dual control</td><td>Replay-twice test asserts identical state</td></tr>
+    </table>
+  </section>
+
+  <section id="s1-11" class="pagebreak">
+    <h2>1.11 Scale, failure, deployment and recovery</h2>
+    <h3>Scale: what happens at ten times the volume</h3>
+    <p>Hardship volume is spiky, not steady. After a regional flood, applications can jump tenfold in a week (CBA has described using its decisioning engine to give same-day support to customers hit by natural disasters, which is exactly this kind of surge). The design scales in three places. Interactive creation is stateless and scales with nodes. The event consumer scales with topic partitions: more partitions or more data-flow threads, coordinated with the platform team, because a consumer group cannot usefully run more consumers than partitions. Correspondence and specialist work are throttled by people, so the clocks become the constraint. The calendar framework's dashboard shows how many cases will breach which deadline at current throughput, so the tribe can move staff before a breach, not after.</p>
+    <h3>Sizing worksheet (illustrative inputs)</h3>
+    <table>
+      <tr><th>Input</th><th>Normal</th><th>Flood week</th><th>Note</th></tr>
+      <tr><td>Hardship applications per day</td><td>20</td><td>600</td><td>Peak hour is 09:00–10:00 NZDT (01:30–02:30 IST)</td></tr>
+      <tr><td><code>loan-state</code> events per day</td><td>350,000</td><td>500,000</td><td>Overnight burst after the core's cycle</td></tr>
+      <tr><td>Payment-returned events per day</td><td>4,000</td><td>15,000</td><td>Separate consumer, separate alert thresholds</td></tr>
+      <tr><td>Target consumer lag (p95)</td><td colspan="2">under 10 s for hardship-relevant topics</td><td><span class="tag amber">assumed Tōtara policy</span></td></tr>
+      <tr><td>Outbox age alert</td><td colspan="2">5 min for <code>hardship-status</code>; 30 min for arrangement confirmations</td><td>Customer-harm vs process alerts</td></tr>
+    </table>
+    <h3>Failure: which part fails first, and what contains it</h3>
+    <table>
+      <tr><th>Failure</th><th>Symptom</th><th>Containment</th><th>Owner</th></tr>
+      <tr><td>Core slow or down</td><td>Arrangement writes time out; reads time out</td><td>Unknown-outcome handling, breaker, manual dual-control fallback; reads show dated snapshot</td><td>Core team; squad runs the fallback</td></tr>
+      <tr><td>Event platform unavailable</td><td>Consumer lag grows; publishes fail</td><td>Outbox holds decisions; consumers resume from committed offsets; dashboards show "events delayed"</td><td>Platform team; squad watches outbox age</td></tr>
+      <tr><td>Breaking schema change upstream</td><td>Mapping failures, DLQ surge</td><td>DLQ plus "state uncertain" flag, alert, new transform, replay</td><td>Producer team and squad</td></tr>
+      <tr><td>Consumer bug applies wrong state</td><td>Wrong arrears cases opened</td><td>Stop the data flow, fix, replay a window; dedupe and sequence guard make replay safe</td><td>Squad</td></tr>
+      <tr><td>Pega node loss</td><td>Requests fail over</td><td>Pega Cloud redundancy; queue items retried; no in-memory state relied upon</td><td>Pega Cloud / platform</td></tr>
+      <tr><td>Gateway credential expiry</td><td>401/403 on all calls</td><td>Classified as configuration, no retries, immediate page; certificate expiry monitoring 30 days ahead</td><td>Squad and gateway team</td></tr>
+      <tr><td>Notification service down</td><td>Letters queue</td><td>Queue with retry; statutory acknowledgement deadline watched separately</td><td>Comms team</td></tr>
+    </table>
+    <h3>Recovery</h3>
+    <p>Recovery objectives are owned by the bank, not the squad. The example assumes RPO 15 minutes and RTO 4 hours for Lending Care <span class="tag amber">assumed Tōtara policy</span>. The architecture's contribution is that recovery is <em>replayable</em>. Decisions are in the database with their outbox rows; events can be re-consumed within the topic's retention; consumers are idempotent. After a restore, the squad replays events from the restore point and re-sends unsent outbox rows, and nothing is applied twice.</p>
+    <h3>Deployment: the paved road</h3>
+    <p>Every change follows one pipeline: branch, peer review, merge, then automated gates (guardrail score threshold, PegaUnit for decisions and transforms, scenario tests for the hardship and arrears journeys, contract tests for integrations, consumer tests for duplicate, out-of-order and poison events), then promotion through environments with Deployment Manager, and production change approval. Schema changes are deployed <em>before</em> the producer starts using them: consumer first, producer second. A useful India advantage: NZ's quietest hours (overnight) fall in Bengaluru's afternoon and evening, so low-risk releases can run with the squad fully awake and the customer asleep.</p>
+    <h3>Environment strategy</h3>
+    <table>
+      <tr><th>Environment</th><th>Purpose</th><th>Event platform</th><th>Data</th></tr>
+      <tr><td>Dev</td><td>Build and unit test</td><td>Dev topics, synthetic producer</td><td>Synthetic</td></tr>
+      <tr><td>Test</td><td>Integration, contract, consumer tests</td><td>Test topics fed by core test</td><td>Synthetic and masked</td></tr>
+      <tr><td>Staging</td><td>End-to-end, performance, replay rehearsal</td><td>Staging cluster mirroring production config</td><td>Masked production-like</td></tr>
+      <tr><td>Production</td><td>Live</td><td>Production cluster</td><td>Live; access by role and runbook only</td></tr>
+    </table>
+  </section>
+
+  <section id="s1-12" class="pagebreak">
+    <h2>1.12 The India–NZ working model</h2>
+    <p>The publicly stated model is squads inside the NZ bank's tribes, with chapters holding engineering craft, shared tribe governance, common standards and named outcomes. Here is how that looks day to day for a Pega squad, in the example.</p>
+    <h3>Time zones</h3>
+    <table>
+      <tr><th>NZDT (Nov–Apr, UTC+13)</th><th>IST (UTC+5:30)</th><th>What happens</th></tr>
+      <tr><td>16:30–18:30</td><td>09:00–11:00</td><td>Overlap window: stand-up, refinement, design reviews with the NZ product owner</td></tr>
+      <tr><td>09:00–16:30</td><td>01:30–09:00</td><td>NZ business hours; NZ on-call owns customer-harm alerts</td></tr>
+      <tr><td>18:30–02:30</td><td>11:00–19:00</td><td>Bengaluru build hours, releases in NZ quiet time, India on-call</td></tr>
+    </table>
+    <p class="small muted">In NZ winter (NZST, UTC+12) everything shifts by one hour and the overlap becomes NZ 16:00–18:00, which is 09:30–11:30 IST.</p>
+    <h3>Decision rights (RACI sketch)</h3>
+    <table>
+      <tr><th>Decision</th><th>Squad (Bengaluru)</th><th>Engineering Manager</th><th>NZ Product Owner</th><th>Pega CoE (NZ)</th><th>Platform team</th></tr>
+      <tr><td>Case design within the application</td><td>R</td><td>A</td><td>C</td><td>C</td><td>I</td></tr>
+      <tr><td>Hardship policy and options</td><td>I</td><td>I</td><td>A</td><td>I</td><td>I</td></tr>
+      <tr><td>Pega standards, guardrails, framework reuse</td><td>C</td><td>R</td><td>I</td><td>A</td><td>I</td></tr>
+      <tr><td>New topic or schema</td><td>R (request)</td><td>A (for the squad)</td><td>I</td><td>I</td><td>A (approve)</td></tr>
+      <tr><td>Production release</td><td>R</td><td>A</td><td>C</td><td>I</td><td>I</td></tr>
+      <tr><td>Incident at 02:00 NZDT</td><td>R (India on-call)</td><td>A</td><td>I</td><td>I</td><td>R if platform</td></tr>
+    </table>
+    <h3>What makes it work</h3>
+    <ul>
+      <li>Written design decisions (one page each) so a decision made at 17:00 NZDT is readable at 09:00 IST.</li>
+      <li>Every alert has a runbook a person in the other country can follow without context.</li>
+      <li>The squad owns outcomes ("hardship decided within clocks, zero collections contact during assessment"), not tickets.</li>
+    </ul>
+  </section>
+
+  <section id="s1-13" class="pagebreak">
+    <h2>1.13 Migration and rollout</h2>
+    <h3>Principles</h3>
+    <ul>
+      <li>Thin slice first: hardship via the app, end to end, before arrears or brokers.</li>
+      <li>Run new and old in parallel for the first cohort; compare outcomes daily.</li>
+      <li>Survive the core migration: the canonical model and versioned transforms mean a new core API or event schema is a new mapping, not a new flow. Run both schema versions during the transition, consumer first.</li>
+    </ul>
+    <h3>Phased plan</h3>
+    <table>
+      <tr><th>Phase</th><th>Scope</th><th>Exit criteria</th></tr>
+      <tr><td>0 · Foundations</td><td>Frameworks, event consumer and producer, pipeline gates, observability</td><td>Duplicate, poison and replay tests pass in staging</td></tr>
+      <tr><td>1 · Hardship (app + contact centre)</td><td>Hardship case type, RECEIVED/APPROVED events, collections pause</td><td>100% of applications acknowledged on the same day; zero collections contact during assessment</td></tr>
+      <tr><td>2 · Arrears</td><td>Event-created arrears cases, promise-to-pay</td><td>One case per loan per cycle under replay</td></tr>
+      <tr><td>3 · Payment exceptions</td><td>High-volume consumer</td><td>Lag under target at flood-week volume</td></tr>
+      <tr><td>4 · Brokers</td><td>Broker API, consent</td><td>Consent present on 100% of broker cases</td></tr>
+    </table>
+    <h3>Cutover and rollback</h3>
+    <p>Open cases in the legacy tool finish there; new applications go to Pega from a cutover date. Rollback means switching the app's backend-for-frontend back to the legacy path. The events Pega has already published remain true, so collections pauses stay in place.</p>
+  </section>
+
+  <section id="s1-14" class="pagebreak">
+    <h2>1.14 Risk register (top ten delivery risks)</h2>
+    <table>
+      <tr><th>#</th><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
+      <tr><td>1</td><td>A collections call reaches a customer in hardship assessment</td><td>Customer harm, regulatory and reputational</td><td>RECEIVED event in the same commit as the case, 5-minute outbox alert, a daily reconciliation of open hardship versus paused strategies</td></tr>
+      <tr><td>2</td><td>Statutory clock miscalculated</td><td>Breach of the Act</td><td>Calendar framework with tests, Legal-owned working-day definition, breach-forecast dashboard</td></tr>
+      <tr><td>3</td><td>Duplicate arrangement on a timeout</td><td>Wrong loan terms</td><td>Idempotency key per intent, status lookup, never re-post with a new key</td></tr>
+      <tr><td>4</td><td>Consumer applies stale or duplicated events</td><td>Wrong cases, wrong letters</td><td>Dedupe in the same commit, sequence guard, replay tests</td></tr>
+      <tr><td>5</td><td>Upstream schema change during core migration</td><td>DLQ surge, uncertain states</td><td>Schema compatibility rules, consumer-first deployment, versioned transforms</td></tr>
+      <tr><td>6</td><td>Rules copied instead of reused</td><td>Inconsistent behaviour, slow change</td><td>Layer checks in the pipeline, override report</td></tr>
+      <tr><td>7</td><td>Time-zone handovers lose context</td><td>Slow incidents, rework</td><td>Runbooks, one-page decisions, overlap ceremonies, correlation-ID tracing</td></tr>
+      <tr><td>8</td><td>GenAI answer treated as a decision</td><td>Wrong policy applied</td><td>Assistant cites policy; a human decides; answers logged</td></tr>
+      <tr><td>9</td><td>Maker approves own work via API</td><td>Control failure</td><td>Four-layer maker-checker, detective report</td></tr>
+      <tr><td>10</td><td>Consumer scaling limited by partitions</td><td>Lag in a surge</td><td>Partition planning with the platform team before phase 3; load test at flood volume</td></tr>
+    </table>
+  </section>
+
+  <section id="s1-15" class="pagebreak">
+    <h2>1.15 Using this in the interview</h2>
+    <h3>The five-minute whiteboard</h3>
+    <ol>
+      <li><strong>Draw the two doors.</strong> Gateway for request–response, event platform for facts. "Pega has exactly two ways out."</li>
+      <li><strong>Draw one case and its clocks.</strong> Hardship: received date, then 5, 10 and 20 working days. "The clocks are law, so they're computed and stored, not remembered."</li>
+      <li><strong>Draw the outbox.</strong> Decision and intent in one commit, then a queue processor. "A slow core can't stall the platform, and a decision is never made but not announced."</li>
+      <li><strong>Draw the timeout.</strong> "Unknown outcome: look up by the same key, never re-post with a new key."</li>
+      <li><strong>Draw the event fan-out.</strong> One <code>hardship-status</code> event: collections pauses, decisioning suppresses offers, app updates. "Care by construction."</li>
+      <li><strong>Name the guards.</strong> Dedupe on event ID in the same commit, sequence guard per key, DLQ, built replay.</li>
+    </ol>
+    <h3>Bridge it to your own work (true, from your resume)</h3>
+    <table>
+      <tr><th>In this chapter</th><th>What you actually did at Mercedes-Benz R&amp;D</th></tr>
+      <tr><td>Event consumer with data sets, data flows and queue processors</td><td>Pega integration layer for 50+ Kafka topics across seven APAC markets</td></tr>
+      <tr><td>Built replay, not offset resets</td><td>Service-REST replay API: dead-letter recovery from about 2 hours to under 2 minutes</td></tr>
+      <tr><td>Observability with one owner per alert</td><td>Operations dashboard and real-time pager with escalation</td></tr>
+      <tr><td>Idempotent writes and merges</td><td>Standardised Connect-SQL merges and queue error handling across markets</td></tr>
+      <tr><td>NZ calendars and clocks</td><td>You shipped for AU and NZ markets, with SLAs and background processing</td></tr>
+      <tr><td>Hardship and arrears domain</td><td>30+ case types for collections, debt recovery and customer service</td></tr>
+    </table>
+    <h3>Twelve prompts an interviewer might use, and where the answer is</h3>
+    <div class="qa"><span class="q">1. "How do you stop processing the same Kafka message twice?"</span> Dedupe row on event ID written in the same commit as the effect; sequence guard per key (1.7).</div>
+    <div class="qa"><span class="q">2. "A write to the core times out. What now?"</span> Unknown outcome; status lookup by the same idempotency key; never a new key; breaker and manual fallback (hop 5).</div>
+    <div class="qa"><span class="q">3. "How do you keep events for one customer in order?"</span> Key by loan or party ID so they share a partition; sequence guard for replays (1.7).</div>
+    <div class="qa"><span class="q">4. "What do you do with a message you can't parse?"</span> DLQ with error class and offset, alert, flag the state as uncertain, fix the transform, replay (1.7).</div>
+    <div class="qa"><span class="q">5. "How does Pega tell other systems it made a decision?"</span> Outbox in the same commit, queue processor publishes, at-least-once delivery, consumers dedupe (1.7, hop 7).</div>
+    <div class="qa"><span class="q">6. "Where would you put the mapping from the core's payload?"</span> In the integration layer, one versioned transform per schema with a unit test; never in the flow (1.6).</div>
+    <div class="qa"><span class="q">7. "How would you structure rulesets and classes?"</span> Organisation, frameworks, implementation, reference data, application; dependencies downward; connectors only in the integration framework (1.5).</div>
+    <div class="qa"><span class="q">8. "How do you scale a consumer?"</span> Partitions bound parallelism; plan partitions with the platform team; scale data-flow threads; watch lag (1.11).</div>
+    <div class="qa"><span class="q">9. "How would you design hardship with SLAs?"</span> Statutory clocks from the received date on working days, stored on the case, breach forecast, same-day acknowledgement (hop 3).</div>
+    <div class="qa"><span class="q">10. "How do you prevent a maker approving their own case?"</span> Routing, Access Deny, server-side validation, detective report (hop 5).</div>
+    <div class="qa"><span class="q">11. "How would you work with a team in New Zealand?"</span> Overlap ceremonies, one-page decisions, runbooks, outcome ownership, correlation-ID tracing (1.12).</div>
+    <div class="qa"><span class="q">12. "Where would GenAI fit?"</span> Policy assistant with citations for specialists; a human decides; answers logged; never in the decision path (hop 4, risk 8).</div>
+  </section>
+
+  <section id="s1-recap" class="pagebreak">
+    <h2>1.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>Accept a hardship application from the app or the contact centre, start the statutory clocks, stop collections contact and sales offers within seconds through one event, assess with evidence and a policy assistant, approve under dual control, book the arrangement in the core through an idempotent write that survives a timeout, confirm it by event, notify the customer, and prove all of it from one correlation ID.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Two doors to the outside; a canonical model with versioned transforms; layered rulesets; separate case types; an outbox for every write and every published event; idempotent, sequence-guarded consumers with a DLQ and built replay; reference data under maker-checker; a decision log; and a working model where every alert has an owner in one of two countries.</p>
+    <h3>What it still cannot do</h3>
+    <p>Broker lodgement, cross-product hardship (a credit card and a home loan in one application), and automated income verification. Each is a variation the frameworks are designed to accept, which is the test of whether the boundaries were drawn in the right places.</p>
+  </section>
+
+  <section id="s1-inv" class="pagebreak">
+    <h2>1.R1 Reference: the integration inventory</h2>
+    <table>
+      <tr><th>#</th><th>Interface</th><th>Direction</th><th>Pattern</th><th>Key / idempotency</th><th>Owner</th></tr>
+      <tr><td>1</td><td>Create hardship (app BFF)</td><td>In</td><td>SYNC</td><td>Client request ID</td><td>Squad</td></tr>
+      <tr><td>2</td><td>Hardship status query (app BFF)</td><td>In</td><td>SYNC-READ</td><td>Case ID</td><td>Squad</td></tr>
+      <tr><td>3</td><td>Evidence upload (app)</td><td>In</td><td>DOC</td><td>Upload ID + hash</td><td>Squad / DMS team</td></tr>
+      <tr><td>4</td><td>Loan read</td><td>Out</td><td>SYNC-READ</td><td>LoanID</td><td>Core team</td></tr>
+      <tr><td>5</td><td>Repayment schedule read</td><td>Out</td><td>SYNC-READ</td><td>LoanID</td><td>Core team</td></tr>
+      <tr><td>6</td><td>Create arrangement</td><td>Out</td><td>SYNC+Q</td><td><code>{case}-ARR-n</code></td><td>Core team</td></tr>
+      <tr><td>7</td><td>Arrangement status lookup</td><td>Out</td><td>SYNC-READ</td><td>Idempotency key</td><td>Core team</td></tr>
+      <tr><td>8</td><td>End-of-day posting callback</td><td>In</td><td>ASYNC-CB</td><td>Tracking ID</td><td>Core team / squad</td></tr>
+      <tr><td>9</td><td><code>loan-state</code> events</td><td>In</td><td>EVENT-IN</td><td>eventId; sequence per LoanID</td><td>Core (producer) / squad (consumer)</td></tr>
+      <tr><td>10</td><td><code>arrangement</code> events</td><td>In</td><td>EVENT-IN</td><td>eventId; correlationId</td><td>Core / squad</td></tr>
+      <tr><td>11</td><td><code>contact-preference</code> events</td><td>In</td><td>EVENT-IN</td><td>eventId; sequence per PartyID</td><td>Customer master / squad</td></tr>
+      <tr><td>12</td><td><code>hardship-status</code> events</td><td>Out</td><td>EVENT-OUT</td><td>eventId from outbox</td><td>Squad</td></tr>
+      <tr><td>13</td><td>Dead-letter topics</td><td>Out</td><td>EVENT-OUT</td><td>Original key + offset</td><td>Squad</td></tr>
+      <tr><td>14</td><td>Notifications (push, SMS, email)</td><td>Out</td><td>SYNC+Q</td><td>Letter ID</td><td>Comms team</td></tr>
+      <tr><td>15</td><td>Document store</td><td>Out</td><td>DOC</td><td>Document ID + hash</td><td>DMS team</td></tr>
+      <tr><td>16</td><td>Customer master read</td><td>Out</td><td>SYNC-READ</td><td>PartyID</td><td>Customer master team</td></tr>
+      <tr><td>17</td><td>Broker lodgement (phase 4)</td><td>In</td><td>SYNC</td><td>Broker request ID</td><td>Squad</td></tr>
+      <tr><td>18</td><td>Staff SSO</td><td>In</td><td>SAML/OIDC</td><td>n/a</td><td>Identity team</td></tr>
+      <tr><td>19</td><td>Logs, metrics, traces</td><td>Out</td><td>Stream</td><td>Correlation ID</td><td>Observability team</td></tr>
+    </table>
+  </section>
+
+  <section id="s1-bp" class="pagebreak">
+    <h2>1.R2 Reference: the case blueprints</h2>
+    <h3>Blueprint 1: Hardship (<code>TOT-Lend-Work-Hardship</code>)</h3>
+    <table>
+      <tr><th>Stage</th><th>Key steps</th><th>Clocks</th><th>Roles</th><th>Integrations and events</th></tr>
+      <tr><td>Intake</td><td>Validate, link loan and arrears case, eligibility</td><td>Received date set</td><td>System, contact centre</td><td>Create API; loan read; snapshot</td></tr>
+      <tr><td>Acknowledge</td><td>Compute deadlines, queue acknowledgement</td><td>5 working days (law); same day (policy)</td><td>System</td><td>Out: <code>RECEIVED</code></td></tr>
+      <tr><td>Assess</td><td>Information request, evidence, affordability, proposal</td><td>Info request by 10 working days</td><td>Specialist (maker)</td><td>DOC; out: <code>UNDER_ASSESSMENT</code></td></tr>
+      <tr><td>Approve</td><td>Authority check, checker approval</td><td>Decision by 20 working days</td><td>Team leader (checker)</td><td>None</td></tr>
+      <tr><td>Fulfil</td><td>Arrangement write, unknown-outcome handling, confirmation</td><td>Confirmation within 30 min or alert</td><td>System, on-call</td><td>SYNC+Q; in: <code>arrangement</code></td></tr>
+      <tr><td>Notify and resolve</td><td>Decision letter, status event, close</td><td>n/a</td><td>System</td><td>Out: <code>APPROVED</code> / <code>DECLINED</code></td></tr>
+    </table>
+    <h3>Blueprint 2: Arrears follow-up (<code>TOT-Lend-Work-Arrears</code>)</h3>
+    <table>
+      <tr><th>Stage</th><th>Key steps</th><th>Clocks</th><th>Roles</th><th>Integrations and events</th></tr>
+      <tr><td>Open</td><td>Created from event; dedupe on loan + cycle</td><td>On threshold crossing</td><td>System</td><td>In: <code>loan-state</code></td></tr>
+      <tr><td>Contact</td><td>Follow strategy unless covered by hardship</td><td>Policy contact SLAs</td><td>Collections specialist</td><td>Collections system status</td></tr>
+      <tr><td>Promise to pay</td><td>Record promise, monitor</td><td>Promise date</td><td>Specialist</td><td>In: <code>loan-state</code> payment</td></tr>
+      <tr><td>Resolve</td><td>Cured, arranged, or escalated</td><td>n/a</td><td>Team leader</td><td>Out: <code>arrears-status</code></td></tr>
+    </table>
+    <h3>Blueprint 3: KYC periodic review (<code>TOT-FC-Work-KYCReview</code>)</h3>
+    <table>
+      <tr><th>Stage</th><th>Key steps</th><th>Clocks</th><th>Roles</th><th>Integrations and events</th></tr>
+      <tr><td>Schedule</td><td>Created by job scheduler from risk-rating due date</td><td>Due date by risk rating (policy)</td><td>System</td><td>Customer master read</td></tr>
+      <tr><td>Collect</td><td>Request updated information and documents</td><td>Customer response window (policy)</td><td>Analyst</td><td>Notifications; DOC</td></tr>
+      <tr><td>Screen and assess</td><td>Screening, identity verification, risk re-rating</td><td>Internal SLA</td><td>Analyst</td><td>Screening APIs</td></tr>
+      <tr><td>Decide</td><td>Maintain, restrict new lending, or escalate</td><td>n/a</td><td>Senior analyst (checker)</td><td>Out: <code>kyc-status</code></td></tr>
+    </table>
+    <h3>Blueprint 4: Payment exception (<code>TOT-Lend-Work-PaymentException</code>)</h3>
+    <table>
+      <tr><th>Stage</th><th>Key steps</th><th>Clocks</th><th>Roles</th><th>Integrations and events</th></tr>
+      <tr><td>Intake</td><td>From event; dedupe on payment ID</td><td>On arrival</td><td>System</td><td>In: payment-returned</td></tr>
+      <tr><td>Auto-resolve</td><td>Known reasons routed (insufficient funds to arrears input)</td><td>Same day</td><td>System</td><td>Internal ticket to arrears</td></tr>
+      <tr><td>Manual</td><td>Investigate unknown reasons</td><td>2 working days (policy)</td><td>Payments specialist</td><td>Payments platform read</td></tr>
+    </table>
+  </section>
+
+  <section id="s1-ref" class="pagebreak">
+    <h2>1.R Authoritative references</h2>
+    <table>
+      <tr><th>Source</th><th>What it supports</th></tr>
+      <tr><td><a href="https://www.legislation.govt.nz/act/public/2003/0052/latest/DLM213107.html" target="_blank" rel="noopener noreferrer">Credit Contracts and Consumer Finance Act 2003, s55 (unforeseen hardship)</a>, with s56 (changes that can be made) and s57A (creditor obligations)</td><td>Written application stating the reasonable cause; four-month repeat rule; the three change types; acknowledgement within 5 working days and information request within 10</td></tr>
+      <tr><td><a href="https://www.consumerprotection.govt.nz/general-help/consumer-laws/credit-contracts-and-consumer-finance-act" target="_blank" rel="noopener noreferrer">Consumer Protection NZ: CCCFA guidance</a></td><td>Decision within 20 working days; when payments must be brought up to date before applying</td></tr>
+      <tr><td><a href="https://www.legislation.govt.nz/act/public/2009/35/en/latest/" target="_blank" rel="noopener noreferrer">AML/CFT Act 2009</a> (e.g. s16 verification, s58 risk assessment)</td><td>The basis for KYC periodic review in the variation</td></tr>
+      <tr><td><a href="https://docs.pega.com/bundle/platform/page/platform/decision-management/kafka-data-set.html" target="_blank" rel="noopener noreferrer">Pega docs: Kafka data set</a></td><td>External Kafka for data sets, separate from Pega's internal stream service; consumption via real-time data flows</td></tr>
+      <tr><td><a href="https://docs.pega.com/bundle/platform/page/platform/user-experience/designing-with-constellation.html" target="_blank" rel="noopener noreferrer">Pega docs: Center-out configuration in Constellation</a> · <a href="https://docs.pega.com/bundle/dx-api/page/platform/dx-api/dx-api-version-2-con.html" target="_blank" rel="noopener noreferrer">Constellation DX API</a></td><td>Views over sections, view-based DX API, case-designer-driven actions</td></tr>
+      <tr><td><a href="https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Executive-Manager---Technology-Modernisation_REQ266311" target="_blank" rel="noopener noreferrer">CBA REQ266311</a> · <a href="https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Engineering-Manager_REQ266820" target="_blank" rel="noopener noreferrer">REQ266820</a> · <a href="https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Senior-Software-Engineer_REQ266821" target="_blank" rel="noopener noreferrer">REQ266821</a></td><td>ASB India capability, its modernisation agenda, squads and chapters, foundations, the Pega squad's scope</td></tr>
+      <tr><td><a href="https://careers.asbgroup.co.nz/jobdetails/ajid/FRdXw/Senior-Software-Engineer-Pega,AUSTRACT2SB165445.html" target="_blank" rel="noopener noreferrer">ASB: Senior Software Engineer – Pega</a> · <a href="https://careers.asbgroup.co.nz/jobdetails/ajid/wqi0x/Pega-System-Architect-Software-Engineer-,AUSTRACT2SB165562.html" target="_blank" rel="noopener noreferrer">ASB: Pega System Architect (CoE)</a> · <a href="https://nz.linkedin.com/jobs/view/lead-kafka-software-engineer-at-asb-bank-4200636983" target="_blank" rel="noopener noreferrer">ASB: Lead Kafka Software Engineer</a></td><td>ASB Pega CoE, modern Pega capabilities in demand, event-driven integration, new Confluent platform</td></tr>
+      <tr><td><a href="https://www.itnews.com.au/news/cba-is-building-digital-twins-of-its-money-management-in-the-app-607852" target="_blank" rel="noopener noreferrer">iTnews: CBA Event Hub on Kafka</a> · <a href="https://www.slideshare.net/slideshow/kafka-in-the-enterprisea-twoyear-journey-to-build-a-data-streaming-platform-from-scratch/120398509" target="_blank" rel="noopener noreferrer">CBA Kafka Summit talk</a></td><td>Kafka since 2016 as core of event-driven architecture; duplication lessons and idempotent consumers</td></tr>
+      <tr><td><a href="https://www.pega.com/customers/cba-marketing" target="_blank" rel="noopener noreferrer">Pega: CBA next best conversations</a> · <a href="https://www.commbank.com.au/articles/newsroom/2022/06/CBA-artificial-intelligence-usages.html" target="_blank" rel="noopener noreferrer">CommBank newsroom: Customer Engagement Engine</a></td><td>CDH-based decisioning at scale; natural-disaster support use case</td></tr>
+    </table>
+    <p class="small muted">Everything not listed here is the teaching example. Pega behaviour marked release-sensitive should be verified on the target release before being stated as fact.</p>
+    <div class="chapnav"><a href="index.html">&larr; Index</a><a href="../CBA_ASB_Pega_Interview_Dossier.html">Interview dossier &rarr;</a></div>
+  </section>
+  </main>
+</div>
+</body>
+</html>

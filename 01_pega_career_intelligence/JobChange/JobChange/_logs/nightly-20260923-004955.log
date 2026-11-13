@@ -1,0 +1,128 @@
+2026-09-23 00:49:55,708  INFO      ============================================================
+2026-09-23 00:49:55,709  INFO      NIGHTLY SCAN STARTING
+2026-09-23 00:49:55,737  INFO      ============================================================
+2026-09-23 00:49:56,764  INFO      Reusing portal instance jlfpflauq0xsXfPPzVP_EtL0WsPANw_h
+2026-09-23 00:49:56,952  INFO      Starting full scan (all targets, fresh)...
+2026-09-23 00:50:01,043  INFO      Scan started: 389 targets
+2026-09-23 00:50:11,092  INFO      Progress: 0/389 [parallel_scan] 
+2026-09-23 00:50:41,181  INFO      Progress: 2/389 [parallel_scan] 
+2026-09-23 00:50:51,208  INFO      Progress: 3/389 [parallel_scan] 
+2026-09-23 00:51:01,240  INFO      Progress: 7/389 [parallel_scan] 
+2026-09-23 00:51:11,296  INFO      Progress: 8/389 [parallel_scan] 
+2026-09-23 00:51:31,340  INFO      Progress: 9/389 [parallel_scan] 
+2026-09-23 00:51:41,370  INFO      Progress: 10/389 [parallel_scan] 
+2026-09-23 00:51:51,396  INFO      Progress: 12/389 [parallel_scan] 
+2026-09-23 00:52:01,421  INFO      Progress: 13/389 [parallel_scan] 
+2026-09-23 00:52:11,450  INFO      Progress: 15/389 [parallel_scan] 
+2026-09-23 00:52:21,493  INFO      Progress: 17/389 [parallel_scan] 
+2026-09-23 00:52:31,515  INFO      Progress: 18/389 [parallel_scan] 
+2026-09-23 00:52:41,555  INFO      Progress: 19/389 [parallel_scan] 
+2026-09-23 00:52:51,584  INFO      Progress: 20/389 [parallel_scan] 
+2026-09-23 00:53:01,613  INFO      Progress: 22/389 [parallel_scan] 
+2026-09-23 00:53:11,764  INFO      Progress: 25/389 [parallel_scan] 
+2026-09-23 00:53:41,903  INFO      Progress: 26/389 [parallel_scan] 
+2026-09-23 00:53:51,938  INFO      Progress: 29/389 [parallel_scan] JPMorganChase
+2026-09-23 00:54:12,061  INFO      Progress: 32/389 [parallel_scan] Coforge
+2026-09-23 00:54:32,116  INFO      Progress: 33/389 [parallel_scan] 
+2026-09-23 00:54:42,162  INFO      Progress: 34/389 [parallel_scan] 
+2026-09-23 00:54:52,195  INFO      Progress: 36/389 [parallel_scan] 
+2026-09-23 00:55:02,250  INFO      Progress: 37/389 [parallel_scan] Capgemini
+2026-09-23 00:55:12,303  INFO      Progress: 40/389 [parallel_scan] 
+2026-09-23 00:55:22,356  INFO      Progress: 41/389 [parallel_scan] 
+2026-09-23 00:55:42,476  INFO      Progress: 42/389 [parallel_scan] First Citizens India
+2026-09-23 00:56:02,613  INFO      Progress: 44/389 [parallel_scan] 
+2026-09-23 00:56:12,666  INFO      Progress: 45/389 [parallel_scan] 
+2026-09-23 00:56:22,719  INFO      Progress: 47/389 [parallel_scan] 
+2026-09-23 00:56:32,769  INFO      Progress: 50/389 [parallel_scan] 
+2026-09-23 00:56:42,820  INFO      Progress: 51/389 [parallel_scan] 
+2026-09-23 00:56:52,889  INFO      Progress: 53/389 [parallel_scan] 
+2026-09-23 00:57:13,045  INFO      Progress: 65/389 [parallel_scan] Tata Consultancy Services
+2026-09-23 00:57:23,257  INFO      Progress: 136/389 [parallel_scan] Medtronic India
+2026-09-23 00:57:33,418  INFO      Progress: 209/389 [parallel_scan] Maantic
+2026-09-23 00:57:43,476  INFO      Progress: 264/389 [parallel_scan] 
+2026-09-23 00:58:23,792  INFO      Progress: 265/389 [parallel_scan] 
+2026-09-23 00:58:33,945  INFO      Progress: 270/389 [parallel_scan] 
+2026-09-23 00:58:44,045  INFO      Progress: 303/389 [parallel_scan] First Citizens Bank India
+2026-09-23 00:58:54,265  INFO      Progress: 369/389 [parallel_scan] 
+2026-09-23 00:59:04,392  INFO      Progress: 389/389 [parallel_scan] 
+2026-09-23 00:59:34,661  INFO      Progress: 1/106 [career_portals] Accenture
+2026-09-23 01:00:04,840  INFO      Progress: 3/106 [career_portals] BT Group India
+2026-09-23 01:01:15,200  INFO      Progress: 6/106 [career_portals] Tesco Bengaluru
+2026-09-23 01:01:45,344  INFO      Progress: 7/106 [career_portals] Cognizant
+2026-09-23 01:02:35,621  INFO      Progress: 8/106 [career_portals] JPMorganChase
+2026-09-23 01:02:45,671  INFO      Progress: 10/106 [career_portals] Wells Fargo
+2026-09-23 01:03:15,809  INFO      Progress: 11/106 [career_portals] Bank of America
+2026-09-23 01:03:45,968  INFO      Progress: 12/106 [career_portals] HSBC
+2026-09-23 01:05:36,531  INFO      Progress: 13/106 [career_portals] Standard Chartered
+2026-09-23 01:05:56,632  INFO      Progress: 14/106 [career_portals] Goldman Sachs
+2026-09-23 01:06:16,739  INFO      Progress: 16/106 [career_portals] Barclays
+2026-09-23 01:06:36,844  INFO      Progress: 17/106 [career_portals] Citi India
+2026-09-23 01:06:46,898  INFO      Progress: 18/106 [career_portals] Deutsche Bank
+2026-09-23 01:07:17,057  INFO      Progress: 20/106 [career_portals] ANZ
+2026-09-23 01:08:27,403  INFO      Progress: 21/106 [career_portals] CBA
+2026-09-23 01:08:47,541  INFO      Progress: 22/106 [career_portals] NatWest Group
+2026-09-23 01:08:57,609  INFO      Progress: 23/106 [career_portals] Lloyds Banking
+2026-09-23 01:09:27,751  INFO      Progress: 25/106 [career_portals] Societe Generale
+2026-09-23 01:10:18,044  INFO      Progress: 28/106 [career_portals] Allianz Technology
+2026-09-23 01:10:58,250  INFO      Progress: 30/106 [career_portals] Aflac India
+2026-09-23 01:11:58,539  INFO      Progress: 31/106 [career_portals] Sun Life India
+2026-09-23 01:12:08,597  INFO      Progress: 32/106 [career_portals] Optum / UHG India
+2026-09-23 01:12:18,666  INFO      Progress: 33/106 [career_portals] Elevance Health
+2026-09-23 01:13:29,006  INFO      Progress: 34/106 [career_portals] GE Healthcare India
+2026-09-23 01:14:39,537  INFO      Progress: 35/106 [career_portals] Roche India
+2026-09-23 01:15:19,745  INFO      Progress: 36/106 [career_portals] Verizon India
+2026-09-23 01:16:30,151  INFO      Progress: 38/106 [career_portals] Vodafone / VOIS India
+2026-09-23 01:17:31,021  INFO      Progress: 39/106 [career_portals] Telstra India
+2026-09-23 01:18:11,221  INFO      Progress: 42/106 [career_portals] Pegasystems
+2026-09-23 01:18:21,274  INFO      Progress: 43/106 [career_portals] Nike India
+2026-09-23 01:18:51,448  INFO      Progress: 45/106 [career_portals] Mphasis
+2026-09-23 01:19:21,599  INFO      Progress: 47/106 [career_portals] Tech Mahindra
+2026-09-23 01:19:51,763  INFO      Progress: 48/106 [career_portals] Mastercard India
+2026-09-23 01:20:01,823  INFO      Progress: 49/106 [career_portals] PayPal India
+2026-09-23 01:20:32,150  INFO      Progress: 50/106 [career_portals] Broadridge India
+2026-09-23 01:21:12,351  INFO      Progress: 51/106 [career_portals] Deloitte India
+2026-09-23 01:21:32,459  INFO      Progress: 52/106 [career_portals] Capital One India
+2026-09-23 01:21:42,513  INFO      Progress: 56/106 [career_portals] Evernorth / Cigna India
+2026-09-23 01:21:52,578  INFO      Progress: 57/106 [career_portals] enGen / Highmark India
+2026-09-23 01:22:32,780  INFO      Progress: 62/106 [career_portals] Maersk India
+2026-09-23 01:22:42,832  INFO      Progress: 63/106 [career_portals] Wipro
+2026-09-23 01:24:13,316  INFO      Progress: 64/106 [career_portals] Comcast India
+2026-09-23 01:24:23,374  INFO      Progress: 65/106 [career_portals] Shell India
+2026-09-23 01:24:53,516  INFO      Progress: 68/106 [career_portals] Dell Technologies India
+2026-09-23 01:25:43,819  INFO      Progress: 69/106 [career_portals] Toyota India
+2026-09-23 01:25:53,869  INFO      Progress: 70/106 [career_portals] LTIMindtree
+2026-09-23 01:26:24,062  INFO      Progress: 71/106 [career_portals] General Motors India
+2026-09-23 01:27:24,379  INFO      Progress: 72/106 [career_portals] Procter & Gamble India
+2026-09-23 01:28:14,626  INFO      Progress: 74/106 [career_portals] Johnson & Johnson India
+2026-09-23 01:29:04,876  INFO      Progress: 75/106 [career_portals] Merck India
+2026-09-23 01:29:35,085  INFO      Progress: 76/106 [career_portals] Coca-Cola India
+2026-09-23 01:30:15,429  INFO      Progress: 77/106 [career_portals] AT&T India
+2026-09-23 01:31:15,734  INFO      Progress: 78/106 [career_portals] Synechron
+2026-09-23 01:31:55,931  INFO      Progress: 79/106 [career_portals] FedEx India
+2026-09-23 01:33:26,400  INFO      Progress: 80/106 [career_portals] CVS Health India
+2026-09-23 01:33:36,474  INFO      Progress: 82/106 [career_portals] Lockheed Martin India
+2026-09-23 01:34:26,753  INFO      Progress: 84/106 [career_portals] Zurich Insurance India
+2026-09-23 01:34:46,859  INFO      Progress: 87/106 [career_portals] Cisco India
+2026-09-23 01:35:06,982  INFO      Progress: 88/106 [career_portals] Aaseya (YASH)
+2026-09-23 01:35:17,038  INFO      Progress: 89/106 [career_portals] Maantic
+2026-09-23 01:35:37,146  INFO      Progress: 90/106 [career_portals] BlueRose Technologies
+2026-09-23 01:35:47,192  INFO      Progress: 91/106 [career_portals] Inadev India
+2026-09-23 01:36:27,426  INFO      Progress: 94/106 [career_portals] fusionAIx
+2026-09-23 01:36:57,609  INFO      Progress: 103/106 [career_portals] Sopra Steria India
+2026-09-23 01:37:57,904  INFO      Progress: 1/4 [job_boards] Shine.com
+2026-09-23 01:38:07,951  INFO      Progress: 3/4 [job_boards] SimplyHired
+2026-09-23 01:38:18,002  INFO      Scan complete.
+2026-09-23 01:38:21,242  INFO      Results: 33 jobs from 16 companies
+2026-09-23 01:38:21,242  INFO      Recommendations: {'excluded': 12, 'recommended': 2, 'review': 12, 'stretch': 7}
+2026-09-23 01:38:21,269  INFO      Career portals: 4/87 found jobs (4.6%)
+2026-09-23 01:38:21,269  INFO        navigation_failed: 27 failures
+2026-09-23 01:38:21,269  INFO        no_pega_links: 1 failures
+2026-09-23 01:38:21,269  INFO        no_pega_results: 12 failures
+2026-09-23 01:38:21,269  INFO        no_search_executed: 43 failures
+2026-09-23 01:38:21,304  INFO      Job boards: 56 additional listings
+2026-09-23 01:38:21,306  INFO      Total runtime: 48.4 minutes
+2026-09-23 01:38:21,307  INFO      Log saved to: C:\Users\DNSATHV\Desktop\calude\JobChange\JobChange\_logs\nightly-20260923-004955.log
+2026-09-23 01:38:21,309  INFO      ============================================================
+2026-09-23 01:38:21,309  INFO      NIGHTLY SCAN COMPLETE — starting portal server
+2026-09-23 01:38:21,310  INFO      ============================================================
+2026-09-23 01:38:21,319  INFO      Reusing portal instance jlfpflauq0xsXfPPzVP_EtL0WsPANw_h

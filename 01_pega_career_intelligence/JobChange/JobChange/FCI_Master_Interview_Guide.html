@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FCI Deposits &amp; Shared Services | Master Interview &amp; Study Guide</title>
+<style>
+:root{
+  --ink:#102033;--muted:#52677a;--navy:#0f2f4a;--blue:#17649a;--soft:#eaf2f8;
+  --line:#c8d6e2;--paper:#fff;--canvas:#eef3f7;--green:#0f766e;--amber:#9a5b00;
+  --red:#b42318;--code:#0f172a
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--canvas)}
+body{font:400 14px/1.62 "Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--canvas)}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* toolbar */
+.toolbar{position:sticky;top:0;z-index:10;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+  padding:11px;background:rgba(238,243,247,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.toolbar button,.toolbar a.btn{border:0;border-radius:6px;background:var(--navy);color:#fff;padding:9px 15px;
+  font:800 13px/1 "Segoe UI",Arial,sans-serif;cursor:pointer;text-decoration:none;display:inline-block}
+.toolbar button:hover,.toolbar a.btn:hover{background:var(--blue);text-decoration:none}
+
+/* page shell */
+.book{width:210mm;margin:18px auto;background:var(--paper);box-shadow:0 18px 50px rgba(16,32,51,.14)}
+.cover{padding:22mm 16mm 16mm;background:linear-gradient(135deg,#102033,#17466a);color:#fff}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:1.8px;font-weight:900;color:#b8def7;margin-bottom:8px}
+h1{font-size:33px;line-height:1.06;letter-spacing:-1.1px;margin-bottom:10px}
+.subtitle{font-size:15.5px;max-width:155mm;color:#e4f2fb}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
+.meta div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:10px;border-radius:6px}
+.meta strong{display:block;font-size:17px;color:#fff}
+.meta span{font-size:10.5px;color:#d7ebf7;text-transform:uppercase;letter-spacing:.7px}
+
+main{padding:11mm 14mm 16mm}
+section{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}
+section:first-child{margin-top:0;border-top:0}
+h2{font-size:22px;color:var(--navy);margin-bottom:8px;letter-spacing:-.3px}
+h3{font-size:17px;color:var(--blue);margin:16px 0 6px}
+h4{font-size:14.5px;color:var(--ink);margin:12px 0 4px}
+h5{font-size:13px;color:var(--navy);margin:10px 0 3px;text-transform:uppercase;letter-spacing:.6px}
+p{margin:6px 0;color:#23384c}
+ul,ol{margin:7px 0 7px 20px}
+li{margin:4px 0}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.pagebreak{break-before:page;page-break-before:always}
+
+/* navigation grids */
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.toc a{display:block;padding:9px 10px;background:var(--soft);border-left:4px solid var(--blue);
+  font-weight:800;border-radius:4px;color:var(--navy)}
+.toc a span{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{background:#f7fafc;border:1px solid var(--line);border-radius:7px;padding:12px}
+.card.blue{background:var(--soft);border-color:#bad4e8}
+.card.green{background:#ecfdf5;border-color:#b8ead8}
+.card.amber{background:#fff7ed;border-color:#fed7aa}
+.card.red{background:#fff1f2;border-color:#fecdd3}
+
+/* tags */
+.tag{display:inline-block;margin:2px 4px 2px 0;padding:3px 7px;border-radius:999px;background:#e8eff6;
+  color:var(--navy);font-size:12px;font-weight:800}
+.tag.green{background:#dff7ed;color:#075e54}
+.tag.amber{background:#fff2d7;color:#774000}
+.tag.red{background:#ffe0e0;color:#9b1c1c}
+
+/* callouts */
+.answer{border-left:4px solid var(--green);padding:8px 10px;background:#f0fdfa;margin:8px 0}
+.warning{border-left:4px solid var(--amber);padding:8px 10px;background:#fff7ed;margin:8px 0}
+.dont{border-left:4px solid var(--red);padding:8px 10px;background:#fff1f2;margin:8px 0}
+.note{border-left:4px solid var(--blue);padding:8px 10px;background:var(--soft);margin:8px 0}
+
+/* code / diagrams */
+.flow{font-family:Consolas,"Courier New",monospace;background:var(--code);color:#dbeafe;padding:12px;
+  border-radius:7px;white-space:pre-wrap;font-size:11.8px;line-height:1.45;margin:8px 0;overflow:auto}
+.formula{font-family:Consolas,"Courier New",monospace;background:#f1f5f9;border:1px solid var(--line);
+  padding:8px;border-radius:6px;color:#0f172a;margin:6px 0;font-size:12.5px}
+code{font-family:Consolas,"Courier New",monospace;background:#eef2f7;padding:1px 4px;border-radius:3px;font-size:12.5px}
+
+/* tables */
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.8px}
+th,td{border:1px solid var(--line);padding:7px;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--navy)}
+td code{font-size:12px}
+
+/* interview Q&A */
+.qa{background:#f8fafc;border:1px solid var(--line);border-radius:7px;padding:10px;margin:8px 0}
+.qa strong{color:var(--navy)}
+.qa .q{display:block;color:var(--navy);font-weight:800;margin-bottom:4px}
+
+/* SVG diagrams */
+.svg-container{margin:12px 0;text-align:center;overflow-x:auto}
+.svg-container svg{max-width:100%;height:auto}
+
+/* chapter footer nav */
+.chapnav{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:12px;border-top:2px solid var(--line)}
+.chapnav a{font-weight:800;color:var(--navy);background:var(--soft);padding:9px 12px;border-radius:5px}
+
+/* scorecard bars */
+.score-bar{display:flex;align-items:center;gap:8px;margin:3px 0}
+.score-bar .label{width:140px;font-size:12px;font-weight:700;color:var(--navy)}
+.score-bar .bar{flex:1;height:18px;background:#e8eff6;border-radius:9px;overflow:hidden}
+.score-bar .bar .fill{height:100%;border-radius:9px;transition:width .4s}
+.score-bar .val{width:40px;font-size:12px;font-weight:800;color:var(--ink);text-align:right}
+
+/* stat cards */
+.stat{text-align:center;padding:14px}
+.stat .num{font-size:26px;font-weight:800;color:var(--navy)}
+.stat .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+
+@media (max-width:820px){
+  html,body{background:#fff}
+  .book{width:100%;margin:0;box-shadow:none}
+  .cover{padding:26px 18px 20px}
+  main{padding:18px}
+  .grid,.grid3,.grid4,.toc,.meta{grid-template-columns:1fr}
+  .toolbar{position:static}
+}
+
+@media print{
+  html,body{background:#fff}
+  .toolbar,.chapnav{display:none}
+  .book{width:210mm;margin:0;box-shadow:none}
+  .cover{padding:16mm 12mm 12mm}
+  main{padding:8mm 11mm 12mm}
+  h2,h3,h4{break-after:avoid}
+  .card,.answer,.warning,.dont,.note,table,.flow,.qa,.formula{break-inside:avoid}
+  .toc{grid-template-columns:repeat(2,1fr)}
+  @page{size:A4;margin:0}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="#sec-fci-intel">1. FCI Intel</a>
+  <a class="btn" href="#sec-pega-platform">2. Pega Platform</a>
+  <a class="btn" href="#sec-integration">3. Integration</a>
+  <a class="btn" href="#sec-ai-genai">4. AI/GenAI</a>
+  <a class="btn" href="#sec-rpa">5. RPA</a>
+  <a class="btn" href="#sec-banking">6. Banking</a>
+  <a class="btn" href="#sec-infra">7. Infra/DevOps</a>
+  <a class="btn" href="#sec-interview">8. Interview Q&amp;A</a>
+</div>
+
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Master Interview &amp; Study Guide &middot; First Citizens India &middot; Deposits &amp; Shared Services</div>
+    <h1>FCI Pega Software Engineer<br>Complete Preparation Guide</h1>
+    <p class="subtitle">Everything you need to know for your FCI interview: company intel, team structure, architecture diagrams, Pega platform deep dives, integration patterns, AI/GenAI, RPA, banking domain, infrastructure, and 100+ interview Q&amp;A — all in one document with SVG diagrams and visual architecture flows.</p>
+    <div class="meta">
+      <div><strong>8</strong><span>Major Sections</span></div>
+      <div><strong>100+</strong><span>Interview Q&amp;A</span></div>
+      <div><strong>SVG</strong><span>Architecture Diagrams</span></div>
+      <div><strong>P2</strong><span>Target Level</span></div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- TABLE OF CONTENTS -->
+    <section>
+      <h2>Guide Map</h2>
+      <div class="toc">
+        <a href="#sec-fci-intel">1. FCI Company &amp; Team Intelligence<span>Company profile, team structure, org chart, salary, benefits, office, culture, AI tools, scorecard</span></a>
+        <a href="#sec-pega-platform">2. Pega Platform Deep Dive<span>Rule resolution, case management, BPM, SLAs, declaratives, decisioning, data model, data pages, Constellation UI, guardrails</span></a>
+        <a href="#sec-integration">3. Integration Architecture<span>Connect/Service rules, REST, SOAP, Kafka, Queue Processors, Job Schedulers, Data Flows, File/Email Listeners, TIBCO ESB, error handling</span></a>
+        <a href="#sec-ai-genai">4. Pega AI, GenAI &amp; Decisioning<span>CDH, NBA, Prediction Studio, Knowledge Buddy, Agentic AI, Blueprint, NLP, sentiment analysis</span></a>
+        <a href="#sec-rpa">5. Pega RPA<span>Attended/unattended bots, OCR, document extraction, Manager bot, orchestration, BPM integration</span></a>
+        <a href="#sec-banking">6. Banking Domain: Deposits<span>Account lifecycle, legal process orders, payments, KYC/AML, reconciliation, CD maturity, dormancy, regulations</span></a>
+        <a href="#sec-infra">7. Infrastructure &amp; DevOps<span>Okta/SAML, Splunk, ServiceNow, Deployment Manager, CI/CD, PDC, Tracer, PAL, PostgreSQL, access control</span></a>
+        <a href="#sec-interview">8. Interview Q&amp;A Master Bank<span>80+ questions across platform, case management, integration, AI, banking, DevOps, behavioral, salary negotiation</span></a>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: FCI COMPANY & TEAM INTELLIGENCE                   -->
+    <!-- ============================================================ -->
+    <section id="sec-fci-intel" class="pagebreak">
+      <h2>1. FCI Company &amp; Team Intelligence</h2>
+      <p>Everything you need to know about First Citizens India before walking into that interview room.</p>
+
+      <h3>1.1 Company Profile</h3>
+      <div class="grid">
+        <div class="card blue">
+          <h4>First Citizens BancShares, Inc.</h4>
+          <table>
+            <tr><th>Attribute</th><th>Detail</th></tr>
+            <tr><td>Type</td><td>Top 20 US financial institution, publicly traded (NASDAQ: FCNCA)</td></tr>
+            <tr><td>Founded</td><td>1898 (Bank of Smithfield) — 125+ year legacy</td></tr>
+            <tr><td>HQ</td><td>Raleigh, North Carolina, USA</td></tr>
+            <tr><td>Major Acquisition</td><td>Silicon Valley Bank (SVB) in 2023 — now integrated</td></tr>
+            <tr><td>Employees</td><td>9,000-10,000 globally (+7-8% YoY)</td></tr>
+            <tr><td>Revenue</td><td>$2B-$3B annual</td></tr>
+            <tr><td>Global Presence</td><td>19 countries including US, India, UK, Canada</td></tr>
+          </table>
+        </div>
+        <div class="card green">
+          <h4>First Citizens India (FCI)</h4>
+          <table>
+            <tr><th>Attribute</th><th>Detail</th></tr>
+            <tr><td>Legal Entity</td><td>FC Global Services India LLP</td></tr>
+            <tr><td>Type</td><td>Global Capability Center (GCC)</td></tr>
+            <tr><td>Location</td><td>11th &amp; 12th Floor, M3 Parcel 2, Embassy Manyata Business Park, Bangalore 560045</td></tr>
+            <tr><td>Office Since</td><td>June 2025 (brand new!)</td></tr>
+            <tr><td>India Headcount</td><td>~1,024 employees (mid-2026)</td></tr>
+            <tr><td>Growth Rate</td><td>+86.5% YoY</td></tr>
+            <tr><td>Awards</td><td>Top GCC for Organizational Excellence — GCC Workplace Awards 2026</td></tr>
+            <tr><td>Functions</td><td>Technology, Enterprise Ops, Finance, Cybersecurity, Risk, Credit Admin</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <h3>1.2 Work-Life Balance &amp; Office Policy</h3>
+      <div class="grid3">
+        <div class="card">
+          <div class="stat"><div class="num">2</div><div class="lbl">Days in Office / Week</div></div>
+          <p class="small muted">Hybrid model — flexible days</p>
+        </div>
+        <div class="card">
+          <div class="stat"><div class="num">Mon-Fri</div><div class="lbl">Work Days (83%)</div></div>
+          <p class="small muted">No weekend work typically</p>
+        </div>
+        <div class="card">
+          <div class="stat"><div class="num">Flex</div><div class="lbl">Timing (78%)</div></div>
+          <p class="small muted">Flexible hours, some US overlap</p>
+        </div>
+      </div>
+
+      <h3>1.3 Salary &amp; Compensation</h3>
+      <table>
+        <tr><th>Level</th><th>Title</th><th>CTC Range</th><th>Category</th><th>Notes</th></tr>
+        <tr><td><span class="tag">P1</span></td><td>Software Engineer I</td><td>10.7L - 15.2L/yr</td><td>Associate</td><td>23% above market average; 0-4 yrs exp</td></tr>
+        <tr><td><span class="tag green">P2</span></td><td>Software Engineer II</td><td>21L - 28L/yr</td><td>Senior Associate</td><td><strong>YOUR TARGET</strong> — push for this with CSSA + 4.5 yrs</td></tr>
+        <tr><td><span class="tag amber">P3</span></td><td>Senior Software Engineer</td><td>21L - 37.5L/yr</td><td>VP</td><td>Wide range, depends on specialization</td></tr>
+        <tr><td><span class="tag red">P4</span></td><td>Principal Software Engineer</td><td>35L+</td><td>AVP</td><td>Architecture/tech lead</td></tr>
+      </table>
+
+      <div class="answer">
+        <strong>Salary Negotiation Strategy:</strong> With your CSSA certification (they only ask for CSA — yours is higher) and 4.5 years of hands-on Pega experience including Kafka integration, push for the P2 band at 24-26L. The JD asks for 5 years + CSA — you're close enough with a higher cert. Highlight your Kafka-to-Pega architecture (they need exactly this), production support experience (24/7 on-call ready), and CSSA over CSA.
+      </div>
+
+      <h3>1.4 Benefits &amp; Perks</h3>
+      <div class="grid4">
+        <div class="card green"><strong>Free Food</strong><p class="small">Breakfast, lunch in office</p></div>
+        <div class="card green"><strong>Free Snacks</strong><p class="small">Pantry always stocked</p></div>
+        <div class="card green"><strong>Free Cab</strong><p class="small">Office commute provided</p></div>
+        <div class="card blue"><strong>AI Academy</strong><p class="small">Internal AI training program</p></div>
+        <div class="card blue"><strong>Leadership Edge</strong><p class="small">9-month leadership program</p></div>
+        <div class="card blue"><strong>GitHub Copilot</strong><p class="small">Available to devs</p></div>
+        <div class="card blue"><strong>MS Copilot</strong><p class="small">Enterprise rollout</p></div>
+        <div class="card"><strong>Hybrid Work</strong><p class="small">2 days office per week</p></div>
+      </div>
+
+      <h3>1.5 Employee Ratings</h3>
+      <div class="score-bar"><span class="label">Overall</span><div class="bar"><div class="fill" style="width:80%;background:var(--green)"></div></div><span class="val">4.0/5</span></div>
+      <div class="score-bar"><span class="label">Salary &amp; Benefits</span><div class="bar"><div class="fill" style="width:82%;background:var(--green)"></div></div><span class="val">4.1/5</span></div>
+      <div class="score-bar"><span class="label">Culture</span><div class="bar"><div class="fill" style="width:90%;background:var(--green)"></div></div><span class="val">4.5/5</span></div>
+      <div class="score-bar"><span class="label">Career Growth</span><div class="bar"><div class="fill" style="width:82%;background:var(--green)"></div></div><span class="val">4.1/5</span></div>
+      <div class="score-bar"><span class="label">Work-Life</span><div class="bar"><div class="fill" style="width:78%;background:var(--amber)"></div></div><span class="val">3.9/5</span></div>
+      <div class="score-bar"><span class="label">Skill Dev</span><div class="bar"><div class="fill" style="width:68%;background:var(--amber)"></div></div><span class="val">3.4/5</span></div>
+
+      <h3>1.6 Team: Deposits &amp; Shared Services — Org Chart</h3>
+      <div class="note"><strong>This is a GREENFIELD project.</strong> You'd be one of the first 3-4 engineers building from scratch. No legacy code, no "this is how we've always done it." When the team grows to 10-15, you're already senior.</div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 1000 680" xmlns="http://www.w3.org/2000/svg" style="font-family:'Segoe UI',Arial,sans-serif">
+          <!-- Background -->
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#102033"/><stop offset="100%" stop-color="#17466a"/></linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#17649a"/><stop offset="100%" stop-color="#1a7bc4"/></linearGradient>
+            <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient>
+            <linearGradient id="gyou" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+          </defs>
+
+          <!-- Title -->
+          <text x="500" y="28" text-anchor="middle" font-size="15" font-weight="800" fill="#102033">DEPOSITS &amp; SHARED SERVICES — TEAM ORG CHART</text>
+          <line x1="200" y1="36" x2="800" y2="36" stroke="#c8d6e2" stroke-width="1"/>
+
+          <!-- US SIDE label -->
+          <rect x="30" y="50" width="120" height="22" rx="4" fill="#e8eff6"/>
+          <text x="90" y="65" text-anchor="middle" font-size="10" font-weight="800" fill="#0f2f4a">US SIDE (Austin, TX)</text>
+
+          <!-- Sanjoy Sarkar - Top -->
+          <rect x="350" y="55" width="300" height="60" rx="8" fill="url(#g1)" stroke="#0f2f4a" stroke-width="2"/>
+          <text x="500" y="76" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">Sanjoy Sarkar</text>
+          <text x="500" y="92" text-anchor="middle" font-size="9" fill="#b8def7">SVP, Sr Director — Head of Enterprise Workflow Automation &amp; Robotics</text>
+          <text x="500" y="106" text-anchor="middle" font-size="8" fill="#7ab8e0">Austin, TX | 16 yrs | Forbes Tech Council | PegaWorld Speaker</text>
+
+          <!-- Connector from Sanjoy down -->
+          <line x1="500" y1="115" x2="500" y2="150" stroke="#c8d6e2" stroke-width="2"/>
+
+          <!-- INDIA SIDE label -->
+          <rect x="30" y="155" width="120" height="22" rx="4" fill="#dff7ed"/>
+          <text x="90" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#075e54">INDIA (Bangalore)</text>
+
+          <!-- Horizontal connector -->
+          <line x1="140" y1="180" x2="860" y2="180" stroke="#c8d6e2" stroke-width="2"/>
+
+          <!-- Vertical drops from horizontal -->
+          <line x1="140" y1="180" x2="140" y2="210" stroke="#c8d6e2" stroke-width="2"/>
+          <line x1="320" y1="180" x2="320" y2="210" stroke="#c8d6e2" stroke-width="2"/>
+          <line x1="500" y1="150" x2="500" y2="180" stroke="#c8d6e2" stroke-width="2"/>
+          <line x1="500" y1="180" x2="500" y2="210" stroke="#c8d6e2" stroke-width="2"/>
+          <line x1="680" y1="180" x2="680" y2="210" stroke="#c8d6e2" stroke-width="2"/>
+          <line x1="860" y1="180" x2="860" y2="210" stroke="#c8d6e2" stroke-width="2"/>
+
+          <!-- Chirantan -->
+          <rect x="40" y="210" width="200" height="65" rx="7" fill="url(#g2)" stroke="#17649a" stroke-width="1.5"/>
+          <text x="140" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Chirantan Chakraborty</text>
+          <text x="140" y="245" text-anchor="middle" font-size="9" fill="#d7ebf7">Principal Architect (Pega CLSA)</text>
+          <text x="140" y="258" text-anchor="middle" font-size="8" fill="#a0c4e8">10+ yrs | Ex-EvonSys</text>
+          <text x="140" y="269" text-anchor="middle" font-size="7" fill="#7ab8e0">Architects ALL FCB Pega projects</text>
+
+          <!-- Tushar -->
+          <rect x="250" y="210" width="140" height="65" rx="7" fill="url(#g2)" stroke="#17649a" stroke-width="1.5"/>
+          <text x="320" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Tushar Banerjee</text>
+          <text x="320" y="245" text-anchor="middle" font-size="9" fill="#d7ebf7">Lead SE (Pega UI/UX)</text>
+          <text x="320" y="258" text-anchor="middle" font-size="8" fill="#a0c4e8">7+ yrs | Ex-Pegasystems</text>
+          <text x="320" y="269" text-anchor="middle" font-size="7" fill="#7ab8e0">Constellation UI specialist</text>
+
+          <!-- Nimalan -->
+          <rect x="400" y="210" width="200" height="65" rx="7" fill="url(#g2)" stroke="#17649a" stroke-width="1.5"/>
+          <text x="500" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Nimalan Peter</text>
+          <text x="500" y="245" text-anchor="middle" font-size="9" fill="#d7ebf7">Lead SE (Pega RPA)</text>
+          <text x="500" y="258" text-anchor="middle" font-size="8" fill="#a0c4e8">20 yrs | Ex-EvonSys, TCS</text>
+          <text x="500" y="269" text-anchor="middle" font-size="7" fill="#7ab8e0">RPA bots, OCR, reconciliation</text>
+
+          <!-- Balamurugan -->
+          <rect x="610" y="210" width="140" height="65" rx="7" fill="url(#g2)" stroke="#17649a" stroke-width="1.5"/>
+          <text x="680" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Balamurugan M.</text>
+          <text x="680" y="245" text-anchor="middle" font-size="9" fill="#d7ebf7">Lead SE (GenAI)</text>
+          <text x="680" y="258" text-anchor="middle" font-size="8" fill="#a0c4e8">8+ yrs | Ex-EvonSys</text>
+          <text x="680" y="269" text-anchor="middle" font-size="7" fill="#7ab8e0">Pega GenAI / Blueprint</text>
+
+          <!-- Deepak Shahi -->
+          <rect x="760" y="210" width="200" height="65" rx="7" fill="url(#g2)" stroke="#17649a" stroke-width="1.5"/>
+          <text x="860" y="230" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Deepak Shahi</text>
+          <text x="860" y="245" text-anchor="middle" font-size="9" fill="#d7ebf7">Principal SE (Pega CLSA)</text>
+          <text x="860" y="258" text-anchor="middle" font-size="8" fill="#a0c4e8">10+ yrs | Ex-Pegasystems</text>
+          <text x="860" y="269" text-anchor="middle" font-size="7" fill="#7ab8e0">CLSA certified Jan 2025</text>
+
+          <!-- YOUR ROLE -->
+          <line x1="500" y1="275" x2="500" y2="320" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3"/>
+          <rect x="370" y="320" width="260" height="55" rx="8" fill="url(#gyou)" stroke="#dc2626" stroke-width="2.5"/>
+          <text x="500" y="342" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">YOU (Sathvik DN)</text>
+          <text x="500" y="358" text-anchor="middle" font-size="10" fill="#fecaca">Software Engineer II (P2) | CSSA | 4.5 yrs</text>
+          <text x="500" y="370" text-anchor="middle" font-size="8" fill="#fca5a5">Core case development, Kafka integration, prod support</text>
+
+          <!-- Business Side -->
+          <rect x="30" y="410" width="120" height="22" rx="4" fill="#fff2d7"/>
+          <text x="90" y="425" text-anchor="middle" font-size="10" font-weight="800" fill="#774000">BUSINESS SIDE</text>
+
+          <line x1="300" y1="440" x2="700" y2="440" stroke="#c8d6e2" stroke-width="1.5"/>
+          <line x1="300" y1="440" x2="300" y2="460" stroke="#c8d6e2" stroke-width="1.5"/>
+          <line x1="700" y1="440" x2="700" y2="460" stroke="#c8d6e2" stroke-width="1.5"/>
+
+          <!-- Thiruselvam -->
+          <rect x="170" y="460" width="260" height="55" rx="7" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+          <text x="300" y="480" text-anchor="middle" font-size="11" font-weight="700" fill="#774000">Thiruselvam Rammohan</text>
+          <text x="300" y="494" text-anchor="middle" font-size="9" fill="#9a5b00">Sr Director, Commercial Banking</text>
+          <text x="300" y="507" text-anchor="middle" font-size="8" fill="#b8860b">25+ yrs | Oracle Flexcube &amp; Fiserv | Built SVB GDC 0→200</text>
+
+          <!-- Stephen -->
+          <rect x="570" y="460" width="260" height="55" rx="7" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+          <text x="700" y="480" text-anchor="middle" font-size="11" font-weight="700" fill="#774000">Stephen Perumalla</text>
+          <text x="700" y="494" text-anchor="middle" font-size="9" fill="#9a5b00">Director of Operations</text>
+          <text x="700" y="507" text-anchor="middle" font-size="8" fill="#b8860b">20+ yrs | Ex-SVB, Wells Fargo, BoFA | India Ops Lead</text>
+
+          <!-- AI Leadership -->
+          <rect x="30" y="540" width="120" height="22" rx="4" fill="#e8eff6"/>
+          <text x="90" y="555" text-anchor="middle" font-size="10" font-weight="800" fill="#0f2f4a">AI LEADERSHIP (US)</text>
+
+          <rect x="170" y="570" width="200" height="45" rx="6" fill="#eaf2f8" stroke="#bad4e8"/>
+          <text x="270" y="588" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2f4a">Scott Richardson</text>
+          <text x="270" y="602" text-anchor="middle" font-size="8" fill="#52677a">Chief Data &amp; Analytics Officer</text>
+
+          <rect x="400" y="570" width="200" height="45" rx="6" fill="#eaf2f8" stroke="#bad4e8"/>
+          <text x="500" y="588" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2f4a">Ash Kaduskar</text>
+          <text x="500" y="602" text-anchor="middle" font-size="8" fill="#52677a">Head of AI &amp; Advanced Analytics</text>
+
+          <rect x="630" y="570" width="200" height="45" rx="6" fill="#eaf2f8" stroke="#bad4e8"/>
+          <text x="730" y="588" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2f4a">Prashant Kale</text>
+          <text x="730" y="602" text-anchor="middle" font-size="8" fill="#52677a">Principal Architect | GenAI CoE Lead</text>
+
+          <!-- Legend -->
+          <rect x="200" y="640" width="600" height="30" rx="5" fill="#f7fafc" stroke="#c8d6e2"/>
+          <circle cx="230" cy="655" r="6" fill="url(#g1)"/><text x="245" y="659" font-size="9" fill="#52677a">US Leadership</text>
+          <circle cx="345" cy="655" r="6" fill="url(#g2)"/><text x="360" y="659" font-size="9" fill="#52677a">India Tech Leads</text>
+          <circle cx="470" cy="655" r="6" fill="url(#gyou)"/><text x="485" y="659" font-size="9" fill="#52677a">Your Role</text>
+          <circle cx="570" cy="655" r="6" fill="#fff7ed" stroke="#fed7aa"/><text x="585" y="659" font-size="9" fill="#52677a">Business Side</text>
+          <circle cx="690" cy="655" r="6" fill="#eaf2f8" stroke="#bad4e8"/><text x="705" y="659" font-size="9" fill="#52677a">AI Leadership</text>
+        </svg>
+      </div>
+
+      <h3>1.7 System Architecture: What You'll Be Building</h3>
+      <div class="svg-container">
+        <svg viewBox="0 0 1100 550" xmlns="http://www.w3.org/2000/svg" style="font-family:'Segoe UI',Arial,sans-serif">
+          <defs>
+            <linearGradient id="ga" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#102033"/><stop offset="100%" stop-color="#1a4a6e"/></linearGradient>
+            <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#17649a"/><stop offset="100%" stop-color="#2084c4"/></linearGradient>
+            <linearGradient id="gc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient>
+            <linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a5b00"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+          </defs>
+
+          <text x="550" y="24" text-anchor="middle" font-size="14" font-weight="800" fill="#102033">FCI DEPOSITS PLATFORM — SYSTEM ARCHITECTURE</text>
+          <line x1="200" y1="32" x2="900" y2="32" stroke="#c8d6e2"/>
+
+          <!-- ACTORS column -->
+          <rect x="20" y="50" width="130" height="200" rx="8" fill="#eaf2f8" stroke="#bad4e8"/>
+          <text x="85" y="68" text-anchor="middle" font-size="10" font-weight="800" fill="#0f2f4a">ACTORS</text>
+          <text x="85" y="88" text-anchor="middle" font-size="9" fill="#52677a">Branch Staff</text>
+          <text x="85" y="105" text-anchor="middle" font-size="9" fill="#52677a">Contact Center</text>
+          <text x="85" y="122" text-anchor="middle" font-size="9" fill="#52677a">Ops Analysts</text>
+          <text x="85" y="139" text-anchor="middle" font-size="9" fill="#52677a">Supervisors</text>
+          <text x="85" y="156" text-anchor="middle" font-size="9" fill="#52677a">Legal/Compliance</text>
+          <text x="85" y="173" text-anchor="middle" font-size="9" fill="#52677a">Auditors</text>
+          <text x="85" y="195" text-anchor="middle" font-size="8" fill="#17649a">SSO via Okta</text>
+          <text x="85" y="210" text-anchor="middle" font-size="8" fill="#17649a">(SAML 2.0)</text>
+          <text x="85" y="235" text-anchor="middle" font-size="8" font-style="italic" fill="#9a5b00">Customers</text>
+          <text x="85" y="246" text-anchor="middle" font-size="7" fill="#9a5b00">(Phase 2 - DX API)</text>
+
+          <!-- Arrow to Presentation -->
+          <line x1="150" y1="150" x2="180" y2="150" stroke="#17649a" stroke-width="2" marker-end="url(#arrowBlue)"/>
+          <defs><marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#17649a"/></marker></defs>
+
+          <!-- PRESENTATION column -->
+          <rect x="180" y="50" width="140" height="200" rx="8" fill="url(#gb)" stroke="#17649a" stroke-width="1.5"/>
+          <text x="250" y="68" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">PRESENTATION</text>
+          <rect x="192" y="78" width="116" height="30" rx="4" fill="rgba(255,255,255,.15)"/>
+          <text x="250" y="97" text-anchor="middle" font-size="9" fill="#d7ebf7">Constellation</text>
+          <text x="250" y="107" text-anchor="middle" font-size="8" fill="#a0c4e8">Ops Portal</text>
+          <rect x="192" y="118" width="116" height="30" rx="4" fill="rgba(255,255,255,.15)"/>
+          <text x="250" y="137" text-anchor="middle" font-size="9" fill="#d7ebf7">Dashboards</text>
+          <text x="250" y="147" text-anchor="middle" font-size="8" fill="#a0c4e8">SLA, KPIs, Queues</text>
+          <rect x="192" y="158" width="116" height="30" rx="4" fill="rgba(255,255,255,.15)"/>
+          <text x="250" y="177" text-anchor="middle" font-size="9" fill="#d7ebf7">DX API v2</text>
+          <text x="250" y="187" text-anchor="middle" font-size="8" fill="#a0c4e8">External Channels</text>
+          <rect x="192" y="198" width="116" height="26" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="250" y="215" text-anchor="middle" font-size="8" fill="#a0c4e8">Service-REST APIs</text>
+
+          <!-- Arrow to Pega Platform -->
+          <line x1="320" y1="150" x2="350" y2="150" stroke="#17649a" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+          <!-- PEGA PLATFORM (main block) -->
+          <rect x="350" y="42" width="300" height="310" rx="10" fill="url(#ga)" stroke="#0f2f4a" stroke-width="2"/>
+          <text x="500" y="62" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">PEGA PLATFORM (Case Engine)</text>
+
+          <!-- Case Types -->
+          <rect x="362" y="72" width="276" height="70" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/>
+          <text x="500" y="88" text-anchor="middle" font-size="9" font-weight="700" fill="#b8def7">CASE TYPES</text>
+          <text x="500" y="102" text-anchor="middle" font-size="8" fill="#7ab8e0">Account Maintenance | Closure | Legal Process Order</text>
+          <text x="500" y="114" text-anchor="middle" font-size="8" fill="#7ab8e0">Payment Exception | KYC/AML | Reconciliation</text>
+          <text x="500" y="126" text-anchor="middle" font-size="8" fill="#7ab8e0">Dormancy | CD Maturity | Dispute</text>
+
+          <!-- Shared Frameworks -->
+          <rect x="362" y="148" width="276" height="55" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/>
+          <text x="500" y="164" text-anchor="middle" font-size="9" font-weight="700" fill="#b8def7">SHARED FRAMEWORKS</text>
+          <text x="500" y="178" text-anchor="middle" font-size="8" fill="#7ab8e0">SLA/Calendars | Authority Matrix | Correspondence</text>
+          <text x="500" y="190" text-anchor="middle" font-size="8" fill="#7ab8e0">Audit Trail | Reference Data | Integration Framework</text>
+
+          <!-- Background Processing -->
+          <rect x="362" y="210" width="276" height="50" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/>
+          <text x="500" y="226" text-anchor="middle" font-size="9" font-weight="700" fill="#b8def7">BACKGROUND PROCESSING</text>
+          <text x="500" y="240" text-anchor="middle" font-size="8" fill="#7ab8e0">Queue Processors | Job Schedulers | Data Flows</text>
+          <text x="500" y="252" text-anchor="middle" font-size="8" fill="#7ab8e0">File/Email Listeners | Batch Operations</text>
+
+          <!-- Decisioning / AI -->
+          <rect x="362" y="266" width="276" height="40" rx="5" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)"/>
+          <text x="500" y="282" text-anchor="middle" font-size="9" font-weight="700" fill="#b8def7">DECISIONING &amp; AI</text>
+          <text x="500" y="296" text-anchor="middle" font-size="8" fill="#7ab8e0">CDH/NBA | Knowledge Buddy | GenAI | RPA Bots | OCR</text>
+
+          <!-- Platform Services -->
+          <rect x="350" y="360" width="300" height="38" rx="6" fill="#eaf2f8" stroke="#bad4e8"/>
+          <text x="500" y="376" text-anchor="middle" font-size="8" font-weight="700" fill="#0f2f4a">PLATFORM SERVICES</text>
+          <text x="500" y="390" text-anchor="middle" font-size="7" fill="#52677a">PostgreSQL | Elasticsearch | Kafka | Splunk/SIEM | PDC | Deployment Mgr</text>
+
+          <!-- Arrow to ESB -->
+          <line x1="650" y1="150" x2="690" y2="150" stroke="#0f766e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+          <defs><marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#0f766e"/></marker></defs>
+
+          <!-- TIBCO ESB -->
+          <rect x="690" y="60" width="120" height="240" rx="8" fill="url(#gc)" stroke="#0f766e" stroke-width="1.5"/>
+          <text x="750" y="80" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">TIBCO ESB</text>
+          <text x="750" y="100" text-anchor="middle" font-size="8" fill="#d1fae5">Routing</text>
+          <text x="750" y="116" text-anchor="middle" font-size="8" fill="#d1fae5">Transform</text>
+          <text x="750" y="132" text-anchor="middle" font-size="8" fill="#d1fae5">Throttling</text>
+          <text x="750" y="148" text-anchor="middle" font-size="8" fill="#d1fae5">Token/mTLS</text>
+          <text x="750" y="164" text-anchor="middle" font-size="8" fill="#d1fae5">Idempotency</text>
+          <text x="750" y="184" text-anchor="middle" font-size="8" fill="#d1fae5">Correlation ID</text>
+          <text x="750" y="204" text-anchor="middle" font-size="8" fill="#d1fae5">Error Routing</text>
+          <text x="750" y="224" text-anchor="middle" font-size="8" fill="#d1fae5">Retry Mgmt</text>
+          <text x="750" y="248" text-anchor="middle" font-size="7" fill="#a7f3d0">REST + JMS</text>
+          <text x="750" y="264" text-anchor="middle" font-size="7" fill="#a7f3d0">SOAP + MQ</text>
+          <text x="750" y="280" text-anchor="middle" font-size="7" fill="#a7f3d0">File Transfer</text>
+
+          <!-- Arrow to Systems of Record -->
+          <line x1="810" y1="150" x2="850" y2="150" stroke="#9a5b00" stroke-width="2" marker-end="url(#arrowAmber)"/>
+          <defs><marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#9a5b00"/></marker></defs>
+
+          <!-- SYSTEMS OF RECORD -->
+          <rect x="850" y="42" width="230" height="310" rx="8" fill="url(#gd)" stroke="#9a5b00" stroke-width="1.5"/>
+          <text x="965" y="62" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">SYSTEMS OF RECORD</text>
+
+          <rect x="862" y="72" width="206" height="26" rx="4" fill="rgba(255,255,255,.15)"/>
+          <text x="965" y="89" text-anchor="middle" font-size="9" fill="#fff">Fiserv Signature (Core Banking)</text>
+
+          <rect x="862" y="104" width="206" height="26" rx="4" fill="rgba(255,255,255,.15)"/>
+          <text x="965" y="121" text-anchor="middle" font-size="9" fill="#fff">Oracle Flexcube (SVB Legacy)</text>
+
+          <rect x="862" y="136" width="206" height="22" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="965" y="151" text-anchor="middle" font-size="8" fill="#fef3c7">Payment Hubs (ACH, Wires)</text>
+
+          <rect x="862" y="164" width="206" height="22" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="965" y="179" text-anchor="middle" font-size="8" fill="#fef3c7">Sanctions / OFAC Screening</text>
+
+          <rect x="862" y="192" width="206" height="22" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="965" y="207" text-anchor="middle" font-size="8" fill="#fef3c7">Fraud Detection Platform</text>
+
+          <rect x="862" y="220" width="206" height="22" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="965" y="235" text-anchor="middle" font-size="8" fill="#fef3c7">CRM / Customer Master</text>
+
+          <rect x="862" y="248" width="206" height="22" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="965" y="263" text-anchor="middle" font-size="8" fill="#fef3c7">Document Management</text>
+
+          <rect x="862" y="276" width="206" height="22" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="965" y="291" text-anchor="middle" font-size="8" fill="#fef3c7">GL / Finance / Reporting</text>
+
+          <rect x="862" y="304" width="206" height="22" rx="4" fill="rgba(255,255,255,.1)"/>
+          <text x="965" y="319" text-anchor="middle" font-size="8" fill="#fef3c7">Print/Mail Vendor | Email/SMS</text>
+
+          <!-- MFT/SFTP -->
+          <rect x="690" y="320" width="120" height="35" rx="6" fill="#ecfdf5" stroke="#b8ead8"/>
+          <text x="750" y="340" text-anchor="middle" font-size="9" font-weight="700" fill="#075e54">MFT / SFTP</text>
+          <text x="750" y="352" text-anchor="middle" font-size="7" fill="#0f766e">Files In/Out</text>
+          <line x1="650" y1="280" x2="690" y2="337" stroke="#0f766e" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="810" y1="337" x2="850" y2="310" stroke="#9a5b00" stroke-width="1" stroke-dasharray="4,3"/>
+
+          <!-- LEGEND -->
+          <rect x="170" y="420" width="760" height="50" rx="6" fill="#f7fafc" stroke="#c8d6e2"/>
+          <text x="550" y="438" text-anchor="middle" font-size="10" font-weight="800" fill="#0f2f4a">INTEGRATION PATTERNS</text>
+          <text x="230" y="458" text-anchor="middle" font-size="8" fill="#52677a">SYNC = REST via ESB</text>
+          <text x="380" y="458" text-anchor="middle" font-size="8" fill="#52677a">ASYNC = Event/Queue + Callback</text>
+          <text x="560" y="458" text-anchor="middle" font-size="8" fill="#52677a">BATCH = SFTP + Trigger File</text>
+          <text x="730" y="458" text-anchor="middle" font-size="8" fill="#52677a">Every call: Correlation ID + Idempotency Key</text>
+
+          <!-- Bottom note -->
+          <text x="550" y="500" text-anchor="middle" font-size="9" font-weight="700" fill="#0f2f4a">Pega NEVER calls the core directly. Everything goes through TIBCO ESB or MFT.</text>
+          <text x="550" y="516" text-anchor="middle" font-size="8" fill="#52677a">The ESB owns timeouts (shorter than Pega's), exactly one layer owns retries, errors classified at mapping boundary.</text>
+          <text x="550" y="530" text-anchor="middle" font-size="8" fill="#52677a">5 integration patterns: SYNC (reads) | SYNC+Q (writes w/ outbox) | ASYNC-CB (long ops) | EVENT (continuous) | BATCH (files)</text>
+        </svg>
+      </div>
+
+      <h3>1.8 AI Tools Available to Developers</h3>
+      <table>
+        <tr><th>Tool</th><th>Status</th><th>Details</th></tr>
+        <tr><td>GitHub Copilot</td><td><span class="tag green">Confirmed</span></td><td>Available to developers — even P1 SWEs in Bangalore use it. Helps with Java, SQL, scripts.</td></tr>
+        <tr><td>Microsoft Copilot (M365)</td><td><span class="tag green">Rolling Out</span></td><td>Enterprise-wide: Teams meeting summaries, Outlook email drafts, Word/Excel/PowerPoint.</td></tr>
+        <tr><td>Pega GenAI Blueprint</td><td><span class="tag green">Active</span></td><td>Chirantan just ran a 2-day workshop (Sep 2026). Auto-generates case types from descriptions.</td></tr>
+        <tr><td>AI Academy</td><td><span class="tag green">Active</span></td><td>Formal internal training — persona-based AI learning experiences for all associates.</td></tr>
+        <tr><td>Claude / ChatGPT</td><td><span class="tag amber">Individual</span></td><td>Used by some developers individually. Not officially provisioned enterprise-wide.</td></tr>
+        <tr><td>Cursor</td><td><span class="tag amber">AI Team</span></td><td>Used by AI/Analytics team. Bank allows but may have security policies around code.</td></tr>
+      </table>
+
+      <h3>1.9 Final Scorecard</h3>
+      <div class="score-bar"><span class="label">Team Quality</span><div class="bar"><div class="fill" style="width:90%;background:var(--green)"></div></div><span class="val">9/10</span></div>
+      <div class="score-bar"><span class="label">Learning Potential</span><div class="bar"><div class="fill" style="width:90%;background:var(--green)"></div></div><span class="val">9/10</span></div>
+      <div class="score-bar"><span class="label">Resume Value</span><div class="bar"><div class="fill" style="width:90%;background:var(--green)"></div></div><span class="val">9/10</span></div>
+      <div class="score-bar"><span class="label">Tech Stack</span><div class="bar"><div class="fill" style="width:90%;background:var(--green)"></div></div><span class="val">9/10</span></div>
+      <div class="score-bar"><span class="label">Compensation</span><div class="bar"><div class="fill" style="width:80%;background:var(--green)"></div></div><span class="val">8/10</span></div>
+      <div class="score-bar"><span class="label">Career Growth</span><div class="bar"><div class="fill" style="width:70%;background:var(--amber)"></div></div><span class="val">7/10</span></div>
+      <div class="score-bar"><span class="label">Work-Life Balance</span><div class="bar"><div class="fill" style="width:70%;background:var(--amber)"></div></div><span class="val">7/10</span></div>
+      <div class="score-bar"><span class="label">Culture</span><div class="bar"><div class="fill" style="width:70%;background:var(--amber)"></div></div><span class="val">7/10</span></div>
+      <p><strong>OVERALL: 8.1/10 — Strong opportunity.</strong> Greenfield project, expert team, cutting-edge tech, above-market pay. Trade-offs: slow promotions, on-call, post-SVB growing pains.</p>
+    </section>
+
+    <!-- PLACEHOLDER for remaining sections — will be populated by subagents -->
+    <div id="placeholder-sections"></div>
+
+  </main>
+</div>
+
+</body>
+</html>

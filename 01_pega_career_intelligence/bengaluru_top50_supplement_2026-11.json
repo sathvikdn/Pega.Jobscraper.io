@@ -1,0 +1,102 @@
+{
+  "asOf": "2026-11-11",
+  "note": "Fresh public lookups (site-restricted search results for public LinkedIn profile pages, job descriptions, Pega.com/PegaWorld) added on top of the existing ledgers for the Top-50 merge. Work facts only; no contact details.",
+  "companies": {
+    "siemens": {
+      "workstreams": [["CCMT global development (India)", "Development and enhancements of the Cash Collection Management Tool used across Siemens' global collections.", "Anusha G"]],
+      "people": [
+        {"name": "Anusha G", "title": "Senior Software Development Engineer – CCMT", "cert": "CSSA, CSA; LSA 8.8 course", "tenure": "Since Dec 2020 (ex-Wells Fargo Smart Investigate)", "worksOn": "Global CCMT development and enhancements", "url": "https://linkedin.com/in/anusha-g-052823a9", "priority": 1},
+        {"name": "Faizan Bhat", "title": "Senior Software Developer – Pega", "cert": "CSSA, CUIS", "tenure": "Since Aug 2019 (ex-Pegasystems Solutions Engineer)", "worksOn": "Pega development at Siemens Technology India", "url": "https://linkedin.com/in/faizan-bhat-83076a160", "priority": 1},
+        {"name": "Rajashekar Nagireddy", "title": "Pega Developer", "cert": "CSSA, CSA", "tenure": "Current", "worksOn": "Pega development", "url": "https://linkedin.com/in/rajashekar-nagireddy-577079247", "priority": 1},
+        {"name": "Amit Abhishek", "title": "Lead Pega Developer (Siemens Technology and Services)", "cert": "LSA Architecture (Oct 2025), CPDC, Pega Data Scientist, CSSA", "tenure": "Since Mar 2021 (ex-Coforge, Mindtree)", "worksOn": "Pega application design/lead development", "url": "https://linkedin.com/in/amit-abhishek-37648378", "priority": 2}
+      ]
+    },
+    "ameriprise": {
+      "workstreams": [["Pega delivery hubs outside Bengaluru", "Hands-on Pega tech leads sit mainly in Gurugram and Noida; Bengaluru hosts the Workflow Automation & Robotics leadership.", "Manish Kumar, Sonali Gupta, Hemant Kumar, Parinay Raj"]],
+      "people": [
+        {"name": "Parinay Raj", "title": "Senior Tech Lead (role listed in Noida, profile Bengaluru)", "cert": "CSSA, CSA", "tenure": "Since Jul 2023 (ex-HSBC)", "worksOn": "Pega tech lead", "url": "https://linkedin.com/in/parinay-raj-000073bb", "priority": 1},
+        {"name": "Manish Kumar", "title": "Pega Technical Lead (Gurugram)", "cert": "CPDC, CSSA, CSA", "tenure": "Since Mar 2021", "worksOn": "BPM application design/delivery", "url": "https://linkedin.com/in/manish-kumar-93bb544b", "priority": 2},
+        {"name": "Sonali Gupta", "title": "Sr Pega App Development Tech Lead (Gurugram)", "cert": "CSSA, CUIS; Theme Cosmos", "tenure": "Since Jul 2026 (ex-Cognizant)", "worksOn": "Pega UI/Theme Cosmos", "url": "https://linkedin.com/in/sonali-gupta-6893bb37", "priority": 2},
+        {"name": "Hemant Kumar", "title": "Technical Manager (Noida)", "cert": "CSSA, LSA Part 1", "tenure": "Since Jul 2022", "worksOn": "CRM + Pega BPM delivery management", "url": "https://linkedin.com/in/hemant-kumar-118b674", "priority": 3},
+        {"name": "Sunil Murugendrappa", "title": "Director – Workflow Automation & Robotics (Bengaluru)", "cert": "Pega LSA", "tenure": "Current", "worksOn": "Leads 50+ engineers across Pega, RPA, QA, DevOps, support", "url": "https://linkedin.com/in/sunil-murugendrappa-72489793", "priority": 4}
+      ]
+    },
+    "standard chartered": {
+      "workstreams": [["Bengaluru CDH decisioning team (growing 2025–2026)", "Pega CDH / Next-Best-Action strategy and decisioning architects; three decisioning architects joined Apr 2025–Jan 2026 (from CBA, HSBC, TCS).", "Swathi Vaddi, Ashutosh Hingankar, Vikas Soni"]],
+      "people": [
+        {"name": "Vikas Soni", "title": "Pega Decisioning Architect", "cert": "CPDC 8.8; Decision Hub 24.1", "tenure": "Since Jan 2026 (ex-HSBC, TCS)", "worksOn": "NBA strategies, AI-driven decisioning", "url": "https://linkedin.com/in/vikas-soni-970018130", "priority": 1},
+        {"name": "Ashutosh Hingankar", "title": "Decisioning Architect – Pega CDH", "cert": "PCDC 23, PCDS 23, CSSA 8.7, CSA", "tenure": "Since Apr 2025", "worksOn": "Pega CDH", "url": "https://linkedin.com/in/ashutosh-hingankar-788984219", "priority": 1},
+        {"name": "Swathi Vaddi", "title": "Lead Decisioning Architect", "cert": "CPDC, Pega Data Scientist, CPMC, CSA", "tenure": "Since Jun 2025 (ex-CBA Lead Decisioning Developer 2022–2025)", "worksOn": "Lead Pega decisioning", "url": "https://linkedin.com/in/swathi-vaddi", "priority": 2}
+      ]
+    },
+    "john deere": {
+      "workstreams": [["Bengaluru Pega leadership and new hires", "An AGM (ex-Pegasystems, CLSA) and a Lead SE are based in Bengaluru, and a CSSA Senior SE joined in Nov 2025, so Bengaluru seats are real, not only Pune.", "NITHIN TL, Shailendra Mishra, MalakondaReddy Boyella"]],
+      "people": [
+        {"name": "MalakondaReddy Boyella", "title": "Senior Software Engineer – Pega (Bengaluru)", "cert": "CSSA, CSA", "tenure": "Since Nov 2025 (ex-Infosys, Aaseya)", "worksOn": "Pega development", "url": "https://linkedin.com/in/malakondareddy-boyella-ba5b451a5", "priority": 1},
+        {"name": "Shailendra Mishra", "title": "Lead Software Engineer (Bengaluru)", "cert": "CSSA, CSA, AWS SA Associate, AWS AI Practitioner", "tenure": "Since Nov 2021 (ex-TCS)", "worksOn": "Full-stack + GenAI + Pega", "url": "https://linkedin.com/in/shailendra-mishra-3585001b", "priority": 2},
+        {"name": "NITHIN TL", "title": "AGM – Software Engineer (Bengaluru)", "cert": "CLSA (PCLSA 80V1); PG AI/ML (BITS)", "tenure": "Deere since Sep 2022; AGM since Mar 2025 (ex-Pegasystems Principal TSE)", "worksOn": "Leads Bengaluru engineering", "url": "https://linkedin.com/in/nithin-tl-447b55165", "priority": 3}
+      ]
+    },
+    "morgan stanley": {
+      "workstreams": [["Client Onboarding Regulatory Services (business side)", "The business owners of the KYC/onboarding lifecycle the Pega platforms serve, including transformation BAs/product owners.", "Krishna K S"]],
+      "people": [
+        {"name": "Subrat Bardhan", "title": "Manager – Pega Developer (Bengaluru)", "cert": "CSSA, CSA", "tenure": "Since Jan 2023", "worksOn": "Pega development (8.5 yrs Pega)", "url": "https://linkedin.com/in/subrat-bardhan-4b89901b7", "priority": 1},
+        {"name": "Krishna K S", "title": "Vice President – Client Onboarding Regulatory Services", "cert": "CSPO", "tenure": "MS since Mar 2020; VP since Jan 2023", "worksOn": "KYC/AML onboarding lifecycle transformation (business)", "url": "https://linkedin.com/in/krishna-k-s-323a3029", "priority": 4}
+      ]
+    },
+    "wells fargo": {
+      "workstreams": [["Bengaluru Pega leads", "Bengaluru has at least four Lead Software Engineers covering Smart Investigate (payments), marketing/CDH and GenAI/agentic exploration.", "Raja Reddy Bommana, Ravi kiran N G, kopparapu suhas, Sheshachal Galagali"]],
+      "people": [
+        {"name": "Ravi kiran N G", "title": "Lead Pega Developer (Bengaluru)", "cert": "CLSA Part 1 (8.8), CSSA, CSA", "tenure": "WF since Jul 2019; lead since Feb 2024 (ex-Cognizant)", "worksOn": "Pega lead; GenAI/agentic AI", "url": "https://linkedin.com/in/ravi-kiran-n-g-a1386b78", "priority": 2},
+        {"name": "Sheshachal Galagali", "title": "Lead Software Engineer (Bengaluru)", "cert": "CSSA", "tenure": "WF since Jul 2020; lead since Mar 2025 (ex-Instellars)", "worksOn": "Pega PRPC", "url": "https://linkedin.com/in/sheshachal-galagali-60168318", "priority": 2},
+        {"name": "kopparapu suhas", "title": "Lead Software Engineer (Bengaluru)", "cert": "CSSA, CSA, CPMC, CPDC", "tenure": "WF since Nov 2021; lead since Apr 2023 (ex-Pegasystems 2015–2021)", "worksOn": "Pega Marketing/NBA, integrations, performance", "url": "https://linkedin.com/in/kopparapu-suhas", "priority": 2},
+        {"name": "Raja Reddy Bommana", "title": "Lead Software Engineer / VP (Bengaluru)", "cert": "CLSA", "tenure": "WF since Aug 2013", "worksOn": "Smart Investigate for Payments, SWIFT/Fed", "url": "https://linkedin.com/in/raja-reddy-bommana", "priority": 3}
+      ]
+    },
+    "vois": {
+      "workstreams": [
+        ["IT Platforms & Automation as a Service (Bengaluru)", "A Pega LSA senior manager leads platform/automation-as-a-service from Bengaluru (since Aug 2025).", "Ganesh Mahagaonkar"],
+        ["CDH test & quality engineering", "Dedicated Pega CDH test lead for NBA decisioning, engagement policies and offer orchestration in Vodafone's always-on marketing.", "Manoj Kannan Manickavasagam"]
+      ],
+      "people": [
+        {"name": "Koteswararao Kasthuri", "title": "Manager – Pega Technology (Bengaluru)", "cert": "CSSA, CSA", "tenure": "Since Feb 2023 (ex-Accenture)", "worksOn": "Pega development; 'Vodafone Stars' award 2024", "url": "https://linkedin.com/in/kkoteswar", "priority": 1},
+        {"name": "Manoj Kannan Manickavasagam", "title": "Manager – Pega CDH Test Lead (Bengaluru)", "cert": "CSA, CPDC", "tenure": "Since Jul 2024 (ex-Cognizant London)", "worksOn": "CDH/NBA quality engineering", "url": "https://linkedin.com/in/manoj-kannan-manickavasagam-609b5855", "priority": 1},
+        {"name": "Praveen Kesari", "title": "Senior Manager (Bengaluru)", "cert": "CLSA 8.8, CPDC, CPMC, CSSA", "tenure": "Since Mar 2023 (ex-CBA Senior Engineer)", "worksOn": "Pega architecture/delivery", "url": "https://linkedin.com/in/praveen-kesari-96279482", "priority": 2},
+        {"name": "Ganesh Mahagaonkar", "title": "Senior Manager – IT Platforms & Automation as a Service (Bengaluru)", "cert": "LSA 8.6, CPDC, CSSA", "tenure": "VOIS since Feb 2025; Sr Manager since Aug 2025", "worksOn": "Pega platform & automation service", "url": "https://linkedin.com/in/ganesh-mahagaonkar-4aba225b", "priority": 3}
+      ]
+    },
+    "natwest": {
+      "workstreams": [["Perpetual KYC on Pega CLM (event-driven)", "Customer due diligence on the Pega CLM KYC framework with perpetual KYC and an event-driven architecture (Bengaluru).", "Sarabdeep Singh (ex-VP NatWest Bengaluru), Milan Patra"]],
+      "people": [
+        {"name": "Milan Patra", "title": "Software Engineer AVP – Pega CLM KYC (Bengaluru)", "cert": "CSSA, CSA, CPDC, Pega Data Scientist", "tenure": "Since Aug 2024 (ex-Coforge, Capgemini)", "worksOn": "CLM/KYC", "url": "https://linkedin.com/in/milan-patra-3709a855", "priority": 1},
+        {"name": "Prasad S (left)", "title": "Ex-AVP, NatWest Bengaluru (now Coforge Senior Technical Lead)", "cert": "CLSA Part 1; CLM KYC, CS, Constellation", "tenure": "Apr 2023–Aug 2026", "worksOn": "CLM KYC", "url": "https://linkedin.com/in/prasad-s-9841bb30a", "priority": 2}
+      ]
+    },
+    "pegasystems": {
+      "workstreams": [
+        ["CDH / decision services product engineering", "Bengaluru engineering teams build Customer Decision Hub decision services, Process AI and the CDH customer data platform.", "Guruprasad Anweri, Satyajit Acharjya"],
+        ["ML & AI inside CDH", "Predictive-model execution monitoring, adaptive-model features in Pega Marketing, 'Feature finder' and MLOps champion/challenger comparisons.", "Ajay R"]
+      ],
+      "people": [
+        {"name": "Guruprasad Anweri", "title": "Engineering Manager – CDH / Process AI / GenAI (Bengaluru)", "cert": "CSA", "tenure": "Pega since Dec 2016; EM since Sep 2025", "worksOn": "Decision services for Pega", "url": "https://linkedin.com/in/guruprasad-anweri-7599a1102", "priority": 3},
+        {"name": "Ajay R", "title": "Engineering Manager – ML & AI (Bengaluru)", "cert": "CSA; MTech Data Analytics", "tenure": "EM since Sep 2024", "worksOn": "Predictive/adaptive analytics, MLOps in CDH", "url": "https://linkedin.com/in/ajay-r-97176691", "priority": 3},
+        {"name": "Satyajit Acharjya", "title": "Senior Engineering Manager (Bengaluru)", "cert": "Not listed", "tenure": "Pega since Nov 2016; Sr EM since Oct 2025", "worksOn": "Co-founded the CDH customer data platform", "url": "https://linkedin.com/in/satyajit-acharjya-4785424b", "priority": 4},
+        {"name": "Sambit Sahu", "title": "Senior Engineering Manager (Bengaluru)", "cert": "CSA, CSSA, CSM, CSPO", "tenure": "Pega since Aug 2012; Sr EM since Apr 2025", "worksOn": "Leads multiple product engineering teams", "url": "https://linkedin.com/in/sambit06", "priority": 4}
+      ]
+    },
+    "booking": {
+      "workstreams": [["Third Pega Engineering Manager (Sep 2026)", "A former NatWest/NAB Pega engineering leader (Smart Dispute, CLM KYC) joined as Engineering Manager, the third Pega EM in about 18 months.", "Sarabdeep Singh"]],
+      "people": [
+        {"name": "Sarabdeep Singh", "title": "Engineering Manager – Pega (Bengaluru)", "cert": "Not listed; ex-Pegasystems", "tenure": "Since Sep 2026 (ex-NAB SVP EM, ex-NatWest VP)", "worksOn": "New Pega squad leadership", "url": "https://linkedin.com/in/sarabdeep-singh-chawla", "priority": 3}
+      ]
+    },
+    "sun life": {
+      "workstreams": [["Bengaluru specialist developers", "Senior Development Specialists in Bengaluru joined from Coforge and Wells Fargo (ex-Pegasystems) in 2024–2025, a sign that Bengaluru seats are growing.", "Dhiraj Anand, Bangari Kaladagi"]],
+      "people": [
+        {"name": "Dhiraj Anand", "title": "Senior Development Specialist – Pega (Bengaluru)", "cert": "Pega Academy badges", "tenure": "Since Dec 2025 (ex-Coforge Senior Technical Lead)", "worksOn": "Senior Pega specialist", "url": "https://linkedin.com/in/dhirajanandsingh", "priority": 1},
+        {"name": "Bangari Kaladagi", "title": "Senior Specialist Developer (Bengaluru)", "cert": "Not listed; ex-Pegasystems Solutions Engineer", "tenure": "Since Feb 2024 (ex-Wells Fargo)", "worksOn": "Pega development", "url": "https://linkedin.com/in/bangari-kaladagi-75014aa0", "priority": 1},
+        {"name": "Baivaw Kumar Dubey", "title": "Specialist Development (Bengaluru)", "cert": "CSSA, CPBA", "tenure": "Since Jul 2025", "worksOn": "Pega + Java/Spring Boot/AWS (current headline is backend-leaning)", "url": "https://linkedin.com/in/baivawkumardubey", "priority": 1}
+      ]
+    }
+  }
+}

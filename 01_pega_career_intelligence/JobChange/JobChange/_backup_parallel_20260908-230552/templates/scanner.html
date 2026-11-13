@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pega Job Hunter</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#09090b;color:#e4e4e7;min-height:100vh;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* ======== SCREEN 1: SCAN LAUNCHER (centered full-screen) ======== */
+#scanScreen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0;position:relative;transition:opacity .5s,transform .5s}
+#scanScreen.hide{opacity:0;transform:scale(.97);pointer-events:none;position:absolute}
+#scanScreen::before{content:'';position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.launch-wrap{position:relative;z-index:1;text-align:center;max-width:560px;width:100%}
+.launch-wrap h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:900;line-height:1.06;letter-spacing:-.04em;margin-bottom:8px}
+.launch-wrap h1 .g1{background:linear-gradient(135deg,#a855f7,#6366f1 60%,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.launch-wrap .tagline{color:#71717a;font-size:1.05rem;margin-bottom:36px;line-height:1.5}
+.launch-wrap .tagline b{color:#a1a1aa}
+
+/* card */
+.scan-card{background:#111113;border:1px solid #27272a;border-radius:20px;padding:32px 36px;text-align:left}
+.scan-card h2{font-size:1rem;font-weight:700;text-align:center;margin-bottom:2px}
+.scan-card .sc-sub{text-align:center;color:#52525b;font-size:.8rem;margin-bottom:18px}
+
+/* cat tabs */
+.cat-tabs{display:flex;gap:0;margin-bottom:16px;border-radius:10px;overflow:hidden;border:1px solid #27272a}
+.cat-tab{flex:1;padding:10px 0;text-align:center;font-size:.82rem;font-weight:700;cursor:pointer;background:transparent;color:#71717a;border:none;transition:all .15s}
+.cat-tab.active{background:#6366f1;color:#fff}
+.cat-tab:hover:not(.active){background:#18181b;color:#a5b4fc}
+
+/* depth pills */
+.depth-row{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.dp{padding:7px 18px;border-radius:8px;font-size:.82rem;font-weight:600;border:1px solid #27272a;background:transparent;color:#a1a1aa;cursor:pointer;transition:all .15s}
+.dp:hover{border-color:#6366f1;color:#c4b5fd}
+.dp.active{background:#6366f1;border-color:#6366f1;color:#fff}
+
+/* scan btn */
+.btn-scan{display:block;width:100%;padding:14px 0;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:16px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;transition:all .2s;letter-spacing:.01em}
+.btn-scan:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(99,102,241,.4)}
+.btn-scan:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* progress */
+.prog-area{margin-top:18px;display:none}
+.prog-area.show{display:block}
+.prog-bar{height:5px;border-radius:3px;background:#27272a;overflow:hidden}
+.prog-bar .fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#6366f1,#a855f7);transition:width .4s}
+.prog-txt{font-size:.78rem;color:#71717a;margin-top:5px;text-align:center}
+
+/* live log inside scan screen */
+.scan-log{margin-top:14px;background:#0a0a0b;border:1px solid #1e1e21;border-radius:10px;padding:10px 14px;font-family:'Cascadia Code','Fira Code',monospace;font-size:.72rem;color:#52525b;max-height:140px;overflow-y:auto;display:none}
+.scan-log.show{display:block}
+.scan-log .ln{padding:1px 0}
+.scan-log .ln.cur{color:#a855f7}
+
+.scan-note{text-align:center;color:#3f3f46;font-size:.72rem;margin-top:14px}
+.scan-note span{color:#a855f7}
+
+/* ======== SCREEN 2: RESULTS DASHBOARD (full-width) ======== */
+#resultScreen{display:none;min-height:100vh}
+#resultScreen.show{display:block}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(9,9,11,.92);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e21;padding:10px 24px;display:flex;align-items:center;gap:16px}
+.topbar .brand{font-size:.95rem;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.topbar .brand .g1{background:linear-gradient(135deg,#a855f7,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.topbar .search-box{flex:1;max-width:400px;position:relative}
+.topbar .search-box input{width:100%;padding:8px 12px 8px 34px;border:1px solid #27272a;border-radius:8px;background:#111113;color:#e4e4e7;font-size:.82rem;outline:none}
+.topbar .search-box input:focus{border-color:#6366f1;box-shadow:0 0 0 2px rgba(99,102,241,.2)}
+.topbar .search-box .ico{position:absolute;left:10px;top:7px;color:#52525b;font-size:.9rem}
+.topbar .stat-pills{display:flex;gap:10px;margin-left:auto;align-items:center}
+.topbar .sp{display:flex;align-items:center;gap:5px;font-size:.78rem;color:#71717a}
+.topbar .sp b{font-size:1rem;font-weight:800}
+.topbar .sp b.green{color:#4ade80}
+.topbar .sp b.purple{background:linear-gradient(135deg,#6366f1,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.btn-new-scan{padding:7px 18px;border-radius:8px;font-size:.78rem;font-weight:700;border:1px solid #27272a;background:transparent;color:#a1a1aa;cursor:pointer;transition:all .15s;margin-left:8px}
+.btn-new-scan:hover{border-color:#6366f1;color:#c4b5fd;background:#111}
+
+/* body grid */
+.dash-body{display:flex;height:calc(100vh - 52px)}
+.sidebar-r{width:220px;border-right:1px solid #1e1e21;overflow-y:auto;padding:12px 0;flex-shrink:0;background:#0c0c0e}
+.sidebar-r .sh{font-size:.65rem;color:#52525b;text-transform:uppercase;letter-spacing:1px;font-weight:700;padding:10px 14px 4px}
+.sidebar-r .ci{display:flex;align-items:center;gap:8px;padding:7px 14px;cursor:pointer;font-size:.8rem;color:#a1a1aa;transition:all .1s;border-left:3px solid transparent}
+.sidebar-r .ci:hover{background:#111113;color:#e4e4e7}
+.sidebar-r .ci.active{background:#111113;color:#fff;border-left-color:#6366f1}
+.sidebar-r .ci .cnt{margin-left:auto;font-size:.7rem;background:rgba(99,102,241,.15);color:#818cf8;padding:1px 7px;border-radius:10px;font-weight:700}
+.sidebar-r .ci .cnt.new{background:rgba(34,197,94,.15);color:#4ade80}
+.sidebar-r .ci .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0}
+.sidebar-r .no-jobs{color:#3f3f46;font-size:.72rem;padding:3px 14px}
+
+/* main content */
+.main-content{flex:1;overflow-y:auto;padding:20px 28px}
+.mc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+.mc-header h2{font-size:1.2rem;font-weight:800}
+.mc-header .links{display:flex;gap:6px;flex-wrap:wrap}
+.mc-header .links a{font-size:.72rem;padding:4px 12px;border:1px solid #27272a;border-radius:20px;color:#71717a;transition:all .15s}
+.mc-header .links a:hover{border-color:#6366f1;color:#c4b5fd}
+
+/* job table */
+.jtbl{width:100%;border-collapse:collapse;font-size:.84rem}
+.jtbl th{text-align:left;padding:8px 12px;color:#52525b;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #1e1e21;position:sticky;top:0;background:#09090b}
+.jtbl td{padding:9px 12px;border-bottom:1px solid #141416;vertical-align:middle}
+.jtbl tr:hover td{background:rgba(99,102,241,.03)}
+.jtbl .new-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:6px;box-shadow:0 0 6px rgba(34,197,94,.5)}
+.jtbl .jl{color:#818cf8;transition:color .15s}
+.jtbl .jl:hover{color:#c4b5fd;text-decoration:underline}
+.src-pill{display:inline-block;padding:2px 8px;border-radius:5px;font-size:.65rem;font-weight:600}
+.src-pill.linkedin{background:rgba(10,102,194,.2);color:#60a5fa}
+.src-pill.naukri{background:rgba(99,102,241,.15);color:#a5b4fc}
+.src-pill.indeed{background:rgba(139,92,246,.15);color:#c4b5fd}
+.src-pill.google{background:rgba(234,179,8,.12);color:#fbbf24}
+.badge-new{background:rgba(34,197,94,.15);color:#4ade80;padding:2px 8px;border-radius:6px;font-size:.65rem;font-weight:700}
+.empty-state{text-align:center;padding:80px 20px;color:#3f3f46;font-size:.9rem}
+.empty-state .big{font-size:2.5rem;margin-bottom:8px}
+
+/* all-jobs view */
+.view-tabs{display:flex;gap:0;margin-bottom:16px;border-radius:8px;overflow:hidden;border:1px solid #27272a;width:fit-content}
+.vt{padding:7px 18px;font-size:.78rem;font-weight:600;cursor:pointer;background:transparent;color:#71717a;border:none;transition:all .15s}
+.vt.active{background:#6366f1;color:#fff}
+.vt:hover:not(.active){background:#18181b;color:#a5b4fc}
+
+/* no-results sidebar section */
+.sidebar-r .divider{height:1px;background:#1e1e21;margin:8px 14px}
+
+@media(max-width:900px){.dash-body{flex-direction:column}.sidebar-r{width:100%;max-height:180px;border-right:none;border-bottom:1px solid #1e1e21}.main-content{padding:14px 16px}.topbar .stat-pills{display:none}}
+@media(max-width:600px){.launch-wrap h1{font-size:2.2rem}.scan-card{padding:22px 20px}.topbar{padding:8px 12px;gap:8px}}
+
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.scanning{animation:pulse 1.5s ease-in-out infinite}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .3s ease forwards}
+button{font-family:inherit}.sidebar-r button{width:100%;text-align:left;background:transparent;border:0}.sidebar-r .ci{border-left:3px solid transparent}.sidebar-r .ci.active{border-left-color:#6366f1}.sidebar-r .company-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.source-state{font-size:.72rem;color:#a1a1aa;margin:5px 0 10px}.scan-log{color:#a1a1aa}.prog-txt,.sc-sub,.scan-note{color:#a1a1aa!important}.saved-results{margin-top:12px;border:0;background:transparent;color:#a5b4fc;font-size:.82rem;cursor:pointer}
+.topbar{flex-wrap:wrap}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #a5b4fc;outline-offset:3px}
+
+/* Descriptions and resume evidence retain the existing scanner layout. */
+.results-tools{padding:12px 24px;border-bottom:1px solid #1e1e21;background:#0c0c0e}
+.results-tools .view-tabs{margin-bottom:8px}.results-tools .source-state{margin:4px 0;line-height:1.5}
+.scope-summary{font-size:.78rem;color:#c4c4cf;line-height:1.5}
+.dash-body{height:calc(100vh - 170px);min-height:420px}
+.main-content{min-width:0}.job-table-scroll{width:100%;overflow-x:auto}.jtbl{min-width:960px}
+.job-fit{min-width:170px}.experience-label{font-weight:600;line-height:1.5}.match-label{font-size:.76rem;color:#c4b5fd;line-height:1.7}
+.stretch-label{color:#fbbf24;font-size:.78rem;line-height:1.5}.review-label{color:#fcd34d;font-size:.78rem;line-height:1.6}
+.btn-job-detail{padding:7px 10px;border:1px solid #4f46e5;border-radius:7px;background:#18162b;color:#c4b5fd;cursor:pointer;white-space:nowrap;font-size:.75rem}
+.btn-job-detail:hover{background:#252044}.btn-job-detail:disabled{opacity:.55;cursor:wait}
+.job-dialog{width:min(1100px,calc(100vw - 32px));max-height:calc(100dvh - 40px);margin:auto;border:1px solid #3f3f46;border-radius:14px;padding:0;background:#111113;color:#e4e4e7;box-shadow:0 24px 90px #0008}
+.job-dialog::backdrop{background:#000b;backdrop-filter:blur(3px)}
+.detail-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px 24px;border-bottom:1px solid #27272a}
+.detail-header h2{font-size:1.2rem;line-height:1.4;overflow-wrap:anywhere}
+.detail-close{padding:7px 12px;flex-shrink:0;border:1px solid #52525b;border-radius:7px;background:transparent;color:#e4e4e7;cursor:pointer}
+.detail-content{max-height:calc(100dvh - 255px);overflow-y:auto;padding:20px 24px;line-height:1.65}
+.detail-content h3{font-size:1rem;font-weight:700;margin:0 0 9px}
+.detail-company{font-size:.94rem;color:#d4d4d8}.detail-links,.description-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;margin:10px 0 16px}
+.detail-links a,.description-meta a{color:#a5b4fc;text-decoration:underline;text-underline-offset:3px}
+.detail-summary,.detail-score,.detail-description{margin-top:20px;padding-top:18px;border-top:1px solid #27272a}
+.detail-summary ul{margin:8px 0 0 20px;font-size:.84rem}.detail-muted{color:#a1a1aa;font-size:.8rem;line-height:1.6;margin:5px 0}
+.detail-score-number{font-size:1.8rem;font-weight:800;color:#c4b5fd;margin-bottom:5px}
+.detail-evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.detail-evidence{border:1px solid #303035;border-radius:9px;padding:16px;min-width:0}
+.detail-evidence ul{padding-left:18px}.detail-evidence li{margin-bottom:14px;font-size:.82rem}.detail-evidence li:last-child{margin-bottom:0}
+.requirement-importance{font-size:.73rem;color:#a1a1aa}.resume-evidence{margin-top:5px;color:#b8e5cb;font-size:.79rem}.jd-evidence{margin-top:5px;color:#bfc1d0;font-size:.78rem}
+.description-meta{color:#a1a1aa}.job-description-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.93rem;line-height:1.8;max-width:90ch}
+.detail-footer{padding:13px 24px;border-top:1px solid #27272a;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.detail-status{color:#a1a1aa;font-size:.78rem;line-height:1.5}.detail-error{color:#fca5a5}
+@media(max-width:700px){.results-tools{padding:10px 12px}.job-dialog{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}.detail-header,.detail-content{padding:16px}.detail-header h2{font-size:1rem}.detail-evidence-grid{grid-template-columns:1fr}.detail-footer{padding:12px 16px;align-items:flex-start;flex-direction:column;gap:10px}.detail-content{max-height:calc(100dvh - 270px)}.results-tools .vt{padding:7px 10px}}
+
+</style>
+</head>
+<body>
+
+<!-- ==================== SCREEN 1: SCAN + INTEL TABS ==================== -->
+<div id="scanScreen">
+  <!-- TOP TAB BAR -->
+  <div style="position:sticky;top:0;z-index:15;background:rgba(9,9,11,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e21;padding:10px 24px;display:flex;align-items:center;gap:16px">
+    <div class="brand" style="font-size:.95rem;font-weight:900;letter-spacing:-.02em">Pega <span class="g1">Hub</span></div>
+    <div style="display:flex;border-radius:8px;overflow:hidden;border:1px solid #27272a">
+      <button id="tabScan" class="cat-tab active" onclick="switchMainTab('scan')" style="padding:8px 22px;font-size:.82rem;font-weight:700;cursor:pointer;border:none;transition:.15s">Job Scanner</button>
+      <button id="tabIntel" class="cat-tab" onclick="switchMainTab('intel')" style="padding:8px 22px;font-size:.82rem;font-weight:700;cursor:pointer;border:none;transition:.15s">Team Intelligence</button>
+    </div>
+    <!-- Search for intel tab -->
+    <div id="intelSearchWrap" style="display:none;flex:1;max-width:420px;position:relative">
+      <span style="position:absolute;left:10px;top:7px;color:#52525b;font-size:.9rem">&#x2315;</span>
+      <input id="intelSearch" placeholder="Search companies, people, tech, certs..." oninput="applyIntelSearch()" style="width:100%;padding:8px 12px 8px 34px;border:1px solid #27272a;border-radius:8px;background:#111113;color:#e4e4e7;font-size:.82rem;outline:none">
+    </div>
+    <div id="intelPills" style="display:none;margin-left:auto;font-size:.78rem;color:#71717a">
+      <b style="background:linear-gradient(135deg,#6366f1,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent" id="sCo2">98</b> companies &nbsp;
+      <b style="color:#4ade80" id="sPpl2">227+</b> people
+    </div>
+  </div>
+
+  <!-- TAB 1: JOB SCANNER -->
+  <div id="scanTab" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 52px);padding:32px">
+    <div class="launch-wrap">
+      <h1>Pega jobs,<br><span class="g1">made visible.</span></h1>
+      <div class="tagline">Scan <b id="scanTargetCount">your selected companies</b> for <b>Pega-specific roles</b> — India, global &amp; remote.</div>
+      <div class="scan-card">
+        <h2>Launch a scan</h2>
+        <div class="sc-sub">Pick a category and depth · your experience: 4 years</div>
+        <div class="cat-tabs">
+          <button class="cat-tab active" data-cat="gcc">GCC / Product</button>
+          <button class="cat-tab" data-cat="si">Consulting / SI</button>
+          <button class="cat-tab" data-cat="remote">Remote / Global</button>
+          <button class="cat-tab" data-cat="all">All</button>
+        </div>
+        <div class="depth-row" id="depthRow">
+          <button class="dp active" data-mode="gcc_top10">Top 10</button>
+          <button class="dp" data-mode="gcc_top20">Top 20</button>
+          <button class="dp" data-mode="gcc_all">All 90+</button>
+        </div>
+        <button class="btn-scan" id="scanBtn" onclick="startScan()">Start scanning &rarr;</button>
+        <div class="prog-area" id="progArea">
+          <div class="prog-bar"><div class="fill" id="progFill" style="width:0%"></div></div>
+          <div class="prog-txt" id="progTxt">Preparing...</div>
+        </div>
+        <div class="scan-log" id="scanLog"></div>
+      </div>
+      <div class="scan-note"><span>&#9679;</span> Pega in the checked description · stated experience below 8 years<br>₹20 LPA+ target · undisclosed pay retained · ₹35 LPA goal<br><button id="savedResults" class="saved-results" onclick="switchToResults()" hidden>View saved results</button></div>
+    </div>
+  </div>
+
+  <!-- TAB 2: TEAM INTELLIGENCE & DOSSIERS -->
+  <div id="intelTab" style="display:none;height:calc(100vh - 52px);overflow-y:auto">
+    <div id="intelContent" style="max-width:1400px;margin:0 auto;padding:20px 24px">
+      <div style="text-align:center;padding:60px;color:#52525b;font-size:.9rem">Loading team intelligence...</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SCREEN 2: RESULTS ==================== -->
+<div id="resultScreen">
+  <div class="topbar">
+    <div class="brand">Pega <span class="g1">Hunter</span></div>
+    <div style="display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #27272a;margin-left:8px">
+      <span style="padding:7px 18px;font-size:.78rem;font-weight:600;background:#6366f1;color:#fff">Job Scanner</span>
+      <a href="/intel" style="padding:7px 18px;font-size:.78rem;font-weight:600;color:#a5b4fc;transition:all .15s;text-decoration:none" onmouseover="this.style.background='#18181b';this.style.color='#c4b5fd'" onmouseout="this.style.background='';this.style.color='#a5b4fc'">Intelligence &amp; Dossiers</a>
+    </div>
+    <div class="search-box">
+      <span class="ico">&#x2315;</span>
+      <input id="filterInput" placeholder="Filter companies or jobs..." oninput="applyFilter()">
+    </div>
+    <div class="stat-pills">
+      <div class="sp"><b class="green" id="rNew">0</b> new</div>
+      <div class="sp"><b class="purple" id="rTotal">0</b> jobs</div>
+      <div class="sp"><b class="purple" id="rCo">0</b> companies</div>
+    </div>
+    <button class="btn-new-scan" onclick="goBack()">New scan</button>
+  </div>
+
+  <div class="results-tools">
+    <div class="view-tabs" role="group" aria-label="Recommendation filters">
+      <button id="recommendedScope" class="vt active" aria-pressed="true" onclick="switchToResults('recommended')">Recommended</button>
+      <button id="reviewScope" class="vt" aria-pressed="false" onclick="switchToResults('review')">Needs verification</button>
+    </div>
+    <p id="scopeSummary" class="scope-summary"></p>
+    <p id="resultsPolicy" class="source-state"></p>
+  </div>
+  <div class="dash-body">
+    <div class="sidebar-r" id="sidebar">
+      <!-- filled by JS -->
+    </div>
+    <div class="main-content" id="mainContent">
+      <div class="empty-state" id="emptyState">
+        <div class="big">&#x1F50D;</div>
+        Select a company from the sidebar
+      </div>
+    </div>
+  </div>
+</div>
+
+<dialog id="jobDialog" class="job-dialog" aria-labelledby="jobDialogTitle">
+  <div class="detail-header">
+    <h2 id="jobDialogTitle">Job description</h2>
+    <button id="closeJobDetail" class="detail-close" type="button" onclick="closeJobDialog()" aria-label="Close job description">Close ✕</button>
+  </div>
+  <div id="jobDialogContent" class="detail-content"></div>
+  <div class="detail-footer">
+    <p id="jobDialogStatus" class="detail-status" role="status" aria-live="polite"></p>
+    <button id="refreshDescription" class="btn-job-detail" type="button" onclick="refreshJobDescription()">Refresh description</button>
+  </div>
+</dialog>
+<script src="/static/original-scanner.js"></script>
+</body>
+</html>

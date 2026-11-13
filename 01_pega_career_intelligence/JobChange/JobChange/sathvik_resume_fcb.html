@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sathvik DN — Pega Certified Senior System Architect specializing in Deposit Operations, Enterprise Workflow Automation, Kafka & REST Integration, and AI-powered Banking Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Franklin:wght@600;700;800&display=swap" rel="stylesheet">
+<title>Sathvik DN | Pega Resume — Deposits &amp; Shared Services</title>
+<style>
+  :root { --ink: #101d29; --navy: #132f49; --blue: #195684; --blue-soft: #e8eff4; --body: #293b49; --muted: #506576; --line: #b8c7d2; --paper: #fff; --canvas: #e4e9ed; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--canvas); }
+  body { color: var(--body); background: var(--canvas); font: 400 8.6pt/1.47 'Inter', 'Segoe UI', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  strong { color: var(--ink); font-weight: 700; }
+
+  .toolbar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; padding: 10px; background: rgba(233,237,241,.92); backdrop-filter: blur(10px); }
+  .toolbar button { padding: 9px 18px; border: 0; border-radius: 4px; color: #fff; background: var(--navy); box-shadow: 0 5px 15px rgba(24,50,75,.2); font: 600 8.5pt/1 'Inter', sans-serif; cursor: pointer; }
+  .toolbar button:hover { background: var(--blue); }
+  .toolbar button:focus-visible { outline: 3px solid #8bb7dc; outline-offset: 2px; }
+
+  .page { position: relative; display: flex; flex-direction: column; width: 210mm; height: 297mm; margin: 16px auto; overflow: hidden; background: var(--paper); box-shadow: 0 16px 44px rgba(24,50,75,.13); page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  .header { display: grid; grid-template-columns: 1fr auto; gap: 10mm; align-items: end; padding: 11mm 14mm 6.5mm; background: #fff; }
+  .name { color: var(--navy); font: 800 29pt/.95 'Libre Franklin', sans-serif; letter-spacing: -1.35px; }
+  .role { margin-top: 2.8mm; color: var(--blue); font-size: 9.4pt; font-weight: 700; letter-spacing: .3px; }
+  .positioning { margin-top: 1.4mm; color: var(--muted); font-size: 7.35pt; font-weight: 500; letter-spacing: .05px; }
+  .contact { display: flex; flex-direction: column; gap: 1.8mm; min-width: 75mm; padding-left: 6mm; color: var(--body); font-size: 7.25pt; font-style: normal; }
+  .contact-item { display: grid; grid-template-columns: 16mm minmax(0, 1fr); gap: 3mm; align-items: baseline; }
+  .contact-label { color: var(--muted); font-size: 5.9pt; font-weight: 700; letter-spacing: .55px; text-transform: uppercase; }
+  .contact-value { min-width: 0; color: var(--body); overflow-wrap: anywhere; text-align: left; }
+  .contact a:hover { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+
+  .body { display: flex; flex: 1; flex-direction: column; padding: 3.5mm 14mm 8mm; }
+  .section { margin-top: 5mm; }
+  .section:first-child { margin-top: 0; }
+  .page:first-child .body > .section:first-child { padding-top: 0; }
+  .section-title { display: flex; align-items: center; gap: 3mm; margin-bottom: 2.4mm; color: var(--navy); font-size: 8.15pt; font-weight: 800; letter-spacing: 1.25px; text-transform: uppercase; }
+  .section-title::before { width: 3px; height: 9px; background: var(--blue); content: ''; }
+  .summary { color: var(--body); font-size: 8.55pt; line-height: 1.6; }
+
+  .metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; align-items: stretch; margin-top: 3.2mm; }
+  .metric { position: relative; padding: 2.8mm 3mm; border-radius: 3px; background: #eaf0f4; }
+  .metric-value { display: block; color: var(--blue); font: 800 12pt/1 'Libre Franklin', sans-serif; letter-spacing: -.25px; }
+  .metric-label { display: block; margin-top: 1.4mm; color: var(--muted); font-size: 5.8pt; font-weight: 700; line-height: 1.28; letter-spacing: .35px; text-transform: uppercase; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; align-items: stretch; }
+  .skill-group { padding: 2.5mm 3mm; border-radius: 3px; background: #edf2f5; }
+  .skill-title { margin-bottom: 1.2mm; color: var(--navy); font-size: 7.3pt; font-weight: 700; }
+  .skill-copy { color: var(--body); font-size: 6.95pt; line-height: 1.48; }
+
+  .role-header { display: grid; grid-template-columns: 1fr auto; gap: 8mm; align-items: end; margin-bottom: 3mm; }
+  .job-title { color: var(--ink); font-size: 10pt; font-weight: 700; }
+  .company { margin-top: 1mm; color: var(--blue); font-size: 8pt; font-weight: 600; }
+  .tenure { color: var(--muted); font-size: 7pt; font-weight: 600; text-align: right; }
+  .project { margin-top: 3.5mm; padding-top: 0; }
+  .project:first-of-type { margin-top: 0; }
+  .project-header { display: grid; grid-template-columns: 1fr auto; gap: 5mm; align-items: baseline; margin-bottom: 1.8mm; }
+  .project-title { color: var(--navy); font-size: 8.35pt; font-weight: 700; }
+  .project-date { color: var(--muted); font-size: 6.5pt; font-weight: 600; }
+  ul { margin-left: 4mm; }
+  li { margin-bottom: 1.5mm; padding-left: .8mm; color: var(--body); font-size: 7.65pt; line-height: 1.47; }
+  li::marker { color: var(--blue); }
+  .impact { color: var(--blue); font-weight: 700; }
+
+  .feature { position: relative; display: grid; grid-template-columns: 39mm 1fr; gap: 5mm; margin-top: 3.4mm; padding: 3.4mm 4.2mm 3.4mm 5mm; background: var(--blue-soft); }
+  .feature::before { position: absolute; top: -1px; bottom: -1px; left: -1px; width: 3px; background: var(--blue); content: ''; }
+  .feature-kicker { color: var(--blue); font-size: 5.9pt; font-weight: 800; letter-spacing: .85px; text-transform: uppercase; }
+  .feature-title { margin-top: 1mm; color: var(--navy); font-size: 8.3pt; font-weight: 700; line-height: 1.3; }
+  .feature-copy { color: var(--body); font-size: 7.45pt; line-height: 1.5; }
+
+  .page-two-body { padding-top: 10mm; }
+
+  .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; align-items: stretch; }
+  .impact-card { padding: 3.5mm; border-radius: 3px; background: #eaf0f4; }
+  .impact-number { display: block; color: var(--blue); font: 800 11pt/1 'Libre Franklin', sans-serif; letter-spacing: -.25px; }
+  .impact-title { display: block; margin-top: 1.5mm; color: var(--navy); font-size: 7.2pt; font-weight: 700; }
+  .impact-copy { margin-top: 1mm; color: var(--muted); font-size: 6.65pt; line-height: 1.42; }
+
+  .bottom-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 7mm; margin-top: 4.5mm; }
+  .compact-title { margin-bottom: 2.4mm; color: var(--navy); font-size: 7.6pt; font-weight: 800; letter-spacing: 1.1px; text-transform: uppercase; }
+  .credential { margin-bottom: 3mm; padding-bottom: 1mm; }
+  .credential-title { color: var(--ink); font-size: 7.5pt; font-weight: 700; }
+  .credential-meta { margin-top: .8mm; color: var(--muted); font-size: 6.7pt; line-height: 1.42; }
+  .context { display: grid; grid-template-columns: auto 1fr; gap: 2mm 4mm; padding: 3.5mm; background: #edf2f5; }
+  .context-label { color: var(--navy); font-size: 6.2pt; font-weight: 700; letter-spacing: .45px; text-transform: uppercase; }
+  .context-value { color: var(--body); font-size: 6.9pt; line-height: 1.42; }
+
+  @media (max-width: 820px) {
+    html, body { background: #fff; }
+    .page { width: 100%; height: auto; min-height: auto; margin: 0; overflow: visible; box-shadow: none; }
+    .header { grid-template-columns: 1fr; padding: 32px 24px 22px; }
+    .contact { min-width: 0; padding-left: 0; }
+    .body { padding: 24px; }
+    .metrics, .skills-grid, .impact-grid, .bottom-grid { grid-template-columns: 1fr 1fr; }
+    .feature { grid-template-columns: 1fr; }
+    .toolbar { position: static; }
+  }
+
+  @media (max-width: 540px) {
+    .metrics, .skills-grid, .impact-grid, .bottom-grid { grid-template-columns: 1fr; }
+    .role-header, .project-header { grid-template-columns: 1fr; gap: 2px; }
+    .tenure { text-align: left; }
+  }
+
+  @media print {
+    html, body { width: 210mm; margin: 0 !important; padding: 0 !important; background: #fff; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    .toolbar { display: none !important; }
+    .page { width: 210mm; height: 297mm; margin: 0 !important; box-shadow: none; }
+    .header { grid-template-columns: minmax(0, 1fr) 76mm; gap: 7mm; padding: 6mm 12mm 3.5mm; }
+    .name { font-size: 29pt; }
+    .role { margin-top: 2.4mm; font-size: 9.4pt; }
+    .positioning { margin-top: 1mm; font-size: 8.3pt; }
+    .contact { gap: 1.2mm; min-width: 73mm; padding-left: 4mm; font-size: 8.1pt; }
+    .contact-item { grid-template-columns: 16mm minmax(0, 1fr); gap: 2.3mm; }
+    .contact-label { font-size: 7pt; }
+    .body { padding: 1.5mm 12mm 4mm; }
+    .page:first-child .body { justify-content: space-between; }
+    .page:first-child .body > .section { margin-top: 0; }
+    .page:first-child .body > .section:nth-child(2) { margin-top: 6mm; }
+    .page:first-child .body > .section:nth-child(3) { margin-top: 7mm; }
+    .section { margin-top: 4.5mm; padding-top: 0; }
+    .section-title { margin-bottom: 2mm; font-size: 9.2pt; }
+    .summary { font-size: 9.5pt; line-height: 1.55; }
+    .metrics { grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 3mm; }
+    .metric { min-width: 0; min-height: 18mm; padding: 3.3mm; }
+    .metric-value { font-size: 15pt; }
+    .metric-label { margin-top: 1.5mm; font-size: 7pt; }
+    .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
+    .skill-group { min-width: 0; min-height: 28mm; padding: 3mm 3.5mm; }
+    .skill-title { margin-bottom: 1mm; font-size: 8.5pt; }
+    .skill-copy { font-size: 8.15pt; line-height: 1.48; }
+    .role-header { margin-bottom: 3.2mm; }
+    .job-title { font-size: 11pt; }
+    .company { margin-top: .5mm; font-size: 9pt; }
+    .tenure { font-size: 8.1pt; }
+    .project { margin-top: 5mm; padding-top: 0; }
+    .project:first-of-type { margin-top: 0; }
+    .project-header { margin-bottom: 2.2mm; }
+    .project-title { font-size: 9.4pt; }
+    .project-date { font-size: 7.7pt; }
+    ul { margin-left: 4mm; }
+    li { margin-bottom: 1.5mm; font-size: 8.5pt; line-height: 1.48; }
+    .feature { grid-template-columns: 40mm 1fr; gap: 4mm; margin-top: 3.5mm; padding: 4mm 4.5mm 4mm 5.5mm; }
+    .feature-kicker { font-size: 6.8pt; }
+    .feature-title { margin-top: .8mm; font-size: 9pt; }
+    .feature-copy { font-size: 8.2pt; line-height: 1.45; }
+    .page-two-body { justify-content: space-between; padding-top: 4mm; padding-bottom: 4mm; }
+    .page-two-body > .section, .page-two-body > .bottom-grid { margin-top: 0; }
+    .page-two-body > .section:nth-of-type(2) { margin-top: -1mm; }
+    .impact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3mm; }
+    .impact-card { min-width: 0; min-height: 30mm; padding: 3mm; }
+    .impact-number { font-size: 14pt; }
+    .impact-title { margin-top: 1.2mm; font-size: 8.8pt; }
+    .impact-copy { margin-top: .8mm; font-size: 8pt; line-height: 1.42; }
+    .page-two-body > .section:nth-of-type(3) .skill-group { min-height: 30mm; padding: 3.5mm 4mm; }
+    .page-two-body > .section:nth-of-type(3) .skill-title { font-size: 9.2pt; }
+    .page-two-body > .section:nth-of-type(3) .skill-copy { font-size: 8.6pt; line-height: 1.5; }
+    .bottom-grid { gap: 5mm; margin-top: 3mm; }
+    .compact-title { margin-bottom: 1.8mm; font-size: 8.5pt; }
+    .credential { margin-bottom: 2.2mm; padding-bottom: 1.5mm; }
+    .credential-title { font-size: 8.4pt; }
+    .credential-meta { margin-top: .5mm; font-size: 7.6pt; }
+    .context { gap: 1.8mm 3mm; padding: 3mm; }
+    .context-label { font-size: 7pt; }
+    .context-value { font-size: 7.8pt; line-height: 1.4; }
+    .project, .feature, .impact-card { break-inside: avoid; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><button type="button" onclick="window.print()">Print / Save as PDF</button></div>
+
+<main>
+<section class="page" aria-label="Resume page 1">
+  <header class="header">
+    <div>
+      <h1 class="name">Sathvik DN</h1>
+      <p class="role">Pega Certified Senior System Architect (CSSA)</p>
+      <p class="positioning">Enterprise Workflow Automation | Kafka, REST &amp; ESB Integration | Banking &amp; Deposit Operations | Pega AI / GenAI</p>
+    </div>
+    <address class="contact">
+      <div class="contact-item"><span class="contact-label">Email</span><a class="contact-value" href="mailto:sathvik.dn@gmail.com">sathvik.dn@gmail.com</a></div>
+      <div class="contact-item"><span class="contact-label">Phone</span><a class="contact-value" href="tel:+918618328889">+91 86183 28889</a></div>
+      <div class="contact-item"><span class="contact-label">LinkedIn</span><a class="contact-value" href="https://www.linkedin.com/in/sathvik-d-n-7462071ab">linkedin.com/in/sathvik-d-n-7462071ab</a></div>
+      <div class="contact-item"><span class="contact-label">Location</span><span class="contact-value">Bangalore, India</span></div>
+    </address>
+  </header>
+
+  <div class="body">
+    <section class="section">
+      <h2 class="section-title">Executive Profile</h2>
+      <p class="summary">Pega CSSA with 4.5 years of hands-on experience delivering enterprise-scale workflow automation, event-driven Kafka integrations, and financial-services applications across seven APAC markets at Mercedes-Benz R&amp;D India. Deep expertise in Pega Infinity architecture, Case Management, BPM, Decisioning, and AI-assisted development. Built 10+ case types for collections, account servicing, and customer-service workflows with SLA-driven processing, correspondence frameworks, File Listener / SFTP batch integration, and Email Listener channels. Replaced 24-hour legacy batch pipelines with real-time Kafka event streaming, delivered Queue Processor &amp; Job Scheduler-based bulk processing (200K records in 5 min), and provided 24/7 L2/L3 production support. Strong Banking &amp; Finance domain knowledge with Agile/Scrum delivery and a track record of zero-defect go-lives.</p>
+      <div class="metrics" aria-label="Career highlights">
+        <div class="metric"><span class="metric-value">10+</span><span class="metric-label">Case Types &amp; Flows Built</span></div>
+        <div class="metric"><span class="metric-value">50+</span><span class="metric-label">Kafka Topics Integrated</span></div>
+        <div class="metric"><span class="metric-value">7</span><span class="metric-label">APAC Markets Served</span></div>
+        <div class="metric"><span class="metric-value">$250K+</span><span class="metric-label">Est. Annual Savings</span></div>
+        <div class="metric"><span class="metric-value">20+</span><span class="metric-label">Production Releases</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Core Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-group"><h3 class="skill-title">Pega Platform</h3><p class="skill-copy">PRPC 8.x / Infinity 24.x, Case Management, BPM, Decisioning, Customer Service Framework, Collections, CPM, Constellation UI, DX API, Data Transforms, Declarative Rules, Decision Tables, Circumstancing, SLAs, Correspondence, Guardrails 95+, Leveraged AI for mapping generation, bottleneck analysis &amp; code review</p></div>
+        <div class="skill-group"><h3 class="skill-title">Integration &amp; Data</h3><p class="skill-copy">Apache Kafka, REST (Connect-REST, Service-REST), SOAP (Connect-SOAP), JMS, ESB / Middleware, SFTP / File Listener, Email Listener / Email Channel, Data Flows &amp; Datasets, Queue Processors, Job Schedulers, Parse Rules (XML/JSON/Delimited), OAuth 2.0, SAML 2.0, Connect-SQL, Microservices</p></div>
+        <div class="skill-group"><h3 class="skill-title">Delivery &amp; Operations</h3><p class="skill-copy">Java, HTML, CSS, JavaScript, SQL, Stored Procedures, PostgreSQL, SQL Server, Pega Deployment Manager, PDC, Tracer, PAL, Splunk (log analysis), CI/CD, Agile / Scrum, SDLC, Release Coordination, L2/L3 Incident Resolution, 24/7 On-Call Production Support, Pega RPA (concepts)</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="role-header">
+        <div><h3 class="job-title">Senior Pega Developer &mdash; Financial Services Platform</h3><div class="company">Mercedes-Benz Research and Development India (MBRDI)</div></div>
+        <div class="tenure">Aug 2022 &ndash; Present<br>Bangalore, India</div>
+      </div>
+
+      <article class="project">
+        <div class="project-header"><h3 class="project-title">Enterprise Kafka-to-Pega Event Integration &amp; Middleware Modernization</h3><span class="project-date">Aug 2025 &ndash; Present</span></div>
+        <ul>
+          <li>Architected the <span class="impact">Kafka-to-Pega ingestion layer</span> for 50+ topics across seven markets using Data Flows, Datasets, and Queue Processors &mdash; patterns directly applicable to ESB-based core banking integration.</li>
+          <li>Replaced legacy SSIS batch pipelines with event-driven Kafka workflows, reducing data availability from <span class="impact">~24 hours to real-time</span> &mdash; comparable to migrating batch file exchange to event-driven account processing.</li>
+          <li>Tuned Queue Processor &amp; Job Scheduler-based bulk processing to handle <span class="impact">200,000 records in 5 minutes</span>, enabling high-volume batch operations for account lifecycle and reconciliation workloads.</li>
+          <li>Engineered metadata-driven integration: runtime-resolved Dataset mappings, dynamic JSON-to-SQL mapping, and <span class="impact">Connect-SQL MERGE</span> to populate target tables &mdash; reusable pattern for multi-system deposit reconciliation.</li>
+          <li>Built a <span class="impact">Service-REST replay API</span> for dead-letter recovery, cutting mean-time-to-recover from ~2 hours to under 2 minutes.</li>
+          <li>Led standardization of error handling, dead-letter queue management, and recovery patterns across all markets, contributing to <span class="impact">$200K estimated annual infrastructure savings</span>.</li>
+          <li>Developed an AI-assisted mapping utility using <span class="impact">Pega AI and GenAI concepts</span> to auto-generate draft Pega-to-database mappings for 50+ tables in 10 minutes, accelerating new market onboarding.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="project-header"><h3 class="project-title">Real-Time Operations Dashboard &amp; Monitoring</h3><span class="project-date">Production Tooling</span></div>
+        <ul>
+          <li>Built a Pega Data Pages dashboard for <span class="impact">Kafka pipeline health, queue-failure monitoring, and node-health visibility</span> &mdash; similar to deposit ops dashboards for SLA tracking and case volume monitoring.</li>
+          <li>Implemented one-click Service-REST requeue, KPI comparisons, and automated incident reports using <span class="impact">log analysis patterns</span> applicable to Splunk-based production monitoring.</li>
+        </ul>
+      </article>
+    </section>
+
+  </div>
+</section>
+
+<section class="page" aria-label="Resume page 2">
+  <div class="body page-two-body">
+    <section class="section">
+      <h2 class="section-title">Experience Continued</h2>
+      <div class="role-header">
+        <div><h3 class="job-title">APAC Account Servicing, Collections &amp; Customer Service</h3><div class="company">Pega Customer Service &amp; CPM &middot; Mercedes-Benz R&amp;D India</div></div>
+        <div class="tenure">Aug 2022 &ndash; Jul 2025</div>
+      </div>
+      <ul>
+        <li>Owned delivery of <span class="impact">10+ case types, flows, and enhancements</span> across account servicing, collections, debt recovery, and customer-service modules using Pega Customer Service Framework and CPM.</li>
+        <li>Designed <span class="impact">SLA-driven case workflows</span> with hard-deadline enforcement, auto-assignment routing, and escalation paths &mdash; patterns mirroring deposit compliance deadlines and legal process order timelines.</li>
+        <li>Configured <span class="impact">Email Listener / Email Channel</span> for automated case creation from inbound customer requests and <span class="impact">File Listener / SFTP batch integrations</span> for Japan market data exchange with Parse Rule-based extraction &mdash; zero go-live defects.</li>
+        <li>Built localized <span class="impact">Correspondence frameworks</span> (SMS, email, letters) replacing 4 external messaging solutions &mdash; reusable for customer notifications and legal response packages.</li>
+        <li>Enabled business-managed strategies through <span class="impact">delegated rules, decision tables, and circumstancing</span> per market &mdash; same pattern for state-specific exemption calculations and product-specific deposit rules.</li>
+        <li>Drove <span class="impact">10+ REST/SOAP/Connect-SQL integrations</span> to external systems via middleware, configured <span class="impact">Queue Processors &amp; Job Schedulers</span> for bulk case creation and nightly batch operations, reducing manual writeback by 100%.</li>
+        <li>Led <span class="impact">20+ production releases</span> (95+ Guardrail score) and <span class="impact">L2/L3 24/7 on-call support across 7 APAC markets</span> using PDC, Tracer, PAL, and log analysis.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Selected Business Impact</h2>
+      <div class="impact-grid">
+        <article class="impact-card"><span class="impact-number">200K / 5 min</span><span class="impact-title">Batch Processing</span><p class="impact-copy">Queue Processor &amp; Job Scheduler bulk processing for account and reconciliation ops.</p></article>
+        <article class="impact-card"><span class="impact-number">$250K+</span><span class="impact-title">Annual Savings</span><p class="impact-copy">$200K infra (batch-to-event) + $50K automated monitoring &amp; support.</p></article>
+        <article class="impact-card"><span class="impact-number">Real-Time</span><span class="impact-title">Kafka Event Streaming</span><p class="impact-copy">Replaced 24-hour batch cycles with Kafka &mdash; real-time account event processing.</p></article>
+        <article class="impact-card"><span class="impact-number">&lt;2 min MTTR</span><span class="impact-title">Dead-Letter Recovery</span><p class="impact-copy">Service-REST replay API; previously ~2 hours manual intervention.</p></article>
+        <article class="impact-card"><span class="impact-number">Zero Defects</span><span class="impact-title">SFTP Go-Live</span><p class="impact-copy">File Listener / SFTP batch integration &mdash; zero defects, legacy server retired.</p></article>
+        <article class="impact-card"><span class="impact-number">7 Markets</span><span class="impact-title">24/7 On-Call</span><p class="impact-copy">L2/L3 incident resolution across TH, AU, NZ, SG, MY, IN, JP.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Self-Initiated Projects</h2>
+      <aside class="feature" aria-label="Kafka operations dashboard">
+        <div><span class="feature-kicker">Operations Tooling</span><h3 class="feature-title">Real-Time Kafka Pipeline Dashboard</h3></div>
+        <p class="feature-copy">Built a Pega Data Pages dashboard for <span class="impact">Kafka pipeline health, queue-failure monitoring, and node-health visibility</span>. Implemented one-click Service-REST requeue, KPI comparisons, and automated incident reports &mdash; reducing investigation time from hours to <span class="impact">seconds</span>.</p>
+      </aside>
+      <aside class="feature" aria-label="Self-initiated production monitoring automation" style="margin-top: 2.5mm;">
+        <div><span class="feature-kicker">AI &amp; Automation</span><h3 class="feature-title">Production Monitoring &amp; Alerting System</h3></div>
+        <p class="feature-copy">Built a custom monitoring app with <span class="impact">real-time SMS alerting</span>, HTML report generation, and escalation workflows for <span class="impact">15+ stakeholders</span>. Applied AI-assisted failure pattern detection, contributing to <span class="impact">$50K estimated annual support savings</span>.</p>
+      </aside>
+    </section>
+
+    <section class="bottom-grid">
+      <div>
+        <h2 class="compact-title">Credentials &amp; Education</h2>
+        <div class="credential"><div class="credential-title">Pega Certified Senior System Architect (CSSA)</div><div class="credential-meta">Pegasystems &mdash; exceeds CSA requirement for P2</div></div>
+        <div class="credential"><div class="credential-title">Pega Certified System Architect (CSA)</div><div class="credential-meta">Pegasystems</div></div>
+        <div class="credential"><div class="credential-title">B.E. Information Science &amp; Engineering</div><div class="credential-meta">Bangalore Institute of Technology &middot; VTU &middot; 2018&ndash;2022</div></div>
+      </div>
+      <div>
+        <h2 class="compact-title">Professional Context</h2>
+        <div class="context">
+          <span class="context-label">Domain</span><span class="context-value">Banking &amp; Finance, Collections, Account Servicing, Deposit Ops</span>
+          <span class="context-label">AI Usage</span><span class="context-value">Leveraged AI for mapping generation, bottleneck analysis, failure detection</span>
+          <span class="context-label">Frameworks</span><span class="context-value">Customer Service, Collections, CPM, Constellation UI, BPM, Decisioning</span>
+          <span class="context-label">Integration</span><span class="context-value">Kafka, REST, SOAP, JMS, ESB, SFTP, File/Email Listener</span>
+          <span class="context-label">Methods</span><span class="context-value">Agile / Scrum, CI/CD, 24/7 On-Call, Guardrails 95+</span>
+          <span class="context-label">Stack</span><span class="context-value">PostgreSQL, SQL Server, Java, Splunk, Okta, ServiceNow</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>
+</main>
+</body>
+</html>

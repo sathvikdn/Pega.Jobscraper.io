@@ -1,0 +1,2275 @@
+{
+  "research_date": "2026-09-08",
+  "companies": [
+    {
+      "name": "FIS India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "g1-new-fis-abhishek",
+          "company_id": "catalogue-fistsysglobalpayments",
+          "name": "Abhishek Kumar",
+          "status": "partially_supported",
+          "employer_as_stated": "FIS",
+          "location_as_stated": "Greater Delhi Area",
+          "title": "Pega developer (self-description)",
+          "profile_url": "https://in.linkedin.com/in/abhishek-kumar-642850b1",
+          "pega_connection": "Pega developer self-description and CSA/CSSA; current product and employment dates are not exposed.",
+          "work_summary": "Pega developer self-description and CSA/CSSA; current product and employment dates are not exposed.",
+          "summary": "Pega developer self-description and CSA/CSSA; current product and employment dates are not exposed.",
+          "certifications": [
+            "CSA7.2",
+            "CSSA7.2"
+          ],
+          "limitations": [
+            "Public index may be stale; current title, employment dates and project allocation are not independently confirmed.",
+            "This is a newly examined observation; the integration layer must deduplicate against the existing canonical profile catalogue."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/abhishek-kumar-642850b1",
+              "title": "Abhishek Kumar professional profile",
+              "summary": "Pega developer self-description and CSA/CSSA; current product and employment dates are not exposed.",
+              "access": "search_index",
+              "source_date": null,
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "g1-co27-q3"
+          ],
+          "source_url": "https://in.linkedin.com/in/abhishek-kumar-642850b1",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        },
+        {
+          "id": "g1-new-fis-thabitha",
+          "company_id": "catalogue-fistsysglobalpayments",
+          "name": "Thabitha B",
+          "status": "partially_supported",
+          "employer_as_stated": "FIS",
+          "location_as_stated": "United States",
+          "title": "Pega administrator/developer (self-description)",
+          "profile_url": "https://www.linkedin.com/in/thabitha022",
+          "pega_connection": "Pega administration/development self-description; current FIS experience lists New York, while Pune is an older entry.",
+          "work_summary": "Pega administration/development self-description; current FIS experience lists New York, while Pune is an older entry.",
+          "summary": "Pega administration/development self-description; current FIS experience lists New York, while Pune is an older entry.",
+          "certifications": [],
+          "limitations": [
+            "Public index may be stale; current title, employment dates and project allocation are not independently confirmed.",
+            "This is a newly examined observation; the integration layer must deduplicate against the existing canonical profile catalogue."
+          ],
+          "sources": [
+            {
+              "url": "https://www.linkedin.com/in/thabitha022",
+              "title": "Thabitha B professional profile",
+              "summary": "Pega administration/development self-description; current FIS experience lists New York, while Pune is an older entry.",
+              "access": "search_index",
+              "source_date": null,
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "g1-co27-q3"
+          ],
+          "source_url": "https://www.linkedin.com/in/thabitha022",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Marsh McLennan India (MMGS)",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "g1-new-marsh-apoorva",
+          "company_id": "catalogue-marshmclennanindiammgs",
+          "name": "Apoorva Matolli",
+          "status": "partially_supported",
+          "employer_as_stated": "Marsh McLennan",
+          "location_as_stated": "Hoboken, New Jersey, United States",
+          "title": null,
+          "profile_url": "https://www.linkedin.com/in/apoorva-matolli",
+          "pega_connection": "Pega SSA credential and a professional recommendation about Pega expertise; no current India assignment.",
+          "work_summary": "Pega SSA credential and a professional recommendation about Pega expertise; no current India assignment.",
+          "summary": "Pega SSA credential and a professional recommendation about Pega expertise; no current India assignment.",
+          "certifications": [
+            "Pega SSA (date unexposed)"
+          ],
+          "limitations": [
+            "Public index may be stale; current title, employment dates and project allocation are not independently confirmed.",
+            "This is a newly examined observation; the integration layer must deduplicate against the existing canonical profile catalogue."
+          ],
+          "sources": [
+            {
+              "url": "https://www.linkedin.com/in/apoorva-matolli",
+              "title": "Apoorva Matolli professional profile",
+              "summary": "Pega SSA credential and a professional recommendation about Pega expertise; no current India assignment.",
+              "access": "search_index",
+              "source_date": null,
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "g1-co28-q3"
+          ],
+          "source_url": "https://www.linkedin.com/in/apoorva-matolli",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Bosch",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "g1-new-bosch-sarvesh",
+          "company_id": "catalogue-bosch",
+          "name": "Sarvesh Joshi",
+          "status": "partially_supported",
+          "employer_as_stated": "Bosch Global Software Technologies",
+          "location_as_stated": null,
+          "title": null,
+          "profile_url": "https://in.linkedin.com/in/sarvesh-joshi-b44b5b205",
+          "pega_connection": "Historical self-attributed post reports CSA8.7 learning. This is a Pega connection, not proof of a current Bosch Pega project.",
+          "work_summary": "Historical self-attributed post reports CSA8.7 learning. This is a Pega connection, not proof of a current Bosch Pega project.",
+          "summary": "Historical self-attributed post reports CSA8.7 learning. This is a Pega connection, not proof of a current Bosch Pega project.",
+          "certifications": [
+            "CSA8.7 (historical self-report; exact date unexposed)"
+          ],
+          "limitations": [
+            "Public index may be stale; current title, employment dates and project allocation are not independently confirmed.",
+            "This is a newly examined observation; the integration layer must deduplicate against the existing canonical profile catalogue."
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/sarvesh-joshi-b44b5b205",
+              "title": "Sarvesh Joshi professional profile",
+              "summary": "Historical self-attributed post reports CSA8.7 learning. This is a Pega connection, not proof of a current Bosch Pega project.",
+              "access": "search_index",
+              "source_date": null,
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "g1-co29-q4"
+          ],
+          "source_url": "https://in.linkedin.com/in/sarvesh-joshi-b44b5b205",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Pegasystems",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "id": "g1-pega23920",
+          "company_id": "fresh-pegasystems",
+          "title": "Senior System Architect",
+          "url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "location": "Bangalore",
+          "status": "unverified",
+          "checked_at": "2026-09-08",
+          "requirements": "CSSA; bachelor’s +5 years or master’s +3 years; enterprise solution delivery and integration exposure.",
+          "salary": null,
+          "limitations": [
+            "Not independently confirmed as an approved budget or currently accepting application.",
+            "Bachelor’s experience requirement exceeds four years."
+          ],
+          "source_url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "access": "page",
+          "closing_date": null,
+          "requisition_id": "23920",
+          "minimum_experience_by_education": {
+            "bachelors": 5,
+            "masters": 3
+          },
+          "kind": "employer_job",
+          "description": "CSSA; bachelor’s +5 years or master’s +3 years; enterprise solution delivery and integration exposure.",
+          "experience_min": 5,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "First Citizens Bank",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "id": "g1-firstcitizens-24759",
+          "company_id": "fresh-firstcitizensbank",
+          "title": "Software Engineer I — PEGA Developer",
+          "requisition_id": "24759",
+          "location": "Bangalore, India",
+          "work_mode": "Hybrid",
+          "status": "unverified",
+          "source_url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "salary": null,
+          "summary": "P1/Associate role; development and production support. Confirm application availability, AI expectations and salary with employer.",
+          "limitations": [
+            "Public index can lag the employer ATS.",
+            "No budget or approved opening count verified."
+          ],
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "minimum_experience_years": 3,
+          "career_level": "P1",
+          "job_grade": "P1 / Associate",
+          "certifications_required": [
+            "CSA"
+          ],
+          "closing_date": null,
+          "vacancy_status": "Indexed employer job description; current application acceptance not independently confirmed",
+          "requirements": "Bachelor's degree and3 years of development/maintenance; at least3 years Pega,CSA,REST/Kafka/JMS/SOAP,infinity/case/decisioning and hands-on Pega AI expectations.",
+          "kind": "employer_job",
+          "description": "P1/Associate role; development and production support. Confirm application availability, AI expectations and salary with employer. Bachelor's degree and3 years of development/maintenance; at least3 years Pega,CSA,REST/Kafka/JMS/SOAP,infinity/case/decisioning and hands-on Pega AI expectations.",
+          "experience_min": 3,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "Broadridge India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "gcc2-new-sashia-tuli",
+          "company_id": "catalogue-broadridge",
+          "name": "Sashia Tuli",
+          "status": "partially_supported",
+          "employer_as_stated": "Broadridge — internship",
+          "title": "Software engineering intern — own account",
+          "location_as_stated": "Hyderabad — internship context",
+          "pega_connection": "Own post describes hands-on Pega internship work.",
+          "work_summary": "Enterprise software internship with named manager and mentors.",
+          "profile_url": null,
+          "sources": [
+            {
+              "url": "https://www.linkedin.com/posts/sashia-tuli-745a7536a_broadridge-internship-softwareengineering-activity-7491507409862094849-2onI",
+              "title": "Sashia Tuli internship post",
+              "summary": "Own account describes Hyderabad Pega internship.",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-152",
+            "q2-153"
+          ],
+          "limitations": [
+            "No exact publication date or current permanent employment established."
+          ],
+          "source_url": "https://www.linkedin.com/posts/sashia-tuli-745a7536a_broadridge-internship-softwareengineering-activity-7491507409862094849-2onI",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Barclays",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "gcc2-new-rupanshi-thakkar",
+          "company_id": "fresh-barclays",
+          "name": "Rupanshi Thakkar",
+          "status": "partially_supported",
+          "employer_as_stated": "Barclays",
+          "title": "Product Owner / Product Manager — self-description",
+          "location_as_stated": "Pune Division, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/rupanshi-thakkar",
+          "pega_connection": "Professional Pega event connection; technical role not proven.",
+          "work_summary": "About describes product ownership/management; tagged in a Barclays Pega event account.",
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/rupanshi-thakkar",
+              "title": "Rupanshi Thakkar public profile",
+              "summary": "About describes product ownership/management; tagged in a Barclays Pega event account.",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-241",
+            "q2-242",
+            "q2-243",
+            "q2-244"
+          ],
+          "limitations": [
+            "Conference location is not a current work location. Exact engineering responsibilities and hiring authority unknown."
+          ],
+          "source_url": "https://in.linkedin.com/in/rupanshi-thakkar",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        },
+        {
+          "id": "gcc2-new-paridhi-khare",
+          "company_id": "fresh-barclays",
+          "name": "Paridhi Khare",
+          "status": "partially_supported",
+          "employer_as_stated": "Barclays",
+          "title": null,
+          "location_as_stated": "Pune Division, Maharashtra, India",
+          "profile_url": "https://in.linkedin.com/in/paridhi-khare-2aba1921",
+          "pega_connection": "Professional Pega event connection; technical role not proven.",
+          "work_summary": "Own post describes attending Pega Innovate 2026 in Hyderabad.",
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/paridhi-khare-2aba1921",
+              "title": "Paridhi Khare public profile",
+              "summary": "Own post describes attending Pega Innovate 2026 in Hyderabad.",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-241",
+            "q2-242",
+            "q2-243",
+            "q2-244"
+          ],
+          "limitations": [
+            "Conference location is not a current work location. Exact engineering responsibilities and hiring authority unknown."
+          ],
+          "source_url": "https://in.linkedin.com/in/paridhi-khare-2aba1921",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "BT Group India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "gcc2-new-kothamasu-meghana",
+          "company_id": "catalogue-btgroupindia",
+          "name": "Kothamasu Meghana",
+          "status": "partially_supported",
+          "employer_as_stated": "BT Group",
+          "title": null,
+          "location_as_stated": "Andhra Pradesh, India (header); Bengaluru, Karnataka, India (BT Group entry)",
+          "profile_url": "https://in.linkedin.com/in/kothamasu-meghana-52732b145",
+          "pega_connection": "About describes 5+ years of Pega application development.",
+          "work_summary": "British Telecom project entry starts July 2021; specific business workflow is not exposed.",
+          "certifications": [
+            "Pega CSSA 8.0",
+            "Pega CSA 7.4",
+            "Robotics System Architect 8.0 — March 2021"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/kothamasu-meghana-52732b145",
+              "title": "Kothamasu Meghana public profile",
+              "summary": "About describes 5+ years of Pega application development. Location: Andhra Pradesh, India (header); Bengaluru, Karnataka, India (BT Group entry).",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-256"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://in.linkedin.com/in/kothamasu-meghana-52732b145",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "DHL IT Services",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "gcc2-new-sameer-mohammad",
+          "company_id": "catalogue-dhlitservices",
+          "name": "Sameer Mohammad",
+          "status": "partially_supported",
+          "employer_as_stated": "DHL IT Services",
+          "title": null,
+          "location_as_stated": "Hyderabad, Telangana, India (DHL IT Services entry)",
+          "profile_url": "https://in.linkedin.com/in/sameer-mohammad-451b57a3",
+          "pega_connection": "Pega CSA/CSSA/decisioning credentials and a same-name DHL IN data-flow support question.",
+          "work_summary": "Historical technical participation on a Pega data-flow exception; current workflow unknown.",
+          "certifications": [
+            "Pega Decisioning Consultant — August 2019",
+            "Pega CSSA — April 2017",
+            "Pega CSA — July 2016"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/sameer-mohammad-451b57a3",
+              "title": "Sameer Mohammad public profile",
+              "summary": "Pega CSA/CSSA/decisioning credentials and a same-name DHL IN data-flow support question. Location: Hyderabad, Telangana, India (DHL IT Services entry).",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            },
+            {
+              "url": "https://support.pega.com/comment/889231",
+              "title": "Sameer Mohammad DHL IT Services IN data-flow question",
+              "summary": "Named DHL IT Services IN participant discusses a Pega data-flow exception.",
+              "source_date": "2021-08-28",
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-271"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://in.linkedin.com/in/sameer-mohammad-451b57a3",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        },
+        {
+          "id": "gcc2-new-sameer-mohammad",
+          "company_id": "catalogue-dhlitservices",
+          "name": "Sameer Mohammad",
+          "status": "partially_supported",
+          "employer_as_stated": "DHL IT Services",
+          "title": null,
+          "location_as_stated": "Hyderabad, Telangana, India (DHL IT Services entry)",
+          "profile_url": "https://in.linkedin.com/in/sameer-mohammad-451b57a3",
+          "pega_connection": "Pega CSA/CSSA/decisioning credentials and a same-name DHL IN data-flow support question.",
+          "work_summary": "Historical technical participation on a Pega data-flow exception; current workflow unknown.",
+          "certifications": [
+            "Pega Decisioning Consultant — August 2019",
+            "Pega CSSA — April 2017",
+            "Pega CSA — July 2016"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/sameer-mohammad-451b57a3",
+              "title": "Sameer Mohammad public profile",
+              "summary": "Pega CSA/CSSA/decisioning credentials and a same-name DHL IN data-flow support question. Location: Hyderabad, Telangana, India (DHL IT Services entry).",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            },
+            {
+              "url": "https://support.pega.com/comment/889231",
+              "title": "Sameer Mohammad DHL IT Services IN data-flow question",
+              "summary": "Named DHL IT Services IN participant discusses a Pega data-flow exception.",
+              "source_date": "2021-08-28",
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-271"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://support.pega.com/comment/889231",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2021-08-28",
+          "crosschecked": true
+        },
+        {
+          "id": "gcc2-new-yogitha-k",
+          "company_id": "catalogue-dhlitservices",
+          "name": "Yogitha K.",
+          "status": "partially_supported",
+          "employer_as_stated": "DHL IT Services — indexed profile association",
+          "title": null,
+          "location_as_stated": "Hyderabad, Telangana, India",
+          "profile_url": "https://in.linkedin.com/in/yogitha-k-3536ba105",
+          "pega_connection": "Own public post announces Pega CSSA.",
+          "work_summary": null,
+          "certifications": [
+            "Pega CSSA — own announcement; exact date unavailable"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/yogitha-k-3536ba105",
+              "title": "Yogitha K. public profile",
+              "summary": "Own public post announces Pega CSSA. Location: Hyderabad, Telangana, India.",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-271"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://in.linkedin.com/in/yogitha-k-3536ba105",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "NAB Innovation Centre India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "gcc2-new-pearl-bhutani",
+          "company_id": "catalogue-nabinnovationcentreindia",
+          "name": "Pearl Bhutani",
+          "status": "partially_supported",
+          "employer_as_stated": "NAB Innovation Centre India — own post",
+          "title": null,
+          "location_as_stated": null,
+          "profile_url": "https://in.linkedin.com/in/pearl-bhutani-689b39315",
+          "pega_connection": "Own post describes CSA-to-CSSA progression at NAB India.",
+          "work_summary": "Professional learning and Pega credential achievement; production project details not stated.",
+          "certifications": [
+            "Pega CSSA — own announcement; exact date unavailable"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/pearl-bhutani-689b39315",
+              "title": "Pearl Bhutani public profile",
+              "summary": "Own post describes CSA-to-CSSA progression at NAB India. Location is not exposed.",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-273"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://in.linkedin.com/in/pearl-bhutani-689b39315",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Societe Generale GSC India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "id": "gcc2-new-rv-kishore",
+          "company_id": "catalogue-societegeneralegscindia",
+          "name": "R V Kishore",
+          "status": "partially_supported",
+          "employer_as_stated": "Societe Generale Global Solution Centre",
+          "title": "Pega Software Developer — self-description",
+          "location_as_stated": "Karur, Tamil Nadu, India (header); Bengaluru (GSC employment entry)",
+          "profile_url": "https://in.linkedin.com/in/rv-kishore33",
+          "pega_connection": "About explicitly describes around three years as a Pega software developer at Societe Generale.",
+          "work_summary": "Pega application development; specific business application not identified.",
+          "certifications": [
+            "Pega Senior System Architect — February 2023"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/rv-kishore33",
+              "title": "R V Kishore public profile",
+              "summary": "About explicitly describes around three years as a Pega software developer at Societe Generale. Location: Karur, Tamil Nadu, India (header); Bengaluru (GSC employment entry).",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-302"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://in.linkedin.com/in/rv-kishore33",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        },
+        {
+          "id": "gcc2-new-anoop-k-korah",
+          "company_id": "catalogue-societegeneralegscindia",
+          "name": "Anoop K Korah",
+          "status": "partially_supported",
+          "employer_as_stated": "Societe Generale",
+          "title": "Lead System Architect — self-description",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/anoop-k-korah",
+          "pega_connection": "About describes Pega development and CLSA; license section lists CSSA and CLSA.",
+          "work_summary": "Architecture/development expertise. Liked Constellation demo posts are not treated as own implementation.",
+          "certifications": [
+            "Pega CSSA",
+            "Pega CLSA"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/anoop-k-korah",
+              "title": "Anoop K Korah public profile",
+              "summary": "About describes Pega development and CLSA; license section lists CSSA and CLSA. Location: Bengaluru, Karnataka, India.",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-302"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://in.linkedin.com/in/anoop-k-korah",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        },
+        {
+          "id": "gcc2-new-gurneet-jolly",
+          "company_id": "catalogue-societegeneralegscindia",
+          "name": "Gurneet Jolly",
+          "status": "partially_supported",
+          "employer_as_stated": "Societe Generale Global Solution Centre",
+          "title": null,
+          "location_as_stated": "Bengaluru, Karnataka, India (header); Bangalore (employment entry)",
+          "profile_url": "https://in.linkedin.com/in/gurneet-jolly-5a102619",
+          "pega_connection": "About lists CSA/CSSA 7.1, and credentials include Pega Decisioning Consultant.",
+          "work_summary": "Current project details are not exposed.",
+          "certifications": [
+            "Pega CSA 7.1 — About",
+            "Pega CSSA 7.1 — About",
+            "Pega Decisioning Consultant"
+          ],
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/gurneet-jolly-5a102619",
+              "title": "Gurneet Jolly public profile",
+              "summary": "About lists CSA/CSSA 7.1, and credentials include Pega Decisioning Consultant. Location: Bengaluru, Karnataka, India (header); Bangalore (employment entry).",
+              "source_date": null,
+              "access": "search_index",
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q2-302"
+          ],
+          "limitations": [
+            "Public search-index evidence can lag changes; no current vacancy, team headcount, hiring authority or personal contact details inferred."
+          ],
+          "source_url": "https://in.linkedin.com/in/gurneet-jolly-5a102619",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        },
+        {
+          "name": "Subramanyam Kolipakula",
+          "employer_as_stated": "Societe Generale Global Solution Centre",
+          "title": "Lead Pega Developer",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/subramanyam-kolipakula",
+          "source_url": "https://in.linkedin.com/in/subramanyam-kolipakula",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Explicit Societe Generale Pega role; Morgan Stanley October 2017–May 2019 is historical.",
+          "work_summary": "Explicit Societe Generale Pega role; Morgan Stanley October 2017–May 2019 is historical.",
+          "certifications": [
+            "CSSA — December 2014",
+            "CSA — February 2014"
+          ],
+          "query_ids": [
+            "q294"
+          ],
+          "limitations": [
+            "Self-reported public professional index; dates/current allocation may be stale.",
+            "No complete headcount or vacancy inferred."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Wells Fargo India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "id": "gcc2-job-wells-r565488",
+          "company_id": "catalogue-wellsfargoindia",
+          "employer": "Wells Fargo",
+          "title": "Lead Software Engineer - Pega",
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "location": "BENGALURU — employer search index",
+          "source_kind": "employer",
+          "access": "search_index",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "closing_date": null,
+          "experience_min": null,
+          "experience_max": null,
+          "salary": null,
+          "india_eligible": true,
+          "remote_eligible": null,
+          "fit": "Pega engineering lead; numeric experience and detailed requirements were not confirmed.",
+          "description": "Employer-indexed India Pega role. Exact URL returned 404 during this pass.",
+          "limitations": [
+            "No available Apply page was observed. 404 does not prove formal closure; current availability is unknown. Salary is not claimed above ₹20 LPA."
+          ],
+          "query_ids": [
+            "q2-250",
+            "q2-288"
+          ],
+          "source_url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "kind": "employer_job"
+        }
+      ]
+    },
+    {
+      "name": "Optum / UHG India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "id": "gcc2-job-optum-96010873840",
+          "company_id": "catalogue-optumunitedhealthgroup",
+          "employer": "UnitedHealth Group / Optum",
+          "title": "Senior Software Engineer",
+          "url": "https://careers.unitedhealthgroup.com/job/hyderabad/senior-software-engineer/50688/96010873840",
+          "location": "Hyderabad, India",
+          "source_kind": "employer",
+          "access": "search_index",
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "closing_date": null,
+          "experience_min": null,
+          "experience_max": null,
+          "salary": null,
+          "india_eligible": true,
+          "remote_eligible": null,
+          "fit": "CSSA aligns with candidate credential; Constellation and GenAI delivery depth require assessment. Numeric experience requirement unavailable in inspected excerpt.",
+          "description": "Indexed requirements: Pega CSSA, end-to-end case applications, Constellation UI and GenAI. Exact employer URL returned 404.",
+          "limitations": [
+            "No current Apply page was observed. A cached relative posting age is not a precise current date. Salary is unknown."
+          ],
+          "query_ids": [
+            "q2-284",
+            "q2-289"
+          ],
+          "source_url": "https://careers.unitedhealthgroup.com/job/hyderabad/senior-software-engineer/50688/96010873840",
+          "kind": "employer_job"
+        }
+      ]
+    },
+    {
+      "name": "Commonwealth Bank",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "name": "Angus Sullivan",
+          "employer_as_stated": "Commonwealth Bank of Australia",
+          "title": "Group Executive, Retail Banking Services",
+          "profile_url": null,
+          "location_as_stated": null,
+          "work_summary": "Named executive in historical CDH case study.",
+          "sources": [
+            {
+              "url": "https://www.pega.com/customers/cba-marketing",
+              "title": "CBA case study",
+              "summary": "Named CDH programme executive.",
+              "access": "page",
+              "source_date": null,
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q49"
+          ],
+          "source_url": "https://www.pega.com/customers/cba-marketing",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "pega_connection": "Named executive in historical CDH case study."
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Siemens",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "name": "Koen Gilhuis",
+          "employer_as_stated": "Siemens",
+          "title": "Service Owner, Global Master Data Management",
+          "profile_url": null,
+          "location_as_stated": null,
+          "work_summary": "Named GMDM service owner; no India allocation verified.",
+          "sources": [
+            {
+              "url": "https://www.pega.com/customers/siemens",
+              "title": "Siemens case study",
+              "summary": "Named service owner.",
+              "access": "page",
+              "source_date": null,
+              "checked_at": "2026-09-08"
+            }
+          ],
+          "query_ids": [
+            "q50"
+          ],
+          "source_url": "https://www.pega.com/customers/siemens",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true,
+          "pega_connection": "Named GMDM service owner; no India allocation verified."
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Nokia India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "name": "Bharath Sai Somesh Rayapati",
+          "employer_as_stated": "Nokia Solutions and Networks",
+          "title": "PEGA Developer",
+          "location_as_stated": "IN",
+          "profile_url": null,
+          "source_url": "https://support.pega.com/comment/1072051",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-01-05",
+          "access": "page",
+          "pega_connection": "Authored Constellation embedded-data question",
+          "limitations": [
+            "Forum employer card is self-reported; city and current employment unverified."
+          ],
+          "crosschecked": true,
+          "work_summary": null
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Daimler Truck India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "name": "Sandeep Mohan",
+          "employer_as_stated": "Daimler Truck Innovation Center India (DTICI)",
+          "title": null,
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/sandeep-mohan-740b36a1",
+          "source_url": "https://in.linkedin.com/in/sandeep-mohan-740b36a1",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "About and credential list identify Pega background; liked hiring posts excluded.",
+          "work_summary": "About and credential list identify Pega background; liked hiring posts excluded.",
+          "certifications": [
+            "CSA",
+            "CSSA"
+          ],
+          "query_ids": [
+            "q225"
+          ],
+          "limitations": [
+            "Self-reported public professional index; dates/current allocation may be stale.",
+            "No complete headcount or vacancy inferred."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Ford Motor Company",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "name": "Prasanna Balakrishnan",
+          "employer_as_stated": "Ford Motor Company",
+          "title": null,
+          "location_as_stated": "Chennai profile; Bengaluru employer experience",
+          "profile_url": "https://in.linkedin.com/in/prasanna-pb",
+          "source_url": "https://in.linkedin.com/in/prasanna-pb",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Enterprise IT background; Pega credentials. Location difference preserved.",
+          "work_summary": "Enterprise IT background; Pega credentials. Location difference preserved.",
+          "certifications": [
+            "CSSA Infinity 24.x — November 2025",
+            "CSA 8.8 — March 2024"
+          ],
+          "query_ids": [
+            "q178"
+          ],
+          "limitations": [
+            "Self-reported public professional index; dates/current allocation may be stale.",
+            "No complete headcount or vacancy inferred."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Allianz Technology",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [
+        {
+          "name": "Anju Murali",
+          "employer_as_stated": "Allianz Technology",
+          "title": "Senior Technical Architect",
+          "location_as_stated": "Trivandrum, Kerala, India",
+          "profile_url": "https://in.linkedin.com/in/anju-murali-745b2321",
+          "source_url": "https://in.linkedin.com/in/anju-murali-745b2321",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "About and experience connect Allianz architecture and Pega certification.",
+          "work_summary": "About and experience connect Allianz architecture and Pega certification.",
+          "certifications": [
+            "CSA",
+            "CSSA"
+          ],
+          "query_ids": [
+            "q304"
+          ],
+          "limitations": [
+            "Self-reported public professional index; dates/current allocation may be stale.",
+            "No complete headcount or vacancy inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Sreekumar S",
+          "employer_as_stated": "Allianz Technology",
+          "title": "Senior Technical Architect",
+          "location_as_stated": "Trivandrum, Kerala, India",
+          "profile_url": "https://in.linkedin.com/in/sreekumar-s",
+          "source_url": "https://in.linkedin.com/in/sreekumar-s",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Own achievements describe ACIS Pega Team Delivery Lead in Azure 2 for Allianz Insurance PLC.",
+          "work_summary": "Own achievements describe ACIS Pega Team Delivery Lead in Azure 2 for Allianz Insurance PLC.",
+          "certifications": [
+            "CSSA — December 2019",
+            "CSA — March 2017"
+          ],
+          "query_ids": [
+            "q304"
+          ],
+          "limitations": [
+            "Self-reported public professional index; dates/current allocation may be stale.",
+            "No complete headcount or vacancy inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Shery Alphonsa George",
+          "employer_as_stated": "Allianz Technology",
+          "title": null,
+          "location_as_stated": "Trivandrum, Kerala, India",
+          "profile_url": "https://in.linkedin.com/in/shery-alphonsa-george",
+          "source_url": "https://in.linkedin.com/in/shery-alphonsa-george",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "About explicitly describes Pega SSA; named current application unknown.",
+          "work_summary": "About explicitly describes Pega SSA; named current application unknown.",
+          "certifications": [
+            "Decisioning Consultant — July 2020",
+            "CSSA — April 2018",
+            "CSA — May 2016"
+          ],
+          "query_ids": [
+            "q304"
+          ],
+          "limitations": [
+            "Self-reported public professional index; dates/current allocation may be stale.",
+            "No complete headcount or vacancy inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "company_id": "catalogue-allianztechnology",
+          "name": "Tibin Mammen",
+          "employer_as_stated": "Allianz Technology",
+          "title": null,
+          "location_as_stated": "Pathanamthitta, Kerala, India",
+          "profile_url": "https://in.linkedin.com/in/tibin-mammen-b7ab5816a",
+          "status": "partially_supported",
+          "pega_connection": "Own About describes Pega 8.7 end-to-end solutions.",
+          "work_summary": "Indexed professional account states Pega developer with 3.6 years of experience; current project assignment unknown.",
+          "sources": [
+            {
+              "url": "https://in.linkedin.com/in/tibin-mammen-b7ab5816a",
+              "title": "Tibin Mammen public profile",
+              "access": "search_index",
+              "checked_at": "2026-09-08",
+              "summary": "Allianz Technology employer context and Pega About; Kerala profile location."
+            }
+          ],
+          "limitations": [
+            "Self-reported public index; no hiring authority or current vacancy established."
+          ],
+          "source_url": "https://in.linkedin.com/in/tibin-mammen-b7ab5816a",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Instellars",
+      "aliases": [],
+      "category": "services",
+      "claims": [],
+      "people": [
+        {
+          "name": "Siddharth Karamchandani",
+          "employer_as_stated": "Instellars",
+          "title": "Developer (About)",
+          "location_as_stated": "Delhi, India",
+          "profile_url": "https://in.linkedin.com/in/siddharth-karamchandani-055590225",
+          "source_url": "https://in.linkedin.com/in/siddharth-karamchandani-055590225",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Pega developer lists Danske client project; not a Danske employee.",
+          "work_summary": "Pega developer lists Danske client project; not a Danske employee.",
+          "certifications": [
+            "CSSA 8.7 — July 2022",
+            "CSA 8.7 — April 2022",
+            "Decisioning Consultant 23"
+          ],
+          "query_ids": [
+            "q288"
+          ],
+          "limitations": [
+            "Self-reported public professional index; dates/current allocation may be stale.",
+            "No complete headcount or vacancy inferred."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": []
+    },
+    {
+      "name": "Wells Fargo",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "Wells Fargo",
+          "title": "Lead Software Engineer (Pega)",
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "location": "BENGALURU",
+          "status": "closed",
+          "source_date": "2026-08-24",
+          "closing_at": "2026-08-30",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "salary": null,
+          "experience_min": null,
+          "description": "Historical Pega/REST/SOAP/SQL/Constellation role; explicit closing date has passed. Closing: 2026-08-30 time not stated.",
+          "limitations": [
+            "Apply control does not override expired closing date.",
+            "Minimum years not visible in examined excerpt."
+          ],
+          "query_ids": [
+            "q34"
+          ],
+          "source_url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "kind": "employer_job",
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "Evernorth / Cigna",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "Evernorth / Cigna",
+          "title": "Software Engineering Advisor - HIH - Evernoth",
+          "url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/Software-Engineering-Advisor---HIH---Evernoth_26005499-1",
+          "location": "Hyderabad, India; hybrid",
+          "status": "unverified",
+          "salary": null,
+          "experience": null,
+          "requirements": "Pega solutions/frameworks; preferred LSA and healthcare expertise.",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "limitations": [
+            "Direct employer page yielded no readable content; current acceptance not verified.",
+            "Hybrid flexibility does not establish Bangalore or fully remote eligibility."
+          ],
+          "source_url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/Software-Engineering-Advisor---HIH---Evernoth_26005499-1",
+          "kind": "employer_job",
+          "description": "Pega solutions/frameworks; preferred LSA and healthcare expertise.",
+          "experience_min": null,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "Empower India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "Empower India",
+          "title": "Software Developer",
+          "url": "https://empower.wd12.myworkdayjobs.com/empower/job/Software-Developer_R0057142",
+          "location": null,
+          "experience": "3–5 years",
+          "requirements": "Pega 8.1+ engineering; 24.1+ preferred.",
+          "status": "unverified",
+          "salary": null,
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "limitations": [
+            "Indexed listing; current employer acceptance not verified."
+          ],
+          "source_url": "https://empower.wd12.myworkdayjobs.com/empower/job/Software-Developer_R0057142",
+          "kind": "employer_job",
+          "description": "Pega 8.1+ engineering; 24.1+ preferred.",
+          "experience_min": 3,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "enGen / Highmark India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "enGen / Highmark India",
+          "title": "Senior Pega Developer",
+          "url": "https://in.linkedin.com/jobs/view/senior-pega-developer-at-engen-global-4450997922",
+          "location": "Chennai / Hyderabad, India",
+          "experience": "3–9 years",
+          "requirements": "CSA, Customer Service, Axway API, microservices and production support.",
+          "status": "unverified",
+          "salary": null,
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "limitations": [
+            "Indexed listing; current employer acceptance not verified."
+          ],
+          "source_url": "https://in.linkedin.com/jobs/view/senior-pega-developer-at-engen-global-4450997922",
+          "kind": "public_job_card",
+          "description": "CSA, Customer Service, Axway API, microservices and production support.",
+          "experience_min": 3,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "Citi / Citi India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "Citi / Citi India",
+          "title": "PEGA Developer",
+          "url": "https://jobs.citi.com/job/pune/pega-developer/287/96335850896",
+          "location": "Pune, India; hybrid",
+          "experience": "4+ years",
+          "requirements": "Pega 8.x, UI-Kit/Cosmos, REST/SOAP/Kafka, SQL; CSSA/LSA preferred.",
+          "status": "unverified",
+          "access": "page",
+          "closing_date": null,
+          "source_date": "2026-06-12",
+          "salary": null,
+          "checked_at": "2026-09-08",
+          "remote_eligibility": "Not established; location/work mode is role-specific.",
+          "limitations": [
+            "Current application acceptance not verified.",
+            "No published salary range found."
+          ],
+          "source_url": "https://jobs.citi.com/job/pune/pega-developer/287/96335850896",
+          "kind": "employer_job",
+          "description": "Pega 8.x, UI-Kit/Cosmos, REST/SOAP/Kafka, SQL; CSSA/LSA preferred.",
+          "experience_min": 4,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "Standard Chartered India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "Standard Chartered India",
+          "title": "Prod Specialist - Pega CDH, WRB Tech",
+          "url": "https://jobs.standardchartered.com/job/Prod-Specialist-Pega-CDH%2C-WRB-Tech/55895-en_GB/",
+          "location": "Bangalore, India; office working",
+          "experience": null,
+          "requirements": "CDH architecture/integration specialist, Band 6.",
+          "status": "closed",
+          "access": "search_index",
+          "closing_date": "2026-07-03",
+          "source_date": "2026-06-29",
+          "salary": null,
+          "checked_at": "2026-09-08",
+          "remote_eligibility": "Not established; location/work mode is role-specific.",
+          "limitations": [
+            "Employer deadline or explicit no-longer-accepting status indicates closed.",
+            "No published salary range found."
+          ],
+          "source_url": "https://jobs.standardchartered.com/job/Prod-Specialist-Pega-CDH%2C-WRB-Tech/55895-en_GB/",
+          "kind": "employer_job",
+          "description": "CDH architecture/integration specialist, Band 6. Closing: 2026-07-03 time not stated.",
+          "experience_min": null,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "Hartford India GCC",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "Hartford India GCC",
+          "title": "Sr Software Engineer Pega",
+          "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-pega-at-the-hartford-india-4423171434",
+          "location": "Hyderabad, India",
+          "experience": null,
+          "requirements": "CSSA; hands-on Pega Infinity/Constellation.",
+          "status": "unverified",
+          "access": "search_index",
+          "closing_date": null,
+          "source_date": null,
+          "salary": null,
+          "checked_at": "2026-09-08",
+          "remote_eligibility": "Not established; location/work mode is role-specific.",
+          "limitations": [
+            "Current application acceptance not verified.",
+            "No published salary range found."
+          ],
+          "source_url": "https://in.linkedin.com/jobs/view/sr-software-engineer-pega-at-the-hartford-india-4423171434",
+          "kind": "public_job_card",
+          "description": "CSSA; hands-on Pega Infinity/Constellation.",
+          "experience_min": null,
+          "vacancy_confirmed": false
+        },
+        {
+          "company": "Hartford India GCC",
+          "title": "Staff Associate / Engineer-Pega",
+          "url": "https://in.linkedin.com/jobs/view/staff-associate-engineer-pega-at-the-hartford-india-4414031030",
+          "location": "Hyderabad, India",
+          "experience": null,
+          "requirements": "Senior Staff Engineer GCC117; CSSA/Constellation.",
+          "status": "closed",
+          "access": "search_index",
+          "closing_date": null,
+          "source_date": null,
+          "salary": null,
+          "checked_at": "2026-09-08",
+          "remote_eligibility": "Not established; location/work mode is role-specific.",
+          "limitations": [
+            "Employer deadline or explicit no-longer-accepting status indicates closed.",
+            "No published salary range found."
+          ],
+          "source_url": "https://in.linkedin.com/jobs/view/staff-associate-engineer-pega-at-the-hartford-india-4414031030",
+          "kind": "public_job_card",
+          "description": "Senior Staff Engineer GCC117; CSSA/Constellation.",
+          "experience_min": null,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "BNP Paribas",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company": "BNP Paribas",
+          "title": "Pega Developer",
+          "url": "https://www.bnpparibas.co.in/en/jobs/pega-developer-2/",
+          "location": "Chennai, India",
+          "experience": null,
+          "requirements": "Historical employer Pega requisition 100004117.",
+          "status": "closed",
+          "access": "search_index",
+          "closing_date": null,
+          "source_date": "2025-06-04",
+          "salary": null,
+          "checked_at": "2026-09-08",
+          "remote_eligibility": "Not established; location/work mode is role-specific.",
+          "limitations": [
+            "Current application acceptance not verified.",
+            "No published salary range found."
+          ],
+          "source_url": "https://www.bnpparibas.co.in/en/jobs/pega-developer-2/",
+          "kind": "employer_job",
+          "description": "Historical employer Pega requisition 100004117.",
+          "experience_min": null,
+          "vacancy_confirmed": false
+        }
+      ]
+    },
+    {
+      "name": "Barclays India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company_id": "catalogue-barclaysindia",
+          "title": "Pega Developer",
+          "url": "https://search.jobs.barclays/job/pune/pega-developer/13015/96771695184",
+          "location": "Pune, India",
+          "description": "JR-0000112284: Group Economic Crime COO Pega case/flow/data-page development, REST/SOAP/SQL, debugging and performance; CSSA preferred. No numeric experience minimum stated.",
+          "checked_at": "2026-09-08",
+          "salary": null,
+          "status": "open",
+          "access": "page",
+          "source_date": "2026-06-22",
+          "experience_min": null,
+          "limitations": [
+            "Apply link and description observed; approved budget and current team allocation require employer confirmation."
+          ],
+          "source_url": "https://search.jobs.barclays/job/pune/pega-developer/13015/96771695184",
+          "kind": "employer_job",
+          "vacancy_confirmed": true
+        }
+      ]
+    },
+    {
+      "name": "ANZ Bank",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company_id": "fresh-anzbank",
+          "title": "Analyst (Systems/Tech Analyst)",
+          "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+          "location": "Bengaluru, India; hybrid/blended",
+          "description": "123198: Document Automation within Tech ARC Intelligent Automation. Pega/workflow, document generation, REST, cloud, demand analysis and stakeholder workshops. An adjacent analyst path, not a pure developer role. Closing: 2026-09-11 23:59 Australia/Melbourne.",
+          "checked_at": "2026-09-08",
+          "salary": null,
+          "status": "open",
+          "access": "page",
+          "experience_min": 5,
+          "closing_at": "2026-09-11",
+          "closing_time": "23:59 Australia/Melbourne",
+          "limitations": [
+            "Requires 5+ relevant years; assess the business-analysis career direction.",
+            "Salary not disclosed."
+          ],
+          "original_source_url": "https://careers.anz.com/job/Bengaluru-Analyst-%28SystemsTech-Analyst%29/1366916966/",
+          "url_basis": "Canonical employer redirect observed on direct page read.",
+          "source_url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+          "kind": "employer_job",
+          "vacancy_confirmed": true
+        }
+      ]
+    },
+    {
+      "name": "The Hartford India",
+      "aliases": [],
+      "category": "gcc",
+      "claims": [],
+      "people": [],
+      "hiring_signals": [
+        {
+          "company_id": "catalogue-thehartfordindia",
+          "title": "IND Staff Software Engineer",
+          "url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/IND-Staff-Software-Engineer_R2624988",
+          "location": "Hyderabad, India GCC–Puppalaguda Village",
+          "description": "Staff/Senior Pega engineering with Cloud, Infinity and Constellation; exact seniority minimum not exposed in examined index.",
+          "checked_at": "2026-09-08",
+          "salary": null,
+          "status": "unverified",
+          "access": "search_index",
+          "experience_min": null,
+          "limitations": [
+            "Direct open returned no readable body; application acceptance not established."
+          ],
+          "source_url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/IND-Staff-Software-Engineer_R2624988",
+          "kind": "employer_job",
+          "vacancy_confirmed": false
+        }
+      ]
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "g1-pega23920",
+      "company_id": "fresh-pegasystems",
+      "title": "Senior System Architect",
+      "url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+      "location": "Bangalore",
+      "status": "uncertain",
+      "checked_at": "2026-09-08",
+      "requirements": "CSSA; bachelor’s +5 years or master’s +3 years; enterprise solution delivery and integration exposure.",
+      "salary": null,
+      "limitations": [
+        "Not independently confirmed as an approved budget or currently accepting application.",
+        "Bachelor’s experience requirement exceeds four years."
+      ],
+      "source_url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+      "access": "page",
+      "closing_date": null,
+      "requisition_id": "23920",
+      "minimum_experience_by_education": {
+        "bachelors": 5,
+        "masters": 3
+      },
+      "company": "Pegasystems",
+      "summary": "CSSA; bachelor’s +5 years or master’s +3 years; enterprise solution delivery and integration exposure.",
+      "experience_min": 5,
+      "fit": "stretch",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Not independently confirmed as an approved budget or currently accepting application.",
+        "Bachelor’s experience requirement exceeds four years."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "role_description",
+      "job_detail_status": "read",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "source_type": "Employer description",
+          "title": "Senior System Architect",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "excerpt": "CSSA; bachelor’s +5 years or master’s +3 years; enterprise solution delivery and integration exposure.",
+          "status": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "g1-firstcitizens-24759",
+      "company_id": "fresh-firstcitizensbank",
+      "title": "Software Engineer I — PEGA Developer",
+      "requisition_id": "24759",
+      "location": "Bangalore, India",
+      "work_mode": "Hybrid",
+      "status": "indexed_only",
+      "source_url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+      "access": "search_index",
+      "checked_at": "2026-09-08",
+      "salary": null,
+      "summary": "P1/Associate role; development and production support. Confirm application availability, AI expectations and salary with employer. Bachelor's degree and3 years of development/maintenance; at least3 years Pega,CSA,REST/Kafka/JMS/SOAP,infinity/case/decisioning and hands-on Pega AI expectations.",
+      "limitations": [
+        "Public index can lag the employer ATS.",
+        "No budget or approved opening count verified."
+      ],
+      "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+      "minimum_experience_years": 3,
+      "career_level": "P1",
+      "job_grade": "P1 / Associate",
+      "certifications_required": [
+        "CSA"
+      ],
+      "closing_date": null,
+      "vacancy_status": "Indexed employer job description; current application acceptance not independently confirmed",
+      "requirements": "Bachelor's degree and3 years of development/maintenance; at least3 years Pega,CSA,REST/Kafka/JMS/SOAP,infinity/case/decisioning and hands-on Pega AI expectations.",
+      "company": "First Citizens Bank",
+      "experience_min": 3,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Public index can lag the employer ATS.",
+        "No budget or approved opening count verified."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "source_type": "Indexed job description",
+          "title": "Software Engineer I — PEGA Developer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "P1/Associate role; development and production support. Confirm application availability, AI expectations and salary with employer. Bachelor's degree and3 years of development/maintenance; at least3 years Pega,CSA,REST/Kafka/JMS/SOAP,infinity/case/decisioning and hands-on Pega AI expectations.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "id": "gcc2-job-wells-r565488",
+      "company_id": "catalogue-wellsfargoindia",
+      "employer": "Wells Fargo",
+      "title": "Lead Software Engineer - Pega",
+      "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+      "location": "BENGALURU — employer search index",
+      "source_kind": "employer",
+      "access": "search_index",
+      "status": "indexed_only",
+      "vacancy_confirmed": false,
+      "checked_at": "2026-09-08",
+      "source_date": null,
+      "closing_date": null,
+      "experience_min": null,
+      "experience_max": null,
+      "salary": null,
+      "india_eligible": true,
+      "remote_eligible": null,
+      "fit": "stretch",
+      "description": "Employer-indexed India Pega role. Exact URL returned 404 during this pass.",
+      "limitations": [
+        "No available Apply page was observed. 404 does not prove formal closure; current availability is unknown. Salary is not claimed above ₹20 LPA."
+      ],
+      "query_ids": [
+        "q2-250",
+        "q2-288"
+      ],
+      "company": "Wells Fargo India",
+      "summary": "Employer-indexed India Pega role. Exact URL returned 404 during this pass.",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "No available Apply page was observed. 404 does not prove formal closure; current availability is unknown. Salary is not claimed above ₹20 LPA."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "source_type": "Indexed job description",
+          "title": "Lead Software Engineer - Pega",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Employer-indexed India Pega role. Exact URL returned 404 during this pass.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "id": "gcc2-job-optum-96010873840",
+      "company_id": "catalogue-optumunitedhealthgroup",
+      "employer": "UnitedHealth Group / Optum",
+      "title": "Senior Software Engineer",
+      "url": "https://careers.unitedhealthgroup.com/job/hyderabad/senior-software-engineer/50688/96010873840",
+      "location": "Hyderabad, India",
+      "source_kind": "employer",
+      "access": "search_index",
+      "status": "indexed_only",
+      "vacancy_confirmed": false,
+      "checked_at": "2026-09-08",
+      "source_date": null,
+      "closing_date": null,
+      "experience_min": null,
+      "experience_max": null,
+      "salary": null,
+      "india_eligible": true,
+      "remote_eligible": null,
+      "fit": "possible",
+      "description": "Indexed requirements: Pega CSSA, end-to-end case applications, Constellation UI and GenAI. Exact employer URL returned 404.",
+      "limitations": [
+        "No current Apply page was observed. A cached relative posting age is not a precise current date. Salary is unknown."
+      ],
+      "query_ids": [
+        "q2-284",
+        "q2-289"
+      ],
+      "company": "Optum / UHG India",
+      "summary": "Indexed requirements: Pega CSSA, end-to-end case applications, Constellation UI and GenAI. Exact employer URL returned 404.",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "No current Apply page was observed. A cached relative posting age is not a precise current date. Salary is unknown."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://careers.unitedhealthgroup.com/job/hyderabad/senior-software-engineer/50688/96010873840",
+          "source_type": "Indexed job description",
+          "title": "Senior Software Engineer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Indexed requirements: Pega CSSA, end-to-end case applications, Constellation UI and GenAI. Exact employer URL returned 404.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "company": "Evernorth / Cigna",
+      "title": "Software Engineering Advisor - HIH - Evernoth",
+      "url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/Software-Engineering-Advisor---HIH---Evernoth_26005499-1",
+      "location": "Hyderabad, India; hybrid",
+      "status": "indexed_only",
+      "salary": null,
+      "experience": null,
+      "requirements": "Pega solutions/frameworks; preferred LSA and healthcare expertise.",
+      "checked_at": "2026-09-08",
+      "access": "search_index",
+      "limitations": [
+        "Direct employer page yielded no readable content; current acceptance not verified.",
+        "Hybrid flexibility does not establish Bangalore or fully remote eligibility."
+      ],
+      "summary": "Pega solutions/frameworks; preferred LSA and healthcare expertise.",
+      "experience_min": null,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Direct employer page yielded no readable content; current acceptance not verified.",
+        "Hybrid flexibility does not establish Bangalore or fully remote eligibility."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/Software-Engineering-Advisor---HIH---Evernoth_26005499-1",
+          "source_type": "Indexed job description",
+          "title": "Software Engineering Advisor - HIH - Evernoth",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Pega solutions/frameworks; preferred LSA and healthcare expertise.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "company": "Empower India",
+      "title": "Software Developer",
+      "url": "https://empower.wd12.myworkdayjobs.com/empower/job/Software-Developer_R0057142",
+      "location": null,
+      "experience": "3–5 years",
+      "requirements": "Pega 8.1+ engineering; 24.1+ preferred.",
+      "status": "indexed_only",
+      "salary": null,
+      "checked_at": "2026-09-08",
+      "access": "search_index",
+      "limitations": [
+        "Indexed listing; current employer acceptance not verified."
+      ],
+      "summary": "Pega 8.1+ engineering; 24.1+ preferred.",
+      "experience_min": 3,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Indexed listing; current employer acceptance not verified."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://empower.wd12.myworkdayjobs.com/empower/job/Software-Developer_R0057142",
+          "source_type": "Indexed job description",
+          "title": "Software Developer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Pega 8.1+ engineering; 24.1+ preferred.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "company": "enGen / Highmark India",
+      "title": "Senior Pega Developer",
+      "url": "https://in.linkedin.com/jobs/view/senior-pega-developer-at-engen-global-4450997922",
+      "location": "Chennai / Hyderabad, India",
+      "experience": "3–9 years",
+      "requirements": "CSA, Customer Service, Axway API, microservices and production support.",
+      "status": "indexed_only",
+      "salary": null,
+      "checked_at": "2026-09-08",
+      "access": "search_index",
+      "limitations": [
+        "Indexed listing; current employer acceptance not verified."
+      ],
+      "summary": "CSA, Customer Service, Axway API, microservices and production support.",
+      "experience_min": 3,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Indexed listing; current employer acceptance not verified."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/senior-pega-developer-at-engen-global-4450997922",
+          "source_type": "Indexed job description",
+          "title": "Senior Pega Developer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "CSA, Customer Service, Axway API, microservices and production support.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "company": "Citi / Citi India",
+      "title": "PEGA Developer",
+      "url": "https://jobs.citi.com/job/pune/pega-developer/287/96335850896",
+      "location": "Pune, India; hybrid",
+      "experience": "4+ years",
+      "requirements": "Pega 8.x, UI-Kit/Cosmos, REST/SOAP/Kafka, SQL; CSSA/LSA preferred.",
+      "status": "uncertain",
+      "access": "page",
+      "closing_date": null,
+      "source_date": "2026-06-12",
+      "salary": null,
+      "checked_at": "2026-09-08",
+      "remote_eligibility": "unknown",
+      "limitations": [
+        "Current application acceptance not verified.",
+        "No published salary range found."
+      ],
+      "summary": "Pega 8.x, UI-Kit/Cosmos, REST/SOAP/Kafka, SQL; CSSA/LSA preferred.",
+      "experience_min": 4,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Current application acceptance not verified.",
+        "No published salary range found."
+      ],
+      "employer_type": "gcc",
+      "independent_discovery": true,
+      "evidence_scope": "role_description",
+      "job_detail_status": "read",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://jobs.citi.com/job/pune/pega-developer/287/96335850896",
+          "source_type": "Employer description",
+          "title": "PEGA Developer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "excerpt": "Pega 8.x, UI-Kit/Cosmos, REST/SOAP/Kafka, SQL; CSSA/LSA preferred.",
+          "status": "uncertain"
+        }
+      ]
+    },
+    {
+      "company": "Hartford India GCC",
+      "title": "Sr Software Engineer Pega",
+      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-pega-at-the-hartford-india-4423171434",
+      "location": "Hyderabad, India",
+      "experience": null,
+      "requirements": "CSSA; hands-on Pega Infinity/Constellation.",
+      "status": "indexed_only",
+      "access": "search_index",
+      "closing_date": null,
+      "source_date": null,
+      "salary": null,
+      "checked_at": "2026-09-08",
+      "remote_eligibility": "unknown",
+      "limitations": [
+        "Current application acceptance not verified.",
+        "No published salary range found."
+      ],
+      "summary": "CSSA; hands-on Pega Infinity/Constellation.",
+      "experience_min": null,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Current application acceptance not verified.",
+        "No published salary range found."
+      ],
+      "employer_type": "gcc",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-pega-at-the-hartford-india-4423171434",
+          "source_type": "Indexed job description",
+          "title": "Sr Software Engineer Pega",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "CSSA; hands-on Pega Infinity/Constellation.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "company_id": "catalogue-barclaysindia",
+      "title": "Pega Developer",
+      "url": "https://search.jobs.barclays/job/pune/pega-developer/13015/96771695184",
+      "location": "Pune, India",
+      "description": "JR-0000112284: Group Economic Crime COO Pega case/flow/data-page development, REST/SOAP/SQL, debugging and performance; CSSA preferred. No numeric experience minimum stated.",
+      "checked_at": "2026-09-08",
+      "salary": null,
+      "status": "open",
+      "access": "page",
+      "source_date": "2026-06-22",
+      "experience_min": null,
+      "limitations": [
+        "Apply link and description observed; approved budget and current team allocation require employer confirmation."
+      ],
+      "company": "Barclays India",
+      "summary": "JR-0000112284: Group Economic Crime COO Pega case/flow/data-page development, REST/SOAP/SQL, debugging and performance; CSSA preferred. No numeric experience minimum stated.",
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Apply link and description observed; approved budget and current team allocation require employer confirmation."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "role_description",
+      "job_detail_status": "read",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://search.jobs.barclays/job/pune/pega-developer/13015/96771695184",
+          "source_type": "Employer description",
+          "title": "Pega Developer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "excerpt": "JR-0000112284: Group Economic Crime COO Pega case/flow/data-page development, REST/SOAP/SQL, debugging and performance; CSSA preferred. No numeric experience minimum stated.",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "company_id": "fresh-anzbank",
+      "title": "Analyst (Systems/Tech Analyst)",
+      "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+      "location": "Bengaluru, India; hybrid/blended",
+      "description": "123198: Document Automation within Tech ARC Intelligent Automation. Pega/workflow, document generation, REST, cloud, demand analysis and stakeholder workshops. An adjacent analyst path, not a pure developer role.",
+      "checked_at": "2026-09-08",
+      "salary": null,
+      "status": "open",
+      "access": "page",
+      "experience_min": 5,
+      "closing_at": "2026-09-11",
+      "closing_time": "23:59 Australia/Melbourne",
+      "limitations": [
+        "Requires 5+ relevant years; assess the business-analysis career direction.",
+        "Salary not disclosed."
+      ],
+      "original_source_url": "https://careers.anz.com/job/Bengaluru-Analyst-%28SystemsTech-Analyst%29/1366916966/",
+      "url_basis": "Canonical employer redirect observed on direct page read.",
+      "company": "ANZ Bank",
+      "summary": "123198: Document Automation within Tech ARC Intelligent Automation. Pega/workflow, document generation, REST, cloud, demand analysis and stakeholder workshops. An adjacent analyst path, not a pure developer role. Closing: 2026-09-11 23:59 Australia/Melbourne.",
+      "fit": "stretch",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Requires 5+ relevant years; assess the business-analysis career direction.",
+        "Salary not disclosed."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "role_description",
+      "job_detail_status": "read",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+          "source_type": "Employer description",
+          "title": "Analyst (Systems/Tech Analyst)",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "excerpt": "123198: Document Automation within Tech ARC Intelligent Automation. Pega/workflow, document generation, REST, cloud, demand analysis and stakeholder workshops. An adjacent analyst path, not a pure developer role. Closing: 2026-09-11 23:59 Australia/Melbourne.",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "company_id": "catalogue-thehartfordindia",
+      "title": "IND Staff Software Engineer",
+      "url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/IND-Staff-Software-Engineer_R2624988",
+      "location": "Hyderabad, India GCC–Puppalaguda Village",
+      "description": "Staff/Senior Pega engineering with Cloud, Infinity and Constellation; exact seniority minimum not exposed in examined index.",
+      "checked_at": "2026-09-08",
+      "salary": null,
+      "status": "indexed_only",
+      "access": "search_index",
+      "experience_min": null,
+      "limitations": [
+        "Direct open returned no readable body; application acceptance not established."
+      ],
+      "company": "The Hartford India",
+      "summary": "Staff/Senior Pega engineering with Cloud, Infinity and Constellation; exact seniority minimum not exposed in examined index.",
+      "fit": "stretch",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Direct open returned no readable body; application acceptance not established."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/IND-Staff-Software-Engineer_R2624988",
+          "source_type": "Indexed job description",
+          "title": "IND Staff Software Engineer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Staff/Senior Pega engineering with Cloud, Infinity and Constellation; exact seniority minimum not exposed in examined index.",
+          "status": "indexed_only"
+        }
+      ]
+    },
+    {
+      "company": "Wells Fargo",
+      "title": "Lead Software Engineer (Pega)",
+      "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+      "location": "BENGALURU",
+      "status": "closed",
+      "source_date": "2026-08-24",
+      "closing_at": "2026-08-30",
+      "checked_at": "2026-09-08",
+      "access": "search_index",
+      "salary": null,
+      "experience_min": null,
+      "description": "Historical Pega/REST/SOAP/SQL/Constellation role; explicit closing date has passed.",
+      "limitations": [
+        "Apply control does not override expired closing date.",
+        "Minimum years not visible in examined excerpt."
+      ],
+      "query_ids": [
+        "q34"
+      ],
+      "summary": "Historical Pega/REST/SOAP/SQL/Constellation role; explicit closing date has passed. Closing: 2026-08-30 time not stated.",
+      "fit": "stretch",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Apply control does not override expired closing date.",
+        "Minimum years not visible in examined excerpt."
+      ],
+      "employer_type": "gcc",
+      "remote_eligibility": "unknown",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "source_type": "Indexed job description",
+          "title": "Lead Software Engineer (Pega)",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Historical Pega/REST/SOAP/SQL/Constellation role; explicit closing date has passed. Closing: 2026-08-30 time not stated.",
+          "status": "closed"
+        }
+      ]
+    },
+    {
+      "company": "Standard Chartered India",
+      "title": "Prod Specialist - Pega CDH, WRB Tech",
+      "url": "https://jobs.standardchartered.com/job/Prod-Specialist-Pega-CDH%2C-WRB-Tech/55895-en_GB/",
+      "location": "Bangalore, India; office working",
+      "experience": null,
+      "requirements": "CDH architecture/integration specialist, Band 6.",
+      "status": "closed",
+      "access": "search_index",
+      "closing_date": "2026-07-03",
+      "source_date": "2026-06-29",
+      "salary": null,
+      "checked_at": "2026-09-08",
+      "remote_eligibility": "unknown",
+      "limitations": [
+        "Employer deadline or explicit no-longer-accepting status indicates closed.",
+        "No published salary range found."
+      ],
+      "summary": "CDH architecture/integration specialist, Band 6. Closing: 2026-07-03 time not stated.",
+      "experience_min": null,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Employer deadline or explicit no-longer-accepting status indicates closed.",
+        "No published salary range found."
+      ],
+      "employer_type": "gcc",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://jobs.standardchartered.com/job/Prod-Specialist-Pega-CDH%2C-WRB-Tech/55895-en_GB/",
+          "source_type": "Indexed job description",
+          "title": "Prod Specialist - Pega CDH, WRB Tech",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "CDH architecture/integration specialist, Band 6. Closing: 2026-07-03 time not stated.",
+          "status": "closed"
+        }
+      ]
+    },
+    {
+      "company": "Hartford India GCC",
+      "title": "Staff Associate / Engineer-Pega",
+      "url": "https://in.linkedin.com/jobs/view/staff-associate-engineer-pega-at-the-hartford-india-4414031030",
+      "location": "Hyderabad, India",
+      "experience": null,
+      "requirements": "Senior Staff Engineer GCC117; CSSA/Constellation.",
+      "status": "closed",
+      "access": "search_index",
+      "closing_date": null,
+      "source_date": null,
+      "salary": null,
+      "checked_at": "2026-09-08",
+      "remote_eligibility": "unknown",
+      "limitations": [
+        "Employer deadline or explicit no-longer-accepting status indicates closed.",
+        "No published salary range found."
+      ],
+      "summary": "Senior Staff Engineer GCC117; CSSA/Constellation.",
+      "experience_min": null,
+      "fit": "stretch",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Employer deadline or explicit no-longer-accepting status indicates closed.",
+        "No published salary range found."
+      ],
+      "employer_type": "gcc",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/staff-associate-engineer-pega-at-the-hartford-india-4414031030",
+          "source_type": "Indexed job description",
+          "title": "Staff Associate / Engineer-Pega",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Senior Staff Engineer GCC117; CSSA/Constellation.",
+          "status": "closed"
+        }
+      ]
+    },
+    {
+      "company": "BNP Paribas",
+      "title": "Pega Developer",
+      "url": "https://www.bnpparibas.co.in/en/jobs/pega-developer-2/",
+      "location": "Chennai, India",
+      "experience": null,
+      "requirements": "Historical employer Pega requisition 100004117.",
+      "status": "closed",
+      "access": "search_index",
+      "closing_date": null,
+      "source_date": "2025-06-04",
+      "salary": null,
+      "checked_at": "2026-09-08",
+      "remote_eligibility": "unknown",
+      "limitations": [
+        "Current application acceptance not verified.",
+        "No published salary range found."
+      ],
+      "summary": "Historical employer Pega requisition 100004117.",
+      "experience_min": null,
+      "fit": "possible",
+      "fit_reasons": [
+        "Requirements assessed from the cited source; compare grade and experience before applying."
+      ],
+      "gaps": [
+        "Approved compensation is not disclosed.",
+        "Current application acceptance not verified.",
+        "No published salary range found."
+      ],
+      "employer_type": "gcc",
+      "independent_discovery": true,
+      "evidence_scope": "employer_job",
+      "job_detail_status": "indexed_only",
+      "job_detail_checked_at": "2026-09-08",
+      "evidence": [
+        {
+          "url": "https://www.bnpparibas.co.in/en/jobs/pega-developer-2/",
+          "source_type": "Indexed job description",
+          "title": "Pega Developer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "excerpt": "Historical employer Pega requisition 100004117.",
+          "status": "closed"
+        }
+      ]
+    }
+  ]
+}

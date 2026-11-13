@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch02 · Case Management, BPM, SLAs, Routing, Correspondence | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch01_pega_platform_core.html">&larr; Chapter 01</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch03_data_model_decisioning.html">Next: Chapter 03 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 02 &middot; Platform foundation</div>
+    <h1>Case Management, BPM, SLAs, Routing &amp; Correspondence</h1>
+    <p class="subtitle">The address-change request now has to travel: intake, review, approval, fulfilment and resolution. This chapter builds that journey one need at a time: stages and steps, the flow shapes that implement them, a late document and a rejection, routing to the right queue, a control that stops Marcus approving his own change, parallel work, the SLA and urgency machinery with how it actually fires, and the letter that confirms the change.</p>
+    <div class="meta">
+      <div><strong>17</strong><span>Sections</span></div>
+      <div><strong>11,128</strong><span>Words</span></div>
+      <div><strong>3</strong><span>SLA intervals</span></div>
+      <div><strong>10</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 01 ended with Dana's request, <code>AM-10417</code>, behaving correctly as a case but going nowhere: nobody has been given the work, there is no sequence of review and approval, and nothing watches the clock. This chapter gives it a journey. The scenario ledger is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s2-1">2.1 A request needs a journey<span>Case type, instance, stages in outline</span></a>
+      <a href="#s2-2">2.2 Stages, processes and steps<span>Stage types, transitions, step types, Case Designer</span></a>
+      <a href="#s2-3">2.3 Flow shapes<span>What actually runs inside a process</span></a>
+      <a href="#s2-4">2.4 A late document and a rejection<span>Tickets, flow actions, waiting</span></a>
+      <a href="#s2-5">2.5 Who sees the work<span>Routing, work queues, Get Next Work</span></a>
+      <a href="#s2-6">2.6 Approval and maker-checker<span>Why Marcus cannot approve his own change</span></a>
+      <a href="#s2-7">2.7 Parallel work<span>Child cases versus Split-Join</span></a>
+      <a href="#s2-8">2.8 SLAs, urgency and the engine<span>Intervals, urgency formulas, how an SLA fires</span></a>
+      <a href="#s2-9">2.9 Correspondence<span>The confirmation letter and its relatives</span></a>
+      <a href="#s2-10">2.10 Audit, reporting, bulk actions<span>What Priya sees</span></a>
+      <a href="#s2-11">2.11 AM-10417 end to end<span>The Account Maintenance design</span></a>
+      <a href="#s2-12">2.12 Variation: closure<span>AC-10882</span></a>
+      <a href="#s2-13">2.13 Variation: legal order<span>LO-20331</span></a>
+      <a href="#s2-14">2.14 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s2-recap">2.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s2-ref">2.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+  </section>
+
+  <section id="s2-1" class="pagebreak">
+    <h2>2.1 A request needs a journey</h2>
+    <p>A case is one unit of business work with a start, an end and a goal: "change the mailing address on Dana Whitfield's accounts". Marcus does not think in terms of rules or classes; he thinks in terms of work that arrives, is looked at, is approved or sent back, and is eventually finished. The first design question is therefore what the lifecycle is, and the second is what shape it takes when real operations work does not go in a straight line.</p>
+    <p>Three terms are used loosely and are worth separating at the start. A <strong>case type</strong> is the template, a rule that defines what every address-change case looks like and how it proceeds; for Riverbend it is <code>FCB-Dep-Work-AccountMaintenance</code>. A <strong>case instance</strong> is one actual case created from that template and stored as a work object: <code>AM-10417</code>, with a unique key (<code>pzInsKey</code>) and a display ID (<code>pyID</code>) built from the class group's prefix and a sequence. And the <strong>case status</strong> (<code>pyStatusWork</code>) is the business status that Marcus and Priya see, such as <code>New</code> or <code>Pending-Approval</code>, and that every change writes into history.</p>
+    <p>The simplest design is a sequence of screens: a form, a review page, an approve button. That is what "workflow" meant before case management frameworks, and it fails the first time reality intrudes. A document arrives late. A sanctions hit stops everything. A legal order arrives in the middle of a closure. A supervisor reassigns work because a colleague is away. A linear sequence cannot represent any of that, so case management models the <em>goal</em> and the <em>lifecycle</em> instead, lets the route change, and attaches tasks, deadlines, documents, audit and correspondence to the same record.</p>
+    <p>For <code>AM-10417</code> the lifecycle has five phases, and Pega's name for a major phase is a <strong>stage</strong>. Intake captures the request and fetches what is needed. Verify decides how much scrutiny it deserves. Approve is where a second person decides. Fulfil updates the core and tells the customer. Resolve closes the case. Inside each stage, a <strong>process</strong> (implemented by a flow) runs a set of <strong>steps</strong>, and a step that needs a person creates an <strong>assignment</strong>: a task held either on one operator's worklist or in a shared work queue.</p>
+    <table>
+      <tr><th>Term</th><th>What it is in Pega</th><th>Rule type or property</th></tr>
+      <tr><td>Case type</td><td>The template defining stages, steps, data and policies</td><td>Case Type rule, class <code>FCB-Dep-Work-AccountMaintenance</code></td></tr>
+      <tr><td>Stage</td><td>A major phase: Intake, Verify, Approve, Fulfil, Resolve</td><td>Defined on the case type; contains processes</td></tr>
+      <tr><td>Process</td><td>A set of steps run within a stage</td><td>A flow (<code>Rule-Obj-Flow</code>)</td></tr>
+      <tr><td>Step</td><td>A unit of work: assignment, automation, approval, subprocess, child case</td><td>Configured in Case Designer; maps to a shape in the underlying flow</td></tr>
+      <tr><td>Assignment</td><td>A task for a person or queue</td><td>An Assign-Worklist or Assign-WorkBasket instance</td></tr>
+      <tr><td>Flow action</td><td>What the assignee can do: submit, approve, reject, request information</td><td><code>Rule-Obj-FlowAction</code></td></tr>
+      <tr><td>Case ID, status</td><td>Display ID and business status</td><td><code>pyID</code>, <code>pyStatusWork</code></td></tr>
+      <tr><td>Parent and child</td><td>Cases linked hierarchically</td><td><code>pxCoveredInsKey</code>, <code>pxCoverInsKey</code></td></tr>
+    </table>
+    <div class="flow">CASE TYPE: Account Maintenance             (rule: FCB-Dep-Work-AccountMaintenance)
+ |
+ +-- STAGE 1  Intake            (primary)   <-- case instance AM-10417 created here
+ |     process: Capture request  -> step: collect details (assignment) -> step: fetch customer (automation)
+ +-- STAGE 2  Verify            (primary)
+ |     process: Risk and verification -> decision: is the change sensitive? -> maybe request a document
+ +-- STAGE 3  Approve           (primary)
+ |     process: Maker-checker   -> step: checker approval (assignment to a work queue)
+ +-- STAGE 4  Fulfil            (primary)
+ |     process: Update core     -> step: post the change to the core -> step: send confirmation
+ +-- STAGE 5  Resolve           (resolution)
+ +-- ALTERNATE STAGES  Rejected | Cancelled by customer
+
+ RUNTIME OBJECTS: case AM-10417 -> assignment (work queue DepOps-Maintenance) -> SLA clock on the assignment</div>
+    <p>The design principle behind the diagram is the one to carry into every case type: stages carry the lifecycle, small flows carry the processes, and subprocesses or child cases carry anything reusable or parallel. The failure it prevents is the single flow with hundreds of shapes for the whole life of a request, which nobody can read, test or change safely.</p>
+  </section>
+
+  <section id="s2-2" class="pagebreak">
+    <h2>2.2 Stages, processes and steps</h2>
+    <p>With the lifecycle sketched, the question is how a case actually moves from one stage to the next, and what happens when it does not go to the next one. Pega distinguishes three kinds of stage for exactly that reason.</p>
+    <p>A <strong>primary stage</strong> is part of the normal path: when every required process in it finishes, the case moves to the next primary stage, automatically by default. Intake, Verify, Approve and Fulfil are primary. An <strong>alternate stage</strong> is off the path: cancellation, rejection, an exception. It is entered explicitly, by a transition or a ticket, and is not part of the default sequence. A <strong>resolution stage</strong> is final: reaching it and finishing its process resolves the case. When Priya rejects Dana's change, the case does not simply stop; it enters an alternate stage called Rejected, which sets a resolved-rejected status and sends the customer a notice.</p>
+    <p>Stages carry a few settings that matter early. Entry and exit conditions let a stage be skipped when a condition is true, for example skipping the enhanced identity check for a low-risk change. A stage can be left to advance automatically or can wait for an explicit user action. Starting a stage sets the case status. A stage can have its own service level. And a stage can offer optional actions, ad hoc processes a user may run at any time while the case is in that stage. Transitions between stages are automatic (the last process finishes), manual (a user chooses "change stage" or a flow action moves the case to a named stage, typically a supervisor), skipped (the condition says the stage has nothing to do) or a jump to an alternate stage through a flow transition or ticket, from which the case may resume a primary stage.</p>
+    <p>Inside a stage, what a "step" is depends on what the step must do. Case Designer, the visual editor in App Studio (also available in Dev Studio), offers a vocabulary of step types, each of which maps onto a shape in the process's flow.</p>
+    <table>
+      <tr><th>Step type</th><th>Underlying shape</th><th>In the address change</th></tr>
+      <tr><td>Collect information</td><td>Assignment with a flow action</td><td>Marcus confirms the new address and the channel</td></tr>
+      <tr><td>Approve / Reject</td><td>Approval assignment</td><td>Priya's decision</td></tr>
+      <tr><td>Automation</td><td>Utility, Decision or Integrator</td><td>Fetch Dana's profile; decide sensitivity</td></tr>
+      <tr><td>Create child cases</td><td>Subprocess or Create Case</td><td>Not needed here (2.7 shows when it is)</td></tr>
+      <tr><td>Attachment / request document</td><td>Attachment-capture assignment</td><td>Proof of address</td></tr>
+      <tr><td>Send notification / correspondence</td><td>Notify or Send Email</td><td>The confirmation letter</td></tr>
+      <tr><td>Wait</td><td>Wait shape</td><td>Waiting for the document</td></tr>
+      <tr><td>Subprocess</td><td>Subprocess shape</td><td>A reusable identity check</td></tr>
+    </table>
+    <p>The division of labour between Case Designer and the underlying flow is practical. Business analysts own the stages and step names, because that is how the business describes its work. Developers own the internals of each flow: conditions, routing details, data transforms and the integrations. Opening a step in Case Designer ends in a normal <code>Rule-Obj-Flow</code> that Sam edits like any other rule, and rule resolution (Chapter 01 §1.6) applies to it like any other rule, which is how Riverbend can later vary a process for one state without copying the case type.</p>
+  </section>
+
+  <section id="s2-3" class="pagebreak">
+    <h2>2.3 Flow shapes: what actually runs</h2>
+    <p>A <strong>flow</strong> is a graph of shapes and connectors that defines the sequence of tasks in a process. Each shape either creates a task, performs automation, branches, pauses or ends. Sam builds the Verify process for <code>AM-10417</code> by starting with the simplest version and adding shapes as the design needs them.</p>
+    <p>The first version is a start, an <strong>Assignment</strong> (Marcus reviews) and an end. The Assignment shape creates a task for a person or queue and waits for a flow action; its configuration carries the routing, the flow actions available, the service level, local actions, instructions and the screen to show. Before Marcus can review anything the case needs Dana's profile, so a call to the core goes in front of the assignment. An <strong>Integrator</strong> shape calls a connector (REST, SOAP or SQL) with request and response mapping and a declared error path, without writing activity code; a <strong>Utility</strong> shape runs an activity with no human involved and is for internal logic a data transform cannot express. The rule of thumb is Integrator for external calls and Utility for internal logic, and Utility shapes should stay thin.</p>
+    <p>Next the process must decide whether this change is sensitive. A <strong>Decision</strong> shape branches on a decision table, tree, when rule or expression, and its results map to outgoing connectors. When the logic is a decision table that the business should maintain, use a Decision shape; when there are two or three simple conditions, a <strong>Fork</strong> (branching on several when rules, first true or all, with an otherwise path) is lighter. Then a sensitive change needs a document, and the case should wait for it: a <strong>Wait</strong> shape pauses the flow until a time, a duration or a condition, including a case dependency (waiting for child cases) or a ticket. Finally a <strong>Notify</strong> shape sends correspondence or a notification, and an <strong>End</strong> shape terminates the flow or resolves the case with a status.</p>
+    <p>Three shapes handle work in parallel, and they are easy to confuse with one another. <strong>Split-For-Each</strong> runs a subflow once for each element of a page list, in parallel, with a join condition (all, any or a count), which suits one verification per signer. <strong>Split-Join</strong> runs two or more different subprocesses in parallel and rejoins, which suits a sanctions check and a tax-ID check at once. A <strong>Subprocess</strong> shape calls another flow, either to reuse it inside the same case or, with Create Case, to spawn a separate case. A <strong>Ticket</strong> shape, covered in 2.4, is a named exception that can be raised from anywhere. A <strong>Start</strong> shape is the entry point, with one per flow or several for different ways in.</p>
+    <div class="flow">FLOW SKETCH: Verify process for AM-10417
+ (Start) --> [Integrator: fetch Dana's profile] --ok--> &lt;Decision: sensitive?&gt;
+                      | error                                  | yes                  | no
+                      v                                         v                      v
+          [Assignment: retry / manual fetch]      [Assignment: request proof of address] (End)
+                                                                | received
+                                                                v
+                                                    [Assignment: Marcus reviews] --> (End)
+ TICKET CUSTOMER_CANCEL  (raised by an external event) jumps to the Cancelled alternate stage</div>
+    <p>Two sketches of confusion deserve a direct answer. Subprocess versus child case is a question of ownership and lifecycle: a subprocess runs in the same case and shares its data, whereas a child case is a separate case with its own lifecycle, audit, SLA and owner (2.7). Wait versus SLA is a question of what is doing the work: a Wait pauses the flow, while an SLA measures time and escalates but does not pause anything, and the right design for a document that may not arrive is both, a Wait for the reply with an SLA on the waiting step for follow-up reminders.</p>
+    <p>The ways this goes wrong are the ones that leave work stranded. A Utility containing a thirty-step activity is logic that belongs in rules. An Integrator with no error connector leaves the flow stalled in a "flow error" status, with the case turning up later in a broken-process report. Decision logic hard-coded into connectors as inline expressions is not maintainable by the business. And a Split-For-Each over hundreds of elements on one case should be a queue processor or child cases instead.</p>
+    <h3>Reference: the flow shapes in one table</h3>
+    <p class="small muted">Skip this on a first read. It collects every shape with its main configuration so you can look one up later.</p>
+    <table>
+      <tr><th>Shape</th><th>What it does</th><th>Key configuration</th><th>Riverbend use</th></tr>
+      <tr><td>Start</td><td>Entry point</td><td>Optional parameters</td><td>Start of Intake</td></tr>
+      <tr><td>Assignment</td><td>Creates a task and waits for a flow action</td><td>Routing, flow actions, service level, local actions, UI</td><td>Marcus reviews; Priya approves</td></tr>
+      <tr><td>Utility</td><td>Runs an activity; keep thin</td><td>Activity, parameters, success and failure connectors</td><td>Compute a fee or queue a record</td></tr>
+      <tr><td>Decision</td><td>Branch by table, tree, when or expression</td><td>Decision type; results map to connectors</td><td>Sensitive or not</td></tr>
+      <tr><td>Fork</td><td>Branch on several when rules</td><td>Conditions per connector, otherwise path</td><td>Hold exists, go to hold path</td></tr>
+      <tr><td>Split-For-Each</td><td>One subflow per list element, in parallel</td><td>Page list, subflow, join (all, any, count)</td><td>One check per signer</td></tr>
+      <tr><td>Split-Join</td><td>Different subprocesses in parallel</td><td>Branch flows, join policy</td><td>Sanctions and tax-ID checks</td></tr>
+      <tr><td>Subprocess</td><td>Call another flow, or create a case</td><td>Flow name, parameters, wait for completion</td><td>Reusable identity check</td></tr>
+      <tr><td>Wait</td><td>Pause until a time, duration or condition</td><td>Timer, case dependency, ticket, date property</td><td>Wait for the document</td></tr>
+      <tr><td>Integrator</td><td>Call a connector with mapping and error handling</td><td>Connector, parameters, response mapping, error flow, async options</td><td>Core read and write</td></tr>
+      <tr><td>Notify</td><td>Send correspondence or a notification</td><td>Rule, recipients, channel</td><td>Confirmation letter</td></tr>
+      <tr><td>End</td><td>Terminate the flow or resolve the case</td><td>Status, resolve option</td><td>Resolved-Completed</td></tr>
+      <tr><td>Ticket</td><td>Named exception raised from anywhere</td><td>Ticket name, when condition</td><td>Cancellation, legal freeze</td></tr>
+    </table>
+  </section>
+
+  <section id="s2-4" class="pagebreak">
+    <h2>2.4 A late document and a rejection</h2>
+    <p>The case is flagged sensitive, because Dana's address changed within 30 days of a card reissue request, and so the Verify process asks for a proof of address. Dana's document does not arrive when the review is supposed to happen. A case that simply waits is acceptable; a case that cannot be pulled back to an earlier point when something unexpected happens is not. Tickets and flow actions are how a flow stays flexible.</p>
+    <p>A <strong>ticket</strong> is a named marker in a flow, and also a named event. When it is <em>raised</em>, by an activity, a utility, a declarative rule, an external event or an SLA escalation, the flow in which the ticket lives resumes from the ticket point, wherever the case currently is. The reason it exists is that exceptions occur anywhere: without tickets, the flow would need a connector from every shape to the exception path. A ticket is defined as a Ticket rule, placed in the flow with a Ticket shape or attached to an assignment, and raised through a Set-Ticket method, an SLA escalation action, a declarative trigger, a "raise ticket" flow action or a Service-REST call that sets a ticket on an existing case. Raising it moves control to the ticket location and removes the current assignments of that flow, unless the ticket location is in a separate parallel branch. That last point is the one to remember: a raised ticket abandons whatever assignment was open.</p>
+    <p>For <code>AM-10417</code> a ticket named <code>CUSTOMER_CANCEL</code> lets Dana withdraw the request from any stage. In a later chapter the same mechanism lets a legal order freeze an in-flight closure. Common uses are jump-back after rework, cancellation, a hold, a regulatory stop and an SLA breach path. The pitfalls follow directly: reuse of one ticket name for different meanings across flows, a ticket that jumps into the middle of a stage that depends on data not yet set, forgetting that the current assignment is dropped, and failing to write a history entry and a status explaining why. Always do the last two.</p>
+    <p>Now Marcus has the proof of address, and he reviews and submits the case for approval. He does this through a <strong>flow action</strong>, the rule that defines what a user can do on an assignment: the form shown, and the processing before and after. A <em>connector action</em> sends the flow down a named outgoing connector (approve, reject, return) when submitted, which is how decisions are made. A <em>local action</em> performs an operation within the same step, such as adding a note, and returns to the same assignment without advancing. The flow action also names the screen, a validate rule that runs on submit (a failure returns messages and keeps the user on the form), pre-processing that runs before the form appears (to prefill it), post-processing that runs after validation (to set status or compute values), and the privilege needed to see the action.</p>
+    <p>Priya opens the assignment on Monday afternoon and rejects it: the proof of address is a photograph too small to read. Her flow action's reject connector sends the case back to Marcus, with the status changed and a history entry recording her reason. Marcus asks Dana for a clearer copy, resubmits, and Priya approves on Tuesday 3 March. Nothing about this required the flow to know in advance that a rejection might occur; the reject connector and the return path were defined once, and the case type carries any number of rejections. What it does require is that the reason is captured, since a rejection that leaves no trace is exactly the evidence gap an auditor looks for.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>A legal order against Dana's account arrives while <code>AC-10882</code> is waiting for Priya's approval, and a ticket is raised on the closure case. What happens to Priya's open assignment, and what should be recorded?</p>
+      <p><strong>Answer.</strong> The raised ticket moves control to the ticket point in the closure flow and removes the current assignments of that flow, so Priya's approval assignment is dropped and the case resumes at the legal-hold review step. A history entry and a status must explain why, or Priya and the auditor will see an approval that vanished with no reason. This assumes the ticket location is in the same flow branch as the assignment; if it sits in a separate parallel branch, the assignment would survive, which is why ticket placement is a design decision and not a detail.</p></div>
+  </section>
+
+  <section id="s2-5" class="pagebreak">
+    <h2>2.5 Who sees the work: routing and work queues</h2>
+    <p>The assignment that Marcus reviews has to reach Marcus. Routing is the mechanism that decides who sees a task, and it exists because operations teams are organised into queues, skill groups, shifts and authority levels. Each assignment must land with someone entitled and able to do it, and must be redistributable when volume or availability changes.</p>
+    <p>The first decision is between putting an assignment on a person's <strong>worklist</strong> and in a shared <strong>work queue</strong> (a work basket). A worklist assignment has one named owner from the start, which suits case ownership and relationship-based work, but it is a push model that needs balancing logic and strands the work if that person is on leave. A work queue has no owner until someone takes the item; users pull the next item with Get Next Work, which ranks by urgency (2.8), and the arrangement survives absences and gives a clear owner once the item is taken. For operations volume work the queue is almost always the right answer, which is why Riverbend routes the address-change review to <code>DepOps-Maintenance</code>.</p>
+    <p>The standard routers on an Assignment shape cover the usual cases: to a specific operator's worklist; to a named work queue; to a skilled group, chosen from the skills configured on operator IDs, which is how legal orders reach people with a legal-process skill; to the manager of the case's work group; back to the current operator, the originator or the creator, for rework; by a decision table or custom router activity, for routing by authority level, product line or state; and up a reporting structure for approvals. The list varies slightly by release, so confirm it on the Assignment shape's properties in the version you use.</p>
+    <p>Routing decisions often depend on more than the router type: a required skill and minimum rating on the operator, availability (an out-of-office setting that delegates work), workload (least-workload routing), authority (an approval limit on the operator or in an authority matrix table) and shift or region (queues by region with a calendar defining business hours). A queue design for Riverbend's deposit operations shows how those choices combine.</p>
+    <div class="flow">DEPOSIT OPS WORK QUEUE DESIGN (illustrative)
+  DepOps-Intake          : new requests, general maintenance (all L1 ops)
+  DepOps-Maintenance     : address/signer/beneficiary changes             (mreed works here)
+  DepOps-Closure         : account closure checks and fulfilment
+  DepOps-Payments-Exc    : ACH returns (R01/R02/R03), stop pay, wire exceptions
+  DepOps-Legal           : garnishments, tax levies, subpoenas, court freezes   (skill: LegalProcess)
+  DepOps-Compliance      : OFAC hits, KYC/AML refreshes                          (skill: Compliance)
+  DepOps-Escheat         : dormancy/unclaimed property
+  DepOps-Recon           : reconciliation breaks
+  DepOps-Supervisor      : escalations, SLA breaches, approvals above L1 authority   (praman)
+
+  Operator -> Work Group (team) -> Access Group (application/roles) -> Skills (operator ID) -> Work queues accessible</div>
+    <p>A queue is only as good as the operators who can reach it. The failure mode that costs most is a work queue that no active operator can access, so assignments sit forever and SLAs breach with nobody noticing; the defence is an alert on queues that have no eligible operator during business hours. The other recurring mistakes are hard-coding operator IDs or routing by name in a flow, using worklist routing for volume work, and writing custom router activities that run a report for every assignment created, which is slow under load.</p>
+  </section>
+
+  <section id="s2-6" class="pagebreak">
+    <h2>2.6 Approval, and why Marcus cannot approve his own change</h2>
+    <p>Marcus has prepared the change and could, if the design allowed it, also approve it. In a bank that is precisely what must not be possible. A person who initiates a sensitive change cannot also authorise it, and higher-value or higher-risk actions need higher authority: closing an account with a large balance, releasing a legal hold, overriding a sanctions alert, waiving a fee, changing a signer. Approval is therefore a design topic of its own, with several patterns.</p>
+    <p>The simplest is a <strong>single approval</strong>: one approver decides, through an Approve/Reject assignment routed to a queue or a manager. <strong>Cascading approval</strong> escalates up a chain until someone has enough authority, configured with an authority or reporting structure or as a loop in the flow that checks a limit. <strong>Reporting-structure approval</strong> routes to the operator's manager and then that manager's manager, using the "reports to" hierarchy. An <strong>authority matrix</strong> is a table mapping product, amount and risk to the required approver level, implemented as a decision table or decision data looked up through a data page. <strong>Parallel approval</strong> requires two or more approvers, using Split-Join or an approval step with several approvers and a join condition. And <strong>maker-checker</strong>, the four-eyes principle, requires that a different person approves from the one who entered the change.</p>
+    <p>Maker-checker is the pattern that gets interviewed on, and the instructive point is that routing alone does not implement it. If the only control is a queue that the maker is not supposed to be in, then a reassignment, an ad hoc action or an API call can bypass it. The control has to be enforced where it cannot be bypassed, in security rules and server-side validation, and so the design has several layers.</p>
+    <div class="flow">1. At Capture, store maker: .MakerOperatorID = pxRequestor.pyUserIdentifier   (data transform, post-processing of the maker flow action)
+2. Checker assignment routing: to work queue DepOps-Approvers  OR  skilled group with Checker skill
+3. Hard control (cannot rely on UI alone):
+     a) Access Deny / Access When rule: deny "Approve" privilege when pxRequestor.pyUserIdentifier = .MakerOperatorID
+     b) Flow action pre-processing/validation: a validate rule returns "Maker cannot approve own case"
+     c) Get Next Work exclusion: a when rule on the assignment so that the maker is not offered the item
+4. Record: history entry with maker, checker, decision, timestamp; field-level audit on amount and status
+5. Authority: checker's approval limit >= case amount, otherwise cascade to the next level</div>
+    <p>For <code>AM-10417</code> this means that when Marcus submits the review, the maker's identifier is stored on the case; Priya's approval assignment routes to the approvers' queue; and if Marcus somehow reached the assignment, the Access Deny on the approve privilege and the server-side validation would both refuse. Chapter 10 builds the access model that makes those rules work and tests them role by role. Each layer closes a gap the previous one leaves: routing keeps the item out of the maker's view, the security rule refuses the action even if reached, validation covers API and ad hoc paths, and a daily report of any case where maker equals checker (target zero) detects what the others missed.</p>
+    <p>The authority matrix for Riverbend, as a decision table the business can maintain, is a short comparison worth having in one place.</p>
+    <table>
+      <tr><th>Case type</th><th>Balance (USD)</th><th>Risk tier</th><th>Approver level</th></tr>
+      <tr><td>Account Closure</td><td>&lt; 10,000</td><td>Low</td><td>L1 Checker</td></tr>
+      <tr><td>Account Closure</td><td>10,000 to 100,000</td><td>Any</td><td>L2 Supervisor</td></tr>
+      <tr><td>Account Closure</td><td>&gt; 100,000</td><td>Any</td><td>L3 Manager + Compliance</td></tr>
+      <tr><td>Legal hold release</td><td>Any</td><td>Any</td><td>Legal + L2 Supervisor (two approvals)</td></tr>
+      <tr><td>Signer change</td><td>Any</td><td>High</td><td>L2 + Compliance</td></tr>
+    </table>
+    <p class="small muted">These thresholds are invented teaching values <span class="tag amber">assumed Riverbend policy</span>.</p>
+    <p>The mistakes to avoid are maker-checker enforced only by queue segregation, approval limits hard-coded in activities, approval loops with no escape when no operator has the authority, and approvals that block on an operator who left the bank.</p>
+  </section>
+
+  <section id="s2-7" class="pagebreak">
+    <h2>2.7 Parallel work: child cases and Split-Join</h2>
+    <p>Some work does not go in a line. When Dana later closes <code>CHK-8842-0117</code>, several things must be checked at once: a sanctions re-screen, whether a legal hold exists, and whether recurring ACH or bill-pay items depend on the account. And if the account had five joint owners, each owner's confirmation would be a separate piece of work. The question for the designer is where that parallel work lives, and Pega gives two answers with different consequences.</p>
+    <p>The first is to keep it inside the case: a Split-Join runs the different checks as parallel branches of the parent's flow, and a Split-For-Each runs one subflow per element of a list. They share the parent's clipboard and the parent's single status, and all branches write to the same case, so the parent lock is a single contention point. They are right for short tasks done by the same team on tightly coupled data. The second is a <strong>child case</strong>, created through a subprocess that creates a case: a separate case with its own data, lifecycle, SLA, owner, audit, security and status, a separate row, searchable and reportable on its own.</p>
+    <table>
+      <tr><th>Dimension</th><th>Child case</th><th>Split-Join / Split-For-Each</th></tr>
+      <tr><td>Data</td><td>Own data; pass what is needed; may reference the parent</td><td>Shares the parent's clipboard</td></tr>
+      <tr><td>Lifecycle</td><td>Own stages, SLA, owner, audit, security, status</td><td>Branch inside the parent's flow; one case status</td></tr>
+      <tr><td>Visibility</td><td>Separate ID; searchable and reportable</td><td>Not individually visible</td></tr>
+      <tr><td>Persistence</td><td>Separate row; parallel locking</td><td>All branches write one case; one lock contention point</td></tr>
+      <tr><td>Parent waits</td><td>A Wait shape on case dependency</td><td>A join condition</td></tr>
+      <tr><td>Best when</td><td>Different owner or team, own SLA, long-running, separately auditable, may start later</td><td>Short tasks, same team, coupled data</td></tr>
+    </table>
+    <p>A short sequence of questions settles most cases. Does the sub-work have a different owner or its own SLA? Would an auditor want to find it on its own? Can it outlive or start independently of the parent? If yes to any, it is a child case. Is it a short, same-team, same-data task? Then Split-Join or a subprocess. Is the number of parallel items large, fifty or more? Then child cases or a queue processor, never a Split-For-Each on one case.</p>
+    <p>Riverbend's closure has two instances of each answer. The five-owner confirmation could be a Split-For-Each if it is a simple electronic signature check by the same person, but child cases ("Owner Confirmation") if each owner has a separate SLA and a compliance review by a different team. A legal order that restrains several accounts spawns one "Hold Placement" child case per account, so that each account's core update, success or failure and audit stands alone: one account failing to update does not stall the others, there is proof of the exact hold time for each, an individual case can be reprocessed without re-running the order, and the parent is not locked while the children work.</p>
+    <p>The anti-pattern to avoid is the parent case being updated from many children at the moment of resolution, which creates parent-lock contention and "lock held" errors. Children write their own results, and the parent waits on case dependency and reads child statuses afterward by report or data page.</p>
+  </section>
+
+  <section id="s2-8" class="pagebreak">
+    <h2>2.8 SLAs, urgency and how an SLA actually fires</h2>
+    <p>Priya cannot watch every case. The business has internal commitments (Riverbend's address-change review has a four-business-hour goal and a one-business-day deadline, <span class="tag amber">assumed Riverbend policy</span>) and the bank has external deadlines whose clocks it does not control. What is needed is automated, auditable escalation in place of supervisors watching spreadsheets. A <strong>service level</strong> rule (<code>Rule-Obj-ServiceLevel</code>) defines how long work should take and what happens as time passes.</p>
+    <h3>Three intervals</h3>
+    <p>A service level has three intervals, and the design question for each is what should happen when it arrives. The <strong>goal</strong> is the desired completion time: the usual escalation is to notify the assignee and raise urgency slightly. The <strong>deadline</strong> is the time by which the work must complete: notify the supervisor, raise urgency substantially, perhaps reassign to the supervisor queue. The <strong>passed deadline</strong> follows the deadline and can recur at an interval: keep escalating, notify the manager and compliance, raise urgency each cycle, set a ticket. Each interval's actions can notify, escalate to another assignee, advance the flow, run an activity, set urgency or set a ticket.</p>
+    <p>The rule has a handful of options that make it usable in practice. The time can be a fixed interval from assignment creation or computed from a property, such as a case due date or regulatory deadline. A calendar makes it count only working time. Each interval carries an urgency value. The passed-deadline interval can repeat every N units, with a maximum count or until cleared, and a cap matters because an uncapped recurrence floods supervisors with email. Where it applies is a question of scope: on an Assignment shape's service level field (timer starts when the assignment is created and stops when it completes), on the case or a stage (a clock for the whole case or stage, for end-to-end turnaround), or on a Case Designer step, which sets that step's assignment SLA.</p>
+    <p>Calendars deserve a paragraph because they are where regulatory SLAs go wrong. A calendar rule defines working days, hours and holidays, and an SLA set to use it counts only business time. An SLA written as "three days" without a calendar crosses weekends and holidays, and a regulatory deadline in business days then becomes wrong. No single holiday list fits every regulatory clock: Reg E, Reg CC, the ACH network and state legal-order deadlines each use a different calendar, so the calendar is an input to a deadline, not a global (<a href="ch12_deposits_banking_domain.html#s12-10">Chapter 12 §12.10</a>). Time zone matters too: SLA calculations use the calendar's or the operator's time zone depending on configuration, and for a bank with operations in India and the US the design needs explicit calendars, a separate one per regulatory clock and another for staffing and shift SLAs (see <a href="ch12_deposits_banking_domain.html#s12-10">Chapter 12 §12.10</a>), with timestamps stored in UTC and displayed in the user's zone.</p>
+    <h3>Urgency: the number that ranks work</h3>
+    <p>Urgency is an integer from <strong>0 to 100</strong> that ranks work. It drives worklist order and the Get Next Work selection algorithm. Values above 100 are not stored: the system ignores adjustments that would push it past 100. There are two urgencies, and conflating them is the classic interview slip: <strong>case urgency</strong> is the priority of the case, <strong>assignment urgency</strong> is the priority of one piece of work on it.</p>
+    <h4>Assignment urgency: the property that actually ranks work</h4>
+    <div class="formula">.pxUrgencyAssign  =  .pxUrgencyWork            (case urgency, copied in at assignment creation)
+                   +  .pxUrgencyAssignSLA      (assignment SLA: initial urgency + interval increments)
+                   +  .pyUrgencyAssignAdjust   (manual adjustment, via the ChangeAssignmentSLA local action)
+                   bounded to 0..100</div>
+    <table>
+      <tr><th>Property</th><th>Prefix</th><th>Meaning</th></tr>
+      <tr><td><code>.pxUrgencyAssign</code></td><td>px — calculated</td><td>The assignment urgency. This is the number that ranks work.</td></tr>
+      <tr><td><code>.pxUrgencyWork</code></td><td>px — calculated</td><td>Case urgency, contributed into the assignment when the assignment is created.</td></tr>
+      <tr><td><code>.pxUrgencyAssignSLA</code></td><td>px — calculated</td><td>The assignment SLA's contribution: its initial urgency plus the increments for goal, deadline and passed-deadline as each interval elapses.</td></tr>
+      <tr><td><code>.pyUrgencyAssignAdjust</code></td><td>py — you set it</td><td>Manual adjustment to this assignment. The <code>ChangeAssignmentSLA</code> local action writes it.</td></tr>
+    </table>
+    <h4>Case urgency: calculated separately</h4>
+    <div class="formula">.pxUrgencyWork  =  .pxUrgencyWorkClass      (case type Initial Urgency; default 10)
+                +  .pyUrgencyWorkAdjust     (manual, via the UrgencyUpdate local action)
+                +  .pxUrgencyWorkSLA        (case-level SLA, if any)
+                +  .pxUrgencyPartyTotal     (sum of work-party urgency; rare)
+                +  .pxUrgencyWorkStageSLA   (current stage's SLA, if any)
+                +  .pxUrgencyWorkStepSLA    (sum of process SLAs in the current stage)</div>
+    <p>The last four are documented but rarely used in practice. The two you will actually configure are the case type's <em>Initial Urgency</em> (Settings &gt; General, default 10) and <code>.pyUrgencyWorkAdjust</code>.</p>
+    <div class="warning"><strong>Case urgency does not propagate to assignments that already exist.</strong> Pega's documentation is explicit: <code>.pxUrgencyAssign</code> reflects a manual adjustment to case urgency only if the adjustment is made <em>before</em> the assignment is created, not after. <code>.pxUrgencyWork</code> is copied into the assignment's total at creation time; raising case urgency later moves the case, not the open assignment sitting in somebody's worklist. If you need an existing assignment to jump the queue, adjust <code>.pyUrgencyAssignAdjust</code> on the assignment. It is the thing that bites teams: "we escalated the case and the work still did not come up next in Get Next Work."</div>
+    <p class="small muted">Runtime: the system recalculates urgency when the value of a standard urgency property changes, or when a user saves the case.</p>
+    <p>The arithmetic is easiest to follow on one case with a statutory deadline. A legal-order case has a case type Initial Urgency of 30 (above the default 10, because these carry deadlines). A supervisor raises case urgency by 10 <em>before</em> the review assignment is created. The review assignment's SLA has initial urgency 10, plus 10 at goal and plus 30 at deadline, with no manual adjustment yet.</p>
+    <table>
+      <tr><th>Moment</th><th><code>.pxUrgencyWork</code></th><th><code>.pxUrgencyAssignSLA</code></th><th><code>.pyUrgencyAssignAdjust</code></th><th><code>.pxUrgencyAssign</code></th></tr>
+      <tr><td>Assignment created</td><td>30 + 10 = 40</td><td>10</td><td>0</td><td><strong>50</strong></td></tr>
+      <tr><td>Goal elapses</td><td>40</td><td>10 + 10 = 20</td><td>0</td><td><strong>60</strong></td></tr>
+      <tr><td>Deadline elapses</td><td>40</td><td>20 + 30 = 50</td><td>0</td><td><strong>90</strong></td></tr>
+      <tr><td>CSR escalates the assignment by 20</td><td>40</td><td>50</td><td>20</td><td><strong>100</strong> (capped; the raw sum is 110)</td></tr>
+      <tr><td>Supervisor now raises <em>case</em> urgency by 10</td><td>50</td><td>50</td><td>20</td><td><strong>100</strong>, unchanged; the existing assignment does not pick up the later case-urgency change</td></tr>
+    </table>
+    <p>The last two rows are the ones worth remembering: the cap is real, and a late case-urgency bump does nothing for work already assigned. Urgency is also a different thing from the other two words in the neighbourhood. A service level is a time rule with actions and is not the number you sort by. Urgency is a numeric ranking value, often the outcome of SLA progression, and is not time. Priority is a business label (high, medium, low) that users or integrations supply; it is not an engine field by itself, and you map it into an initial urgency.</p>
+    <h3>How an SLA actually fires</h3>
+    <p>An SLA does not run in a thread. When an assignment with a service level is created, Pega computes the next due time and writes an entry to the SLA queue, specifically the <code>System-Queue-ServiceLevel</code> table, not a sleeping process. A system-managed background processor then runs periodically: it selects entries whose next-action time has arrived, runs the escalation actions for that interval, updates urgency and re-queues the entry for the next interval. When the assignment completes, its timer entry is removed.</p>
+    <div class="flow">Assignment created  (SLA Goal 4h, Deadline 8h, Passed every 2h)
+   |
+   v   engine writes SLA timer entry (next action time = created + 4h)
+   +--------------------------------------------------------------+
+   | SLA queue / timeout store  (sorted by next action time)      |
+   +--------------------------------------------------------------+
+   |                                   ^ re-queue next interval
+   v                                   |
+ SLA processing (batch requestor) wakes every cycle
+   -> selects due entries -> loads the case -> runs escalation actions (Notify, Urgency, Reassign, Ticket)
+   -> history row "Goal passed" / "Deadline passed"
+   -> on assignment completion: timer entry removed</div>
+    <p>The legacy agent and the queue processor are different execution models (agent schedule versus queue-processor dequeue). Do not assume every SLA-like timer in the platform uses <code>System-Queue-ServiceLevel</code>: case-level, stage-level and step-level SLAs, and timer and wait shapes, are configured separately and may be serviced by different background mechanisms. Verify per release rather than generalising from assignment SLAs. Which of them services assignment SLAs on a given system is something to read, not to assume, and the table pairs each statement with the screen that proves it.</p>
+    <table>
+      <tr><th>What to say</th><th>How to confirm it on the deployed version</th></tr>
+      <tr><td>Assignment SLA events wait in the <code>System-Queue-ServiceLevel</code> queue; its backlog and oldest-item age are the health metric</td><td>Admin Studio: Queue Processors landing page (delayed and failed items, last run time) for the processor in use; the SLA queue backlog in the database or the equivalent view for your release</td></tr>
+      <tr><td>Historically the <code>ServiceLevelEvents</code> agent serviced SLA events</td><td>Admin Studio: Agent Management for the node, to see whether the agent is enabled and when it last ran</td></tr>
+      <tr><td>A queue processor (named <code>pyProcessSLA</code> in releases that ship it) can service them instead</td><td>Admin Studio: Queue Processors landing page, to see whether that processor exists and is running on a background-processing node</td></tr>
+      <tr><td>The <code>UseSLAQueueProcessor</code> Dynamic System Setting selects between agent and processor</td><td>Dev Studio or Admin Studio: read the DSS value on the deployed system; do not infer it from a document</td></tr>
+      <tr><td>The default has varied by release</td><td>Confirm via the <code>UseSLAQueueProcessor</code> DSS value and the Queue Processors landing page on the deployed version</td></tr>
+      <tr><td>The two must not run concurrently</td><td>Admin Studio: confirm the agent is disabled once the processor is enabled, and that only one is draining the queue</td></tr>
+    </table>
+    <div class="warning"><strong>Migration drain behaviour is not something to assert.</strong> Whether items already queued by the agent are picked up by the queue processor, or must be drained by the agent first, is not established here. Before switching, confirm it on a lower environment, and keep the agent enabled until the backlog is observed to be zero.</div>
+    <p>The safe switch sequence follows from that uncertainty. Verify drain behaviour on a lower environment, then enable the queue processor, then watch both the agent's queue and the processor's queue, and disable the <code>ServiceLevelEvents</code> agent only once the agent-side backlog is confirmed drained. Running both at once risks double processing (duplicate escalations); disabling the agent too early risks stranding queued items. Release-specific defects have also existed in this area, for example SLA goal and deadline updates failing while using the queue processor, so if SLA adjustment behaves oddly, check support notes for the deployed version before assuming your own configuration is wrong.</p>
+    <p>What this means for Lena is a diagnosis she can state in advance. If the SLA processor stops, no escalation emails go out, urgency does not rise, supervisors say cases "never turned red" though they are days overdue, <code>.pxUrgencyAssign</code> is unchanged and history lacks "Goal passed" while the SLA backlog count grows. The typical causes are the processor stopped or disabled, a node type that does not include background processing so no node runs it, a stuck partition after an infrastructure fault, a poison entry (a case whose escalation activity throws) retrying and consuming capacity, a database lock on the SLA table, clock skew, or a deployment that replaced node classification. She diagnoses from the Queue Processors landing page (status, delayed and failed items, last run time), checks which nodes run it, reads the logs for exceptions in the escalation activity and looks at the broken queue items. Recovery is to restart the processor or fix the node classification and resolve or requeue broken items; once it catches up it fires every past-due interval at once, which produces an escalation email burst to supervisors, so communicate before restarting and consider throttling notification actions. Prevention is an alert on the delayed-items count and the oldest-item age, a synthetic SLA test case in production, tiny idempotent escalation activities and a written runbook.</p>
+    <p>Riverbend's own SLA designs follow from these mechanisms, all of them invented policy. The ACH return handling has an assignment SLA with a goal of two business hours and a deadline per reason, well inside the network deadline, because the return window is a business-day deadline set outside Pega and the SLA only provides earlier internal warnings <span class="tag amber">assumed Riverbend policy</span>. A Reg CC hold exception review has a case SLA on the Reg CC business-day calendar with a one-business-day goal and a two-day deadline, and a passed deadline that notifies the supervisor every four hours <span class="tag amber">assumed Riverbend policy</span>. A legal order has a case SLA computed from the order's response-due date, dynamic from a property, with the validation goal at due date minus five business days and a deadline at due date minus one <span class="tag amber">assumed Riverbend policy</span>. A Reg E dispute's investigation clock is in business days from the notice, as a stage-level SLA. An account closure has a case deadline of ten business days. Regulatory durations belong to Compliance; these are design patterns.</p>
+    <p>The things that go wrong with SLAs are consistent: actions that call slow integrations, an SLA in calendar days for a business-day regulation, a passed-deadline recurrence with no cap, an SLA on every step so that the processor's load multiplies, and an escalation activity that updates a parent case from thousands of children at once.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Priya escalates <code>AM-10417</code> by raising its case urgency while its review assignment is already sitting in <code>DepOps-Maintenance</code>. Marcus's next Get Next Work does not offer it first. Why, and what would have moved it?</p>
+      <p><strong>Answer.</strong> Get Next Work ranks by assignment urgency, <code>.pxUrgencyAssign</code>. Case urgency was copied into the assignment when it was created, so a later change moves the case and not the open assignment. Adjusting <code>.pyUrgencyAssignAdjust</code> on the assignment (the <code>ChangeAssignmentSLA</code> local action writes it) would have raised the number that is ranked. This assumes the assignment already existed; had Priya raised case urgency before the assignment was created, it would have been included.</p></div>
+  </section>
+
+  <section id="s2-9" class="pagebreak">
+    <h2>2.9 Correspondence: the confirmation letter</h2>
+    <p>The change is approved and fulfilled, and Dana has to be told. A bank must send specific notices (closure confirmations, adverse action, legal-order acknowledgements, dormancy warnings, Reg DD notices for CD maturity), and they must be correct, consistent, reproducible and archived. Typing text into an activity does none of that. <strong>Correspondence</strong> is the generation and delivery of customer-facing or internal communications from a case, and it is a set of rules for that reason.</p>
+    <p>A correspondence rule (<code>Rule-Obj-Corr</code>) exists per channel. Email correspondence is an HTML body with embedded properties, From, To, CC, BCC, subject and attachments, sent through an Email Account rule (SMTP). Mail (print) is HTML formatted for print, rendered to a PDF attached to the case and handed to a print vendor by file or API; it is used for legal notices. Fax is similar and rare. SMS is a short text body delivered through a gateway or connector, and it needs opt-in and consent handling. Notice that the channels differ in what they need from the rest of the application: a letter needs a stored copy and a vendor handoff, an SMS needs consent.</p>
+    <p>A letter is assembled from reusable parts. A <em>correspondence fragment</em> is a reusable block such as the bank header, footer, legal disclosure or signature, included by name. A paragraph rule holds reusable text, and a field value holds localised labels and messages, one per language. Merge properties insert the case's data into the body, and the editor offers an insert-property tool that should be used in preference to typing the syntax from memory. An Email Account rule defines the SMTP and IMAP host, port, credentials through an authentication profile and the sender, and serves both outbound correspondence and the Email Listener inbound.</p>
+    <p>It helps to separate formal correspondence from a notification. A correspondence rule produces a formal customer document, a letter or legal notice, with full HTML and fragments, stored as a case attachment and correspondence history. A notification (a Notify shape or notification rule) is a lightweight alert to users or customers across channels, one template per channel with limited formatting, and the record is a delivery record. Riverbend uses correspondence for the closure confirmation letter, the legal-order acknowledgement and the dormancy notice, and notifications for "case assigned" or "SLA warning" alerts.</p>
+    <p>When the Fulfil stage of <code>AM-10417</code> reaches its Notify step, the runtime sequence is worth following, because it explains where this can fail. A correspondence rule is selected by name and class, and rule resolution (Chapter 01) decides which variant applies, by language ruleset and circumstance by state or product. Fragments resolve and the case's data merges into the placeholders. The To and CC addresses come from the customer data page and an internal group address. The HTML is rendered, as an email or as a PDF. An email goes by SMTP through the Email Account (asynchronously through a queue processor when configured); a letter's PDF is stored on the case and sent by file or API to the print vendor. A correspondence history entry is written and a copy attached to the case through a link-attachment, with a sent or failed status. A failure follows a retry policy and raises an error notification to an operations queue and a case note.</p>
+    <p>Attachments and PDFs have their own practicalities. Case attachments are stored as link-attachment instances pointing at a file in the database, in a repository (cloud or file storage), or in a content management system; for a bank, an enterprise repository is preferable for retention and size, keeping the database for small items. PDF generation uses Pega's HTML-to-PDF engine, so fonts, page breaks, non-Latin characters and large tables all need testing. Localisation puts language-specific text in field values and paragraphs in language rulesets, selected by locale or by an explicit language property on the customer; dual-language notices are either two correspondence rules sent together or one rule composed of two fragments chosen by a customer preference, and whether both are legally required is a decision for Compliance. Regulatory text comes from Compliance and is versioned, never translated by the developer.</p>
+    <p>Bounces arrive later than the send. SMTP accepts the message and the bounce comes back as an email, which an Email Listener on the sending or a bounce mailbox can read, parse for the case ID in a header or subject token, and use to write a note or reopen an undeliverable task. A hard bounce (a bad address) sets a flag on the customer contact and triggers a fallback, a letter by mail and an operations task to verify the address, which for Dana's case is an address-update case of its own; a soft bounce (a full mailbox) retries.</p>
+    <table>
+      <tr><th>Notice</th><th>Channel</th><th>Trigger</th><th>Notes</th></tr>
+      <tr><td>Address change confirmation</td><td>Mail to old and new address, email, SMS</td><td>Fulfil stage end</td><td>Notifying the old address is a fraud control; consent checked for SMS</td></tr>
+      <tr><td>Account closure confirmation</td><td>Email and mail</td><td>Fulfil stage end</td><td>Final balance, disposition method</td></tr>
+      <tr><td>CD maturity notice</td><td>Mail or email</td><td>Date-based job</td><td>Rollover terms; Reg DD style disclosure</td></tr>
+      <tr><td>Legal order acknowledgement</td><td>Mail to court or agency</td><td>Legal case stage</td><td>Strict content; circumstance by state</td></tr>
+      <tr><td>Dormancy warning</td><td>Mail</td><td>Dormancy scan job</td><td>State-specific due-diligence timing</td></tr>
+      <tr><td>ACH return notice</td><td>Email, SMS or mail</td><td>Payment exception case</td><td>Reason code mapped to customer wording</td></tr>
+    </table>
+    <p>The mistakes here are typing customer text directly in activities, hard-coding sender addresses, sending correspondence synchronously inside an interactive flow action, keeping no copy on the case, editing a fragment shared by forty letters without regression testing, and putting personal data in email subjects.</p>
+  </section>
+
+  <section id="s2-10" class="pagebreak">
+    <h2>2.10 Audit, reporting and bulk actions: what Priya sees</h2>
+    <p>By Tuesday afternoon <code>AM-10417</code> has produced a history of its own, and Priya wants to see more than one case: the open cases by queue and status, which are late, and which approvals are waiting. This is the reporting side of case management, and it rests on the audit the case already carries.</p>
+    <p>Every case has a History tab backed by history instances. For compliance traceability the history should show who created the case, who edited which field, who approved, which rule decided, which correspondence went out and which SLA events fired. That depends on meaningful history descriptions (include the old and new decision values, not just "Approved"), field-level audit on regulated fields, decision evidence attached to the case (screening results, a summary of a response payload, correspondence PDFs, never raw secrets), and a retention and purge policy with a read-only role for auditors.</p>
+    <p>Reports are built from the <strong>Report Definition</strong> rule: an Applies-To class, data access (class joins), columns (properties, functions, aggregates), filters (fixed, parameterised or user-prompted), sort, chart, pagination and a Query tab that shows the SQL. Two constraints matter before any dashboard is designed. Filters and joins on large tables should use exposed, indexed columns, because a filter on an unexposed property means scanning BLOB columns; and joins must be on exposed columns, with embedded page lists requiring a Declare Index (Chapter 03 explains why). Aggregates (count, sum, average, min, max, grouped) use the report's summarise mode, and charts are set on the report's chart tab. Users run and save reports from the Report Browser, and reports can be scheduled and emailed. Global case search is a different mechanism, a full-text search index separate from SQL reports.</p>
+    <div class="flow">SUPERVISOR DASHBOARD (Deposits Ops)  built from Report Definitions + charts on a landing page
+  Widget 1  Open cases by queue and status
+  Widget 2  Cases past deadline (pxUrgencyAssign above a threshold, or SLA deadline passed)
+  Widget 3  Average cycle time by case type (resolved last 30 days)
+  Widget 4  Legal orders due in the next 3 business days
+  Widget 5  ACH returns by reason code today vs the 7-day average
+  Widget 6  Maker-checker exceptions (maker = checker)  -> should always be zero
+  Widget 7  Queue processor health (delayed items)</div>
+    <p>The pitfalls are the ones that make a dashboard slow or dangerous: reports filtered on unexposed properties, reports without date filters on large work tables, a count over millions of rows on a landing page that refreshes each time, and users allowed to build unrestricted reports against the work table, which is a performance and a personal-data risk. The design habit that avoids them is to expose or index any property used in a filter, join or sort from day one, and to give supervisors curated reports instead of letting every team write its own.</p>
+    <p>Priya's last tool is the bulk action. From the worklist or a work queue, selecting several assignments allows a bulk transfer (reassign to another operator or queue), a bulk approve or a configured bulk flow action: reassigning two hundred cases when staff are absent, or approving low-risk items at end of day where policy allows. Bulk actions run assignment by assignment with locking, so large batches belong in a queue processor with parameters, not the UI. They are controlled by privilege, with each item audited in history. A bulk approve contradicts maker-checker if it lets a maker approve their own items, so it must go through the same access rules.</p>
+  </section>
+
+  <section id="s2-11" class="pagebreak">
+    <h2>2.11 AM-10417 end to end: the Account Maintenance design</h2>
+    <div class="note"><span class="tag amber">assumed Riverbend policy</span> Every SLA value in the three designs in 2.11 to 2.13 is an invented Riverbend proposal aligned to Chapter 13 §13.8, which holds the canonical set. None is a regulatory deadline.</div>
+    <p>Everything built in this chapter can now be read as one design. The case type handles address, phone and email changes, signer and beneficiary updates, nickname and statement preferences; it is one case type with a maintenance-type property, or one process per type. It can be created three ways: from the branch or operations intake form, by Service-REST from the digital channel or the ESB (which is how Dana's web request arrived), or from the email channel.</p>
+    <div class="flow">CASE TYPE  FCB-Dep-Work-AccountMaintenance           ID prefix: AM-       Locking: pessimistic (manual) / optimistic (API)
+
+STAGE 1  INTAKE                                    status: New                   SLA: stage goal 1 business day
+  Process: Capture request
+    Step 1  Assignment  Collect request details        route: work queue DepOps-Maintenance
+    Step 2  Integrator  Fetch customer & accounts      D_CustomerProfile / D_AccountList (Connect-REST via ESB), cached by CustomerID
+    Step 3  Utility     Pre-validate (address format; TIN format)
+STAGE 2  VERIFY                                    status: Pending-Verify         SLA: assignment goal 4h / deadline 1 business day
+  Process: Risk and verification
+    Step 4  Decision    Decision table "MaintenanceRisk": type x channel x recent-change-count x customer risk -> Low/Medium/High
+    Step 5  Fork        Low: auto-verify  |  Medium: assignment L1 verify docs  |  High: subprocess Enhanced Due Diligence (KYC/AML)
+    Step 6  Wait (optional) up to 5 business days for a missing document, reminder by correspondence at day 2
+STAGE 3  APPROVE                                   status: Pending-Approval       SLA: deadline 1 business day
+  Process: Maker-checker
+    Step 7  Assignment  Checker approval  (router: ToWorkbasket DepOps-Checkers; Access Deny if maker = checker)
+    Step 8  Decision    Authority matrix: signer removal on a joint account needs L2 + second approval
+STAGE 4  FULFIL                                    status: Pending-Core-Update
+  Process: Update core
+    Step 9  Integrator  POST update to core via the ESB (idempotency key = case ID + sequence); error flow -> Assignment "Fix core update"
+    Step 10 Integrator  Refresh D_CustomerProfile (reload); Utility clears stale caches
+    Step 11 Notify      Address change: confirmation to OLD and NEW address (mail) + email/SMS alert
+STAGE 5  RESOLVE (resolution)                      status: Resolved-Completed
+ALTERNATE STAGES   Rejected (Resolved-Rejected, notify customer)   |   Cancelled by customer (ticket CUSTOMER_CANCEL)
+TICKETS            OFAC_HOLD (external screening hit)   |   DUPLICATE_REQUEST
+AUDIT              Field-level audit: Address, Signers, Beneficiary, Phone, Email   |   History at every stage change
+SLA SUMMARY        case deadline 5 business days; supervisor escalation after deadline; passed deadline every 4h to DepOps-Supervisor</div>
+    <table>
+      <tr><th>Design decision</th><th>Reason</th></tr>
+      <tr><td>Notify old and new address on an address change</td><td>A common fraud control; confirm the policy with Compliance</td></tr>
+      <tr><td>Idempotency key on the core update</td><td>A retry after a timeout must not apply the change twice (Chapter 05 explains why this is harder than it sounds)</td></tr>
+      <tr><td>Reload the data page after the core update</td><td>Otherwise the case displays stale data from the cache (Chapter 03)</td></tr>
+      <tr><td>A decision table drives the risk path</td><td>The business can maintain it, and PegaUnit can test it (Chapter 01)</td></tr>
+    </table>
+    <p>Read against the ledger, the design reproduces what happened to <code>AM-10417</code>: created Monday 2 March from the web channel, flagged sensitive by the 30-day card-reissue rule, held for a document, rejected once by Priya and approved by her on Tuesday 3 March, fulfilled against the core and resolved. The one thing in this design that the chapter has not yet explained is where the customer profile and balances come from, which is Chapter 03.</p>
+  </section>
+
+  <section id="s2-12" class="pagebreak">
+    <h2>2.12 Variation: closure, <code>AC-10882</code></h2>
+    <p>On Monday 9 March Dana asks to close <code>CHK-8842-0117</code>. The journey has the same five stages, but the content of each changes, and the changes show which parts of this chapter were doing the work. Intake captures the reason and disbursement method and reads the balance, holds and pending items from the core. A decision (<code>ClosureEligibility</code>) classifies the request as proceed, block or needs review. A parallel pre-closure stage uses Split-Join to run a sanctions re-screen, a legal-hold check against active legal-order cases and a recurring-items check together, with a ticket for a sanctions or legal hit that sends the case to a Hold Review alternate stage. Approval is by balance, using the authority matrix. Fulfilment posts the closure and disbursement to the core through the ESB, cancels recurring services and sends the confirmation letter.</p>
+    <div class="flow">CASE TYPE  FCB-Dep-Work-AccountClosure                  ID prefix: AC-
+STAGE 1  INTAKE                           SLA: goal 1 business day
+  Step 1  Assignment  Capture closure reason, disbursement method
+  Step 2  Integrator  Fetch balance, holds, pending items, linked products from core
+  Step 3  Decision    "ClosureEligibility": open holds? pending items? legal flag? negative balance? -> Proceed / Block / Needs-Review
+STAGE 2  PRE-CLOSURE CHECKS  (parallel)   SLA: assignment goal 4h / deadline 1 day
+  Split-Join  A: sanctions re-screen   B: legal-hold check   C: recurring items check   Join: all branches
+  Decision   Any hit?  -> ticket OFAC_HOLD / LEGAL_HOLD -> alternate stage "Hold Review"
+STAGE 3  APPROVE                          SLA: deadline 1 business day;  maker-checker enforced
+STAGE 4  FULFIL                           status: Pending-Disbursement
+  Step  Integrator  Post closure + disbursement instruction to core via ESB (idempotency; close request, then confirm)
+  Step  Utility     Cancel recurring services; stop future statements
+  Step  Notify      Closure confirmation letter + email
+STAGE 5  RESOLVE
+CASE SLA           target 2 business days (the ledger value); longer envelope for exceptions
+LOCKING            Pessimistic; long holds not allowed (queue-processor callbacks retry on lock)</div>
+    <p>Four failure modes recur in closure and each has a defined handling. A core timeout on the closure post routes the case to a "fix core update" assignment, retries with the same idempotency key and checks core state first by a read before posting again. A balance that changes between approval and posting (a late transaction) is re-fetched at fulfilment and, if it exceeds the approved amount by a threshold, the case returns to approval. A legal hold raised mid-case arrives as a ticket that jumps the flow to Hold Review so the closure cannot post. A disbursement check that is returned, or escheat that is required, spawns a child case for unclaimed property. Chapter 05 returns to the first two in detail.</p>
+  </section>
+
+  <section id="s2-13" class="pagebreak">
+    <h2>2.13 Variation: a legal order, <code>LO-20331</code></h2>
+    <p>Victor Osei's legal order is the strongest case for child cases, because it carries an external clock, rigid content requirements and serious penalties for mishandling. Its stages differ in kind from the address change: intake and classification (key the order, upload the image, match the customer, compute the response-due date in business days on the right calendar and set the SLA dynamically from it); validation by a legal reviewer routed to a skilled group, with an invalid order returned to its issuer; placing the hold, where one child "Hold Placement" case per account posts the core hold, computes the hold amount and applies exemptions, with the parent waiting on case dependency; responding and remitting, with a response letter approved by a checker and any remittance under dual control; and a monitoring stage that waits for release and then releases through a child case.</p>
+    <div class="flow">CASE TYPE  FCB-Dep-Work-LegalOrder                  ID prefix: LO-
+STAGE 1  INTAKE & CLASSIFY               SLA: goal 4 business hours from receipt; deadline 1 business day
+  Assignment (key order, upload PDF) -> Integrator (match customer, avoid wrong-customer holds) ->
+  Decision "LegalOrderRoute" -> Utility (compute ResponseDueDate on the right calendar; set SLA dynamically)
+STAGE 2  VALIDATE ORDER                  SLA: goal = due date minus 5 business days
+  Assignment to skilled group (LegalProcess); invalid -> alternate stage "Reject / Return to Issuer"
+STAGE 3  PLACE HOLD / RESTRAIN           SLA: same business day
+  Create one HoldPlacement child case per account; Wait for all children; Notify where permitted
+STAGE 4  RESPOND & REMIT                 SLA: deadline = ResponseDueDate; passed deadline hourly to Legal Manager
+STAGE 5  MONITOR / RELEASE               status: Active-Hold
+STAGE 6  RESOLVE
+TICKETS  AMENDED_ORDER | RELEASE_ORDER | OFAC_HOLD
+EXTERNAL INTERACTION  raises LEGAL_FREEZE on related closure, maintenance and payment cases (see 2.4)</div>
+    <p>The architecture is the point here and the legal content is not. Exemption rules for protected funds, notice prohibitions, response windows and priority between competing orders are legal matters that vary by state and federal law, and in the design they live in decision tables and circumstanced rules that Legal and Compliance approve. Chapter 12 states the shape of those rules with their citations; this chapter only shows where they plug in.</p>
+  </section>
+
+  <section id="s2-14" class="pagebreak">
+    <h2>2.14 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. Explain case, stage, process and step in Pega.</span>
+    <p>"A case type is the template for a business request. It is divided into stages, which are the lifecycle phases: primary stages in order, alternate stages for off-path scenarios like cancellation, and a resolution stage. Each stage holds processes, which are flows, and processes are made of steps such as assignments, automation, approvals or child cases. At runtime there is a case instance with an ID and a status, and assignments that sit on a worklist or a work queue."</p></div>
+
+    <div class="qa"><span class="q">Q2. Child case or Split-Join?</span>
+    <p>"If the sub-work has a different owner or its own SLA, an auditor would want to find it separately, or it can start or finish independently, it is a child case with its own lifecycle and audit. If it is a short, same-team task on tightly coupled data, a Split-Join or subprocess in the same case is enough. For large numbers of parallel items I use child cases or a queue processor, never a Split-For-Each on one case. I avoid children updating the parent at the same moment, because of parent lock contention."</p></div>
+
+    <div class="qa"><span class="q">Q3. Worklist or work queue?</span>
+    <p>"A worklist has one named owner from the start and suits relationship-based work, but it strands work when that person is away. A work queue is shared and pulled with Get Next Work, ranked by urgency, which suits operational volume. I define queues by function with skills on the sensitive ones, take authority from reference data, and alert on a queue with no eligible operator."</p></div>
+
+    <div class="qa"><span class="q">Q4. How do you implement maker-checker?</span>
+    <p>"I store the maker's operator ID at submit and route approval to a checker queue that excludes the maker. Routing alone can be bypassed by reassignment or an API call, so I enforce it in security: an Access Deny with a when condition on the approve privilege when the maker equals the current operator, a validate rule on the approve action so APIs are covered, and a daily report of any case where maker equals checker, target zero. Authority limits come from a decision table by amount and risk."</p></div>
+
+    <div class="qa"><span class="q">Q5. Explain SLA intervals and urgency.</span>
+    <p>"A service level has goal, deadline and passed-deadline intervals; each can raise urgency and run actions such as notify, reassign or raise a ticket, and passed deadline can recur. Urgency is an integer from 0 to 100. The ranking property is assignment urgency, pxUrgencyAssign: case urgency, pxUrgencyWork, copied in when the assignment is created, plus the assignment SLA's contribution, plus any manual adjustment. It drives worklist order and Get Next Work. A later change to case urgency does not reach an assignment that already exists, so to promote open work you adjust the assignment. SLA is time, urgency is ranking, and priority is a business label that I map into urgency."</p></div>
+
+    <div class="qa"><span class="q">Q6. How does an SLA actually fire in the engine?</span>
+    <p>"When an assignment with a service level is created, the engine records the next due time in the SLA queue, System-Queue-ServiceLevel. A background processor, historically the ServiceLevelEvents agent or a queue processor in releases that ship one, selected by the UseSLAQueueProcessor setting, picks up due entries, runs the interval's actions, updates urgency and re-queues the next interval. I would not assume which is active: I read the setting and the Queue Processors landing page on the deployed version, and I would not run both at once. Case, stage and step SLAs and timer shapes are configured separately, so I would not generalise from assignment SLAs."</p></div>
+
+    <div class="qa"><span class="q">Q7. SLAs have stopped escalating in production. What do you do?</span>
+    <p>"I check whatever services SLAs in Admin Studio: is it running, on which nodes, how many delayed and failed items, how old is the oldest. Then logs and PDC alerts for exceptions in the escalation activity, which can create a poison item, and node classification and database health. I fix the cause, restart, handle broken items, and warn supervisors because on catching up it fires all missed intervals and sends a burst of notifications. Afterwards I add a delayed-item alert and a runbook."</p></div>
+
+    <div class="qa"><span class="q">Q8. How do you handle business days and time zones in SLAs?</span>
+    <p>"An SLA that counts business time uses a calendar rule, and no single holiday list fits every regulatory clock, so I model the calendar as an input to the deadline: a separate calendar per regulatory clock and another for staffing. Timestamps are stored in UTC and shown in the user's zone. I never put a regulatory deadline in calendar days unless the regulation says calendar days."</p></div>
+
+    <div class="qa"><span class="q">Q9. What is a ticket and when would you use one?</span>
+    <p>"A named marker in a flow that, when raised, moves the flow to the ticket point from wherever the case is, dropping the current assignments of that flow. I use it for exceptions that can occur anywhere, such as customer cancellation, a legal freeze or an SLA breach path, and I always write a history entry and status explaining why it was raised."</p></div>
+
+    <div class="qa"><span class="q">Q10. How would you design the correspondence for a notice?</span>
+    <p>"A correspondence rule per channel with shared fragments for the header and legal text, selected by language and state through ruleset and circumstance, merge properties from the case and the customer data page, generated at fulfilment by a notify step rather than synchronously in a flow action. A copy is attached to the case, failures route to an ops queue, and bounces are handled by an email listener that flags the contact and triggers a mail fallback. Compliance owns approved wording and versions."</p></div>
+  </section>
+
+  <section id="s2-recap">
+    <h2>2.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>Dana's request now travels. It is created from the web channel, captured, checked for sensitivity, held for a document, reviewed by Marcus in <code>DepOps-Maintenance</code>, rejected once and then approved by Priya, who cannot be the maker, updated in the core, confirmed by letter, and resolved. Every step has a deadline and an escalation, and the case's audit and the supervisor's dashboard are built from the same facts.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Stages carry the lifecycle and processes carry the work, built from flow shapes; tickets and flow actions let the route bend; routing places assignments on queues, worklists and skills; maker-checker is enforced in security and validation, not only routing; child cases and Split-Join carry parallel work; a service level writes entries to an SLA queue that a background processor works through, and urgency is the bounded sum that ranks the result; correspondence is assembled from rules and archived on the case.</p>
+    <h3>What it still cannot do</h3>
+    <p>The case runs, but it has no real data. The review screen needs Dana's address and balance, and the fulfilment step needs the same facts; those live in the core, and the case does not own them. How the case obtains them once, keeps them correct while the case sits in Priya's queue, and writes a change back is the subject of Chapter 03.</p>
+  </section>
+
+  <section id="s2-ref" class="pagebreak">
+    <h2>2.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. Where a number is release- or date-sensitive, the applicable release or effective date is given.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>Pega Academy: Assignment Urgency (v4) <span class="tag">training</span></td><td>https://academy.pega.com/topic/assignment-urgency/v4/in/74506/74516</td><td>Directly retrieved 2026-10-12; release-sensitive</td><td>0&ndash;100 bound and the &gt;100 rule; the three-term <code>.pxUrgencyAssign</code> sum; the six-term <code>.pxUrgencyWork</code> sum; Initial Urgency default 10; <code>UrgencyUpdate</code> and <code>ChangeAssignmentSLA</code> local actions; the before/after assignment-creation caution; recalculation triggers</td></tr>
+      <tr><td>12 CFR 1005.2(d) (Reg E business day), 12 CFR 229.2(f),(g) (Reg CC)</td><td>https://www.consumerfinance.gov/rules-policy/regulations/1005/2</td><td>Directly retrieved 2026-10-12</td><td>Why one holiday calendar cannot drive every regulatory clock (see Chapter 12 §12.10)</td></tr>
+    </table>
+    <p class="small muted">SLA queue-processor behaviour (2.8) is release-specific and is not sourced here: it is a "confirm on the deployed version" table by design.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch01_pega_platform_core.html">&larr; Previous: Chapter 01</a><a href="ch03_data_model_decisioning.html">Next: Chapter 03 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

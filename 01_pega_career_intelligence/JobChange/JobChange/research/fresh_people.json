@@ -1,0 +1,2087 @@
+{
+  "research_date": "2026-09-08",
+  "scope": "Independent public LinkedIn discovery from Pega/PRPC/CSSA/CLSA, engineering/architecture, domain and Bengaluru/Bangalore terms, followed by source-specific refinement. No old local company or people dataset was loaded. This is a bounded public-index sample, not a full authenticated scrape or exhaustive employer/employee census.",
+  "methodology": [
+    "Only public LinkedIn profile/post data and professional context included. No personal email addresses, phone numbers, home addresses or unrelated personal traits collected.",
+    "Readable search-index extracts were used. Six attempted direct profile opens failed; these records are explicitly labelled search_index.",
+    "Author, subject, current employer, historical client and event participants are kept distinct. Likes/reposts do not prove authorship, employment changes or ownership.",
+    "Bengaluru profile location is distinct from current role location. Conflicting or historical locations remain explicit.",
+    "Employee departures are not used to infer replacement vacancies. Recruiter posts are leads until an actual current requisition is confirmed.",
+    "Certifications and historical Pega experience identify potential employers to investigate, not proof every current team uses Pega."
+  ],
+  "queries": [
+    {
+      "query": "site:linkedin.com/in Pega CSSA Bangalore engineer",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Initial skill/city discovery; accepted public Pega profiles."
+    },
+    {
+      "query": "site:linkedin.com/in Pega architect Bengaluru bank",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Initial skill/city discovery; banking and consulting profiles."
+    },
+    {
+      "query": "site:linkedin.com/in PRPC Bangalore developer",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Initial PRPC discovery; mixed locations require row-level checks."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bengaluru\" \"bank\" \"engineer\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Banking skill discovery; historical locations separated."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bangalore\" \"architect\" -\"Pegasystems\" -\"Infosys\" -\"Cognizant\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer-diversity search; exclusions were not reliably respected by search results."
+    },
+    {
+      "query": "site:linkedin.com/in \"PRPC\" \"Bengaluru\" \"manager\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Architecture/practice leadership discovery."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bengaluru\" bank -Cognizant -Infosys -Pegasystems -liked",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Attempt to reduce reaction-only results; manual author checks still required."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bangalore\" insurance -Cognizant -Infosys -liked",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Insurance domain exploration; no current project inferred from likes."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bengaluru\" \"Engineer\" -Cognizant -Infosys -Pegasystems -liked",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found Coforge and product-engineering evidence."
+    },
+    {
+      "query": "\"Bangalore\" \"Pega\" \"Bank of\" \"linkedin.com/in\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Weak precision; non-LinkedIn results excluded from this dataset."
+    },
+    {
+      "query": "\"Bengaluru\" \"Pega\" \"Insurance\" \"linkedin.com/in\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found unrelated/third-party resumes; excluded from this LinkedIn-only artifact."
+    },
+    {
+      "query": "\"Bengaluru\" \"CLSA\" \"linkedin.com/in\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Weak precision; returned unrelated finance acronym results."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bangalore financial services bank architect",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Broadened banking discovery."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bengaluru insurance architect",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Domain search; overseas profiles labelled by stated location."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bengaluru retail engineer",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Retail discovery; no retail team inferred from unrelated activity."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bangalore payments developer",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found overseas bank professionals and Bengaluru consultancy evidence."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bangalore \"bank\" \"Senior\" -Cognizant -Pegasystems -Commonwealth -Barclays",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Diversity search; search exclusions imperfect."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bengaluru \"insurance\" \"Lead\" -Pegasystems -Cognizant",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Insurance/leadership exploration."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bengaluru \"collections\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found Pega product-management collections evidence."
+    },
+    {
+      "query": "site:linkedin.com/in PRPC Bengaluru manager payment",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found D4 Smart Investigate/Kafka recruiting and Booking Holdings profile."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bengaluru\" \"JPMorgan\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Follow-up to newly found historical CoE/client mentions; current profile locations checked."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bengaluru\" \"Deutsche\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Follow-up to newly found banking-project references; no current Deutsche employee accepted."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bangalore \"Manufacturing\" architect",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Industry expansion; no current manufacturing employer accepted on unsupported evidence."
+    },
+    {
+      "query": "site:linkedin.com/in Pega Bangalore \"Healthcare\" engineer",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found intermediary healthcare Pega recruitment signals."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bangalore\" \"Boeing\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Exploratory employer hypothesis; no Boeing person or employer claim accepted."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bengaluru\" \"Senior Software Engineer\" -Cognizant -Pegasystems -Infosys",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found NTT DATA practice lead and other service-company profiles."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bangalore\" \"Lead Developer\" -Cognizant -Pegasystems",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Lead-role exploration; requirements above candidate experience retained as gaps."
+    },
+    {
+      "query": "site:linkedin.com/in \"Pega\" \"Bengaluru\" \"customer\" \"Architect\" -Cognizant -Pegasystems",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Found TCS project descriptions and product testing credentials."
+    },
+    {
+      "query": "site:linkedin.com/in \"Lakshmikanthareddy Gangireddy\" \"StaidLogic\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Follow-up resolved current profile location as Greater Phoenix."
+    },
+    {
+      "query": "site:linkedin.com/in \"Prashanth Chittem\" \"Futureproof\" location",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Follow-up found Bengaluru profile and authored CDH hiring post."
+    },
+    {
+      "query": "site:linkedin.com/in \"Suresh Kumar\" \"Booking Holdings\" Pega projects",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Follow-up exposed 2016\u20132018 banking projects; not attributed to Booking Holdings."
+    },
+    {
+      "query": "site:linkedin.com/in \"Sandeep Manepalli Gururaj\" Pega collections",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Follow-up corroborated collections/customer-service product focus."
+    },
+    {
+      "query": "site:linkedin.com/in \"Mohit K\" \"Fint Solutions\" \"Pega\" posted",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Follow-up confirmed Pega content is a Fint company repost, not his own engineering work."
+    },
+    {
+      "query": "site:linkedin.com/posts \"Mariya Limdi\" \"Pega System Architect\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public index returned authored recruitment content on profile; direct post URL not exposed."
+    },
+    {
+      "query": "site:linkedin.com/posts \"Saran Kumar\" \"Pega Developer\" Bengaluru",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public index returned authored historical D4 recruitment content."
+    },
+    {
+      "query": "site:linkedin.com/posts \"Prashanth Chittem\" \"Pega CDH Expert\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public index returned authored CDH recruiting content; employer/location in post not explicit."
+    }
+  ],
+  "access_checks": [
+    {
+      "url": "https://in.linkedin.com/in/praveen-mali-9b84781b3",
+      "checked_at": "2026-09-08",
+      "method": "direct page open",
+      "outcome": "Fetch failure"
+    },
+    {
+      "url": "https://in.linkedin.com/in/rashmika-m-g-58753b22",
+      "checked_at": "2026-09-08",
+      "method": "direct page open",
+      "outcome": "robots.txt denied"
+    },
+    {
+      "url": "https://in.linkedin.com/in/sandeep-manepalli-gururaj-43b42221",
+      "checked_at": "2026-09-08",
+      "method": "direct page open",
+      "outcome": "HTTP 999"
+    },
+    {
+      "url": "https://in.linkedin.com/in/suresh-kumar-50039220",
+      "checked_at": "2026-09-08",
+      "method": "direct page open",
+      "outcome": "Fetch failure"
+    },
+    {
+      "url": "https://in.linkedin.com/in/manjunath-k-clsa",
+      "checked_at": "2026-09-08",
+      "method": "direct page open",
+      "outcome": "Cache miss"
+    },
+    {
+      "url": "https://in.linkedin.com/in/manasa-hm",
+      "checked_at": "2026-09-08",
+      "method": "direct page open",
+      "outcome": "Timeout"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Commonwealth Bank",
+      "category": "gcc",
+      "aliases": [
+        "Common wealth Bank of australia"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Jayanth M with Commonwealth Bank and states: Describes Pega solution design and GenAI Blueprint; lists CSSA, decisioning and LSA Part 1. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/jayanth-mouvanal",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Jayanth M's indexed profile associates Commonwealth Bank with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/jayanth-mouvanal",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Jayanth M",
+          "title": null,
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/jayanth-mouvanal",
+          "source_url": "https://in.linkedin.com/in/jayanth-mouvanal",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Describes Pega solution design and GenAI Blueprint; lists CSSA, decisioning and LSA Part 1.",
+          "work_summary": "Named employer experience is Bengaluru. Historical client projects include P&G workflows and insurance applications; these are not identified as Commonwealth Bank work.",
+          "limitations": [
+            "Current title and employment dates are not exposed. Liked hiring posts are not his authored vacancies.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Mallikarjuna Malepati",
+          "title": "Pega Engineer",
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/mallik7781",
+          "source_url": "https://in.linkedin.com/in/mallik7781",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section identifies him as a Pega Engineer delivering development projects.",
+          "work_summary": "Employer shown as Commonwealth Bank; particular product, team and business domain not exposed.",
+          "limitations": [
+            "Exact current job title, project ownership and vacancy status need confirmation.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Harini Preethi SureshKumar",
+          "title": null,
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/harini-preethi-sureshkumar",
+          "source_url": "https://in.linkedin.com/in/harini-preethi-sureshkumar",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Describes Pega process automation; PCSSA and customer-service implementation training are listed.",
+          "work_summary": "Experience lists Commonwealth Bank in Bengaluru; AWS Solutions Architect certification also appears.",
+          "limitations": [
+            "No project name, team size or current hiring evidence.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Hareesha Paruchuri",
+          "title": null,
+          "employer_as_stated": "Common wealth Bank of australia",
+          "location_as_stated": "India; employer experience lists Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/hareesha-paruchuri-61169498",
+          "source_url": "https://in.linkedin.com/in/hareesha-paruchuri-61169498",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section states 11 years of PRPC experience; CSA and CSSA are listed.",
+          "work_summary": "Named experience is Common wealth Bank of australia in Bengaluru.",
+          "limitations": [
+            "Experience duration is self-reported and may be stale. Liked vacancy posts are not own-team openings.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Pegasystems",
+      "category": "gcc",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Subramanyam Kopparam with Pegasystems and states: Profile lists CLSA and CSSA certifications. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/subramanyam-kopparam-202a84103",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Subramanyam Kopparam's indexed profile associates Pegasystems with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/subramanyam-kopparam-202a84103",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Sandeep describes current product-management work on AI-powered collections and customer service at Pega. This is unusually close domain evidence for Sathvik; an engineering opening and budget still need separate confirmation.",
+          "source_url": "https://in.linkedin.com/in/sandeep-manepalli-gururaj-43b42221",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Rashmika describes her own Pegaverse hackathon project using AI to turn user stories into code. It demonstrates experimentation and named collaboration, not a proven production feature or permanent squad.",
+          "source_url": "https://in.linkedin.com/in/rashmika-m-g-58753b22",
+          "source_title": "Public LinkedIn professional post (indexed)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Subramanyam Kopparam",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/subramanyam-kopparam-202a84103",
+          "source_url": "https://in.linkedin.com/in/subramanyam-kopparam-202a84103",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile lists CLSA and CSSA certifications.",
+          "work_summary": "Experience names Pegasystems in Bengaluru Area.",
+          "limitations": [
+            "Product squad, current title and project details are not exposed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Sarath Sridar",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Greater Bengaluru Area",
+          "profile_url": "https://in.linkedin.com/in/sarathsridar",
+          "source_url": "https://in.linkedin.com/in/sarathsridar",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section states Pega Infinity experience and CSSA 8.7.",
+          "work_summary": "Experience names Pegasystems in Bengaluru.",
+          "limitations": [
+            "Current title, team and specific work are not exposed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Jagadish Chinta",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bangalore Urban, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/jagadish-chinta-6aa79b145",
+          "source_url": "https://in.linkedin.com/in/jagadish-chinta-6aa79b145",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes a Pega CLSA professional with 16+ years of experience.",
+          "work_summary": "Experience names Pegasystems; role location is India.",
+          "limitations": [
+            "Bengaluru is profile location, not a proven office or squad. Liked GCS hiring post is not his vacancy.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        },
+        {
+          "name": "prudhvi annepu",
+          "title": "Software Engineer",
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/prudhvi-annepu",
+          "source_url": "https://in.linkedin.com/in/prudhvi-annepu",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes five years of Pega development; CSSA and decisioning certifications appear.",
+          "work_summary": "Experience names Pegasystems in Bengaluru. A recommendation describes historical GE HealthCare applications.",
+          "limitations": [
+            "Historical GE HealthCare work is not attributed to his present employer or team.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Rashmika M G",
+          "title": "Pega and Java developer",
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/rashmika-m-g-58753b22",
+          "source_url": "https://in.linkedin.com/in/rashmika-m-g-58753b22",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own post describes Pegaverse, an AI project turning user stories into code at Pega Hackathon 12.",
+          "work_summary": "Names collaboration with Abhay Chaturvedi, Karthik L Nagar and Soujanya; event work, not a verified production squad.",
+          "limitations": [
+            "Hackathon result is self-reported. Reposted Java/AI vacancy is someone else's post and may be historical.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Sandeep Manepalli Gururaj",
+          "title": "Senior Product Manager",
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/sandeep-manepalli-gururaj-43b42221",
+          "source_url": "https://in.linkedin.com/in/sandeep-manepalli-gururaj-43b42221",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section explicitly describes building AI collections and customer-service products at Pega.",
+          "work_summary": "Product/domain overlap with Sathvik's collections and customer-service experience is direct.",
+          "limitations": [
+            "No engineering vacancy, team size or salary budget is shown.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Harsshath Prabu",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Greater Bengaluru Area",
+          "profile_url": "https://in.linkedin.com/in/harsshath-prabu-874a7790",
+          "source_url": "https://in.linkedin.com/in/harsshath-prabu-874a7790",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile lists CSA 8.8, software-testing certifications and AWS Solutions Architect.",
+          "work_summary": "Experience names Pegasystems; about section focuses on software quality.",
+          "limitations": [
+            "Specific squad, current title and Pega development responsibilities are not exposed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        },
+        {
+          "name": "Umamaheshwar Reddy Midthuru",
+          "title": "Senior Principal Application Engineer",
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Charlotte, NC (latest named experience)",
+          "profile_url": "https://www.linkedin.com/in/maheshmidthuru",
+          "source_url": "https://www.linkedin.com/in/maheshmidthuru",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile describes Pega CRM engineering, digital messaging and Voice AI features.",
+          "work_summary": "Current named experience is Pegasystems in Charlotte; Bengaluru appears in older entries.",
+          "limitations": [
+            "Do not count as a current Bengaluru team member. Exact dates and project attribution remain incomplete.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Perficient",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Praveen Mali with Perficient and states: Lists Pega CSA/CSSA and a Digital TPA project dated June\u2013December 2025. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/praveen-mali-9b84781b3",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Praveen Mali's indexed profile associates Perficient with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/praveen-mali-9b84781b3",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Praveen Mali",
+          "title": null,
+          "employer_as_stated": "Perficient",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/praveen-mali-9b84781b3",
+          "source_url": "https://in.linkedin.com/in/praveen-mali-9b84781b3",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega CSA/CSSA and a Digital TPA project dated June\u2013December 2025.",
+          "work_summary": "Describes headless telecom Pega, REST services, Apttus integration, data pages and case-management rules.",
+          "limitations": [
+            "Project's employing company is not explicitly attached. Open-to-work post and current employer may reflect different dates.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Aaseya",
+      "category": "services",
+      "aliases": [
+        "Aaseya IT Services Pvt. Ltd."
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Debapriya (Deb) Brahma with Aaseya and states: CLSA and Pega marketing/customer-service certifications; architect and consulting leadership description. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/debapriya-deb-brahma-117b8b19",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Debapriya (Deb) Brahma's indexed profile associates Aaseya with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/debapriya-deb-brahma-117b8b19",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Debapriya (Deb) Brahma",
+          "title": "Principal Architect and Consulting Leader",
+          "employer_as_stated": "Aaseya",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/debapriya-deb-brahma-117b8b19",
+          "source_url": "https://in.linkedin.com/in/debapriya-deb-brahma-117b8b19",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "CLSA and Pega marketing/customer-service certifications; architect and consulting leadership description.",
+          "work_summary": "Named Aaseya experience is Bengaluru.",
+          "limitations": [
+            "Current customer assignments, team membership and vacancies are not exposed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "PRASANNA R",
+          "title": null,
+          "employer_as_stated": "Aaseya",
+          "location_as_stated": "Chennai, Tamil Nadu, India",
+          "profile_url": "https://in.linkedin.com/in/prasanna-r-904327171",
+          "source_url": "https://in.linkedin.com/in/prasanna-r-904327171",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega CSA and CSSA certifications.",
+          "work_summary": "Profile names Aaseya IT Services; specific project work is unknown.",
+          "limitations": [
+            "Chennai profile, not Bengaluru evidence. Liked Aaseya hiring content is not attributed to this person.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "V2Soft",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Prakyath P with V2Soft and states: Authored a Pega LSA recruitment post visible in the public index. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/prakyath-p-694410303",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "vacancy",
+          "text": "Recruiter-authored Pega LSA contract post for Hyderabad; 7\u201310 years, LSA/CSSA and up to \u20b930 LPA CTC. This is a recruitment lead requiring a current requisition check.",
+          "source_url": "https://in.linkedin.com/in/prakyath-p-694410303",
+          "source_title": "Public LinkedIn professional post (indexed)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Prakyath P",
+          "title": null,
+          "employer_as_stated": "V2Soft",
+          "location_as_stated": "Greater Bengaluru Area",
+          "profile_url": "https://in.linkedin.com/in/prakyath-p-694410303",
+          "source_url": "https://in.linkedin.com/in/prakyath-p-694410303",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Authored a Pega LSA recruitment post visible in the public index.",
+          "work_summary": "Advertises Hyderabad contract work, 7\u201310 years, LSA/CSSA, enterprise integrations and CoE governance.",
+          "limitations": [
+            "Recruitment evidence only; not a Pega engineering team member. Client identity and vacancy currency unconfirmed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [
+        {
+          "type": "professional_post",
+          "text": "Recruiter-authored Pega LSA contract post for Hyderabad; 7\u201310 years, LSA/CSSA and up to \u20b930 LPA CTC.",
+          "source_url": "https://in.linkedin.com/in/prakyath-p-694410303",
+          "source_title": "Prakyath P public LinkedIn recruiting content",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "observed_relative_age": "1w",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct",
+          "status": "unverified_recruitment_lead",
+          "location": "Hyderabad",
+          "experience_min": 7,
+          "experience_max": 10,
+          "salary_max_ctc_lpa": 30,
+          "limitations": [
+            "Seniority above a four-year profile; contract and onsite conditions; below \u20b935 LPA final goal.",
+            "No current requisition check; do not count as a confirmed open role."
+          ]
+        }
+      ],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Capgemini",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Saritha Bhagel with Capgemini and states: About section describes a certified Pega Business Architect; PCBA 24.2 issued July 2025. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/sarithabhagel",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Saritha Bhagel's indexed profile associates Capgemini with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/sarithabhagel",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Saritha Bhagel",
+          "title": null,
+          "employer_as_stated": "Capgemini",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/sarithabhagel",
+          "source_url": "https://in.linkedin.com/in/sarithabhagel",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes a certified Pega Business Architect; PCBA 24.2 issued July 2025.",
+          "work_summary": "Named Capgemini experience is Bengaluru; banking training certifications are visible.",
+          "limitations": [
+            "Training does not establish a named banking customer or active Pega delivery team.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Futureproof | A Blend Company",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Prashanth Chittem with Futureproof | A Blend Company and states: Lists Pega decisioning/data-science credentials and describes attending a Bangalore CLDA boot camp. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/prashanth-chittem-a0292755",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "vacancy",
+          "text": "Authored CDH expert hiring post seeking 8+ overall years and 4+ CDH years, decisioning and data-science credentials. This is a recruitment lead requiring a current requisition check.",
+          "source_url": "https://in.linkedin.com/in/prashanth-chittem-a0292755",
+          "source_title": "Public LinkedIn professional post (indexed)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Prashanth Chittem",
+          "title": null,
+          "employer_as_stated": "Futureproof | A Blend Company",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/prashanth-chittem-a0292755",
+          "source_url": "https://in.linkedin.com/in/prashanth-chittem-a0292755",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega decisioning/data-science credentials and describes attending a Bangalore CLDA boot camp.",
+          "work_summary": "Own CDH hiring post discusses next-best-action strategies, data flows and analytics; Snowflake training also appears.",
+          "limitations": [
+            "Named vacancy employer and location are not explicit in that post. Profile city is not proof of office location.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [
+        {
+          "type": "professional_post",
+          "text": "Authored CDH expert hiring post seeking 8+ overall years and 4+ CDH years, decisioning and data-science credentials.",
+          "source_url": "https://in.linkedin.com/in/prashanth-chittem-a0292755",
+          "source_title": "Prashanth Chittem public LinkedIn recruiting content",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "observed_relative_age": "5mo",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct",
+          "status": "unverified_recruitment_lead",
+          "location": null,
+          "experience_min": 8,
+          "experience_max": null,
+          "salary_max_ctc_lpa": null,
+          "limitations": [
+            "Posting does not explicitly identify employer or location. Profile association is a lead to investigate, not proof Futureproof owns the vacancy.",
+            "No current requisition check; do not count as a confirmed open role."
+          ]
+        }
+      ],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Infosys",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Harshan R with Infosys and states: Own posts describe CSSA 24.2 learning; profile includes a June 2025 workflow-automation award. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/r-harshan",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Hari Krishna Molli's indexed profile associates Infosys with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/hari-krishna-molli-709376246",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Harshan R",
+          "title": null,
+          "employer_as_stated": "Infosys",
+          "location_as_stated": "Chennai, Tamil Nadu, India",
+          "profile_url": "https://in.linkedin.com/in/r-harshan",
+          "source_url": "https://in.linkedin.com/in/r-harshan",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own posts describe CSSA 24.2 learning; profile includes a June 2025 workflow-automation award.",
+          "work_summary": "Award description says workflow automation reduced incident volume.",
+          "limitations": [
+            "Self-reported outcome is not independently measured. No Bengaluru team claim.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        },
+        {
+          "name": "Hari Krishna Molli",
+          "title": null,
+          "employer_as_stated": "Infosys",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/hari-krishna-molli-709376246",
+          "source_url": "https://in.linkedin.com/in/hari-krishna-molli-709376246",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega CSA and CSSA certifications.",
+          "work_summary": "Named Infosys experience is Bengaluru.",
+          "limitations": [
+            "Current title, team and customer work are unknown; certificate evidence alone is not a project.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "LTM",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Manjunath K with LTM and states: Describes CLSA and AWS solution architecture experience. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/manjunath-k-clsa",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Manjunath K's indexed profile associates LTM with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/manjunath-k-clsa",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Manjunath authored a March 2026 Pega/AWS Bedrock reference-architecture article and a Kubernetes exploration. These are personal technical demonstrations, not established LTM customer deployments.",
+          "source_url": "https://in.linkedin.com/in/manjunath-k-clsa",
+          "source_title": "Public LinkedIn professional post (indexed)",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-03",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Manjunath K",
+          "title": null,
+          "employer_as_stated": "LTM",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/manjunath-k-clsa",
+          "source_url": "https://in.linkedin.com/in/manjunath-k-clsa",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Describes CLSA and AWS solution architecture experience.",
+          "work_summary": "Own March 2026 articles describe a Pega/Bedrock reference architecture and running Pega on Kubernetes.",
+          "limitations": [
+            "Personal reference architecture is not demonstrated employer production work; LTM expansion/aliases unverified.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Cognizant",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links PERUGU RAVIKRISHNA with Cognizant and states: About section states Pega senior-system-architect skills in case management, UI and SLAs. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/perugu-ravikrishna-8b1210160",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "PERUGU RAVIKRISHNA's indexed profile associates Cognizant with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/perugu-ravikrishna-8b1210160",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "PERUGU RAVIKRISHNA",
+          "title": null,
+          "employer_as_stated": "Cognizant",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/perugu-ravikrishna-8b1210160",
+          "source_url": "https://in.linkedin.com/in/perugu-ravikrishna-8b1210160",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section states Pega senior-system-architect skills in case management, UI and SLAs.",
+          "work_summary": "Named Cognizant experience is Bengaluru.",
+          "limitations": [
+            "Liked Smart Investigate hiring and Mphasis posts are not his team or employment history.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Aravindhan J",
+          "title": null,
+          "employer_as_stated": "Cognizant",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/aravindhan-j-b222541b1",
+          "source_url": "https://in.linkedin.com/in/aravindhan-j-b222541b1",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile lists Pega CSA/CSSA and describes Pega-certified application work.",
+          "work_summary": "Named Cognizant experience is Bengaluru; Creatio training also appears.",
+          "limitations": [
+            "Liked REST demonstration and hiring posts are not his implementation or vacancies.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Ritesh P S",
+          "title": null,
+          "employer_as_stated": "Cognizant",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/ritesh-p-s-b72a2a85",
+          "source_url": "https://in.linkedin.com/in/ritesh-p-s-b72a2a85",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Pega CSA/CSSA credentials appear in the profile.",
+          "work_summary": "Named Cognizant experience is Bengaluru.",
+          "limitations": [
+            "Specific Pega squad and responsibilities are unknown. Liked US job posts are not his vacancies.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Rakshith Nagabhushana",
+          "title": null,
+          "employer_as_stated": "Cognizant",
+          "location_as_stated": "Brookfield, Wisconsin, United States",
+          "profile_url": "https://www.linkedin.com/in/rakshith-nagabhushana-12375486",
+          "source_url": "https://www.linkedin.com/in/rakshith-nagabhushana-12375486",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes PRPC versions 7.2, 7.3, 8.2 and 8.6; CSSA listed.",
+          "work_summary": "Named Cognizant experience is Brookfield, Wisconsin.",
+          "limitations": [
+            "Older Bengaluru entries do not establish current Bengaluru presence; remote India eligibility unknown.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Randstad Digital",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Yashovardhan M with Randstad Digital and states: About section describes four years of Pega decisioning experience; decisioning and CSSA certifications appear. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/makkala-yashovardhan",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Yashovardhan M",
+          "title": "Pega Senior Decisioning Consultant",
+          "employer_as_stated": "Randstad Digital",
+          "location_as_stated": "Greater Hyderabad Area",
+          "profile_url": "https://in.linkedin.com/in/makkala-yashovardhan",
+          "source_url": "https://in.linkedin.com/in/makkala-yashovardhan",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes four years of Pega decisioning experience; decisioning and CSSA certifications appear.",
+          "work_summary": "Named Randstad Digital experience is Hyderabad.",
+          "limitations": [
+            "Bangalore appears only in older entries/education; current Bengaluru team not established.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "HCLTech",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Manasa HM with HCLTech and states: Lists CSA/CSSA and historical Pega banking/insurance delivery work. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/manasa-hm",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Manasa HM's indexed profile associates HCLTech with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/manasa-hm",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Manasa HM",
+          "title": null,
+          "employer_as_stated": "HCLTech",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/manasa-hm",
+          "source_url": "https://in.linkedin.com/in/manasa-hm",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists CSA/CSSA and historical Pega banking/insurance delivery work.",
+          "work_summary": "Projects describe Swiss-bank back-office automation, UK credit-risk workflow and healthcare CPM integrations.",
+          "limitations": [
+            "Projects date from 2008\u20132017 or stale Present labels; do not attribute all projects to current HCLTech team.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Sameer Rohidekar",
+          "title": "Senior Software Engineer",
+          "employer_as_stated": "HCLTech",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/sameer-rohidekar-98060a29",
+          "source_url": "https://in.linkedin.com/in/sameer-rohidekar-98060a29",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Pega decisioning, CSA and CSSA certifications appear.",
+          "work_summary": "Named HCLTech experience is Bengaluru.",
+          "limitations": [
+            "Exact current role title may differ from About wording; no specific client or squad is exposed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Coforge",
+      "category": "services",
+      "aliases": [
+        "COFORGE DPA Pvt Ltd"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Rohini L with Coforge and states: About section explicitly describes senior Pega development at Coforge DPA. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/sce17cs040",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Rohini L's indexed profile associates Coforge with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/sce17cs040",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Rohini L",
+          "title": "Senior Software Engineer / Senior Pega Developer",
+          "employer_as_stated": "Coforge",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/sce17cs040",
+          "source_url": "https://in.linkedin.com/in/sce17cs040",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section explicitly describes senior Pega development at Coforge DPA.",
+          "work_summary": "CSA/CSSA and Bengaluru Coforge experience are visible.",
+          "limitations": [
+            "Liked farewell posts are other people's departures; no departure or replacement vacancy inferred.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        },
+        {
+          "name": "Abhiraj Gupta",
+          "title": null,
+          "employer_as_stated": "Coforge",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/guptaabhiraj4",
+          "source_url": "https://in.linkedin.com/in/guptaabhiraj4",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes CSSA and 7+ years of Pega experience.",
+          "work_summary": "Profile names Coforge; current project specifics are unknown.",
+          "limitations": [
+            "Liked platform, Smart Dispute and Simplify3x hiring posts are not his team's vacancies.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "American Express",
+      "category": "gcc",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Prabakaran Soundararajan with American Express and states: About section describes Pega architecture; own November 2024 article explains multipart REST uploads. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://www.linkedin.com/in/prabakaransoundararajan",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Prabakaran Soundararajan",
+          "title": "Pega Lead System Architect",
+          "employer_as_stated": "American Express",
+          "location_as_stated": "United States; named employer experience Florida",
+          "profile_url": "https://www.linkedin.com/in/prabakaransoundararajan",
+          "source_url": "https://www.linkedin.com/in/prabakaransoundararajan",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes Pega architecture; own November 2024 article explains multipart REST uploads.",
+          "work_summary": "CLSA and decisioning certifications are listed.",
+          "limitations": [
+            "No current Bengaluru or India-remote evidence; article is technical knowledge, not a named employer system.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Bank of America",
+      "category": "gcc",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Durgaprasad Murari with Bank of America and states: Lists Pega CSSA, decisioning and June 2026 LSA architecture Part 1. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://www.linkedin.com/in/durgaprasad-murari-a3545676",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Durgaprasad Murari",
+          "title": null,
+          "employer_as_stated": "Bank of America",
+          "location_as_stated": "Charlotte, NC (named employer experience)",
+          "profile_url": "https://www.linkedin.com/in/durgaprasad-murari-a3545676",
+          "source_url": "https://www.linkedin.com/in/durgaprasad-murari-a3545676",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega CSSA, decisioning and June 2026 LSA architecture Part 1.",
+          "work_summary": "Named employer experience is Bank of America in Charlotte.",
+          "limitations": [
+            "Older Bengaluru experience is not current Bengaluru evidence. Part 1 is not a full CLSA credential.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Barclays",
+      "category": "gcc",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Prashant Daniel M with Barclays and states: Lists Pega CSSA/decisioning and historical architecture projects. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://www.linkedin.com/in/danprashant",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Prashant Daniel M",
+          "title": null,
+          "employer_as_stated": "Barclays",
+          "location_as_stated": "Whippany, New Jersey, United States (named experience)",
+          "profile_url": "https://www.linkedin.com/in/danprashant",
+          "source_url": "https://www.linkedin.com/in/danprashant",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega CSSA/decisioning and historical architecture projects.",
+          "work_summary": "Describes telecom and Malaysian electricity-utility implementations, DCO and solution design.",
+          "limitations": [
+            "Projects are historical and not linked to Barclays; current Bengaluru presence not established.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        },
+        {
+          "name": "Saurabh Jha",
+          "title": null,
+          "employer_as_stated": "Barclays",
+          "location_as_stated": "India (named employer experience)",
+          "profile_url": "https://in.linkedin.com/in/saurabh-jha-17857716",
+          "source_url": "https://in.linkedin.com/in/saurabh-jha-17857716",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Pega CSA/CSSA and LSA Part 1 are listed.",
+          "work_summary": "Recommendations describe earlier JPMorgan Pega CoE and reusable-asset work.",
+          "limitations": [
+            "Historical colleague recommendations do not prove current Barclays Pega work or Bengaluru location.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "KPMG India",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Santhosh Thirugnanam with KPMG India and states: About section describes Pega CSSA and 13 years of IT experience. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/santhosh-thirugnanam-561a9423",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Santhosh Thirugnanam",
+          "title": null,
+          "employer_as_stated": "KPMG India",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/santhosh-thirugnanam-561a9423",
+          "source_url": "https://in.linkedin.com/in/santhosh-thirugnanam-561a9423",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section describes Pega CSSA and 13 years of IT experience.",
+          "work_summary": "Profile names KPMG India. Reposted hiring material describes Pega UI and multi-geography delivery needs.",
+          "limitations": [
+            "Recruitment post belongs to Erica Toscano and is historical; it is not treated as Santhosh's active vacancy.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Ciberspring",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Karthik P A with Ciberspring and states: About section states Pega design/development experience; CSA/CSSA listed. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/karthik-p-a-a2932245",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Karthik P A's indexed profile associates Ciberspring with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/karthik-p-a-a2932245",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Karthik P A",
+          "title": "Pega developer",
+          "employer_as_stated": "Ciberspring",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/karthik-p-a-a2932245",
+          "source_url": "https://in.linkedin.com/in/karthik-p-a-a2932245",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section states Pega design/development experience; CSA/CSSA listed.",
+          "work_summary": "Named Ciberspring experience is Bengaluru.",
+          "limitations": [
+            "Self-reported experience may be stale. Liked dismissal story is not this person's employment history.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "StaidLogic",
+      "category": "global",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Lakshmikanthareddy Gangireddy with StaidLogic and states: About section explicitly associates StaidLogic with Pega enterprise-transformation solutions. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://www.linkedin.com/in/lakshmikanthareddy-gangireddy-3257a31a",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Lakshmikanthareddy Gangireddy",
+          "title": null,
+          "employer_as_stated": "StaidLogic",
+          "location_as_stated": "Greater Phoenix Area",
+          "profile_url": "https://www.linkedin.com/in/lakshmikanthareddy-gangireddy-3257a31a",
+          "source_url": "https://www.linkedin.com/in/lakshmikanthareddy-gangireddy-3257a31a",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section explicitly associates StaidLogic with Pega enterprise-transformation solutions.",
+          "work_summary": "Historical projects include fulfillment, risk and payment investigations.",
+          "limitations": [
+            "Current role scope, client ownership, Bengaluru presence and India-remote eligibility are unknown.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "D4 Insight",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Saran Kumar with D4 Insight and states: Authored Pega developer recruiting post, shown as 10 months old in the index. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/saran-kumar-685b15147",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "vacancy",
+          "text": "Authored Bengaluru Pega developer post for banking Smart Investigate 8.x with REST/JSON and Kafka; 4+ years. This is a recruitment lead requiring a current requisition check.",
+          "source_url": "https://in.linkedin.com/in/saran-kumar-685b15147",
+          "source_title": "Public LinkedIn professional post (indexed)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Saran Kumar",
+          "title": null,
+          "employer_as_stated": "D4 Insight",
+          "location_as_stated": null,
+          "profile_url": "https://in.linkedin.com/in/saran-kumar-685b15147",
+          "source_url": "https://in.linkedin.com/in/saran-kumar-685b15147",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Authored Pega developer recruiting post, shown as 10 months old in the index.",
+          "work_summary": "Post describes Bengaluru banking payment investigations, Smart Investigate 8.x, REST/JSON and Kafka.",
+          "limitations": [
+            "Recruiter profile location/title not exposed; unnamed end client; posting is historical and unconfirmed active.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [
+        {
+          "type": "professional_post",
+          "text": "Authored Bengaluru Pega developer post for banking Smart Investigate 8.x with REST/JSON and Kafka; 4+ years.",
+          "source_url": "https://in.linkedin.com/in/saran-kumar-685b15147",
+          "source_title": "Saran Kumar public LinkedIn recruiting content",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "observed_relative_age": "10mo",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct",
+          "status": "unverified_recruitment_lead",
+          "location": "Bengaluru",
+          "experience_min": 4,
+          "experience_max": null,
+          "salary_max_ctc_lpa": null,
+          "limitations": [
+            "Historical posting; unnamed bank; Smart Investigate is an additional skill requirement.",
+            "No current requisition check; do not count as a confirmed open role."
+          ]
+        }
+      ],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Booking Holdings",
+      "category": "gcc",
+      "aliases": [
+        "Booking Holdings (NASDAQ: BKNG)"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Suresh Kumar with Booking Holdings and states: Lists CSSA and CLSA-A; named Booking Holdings experience is Bengaluru. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/suresh-kumar-50039220",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Suresh Kumar's indexed profile associates Booking Holdings with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/suresh-kumar-50039220",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Suresh Kumar",
+          "title": null,
+          "employer_as_stated": "Booking Holdings (NASDAQ: BKNG)",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/suresh-kumar-50039220",
+          "source_url": "https://in.linkedin.com/in/suresh-kumar-50039220",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists CSSA and CLSA-A; named Booking Holdings experience is Bengaluru.",
+          "work_summary": "Historical Soprano and dbCAR projects describe banking onboarding, KYC, REST/SOAP and case workflows.",
+          "limitations": [
+            "Those 2016\u20132018 banking projects are not Booking Holdings projects; current team/product is unknown.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "JPMorgan Chase & Co.",
+      "category": "gcc",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Campbell Ben with JPMorgan Chase & Co. and states: About section references BPM/Pega leadership; CSA/CSSA listed. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://www.linkedin.com/in/campbell-ben-08622a22",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Campbell Ben",
+          "title": "Senior Technology executive",
+          "employer_as_stated": "JPMorgan Chase & Co.",
+          "location_as_stated": "Tampa, Florida, United States (named experience)",
+          "profile_url": "https://www.linkedin.com/in/campbell-ben-08622a22",
+          "source_url": "https://www.linkedin.com/in/campbell-ben-08622a22",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section references BPM/Pega leadership; CSA/CSSA listed.",
+          "work_summary": "Recommendations describe earlier Pega-team mentorship at JPMorgan.",
+          "limitations": [
+            "Do not treat historical Bengaluru entries as current location or colleague praise as an objective team ranking.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        },
+        {
+          "name": "Punam Mahajan",
+          "title": "Associate",
+          "employer_as_stated": "JPMorgan Chase & Co.",
+          "location_as_stated": "Bengaluru profile; Mumbai named employer experience",
+          "profile_url": "https://in.linkedin.com/in/punam-mahajan-9b4987173",
+          "source_url": "https://in.linkedin.com/in/punam-mahajan-9b4987173",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega CSA and CSSA; About describes an Associate.",
+          "work_summary": "Named JPMorgan experience is Mumbai while profile header says Bengaluru.",
+          "limitations": [
+            "Location conflict explicitly unresolved. Liked AIB joining announcement is not her move.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "NTT DATA Services",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links shanmukharao siripurapu with NTT DATA Services and states: About section states leadership of the organization's offshore Pega practice. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/shanpega",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "shanmukharao siripurapu's indexed profile associates NTT DATA Services with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+          "source_url": "https://in.linkedin.com/in/shanpega",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "pega_usage",
+          "text": "Shanmukharao explicitly states that he leads the organization\u2019s offshore Pega practice; the named employer experience is NTT DATA Services in Bengaluru.",
+          "source_url": "https://in.linkedin.com/in/shanpega",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "shanmukharao siripurapu",
+          "title": null,
+          "employer_as_stated": "NTT DATA Services",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/shanpega",
+          "source_url": "https://in.linkedin.com/in/shanpega",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About section states leadership of the organization's offshore Pega practice.",
+          "work_summary": "Named NTT DATA experience is Bengaluru; customer service, decisioning and architecture certifications appear.",
+          "limitations": [
+            "No named client, team size or vacancy is exposed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Tata Consultancy Services",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Rangaswamy Kakarla with Tata Consultancy Services and states: Own profile describes May 2026 Vodafone CDH migration and 2024\u20132026 Singapore CPFB Pega cloud work. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/rangaswamy-kakarla-ba6938271",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Rangaswamy Kakarla",
+          "title": null,
+          "employer_as_stated": "Tata Consultancy Services",
+          "location_as_stated": "India; named employer experience Hyderabad",
+          "profile_url": "https://in.linkedin.com/in/rangaswamy-kakarla-ba6938271",
+          "source_url": "https://in.linkedin.com/in/rangaswamy-kakarla-ba6938271",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own profile describes May 2026 Vodafone CDH migration and 2024\u20132026 Singapore CPFB Pega cloud work.",
+          "work_summary": "Includes Pega 23.1 NBAD, cloud 24.2 migration, data flows and REST integrations.",
+          "limitations": [
+            "Current named location is Hyderabad. Stated CLSA exam and credential Part 1 are kept distinct; no full CLSA assumed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Rang Technologies Inc",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Mariya Limdi with Rang Technologies Inc and states: Authored Pega SA/SSA recruitment post visible in the index. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://in.linkedin.com/in/mariya-limdi-3a507a6b",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "vacancy",
+          "text": "Authored Bengaluru hybrid SA 2\u20135 years / SSA 5\u20138 years recruiting post, with Pega casework, integrations and customer-service exposure. This is a recruitment lead requiring a current requisition check.",
+          "source_url": "https://in.linkedin.com/in/mariya-limdi-3a507a6b",
+          "source_title": "Public LinkedIn professional post (indexed)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Mariya Limdi",
+          "title": null,
+          "employer_as_stated": "Rang Technologies Inc",
+          "location_as_stated": null,
+          "profile_url": "https://in.linkedin.com/in/mariya-limdi-3a507a6b",
+          "source_url": "https://in.linkedin.com/in/mariya-limdi-3a507a6b",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Authored Pega SA/SSA recruitment post visible in the index.",
+          "work_summary": "Advertises Bengaluru hybrid SA 2\u20135 years and SSA 5\u20138 years with casework, integration and customer-service exposure.",
+          "limitations": [
+            "Recruitment intermediary; end client, pay and continued availability are unknown. Person location not exposed.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [
+        {
+          "type": "professional_post",
+          "text": "Authored Bengaluru hybrid SA 2\u20135 years / SSA 5\u20138 years recruiting post, with Pega casework, integrations and customer-service exposure.",
+          "source_url": "https://in.linkedin.com/in/mariya-limdi-3a507a6b",
+          "source_title": "Mariya Limdi public LinkedIn recruiting content",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "observed_relative_age": "1mo",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct",
+          "status": "unverified_recruitment_lead",
+          "location": "Bengaluru",
+          "experience_min": 2,
+          "experience_max": 5,
+          "salary_max_ctc_lpa": null,
+          "limitations": [
+            "End client, current requisition, pay and continued availability are unknown.",
+            "No current requisition check; do not count as a confirmed open role."
+          ]
+        }
+      ],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "Fint Solutions",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Mohit K with Fint Solutions and states: Profile describes US staffing/recruitment and reposts a Fint company Pega developer advertisement. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://www.linkedin.com/in/mohit-k-58266623b",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        },
+        {
+          "type": "vacancy",
+          "text": "Fint company hiring content reposted on Mohit\u2019s profile describes a Bengaluru hybrid senior Pega role, CSSA and healthcare exposure, 6+ years. This is a recruitment lead requiring a current requisition check.",
+          "source_url": "https://www.linkedin.com/in/mohit-k-58266623b",
+          "source_title": "Public LinkedIn professional post (indexed)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Mohit K",
+          "title": null,
+          "employer_as_stated": "Fint Solutions",
+          "location_as_stated": "Naperville, Illinois, United States",
+          "profile_url": "https://www.linkedin.com/in/mohit-k-58266623b",
+          "source_url": "https://www.linkedin.com/in/mohit-k-58266623b",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile describes US staffing/recruitment and reposts a Fint company Pega developer advertisement.",
+          "work_summary": "Company post describes Bengaluru hybrid Pega PRPC/BPM, CSSA and healthcare exposure, requiring 6+ years.",
+          "limitations": [
+            "Job content belongs to Fint's reposted company material, not Mohit's engineering work; current availability unverified.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [
+        {
+          "type": "professional_post",
+          "text": "Fint company hiring content reposted on Mohit\u2019s profile describes a Bengaluru hybrid senior Pega role, CSSA and healthcare exposure, 6+ years.",
+          "source_url": "https://www.linkedin.com/in/mohit-k-58266623b",
+          "source_title": "Mohit K public LinkedIn recruiting content",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "observed_relative_age": "1mo (adjacent company post; exact Pega post age unresolved)",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct",
+          "status": "unverified_recruitment_lead",
+          "location": "Bengaluru",
+          "experience_min": 6,
+          "experience_max": null,
+          "salary_max_ctc_lpa": null,
+          "limitations": [
+            "Original author is the company, not Mohit. Above current experience; live application has not been checked.",
+            "No current requisition check; do not count as a confirmed open role."
+          ]
+        }
+      ],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    },
+    {
+      "name": "PT Kynerja Abadi Solusindo",
+      "category": "global",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Public profile links Prayudha Riantoro with PT Kynerja Abadi Solusindo and states: Profile explicitly describes Pega loan-origination and government work-injury claim projects. This is professional-skill evidence; a current employer implementation is not automatically established.",
+          "source_url": "https://id.linkedin.com/in/prayudha-riantoro-b08b40150",
+          "source_title": "Public LinkedIn professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "inference"
+        }
+      ],
+      "people": [
+        {
+          "name": "Prayudha Riantoro",
+          "title": "Pegasystem Architect",
+          "employer_as_stated": "PT Kynerja Abadi Solusindo",
+          "location_as_stated": "Greater Jakarta Area, Indonesia",
+          "profile_url": "https://id.linkedin.com/in/prayudha-riantoro-b08b40150",
+          "source_url": "https://id.linkedin.com/in/prayudha-riantoro-b08b40150",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile explicitly describes Pega loan-origination and government work-injury claim projects.",
+          "work_summary": "2025\u20132026 Nano Bank / Nano Bank Syariah Pega 24.1; 2023\u20132025 Singapore MOM Pega 8.7.",
+          "limitations": [
+            "Overseas practice evidence only. No Bengaluru presence or India-remote hiring is established.",
+            "Public index snapshot; current employment dates and exact team not independently verified."
+          ],
+          "bangalore_experience_as_stated": false
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh public search-index evidence; current employment, office and team ownership are self-reported and may have changed.",
+        "Named people are a discovered sample, not the complete team or a headcount estimate. No vacancy is inferred from an employee's move or departure."
+      ]
+    }
+  ]
+}

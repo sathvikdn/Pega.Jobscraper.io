@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pega Career Intelligence Hub</title>
+<link rel="stylesheet" href="/static/app.css"><link rel="stylesheet" href="/static/expanded.css">
+<link rel="stylesheet" href="/static/dossiers-original.css"><link rel="stylesheet" href="/static/classic.css">
+<script defer src="/static/search.js"></script><script defer src="/static/directory.js"></script>
+<script defer src="/static/depth.js"></script><script defer src="/static/investigation.js"></script>
+<script defer src="/static/app.js"></script><script defer src="/static/classic.js"></script><script defer src="/static/classic-webmcp.js"></script></head>
+<body data-classic="true">
+<a class="skip-link" href="#main">Skip to results</a>
+<header class="topbar">
+<button id="menuToggle" class="button small" aria-controls="classicSidebar" aria-expanded="true" aria-label="Collapse sidebar">☰</button>
+<a class="brand" href="/library/career-hub"><span class="g1">Pega</span> Intelligence Hub</a>
+<nav class="tabs" aria-label="Main pages">
+<button data-view="career">Career Hub</button><button data-view="opportunities">Job Scanner</button>
+<button data-view="teams">Deep Dossiers</button><button data-view="library">Interview Masterclass</button>
+</nav>
+<input id="classicSearch" class="classic-search" type="search" placeholder="Search companies, people, projects, skills…" aria-label="Search current view">
+<span id="researchDate" class="muted"></span>
+</header>
+<div class="dash">
+<aside class="sidebar" id="classicSidebar">
+<button class="button small mobile-close" onclick="closeMobile()">Close menu</button>
+<nav class="side-navigation" aria-label="Workspace">
+<button data-view="career">Executive dashboard</button>
+<button data-view="opportunities">Search & saved roles</button>
+<button data-view="teams">Companies & people</button>
+<button data-view="salary">Compensation</button>
+<button data-view="discovery">Search progress & coverage</button>
+<button data-view="library">Study library</button>
+</nav>
+<div id="sideFilters"></div><div id="companyNav"></div>
+<div class="side-context"><strong>₹35 LPA goal · ₹20 LPA+ search</strong><p>Annual total CTC</p><p>TCS joining · 02 Dec 2026</p></div>
+</aside>
+<div class="main-c"><div class="section-bar page-context"><strong id="currentView">Career workspace</strong><span id="classicCounts" class="muted"></span></div>
+<main id="main" tabindex="-1"><p>Loading saved research…</p></main>
+<footer>Saved research stays available between searches. Open a source to see its date and evidence.</footer>
+</div></div>
+<dialog id="detailDialog" aria-label="Opportunity details"><div id="detailContent"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>

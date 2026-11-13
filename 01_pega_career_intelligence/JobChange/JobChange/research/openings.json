@@ -1,0 +1,778 @@
+{
+  "as_of": "2026-09-07",
+  "opportunities": [
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 3,
+      "experience_max": 5,
+      "skills": [
+        "Pega Infinity",
+        "Production support",
+        "SQL",
+        "ITIL",
+        "Root cause analysis",
+        "Release management",
+        "Automation"
+      ],
+      "fit_reasons": [
+        "Four years of enterprise Pega work and production automation align with the stated experience band.",
+        "Bengaluru product employer; operational troubleshooting and SQL are directly relevant."
+      ],
+      "gaps": [
+        "Support-led role: confirm development ownership and career path.",
+        "Rotational shifts and on-call work are required; confirm schedule.",
+        "Confirm depth in Oracle/DB2 and formal ITIL practices."
+      ],
+      "salary": null,
+      "id": "pega-23991",
+      "company": "Pegasystems",
+      "title": "Application Support Engineer",
+      "requisition_id": "23991",
+      "location": "Bengaluru",
+      "url": "https://www.pega.com/about/careers/23991/application-support-engineer",
+      "fit": "strong",
+      "summary": "Bengaluru internal enterprise application support and releases. Strong technical overlap, with an explicit trade-off toward production support.",
+      "evidence": [
+        {
+          "url": "https://www.pega.com/about/careers/23991/application-support-engineer",
+          "title": "Pegasystems — Application Support Engineer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer page identifies job 23991 in Bangalore, requests 3–5 years in production support, Pega Infinity programming and database experience, describes application automation and releases, and displays Apply Now.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "product"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 5,
+      "experience_max": null,
+      "skills": [
+        "Pega PRPC",
+        "CSA",
+        "Kafka",
+        "REST",
+        "SOAP",
+        "JMS",
+        "Pega AI",
+        "Java",
+        "SQL",
+        "Production support"
+      ],
+      "fit_reasons": [
+        "Direct overlap with banking workflows, Kafka/REST/SOAP integration and production troubleshooting.",
+        "Bengaluru GCC role in Deposits and Shared Services."
+      ],
+      "gaps": [
+        "Requires five years overall development/maintenance, including at least three in Pega; four years falls short of the overall requirement.",
+        "Pega GenAI/Knowledge Buddy/Agentic AI and strong Java/web technology experience need confirmation.",
+        "Full ATS page did not render in the research tool; recheck current application availability.",
+        "24/7 on-call rotation."
+      ],
+      "salary": null,
+      "id": "firstcitizens-24726",
+      "company": "First Citizens India (FC Global Services India LLP)",
+      "title": "Software Engineer II - Pega Developer",
+      "requisition_id": "24726",
+      "location": "Bengaluru",
+      "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-II---Pega-Developer_24726-1",
+      "fit": "possible",
+      "summary": "High-value Bengaluru lead to verify first. Excellent domain/integration match, with a one-year overall experience gap and additional Pega AI expectations.",
+      "evidence": [
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-II---Pega-Developer_24726-1",
+          "title": "First Citizens India (FC Global Services India LLP) — Software Engineer II - Pega Developer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer ATS search index gives req 24726, Bangalore hybrid, five overall years and three Pega years, CSA, Kafka/REST/SOAP and Pega AI skills, plus Apply. Direct page returned no readable content; the relative posting age was not converted into a date.",
+          "status": "search_index_only"
+        }
+      ],
+      "employer_type": "gcc"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 5,
+      "experience_max": null,
+      "skills": [
+        "CSSA",
+        "Pega architecture",
+        "Enterprise application delivery",
+        "Integrations",
+        "Object-oriented design",
+        "Agile",
+        "Client consulting"
+      ],
+      "fit_reasons": [
+        "CSSA and enterprise Pega delivery are relevant.",
+        "Bengaluru role with exposure to Pega consulting and technical ownership."
+      ],
+      "gaps": [
+        "Bachelor's route requires five years; the alternative is a master's degree with three years.",
+        "Must demonstrate end-to-end ownership of a medium or large component and ability to lead a technical team.",
+        "Client-delivery consulting role; confirm project and travel expectations."
+      ],
+      "salary": null,
+      "id": "pega-23920",
+      "company": "Pegasystems",
+      "title": "Senior System Architect",
+      "requisition_id": "23920",
+      "location": "Bengaluru",
+      "url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+      "fit": "possible",
+      "summary": "Bengaluru Pega consulting opportunity worth a targeted referral if the experience threshold is flexible.",
+      "evidence": [
+        {
+          "url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "title": "Pegasystems — Senior System Architect",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Official job 23920 lists Bangalore, CSSA, enterprise implementation and component leadership. It specifies five years with a bachelor's or three with a master's, and provides Apply Now.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "product"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 4,
+      "experience_max": 5,
+      "skills": [
+        "Pega Platform",
+        "CSSA",
+        "BPM",
+        "Application integration",
+        "Agile",
+        "Debugging"
+      ],
+      "fit_reasons": [
+        "Detailed requirement aligns with four years of Pega development and CSSA.",
+        "Bengaluru position with business workflows, integrations and troubleshooting."
+      ],
+      "gaps": [
+        "Confirm compensation, actual project, role scope and joining timeline.",
+        "Page header says 2–5 years/minimum three, while detailed requirements ask four years or 4–5 years; recruiter should resolve the inconsistency.",
+        "15 years full-time education required."
+      ],
+      "salary": null,
+      "id": "accenture-atci-5180342-s1904763",
+      "company": "Accenture",
+      "title": "Custom Software Engineer",
+      "requisition_id": "ATCI-5180342-S1904763",
+      "location": "Bengaluru",
+      "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5180342-S1904763_en",
+      "fit": "strong",
+      "summary": "Selected services-company backup with a direct Pega/CSSA match; evaluate fixed pay and project ownership against the existing offer.",
+      "evidence": [
+        {
+          "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5180342-S1904763_en",
+          "title": "Accenture — Custom Software Engineer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer page lists Bengaluru and Pega Platform, labels the role Senior Analyst, asks 4–5 years and mandatory CSSA in detailed requirements, and displays Apply for this job. Header experience differs from the detailed requirement.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "services"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 4,
+      "experience_max": 5,
+      "skills": [
+        "Pega Platform",
+        "CSSA",
+        "BPM",
+        "Application integration",
+        "Agile",
+        "Debugging"
+      ],
+      "fit_reasons": [
+        "Detailed requirement aligns with four years of Pega development and CSSA.",
+        "Bengaluru position with business workflows, integrations and troubleshooting."
+      ],
+      "gaps": [
+        "Confirm compensation, actual project, role scope and joining timeline.",
+        "Page header says 2–5 years/minimum three, while detailed requirements ask four years or 4–5 years; recruiter should resolve the inconsistency.",
+        "15 years full-time education required."
+      ],
+      "salary": null,
+      "id": "accenture-atci-5347784-s1947390",
+      "company": "Accenture",
+      "title": "Custom Software Engineer",
+      "requisition_id": "ATCI-5347784-S1947390",
+      "location": "Bengaluru",
+      "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5347784-S1947390_en",
+      "fit": "strong",
+      "summary": "Selected services-company backup with a direct Pega/CSSA match; evaluate fixed pay and project ownership against the existing offer.",
+      "evidence": [
+        {
+          "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5347784-S1947390_en",
+          "title": "Accenture — Custom Software Engineer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer page identifies Bengaluru Senior Analyst, Pega Platform, minimum four years in detailed requirements and mandatory CSA/CSSA, with an application link. Header/minimum-three wording conflicts with the more specific four-year requirement.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "services"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 4,
+      "experience_max": null,
+      "skills": [
+        "Pega PRPC 8",
+        "CSA",
+        "CSSA",
+        "BPM",
+        "SOAP",
+        "System integration",
+        "PAL",
+        "Security"
+      ],
+      "fit_reasons": [
+        "Minimum four years and CSA/CSSA align with the known profile.",
+        "Pega integrations, production diagnostics and enterprise implementation are relevant."
+      ],
+      "gaps": [
+        "Confirm that the undated vacancy is actively staffed and obtain a requisition/contact.",
+        "Specialist consulting employer: assess client assignment, fixed compensation and growth path.",
+        "Requires four years specifically on Pega PRPC 8; verify version history."
+      ],
+      "salary": null,
+      "id": "instellars-pega-developer-9",
+      "company": "Instellars Global Consulting Pvt Ltd",
+      "title": "Pega Developer",
+      "requisition_id": null,
+      "location": "Bengaluru",
+      "url": "https://instellars.com/careers?role=OQ%3D%3D",
+      "fit": "strong",
+      "summary": "Bengaluru specialist consulting option with direct certification/experience fit. An undated employer vacancy rather than a dated ATS requisition.",
+      "evidence": [
+        {
+          "url": "https://instellars.com/careers?role=OQ%3D%3D",
+          "title": "Instellars Global Consulting Pvt Ltd — Pega Developer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer careers page names Pega Developer in Bangalore, minimum four years on PRPC 8, CSA/CSSA, integrations and PAL diagnostics. Apply Now is visible; no requisition number, posting date or numerical compensation is published.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "services"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 7,
+      "experience_max": null,
+      "skills": [
+        "CSSA",
+        "Pega architecture",
+        "Enterprise delivery",
+        "Integrations",
+        "Agile",
+        "Client consulting",
+        "Technical leadership"
+      ],
+      "fit_reasons": [
+        "Pega certification, enterprise workflow and integration background are relevant.",
+        "Employer explicitly allows both Bengaluru and Hyderabad."
+      ],
+      "gaps": [
+        "Bachelor's route asks seven years, materially above the known four-year profile; master's alternative is three years.",
+        "Technical team leadership and client enablement requirements need demonstrated evidence.",
+        "Very similar to the other 23912/23918 requisition; ask recruiter which team is appropriate before duplicate applications."
+      ],
+      "salary": null,
+      "id": "pega-23912",
+      "company": "Pegasystems",
+      "title": "Senior System Architect",
+      "requisition_id": "23912",
+      "location": "Bengaluru; Hyderabad",
+      "url": "https://www.pega.com/about/careers/23912/senior-system-architect",
+      "fit": "stretch",
+      "summary": "Selective stretch only: official Pega consulting vacancy, but the bachelor's experience threshold is substantially higher.",
+      "evidence": [
+        {
+          "url": "https://www.pega.com/about/careers/23912/senior-system-architect",
+          "title": "Pegasystems — Senior System Architect",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Official job 23912 lists Hyderabad and Bangalore, CSSA, enterprise solution/component delivery and client mentoring. The qualification is seven years with a bachelor's or three with a master's. Apply Now is visible.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "product"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 7,
+      "experience_max": null,
+      "skills": [
+        "CSSA",
+        "Pega architecture",
+        "Enterprise delivery",
+        "Integrations",
+        "Agile",
+        "Client consulting",
+        "Technical leadership"
+      ],
+      "fit_reasons": [
+        "Pega certification, enterprise workflow and integration background are relevant.",
+        "Employer explicitly allows both Bengaluru and Hyderabad."
+      ],
+      "gaps": [
+        "Bachelor's route asks seven years, materially above the known four-year profile; master's alternative is three years.",
+        "Technical team leadership and client enablement requirements need demonstrated evidence.",
+        "Very similar to the other 23912/23918 requisition; ask recruiter which team is appropriate before duplicate applications."
+      ],
+      "salary": null,
+      "id": "pega-23918",
+      "company": "Pegasystems",
+      "title": "Senior System Architect",
+      "requisition_id": "23918",
+      "location": "Bengaluru; Hyderabad",
+      "url": "https://www.pega.com/about/careers/23918/senior-system-architect",
+      "fit": "stretch",
+      "summary": "Selective stretch only: official Pega consulting vacancy, but the bachelor's experience threshold is substantially higher.",
+      "evidence": [
+        {
+          "url": "https://www.pega.com/about/careers/23918/senior-system-architect",
+          "title": "Pegasystems — Senior System Architect",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Official job 23918 lists Hyderabad and Bangalore, CSSA, enterprise solution/component delivery and client mentoring. The qualification is seven years with a bachelor's or three with a master's. Apply Now is visible.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "product"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-06-12",
+      "closing_at": null,
+      "experience_min": 4,
+      "experience_max": null,
+      "skills": [
+        "Pega 8",
+        "PRPC",
+        "CSSA",
+        "Kafka",
+        "REST",
+        "SOAP",
+        "SQL",
+        "Cosmos",
+        "UI-Kit",
+        "Agile"
+      ],
+      "fit_reasons": [
+        "Explicit four-plus years matches the profile.",
+        "Kafka/REST/SOAP, SQL, financial workflows and production optimization strongly overlap."
+      ],
+      "gaps": [
+        "Pune requires a location decision.",
+        "Prepare concrete Cosmos/UI-Kit, UI and DCO examples.",
+        "Compensation is not published."
+      ],
+      "salary": null,
+      "id": "citi-26968715",
+      "company": "Citi",
+      "title": "PEGA Developer",
+      "requisition_id": "26968715",
+      "location": "Pune",
+      "url": "https://jobs.citi.com/job/pune/pega-developer/287/96335850896",
+      "fit": "strong",
+      "summary": "One of the strongest verified development matches, in Pune. Prioritize if relocation is acceptable.",
+      "evidence": [
+        {
+          "url": "https://jobs.citi.com/job/pune/pega-developer/287/96335850896",
+          "title": "Citi — PEGA Developer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-06-12",
+          "excerpt": "Citi job 26968715 is Pune hybrid, dated June 12, 2026, with Apply. It requests at least four years of Pega development, prefers CSSA/LSA, and includes Kafka/REST/SOAP integrations, SQL, UI and performance work.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "gcc"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-06-22",
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "Pega PRPC",
+        "Case management",
+        "REST",
+        "SOAP",
+        "SQL",
+        "CSSA",
+        "Agile",
+        "Performance tuning"
+      ],
+      "fit_reasons": [
+        "Hands-on Pega, REST/SOAP, SQL, debugging and CSSA preference match the profile.",
+        "Financial-services technology role with independent feature delivery."
+      ],
+      "gaps": [
+        "Pune location; exact anchor-day arrangement needs confirmation.",
+        "No numerical experience requirement is stated.",
+        "JD mixes Pega-specific requirements with generic data-pipeline accountabilities; clarify the actual team remit.",
+        "Investment/asset-management experience and cloud are preferred."
+      ],
+      "salary": null,
+      "id": "barclays-jr-0000112284",
+      "company": "Barclays",
+      "title": "Pega Developer",
+      "requisition_id": "JR-0000112284",
+      "location": "Pune",
+      "url": "https://search.jobs.barclays/job/pune/pega-developer/13015/96771695184",
+      "fit": "strong",
+      "summary": "Pune bank role with a strong Pega skills match. Clarify mixed job-description wording during recruiter screening.",
+      "evidence": [
+        {
+          "url": "https://search.jobs.barclays/job/pune/pega-developer/13015/96771695184",
+          "title": "Barclays — Pega Developer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-06-22",
+          "excerpt": "Official page gives JR-0000112284, Pune, live date June 22, 2026 and Apply. Pega PRPC, REST/SOAP, SQL, Agile delivery and debugging are required; CSSA is preferred. Page describes hybrid working but includes generic data-platform accountabilities.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "gcc"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-06-15",
+      "closing_at": null,
+      "experience_min": null,
+      "experience_max": null,
+      "skills": [
+        "Pega Infinity",
+        "Kafka",
+        "REST",
+        "SOAP",
+        "MQ",
+        "Decisioning",
+        "L3 support",
+        "DevOps",
+        "Technical leadership"
+      ],
+      "fit_reasons": [
+        "Kafka integration and production stability responsibilities match distinctive profile strengths.",
+        "Financial-services Pega development remains relevant."
+      ],
+      "gaps": [
+        "Expects leadership across multiple globally distributed work streams; not established by four years alone.",
+        "Extensive architecture, decisioning, governance, cloud/container and DevOps experience expected.",
+        "No numerical experience range is stated; title understates leadership scope.",
+        "Pune location."
+      ],
+      "salary": null,
+      "id": "barclays-jr-0000111935",
+      "company": "Barclays",
+      "title": "Pega Developer",
+      "requisition_id": "JR-0000111935",
+      "location": "Pune",
+      "url": "https://search.jobs.barclays/en/job/pune/pega-developer/13015/96461980992",
+      "fit": "stretch",
+      "summary": "Leadership-heavy Pune stretch despite the developer title. Pursue only with credible design/governance and team-lead examples.",
+      "evidence": [
+        {
+          "url": "https://search.jobs.barclays/en/job/pune/pega-developer/13015/96461980992",
+          "title": "Barclays — Pega Developer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-06-15",
+          "excerpt": "Employer page identifies JR-0000111935 in Pune, live June 15, 2026, with Apply. Requirements include Pega Infinity, Kafka/REST/SOAP/MQ, L3 stability and leadership of distributed teams. Hybrid working is described; numeric experience is absent.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "gcc"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 5,
+      "experience_max": null,
+      "skills": [
+        "CSSA",
+        "Pega architecture",
+        "Enterprise application delivery",
+        "Integrations",
+        "Agile",
+        "Client consulting"
+      ],
+      "fit_reasons": [
+        "CSSA and enterprise Pega component delivery overlap.",
+        "Pega employer consulting opportunity with technical ownership."
+      ],
+      "gaps": [
+        "Bachelor's route requires five years; master's route requires three.",
+        "Hyderabad location.",
+        "Must show medium/large component ownership and technical leadership."
+      ],
+      "salary": null,
+      "id": "pega-23914",
+      "company": "Pegasystems",
+      "title": "Senior System Architect",
+      "requisition_id": "23914",
+      "location": "Hyderabad",
+      "url": "https://www.pega.com/about/careers/23914/senior-system-architect",
+      "fit": "possible",
+      "summary": "Hyderabad alternative to the Bengaluru Pega consulting role; one-year gap on the bachelor's route.",
+      "evidence": [
+        {
+          "url": "https://www.pega.com/about/careers/23914/senior-system-architect",
+          "title": "Pegasystems — Senior System Architect",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Official job 23914 specifies Hyderabad, CSSA, enterprise implementation, integrations and leadership of a solution component. It requires five years with a bachelor's or three with a master's and displays Apply Now.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "product"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-08-06",
+      "closing_at": null,
+      "experience_min": 3,
+      "experience_max": 5,
+      "skills": [
+        "Pega PRPC",
+        "CSA",
+        "CSSA",
+        "Constellation",
+        "SQL Server",
+        "Integrations",
+        "Debugging",
+        "Object-oriented design"
+      ],
+      "fit_reasons": [
+        "Three-to-five-year requirement and Pega certifications align.",
+        "PRPC design, database work and enterprise integrations overlap."
+      ],
+      "gaps": [
+        "Title emphasizes Constellation; depth and hands-on expectations should be clarified.",
+        "JD also requests framework exposure and small-team leadership.",
+        "Hyderabad location."
+      ],
+      "salary": null,
+      "id": "virtusa-creq266257",
+      "company": "Virtusa",
+      "title": "Pega Constellation",
+      "requisition_id": "CREQ266257",
+      "location": "Hyderabad",
+      "url": "https://virtusapolaris.referrals.selectminds.com/jobs/pega-constellation-79913",
+      "fit": "possible",
+      "summary": "Current Hyderabad services option within the experience band. Confirm whether Constellation is a hard gate.",
+      "evidence": [
+        {
+          "url": "https://virtusapolaris.referrals.selectminds.com/jobs/pega-constellation-79913",
+          "title": "Virtusa — Pega Constellation",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-08-06",
+          "excerpt": "Official ATS job CREQ266257 shows Hyderabad, Apply for Job and three-to-five years with CSA/CSSA, PRPC design, integrations and SQL Server. Employer listing dates it August 6, 2026; role-page relative age varies, so the explicit listing date is used.",
+          "status": "verified"
+        },
+        {
+          "url": "https://virtusapolaris.referrals.selectminds.com/landingpages/software-engineer-opportunities-at-virtusa-318",
+          "title": "Virtusa — Software Engineer opportunities",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer listing identifies Pega Constellation CREQ266257 in Hyderabad and gives August 6, 2026 as its post date.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "services"
+    },
+    {
+      "country": "India",
+      "work_mode": "unknown",
+      "status": "open",
+      "checked_at": "2026-09-07",
+      "posted_at": null,
+      "closing_at": null,
+      "experience_min": 5,
+      "experience_max": 10,
+      "skills": [
+        "Pega Platform",
+        "System integration",
+        "Agile",
+        "DevOps",
+        "Troubleshooting",
+        "Team leadership"
+      ],
+      "fit_reasons": [
+        "Pega development, integrations and troubleshooting overlap."
+      ],
+      "gaps": [
+        "Five-year minimum exceeds the known four-year profile.",
+        "Role is graded Team Lead/Consultant, with responsibility for team decisions and mentoring.",
+        "Hyderabad location; compensation and project assignment need confirmation."
+      ],
+      "salary": null,
+      "id": "accenture-atci-5200156-s1909069",
+      "company": "Accenture",
+      "title": "Custom Software Engineer",
+      "requisition_id": "ATCI-5200156-S1909069",
+      "location": "Hyderabad",
+      "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5200156-S1909069_en",
+      "fit": "stretch",
+      "summary": "Hyderabad services stretch with a lead remit. Lower priority than four-year developer requisitions.",
+      "evidence": [
+        {
+          "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5200156-S1909069_en",
+          "title": "Accenture — Custom Software Engineer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Employer page identifies Hyderabad, Pega Platform, Team Lead/Consultant grade and a five-to-ten-year header. Detailed requirements ask at least five Pega years and team management. Apply for this job is visible.",
+          "status": "verified"
+        }
+      ],
+      "employer_type": "services"
+    },
+    {
+      "country": "India",
+      "work_mode": "hybrid",
+      "status": "indexed_only",
+      "checked_at": "2026-09-07",
+      "posted_at": "2026-09-04",
+      "closing_at": null,
+      "experience_min": 2,
+      "experience_max": 5,
+      "skills": [
+        "Pega BPM",
+        "Case management",
+        "Business rules",
+        "Pega UI",
+        "Java backend",
+        "External APIs",
+        "CI/CD"
+      ],
+      "fit_reasons": [
+        "Application-development experience falls within the stated two-to-five-year band.",
+        "Pega workflows, integrations and production reliability overlap."
+      ],
+      "gaps": [
+        "Strong backend Java is an explicit requirement; do not imply that Pega experience proves this.",
+        "Chennai is outside the preferred Bengaluru/Hyderabad/Pune set.",
+        "Employer content is readable in search index, but repeated direct opening failed; recheck application availability."
+      ],
+      "salary": null,
+      "id": "citi-26985252",
+      "company": "Citi",
+      "title": "Java Pega Developer",
+      "requisition_id": "26985252",
+      "location": "Chennai",
+      "url": "https://jobs.citi.com/job/chennai/java-pega-developer/287/100164784768",
+      "fit": "possible",
+      "summary": "Additional-city lead: recent Chennai bank opening combining Java backend and Pega. Only suitable with credible Java depth.",
+      "evidence": [
+        {
+          "url": "https://jobs.citi.com/job/chennai/java-pega-developer/287/100164784768",
+          "title": "Citi — Java Pega Developer",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-09-04",
+          "excerpt": "Employer search index gives req 26985252, Chennai hybrid, September 4, 2026 and Apply. It asks two-to-five years, Pega BPM/case/UI/integration experience and strong backend Java; direct page retrieval failed.",
+          "status": "search_index_only"
+        }
+      ],
+      "employer_type": "gcc"
+    }
+  ],
+  "methodology": [
+    "Researched on 2026-09-07 using public official employer careers pages and employer-controlled ATS pages. No LinkedIn account access, employee-departure inference or third-party salary estimates were used.",
+    "Open means the retrieved employer page contains the role description and an application link/button without an observed closure notice or elapsed closing date. This is page-level evidence, not a completed ATS submission or recruiter confirmation.",
+    "Indexed_only means employer content was available through the search index but direct page content could not be verified. These leads require a fresh application-page check before being treated as active.",
+    "Rows are distinct employer requisitions, not a claimed number of headcount vacancies. Similar Pega requisitions are retained with separate IDs and a duplicate-application caution.",
+    "Locations normalize Bangalore to Bengaluru. Multi-location roles list both cities; Pune, Hyderabad and the Chennai extra are not represented as Bengaluru opportunities.",
+    "Fit is an analyst assessment against approximately four years of Pega work, CSA/CSSA, MBRDI auto-finance experience, Kafka/REST/SOAP/SQL and production automation. It is not a recruiter decision, salary forecast or success probability.",
+    "Experience_min uses the stated overall or bachelor's-route threshold where alternatives exist; master's/Pega-specific exceptions and contradictory requirements are explained in gaps. Null means no explicit figure found.",
+    "Only explicit employer posting dates were recorded. Search crawl dates and relative ages are not assumed to be original publication dates. Virtusa's explicit employer listing date is retained with the relative-date inconsistency noted.",
+    "All evidence excerpts are concise paraphrases. No applications were submitted and no recruiter or employee was contacted."
+  ],
+  "limitations": [
+    "No selected role publishes a numerical India salary range; salary is null throughout. None establishes that the desired 24–27 lakh package will be offered.",
+    "Public pages and search indexes can be cached or lag hiring changes; Apply buttons are not proof that a recruiter is still screening. Verify ATS acceptance and req ownership before investing heavily.",
+    "First Citizens 24726 and Citi 26985252 are indexed-only leads; other records have readable employer pages and visible application controls.",
+    "Some employer descriptions contain inconsistent experience bands or generic accountabilities; these are flagged rather than silently resolved.",
+    "Four senior/lead-scope roles are explicitly stretch entries. They should not displace better-fitting developer opportunities in the weekly application pipeline.",
+    "Excluded obvious closed/expired or much more senior roles, including Wells Fargo R-565488 whose indexed closing date was 2026-08-30, Standard Chartered 55895 whose closing date was 2026-07-03, and multiple Virtusa postings carrying closure notices.",
+    "Search is selective and time-bounded, not a complete census. No verified suitable opening was found for every employer from the saved dossiers."
+  ]
+}

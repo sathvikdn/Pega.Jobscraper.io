@@ -1,0 +1,641 @@
+{
+  "as_of": "2026-09-08",
+  "team_depth": [
+    {
+      "category": "services",
+      "people": [
+        {
+          "name": "Kalaivani Ganeshkumar",
+          "title": "Vice President, Capgemini",
+          "location": "Not stated; Las Vegas session location is not residence",
+          "source_url": "https://www.capgemini.com/news/events/pegaworld/",
+          "connection_to_team": "Named speaker with Navy Federal's product, platform and legal operations staff for the implementation session."
+        }
+      ],
+      "id": "consulting-capgemini-pega-modernization",
+      "company": "Capgemini",
+      "match_names": [
+        "Capgemini",
+        "Capgemini India"
+      ],
+      "team_focus": "Legacy application replacement and governed case workflows, with a named Navy Federal Credit Union implementation.",
+      "what_they_build": [
+        "Navy Federal legal operations application replacing Lotus Notes and IBM BPM.",
+        "Routing, business rules, notifications, SLAs, reporting and straight-through resolution.",
+        "CAALM modernization tooling and Pega/AWS migration demonstrations."
+      ],
+      "technologies": [
+        "Pega Blueprint",
+        "Pega Infinity",
+        "Case management",
+        "CAALM",
+        "AWS",
+        "Legacy migration"
+      ],
+      "learning_value": [
+        "Connect current workflow and integration experience to full application replacement.",
+        "Develop stronger requirements-to-case design, SLA/reporting and migration ownership."
+      ],
+      "ownership_evidence": "The 2026 employer event page explicitly describes Capgemini as Navy Federal's implementation partner. It also lists modernization demos; a demo is capability evidence, not proof every advertised solution is in production.",
+      "bangalore_scope": "The cited project and event sources establish global practice work, not the Bengaluru delivery location or a local vacancy.",
+      "sources": [
+        {
+          "url": "https://www.capgemini.com/news/events/pegaworld/",
+          "title": "Capgemini at PegaWorld 2026",
+          "source_type": "employer",
+          "checked_at": "2026-09-08",
+          "event_date": "2026-06-09",
+          "excerpt": "Names Navy Federal legal-operations modernization, Pega Blueprint, case routing/SLAs and Capgemini speaker Kalaivani Ganeshkumar. Separately describes CAALM demonstrations."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Assessment: a specific implementation gives a stronger basis for evaluating engineering ownership than a generic partnership badge.",
+          "The workflow/migration work can extend existing Pega and production skills."
+        ],
+        "tradeoffs": [
+          "Actual client allocation, Bengaluru availability and remote policy are unconfirmed.",
+          "No cited source establishes a ₹35L CTC budget or the candidate's eligibility."
+        ],
+        "questions_to_ask": [
+          "Which client application and delivery phase would this role own?",
+          "Will I design migrations and integrations or mainly deliver assigned rule changes?",
+          "What are the location, bench/reallocation policy and recurring CTC breakdown?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [],
+      "id": "consulting-credera-pega-enterprise-workflows",
+      "company": "Credera",
+      "match_names": [
+        "Credera",
+        "Areteans"
+      ],
+      "team_focus": "Business-process applications across consumer goods operations, with a separate India CSSA hiring description.",
+      "what_they_build": [
+        "Pega applications for product-idea assessment, procurement and scheduled payments.",
+        "Product/customer master-data workflows and coordination across global functions."
+      ],
+      "technologies": [
+        "Pega",
+        "Workflow automation",
+        "Master data",
+        "Constellation",
+        "Queue Processors",
+        "Blueprint/GenAI"
+      ],
+      "learning_value": [
+        "Broaden beyond one automotive workflow into enterprise process design.",
+        "The separate CSSA role asks for Constellation, access controls and asynchronous processing."
+      ],
+      "ownership_evidence": "Credera's case study says it designed and deployed tailored Pega applications for an unnamed global CPG client. The India role is separate evidence and is not proven to belong to that client.",
+      "bangalore_scope": "Employer-attributed CSSA job description names Bengaluru among four India locations and three office days weekly; its page header is Hyderabad. This supports a Bengaluru delivery option, not assignment to the CPG program.",
+      "sources": [
+        {
+          "url": "https://credera.com/en-us/case-studies/leading-digital-transformation-at-a-global-cpg-company",
+          "title": "Credera: global consumer-goods digital transformation",
+          "source_type": "employer",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Describes delivered Pega solutions for R&D, procurement, payments and master data. The customer is unnamed."
+        },
+        {
+          "url": "https://in.linkedin.com/jobs/view/pega-cssa-developer-smart-dispute-framework-at-credera-4418967021",
+          "title": "Credera: Pega CSSA Developer / Senior Consultant SSA",
+          "source_type": "employer_job",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Job description lists 3–5 Pega years, CSSA, Constellation, background processing, GenAI and Bengaluru among hybrid locations. These requirements do not identify the CPG client."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Assessment: specific business applications plus a 3–5-year CSSA role make this worth an early project-level discussion.",
+          "Process integration and ownership can build on existing enterprise Pega work."
+        ],
+        "tradeoffs": [
+          "Constellation/GenAI depth remains a skill gap to demonstrate.",
+          "The reviewed role is hybrid, and published company material establishes no salary budget."
+        ],
+        "questions_to_ask": [
+          "Which client, module and architecture would I join?",
+          "How much hands-on Constellation and integration design does an SSA own?",
+          "Is Bengaluru confirmed for this requisition, and what is the fixed/variable CTC split?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [
+        {
+          "name": "Dev Victorien",
+          "title": "Director, Enterprise Integration & Process Automation, Cognizant",
+          "location": "Not stated",
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/ai-unlocked-legacy-transformation-excellus-bluecross-blueshield",
+          "connection_to_team": "Named Cognizant speaker alongside Excellus architects/leaders in the client transformation session."
+        },
+        {
+          "name": "Prashant Gaonkar",
+          "title": "SVP, Enterprise Integration and Process Orchestration Practice, Cognizant",
+          "location": "Not stated",
+          "source_url": "https://www.cognizant.com/us/en/cmp/pegaworld-2026",
+          "connection_to_team": "Named practice leader and panel speaker; not presented as a Bengaluru hiring manager."
+        }
+      ],
+      "id": "consulting-cognizant-pega-process-orchestration",
+      "company": "Cognizant",
+      "match_names": [
+        "Cognizant",
+        "Cognizant Technology Solutions"
+      ],
+      "team_focus": "Enterprise process orchestration, insurance automation and legacy transformation.",
+      "what_they_build": [
+        "Pega accelerators for auto claims, commercial underwriting and service workflows.",
+        "A PegaWorld 2026 client session on Excellus BlueCross BlueShield legacy-application transformation."
+      ],
+      "technologies": [
+        "Pega AI",
+        "Pega Blueprint",
+        "Agentic workflows",
+        "Insurance integration",
+        "Legacy modernization"
+      ],
+      "learning_value": [
+        "Auto-claims workflows offer a plausible domain bridge from automotive operations.",
+        "Potential to develop integration design and human-review controls around AI-driven intake."
+      ],
+      "ownership_evidence": "Cognizant publishes its solution offerings; the Pega agenda names Cognizant and Excellus speakers for a transformation case. These establish practice involvement, not the precise team or production ownership of a new hire.",
+      "bangalore_scope": "No reviewed event source assigns the Excellus work or listed experts to Bengaluru. India remote eligibility and current team allocation remain unknown.",
+      "sources": [
+        {
+          "url": "https://www.cognizant.com/us/en/cmp/pegaworld-2026",
+          "title": "Cognizant at PegaWorld 2026",
+          "source_type": "employer",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Lists insurance/service accelerators, practice leaders and client engagements. Auto Claims Processor is an advertised solution offering."
+        },
+        {
+          "url": "https://www.pega.com/events/pegaworld/agenda/ai-unlocked-legacy-transformation-excellus-bluecross-blueshield",
+          "title": "AI Unlocked: Excellus BlueCross BlueShield legacy transformation",
+          "source_type": "vendor_event",
+          "checked_at": "2026-09-08",
+          "event_date": "2026-06-09",
+          "excerpt": "Official agenda names Dev Victorien of Cognizant and Excellus representatives, describing legacy transformation toward an AI-ready platform."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Assessment: named client evidence and concrete insurance/integration offerings justify investigating a delivery role.",
+          "Useful breadth if the assignment includes build and modernization rather than only support."
+        ],
+        "tradeoffs": [
+          "Accelerator marketing does not establish production deployment for each solution.",
+          "Confirm client allocation, coding ownership, remote policy and salary; none is guaranteed by event participation."
+        ],
+        "questions_to_ask": [
+          "Is this role in a modernization build, managed support, or an accelerator team?",
+          "Which integration and release decisions would I own?",
+          "Can the actual client assignment support Bengaluru or India remote, and the ₹35L total CTC goal?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [],
+      "id": "consulting-accenture-pega-insurance-intake",
+      "company": "Accenture",
+      "match_names": [
+        "Accenture",
+        "Accenture in India"
+      ],
+      "team_focus": "Insurance intake automation combining Pega case workflows and AI processing of unstructured email.",
+      "what_they_build": [
+        "Corebridge email intake that interprets messages, structures information and routes work.",
+        "Automated workflow initiation with reduced manual insurance operations."
+      ],
+      "technologies": [
+        "Pega workflow automation",
+        "AI/NLP",
+        "Unstructured intake",
+        "Case routing"
+      ],
+      "learning_value": [
+        "Apply recovery, integration and operational troubleshooting skills to automated intake.",
+        "Build experience designing human exceptions and observing AI-enabled workflow behavior."
+      ],
+      "ownership_evidence": "Pega's 2026 Corebridge session explicitly credits collaboration with Accenture. It supports participation in delivered transformation, not exclusive ownership, current staffing or a particular India team.",
+      "bangalore_scope": "The case description is global client evidence. It does not locate implementation staff in Bengaluru or establish India remote availability.",
+      "sources": [
+        {
+          "url": "https://www.pega.com/insights/resources/pegaworld-2026-reimagining-front-door-how-corebridge-turned-emails-automated",
+          "title": "PegaWorld 2026: Corebridge automated email workflows with Pega and AI",
+          "source_type": "vendor_case_study",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Describes Corebridge and Accenture implementing AI/NLP-assisted email interpretation, structuring and routing into Pega workflows. Reported outcomes belong to the case study, not this candidate."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Assessment: this concrete intake/integration use case offers useful growth beyond routine case maintenance.",
+          "Existing production and recovery experience is relevant to exception-heavy workflow systems."
+        ],
+        "tradeoffs": [
+          "Pega case experience does not establish NLP or model-governance expertise.",
+          "A large practice does not guarantee project choice, remote work or ₹35L pay."
+        ],
+        "questions_to_ask": [
+          "Does the actual opening involve intake/integration development or operations support?",
+          "Who owns failure handling, observability and human-review design?",
+          "What project duration, office policy and recurring CTC range are confirmed?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [
+        {
+          "name": "Subramanian Annamalai",
+          "title": "Pega Solution Architect, Virtusa",
+          "location": "Not stated",
+          "source_url": "https://www.virtusa.com/lp/pega-world-2026",
+          "connection_to_team": "Named speaker for the New York Life compliance session; location and current reporting line are unverified."
+        }
+      ],
+      "id": "consulting-virtusa-pega-compliance",
+      "company": "Virtusa",
+      "match_names": [
+        "Virtusa",
+        "Virtusa Corporation"
+      ],
+      "team_focus": "Compliance workflows, legacy replacement and modernization of existing Pega platforms.",
+      "what_they_build": [
+        "New York Life compliance workflows consolidated into a unified Pega platform.",
+        "Blueprint Domain Encapsulation and Helio-assisted legacy modernization offerings."
+      ],
+      "technologies": [
+        "Pega intelligent automation",
+        "Pega Infinity",
+        "Blueprint",
+        "Virtusa Helio",
+        "Compliance workflows"
+      ],
+      "learning_value": [
+        "Develop domain-led design, auditability and exception management in regulated operations.",
+        "Potential exposure to upgrading existing Pega estates and replacing legacy processes."
+      ],
+      "ownership_evidence": "Virtusa's indexed official PegaWorld page names its New York Life collaboration and solution architect. Direct retrieval exposed only the page shell, so session details rely on the employer's public search index.",
+      "bangalore_scope": "The reviewed event source does not identify the New York Life delivery location. Any Bengaluru role or remote arrangement must be confirmed separately.",
+      "sources": [
+        {
+          "url": "https://www.virtusa.com/lp/pega-world-2026",
+          "title": "Virtusa at PegaWorld 2026",
+          "source_type": "employer_search_index",
+          "checked_at": "2026-09-08",
+          "event_date": "2026-06-09",
+          "excerpt": "Employer index describes New York Life compliance transformation and lists Subramanian Annamalai as Virtusa's Pega Solution Architect speaker. Direct page body did not render."
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Assessment: named client and solution-architect participation provide a concrete starting point for evaluating delivery depth.",
+          "Compliance workflow and modernization work can extend existing Pega operations experience."
+        ],
+        "tradeoffs": [
+          "Event marketing and indexed content do not establish current openings or project allocation.",
+          "No source confirms remote work, salary or a Bengaluru team for this engagement."
+        ],
+        "questions_to_ask": [
+          "Which live program would this role join, and how much is new build versus maintenance?",
+          "Will I own case/integration design and production releases?",
+          "What is the location and CTC range for this exact grade?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [
+        {
+          "name": "Satish Velchal",
+          "title": "Transformation and Practice Head, Pega BPM, TCS",
+          "location": "Not stated",
+          "source_url": "https://www.tcs.com/who-we-are/events/tcs-at-pegaworld-2026",
+          "connection_to_team": "Named 2026 TCS session speaker; not established as the candidate's prospective manager."
+        }
+      ],
+      "id": "consulting-tcs-pega-payments",
+      "company": "Tata Consultancy Services",
+      "match_names": [
+        "TCS",
+        "Tata Consultancy Services"
+      ],
+      "team_focus": "Payments disputes implementation and broader Pega workflow modernization.",
+      "what_they_build": [
+        "Nationwide Building Society Visa dispute processing using Pega Smart Dispute.",
+        "Human-and-AI workflow approaches and industry frameworks demonstrated at PegaWorld 2026."
+      ],
+      "technologies": [
+        "Pega Smart Dispute",
+        "Pega BPM",
+        "Pega AI",
+        "TCS Crystallus",
+        "Case management"
+      ],
+      "learning_value": [
+        "Payments lifecycle and framework depth can strengthen a general CSSA profile.",
+        "Learn how implementation and operations adapt to scheme compliance changes."
+      ],
+      "ownership_evidence": "Pega's Nationwide case explicitly states that TCS customized and deployed Smart Dispute. The 2026 TCS event page establishes current practice activity, but does not prove continued staffing on that historical engagement.",
+      "bangalore_scope": "These sources do not locate the Nationwide delivery team or named practice leaders in Bengaluru. The user's separate offer is not evidence of assignment to this practice or client.",
+      "sources": [
+        {
+          "url": "https://www.pega.com/customers/nationwide-smart-dispute",
+          "title": "Nationwide Smart Dispute implementation with TCS",
+          "source_type": "vendor_case_study",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Pega describes TCS customizing and deploying Nationwide's Visa dispute solution. The case arose from pandemic-era demand and is historical delivery evidence."
+        },
+        {
+          "url": "https://www.tcs.com/who-we-are/events/tcs-at-pegaworld-2026",
+          "title": "TCS at PegaWorld 2026",
+          "source_type": "employer_search_index",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Indexed employer event content names Satish Velchal and describes Pega/BPM human-and-AI workflows and Crystallus demonstrations. Direct retrieval primarily exposed navigation."
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "Assessment: a framework-heavy payments assignment could offer meaningful domain depth.",
+          "Evaluate the actual project and responsibility before comparing the employer brand."
+        ],
+        "tradeoffs": [
+          "The existing offer does not establish this client assignment, Smart Dispute learning or a higher pay band.",
+          "Remote work, development ownership and ₹35L budget are not established by these sources."
+        ],
+        "questions_to_ask": [
+          "Can the offer be mapped to a named Pega development project before joining?",
+          "Will the role provide implementation ownership and framework training?",
+          "Is the proposed compensation recurring CTC, and which components depend on performance?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [
+        {
+          "name": "Pritiman Panda",
+          "title": "Practice Director, Digital Business Services, HCLTech",
+          "location": "Bengaluru event attendance; current residence not established",
+          "source_url": "https://www.hcltech.com/events/pegaworld",
+          "connection_to_team": "2026 employer page supplies the title; his linked PegaFest post supplies first-person practice and event evidence."
+        }
+      ],
+      "id": "consulting-hcltech-pega-dpa",
+      "company": "HCLTech",
+      "match_names": [
+        "HCLTech",
+        "HCL Technologies"
+      ],
+      "team_focus": "Digital process automation, lending/compliance workflows and legacy modernization.",
+      "what_they_build": [
+        "Bank lending and compliance transformations and Pega-based CRM/insurance solutions described on the practice's event page.",
+        "Process-mining plus Blueprint modernization approaches discussed in a first-person PegaFest account."
+      ],
+      "technologies": [
+        "Pega",
+        "Blueprint",
+        "Process mining",
+        "Case management",
+        "Legacy modernization",
+        "Workflow automation"
+      ],
+      "learning_value": [
+        "Potential to connect production pain points to process discovery and redesign.",
+        "Banking integration and governed workflow experience can extend the existing technical base."
+      ],
+      "ownership_evidence": "HCLTech's 2026 event page describes its offerings/client examples and names the practice director. Pritiman Panda's own PegaFest post describes customer work and explicitly identifies an HCLTech team spanning delivery and practice functions.",
+      "bangalore_scope": "The PegaFest post explicitly records Bengaluru participation. Event attendance supports historical local ecosystem involvement; it does not prove current Bengaluru residence, project staffing, a team headcount or a vacancy.",
+      "sources": [
+        {
+          "url": "https://www.hcltech.com/events/pegaworld",
+          "title": "HCLTech at PegaWorld 2026",
+          "source_type": "employer",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Names Pritiman Panda, presents workflow/modernization capabilities and links bank, lending and insurance examples. Global practice evidence."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/pritimanpanda_pegafest-pegagenaiblueprint-legacymodernization-activity-7272002526319652864--l0_",
+          "title": "Pritiman Panda: Bengaluru PegaFest account",
+          "source_type": "professional_post",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Author describes process mining with Blueprint for customers and names an HCLTech delivery/practice contingent. This historical post's exact event date was not exposed in readable content."
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "Assessment: first-person practitioner evidence adds useful detail beyond a partnership logo.",
+          "Worth exploring if the role includes design, integration and modernization delivery."
+        ],
+        "tradeoffs": [
+          "The historical event does not establish a current Bengaluru assignment.",
+          "No verified remote policy, current headcount, role budget or guaranteed project ownership."
+        ],
+        "questions_to_ask": [
+          "Which client build and delivery team would an SSA join?",
+          "Does the job involve process redesign and integrations, or primarily ticket resolution?",
+          "What are the location and grade-specific total CTC components?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [
+        {
+          "name": "Nidhi Agrawal",
+          "title": "PegaFest participant; current job title not verified",
+          "location": "Bengaluru event attendance; residence unknown",
+          "source_url": "https://www.linkedin.com/posts/nidhi-agrawal-84ba6836_pegafest-activity-7272066141630394368-pPUt",
+          "connection_to_team": "Author reports attendance. Mphasis association comes from an identified comment, so current employment and delivery ownership are not asserted."
+        }
+      ],
+      "id": "consulting-mphasis-pega-logistics-insurance",
+      "company": "Mphasis",
+      "match_names": [
+        "Mphasis",
+        "Mphasis Limited"
+      ],
+      "team_focus": "Logistics case management and multi-country insurance policy workflows.",
+      "what_they_build": [
+        "Shipment and clearance cases for tracking, package handling, inquiries and claims.",
+        "P&C policy administration covering new business, renewals and endorsements.",
+        "Integration, reporting and sign-on around legacy replacement."
+      ],
+      "technologies": [
+        "Pega BPM",
+        "DevOps",
+        "Systems integration",
+        "Case management",
+        "LDAP/SSO",
+        "Policy administration"
+      ],
+      "learning_value": [
+        "Logistics cases provide another operational domain for current integration/recovery experience.",
+        "Insurance implementations offer framework, reporting and identity-integration depth."
+      ],
+      "ownership_evidence": "Mphasis case studies explicitly describe its teams delivering Pega logistics and insurance systems. Clients are anonymized and project dates unclear; their identities were not inferred.",
+      "bangalore_scope": "Nidhi Agrawal's historical first-person post records Bangalore PegaFest attendance; a commenter identifies the Mphasis contingent. This is event-level evidence, not proof of current employee residence or a local client delivery roster.",
+      "sources": [
+        {
+          "url": "https://www.mphasis.com/home/services/application-services/business-process-management-main/case-study/enterprise-business-service-for-a-large-logistic-provider-in-us-and-europe.html",
+          "title": "Mphasis: logistics shipment and clearance case management",
+          "source_type": "employer_search_index",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Official case-study index says Mphasis delivered Pega BPM, testing, DevOps and integration for a logistics client's shipment/clearance cases."
+        },
+        {
+          "url": "https://www.mphasis.com/home/services/application-services/business-process-management/case-study/insurance-firm-improving-performance.html",
+          "title": "Mphasis: Pega insurance policy administration",
+          "source_type": "employer_search_index",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Describes P&C new-business, renewal and endorsement applications with reporting, third-party messaging and LDAP integration."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/nidhi-agrawal-84ba6836_pegafest-activity-7272066141630394368-pPUt",
+          "title": "Nidhi Agrawal: Bangalore PegaFest attendance",
+          "source_type": "professional_post",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Author states Bangalore attendance; Dwaipayan Mitra's separate comment thanks the Mphasis team. Exact event date and current employment are not verified."
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "Assessment: concrete logistics and policy workflows may offer stronger learning than an undefined generic Pega allocation.",
+          "Integration, operations and reporting skills have practical overlap."
+        ],
+        "tradeoffs": [
+          "Case studies are undated marketing evidence; current assignments may differ.",
+          "Event participation and client scale do not establish staffing, remote eligibility or salary."
+        ],
+        "questions_to_ask": [
+          "Does the available role belong to one of these delivery areas or a different support account?",
+          "What modules, integrations and releases would I own?",
+          "Is Bengaluru or India remote permitted for the actual client, and what is the total CTC band?"
+        ]
+      }
+    },
+    {
+      "category": "services",
+      "people": [
+        {
+          "name": "Rajib Chakrabarty",
+          "title": "EY GDS Pegasystems Leader",
+          "location": "Kolkata, India",
+          "source_url": "https://www.ey.com/en_gl/alliances/pegasystems",
+          "connection_to_team": "Named and located on EY's official alliance team page; no reporting relationship or hiring authority is inferred."
+        }
+      ],
+      "id": "consulting-ey-pega-financial-services",
+      "company": "EY",
+      "match_names": [
+        "EY",
+        "Ernst & Young",
+        "EY GDS"
+      ],
+      "team_focus": "Financial-services process transformation, customer service and decisioning.",
+      "what_they_build": [
+        "Customer-interaction modernization discussed with Northwestern Mutual.",
+        "Pega KYC orchestration and other financial-services workflow offerings.",
+        "Constellation implementation and BT customer engagement sessions."
+      ],
+      "technologies": [
+        "Pega Customer Service",
+        "Pega Cloud",
+        "Constellation",
+        "Pega Customer Decision Hub",
+        "KYC",
+        "Agentic AI"
+      ],
+      "learning_value": [
+        "Potential exposure to modern Pega UI and business-led transformation.",
+        "Opportunity to add financial-services process and governance depth."
+      ],
+      "ownership_evidence": "EY's alliance page links named client sessions and identifies practice leaders. Pega's 2026 partner announcement credits EY with a US life insurer's unified customer-service ecosystem; the unnamed award client is not assumed to be Northwestern Mutual.",
+      "bangalore_scope": "The official alliance page locates GDS Pega leader Rajib Chakrabarty in Kolkata. That supports India practice leadership, not Bengaluru project presence or remote eligibility.",
+      "sources": [
+        {
+          "url": "https://www.ey.com/en_gl/alliances/pegasystems",
+          "title": "EY–Pegasystems Alliance",
+          "source_type": "employer",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "Names practice leadership and links Northwestern Mutual, Constellation and BT session material. Rajib Chakrabarty is listed in Kolkata."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260608539866/en/Pega-Honors-Partners-at-PegaWorld-2026-for-Driving-AIPowered-Enterprise-Transformation",
+          "title": "Pega Partner Awards 2026: EY customer-service delivery",
+          "source_type": "vendor_press_release",
+          "checked_at": "2026-09-08",
+          "event_date": "2026-06-08",
+          "excerpt": "Pega's distributed release credits EY with a unified Pega service ecosystem for an unnamed US life insurer. Award recognition is not a vacancy or salary claim."
+        },
+        {
+          "url": "https://www.ey.com/en_uk/alliances/pegasystems",
+          "title": "EY UK: Pega financial-services workflow offerings",
+          "source_type": "employer_search_index",
+          "checked_at": "2026-09-08",
+          "event_date": null,
+          "excerpt": "The UK alliance page explicitly describes Pega-supported KYC orchestration alongside collections and other financial-services offerings. This is solution-offering evidence, not a named implementation."
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "Assessment: named implementation topics make this a useful option for Constellation and financial-services growth.",
+          "India practice leadership is documented, while Bengaluru assignment still needs verification."
+        ],
+        "tradeoffs": [
+          "Practice leadership and awards do not establish the delivery mix of an individual opening.",
+          "Client-facing consulting demands, office policy and compensation are role-specific and unverified."
+        ],
+        "questions_to_ask": [
+          "Which legal entity, client and delivery team is hiring?",
+          "What proportion is hands-on Pega engineering versus analysis or coordination?",
+          "What are the Bengaluru/remote terms and recurring ₹35L-target CTC components for the grade?"
+        ]
+      }
+    }
+  ],
+  "methodology": [
+    "Public employer practice/event pages, Pega client sessions and case studies were checked alongside two first-person PegaFest posts. No private profiles, contact databases or outreach were used.",
+    "Assessment priorities are our project-learning judgments for a four-year Pega/CSSA integration and production background, not rankings of employer quality or verified qualification.",
+    "Named client implementation evidence is distinguished from solution demos, alliance marketing, historical event participation and current job descriptions.",
+    "People are included only with a source-supported professional connection. Speaker locations are not converted into residence; event attendees are not treated as a current team roster.",
+    "₹35 lakh total CTC is the user's goal and ₹20 lakh-plus remains the broader search threshold. None of these practice sources establishes a role budget, fixed pay, offer probability or remote permission.",
+    "Descriptions summarize public claims; they do not reproduce or endorse reported outcome metrics as independently audited results."
+  ],
+  "limitations": [
+    "No headcount, current hiring, employee departure, confidential customer identity or compensation estimate was inferred.",
+    "Most sources describe global engagements. Bengaluru or India remote must be established by an actual role or employer confirmation.",
+    "Some employer pages were available primarily through their public search index; that limitation is stated in their sources and ownership evidence.",
+    "Historical PegaFest participation is retained as professional ecosystem context, with exact dates left null where the readable source did not expose them.",
+    "Deloitte, KPMG and NTT DATA remain in the broader directory. This bounded depth set favors the nine firms for which concrete relevant project or practice evidence was obtained."
+  ]
+}

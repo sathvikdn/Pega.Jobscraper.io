@@ -1,0 +1,298 @@
+PAGE 1
+00 — Start Here: The 60-Second
+Routing Decision
+You just unzipped 9 PDFs. You're staring at filenames. Your interview is somewhere between three days
+and three months away, and you're not sure which file to open first. 
+Don't open any of them yet.
+Spend the next 60 seconds on this file instead. It exists for exactly one reason — to tell you which of the
+other eight PDFs you should open right now, in what order, and what to skip. Read the diagnostic below,
+find your row, then close this file and go.
+The 3-Question Diagnostic
+Answer these three questions in your head. Then jump to the matching row in the table after Q3.
+Q1. When is your interview?
+(A) This week — 3 to 7 days
+(B) Next 2 weeks — 8 to 14 days
+(C) This month — 15 to 30 days
+(D) 1 to 3 months out
+(E) No specific timeline — I'm building the skill
+Q2. What type of company?
+(a) Service MNC — TCS, Infosys, Wipro, Accenture, Cognizant, HCL, LTIMindtree, Tech Mahindra
+(b) Product company or funded startup — Razorpay, Swiggy, Cred, Meesho, Zerodha, Flipkart,
+PhonePe, Zomato, Paytm
+(c) Data-role company — analytics-heavy product cos, D2C brands, ad-tech, fintech analytics teams
+(d) GCC of US firm — JP Morgan India, Walmart Labs, Wells Fargo, Goldman Sachs, Target, AmEx,
+Morgan Stanley, Deutsche Bank
+Q3. What's your role?
+(i) Backend dev — Java / Python / Node + SQL
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+hello@learnandexcel.in · learnandexcel.in
+PAGE 2
+(ii) Data engineer
+(iii) Data analyst or analytics engineer
+(iv) BI engineer
+(v) DBA
+Routing Table — Open These In This Order
+Find the row that matches your runway (Q1) and your company × role combination (Q2 + Q3). File
+numbers in bold are non-negotiable opens; the rest are "if you have time after."
+• 
+• 
+• 
+• 
+Learn & Excel · SQL Interview Prep — START HERE 2 / 7
+hello@learnandexcel.in · learnandexcel.in
+PAGE 3
+Your situation Open first Open next Then Skip
+for
+now
+(A) This week +
+Service MNC +
+any role
+01 Top 50, 07
+Cheatsheet
+02 Top 200 (skim
+joins + windows
+only)
+03 What Changed
+2026
+04, 05,
+06, 08
+(A) This week +
+Product co +
+Backend/DE
+01 Top 50, 07
+Cheatsheet
+05 Scenario
+Library (debug +
+optimize sections
+only)
+06 Modern DB (your
+stack only)
+02, 04
+full, 08
+(A) This week +
+Product co + Data
+analyst/BI
+01 Top 50, 07
+Cheatsheet
+05 Scenario
+(what-will-this-
+return + index
+decisions)
+06 Modern DB
+(BigQuery or
+Snowflake section)
+02, 04
+full, 08
+(A) This week +
+GCC + Backend/
+DE
+01 Top 50, 07
+Cheatsheet
+05 Scenario
+(transaction
+conflicts +
+optimize)
+04 Chapter 5
+(transactions +
+isolation) only
+02, 03,
+04 rest,
+08
+(A) This week +
+Data-role
+company + any
+role
+01 Top 50, 07
+Cheatsheet
+05 Scenario
+(debug + data
+quality)
+06 Modern DB (your
+warehouse)
+02, 04
+full, 08
+(B) 2 weeks +
+Service MNC
+01 Top 50, 02 Top
+200
+04 Chapters 1, 2,
+3, 7
+07 Cheatsheet day
+before
+05 full,
+06, 08
+(B) 2 weeks +
+Product co / GCC
++ Backend/DE
+01 Top 50, 02 Top
+200
+04 Chapters 2, 3,
+4, 5
+05 debug + optimize +
+index decisions, 07
+Cheatsheet day
+before
+04 Ch
+6, 9, 08
+(B) 2 weeks +
+Data analyst/BI/
+DE
+01 Top 50, 02 Top
+200
+04 Chapters 2, 3,
+7, 8
+06 your warehouse, 
+07 Cheatsheet day
+before
+04 Ch
+5, 6, 9,
+08
+(C) 1 month + any
+combination
+See 30-day plan
+below
+— — —
+(D) 1–3 months +
+any combination
+04 Core Library end-
+to-end, then 05
+06 Modern DB for
+your stack
+02 Top 200 as final
+dress-rehearsal, 08
+None
+Learn & Excel · SQL Interview Prep — START HERE 3 / 7
+hello@learnandexcel.in · learnandexcel.in
+PAGE 4
+Your situation Open first Open next Then Skip
+for
+now
+Scenario Library
+end-to-end
+Salary Map before
+negotiating
+(E) No timeline /
+learning
+04 Core Library at 1
+chapter per week
+05 Scenario at 1
+category per week
+06 Modern DB, 03
+What Changed 2026
+None
+One special-case note for DBAs — regardless of runway, after the row above, also open 04 Chapter 4
+(indexes + optimization) and 04 Chapter 5 (transactions + isolation + locking) in full. These two
+chapters are your interview, full stop.
+⚡ The 5-Day Cram Plan
+If you have exactly 5 days, here's the hour-by-hour. Total commitment: ~3 hours/day on weekdays, ~5
+hours on the weekend day. About 18 hours total.
+Day 1 (3 hrs) — Top 50 + frame your weak spots - Hour 1: Read 01 Top 50 start to finish. Don't try to
+solve. Just read question + answer + framework. - Hour 2: Re-read 01 Top 50. This time, mark every
+question where you couldn't have written the answer cold. - Hour 3: Open 07 Cheatsheet. Read all three
+pages. Print it.
+Day 2 (3 hrs) — Joins, windows, CTEs - Hour 1: From 04 Core Library, do Chapter 2 (joins) — first 25
+questions, answers covered. - Hour 2: From 04, do Chapter 3 (windows + CTEs) — first 25 questions. -
+Hour 3: Re-attempt every question you got wrong from hours 1 and 2.
+Day 3 (3 hrs) — Indexes, optimization, EXPLAIN reading - Hour 1: From 04, do Chapter 4 (indexes +
+optimization) — first 30 questions. - Hour 2: From 05 Scenario Library, do the "optimize this query"
+category — first 15 scenarios. - Hour 3: From 05, do the "index decisions" category — first 15 scenarios.
+Day 4 (3 hrs) — Transactions + your stack's modern DB - Hour 1: From 04, Chapter 5 (transactions,
+isolation, locking) — first 20 questions. Memorise the four isolation-level tables in 07 Cheatsheet. - Hour
+2: Open 06 Modern DB Specifics — read ONLY the section for the database your target company uses.
+Snowflake for analytics roles, Postgres 16 for most product cos, MySQL 8 for legacy stacks, BigQuery
+for ad-tech and Google-shop, SQL Server 2022 for finance GCCs. - Hour 3: From 05, do "debug this
+query" — first 15 scenarios.
+Day 5 (6 hrs, weekend) — Mock + cheatsheet drill - Hours 1–2: Re-read 01 Top 50. You should now
+be able to answer 40+ of 50 cold. Mark the gaps. - Hours 3–4: Speed-run 02 Top 200 — read the
+question, give yourself 90 seconds to think, then read the answer. Don't write anything. - Hour 5: Re-read
+Learn & Excel · SQL Interview Prep — START HERE 4 / 7
+hello@learnandexcel.in · learnandexcel.in
+PAGE 5
+07 Cheatsheet three times. Cover the page, recite from memory. - Hour 6: Re-attempt all questions you
+flagged across days 1–4.
+What to skip on a 5-day plan: 02 Top 200 (full read), 04 Chapters 6, 8, 9, 10 (normalization, set ops,
+stored procs, modern features), 05 categories beyond debug/optimize/index decisions, 03 What
+Changed 2026, 08 Salary Map.
+📚 The 30-Day Deep Prep Plan
+If you have a month, you can actually internalise this stuff instead of cramming. Plan: ~1 hour/day
+weekdays, 3 hours each weekend day. About 35 hours total.
+Week 1 — Foundations and the 50 Most-Asked - Days 1–2: 01 Top 50 end to end. Solve every
+question on paper before reading the answer. - Days 3–5: 04 Chapter 1 (fundamentals) + Chapter 2
+(joins). All 50+50 questions. - Weekend: 04 Chapter 3 (windows + CTEs). This single chapter is where
+most candidates lose the offer. Don't rush.
+Week 2 — Performance and reliability - Days 6–8: 04 Chapter 4 (indexes + optimization). Slowest
+chapter — go deep. - Days 9–10: 04 Chapter 5 (transactions, isolation, locking). Memorise the
+isolation tables from 07. - Weekend: 05 Scenario Library — debug + optimize categories (all questions).
+Week 3 — Breadth, schema thinking, and modern stack - Days 11–12: 04 Chapter 6 (normalization)
++ Chapter 7 (aggregations). - Days 13–14: 04 Chapter 8 (set ops) + Chapter 9 (stored procs). - Day
+15: 04 Chapter 10 (modern features). - Weekend: 06 Modern DB Specifics — your target warehouse
+end to end, plus skim the others.
+Week 4 — Scenarios, intel, dress rehearsal - Days 16–18: 05 Scenario Library — design schema +
+what-will-this-return + index decisions categories. - Days 19–20: 05 — transaction conflicts + data
+quality investigations. - Day 21: 02 Top 200 at Indian MNCs — read like a magazine, mark the patterns.
+- Day 22: 03 What Changed in 2026 — talk-track material for "what's new?" questions. - Days 23–25:
+Re-attempt every question you flagged across the month. - Days 26–28: Mock-interview drill — pick 15
+random questions from 04 + 10 from 05, time yourself 4 minutes each, speak the answer out loud. - Day
+29: 07 Cheatsheet — re-read until you can recite the function patterns and index pitfalls without looking.
+- Day 30 (interview eve): Read 07 Cheatsheet + skim 01 Top 50. Sleep early. Eat properly.
+Optional: read 08 Salary Map the day before negotiation, not before the technical round.
+Learn & Excel · SQL Interview Prep — START HERE 5 / 7
+hello@learnandexcel.in · learnandexcel.in
+PAGE 6
+How To Use The Cheatsheet On Interview Day
+07 Cheatsheet is 1 page. Treat it like an exam aid, not study material.
+Offline interview: print it on A4, fold in half, keep in your bag. Glance at it in the waiting room or
+auto on the way. Do NOT carry it into the panel room.
+Online interview: pin the PDF open on your second monitor, or print and tape next to your webcam
+— angled so you can glance without breaking eye contact. Interviewers don't mind; many of them
+have their own notes too.
+Just before the round: read it once, top to bottom, slowly. The three isolation-level tables are the
+highest-leverage thing on the page — most candidates fumble READ COMMITTED vs REPEATABLE
+READ under pressure. Memorise the row order.
+During the round: if the interviewer asks "which isolation level prevents phantom reads?" — you
+should answer in 2 seconds without consulting anything. The cheatsheet is for confidence-of-recall,
+not lookup.
+What This Pack Does NOT Include
+Be clear-eyed about scope so you don't go in expecting the wrong thing.
+No live mock interview. This is self-paced reading material. If you need a human asking you SQL
+questions in real time, book a peer-mock separately.
+No resume review. Question patterns and answer frameworks only. We don't touch your CV.
+No career counseling or role-selection advice. We don't help you decide between an offer at TCS
+vs a startup, or whether you should pivot from backend to data engineering.
+No system design or coding rounds beyond SQL. This is a SQL-only pack. DSA, LLD/HLD,
+behavioural — out of scope.
+No company-specific question dumps. We tell you the patterns Indian MNCs and product cos
+ask. We do not promise "the exact 5 questions Razorpay asked candidate X last Tuesday."
+No video. Everything is in PDFs you can read on a phone, tablet, or laptop. No subscription, no
+login.
+What it IS: 1,400+ questions across 8 PDFs, frameworks for answering them, a cheatsheet for D-day,
+and the intel layer (Top 50, Top 200, 2026 shifts) so you walk in knowing what's coming.
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Learn & Excel · SQL Interview Prep — START HERE 6 / 7
+hello@learnandexcel.in · learnandexcel.in
+PAGE 7
+Recommended First Action
+Stop here. Go back to the diagnostic table. Find your row. Open that PDF now. The rest of the pack
+works only if you start with the right file — and the right file is almost never "the next one in numerical
+order."
+Pick. Open. Go.
+Learn & Excel · SQL Interview Prep — START HERE 7 / 7
+hello@learnandexcel.in · learnandexcel.in

@@ -1,0 +1,4880 @@
+{
+  "generatedAt": "2026-11-13T08:17:11.055Z",
+  "targetCount": 200,
+  "candidatePool": 200,
+  "selection": "Top 50 first, then deduplicated GCC catalogue and additional product/enterprise accounts. A target is not a confirmed Bengaluru Pega employer.",
+  "scanAt": "2026-11-12T14:27:00.130Z",
+  "scanLimits": "Only official Workday feed matches from sites that responded; zero means no matching listing on that board at scan time, not no Pega openings across the employer. Third-party posts and search-index results are not treated as open jobs.",
+  "records": [
+    {
+      "index": 1,
+      "id": "commonwealth bank",
+      "company": "Commonwealth Bank (CBA India)",
+      "aliases": [
+        "Commonwealth Bank",
+        "Commonwealth Bank India",
+        "Commonwealth Bank (CBA India)"
+      ],
+      "top50Rank": 1,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://commbank.com.au/about-us/careers",
+      "scanStatus": "Official feed: Bengaluru Pega mention",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [
+        {
+          "title": "Staff Software Engineer",
+          "location": "Bangalore - Manyata Tech Park Road · India",
+          "reqId": "REQ268289",
+          "posted": "2026-11-10",
+          "closes": "2026-11-30",
+          "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Staff-Software-Engineer_REQ268289",
+          "relevance": "Separate CBA role: Pega is one of several skills"
+        },
+        {
+          "title": "Senior Software Engineer",
+          "location": "Bangalore - Manyata Tech Park Road · India",
+          "reqId": "REQ266822",
+          "posted": "2026-11-07",
+          "closes": "2026-11-20",
+          "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Senior-Software-Engineer_REQ266822",
+          "relevance": "ASB build-out"
+        },
+        {
+          "title": "Engineering Manager",
+          "location": "Bangalore - Manyata Tech Park Road · India",
+          "reqId": "REQ266820",
+          "posted": "2026-11-04",
+          "closes": "2026-11-27",
+          "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Engineering-Manager_REQ266820",
+          "relevance": "ASB build-out"
+        },
+        {
+          "title": "Senior Software Engineer",
+          "location": "Bangalore - Manyata Tech Park Road · India",
+          "reqId": "REQ266821",
+          "posted": "2026-11-04",
+          "closes": "2026-11-27",
+          "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Senior-Software-Engineer_REQ266821",
+          "relevance": "ASB build-out"
+        },
+        {
+          "title": "Executive Manager - Technology Modernisation",
+          "location": "Bangalore - Manyata Tech Park Road · India",
+          "reqId": "REQ266311",
+          "posted": "2026-11-03",
+          "closes": "2026-11-20",
+          "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Executive-Manager---Technology-Modernisation_REQ266311",
+          "relevance": "ASB build-out"
+        },
+        {
+          "title": "Engineering Manager",
+          "location": "Bangalore - Manyata Tech Park Road · India",
+          "reqId": "REQ267794",
+          "posted": "2026-10-28",
+          "closes": "2026-11-30",
+          "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Engineering-Manager_REQ267794-2",
+          "relevance": "Separate CBA role: Pega is one of several skills"
+        }
+      ],
+      "boardSize": 219,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Jayanth M's indexed profile associates Commonwealth Bank with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+        "url": "https://in.linkedin.com/in/jayanth-mouvanal",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": {
+        "verdict": "Strongest confirmed build-out",
+        "evidence": "Four current official Bengaluru requisitions explicitly reference the ASB partnership: Executive Manager REQ266311, Pega Engineering Manager REQ266820 and Senior Software Engineers REQ266821/822. A separate Staff Engineer and Corp Tech Manager also mention Pega but do not establish additional ASB Pega seats.",
+        "sourceUrl": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Bangalore---Manyata-Tech-Park-Road/Senior-Software-Engineer_REQ266822",
+        "nextAction": "Confirm which req your interview is attached to; prioritize both Senior SWE seats, and ask which ASB product journeys the India squad will own."
+      },
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Very high. Very high. Bengaluru-only, direct bank GCC, integrations/events match your Kafka story. Treat ASB as the sharpest current angle.",
+      "program": "A ~20-person Bengaluru Pega CoE that grew out of the Data & Advanced Analytics decisioning programme and now spans offers/CDH, merchant onboarding, fraud & scam, CLM/KYC and a new ASB (NZ) squad."
+    },
+    {
+      "index": 2,
+      "id": "first citizens bank",
+      "company": "First Citizens India",
+      "aliases": [
+        "First Citizens Bank",
+        "First Citizens Bank India",
+        "First Citizens India"
+      ],
+      "top50Rank": 2,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://jobs.firstcitizens.com",
+      "scanStatus": "Partial board: no reliable negative",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 32,
+      "olderLeads": [
+        {
+          "title": "Software Engineer I — PEGA Developer",
+          "location": "Bangalore, India",
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "checkedAt": "2026-09-08",
+          "sourceDate": null
+        },
+        {
+          "title": "Software Engineer II - Pega Developer",
+          "location": "Bengaluru, Karnataka, India",
+          "url": "https://www.linkedin.com/jobs/view/4449026353",
+          "checkedAt": "2026-09-07T19:56:40+00:00",
+          "sourceDate": "2026-08-26"
+        }
+      ],
+      "historicalClaim": {
+        "text": "Equipment-finance servicing combines Pega Customer Service, Collections and Customer Decision Hub. Collections spans delinquency through litigation; the session describes a forthcoming external remarketing portal.",
+        "url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 2
+      },
+      "fit": "Very high. Very high for Bengaluru and growth. Strong match to Pega + REST/Kafka + AI-assisted automation if the role is P2/Pega Developer rather than pure RPA.",
+      "program": "A fast-growing GCC (800–900 people, +140% YoY, ex-SVB India) where Pega sits in two places: Deposits & Shared Services workflow and Lending Digital Automation (Pega + Robotics). Senior Pega hiring from Pegasystems and EvonSys happened in 2026."
+    },
+    {
+      "index": 3,
+      "id": "empower",
+      "company": "Empower India",
+      "aliases": [
+        "Empower India"
+      ],
+      "top50Rank": 3,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://www.empower.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 119,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 1,
+        "teamAssociated": 0
+      },
+      "fit": "Very high (band and skills match). Very high for practical Pega production ownership. The work resembles your case/integration/support strengths more than pure CDH roles.",
+      "program": "A Bengaluru Pega engineering team for US retirement/wealth record-keeping workflows, led by an ex-Pegasystems manager, combining feature development on Pega 24.x with 24/7 production support."
+    },
+    {
+      "index": 4,
+      "id": "daimler truck",
+      "company": "Daimler Truck Innovation Center India (DTICI)",
+      "aliases": [
+        "Daimler Truck India",
+        "Daimler Truck Innovation Center India",
+        "Daimler Truck Innovation Center India (DTICI)"
+      ],
+      "top50Rank": 4,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Sapana Mishra's indexed professional profile lists DTICI and Bengaluru, and self-describes 7+ years of Pega experience and CSSA certification.",
+        "url": "https://in.linkedin.com/in/sapana-mishra-a39a85117",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "High. Bengaluru, automotive financial services (closest analogue to MBRDI), CSSA band, Constellation.",
+      "program": "The India Pega team behind Daimler Truck Financial Services (DTFS). DTFS rebuilt a legacy application in 14 weeks on Pega Blueprint and Pega Cloud, presented at PegaWorld 2026. The Bengaluru team hired several CSSA-level consultants in 2025."
+    },
+    {
+      "index": 5,
+      "id": "booking",
+      "company": "Booking Holdings India",
+      "aliases": [
+        "Booking.com",
+        "Booking Holdings India"
+      ],
+      "top50Rank": 5,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://careers.bookingholdings.com",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Suresh Kumar's indexed profile associates Booking Holdings with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+        "url": "https://in.linkedin.com/in/suresh-kumar-50039220",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": {
+        "verdict": "Plausible squad growth; no employer-verified open Pega seat",
+        "evidence": "Three dated profile starts in the Top 50 (two Pega-labelled, one engineering manager) and a mirrored 'newly formed Trips Pega Delivery Team' description. The recruiter/vendor SA ad and Engineering Manager aggregator copy were not matched to a live Booking employer requisition.",
+        "sourceUrl": "https://careers.booking.com/teams/engineering/",
+        "nextAction": "Ask a current Booking Pega peer which CS Tech/Trips squads are hiring on direct Booking payroll; request a first-party job link."
+      },
+      "joinedProfileStarts": {
+        "explicitlyPega": 2,
+        "teamAssociated": 1
+      },
+      "fit": "High. High. Direct product-company work, Bengaluru-only, good 2-5 year SA band. Less domain match than finance but excellent product-engineering signal.",
+      "program": "A product-style Pega org for Booking.com customer service. It is clearly expanding: two Pega Engineering Managers (Mar 2025, Oct 2026) and three LSAs (Mar 2025, Oct 2025, Jun 2026) joined within 20 months."
+    },
+    {
+      "index": 6,
+      "id": "jpmorganchase",
+      "company": "JPMorganChase India",
+      "aliases": [
+        "JPMorgan Chase & Co.",
+        "JPMorgan Chase India",
+        "JPMorganChase India"
+      ],
+      "top50Rank": 6,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=pega&location=India",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "High. High due to 2-5 year signal and integration/KYC work. Culture is process-heavy and RTO may be stricter.",
+      "program": "Bengaluru Pega engineers sit across KYC/onboarding, document and tax-inquiry workflows, payment investigations and Pega product teams under a deep VP/ED layer; a VP publicly asked for 2–5-year Pega hires in Sep 2026."
+    },
+    {
+      "index": 7,
+      "id": "nokia",
+      "company": "Nokia India",
+      "aliases": [
+        "Nokia India"
+      ],
+      "top50Rank": 7,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://nokia.com/careers",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 1,
+        "teamAssociated": 0
+      },
+      "fit": "High. High. Bengaluru, 4-7 year band, CSSA/Constellation preferred, direct enterprise environment.",
+      "program": "A small Bengaluru Pega team inside Nokia's Strategy & Technology / business-services IT, building internal order orchestration, logistics, cash-collection and hardware-service workflows. It hires 4–7-year System Architects, and several recent hires came straight from CBA."
+    },
+    {
+      "index": 8,
+      "id": "broadridge",
+      "company": "Broadridge India",
+      "aliases": [
+        "Broadridge India"
+      ],
+      "top50Rank": 8,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://broadridge.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 318,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": {
+        "verdict": "Conflicting signal; employer feed has no Pega match",
+        "evidence": "A third-party Pega Developer post claims Hyderabad/Bengaluru and Constellation, but the checked Broadridge Workday career site's Pega search returned no matching roles. Do not call the third-party post an approved direct seat.",
+        "sourceUrl": "https://broadridge.wd5.myworkdayjobs.com/en-US/Careers",
+        "nextAction": "Ask Broadridge TA for the first-party requisition ID, location and payroll."
+      },
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "High. High practical fit: 4-7 year/CSSA band, Pega Infinity, case management, integrations and financial services.",
+      "program": "A financial-services Pega team (investor communications, governance, back-office workflows) led from Hyderabad, with Bengaluru Senior Member Technical seats. Current JDs ask for Pega Infinity, Constellation and Pega GenAI."
+    },
+    {
+      "index": 9,
+      "id": "telstra",
+      "company": "Telstra India",
+      "aliases": [
+        "Telstra India"
+      ],
+      "top50Rank": 9,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://careers.telstra.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 163,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium-high. Bengaluru, CSSA Senior Software Engineer band matches about 4 years' experience.",
+      "program": "Part of Telstra's Pega software-engineering chapter, which owns about 17 Pega applications and 30+ engineers across Australia and India. Bengaluru members are mostly CSSA Senior Software Engineers on telecom CRM, service and decisioning apps."
+    },
+    {
+      "index": 10,
+      "id": "cisco",
+      "company": "Cisco India",
+      "aliases": [
+        "Cisco",
+        "Cisco India"
+      ],
+      "top50Rank": 10,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://jobs.cisco.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Upgrading Pega 8.x to Infinity 24.1.1 on OpenShift, externalizing Kafka and Elasticsearch, and optimizing the JVM and platform migration for business continuity.",
+        "url": "https://www.pega.com/pt-br/events/pegaworld/agenda-2025/pega-platform-modernisation",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Excellent technical fit; low probability. Excellent technical fit for Kafka/platform ownership. Lower hiring probability because the team is small and openings are rare.",
+      "program": "A compact internal Pega platform team that moved 30+ internal finance, logistics and operations apps from VMs to OpenShift, externalised Kafka and Elasticsearch, and upgraded to Pega Infinity 24.1 with zero major production issues."
+    },
+    {
+      "index": 11,
+      "id": "pegasystems",
+      "company": "Pegasystems India (Bengaluru)",
+      "aliases": [
+        "Pegasystems",
+        "Pegasystems India (Bengaluru)"
+      ],
+      "top50Rank": 11,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://www.pega.com/about/careers/search?keywords=&location=India",
+      "scanStatus": "Official employer page: Bengaluru Pega role",
+      "checkedAt": "2026-11-13T07:39:53.409Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [
+        {
+          "title": "Software Engineer, GenAI Engineering (Pega Developer CSA, CSSA)",
+          "reqId": "24123",
+          "location": "Bengaluru",
+          "url": "https://www.pega.com/about/careers/24123/software-engineer-genai-engineering-pega-developer-csa-cssa",
+          "posted": null,
+          "closes": null,
+          "relevance": "2-4 years Pega; CSA and CSSA; GenAI agents, evaluations, guardrails and observability"
+        }
+      ],
+      "boardSize": null,
+      "olderLeads": [
+        {
+          "title": "Lead System Architect - Pega LSA",
+          "location": "Bengaluru, Karnataka, India",
+          "url": "https://www.linkedin.com/jobs/view/4460719973",
+          "checkedAt": "2026-09-08T07:19:13+00:00",
+          "sourceDate": null
+        },
+        {
+          "title": "Senior System Architect (Pega CSSA)",
+          "location": "India - Karnataka - Bangalore | India - Telangana - Hyderabad",
+          "url": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+          "checkedAt": "2026-09-08",
+          "sourceDate": null
+        }
+      ],
+      "historicalClaim": {
+        "text": "Subramanyam Kopparam's indexed profile associates Pegasystems with Bengaluru. This establishes a self-reported named-person footprint, not a complete team or current office roster.",
+        "url": "https://in.linkedin.com/in/subramanyam-kopparam-202a84103",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": {
+        "verdict": "Confirmed product role; expansion is broader than one new Pega team",
+        "evidence": "Pega's employer-hosted CSA/CSSA GenAI Engineering role 24123 loaded successfully. It asks for 2-4 years of Pega and works on agents, developer assistant, evaluation, guardrails and observability.",
+        "sourceUrl": "https://www.pega.com/about/careers/24123/software-engineer-genai-engineering-pega-developer-csa-cssa",
+        "nextAction": "Apply if interested in platform-product engineering; it is not a bank Customer Service delivery role."
+      },
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "High upside; product-engineering interview bar. High upside, but interview bar is product-engineering not GCC implementation. Best if you frame yourself as Pega + integration + developer-productivity/AI tooling.",
+      "program": "Platform vendor. Bengaluru has AI/ML leadership and product/engineering presence, while Hyderabad is the larger India engineering center."
+    },
+    {
+      "index": 12,
+      "id": "siemens",
+      "company": "Siemens",
+      "aliases": [
+        "Siemens"
+      ],
+      "top50Rank": 12,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://jobs.siemens.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Industrial workflow automation is adopting Pega Blueprint and Constellation across manufacturing, energy and healthcare operations.",
+        "url": "https://www.pega.com/pt-br/events/pegaworld/agenda-2025/siemens-accelerating-transformation-ai-blueprint-constellation",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": {
+        "verdict": "Capability-building hint, open engineering seat unverified",
+        "evidence": "An indexed Siemens Lead Pega Architect role (514440, posted July 2026) speaks of building Pega capability; a September Senior Lead role (523881) mentions a Pega Nearshore Consulting team. Siemens direct job-detail URLs returned HTTP 403. November Pega mentions found on Siemens job pages are order-operations roles using Pega, not developer openings.",
+        "sourceUrl": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/514440",
+        "nextAction": "Request a live Siemens Pega engineer requisition and payroll/entity before treating the project descriptions as a new internal product squad."
+      },
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Very high domain fit (collections). Very high domain fit due to collections. Direct Bengaluru opening evidence needs validation.",
+      "program": "Global Siemens collections platform with Pega CCMT and local India engineering signals."
+    },
+    {
+      "index": 13,
+      "id": "john deere",
+      "company": "John Deere India (JDTCI)",
+      "aliases": [
+        "John Deere India",
+        "John Deere Financial",
+        "John Deere India (JDTCI)"
+      ],
+      "top50Rank": 13,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://deere.com/careers",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 1,
+        "teamAssociated": 0
+      },
+      "fit": "Very high domain fit; check legal employer and city. Extremely high domain fit due to collections, but location and legal-employer ambiguity must be checked.",
+      "program": "Small Pega group inside JDTCI with Pune as center of gravity but Bengaluru lead/software-engineer evidence; some Deere Pega work is vendor-staffed."
+    },
+    {
+      "index": 14,
+      "id": "ameriprise",
+      "company": "Ameriprise India",
+      "aliases": [
+        "Ameriprise India",
+        "Ameriprise Financial India"
+      ],
+      "top50Rank": 14,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://www.ameriprise.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": 232,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium-high. Bengaluru leadership, large Pega+automation scope, AWS/Python adjacency.",
+      "program": "50+ across Pega, RPA, QA, DevOps and support (Bengaluru-led; delivery also in Gurugram/Noida/Hyderabad). Wealth/financial advisory operations, workflow automation and robotics."
+    },
+    {
+      "index": 15,
+      "id": "societe generale",
+      "company": "Société Générale GSC",
+      "aliases": [
+        "Societe Generale GSC India",
+        "Societe Generale",
+        "Société Générale GSC",
+        "Societe Generale India"
+      ],
+      "top50Rank": 15,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://careers.societegenerale.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium-high. High if you want Bengaluru bank-GCC delivery with modern Constellation exposure. Growth may be steadier than fast-growth teams.",
+      "program": "Bengaluru bank-GCC Pega team with many long-tenured lead/senior developer profiles and Constellation hiring signal."
+    },
+    {
+      "index": 16,
+      "id": "bt group",
+      "company": "BT Group",
+      "aliases": [
+        "BT Group India",
+        "BT Group"
+      ],
+      "top50Rank": 16,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://bt.com/careers",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium-high. High if you want telecom workflow modernization and a Bengaluru manager-led CoE. Less domain match than BFSI/auto-finance.",
+      "program": "Bengaluru Pega CoE / Digital Process Automation group for BT Business Platform Modernization with manager plus senior developer profiles."
+    },
+    {
+      "index": 17,
+      "id": "verizon",
+      "company": "Verizon",
+      "aliases": [
+        "Verizon"
+      ],
+      "top50Rank": 17,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://mycareer.verizon.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 1277,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Modernizing Pega decisioning beyond micro-segmentation toward real-time personalized experiences across channels, with GenAI integration.",
+        "url": "https://www.pega.com/events/pegaworld/agenda/segment-me-verizon%E2%80%99s-journey-hyper-personalization-0",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Good Bengaluru team, but CDH-leaning; ask whether case-management squads are hiring.",
+      "program": "10-20 in Bengaluru (stronger than earlier ledger, which placed it mainly in Hyderabad/Chennai). Telecom customer decisioning (CDH/NBx), customer journeys, case management, KYC."
+    },
+    {
+      "index": 18,
+      "id": "morgan stanley",
+      "company": "Morgan Stanley",
+      "aliases": [
+        "Morgan Stanley",
+        "Morgan Stanley India"
+      ],
+      "top50Rank": 18,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://morganstanley.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 1194,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Good learning but likely senior-heavy. Strong if you want KYC/onboarding and architecture exposure; may not be easiest 4-year entry.",
+      "program": "Senior-heavy bank Pega team around KYC, onboarding and regulatory platforms; Bengaluru director/senior manager profiles visible."
+    },
+    {
+      "index": 19,
+      "id": "goldman sachs",
+      "company": "Goldman Sachs",
+      "aliases": [
+        "Goldman Sachs",
+        "Goldman Sachs India"
+      ],
+      "top50Rank": 19,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://higher.gs.com/roles?q=pega&location=India",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium (domain strong, band senior). High domain/engineering fit, but likely senior bar and tough interviews. Excellent target if Smart Investigate/payments/collections role opens.",
+      "program": "Pega appears in Marcus collections/recoveries, fraud/disputes and Transaction Banking payment-investigation workflows; Bengaluru senior Pega engineers are visible."
+    },
+    {
+      "index": 20,
+      "id": "vodafone",
+      "company": "VOIS (Vodafone)",
+      "aliases": [
+        "Vodafone / VOIS India",
+        "Vodafone / VOIS",
+        "VOIS (Vodafone)"
+      ],
+      "top50Rank": 20,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://careers.vodafone.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium (CDH-heavy). Good if you want CDH. Less direct fit if you want case/integration/platform work. Strong WLB signal but compensation may lag.",
+      "program": "Decisioning-heavy Pega CDH org with Bengaluru senior-manager and manager signals; some urgent roles appear contract/short-duration."
+    },
+    {
+      "index": 21,
+      "id": "sun life",
+      "company": "Sun Life Global Solutions",
+      "aliases": [
+        "Sun Life Financial",
+        "Sun Life / SLGS",
+        "Sun Life India GCC",
+        "Sun Life Global Solutions"
+      ],
+      "top50Rank": 21,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://sunlife.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 288,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Knowledge Buddy ingests insurance documents to answer service-agent questions. The presentation reports a pilot expanded to 400+ users; these are application users, not Pega engineers.",
+        "url": "https://www.pega.com/events/pegaworld/agenda/sun-life-delivers-instant-answers-empowering-agents-knowledge-buddy",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 1,
+        "teamAssociated": 0
+      },
+      "fit": "Medium (Bengaluru seats fewer). Good if Bengaluru role exists; otherwise Gurugram-heavy. Constellation learning upside is strong.",
+      "program": "Insurance/wealth Pega specialist ladder with Gurugram core and Bengaluru specialist/developer openings."
+    },
+    {
+      "index": 22,
+      "id": "natwest group",
+      "company": "NatWest Group",
+      "aliases": [
+        "NatWest Group",
+        "NatWest Group India"
+      ],
+      "top50Rank": 22,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://jobs.natwestgroup.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "access-denied",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": {
+        "verdict": "New Bengaluru office, not evidence of a new Pega team",
+        "evidence": "NatWest's official Bengaluru office page says the hub opened in 2025. Current local software-engineering search results are mainly Java/AWS/DevOps and do not substantiate Pega engineering vacancies.",
+        "sourceUrl": "https://jobs.natwestgroup.com/pages/bengaluru",
+        "nextAction": "Monitor Pega-specific requisitions separately from general Bengaluru office hiring."
+      },
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium (CDH/KYC, senior-leaning). Good but likely senior/CDH/KYC-heavy. Apply if role matches 4-6 years or if you want decisioning/KYC.",
+      "program": "Strong global Pega CDH modernization plus India financial-crime/CLM-KYC leadership hiring signal."
+    },
+    {
+      "index": 23,
+      "id": "standard chartered",
+      "company": "Standard Chartered",
+      "aliases": [
+        "Standard Chartered India",
+        "Standard Chartered"
+      ],
+      "top50Rank": 23,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://sc.com/careers",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [
+        {
+          "title": "Prod Specialist - Pega CDH, WRB Tech",
+          "location": "Bangalore, India; office working",
+          "url": "https://jobs.standardchartered.com/job/Prod-Specialist-Pega-CDH%2C-WRB-Tech/55895-en_GB/",
+          "checkedAt": "2026-09-08",
+          "sourceDate": "2026-06-29"
+        }
+      ],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 1,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Good bank-GCC target, but not as clean Bengaluru/current-opening signal as CBA/FCI/JPMC/Broadridge.",
+      "program": "Strong bank-Pega estate, but Bengaluru evidence splits across NBA/decisioning and developer profiles while Chennai remains important."
+    },
+    {
+      "index": 24,
+      "id": "shell",
+      "company": "Shell India",
+      "aliases": [
+        "Shell India"
+      ],
+      "top50Rank": 24,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://shell.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 145,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Good if you want enterprise workflow/platform and stable GCC. Less direct if role is robotics or very senior LSA.",
+      "program": "Direct Pega COE/platform and automation/robotics evidence; some Shell Pega work appears enterprise/SSW workflow rather than BFSI case work."
+    },
+    {
+      "index": 25,
+      "id": "elevance health",
+      "company": "Carelon Global Solutions India",
+      "aliases": [
+        "Elevance Health",
+        "Carelon Global Solutions India",
+        "Carelon / Elevance",
+        "Elevance Health India"
+      ],
+      "top50Rank": 25,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://careers.elevancehealth.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. A real Bengaluru team, but juniors there are on lower bands than your target.",
+      "program": "10-20 in Bengaluru (Bagmane), part of a larger Hyderabad/Gurugram Pega estate. Healthcare claims (Smart Claims Engine), provider data, care management, customer service."
+    },
+    {
+      "index": 26,
+      "id": "wells fargo",
+      "company": "Wells Fargo India",
+      "aliases": [
+        "Wells Fargo India",
+        "Wells Fargo"
+      ],
+      "top50Rank": 26,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://www.wellsfargojobs.com/en/jobs/?search=pega&country=India",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 1542,
+      "olderLeads": [
+        {
+          "title": "Lead Software Engineer - Pega",
+          "location": "BENGALURU — employer search index",
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "checkedAt": "2026-09-08",
+          "sourceDate": null
+        },
+        {
+          "title": "Lead Software Engineer (Pega)",
+          "location": "BENGALURU",
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "checkedAt": "2026-09-08",
+          "sourceDate": "2026-08-24"
+        }
+      ],
+      "historicalClaim": {
+        "text": "Customer Decision Hub runs real-time customer engagement and marketing decisioning at large scale; the session describes plans for autonomous agentic marketing capabilities.",
+        "url": "https://www.pega.com/events/pegaworld/agenda/wells-fargo-70-million-customers-6-billion-decisions-zero-guesswork",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Monitor. Strong technical/domain fit, but monitor-only until a live role appears. Do not over-invest without a requisition.",
+      "program": "Senior-heavy Pega team with Bengaluru VP/lead signals but latest refresh found no current India Pega requisition."
+    },
+    {
+      "index": 27,
+      "id": "mufg global service",
+      "company": "MUFG Global Service (MUFG Bank)",
+      "aliases": [
+        "MUFG Global Service",
+        "MUFG Global Service (MUFG Bank)"
+      ],
+      "top50Rank": 27,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://www.mufg.jp/english/careers/index.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Bengaluru bank GCC, but an older on-prem 8.8 stack.",
+      "program": "5-8 in Bengaluru (separate from MUFG Pension & Market Services in Mumbai/Pune). Banking operations workflows, trade finance, onboarding."
+    },
+    {
+      "index": 28,
+      "id": "anz bank",
+      "company": "ANZ",
+      "aliases": [
+        "ANZ Bank",
+        "ANZ Bank India",
+        "ANZ"
+      ],
+      "top50Rank": 28,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://careers.anz.com",
+      "scanStatus": "Official search: no Bengaluru Pega match",
+      "checkedAt": "2026-11-13T07:39:54.142Z",
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [
+        {
+          "title": "Analyst (Systems/Tech Analyst)",
+          "location": "Bengaluru, India; hybrid/blended",
+          "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+          "checkedAt": "2026-09-08",
+          "sourceDate": null
+        }
+      ],
+      "historicalClaim": {
+        "text": "Migrating legacy on-premises Pega applications to Pega Cloud to simplify upgrades, patches and platform operations.",
+        "url": "https://www.pega.com/pt-br/events/pegaworld/agenda-2025/cloud-modernization-anz-bank-transforms-legacy-future-proof-pega-cloud",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": {
+        "verdict": "Bengaluru Pega team exists; recent SSA requisition closed",
+        "evidence": "ANZ Pega SSA req 126222 in Bengaluru advertised Digital Sales Experience integration and outbound CDH; the copied ad says it ended 28 October 2026. The current official ANZ Pega search returned two Docklands (Australia) matches, not a Bengaluru requisition.",
+        "sourceUrl": "https://careers.anz.com/search/?q=pega",
+        "nextAction": "Set an official ANZ alert; do not apply using the still-indexed 126222 mirror."
+      },
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Pega Cloud + lending is relevant; the ops-engineer role is support-heavy.",
+      "program": "5-10 visible (Bengaluru chapter + operations; some Capgemini vendor staff). Home lending, retail banking operations, disputes."
+    },
+    {
+      "index": 29,
+      "id": "bny",
+      "company": "BNY",
+      "aliases": [
+        "BNY India",
+        "BNY Mellon India",
+        "BNY"
+      ],
+      "top50Rank": 29,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://bnymellon.eightfold.ai/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Compliance/sanctions domain, Chennai-weighted.",
+      "program": "15+ across India (Bengaluru has leadership; much of the engineering is Chennai/Pune). Sanctions screening, payments compliance, onboarding."
+    },
+    {
+      "index": 30,
+      "id": "hsbc",
+      "company": "HSBC",
+      "aliases": [
+        "HSBC",
+        "HSBC India"
+      ],
+      "top50Rank": 30,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low-medium unless you want a CDH pivot.",
+      "program": "10-15 visible (Bengaluru is mainly CDH/decisioning; core Pega build is Pune/Hyderabad). Customer decisioning / marketing NBA, Data & Analytics, payments investigations (global)."
+    },
+    {
+      "index": 31,
+      "id": "nike",
+      "company": "Nike India",
+      "aliases": [
+        "Nike India",
+        "Nike India (ITC)"
+      ],
+      "top50Rank": 31,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://careers.nike.com/?query=pega",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 721,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium. Modern Pega versions in a consumer-brand GCC; small team.",
+      "program": "5-8 visible in Bengaluru. Retail operations, consumer service / CRM case management."
+    },
+    {
+      "index": 32,
+      "id": "intel",
+      "company": "Intel India",
+      "aliases": [
+        "Intel India"
+      ],
+      "top50Rank": 32,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://jobs.intel.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 878,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low-medium. Good platform/company brand, but hiring may be rare and semiconductor context may be less domain-aligned.",
+      "program": "Small enterprise Pega/cloud application team inside Intel; evidence includes Cloud App Dev Engineers and an older senior Pega developer posting."
+    },
+    {
+      "index": 33,
+      "id": "levi strauss",
+      "company": "Levi Strauss & Co. India",
+      "aliases": [
+        "Levi Strauss & Co. India",
+        "Levi Strauss India"
+      ],
+      "top50Rank": 33,
+      "historicalTeamEvidence": "Medium-high",
+      "careerUrl": "https://www.levistrauss.com/careers/",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": 1390,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low-medium. Small team with rare openings.",
+      "program": "3-5. Retail customer service, order management."
+    },
+    {
+      "index": 34,
+      "id": "ge healthcare",
+      "company": "GE HealthCare",
+      "aliases": [
+        "GE Healthcare India",
+        "GE HealthCare"
+      ],
+      "top50Rank": 34,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://careers.gehealthcare.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 1092,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low-medium for a hands-on developer; better for a product-owner path.",
+      "program": "5-10 direct in Bengaluru plus vendor developers. Quality and Legal enterprise applications, order fulfilment, regulated workflows."
+    },
+    {
+      "index": 35,
+      "id": "unilever",
+      "company": "Unilever (UniOps / Digital Hub)",
+      "aliases": [
+        "Unilever India",
+        "Unilever / UniOps",
+        "Unilever",
+        "Unilever (UniOps / Digital Hub)"
+      ],
+      "top50Rank": 35,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://careers.unilever.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low for hands-on development; possible for platform-governance roles.",
+      "program": "Small internal core (~12 employees globally) + 150+ contractors; Bengaluru hosts platform governance and app management. Global master data (products, materials, customers, vendors, pricing), hyperautomation."
+    },
+    {
+      "index": 36,
+      "id": "ford",
+      "company": "Ford Business Solutions (Bengaluru satellite)",
+      "aliases": [
+        "Ford Motor Company",
+        "Ford India (FBS)",
+        "Ford",
+        "Ford Business Solutions India",
+        "Ford Credit",
+        "Ford Business Solutions (Bengaluru satellite)"
+      ],
+      "top50Rank": 36,
+      "historicalTeamEvidence": "High",
+      "careerUrl": "https://corporate.ford.com/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Medium (Chennai-centred).",
+      "program": "Chennai CoE of 8+; at least one Bengaluru transfer (Jan 2026). DPA, RPA, low-code CoE, Pega SaaS migration, Ford Credit."
+    },
+    {
+      "index": 37,
+      "id": "orange business",
+      "company": "Orange Business",
+      "aliases": [
+        "Orange Business"
+      ],
+      "top50Rank": 38,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://www.orange-business.com/en/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low-medium; senior band and Gurugram-centred.",
+      "program": "5-8, mainly Gurugram; Bengaluru seats appear in some hiring posts. Telecom B2B order and network workflows (SALTO/Optima), BSS."
+    },
+    {
+      "index": 38,
+      "id": "american express",
+      "company": "American Express",
+      "aliases": [
+        "American Express",
+        "American Express India"
+      ],
+      "top50Rank": 39,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://aexp.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low for Bengaluru; good if Gurugram is acceptable.",
+      "program": "India Pega team is Gurugram-centred; Bengaluru presence weak. Cards, fraud, disputes, servicing."
+    },
+    {
+      "index": 39,
+      "id": "amadeus labs",
+      "company": "Amadeus Labs",
+      "aliases": [
+        "Amadeus Labs"
+      ],
+      "top50Rank": 40,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low-medium. A product company, but Pega is a small internal-IT platform there.",
+      "program": "2-4 inside internal IT / low-code platforms. Internal finance/operations workflows for a travel-technology product company."
+    },
+    {
+      "index": 40,
+      "id": "dell",
+      "company": "Dell Technologies",
+      "aliases": [
+        "Dell Technologies India",
+        "Dell India",
+        "Dell Technologies"
+      ],
+      "top50Rank": 41,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://jobs.dell.com",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low.",
+      "program": "2-4, long-tenured. Internal operations (NGMT management tool), BPM workflows."
+    },
+    {
+      "index": 41,
+      "id": "fidelity national financial",
+      "company": "Fidelity National Financial India (FNF)",
+      "aliases": [
+        "Fidelity National Financial India (FNF)"
+      ],
+      "top50Rank": 42,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://www.fnf.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low. Pega is peripheral there.",
+      "program": "1-3 visible Pega engineers. Title insurance, settlement and mortgage workflows."
+    },
+    {
+      "index": 42,
+      "id": "paypal",
+      "company": "PayPal",
+      "aliases": [
+        "PayPal India",
+        "PayPal"
+      ],
+      "top50Rank": 43,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://careers.pypl.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 327,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low.",
+      "program": "5-10, mainly Chennai; one or two Bengaluru profiles. Call-centre servicing, disputes."
+    },
+    {
+      "index": 43,
+      "id": "ing",
+      "company": "ING (ING Hubs India)",
+      "aliases": [
+        "ING",
+        "ING (ING Hubs India)"
+      ],
+      "top50Rank": 44,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://www.ing.jobs",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low for a direct switch.",
+      "program": "Several Bengaluru Pega developers, but visible ones are HCLTech staff on the ING account. Wholesale banking, CLM/KYC, lending workflows."
+    },
+    {
+      "index": 44,
+      "id": "optum",
+      "company": "Optum / UnitedHealth Group",
+      "aliases": [
+        "Optum / UHG India",
+        "Optum / UHG",
+        "Optum / UnitedHealth Group India",
+        "Optum / UnitedHealth India",
+        "Optum / UnitedHealth Group"
+      ],
+      "top50Rank": 45,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://careers.unitedhealthgroup.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low for Bengaluru.",
+      "program": "Large India Pega footprint, but in Hyderabad and Gurugram; Bengaluru unproven. Healthcare compliance apps, clinical/PBM platforms, care management, call-centre."
+    },
+    {
+      "index": 45,
+      "id": "evernorth cigna",
+      "company": "Evernorth / Cigna",
+      "aliases": [
+        "Evernorth / Cigna",
+        "Evernorth / Cigna India"
+      ],
+      "top50Rank": 46,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://jobs.thecignagroup.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 547,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low for Bengaluru; high if you would relocate to Hyderabad (DPA COE is a strong learning team).",
+      "program": "Pega team is Hyderabad-based; Bengaluru Pega unproven. Health benefits, onboarding, healthcare management, DPA COE / RAG."
+    },
+    {
+      "index": 46,
+      "id": "conduent",
+      "company": "Conduent",
+      "aliases": [
+        "Conduent India",
+        "Conduent"
+      ],
+      "top50Rank": 47,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://jobs.conduent.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low.",
+      "program": "2-4. Finance/fixed-asset workflows, customer experience."
+    },
+    {
+      "index": 47,
+      "id": "deutsche bank",
+      "company": "Deutsche Bank",
+      "aliases": [
+        "Deutsche Bank",
+        "Deutsche Bank India"
+      ],
+      "top50Rank": 48,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://careers.db.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low.",
+      "program": "Not established for Bengaluru. Client Lifecycle Management / KYC."
+    },
+    {
+      "index": 48,
+      "id": "northern trust",
+      "company": "Northern Trust",
+      "aliases": [
+        "Northern Trust",
+        "Northern Trust India"
+      ],
+      "top50Rank": 49,
+      "historicalTeamEvidence": "Medium",
+      "careerUrl": "https://www.northerntrust.com/united-states/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 663,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low.",
+      "program": "1-3 visible, RPA-leaning. Operations automation."
+    },
+    {
+      "index": 49,
+      "id": "tesco",
+      "company": "Tesco Bengaluru",
+      "aliases": [
+        "Tesco Bengaluru"
+      ],
+      "top50Rank": 50,
+      "historicalTeamEvidence": "Low",
+      "careerUrl": "https://tescoplc.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": {
+        "explicitlyPega": 0,
+        "teamAssociated": 0
+      },
+      "fit": "Low.",
+      "program": "1-2 visible. Retail workflows, customer operations."
+    },
+    {
+      "index": 50,
+      "id": "aflac",
+      "company": "Aflac India",
+      "aliases": [
+        "Aflac India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.aflac.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 51,
+      "id": "allianz technology",
+      "company": "Allianz Technology",
+      "aliases": [
+        "Allianz Technology",
+        "Allianz Technology India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://careers.allianz.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 52,
+      "id": "amdocs",
+      "company": "Amdocs India",
+      "aliases": [
+        "Amdocs India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.amdocs.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 53,
+      "id": "at and t",
+      "company": "AT&T India",
+      "aliases": [
+        "AT&T India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://att.jobs",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 54,
+      "id": "axa",
+      "company": "AXA",
+      "aliases": [
+        "AXA"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.axa.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 55,
+      "id": "bank of america",
+      "company": "Bank of America",
+      "aliases": [
+        "Bank of America",
+        "Bank of America India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://careers.bankofamerica.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 56,
+      "id": "barclays",
+      "company": "Barclays India",
+      "aliases": [
+        "Barclays India",
+        "Barclays"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://search.jobs.barclays",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 57,
+      "id": "bnp paribas",
+      "company": "BNP Paribas",
+      "aliases": [
+        "BNP Paribas",
+        "BNP Paribas India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://group.bnpparibas/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 58,
+      "id": "bosch",
+      "company": "Bosch",
+      "aliases": [
+        "Bosch",
+        "Bosch India (BGSW)",
+        "Bosch / BGSW"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://www.bosch.in/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 59,
+      "id": "capital one",
+      "company": "Capital One India",
+      "aliases": [
+        "Capital One India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://capitalone.com/tech/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 2063,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 60,
+      "id": "cargill",
+      "company": "Cargill",
+      "aliases": [
+        "Cargill"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://careers.cargill.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 61,
+      "id": "charles schwab",
+      "company": "Charles Schwab India",
+      "aliases": [
+        "Charles Schwab India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.schwabjobs.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 62,
+      "id": "citi",
+      "company": "Citi / Citi India",
+      "aliases": [
+        "Citi / Citi India",
+        "Citibank India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://jobs.citi.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 2000,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 63,
+      "id": "cno financial",
+      "company": "CNO Financial",
+      "aliases": [
+        "CNO Financial",
+        "CNO Financial India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.cnoinc.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 64,
+      "id": "coca cola",
+      "company": "Coca-Cola India",
+      "aliases": [
+        "Coca-Cola India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://coca-colacompany.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 65,
+      "id": "comcast",
+      "company": "Comcast India",
+      "aliases": [
+        "Comcast India",
+        "Comcast"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.comcast.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 66,
+      "id": "csc",
+      "company": "CSC (Corporation Service Company)",
+      "aliases": [
+        "CSC (Corporation Service Company)"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "documented_connection_only",
+      "careerUrl": "https://www.cscglobal.com/service/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [
+        {
+          "title": "Senior Software Engineer",
+          "location": "Bengaluru, Karnataka, India",
+          "url": "https://www.linkedin.com/jobs/view/4400844336",
+          "checkedAt": "2026-09-08T07:40:32+00:00",
+          "sourceDate": null
+        }
+      ],
+      "historicalClaim": {
+        "text": "An EvonSys technical lead describes a CSC Client Prepared Filings implementation from February 2019 to August 2022 using Pega asynchronous processing, REST and JMS/MQ. This is historical client work, not proof of a current Bengaluru assignment.",
+        "url": "https://lk.linkedin.com/in/anuradha-rathnayake-7a950532",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "An EvonSys technical lead describes a CSC Client Prepared Filings implementation from February 2019 to August 2022 using Pega asynchronous processing, REST and JMS/MQ. This is historical client work, not proof of a current Bengaluru assignment."
+    },
+    {
+      "index": 67,
+      "id": "cummins",
+      "company": "Cummins India",
+      "aliases": [
+        "Cummins India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.cummins.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "access-denied",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 68,
+      "id": "cvs health",
+      "company": "CVS Health India",
+      "aliases": [
+        "CVS Health India",
+        "CVS Health / Aetna"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.cvshealth.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 69,
+      "id": "daimler ag",
+      "company": "Daimler AG (Mercedes parent)",
+      "aliases": [
+        "Daimler AG (Mercedes parent)"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.mercedes-benz.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 70,
+      "id": "danske bank",
+      "company": "Danske Bank",
+      "aliases": [
+        "Danske Bank"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "documented_connection_only",
+      "careerUrl": "https://danskebank.com/Job",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "The Danske Bank UK forum presentation discusses mortgage and onboarding transformation and customer journeys launched since 2022.",
+        "url": "https://www.pega.com/insights/resources/pega-community-forum-danske-bank-uk-empowering-change-role-pega-saas-our-digital",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "The Danske Bank UK forum presentation discusses mortgage and onboarding transformation and customer journeys launched since 2022."
+    },
+    {
+      "index": 71,
+      "id": "dhl",
+      "company": "DHL IT Services",
+      "aliases": [
+        "DHL IT Services",
+        "DHL India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://careers.dhl.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 72,
+      "id": "engen",
+      "company": "enGen / Highmark India",
+      "aliases": [
+        "enGen / Highmark India",
+        "enGen Global",
+        "enGen / Highmark"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://careers.highmarkhealth.org",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 73,
+      "id": "estes express",
+      "company": "Estes Express",
+      "aliases": [
+        "Estes Express",
+        "Estes Express India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.work4estes.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unsafe-redirect-rejected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 74,
+      "id": "fedex",
+      "company": "FedEx India",
+      "aliases": [
+        "FedEx India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.fedex.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 75,
+      "id": "fidelity investments",
+      "company": "Fidelity India",
+      "aliases": [
+        "Fidelity India",
+        "Fidelity Investments"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://india.fidelity.com/careers/",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 870,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 76,
+      "id": "fis",
+      "company": "FIS India",
+      "aliases": [
+        "FIS India",
+        "FIS (TSYS)"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://careers.fisglobal.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 77,
+      "id": "fiserv",
+      "company": "Fiserv India",
+      "aliases": [
+        "Fiserv India",
+        "Fiserv"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.careers.fiserv.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 393,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 78,
+      "id": "general motors",
+      "company": "General Motors India",
+      "aliases": [
+        "General Motors India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://search-careers.gm.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 79,
+      "id": "global payments",
+      "company": "Global Payments India",
+      "aliases": [
+        "Global Payments India",
+        "Global Payments / TSYS India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.globalpayments.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 80,
+      "id": "hdfc bank",
+      "company": "HDFC Bank",
+      "aliases": [
+        "HDFC Bank"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.hdfcbank.com/personal/about-us/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 81,
+      "id": "icici bank",
+      "company": "ICICI Bank",
+      "aliases": [
+        "ICICI Bank"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.icicicareers.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 82,
+      "id": "iffco tokio",
+      "company": "IFFCO Tokio",
+      "aliases": [
+        "IFFCO Tokio",
+        "IFFCO Tokio India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.iffcotokio.co.in/career",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 83,
+      "id": "ikea",
+      "company": "IKEA",
+      "aliases": [
+        "IKEA"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://www.ikea.com/global/en/work-with-us/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 84,
+      "id": "itc limited",
+      "company": "ITC Limited",
+      "aliases": [
+        "ITC Limited"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://www.itcportal.com/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 85,
+      "id": "johnson and johnson",
+      "company": "Johnson & Johnson India",
+      "aliases": [
+        "Johnson & Johnson India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.jnj.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 86,
+      "id": "kotak mahindra bank",
+      "company": "Kotak Mahindra Bank",
+      "aliases": [
+        "Kotak Mahindra Bank"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.kotak.com/en/about-us/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 87,
+      "id": "liberty mutual",
+      "company": "Liberty Mutual India",
+      "aliases": [
+        "Liberty Mutual India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.libertymutual.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 88,
+      "id": "lloyds banking",
+      "company": "Lloyds Banking Group",
+      "aliases": [
+        "Lloyds Banking Group",
+        "Lloyds Technology Centre India",
+        "Lloyds Banking Group India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "documented_connection_only",
+      "careerUrl": "https://lloydsbankinggrouptalent.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": {
+        "text": "Pega and AI workflows span commercial account opening and asset finance; the session describes progression from feasibility to deployment.",
+        "url": "https://www.pega.com/events/pegaworld/agenda/lloyds-banking-group-ai-powered-commercial-banking-transformation-pega",
+        "checkedAt": "2026-09-08"
+      },
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "Pega and AI workflows span commercial account opening and asset finance; the session describes progression from feasibility to deployment."
+    },
+    {
+      "index": 89,
+      "id": "lockheed martin",
+      "company": "Lockheed Martin India",
+      "aliases": [
+        "Lockheed Martin India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://lockheedmartinjobs.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 90,
+      "id": "lpl financial",
+      "company": "LPL Financial India",
+      "aliases": [
+        "LPL Financial India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.lpl.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 91,
+      "id": "maersk",
+      "company": "A.P. Moller - Maersk",
+      "aliases": [
+        "A.P. Moller - Maersk",
+        "Maersk GSC"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "documented_connection_only",
+      "careerUrl": "https://maersk.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 1212,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 92,
+      "id": "manulife",
+      "company": "Manulife India",
+      "aliases": [
+        "Manulife India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.manulife.com/en/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 93,
+      "id": "marsh mclennan",
+      "company": "Marsh McLennan India (MMGS)",
+      "aliases": [
+        "Marsh McLennan India (MMGS)",
+        "Marsh McLennan India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://careers.marshmclennan.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 94,
+      "id": "mastercard",
+      "company": "Mastercard India",
+      "aliases": [
+        "Mastercard India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.mastercard.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 896,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 95,
+      "id": "maximus",
+      "company": "Maximus India",
+      "aliases": [
+        "Maximus India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.maximus.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 96,
+      "id": "medtronic",
+      "company": "Medtronic India",
+      "aliases": [
+        "Medtronic India",
+        "Medtronic"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://medtronic.eightfold.ai/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 97,
+      "id": "mercedes benz mobility ag",
+      "company": "Mercedes-Benz Mobility AG",
+      "aliases": [
+        "Mercedes-Benz Mobility AG"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://jobs.mercedes-benz.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 98,
+      "id": "merck",
+      "company": "Merck India",
+      "aliases": [
+        "Merck India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.merck.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 99,
+      "id": "metlife",
+      "company": "MetLife MGCC",
+      "aliases": [
+        "MetLife MGCC"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.metlife.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 100,
+      "id": "mizuho",
+      "company": "Mizuho Global Services India (MGS)",
+      "aliases": [
+        "Mizuho Global Services India (MGS)"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.mizuhogroup.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 101,
+      "id": "mondelez",
+      "company": "Mondelez India",
+      "aliases": [
+        "Mondelez India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.mondelezinternational.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 102,
+      "id": "mufg",
+      "company": "MUFG",
+      "aliases": [
+        "MUFG"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.mufg.jp/english/careers/index.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 103,
+      "id": "mufg pension and market services",
+      "company": "MUFG Pension & Market Services (Link Group)",
+      "aliases": [
+        "MUFG Pension & Market Services (Link Group)",
+        "MUFG Pension & Market Svcs"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.mpms.mufg.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 104,
+      "id": "nab",
+      "company": "NAB Innovation Centre India",
+      "aliases": [
+        "NAB Innovation Centre India",
+        "NAB"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://www.nab.com.au/about-us/careers",
+      "scanStatus": "Portal unreachable: unknown",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 105,
+      "id": "navistar",
+      "company": "Navistar India",
+      "aliases": [
+        "Navistar India",
+        "Navistar / International Motors",
+        "Navistar"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.international.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 106,
+      "id": "novartis",
+      "company": "Novartis India",
+      "aliases": [
+        "Novartis India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.novartis.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 107,
+      "id": "pepsico",
+      "company": "PepsiCo India",
+      "aliases": [
+        "PepsiCo India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.pepsicojobs.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 108,
+      "id": "pfizer",
+      "company": "Pfizer India",
+      "aliases": [
+        "Pfizer India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.pfizer.com/about/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 109,
+      "id": "philips",
+      "company": "Philips India",
+      "aliases": [
+        "Philips India",
+        "Philips"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.careers.philips.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 802,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 110,
+      "id": "pnc",
+      "company": "PNC India",
+      "aliases": [
+        "PNC India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.pnc.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 111,
+      "id": "procter and gamble",
+      "company": "Procter & Gamble India",
+      "aliases": [
+        "Procter & Gamble India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://pgcareers.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 112,
+      "id": "proximus",
+      "company": "Proximus",
+      "aliases": [
+        "Proximus"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.proximus.com/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 113,
+      "id": "renault nissan tech",
+      "company": "Renault-Nissan Tech India",
+      "aliases": [
+        "Renault-Nissan Tech India",
+        "Renault-Nissan Tech"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.renaultgroup.com/en/our-company/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 114,
+      "id": "roche",
+      "company": "Roche India",
+      "aliases": [
+        "Roche India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://roche.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 115,
+      "id": "s and p global",
+      "company": "S&P Global India",
+      "aliases": [
+        "S&P Global India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.spglobal.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 116,
+      "id": "state street",
+      "company": "State Street India",
+      "aliases": [
+        "State Street India",
+        "State Street"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://statestreet.wd1.myworkdayjobs.com/Global",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 1204,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 117,
+      "id": "stellantis",
+      "company": "Stellantis India",
+      "aliases": [
+        "Stellantis India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.careers.stellantis.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 118,
+      "id": "synchrony",
+      "company": "Synchrony",
+      "aliases": [
+        "Synchrony",
+        "Synchrony India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.synchronycareers.com",
+      "scanStatus": "Partial board: no reliable negative",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 29,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 119,
+      "id": "the hartford",
+      "company": "Hartford India GCC",
+      "aliases": [
+        "Hartford India GCC",
+        "The Hartford India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "https://www.thehartford.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 216,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 120,
+      "id": "toyota",
+      "company": "Toyota India",
+      "aliases": [
+        "Toyota India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://toyota.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 121,
+      "id": "u s bank",
+      "company": "U.S. Bank India",
+      "aliases": [
+        "U.S. Bank India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.usbank.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 122,
+      "id": "ubs",
+      "company": "UBS",
+      "aliases": [
+        "UBS",
+        "Credit Suisse / UBS India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.ubs.com/global/en/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 123,
+      "id": "ups",
+      "company": "UPS India",
+      "aliases": [
+        "UPS India",
+        "UPS"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.jobs-ups.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 124,
+      "id": "visa",
+      "company": "Visa India",
+      "aliases": [
+        "Visa India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://usa.visa.com/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "access-denied",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 125,
+      "id": "voya financial",
+      "company": "Voya Financial India",
+      "aliases": [
+        "Voya Financial India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.voya.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 126,
+      "id": "western union",
+      "company": "Western Union India",
+      "aliases": [
+        "Western Union India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.westernunion.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 127,
+      "id": "zurich insurance",
+      "company": "Zurich Insurance India",
+      "aliases": [
+        "Zurich Insurance India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://zurich.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 128,
+      "id": "abb",
+      "company": "ABB",
+      "aliases": [
+        "ABB"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.abb/global/en",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 129,
+      "id": "adobe",
+      "company": "Adobe India",
+      "aliases": [
+        "Adobe India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 130,
+      "id": "aig",
+      "company": "AIG",
+      "aliases": [
+        "AIG"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.aig.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 131,
+      "id": "airbus",
+      "company": "Airbus",
+      "aliases": [
+        "Airbus"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.airbus.com/en/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 132,
+      "id": "airtel",
+      "company": "Airtel",
+      "aliases": [
+        "Airtel"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.airtel.in/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 133,
+      "id": "amazon",
+      "company": "Amazon India",
+      "aliases": [
+        "Amazon India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 134,
+      "id": "aon",
+      "company": "Aon",
+      "aliases": [
+        "Aon"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 135,
+      "id": "astrazeneca",
+      "company": "AstraZeneca",
+      "aliases": [
+        "AstraZeneca"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.astrazeneca.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 136,
+      "id": "atlassian",
+      "company": "Atlassian India",
+      "aliases": [
+        "Atlassian India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 137,
+      "id": "ayvens leaseplan",
+      "company": "Ayvens / LeasePlan",
+      "aliases": [
+        "Ayvens / LeasePlan"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.ayvens.com/en-cp/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 138,
+      "id": "bd becton dickinson",
+      "company": "BD / Becton Dickinson",
+      "aliases": [
+        "BD / Becton Dickinson"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 139,
+      "id": "bmw financial services",
+      "company": "BMW Financial Services",
+      "aliases": [
+        "BMW Financial Services"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.bmwgroup.jobs",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 140,
+      "id": "bmw techworks",
+      "company": "BMW TechWorks",
+      "aliases": [
+        "BMW TechWorks"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.bmwgroup.jobs",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 141,
+      "id": "boeing",
+      "company": "Boeing",
+      "aliases": [
+        "Boeing"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.boeing.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 142,
+      "id": "bp",
+      "company": "BP",
+      "aliases": [
+        "BP"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.bp.com/en/global/corporate/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "access-denied",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 143,
+      "id": "carrier",
+      "company": "Carrier",
+      "aliases": [
+        "Carrier"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.carrier.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 144,
+      "id": "caterpillar",
+      "company": "Caterpillar",
+      "aliases": [
+        "Caterpillar"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 145,
+      "id": "charter spectrum",
+      "company": "Charter / Spectrum",
+      "aliases": [
+        "Charter / Spectrum"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.spectrum.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 146,
+      "id": "chevron",
+      "company": "Chevron",
+      "aliases": [
+        "Chevron"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.chevron.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 147,
+      "id": "cleartrip",
+      "company": "Cleartrip",
+      "aliases": [
+        "Cleartrip"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 148,
+      "id": "cnh",
+      "company": "CNH",
+      "aliases": [
+        "CNH"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.cnh.com/en-US/Careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 149,
+      "id": "deutsche bahn",
+      "company": "Deutsche Bahn",
+      "aliases": [
+        "Deutsche Bahn"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "not_established",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 150,
+      "id": "deutsche telekom digital labs",
+      "company": "Deutsche Telekom Digital Labs",
+      "aliases": [
+        "Deutsche Telekom Digital Labs"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.telekom.com/en/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 151,
+      "id": "dp world",
+      "company": "DP World",
+      "aliases": [
+        "DP World"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.dpworld.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 152,
+      "id": "eaton",
+      "company": "Eaton",
+      "aliases": [
+        "Eaton"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.eaton.com/us/en-us/company/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 153,
+      "id": "expedia group",
+      "company": "Expedia Group",
+      "aliases": [
+        "Expedia Group"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 154,
+      "id": "exxonmobil",
+      "company": "ExxonMobil India",
+      "aliases": [
+        "ExxonMobil India",
+        "ExxonMobil"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.exxonmobil.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 155,
+      "id": "flipkart",
+      "company": "Flipkart",
+      "aliases": [
+        "Flipkart"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 156,
+      "id": "ge aerospace",
+      "company": "GE Aerospace",
+      "aliases": [
+        "GE Aerospace"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.gecareers.com/aviation/global/en",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 157,
+      "id": "ge vernova",
+      "company": "GE Vernova",
+      "aliases": [
+        "GE Vernova"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.gecareers.com/vernova/global/en",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 158,
+      "id": "google",
+      "company": "Google India",
+      "aliases": [
+        "Google India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 159,
+      "id": "h and m",
+      "company": "H&M",
+      "aliases": [
+        "H&M"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "documented_connection_only",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 160,
+      "id": "home depot",
+      "company": "Home Depot India",
+      "aliases": [
+        "Home Depot India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 161,
+      "id": "honeywell",
+      "company": "Honeywell",
+      "aliases": [
+        "Honeywell"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.honeywell.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 162,
+      "id": "intuit",
+      "company": "Intuit India",
+      "aliases": [
+        "Intuit India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 163,
+      "id": "invesco",
+      "company": "Invesco",
+      "aliases": [
+        "Invesco"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 164,
+      "id": "jci",
+      "company": "JCI",
+      "aliases": [
+        "JCI"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://jobs.johnsoncontrols.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 165,
+      "id": "jlr",
+      "company": "JLR",
+      "aliases": [
+        "JLR"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.jaguarlandrovercareers.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 166,
+      "id": "komatsu",
+      "company": "Komatsu",
+      "aliases": [
+        "Komatsu"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.komatsu.com/en/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 167,
+      "id": "kroger technology",
+      "company": "Kroger Technology",
+      "aliases": [
+        "Kroger Technology"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 168,
+      "id": "london stock exchange group",
+      "company": "London Stock Exchange Group",
+      "aliases": [
+        "London Stock Exchange Group"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 169,
+      "id": "lowe s",
+      "company": "Lowe’s",
+      "aliases": [
+        "Lowe’s"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://talent.lowes.com",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 12973,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 170,
+      "id": "lufthansa systems",
+      "company": "Lufthansa Systems India",
+      "aliases": [
+        "Lufthansa Systems India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.lufthansa-systems.com/career",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "network-error",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 171,
+      "id": "massmutual",
+      "company": "MassMutual India",
+      "aliases": [
+        "MassMutual India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.massmutual.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 172,
+      "id": "meesho",
+      "company": "Meesho",
+      "aliases": [
+        "Meesho"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 173,
+      "id": "microsoft",
+      "company": "Microsoft India",
+      "aliases": [
+        "Microsoft India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 174,
+      "id": "myntra",
+      "company": "Myntra",
+      "aliases": [
+        "Myntra"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 175,
+      "id": "nasdaq",
+      "company": "Nasdaq",
+      "aliases": [
+        "Nasdaq"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 176,
+      "id": "oracle",
+      "company": "Oracle India",
+      "aliases": [
+        "Oracle India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 177,
+      "id": "paytm",
+      "company": "Paytm",
+      "aliases": [
+        "Paytm"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 178,
+      "id": "phonepe",
+      "company": "PhonePe",
+      "aliases": [
+        "PhonePe"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 179,
+      "id": "prime therapeutics",
+      "company": "Prime Therapeutics",
+      "aliases": [
+        "Prime Therapeutics"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.primetherapeutics.com/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 180,
+      "id": "qualcomm",
+      "company": "Qualcomm",
+      "aliases": [
+        "Qualcomm"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.qualcomm.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 181,
+      "id": "razorpay",
+      "company": "Razorpay",
+      "aliases": [
+        "Razorpay"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 182,
+      "id": "rolls royce",
+      "company": "Rolls-Royce",
+      "aliases": [
+        "Rolls-Royce"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.rolls-royce.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 183,
+      "id": "sainsbury s tech",
+      "company": "Sainsbury's Tech",
+      "aliases": [
+        "Sainsbury's Tech"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 184,
+      "id": "salesforce",
+      "company": "Salesforce India",
+      "aliases": [
+        "Salesforce India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 185,
+      "id": "sap labs",
+      "company": "SAP Labs India",
+      "aliases": [
+        "SAP Labs India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 186,
+      "id": "schneider electric",
+      "company": "Schneider Electric",
+      "aliases": [
+        "Schneider Electric"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.se.com/ww/en/about-us/careers/overview.jsp",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 187,
+      "id": "slb",
+      "company": "SLB",
+      "aliases": [
+        "SLB"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.slb.com",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 188,
+      "id": "stripe",
+      "company": "Stripe India",
+      "aliases": [
+        "Stripe India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 189,
+      "id": "swiss re",
+      "company": "Swiss Re",
+      "aliases": [
+        "Swiss Re"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 190,
+      "id": "t mobile tmus global solutions",
+      "company": "T-Mobile / TMUS Global Solutions",
+      "aliases": [
+        "T-Mobile / TMUS Global Solutions"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.t-mobile.com/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 191,
+      "id": "target",
+      "company": "Target in India",
+      "aliases": [
+        "Target in India",
+        "Target"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://corporate.target.com/careers",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "not probed",
+      "officialJobs": [],
+      "boardSize": 2000,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 192,
+      "id": "thomson reuters",
+      "company": "Thomson Reuters",
+      "aliases": [
+        "Thomson Reuters"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 193,
+      "id": "toyota tfs",
+      "company": "Toyota / TFS",
+      "aliases": [
+        "Toyota / TFS"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.toyotafinancial.com/us/en/careers.html",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 194,
+      "id": "twilio",
+      "company": "Twilio India",
+      "aliases": [
+        "Twilio India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 195,
+      "id": "uber",
+      "company": "Uber India",
+      "aliases": [
+        "Uber India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 196,
+      "id": "vanguard",
+      "company": "Vanguard",
+      "aliases": [
+        "Vanguard"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "",
+      "scanStatus": "Official feed: no Bengaluru Pega match",
+      "checkedAt": "2026-11-12T14:27:00.130Z",
+      "careerPageProbe": "career URL not mapped",
+      "officialJobs": [],
+      "boardSize": 336,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 197,
+      "id": "vodafone idea",
+      "company": "Vodafone Idea",
+      "aliases": [
+        "Vodafone Idea"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.myvi.in/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 198,
+      "id": "volvo cars",
+      "company": "Volvo Cars",
+      "aliases": [
+        "Volvo Cars"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.volvocars.com/intl/v/careers",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 199,
+      "id": "vw digital solutions",
+      "company": "VW Digital Solutions",
+      "aliases": [
+        "VW Digital Solutions"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://www.cariad.technology/careers/",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "unavailable-or-redirected",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    },
+    {
+      "index": 200,
+      "id": "walmart global tech",
+      "company": "Walmart Global Tech India",
+      "aliases": [
+        "Walmart Global Tech India"
+      ],
+      "top50Rank": null,
+      "historicalTeamEvidence": "unproven",
+      "careerUrl": "https://careers.walmart.com/technology",
+      "scanStatus": "Not checked via supported official feed",
+      "checkedAt": null,
+      "careerPageProbe": "reachable-search-not-verified",
+      "officialJobs": [],
+      "boardSize": null,
+      "olderLeads": [],
+      "historicalClaim": null,
+      "newTeamSignal": null,
+      "joinedProfileStarts": null,
+      "fit": "Unassessed: verify Bengaluru Pega engineering ownership and payroll",
+      "program": "No verified Bengaluru Pega workstream in this project"
+    }
+  ]
+}

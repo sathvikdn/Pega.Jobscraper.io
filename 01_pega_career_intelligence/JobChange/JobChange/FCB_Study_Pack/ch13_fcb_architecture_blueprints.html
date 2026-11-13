@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch13 · Architecture: How It All Fits | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch12_deposits_banking_domain.html">&larr; Chapter 12</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch14_interview_question_bank.html">Next: Chapter 14 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 13 &middot; Putting it together</div>
+    <h1>Architecture: How It All Fits</h1>
+    <p class="subtitle">Twelve chapters have each added a component for a reason. This chapter explains why each boundary exists by naming the failure that would occur without it, then walks one complete request, Dana's closure <code>AC-10882</code> with its hold <code>AC-10882-HOLD-1</code>, from the screen to the core, through a timeout and an asynchronous confirmation, to the audit trail. The other case types follow as variations that state only what differs, and scale, failure, deployment and recovery are examined as consequences of the same design.</p>
+    <div class="meta">
+      <div><strong>18</strong><span>Sections</span></div>
+      <div><strong>28</strong><span>Interfaces</span></div>
+      <div><strong>19,189</strong><span>Words</span></div>
+      <div><strong>0</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 12 ended with a family of case types and the rules that govern them, and the open question of how the parts fit one architecture and how it scales. The ledger is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s13-1">13.1 What we built, and why every boundary exists<span>Each boundary, justified by the failure it prevents</span></a>
+      <a href="#s13-2">13.2 The setting<span>Actors, neighbours, assumptions, principles</span></a>
+      <a href="#s13-3">13.3 The system in one picture</a>
+      <a href="#s13-4">13.4 The integration boundary<span>A pattern per interface, and one contract each</span></a>
+      <a href="#s13-5">13.5 The layered application<span>Rulesets, classes, the one-layer trap</span></a>
+      <a href="#s13-6">13.6 The canonical model and the translation point</a>
+      <a href="#s13-walk">13.7 One request end to end: Dana's closure, AC-10882<span>Seven hops, one unknown outcome, one confirmation</span></a>
+      <a href="#s13-var">13.8 The other case types, as variations<span>Legal order, payment exception, dispute, and the rest</span></a>
+      <a href="#s13-9">13.9 The shared frameworks</a>
+      <a href="#s13-10">13.10 Scale, failure, deployment and recovery<span>Consequences of the design</span></a>
+      <a href="#s13-11">13.11 Governance</a>
+      <a href="#s13-12">13.12 Migration and rollout</a>
+      <a href="#s13-13">13.13 Risk register</a>
+      <a href="#s13-recap">13.Z Where we are now<span>What works, and what comes next</span></a>
+      <a href="#s13-inv">13.R1 Reference: the integration inventory</a>
+      <a href="#s13-bp">13.R2 Reference: the full case blueprints</a>
+      <a href="#s13-ref">13.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+  </section>
+
+  <section id="s13-1" class="pagebreak">
+    <h2>13.1 What we built, and why every boundary exists</h2>
+    <p>The parts exist. Chapter 01 gave rules that resolve by class, ruleset and circumstance, so Dana's address change <code>AM-10417</code> could behave correctly for her market. Chapter 02 made it travel through stages, assignments and SLAs. Chapter 03 let the case read account data it does not own. Chapter 04 gave Marcus and Priya two UI paths and a DX API. Chapter 05 connected the case to the core and broke the connection three ways. Chapter 06 followed an event from a topic to a persisted snapshot. Chapter 07 took in files and email, Chapters 08 and 09 added decisioning and a robot for a screen with no API, Chapter 10 secured, shipped and diagnosed it, Chapter 11 looked at the database, and Chapter 12 explained the money and the law. The question this chapter answers is how they fit together and why they are separated where they are, because a boundary that is not justified by a failure is just ceremony.</p>
+    <p>Each boundary below is stated with the failure that appears when it is removed.</p>
+    <p><strong>The integration boundary.</strong> Pega never calls the core directly and never binds to its payloads, and it talks to everything through the ESB or managed file transfer. Without that boundary every case type contains core-specific calls, so a change to the core's contract or a slow core call is a change to, and an outage of, every flow that touches it. With it, the timeouts, the idempotency key, the one retry owner and the error classification live in one integration framework, and the core's failure is contained at one place (Chapter 05). The ESB also gives the one place to throttle, authenticate and trace by correlation ID, which is what let Chapter 10 reconstruct <code>AC-10882-HOLD-1</code> across three systems.</p>
+    <p><strong>The canonical model and its translation point.</strong> Between the vendor payload and the case sits a canonical model, and a mapping at the integration boundary translates one to the other. Without it, a renamed field in the core's response breaks forty rules that happened to read it, and a second core version means a second copy of every flow. With it, a vendor change touches one transform and its unit test, unknown codes become an explicit Unknown with an alert instead of a silent default, and the case stores keys, deltas and decisions, never a copy of the account. The translation must sit <em>at the integration boundary</em>, in the integration rules, not in the case flow: if the mapping is in the flow, the flow is again coupled to the vendor.</p>
+    <p><strong>The layered ruleset stack.</strong> Rules are organised in enterprise, framework, implementation and application layers with dependencies that run one way. Without it, the first case type is built in one ruleset and by the third, rules are copied because nothing is shared; by the sixth, a change to a correspondence header edits forty rules; a state's variation needs another copy; and nobody can say which rules are safe to change. With it, shared frameworks sit low, true differences sit high, decision data changes without a code release, and a hotfix is not a full release (Chapter 01).</p>
+    <p><strong>The case-type split.</strong> Maintenance, closure, legal order, payment exception, dispute and the rest are separate case types sharing frameworks, linked by keys, and not one giant case. Without the split, one case carries every process's stages and every clock, a legal order cannot interrupt a closure cleanly, and access cannot be restricted for sanctions and legal work. With it, each has its own clock, authority and access, and interacts with the others through tickets and child cases (Chapter 02, Chapter 12).</p>
+    <p><strong>The asynchronous boundaries.</strong> Writes that matter go through an outbox and a queue processor, long operations through a callback and a sweeper, and notices through a queue. Without them, a connector call sits inside a transaction holding locks for the length of a network wait, so a slow partner becomes a platform stall (Chapter 11 §11.9), and a lost response leaves the case unable to know whether to act again. With them, the decision and its intent commit locally in milliseconds and the effect completes on someone else's clock with an honest status in between.</p>
+    <p><strong>The reference-data boundary.</strong> Rules own policy and data owns numbers. Without it a threshold or a calendar needs a developer release and cannot be effective-dated, so reprocessing an old order uses today's rule. With it, Legal and Compliance change values through a maker-checker case with effective dates (Chapter 03, Chapter 12). And <strong>the audit boundary</strong>: every decision records the rule version, its inputs and the approver, because evidence reconstructed afterwards is evidence that can be challenged.</p>
+    <p>With the boundaries stated, the remaining sections set the scene, justify each boundary in detail, and then run a single request through all of them.</p>
+  </section>
+
+  <section id="s13-2" class="pagebreak">
+    <h2>13.2 The architecture brief</h2>
+    <h3>The problem statement</h3>
+    <p>Design a Pega platform for the Deposits and Shared Services operations of a US bank: a new, greenfield implementation that replaces or consolidates manual and fragmented processing for account maintenance, closure, legal process orders, payment exceptions, KYC/AML review, reconciliation, dormancy and related work. It must integrate with core banking through a TIBCO ESB, enforce regulatory clocks and dual-control, provide evidence for audit, and be operable around the clock by a small support team.</p>
+    <h3>Actors</h3>
+    <table>
+      <tr><th>Actor</th><th>What they do on the platform</th><th>Channel and access model</th></tr>
+      <tr><td>Branch staff</td><td>Submit customer requests (maintenance, closure, stop payment); receive legal papers and forward them</td><td>Branch portal or the teller platform embedding or launching Pega; Maker role</td></tr>
+      <tr><td>Contact centre agents</td><td>Handle inbound service requests, start service cases, look up case status</td><td>Interaction-style desktop (Chapter 04.8); Maker role, narrower data view; masked PII</td></tr>
+      <tr><td>Operations analysts (L1 and L2)</td><td>Work queues: maintenance, payments exceptions, reconciliation, dormancy</td><td>Pega portal; Maker and Checker roles by seniority</td></tr>
+      <tr><td>Supervisors</td><td>Monitor SLA and backlog, reassign, approve within authority, handle escalations</td><td>Supervisor role, dashboards</td></tr>
+      <tr><td>Legal and Compliance specialists</td><td>Legal process orders, sanctions escalations, AML reviews, exceptions requiring judgement</td><td>Restricted queues and case types; separate access groups</td></tr>
+      <tr><td>Customers (self-service)</td><td>Submit address change or dispute intake, upload documents, track status</td><td>Bank's digital channel calling Pega's DX API or Service-REST through a backend-for-frontend (Chapter 04.7); later phase</td></tr>
+      <tr><td>Partner systems and vendors</td><td>Deliver files and events, receive files and correspondence</td><td>Service accounts, token or certificate authentication</td></tr>
+      <tr><td>Auditors and risk</td><td>Read-only evidence review</td><td>Auditor role</td></tr>
+      <tr><td>Platform and support engineers</td><td>Operate, monitor, deploy</td><td>Admin access group, pipeline roles (Chapter 10)</td></tr>
+    </table>
+    <h3>Surrounding systems (as given in the brief, plus typical neighbours to confirm)</h3>
+    <table>
+      <tr><th>System</th><th>Given or assumed</th><th>Role</th></tr>
+      <tr><td>Core banking (Fiserv or Flexcube-style)</td><td>Given</td><td>System of record for customers, accounts, balances, holds and transactions</td></tr>
+      <tr><td>TIBCO ESB</td><td>Given</td><td>Middleware hub: routing, transformation, security, throttling (Chapter 05.7)</td></tr>
+      <tr><td>Identity provider (Okta likely)</td><td>Assumed; to confirm</td><td>Employee single sign-on and group claims (Chapter 05.13)</td></tr>
+      <tr><td>Log platform (Splunk likely)</td><td>Assumed; to confirm</td><td>Central logs and correlation-ID tracing (Chapter 10.10)</td></tr>
+      <tr><td>CRM or customer master</td><td>Assumed</td><td>Customer profile and contact data</td></tr>
+      <tr><td>Document management</td><td>Assumed</td><td>Images, legal orders, evidence, correspondence copies</td></tr>
+      <tr><td>Payment hubs and networks</td><td>Assumed (ACH, wires, checks, cards)</td><td>Source of exceptions and returns; execution of payments</td></tr>
+      <tr><td>Sanctions and identity screening</td><td>Assumed</td><td>OFAC, PEP, identity verification</td></tr>
+      <tr><td>Fraud detection platform</td><td>Assumed</td><td>Alerts and holds</td></tr>
+      <tr><td>Print and mail vendor, email and SMS gateways</td><td>Assumed</td><td>Correspondence delivery</td></tr>
+      <tr><td>General ledger and finance</td><td>Assumed</td><td>Reconciliation counterpart; journal entries</td></tr>
+      <tr><td>Data warehouse</td><td>Assumed</td><td>Reporting and analytics</td></tr>
+      <tr><td>Kafka or other event backbone</td><td>To confirm</td><td>Event-driven intake if it exists</td></tr>
+    </table>
+    <h3>Working assumptions (stated so they can be corrected)</h3>
+    <ol>
+      <li>Core banking is the system of record for customer, account, balance and hold data; Pega never becomes a second master (it stores keys, deltas and evidence).</li>
+      <li>Pega Infinity on a current release with Constellation as the UI for internal operations (Chapter 04.11); the exact version and deployment model are to confirm.</li>
+      <li>PostgreSQL (or the bank's standard database) hosts the Pega schemas; the DBA team owns the database platform (Chapter 11).</li>
+      <li>The ESB can expose REST (preferably) or SOAP services for the operations needed, with idempotency support negotiable; core batch extracts exist for reconciliation.</li>
+      <li>Regulatory content (exemptions, notices, deadlines, thresholds) is owned by Legal and Compliance and delivered as reference data under change control.</li>
+      <li>Operations is staffed in more than one location and time zone, so calendars and cut-offs are explicit (Chapter 02.8).</li>
+      <li>The first release is internal operations; customer self-service is a later phase.</li>
+    </ol>
+    <h3>Architecture principles</h3>
+    <table>
+      <tr><th>Principle</th><th>Meaning in practice</th></tr>
+      <tr><td>Core is the master; Pega is the workbench</td><td>Read through cached, thread-scope data pages; write through idempotent integrations; store keys and snapshots needed for audit, not copies</td></tr>
+      <tr><td>Rules own policy; data owns numbers</td><td>Logic in rules; thresholds, calendars, state and product variation in effective-dated reference data (Chapter 03.12)</td></tr>
+      <tr><td>Canonical model between systems and cases</td><td>Vendor payloads never bind to cases (Chapter 05.3)</td></tr>
+      <tr><td>Design for failure</td><td>Every integration has timeouts, idempotency, classification, retry and a degraded mode (Chapter 05.9)</td></tr>
+      <tr><td>Dual control by construction</td><td>Four-layer maker-checker, privileges, Access Deny, validation and detective report (Chapter 10.4)</td></tr>
+      <tr><td>Evidence by default</td><td>Every decision stores the rule version, inputs and approver; every regulatory clock stores its start date and notices</td></tr>
+      <tr><td>Reuse before build</td><td>Shared SLA, authority matrix, correspondence, audit and integration frameworks used by all case types</td></tr>
+      <tr><td>Observable and supportable</td><td>Correlation IDs, dashboards, alerts with owners and runbooks, replay tooling, 24x7 operability (Chapters 06.11, 10)</td></tr>
+      <tr><td>Thin slices, early value</td><td>Pilot a low-risk case type end to end before the high-risk ones; prove the platform and the controls</td></tr>
+      <tr><td>Standards enforced mechanically</td><td>Guardrail and test gates in the pipeline (Chapter 10.11)</td></tr>
+    </table>
+  </section>
+
+  <section id="s13-3" class="pagebreak">
+    <h2>13.3 Context diagram</h2>
+    <div class="flow">                                   RIVERBEND DEPOSIT SERVICING: SYSTEM CONTEXT (target)
+
+   ACTORS                                  PRESENTATION                      PEGA PLATFORM (case engine)                         INTEGRATION                       SYSTEMS OF RECORD / PARTNERS
+ ┌──────────────┐   SSO (SAML/OIDC)   ┌──────────────────┐        ┌──────────────────────────────────────────┐     ┌────────────────┐     ┌───────────────────────┐
+ │ Branch       │ ───────────────────▶│ Constellation    │        │ Case types: Maintenance, Closure, Legal   │     │                │────▶│ Core banking          │
+ │ Contact ctr  │                     │ ops portal       │──────▶ │ Order, ACH/Payment Exception, KYC/AML,    │────▶│   TIBCO ESB    │     │ (accounts, holds, txn)│
+ │ Ops analysts │   ◀── Okta (IdP) ── │ (agent desktop,  │        │ Reconciliation, Dormancy, CD Maturity ... │     │ routing,       │────▶│ Payment hubs (ACH,    │
+ │ Supervisors  │                     │  dashboards)     │        │ Shared frameworks: SLA/calendars,         │     │ transformation,│     │  wires, checks, cards)│
+ │ Legal/Compl. │                     └──────────────────┘        │ authority matrix, correspondence, audit,  │     │ throttling,    │────▶│ Sanctions / ID verif. │
+ │ Auditors     │                     ┌──────────────────┐        │ reference data, integration framework     │     │ token + mTLS,  │     │ Fraud platform        │
+ │ Customers ───│ (phase 2) ─────────▶│ Bank digital     │──DX──▶ │                                           │     │ idempotency    │────▶│ CRM / customer master │
+ └──────────────┘                     │ portal + BFF     │  API   │ Background: Queue Processors, Job         │     └────────────────┘     │ Document management   │
+                                      └──────────────────┘        │ Schedulers, Data Flows, File/Email        │     ┌────────────────┐     │ GL / finance          │
+                                                                  │ Listeners                                  │◀───▶│ MFT / SFTP     │◀───▶│ Print/mail vendor     │
+ PLATFORM SERVICES                                                │                                            │     │ (files in/out) │     │ Email / SMS gateways  │
+ Pega DB (PostgreSQL) · Elasticsearch/search · Stream service ·   └──────────────────────────────────────────┘     └────────────────┘     │ State escheat portals │
+ Kafka (if present) · Splunk/SIEM · PDC · Deployment Manager                  ▲   events (Kafka/ESB topics)                                  │ Data warehouse        │
+                                                                              └────────────────────────────────────────────────────────────────┴───────────────────────┘
+ LEGEND: sync = REST via ESB (read, quick writes) · async = event/queue + callback · batch = SFTP files with trigger file · every call carries correlation ID and idempotency key</div>
+    <div class="note"><strong>Reading the diagram.</strong> Every arrow between Pega and a system of record goes through the ESB or managed file transfer, never point-to-point; every arrow carries a correlation ID. Customers enter only through the bank's channel and backend-for-frontend in a later phase.</div>
+  </section>
+
+  <section id="s13-4" class="pagebreak">
+    <h2>13.4 The integration boundary: a pattern per interface, and why</h2>
+    <p>The integration boundary is where most of a deposits platform's incidents arise, so it is where the design effort goes first. There are twenty-eight interfaces in the inventory (13.R1), and they do not each get a bespoke design: each gets one of five patterns, chosen by one piece of logic. <strong>SYNC</strong> is a request-reply REST call through the ESB. <strong>SYNC+Q</strong> is a synchronous attempt with queued retry. <strong>ASYNC-CB</strong> is an asynchronous request with a callback and a status check. <strong>EVENT</strong> is event-driven intake. <strong>BATCH</strong> is a file exchange with a trigger file and reconciliation. The reason for having few patterns is operational: a small support team can learn how five patterns fail and recover, and cannot learn twenty-eight.</p>
+    <p>The logic starts with who is waiting and what a repeat would do. A person looking at a screen needs a safe read now, so reads are synchronous and cached in a data page with an as-of stamp, and a failed read degrades to the cached value, because repeating a read costs nothing. A write that must not be lost or duplicated cannot be synchronous alone: if the call times out, the caller does not know whether the effect happened, so the write is an attempt with an idempotency key, queued for retry through an outbox, with the unknown outcome as its own status (Chapter 05 §5.9). An operation that takes long or spans several systems cannot hold a user thread, so it is asynchronous: the request returns a tracking ID, the answer arrives by callback, and a sweeper covers the callback that never comes. Continuous change that others need quickly is an event, if the bank has an event backbone, because polling either wastes calls or arrives late (Chapter 06). Volume and vendor standards, such as ACH return files and core extracts, are batch with a trigger file, because a file is a durable, hashable artefact that can be registered, staged and reconciled by counts (Chapter 07). Compliance controls such as sanctions screening fail closed, so the case waits and never approves by default. And where there is no interface at all the answer is to ask for one, using a robot only as a time-boxed bridge (Chapter 09).</p>
+    <p>Two details of the pattern make it hold. Timeouts are agreed at each hop and the ESB's is shorter than Pega's, so the layer closest to the core fails first and reports. And exactly one layer owns retries: if Pega retries and the ESB also retries, one failure becomes a multiplied load on a core that is already struggling. These are written into a one-page contract per operation, agreed with the ESB team before anyone builds, because most integration incidents are boundary disagreements and not code defects. The twenty-eight interfaces and the pattern, reason and resilience note for each are in the reference inventory (13.R1); in the walkthrough of 13.7, the balance read is SYNC, the settlement is EVENT, the hold is SYNC+Q with an outbox, the disbursement is ASYNC-CB and the nightly comparison against the core is BATCH.</p>
+    <h3>The decision logic behind the choices</h3>
+    <div class="flow">PATTERN SELECTION (apply per interface)
+   Is a human waiting on screen and is the operation a safe READ?                 -&gt; SYNC (cached via data page; degraded mode defined)
+   Is it a WRITE that must not be lost or duplicated, with business tolerant of seconds-to-minutes? -&gt; SYNC+Q (outbox, idempotency key, queued retry)
+   Does the backend take long, or involve several systems, or finish on its own clock?  -&gt; ASYNC-CB (202 + callback + status sweeper)
+   Does the source produce continuous change that others need quickly and an event backbone exists? -&gt; EVENT (keyed, idempotent, replayable)
+   Is it high volume, once-a-day, or an industry/vendor file standard?            -&gt; BATCH (trigger file, registry, staging, reconcile)
+   Is it a compliance control (sanctions, dual control)?                           -&gt; fail CLOSED; design the manual fallback first
+   Is there no interface at all?                                                   -&gt; ask for one; RPA as a time-boxed bridge only (Chapter 09)
+   ALWAYS: correlation ID; idempotency key on writes; timeouts agreed with the ESB (ESB shorter than Pega); one layer owns retries; errors classified at the mapping boundary</div>
+    <h3>Standard integration contract (one page per operation, agreed with the ESB team)</h3>
+    <table>
+      <tr><th>Item</th><th>Content</th></tr>
+      <tr><td>Operation and purpose</td><td>Business meaning, owner, version</td></tr>
+      <tr><td>Pattern and latency target</td><td>Sync, async with callback, event, batch; target p95 and p99</td></tr>
+      <tr><td>Request and response schema</td><td>Canonical-friendly JSON or XML, mandatory fields, enumerations, examples</td></tr>
+      <tr><td>Timeouts at each hop</td><td>Pega connect and read; ESB backend timeout (shorter than Pega's)</td></tr>
+      <tr><td>Retry ownership</td><td>Which layer retries, how many times, backoff</td></tr>
+      <tr><td>Idempotency</td><td>Key format, retention period, behaviour on repeat</td></tr>
+      <tr><td>Error contract</td><td>Status codes and body; which are transient, permanent or business</td></tr>
+      <tr><td>Throttling</td><td>Maximum rate; signalling (429 and Retry-After)</td></tr>
+      <tr><td>Security</td><td>Authentication, scopes, mTLS, IP allow list</td></tr>
+      <tr><td>Correlation</td><td>Header name; propagation to core and back</td></tr>
+      <tr><td>Ordering and delivery guarantees</td><td>For events: key, ordering scope, at-least-once</td></tr>
+      <tr><td>Availability and maintenance windows</td><td>Planned downtime; degraded behaviour</td></tr>
+      <tr><td>Environments and test data</td><td>Stubs, failure injection, realistic data</td></tr>
+      <tr><td>Change and deprecation policy</td><td>Notice period, versioning</td></tr>
+      <tr><td>Monitoring and support</td><td>Who can see message status by correlation ID; on-call contacts</td></tr>
+    </table>
+      </section>
+
+  <section id="s13-5" class="pagebreak">
+    <h2>13.5 The layered application, and the "everything in one layer" trap</h2>
+    <p>The closure of 13.7 will use rules from five layers without naming them: its flow and eligibility table from the deposits framework, the correlation ID and idempotency handling from the enterprise integration framework, the notice template from the correspondence framework, the product-specific differences from a thin implementation layer, and the portal Marcus sees from the application layer. The structure chosen in the first sprints is the structure the team lives with for years. Chapter 01 gives the mechanics (classes, rulesets, built-on stacks, rule resolution); this section applies them to a deposits programme.</p>
+    <h3>The trap</h3>
+    <p>A new team builds quickly in one application and one ruleset, with every class under one implementation node. It works for the first case type. By the third, rules are copied between case types because nothing is shared; by the sixth, a change to the correspondence header means editing forty rules; a second business unit or state needs different behaviour and the only option is another copy; the authority matrix is embedded in three flows; an integration mapping change forces a full release of the case flows; and nobody can say which rules are safe to change. The cost is not visible until the second year.</p>
+    <table>
+      <tr><th>Symptom of the one-layer trap</th><th>Root cause</th><th>Layered prevention</th></tr>
+      <tr><td>Copy-paste rules between case types</td><td>Nothing shared at a higher class or ruleset</td><td>Shared frameworks in a lower layer; case types inherit and specialise</td></tr>
+      <tr><td>Fear of changing a rule because it may break other things</td><td>Unknown dependencies</td><td>One-directional dependency rule: higher layers use lower ones; lower never reference higher; enforced by ruleset prerequisites and reviews</td></tr>
+      <tr><td>State or market variation done with if/else or cloned flows</td><td>No specialisation structure</td><td>Circumstancing and reference data; implementation layer holds only true differences</td></tr>
+      <tr><td>Hotfixes require releasing everything</td><td>Mixed change cadences in one ruleset</td><td>Separate rulesets by change cadence and owner: process, integration, decision data, tests</td></tr>
+      <tr><td>Business cannot change thresholds without a developer release</td><td>Numbers embedded in rules</td><td>Decision data and data types in their own ruleset with a business change process</td></tr>
+      <tr><td>Vendor payload changes ripple into cases</td><td>No integration or canonical layer</td><td>Integration rulesets and classes with mapping transforms</td></tr>
+      <tr><td>Test rules shipped to production</td><td>Tests mixed with product rules</td><td>Separate test ruleset not packaged for production</td></tr>
+    </table>
+    <h3>The proposed layers</h3>
+    <div class="flow">APPLICATION STACK (built-on, top to bottom; the operator logs in to the TOP application; rule resolution searches top-down, Chapter 01.6)
+
+ ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+ │ L5  FCBDepOps  (the application operators log into: one per persona family or business unit if needed)            │
+ │     rulesets: FCBDepOps_Rules (UI composition, portals, work queues config, role-specific views, dashboards)        │
+ │     access groups: Makers, Checkers, Supervisors, Legal, Compliance, Auditors, ...                                  │
+ ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+ │ L4  FCBDepImpl (implementation / specialisation layer: ONLY true differences)                                        │
+ │     per business unit, product line or state overrides: circumstanced rules, product-specific templates              │
+ │     rulesets: FCBDepImpl_Retail, FCBDepImpl_Commercial (as needed)                                                  │
+ ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+ │ L3  FCBDep  (Deposits FRAMEWORK: case types, flows, shared deposit logic)                                            │
+ │     rulesets: FCBDep (case types, flows, flow actions, views), FCBDepInt (integration rules for deposits systems),   │
+ │               FCBDepData (data types, decision tables and reference data: business-managed), FCBDepRpt (reports)     │
+ ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+ │ L2  FCBCommon  (ENTERPRISE layer: reusable across Deposits and any future Riverbend application)                           │
+ │     rulesets: FCBCommon (canonical data classes: Party, Address, Account, Hold, Order; audit; error framework),      │
+ │               FCBCommonInt (integration framework: connectors base, error classification, correlation, idempotency),  │
+ │               FCBCommonCorr (correspondence framework: fragments, templates base), FCBCommonSec (roles base, privileges) │
+ ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+ │ L1  PEGA PLATFORM and Pega-supplied frameworks (never modified)                                                      │
+ └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+ SEPARATE, NEVER PACKAGED TO PRODUCTION:  FCBDepTest (PegaUnit cases, test data, simulation rules)
+ DEPENDENCY RULE: FCBDepOps -&gt; FCBDepImpl -&gt; FCBDep -&gt; FCBCommon -&gt; Pega. Never the reverse. Prerequisites on each ruleset enforce it.</div>
+    <h3>What belongs in each layer</h3>
+    <table>
+      <tr><th>Layer</th><th>Contains</th><th>Does not contain</th><th>Owner and change cadence</th></tr>
+      <tr><td>L2 FCBCommon (enterprise)</td><td>Canonical data classes (<code>FCB-Common-Data-Party</code>, Address, Account, Hold, Order, Transaction); audit utilities; error classification and logging framework; the integration base (connector templates, correlation ID and idempotency handling, timeout defaults); correspondence framework (fragment library, base templates, send and archive); base security roles and privilege naming; calendar and SLA utilities; shared UI components</td><td>Anything specific to a deposit product or process; anything that changes weekly</td><td>Enterprise architecture and platform team; slow cadence, high review bar</td></tr>
+      <tr><td>L3 FCBDep (framework)</td><td>Deposit case types and their flows, stages, shared subprocesses (Verify, Approve, Notify), decision-table skeletons, authority matrix framework, data page definitions, reports, dashboards; deposit-specific integration rules for core, payment hub, screening; business-managed decision data and reference data in a separate ruleset</td><td>State or product overrides (they go to L4); environment endpoints (configuration)</td><td>Deposits technical lead; release cadence</td></tr>
+      <tr><td>L4 FCBDepImpl (implementation)</td><td>Only genuine differences: a circumstanced variant for a state, a product-specific correspondence template, a business-unit-specific routing rule</td><td>Copies of framework rules (circumstance, do not clone); new base capabilities (those go down to L3 or L2)</td><td>Product and business-unit teams under framework governance</td></tr>
+      <tr><td>L5 FCBDepOps (application)</td><td>Portals, work queue configuration, role-specific landing pages, access group set, dashboards composition</td><td>Process logic</td><td>Deposits product owner and UX</td></tr>
+      <tr><td>Decision and reference data (FCBDepData)</td><td>Decision tables, Decision Data, data types for exemptions, notice rules, return-reason treatments, dormancy rules, authority matrix, calendars</td><td>Process flows</td><td>Business owners (Legal, Compliance, Payments Ops) through maker-checker; promoted with the release or by a controlled data release</td></tr>
+      <tr><td>Integration rulesets (FCBCommonInt and FCBDepInt)</td><td>Connectors, services, authentication profile references, mapping transforms, simulation rules, integration classes</td><td>Case logic</td><td>Integration lead; changes with ESB contract versions</td></tr>
+      <tr><td>Tests (FCBDepTest)</td><td>PegaUnit cases, simulation data, scenario tests</td><td>Anything needed at run time</td><td>QA and developers; never in the production package</td></tr>
+    </table>
+    <h3>Class structure and naming (extending Chapter 01.4)</h3>
+    <table>
+      <tr><th>Concern</th><th>Standard</th></tr>
+      <tr><td>Org and framework classes</td><td><code>FCB-</code> (org, abstract), <code>FCB-Common-</code> (enterprise), <code>FCB-Dep-</code> (Deposits framework, abstract)</td></tr>
+      <tr><td>Work classes</td><td><code>FCB-Dep-Work-</code> (abstract base with shared properties and defaults), then one concrete class per case type: <code>FCB-Dep-Work-AccountMaintenance</code>, <code>-AccountClosure</code>, <code>-LegalOrder</code>, <code>-HoldPlacement</code>, <code>-PaymentException</code>, <code>-KYCReview</code>, <code>-ReconBreak</code>, <code>-Dormancy</code>, <code>-CDMaturity</code>, <code>-StopPayment</code>, <code>-Dispute</code></td></tr>
+      <tr><td>Data classes</td><td><code>FCB-Common-Data-*</code> for enterprise entities; <code>FCB-Dep-Data-*</code> for deposits reference data and persisted data (LegalOrder, ReturnReason, ExemptionParameter, FileRegistry...)</td></tr>
+      <tr><td>Integration classes</td><td><code>FCB-Dep-Int-&lt;System&gt;-&lt;Entity&gt;_vN</code> (for example <code>FCB-Dep-Int-Core-Account_v1</code>), one per external contract version</td></tr>
+      <tr><td>Ruleset names</td><td><code>FCBCommon</code>, <code>FCBCommonInt</code>, <code>FCBDep</code>, <code>FCBDepInt</code>, <code>FCBDepData</code>, <code>FCBDepImpl_*</code>, <code>FCBDepOps_Rules</code>, <code>FCBDepTest</code>; version <code>MM-mm-pp</code> aligned to release trains</td></tr>
+      <tr><td>Rule naming</td><td>Verb-noun for actions, question form for when rules (<code>HasActiveLegalHold</code>), noun for data pages (<code>D_Account</code>), prefix for integration (<code>Core_PlaceHold</code>)</td></tr>
+      <tr><td>Property placement</td><td>At the highest class where all descendants need it (Chapter 03.1); money as Decimal, identifiers as Text, business dates as Date</td></tr>
+    </table>
+    <h3>Reusable component strategy</h3>
+    <table>
+      <tr><th>Component (built once, in the lowest sensible layer)</th><th>Used by</th><th>Chapter reference</th></tr>
+      <tr><td>SLA and calendar utility: business-day calculations on a calendar chosen per regulatory clock (Chapter 12 §12.10) and bank-specific calendars; dynamic due-date SLA rules</td><td>All case types with a clock</td><td>02.8, 12.10</td></tr>
+      <tr><td>Authority matrix and approval subprocess (maker-checker with four-layer enforcement)</td><td>Closure, Legal, Maintenance, Reconciliation, Fee waiver</td><td>02.6, 10.4</td></tr>
+      <tr><td>Correspondence framework: fragment library, state and language variation, send, archive, bounce handling, loop prevention</td><td>Every notice</td><td>02.9, 07.16</td></tr>
+      <tr><td>Integration framework: connector base, correlation ID and idempotency key handling, error classification, retry via queue processor, circuit-breaker flag (a build, not a Pega feature), degraded mode helpers</td><td>Every integration</td><td>05.9, 05.10</td></tr>
+      <tr><td>File intake framework: registry, trigger-file handshake, staging, chunking, reconciliation</td><td>ACH returns, legal orders, positive pay, mail vendor files, core extracts</td><td>07.8 to 07.11</td></tr>
+      <tr><td>Audit and evidence utilities: decision log (rule version, inputs, outcome), field audit configuration pattern, evidence attachment</td><td>All regulated decisions</td><td>01.11, 10.7</td></tr>
+      <tr><td>Dead-letter, replay and dashboard toolkit</td><td>All pipelines</td><td>06.11</td></tr>
+      <tr><td>Reference data maintenance case (maker-checker change of decision data with effective dates)</td><td>Business-owned rules</td><td>03.12</td></tr>
+      <tr><td>Common UI views and components</td><td>All case types in Constellation</td><td>04.3</td></tr>
+      <tr><td>Test frameworks: PegaUnit templates, simulation of connectors, role-by-role access test suite</td><td>All development</td><td>01.13, 10.4</td></tr>
+    </table>
+    <h3>Governance mechanisms that keep the layers honest</h3>
+    <ul>
+      <li><strong>Architecture review at check-in for new classes and rulesets</strong>; a short template ("which layer, why, who owns it").</li>
+      <li><strong>Prerequisite checks in the pipeline</strong>: a build fails if a lower layer references a higher one.</li>
+      <li><strong>The L4 rule</strong>: anything proposed for the implementation layer must state what differs from the framework; if nothing differs, it is not an override.</li>
+      <li><strong>Clone detection</strong>: periodic search for near-duplicate rules (same name patterns across case classes) as a technical-debt item.</li>
+      <li><strong>Decision data change path</strong> separate from the code release path, with its own approvals (13.11).</li>
+    </ul>
+  </section>
+
+  <section id="s13-6" class="pagebreak">
+    <h2>13.6 The canonical data model and the translation boundary</h2>
+    <p>In hop 2 of the closure the case read an account and stored a key, and the canonical model is what makes that clean. Chapter 05 §5.3 argued that cases never bind to vendor payloads, and Chapter 03 sketched the entities. The failure it prevents is concrete: if the core renames the field that carries the available balance, and forty rules read that field, forty rules break; if the case flow itself contains the mapping, the flow is coupled to the vendor and cannot be reused when a second core version appears. This section fixes the model, and the rule that the translation sits at the integration boundary and nowhere else.</p>
+    <h3>Core entities (canonical, in <code>FCB-Common-Data-*</code>)</h3>
+    <table>
+      <tr><th>Entity</th><th>Key attributes (canonical names and types)</th><th>Source of truth</th><th>How Pega holds it</th></tr>
+      <tr><td>Party (customer or entity)</td><td><code>PartyID</code> (Text), type (Individual, Entity), legal name, tax ID reference (hash or token, never raw), date of birth or formation date, state, risk rating, status, contact points (page list of Address, Phone, Email with type and verified flag), beneficial owners (entities)</td><td>Core or customer master</td><td>Read through <code>D_Party</code> (thread scope); case holds <code>PartyID</code> and a snapshot only where audit needs the value at that time</td></tr>
+      <tr><td>Account</td><td><code>AccountNumber</code> (Text), <code>ProductCode</code>, status (Active, Dormant, Frozen, Closed), open date, close date, maturity date (CD), ledger balance, available balance (Decimal), owners and roles (page list: PartyID, role), titling, state, last owner activity date</td><td>Core</td><td>Read through <code>D_Account[AccountNumber]</code> and <code>D_AccountsByParty</code>; exposed account number on cases</td></tr>
+      <tr><td>Hold</td><td><code>HoldID</code>, <code>AccountNumber</code>, type (Legal, Fraud, Deposit, Admin), amount, status, placed at, expires at, released at, reason code, linked order ID, idempotency key, core reference</td><td>Core (holds are placed in core)</td><td>Pega persists a Hold request record (data instance) to track the request and result; read current holds through <code>D_Holds</code></td></tr>
+      <tr><td>Order (legal)</td><td><code>OrderNo</code> + <code>Version</code> (unique key), type, jurisdiction state, issuing authority, service date and time, response due date, amount claimed, debtor identifiers, status, related case IDs</td><td>Pega (the order record is created by Riverbend's process)</td><td>Own table with exposed columns (Chapter 03.13); child hold cases by account</td></tr>
+      <tr><td>Transaction</td><td><code>TxnID</code>, <code>AccountNumber</code>, posted at, amount (signed Decimal), type, channel, trace number, balance after, source reference</td><td>Core</td><td>Read on demand, paged; ACH return items staged in a table for processing</td></tr>
+      <tr><td>Return item (ACH)</td><td>Original trace, return trace, reason code, amount, effective date, status, file ID, line number</td><td>Network file (received)</td><td>Staging table and applied-returns table with unique key (Chapter 11.3)</td></tr>
+      <tr><td>Reference entities</td><td>ReasonCode, Product, StateRule (exemption parameter set), NoticeRule, Calendar, AuthorityLimit, DormancyRule</td><td>Pega decision data (business-owned)</td><td>Effective-dated data types, node-scope read-only data pages</td></tr>
+    </table>
+    <h3>The translation boundary</h3>
+    <div class="flow">THREE LAYERS BETWEEN A VENDOR AND A CASE
+   [ External contract, versioned ]        [ Mapping (data transforms, one per direction per version) ]        [ Canonical model ]        [ Case ]
+   core JSON v1 / ESB payload   --&gt;   FCB-Dep-Int-Core-Account_v1   --CoreAccountToCanonical-->   FCB-Common-Data-Account   --&gt;   case keys + decisions
+   core v2 (later)              --&gt;   FCB-Dep-Int-Core-Account_v2   --CoreAccountV2ToCanonical-->  (same canonical)           --&gt;   unchanged
+   Code translation (status, product, reason codes) from REFERENCE DATA, not hard-coded;  unknown code -&gt; Unknown + alert, never a silent default.
+   Money: Decimal end to end; business dates: Date; instants: DateTime in GMT; identifiers: Text; sensitive identifiers: tokens or hashes.
+   Rule: a change in a vendor field touches ONE transform and its PegaUnit test (Chapter 05.5).</div>
+    <h3>What the case stores</h3>
+    <table>
+      <tr><th>Store on the case</th><th>Do not store on the case</th></tr>
+      <tr><td>Keys: <code>PartyID</code>, <code>AccountNumber</code>, linked case and order IDs</td><td>The whole customer or account record (goes stale; PII bloat in the BLOB)</td></tr>
+      <tr><td>The requested change (delta) and the decision outcomes with rule versions</td><td>Transaction history</td></tr>
+      <tr><td>Snapshots required for audit at the time of decision (the address as processed, the balance used for an approval, screening results summary)</td><td>Raw vendor payloads (keep payload hash and size in logs; payload in a protected store with short retention if needed)</td></tr>
+      <tr><td>Correlation ID, idempotency keys, regulatory clock start dates and notices sent</td><td>Secrets, tokens, raw tax IDs</td></tr>
+      <tr><td>Exposed columns chosen from the report, queue and batch queries (Chapter 03.3)</td><td>Large page lists that belong in their own data instances</td></tr>
+    </table>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>The core's next release renames <code>availBal</code> to <code>availableBalance</code> and adds a status value the application has never seen. A developer has already put the old field name in the closure flow's eligibility decision, to "save a mapping step". Where should the translation have sat, and what happens to the new status value?</p>
+      <p><strong>Answer.</strong> At the integration boundary, in the mapping transform for the versioned external contract (<code>FCB-Dep-Int-Core-Account_v1</code> to the canonical account), so that the flow reads only the canonical <code>AvailableBalance</code>. With the mapping in the flow, the rename breaks the flow and every other rule that copied the pattern; with it at the boundary, the rename touches one transform and its unit test. The unknown status must map to an explicit Unknown with an alert, never to a default such as Active, because a closed or frozen account silently treated as active is how a restraint is missed. The answer fails if the status value is added to the code table but the transform's test is not updated, which is why the transform and its test change together.</p></div>
+    <h3>Exposed-column plan for the work tables (start list, to be refined with the DBA)</h3>
+    <table>
+      <tr><th>Column (property)</th><th>Used by</th></tr>
+      <tr><td>Status, stage, case type, priority</td><td>Queues, dashboards, SLA reports</td></tr>
+      <tr><td>AccountNumber, PartyID</td><td>Lookups, duplicate detection, case-by-account search</td></tr>
+      <tr><td>ResponseDueDate / RegulatoryDeadline, SLA outcome, age band inputs</td><td>Due-soon reports, breach counts, supervisor dashboards</td></tr>
+      <tr><td>Amount (where authority applies), RiskTier</td><td>Approval routing queries, risk reports</td></tr>
+      <tr><td>MakerOperatorID, ApproverOperatorID</td><td>Maker-checker control report</td></tr>
+      <tr><td>CorrelationID, FileID, LineNumber</td><td>Support tracing, file reconciliation</td></tr>
+      <tr><td>ParentCaseID</td><td>Child-case roll-ups</td></tr>
+      <tr><td>ResolvedDateTime, ResolutionCode, ExceptionReason, ReworkFlag</td><td>Operational metrics (Chapter 12.14)</td></tr>
+    </table>
+  </section>
+
+  <section id="s13-walk" class="pagebreak">
+    <h2>13.7 One request end to end: Dana's closure, <code>AC-10882</code></h2>
+    <p>The boundaries are now justified one at a time, and the test of an architecture is whether they hold together under one real request. Dana Whitfield (<code>CUS-4417</code>) has decided to close her checking account <code>CHK-8842-0117</code> and move the money to her savings account <code>SAV-8842-0233</code>. She phones Riverbend on Monday 9 March 2026, and Marcus Reed opens the closure in the agent desktop. The case is <code>AC-10882</code>, its class is <code>FCB-Dep-Work-AccountClosure</code>, and Priya Raman is the checker. This is the only journey in the pack that crosses every boundary: the screen, the case engine, data pages, the integration to the core with an unknown outcome, an asynchronous confirmation by event, a disbursement completed on the core's clock, and an audit trail. For each hop the walkthrough states what triggered it, which rule runs and on what page or class, what data enters, what changes, what lives only on the clipboard and what is committed, whether it is synchronous or asynchronous, what Marcus sees, and what happens when that hop fails. The mechanics of the connector, the event path and the authorisation surface are in Chapters 05, 06 and 10; this section only shows how they connect. The times and thresholds are illustrative and carry <span class="tag amber">assumed Riverbend policy</span> where they are Riverbend's own targets.</p>
+
+    <h3>Hop 1: Marcus submits the closure from the screen</h3>
+    <p><strong>Trigger.</strong> At 10:05 Marcus completes the closure form in Constellation (Chapter 04) and clicks Submit. <strong>What runs.</strong> The browser calls the case engine's DX API, which validates the request against the view and the data model, and creates the case. The case class inherits from the deposits framework; the closure case type's stages (Intake, Pre-closure checks, Approve, Fulfil, Resolve) come from the layer that owns closure, and the authority table and the closure-eligibility table come from the reference-data ruleset, not from the case. <strong>What data enters.</strong> From the form: the closure reason, the delivery method (internal transfer to <code>SAV-8842-0233</code>), and the requester's verification result (Dana was verified on the call by Marcus against the customer record). From the call context: <code>AccountNumber</code> and <code>PartyID</code>. <strong>What is committed.</strong> In one database transaction: the case row (with the exposed columns for status, stage, account number and due dates), the first history entry, the correlation ID <code>AC-10882</code> and the first assignment. <strong>Sync or async.</strong> Synchronous, because Marcus is waiting. <strong>What Marcus sees.</strong> The case ID and the Intake stage. <strong>If it fails.</strong> If the request fails validation, the field-level message appears on the form and nothing is committed. If the response is lost in the network and Marcus clicks Submit again, the DX call's idempotency key returns the same case instead of creating <code>AC-10883</code> (Chapter 04 §4.6). A double submit is a hop-1 problem, solved at hop 1.</p>
+
+    <h3>Hop 2: the case reads what it does not own</h3>
+    <p><strong>Trigger.</strong> The Pre-closure checks stage needs the account's balance, holds, pending items, linked products and accrued interest. <strong>What runs.</strong> Data pages, not copies: <code>D_Account[AccountNumber]</code> returns the ledger and available balance, <code>D_Holds</code> returns active holds, and an accrued-interest data page returns interest accrued but not yet paid to closure date. Each is a thread-scope page whose source is a connector to the ESB, mapped to the canonical account class so that no vendor field name appears in the case (13.6). <strong>What data enters.</strong> At 10:06 the ledger balance is $4,218.55 and the available balance is $4,218.55, because the $200.00 card authorisation settled at 09:40 and the hold that carried it was released. Accrued interest is $0.00, since a CHK01 product pays none; for a savings product it would be a non-zero amount added to the disbursement. <strong>What changes.</strong> Nothing in the case yet beyond the decision outcomes: the eligibility decision (holds, legal flags, pending items, negative balance, linked products) returns Proceed. The balance <em>used for the approval</em> is copied onto the case as a snapshot, because Priya's approval must record what she saw; the account itself is never copied. <strong>Clipboard or committed.</strong> The data pages are clipboard-only and are re-read on a defined refresh; the snapshot and the decision log entry are committed. <strong>Sync or async.</strong> Synchronous, cached. <strong>What Marcus sees.</strong> The balance with its as-of time. <strong>If it fails.</strong> If the core read times out, the interactive path does not retry; a read is safe to repeat, so the failure is a read timeout and not an unknown outcome, and the case shows the cached value with its as-of stamp and a banner, or waits (Chapter 05 §5.9, Chapter 03). The case never proceeds on a value it cannot date.</p>
+    <p>How the balance got to $4,218.55 is itself a hop in an earlier request. The settlement of the $200.00 authorisation reached Pega at 09:40 as event <code>EVT-55121</code> (sequence 882, partition 3, topic <code>rb.deposits.account.balance.v1</code>, key <code>CHK-8842-0117</code>), and the consumer persisted it behind a guard so that a late duplicate of <code>EVT-55120</code> could not overwrite it (Chapter 06). The data page re-reads from the persisted snapshot or from the core on its refresh strategy. The point for the architecture is that the closure case does not know or care how the balance arrives; the boundary hides it.</p>
+
+    <h3>Hop 3: maker, checker, and the authorisation surface</h3>
+    <p><strong>Trigger.</strong> At 10:10 Marcus submits the closure for approval (stage Approve). <strong>What runs.</strong> The approval subprocess, with the authority decision keyed by balance band, routes the assignment to the checkers' queue. Four independent layers keep Marcus from approving his own work (Chapter 10 §10.4): routing excludes him from the queue, an Access Deny on the <code>ApproveClosure</code> privilege applies when the maker equals the current operator, a server-side validation on the Approve flow action rejects maker equals approver even on an API call, and a daily report of maker equals checker should return zero. <strong>What changes.</strong> At 10:20 Priya opens the assignment, sees the balance snapshot and approves. The approval records her operator ID, the balance she approved against, and the rule version of the authority table. <strong>Committed.</strong> The assignment completion, the history entry and the decision log are committed in one short transaction. <strong>Sync or async.</strong> Synchronous. <strong>What Marcus sees.</strong> Status Pending-Approval, then Approved. <strong>If it fails.</strong> If Marcus tries to approve his own submission, the refusal is the rule's and not the screen's, and the denial is written to the security log. If no eligible approver exists the supervisor's queue is alerted. If the balance has moved beyond a threshold in reference data between approval and fulfilment, a re-approval rule applies before any money-affecting call is made.</p>
+
+    <h3>Hop 4: the hold call, a timeout, and an unknown outcome</h3>
+    <p><strong>Trigger.</strong> At 10:21 the case enters Fulfil. The first money-affecting step places a hold on the funds to be disbursed so that nothing can leave the account between the decision and the posting: <code>AC-10882-HOLD-1</code>, for $4,218.55. <strong>What runs.</strong> The integration framework, in the pattern SYNC+Q with an outbox (Chapter 05 §5.15). In one local transaction Pega sets the case status to <code>Pending-Core</code>, writes the history entry, and writes an outbox row carrying the idempotency key <code>AC-10882-HOLD-1</code> and the hold request, and commits. A queue processor then claims the outbox row and calls the ESB with the key in the header and the correlation ID; the ESB calls the core. <strong>Why it is built this way.</strong> The decision and its intent commit together, so there is no state in which the case believes it asked and nothing will ever send the request. And the connector call is made outside any transaction that holds locks, so a slow core does not hold a database row (Chapter 11 §11.9). <strong>What Marcus sees.</strong> Pending-Core, which is an honest statement: the decision is taken and the effect is not yet confirmed.</p>
+    <p><strong>The failure.</strong> At 10:21:08 the call times out: the connector's read timeout elapsed with no response. This is the case the whole of Chapter 05 prepared for. A timeout on a <em>write</em> that may have succeeded is not a transient error; it is an unknown outcome. The core may have created the hold and the response may have been lost, or the request may never have arrived. The queue processor therefore does not re-post. It moves the outbox row to <code>Unknown</code>, leaves the case in Pending-Core, and asks for the status of the key with a lookup call, <code>GET</code> by <code>AC-10882-HOLD-1</code>. At 10:21:15 the ESB answers that the request is in flight at the core. The case stays in Pending-Core and the processor schedules another lookup with backoff. What the processor must not do is send a new request with a new key, because the key identifies the <em>intent</em> and not the attempt; a new key would be a second hold request, and the account could end up with two restraints for one closure. Marcus sees Pending-Core with an attempt count and, on the case, the note that the outcome is being confirmed.</p>
+    <p>Other failures at this hop have their own handling. If the core rejects the request, the rejection is classified at the mapping boundary: a business rejection (a restraint already present, for instance) becomes a fix assignment carrying the reason; a duplicate key returns the stored response with the same hold reference (the 409 pattern of Chapter 05); a transient server error retries with jittered backoff by the one layer that owns retries. If the ESB or core is down for a sustained period, a breaker opens, the case stays in Pending-Core with a banner and an alert, and a manual fallback applies: a priority queue where an authorised person places the hold directly in the core and records the reference, with dual control, so a closure is not blocked by an outage while the restraint is never skipped.</p>
+
+    <h3>Hop 5: the confirmation arrives as an event, on partition 3</h3>
+    <p><strong>Trigger.</strong> At 10:21:41 the core finishes creating the hold, and the account's change is published as event <code>EVT-55122</code>: sequence 883, partition 3, topic <code>rb.deposits.account.balance.v1</code>, key <code>CHK-8842-0117</code>. The key is the account number, so it lands on the same partition as <code>EVT-55121</code> and arrives after it, which preserves the order the guard relies on (Chapter 06 §6.2). It carries the full state of the account: ledger balance $4,218.55 and available balance $0.00, with the hold reference. <strong>What runs.</strong> A data flow consumes the topic, a strategy keeps the event if its as-of is newer than the stored snapshot, and the consumer persists it atomically with its dedupe record. A listener on the persisted change raises the confirmation for any case with an outbox row in <code>Pending-Core</code> or <code>Unknown</code> for that account. <strong>What changes.</strong> The queue processor's next status lookup also returns the hold reference, and the two sources agree: the outbox row for <code>AC-10882-HOLD-1</code> moves to Confirmed, the case moves from Pending-Core to the next step, and the hold reference is stored on the case. <strong>Committed.</strong> The snapshot and the dedupe record in one transaction, then the outbox row and the case status in another. <strong>Sync or async.</strong> Asynchronous; neither Marcus nor the queue processor waits for it. <strong>What Marcus sees.</strong> The case leaves Pending-Core, with the hold reference shown.</p>
+    <p>This is the hop that shows why the unknown outcome had an exit. The timeout at hop 4 did not leave the case guessing: two independent signals, the status lookup by key and the event for the same account, can both resolve it, and either alone is enough. If the event is duplicated, the dedupe boundary ignores it; if it arrives out of order, the snapshot guard refuses it; if the consumer crashes before acknowledging, the offset has not advanced and the event is redelivered; and if the topic backs up, the status lookup answers first. If neither signal arrives within the threshold, the sweeper (hop 6) raises it. The replay tooling is not an option here: Pega cannot reprocess a Kafka dataset by resetting offsets on the consumer group, so replay is something that is built (Chapter 06 §6.3).</p>
+
+    <h3>Hop 6: disbursement, completed on the core's clock</h3>
+    <p><strong>Trigger.</strong> With the hold confirmed, the Fulfil stage re-fetches the balance (a read that is deliberately not cached for this step) and posts the transfer of $4,218.55 from <code>CHK-8842-0117</code> to <code>SAV-8842-0233</code>, closes the account in the core and cancels linked services. <strong>What runs.</strong> The pattern is ASYNC-CB: the processor posts the request with the idempotency key <code>AC-10882-DISB-1</code>; the ESB returns 202 with a tracking ID; the case moves to Awaiting-Core-Confirmation with a deadline; and the core completes the posting in its end-of-day cycle. At 02:14 on Tuesday 10 March, the core calls a Service-REST endpoint on Pega with the tracking ID and the result. The endpoint authenticates the caller with a certificate, runs under a narrow service access group that can complete only this kind of assignment, is idempotent on the tracking ID, and commits the case update in a short transaction. <strong>What changes.</strong> The checking account is closed in the core, the savings balance becomes $12,040.00 + $4,218.55 = $16,258.55, the hold is released with the closure, and the notices are queued. <strong>What Marcus sees.</strong> Awaiting-Core-Confirmation through the evening, then Disbursed on Tuesday morning.</p>
+    <p><strong>If it fails.</strong> If the callback never arrives, a sweeper scheduler finds cases in Awaiting-Core-Confirmation past their threshold and asks the ESB for the status by tracking ID; the case does not wait for ever. If the callback arrives twice, the second changes nothing. If the core rejects the disbursement (an item arrived in the interval, or a restraint was placed), the case returns to the fix queue with the reason. And if a legal order for the account arrives while the case is in flight, a ticket interrupts it, posting stops, and the closure resumes only after Legal clears it (Chapter 02 §2.4, Chapter 12 §12.7); that is why the hold of hop 4 is placed before money moves and not after.</p>
+
+    <h3>Hop 7: notices, resolution, and the audit trail</h3>
+    <p><strong>Trigger.</strong> The confirmation moves the case to Resolve. <strong>What runs.</strong> The correspondence framework queues the closure confirmation and the final statement through a queue processor, attaches a copy to the case, handles bounces and prevents mail loops (Chapter 07 §7.16). The notice is queued and not sent inline, so a mail gateway failure cannot undo a closed account. At 07:40 on Tuesday 10 March, the morning reconciliation compares the core's end-of-day balance for <code>CHK-8842-0117</code> (closed, zero) and <code>SAV-8842-0233</code> ($16,258.55) with the Pega-side summary using the full outer join of Chapter 11 §11.13, finds no break, and the case is marked Closed. <strong>What is now in the audit trail.</strong> The history of every status change; the decision log for each rule (rule name, version, inputs, outcome); the maker and the checker with the balance at approval; the idempotency keys <code>AC-10882-HOLD-1</code> and <code>AC-10882-DISB-1</code> with the core references and attempt counts; the correlation ID that finds each call in the ESB and core logs; the notice copy and its proof of dispatch; and the reconciliation result. None of it was assembled afterwards: it is the by-product of the design, which is the meaning of "evidence by default". <strong>What Marcus sees.</strong> Status Closed on Tuesday 10 March 2026 and the case history.</p>
+    <p>The correlation ID makes the middle of this journey inspectable. A single search across the Pega, ESB and core logs for <code>AC-10882-HOLD-1</code> reconstructs the hold's timeline: queue item picked, request sent, the ESB's receipt and key, the core's lock wait, the 504 at the ESB's backend timeout, the Unknown status in Pega, the lookup, the late creation of the hold, and the stored response returned for the key (Chapter 10 §10.10).</p>
+
+    <table>
+      <tr><th>Hop</th><th>Mode</th><th>Committed where</th><th>What Marcus sees</th><th>If it fails</th></tr>
+      <tr><td>1 Submit from the screen</td><td>Synchronous (DX API)</td><td>Pega database, one transaction</td><td>Case ID, Intake</td><td>Validation message, nothing committed; a repeated submit returns the same case</td></tr>
+      <tr><td>2 Reads of balance, holds, interest</td><td>Synchronous, cached data pages</td><td>The decision and a balance snapshot; the pages themselves are clipboard-only</td><td>The balance with its as-of time</td><td>Read timeout: cached value with its stamp, or wait; never proceed on an undated value</td></tr>
+      <tr><td>3 Maker and checker</td><td>Synchronous</td><td>Pega database; decision log</td><td>Pending-Approval, then Approved</td><td>Self-approval refused by the rule; re-approval if the balance moves</td></tr>
+      <tr><td>4 Hold <code>AC-10882-HOLD-1</code></td><td>Queued: outbox, queue processor, ESB, core</td><td>Pega: status and outbox row in one transaction; core: the hold</td><td>Pending-Core</td><td>Timeout is an unknown outcome: status lookup by the same key; duplicate returns the stored response; breaker and manual fallback</td></tr>
+      <tr><td>5 Confirmation event <code>EVT-55122</code></td><td>Asynchronous (data flow, partition 3)</td><td>Snapshot and dedupe record in one transaction; then the outbox row and case status</td><td>Pending-Core clears, hold reference shown</td><td>Duplicate ignored, out-of-order refused, crash redelivered; the status lookup is an independent signal</td></tr>
+      <tr><td>6 Disbursement to <code>SAV-8842-0233</code></td><td>Asynchronous with callback</td><td>Core, then Pega on the idempotent callback</td><td>Awaiting-Core-Confirmation, then Disbursed</td><td>Sweeper asks status by tracking ID; callback idempotent; a legal order interrupts by ticket</td></tr>
+      <tr><td>7 Notices, reconciliation, audit</td><td>Queued, then a scheduled comparison</td><td>Pega: notice copy, history, decision log</td><td>Closed, 10 Mar 2026</td><td>Queue retry with backoff; bounce handling; a break becomes a reconciliation case</td></tr>
+    </table>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>At 10:21:08 the hold call times out, and Pega records <code>AC-10882-HOLD-1</code> as Unknown. Unknown to Pega, the core accepted the request and created the hold at 10:21:41. What is the status of <code>AC-10882</code> at 10:22, and what must happen next?</p>
+      <p><strong>Answer.</strong> The case is in Pending-Core with the outbox row Unknown, because Pega has no confirmation yet and must not assume either outcome. What happens next is a resolution, not a retry: the status lookup by the same key, or the event <code>EVT-55122</code>, returns the hold reference, and the row moves to Confirmed. If the processor re-posted with a new key at 10:22 on the grounds that the first attempt failed, the core would create a second hold. Re-posting with the <em>same</em> key is safe only because the core or the ESB honours the key and returns the stored response, which is a contract the integration agreement must state and the failure-injection suite must test (Chapter 05 §5.9).</p></div>
+    <p>The closure blueprint this journey ran on, stage by stage, is in the reference block (13.R2). Everything that differs between this journey and the other case types is what the next section states.</p>
+  </section>
+
+  <section id="s13-var" class="pagebreak">
+    <h2>13.8 The other case types, as variations on the closure</h2>
+    <p>The closure journey is the worked case, and the other case types reuse its machinery: the layers, the shared frameworks, the integration patterns, the audit approach. Each is therefore described only by what differs, with the reason, and the full stage tables are in 13.R2. The question for each is the same four: what is its clock, who has the authority, which integration is different, and what is the evidence.</p>
+    <p><strong>Legal process order, <code>LO-20331</code> (Victor Osei, <code>CHK-8842-0719</code>).</strong> It differs from the closure because a statutory hold cannot be reversed by an operator and the clock is externally imposed. The clock is the order's own: a response due date, a waiting period before remitting (for a federal levy, 21 calendar days under IRC &sect;6332(c), Chapter 12 §12.7), and a same-day restraint, all computed and stored on the case with the exact receipt time, which can fix legal priority. The authority is Legal's and not Operations': a restricted queue, strict customer matching in which only an exact key match proceeds, and two distinct privileges so that placing and releasing the restraint need different people. The integration differs in that one order creates one Hold Placement child case per account, each with its own idempotency key and the hop-4 pattern, and intake is a mix of a vendor file, scanned mail and email (Chapter 07), none of which a closure has. The evidence adds the receipt time, the match confidence, the exemption outcome, the notice decision and the response, and it is why this case type is built last, behind controls already proved, and run in parallel before cutover (13.12).</p>
+    <p><strong>Payment exception, <code>PE-30142</code> (Harlow Freight Co., <code>CHK-8842-1055</code>).</strong> It differs because the inbound trigger is a file and the deadline is a network window. The ACH return arrives in a file through the trigger-file handshake of Chapter 07 §7.12, is registered, staged and applied in chunks, and a case is created only where a person must act. The clock is the ACH network's banking-day deadline for the return reason, counted on the network calendar, which is not the Reg E or Reg CC calendar (Chapter 12 §12.8). The authority is a reason-code treatment table, with approval only for large amounts and fee overrides. Duplicates are prevented by the registry on file name and hash, and by an idempotent apply keyed on the original and return trace numbers; the evidence is the trace pair, the reason code and the control totals that prove declared equals staged equals applied plus exceptions plus rejects.</p>
+    <p><strong>Dispute, <code>DS-10915</code> (Dana, oral notice Monday 8 December 2025).</strong> It differs because provisional credit is a regulatory obligation with its own clock. The clock is Reg E: 10, 3, 2 and 1 business days, and 45 calendar days, computed on the institution's own calendar and stored as a record with its inputs, so that Dana's determination or provisional credit is due Monday 22 December 2025 and the investigation by Thursday 22 January 2026 (Chapter 12 §12.4). The authority is a provisional-credit decision with approval for denial. The integration is a credit posting through the same outbox as hop 4 and a link back to the ACH or card exception that produced the claim, and the evidence is the timer record for each clock, the notices and the investigation file. The difference from the closure is that it has two clocks running to the customer and, for a card, a third to the network.</p>
+    <p><strong>Account maintenance, <code>AM-10417</code>.</strong> It differs by being the light case: a business-day SLA, no regulatory clock beyond notice rules, risk-tiered verification from a decision table on channel and recent change, and a core update that uses the hop-4 outbox with a lighter consequence. It is the pilot case type for that reason (13.12). <strong>KYC and AML review</strong> adds restricted access, fail-closed screening integrations and a risk rating decision, and the case types visible only to Compliance. <strong>Reconciliation break</strong> is detected by the set-based comparison of Chapter 11 §11.13, and resolved with maker-checker adjustments and an age-banded SLA. <strong>Dormancy and CD maturity</strong> are scheduler-driven, selecting keys and queueing chunks, with state-specific timers held as reference data. None of these needs its own architecture: each is a different clock, authority, integration and evidence on the same frame.</p>
+    <p>The dependencies among them determine the build order, and the order is itself an architectural decision, because the later case types lean on controls the earlier ones prove.</p>
+    <h3>Case type dependencies and build order</h3>
+    <p>The full catalogue of triggers, clocks and controls is in Chapter 12 §12.15. The map below shows how the case types depend on each other, because those dependencies drive the build sequence and the shared frameworks: a legal order interrupts a closure through a ticket, a fraud alert creates a hold placement, a maintenance change can raise a KYC child case, and a payment exception can link to a dispute.</p>
+    <div class="flow">CASE TYPE DEPENDENCY MAP   (arrows: "creates", "interrupts via ticket", "reads data from"; solid = build dependency)
+
+                                  ┌─────────────────────┐
+                    triggers ───▶ │  KYC / AML REVIEW   │ ◀── event: address/name/signer change; periodic review (scheduler)
+                                  └─────────┬───────────┘
+                                            │ outcome gates
+   ┌───────────────────────┐        ┌───────▼───────────┐      creates child       ┌─────────────────────┐
+   │  ACCOUNT MAINTENANCE  │───────▶│  (EDD child case) │                          │  FRAUD ALERT REVIEW │──creates──▶ HOLD PLACEMENT
+   └───────────┬───────────┘        └───────────────────┘                          └──────────┬──────────┘             ▲   ▲
+               │ may raise                                                                    │ may create             │   │
+               ▼                                                                              ▼                        │   │
+   ┌───────────────────────┐   ticket LEGAL_FREEZE        ┌─────────────────────┐   ┌─────────────────────┐          │   │
+   │   ACCOUNT CLOSURE     │◀─────────────────────────────│  LEGAL PROCESS ORDER │──creates (per account)──────────────┘   │
+   └───────────┬───────────┘   (interrupt in-flight)      └──────────┬──────────┘                                         │
+               │ checks active holds, orders, screening               │ remit / respond                                   │
+               ▼                                                      ▼                                                    │
+   ┌───────────────────────┐                              ┌─────────────────────┐  R16 / frozen account link             │
+   │ DORMANCY & ESCHEAT    │──eligibility checks──────────│ ACH / PAYMENT EXC.  │────────────────────────────────────────┘
+   └───────────────────────┘  holds, orders, deceased      └──────────┬──────────┘
+                                                                      │ customer claim            ┌─────────────────────┐
+   ┌───────────────────────┐                                          └──────────────────────────▶│  REG E / CARD DISPUTE│
+   │ CD MATURITY / ROLLOVER│                                                                       └─────────────────────┘
+   └───────────────────────┘      ┌───────────────────────┐      ┌─────────────────────┐   ┌─────────────────────┐
+                                  │ RECONCILIATION BREAK  │      │ STOP PAYMENT        │   │ DECEASED ACCOUNT    │──interacts──▶ Closure, Dormancy, Holds
+                                  └───────────────────────┘      └─────────────────────┘   └─────────────────────┘
+   SHARED: SLA/calendar · authority matrix · correspondence · integration framework · audit · reference data change case</div>
+    <h3>Build sequence rationale</h3>
+    <table>
+      <tr><th>Wave</th><th>Case types</th><th>Why in this wave</th></tr>
+      <tr><td>0 Foundations</td><td>Shared frameworks, security roles, integration base, observability, CI/CD, reference data change case</td><td>Everything depends on them; prove the pipeline and controls first</td></tr>
+      <tr><td>1 Pilot</td><td>Account Maintenance (address change, phone, email) for one channel; Stop Payment</td><td>High volume, low consequence, proves intake, routing, SLA, correspondence, core update with idempotency, dashboards</td></tr>
+      <tr><td>2 Expansion</td><td>Maintenance (signers, beneficiaries, title); Account Closure; CD Maturity; Deposit Hold Review</td><td>Adds approvals and maker-checker, scheduler-driven processes and Reg DD and Reg CC clocks</td></tr>
+      <tr><td>3 Payments and risk</td><td>ACH/Payment Exception; Reg E and Card Dispute; Fraud Alert Review; Wire Exception and Recall</td><td>Needs file and event integrations, tight deadlines, linkages across cases</td></tr>
+      <tr><td>4 Critical and regulated</td><td>Legal Process Order and Hold Placement; KYC/AML Review; Reconciliation Break; Dormancy and Escheat; Deceased Account</td><td>Highest consequence and the most reference data; built on proven controls; legal orders benefit from parallel run (13.12)</td></tr>
+    </table>
+    <p>The order is a choice with an alternative. Some programmes pilot the highest-pain process first, often legal orders or reconciliation, to prove value quickly. The trade-off is risk: a first release on the strictest controls with an unproven platform. The decision is the sponsor's, and it reduces to one question: which is the bigger risk, delay or an early error? That decides the pilot. Riverbend's order puts low-consequence maintenance first because it proves intake, routing, SLA, correspondence and the idempotent core update, which every later wave depends on.</p>
+  </section>
+
+  <section id="s13-9" class="pagebreak">
+    <h2>13.9 The shared frameworks, specified</h2>
+    <p>Because every blueprint relies on them, the frameworks are specified once. Each is built in the lowest sensible layer (13.5) and tested before the first case type depends on it.</p>
+    <table>
+      <tr><th>Framework</th><th>Specification</th><th>Acceptance tests</th></tr>
+      <tr><td>SLA and calendar</td><td>Calendar rules: one calendar per regulatory clock (Reg E per-institution, Reg CC statutory, ACH network, state legal-order; Chapter 12 §12.10), plus an India working calendar for staffing targets; a due-date function (start, duration, unit, calendar) used by dynamic SLA rules; stores start date, due date and calendar on the case; goal, deadline and passed-deadline escalations through the Service Level rule; SLA processor monitored (delayed items, node type present); synthetic production SLA test that must escalate</td><td>PegaUnit boundary tests (holiday, weekend, cut-off, daylight saving); a staging test that stops the SLA processor and proves the alert fires</td></tr>
+      <tr><td>Authority matrix and approvals</td><td>Decision data: case type x amount band x risk to approver level; approval subprocess with cascading; maker captured at submit; four-layer enforcement (routing exclusion, Access Deny with when, Validate on the flow action, daily detective report)</td><td>Role-by-role positive and negative tests including the API channel, reassignment, bulk and delegation (Chapter 10.4)</td></tr>
+      <tr><td>Correspondence</td><td>Fragment library (header, legal footers by state, signatures); base templates per channel; state and language variation by circumstancing and field values; send via queue processor; copy attached to the case; bounce handler; auto-mail detection and loop prevention; PDF generation; delivery proof for mail</td><td>Template regression suite per state and language; out-of-office and bounce samples; dual-language rendering checks (Chapter 02.9, 07.16)</td></tr>
+      <tr><td>Integration framework</td><td>Connector templates with explicit timeouts; correlation ID header; idempotency key generator and storage; error classification at the mapping boundary; queue-based retry with jittered backoff and attempt counter; circuit-breaker flag with probe; degraded-mode helpers; simulation rules; logging without PII</td><td>Failure-injection suite: timeout, 503, 429, 409 (outcome lookup), malformed response, token expiry, duplicate inbound (Chapter 05.9)</td></tr>
+      <tr><td>File intake framework</td><td>Registry table with unique constraint on interface and hash; trigger-file handshake; staging with per-row status; chunked bulk load; reconciliation of declared, staged, applied, rejected and failed counts; expected-file monitor</td><td>Partial upload, duplicate file, bad row, trailer mismatch, late file, large-volume tests (Chapter 07)</td></tr>
+      <tr><td>Audit and evidence</td><td>Decision-log utility (rule name, version, inputs, outcome, timestamp); field-audit configuration pattern for regulated properties; evidence attachment and hash; history description standard; retention classes</td><td>Sample audit walk-through: pick a case and prove who, when, why and on whose approval</td></tr>
+      <tr><td>Reference data management</td><td>Effective-dated data types or decision data; maintenance case with maker-checker; promotion path; node-scope read-only data pages with controlled refresh; versioned "as of" lookups (so reprocessing a past order gives the answer in force then)</td><td>Effective-date boundary tests; cache refresh test across nodes (Chapter 03.5, 03.12)</td></tr>
+      <tr><td>Dead-letter, replay and operations dashboard</td><td>Dead-letter store or topic with payload and context; replay Service-REST with privilege, dry run, throttle and audit; dashboard for lag, queues, broken items, file states, DLT, SLA processor health</td><td>Replay idempotency test; alert tests (Chapter 06.11, 06.13)</td></tr>
+      <tr><td>Security roles</td><td>Persona roles with shallow inheritance, privilege naming, Access Deny rules for hard controls, service identities; JIT provisioning mapping table under change control</td><td>Access test suite in every release (Chapter 10.3)</td></tr>
+    </table>
+  </section>
+
+  <section id="s13-10" class="pagebreak">
+    <h2>13.10 Scale, failure, deployment and recovery</h2>
+    <p>The walkthrough was one request on a Monday morning. The design's real test is what the same path does at ten times the volume, when a hop fails, when the code behind it changes, and when the platform itself is lost. Each of those is answered below against <code>AC-10882</code>, and all volumes are illustrative sizing worksheets that show the method: Riverbend's real volumes must be obtained and the worksheet re-run, with the assumptions visible.</p>
+    <h3>Scale: what happens at ten times the volume</h3>
+    <p>Dana's closure is one of roughly two hundred a day in the worksheet below. At ten times that, the first thing that does not scale is not the case engine, whose creation rate is under one case per second, but the things the closure leans on. The core's hold and disbursement calls are the first: a queue processor sending two thousand holds with a bounded thread count will queue behind the core's own capacity, which is the reason hop 4 is queued with throttling and not synchronous, and the reason a separate queue processor serves each downstream dependency, so a slow core cannot starve the notices. The second is the database: the closure's exposed, indexed columns keep the supervisor dashboard cheap, but a Report Definition that filtered on an unexposed column would scan the case table, as in Chapter 10 §10.13. The third is the event path: the consumer's partition parallelism and the dedupe table's growth set how fast balances can be absorbed (Chapter 06 §6.8). What scales cleanly is the stateless web tier, by adding nodes. The worksheet shows the arithmetic.</p>
+    <h3>Sizing worksheet (illustrative inputs)</h3>
+    <table>
+      <tr><th>Process</th><th>Avg cases per business day</th><th>Peak factor</th><th>Peak per day</th><th>Notes</th></tr>
+      <tr><td>Account Maintenance</td><td>1,500</td><td>2.0 (Monday and month-end)</td><td>3,000</td><td>Mostly L1; straight-through share grows</td></tr>
+      <tr><td>Account Closure</td><td>200</td><td>2.0</td><td>400</td><td>Approvals; async core posting</td></tr>
+      <tr><td>Legal Process Orders (orders)</td><td>80</td><td>3.0</td><td>240</td><td>About 1.5 accounts per order, so 120 to 360 hold child cases</td></tr>
+      <tr><td>ACH exceptions (cases needing a human)</td><td>600 (of about 15,000 return rows per day)</td><td>3.0</td><td>1,800</td><td>Most return rows are processed without a case</td></tr>
+      <tr><td>KYC / AML reviews</td><td>600</td><td>2.0</td><td>1,200</td><td>Plus scheduler-driven periodic reviews</td></tr>
+      <tr><td>Reconciliation breaks</td><td>300</td><td>2.0</td><td>600</td><td>Most auto-match; humans see the rest</td></tr>
+      <tr><td>Stop payments, disputes, others</td><td>800</td><td>2.0</td><td>1,600</td><td>Stop payments need minutes-level response</td></tr>
+      <tr><td>Total</td><td>about 4,100</td><td></td><td>about 8,800</td><td></td></tr>
+    </table>
+    <div class="formula">Derived load (illustrative):
+ Operators: 200 concurrent users at peak; 60 interactions per user-hour => 200 x 60 / 3600 = 3.3 interactions/s  (about 12,000 per hour)
+ Interaction rate peak factor 3x for start-of-day surge => ~10 interactions/s
+ Web node capacity (assume 15 interactions/s per node at the p95 budget, to be measured): 10/15 -> 1 node needed; for N+1 and rolling restarts, 3 web nodes minimum
+ Case creation rate at peak: 8,800 cases/day over a 10-hour day = 0.24 cases/s average, ~1/s in bursts: trivial for the engine; the limit is integration and the database
+ Background work: ACH file of 150,000 rows in a 60-minute window = 42 rows/s (Chapter 06.14); at an order-of-magnitude budget of roughly 10 ms per record (a designed experiment to run, not a measurement, Chapter 06 §6.8), about one thread's worth of work; use 4 for headroom and failure tolerance
+ Reconciliation extract of 1.5 million accounts: staging bulk load at ~10,000 rows/s = 150 s; set-based compare in the database: minutes; budget 60 minutes total
+ Storage growth: 4,100 cases/day x 250 days = ~1.0 million cases/year; BLOB ~20 KB + exposed columns ~2 KB => ~22 GB/yr;
+   history ~25 rows/case x ~1 KB = 25 KB/case => ~25 GB/yr; attachments in a content store (not the database), say 0.5 MB per case with documents => ~500 GB/yr to the repository
+   7-year retention: database ~330 GB (before indexes ~1.5x, so ~500 GB); plan partitioning of history (Chapter 11.11) and archival (Chapter 10.7)
+ Connection pool: 3 web nodes x 40 + 2 background nodes x 60 = 240 connections peak; keep within the database limit with headroom; investigate any pool exhaustion as a symptom of a slow query or long transaction (Chapter 10.9)</div>
+    <h3>Throughput and latency targets (proposals to agree) <span class="tag amber">assumed Riverbend policy</span></h3>
+    <table>
+      <tr><th>Path</th><th>Target</th><th>How it is met</th></tr>
+      <tr><td>Interactive screen load or action (server time)</td><td>p95 under 2 seconds; p99 under 4 seconds</td><td>Budget below; cached data pages; paged reports; no per-row connector calls</td></tr>
+      <tr><td>Case creation via service or DX API</td><td>p95 under 1 second excluding synchronous downstream calls</td><td>Asynchronous follow-up work; idempotent creation</td></tr>
+      <tr><td>Core read (cache miss)</td><td>p95 under 800 ms end to end</td><td>ESB contract; timeouts; degraded mode</td></tr>
+      <tr><td>Queue processor item (typical)</td><td>An order-of-magnitude budget of roughly 10 ms per record in chunked bulk paths (to be measured); seconds for single integration calls</td><td>Chunking, exposed columns, no per-item connector calls (Chapter 06.8)</td></tr>
+      <tr><td>ACH return file, 150,000 rows</td><td>Complete within 60 minutes of arrival; typical under 10</td><td>Staging, chunked idempotent apply</td></tr>
+      <tr><td>Legal order: arrival to restraint placed</td><td>Same business day; target under 4 hours for exact matches <span class="tag amber">assumed Riverbend policy</span></td><td>Priority queue, SLA, child cases</td></tr>
+      <tr><td>Stop payment placement</td><td>Under 5 minutes from request, synchronous path under 10 seconds</td><td>Real-time core call; manual fallback</td></tr>
+      <tr><td>Dashboard refresh</td><td>Under 5 seconds per widget; data up to a few minutes old</td><td>Summarised reports on indexed columns, cached data pages (Chapter 04.9)</td></tr>
+    </table>
+    <h3>Performance budget for one interactive transaction (server side, p95)</h3>
+    <table>
+      <tr><th>Component</th><th>Budget</th><th>Controls</th></tr>
+      <tr><td>Rule execution and rule resolution (warm cache)</td><td>300 ms</td><td>Thin flow actions, declarative rules, no activities with loops</td></tr>
+      <tr><td>Database interactions</td><td>400 ms (at most 10 interactions at 40 ms)</td><td>Exposed, indexed columns; no BLOB scans; PAL watch for N+1</td></tr>
+      <tr><td>Data page loads (cache hits are free)</td><td>0 ms hit; 800 ms miss on one core call</td><td>Thread-scope reads with refresh strategy by data volatility</td></tr>
+      <tr><td>UI metadata and rendering preparation</td><td>200 ms</td><td>Constellation views, lazy-loaded tabs</td></tr>
+      <tr><td>Slack for GC, locks and network</td><td>300 ms</td><td>Heap sizing, short transactions, lock timeouts</td></tr>
+      <tr><td>Total</td><td>about 2.0 s server time</td><td>PDC trend and PAL baselines per release; alert on regression</td></tr>
+    </table>
+    <h3>Batch windows (nightly timeline, illustrative)</h3>
+    <div class="flow">NIGHTLY TIMELINE (US Eastern, illustrative; actual cut-offs from Riverbend operations and core schedule)
+ 18:00  core end-of-day close begins                                   (core owns; Pega holds heavy jobs)
+ 20:30  core EOD extract files arrive with trigger files               expected-file monitor armed (grace 15 min)
+ 20:45  Reconciliation detect job: staging load + set-based compare    budget 60 min; breaks create cases (Chapter 13.8, Blueprint 6)
+ 22:00  ACH return and NOC files arrive                                 budget 60 min; apply, notices queued
+ 23:00  Dormancy scan and CD maturity scheduler (selects keys, queues chunks)   budget 30 min
+ 00:30  Correspondence dispatch: print/mail vendor files; email/SMS queues drain
+ 02:00  Archive and purge jobs (processed staging, expired items), partition maintenance
+ 05:00  Dashboard rollups; expected-file checks for early-morning legal and positive-pay files
+ 07:00  Business opens: queues loaded, SLA clocks running, dashboards green
+ RULE: nothing in the window may depend on a human; every job is idempotent and restartable; a missed trigger raises a page before the window closes.</div>
+    <h3>Recovery: when the core's confirmation never arrives, and when the platform is lost</h3>
+    <p>Two different losses need two different answers. The first is the one the walkthrough already contains: <code>AC-10882</code> is in Awaiting-Core-Confirmation and the callback never comes. Nothing is lost, because the intent is in the outbox with its key and the case is waiting with a deadline; the sweeper asks the ESB for the status by tracking ID, and if the core answers that the posting completed, the case moves on, while if the core has no record of the request, the same key is re-posted. If the status is still unknown at the second threshold the case goes to a human queue with the correlation ID, and the nightly reconciliation of Chapter 11 §11.13 would in any case surface a closed account in the core that Pega still shows open. The second loss is the platform. If the site hosting Pega fails at hop 6, the case row and the outbox are in the database and recover to the replica; the hold and the transfer are in the core, whose own recovery is coordinated; the callback and the sweeper then reconcile what happened in between. Suppose the new primary is ten minutes behind and shows <code>AC-10882-HOLD-1</code> pending although the core holds it: the processor re-sends with the same key, and the core or ESB returns the stored response with the existing hold reference, so there is one hold. That works only if the key's retention at the ESB outlasts the recovery time, which is why key retention is a stated line in the integration contract. The objectives come from the business, and the proposals follow.</p>
+    <h3>Availability, HA, DR and recovery objectives</h3>
+    <table>
+      <tr><th>Tier (proposal)</th><th>Capabilities</th><th>RPO</th><th>RTO</th><th>Design</th></tr>
+      <tr><td>Tier 1: legal orders, payment exceptions, KYC sanctions escalations, SLA processing</td><td>Time-bound, regulatory clocks</td><td>15 minutes or less</td><td>2 hours or less (illustrative)</td><td>Redundant web and background nodes; database with synchronous standby in region and asynchronous replica in a DR region; tested failover</td></tr>
+      <tr><td>Tier 2: maintenance, closure, disputes, dormancy</td><td>Business-critical but tolerant of short delay</td><td>1 hour</td><td>4 to 8 hours</td><td>Same platform; DR failover on the platform schedule</td></tr>
+      <tr><td>Tier 3: reporting, dashboards, analytics feeds</td><td>Important, non-urgent</td><td>24 hours</td><td>24 hours</td><td>Rebuild from replica or warehouse</td></tr>
+    </table>
+    <table>
+      <tr><th>Concern</th><th>Approach</th></tr>
+      <tr><td>Business impact analysis</td><td>RPO and RTO come from the business, not engineering; the proposals above are starting points to negotiate</td></tr>
+      <tr><td>Stateless web and background tiers</td><td>Nodes replaceable; configuration and keystores in the managed store; rolling deployments</td></tr>
+      <tr><td>Database</td><td>Replication with failover orchestration; backups with PITR; regular restore drills; rules and data schemas restored to the same point (Chapter 11.14)</td></tr>
+      <tr><td>Events and files after failover</td><td>Idempotent consumers and the file registry make replay safe; Kafka mirroring where used; SFTP endpoints available in both regions</td></tr>
+      <tr><td>Integration dependencies during DR</td><td>ESB and core DR plans coordinated; degraded modes defined per integration (Chapter 05.9)</td></tr>
+      <tr><td>DR testing</td><td>At least twice a year: failover, process one file and one legal order end to end, fail back</td></tr>
+      <tr><td>Manual fallback procedures</td><td>For Tier 1 processes: how operations work without Pega for hours (paper log, spreadsheet with dual control) and how to reconcile afterwards</td></tr>
+    </table>
+    <h3>Failure: which part of the closure fails first, and what contains it</h3>
+    <p>Failure was examined hop by hop in 13.7, and the topology is where the containment is physical. If the core is slow, only the queue processor that serves the core is affected, not the web nodes, because heavy and dependency-bound work never runs on interactive nodes. If the ESB is down for four hours, reads degrade to cached values with an as-of stamp, writes sit in outboxes with idempotency keys behind a breaker, sanctions screening fails closed so onboarding waits, legal restraints use the manual fallback with dual control if a deadline is at risk, and on recovery the queues drain at a throttled rate, exhausted items go to a human queue, and counts are reconciled between Pega and the core. If a node is lost, stateless web and background tiers are replaced and the single active listener or queue processor moves. If the database is slow, the symptom is pool exhaustion, which Chapter 10 §10.13 diagnosed from the widest evidence to the narrowest. In each case a stated degraded mode and a manual fallback were agreed in advance with Compliance, because the SLA treatment during an outage is a business decision. The topology below places the bulkheads.</p>
+    <h3>Node classification and topology</h3>
+    <div class="flow">TOPOLOGY (production; counts are starting proposals, to be validated with Pega sizing guidance and load tests)
+
+                          Load balancer / WAF (TLS, sticky sessions per Pega guidance)
+                                       |
+              ┌────────────────────────┴────────────────────────┐
+              ▼                                                 ▼
+   WEB / USER NODES (node type WebUser)  x3                SERVICE NODES (Service-REST, ESB callbacks, DX API) x2   (can share with web if sized; separate bulkhead preferred)
+   interactive requestors, UI, Constellation APIs            separate service packages and access groups, rate limits
+
+   BACKGROUND NODES (node type BackgroundProcessing) x2+   queue processors (dedicated), job schedulers, SLA processing, file and email listeners (single active instance per listener)
+   STREAM NODES (node type Stream) x3 (per Pega guidance)  internal stream service for queue processors and real-time data flows
+   DATA FLOW NODES (real-time and batch types) x2          only if Kafka datasets and data flows are used (Chapter 06.5)
+   SEARCH NODES (node type Search) x2                      case search and reporting index
+   ADMIN / DIAGNOSTIC access (Admin Studio, PDC agent)
+
+   DATA TIER: PostgreSQL primary + synchronous standby (HA) + asynchronous replica (DR/read offload) ; separate rules and data schemas; connection pooling sized for total node demand
+   FILE TIER: managed file transfer / SFTP (dual endpoints), content repository for attachments and evidence
+   EXTERNAL: ESB, IdP, Splunk, Kafka (if used), print/mail vendor, state portals
+   Isolation (bulkhead): heavy batch and queue work never on web nodes; separate queue processors per downstream dependency (Chapter 05.9); listeners pinned to background nodes.</div>
+    <h3>Deployment: how a change reaches the closure path without downtime</h3>
+    <p>A change to the closure flow reaches production through the pipeline of Chapter 10 §10.11: one artefact built from the product rule and promoted through QA, UAT, staging and production, with guardrail, PegaUnit, role-access and performance gates, dual control on the production approval, and the release evidence kept. Web and background nodes are replaced by rolling restart, with a cache refresh step, so there is no downtime window; queue processors drain or tolerate the new payload because queue item payloads are versioned. A change to a decision table, such as the closure authority bands, travels the separate faster reference-data path through a maintenance case with maker-checker and an effective date. A schema change is released by expand and contract, so that the previous release still works if the new one is rolled back, and a risky behaviour change is guarded by a feature toggle that can be turned off without a deployment. In-flight cases matter: an <code>AC-10882</code> created under the old flow must complete under it, so stages and flow shapes in active use are deprecated before they are removed. The environments below are the route.</p>
+    <h3>Environment strategy and retention</h3>
+    <table>
+      <tr><th>Topic</th><th>Approach</th></tr>
+      <tr><td>Environments</td><td>Development, Integration/Build, QA, UAT, Staging (production-like, same topology), Production, plus DR (Chapter 10.11)</td></tr>
+      <tr><td>Data</td><td>Synthetic or irreversibly masked data in lower environments; outbound channels neutralised; masking covers BLOBs (Chapter 10.7)</td></tr>
+      <tr><td>Integration test partners</td><td>Stable ESB and core test endpoints with failure injection; stubs via connector simulation</td></tr>
+      <tr><td>Retention and archival</td><td>Policy by data class: resolved cases archived after the operational window; history and audit partitioned; attachments by repository lifecycle; staging purged after investigation window; legal-hold override</td></tr>
+      <tr><td>Observability</td><td>Correlation IDs, PDC, Splunk dashboards, queue and lag dashboards, alerts with owners and runbooks (Chapters 06.13, 10.8 to 10.10)</td></tr>
+    </table>
+  </section>
+
+  <section id="s13-11" class="pagebreak">
+    <h2>13.11 Governance</h2>
+    <p>The layers, patterns and frameworks above erode unless decisions are made by the right people and standards are enforced mechanically. The governance below is the set of rules that keeps the closure path as it was designed: who owns regulatory content, how a rule is reviewed, what counts as done, how changes are tested and released, and who decides when something goes wrong.</p>
+    <table>
+      <tr><th>Area</th><th>Policy proposal</th><th>Enforcement</th></tr>
+      <tr><td>Guardrail policy</td><td>Compliance score at or above 95, zero new severe warnings on changed rules, justified warnings recorded with owner and reason, no Java steps without architect exception, no custom HTML or JavaScript in Constellation views without a DX Component exception (Chapter 01.12, 04.4)</td><td>Deployment Manager gates; weekly top-warning review</td></tr>
+      <tr><td>Code review standards</td><td>One independent reviewer on every merge; checklist: layer and naming, error handling and timeouts on every integration, idempotency on writes, exposed columns and indexes for queries used, security privileges and Access Deny, PegaUnit added, no hard-coded numbers that belong in reference data, correlation ID present, no PII in logs</td><td>Branch review records; sampling by the lead</td></tr>
+      <tr><td>Definition of done</td><td>Acceptance criteria met; PegaUnit cases for decisions and mappings; scenario test for the journey; role access tests; failure-injection test for integrations; guardrails clean; dashboards and alerts updated; runbook entry; correspondence approved by Compliance; documentation updated; evidence stored; regression passed in QA</td><td>Checklist in the story template; QA sign-off</td></tr>
+      <tr><td>Test strategy</td><td>Pyramid: many PegaUnit tests on decision tables, data transforms and when rules; scenario tests for core paths; API and integration contract tests against stubs and the ESB test environment; role-by-role access suite; performance tests at production-like volume for batch and key screens; UAT with business; failure-injection and DR drills</td><td>Pipeline stages (Chapter 10.11)</td></tr>
+      <tr><td>Release cadence</td><td>Two-week sprints; a production release roughly monthly (or per agreed train) with the same artefact promoted through environments; hotfix path for production defects; reference data releases can be more frequent through the controlled data path</td><td>Release calendar; change advisory process</td></tr>
+      <tr><td>Reference data and decision-table changes</td><td>Business owners propose changes through the maintenance case; maker-checker; effective dates; PegaUnit regression pack for the table; Compliance approval for regulatory tables; promotion with audit evidence</td><td>Maintenance case; pipeline task</td></tr>
+      <tr><td>Dual control</td><td>Production deployment approved by someone other than developer and deployer; sensitive business actions maker-checker in four layers; reference data changes maker-checker (Chapter 10.4, 10.11)</td><td>Pipeline approvals; access tests</td></tr>
+      <tr><td>Security governance</td><td>Persona roles and quarterly access recertification; JIT mapping change control; break-glass review; secrets and certificate inventory with 60 and 30 day alerts (Chapter 05.14, 10.3)</td><td>Access reviews; certificate monitor</td></tr>
+      <tr><td>Audit readiness</td><td>Evidence by default: decision logs, field audit on regulated fields, release evidence package, reconciliation evidence, incident RCAs; periodic internal mock audit</td><td>Evidence index maintained per release</td></tr>
+      <tr><td>Architecture governance</td><td>Short design review for new classes, rulesets and integrations; dependency rule check; clone detection; integration contract per operation</td><td>Review board of lead, security, DBA and ESB representatives, light-weight</td></tr>
+      <tr><td>Technical debt</td><td>Register with severity and owner; allocate a fixed share of each sprint (for example 15 to 20 percent); never defer debt that is a control weakness</td><td>Sprint planning</td></tr>
+      <tr><td>Operational readiness</td><td>Runbooks, alerts, dashboards, on-call rota, escalation ladder and handover standard before go-live of each case type (Chapter 10.13)</td><td>Go-live checklist</td></tr>
+    </table>
+    <h3>Decision rights (RACI sketch)</h3>
+    <table>
+      <tr><th>Decision</th><th>Responsible</th><th>Accountable</th><th>Consulted</th><th>Informed</th></tr>
+      <tr><td>Regulatory rule content (exemptions, notices, deadlines)</td><td>Legal and Compliance analysts</td><td>Head of Legal or Compliance</td><td>Pega lead, Operations</td><td>Product owners, support</td></tr>
+      <tr><td>Process design and SLAs</td><td>Business analysts and Operations</td><td>Deposits operations head</td><td>Pega lead, Compliance</td><td>Support</td></tr>
+      <tr><td>Application and ruleset structure</td><td>Pega lead</td><td>Enterprise architect</td><td>Security, DBA</td><td>Team</td></tr>
+      <tr><td>Integration contracts</td><td>Pega integration lead and ESB team</td><td>Integration architect</td><td>Core owner, security</td><td>Operations</td></tr>
+      <tr><td>Access roles and SoD</td><td>Pega lead with security</td><td>Security and Compliance head</td><td>Audit</td><td>Operations</td></tr>
+      <tr><td>Production release approval</td><td>Release manager</td><td>Service owner</td><td>QA, Operations</td><td>Stakeholders</td></tr>
+      <tr><td>DBA changes (indexes, exposed columns, DDL)</td><td>DBA</td><td>Data platform owner</td><td>Pega lead</td><td>Support</td></tr>
+      <tr><td>Incident severity and communication</td><td>Incident commander</td><td>Service owner</td><td>Business owner, security if data</td><td>Executives per severity</td></tr>
+    </table>
+  </section>
+
+  <section id="s13-12" class="pagebreak">
+    <h2>13.12 Migration and rollout</h2>
+    <p>Replacing a bank's manual and fragmented processes is a migration as much as a build, and the closure shows why: a case in flight at cutover has a hold in the core and a clock on the case, and neither can be lost. The approach is to prove the platform on a low-risk slice, run old and new side by side with an exit rule, and never leave an in-flight regulatory item without an owner.</p>
+    <h3>Principles</h3>
+    <ul>
+      <li>Prove the platform and the controls on a low-risk slice before the high-risk processes.</li>
+      <li>Run the new and old side by side long enough to compare results, with a clear exit rule.</li>
+      <li>Never migrate what you can finish in the old system; never leave in-flight regulatory items without an owner.</li>
+      <li>Every cutover has a rehearsed rollback and a named decision owner.</li>
+      <li>Legacy decommission is a planned step, not an assumption.</li>
+    </ul>
+    <h3>Phased plan</h3>
+    <table>
+      <tr><th>Phase</th><th>Scope</th><th>Entry criteria</th><th>Exit criteria</th></tr>
+      <tr><td>0 Foundations</td><td>Environments, pipeline with gates, layered application, shared frameworks, security roles, observability, reference data case, integration contracts signed with ESB team</td><td>Brief, assumptions confirmed, team onboarded</td><td>Pipeline runs a hello-world case type through all environments with gates; failure-injection suite green; role test suite green; dashboards live</td></tr>
+      <tr><td>1 Pilot</td><td>One or two low-risk case types (address and contact maintenance; stop payment) for one team and one channel</td><td>Phase 0 exits; UAT scripts; training; manual fallback documented</td><td>Four to six weeks live without a severity-1; SLA and straight-through metrics meet targets; no control findings in the mock audit; support runbook exercised</td></tr>
+      <tr><td>2 Expansion</td><td>Remaining maintenance types, account closure, CD maturity, deposit hold review; more teams and channels</td><td>Pilot exit; capacity plan</td><td>Approvals and scheduler-driven processes stable; Reg CC and Reg DD clocks verified; throughput within budget</td></tr>
+      <tr><td>3 Payments and risk</td><td>ACH and payment exceptions, disputes, fraud alert review, wire exceptions</td><td>File and event integrations proven in UAT; hub contracts</td><td>Batch windows met for 30 consecutive nights; reconciliation of file totals perfect; duplicate protection proven</td></tr>
+      <tr><td>4 Critical regulated</td><td>Legal process orders, KYC/AML review, reconciliation breaks, dormancy and escheatment, deceased accounts</td><td>Legal, Compliance and Audit sign off controls; reference data loaded and approved; parallel run plan</td><td>Parallel run results reconciled; deadline-breach count zero during the run; restricted-access model tested; DR drill including a legal order</td></tr>
+      <tr><td>5 Decommission</td><td>Retire legacy tools and manual logs; archive legacy data read-only</td><td>All in-flight items migrated or completed</td><td>Evidence archived; access removed; licences released</td></tr>
+    </table>
+    <h3>Parallel run design (especially for legal orders and reconciliation)</h3>
+    <div class="flow">PARALLEL RUN
+   MODE 1 SHADOW: the legacy process remains the system of action; the new platform processes the same inputs and PRODUCES decisions without acting (no restraint, no posting).
+          Compare: customer match, accounts identified, restraint amount, exemptions applied, notice decision, deadline computed, SLA dates.
+   MODE 2 ACTIVE-WITH-CHECK: the new platform acts; staff verify each result against the legacy output for a defined period; differences are logged, classified (new bug, legacy bug, rule difference) and resolved.
+   MODE 3 PRIMARY: the new platform is the system of action; legacy kept read-only for a defined period for reference.
+   EXIT RULE per mode (agreed in advance): for example, 200 consecutive orders with zero material differences and zero missed deadlines, plus Legal sign-off.
+   DIFFERENCE LOG is evidence for Audit: who reviewed each difference and the decision.</div>
+    <h3>Data migration and backfill</h3>
+    <table>
+      <tr><th>Data</th><th>Approach</th></tr>
+      <tr><td>Reference data and decision tables</td><td>Authored in Pega by business owners with maker-checker; seeded through the pipeline; effective-dated from go-live</td></tr>
+      <tr><td>In-flight cases at cutover</td><td>Rule per case type: finish in the legacy system if completion is near (for example, within days), or create the case in Pega with a documented mapping where regulatory clocks continue. Legal orders in flight are migrated with their original receipt time and deadlines, verified item by item</td></tr>
+      <tr><td>Historical closed cases</td><td>Not migrated into the live work tables; archived read-only in the legacy system or a warehouse with search; Pega holds new cases only</td></tr>
+      <tr><td>Legal order and hold registry</td><td>Reconcile active restraints in core to Pega's order records before cutover so no restraint is orphaned; migrate order metadata with version</td></tr>
+      <tr><td>Reconciliation baselines</td><td>Agree opening breaks and ageing as at cutover; carry forward with original ages</td></tr>
+      <tr><td>Exposed column backfill</td><td>Not needed for new cases; plan backfill only for migrated cases (Chapter 03.3)</td></tr>
+      <tr><td>Operators and access</td><td>Provisioned through SSO groups; no bulk operator migration</td></tr>
+    </table>
+    <h3>Cutover and rollback</h3>
+    <table>
+      <tr><th>Step</th><th>Detail</th></tr>
+      <tr><td>Cutover plan per case type and team</td><td>Cutover in quiet periods; communication; support surge; freeze on legacy intake; go or no-go checklist (data loaded, integrations green, alerts armed, staff trained)</td></tr>
+      <tr><td>Rollback triggers</td><td>Severity-1 incident unresolved within the agreed time; control failure (for example a maker-checker bypass); deadline breach risk; reconciliation break above tolerance; decided by the named owner</td></tr>
+      <tr><td>Rollback mechanism</td><td>Re-enable the legacy intake; route new items back; migrate in-flight items created in Pega during the window back or finish them in Pega under a defined exception; reconcile (Chapter 10.12)</td></tr>
+      <tr><td>Hypercare</td><td>Two to four weeks of intensive monitoring, daily stand-up with Operations, tuned alerts, fast-track fixes through the hotfix path</td></tr>
+      <tr><td>Training and adoption</td><td>Role-based training with sandbox practice; super-users in each team; quick reference guides; feedback loop into the backlog</td></tr>
+    </table>
+      </section>
+
+  <section id="s13-13" class="pagebreak">
+    <h2>13.13 Risk register (top ten delivery risks)</h2>
+    <p>Delivery risks are the architecture's decisions seen from the other side, and the ten below follow from the boundaries of 13.1. Each row names the early warning that would show the risk materialising, because a risk with no early warning is one nobody will see until a go-live.</p>
+    <table>
+      <tr><th>#</th><th>Risk</th><th>Likelihood / impact</th><th>Early warning</th><th>Mitigation</th><th>Owner</th></tr>
+      <tr><td>1</td><td>Integration contracts with the ESB and core are late, unstable or lack idempotency</td><td>High / High</td><td>No agreed contract by sprint 2; test environment unavailable; changing payloads</td><td>One-page contract per operation first; simulation and contract tests; canonical model isolates change; escalate through integration architect; manual fallback designed in parallel</td><td>Integration lead</td></tr>
+      <tr><td>2</td><td>Regulatory content (exemptions, notices, deadlines) is unavailable or changes</td><td>Medium / High</td><td>Legal cannot supply rules in decision-table form; frequent corrections</td><td>Reference-data design; Legal-owned change case; effective dating; pilot with a subset of states and order types; a named owner who keeps the content current</td><td>Legal and Compliance lead</td></tr>
+      <tr><td>3</td><td>Wrong-customer restraint or missed legal deadline</td><td>Low / Very high</td><td>Match exceptions; passed-deadline alerts; near-miss reports</td><td>Strict match rules, dual control, SLA from receipt time, parallel run, due-soon dashboards, SLA processor monitoring, manual fallback</td><td>Legal operations head</td></tr>
+      <tr><td>4</td><td>Control weakness: maker-checker or SoD bypass, over-broad roles</td><td>Medium / Very high</td><td>Maker-equals-checker report non-zero; access test failures</td><td>Four-layer enforcement, role tests each release, quarterly recertification, independent release approval</td><td>Security and Pega lead</td></tr>
+      <tr><td>5</td><td>Performance problems at production volume (batch windows, reports, screens)</td><td>Medium / High</td><td>Slow PAL baselines; alerts; window overruns in staging</td><td>Exposed, indexed columns by design; chunked bulk paths; production-like volume tests; DBA review; PDC trends (Chapters 03.3, 06.8)</td><td>Pega lead and DBA</td></tr>
+      <tr><td>5b</td><td>(Related) Architecture drift into one layer; technical debt accumulates</td><td>Medium / Medium</td><td>Clones; rising guardrail warnings; hotfix needs full release</td><td>Layering rules, dependency check, architecture review, debt budget</td><td>Pega lead</td></tr>
+      <tr><td>6</td><td>Operational readiness gaps: no runbooks, alerts or on-call at go-live</td><td>Medium / High</td><td>Go-live checklist items open</td><td>Operational readiness as a definition-of-done item; game-day exercises; severity matrix and templates (Chapter 10.13)</td><td>Support lead</td></tr>
+      <tr><td>7</td><td>Data migration and cutover errors (in-flight items, orphaned restraints)</td><td>Medium / High</td><td>Reconciliation variances; unmapped items</td><td>Per-case-type rules, item-level verification, restraint reconciliation, rehearsals, rollback plan</td><td>Programme manager</td></tr>
+      <tr><td>8</td><td>Skills and capacity: small team, key-person dependency, learning curve on Constellation or integration</td><td>High / Medium</td><td>Single reviewer for many changes; slipping estimates</td><td>Pairing, documentation, shared frameworks, training plan, onboarding standard, spread knowledge deliberately</td><td>Delivery manager and lead</td></tr>
+      <tr><td>9</td><td>Security and data protection: PII in logs, lower environments or prompts; certificate expiry outage</td><td>Medium / High</td><td>Unmasked data discovered; certificate within 30 days of expiry</td><td>Masking pipeline, log standards, secrets and certificate inventory with alerts, data classification (Chapters 05.14, 10.7)</td><td>Security and platform</td></tr>
+      <tr><td>10</td><td>Scope growth and unclear ownership of processes (people working around the platform)</td><td>High / Medium</td><td>Requests for exceptions to the pattern; shadow spreadsheets</td><td>Intake and prioritisation with a product owner, clear process owners, thin slices with visible value, metrics that show benefits, change control</td><td>Product owner</td></tr>
+    </table>
+    <p>Three of the ten deserve attention first for a greenfield deposits platform: integration contracts and idempotency (hops 4 to 6 of the closure depend on them), regulatory content ownership and effective dating, and control design (dual control and segregation of duties). Each is a design problem to solve before build, not a testing problem to find later.</p>
+  </section>
+
+  <section id="s13-recap">
+    <h2>13.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>Dana's closure <code>AC-10882</code> runs from Marcus's screen to a confirmed disbursement on Tuesday 10 March 2026, crossing every boundary the earlier chapters built, with each hop's mode, commit point, visible state and failure behaviour known. The hold call timed out, the outcome was unknown, and two independent signals, the status lookup by key and the event <code>EVT-55122</code>, resolved it without a second hold. The other case types reuse the same machinery and differ only in clock, authority, integration and evidence.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Boundaries justified by the failures they prevent: the integration layer, the canonical model with its translation at the boundary, the layered rulesets, the case-type split, the asynchronous hops and the reference-data and audit boundaries. A pattern per interface from one piece of logic and a contract per operation; shared frameworks built once; sizing, topology and recovery derived from stated assumptions; governance that enforces standards mechanically; and a phased rollout with parallel runs.</p>
+    <h3>What it still cannot do</h3>
+    <p>An architecture does not decide whether someone can explain it. Knowing why the hold uses the same key on the retry, why the translation sits at the boundary, or why Reg E counts business days for ten and calendar days for forty-five is understanding; being able to say it in a few sentences, with one example and the honest limit of what was done, is a different skill. Chapter 14 turns the understanding of these thirteen chapters into answers: the direct sentence first, then the mechanism, an example that is clearly either confirmed or hypothetical, the follow-up questions an interviewer asks next, and the misconception to avoid.</p>
+  </section>
+
+  <section id="s13-inv" class="pagebreak">
+    <h2>13.R1 Reference: the integration inventory</h2>
+    <p>The twenty-eight interfaces, each with its direction, chosen pattern, the reason for the pattern, and the resilience, contract and control questions. Patterns are explained in 13.4; the closure walkthrough of 13.7 used the first, third, fourth, fifth and sixth rows' patterns.</p>
+    <table>
+      <tr><th>#</th><th>Interface</th><th>Direction</th><th>Pattern</th><th>Why this pattern</th><th>Resilience, contract and controls</th></tr>
+      <tr><td>1</td><td>Customer and account read (profile, accounts, balances)</td><td>Pega to core via ESB</td><td>SYNC, cached in thread-scope data pages</td><td>The agent or analyst needs it on screen now; reads are safe to repeat; cache avoids repeated calls (Chapter 03.5)</td><td>Timeouts 5-8 s interactive; no automatic retry on the interactive path; serve cached value with an as-of stamp as degraded mode; reload after any update; correlation ID</td></tr>
+      <tr><td>2</td><td>Transaction history read</td><td>Pega to core via ESB</td><td>SYNC, paged, not stored</td><td>High volume and always current; copying it into cases creates stale PII and BLOB bloat</td><td>Server-side paging and date filters; limit rows; mask; never cache whole history in node scope</td></tr>
+      <tr><td>3</td><td>Account maintenance update (address, signers, beneficiaries)</td><td>Pega to core via ESB</td><td>SYNC+Q with outbox table (a build, not a Pega feature) and idempotency key</td><td>Business wants confirmation quickly, but a core outage must not lose or duplicate updates</td><td>Case status Pending-Core; queue processor delivery with jittered backoff; idempotency key = case ID + step; reload data pages after success (Chapter 05.9)</td></tr>
+      <tr><td>4</td><td>Hold placement and release</td><td>Pega to core via ESB</td><td>SYNC+Q, idempotent, per-account child cases</td><td>Money-affecting, deadline-driven, must never double-post; a per-account case isolates failures</td><td>Idempotency key; timeouts agreed with ESB (ESB shorter); breaker; manual fallback; dual control before the work item exists; read-back of core reference</td></tr>
+      <tr><td>5</td><td>Account closure and disbursement</td><td>Pega to core via ESB</td><td>ASYNC-CB with status check</td><td>Closure and disbursement can take time and involve several backends; the case waits with an SLA</td><td>202 with tracking ID; callback to a Service-REST; sweeper scheduler for cases stuck in Pending-Core; re-fetch balance before posting (Chapter 02.12)</td></tr>
+      <tr><td>6</td><td>Core end-of-day balances and ledger extract</td><td>Core to Pega (staging)</td><td>BATCH (SFTP, trigger file, checksum) into staging, MERGE</td><td>Large volume, once a day, set-based comparison; a file is a durable, hashable artifact</td><td>File registry; per-row error isolation; trailer reconciliation; expected-file monitor (Chapter 07.8 to 07.11, 05.8)</td></tr>
+      <tr><td>7</td><td>Account status and posting events</td><td>Core or ESB to Pega</td><td>EVENT (topic keyed by account number), if the bank has an event backbone; otherwise ESB push to Service-REST with idempotency</td><td>Real-time awareness (for example a hold placed elsewhere, an account closed) without polling; replaces batch latency</td><td>At-least-once, idempotent consumer with sequence guard; dead-letter and replay API; lag monitoring (Chapter 06)</td></tr>
+      <tr><td>8</td><td>ACH return and NOC files</td><td>Payment hub or network to Pega</td><td>BATCH with trigger file, parse structured (94-char), staging</td><td>The network format is file-based; volume spikes; reconciliation by control totals</td><td>Registry on name + hash; structural validation; chunked idempotent apply keyed on original trace + return trace (Chapter 07.12)</td></tr>
+      <tr><td>9</td><td>Payment exceptions raised by the payment hub (ACH, wires, checks)</td><td>Hub to Pega</td><td>EVENT or Service-REST with idempotency; file if that is all the hub offers</td><td>Exceptions arrive continuously with tight deadlines; push is better than polling</td><td>202 Accepted for queued work; deterministic exception ID; alerts if no exceptions arrive when expected</td></tr>
+      <tr><td>10</td><td>Positive pay issue and presented-item files</td><td>Corporate customers and check system to Pega</td><td>BATCH, set-based matching in SQL, exceptions as cases</td><td>Million-row matching is a database job, not a case loop (Chapter 07.13)</td><td>Cut-off time monitoring; late-file incident; default decision rule</td></tr>
+      <tr><td>11</td><td>Wire exception and recall requests</td><td>Pega to payment hub and messaging network</td><td>SYNC+Q with dual control</td><td>Time-critical and irreversible; need immediate attempt and a retryable record</td><td>Idempotent request; dual control on release; same-day SLA; OFAC hits to a restricted queue</td></tr>
+      <tr><td>12</td><td>Card dispute and chargeback</td><td>Pega to card processor or network portal</td><td>ASYNC-CB, or batch with status files (confirm what the processor offers); RPA bridge only if no interface exists</td><td>Network deadlines run on the network's clock; status arrives later</td><td>Two-clock tracking (Reg E and network); evidence packaging; reconciliation (Chapter 12.9)</td></tr>
+      <tr><td>13</td><td>Sanctions (OFAC) screening</td><td>Pega to screening service via ESB</td><td>SYNC for onboarding; BATCH rescreening for list updates</td><td>Decision needed before the account opens or the payment proceeds</td><td>Fail closed: no auto-approval if unavailable; case waits; alert; strict dual control on false-positive clearance (Chapter 05.9, 12.5)</td></tr>
+      <tr><td>14</td><td>Identity verification and KYC data providers</td><td>Pega to services</td><td>SYNC with ASYNC fallback to manual review</td><td>Applicant is waiting; if the service is slow, the case moves to manual verification</td><td>Timeouts; classification of provider errors; no PII in logs</td></tr>
+      <tr><td>15</td><td>CRM or customer master (contact updates, relationship data)</td><td>Pega to and from CRM</td><td>SYNC read; EVENT or SYNC+Q for updates</td><td>Contact data changes flow both ways; avoid dual masters</td><td>Single owner per attribute; reload on change; idempotent updates</td></tr>
+      <tr><td>16</td><td>Document management (store and retrieve images, orders, evidence)</td><td>Pega to document store</td><td>SYNC for small items, ASYNC for large; repository rule with a content store, link on the case</td><td>Documents are large and long-retained; keep them out of the work table (Chapter 02.10)</td><td>Hash recorded; virus scanning; retention policy; access by privilege</td></tr>
+      <tr><td>17</td><td>Print and mail vendor (letters, notices)</td><td>Pega to vendor; status back</td><td>BATCH (outbound file, inbound status and returned-mail files)</td><td>Vendors standardise on SFTP; mail is inherently asynchronous</td><td>Registry both directions; proof of mailing stored; returned mail feeds address and dormancy rules</td></tr>
+      <tr><td>18</td><td>Email and SMS gateways</td><td>Pega to gateways</td><td>SYNC+Q via correspondence framework</td><td>Notices must be queued and retried without blocking users</td><td>Queue processor with backoff; bounce handling; consent checks; loop prevention (Chapter 07.16)</td></tr>
+      <tr><td>19</td><td>Legal order intake</td><td>Vendor, agent, mail, email to Pega</td><td>BATCH (vendor file) plus manual scan and keying plus email listener</td><td>Orders arrive by many routes; the receipt timestamp is legally significant</td><td>Single intake model; version key; match confidence rules; dual control on restraint (Chapter 07.13)</td></tr>
+      <tr><td>20</td><td>Digital channel intake (phase 2)</td><td>Bank portal and BFF to Pega</td><td>SYNC via DX API or Service-REST with idempotency</td><td>Human-facing; case semantics from the DX API</td><td>Token authentication; version-token handling; double-submit protection (Chapter 04.6)</td></tr>
+      <tr><td>21</td><td>Single sign-on</td><td>Pega to IdP</td><td>SAML or OIDC, JIT provisioning with group mapping</td><td>Corporate standard; centralised access control</td><td>Metadata and certificate rotation; mapping change control (Chapter 05.13)</td></tr>
+      <tr><td>22</td><td>Logs and security events</td><td>Pega to Splunk or SIEM</td><td>Log forwarding (not an in-process integration)</td><td>Keeps the application off the logging critical path</td><td>Correlation IDs in every line; masked fields; retention; alerts owned by monitoring (Chapter 10)</td></tr>
+      <tr><td>23</td><td>Fraud platform alerts and actions</td><td>Fraud platform to Pega; Pega to core for holds</td><td>EVENT in; SYNC+Q out for holds</td><td>Real-time alert-to-containment is time-critical</td><td>Same-day clocks; dual control on releases above limits</td></tr>
+      <tr><td>24</td><td>General ledger and finance extracts</td><td>Finance to Pega (staging); journals out if needed</td><td>BATCH</td><td>Finance is batch-oriented and controlled</td><td>Totals and counts; maker-checker on adjustments</td></tr>
+      <tr><td>25</td><td>State unclaimed property reporting</td><td>Pega to state portals or files</td><td>BATCH outbound (file per state format)</td><td>States define formats and dates; manual portal upload as the fallback</td><td>Dual control on remittance; proof of submission</td></tr>
+      <tr><td>26</td><td>Data warehouse feeds</td><td>Pega to warehouse</td><td>BATCH or EVENT (case events), from a replica where possible</td><td>Analytics must not load the transactional database (Chapter 11.12)</td><td>Masking; schema contract; reconciliation of counts</td></tr>
+      <tr><td>27</td><td>Returned-mail and address-quality feeds</td><td>Mail vendor to Pega</td><td>BATCH (file listener)</td><td>Vendor delivers files</td><td>Idempotent flag updates; feeds dormancy due-diligence evidence</td></tr>
+      <tr><td>28</td><td>Legacy screen-only systems (conditional)</td><td>Pega to legacy UI</td><td>RPA bridge only if no API or batch exists, time-boxed with a decommission plan</td><td>Last resort (Chapter 09.3)</td><td>All bot controls; attended first; reconciliation against the system's own report</td></tr>
+    </table>
+  </section>
+
+  <section id="s13-bp" class="pagebreak">
+    <h2>13.R2 Reference: the full case blueprints</h2>
+    <p>These are the stage-by-stage blueprints behind 13.7 and 13.8, kept together for lookup. Every SLA, goal, deadline, queue name, volume and routing choice in them is an <span class="tag amber">assumed Riverbend policy</span> proposal to be agreed, not a regulatory requirement; regulatory clocks are cited in Chapter 12 §12.10 and are never set from these tables. Blueprint 2 is the closure that the walkthrough followed.</p>
+    <p>Each blueprint gives: purpose and triggers, data and decisions, a stage table with steps, routing, SLA, integrations, correspondence, audit points and failure handling, then the reporting and open questions. The mechanics of stages, flows, routing and SLAs are in Chapter 02; domain rules are in Chapter 12; integration patterns in Chapters 05 to 07. <strong>SLA values are proposals to agree with the business, not Riverbend policy</strong>; regulatory clocks are computed from reference data owned by Compliance.</p>
+    <div class="note"><strong>Common conventions for all six.</strong> Case ID with class-group prefix; <code>CorrelationID</code> created at intake and sent on every call; idempotency key = case ID + step + sequence on every write; every status change writes history; decisions write a decision-log entry (rule version, inputs, outcome); maker-checker enforced in four layers (Chapter 10.4); notices through the correspondence framework with copy attached; SLAs on the correct calendar (Chapter 02.8); dashboards from exposed columns (Chapter 03.3).</div>
+
+    <h3>Blueprint 1: Account Maintenance</h3>
+    <table>
+      <tr><th>Item</th><th>Design</th></tr>
+      <tr><td>Purpose and triggers</td><td>Change customer or account details: address, phone, email, name, signers, beneficiaries, title, product (Chapter 12.6). Triggers: branch or contact centre request, digital channel (phase 2), customer email (Email Channel or Listener), partner file for bulk updates</td></tr>
+      <tr><td>Data</td><td>Keys (<code>PartyID</code>, <code>AccountNumber</code>), <code>MaintenanceType</code>, delta (old and new values for audit), channel, requester identity and verification result, risk tier, maker and approver IDs, documents, notice records</td></tr>
+      <tr><td>Decisions (business-managed tables)</td><td><em>MaintenanceRisk</em> (type x channel x recent-change count x customer risk to Low, Medium, High and route path); <em>RequiredDocuments</em> (type x titling x state); <em>ApprovalAuthority</em> (type x risk x titling to approver level); <em>NoticePolicy</em> (which contact points to notify)</td></tr>
+    </table>
+    <table>
+      <tr><th>Stage</th><th>Steps</th><th>Routing</th><th>SLA (proposal)</th><th>Integrations</th><th>Correspondence</th><th>Audit points</th><th>Failure handling</th></tr>
+      <tr><td>1 Intake</td><td>Capture request; validate format (postal address standardisation); fetch party and accounts; duplicate-open-case check on the same account and type</td><td>Branch or contact-centre queue; digital auto-created</td><td>Goal 4 business hours</td><td>D_Party and D_AccountsByParty (SYNC, cached); address validation service (SYNC)</td><td>Acknowledgement (suppressed for auto-mail)</td><td>Requester identity, channel, timestamp</td><td>Core read fails: degraded banner, case created with minimal data and enriched later; duplicate found: link and warn</td></tr>
+      <tr><td>2 Verify</td><td>Decision MaintenanceRisk; low risk straight-through verification; medium: document review; high: enhanced verification and possible KYC child case; recent-change checks</td><td>L1 verify queue; high risk to skilled group</td><td>Goal 4 h / deadline 1 business day</td><td>Screening re-check if name or owner change (SYNC, fail closed); KYC child case (Blueprint 5)</td><td>Request for missing documents with reminders (Wait)</td><td>Decision log (rule version, inputs, tier); documents received</td><td>Screening unavailable: Waiting-Screening status, retry, alert; documents never arrive: timed closure per policy with notice</td></tr>
+      <tr><td>3 Approve</td><td>Maker-checker; authority by decision table; second approval for signer removal on a joint account</td><td>Checker queue; maker excluded (routing, Access Deny, validation)</td><td>Deadline 1 business day; passed-deadline to supervisor</td><td>None</td><td>None</td><td>Maker, checker, decision, reason</td><td>No eligible approver: supervisor queue alert (zero-eligible-operators alert, Chapter 02.5)</td></tr>
+      <tr><td>4 Fulfil</td><td>Update core through the ESB; reload data pages; update CRM if it is a separate master</td><td>Automatic; failure to a fix queue</td><td>Goal 15 minutes automatic; deadline 4 business hours before escalation</td><td>Core update: SYNC+Q with outbox and idempotency key; CRM update: SYNC+Q</td><td>None</td><td>Core reference, request and response metadata, attempt count</td><td>Transient: backoff retry; permanent or business error: "Fix core update" assignment; unknown outcome after timeout: status check before re-post; breaker open: Pending-Core with banner</td></tr>
+      <tr><td>5 Notify and resolve</td><td>Send confirmation to old and new contact points; set recent-change flag for fraud rules; resolve</td><td>Automatic</td><td>Within 1 business day of fulfilment</td><td>Email, SMS and mail gateways via correspondence framework</td><td>Confirmation to old and new address (by policy); letters for address changes</td><td>Notice copy and proof of dispatch</td><td>Bounce: hard-bounce flag and mail fallback task</td></tr>
+      <tr><td>Alt: Rejected or Cancelled</td><td>Reject with reason; or cancel on customer request (ticket)</td><td>As needed</td><td>n/a</td><td>None</td><td>Rejection notice</td><td>Reason code</td><td>Cancel after Pending-Core: reverse via compensating update</td></tr>
+    </table>
+    <p><strong>Case SLA:</strong> deadline 5 business days; passed-deadline recurrence to the supervisor. <strong>Reporting:</strong> backlog by queue and age, turnaround by type, straight-through rate, exception reasons, maker-equals-checker control report (target zero). <strong>Open questions:</strong> which maintenance types are allowed to be straight-through; notice policy for old addresses; whether CRM is a separate master.</p>
+
+    <h3>Blueprint 2: Account Closure</h3>
+    <table>
+      <tr><th>Item</th><th>Design</th></tr>
+      <tr><td>Purpose and triggers</td><td>Close an account and disburse the balance (Chapter 02.12, 12.4). Triggers: customer request (any channel), bank-initiated closure, deceased-owner process</td></tr>
+      <tr><td>Data</td><td>Keys, closure reason, disbursement method and details, balance at request and at fulfilment, holds and legal flags found, linked orders, approver IDs, disbursement reference</td></tr>
+      <tr><td>Decisions</td><td><em>ClosureEligibility</em> (holds, legal flags, pending items, negative balance, linked products to Proceed, Block or Review); <em>ClosureAuthority</em> (balance bands to approver level); <em>DisbursementRules</em> (method by amount and state; wire needs dual control)</td></tr>
+    </table>
+    <table>
+      <tr><th>Stage</th><th>Steps</th><th>Routing</th><th>SLA (proposal)</th><th>Integrations</th><th>Correspondence</th><th>Audit points</th><th>Failure handling</th></tr>
+      <tr><td>1 Intake</td><td>Capture reason (optional retention conversation never obstructs); verify requester; gather accounts, holds, pending items</td><td>Closure queue</td><td>Goal 1 business day</td><td>Balance, holds, pending items, linked products (SYNC reads); legal orders lookup (data page over legal order table)</td><td>Acknowledgement</td><td>Requester, reason code</td><td>Core read failure: wait and retry; manual capture fallback</td></tr>
+      <tr><td>2 Pre-closure checks</td><td>Parallel: sanctions re-screen, active legal hold check, recurring items (ACH, bill pay), negative balance; ClosureEligibility decision</td><td>Automatic; hits to specialist queues</td><td>Goal 4 h / deadline 1 business day</td><td>Screening (SYNC, fail closed); holds from core; recurring items inventory</td><td>Notice of recurring items to cancel (where policy requires)</td><td>Each check outcome and rule version</td><td>Sanctions or legal hit raises ticket to Hold Review alternate stage; check unavailable: wait, never skip</td></tr>
+      <tr><td>3 Approve</td><td>Maker-checker; authority by balance; second approval and compliance for large balances</td><td>Checker, supervisor, manager queues by band</td><td>Deadline 1 business day</td><td>None</td><td>None</td><td>Approver, limit, balance at approval</td><td>Balance changes before posting: re-approval rule (threshold)</td></tr>
+      <tr><td>4 Fulfil</td><td>Re-fetch balance; post closure and disbursement; cancel services; trigger final statement</td><td>Automatic with fix queue</td><td>Deadline 4 business hours (async completion with callback)</td><td>Closure and disbursement: ASYNC-CB with status check and idempotency; payment initiation with dual control for wires</td><td>Closure confirmation letter and email; final statement</td><td>Core and payment references; amounts disbursed vs approved</td><td>Timeout: status check before re-post; legal order arrives mid-flow: LEGAL_FREEZE ticket stops posting; disbursement returned: child case Unclaimed or Return handling</td></tr>
+      <tr><td>5 Resolve</td><td>Mark closed in core and Pega; schedule post-closure monitoring (returned items, tax form)</td><td>Automatic</td><td>n/a</td><td>None</td><td>Tax form timing note</td><td>Resolution code, evidence links</td><td>Post-closure returned item: reopen path</td></tr>
+      <tr><td>Alt: Cancelled; Hold Review; Rejected</td><td>Customer cancels; legal or compliance review; eligibility block</td><td>Legal, compliance</td><td>Per owner team</td><td>As above</td><td>Non-disclosing wording when notice is restricted</td><td>Reason, approver</td><td>Resume to Compliance stage after release</td></tr>
+    </table>
+    <p><strong>Case SLA:</strong> 10 business days (proposal) <span class="tag amber">assumed Riverbend policy</span>. <strong>Reporting:</strong> closures by reason, within-30-days-of-opening closures (fraud pattern), aged pending-disbursement, retention-offer outcomes. <strong>Open questions:</strong> authority bands; whether a retention conversation is in scope (and its conduct review); disbursement methods and their dual-control thresholds.</p>
+
+    <h3>Blueprint 3: Legal Process Order</h3>
+    <table>
+      <tr><th>Item</th><th>Design</th></tr>
+      <tr><td>Purpose and triggers</td><td>Process garnishments, tax levies, support levies, subpoenas and court freezes (Chapter 12.7). Triggers: vendor file (Chapter 07.13), scanned mail keyed by Legal Ops, agent or branch forward, email listener intake</td></tr>
+      <tr><td>Data</td><td>Order record (OrderNo + Version, type, state, issuing authority, <strong>service date and time</strong>, response due date, amount, debtor identifiers), match confidence, accounts affected, exemption outcome, notice decision, response and remittance references; child Hold Placement cases</td></tr>
+      <tr><td>Decisions (Legal-owned, effective-dated, circumstanced)</td><td><em>LegalOrderRoute</em>; <em>ExemptionRules</em> (circumstanced by state and order type; Chapter 03.10); <em>NoticeRules</em> (required, permitted, forbidden); <em>ResponseWindow</em> (due date from type and state on the business calendar); <em>PriorityRank</em> (competing orders); <em>WaitingPeriod</em> (for example the federal levy period, verified at 21 calendar days)</td></tr>
+    </table>
+    <table>
+      <tr><th>Stage</th><th>Steps</th><th>Routing</th><th>SLA (proposal)</th><th>Integrations</th><th>Correspondence</th><th>Audit points</th><th>Failure handling</th></tr>
+      <tr><td>1 Intake and classify</td><td>Record exact receipt time; key or parse the order; attach the image; classify; compute response due date; dedupe on OrderNo + Version; amendments become tickets</td><td>Restricted legal intake queue</td><td>Goal 4 business hours from receipt / deadline 1 business day</td><td>Document store (store image); vendor file registry; calendar service</td><td>None</td><td>Receipt timestamp, source channel, who keyed it</td><td>Vendor file late or missing: expected-file alert; duplicate version: skip; unreadable: back to sender queue</td></tr>
+      <tr><td>2 Identify customer and accounts</td><td>Match by identifiers; exact key match proceeds, near or multiple matches go to manual confirmation; list accounts and titling</td><td>Legal specialist (skill)</td><td>Same business day</td><td>Party and account search (SYNC); never auto-restrain on fuzzy matches</td><td>None</td><td>Match evidence and confidence; who confirmed</td><td>Core search down: wait, escalate, no restraint on guesses</td></tr>
+      <tr><td>3 Validate and rule</td><td>Validate court, service, jurisdiction; determine order rules; joint account and special account flags to Legal</td><td>Legal reviewer; counsel escalation</td><td>Goal = due date minus 5 business days</td><td>None</td><td>Return-to-issuer notice if invalid</td><td>Validity decision and reason</td><td>Doubtful validity: counsel queue with deadline visible</td></tr>
+      <tr><td>4 Restrain</td><td>Compute restraint (balance on hand at service, exemptions); create one child Hold Placement case per account; dual control on placement</td><td>Legal specialist; second approver for placement or auto-approval below policy</td><td>Same business day</td><td>Core hold: SYNC+Q idempotent per account; federal benefit look-back using ACH payment codes</td><td>None</td><td>Amounts, exemptions applied and rule versions, core references</td><td>Core down: manual fallback with dual control; bot bridge only as time-boxed exception (Chapter 09.12); partial success per account is visible in the parent</td></tr>
+      <tr><td>5 Notify</td><td>Decision NoticeRules: send required notice, hold off where forbidden; exemption claim instructions where required</td><td>Automatic with Legal override</td><td>Dynamic from notice rule</td><td>Correspondence framework (state and order type templates); mail vendor</td><td>Customer notice (varies by state and order); acknowledgements to issuers</td><td>Notice decision, content version, proof of mailing</td><td>Template missing for a state: block with alert (never send a generic notice)</td></tr>
+      <tr><td>6 Wait and monitor</td><td>Wait for statutory period or customer challenge; watch for amended, release and bankruptcy notices (tickets)</td><td>Case waits; scheduler checks</td><td>Wait until computed date</td><td>Scheduler; legal vendor and email intake for later paper</td><td>None</td><td>Events that interrupted the wait</td><td>Release during wait: restraint released through dual control; stay notice: Legal decision</td></tr>
+      <tr><td>7 Respond and remit</td><td>Prepare answer or certification; maker-checker; remit funds by check or wire after the wait; reconcile</td><td>Legal specialist; checker; payments approver for remittance</td><td>Deadline = response due date (passed-deadline hourly to Legal manager)</td><td>Payment initiation with dual control; correspondence to issuer</td><td>Answer or certification; transmittal</td><td>Amounts remitted, approvals, proofs</td><td>Missed deadline: escalation chain, incident, Legal notified; payment failure: idempotent retry or manual payment</td></tr>
+      <tr><td>8 Release and resolve</td><td>Release remaining restraint on satisfaction, vacatur or expiry; notify; close; retain evidence</td><td>Two distinct privileges (first and second release approval)</td><td>Same business day after release authority</td><td>Core hold release SYNC+Q; correspondence</td><td>Release notice where permitted</td><td>Release authority and evidence</td><td>Release fails: retry, alert, manual fallback</td></tr>
+    </table>
+    <p><strong>Case SLA:</strong> dynamic from the response due date; recurring passed-deadline alerts; the SLA processor monitored as a production dependency (Chapter 02.8). <strong>Reporting:</strong> orders due in the next three business days; amounts held by state; aged restraints; wrong-match exceptions; deadline breaches (target zero). <strong>Access:</strong> restricted roles; masked dashboards; no case detail in general correspondence. <strong>Open questions:</strong> intake channels and who first receives paper; which states and order types are in scope for release 1; remittance method and approval levels; notice policy ownership.</p>
+
+    <h3>Blueprint 4: ACH / Payment Exception</h3>
+    <table>
+      <tr><th>Item</th><th>Design</th></tr>
+      <tr><td>Purpose and triggers</td><td>Handle ACH returns, notifications of change, unresolved inbound entries and customer claims about ACH items (Chapter 12.8; file mechanics Chapter 07.12). Triggers: return and NOC files, hub exception events, customer calls</td></tr>
+      <tr><td>Data</td><td>Staged return items (file ID, line, trace numbers, reason, amount), account, treatment outcome, deadline (banking days), links to stop payment, hold, deceased and dispute cases</td></tr>
+      <tr><td>Decisions</td><td><em>ReturnReasonTreatment</em> (reason code x originator or receiver type to treatment, SLA, notice template); <em>ReturnDeadline</em> (banking-day computation by reason); <em>AuthorityLimits</em></td></tr>
+    </table>
+    <table>
+      <tr><th>Stage</th><th>Steps</th><th>Routing</th><th>SLA (proposal)</th><th>Integrations</th><th>Correspondence</th><th>Audit points</th><th>Failure handling</th></tr>
+      <tr><td>1 Ingest and triage</td><td>Trigger-file handshake; registry; structural validation of batch and file controls; stage; reject malformed rows with reasons; chunk for processing</td><td>Automatic; exception rows to payments exceptions queue</td><td>Within 30 minutes of file arrival (batch window budget)</td><td>File listener; staging; queue processor (Chapter 06)</td><td>None</td><td>File hash, counts, rejects</td><td>Duplicate file skipped; trailer mismatch quarantines the file; late file alert</td></tr>
+      <tr><td>2 Match and decide</td><td>Match to original item by trace; idempotent apply by original trace + return trace; ReturnReasonTreatment; create exception cases only where a human must act</td><td>Payments exceptions queue; skills for unauthorised-debit handling</td><td>Goal 2 business hours / deadline per reason well inside the network deadline</td><td>Core and hub lookups (SYNC); unmatched returns to review</td><td>Prepared by reason</td><td>Decision log; file line reference</td><td>Unmatched return: manual match; already applied: skip as duplicate</td></tr>
+      <tr><td>3 Post or reverse</td><td>Post reversals or credits through the hub or core with idempotency; fee decision (authority)</td><td>Automatic; approval for large amounts or fee overrides</td><td>Same business day</td><td>SYNC+Q posting with keys</td><td>None</td><td>Posting references and amounts</td><td>Post fails: retry, then fix queue; unknown outcome: status check</td></tr>
+      <tr><td>4 Notify</td><td>Customer and originator notices by reason; loop-safe email and SMS</td><td>Automatic</td><td>Same business day</td><td>Correspondence framework</td><td>R01, R02, R03 and others as templates (compliance-approved)</td><td>Notice copy</td><td>Bounce handling; mail fallback</td></tr>
+      <tr><td>5 Unauthorised-debit sub-process</td><td>For R05, R07, R10, R11, R29-style claims: collect signed statement; return within the extended or short window; run the Reg E clocks in parallel; link Reg E case</td><td>Specialist queue</td><td>Dynamic from claim date and window</td><td>Document store</td><td>Signed statement request</td><td>Statement, window dates, return trace</td><td>Statement not received: close per policy; late return: approval to proceed under network rules</td></tr>
+      <tr><td>6 Reconcile and resolve</td><td>Control totals: file control = staged = applied + exceptions + rejects; resolve; metrics (returns by reason today vs average)</td><td>Automatic with variance alert</td><td>By end of day</td><td>Staging tables, reports</td><td>None</td><td>Reconciliation record</td><td>Variance stops the file and alerts Payments Operations</td></tr>
+    </table>
+    <p><strong>Case SLA:</strong> per reason from the banking-day deadline minus a safety margin. <strong>Reporting:</strong> returns by reason code versus a seven-day average; originator return rates against the network thresholds; items near deadline; duplicate files; rejects. <strong>Open questions:</strong> which returns can be fully automatic; fee policy; whether the hub provides events or only files.</p>
+
+    <h3>Blueprint 5: KYC / AML Review</h3>
+    <table>
+      <tr><th>Item</th><th>Design</th></tr>
+      <tr><td>Purpose and triggers</td><td>Identity verification, screening, risk rating, beneficial ownership and enhanced due diligence at onboarding and ongoing (Chapter 12.5). Triggers: new account application, event triggers (maintenance, alerts), periodic review scheduler, sanctions list updates</td></tr>
+      <tr><td>Data</td><td>Party and entity data, ID verification results, screening outcomes and clearance rationale, risk rating and its inputs, beneficial owners, EDD documents, approvals, next review date</td></tr>
+      <tr><td>Decisions</td><td><em>RiskRating</em> (customer type, geography, product, expected activity, screening results to Low, Medium, High); <em>EDDTriggers</em>; <em>ReviewFrequency</em> by risk; <em>AlertClearanceAuthority</em></td></tr>
+      <tr><td>Access</td><td>Restricted compliance access group; sanctions and SAR-related content isolated; no leakage into correspondence, dashboards or search</td></tr>
+    </table>
+    <table>
+      <tr><th>Stage</th><th>Steps</th><th>Routing</th><th>SLA (proposal)</th><th>Integrations</th><th>Correspondence</th><th>Audit points</th><th>Failure handling</th></tr>
+      <tr><td>1 Intake and completeness</td><td>CIP minimum data present and well formed; collect missing items</td><td>KYC operations queue</td><td>Onboarding turnaround target (business hours)</td><td>Origination platform feed</td><td>Requests for information with reminders</td><td>Data received and when</td><td>Applicant does not respond: timed closure per policy</td></tr>
+      <tr><td>2 Identity and screening</td><td>Documentary and non-documentary verification; OFAC, PEP and watchlist screening; alert review</td><td>Alerts to Compliance skill group</td><td>Sanctions alerts same day; true matches immediate</td><td>ID verification (SYNC with manual fallback); sanctions (SYNC, fail closed; batch rescreening)</td><td>None (never tip off)</td><td>Each alert, reviewer, rationale, evidence</td><td>Screening unavailable: Waiting-Screening, alert, no auto-approval; true match: block and report clock starts (dynamic SLA)</td></tr>
+      <tr><td>3 Risk rating</td><td>RiskRating decision; EDD trigger evaluation</td><td>Automatic</td><td>Immediate</td><td>None</td><td>None</td><td>Decision log with inputs and rule version</td><td>Missing input: route to analyst</td></tr>
+      <tr><td>4 Beneficial ownership (entities)</td><td>Collect certification; identify and verify owners and control person; screen each; CDD documentation</td><td>KYC operations; child KYC cases per owner</td><td>Deadline 5 business days</td><td>Same services for each individual</td><td>Certification request</td><td>Certification, verification results</td><td>Owner structure unclear: escalation to Compliance</td></tr>
+      <tr><td>5 EDD (high risk)</td><td>Source of funds and wealth, purpose, expected activity; senior approval; conditions</td><td>EDD specialists; senior approver</td><td>Deadline 10 business days <span class="tag amber">assumed Riverbend policy</span></td><td>Document store; adverse media provider</td><td>None</td><td>Evidence, approver, conditions</td><td>Evidence insufficient: decline or restrict with rationale</td></tr>
+      <tr><td>6 Decide and set up</td><td>Approve, approve with conditions, decline; open or confirm account in core; set monitoring profile and next review date</td><td>Compliance approver</td><td>Deadline 1 business day after evidence complete</td><td>Core account status (SYNC+Q idempotent)</td><td>Decline notice process per legal guidance</td><td>Decision, approver, conditions</td><td>Core update fails: Pending-Core handling as in Maintenance</td></tr>
+      <tr><td>7 Monitor and review</td><td>Scheduler creates periodic and event-driven review cases from the next review date</td><td>KYC operations</td><td>By review due date</td><td>Scheduler; screening batch</td><td>Refresh requests</td><td>Review outcomes</td><td>Missed review: dashboard flags overdue reviews</td></tr>
+    </table>
+    <p><strong>Reporting:</strong> alerts by age and outcome, false-positive rate, overdue reviews, onboarding turnaround, overrides. <strong>Open questions:</strong> which screening and ID vendors; where transaction monitoring alerts originate; who owns SAR workflow (a separate restricted system or this platform).</p>
+
+    <h3>Blueprint 6: Reconciliation Break</h3>
+    <table>
+      <tr><th>Item</th><th>Design</th></tr>
+      <tr><td>Purpose and triggers</td><td>Detect and resolve differences between core and ledger, settlement and postings, suspense items (Chapter 12.11). Trigger: nightly detection job after the core end-of-day extract</td></tr>
+      <tr><td>Data</td><td>Break record (account or settlement reference, business date, core and ledger amounts, difference, type, age), investigation notes, resolution code and root cause, adjustment references</td></tr>
+      <tr><td>Decisions</td><td><em>BreakTolerance</em> (amount thresholds by type); <em>BreakRoute</em> (type to queue and skill); <em>AdjustmentAuthority</em> (amount bands); <em>AgingEscalation</em></td></tr>
+    </table>
+    <table>
+      <tr><th>Stage</th><th>Steps</th><th>Routing</th><th>SLA (proposal)</th><th>Integrations</th><th>Correspondence</th><th>Audit points</th><th>Failure handling</th></tr>
+      <tr><td>1 Detect</td><td>Load extracts (trigger-file handshake), staging, set-based comparison with FULL join, tolerance filter, idempotent upsert of breaks (Chapter 05.8, 11.13); auto-match retry for timing items</td><td>Automatic</td><td>Complete within the batch window (illustrative: 60 minutes)</td><td>BATCH files from core and finance; database set-based processing</td><td>None</td><td>File registry, counts, query version</td><td>Extract late or mismatched counts: alert and hold detection; rerun idempotent</td></tr>
+      <tr><td>2 Triage</td><td>Classify (timing, missing, amount, duplicate, out of balance); route by type; link related transactions and files</td><td>Reconciliation queue by skill</td><td>Goal 1 business day</td><td>Transaction reads (SYNC, paged)</td><td>None</td><td>Break classification</td><td>Out-of-balance: immediate supervisor and finance alert</td></tr>
+      <tr><td>3 Investigate</td><td>Guided checklist; trace to files and entries; contact payments or core teams; decide adjustment, reversal or write-off</td><td>Analyst; specialists</td><td>2 to 5 business days by type</td><td>Document store; payments hub reads</td><td>None</td><td>Findings, evidence attached</td><td>Cross-team delay: escalation by age band</td></tr>
+      <tr><td>4 Resolve</td><td>Propose adjustment; maker-checker by amount; post through approved process; write-offs per authority</td><td>Checker, manager, controller by band</td><td>Deadline by age band</td><td>Adjustment posting (SYNC+Q with idempotency)</td><td>None</td><td>Proposer, approver, amounts, GL references</td><td>Posting fails: retry and fix queue; duplicate post prevented by key</td></tr>
+      <tr><td>5 Verify and close</td><td>Re-run match for the item; confirm zero difference; record root cause code; close</td><td>Automatic with sampling review</td><td>Same day</td><td>Re-detection query</td><td>None</td><td>Verification result</td><td>Recurrence: reopen and link to root-cause action</td></tr>
+    </table>
+    <p><strong>SLA by age band:</strong> 0 to 1 day auto-match; 2 to 5 days analyst; 6 to 30 days manager approval; over 30 days senior review. <strong>Reporting:</strong> open breaks by age and gross amount, aging trend, root-cause Pareto, auto-match rate, write-offs by authority. <strong>Open questions:</strong> reconciliations in scope for release 1; GL access; tolerance values; segregation of the reconciler from the poster.</p>
+  </section>
+
+  <section id="s13-ref" class="pagebreak">
+    <h2>13.R Authoritative references</h2>
+    <p class="small muted">This chapter is design and is not a source-backed fact base. Each row states what the cross-referenced chapter supports; regulatory figures are in Chapter 12 with their own citations, and every SLA, volume and threshold here is an assumed Riverbend policy proposal.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / effective date</th><th>What it supports here</th></tr>
+      <tr><td>Chapter 05 — Integration (resilience, idempotency, 409, unknown outcome)</td><td>ch05_integration_rest_soap_esb.html</td><td>This pack</td><td>Home chapter for the integration patterns used in the blueprints</td></tr>
+      <tr><td>Chapter 06 — Kafka, queue processors (delivery semantics, ordering, failure walkthroughs)</td><td>ch06_kafka_dataflow_queue_processors.html</td><td>This pack</td><td>Home chapter for event and queue design</td></tr>
+      <tr><td>Chapter 10 — Security, DevOps and monitoring</td><td>ch10_security_devops_monitoring.html</td><td>This pack</td><td>Dual control, pipeline, observability and recovery practice</td></tr>
+      <tr><td>Chapter 12 — Deposits domain (regulatory clocks and calendars)</td><td>ch12_deposits_banking_domain.html</td><td>This pack</td><td>Home chapter for every regulatory figure; all SLAs in this chapter are assumed Riverbend policy</td></tr>
+    </table>
+  </section>
+
+    <div class="chapnav"><a href="ch12_deposits_banking_domain.html">← Previous: Chapter 12</a><a href="ch14_interview_question_bank.html">Next: Chapter 14 →</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

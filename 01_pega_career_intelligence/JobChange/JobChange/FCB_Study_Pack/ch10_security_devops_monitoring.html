@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch10 · Security, DevOps &amp; Monitoring | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch09_pega_rpa.html">&larr; Chapter 09</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch11_postgresql_sql_deep.html">Next: Chapter 11 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 10 &middot; Operating the application</div>
+    <h1>Security, DevOps &amp; Monitoring</h1>
+    <p class="subtitle">The application now takes in files, events, emails and screens, and the next questions are who may do what, how a change reaches production, and what to do when production misbehaves. This chapter follows Marcus and Priya attempting different actions on <code>AM-10417</code> to show where server-side authorisation actually allows or refuses; then a deployment; then a production incident, worked in a fixed order: symptom, evidence, hypothesis, diagnostic tool, containment, verification, prevention. Each diagnostic tool is given the question it uniquely answers and the question it cannot.</p>
+    <div class="meta">
+      <div><strong>19</strong><span>Sections</span></div>
+      <div><strong>15,272</strong><span>Words</span></div>
+      <div><strong>7</strong><span>Steps in the incident method</span></div>
+      <div><strong>14</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section id="s10-1" class="pagebreak">
+    <h2>10.1 Two operators, one case</h2>
+    <p>On Monday 2 March, <code>AM-10417</code> is in the review stage. Marcus Reed (<code>mreed</code>) has prepared Dana's address change and tries to approve his own work. Priya Raman (<code>praman</code>) tries, as a supervisor, to reassign the whole queue and to edit the capture data on a case she is meant only to approve. Each attempt will succeed or be refused, and the interesting question is <em>where</em>: in the screen, in the rule that does the work, or in the data. The answer shapes everything that follows, because a bank's security argument has to hold when someone does not use the screen at all. The surrounding concerns, authentication mechanics (OAuth, SAML, keystores, rotation) are in Chapter 05 §5.11 to 5.14 and are only referenced here, and field labels, grid layouts and alert IDs vary by release, so they are described by function.</p>
+  </section>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 09 ended with an application that takes in every kind of input, and the question of who may do what with it, how it is deployed and how it is watched. The ledger is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s10-1">10.1 Two operators, one case<span>Where an attempt is allowed or refused</span></a>
+      <a href="#s10-2">10.2 The access model<span>Operator, access group, role, ARO, deny, privilege, when</span></a>
+      <a href="#s10-3">10.3 Designing the deposit-ops role set<span>Maker, checker, supervisor, auditor, admin</span></a>
+      <a href="#s10-4">10.4 Segregation of duties<span>Conflict matrix and four layers</span></a>
+      <a href="#s10-5">10.5 Conditional access, field security, encryption<span>Masking and cipher</span></a>
+      <a href="#s10-6">10.6 Authentication wiring, API security, OWASP<span>Pega-side checklist</span></a>
+      <a href="#s10-7">10.7 Audit, PII, retention, lower environments</a>
+      <a href="#s10-8">10.8 What each diagnostic tool reveals<span>The question each answers, and the one it cannot</span></a>
+      <a href="#s10-9">10.9 Alert-to-action mapping</a>
+      <a href="#s10-10">10.10 Splunk and SPL<span>Queries and correlation-ID tracing</span></a>
+      <a href="#s10-11">10.11 A deployment<span>Pipelines, gates, promotion</span></a>
+      <a href="#s10-12">10.12 Rollback, hotfix and release evidence<span>Why schema and data break rollback</span></a>
+      <a href="#s10-13">10.13 A production incident<span>Severity, the method in order, containment</span></a>
+      <a href="#s10-14">10.14 RCA, prevention, handover</a>
+      <a href="#s10-15">10.15 Security and release checklist</a>
+      <a href="#s10-16">10.16 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s10-recap">10.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s10-ref">10.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+  </section>
+
+  <section id="s10-2" class="pagebreak">
+    <h2>10.2 The access model: where Marcus is refused and Priya is not</h2>
+    <p>Marcus clicks Approve on <code>AM-10417</code> and nothing happens, and then he sends the same action through the DX API with a crafted request, because the front end is only a client. Both are refused. The reason is that Pega's access control answers a single question at the point of every operation, whatever the channel: <em>which user, in which application context, may do what to which kind of object, under which conditions?</em> It is built from a chain of records. A person (an <strong>Operator ID</strong>) belongs to an <strong>Access Group</strong>, which names an application and a set of <strong>Access Roles</strong>. Each role has <strong>Access of Role to Object (ARO)</strong> rules that grant permissions on classes of objects, optional <strong>Privileges</strong> for specific actions, and <strong>Access When</strong> conditions that make permissions depend on data. <strong>Access Deny</strong> rules block access explicitly and override grants. Authorisation in hand-coded systems is scattered through controllers; in Pega it is declarative and attached to the model, so the engine enforces it in the UI, reports, services, the DX API and background processing alike. That is the strength, and the risk is an under-designed role set that grants far more than intended with nobody able to explain who can do what.</p>
+    <div class="flow">PERSON / SYSTEM
+   |
+ OPERATOR ID  (Data-Admin-Operator-ID)       identity record: name, auth reference, default access group, work group, org unit, skills, time zone, locale, availability, reports-to
+   |   selects at login (one of the operator's access groups)
+   v
+ ACCESS GROUP                                names: the APPLICATION, the ACCESS ROLES, the PORTAL(s) and landing, the WORK POOL (which case classes the user can create/see)
+   |
+   +-- APPLICATION  -&gt;  built-on stack  -&gt;  RULESET LIST (what rules the user runs; Chapter 01)
+   |
+   +-- ACCESS ROLES (Rule-Access-Role-Name)      e.g. FCBDep:Maker, FCBDep:Checker ; roles can INHERIT from other roles (dependent roles)
+         |
+         +-- ARO  (Rule-Access-Role-Obj)         per CLASS: permission grid + access levels + privileges + Access When conditions
+         +-- ACCESS DENY (Rule-Access-Deny-Obj)  per class: explicit denial; overrides any grant
+         +-- PRIVILEGES (Rule-Access-Privilege)  named capabilities (e.g. "ApproveClosure") granted through ARO and tested by flow actions/sections/activities
+         +-- ACCESS WHEN (Rule-Access-When)      conditions (when-rule-like) used in AROs and Deny rules: "only if .Amount &lt; 10000", "only if not .MakerOperatorID = current user"
+   v
+ RUNTIME CHECK on every access: open case? modify? delete? run report? execute activity? see field? launch flow action? -&gt; allowed or denied</div>
+    <p>The decision for Marcus's attempt runs in a fixed order.</p>
+    <div class="flow">ACCESS DECISION (conceptual order)
+   request: operator mreed (access group FCBDep:Makers; role Maker) tries to APPROVE case AM-10417 (class FCB-Dep-Work-AccountMaintenance)
+   1 Does any ACCESS DENY rule in the user's roles apply to this class and permission, with its Access When true?   YES -&gt; DENIED (deny always wins)
+        here: Access Deny on privilege "ApproveChange" when .MakerOperatorID = current operator  -&gt; TRUE (mreed prepared it) -&gt; DENIED
+   2 Otherwise: does an ARO grant the needed permission (execute the Approve flow action; the privilege "ApproveChange") on this class or an inherited class?
+        - roles are combined: any granted role is enough, unless denied in step 1
+        - class inheritance: the ARO is looked up along the class hierarchy (most specific first)
+        - Access When conditions evaluated: the grant applies only if true
+   3 NO grant found -&gt; DENIED (default deny)
+   4 Granted -&gt; proceed. Security-relevant denials are written to the security alert log
+   Result: permissions are the UNION of role grants, minus explicit denies, evaluated per class and per action.</div>
+    <p>Priya's approval of the same case reaches step 2: she holds a Checker role with the <code>ApproveChange</code> privilege, the Access Deny condition is false because she did not prepare it, and the ARO grants the action. Her second attempt, editing Dana's captured address while she is meant only to approve, fails at step 3: the Checker role has no modify grant outside the approval assignment, and the Access When on that grant is false. Her third, bulk-reassigning the approval queue, succeeds, because the Supervisor role inherits Checker and adds the reassign privileges. Each outcome is a rule, not a screen.</p>
+    <p>The same attempt through the interface illustrates why <strong>UI hiding is not security</strong>. If the Approve button were only hidden from makers by a visibility condition, Marcus would not see it, and a crafted request, another channel or a service call could still reach the rule that does the work. Privileges are therefore required on the rule that does the work (flow action, activity, data page, report, service) and the UI merely reflects them. A privilege on a flow action means a user without it does not see or cannot run it; a privilege on an activity or data page restricts who can run or read it, including from services; a report definition's privilege controls who can run it; and a Service-REST or DX API caller is bounded by the service access group and privileges. The server-side Validate rule on the Approve action is a second layer that rejects maker equals approver even if the grant were wrong (Chapter 04 §4.2).</p>
+    <p>The records in the chain, and the design notes that matter on a whiteboard, are these.</p>
+    <table>
+      <tr><th>Record</th><th>Key fields (labelled approximately)</th><th>Purpose and design notes</th></tr>
+      <tr><td>Operator ID</td><td>Identifier, name, authentication (password or federated), access group(s) and default, work group, organisation, skills, time zone, locale, availability, reports-to</td><td>One per human; technical accounts for services and listeners are separate operator IDs or service access groups. With SSO, operators are created or updated at login (Chapter 05 §5.13)</td></tr>
+      <tr><td>Access Group</td><td>Name, application and version, roles list, portal, work pool, rule check-out option, locale</td><td>The unit of "what kind of user am I": one per persona and application layer, named by persona and not by person. Production groups never include developer roles</td></tr>
+      <tr><td>Access Role Name</td><td>Name, description, dependent (parent) roles</td><td>A container for permissions; dependency lets a Supervisor role extend Checker; keep the hierarchy shallow and documented</td></tr>
+      <tr><td>Access of Role to Object (ARO)</td><td>Applies-to class, role, permission grid, access levels, privileges, Access When references</td><td>Where permissions are really granted. Class-based, so inheritance matters: a grant on a parent class applies to child classes unless overridden</td></tr>
+      <tr><td>Access Deny</td><td>Applies-to class, role, denied permissions, optional Access When</td><td>Negative control for hard rules ("a maker may never approve their own case", "auditors may never modify")</td></tr>
+      <tr><td>Privilege</td><td>Name, class</td><td>A named permission required by flow actions, sections, buttons, activities, data pages and reports; granted in an ARO</td></tr>
+      <tr><td>Access When</td><td>Conditions on properties and the current operator</td><td>Makes access contextual (amount-based, ownership-based, state-based)</td></tr>
+    </table>
+    <p>The access group also chooses the portal and the application (which fixes the rulesets), a user with two access groups switches context and does not leak permissions between them, the <strong>work pool</strong> restricts which case classes the user can create and list, and the work group and operator hierarchy feed routing and "own team's work" conditions. Role inheritance should stay shallow, with one pitfall to name.</p>
+    <div class="flow">ROLE HIERARCHY (illustrative; keep it shallow)
+   FCBDep:ReadOnly            : open + report on deposit work classes and data classes                 (base)
+   FCBDep:Maker               : inherits ReadOnly + create/modify cases + privilege "SubmitForApproval"
+   FCBDep:Checker             : inherits ReadOnly + privilege "ApproveChange"  + modify only in approval assignments   (does NOT inherit Maker)
+   FCBDep:Supervisor          : inherits Checker + reassign + bulk reassign + SLA dashboards + override with reason
+   Pitfall: a Supervisor inheriting BOTH Maker and Checker would let one person do both halves of a dual-control step.</div>
+    <h3>The permission grid, and what the 0&ndash;5 numbers mean</h3>
+    <p>Priya's role works in production and Marcus's colleague's new "diagnostics" role does not, and the reason is the part of the ARO most candidates get wrong. Each ARO corresponds to one access role and one class and defines the access controls the role has over instances of that class. The controls are named on the rule form: <strong>Open instances</strong>, <strong>Modify instances</strong> (save new or modified instances), <strong>Delete instances</strong>, <strong>Run reports</strong> and <strong>Execute activities</strong> (whose Applies-to class is this class). Practitioners shorthand this as read, write, delete and execute, which is fine in conversation, but using the form's own wording signals that the rule has actually been opened. For each control one enters either a production level (0 to 5) or an Access When rule name. Pega's documentation states that the production level is compared with the production level of the current system, that the permission is granted only if the access control's level is greater than or equal to the system's, that 0 gives no access and 5 allows access on all systems, and that it is possible to enter an Access When rule name instead, which is evaluated to decide access.</p>
+    <div class="formula">Permission is granted only if
+    the access control's production level  &gt;=  the production level of the current system
+
+0 (or blank) = no access        5 = access on all systems
+
+System production levels:   1 Experimental / Sandbox   2 Development   3 Test / QA   4 Pre-production / Staging   5 Production</div>
+    <p>The level is not a "how much access" dial; it is a "on which systems" dial. A setting of 5 grants the permission everywhere including production, while a setting of 3 grants it on development and test systems but <em>silently withdraws it in staging and production</em>. That is the mechanism behind the classic complaint that it worked in QA and the button is missing in production, and the diagnosis is to read the ARO that governs the action and compare its production levels with the system's. Used deliberately, it is a genuine control: diagnostic and administrative capabilities get a level below 5 so they cannot be exercised in production even if the role is accidentally granted there, while business permissions get 5 and are constrained by Access When conditions. An over-broad role assignment in production then fails safe. Access Manager and the ARO rule form expose slightly different production-level options, and Pega-supplied roles arrive pre-populated, so the actual ARO is read and not recited.</p>
+    <p>The anti-patterns are using Pega-supplied broad roles as-is in production, an "all privileges" role for everyone, a role per person, permissions granted at the top class when only one case type needs them, relying on UI visibility, a production access group that includes developer or admin roles, and no periodic access review.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>A new "reassign" privilege works in the QA system and for Priya's supervisor tests, but in production the Reassign action is missing for the real supervisors, and the access group and role assignments look identical in both systems. What do you check first, and what is the likely cause?</p>
+      <p><strong>Answer.</strong> Read the ARO that grants the reassign privilege and look at its production levels: a level of 3 or 4 on the relevant controls would grant it in QA and withdraw it in staging and production without any error. The fix is to set the business permission to 5 and constrain it with Access When. This explains the symptom only if the action is governed by an ARO production level; if the levels are 5, the next suspects are an Access Deny with a condition true only in production data, a ruleset version in the production access group that predates the privilege, or a missing data instance in the deployment package.</p></div>
+  </section>
+
+  <section id="s10-3" class="pagebreak">
+    <h2>10.3 Designing the deposit-ops role set</h2>
+    <p>Marcus's refusal and Priya's success are two rows of a role set that someone designed. A bank will ask for that design on a whiteboard, and the method is to start from <em>duties</em>, not people, express each duty as privileges and AROs, then check segregation of duties. The duties are to initiate or prepare (enter a closure, key a signer change, register a legal order), to verify or approve (approve a closure, a hold release, a fee waiver above limit), to supervise (reassign, monitor SLAs, override with reason), specialist handling (legal orders, sanctions review), read-only oversight (audit, compliance), administering operations (queues, skills, reference data under change control), administering the platform (deploy, configure, support) and integration identities (ESB callback, file listener, queue processors, scheduler).</p>
+    <table>
+      <tr><th>Role / access group</th><th>Who</th><th>Can do</th><th>Cannot do (Access Deny or no grant)</th><th>Key mechanisms</th></tr>
+      <tr><td>Ops Maker (L1 analyst)</td><td>Operations analysts such as Marcus</td><td>Create and work cases in intake and verify stages; submit for approval; notes and attachments; view their queues; run own-work reports</td><td>Approve any case; approve their own work; modify closed cases; see cases outside their work pool; delete cases; unrestricted reports; change reference data</td><td>ARO modify limited to open states via Access When; Access Deny on the approval privilege; work pool restriction</td></tr>
+      <tr><td>Ops Checker (approver)</td><td>Senior analysts</td><td>Approve or reject within authority; return for rework; view case and history</td><td>Approve a case they made; edit capture data; exceed approval limit; bulk reassign</td><td>Privilege "Approve" plus Access Deny when <code>.MakerOperatorID</code> equals the current operator; authority limit via Access When on amount; validation on the flow action as a second layer</td></tr>
+      <tr><td>Ops Supervisor</td><td>Team leads such as Priya</td><td>Everything a Checker can within limits; reassign and bulk reassign; manage queue priority; view all team cases and SLA dashboards; handle escalations</td><td>Act as maker and checker on one case; change rules; change the authority matrix; delete cases</td><td>Inherits Checker (not Maker); privileges for reassign; overrides need a reason and are audited; Access Deny on rule development</td></tr>
+      <tr><td>Legal Ops specialist</td><td>Legal process team</td><td>Process legal order cases; register and amend orders; view related holds</td><td>See non-legal cases beyond need; release restraints without a second approval</td><td>Separate work pool and access group; skill-based routing; dual-control privilege for releases</td></tr>
+      <tr><td>Compliance reviewer</td><td>Compliance team</td><td>Review sanctions and AML cases; approve or reject; view enriched screening data</td><td>Modify operational data on accounts; handle money-affecting assignments</td><td>Dedicated case types or stages; screening data pages only for this role</td></tr>
+      <tr><td>Read-only Auditor</td><td>Internal audit, risk, regulators on request</td><td>Open and search all in-scope cases and history; run approved audit reports; export under controls</td><td>Create, modify, delete, approve, reassign, run activities; see unmasked data beyond need</td><td>ARO read and report only; Access Deny on write, delete and execute; masked fields by default; sessions logged</td></tr>
+      <tr><td>Ops Admin (business-side)</td><td>Operations managers or designated administrators</td><td>Maintain work queues, skills, work groups, availability, reference data through a controlled change case; user lifecycle requests</td><td>Approve operational cases; change rules or deploy; self-approve a reference data change</td><td>Privileges for operator and queue management; reference data through a maker-checker change case</td></tr>
+      <tr><td>Platform Admin</td><td>Platform and support engineers</td><td>Admin Studio, node and queue management, diagnostics, deployments through the pipeline</td><td>Process or approve business cases; use production data beyond need; deploy without approval</td><td>A separate admin access group; privileged access with just-in-time elevation and logging; no business work pool</td></tr>
+      <tr><td>Developer (non-production only)</td><td>Pega developers</td><td>Build rules in development environments</td><td>Any access to production data or deployment rights beyond non-sensitive diagnostics</td><td>No production developer access groups; production diagnostics through controlled support roles</td></tr>
+      <tr><td>Integration service identities</td><td>ESB callback, file listener, queue processors, schedulers</td><td>Only the specific create or update operations the integration needs</td><td>Interactive login; approvals; reading unrelated cases</td><td>Service access groups with narrow AROs; no portal; token or certificate authentication (Chapter 05)</td></tr>
+    </table>
+    <table>
+      <tr><th>Privilege (illustrative names)</th><th>Granted to</th><th>Protects</th></tr>
+      <tr><td>CreateClosure</td><td>Maker</td><td>Starting a closure case</td></tr>
+      <tr><td>SubmitForApproval</td><td>Maker</td><td>The maker's submit action</td></tr>
+      <tr><td>ApproveChange / ApproveClosure</td><td>Checker, Supervisor</td><td>The approval flow action</td></tr>
+      <tr><td>ReleaseRestraint</td><td>Legal Ops (first approval), Supervisor (second approval)</td><td>Hold release; two distinct privileges so two different people are required</td></tr>
+      <tr><td>ReassignBulk</td><td>Supervisor</td><td>Bulk reassign</td></tr>
+      <tr><td>ViewScreeningDetail</td><td>Compliance reviewer</td><td>The sanctions hit details data page</td></tr>
+      <tr><td>RunAuditReports</td><td>Auditor</td><td>Audit report definitions</td></tr>
+      <tr><td>ManageReferenceData / ApproveReferenceData</td><td>Ops Admin (maker) / a different Ops Admin or Compliance (checker)</td><td>Editing and publishing reference tables</td></tr>
+    </table>
+    <div class="flow">WHITEBOARD ANSWER FORMAT
+   1 Personas and duties (table)                      2 Access groups per persona; work pools; portals
+   3 Roles with shallow inheritance (no role inherits both halves of a dual-control pair)
+   4 AROs per class: least privilege; Access When for state/amount/ownership
+   5 Access Deny for hard rules (self-approval, auditor write) -- deny wins
+   6 Privileges on flow actions and sensitive data pages; server-side validation as a second layer
+   7 Service identities separate, narrow, no interactive login
+   8 Review: access recertification quarterly; joiner/mover/leaver via IdP groups mapping to access groups (Chapter 05)
+   9 Test: a role-by-role access test suite (positive and negative cases) run in every release</div>
+  </section>
+
+  <section id="s10-4" class="pagebreak">
+    <h2>10.4 Segregation of duties, made explicit</h2>
+    <p>The refusal of Marcus's approval is one instance of a general principle. <strong>Segregation of duties (SoD)</strong> means no single person can complete a sensitive process end to end, because that would allow error or fraud to pass unnoticed. Maker-checker is its most visible form, and SoD also applies across roles (a developer should not deploy their own code to production) and across lifecycles (the person who creates a user should not approve their access).</p>
+    <table>
+      <tr><th>Duty A</th><th>Duty B</th><th>Conflict type</th><th>Enforcement</th></tr>
+      <tr><td>Prepare (maker) a change or closure</td><td>Approve (checker) the same item</td><td>Per item</td><td>Access Deny when maker equals the current operator; validation on the approve action; routing exclusion; an audit report of violations (always zero)</td></tr>
+      <tr><td>Register a legal order</td><td>Release the resulting restraint</td><td>Per item</td><td>Two privileges held by different people; the second approver differs from the first and from the registrant</td></tr>
+      <tr><td>Request a fee waiver</td><td>Approve the same waiver above limit</td><td>Per item</td><td>Authority matrix with Access When; approver differs from requester</td></tr>
+      <tr><td>Maintain reference data (maker)</td><td>Approve the change (checker)</td><td>Per item</td><td>A change case with maker-checker; no one approves their own change</td></tr>
+      <tr><td>Develop or change a rule</td><td>Deploy it to production</td><td>Across roles</td><td>Pipeline approvals by someone other than the author; no developer production access</td></tr>
+      <tr><td>Deploy to production</td><td>Approve the release</td><td>Per release</td><td>Dual control on release approval, separate from the deployer role</td></tr>
+      <tr><td>Create or modify operators and roles</td><td>Approve user access requests</td><td>Across roles</td><td>Access managed in the IdP with an approval workflow; a Pega admin cannot grant themselves roles; mapping table changes are change-controlled</td></tr>
+      <tr><td>Post transactions (money)</td><td>Reconcile or review the same transactions</td><td>Across roles</td><td>Reconciliation separate from posting; write-offs need approval</td></tr>
+      <tr><td>Operate a bot</td><td>Change the bot or hold its credentials</td><td>Across roles</td><td>Chapter 09 §9.10</td></tr>
+    </table>
+    <div class="flow">MAKER-CHECKER: FOUR INDEPENDENT LAYERS (any one failing must not defeat the control)
+   L1 ROUTING     : the approval assignment goes to a checkers' work queue; the maker is excluded from "get next work" by a when rule on the assignment
+   L2 SECURITY    : Access Deny on privilege "ApproveChange" when .MakerOperatorID = current operator ; the privilege is held only by checker roles
+   L3 VALIDATION  : a server-side Validate rule on the Approve flow action rejects maker = approver (covers API and ad-hoc paths)
+   L4 DETECTION   : a report/alert listing any case where maker = approver, run daily; target = 0; reviewed by compliance
+   Plus: History records maker, checker, decision and time; field audit on amounts; attempts that fail are logged as security events.
+   Edge cases to test: reassignment of the approval to the maker by a supervisor; bulk approve; delegation during leave; DX API approve call; case reopened after resolution.</div>
+    <p>A control that has not been tested is an assumption, so the control is tested role by role: as Marcus, attempt to approve his own case (denied); as Priya in the Checker role, attempt to edit capture data (denied); as an Auditor, attempt any write (denied); as a Supervisor, bulk-reassign approvals to the maker, then the maker attempts to approve (denied). The API channel is included, since the DX API is the route a crafted request would take. These are valuable PegaUnit and scenario tests (Chapter 01).</p>
+  </section>
+
+  <section id="s10-5" class="pagebreak">
+    <h2>10.5 Conditional access, field-level security, masking and encryption</h2>
+    <p>Role-based access answers "what can a Checker do", and it struggles with conditions on <em>data</em>: only cases for my branch, only accounts in my state, only if the customer is not an employee. Pega offers conditional mechanisms. <em>Access When on AROs</em> evaluates a condition on the instance and the current operator, such as modify only if the status is open and the case belongs to the operator's work group. <em>Attribute-based access control</em> applies policy conditions on attributes of the user and the data, to classes and, in some releases, individual properties, managed separately from roles (deny read of high-profile accounts to anyone outside the VIP team). <em>Client-based access control</em> restricts by client or tenant attribute in multi-entity setups. Work-group and organisation hierarchy conditions limit a supervisor to their team, and data page and report privileges control who can read sensitive data pages and run sensitive reports. Availability, authoring screens and enforcement scope (for example property-level restriction) of ABAC and client-based control depend on the release, so the concept is described, the capability confirmed on the target version, and always paired with Access When and privileges.</p>
+    <table>
+      <tr><th>Technique</th><th>Effect</th><th>Notes</th></tr>
+      <tr><td>Property read and write restrictions by privilege or Access When</td><td>The property is not readable or editable for unauthorised roles</td><td>Combine with UI conditions; enforce on the server</td></tr>
+      <tr><td>Display masking</td><td>Show only the last four digits of an account number or tax ID; unmasking needs a privilege and creates an audit entry</td><td>Mask in the data layer (a masked display property), not only in the section, so API and reports are masked too</td></tr>
+      <tr><td>Not loading sensitive data</td><td>Do not fetch the tax ID into the clipboard unless needed</td><td>The best control: data that is not loaded cannot leak</td></tr>
+      <tr><td>Section and layout visibility</td><td>Hide whole regions for roles</td><td>Presentation only; pair with the above</td></tr>
+      <tr><td>Report column restrictions</td><td>Sensitive columns excluded from general reports; sensitive reports require a privilege</td><td>Prevents self-service export of personal data</td></tr>
+    </table>
+    <table>
+      <tr><th>Encryption layer</th><th>Mechanism</th><th>What it protects</th><th>Limitations</th></tr>
+      <tr><td>In transit</td><td>TLS for browsers, connectors and services; mTLS where required (Chapter 05 §5.14); encrypted JDBC, Kafka and SFTP</td><td>Eavesdropping and tampering on the wire</td><td>Does not protect data at rest or against authorised-user misuse</td></tr>
+      <tr><td>At rest: database or storage</td><td>Transparent data encryption, encrypted volumes and backups (platform and DBA responsibility)</td><td>Theft of disks and backups</td><td>Does not protect against a user or application with legitimate database access</td></tr>
+      <tr><td>Property-level encryption in Pega</td><td>Encrypted property types and platform cipher configuration encrypt the value before storage, including in the BLOB (<code>pzPVStream</code>) and exposed columns</td><td>Sensitive values (tax ID, card-like numbers) unreadable in the database and backups without the key</td><td>Encrypted properties generally cannot be used in report filters, sorts or joins (Chapter 03 §3.3); store a hash or masked token for lookup if search is needed</td></tr>
+      <tr><td>Column-level encryption at the database</td><td>Database-supported column encryption on exposed columns</td><td>Targeted protection of personal data columns</td><td>Performance and key management; coordinate with the DBA</td></tr>
+      <tr><td>Key management</td><td>Keys in a managed key store or HSM, rotated under policy, separated from the data</td><td>The root of trust</td><td>Owned by security; rotation of encrypted-at-rest data is a planned migration</td></tr>
+      <tr><td>Whole-BLOB consideration</td><td>The BLOB holds every property on the page; unless encryption covers it, personal data in unencrypted properties sits in plaintext in the BLOB</td><td>Know what is on the case page</td><td>Keep sensitive fields off case pages unless needed</td></tr>
+    </table>
+    <p>The anti-patterns are masking only in the UI while the API and reports return the full value, encrypting a property that must be searched and then discovering reports fail, personal data in correspondence subjects or logs, production data copied to lower environments unmasked, and full tax IDs stored on case pages for convenience.</p>
+  </section>
+
+  <section id="s10-6" class="pagebreak">
+    <h2>10.6 Authentication wiring, API security, timeouts and the OWASP view</h2>
+    <p>Chapter 05 covered how OAuth, SAML, JWT validation, mTLS and rotation work. What follows is the Pega-side wiring and governance around them, which an auditor asks about as a checklist. Employees authenticate by SAML or OIDC against the corporate identity provider and technical callers by token or certificate, with no local passwords for humans in production except a controlled break-glass account. Operators are provisioned just in time with the access group derived from IdP group claims through a controlled mapping table, unmapped users are denied and mapping changes are change-controlled. Idle timeouts for operations users are short (15 to 20 minutes, set by policy), with an absolute session lifetime, re-authentication for sensitive actions, and full logout on shared workstations. Multi-factor authentication is enforced at the IdP and Pega relies on the assertion's authentication context, with step-up for high-risk actions where the IdP supports it. One or two locally authenticated emergency accounts hold credentials in a vault, and their use triggers an alert and review and is followed by rotation. Every Service-REST requires authentication with token validation or mTLS and a least-privilege service access group, and lockout and brute-force handling sit at the IdP, with Pega login failures going to the security alert log and onward to the SIEM.</p>
+    <table>
+      <tr><th>API control (Service-REST and DX API)</th><th>Practice</th></tr>
+      <tr><td>Authenticate and authorise every call</td><td>No anonymous services; authorisation by privilege in the service's access group</td></tr>
+      <tr><td>Input validation</td><td>Server-side validation of every field, size limits, type checks; reject unknown or oversized payloads</td></tr>
+      <tr><td>Rate limiting and throttling</td><td>At the gateway or ESB, per caller; Pega protects capacity with separate service packages and queue-based processing</td></tr>
+      <tr><td>Least data exposure</td><td>Return only needed fields; mask personal data; never return internal error details or stack traces</td></tr>
+      <tr><td>Idempotency and replay protection</td><td>Idempotency keys (Chapter 05 §5.9); timestamp and nonce for sensitive calls where appropriate</td></tr>
+      <tr><td>Transport security</td><td>TLS 1.2 or higher; mTLS for internal service-to-service</td></tr>
+      <tr><td>Logging without secrets</td><td>Log identity, operation, correlation ID and outcome; never tokens, passwords or full personal data</td></tr>
+      <tr><td>CORS and versioning</td><td>Restrict allowed origins for browser callers; versioned contracts with a sunset policy</td></tr>
+    </table>
+    <table>
+      <tr><th>Risk category (OWASP Top 10 themes)</th><th>What Pega gives you</th><th>What you must still do</th></tr>
+      <tr><td>Broken access control</td><td>Declarative AROs, privileges, Access Deny, work pools, default-deny</td><td>Least-privilege roles; Access When for object-level checks; server-side enforcement; role tests including the API channel</td></tr>
+      <tr><td>Cryptographic failures</td><td>TLS support, encrypted property types, platform cipher</td><td>Choose what to encrypt; manage keys; mask personal data; none in logs or URLs</td></tr>
+      <tr><td>Injection (SQL, command, expression)</td><td>Parameterised database access in standard rules, Report Definitions and Connect-SQL bind parameters; HTML escaping in standard controls</td><td>Never concatenate user input into SQL (dynamic Connect-SQL only with allow-listed identifiers, Chapter 05 §5.8); avoid Java steps; sanitise inputs in custom components</td></tr>
+      <tr><td>Insecure design</td><td>Guardrails steer towards secure patterns</td><td>Threat model integrations and case flows; maker-checker; SoD; abuse cases</td></tr>
+      <tr><td>Security misconfiguration</td><td>Secure defaults in current releases; vendor security checklists</td><td>Disable unused services and demo operators, change defaults, lock down Tracer and admin access in production, review service packages</td></tr>
+      <tr><td>Vulnerable and outdated components</td><td>Vendor patches and hotfixes; Java and library updates</td><td>Patch cadence; track bulletins; test and deploy updates</td></tr>
+      <tr><td>Identification and authentication failures</td><td>SSO integration, session management, lockout via the IdP</td><td>MFA at the IdP, timeouts, break-glass control</td></tr>
+      <tr><td>Software and data integrity failures</td><td>Ruleset locking, product rule packaging, Deployment Manager approvals</td><td>Controlled pipelines; no direct production edits; verify imported packages</td></tr>
+      <tr><td>Security logging and monitoring failures</td><td>Security alert logs, history, field audit</td><td>Forward logs to the SIEM; alert on anomalies; retain per policy; test detection</td></tr>
+      <tr><td>Server-side request forgery and unvalidated redirects</td><td>Connectors with configured endpoints</td><td>Do not let user input define connector endpoints or redirect targets; allow-list</td></tr>
+      <tr><td>Cross-site scripting and request forgery</td><td>Output encoding in standard controls; CSRF protections in the standard clients</td><td>Avoid custom HTML and JavaScript; custom clients and DX components follow the same rules (Chapter 04 §4.12)</td></tr>
+    </table>
+    <p>The accurate summary is that Pega gives secure building blocks and default-deny access control, and the weaknesses in real programmes come from over-broad roles, custom code, misconfiguration and weak operational discipline, not from the engine.</p>
+  </section>
+
+  <section id="s10-7" class="pagebreak">
+    <h2>10.7 Audit trail, personal data handling, retention and lower environments</h2>
+    <table>
+      <tr><th>Audit layer</th><th>What it records</th><th>Source</th><th>Tamper evidence and retention</th></tr>
+      <tr><td>Business audit</td><td>Who did what to a case and when: status changes, approvals, reassignments, correspondence, attachments</td><td>Case history (Chapter 01, 02)</td><td>Retained with the case; archive and purge policy approved by Compliance</td></tr>
+      <tr><td>Field-level audit</td><td>Old and new values of regulated properties</td><td>Field-level auditing configuration</td><td>Limited to regulated fields; retention aligned</td></tr>
+      <tr><td>Rule audit</td><td>Who changed which rule, when, why</td><td>Rule history, ruleset versions, pipeline records</td><td>Locked ruleset versions; pipeline evidence (10.12)</td></tr>
+      <tr><td>Security audit</td><td>Logins, failed logins, access denials, privilege use, security setting changes</td><td>Security alert log; IdP authentication events</td><td>Forward to the SIEM; immutable storage; long retention</td></tr>
+      <tr><td>Integration audit</td><td>Calls to and from other systems with correlation IDs and outcomes</td><td>Integration logs (Chapter 05 §5.10)</td><td>Metadata retained; payloads masked or short retention</td></tr>
+      <tr><td>Operational audit</td><td>Manual interventions: requeues, replays, overrides, bulk actions, break-glass use</td><td>History entries, replay endpoint audit (Chapter 06 §6.11)</td><td>Reason, operator and approver recorded</td></tr>
+      <tr><td>Data access audit</td><td>Who viewed sensitive data (unmask events, report exports)</td><td>Custom audit entries on unmask and export actions</td><td>Review sampling</td></tr>
+    </table>
+    <p>Handling personal and non-public data rests on six principles: minimise (collect, load, store and log only what is needed); classify (a classification applied to properties and tables, with restricted data getting the strongest controls); mask and tokenise (display masks, tokens for search, hashes for matching); control egress (exports, reports, emails, correspondence, logs, attachments and AI prompts are all egress paths, Chapter 08 §8.11); retain and purge (each data class has a retention period and a defensible deletion process, with legal holds suspending purges); and support subject rights by knowing where each customer's data lives (case BLOBs, history, attachments, index tables, logs, backups).</p>
+    <table>
+      <tr><th>Data</th><th>Growth risk</th><th>Approach</th></tr>
+      <tr><td>Resolved cases and BLOBs</td><td>Work tables grow without bound</td><td>Archive resolved cases after the business retention window; purge after the legal retention period</td></tr>
+      <tr><td>History and audit tables</td><td>The largest tables in many installations</td><td>Partition by date; archive then purge per policy; keep the regulatory minimum</td></tr>
+      <tr><td>Attachments</td><td>Large binary storage</td><td>A content repository with lifecycle rules (Chapter 02 §2.10)</td></tr>
+      <tr><td>Queue and staging tables</td><td>Processed rows accumulate</td><td>A scheduled purge after the investigation window (Chapter 06, 07)</td></tr>
+      <tr><td>Logs and backups</td><td>Logs hold operational and sometimes sensitive data; backups hold deleted data until they expire</td><td>Retention tiers (hot, warm, cold) and masked fields; backup retention aligned with deletion obligations and encrypted</td></tr>
+    </table>
+    <div class="flow">PRODUCTION DATA -&gt; LOWER ENVIRONMENTS
+   Rule: no real customer personal data in development, QA or UAT unless the environment is controlled to production standards.
+   Options: (1) synthetic data generation (preferred)   (2) a production copy with irreversible masking of names, tax IDs, account numbers, addresses, emails, phone numbers,
+            with referential integrity preserved (same input -&gt; same masked output so joins still work), plus format preservation (valid-looking routing and account patterns)
+   Controls: masking in a controlled pipeline by the data team; a verification report (scan for unmasked patterns); access to lower environments limited; BLOB content masked too
+   (the page is serialised in pzPVStream: masking only the exposed columns leaves personal data in the BLOB!); attachments excluded or replaced; correspondence and email addresses neutralised
+   so test runs cannot send real email or SMS to customers (outbound channels disabled or redirected to a sink).</div>
+    <p>The failures are a production database copy restored to QA "just for testing", masking columns but not BLOBs, test environments able to send real email and SMS, logs with full account numbers, unlimited retention of resolved cases, and developers with production read access for convenience.</p>
+  </section>
+
+  <section id="s10-8" class="pagebreak">
+    <h2>10.8 What each diagnostic tool reveals, and what it cannot</h2>
+    <p>Before the deployment and the incident, the tools need to be distinguished by the question each uniquely answers, because the common failure in an incident is reaching for the tool one knows and getting an answer to a different question. Observability is the ability to answer "what is the system doing and why" from outside, quickly and without guessing, and in Pega it comes from tools that serve different scopes: a whole cluster over time, one requestor in detail, one statement in the database.</p>
+    <table>
+      <tr><th>Tool</th><th>The question it uniquely answers</th><th>The question it cannot answer</th><th>Production safety</th></tr>
+      <tr><td>Logs (application, alert, security, exception, garbage-collection)</td><td>What errors, warnings and threshold breaches did this node record, with stack traces, rule and requestor context, and when? The alert log says which interactions, queries, connectors or clipboard sizes exceeded configured thresholds</td><td>Why a rule produced a result, or what a normal transaction costs. A log shows that something exceeded a threshold, not the sequence of rules that led to it; and it is per node, so a cluster-wide pattern needs aggregation</td><td>Safe; control the log level (debug is costly and may expose data)</td></tr>
+      <tr><td>PDC (the diagnostic and monitoring service)</td><td>Across all nodes and over time, which problems are biggest, new or growing, and did a release or a fix change them? It groups alerts and exceptions, trends them, and compares before and after</td><td>Why one specific user's screen is slow, or what happened inside a single interaction: it aggregates alerts and does not trace a requestor's rule execution</td><td>Safe; designed for production; the evidence tool for "did my fix work"</td></tr>
+      <tr><td>PAL (Performance Analyzer)</td><td>For one requestor and interaction, how many rule executions, database interactions and connector calls, and how much CPU and elapsed time? It exposes the N+1 pattern as an interaction count</td><td>Which rule or statement is responsible, in order, or why a rule resolved as it did: it reports counters and timings, not the path. It also cannot see other requestors</td><td>Low overhead; good for production questions</td></tr>
+      <tr><td>Tracer</td><td>For one requestor session, which rules ran in what order, how a rule resolved, what each activity, data transform, data page and connector call did, with messages and timings</td><td>Anything outside that session: it does not show the cluster, history over time, or other users, and the trace is a reproduction, not evidence of what happened last night</td><td>Free use in lower environments; in production only briefly, for a specific user, with approval, because it adds overhead and may capture sensitive data. Never left running</td></tr>
+      <tr><td>Clipboard tool</td><td>What data is on this requestor's pages right now (properties, page lists, data pages, messages)</td><td>How the data got there, or how it looked a minute ago</td><td>Read-only inspection is low risk but shows real data: authorised support only</td></tr>
+      <tr><td>Database trace and database tooling (EXPLAIN, slow-query log, locks view)</td><td>Exactly which SQL ran, how long each took and how many rows; why a statement is slow (plan, missing index, lock waits)</td><td>Which rule or screen issued it without a join to the alert or Tracer, and anything about application logic</td><td>Moderate overhead; lower environments; short and supervised in production; with the DBA</td></tr>
+      <tr><td>Admin Studio</td><td>The operational state of nodes, requestors, queue processors, job schedulers, data flows and listeners right now</td><td>Why a processor is in that state, which needs logs and the database</td><td>Safe; privileged access controlled</td></tr>
+      <tr><td>Thread and heap dumps (platform team)</td><td>What each JVM thread is doing (a hang) and what is consuming memory</td><td>Business context; and heap dumps contain data and are restricted</td><td>Thread dumps routinely safe; heap dumps handled as restricted</td></tr>
+      <tr><td>Splunk or a SIEM <span class="tag">pattern</span></td><td>Search and correlate logs across systems and time, such as one correlation ID across Pega, ESB and core</td><td>Anything not logged or not ingested; and it adds no Pega rule context</td><td>Safe; analyst access</td></tr>
+    </table>
+    <div class="flow">QUESTION                                              FIRST TOOL                         THEN
+ "Is something broken right now across the cluster?"    PDC / Admin Studio / alert dashboards   logs for the affected node
+ "Which transactions were slow last night?"             PDC alerts trend / Splunk               PAL and Tracer on a reproduction
+ "Why is THIS user's screen slow?"                       PAL (counts/timing), then Tracer        DB trace if SQL is suspect
+ "Why did this rule give a different result?"            Tracer (rule resolution, circumstance)  Clipboard to see the data state
+ "Is this query slow because of a missing index?"        DB trace -&gt; EXPLAIN                     DBA; expose/index (Chapter 03 §3.3, 11)
+ "Did my fix work?"                                      PDC before/after trend                  PAL on the same scenario
+ "What happened to correlation ID AC-10882-HOLD-1?"      Splunk across systems                   Case history
+ "Why is the queue not draining?"                        Admin Studio queue pages                logs, DB locks, node types (Chapter 06)
+ "Who accessed or changed X?"                            History, field audit, security log      SIEM</div>
+    <p>PDC deserves its detail. It collects alerts and exceptions from all nodes and groups them by type and rule, so one chronic problem appears as one item with counts and not thousands of lines; it ranks the biggest contributors to slowness and errors by frequency and total time; it drills from a group to individual alerts with the rule, requestor, stack and timing; it trends and compares before and after a release or fix, which is proof that a change worked or evidence of a regression; it notifies on new or growing issues; and it gives summaries by node, application and time of day. Its packaging (cloud service or client-managed) varies by release. Tracer is used safely by tracing only the rule types and events needed, tracing one operator session (the reproduction) and not the whole system, in production only with approval, briefly and with the output cleared afterwards because trace files can contain personal data, and preferring PAL and PDC for production questions.</p>
+  </section>
+
+  <section id="s10-9" class="pagebreak">
+    <h2>10.9 Alert-to-action mapping</h2>
+    <p>Performance and security alerts are identified by IDs of a fixed form, each with a documented meaning and a configurable threshold. The table maps by <em>category and symptom</em> and not by ID string, because exact numbers belong in the alert reference for the target release.</p>
+    <table>
+      <tr><th>Alert category (functional)</th><th>What it means</th><th>First diagnostic step</th><th>Likely root causes</th><th>Typical fix</th></tr>
+      <tr><td>HTTP interaction time exceeded</td><td>A user request took longer than the threshold end to end</td><td>Identify the rule or screen in the alert; reproduce with PAL; see what dominated: database, connector, rule execution or rendering</td><td>Slow data page source; N+1 queries; a heavy section with deep layouts; a large page list; connector timeout; lock wait</td><td>Fix the dominant contributor (cache or optimise the data page, add an index, paginate, reduce refresh scope)</td></tr>
+      <tr><td>Slow database query</td><td>A SQL statement exceeded the time threshold</td><td>Get the statement (alert detail or DB trace); EXPLAIN with the DBA; find the report definition or activity that issued it</td><td>A filter on an unexposed or unindexed column; no date range; missing join index; outdated statistics; table bloat; lock contention; a full scan on a BLOB-heavy table</td><td>Expose and index columns, add filters and pagination, update statistics, refactor the report (Chapter 03 §3.3, 11)</td></tr>
+      <tr><td>Large amount of data returned by a query</td><td>A query returned more rows or bytes than the threshold</td><td>Find the report or list loading it; check whether the UI needs all rows</td><td>An unbounded report; a "get all" list data page; missing paging; a wide select</td><td>Paginate, add filters, select only the needed columns, move to summary reports</td></tr>
+      <tr><td>Slow commit or rollback</td><td>A database commit took longer than the threshold</td><td>Check database health: log write latency, lock waits, long transactions; what was committed</td><td>A very large transaction; many index updates; I/O saturation; waiting for locks</td><td>Smaller transactions, chunking, DBA tuning, remove unnecessary indexes</td></tr>
+      <tr><td>Large clipboard or page size</td><td>A requestor's clipboard exceeded a threshold</td><td>Inspect the Clipboard for the largest pages; which page list is huge</td><td>Large page lists on the case; data pages loaded with full lists; retained temporary pages; attachments in properties</td><td>Paginate, drop temporary pages, move lists to data instances, load less (Chapter 01)</td></tr>
+      <tr><td>Long-running connector call</td><td>A connector exceeded its threshold</td><td>Identify the connector, endpoint and requests; compare with ESB and downstream latency using correlation IDs</td><td>A slow ESB or core; timeouts too long; retries in both layers; payload too large; per-item calls in loops</td><td>Set timeouts, cache, batch calls, agree retry ownership, a breaker (Chapter 05 §5.9)</td></tr>
+      <tr><td>Long-running requestor or activity</td><td>A background or interactive requestor ran too long</td><td>Identify the activity from the alert; check for a batch loop; a thread dump if stuck</td><td>Looping logic; waiting on a lock; a slow dependency; unbounded list processing</td><td>Chunk work, move to a queue processor, fix the loop or lock</td></tr>
+      <tr><td>Rule assembly or first-use compile time</td><td>First use of a rule after deployment or restart was slow</td><td>Check timing relative to a deployment or node restart</td><td>A cold node after restart; many newly deployed rules</td><td>Warm-up traffic or pre-assembly after deployment; stagger restarts</td></tr>
+      <tr><td>Lock-related</td><td>A requestor could not obtain a case or data lock in time</td><td>Find the lock holder and how long it has been held</td><td>A user left a case open; a background processor updating a parent case; many children updating one parent</td><td>Locking strategy review (Chapter 01), shorter transactions, release stale locks by the controlled procedure</td></tr>
+      <tr><td>Queue backlog or delay</td><td>Items wait longer than expected, or processors are not running</td><td>Admin Studio: processor status, ready, delayed and broken counts, nodes of the required type</td><td>A stopped processor; a missing node type; a downstream outage; a poison item; thread starvation</td><td>Restart or fix, requeue broken items, scale threads within database limits (Chapter 06)</td></tr>
+      <tr><td>Data flow or stream issues</td><td>A run stopped, lag is growing, failures in a data flow</td><td>Run status and last error; Kafka lag; downstream health</td><td>A poison message; a downstream outage; node loss; a contract change</td><td>Dead-letter and replay (Chapter 06 §6.11), restart, fix</td></tr>
+      <tr><td>Repeated failed logins or denied access</td><td>Possible attack or misconfiguration</td><td>Source and pattern; affected accounts; time window</td><td>Credential stuffing; an expired service credential; a misconfigured integration; a role change</td><td>Escalate to security; lock accounts at the IdP; correct configuration</td></tr>
+      <tr><td>Memory and garbage-collection symptoms</td><td>Long pauses, out-of-memory warnings</td><td>GC log; heap trend; thread dump; largest clipboards</td><td>Large pages; a leak in custom code; an undersized heap; many requestors</td><td>Reduce page sizes, tune the heap with the platform team, fix leaks</td></tr>
+      <tr><td>Rule resolution or deployment errors</td><td>Rules not found or behaving differently after a release</td><td>Check the ruleset list and versions of the access group; Tracer rule resolution; whether the package imported fully</td><td>A missing data instance or rule in the package; an access group on an older version; a cache not refreshed on a node</td><td>Correct the package or access group; refresh the cache; redeploy (10.12)</td></tr>
+    </table>
+    <p>Alert hygiene keeps this useful: thresholds are tuned per environment so alerts mean something, each recurring alert has an owner, a runbook entry and a ticket, the top alert groups are reviewed weekly with the aim of a declining top ten, and symptom alerts (slow requests) are distinguished from cause alerts (a slow query) so the cause is fixed. The triage flow is: is the group new or growing (if not, a backlog item with an owner); is there customer or SLA impact now (if so, the incident process in 10.13); identify the rule, query, endpoint or node from the category; reproduce in a lower environment with PAL or Tracer; fix and deploy through the pipeline; verify with the before and after trend in PDC and close with evidence.</p>
+  </section>
+
+  <section id="s10-10" class="pagebreak">
+    <h2>10.10 Splunk and SPL: the queries worth knowing, and correlation-ID tracing <span class="tag">pattern</span></h2>
+    <p>Logs from several systems have to be read together, and the most valuable single query in an integration incident is the one that reconstructs a transaction from its correlation ID. The field and sourcetype names below are teaching assumptions, since they depend on how a platform team ingests Pega logs: indexes <code>pega</code>, <code>esb</code> and <code>core</code>; sourcetypes <code>pega:rules</code>, <code>pega:alert</code> and <code>pega:security</code>; fields such as <code>host</code>, <code>log_level</code>, <code>logger</code>, <code>message</code>, <code>corr</code>, <code>alert_category</code>, <code>duration_ms</code>, <code>rule_name</code>, <code>operator</code>, <code>queue_name</code>, <code>connector_name</code> and <code>http_status</code>, some extracted with <code>rex</code>.</p>
+    <table>
+      <tr><th>Command</th><th>Purpose</th><th>Example</th></tr>
+      <tr><td><code>search</code> (implicit first command)</td><td>Filter by index, sourcetype, time and terms; most selective first</td><td><code>index=pega sourcetype=pega:rules log_level=ERROR earliest=-4h</code></td></tr>
+      <tr><td><code>where</code></td><td>Filter with expressions once fields exist</td><td><code>| where duration_ms &gt; 5000</code></td></tr>
+      <tr><td><code>stats</code></td><td>Aggregate: count, average, percentiles, distinct count, by fields</td><td><code>| stats count avg(duration_ms) perc95(duration_ms) by connector_name</code></td></tr>
+      <tr><td><code>timechart</code></td><td>Aggregate over time buckets for trends</td><td><code>| timechart span=5m count by alert_category</code></td></tr>
+      <tr><td><code>eval</code>, <code>rex</code></td><td>Compute fields; extract fields with a regular expression</td><td><code>| rex field=_raw "correlationId=(?&lt;corr&gt;[0-9a-fA-F-]{36})"</code></td></tr>
+      <tr><td><code>transaction</code></td><td>Group related events by a common field and time span; useful but costly on large volumes</td><td><code>| transaction corr maxspan=10m</code></td></tr>
+      <tr><td><code>sort</code>, <code>head</code>, <code>table</code>, <code>dedup</code>, <code>top</code>, <code>bin</code>, <code>eventstats</code>, <code>streamstats</code>, <code>lookup</code>, <code>join</code></td><td>Order, limit, display, reduce, add aggregate or running values, enrich (use <code>join</code> sparingly: <code>stats</code> by a key is usually faster)</td><td><code>| sort 0 - count | head 20</code></td></tr>
+    </table>
+    <div class="flow">1. ERRORS BY COMPONENT AND NODE, LAST 4 HOURS
+index=pega sourcetype=pega:rules log_level=ERROR earliest=-4h
+| stats count by logger host
+| sort 0 - count
+| head 20
+
+2. ALERT VOLUME TREND BY CATEGORY (find when a problem started)
+index=pega sourcetype=pega:alert earliest=-24h
+| timechart span=15m count by alert_category
+
+3. SLOW CONNECTORS: AVERAGE AND 95TH PERCENTILE, WITH A THRESHOLD
+index=pega sourcetype=pega:alert alert_category="connector" earliest=-24h
+| stats count avg(duration_ms) as avg_ms perc95(duration_ms) as p95_ms max(duration_ms) as max_ms by connector_name
+| where p95_ms &gt; 3000
+| sort 0 - p95_ms
+
+4. SLOW INTERACTIONS: WHICH RULES, WHICH HOURS
+index=pega sourcetype=pega:alert alert_category="http_interaction" earliest=-7d
+| eval hour=strftime(_time,"%H")
+| stats count perc95(duration_ms) as p95_ms by rule_name hour
+| where count &gt; 20
+| sort 0 - p95_ms
+
+5. QUEUE PROCESSOR FAILURES AND BROKEN ITEMS
+index=pega sourcetype=pega:rules logger="*QueueProcessor*" log_level IN (ERROR,WARN) earliest=-24h
+| stats count latest(message) as last_error by queue_name
+| sort 0 - count
+
+6. FAILED AND DENIED LOGINS: BRUTE-FORCE LOOK
+index=pega sourcetype=pega:security (message="*login failed*" OR message="*access denied*") earliest=-24h
+| stats count dc(operator) as users by src_ip
+| where count &gt; 20
+| sort 0 - count</div>
+    <div class="flow">7. FULL TIMELINE FOR ONE TRANSACTION ACROSS SYSTEMS
+(index=pega OR index=esb OR index=core) corr="AC-10882-HOLD-1" earliest=-24h
+| eval system=case(index=="pega","PEGA", index=="esb","ESB", index=="core","CORE", true(),index)
+| sort 0 _time
+| table _time system host log_level message duration_ms http_status
+
+READING THE RESULT (illustrative, the hold of Chapter 05 §5.15)
+   10:15:00.120 PEGA  node2  INFO   Queue item picked: PlaceHold AC-10882 attempt=1
+   10:15:00.160 PEGA  node2  INFO   Connect-REST POST /accounts/CHK-8842-0117/holds  timeout=8000ms
+   10:15:00.210 ESB   esb1   INFO   Request received; token valid; idempotency key AC-10882-HOLD-1 new
+   10:15:00.230 ESB   esb1   INFO   Routing to core (product CHK01)
+   10:15:03.300 CORE  core1  WARN   Posting delayed; DB lock wait 3000ms
+   10:15:05.400 ESB   esb1   ERROR  Backend timeout after 5000ms -&gt; 504
+   10:15:05.420 PEGA  node2  WARN   Connector returned 504 on a WRITE -&gt; status Unknown; status lookup scheduled
+   10:15:06.800 PEGA  node2  INFO   Status lookup by key AC-10882-HOLD-1: ESB reports in flight
+   10:15:07.350 CORE  core1  INFO   Hold H-889120 created (key AC-10882-HOLD-1)    &lt;- the first attempt DID complete late in the core
+   10:15:07.600 ESB   esb1   INFO   Lookup answered: stored response 201
+   10:15:07.640 PEGA  node2  INFO   Success: holdRef H-889120    &lt;- unknown outcome resolved by lookup; no second hold
+ CONCLUSION: the root cause is a core lock wait (3 s) pushing the call past the ESB's 5 s limit; the Unknown status and the key behaved correctly.
+
+8. LATENCY BREAKDOWN PER HOP FOR MANY TRANSACTIONS
+(index=pega OR index=esb) sourcetype IN (pega:rules, esb:access) corr=* earliest=-1h
+| stats earliest(_time) as t_start latest(_time) as t_end values(index) as systems by corr
+| eval total_s=round(t_end-t_start,2)
+| where total_s &gt; 5
+| sort 0 - total_s | head 20</div>
+    <p>Query hygiene follows from how the engine works: specify index, sourcetype and a tight time range first; avoid leading wildcards; filter early and aggregate late, dropping unneeded fields; prefer <code>stats</code> to <code>transaction</code> and <code>join</code> for large volumes; save useful searches as reports and alerts with owners; and mind sensitive data in results and exports. Indexes, forwarders, retention and dashboard administration belong to the platform or observability team.</p>
+  </section>
+
+  <section id="s10-11" class="pagebreak">
+    <h2>10.11 A deployment: pipelines, gates and promotion <span class="tag">pattern</span></h2>
+    <p>Marcus and Priya's rules do not change by themselves. In the early hours of Tuesday 10 March, release 26.3 goes to production, carrying a new supervisor dashboard widget that shows cases at risk of missing their SLA. How that change gets from a developer's branch to Priya's screen is the pipeline, and the reason to understand it is that every gate is a place where a defect is cheaper to catch than in production. Chapter 01 introduced branches, product rules and PegaUnit; this section assembles them. Pega's documentation describes Deployment Manager as the low-code, model-driven tool for configuring and running CI/CD workflows, automating branch merging, validation, packaging, artifact management, deployments, testing, guardrail compliance and test-coverage enforcement, with a pipeline defined by customising stages and tasks or using a default standard pipeline, and a Deployment Manager service for Pega Cloud route-to-live environments that integrates with tools such as Jenkins and Azure DevOps.</p>
+    <table>
+      <tr><th>Component</th><th>Role</th></tr>
+      <tr><td>Orchestration server (hosts Deployment Manager)</td><td>A Pega system that runs pipelines and talks to the environments; itself patched and secured</td></tr>
+      <tr><td>Candidate systems (environments)</td><td>Development, build or integration, QA, UAT, staging, production, each registered with service accounts that have deployment rights only</td></tr>
+      <tr><td>Pipeline</td><td>A definition of stages and tasks for an application: environments, order, checks and approvals</td></tr>
+      <tr><td>Artifact repository</td><td>Stores the built package so the same artifact is promoted through environments (build once, deploy many)</td></tr>
+      <tr><td>Product rule (RAP)</td><td>Defines what goes into the package: application, ruleset versions, data instances (Chapter 01)</td></tr>
+      <tr><td>Branch-based development</td><td>Developers work in branches; merging triggers the pipeline</td></tr>
+      <tr><td>External CI tooling</td><td>Import and export utilities and automation servers such as Jenkins trigger imports, exports and tests instead of, or alongside, Deployment Manager</td></tr>
+      <tr><td>Quality tooling</td><td>Guardrail compliance score, PegaUnit and scenario tests, coverage reports, the application quality landing page</td></tr>
+    </table>
+    <div class="flow">DEV --&gt; BUILD/INTEGRATION --&gt; QA --&gt; UAT --&gt; (STAGING / PRE-PROD) --&gt; PRODUCTION
+
+ DEV         the developer works in a BRANCH ruleset; unit tests + local guardrail check; submits a MERGE (peer review; conflict check)
+ MERGE       task: merge the branch into the target ruleset version after approval; conditions: guardrail warnings within threshold, PegaUnit pass
+ BUILD       task: generate the application package from the product rule -&gt; store the artifact (versioned, hashed)
+             gates: guardrail compliance score &gt;= threshold (for example 90, aiming 95+); no new SEVERE warnings; PegaUnit pass rate 100%; coverage &gt;= threshold on changed rules
+ QA          task: deploy the package; run the PegaUnit suite + automated scenario tests + API tests; refresh quality metrics
+             gate: all green; defect triage
+ UAT         task: deploy the SAME artifact; business testing; a manual approval task (product owner sign-off)
+ STAGING     (production-like) deploy; performance and regression tests; rollback rehearsal for risky releases; data and schema change rehearsal
+ PRODUCTION  task: approval (dual control: the release approver is not the deployer or the developer); deploy in the agreed window; post-deploy smoke tests; health checks;
+             lock the ruleset versions; record evidence; notify</div>
+    <table>
+      <tr><th>Gate</th><th>Protects against</th><th>Practical setting</th></tr>
+      <tr><td>Guardrail compliance score threshold</td><td>Erosion of maintainability and performance patterns</td><td>A minimum overall score (for example 90 to 95) and zero new severe warnings on changed rules</td></tr>
+      <tr><td>PegaUnit pass rate</td><td>Regressions in decision tables, data transforms, activities, flows</td><td>100 per cent pass; a failing test blocks promotion; new regulatory logic requires tests</td></tr>
+      <tr><td>Test coverage threshold</td><td>Untested rules in critical areas</td><td>A coverage target by area; priority on regulatory rules</td></tr>
+      <tr><td>Scenario and API tests</td><td>Broken journeys and contracts</td><td>Core paths and role-by-role access tests (10.4), including negative cases</td></tr>
+      <tr><td>Peer review and merge approval</td><td>Defects and standards drift</td><td>At least one reviewer who did not write the change; a checklist: naming, error handling, integration timeouts, security, exposed columns, a test added</td></tr>
+      <tr><td>Manual approvals</td><td>Unauthorised or unready change</td><td>Dual control on production; approver recorded</td></tr>
+      <tr><td>Static checks on packaged content</td><td>Secrets, environment-specific values, debug settings</td><td>Scan for hard-coded credentials and endpoint URLs; verify the package carries no environment data</td></tr>
+      <tr><td>Performance and capacity checks</td><td>Slow queries, memory growth</td><td>Run against production-like volumes; compare PAL interaction counts and alert counts with a baseline</td></tr>
+      <tr><td>Environment parity check</td><td>"Works in QA, fails in production"</td><td>Compare node types, DSS, access group versions, data instances, keystores, queue processor state, and the production levels of AROs (10.2)</td></tr>
+    </table>
+    <table>
+      <tr><th>Include in the package</th><th>Exclude or handle separately</th></tr>
+      <tr><td>Application and ruleset versions (locked)</td><td>Environment configuration: endpoints, credentials, DSS values, keystores, authentication profiles with secrets (set per environment through controlled configuration)</td></tr>
+      <tr><td>Data instances the code needs: work queues, access groups, roles, data types, decision data, reference data defined as part of the release</td><td>Operators and personal data (managed through the IdP and provisioning)</td></tr>
+      <tr><td>Test artefacts as needed in lower environments</td><td>Production data and attachments</td></tr>
+      <tr><td>Database change scripts as a separate controlled artefact (DDL for exposed columns, indexes, tables)</td><td>Ad hoc manual DDL</td></tr>
+    </table>
+    <p>Dual control and segregation of duties apply to the pipeline itself: the pipeline service accounts can deploy but not edit rules; developers can edit in development but cannot trigger production deployment; production deployment needs an approval by someone other than the developer and the person who triggered it; emergency changes follow an expedited approval path with retrospective review, never a bypass; and pipeline configuration changes are controlled and audited. The environments have distinct purposes: development (synthetic data, full developer rights there only), integration or build (merged build against stubs), QA (regression, stable test data), UAT (business acceptance, a frozen release candidate), staging (production-like rehearsal for performance, deployment and rollback) and production (locked, controlled access). The release-26.3 pipeline passes every gate: the widget works in QA with a few hundred cases, and the performance check, run against QA's small data volume, finds no problem. That omission is where the incident begins.</p>
+    <p>The failures to avoid are importing archives by hand into production, different packages built for different environments, production deployment by the developer who wrote the change, gates an admin can skip without a trace, skipping the staging rehearsal for schema changes, and environment data inside the package.</p>
+  </section>
+
+  <section id="s10-12" class="pagebreak">
+    <h2>10.12 Rollback, hotfix and release evidence</h2>
+    <p>When release 26.3 misbehaves, the first instinct is "redeploy the previous version". For rule-only changes that largely works, since rules are versioned and the application can be pointed back to the previous ruleset versions. For anything that changed <em>state</em> it does not, because rolling back code does not roll back what the new code has already done.</p>
+    <table>
+      <tr><th>Change type</th><th>Why rollback fails or is dangerous</th><th>Safer design</th></tr>
+      <tr><td>Database schema: added column or table</td><td>Old code ignores it: usually safe to leave in place</td><td>Backward-compatible additive change; leave in place after rollback</td></tr>
+      <tr><td>Database schema: dropped, renamed or retyped column</td><td>Old code expects the old column and fails; dropped data may be gone</td><td>Never in the same release as the code change: use expand and contract</td></tr>
+      <tr><td>Data migration or backfill</td><td>Old code may not understand new values; a reverse migration needs its own script and time</td><td>Make new code tolerant of both formats; keep the original data until the release is proven; script and rehearse the reverse</td></tr>
+      <tr><td>New properties stored in case BLOBs</td><td>Old rules usually ignore unknown properties, but a changed meaning or a removed or retyped property breaks old behaviour</td><td>Additive property changes only; never reuse a property with a new meaning</td></tr>
+      <tr><td>In-flight cases advanced by the new version</td><td>They may sit at a stage, step or assignment the old version lacks, or hold data the old flow cannot handle</td><td>Compatibility testing with in-flight samples; do not remove flow shapes and stages in use; deprecate then remove</td></tr>
+      <tr><td>Queue items and messages created by the new version</td><td>Old activities cannot process new parameters; items go to broken</td><td>Version the queue item payload; keep consumers tolerant; drain queues before risky releases</td></tr>
+      <tr><td>Kafka and event contracts, outbound messages, delivered correspondence</td><td>External effects are irreversible</td><td>Additive, versioned contracts; feature toggles to stop new behaviour without redeploy</td></tr>
+      <tr><td>Reference and decision data</td><td>Rolling back rules but not data (or the reverse) leaves a mismatch</td><td>Version reference data with effective dates (Chapter 03 §3.12); package data with the code</td></tr>
+      <tr><td>Authentication, certificates, keys, DSS values</td><td>Configuration changes live outside the package</td><td>Configuration change control; record previous values; rollback steps in the runbook</td></tr>
+      <tr><td>External systems changed in the same window</td><td>Rolling back only Pega leaves a contract mismatch</td><td>A coordinated plan with both sides' rollback points</td></tr>
+      <tr><td>Cache and node state</td><td>Nodes may serve old and new rules inconsistently during and after the switch</td><td>A cache refresh step in the runbook; a rolling restart with verification</td></tr>
+    </table>
+    <p>Rollback becomes real through a set of strategies. <em>Expand and contract</em> for schema and data: release 1 adds the new column, with code writing both and reading the old; release 2 switches reads to the new and backfills; release 3 stops writing the old and later drops it, so at every step the previous release still works. <em>Backward-compatible releases</em> (N and N-1 compatible). <em>Feature toggles</em>, in which new behaviour is guarded by a switch held as configuration, so turning it off is faster and safer than redeploying. <em>Roll forward</em> when the fault is small and the state has changed, with a decision owner defined in advance. <em>Rolling or canary deployment</em>, switching a subset of access groups first. <em>Backup and point-in-time recovery</em> is a disaster option and not a rollback tool, since restoring loses all work since the restore point. <em>Rehearsal in staging</em> executes and times both deployment and rollback. And rollback decision criteria are written before the release: error rate above X, a severe defect in a core journey, a reconciliation break, with a decision owner and a time limit.</p>
+    <div class="flow">EXPAND/CONTRACT EXAMPLE: replacing a free-text hold reason with a coded reason
+  RELEASE 1 (expand): add column hold_reason_code; code writes BOTH hold_reason_text and hold_reason_code; reads text.            rollback: safe (old code ignores the new column)
+  BACKFILL:           derive codes for existing rows in chunks (idempotent script); verify counts.                                  rollback: leave the filled column
+  RELEASE 2:          reads switch to code; decision tables use code; text still written.                                           rollback: old code reads text (still maintained)
+  RELEASE 3 (contract): stop writing text; after retention and validation, drop hold_reason_text.                                   rollback: only possible BEFORE release 3 -- so release 3 waits until confidence is high
+  Rule: never combine a destructive schema change with the code change that needs it.</div>
+    <div class="flow">HOTFIX (production defect needing a fast fix)
+ 1 TRIAGE         severity and impact confirmed; workaround available? if yes, prefer workaround + a normal release
+ 2 APPROVAL       emergency change approval (named approvers, not the developer); scope limited to the fix
+ 3 BRANCH         from the exact production ruleset version (not from the main development line)
+ 4 FIX            a minimal change; guardrails and PegaUnit including a test reproducing the defect
+ 5 PATCH VERSION  create the next patch ruleset version; package via the product rule; the pipeline with expedited gates (guardrail, PegaUnit, targeted regression)
+ 6 TEST           staging or UAT-like verification of the defect and neighbouring behaviour; confirm the rollback step
+ 7 DEPLOY         production window; post-deploy smoke; monitor alerts (PDC before/after)
+ 8 BACKPORT       merge the fix into the main development line so it is not lost in the next release
+ 9 EVIDENCE       ticket, approvals, test results, package hash, deployment log; a retrospective within a few days
+ Note: Pega also issues vendor hotfixes for the platform; those follow the vendor's installation procedure plus the same change approvals and staging verification.</div>
+    <p>Release evidence for audit is the set of records the pipeline should already hold: the change request with justification and risk assessment; the scope (rules, data instances and DDL changed); code review and merge approvals; the guardrail score and warnings report; test results (PegaUnit, scenario, API, performance, access); UAT sign-off; production approval by someone independent of the developer and deployer; the package identity (version and hash); the deployment log with who triggered it; post-deployment verification (smoke tests, health checks, alert trends); the rollback plan and any decision record; and the locked ruleset versions.</p>
+  </section>
+
+  <section id="s10-13" class="pagebreak">
+    <h2>10.13 A production incident, in order: symptom to prevention</h2>
+    <p>At 08:20 on Tuesday 10 March, Priya reports that the approval screen for her team's queue takes about fourteen seconds to open, where yesterday it took two. The method that turns that sentence into a fix is fixed, and worth following in order because each step constrains the next: <em>symptom, evidence, hypothesis, diagnostic tool, containment, verification, prevention</em>. Severity is set first by impact, not by difficulty: supervisors cannot work the approval queue efficiently, no regulatory deadline is yet at risk, a workaround exists (use the plain queue view), so it is SEV2, and it rises to SEV1 if a legal deadline is threatened or data is exposed. Severity can be raised or lowered as facts emerge, and regulatory deadline risk and data exposure raise it automatically.</p>
+    <table>
+      <tr><th>Severity</th><th>Definition</th><th>Deposits examples</th><th>Response and update cadence</th><th>Who is engaged</th></tr>
+      <tr><td>SEV1 Critical</td><td>Major outage or customer, financial or regulatory impact now or imminent; no workaround</td><td>Legal-order processing stalled with deadlines today; an ACH return file not processed before the window; duplicate holds or postings; data exposure; platform down</td><td>Acknowledge within 15 minutes; an incident commander; updates every 30 minutes; a bridge call</td><td>On-call L2 and L3, platform, DBA, integration partners, business owner, management; security and compliance if data or regulatory impact</td></tr>
+      <tr><td>SEV2 High</td><td>Significant degradation or a key function impaired; a workaround exists or the scope is limited</td><td>An SLA queue processor delayed; one pipeline lagging; a connector failing intermittently; the supervisor dashboard slow or unavailable</td><td>Acknowledge within 30 minutes; hourly updates</td><td>On-call L2, L3 as needed, the service owner</td></tr>
+      <tr><td>SEV3 Medium</td><td>Limited impact; a non-critical function</td><td>A slow report; a template error for a small segment; broken items in a low-priority queue</td><td>Same business day; daily updates</td><td>L2 support, the development team</td></tr>
+      <tr><td>SEV4 Low</td><td>Cosmetic or a request</td><td>A label typo; an enhancement request</td><td>Backlog</td><td>The product team</td></tr>
+    </table>
+    <h3>The first fifteen minutes, minute by minute</h3>
+    <table>
+      <tr><th>Minute</th><th>Action</th><th>Output</th></tr>
+      <tr><td>0-2</td><td>Acknowledge the page; open the incident record; note the start time and source of detection</td><td>Incident ID; the timeline begins</td></tr>
+      <tr><td>2-5</td><td>Assess scope and impact: what is failing, who is affected (users, markets, case types), since when, whether data is at risk, whether money or a regulatory deadline is involved</td><td>Severity assigned; a business impact statement</td></tr>
+      <tr><td>5-8</td><td>Check the fast signals: PDC and alert trend, Admin Studio (nodes, queue processors, listeners, data flows), recent changes (deployments, configuration, certificate or credential changes, upstream releases), dependency health (ESB, core, database, IdP)</td><td>Candidate causes; the answer to "what changed?"</td></tr>
+      <tr><td>8-10</td><td>Capture evidence before containment, in a few minutes: screenshots, log excerpts with correlation IDs, queue and lag counts, node states</td><td>An evidence bundle attached to the incident</td></tr>
+      <tr><td>10-13</td><td>Decide containment: stop the bleeding without destroying evidence or causing more harm</td><td>The containment action taken and recorded</td></tr>
+      <tr><td>13-15</td><td>Communicate: an initial notice to stakeholders, the next update time, escalation if severity or complexity requires, a bridge for SEV1</td><td>Communications sent; roles assigned (commander, investigator, scribe, communications lead)</td></tr>
+    </table>
+    <p>Evidence is captured before containment because restarts, stopped queues and rollbacks change the system and can erase the clues needed for the root cause. The capture is quick, and it never delays containment when customers or money are actively being harmed: in that case one person contains while another captures.</p>
+    <table>
+      <tr><th>Evidence</th><th>How</th></tr>
+      <tr><td>Time and scope</td><td>A timeline of the first alert, the first customer report and any changes</td></tr>
+      <tr><td>Logs and alerts</td><td>Export the relevant log lines and PDC alert groups for the window, with correlation IDs</td></tr>
+      <tr><td>Queue and pipeline state</td><td>Screenshots or counts: ready, delayed and broken items; Kafka lag; data flow status; oldest item age</td></tr>
+      <tr><td>Node and JVM state</td><td>The node list and types, CPU and memory, a thread dump if a node is hung (before restarting it), the GC log</td></tr>
+      <tr><td>Database state</td><td>Active sessions, lock waits and the blocking chain, slow statements (with the DBA)</td></tr>
+      <tr><td>Sample failing transactions</td><td>Case IDs, error text, request and response metadata (masked)</td></tr>
+      <tr><td>Recent change list</td><td>Deployments, configuration, certificates, credentials, upstream releases</td></tr>
+    </table>
+    <div class="flow">INCIDENT TRIAGE DECISION TREE
+ ALERT / REPORT
+   |
+   v
+ [Is customer money, a regulatory deadline, or data exposure involved NOW?]
+   YES --&gt; SEV1: start the bridge, incident commander, notify business + security/compliance if data; CONTAIN FIRST (parallel evidence capture)
+   NO  --&gt; [Is a key function down or degraded with no safe workaround?]  YES --&gt; SEV2 ; NO --&gt; SEV3/4 (normal queue)
+   |
+   v
+ [What changed recently?]   deployment / config / certificate or credential / upstream release / traffic spike / infra event
+   CHANGE FOUND --&gt; [Can it be reverted or toggled off safely (feature toggle, config revert, rollback per 10.12)?]
+                       YES --&gt; revert or toggle, verify recovery by metrics (not by feeling)      NO --&gt; a targeted fix or workaround
+   NO CHANGE FOUND --&gt; localise the failing tier:
+        - Single node? (node health, JVM, thread dump)   -&gt; remove from rotation / restart AFTER evidence capture
+        - Database? (locks, slow SQL, connections)       -&gt; DBA: kill the blocker, add an index, adjust the pool; reduce load (pause batch jobs)
+        - Integration? (ESB/core/IdP errors, timeouts)   -&gt; breaker / degraded mode; engage the partner; queue and retry (Chapter 05 §5.9)
+        - Background processing? (queue processor, listener, data flow or scheduler not running or lagging) -&gt; restart, fix, requeue (Chapter 06, 07)
+        - Security signal? (login failures, unusual access) -&gt; invoke the security incident process; preserve logs; do not "clean up"
+        - Capacity or traffic? -&gt; throttle non-critical load, scale within database limits
+ CONTAIN (choose the least destructive effective option)
+   - stop or pause a queue, job or listener causing harm      - switch to the manual fallback procedure (business notified)
+   - toggle a feature off                                     - fail over or route around the failing dependency
+   - block the offending source (rate limit)                  - restart a node ONLY after thread dump and log capture
+ VERIFY recovery:  metrics return to baseline (lag, queue age, error rate, p95 latency); reconcile data (counts, duplicates); the business confirms
+ COMMUNICATE resolution; schedule the RCA; set monitoring for recurrence</div>
+    <h3>Symptom, then evidence</h3>
+    <p>The first fifteen minutes follow a checklist: acknowledge the report and open the incident record with the start time and detection source; assess impact and set severity; identify what changed (a release, a configuration, a data load); look at the aggregate view before any single user; contain if there is a safe, fast containment; communicate to the stakeholders on the cadence; and keep a timeline. The aggregate view is PDC and the alert log, and they answer a question about the whole cluster over time. The HTTP-interaction-time alerts for the supervisor dashboard rule start at 02:12, twelve minutes after the 02:00 deployment, and the slow-query alerts start at the same time; before 02:00 there are none. That evidence establishes <em>when</em> and <em>what changed</em>, and it narrows the suspects to release 26.3. What PDC cannot say is why Priya's one screen is slow, which is the next tool's question.</p>
+    <h3>Hypothesis, then the tool that tests it</h3>
+    <p>The hypothesis, given the new widget, is that it loads its data in a way that does not scale to production volume: either an unbounded query on an unexposed column, or one query per row. The tool that discriminates between them is PAL, run on a reproduction of Priya's screen, because the two hypotheses predict different interaction counts. It reports 212 database interactions and about 11.8 seconds of the 14 spent in the database; a screen that loads one list should make a handful. A count in the hundreds is the signature of one query per row, the N+1 pattern from Chapter 06 §6.8. PAL says <em>that</em> the screen makes 212 queries; it cannot say which rule is responsible. Tracer, run on the same reproduction in staging (not left running in production), shows the data page for a single case being resolved once for each of the 200-odd rows of the widget. The database trace shows the single statement repeated, and EXPLAIN on it, with the DBA, shows a sequential scan on a work table because the filter column is not exposed and indexed (Chapter 03 §3.3, Chapter 11). Each tool answered the question the previous one raised, in order of scope: cluster and time, then one requestor's counters, then the rule sequence, then the statement, then the plan.</p>
+    <h3>Containment, verification, prevention</h3>
+    <p>Containment comes before the proper fix, and it is the feature toggle designed in the release: the dashboard widget is switched off by a configuration value, with no redeployment, and Priya's screen returns to about two seconds. This is containment and not a fix, and it is stated as such in the incident record. Verification then uses two independent checks: PAL on the same scenario shows the interaction count back to a handful, and the PDC before and after trend shows the alerts falling to the pre-release baseline, which is the evidence that closes the incident. The permanent fix (load the widget's rows with one set-based query on an exposed, indexed column, with pagination) goes through the pipeline as a normal change, with the toggle turned back on only after it is verified in staging at production-like volume. Prevention is what the root-cause analysis in 10.14 turns into pipeline gates and standards. The ownership throughout is the method, not the heroics: evidence before containment, containment before fixing, and a verification step that someone other than the author can read.</p>
+    <table>
+      <tr><th>Step</th><th>What was done for the slow approval screen</th><th>Tool or control that provided it</th></tr>
+      <tr><td>Symptom</td><td>The screen takes about 14 s instead of 2 s</td><td>A user report</td></tr>
+      <tr><td>Evidence</td><td>Alerts begin 12 minutes after the 02:00 deployment; none before</td><td>PDC trend and the alert log</td></tr>
+      <tr><td>Hypothesis</td><td>The new widget issues one query per row, or a scan on an unexposed column</td><td>Reasoning from the evidence</td></tr>
+      <tr><td>Diagnostic tool</td><td>212 database interactions; one data page resolved per row; a sequential scan in the plan</td><td>PAL, then Tracer in staging, then the DB trace and EXPLAIN with the DBA</td></tr>
+      <tr><td>Containment</td><td>The widget switched off by a toggle; the screen recovers</td><td>A feature toggle, a configuration value</td></tr>
+      <tr><td>Verification</td><td>The interaction count falls to a handful; the alerts return to baseline</td><td>PAL on the same scenario; the PDC before and after trend</td></tr>
+      <tr><td>Prevention</td><td>A pipeline gate on interaction counts at production-like volume; an N+1 review checklist; exposed and indexed filter columns</td><td>The post-incident review (10.14)</td></tr>
+    </table>
+    <table>
+      <tr><th>Aspect</th><th>Containment</th><th>Fix</th></tr>
+      <tr><td>Goal</td><td>Limit harm and restore service quickly</td><td>Remove the root cause</td></tr>
+      <tr><td>Time scale</td><td>Minutes</td><td>Hours to weeks</td></tr>
+      <tr><td>Examples</td><td>Pause a queue processor; toggle a feature off; manual fallback; failover; throttle; restart after capture</td><td>A code or rule change; add an index; fix a mapping; increase capacity; improve monitoring</td></tr>
+      <tr><td>Risk</td><td>Hiding the problem; losing evidence; data inconsistency after a pause</td><td>A rushed change causing a second incident</td></tr>
+      <tr><td>Control</td><td>Authorised by the incident commander; recorded</td><td>Through the change process (the hotfix path if urgent)</td></tr>
+    </table>
+    <table>
+      <tr><th>Communication element</th><th>Practice</th></tr>
+      <tr><td>Roles</td><td>Incident commander (decides, coordinates), technical investigators, a scribe (timeline), a communications lead (stakeholder updates)</td></tr>
+      <tr><td>Update cadence</td><td>Per severity (SEV1 every 30 minutes) even if there is "no change": silence creates escalation noise</td></tr>
+      <tr><td>Content</td><td>Impact, what is known, what is being done, what is needed, the next update time; no speculation, no blame, no sensitive data in chat channels</td></tr>
+      <tr><td>Escalation ladder</td><td>L1 support, L2 on-call, L3 engineers and architects, the service owner, management; partners (ESB, core, DBA, security) through their on-call; time-based escalation if there is no progress in a defined interval</td></tr>
+      <tr><td>Business and regulatory notification</td><td>The business owner decides customer and regulator notifications with Compliance; engineering supplies facts quickly</td></tr>
+      <tr><td>Single source of truth</td><td>One incident record and one bridge; no parallel threads</td></tr>
+    </table>
+    <div class="flow">STATUS UPDATE TEMPLATE (every 30 minutes for SEV1; illustrative incident)
+   [INC-4821] SEV1  | Updated 02:30 | Next update 03:00
+   IMPACT   : ACH return processing delayed; 38,000 of 150,000 returns applied; the batch window closes 06:00; customer notices not yet affected
+   STATUS   : Contained: queue processor ACHReturnApply restarted on node bg2 after a thread dump; processing resumed 02:22 at 6 threads
+   CAUSE    : Under investigation: database lock waits on the return table started 01:47; the DBA is analysing the blocking session
+   ACTIONS  : (1) DBA kill-and-index review (owner: A) (2) throttle replay of other jobs (owner: B) (3) prepare a manual fallback for priority returns (owner: C)
+   RISK     : At the current rate completion is ~05:10; breach risk if the rate drops below 25/s
+   NEEDED   : A decision from Payments Ops on prioritising R10 returns</div>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>PDC shows slow-interaction alerts for the supervisor dashboard only on Tuesday mornings between 08:00 and 09:00 and never at other times, though the release was deployed at 02:00. Does the release explain it, and what do you check?</p>
+      <p><strong>Answer.</strong> The release is not sufficient to explain a time-of-day pattern. A defect that scaled with data volume would worsen with the number of open cases, which peaks when queues are fullest, so the pattern may still be the release interacting with load. The check is to compare the alert counts for the same hour on previous days, and use PAL on a reproduction both at low and at peak volume: if the interaction count grows with the number of rows, the widget is the cause; if it does not, look for something scheduled at that hour (a batch job holding locks, a report refresh, a queue backlog) with the alert log and Admin Studio. The decision depends on whether the evidence was gathered across more than one morning, which is why the first step is a trend and not a single instance.</p></div>
+  </section>
+
+  <section id="s10-14" class="pagebreak">
+    <h2>10.14 Root cause analysis, prevention and handover</h2>
+    <p>An incident is closed when it will not recur, and that is a different question from whether it is fixed. A root-cause analysis separates the trigger (the release introduced the query) from the cause (a defect in how the widget loads data) from the contributing conditions (the QA data volume was small enough that nothing looked wrong; the pipeline had no gate on interaction counts; the toggle existed, which is why impact was brief). The five whys applied to the incident run: the screen was slow because it issued 212 queries; because the widget resolved a data page per row; because the developer built it as the case-level pattern was built; because no standard or review item flagged N+1 for list widgets; because no performance gate exercises list widgets at production-like volume; and so the preventive actions are a standard and review item, a pipeline gate comparing PAL interaction counts and alert counts with a baseline on a production-like data set, an exposed and indexed filter column, and a regression test for the dashboard.</p>
+    <p>The review itself is blameless and evidence-based: a timeline with timestamps and sources, the impact (who, how long, what was affected), what worked (the toggle, the trend evidence), what did not, the root cause and contributing factors, and owned, dated actions that are tracked to completion and reported to the service owner. Handover between shifts in 24/7 support follows the same discipline: the open incidents with their severity and next action, what has been tried and what is ruled out, the evidence captured, the containment in place and who owns the next step, so the next engineer does not repeat work or undo containment. The method, severity first, evidence before containment, containment before fix, verification by trend and by reproduction, and prevention as a pipeline gate, is the reusable part.</p>
+    <h3>The RCA document</h3>
+    <table>
+      <tr><th>Section</th><th>Content</th></tr>
+      <tr><td>Summary</td><td>What happened, impact, duration, severity</td></tr>
+      <tr><td>Timeline</td><td>Detection, response, containment and resolution with timestamps (from the scribe and the logs)</td></tr>
+      <tr><td>Impact</td><td>Customers, cases, money, SLAs, regulatory deadlines, a financial estimate</td></tr>
+      <tr><td>Root cause and contributing factors</td><td>The technical cause, plus process and detection gaps</td></tr>
+      <tr><td>What went well, and what did not</td><td>Detections and practices that worked; delays, missing alerts, unclear ownership</td></tr>
+      <tr><td>Corrective and preventive actions</td><td>Specific, owned, dated and tracked to closure</td></tr>
+      <tr><td>Evidence</td><td>Logs, graphs, tickets, the PDC before-and-after trend</td></tr>
+    </table>
+    <p>A second worked case shows the method where the cause is not a query. Supervisors report cases past deadline with no escalation emails or urgency changes for nine hours overnight.</p>
+    <div class="flow">5-WHYS WORKED EXAMPLE: SLA ESCALATIONS STOPPED OVERNIGHT
+ PROBLEM: Supervisors report cases past deadline with no escalation emails or urgency changes for 9 hours overnight.
+ WHY 1: Why were there no escalations?          -&gt; The SLA processing queue processor was not running.
+ WHY 2: Why was it not running?                  -&gt; After the evening release, the node that ran background processing was replaced and the new node did not have the background-processing node type.
+ WHY 3: Why did the new node lack the node type? -&gt; Node classification is set in environment configuration that is not part of the release package or the release checklist.
+ WHY 4: Why was it not on the checklist?         -&gt; Environment configuration is owned by the platform team; the release process assumed it was unchanged; no pre- or post-deployment topology check exists.
+ WHY 5: Why did nobody notice for 9 hours?       -&gt; No alert on queue processor delayed-item age or on missing node types; escalations are silent when they do not fire.
+ ROOT CAUSES: (a) configuration drift not covered by release controls  (b) no detection of a stalled SLA processor
+ ACTIONS  :  A1 add topology verification (node types, queue processors running) to the post-deployment smoke test  [owner: release manager, 2 weeks]
+             A2 alert when the oldest SLA queue item age exceeds 15 min or when a required node type is absent  [owner: monitoring, 1 week]
+             A3 a synthetic SLA test case in production that must escalate within N minutes, alerting on failure  [owner: support lead, 3 weeks]
+             A4 document node classification in the environment runbook and include it in change tickets  [owner: platform, 1 week]
+             A5 post-recovery burst handling: throttle escalation emails when the processor catches up (runbook update)  [owner: dev lead, 2 weeks]
+ VERIFICATION: A2 tested by disabling the processor in staging: the alert fired in 4 minutes.</div>
+    <table>
+      <tr><th>Action type</th><th>Meaning</th><th>Example from above</th></tr>
+      <tr><td>Corrective</td><td>Fixes this instance</td><td>Restore the node type and restart the processor</td></tr>
+      <tr><td>Preventive</td><td>Stops recurrence</td><td>A topology check in release gates; configuration under change control</td></tr>
+      <tr><td>Detective</td><td>Finds it faster next time</td><td>Alerts on queue age and node type presence; a synthetic SLA test</td></tr>
+      <tr><td>Mitigating</td><td>Reduces impact if it recurs</td><td>Escalation burst throttling; a manual supervisor report as a fallback</td></tr>
+    </table>
+    <p>The fix is proved, not assumed: a metric that would show recurrence (the oldest SLA queue item age, say) is watched in PDC or a dashboard for a defined period, detective controls are verified by deliberately triggering the failure in a lower environment, actions are closed only with evidence (a link to the changed runbook, the alert definition, the test result), and recurring incident classes are reviewed monthly, trending mean time to detect and to resolve.</p>
+    <div class="flow">HANDOVER NOTE (end of shift / rotation)
+   OPEN INCIDENTS     : INC-4821 (SEV2) status, owner, next action and time, who is waiting on whom
+   WATCH ITEMS        : lag on topic X is elevated but within its objective; queue ACHReturnApply broken items = 4 (known cause, fix in next release); the certificate for a partner SFTP expires in 12 days
+   RECENT CHANGES     : releases and configuration changes in the last 48 hours; planned changes in the next 24 hours (windows, owners)
+   KNOWN WORKAROUNDS  : manual procedure links; temporary toggles in effect (and when to remove them)
+   SCHEDULED RISKS    : month-end volume; a core maintenance window Sunday 02:00-04:00; an ESB release Thursday
+   CONTACTS           : the escalation ladder, partner on-calls, business owners
+   RUNBOOK UPDATES    : what changed in runbooks this shift
+   RULE: handover is verbal plus written; the incoming engineer repeats back the open incidents; nothing is "in my head".</div>
+  </section>
+
+  <section id="s10-15" class="pagebreak">
+    <h2>10.15 Security and release checklist</h2>
+        <h3>What to test, and what proves it</h3>
+    <table>
+      <tr><th>What to test</th><th>How</th><th>What proves it passes</th></tr>
+      <tr><td>Access control per role</td><td>Run as maker, checker, supervisor, auditor and admin; attempt every forbidden action, including through the API</td><td>Each forbidden action is refused server-side, not just hidden in the UI</td></tr>
+      <tr><td>Maker-checker bypass paths</td><td>Reassign to the maker, bulk approve, delegate, reopen, call the approve endpoint directly</td><td>The detective report of maker equals checker returns zero</td></tr>
+      <tr><td>Authentication expiry</td><td>Expire a session, a token and a certificate</td><td>Clean re-authentication; an alert before expiry</td></tr>
+      <tr><td>SLA and calendar boundaries</td><td>The Reg CC Juneteenth case (19 June is a Reg CC business day); a weekend boundary; a Reg E institution without Saturday back-office work; an after-cut-off receipt</td><td>Each due date matches the hand-calculated value for that calendar (Chapter 12 §12.10)</td></tr>
+      <tr><td>Production-like load</td><td>Production volumes and data, acceptance criteria written first</td><td>Criteria met; no new severe alerts</td></tr>
+    </table>
+    <p>A design exercise ties the section together: a fee waiver above a limit needs a second person, so design the enforcement and the evidence. The answer has four layers: routing to a checker queue that excludes the maker; an Access Deny with an Access When on the approve privilege; server-side validation on the approve action so APIs are covered; and a daily detective report with a target of zero, with authority limits from a decision table by amount and risk, and bypass cases tested.</p>
+    <table>
+      <tr><th>Area</th><th>Question to be able to answer "yes"</th></tr>
+      <tr><td>Access</td><td>Is every role designed from duties, with shallow inheritance, least privilege and Access Deny for hard rules? Are service identities separate and narrow? Is there an access recertification schedule?</td></tr>
+      <tr><td>Segregation of duties</td><td>Is maker-checker enforced in four layers and tested through the API as well as the UI? Is release approval independent of the developer and deployer?</td></tr>
+      <tr><td>Authentication</td><td>Is human login federated with MFA at the IdP, with just-in-time provisioning mapped to access groups? Are services token or certificate authenticated? Is there a controlled break-glass account?</td></tr>
+      <tr><td>Data protection</td><td>Is sensitive data minimised, masked at the data layer, encrypted where required, absent from logs and lower environments, and covered by retention rules?</td></tr>
+      <tr><td>Audit</td><td>Can we show who did what, when and on whose approval, for business actions, rule changes, security events and manual interventions?</td></tr>
+      <tr><td>Observability</td><td>Are alert thresholds tuned, PDC trends, queue and lag dashboards and correlation IDs searchable, and are there alerts with owners and runbooks?</td></tr>
+      <tr><td>Resilience</td><td>Are timeouts, retries, idempotency, breakers and degraded modes defined and tested (Chapter 05 §5.9)?</td></tr>
+      <tr><td>CI/CD and rollback</td><td>Is one artefact promoted through environments with mechanical gates, UAT sign-off, production dual control and evidence retention? Is the release backward compatible, toggle-protected, rehearsed in staging, with criteria and an owner for the rollback decision?</td></tr>
+      <tr><td>Incident readiness</td><td>Do a severity matrix, first-15-minutes checklist, evidence procedure, containment options, communication templates, escalation ladder, RCA template and handover note exist and get practised?</td></tr>
+    </table>
+  </section>
+
+  <section id="s10-16" class="pagebreak">
+    <h2>10.16 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. Walk me through Pega's access model.</span>
+    <p>"An operator belongs to an access group, which names the application and the access roles. Roles carry Access of Role to Object rules that grant Open, Modify, Delete, Run reports and Execute activities per class, with privileges and Access When conditions, and Access Deny rules override grants. The default is deny, permissions are the union of role grants minus denies, and everything is enforced server-side in every channel."</p></div>
+
+    <div class="qa"><span class="q">Q2. Why is hiding a button not security?</span>
+    <p>"A hidden control only affects the screen. A crafted request or another channel such as the DX API can reach the rule that does the work, so the privilege or Access When is required on that rule, with server-side validation as a second layer. I test the denial through the API too."</p></div>
+
+    <div class="qa"><span class="q">Q3. It worked in QA but the button is missing in production. What do you check?</span>
+    <p>"The ARO's production levels. The level is a 'which systems' control: an access control passes only when its level is at least the system's production level, so a 3 grants in QA and withdraws in staging and production without an error. Then access group ruleset versions, an Access Deny condition, and whether the data instance made it into the package."</p></div>
+
+    <div class="qa"><span class="q">Q4. How do you enforce maker-checker?</span>
+    <p>"In four independent layers: routing excludes the maker from the approvers' queue; an Access Deny blocks the approve privilege when the maker is the current operator; a server-side validation on the action rejects maker equals approver; and a daily detection report that should be zero. I test the edge cases: reassignment to the maker, bulk approval, delegation and the DX API."</p></div>
+
+    <div class="qa"><span class="q">Q5. What do Tracer, PAL, PDC and the logs each tell you, and not tell you?</span>
+    <p>"PDC and the alert logs show the cluster over time: what is new or growing and whether a fix worked, but not why one user's screen is slow. PAL gives one requestor's counts and timings, so it exposes N+1, but not which rule is responsible. Tracer shows the rule sequence and resolution for one session, but nothing across nodes or over time, and is used briefly and carefully in production. The database trace and EXPLAIN give the statement and plan. I move from the widest scope to the narrowest."</p></div>
+
+    <div class="qa"><span class="q">Q6. Describe your incident method.</span>
+    <p>"Set severity by impact, then symptom, evidence from the aggregate view, a hypothesis, the diagnostic tool that discriminates between hypotheses, containment before the fix, verification by trend and by reproduction, and prevention as a pipeline gate or standard. Evidence before containment, and a blameless review with owned actions."</p></div>
+
+    <div class="qa"><span class="q">Q7. Why is 'redeploy the previous version' not a rollback plan?</span>
+    <p>"Because code rollback does not undo state: schema, data migrations, in-flight cases, queue items, outbound messages and reference data. I design releases backward compatible with expand and contract, use feature toggles to switch behaviour off without a deployment, rehearse deployment and rollback in staging, and write rollback criteria and the decision owner before the window. Point-in-time restore is a disaster option."</p></div>
+
+    <div class="qa"><span class="q">Q8. What gates would you put in a Pega pipeline?</span>
+    <p>"Peer-reviewed merge, a guardrail score threshold with no new severe warnings, PegaUnit at full pass, coverage on regulatory rules, scenario and API tests including negative access tests, secret and environment-data scans, a performance check against production-like volume comparing interaction counts with a baseline, an environment parity check, and dual control on production approval. The same artifact is promoted through environments."</p></div>
+
+    <div class="qa"><span class="q">Q9. How do you handle sensitive data across environments?</span>
+    <p>"Synthetic data where possible, otherwise irreversible masking with referential integrity preserved, including the BLOB, because masking only exposed columns leaves personal data in the serialised page. Outbound channels are disabled or redirected in test, and egress paths such as exports, logs and AI prompts are controlled."</p></div>
+
+    <div class="qa"><span class="q">Q10. How do you trace one transaction across Pega, the ESB and the core?</span>
+    <p>"A correlation ID generated at the start, stored on the case, sent on every call and written to logs. In the log platform one search across the three indexes sorted by time reconstructs the timeline, which in a timeout case shows whether the first attempt completed late, so I can see that an unknown-outcome status and an idempotency key behaved correctly."</p></div>
+
+    <div class="qa"><span class="q">Q11. Containment or fix first?</span>
+    <p>"Containment first, when harm is ongoing: it limits harm and restores service in minutes (pause a processor, toggle a feature off, manual fallback, throttle, restart after capturing evidence). The fix removes the root cause through the change process, the hotfix path if urgent. The risks are hiding the problem or losing evidence on the containment side, and a rushed change causing a second incident on the fix side."</p></div>
+
+    <div class="qa"><span class="q">Q12. How do you do a root-cause analysis?</span>
+    <p>"Blameless: a timeline from logs and the scribe's notes, the impact, then five whys down to the conditions that allowed it, usually a process or detection gap as well as a technical cause. Actions are corrective, preventive, detective and mitigating, each with an owner and date. I verify detective controls by breaking the thing deliberately in staging and confirm the fix with a PDC before and after trend. When SLA escalations silently stopped overnight, the deepest cause was that nobody was alerted on a stalled processor or a missing node type, so the actions added those alerts and a synthetic SLA test, not just a restart."</p></div>
+
+    <div class="qa"><span class="q">Q13. What is your hotfix process?</span>
+    <p>"Triage and look for a workaround first; emergency approval by named approvers who are not the developer; branch from the exact production ruleset version; a minimal fix with a test that reproduces the defect; a patch ruleset version through the product rule and the pipeline with expedited but real gates; verification in a production-like environment; deployment in a window with smoke tests and a PDC watch; backport to the main line; and a retrospective. It is the normal pipeline accelerated, never bypassed."</p></div>
+
+    <div class="qa"><span class="q">Q14. What release evidence would an auditor want?</span>
+    <p>"The change request and risk assessment, the scope of rules, data and DDL, review and merge approvals, the guardrail score, test results across PegaUnit, scenario, API and access tests, UAT sign-off, an independent production approval, the package version and hash, the deployment log, post-deployment verification, locked ruleset versions and the rollback plan. The pipeline produces most of it automatically, which is a reason to use it."</p></div>
+  </section>
+
+  <section id="s10-recap">
+    <h2>10.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>Marcus is refused when he tries to approve his own change, by the rule and not the screen; Priya can approve, reassign and supervise but not edit capture data; a release reaches production through gates with dual control; and a production slowdown is diagnosed from the widest evidence to the narrowest, contained by a toggle and verified by trend.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Declarative access control with default deny, Access Deny and ARO production levels; four-layer maker-checker; masking, encryption and audit layers; tools matched to the question each answers; a pipeline of build-once, promote-many with gates; rollback by compatibility and toggles; and an incident method that ends in prevention.</p>
+    <h3>What it still cannot do</h3>
+    <p>Most of the evidence in this chapter ended in a database: an unexposed column, a sequential scan, a lock. The application's data lives in tables, and understanding what a query does, how concurrent sessions affect Dana's row and why a plan changes is the subject of Chapter 11.</p>
+  </section>
+
+  <section id="s10-ref" class="pagebreak">
+    <h2>10.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. docs.pega.com pages are JavaScript-rendered and not directly retrievable; their content was obtained through search-engine indexing.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>OWASP Top Ten <span class="tag">standard</span></td><td>https://owasp.org/www-project-top-ten/</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>The risk categories used in the OWASP mapping in 10.6</td></tr>
+      <tr><td>Pega docs: Defining permissions by using Access of Role to Object rules <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/security/define-permissions-using-access-of-role-to-object-rules.html</td><td>Platform 24.2 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>The five access controls (Open, Modify, Delete instances; Run reports; Execute activities); the production level 0 to 5 comparison with the current system; Access When as the alternative to a level</td></tr>
+      <tr><td>Pega docs: Delivering applications with DevOps <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform/page/platform/devops/devops.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Deployment Manager as the CI/CD tool; pipeline stages and tasks; guardrail compliance and test coverage enforcement</td></tr>
+      <tr><td>Pega docs: Deployment Manager service <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/deployment-manager/page/deployment-manager/dm/deployment-manager-service.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>The Deployment Manager service on Pega Cloud for route-to-live environments and its integration with external tooling</td></tr>
+    </table>
+    <p class="small muted">PDC, PAL, Tracer and the incident method are described by function and engineering practice; no page is cited for them, and the alert reference for the target release holds exact alert IDs and thresholds.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch09_pega_rpa.html">&larr; Previous: Chapter 09</a><a href="ch11_postgresql_sql_deep.html">Next: Chapter 11 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch04 · UI: Traditional, Constellation &amp; DX API | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch03_data_model_decisioning.html">&larr; Chapter 03</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch05_integration_rest_soap_esb.html">Next: Chapter 05 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 04 &middot; Platform foundation</div>
+    <h1>UI: Traditional, Constellation &amp; DX API</h1>
+    <p class="subtitle">The case has data and a journey, and nobody can see it. This chapter builds the screen: Marcus opens <code>AM-10417</code>, edits the address field, receives a validation message and submits. It is built twice, once in the traditional section-based UI and once in Constellation, as two separate implementation paths that are never interchangeable artefacts; then the same address change is completed from the web channel through the DX API.</p>
+    <div class="meta">
+      <div><strong>16</strong><span>Sections</span></div>
+      <div><strong>8,378</strong><span>Words</span></div>
+      <div><strong>2</strong><span>Separate UI paths</span></div>
+      <div><strong>10</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 03 ended with the case holding the right data and refusing bad data, but with no screen: Marcus has no way to open <code>AM-10417</code>, change a field or submit it. This chapter makes the application usable by people and by channels. The ledger is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s4-1">4.1 The screen Marcus opens: traditional UI<span>Portal, harness, section, layouts, controls, skin</span></a>
+      <a href="#s4-2">4.2 Editing, refreshing, validating: traditional behaviour<span>Visibility, refresh, reuse, custom-UI risk</span></a>
+      <a href="#s4-3">4.3 The same screen in Constellation<span>View metadata, design system, naming history</span></a>
+      <a href="#s4-4">4.4 DX Components and migration<span>The escape hatch and the cost of changing paths</span></a>
+      <a href="#s4-5">4.5 The DX API<span>Case semantics, UI metadata, v1 versus v2</span></a>
+      <a href="#s4-6">4.6 Dana's address change through the web channel<span>The endpoint journey</span></a>
+      <a href="#s4-7">4.7 SDKs and custom portals<span>When a bank builds its own front end</span></a>
+      <a href="#s4-8">4.8 Agent desktop concepts<span>Interactions and service cases</span></a>
+      <a href="#s4-9">4.9 Supervisor dashboards<span>What Priya sees</span></a>
+      <a href="#s4-10">4.10 Accessibility, localisation, responsive<span>What a bank must get right</span></a>
+      <a href="#s4-11">4.11 Choosing for Riverbend<span>Which path, and why</span></a>
+      <a href="#s4-12">4.12 UI performance and security<span>Round trips and threats</span></a>
+      <a href="#s4-13">4.13 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s4-recap">4.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s4-ref">4.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+    <p class="small muted">Release labels at section level say which UI architecture a section describes. Pega's UI stack changes quickly between releases, so where an exact label, endpoint path or capability is release-dependent, the text describes the function; confirm any exact string in the documentation for the version in use.</p>
+  </section>
+
+  <section id="s4-1" class="pagebreak">
+    <h2>4.1 The screen Marcus opens: traditional UI <span class="tag">8.8 / traditional UI</span></h2>
+    <p>Marcus clicks <code>AM-10417</code> in his <code>DepOps-Maintenance</code> queue and sees a case header with the ID, status and SLA, a summary of Dana's current address and accounts, a form with the requested address, and Approve-style actions. In the traditional, section-based UI, that screen is the output of a stack of rules, and the server turns them into HTML. The server resolves UI rules (harness, sections, layouts, controls, skin), generates HTML, CSS and JavaScript, and the browser displays it. A developer designs each screen by composing layouts and fields.</p>
+    <p>The reason Pega builds screens this way is the model underneath. Before model-driven UI, every screen was hand-coded and every field's label, format, validation and visibility was repeated in HTML, JavaScript and server code. Pega attaches the UI to the property and rule model from Chapter 03: a property already knows its type, edit rules and table of choices, so a section can generate the right control and server-side behaviour from the same rules the process uses.</p>
+    <p>Reading the stack from the outside in: a <strong>portal</strong> is the top-level workspace a user logs into, with navigation, landing pages and work areas, named in the access group's portal list. A <strong>harness</strong> is the page template for a work context, such as the case and assignment wrapper with its header, tabs and action area. A <strong>section</strong> is the main reusable building block, a form region composed of layouts, controls and other sections, and a flow action (Chapter 02 §2.4) names the section that renders its form. A <strong>layout</strong> arranges content inside a section; a <strong>control</strong> decides how a property is edited or displayed; and a <strong>skin</strong> supplies the visual theming. Paragraph, correspondence and HTML rules hold static text and legacy fragments.</p>
+    <div class="flow">TRADITIONAL RENDERING PATH
+ Browser requests case AM-10417 assignment
+   |
+   v  server: portal rule  -> work area -> HARNESS (pyWorkPage context: header, tabs, action area)
+   |         -> flow action form refers to SECTION  AddressChangeReview
+   |              section = layouts (dynamic layout "Current address", dynamic layout "Requested address")
+   |                 cells -> controls (text input, dropdown, date) bound to properties (.NewAddress.Line1, .NewAddress.State)
+   |         -> SKIN supplies CSS classes -> HTML/CSS/JS generated and cached by rule assembly
+   v
+ HTML sent to the browser; Marcus edits fields; refresh-on-change calls the server for a partial section reload
+ Submit -> server validation (Validate rule) -> post-processing -> flow advances -> section refreshed or next assignment shown</div>
+    <p>Layouts are where most of a section's shape comes from. The <em>dynamic layout</em> is the responsive default, a container of rows and groups in inline, grid or stacked formats whose breakpoints come from the skin; it can nest, but deep nesting hurts performance and readability. A <em>repeating dynamic layout</em> renders a page list or group as repeated rows or cards, with pagination options for large lists. A <em>table layout</em> (repeating grid) shows a page list with sortable columns and per-row actions. Tree and tree-grid layouts show hierarchies, tab groups and accordions organise content (and should lazy-load heavy tabs), and the older fixed column layout should be avoided in new work. Embedded sections are the composition mechanism.</p>
+    <p>Each cell of a layout has settings that determine what it shows and how it behaves: the cell type (field, label, text, icon, button, link, embedded section, image); the property, using relative notation inside repeating layouts; the control, defaulted from the property and overridable; whether it is editable, read-only or automatic; its visibility, required and disabled conditions, each tied to a when rule or expression; its event-driven actions (refresh a section, set a value, run a data transform, open a local action, show a confirmation, post a value); its label and format; and an optional style class from the skin, with inline styles discouraged. Controls are mostly generated from the property type and table-edit settings: inputs, displays, actions, and special controls such as attachments, signature, maps, charts and case history. Custom controls built from HTML rules and JavaScript are costly and draw guardrail warnings.</p>
+    <p>A skin defines the visual identity once, as named style classes for colours, typography, spacing and components, and skins can be layered (a base skin, then Riverbend's brand skin). In a bank this is where brand and accessibility contrast decisions are made once instead of per section, and where responsive breakpoints are configured. The portal types an operator meets are the case-worker portal for operations users (worklist, search, create menu), a manager portal for supervisors (team workload, reassignment, reports), the interaction portal for contact-centre agents (4.8), the developer portal (Dev Studio itself) and custom portals designed per audience. Portal and harness rule names vary by release and framework, so describe a portal's role and check which Pega-supplied portal an access group references.</p>
+    <p>For Riverbend's closure review the same stack looks like this: a harness with the case header (ID, status, SLA chip), a read-only "Account Summary" section populated from <code>D_AccountSummary</code>, a repeating dynamic layout for signers with a per-row verification checkbox, a conditional "Legal hold details" section shown only when <code>HasActiveLegalHold</code> is true, and the checker's approve and reject actions. The disbursement-method dropdown is generated from a property whose table-edit source is a data page.</p>
+  </section>
+
+  <section id="s4-2" class="pagebreak">
+    <h2>4.2 Editing, refreshing, validating: traditional behaviour <span class="tag">8.8 / traditional UI</span></h2>
+    <p>Marcus changes the state dropdown on the requested address, types a ZIP code that does not match, and presses submit. Three behaviours fire in sequence, and each is a rule from earlier chapters made visible.</p>
+    <p>First, what is on screen follows conditions. A cell, layout or section can be shown, hidden, required or disabled by a when rule or inline expression; reusing a named when rule such as <code>IsJointAccount</code> means a business rule change updates every place at once and the condition can be unit-tested. One caution cannot be repeated too often: hiding a field is not security. A hidden field's data can still be sent by a crafted request, so access is enforced with privileges, Access When rules and server-side validation, and sensitive data is not loaded into the page unless the operator is entitled to it.</p>
+    <p>Second, a change in one field can change another part of the form. An event on a cell, such as the change of a dropdown, runs a set of actions: post the value to the server's clipboard, then refresh a section. The server recomputes the section and sends back HTML for that region only, preserving the user's context and other unsaved fields. The cost is one round trip per change, so the design rule is to batch dependent updates into one refresh and to refresh the smallest section that contains the affected fields. Refreshing the current section suits dependent fields within it; refreshing a smaller named section suits an isolated area; refreshing the whole harness is rare and expensive; and simple client-side visibility expressions avoid a server call at the price of logic duplicated on the client.</p>
+    <div class="flow">REFRESH ON CHANGE
+ Marcus selects .NewAddress.State in section RequestedAddress
+   |  event: change -> action 1: Post value (send field to the server clipboard)
+   |                  -> action 2: Refresh section  CityStateLookup   (when rule IsUSAddress true -> section visible)
+   v
+ Server: updates clipboard, evaluates visibility when rules, regenerates ONLY CityStateLookup HTML
+   |
+   v  browser swaps the region. Other unsaved fields remain.
+ Cost: one server round trip per change.</div>
+    <p>Third, submission. Required and simple format checks run in the browser, but they are only convenience. The authoritative checks run on the server at submit: edit-input normalisation on the touched properties, then the flow action's Validate rule, whose messages attach to the property so the section displays them next to the field, and the assignment does not advance (Chapter 03 §3.11). The same server validations apply to any API-driven channel, which is why UI-only checks are never relied on. In this example Marcus sees a message beside the ZIP field, corrects it, and submits again; post-processing then sets the status and the flow advances.</p>
+    <p>Reuse is what keeps the UI maintainable. A screen is composed from small embedded sections (<code>AddressBlock</code>, <code>SignerRow</code>, <code>HoldSummary</code>) parameterised with section parameters rather than copied. Shared sections sit at the highest class where all consumers share the property structure, such as a common address class, and are specialised lower down by rule resolution (Chapter 01). A single section can render read-only or editable depending on a parameter or surrounding mode. Labels come from field values and not literal text, so the same section serves multiple languages (4.10), and design templates give harnesses a consistent layout.</p>
+    <p>The temptation to avoid is the hand-coded section. Pega can auto-generate controls and sections from the property model; a <strong>non-auto-generated</strong> section or an HTML rule with custom JavaScript replaces that with raw markup, and the consequences accumulate: validation and formatting are no longer applied consistently, the markup breaks when Pega changes its client framework (which is exactly why Constellation prohibits it), values written unescaped create cross-site scripting risk and custom posts can bypass anti-forgery protections, hand-built controls often miss keyboard and screen-reader support, the guardrail score falls, only the original author can maintain it and it cannot be changed in App Studio, and custom scripts block rendering and defeat section caching. The usual offences are inline CSS and style attributes instead of skin classes, five or more levels of nested dynamic layouts, a section that loads a 5,000-row page list without paging, sections bound to one flow so nothing is reusable, JavaScript that reads and writes DOM fields directly, hiding sensitive fields with CSS only, and refreshing the whole harness on every keystroke.</p>
+  </section>
+
+  <section id="s4-3" class="pagebreak">
+    <h2>4.3 The same screen in Constellation <span class="tag">Infinity / Constellation</span></h2>
+    <p>Everything in 4.1 and 4.2 is one way to build the review screen. Constellation is a different way, and it is a separate implementation path rather than a restyling of the first: the artefacts are different rules, authored in different places, rendered by a different client. Sections, harnesses and custom controls built for the traditional path do not become views, and views are not sections.</p>
+    <p>In Constellation the platform does not generate HTML. It describes each screen as <strong>view metadata</strong>, a structured, declarative description of "this screen has a form with these fields, this table, these actions", and a separate JavaScript front end built on Pega's Constellation design system renders that metadata in the browser. A builder authors <em>views</em> by choosing from prescribed <strong>templates</strong> (one-column form, two-column form, details, list, wizard-style steps) and filling <strong>regions</strong> with fields, nested views or components. Fields carry presentation settings (editable, read-only, display as a given component), and the control comes from the design system's components (text, dropdown, date, currency, status badge). Authoring happens in App Studio, in the case type's step or stage editor, with a live preview, and the underlying rules are visible in Dev Studio. Visibility, required and disabled conditions still exist, expressed in a Constellation-compatible form, and actions (submit, cancel, refresh-on-change, local actions) are defined in the view or flow action context. The view rule type, the template names and the App Studio screen labels evolve each release; the durable concepts are metadata-driven views, prescribed templates and regions, design-system components, no custom HTML or JavaScript in the standard path, and DX Components as the sanctioned extension.</p>
+    <p>For Marcus's interaction, then, the same behaviour is expressed differently. The address form is a view with a two-column template, the requested-address fields in one region and the current address read-only in the other. The state dropdown's dependent behaviour is a refresh-on-change in the view. The validation message comes from the same server-side Validate rule, because validation is a case-engine rule and not a UI rule. What changes is who draws the screen: the design system decides spacing, alignment, responsive collapse, accessibility behaviour and interaction patterns, and the builder decides only what appears in which region. That is what "opinionated" or "prescribed" means. One cannot absolutely position elements, inject arbitrary CSS or build one-off controls in the standard path, and the opinion is the feature, because it is what keeps the UI upgrade-safe and consistent.</p>
+    <p>Pega moved to this model for reasons that all trace to the cost of the first one. Traditional customisation (custom HTML, JavaScript, CSS, deep skins) turned every upgrade into a regression project; Constellation keeps the client and the metadata contract owned by Pega. A prescribed design system produces consistent, accessible, responsive screens without each team inventing layout. View authoring is fast. Because the UI is metadata over an API, the same case engine can serve Pega's front end or a custom client (4.5). The browser renders while the server holds data and process, with an explicit, versionable contract between them, and client-side rendering with cacheable static assets reduces server CPU spent generating HTML.</p>
+    <table>
+      <tr><th>Gain</th><th>Lose or constrain</th></tr>
+      <tr><td>Upgrade-safe UI: no custom HTML/JS to regress</td><td>Pixel-perfect bespoke layouts</td></tr>
+      <tr><td>Built-in accessibility and responsive behaviour</td><td>Arbitrary CSS and custom controls in the standard path</td></tr>
+      <tr><td>Fast authoring in App Studio with preview</td><td>Direct reuse of existing traditional sections and custom controls</td></tr>
+      <tr><td>Clear client/server contract (metadata over API)</td><td>Some legacy features and rule types are not supported (check the release's supported-features list)</td></tr>
+      <tr><td>Foundation for custom front ends via the DX API and SDKs</td><td>The familiar debugging of server-rendered UI: you debug metadata and API payloads instead</td></tr>
+      <tr><td>Consistent look across applications</td><td>Branding beyond what theming exposes</td></tr>
+      <tr><td>Reduced server CPU for rendering</td><td>Dependence on Pega's roadmap for new components</td></tr>
+    </table>
+    <p>The front end itself, the JavaScript bundles, design-system assets and component code, is delivered as <strong>static content</strong> separately from the application server. In Pega Cloud a dedicated static content service serves it; in client-managed deployments it is hosted by a service you deploy or by the platform's configured static content location (the mechanism varies by release and deployment model). The browser loads the shell from static content, which is cacheable and CDN-friendly, then calls the Pega server only for data and metadata.</p>
+    <div class="flow">CONSTELLATION REQUEST PATH
+ Browser
+   |  1 GET portal shell (HTML + JS bundle references) -------------------------> Static content service (CDN-cacheable)
+   |  <---- JS/CSS/design-system assets (versioned, cached) ----------------------
+   |  2 Authenticate (SSO/OIDC/SAML via the IdP; token or session cookie) --------> Pega server / IdP
+   |  3 API calls (JSON) with credentials ----------------------------------------> Pega DX API layer (Constellation DX API)
+   |       e.g. get worklist, get case, get assignment + view metadata, submit action
+   |  <---- JSON: data + UI metadata (view definition for this step) + available actions ----
+   |  4 Client renders metadata using design system components
+   |  5 User action -> API call (PATCH/POST) -> Pega runs flow action, validations, rules
+   |       -> response: updated data, errors, next assignment/view metadata
+   v
+ Pega engine: case, flow, SLA, data pages, decisioning, DB  (unchanged by the UI choice)</div>
+    <p>The names confuse people constantly, and knowing them precisely is an easy way to sound current. They did not describe different products so much as get consolidated: starting with Pega Platform 8.8, Pega bundled all the new UI technology under the single name Constellation. The official mapping is below.</p>
+    <table>
+      <tr><th>Component type</th><th>Previous name</th><th>Current name</th></tr>
+      <tr><td colspan="3"><strong>Traditional UI</strong></td></tr>
+      <tr><td>Architecture</td><td>Section-based architecture</td><td>Traditional UI architecture</td></tr>
+      <tr><td>Design system</td><td>Theme Cosmos / UI-Kit</td><td>Theme Cosmos / UI-Kit (unchanged)</td></tr>
+      <tr><td>API</td><td>DX API v1</td><td>Traditional DX API</td></tr>
+      <tr><td>SDK</td><td>DX Starter Pack</td><td>Traditional Starter Packs</td></tr>
+      <tr><td colspan="3"><strong>Constellation</strong></td></tr>
+      <tr><td>Architecture</td><td>Constellation</td><td>Constellation architecture</td></tr>
+      <tr><td>Design system</td><td>Cosmos, Cosmos React</td><td>Constellation design system</td></tr>
+      <tr><td>API</td><td>DX API v2</td><td>Constellation DX API</td></tr>
+      <tr><td>SDK</td><td>DX SDK</td><td>Constellation SDK</td></tr>
+      <tr><td>Build-on application</td><td>CosmosReact</td><td>Constellation</td></tr>
+    </table>
+    <p>One subtlety: as of 8.8 there are two distinct design systems, not one renamed one. The Constellation design system supports the Constellation architecture; the Cosmos design system continues to support Theme Cosmos applications and the Cosmos React applications from 8.7 and earlier. "Cosmos React became the Constellation design system" is right about the lineage of the new architecture, but Cosmos did not disappear. Pega's documentation describes Constellation as the latest UI, with low-code configuration and efficient development but fewer features and a very prescriptive experience, while the traditional architecture is battle-tested and matches the needs of most businesses; the direction of travel is that Constellation is the recommended UI for new applications, with the traditional UI fully supported, and some Constellation components can be used inside a traditional application as a staged migration path.</p>
+  </section>
+
+  <section id="s4-4" class="pagebreak">
+    <h2>4.4 DX Components and the cost of changing path <span class="tag">Infinity / Constellation</span></h2>
+    <p>Suppose Riverbend needs a signature pad that the design system does not have. In the traditional UI the answer would be a custom control: an HTML rule plus JavaScript. Constellation does not allow that in its standard path, and offers instead a controlled extension point. A <strong>Constellation DX Component</strong> is a custom UI component, written in React and JavaScript against Pega's component contract, that is built, packaged and deployed so a view can render a field or region with the team's own UI. Pega's documentation names the types that its component builder supports: layout templates, widgets (added to the case utilities panel or to landing pages), fields (which replace out-of-the-box field components) and, in recent versions, presentation components.</p>
+    <p>The lifecycle shows what is being taken on. A developer builds the component in a local project using Pega's tooling. The component declares which Pega field or region type it can render and what configuration it accepts. It is packaged and published into the application as an artefact. An author selects it for a field in the view. At run time the client loads the bundle and gives it the view data and callbacks, and the component calls back to update values or trigger actions while Pega handles validation and persistence. From that moment the team owns code: security review, accessibility testing, upgrade compatibility, versioning and CI tests.</p>
+    <table>
+      <tr><th>Traditional customisation</th><th>Replaced in Constellation by</th></tr>
+      <tr><td>Custom control (HTML rule plus JavaScript)</td><td>A DX Component, or a standard design-system component</td></tr>
+      <tr><td>HTML rule and inline JavaScript in sections</td><td>Not supported in the standard path; a DX Component for a genuine need</td></tr>
+      <tr><td>Design templates and custom layouts</td><td>Prescribed view templates and regions</td></tr>
+      <tr><td>Custom skin CSS</td><td>Design-system theming options and tokens</td></tr>
+      <tr><td>Custom JavaScript event wiring</td><td>View actions and refresh conditions; DX Component logic if needed</td></tr>
+    </table>
+    <p>The decision whether to write one follows a short sequence of questions. Can a standard component meet the need after a small UX concession? Then do that. Is it needed by many screens? That strengthens the case. Is it a regulatory or brand requirement? Document and approve it first. Does the team have React skills, a test pipeline and an owner? That is required before starting. The anti-pattern is building one for convenience.</p>
+    <p>The same thinking applies to moving an existing application from one path to the other. It cannot be done by changing a setting: an existing section-based application is not switched to Constellation, because Constellation applications are built or reconfigured on its view model, and existing sections, harnesses and custom controls do not carry over. Case-type forms are rebuilt as views, custom controls are replaced by standard components or DX Components, portals and landing pages are rebuilt, and skin customisations are re-expressed through the design system's theming. Coexistence paths exist (embedding, or using the traditional UI for particular parts, with readiness-assessment tooling that varies by release), but any migration is a project: inventory the case types, sections, controls, portals, skins and scripts; classify each as standard (re-author as views), custom (a DX Component or a redesign) or unsupported (rethink it); pilot one low-risk case type end to end; regression-test and check accessibility; then cut over per case type by user group, with rules for in-flight cases that were created with traditional assignments. Rules, data and integrations are unaffected; only the UI layer is rebuilt. Not every legacy feature has a Constellation equivalent in every release, so the supported-features list for the target version is checked before committing. A new application starts without any of this debt, which is the strongest argument for choosing Constellation at the start (4.11).</p>
+    <p>The mistakes that recur are promising a client that a traditional application will move to Constellation "in a sprint", porting old custom JavaScript line for line, and ignoring the in-flight cases.</p>
+  </section>
+
+  <section id="s4-5" class="pagebreak">
+    <h2>4.5 The DX API: a case engine a front end can consume</h2>
+    <p>Dana does not log into Marcus's portal. She submits her address change on Riverbend's website, and the web team wants its own design system while Pega remains the workflow engine. Without a standard API, that team would need a hand-built Service-REST endpoint for every action (create a case, get the assignment, submit a form, fetch the worklist), duplicating Pega's own knowledge of flow actions, validation, routing and locking. The <strong>Digital Experience (DX) API</strong> is the REST API family built for exactly this: it exposes <em>case-management semantics</em>, with the platform enforcing security, validation, locking and process rules on each call. That is what separates it from a generic data API, or from a Service-REST designed for system-to-system use.</p>
+    <p>There are two generations, and they pair with the two UI paths. The traditional DX API (v1) goes with the section-based UI; screens are described by sections and harnesses tied to server rules, so a custom client either embeds server-generated HTML or works out for itself which fields to show and how. The Constellation DX API (v2) goes with view-based UI; it returns structured view metadata alongside data, so the client renders from what it is given. Pega's documentation describes the second as separating data from layout, reducing chattiness, introducing hypermedia-style responses that reference available actions, adding endpoints (for example to follow a case or change stages), and being the most suitable choice for new applications. Some Constellation endpoints can be used with a traditional application, but only applications built on the view-based approach can use every one. Version numbers and base paths are release-dependent: say "the original DX API for traditional and the newer, view-based one for Constellation", and quote URLs only after checking them.</p>
+    <p>A usable way to see the difference is to ask what a response answers. A normal data API answers "what are the values?" A DX API v2 response to "get this assignment" answers three things at once: the <strong>data</strong> (account number, owner, balance); the <strong>UI metadata</strong> (which view, which template and regions, which fields in what order, which are editable, read-only, required or hidden, localised labels, the component type for each field); and the <strong>actions and navigation</strong> (what the user may do now, such as approve or reject, and what comes next). Because the server decides which fields are visible and required given the current rule state, the client does not duplicate business logic such as "show wire details only if the method is Wire": it renders what it receives, and after each change it asks again and gets new metadata.</p>
+    <div class="flow">ILLUSTRATIVE SHAPE OF A v2-STYLE ASSIGNMENT RESPONSE  (structure only; field names are schematic, not the literal schema)
+{
+  "assignment": { "id": "...", "name": "Checker approval", "actions": [ {"id": "Approve"}, {"id": "Reject"} ] },
+  "case":       { "id": "AC-10882", "status": "Pending-Approval", "stage": "Approve" },
+  "data":       { "AccountNumber": "CHK-8842-0117", "ClosureBalance": 4218.55, "Signers": [ {"Name": "D. Whitfield"} ] },
+  "uiMetadata": { "view": "ApproveClosure",
+                  "template": "OneColumn",
+                  "regions": [ { "name": "main", "fields": [
+                      { "name": "AccountNumber", "component": "text",  "readOnly": true,  "label": "Account number" },
+                      { "name": "Decision",      "component": "radio", "required": true,  "options": ["Approve","Reject"] } ] } ] },
+  "etag":       "(version token for concurrency)"
+}
+=> The client renders the view; the user picks Approve; the client sends the changed values and the chosen action; the server validates and advances.</div>
+    <p>This is a teaching sketch of the concept, not the literal DX API schema; the exact schema comes from the documentation of the version in use.</p>
+    <p>The hypermedia point needs one sentence of its own. Rather than the client hard-coding the sequence of calls, the response for a case lists its available actions and current assignments, the response for an assignment lists its flow actions, and a submit response carries the next assignment (if the same user gets it) or confirms the case has moved on. The client follows what is offered, so when Sam adds a stage or reorders processes in Pega, the client keeps working with no code change. The chattiness difference follows from the same design: assembling a screen from a hand-built service takes separate calls for case data, field definitions and visibility, allowed values for dropdowns, and which actions are allowed, then a submit and a repeat; with the v2 API one response can carry data, the view and the actions, dropdown options are resolved by the server or fetched by a specific data-view call, and the submit response returns information about the next step.</p>
+    <p>Security is unchanged by the channel. DX API calls run as a Pega operator, so the full model applies: access group, roles, privileges, Access When and work locks, and the API does not bypass rule-based security. Authentication is typically token-based (OAuth 2.0 or OIDC bearer tokens issued by the bank's identity provider and validated through an authentication service), while Pega's own Constellation client uses session cookies; Chapter 05 explains the token flows and Chapter 10 operator provisioning. Concurrency uses version tokens in the ETag style so two clients cannot silently overwrite one another, which is the optimistic-locking model from Chapter 01 §1.11. Server-side validation always applies; a client's own checks are a convenience. One documented constraint for the Constellation DX API is that the application name appears in the URL after the application path segment, and the platform identifies the first access group on the operator that matches the application, so an operator with several access groups on the same application is not supported.</p>
+    <table>
+      <tr><th>Concern</th><th>DX API</th><th>Custom Service-REST</th></tr>
+      <tr><td>Purpose</td><td>Human-facing front end for case work</td><td>System-to-system integration, bespoke contracts</td></tr>
+      <tr><td>Case semantics (flow actions, locks, routing)</td><td>Built in</td><td>You implement</td></tr>
+      <tr><td>UI metadata</td><td>Yes (v2)</td><td>No</td></tr>
+      <tr><td>Contract control</td><td>Pega-defined, versioned by Pega</td><td>You define; stable canonical model</td></tr>
+      <tr><td>Best for</td><td>Custom portals, mobile apps, agent UIs</td><td>Core, ESB, partners, batch callbacks and a replay API (a requeue endpoint of this kind is something you build; Pega has no built-in replay API)</td></tr>
+    </table>
+  </section>
+
+  <section id="s4-6" class="pagebreak">
+    <h2>4.6 Dana's address change through the web channel</h2>
+    <p>On Monday 2 March 2026 Dana submits her new address on Riverbend's website. The sequence below is what happens between her browser and the engine, described by function; resource paths, parameter names and headers are release-dependent and are confirmed against the version's API documentation.</p>
+    <div class="flow">DANA'S ADDRESS CHANGE via the web portal (DX API v2 style)
+ Portal (Riverbend design system)                  Pega DX API                            Pega engine
+   |  login via the bank IdP, get token  ------------------------------------------>  authentication service
+   |  list case types (customer-facing set) ----->  entitled case types: "Change address"
+   |  create case "AccountMaintenance", {type:"Address"} -----> create case, run pyDefault, Stage 1 Intake, assignment "Enter new address"
+   |  <---- case ID AM-10417, assignment info, etag
+   |  get assignment -----------------------------> view metadata: address form fields, required flags, state dropdown options
+   |  Dana types her ZIP; portal calls refresh ---> server recalculates City/State via data page lookup, returns updated values
+   |  submit action "Submit" + values + etag -----> Validate rule (address format), post-processing, flow advances
+   |  <---- next step: "We are verifying your request" (no customer assignment), case moved to Stage 2 Verify
+   |  poll or push notification: status "Resolved-Completed" (3 March) -> portal shows confirmation
+ Behind the scenes: Verify and Approve run in the ops portal (Marcus, then Priya); core update via an Integrator; correspondence sent.</div>
+    <p>Read in order, the journey is the sequence a front end has to follow. The client lists the case types the authenticated user may create, and the server applies security and returns only those entitled. Creating a case runs the same creation path as any other channel: <code>pyDefault</code> and the creation transform, the first stage and flow, and the first assignment, returning the case ID, status, assignment information and a version token. Fetching the assignment resolves the flow action's view, evaluates visibility and required conditions and loads data page values, and returns data, view metadata and available actions. A refresh after a field change re-evaluates conditions and transforms on the changed values. Submitting sends the values, the chosen action and the version token; the server applies the values, runs validation and post-processing, advances the flow and may move the case to the next stage, answering with the next assignment or with validation errors keyed to fields. Afterwards the client can fetch the case (summary, stage, status, history, attachments), attach documents, perform local actions and read the worklist.</p>
+    <p>The channel adds concerns the screen did not have. If the case changed after the client fetched it, the submit fails on the version token, and the client must refetch and either retry or ask the user: never retry blindly with the old token. A customer who double-clicks "Submit" could create two cases, so the portal disables the button, and either stores a client-generated request key on the case and checks it in the creation transform, or applies an idempotency pattern in its backend. Validation errors come back per field and the client maps them onto the form. A step that waits for the core (an Integrator) should be asynchronous so the API call returns quickly and the client shows "processing"; Chapter 05 returns to why. A customer's token maps to a limited operator or external-user model so they see only their own cases (Chapter 10). The mistakes to avoid are calling the DX API directly from a browser with a powerful operator's credentials, a portal that hard-codes stage and step sequences, ignoring version-token conflicts, exposing internal case statuses to customers, and skipping server-side validation because the portal validates.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Dana's browser submits her address change and the response is lost on a flaky connection; her browser retries and the portal sends the create request a second time. What stops two <code>AM-</code> cases, and what does it depend on?</p>
+      <p><strong>Answer.</strong> Nothing in the DX API itself stops it: each create is a legitimate new case. The protection has to be added, either with a client-generated request key stored on the case and checked in the creation data transform (so the second request finds the first and returns it) or with an idempotency pattern in the portal's backend that recognises the repeat before it reaches Pega. It depends on the key being generated once per user intention and reused on every retry; a key regenerated on each attempt defeats the check. Chapter 05 develops the same idea for calls to the core.</p></div>
+  </section>
+
+  <section id="s4-7" class="pagebreak">
+    <h2>4.7 SDKs and custom portals <span class="tag">Infinity / Constellation</span></h2>
+    <p>Riverbend's web team is writing the customer portal in its own framework. Pega provides software development kits for building a custom front end that talks to the Constellation DX API and renders Pega views with the design system or the team's own components; the common families are React, Angular and Web Components. The SDK handles authentication helpers, calls to the API, parsing of view metadata and mapping metadata to UI components, so the team does not reimplement that plumbing.</p>
+    <table>
+      <tr><th>Option</th><th>When</th><th>Cost</th></tr>
+      <tr><td>Pega-provided Constellation front end (default)</td><td>Internal operations users, standard flows</td><td>Lowest</td></tr>
+      <tr><td>Constellation SDK (React, Angular, Web Components)</td><td>A customer-facing portal on the bank's design system; embedding Pega work in an existing web app</td><td>A front-end team is required; you own versioning and testing</td></tr>
+      <tr><td>Direct DX API with a fully custom client</td><td>Rare: non-web clients or very bespoke UX</td><td>Highest: you reimplement metadata rendering</td></tr>
+      <tr><td>Embedded Pega UI in another portal</td><td>A teller platform that wants Pega screens in its shell</td><td>Moderate: authentication and sizing integration</td></tr>
+    </table>
+    <p>A bank chooses an SDK when it has a mandated enterprise design system for customer-facing channels, when digital teams rather than Pega developers own the portal and want to release independently, when marketing or UX requirements exceed the prescribed look, or when Pega is the case engine behind several front ends. It chooses not to when the screens are internal operations with heavy stage-driven data entry (the standard front end is faster and cheaper), when there is no in-house front-end capacity (the SDK adds a codebase), or when time is short.</p>
+    <div class="flow">TARGET PATTERN: customer portal on the bank design system, Pega as case engine
+   Customer browser / mobile web
+        |
+   Bank portal (React/Angular/Web Components with SDK + bank design system)
+        |  tokens via the bank IdP
+        v
+   Backend-for-frontend / API gateway   (rate limit, WAF, token translation, idempotency, logging with correlation ID)
+        |
+        v
+   Pega Constellation DX API  ->  Pega case engine (Maintenance, Closure, Disputes...)  ->  ESB -> core banking
+   Static content for any Pega-served Constellation views: static content service (CDN)</div>
+    <p>The division of responsibility is the point to remember: Pega developers own the case types, data model, validations and APIs, and the front-end team owns the portal.</p>
+  </section>
+
+  <section id="s4-8" class="pagebreak">
+    <h2>4.8 Agent desktop concepts: interactions and service cases</h2>
+    <p>Dana could as easily phone. A contact-centre agent works inside an <strong>interaction</strong>, a conversation with a customer (a call, a chat, a branch walk-in) that is a container for the agent's work and context. The interaction portal is the agent workspace: caller identification, a customer context panel, interaction-driven navigation and service-case creation inside the interaction. Customer identification and verification (search, security questions, marking the interaction as verified) is mandatory before disclosing account data. The context panel is a set of data pages that assemble the customer's accounts, recent cases, holds and preferences into one view (<code>D_Customer</code>, <code>D_AccountList</code>, <code>D_OpenCases</code>). A <em>service case</em> is a case created from the interaction, such as a stop payment, an address change or a dispute, and it is the same case type operations use, started by an agent. Wrap-up records a disposition, notes and an outcome for audit and quality reporting, and screen pop and telephony integration (which identifies the caller and opens the context) sit outside Pega and are integrated. Next-best-action suggestions, where used, belong to decisioning (Chapter 08).</p>
+    <div class="flow">AGENT INTERACTION FLOW
+ Call arrives (CTI) -> screen pop with a caller-number match candidate
+ Agent verifies identity (knowledge-based questions / one-time code via integration) -> interaction marked verified
+ Context panel loads thread-scope data pages: D_Customer, D_AccountList, D_Holds, D_OpenCases  (personal data; per interaction)
+ Agent selects "Stop payment" -> service case created inside the interaction (case type shared with ops)
+ Case completes real-time steps (core call via an Integrator) or becomes a back-office assignment
+ Wrap-up: disposition, notes -> history; interaction closed</div>
+    <p>Four design points matter in banking. Disclose data only after verification, tying the visibility of account sections to an "interaction verified" condition enforced by access control, not by the UI alone. Mask personal data by default (last four digits) with a privilege-gated unmask and an audit entry. Keep the agent's synchronous steps short, with tight timeouts on core calls and a fall-back to a back-office case if the core is slow (Chapter 05). And avoid loading everything: lazy-load tabs for accounts, holds and history so the panel appears quickly.</p>
+  </section>
+
+  <section id="s4-9" class="pagebreak">
+    <h2>4.9 Supervisor dashboards: what Priya sees</h2>
+    <p>Priya needs a live answer to "are we going to meet today's deadlines, and where is the backlog?" Dashboards combine Report Definitions (Chapter 02 §2.10) with charts, tables and filters on a landing page, so she acts on queues and not on spreadsheets. The useful widgets map to actions: work by queue and age bucket (rebalance staff), SLA at risk and breached (reassign or escalate), throughput today against target (an overtime decision), legal orders due soon (prioritise), ACH returns by reason code (spot a bad originator or a systemic issue), maker-equals-checker exceptions (a control report that must be zero), and integration health such as failed connector calls and queue processor delayed items (trigger an incident response). The operational health widgets are tooling the team builds for itself; Pega does not ship them as a ready-made dashboard.</p>
+    <p>Dashboards fail by being slow, and the rules that prevent it are the data-model rules again. Every filter, group and sort column is exposed and indexed (Chapter 03 §3.3). Every query is bounded by a date range, lists are paginated and counts are limited. Heavy aggregates are cached through a short-lived data page rather than queried on every refresh by every supervisor. Auto-refresh is limited, because a landing page refreshing every ten seconds for fifty supervisors is a load test nobody intended. Drill-down shows a summary first and detail on click, with a hard row cap and a privilege check.</p>
+    <div class="flow">SUPERVISOR DASHBOARD DATA PATH
+  Widget -> Report Definition (summarise, filters: queue, date range, status)
+         -> SQL on exposed, indexed columns (pc_work_dep + assignment tables)
+         -> short-lived cached data page (e.g. 2 min, node scope for team-level data without personal data)
+         -> chart/table render
+  Drill-down click -> list report limited to 100 rows, pagination, privilege check</div>
+    <p>The things to avoid are dashboards built on unexposed properties, unbounded counts on millions of rows, each supervisor building private reports against the work table, and personal data in widgets visible to every role.</p>
+  </section>
+
+  <section id="s4-10" class="pagebreak">
+    <h2>4.10 Accessibility, localisation and responsive design</h2>
+    <p>A bank must meet accessibility obligations for customer-facing and, increasingly, employee-facing tools; which legal standard applies is a Compliance matter, and WCAG-aligned expectations are the usual reference. Pega's standard controls and Constellation's design system carry keyboard navigation, focus management, labels and ARIA roles; custom controls do not unless they are built. In practice that means every field has a visible, programmatically associated label (not a placeholder alone), the whole journey works from the keyboard with a visible focus, error messages are tied to fields and status changes are announced to screen readers, SLA status is never conveyed by colour alone, session timeouts warn and can be extended, and key journeys get automated checks plus a manual screen-reader pass.</p>
+    <p>Localisation depends on never putting literal text in a section or view. Labels, messages, button text and dropdown options come from field values or localisation packs, language rulesets (a Spanish one, for example) layer over the base so the language follows the operator's locale or the customer's preference, and dates, numbers and currency are formatted by locale while the stored data stays neutral (ISO dates, decimals with an explicit currency). Regulatory text is translated and approved by Compliance and versioned, not machine-translated casually. Layouts must tolerate text expansion, right-to-left support is a distinct requirement to confirm, and time zones follow the rule from Chapter 02: store GMT, render in the user's zone, keep business dates as dates.</p>
+    <p>Responsive behaviour differs by path. Constellation's design system is responsive by default and should be tested at tablet and phone widths. Traditional dynamic layouts and skin breakpoints must be configured, and a layout that looks right on a desktop may overflow on a phone. Mobile web for customers is typically a custom portal on the SDK or DX API; field or branch tablets with offline needs are a separate decision, since standard web is online only; and heavy tables on small screens use card views or summarised columns, not horizontal scrolling.</p>
+  </section>
+
+  <section id="s4-11" class="pagebreak">
+    <h2>4.11 Choosing for Riverbend: which path, and why</h2>
+    <p>With both paths built once on paper, the choice for Riverbend's Deposit Servicing application is a comparison against the application's actual circumstances, and the circumstances are those of a new build with no legacy UI to migrate.</p>
+    <table>
+      <tr><th>Criterion</th><th>Traditional (section-based)</th><th>Constellation (Pega front end)</th><th>Constellation + SDK custom portal</th><th>Verdict</th></tr>
+      <tr><td>New build, no legacy UI to migrate</td><td>No advantage</td><td>Strong fit</td><td>Fit where needed</td><td>Start on Constellation</td></tr>
+      <tr><td>Upgrade safety</td><td>Weaker if customised</td><td>Strongest</td><td>Depends on custom code</td><td>Constellation</td></tr>
+      <tr><td>Speed of delivery for ops screens</td><td>Medium</td><td>Highest</td><td>Lowest (extra codebase)</td><td>Constellation</td></tr>
+      <tr><td>Bespoke look and brand</td><td>Possible with skin and custom work</td><td>Limited theming</td><td>Full control</td><td>Only for customer-facing journeys</td></tr>
+      <tr><td>Accessibility and responsive</td><td>Manual effort</td><td>Built in</td><td>Your responsibility</td><td>Constellation for internal</td></tr>
+      <tr><td>Custom controls and legacy JavaScript</td><td>Allowed, at a cost</td><td>Not in the standard path; DX Component</td><td>Free</td><td>Avoid needing them</td></tr>
+      <tr><td>Skills required</td><td>Pega developers</td><td>Pega developers and analysts</td><td>Plus front-end engineers</td><td>Match to team</td></tr>
+      <tr><td>Governance and guardrails</td><td>More warning sources</td><td>Fewer</td><td>Separate SDLC for the portal</td><td>Constellation</td></tr>
+    </table>
+    <p>The reasoning is that stage-driven maintenance and review screens suit the prescribed templates, the built-in accessibility is worth having, and the long-term upgrade cost is lowest. If Riverbend later offers customer self-service for address changes, a thin custom portal on the DX API or SDK is added for that audience only, with Pega staying the case engine, which is exactly the pattern Dana's change followed in 4.6. Two checks come before committing: which Pega version the bank targets and whether its supported-features list covers what the Deposits scope needs (specific attachment or correspondence features, for example), and whether the team has standardised on the traditional UI for reasons a newcomer cannot see. The recommendation is for a new build; it is not a claim about any real bank's decision.</p>
+  </section>
+
+  <section id="s4-12" class="pagebreak">
+    <h2>4.12 UI performance and security</h2>
+    <p>The two paths spend effort in different places. In the traditional UI the server generates heavier HTML and JavaScript per page type on first load and regenerates HTML regions on each interaction; its hotspots are deep layout nesting, large repeating grids, many refresh events and uncached data pages, and it is diagnosed with Tracer, PAL, the browser's network tab and a database trace. In Constellation a static bundle is cached or served from a CDN so the shell loads quickly after the first visit, and each interaction returns JSON for the client to render; its hotspots are slow data pages behind views, large lists without paging and chatty custom components, and it is diagnosed with the browser network tab (API timings and response size) plus PAL and PDC for the server side. Four habits apply to both: count server round trips per user action and aim for one; never load large lists into a view, page them on the server; keep the data pages behind a screen fast, because a slow connector inside one makes the screen slow; and defer heavy sections such as tabs until opened.</p>
+    <table>
+      <tr><th>Threat</th><th>Control</th></tr>
+      <tr><td>Hidden-field tampering</td><td>Enforce on the server: privileges, Access When, validation</td></tr>
+      <tr><td>Cross-site scripting</td><td>Avoid custom HTML; use standard controls that escape output; DX Components must escape and be reviewed</td></tr>
+      <tr><td>Cross-site request forgery</td><td>Platform protections for standard clients; custom clients must follow the token requirements</td></tr>
+      <tr><td>Excess data exposure</td><td>Load only needed fields; mask personal data; limit what API responses include</td></tr>
+      <tr><td>Insecure direct object reference</td><td>Case access checked by access roles and work group; never rely on unguessable IDs</td></tr>
+      <tr><td>Session management</td><td>Timeouts; re-authentication for sensitive actions; token expiry</td></tr>
+      <tr><td>Clickjacking and framing</td><td>Frame-ancestor policies when embedding Pega in another portal</td></tr>
+    </table>
+    <p>Chapter 10 covers the full security model and Chapter 05 the token and single sign-on flows.</p>
+  </section>
+
+  <section id="s4-13" class="pagebreak">
+    <h2>4.13 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. Describe the traditional Pega UI stack.</span>
+    <p>"A portal contains work areas; a harness is the page template for the work context; sections are the reusable form regions built from layouts such as dynamic and repeating layouts; cells bind properties to controls; the skin supplies CSS and responsive behaviour. A flow action refers to a section for its form. The server generates HTML from those rules, and refresh-on-change reloads just a section. The discipline is small parameterised sections, named when rules for visibility, and no custom HTML or JavaScript."</p></div>
+
+    <div class="qa"><span class="q">Q2. How do you show or hide fields, and is that security?</span>
+    <p>"Visibility, required and disabled can be driven by a named when rule or expression. It is presentation only: a hidden field can still be posted, so access is enforced with privileges, Access When and server-side validation, and sensitive data is not loaded into the page unless the operator is entitled."</p></div>
+
+    <div class="qa"><span class="q">Q3. What are the risks of custom controls and non-auto-generated sections?</span>
+    <p>"They bypass the property model so validation and formatting are inconsistent, break on upgrade, raise cross-site scripting and request-forgery concerns, usually miss accessibility, cost guardrail points, and only their author can maintain them. Each is a future upgrade project and an exception to approve."</p></div>
+
+    <div class="qa"><span class="q">Q4. Explain Constellation, and say how it relates to the traditional UI.</span>
+    <p>"Constellation replaces server-generated HTML with view metadata rendered by a client built on Pega's design system. Views are authored from prescribed templates and regions in App Studio; the front end is delivered as static content and talks to the Constellation DX API for data, metadata and actions. It is a separate implementation path from the traditional UI, with different artefacts, not a skin on it. The trade is design freedom for upgrade safety, consistency, built-in accessibility and speed. Custom needs go through DX Components, not HTML and JavaScript."</p></div>
+
+    <div class="qa"><span class="q">Q5. What does 'opinionated' mean here, and what do you lose?</span>
+    <p>"The design system decides spacing, alignment, responsive behaviour and interaction patterns; I decide what appears in which region. I lose arbitrary CSS, one-off controls and direct reuse of old sections, and I get upgrade-safe screens, consistency and accessibility. For a bank's internal operations that is the right trade."</p></div>
+
+    <div class="qa"><span class="q">Q6. Can we migrate a traditional application to Constellation by switching a setting?</span>
+    <p>"No. It is a UI re-platforming: case-type forms are rebuilt as views, custom controls are replaced or become DX Components, portals and skins are redone. Rules, data and integrations are unaffected. I would inventory and classify what exists, pilot one case type, check the supported-features list for the release, regression-test, and cut over per case type. A new build avoids the problem."</p></div>
+
+    <div class="qa"><span class="q">Q7. What is the DX API, and what does 'UI metadata in the response' mean?</span>
+    <p>"It is a REST API for building front ends on the case engine, with case semantics: create a case, get the assignment, perform a flow action, with security, validation and locking enforced by the platform. The Constellation version returns data, view metadata and the available actions together, so the client renders what it is given and does not duplicate rule logic, and it needs fewer calls. Version tokens give optimistic concurrency, and the server-side validation still applies."</p></div>
+
+    <div class="qa"><span class="q">Q8. A customer double-clicks Submit in a custom portal. How do you avoid two cases?</span>
+    <p>"The DX API treats each create as a new case, so I add protection: disable the button, and store a client-generated request key, created once per user intention and reused on retries, on the case and check it in the creation transform, or apply idempotency in the portal's backend. A key regenerated on every attempt defeats it."</p></div>
+
+    <div class="qa"><span class="q">Q9. DX API or a custom Service-REST?</span>
+    <p>"The DX API for human-facing front ends, because it brings flow actions, locks, routing and UI metadata. A custom Service-REST for system-to-system integration with a stable canonical contract, such as the core, partners and a replay endpoint, which is something you build. I would not use the DX API as an integration contract with the core or the ESB."</p></div>
+
+    <div class="qa"><span class="q">Q10. Which UI path for a new deposits application?</span>
+    <p>"Constellation with the standard front end for operations: a new build has no migration debt, stage-driven screens suit the templates, accessibility is built in and upgrade cost is lowest. A thin custom portal on the DX API or SDK only for customer-facing journeys, with Pega as the case engine, and I would confirm the target release and its supported-features list first."</p></div>
+  </section>
+
+  <section id="s4-recap">
+    <h2>4.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>Marcus can open <code>AM-10417</code>, edit the requested address, receive a server-side validation message beside the field and submit, in either UI path; Priya can see her queues and deadlines on a dashboard; and Dana's web portal can create and complete the same address change through the DX API with a version token and protection against a double submit.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>The traditional path builds a screen from portal, harness, section, layout, control and skin rules that the server renders to HTML, with refresh-on-change for partial updates. Constellation builds it from view metadata, templates and regions rendered by a client on the design system, delivered as static content. The DX API exposes case semantics to any front end, returning data, metadata and actions. Validation, security and locking live in the case engine, so they hold on every path.</p>
+    <h3>What it still cannot do</h3>
+    <p>The screen is there and Marcus can submit, but the core still knows nothing: fulfilment has no way to read Dana's account from it, or to ask it to change her address or place a hold. Calling the core, and what happens when it is slow, when it refuses and when it loses its answer, is Chapter 05.</p>
+  </section>
+
+  <section id="s4-ref" class="pagebreak">
+    <h2>4.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. docs.pega.com pages are JavaScript-rendered and not directly retrievable; their content was obtained through search-engine indexing.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>Pega docs: User experience (Platform 8.8) <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-88/page/platform/user-experience/user-experience.html</td><td>Platform 8.8 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>The updated-naming table (Cosmos React to Constellation design system, DX API v2 to Constellation DX API, SDKs); the description of Constellation as prescriptive with fewer features</td></tr>
+      <tr><td>Pega docs: UI version comparison <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-88/page/platform/user-experience/selecting-architecture-application.html</td><td>Platform 8.8 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Constellation versus the traditional architecture: different feature sets, recommended uses</td></tr>
+      <tr><td>Pega docs: Differences between Traditional DX API and Constellation DX API <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/dx-api/page/platform/dx-api/differences-between-v1-v2.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Reduced chattiness, data and layout separation, hypermedia responses, additional endpoints, suitability for new applications; partial use of v2 endpoints with a traditional application</td></tr>
+      <tr><td>Pega docs: Constellation DX API <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/dx-api/page/platform/dx-api/dx-api-version-2-con.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>UI metadata in responses; the application name in the URL and the first-matching-access-group behaviour</td></tr>
+      <tr><td>Pega docs: Types of Constellation DX components <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/constellation-dx-components/page/constellation-dx-components/custom-components/types-constellation-dx-components.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Layout templates, widgets, fields and presentation components as DX component types</td></tr>
+    </table>
+    <p class="small muted">The static content service and migration tooling vary by release and deployment model and are described by function; no page is cited for them.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch03_data_model_decisioning.html">&larr; Previous: Chapter 03</a><a href="ch05_integration_rest_soap_esb.html">Next: Chapter 05 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

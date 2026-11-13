@@ -1,0 +1,850 @@
+{
+  "checkedAt": "2026-11-12T15:02:46.207Z",
+  "results": [
+    {
+      "url": "https://aexp.com/careers",
+      "status": "network-error",
+      "error": "timeout"
+    },
+    {
+      "url": "https://att.jobs",
+      "status": "network-error",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://bnymellon.eightfold.ai/careers",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://careers.abb/global/en",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 169834
+    },
+    {
+      "url": "https://careers.aflac.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 76813
+    },
+    {
+      "url": "https://careers.allianz.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.anz.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 28428
+    },
+    {
+      "url": "https://careers.astrazeneca.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 37121
+    },
+    {
+      "url": "https://careers.axa.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.bankofamerica.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 118883
+    },
+    {
+      "url": "https://careers.cargill.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 53288
+    },
+    {
+      "url": "https://careers.chevron.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 52095
+    },
+    {
+      "url": "https://careers.cnoinc.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 26235
+    },
+    {
+      "url": "https://careers.db.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 110213
+    },
+    {
+      "url": "https://careers.dhl.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.elevancehealth.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.fedex.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.fisglobal.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.highmarkhealth.org",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.honeywell.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 92763
+    },
+    {
+      "url": "https://careers.jnj.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.lpl.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.marshmclennan.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.massmutual.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 70557
+    },
+    {
+      "url": "https://careers.maximus.com",
+      "status": "network-error",
+      "error": "timeout"
+    },
+    {
+      "url": "https://careers.pnc.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 144807
+    },
+    {
+      "url": "https://careers.qualcomm.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.rolls-royce.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 151626
+    },
+    {
+      "url": "https://careers.slb.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.societegenerale.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.spglobal.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.unilever.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 59780
+    },
+    {
+      "url": "https://careers.unitedhealthgroup.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.usbank.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://careers.vodafone.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 180220
+    },
+    {
+      "url": "https://careers.walmart.com/technology",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 152223
+    },
+    {
+      "url": "https://careers.westernunion.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://coca-colacompany.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://corporate.ford.com/careers.html",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 61112
+    },
+    {
+      "url": "https://danskebank.com/Job",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 100886
+    },
+    {
+      "url": "https://group.bnpparibas/careers",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://higher.gs.com/roles?q=pega&location=India",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 8450
+    },
+    {
+      "url": "https://jobs.boeing.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://jobs.carrier.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 59662
+    },
+    {
+      "url": "https://jobs.cisco.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 136217
+    },
+    {
+      "url": "https://jobs.comcast.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 52533
+    },
+    {
+      "url": "https://jobs.conduent.com",
+      "status": "network-error",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://jobs.cvshealth.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 101832
+    },
+    {
+      "url": "https://jobs.dell.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://jobs.exxonmobil.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 99056
+    },
+    {
+      "url": "https://jobs.gecareers.com/aviation/global/en",
+      "status": "network-error",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://jobs.gecareers.com/vernova/global/en",
+      "status": "network-error",
+      "error": "timeout"
+    },
+    {
+      "url": "https://jobs.globalpayments.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://jobs.johnsoncontrols.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 115929
+    },
+    {
+      "url": "https://jobs.libertymutual.com",
+      "status": "network-error",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://jobs.mercedes-benz.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 3099
+    },
+    {
+      "url": "https://jobs.merck.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 134
+    },
+    {
+      "url": "https://jobs.metlife.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 79358
+    },
+    {
+      "url": "https://jobs.natwestgroup.com",
+      "status": "access-denied",
+      "http": 403
+    },
+    {
+      "url": "https://jobs.siemens.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 62676
+    },
+    {
+      "url": "https://jobs.spectrum.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 184947
+    },
+    {
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=pega&location=India",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 18819
+    },
+    {
+      "url": "https://lloydsbankinggrouptalent.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 85646
+    },
+    {
+      "url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://lockheedmartinjobs.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 160
+    },
+    {
+      "url": "https://medtronic.eightfold.ai/careers",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://pgcareers.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://roche.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 179307
+    },
+    {
+      "url": "https://search-careers.gm.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 83987
+    },
+    {
+      "url": "https://search.jobs.barclays",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 68464
+    },
+    {
+      "url": "https://tescoplc.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 76707
+    },
+    {
+      "url": "https://toyota.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://usa.visa.com/careers.html",
+      "status": "access-denied",
+      "http": 403
+    },
+    {
+      "url": "https://www.aig.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.airbus.com/en/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.airtel.in/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 652
+    },
+    {
+      "url": "https://www.amdocs.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 149272
+    },
+    {
+      "url": "https://www.ameriprise.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 49984
+    },
+    {
+      "url": "https://www.ayvens.com/en-cp/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.bmwgroup.jobs",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 171011
+    },
+    {
+      "url": "https://www.bosch.in/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 86038
+    },
+    {
+      "url": "https://www.bp.com/en/global/corporate/careers.html",
+      "status": "access-denied",
+      "http": 403
+    },
+    {
+      "url": "https://www.careers.stellantis.com",
+      "status": "network-error",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://www.cariad.technology/careers/",
+      "status": "unavailable-or-redirected",
+      "http": 500
+    },
+    {
+      "url": "https://www.cnh.com/en-US/Careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.cscglobal.com/service/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 138070
+    },
+    {
+      "url": "https://www.cummins.com/careers",
+      "status": "access-denied",
+      "http": 403
+    },
+    {
+      "url": "https://www.dpworld.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.eaton.com/us/en-us/company/careers.html",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 140912
+    },
+    {
+      "url": "https://www.engen.health/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 130636
+    },
+    {
+      "url": "https://www.fnf.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 21285
+    },
+    {
+      "url": "https://www.hdfcbank.com/personal/about-us/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.icicicareers.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 746
+    },
+    {
+      "url": "https://www.iffcotokio.co.in/career",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://www.ikea.com/global/en/work-with-us/",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://www.ing.jobs",
+      "status": "unavailable-or-redirected",
+      "http": 302
+    },
+    {
+      "url": "https://www.international.com/careers",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://www.itcportal.com/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 126398
+    },
+    {
+      "url": "https://www.jaguarlandrovercareers.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 188622
+    },
+    {
+      "url": "https://www.jobs-ups.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 65741
+    },
+    {
+      "url": "https://www.komatsu.com/en/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 159267
+    },
+    {
+      "url": "https://www.kotak.com/en/about-us/careers.html",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.levistrauss.com/careers/",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://www.lufthansa-systems.com/career",
+      "status": "network-error",
+      "error": "timeout"
+    },
+    {
+      "url": "https://www.manulife.com/en/careers.html",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://www.mizuhogroup.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.mondelezinternational.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.mpms.mufg.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 142439
+    },
+    {
+      "url": "https://www.mufg.jp/english/careers/index.html",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 31728
+    },
+    {
+      "url": "https://www.myvi.in/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 135424
+    },
+    {
+      "url": "https://www.nab.com.au/about-us/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.novartis.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.orange-business.com/en/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 27162
+    },
+    {
+      "url": "https://www.pepsicojobs.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.pfizer.com/about/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 143535
+    },
+    {
+      "url": "https://www.primetherapeutics.com/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.proximus.com/careers.html",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://www.renaultgroup.com/en/our-company/careers/",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.schwabjobs.com",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.se.com/ww/en/about-us/careers/overview.jsp",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.t-mobile.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 200000
+    },
+    {
+      "url": "https://www.telekom.com/en/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 186638
+    },
+    {
+      "url": "https://www.toyotafinancial.com/us/en/careers.html",
+      "status": "unavailable-or-redirected",
+      "http": 404
+    },
+    {
+      "url": "https://www.ubs.com/global/en/careers.html",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 124322
+    },
+    {
+      "url": "https://www.volvocars.com/intl/v/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 152129
+    },
+    {
+      "url": "https://www.voya.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 74291
+    },
+    {
+      "url": "https://www.work4estes.com",
+      "status": "unsafe-redirect-rejected",
+      "http": 301
+    },
+    {
+      "url": "https://zurich.com/careers",
+      "status": "reachable-search-not-verified",
+      "http": 200,
+      "pageMentionsPega": false,
+      "bytesRead": 851
+    }
+  ],
+  "warning": "GET only: reachability is not job-search coverage. No negative vacancy claims follow from this probe."
+}

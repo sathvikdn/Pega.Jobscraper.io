@@ -1,0 +1,1957 @@
+{
+  "research_date": "2026-09-08",
+  "scope": "Independent discovery from Pega partner/sponsor pages, employer practice and vacancy pages, and public LinkedIn search. Existing portal catalogues were not used to seed discovery. Observed public evidence; not a complete employee census.",
+  "queries": [
+    {
+      "query": "site.pega.com partners consulting Pega partners India specialists EvonSys Aaseya Areteans Coforge Virtusa",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Official partnership program, 2026 sponsor roster and Blueprint partner showcase discovered."
+    },
+    {
+      "query": "site.linkedin.com/jobs Pega Bangalore India remote 2026 consultant specialist",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public LinkedIn job listings found; aggregate counts are not used as confirmed vacancies."
+    },
+    {
+      "query": "EvonSys Pega careers India developer Bangalore",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer and public recruiting results reviewed."
+    },
+    {
+      "query": "Aaseya Pega careers India CSSA jobs",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer and public recruiting results reviewed."
+    },
+    {
+      "query": "Areteans Pega careers Bangalore jobs",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer and public recruiting results reviewed."
+    },
+    {
+      "query": "Instellars Pega jobs India remote",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer and public recruiting results reviewed."
+    },
+    {
+      "query": "site.evonsys.com careers Pega developer India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public employer, job and professional profile evidence reviewed."
+    },
+    {
+      "query": "site.linkedin.com/jobs/view \"EvonSys\" \"Pega\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public employer, job and professional profile evidence reviewed."
+    },
+    {
+      "query": "site.instellars.com Pega",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public employer, job and professional profile evidence reviewed."
+    },
+    {
+      "query": "site.linkedin.com/in \"Instellars\" \"Bengaluru\" Pega",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Public employer, job and professional profile evidence reviewed."
+    },
+    {
+      "query": "Pega careers Eclatprime India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Independently discovered specialist firms and role signals reviewed."
+    },
+    {
+      "query": "Pega careers Maantic India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Independently discovered specialist firms and role signals reviewed."
+    },
+    {
+      "query": "Pega careers Labb India remote",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Independently discovered specialist firms and role signals reviewed."
+    },
+    {
+      "query": "Pega careers Adqura India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Independently discovered specialist firms and role signals reviewed."
+    },
+    {
+      "query": "site.labb.com careers Pega India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist location and employer recruiting pages examined."
+    },
+    {
+      "query": "\"Labb\" \"Pega\" \"India\" careers",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist location and employer recruiting pages examined."
+    },
+    {
+      "query": "\"Eclantiqx\" \"careers\" Pega",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist location and employer recruiting pages examined."
+    },
+    {
+      "query": "\"EvonSys\" \"careers\" Hyderabad Pega developer",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist location and employer recruiting pages examined."
+    },
+    {
+      "query": "\"labb.ltd\" careers India Pega",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "India hiring and specialist practice evidence reviewed; remote not assumed from international footprint."
+    },
+    {
+      "query": "\"ai4process\" careers Pega India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "India hiring and specialist practice evidence reviewed; remote not assumed from international footprint."
+    },
+    {
+      "query": "\"Cognitonic\" careers Pega India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "India hiring and specialist practice evidence reviewed; remote not assumed from international footprint."
+    },
+    {
+      "query": "\"Lantiqx\" \"Pega\" hiring Bangalore",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "India hiring and specialist practice evidence reviewed; remote not assumed from international footprint."
+    },
+    {
+      "query": "site.capgemini.com/jobs Pega Bangalore 2026",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer careers pages searched for India Pega vacancies."
+    },
+    {
+      "query": "site.careers.ey.com Pega Bengaluru 2026",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer careers pages searched for India Pega vacancies."
+    },
+    {
+      "query": "site.careers.cognizant.com Pega India Bangalore",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer careers pages searched for India Pega vacancies."
+    },
+    {
+      "query": "site.virtusa.com/careers Pega Bangalore",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Employer careers pages searched for India Pega vacancies."
+    },
+    {
+      "query": "Pega CSSA Bangalore jobs domains:careers.ey.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Official-domain India roles reviewed."
+    },
+    {
+      "query": "Pega Developer Bengaluru domains:capgemini.com,jobs.capgemini.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Official-domain India roles reviewed."
+    },
+    {
+      "query": "Pega Developer India domains:careers.cognizant.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Official-domain India roles reviewed."
+    },
+    {
+      "query": "Pega Developer Bangalore domains:accenture.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Official-domain India roles reviewed."
+    },
+    {
+      "query": "\"Pega\" \"Bangalore\" \"Coforge\" jobs",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Large consultancy India vacancies and professional recruiting evidence reviewed."
+    },
+    {
+      "query": "\"Pega\" \"Bangalore\" \"Infosys\" careers",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Large consultancy India vacancies and professional recruiting evidence reviewed."
+    },
+    {
+      "query": "\"Pega\" \"Bangalore\" \"HCLTech\" hiring",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Large consultancy India vacancies and professional recruiting evidence reviewed."
+    },
+    {
+      "query": "\"Pega\" \"India\" \"UST\" careers",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Large consultancy India vacancies and professional recruiting evidence reviewed."
+    },
+    {
+      "query": "Pega Bangalore domains:careers.ey.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "EY role URL/copy city conflict found; Noida is explicitly stated in current body."
+    },
+    {
+      "query": "Pega Bangalore domains:jobs.capgemini.com,capgemini.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Capgemini official Pega practice and collection case study found; India vacancy not confirmed."
+    },
+    {
+      "query": "\"Truviq\" \"PEGA CSSA\" India",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist firms and India remote eligibility investigated."
+    },
+    {
+      "query": "\"Pega\" \"remote\" \"India\" \"careers\" -site:reddit.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist firms and India remote eligibility investigated."
+    },
+    {
+      "query": "\"Pega\" \"remote\" \"India\" \"Ruletronics\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist firms and India remote eligibility investigated."
+    },
+    {
+      "query": "\"Pega\" \"remote\" \"India\" \"Rules Cube\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specialist firms and India remote eligibility investigated."
+    },
+    {
+      "query": "\"Inadev\" \"Pega CS Developer\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Remote claims checked against role-specific primary sources; geographic restrictions retained."
+    },
+    {
+      "query": "\"PegaOne\" careers Pega India remote",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Remote claims checked against role-specific primary sources; geographic restrictions retained."
+    },
+    {
+      "query": "\"labb\" \"Pega\" careers India site:linkedin.com/jobs",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Remote claims checked against role-specific primary sources; geographic restrictions retained."
+    },
+    {
+      "query": "\"Pega\" \"remote\" \"India\" site:careers.epam.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Remote claims checked against role-specific primary sources; geographic restrictions retained."
+    },
+    {
+      "query": "\"Pega\" \"3 years\" \"Bengaluru\" site:accenture.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Role-specific primary pages searched; blocked, closed and indexed-only states kept distinct."
+    },
+    {
+      "query": "\"Pega Developer\" \"Bangalore\" site:jobs.smartrecruiters.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Role-specific primary pages searched; blocked, closed and indexed-only states kept distinct."
+    },
+    {
+      "query": "\"Pega\" \"Bengaluru\" site:kpmgcareers.co.in",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Role-specific primary pages searched; blocked, closed and indexed-only states kept distinct."
+    },
+    {
+      "query": "\"Pega\" \"Bengaluru\" site:careers.pwc.com",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Role-specific primary pages searched; blocked, closed and indexed-only states kept distinct."
+    },
+    {
+      "query": "\"Pega\" \"Bangalore\" \"Coforge\" site:linkedin.com/jobs/view",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specific role links located for verification."
+    },
+    {
+      "query": "\"S2R_EAIS_Pega_Q2_FY\" Infosys",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Specific role links located for verification."
+    },
+    {
+      "query": "site.linkedin.com/posts \"PegaFest\" \"Bangalore\" \"HCL\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Professional profile and event posts checked for directly stated work/location; event attendance not treated as current employment."
+    },
+    {
+      "query": "site.linkedin.com/in \"Capgemini\" \"Bengaluru\" \"Pega\" \"About\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Professional profile and event posts checked for directly stated work/location; event attendance not treated as current employment."
+    },
+    {
+      "query": "site.linkedin.com/in \"Cognizant\" \"Bengaluru\" \"Pega\" \"collections\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Professional profile and event posts checked for directly stated work/location; event attendance not treated as current employment."
+    },
+    {
+      "query": "site.linkedin.com/in \"Aaseya\" \"Bengaluru\" \"Pega\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Professional profile and event posts checked for directly stated work/location; event attendance not treated as current employment."
+    },
+    {
+      "query": "\"HCLTech\" \"PegaFest\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Pega professional work and event participation sources reviewed."
+    },
+    {
+      "query": "\"Cognizant\" \"Bengaluru\" \"Pega\" site:linkedin.com/in -collections",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Pega professional work and event participation sources reviewed."
+    },
+    {
+      "query": "\"Inadev\" \"Pega\" site:linkedin.com/in",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Pega professional work and event participation sources reviewed."
+    },
+    {
+      "query": "\"Areteans\" \"Bengaluru\" \"Pega\" site:linkedin.com/in",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Pega professional work and event participation sources reviewed."
+    },
+    {
+      "query": "Areteans Credera united brand 2025 official",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Brand relationships and directly stated Pega experience investigated."
+    },
+    {
+      "query": "HCLTech PegaFest Bangalore Pritiman Panda",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Brand relationships and directly stated Pega experience investigated."
+    },
+    {
+      "query": "\"Pega\" \"Bengaluru\" \"Accenture\" site:linkedin.com/in \"About\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Brand relationships and directly stated Pega experience investigated."
+    },
+    {
+      "query": "\"Pega\" \"Bengaluru\" \"Truviq\" site:linkedin.com/in \"About\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "outcome": "Brand relationships and directly stated Pega experience investigated."
+    }
+  ],
+  "companies": [
+    {
+      "name": "Instellars",
+      "category": "services",
+      "aliases": [
+        "Instellars Global Consulting"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Pega consulting covers CDH, case management, collections and KYC/CLM.",
+          "source_url": "https://www.linkedin.com/company/instellars",
+          "source_title": "Instellars public company page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "The company lists Bengaluru and an employer vacancy requests a Bengaluru Pega developer.",
+          "source_url": "https://instellars.com/careers?role=OQ%3D%3D",
+          "source_title": "Instellars Pega Developer careers",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Its June 2026 banking webinar describes CDH acquisition, onboarding, servicing and retention journeys. Speakers are Vivek Shivashankar and Abhishek Banerjee. This is practice evidence, not a named client deployment.",
+          "source_url": "https://www.linkedin.com/company/instellars",
+          "source_title": "Instellars June 17 2026 banking CDH webinar",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-17",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "An employer case study describes Pega collections and underwriting, origination, CRM and remarketing, predictive analytics, dialers and IVR for an unnamed auto-finance customer. This closely matches the candidate domain; the client identity and current project staffing are not disclosed.",
+          "source_url": "https://instellars.com/case-study/building-next-generation-collections-br-underwriting-through-digital-strategies",
+          "source_title": "Instellars auto-finance collections and underwriting case study",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Ramprasad Reddy Kothapalli",
+          "title": "Pega Lead Consultant",
+          "employer_as_stated": "Instellars",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/ramprasad-reddy-kothapalli-6a635111",
+          "source_url": "https://in.linkedin.com/in/ramprasad-reddy-kothapalli-6a635111",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "About explicitly identifies Pega Lead Consultant at Instellars; detailed customer project not visible.",
+          "work_summary": "About explicitly identifies Pega Lead Consultant at Instellars; detailed customer project not visible.",
+          "limitations": "Public profile self-description; dates/current assignment are not independently confirmed. Liked/reposted activity is not attributed as personal work."
+        },
+        {
+          "name": "GOPIREDDY ILLURI",
+          "title": null,
+          "employer_as_stated": "Instellars Global Consulting",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/gopireddy-illuri-53870488",
+          "source_url": "https://in.linkedin.com/in/gopireddy-illuri-53870488",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About states Pega development; certifications include CSSA and LSA architecture/readiness.",
+          "work_summary": "Own About states Pega development; certifications include CSSA and LSA architecture/readiness.",
+          "limitations": "Public profile self-description; dates/current assignment are not independently confirmed. Liked/reposted activity is not attributed as personal work."
+        },
+        {
+          "name": "Prasanth M",
+          "title": "Pega developer / decisioning consultant (About)",
+          "employer_as_stated": "Instellars",
+          "location_as_stated": "Profile: Erode, Tamil Nadu; Instellars experience: Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/prasanth-m-72844918b",
+          "source_url": "https://in.linkedin.com/in/prasanth-m-72844918b",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About describes telecom Pega decisioning experience; current client not stated.",
+          "work_summary": "Own About describes telecom Pega decisioning experience; current client not stated.",
+          "limitations": "Public profile self-description; dates/current assignment are not independently confirmed. Liked/reposted activity is not attributed as personal work."
+        },
+        {
+          "name": "Gurram Venkata Bhargavi",
+          "title": "Decision Support Analyst and Architect (About)",
+          "employer_as_stated": "Instellars",
+          "location_as_stated": "Profile: Hyderabad; Instellars experience: Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/gurram-venkata-bhargavi-5b6339161",
+          "source_url": "https://in.linkedin.com/in/gurram-venkata-bhargavi-5b6339161",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About states analyst/architect work at Instellars; Pega data scientist, decisioning architect and CSSA credentials visible.",
+          "work_summary": "Own About states analyst/architect work at Instellars; Pega data scientist, decisioning architect and CSSA credentials visible.",
+          "limitations": "Public profile self-description; dates/current assignment are not independently confirmed. Liked/reposted activity is not attributed as personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Employer page with Apply Now; minimum 4 years Pega PRPC 8, CSA/CSSA, integrations and BPM. Salary and work arrangement not published.",
+          "url": "https://instellars.com/careers?role=OQ%3D%3D",
+          "title": "Pega Developer",
+          "location": "Bangalore, India",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": true,
+          "status": "page_available"
+        }
+      ],
+      "limitations": [
+        "No publication date or closing date on employer page; confirm requisition availability before applying.",
+        "An old remote recruiting post is not treated as current remote eligibility.",
+        "Profile city and employer assignment city can differ; no headcount extrapolation."
+      ]
+    },
+    {
+      "name": "Credera",
+      "category": "services",
+      "aliases": [
+        "Areteans",
+        "Areteans Technology Solutions"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer describes its Pega delivery practice and projects for businesses and government.",
+          "source_url": "https://areteanstech.com/careers/",
+          "source_title": "Areteans careers",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Pega attributes a card-fraud-investigation Blueprint to Areteans. It is a solution template, not proof of a specific open team.",
+          "source_url": "https://www.pega.com/blueprint/partner-showcase",
+          "source_title": "Pega Blueprint partner showcase",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "event",
+          "access": "page",
+          "confidence": "direct"
+        },
+        {
+          "type": "pega_usage",
+          "text": "Areteans public company announcement says Areteans is now Credera. Older Areteans pages/profiles are retained with their original employer wording.",
+          "source_url": "https://www.linkedin.com/posts/areteans_areteans-is-now-credera-activity-7346192735617355777-kQRi",
+          "source_title": "Areteans is now Credera",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Sushant Katkam",
+          "title": "Pega Architect (About)",
+          "employer_as_stated": "Areteans",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/sushant-katkam-b9b44529",
+          "source_url": "https://in.linkedin.com/in/sushant-katkam-b9b44529",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Lists Pega architecture credentials and projects Compass/PayPal, Core Claims/BNP, governance framework and MCOM/Belgacom. These are career projects, not confirmed current Credera accounts.",
+          "work_summary": "Lists Pega architecture credentials and projects Compass/PayPal, Core Claims/BNP, governance framework and MCOM/Belgacom. These are career projects, not confirmed current Credera accounts.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        },
+        {
+          "name": "Sushant Balur",
+          "title": null,
+          "employer_as_stated": "Areteans",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/sushantbalur",
+          "source_url": "https://in.linkedin.com/in/sushantbalur",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile describes historical ANZ payment-exception investigation using Smart Investigate and event-message ingestion from FileNet/SWIFT in 2013. The undated/present project marker is not trusted as current assignment.",
+          "work_summary": "Profile describes historical ANZ payment-exception investigation using Smart Investigate and event-message ingestion from FileNet/SWIFT in 2013. The undated/present project marker is not trusted as current assignment.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        },
+        {
+          "name": "NAVEEN B",
+          "title": null,
+          "employer_as_stated": "Areteans",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/naveen-b-85335220a",
+          "source_url": "https://in.linkedin.com/in/naveen-b-85335220a",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About lists Pega decisioning consultant and data scientist; client project not disclosed.",
+          "work_summary": "Own About lists Pega decisioning consultant and data scientist; client project not disclosed.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        },
+        {
+          "name": "Chakradhar R Muppala",
+          "title": "Senior Software Engineer (About)",
+          "employer_as_stated": "Areteans",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/chakradhar-r-muppala-39040b162",
+          "source_url": "https://in.linkedin.com/in/chakradhar-r-muppala-39040b162",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile lists Areteans Bengaluru with CSA/CSSA credentials; client work is not disclosed.",
+          "work_summary": "Profile lists Areteans Bengaluru with CSA/CSSA credentials; client work is not disclosed.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Official listing requires CSSA and 4+ years relevant Pega experience; CLM/KYC framework experience is mandatory for the named framework role.",
+          "url": "https://areteanstech.com/job-listing/",
+          "title": "Pega CSSA / CLM-KYC",
+          "location": "Hyderabad, Bangalore, Chennai, Kolkata, Pune, Gurgaon and Bhubaneswar",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": true,
+          "status": "page_available"
+        }
+      ],
+      "limitations": [
+        "CLM/KYC experience is a material gap if candidate only has collections/customer service.",
+        "Employer page date is absent; availability and client allocation require confirmation.",
+        "Older Areteans careers pages may persist after rebrand; verify requisition with Credera."
+      ]
+    },
+    {
+      "name": "Aaseya",
+      "category": "services",
+      "aliases": [
+        "Aaseya IT Services",
+        "YASH Technologies (Aaseya subsidiary)"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer Pega practice covers digital process automation.",
+          "source_url": "https://aaseya.com/digital-coe/pega/",
+          "source_title": "Aaseya Pega practice",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Vishnu Ghosh’s own profile lists Aaseya Bengaluru and Pega LBA work.",
+          "source_url": "https://in.linkedin.com/in/vishnu-ghosh-74838a2a",
+          "source_title": "Vishnu Ghosh professional profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Vishnu Ghosh",
+          "title": "Pega Lead Business Architect",
+          "employer_as_stated": "Aaseya",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/vishnu-ghosh-74838a2a",
+          "source_url": "https://in.linkedin.com/in/vishnu-ghosh-74838a2a",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About identifies Pega LBA ownership; authored articles discuss Blueprint discovery (Feb 2026) and multilingual Pega email processing.",
+          "work_summary": "Own About identifies Pega LBA ownership; authored articles discuss Blueprint discovery (Feb 2026) and multilingual Pega email processing.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        },
+        {
+          "name": "Guru Vardhan Mullandram",
+          "title": null,
+          "employer_as_stated": "Aaseya",
+          "location_as_stated": "Bengaluru is indexed; current assignment city unconfirmed",
+          "profile_url": "https://in.linkedin.com/in/guru-vardhan-mullandram-169b00148",
+          "source_url": "https://in.linkedin.com/in/guru-vardhan-mullandram-169b00148",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own project section describes BDUK voucher funding platform replacing legacy systems with Pega 8.7. Hackathon post about Shreyas Sonawane is liked content and not Guru’s achievement.",
+          "work_summary": "Own project section describes BDUK voucher funding platform replacing legacy systems with Pega 8.7. Hackathon post about Shreyas Sonawane is liked content and not Guru’s achievement.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Official careers page lists SSA with Apply Now, 5+ Pega years and CSSA. It asks for prior SSA ownership on multiple projects.",
+          "url": "https://aaseya.com/careers/",
+          "title": "Pega Senior System Architect",
+          "location": "Bangalore, Chennai; Australia is listed separately",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": true,
+          "status": "page_available"
+        }
+      ],
+      "limitations": [
+        "Five-year minimum exceeds the candidate current experience.",
+        "No public India salary budget or remote eligibility established."
+      ]
+    },
+    {
+      "name": "EvonSys",
+      "category": "services",
+      "aliases": [
+        "Evonsys LLC"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Pega specialist provides strategy, implementation, cloud modernization and upgrades.",
+          "source_url": "https://www.evonsys.com/pega-services",
+          "source_title": "EvonSys Pega services",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Pega lists an EvonSys cross-border payments Blueprint with Swift ISO messages and API integration.",
+          "source_url": "https://www.pega.com/blueprint/partner-showcase",
+          "source_title": "Pega Blueprint partner showcase",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "event",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "A public employer-branded vacancy exists in Melbourne; it is not classified as India-eligible.",
+          "url": "https://au.linkedin.com/jobs/view/associate-architect-%E2%80%93-technology-with-smart-investigate-expertise-at-evonsys-4406847523",
+          "title": "Associate Architect – Technology (Smart Investigate)",
+          "location": "Melbourne, Australia",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "India vacancy not independently confirmed in this pass.",
+        "Australian opening does not establish India remote work."
+      ]
+    },
+    {
+      "name": "Maantic",
+      "category": "services",
+      "aliases": [
+        "Maantic Global IT Solutions"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer careers page describes Pega BPM development and support.",
+          "source_url": "https://maantic.com/careers/",
+          "source_title": "Maantic careers",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "India section advertises 7+ Pega years, Oracle/SQL, Java and integration, but the same page also contains a no-open-positions message in another section; availability is unresolved.",
+          "url": "https://maantic.com/careers/",
+          "title": "Senior Pega Developer",
+          "location": "India (city not stated)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Seven-year minimum is above candidate experience.",
+        "Contradictory careers-page sections require recruiter confirmation.",
+        "US Systems Analyst salary on this page does not apply to India Pega roles."
+      ]
+    },
+    {
+      "name": "Adqura",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Pega sponsor roster identifies Adqura decisioning and CDH modernization.",
+          "source_url": "https://www.pega.com/events/pegaworld/sponsors",
+          "source_title": "PegaWorld 2026 sponsors",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "event",
+          "access": "page",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Employer describes decision architecture, real-time integration and machine-learning work, with teams including India.",
+          "source_url": "https://www.adqura.com/careers/",
+          "source_title": "Adqura careers",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [],
+      "limitations": [
+        "General careers invitation is not a confirmed specific vacancy.",
+        "No Bengaluru project or India remote policy established."
+      ]
+    },
+    {
+      "name": "Eclantiqx",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Official careers index lists Pega BA, CSSA, CLSA and decisioning roles in Hyderabad.",
+          "source_url": "https://www.eclantiqx.com/careers/",
+          "source_title": "Eclantiqx careers",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Employer careers index shows CSSA role with apply link; direct opening returned an internal tool error, so current status has not been page-verified.",
+          "url": "https://www.eclantiqx.com/careers/",
+          "title": "Pega Certified Senior System Architect",
+          "location": "Hyderabad",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Employer naming overlaps Eclatprime and Lantiqx in public posts; legal-employer identity should be confirmed, not automatically merged.",
+        "Search-index access only; no salary or experience range confirmed."
+      ]
+    },
+    {
+      "name": "Lantiqx",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Company hiring post describes expansion of Pega and AI delivery.",
+          "source_url": "https://www.linkedin.com/posts/lantiqx_pega-pegaclm-kyc-activity-7453048211432288256-D5HC",
+          "source_title": "Lantiqx Pega and AI hiring",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Company recruiting post explicitly includes Bangalore for Pega SSA/LSA roles.",
+          "source_url": "https://www.linkedin.com/posts/lantiqx_pega-pegaclm-kyc-activity-7453048211432288256-D5HC",
+          "source_title": "Lantiqx India hiring",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Imthiyaz Basha Gounda",
+          "title": null,
+          "employer_as_stated": "Lantiqx",
+          "location_as_stated": "United Kingdom profile; Bangalore not established",
+          "profile_url": "https://uk.linkedin.com/in/imthiyazbasha",
+          "source_url": "https://uk.linkedin.com/in/imthiyazbasha",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Profile associates him with Lantiqx and shares company Pega CLM/KYC and Constellation hiring. Shared posts are recorded as company signals, not his personal project delivery.",
+          "work_summary": "Profile associates him with Lantiqx and shares company Pega CLM/KYC and Constellation hiring. Shared posts are recorded as company signals, not his personal project delivery.",
+          "limitations": "Public profile self-description; dates/current assignment are not independently confirmed. Liked/reposted activity is not attributed as personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "recruiter_post",
+          "description": "Company post lists India roles including Bangalore; indexed age about four months, so it is a hiring lead requiring current confirmation.",
+          "url": "https://www.linkedin.com/posts/lantiqx_pega-pegaclm-kyc-activity-7453048211432288256-D5HC",
+          "title": "Pega SSA / LSA",
+          "location": "Mumbai, Pune, Bangalore, Chennai",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        },
+        {
+          "kind": "recruiter_post",
+          "description": "Company post asks CSSA, 4–8 years, immediate to 30-day notice. Indexed as about six months old.",
+          "url": "https://www.linkedin.com/posts/lantiqx_pega-constellation-pega-activity-7429932604717486081-IiMt",
+          "title": "Pega Constellation professionals",
+          "location": "Not stated in this post",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Recruiting posts are signals, not live requisition verification.",
+        "Need Constellation or CLM/KYC skill evidence, current notice compatibility and India employment details."
+      ]
+    },
+    {
+      "name": "ai4process",
+      "category": "services",
+      "aliases": [
+        "ai4Process"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer describes Pega Infinity, Constellation and GenAI delivery alongside Camunda and Blue Prism. India offices are Chennai and Bhubaneswar.",
+          "source_url": "https://ai4process.com/",
+          "source_title": "ai4process official practice",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Public employer job has Apply and asks 5+ Pega years with mandatory KYC domain knowledge; immediate to 30 days preferred.",
+          "url": "https://in.linkedin.com/jobs/view/senior-system-architect-at-ai4process-4441172384",
+          "title": "Senior System Architect",
+          "location": "Chennai preferred; Hyderabad alternative",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Search index states two weeks old but no absolute posting date verified.",
+        "Five-year and KYC minimums exceed proven candidate evidence; Bengaluru and remote not established."
+      ]
+    },
+    {
+      "name": "Cognitonic Systems",
+      "category": "services",
+      "aliases": [
+        "Cognitonic"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer public post advertises Pega business-analysis and workflow work in banking, insurance and government.",
+          "source_url": "https://www.linkedin.com/posts/cognitonic-systems_hiring-businessarchitect-businessanalyst-activity-7479810754779533312-bgrK",
+          "source_title": "Cognitonic business architect hiring",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "balu arigela",
+          "title": null,
+          "employer_as_stated": "Cognitonic Systems",
+          "location_as_stated": "Hyderabad, Telangana, India",
+          "profile_url": "https://in.linkedin.com/in/balu-arigela-a1013a129",
+          "source_url": "https://in.linkedin.com/in/balu-arigela-a1013a129",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own profile lists Cognitonic and CSA/CSSA credentials; authored Pega class explanation. Liked vacancy content is not employer evidence.",
+          "work_summary": "Own profile lists Cognitonic and CSA/CSSA credentials; authored Pega class explanation. Liked vacancy content is not employer evidence.",
+          "limitations": "Public profile self-description; dates/current assignment are not independently confirmed. Liked/reposted activity is not attributed as personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "recruiter_post",
+          "description": "Company post seeks 3–5 years BA/business-architect experience and experience or willingness to use Pega. Indexed age one month; current vacancy unverified.",
+          "url": "https://www.linkedin.com/posts/cognitonic-systems_hiring-businessarchitect-businessanalyst-activity-7479810754779533312-bgrK",
+          "title": "Business Architect",
+          "location": "Hyderabad, India",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "This is an adjacent BA track; developer background does not establish required BA experience.",
+        "No Bengaluru team or remote eligibility established."
+      ]
+    },
+    {
+      "name": "Accenture",
+      "category": "services",
+      "aliases": [
+        "Accenture in India"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer Pega Platform software engineering role includes application development, integration and troubleshooting.",
+          "source_url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5686136-S2065415_en",
+          "source_title": "Accenture Pega Platform Senior Analyst",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Multiple own professional profiles list Accenture Bengaluru with Pega credentials and work.",
+          "source_url": "https://in.linkedin.com/in/rachana-jayasimha-a668a54b",
+          "source_title": "Rachana Jayasimha profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Krishna Singhal describes representing Accenture at a PegaWorld legacy-modernization session with Nationwide leaders. This does not identify every Bangalore client team.",
+          "source_url": "https://in.linkedin.com/in/krishna-singhal-38920413",
+          "source_title": "Krishna Singhal PegaWorld account",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Rachana Jayasimha",
+          "title": null,
+          "employer_as_stated": "Accenture",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/rachana-jayasimha-a668a54b",
+          "source_url": "https://in.linkedin.com/in/rachana-jayasimha-a668a54b",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About states Pega CSSA and Pega 8.x knowledge.",
+          "work_summary": "Own About states Pega CSSA and Pega 8.x knowledge.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        },
+        {
+          "name": "Nirosha R",
+          "title": "Pega Developer (About)",
+          "employer_as_stated": "Accenture",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/niroshahh",
+          "source_url": "https://in.linkedin.com/in/niroshahh",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own project section lists Rabo Bank from Aug 2026 and older Apria Healthcare Pega PRPC/Customer Service development. Old Apria description still says currently; employer/project recency is therefore not fully resolved.",
+          "work_summary": "Own project section lists Rabo Bank from Aug 2026 and older Apria Healthcare Pega PRPC/Customer Service development. Old Apria description still says currently; employer/project recency is therefore not fully resolved.",
+          "limitations": "A former-employer departure statement is not a replacement-vacancy signal. Rabobank project entry does not establish Pega scope in that new assignment."
+        },
+        {
+          "name": "Krishna Singhal",
+          "title": null,
+          "employer_as_stated": "Accenture",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/krishna-singhal-38920413",
+          "source_url": "https://in.linkedin.com/in/krishna-singhal-38920413",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Describes Accenture/Nationwide legacy-modernization PegaWorld appearance; profile lists CSA and CPBA.",
+          "work_summary": "Describes Accenture/Nationwide legacy-modernization PegaWorld appearance; profile lists CSA and CPBA.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        },
+        {
+          "name": "Harini Murali",
+          "title": "Senior Software Engineer (About)",
+          "employer_as_stated": "Accenture in India",
+          "location_as_stated": "Experience: Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/harini-murali-3004a1188",
+          "source_url": "https://in.linkedin.com/in/harini-murali-3004a1188",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own experience identifies Accenture and Pega LSA Part 1 V25 certification dated June 2026.",
+          "work_summary": "Own experience identifies Accenture and Pega LSA Part 1 V25 certification dated June 2026.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "ATCI-5686136-S2065415, senior analyst, 2–5 band and minimum 3 Pega years. Search index shows Apply; direct tool open failed so availability remains unverified.",
+          "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5686136-S2065415_en",
+          "title": "Custom Software Engineer – Pega Platform",
+          "location": "Bengaluru",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "No public pay budget; cannot infer ₹20L or ₹35L from role title.",
+        "Similar job IDs across locales are not independent vacancies."
+      ]
+    },
+    {
+      "name": "Cognizant",
+      "category": "services",
+      "aliases": [
+        "Cognizant Technology Solutions"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer Pega whitepaper describes a Pega practice in its Enterprise Platform Group.",
+          "source_url": "https://www.cognizant.com/en_us/services/documents/cognizant-pega-whitepaper-will-the-real-ai-please-stand-up.pdf",
+          "source_title": "Cognizant Pega partnership whitepaper",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Pega partner showcase attributes an Auto Collections Blueprint and payment dispute workflows to Cognizant. This is a direct domain match for collections experience but not an open-team guarantee.",
+          "source_url": "https://www.pega.com/blueprint/partner-showcase",
+          "source_title": "Pega Blueprint partner showcase",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "event",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Apoorva N",
+          "title": null,
+          "employer_as_stated": "Cognizant",
+          "location_as_stated": "Profile: Bengaluru; Cognizant experience: Hyderabad",
+          "profile_url": "https://in.linkedin.com/in/apoorva-n-85898a216",
+          "source_url": "https://in.linkedin.com/in/apoorva-n-85898a216",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own certification list includes Pega CSA and Boomi Associate Integration Developer; client work not visible.",
+          "work_summary": "Own certification list includes Pega CSA and Boomi Associate Integration Developer; client work not visible.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "00070250921, dated September 7 2026, hybrid Chennai, 6–10 years Pega Robotics/applications. New source but experience and Robotics gaps are substantial; direct open failed.",
+          "url": "https://careers.cognizant.com/apj-en/jobs/00070250921/hiring-for-pega-prpc/",
+          "title": "Hiring for PEGA PRPC",
+          "location": "Chennai, hybrid",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-09-07",
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        },
+        {
+          "kind": "employer_job",
+          "description": "00068990833 indexed 4–6 Pega years and CLM/integration workflows; direct URL now returns 404, so excluded from confirmed vacancy counts. A 404 is not sufficient to establish why the page disappeared.",
+          "url": "https://careers.cognizant.com/emea-en/jobs/00068990833/developer/",
+          "title": "Developer – Pega",
+          "location": "Kolkata, hybrid",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-24",
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Framework/Robotics and location must be assessed per requisition.",
+        "One previously indexed role returned 404; never treat search-index Apply text alone as current availability."
+      ]
+    },
+    {
+      "name": "Capgemini",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Official India Pega practice covers customer service, engagement and process automation.",
+          "source_url": "https://www.capgemini.com/in-en/about-us/technology-partners/pega/",
+          "source_title": "Capgemini Pega practice",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Employer links its iQera Pega CRM debt-collection implementation and Wind Tre customer communication work using Pega, Adobe and Google Cloud. Bangalore ownership is not established.",
+          "source_url": "https://www.capgemini.com/in-en/about-us/technology-partners/pega/",
+          "source_title": "Capgemini Pega client stories",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "A professional profile lists Capgemini Bangalore and Pega CLSA/CDH credentials.",
+          "source_url": "https://in.linkedin.com/in/kshiroda-kumar-nayak-52460423",
+          "source_title": "Kshiroda Kumar Nayak profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Kshiroda Kumar Nayak",
+          "title": null,
+          "employer_as_stated": "Capgemini",
+          "location_as_stated": "Greater Bengaluru Area; experience: Bangalore Urban",
+          "profile_url": "https://in.linkedin.com/in/kshiroda-kumar-nayak-52460423",
+          "source_url": "https://in.linkedin.com/in/kshiroda-kumar-nayak-52460423",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About identifies Pega CLSA; Pega data-scientist and decisioning credentials visible.",
+          "work_summary": "Own About identifies Pega CLSA; Pega data-scientist and decisioning credentials visible.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Fresh practice evidence does not establish an available Bangalore requisition.",
+        "Client geography and current individual account allocation are unknown."
+      ]
+    },
+    {
+      "name": "Virtusa",
+      "category": "services",
+      "aliases": [
+        "VirtusaPolaris"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer vacancy specifies Pega Email Bot, CLM/KYC and Customer Service development.",
+          "source_url": "https://virtusapolaris.referrals.selectminds.com/jobs/pega-clm-78511",
+          "source_title": "Virtusa CREQ259726",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Employer requisition explicitly locates Pega CLM delivery in Bangalore.",
+          "source_url": "https://virtusapolaris.referrals.selectminds.com/jobs/pega-clm-78511",
+          "source_title": "Virtusa Pega CLM Bangalore",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "CREQ259726, readable employer ATS with Apply for Job; CSSA and minimum 7 Pega years.",
+          "url": "https://virtusapolaris.referrals.selectminds.com/jobs/pega-clm-78511",
+          "title": "Pega CLM – Lead Software Engineer",
+          "location": "Bangalore",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-10",
+          "access": "page",
+          "vacancy_confirmed": true,
+          "status": "page_available"
+        }
+      ],
+      "limitations": [
+        "Seven-year minimum makes this a team-demand signal, not a close four-year match.",
+        "No India salary or remote policy published."
+      ]
+    },
+    {
+      "name": "EY",
+      "category": "services",
+      "aliases": [
+        "Ernst & Young"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "PegaWorld 2026 lists EY as a sponsor; the historical healthcare consulting role references Pega care-management/workflow platforms.",
+          "source_url": "https://www.pega.com/events/pegaworld/sponsors",
+          "source_title": "PegaWorld 2026 sponsor roster",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "event",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Requisition 1697398 is explicitly unavailable on direct employer-page open. Historical indexed body said Noida even though URL said Bengaluru. Kept as closed evidence only.",
+          "url": "https://careers.ey.com/ey/job/Bengaluru-BC-sector-health-Senior-Health-Technology-KA-560016/1382320033/",
+          "title": "BC sector health – Senior Health Technology",
+          "location": "Noida in historical job body; Bengaluru URL conflicted",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-06",
+          "access": "page",
+          "vacancy_confirmed": false,
+          "status": "closed"
+        }
+      ],
+      "limitations": [
+        "Vacancy is closed.",
+        "Healthcare-domain advisory is not automatically a Pega developer match."
+      ]
+    },
+    {
+      "name": "Coforge",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "PegaWorld 2026 lists Coforge as sponsor.",
+          "source_url": "https://www.pega.com/events/pegaworld/sponsors",
+          "source_title": "PegaWorld 2026 sponsor roster",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "event",
+          "access": "page",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Own professional profiles list Coforge Bengaluru with Pega development/CSSA background.",
+          "source_url": "https://in.linkedin.com/in/guptaabhiraj4",
+          "source_title": "Abhiraj Gupta profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Abhiraj Gupta",
+          "title": null,
+          "employer_as_stated": "Coforge",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/guptaabhiraj4",
+          "source_url": "https://in.linkedin.com/in/guptaabhiraj4",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About identifies CSSA and Pega experience; liked Maantic hiring posts are not Coforge openings.",
+          "work_summary": "Own About identifies CSSA and Pega experience; liked Maantic hiring posts are not Coforge openings.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        },
+        {
+          "name": "Vaishnavi Y",
+          "title": "Pega Developer (About)",
+          "employer_as_stated": "Coforge",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/vaishnavi-y-107391197",
+          "source_url": "https://in.linkedin.com/in/vaishnavi-y-107391197",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About describes Pega 8.5 application development; client unspecified.",
+          "work_summary": "Own About describes Pega 8.5 application development; client unspecified.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "An aggregate LinkedIn list suggests Smart Investigate technical-lead demand, but no specific requisition was confirmed; not counted as a vacancy."
+      ]
+    },
+    {
+      "name": "Infosys",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer-branded Pega consulting listing describes configuration, solution demonstrations and small-project delivery.",
+          "source_url": "https://in.linkedin.com/jobs/view/s2r-eais-pega-q2-fy-27-at-infosys-4434606555",
+          "source_title": "Infosys Pega consulting job",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Ravichandra Hiremath profile explicitly lists Infosys Bengaluru and telecom Pega CSSA work.",
+          "source_url": "https://in.linkedin.com/in/ravichandra-hiremath",
+          "source_title": "Ravichandra Hiremath profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Ravichandra Hiremath",
+          "title": null,
+          "employer_as_stated": "Infosys",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/ravichandra-hiremath",
+          "source_url": "https://in.linkedin.com/in/ravichandra-hiremath",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own About describes CSSA with telecom-domain experience; no current client identified.",
+          "work_summary": "Own About describes CSSA with telecom-domain experience; no current client identified.",
+          "limitations": "Public self-description; project dates and current assignment not independently verified. Liked posts are not personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Public Infosys Pega consulting job 4434606555; years and salary not explicit in visible index. Direct check redirected with expired_jd_redirect to unrelated search results; this vacancy is treated as closed.",
+          "url": "https://in.linkedin.com/jobs/view/s2r-eais-pega-q2-fy-27-at-infosys-4434606555",
+          "title": "S2R_EAIS_Pega_Q2_FY 27",
+          "location": "Bengaluru East",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": false,
+          "status": "closed"
+        }
+      ],
+      "limitations": [
+        "Indexed-only role; exact minimum experience and current opening need confirmation."
+      ]
+    },
+    {
+      "name": "HCLTech",
+      "category": "services",
+      "aliases": [
+        "HCL Technologies"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer PegaWorld 2026 page describes agentic workflows and Pega process automation.",
+          "source_url": "https://www.hcltech.com/events/pegaworld",
+          "source_title": "HCLTech PegaWorld 2026",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Employer links APAC mortgage/loan and compliance transformations and names Achmea as a Pega customer example; delivery city not disclosed.",
+          "source_url": "https://www.hcltech.com/events/pegaworld",
+          "source_title": "HCLTech Pega client examples",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Pritiman Panda’s firsthand PegaFest 2024 Bengaluru post describes combining process mining, Blueprint and legacy modernization for customers.",
+          "source_url": "https://www.linkedin.com/posts/pritimanpanda_pegafest-pegagenaiblueprint-legacymodernization-activity-7272002526319652864--l0_",
+          "source_title": "Pritiman Panda PegaFest Bengaluru 2024",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Pritiman Panda",
+          "title": "Practice Director, Digital Business Services",
+          "employer_as_stated": "HCLTech",
+          "location_as_stated": "Bengaluru event participation; current work city not stated",
+          "profile_url": null,
+          "source_url": "https://www.linkedin.com/posts/pritimanpanda_pegafest-pegagenaiblueprint-legacymodernization-activity-7272002526319652864--l0_",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Firsthand post discusses process-mining/Blueprint approach; 2026 employer event page confirms practice-director title.",
+          "work_summary": "Firsthand post discusses process-mining/Blueprint approach; 2026 employer event page confirms practice-director title.",
+          "limitations": "Event attendance is not proof of present Bengaluru residence. Tagged attendees are not a current team roster."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Public employer-branded job asks 8–14 years with banking, Pega case management, SQL and API/Kafka/MQ mapping. Placeholder compensation wording gives no budget. Direct page shows matching HCLTech title/location and Apply.",
+          "url": "https://in.linkedin.com/jobs/view/urgent-opening-for-pega-ba-for-bangalore-at-hcltech-4444873803",
+          "title": "Pega BA",
+          "location": "Bengaluru",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": true,
+          "status": "page_available"
+        }
+      ],
+      "limitations": [
+        "Eight-year minimum exceeds current experience; role is BA, not general development.",
+        "No current headcount inferred from conference attendance."
+      ]
+    },
+    {
+      "name": "Truviq Systems",
+      "category": "services",
+      "aliases": [
+        "Truviq"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer ATS advertises Pega CSSA, Constellation, release engineering and Camunda roles.",
+          "source_url": "https://truviqsystems.zohorecruit.in/jobs/careers",
+          "source_title": "Truviq employer ATS",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Recruiting post lists Bangalore for Pega development; own ATS lists Bangalore among CSSA India cities.",
+          "source_url": "https://www.linkedin.com/posts/manvitha-kamuni-13548620b_hiring-truviqsystems-pegadeveloper-activity-7490282776424878080-CH8W",
+          "source_title": "Manvitha Kamuni Truviq hiring",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "recruiter_post",
+          "description": "Readable recruiter post states 4+ years, mandatory one year Constellation, onsite, immediate to 15-30 days. Relative age is six days on the page; no absolute date verified. It is a recruiting signal, not an independently confirmed requisition.",
+          "url": "https://www.linkedin.com/posts/manvitha-kamuni-13548620b_hiring-truviqsystems-pegadeveloper-activity-7490282776424878080-CH8W",
+          "title": "Pega CSSA Developer",
+          "location": "Bangalore plus Hyderabad, Chennai, Bhubaneswar, Gurugram, Pune and Noida",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        },
+        {
+          "kind": "employer_job",
+          "description": "Employer ATS search index lists CSSA India with 5+ years. Direct open rendered no job text; requires page verification.",
+          "url": "https://truviqsystems.zohorecruit.in/jobs/careers",
+          "title": "PEGA CSSA – India",
+          "location": "Hyderabad, Bangalore, Chennai, Pune",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        },
+        {
+          "kind": "employer_job",
+          "description": "Employer ATS index lists deployment coordination and Pega Cloud tooling; experience minimum not visible.",
+          "url": "https://truviqsystems.zohorecruit.in/jobs/careers",
+          "title": "Pega Release Engineer",
+          "location": "Hyderabad",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-23",
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "The 4-year recruiting post and 5-year ATS listing may be different requisitions; do not merge their requirements.",
+        "Mandatory Constellation is not yet proven in candidate background.",
+        "Salary absent; aggregator estimates are not a hiring budget."
+      ]
+    },
+    {
+      "name": "PegaOne",
+      "category": "services",
+      "aliases": [
+        "PegaOne Software Solutions"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer-branded role describes full lifecycle Pega delivery for insurance clients.",
+          "source_url": "https://in.linkedin.com/jobs/view/business-analyst-%2B-senior-pega-test-engineer-at-pegaone-4436725773",
+          "source_title": "PegaOne BA and Pega Test Engineer",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "Company post advertises Pega SSA/LSA positions in Bangalore hybrid.",
+          "source_url": "https://www.linkedin.com/company/pegaone",
+          "source_title": "PegaOne company recruiting posts",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        },
+        {
+          "type": "employee_move",
+          "text": "Company welcome announcements show new hires, but do not disclose their teams or create evidence of an unfilled replacement role.",
+          "source_url": "https://www.linkedin.com/company/pegaone",
+          "source_title": "PegaOne company hiring announcements",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Vinoth Sadayappan",
+          "title": null,
+          "employer_as_stated": "PegaOne",
+          "location_as_stated": "Vaterstetten, Bavaria, Germany",
+          "profile_url": "https://de.linkedin.com/in/vinoth-sadayappan",
+          "source_url": "https://de.linkedin.com/in/vinoth-sadayappan",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own profile identifies PegaOne; shares company recruiting material. Current project responsibilities not public.",
+          "work_summary": "Own profile identifies PegaOne; shares company recruiting material. Current project responsibilities not public.",
+          "limitations": "Public self-description; dates and current assignment not independently verified. Liked content is not attributed as personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "India-location employer-branded listing explicitly says Remote/full time; requires insurance-domain BA and test ownership. Source is index only; direct careers portal was unavailable to this tool.",
+          "url": "https://in.linkedin.com/jobs/view/business-analyst-%2B-senior-pega-test-engineer-at-pegaone-4436725773",
+          "title": "Business Analyst + Senior Pega Test Engineer",
+          "location": "India – Remote",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        },
+        {
+          "kind": "recruiter_post",
+          "description": "Company post says Bangalore hybrid, without a visible current requisition or salary range.",
+          "url": "https://www.linkedin.com/company/pegaone",
+          "title": "Pega Senior System Architect",
+          "location": "Bangalore – Hybrid",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Remote eligibility is role-specific; Bangalore SSA post is hybrid.",
+        "BA/testing vacancy is an adjacent skill track and not automatically a fit for developer experience.",
+        "No unfilled vacancy inferred from welcome/new-hire posts."
+      ]
+    },
+    {
+      "name": "Inadev",
+      "category": "services",
+      "aliases": [
+        "INADEV"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Production employer India careers index lists a Pega Customer Service developer role.",
+          "source_url": "https://www.inadev.com/careers/india-jobs/",
+          "source_title": "Inadev India jobs",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Mithun R",
+          "title": null,
+          "employer_as_stated": "Inadev",
+          "location_as_stated": "Current employer experience: Asia; older entries Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/mithun-r-a13a501a6",
+          "source_url": "https://in.linkedin.com/in/mithun-r-a13a501a6",
+          "checked_at": "2026-09-08",
+          "access": "search_index",
+          "pega_connection": "Own profile lists Inadev and CSSA/CSA plus decisioning credentials; detailed current project is not visible.",
+          "work_summary": "Own profile lists Inadev and CSSA/CSA plus decisioning credentials; detailed current project is not visible.",
+          "limitations": "Public self-description; dates and current assignment not independently verified. Liked content is not attributed as personal work."
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Production employer India jobs search index states Full Time, Pan India, Remote and Apply Now. Direct open returned 403, so current opening and minimum experience remain unverified.",
+          "url": "https://www.inadev.com/careers/india-jobs/",
+          "title": "Pega CS Developer",
+          "location": "Pan India – Remote",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "India remote is explicitly indexed; team, shift, years, salary and client allocation remain unknown.",
+        "Staging-site duplicate was rejected in favor of the production domain.",
+        "Do not equate older Bengaluru jobs on a profile with a current Inadev Bengaluru team."
+      ]
+    },
+    {
+      "name": "Hesso Digital",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer careers page advertises Pega BPM/DX API architecture alongside front-end and product work.",
+          "source_url": "https://www.hessodigital.com/careers",
+          "source_title": "Hesso Digital careers",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Employer describes client delivery plus its own products realIQ, EMIdaddy, Hekla and AURA. It does not say these products are built on Pega.",
+          "source_url": "https://www.hessodigital.com/careers",
+          "source_title": "Hesso Digital work model",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Employer page lists Pega Architect, full-time Hyderabad, Pega BPM/DX API, with Apply linking to its contact form. No requisition date, salary or required years disclosed.",
+          "url": "https://www.hessodigital.com/careers",
+          "title": "Pega Architect",
+          "location": "Hyderabad",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": true,
+          "status": "page_available"
+        }
+      ],
+      "limitations": [
+        "Remote applies to its front-end/design roles, not its Pega Architect listing.",
+        "General contact-form application may be evergreen; confirm budget, level and client before prioritizing."
+      ]
+    },
+    {
+      "name": "Ultimech",
+      "category": "services",
+      "aliases": [],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer careers page lists Pega CSSA, marketing, practice and business-architecture roles; EU language restrictions are explicit.",
+          "source_url": "https://www.ultimech.com/index.php/careers/job-opportunities/",
+          "source_title": "Ultimech job opportunities",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Role-specific employer page explicitly allows remote work from India, requests 5+ years plus Azure Logic/Function Apps, C# and BizTalk; directs applicants to employer email. Adjacent integration track with substantial stack gaps.",
+          "url": "https://www.ultimech.com/index.php/careers/job-opportunities/azure-integration-lead-india-remote/",
+          "title": "Azure Integration Lead",
+          "location": "India – Remote",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": true,
+          "status": "page_available"
+        },
+        {
+          "kind": "employer_job",
+          "description": "Employer list explicitly says India/all locations, but role-specific detail failed to load and work-from-home is not stated for this Pega role.",
+          "url": "https://www.ultimech.com/index.php/careers/job-opportunities/",
+          "title": "Senior Pega Marketing Developer",
+          "location": "India (all locations)",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Remote Azure integration is not evidence that Pega roles permit India remote.",
+        "Older-looking undated page; exact requisition freshness must be confirmed.",
+        "EU-language Pega contracts do not establish India eligibility."
+      ]
+    },
+    {
+      "name": "EPAM Systems",
+      "category": "services",
+      "aliases": [
+        "EPAM"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "Employer index describes Pega API development, reusable components and workflow engineering.",
+          "source_url": "https://careers.epam.com/en/vacancy/senior-software-engineer-pega-bltrtvmhku5aou9dk37_en",
+          "source_title": "EPAM Senior Software Engineer – Pega",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "employer",
+          "access": "search_index",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Official indexed job lists Hyderabad, 5–10 overall years and 5+ Pega years; direct page access returned a cache miss.",
+          "url": "https://careers.epam.com/en/vacancy/senior-software-engineer-pega-bltrtvmhku5aou9dk37_en",
+          "title": "Senior Software Engineer – Pega",
+          "location": "Hyderabad, India",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "Five-year minimum is above current experience.",
+        "This Hyderabad page does not establish India remote eligibility."
+      ]
+    },
+    {
+      "name": "labb",
+      "category": "global",
+      "aliases": [
+        "Labb Consulting"
+      ],
+      "claims": [
+        {
+          "type": "pega_usage",
+          "text": "PegaWorld 2026 describes labb’s Constellation and agentic delivery practice.",
+          "source_url": "https://www.pega.com/events/pegaworld/sponsors",
+          "source_title": "PegaWorld 2026 sponsors",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "source_kind": "event",
+          "access": "page",
+          "confidence": "direct"
+        }
+      ],
+      "people": [],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "description": "Employer-branded New York listing asks 7+ years, CLSA Parts 1/2 and mandatory US citizenship or Green Card; not India-eligible. US base pay is not an India CTC comparison.",
+          "url": "https://www.linkedin.com/jobs/view/pega-lead-system-architect-at-labb-4404568586",
+          "title": "Pega Lead System Architect",
+          "location": "NYC / Dallas / DC / Boston, US – hybrid and travel",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "vacancy_confirmed": false,
+          "status": "unverified"
+        }
+      ],
+      "limitations": [
+        "US residency/work-authorization constraint excludes this role for India-based remote search.",
+        "No suitable current India role established; international brand presence alone is insufficient."
+      ]
+    }
+  ]
+}

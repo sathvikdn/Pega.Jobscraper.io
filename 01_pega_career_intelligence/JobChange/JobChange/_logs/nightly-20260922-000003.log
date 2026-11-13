@@ -1,0 +1,40 @@
+2026-09-22 00:00:03,398  INFO      ============================================================
+2026-09-22 00:00:03,398  INFO      NIGHTLY SCAN STARTING
+2026-09-22 00:00:03,399  INFO      ============================================================
+2026-09-22 00:00:03,606  ERROR     Nightly scan crashed: Port is occupied by a service without a valid health endpoint
+Traceback (most recent call last):
+  File "C:\Users\DNSATHV\Desktop\calude\JobChange\JobChange\nightly_scan.py", line 164, in _start_portal_server
+    with urllib.request.urlopen(f'http://127.0.0.1:{port}/api/health',timeout=5) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DNSATHV\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DNSATHV\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DNSATHV\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DNSATHV\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DNSATHV\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\DNSATHV\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: NOT FOUND
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DNSATHV\Desktop\calude\JobChange\JobChange\nightly_scan.py", line 44, in run_nightly
+    _start_portal_server()
+  File "C:\Users\DNSATHV\Desktop\calude\JobChange\JobChange\nightly_scan.py", line 171, in _start_portal_server
+    raise RuntimeError('Port is occupied by a service without a valid health endpoint') from error
+RuntimeError: Port is occupied by a service without a valid health endpoint
+2026-09-22 00:00:03,640  INFO      Total runtime: 0.0 minutes
+2026-09-22 00:00:03,640  INFO      Log saved to: C:\Users\DNSATHV\Desktop\calude\JobChange\JobChange\_logs\nightly-20260922-000003.log
+2026-09-22 00:00:03,641  INFO      ============================================================
+2026-09-22 00:00:03,641  INFO      NIGHTLY SCAN COMPLETE — starting portal server
+2026-09-22 00:00:03,641  INFO      ============================================================

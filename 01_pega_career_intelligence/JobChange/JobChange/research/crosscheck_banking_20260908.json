@@ -1,0 +1,795 @@
+{
+  "research_date": "2026-09-08",
+  "scope": "Bounded additive verification of five banking employers against preserved older observations; public pages and search indexes only.",
+  "queries": [
+    {
+      "id": "bank-q01",
+      "query": "site.pega.com Commonwealth Bank 200 models customer engagement engine 2025 2026",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "Found Pega customer case study with 200 models; did not establish a 2026 model inventory."
+    },
+    {
+      "id": "bank-q02",
+      "query": "site.wellsfargojobs.com Pega Smart Investigate Payments Bangalore",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "Returned the general employer Bengaluru search page; no readable matching Pega vacancy established."
+    },
+    {
+      "id": "bank-q03",
+      "query": "site.pega.com JPMorgan sanctions 9 million 99% Brian Gashi",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "Found official 2024 sanctions session and its transcript."
+    },
+    {
+      "id": "bank-q04",
+      "query": "site.pega.com ANZ Pega Cloud modernization Andrew Calyvopoulos",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "Found official modernization case study, 2025 session and a public profile index."
+    },
+    {
+      "id": "bank-q05",
+      "query": "First Citizens Pega Robot Manager collections Bengaluru Software Engineer 24759",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "This combined search batch did not expose a useful matching result sufficient to verify the older assertion."
+    },
+    {
+      "id": "bank-q06",
+      "query": "\"Wells Fargo\" \"Smart Investigate\" Pega LinkedIn",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "This combined search batch did not expose a precise employer or professional result proving Smart Investigate allocation."
+    },
+    {
+      "id": "bank-q07",
+      "query": "site:linkedin.com/in \"Commonwealth Bank\" \"Pega\" \"Bengaluru\" architect",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "Found public profile-index records with CBA experience and Pega skills; some expose historical projects."
+    },
+    {
+      "id": "bank-q08",
+      "query": "site:linkedin.com/in \"ANZ\" \"Pega\" \"Bengaluru\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "No additional precise ANZ Bengaluru professional was established from this batch."
+    },
+    {
+      "id": "bank-q09",
+      "query": "site:pega.com \"Wells Fargo\" \"2026\" \"Richardson\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "Found official 2026 keynote agenda and recording page; confirms CDH context, not Bengaluru assignment."
+    },
+    {
+      "id": "bank-q10",
+      "query": "site:pega.com \"First Citizens\" \"Collections\" \"Sanjoy\"",
+      "checked_at": "2026-09-08",
+      "source": "web search",
+      "operation": "search",
+      "outcome": "Found official 2026 session and 2023 automation transcript."
+    },
+    {
+      "id": "bank-o01",
+      "query": "https://www.pega.com/customers/cba-marketing",
+      "url": "https://www.pega.com/customers/cba-marketing",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Read official case-study body."
+    },
+    {
+      "id": "bank-o02",
+      "query": "https://www.pega.com/customers/anz-bank-platform",
+      "url": "https://www.pega.com/customers/anz-bank-platform",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Read official case-study body."
+    },
+    {
+      "id": "bank-o03",
+      "query": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+      "url": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Read official session body and transcript."
+    },
+    {
+      "id": "bank-o04",
+      "query": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+      "url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Official session page opened; indexed agenda text also available."
+    },
+    {
+      "id": "bank-o05",
+      "query": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+      "url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Official recording page opened; descriptive text available."
+    },
+    {
+      "id": "bank-o06",
+      "query": "https://in.linkedin.com/in/anjana-a-304bb465",
+      "url": "https://in.linkedin.com/in/anjana-a-304bb465",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Direct open failed with Internal Error; professional observations use only the earlier public search index."
+    },
+    {
+      "id": "bank-o07",
+      "query": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+      "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Employer Workday page returned zero readable lines; active opening and requirements not reverified."
+    },
+    {
+      "id": "bank-o08",
+      "query": "https://www.pega.com/es/insights/resources/pegaworld-inspire-2023-digital-automation-first-citizens-bank",
+      "url": "https://www.pega.com/es/insights/resources/pegaworld-inspire-2023-digital-automation-first-citizens-bank",
+      "checked_at": "2026-09-08",
+      "source": "web page",
+      "operation": "open",
+      "outcome": "Read official historical transcript, including technology, scope and named leaders."
+    }
+  ],
+  "companies": [
+    {
+      "name": "Commonwealth Bank",
+      "category": "gcc",
+      "aliases": [
+        "CBA",
+        "Commonwealth Bank of Australia",
+        "CommBank"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "The official case study supports historical CDH-powered next-best conversations and reports exactly 200 models. It does not establish a current 2026 model count, the payments/home-loans/AML bundle, or Bengaluru ownership of that programme.",
+          "source_url": "https://www.pega.com/customers/cba-marketing",
+          "source_title": "Commonwealth Bank of Australia: Exceeding customer expectations with personalized conversations",
+          "source_kind": "vendor_case_study",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Payments, home loans, AML, CDH with 200+ ML models. Real-time NBA decisioning across retail banking.",
+          "previous_source": "portal/research/master_catalog.json; preserved directory.json historical snapshot",
+          "verdict": "partially_supported",
+          "source_period": "Historical case study; publication date not displayed in the opened body"
+        },
+        {
+          "type": "project",
+          "text": "The published CBA result spans 18 channels and reports sub-200-millisecond decisions. This is useful evidence of decisioning scale, not a present-day team census.",
+          "source_url": "https://www.pega.com/customers/cba-marketing",
+          "source_title": "Commonwealth Bank of Australia: Exceeding customer expectations with personalized conversations",
+          "source_kind": "vendor_case_study",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Shabaz (Bharath)",
+          "title": null,
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/nayabshabazali",
+          "source_url": "https://in.linkedin.com/in/nayabshabazali",
+          "source_title": "Shabaz (Bharath) public professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Index describes Pega system-architecture experience and lists CSA/CSSA.",
+          "work_summary": "CBA appears in experience; exact current role was not exposed.",
+          "limitations": [
+            "Public search-index observation; no direct profile body or employment dates verified.",
+            "Profile geography and employer experience are separate observations; no current project allocation, team size or vacancy is inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Saranya M",
+          "title": null,
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/saranyamohan-profile",
+          "source_url": "https://in.linkedin.com/in/saranyamohan-profile",
+          "source_title": "Saranya M public professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Public index lists a Pega CSA credential.",
+          "work_summary": "CBA appears in experience. No named current bank project was exposed.",
+          "limitations": [
+            "Public search-index observation; no direct profile body or employment dates verified.",
+            "Profile geography and employer experience are separate observations; no current project allocation, team size or vacancy is inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Dhananjaya Reddy",
+          "title": null,
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/dhananjaya-reddy-aa6b35118",
+          "source_url": "https://in.linkedin.com/in/dhananjaya-reddy-aa6b35118",
+          "source_title": "Dhananjaya Reddy public professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Profile description identifies CSSA.",
+          "work_summary": "CBA experience is indexed; certification is individual skill evidence.",
+          "limitations": [
+            "Public search-index observation; no direct profile body or employment dates verified.",
+            "Profile geography and employer experience are separate observations; no current project allocation, team size or vacancy is inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Gurushankar C N",
+          "title": null,
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/gurushankar-c-n-a1752a47",
+          "source_url": "https://in.linkedin.com/in/gurushankar-c-n-a1752a47",
+          "source_title": "Gurushankar C N public professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Index lists CLSA, decisioning and CSSA credentials.",
+          "work_summary": "No current CBA project was established. Liked Kafka/Pega posts are excluded as personal project evidence.",
+          "limitations": [
+            "Public search-index observation; no direct profile body or employment dates verified.",
+            "Profile geography and employer experience are separate observations; no current project allocation, team size or vacancy is inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Gopicharan Chiluka",
+          "title": null,
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bangalore Urban",
+          "profile_url": "https://in.linkedin.com/in/gopicharan-chiluka-549b771a3",
+          "source_url": "https://in.linkedin.com/in/gopicharan-chiluka-549b771a3",
+          "source_title": "Gopicharan Chiluka public professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Index lists Pega decisioning and system-architect credentials.",
+          "work_summary": "CBA appears in experience; exact current title was not exposed.",
+          "limitations": [
+            "Public search-index observation; no direct profile body or employment dates verified.",
+            "Profile geography and employer experience are separate observations; no current project allocation, team size or vacancy is inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Anjana A",
+          "title": "Senior Pega Developer (self-description)",
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/anjana-a-304bb465",
+          "source_url": "https://in.linkedin.com/in/anjana-a-304bb465",
+          "source_title": "Anjana A public professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Public profile description identifies Pega development.",
+          "work_summary": "A project entry dated November 2019 describes Trebla Smart POS merchant onboarding and maintenance applications for CBA. Treat this as historical project evidence.",
+          "limitations": [
+            "Public search-index observation; no direct profile body or employment dates verified.",
+            "Profile geography and employer experience are separate observations; no current project allocation, team size or vacancy is inferred.",
+            "Direct profile open failed; the project entry was available in the public search index.",
+            "The project date does not establish current team membership or that all CBA Pega engineers work on Trebla."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Resmi Raveendran",
+          "title": "Transformation architect / Pega techno-manager (self-description)",
+          "employer_as_stated": "Commonwealth Bank",
+          "location_as_stated": "Bengaluru",
+          "profile_url": "https://in.linkedin.com/in/resmi-raveendran",
+          "source_url": "https://in.linkedin.com/in/resmi-raveendran",
+          "source_title": "Resmi Raveendran public professional profile",
+          "source_kind": "professional_profile",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "search_index",
+          "pega_connection": "Profile describes Pega technical and managerial experience.",
+          "work_summary": "This strengthens the older professional association but does not verify a precise current platform-lead appointment.",
+          "limitations": [
+            "Public search-index observation; no direct profile body or employment dates verified.",
+            "Profile geography and employer experience are separate observations; no current project allocation, team size or vacancy is inferred."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "The older 10–15 team-size and stable-team descriptions were not independently verified.",
+        "Skills and indexed CBA experience are not proof that every named person currently belongs to the same Bengaluru Pega team.",
+        "No compensation figure or active opening was established in this pass."
+      ]
+    },
+    {
+      "name": "Wells Fargo",
+      "category": "gcc",
+      "aliases": [
+        "Wells Fargo Bank"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "This pass did not verify the older payments/Smart Investigate bundle. The official 2026 source instead documents Customer Decision Hub in marketing; it cannot substantiate a different payments team or its Bengaluru allocation.",
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+          "source_title": "PegaWorld 2026 Wells Fargo keynote: 70 million customers. 6 billion decisions. Zero guesswork.",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-09",
+          "confidence": "direct",
+          "previous_claim": "Pega Smart Investigate for Payments, Swift Payments/Wires processing, Payment investigations framework, Pega GenAI-powered workflow solutions.",
+          "previous_source": "portal/research/master_catalog.json; preserved directory.json historical snapshot",
+          "verdict": "not_verified"
+        },
+        {
+          "type": "project",
+          "text": "The 2026 keynote describes CDH-based personalization at six billion customer interactions per month and discusses an agentic-marketing direction. A programme description does not prove an approved engineering vacancy.",
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+          "source_title": "PegaWorld 2026 Wells Fargo keynote: 70 million customers. 6 billion decisions. Zero guesswork.",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-09",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Marcia Osborne",
+          "title": "Consumer Banking and Lending Marketing Senior Executive",
+          "employer_as_stated": "Wells Fargo",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+          "source_title": "PegaWorld 2026 Wells Fargo keynote: 70 million customers. 6 billion decisions. Zero guesswork.",
+          "source_kind": "event",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Named participant in an official Pega customer session.",
+          "work_summary": "Speaker on the bank’s CDH marketing programme.",
+          "limitations": [
+            "Role is attributed to the dated session; current employment and local delivery allocation are unverified."
+          ],
+          "source_period": "PegaWorld 2026",
+          "crosschecked": true
+        },
+        {
+          "name": "Giles Richardson",
+          "title": "Executive Vice President of Marketing Strategy and Delivery",
+          "employer_as_stated": "Wells Fargo",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-2026-wells-fargo-keynote-70-million-customers-6-billion-decisions-zero",
+          "source_title": "PegaWorld 2026 Wells Fargo keynote: 70 million customers. 6 billion decisions. Zero guesswork.",
+          "source_kind": "event",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Named participant in an official Pega customer session.",
+          "work_summary": "Co-speaker on CDH marketing transformation.",
+          "limitations": [
+            "Role is attributed to the dated session; current employment and local delivery allocation are unverified."
+          ],
+          "source_period": "PegaWorld 2026",
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "No fresh payment-platform job description was retrieved in this bounded pass.",
+        "Older 20+ headcount and actively-growing labels remain unverified observations.",
+        "Named keynote leaders are global programme evidence; local reporting lines and current vacancies are unknown."
+      ]
+    },
+    {
+      "name": "JPMorgan Chase & Co.",
+      "category": "gcc",
+      "aliases": [
+        "JPMorgan Chase",
+        "JPMC",
+        "J.P. Morgan"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "The 2024 transcript supports Pega-based sanctions/client-screening workflows and payment investigations. It does not establish this exact WKO/CIB programme label or the 180+ country figure.",
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+          "source_title": "PegaWorld iNspire 2024: Managing Sanctions Alerts with AI at Scale",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Wholesale KYC Operations (WKO) - client onboarding, due diligence, KYC automation across 180+ countries. Low-code platform development for CIB.",
+          "previous_source": "portal/research/master_catalog.json; preserved directory.json historical snapshot",
+          "verdict": "partially_supported",
+          "source_period": "PegaWorld 2024"
+        },
+        {
+          "type": "crosscheck",
+          "text": "The official 2024 session supports nine million annual sanctions alerts and 99% straight-through processing specifically for false sanctions alerts. These are historical programme metrics, not a 2026 workforce or vacancy estimate.",
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+          "source_title": "PegaWorld iNspire 2024: Managing Sanctions Alerts with AI at Scale",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Around 9M sanctions alerts/year and 99% STP for false positives.",
+          "previous_source": "portal/Pega_Career_Intelligence_Hub.html; JPMC Global Sanctions Manager dossier / scale paragraph",
+          "verdict": "supported",
+          "source_period": "PegaWorld 2024"
+        }
+      ],
+      "people": [
+        {
+          "name": "Brian Gashi",
+          "title": "Managing Director; Global Head of Sanctions and Client Screening Technology",
+          "employer_as_stated": "JPMorgan Chase",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+          "source_title": "PegaWorld iNspire 2024: Managing Sanctions Alerts with AI at Scale",
+          "source_kind": "event",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Named participant in an official Pega customer session.",
+          "work_summary": "Describes the Pega Global Sanctions Manager programme.",
+          "limitations": [
+            "Role is attributed to the dated session; current employment and local delivery allocation are unverified."
+          ],
+          "source_period": "PegaWorld 2024",
+          "crosschecked": true
+        },
+        {
+          "name": "Kate Stern Jones",
+          "title": "Product management / operations (speaker description)",
+          "employer_as_stated": "JPMorgan Chase",
+          "location_as_stated": "Tampa (2024 session)",
+          "profile_url": null,
+          "source_url": "https://www.pega.com/insights/resources/pegaworld-inspire-2024-managing-sanctions-alerts-ai-scale",
+          "source_title": "PegaWorld iNspire 2024: Managing Sanctions Alerts with AI at Scale",
+          "source_kind": "event",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Named participant in an official Pega customer session.",
+          "work_summary": "Describes franchise screening and case-management controls.",
+          "limitations": [
+            "Role is attributed to the dated session; current employment and local delivery allocation are unverified."
+          ],
+          "source_period": "PegaWorld 2024",
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Kate Stern Jones states Tampa in the historical transcript; this is not a Bengaluru lead.",
+        "The speaker transcript is dated 2024 and does not verify present roles.",
+        "The original 15+ team-size/growing labels and exact India project ownership were not established."
+      ]
+    },
+    {
+      "name": "First Citizens Bank",
+      "category": "gcc",
+      "aliases": [
+        "First Citizens",
+        "First Citizens India"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "The 2023 transcript supports Pega/robotics automation for equipment finance, corporate functions and fraud, including OCR and reconciliation. It does not name the exact Robot Manager product or verify this KYC claim.",
+          "source_url": "https://www.pega.com/es/insights/resources/pegaworld-inspire-2023-digital-automation-first-citizens-bank",
+          "source_title": "PegaWorld iNspire 2023: Digital Automation at First Citizens Bank",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Lending digital automation, Pega Robot Manager, KYC workflows.",
+          "previous_source": "portal/research/master_catalog.json; preserved directory.json historical snapshot",
+          "verdict": "partially_supported",
+          "source_period": "PegaWorld 2023"
+        },
+        {
+          "type": "project",
+          "text": "The June 2026 session describes equipment-finance servicing using Customer Service, Collections and CDH, from delinquency to litigation. An external remarketing portal is described as the next step, not a delivered feature.",
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "source_title": "First Citizens Bank: Turning Data into Decisions, Collections into Connections",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": "2026-06-09",
+          "confidence": "direct"
+        },
+        {
+          "type": "crosscheck",
+          "text": "A 2023 speaker said the in-house practice grew from one to four FTEs and intended to expand. That historical practice figure has no stated Bengaluru scope and cannot verify today’s 3–5 Bengaluru estimate.",
+          "source_url": "https://www.pega.com/es/insights/resources/pegaworld-inspire-2023-digital-automation-first-citizens-bank",
+          "source_title": "PegaWorld iNspire 2023: Digital Automation at First Citizens Bank",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Bengaluru Pega team size: 3–5; team growing.",
+          "previous_source": "portal/research/master_catalog.json; preserved First Citizens team snapshot",
+          "verdict": "not_verified",
+          "source_period": "PegaWorld 2023"
+        },
+        {
+          "type": "source_check",
+          "title": "Earlier First Citizens India requisition 24759",
+          "text": "The existing employer link was reopened but returned no readable job body. Requirements, location, application availability and current hiring status were not reverified.",
+          "source_url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "source_title": "First Citizens India Workday requisition 24759",
+          "source_kind": "employer",
+          "access": "unreadable",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "not_verified",
+          "confidence": "direct",
+          "location": null,
+          "salary": null,
+          "limitations": [
+            "Do not promote this observation to an active opening.",
+            "Preserve the earlier job observation separately with its own access/status/date."
+          ]
+        }
+      ],
+      "people": [
+        {
+          "name": "John Montoya",
+          "title": "Executive Director of Application Development and Support",
+          "employer_as_stated": "First Citizens Bank",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.pega.com/es/insights/resources/pegaworld-inspire-2023-digital-automation-first-citizens-bank",
+          "source_title": "PegaWorld iNspire 2023: Digital Automation at First Citizens Bank",
+          "source_kind": "event",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Named participant in an official Pega customer session.",
+          "work_summary": "In 2023, described responsibility for commercial technology and Pega support.",
+          "limitations": [
+            "Role is attributed to the dated session; current employment and local delivery allocation are unverified."
+          ],
+          "source_period": "PegaWorld 2023",
+          "crosschecked": true
+        },
+        {
+          "name": "Sanjoy Sarkar",
+          "title": "SVP, Senior Director; Head of Enterprise Workflow Automation & Robotics CoE",
+          "employer_as_stated": "First Citizens Bank",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "source_title": "First Citizens Bank: Turning Data into Decisions, Collections into Connections",
+          "source_kind": "event",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Named participant in an official Pega customer session.",
+          "work_summary": "Named leader presenting the equipment-finance programme.",
+          "limitations": [
+            "Role is attributed to the dated session; current employment and local delivery allocation are unverified."
+          ],
+          "source_period": "PegaWorld 2026",
+          "crosschecked": true
+        },
+        {
+          "name": "Justine Cook",
+          "title": "Director, Operations",
+          "employer_as_stated": "First Citizens Bank",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.pega.com/events/pegaworld/agenda/first-citizens-bank-turning-data-decisions-collections-connections",
+          "source_title": "First Citizens Bank: Turning Data into Decisions, Collections into Connections",
+          "source_kind": "event",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Named participant in an official Pega customer session.",
+          "work_summary": "Named operations co-speaker for the same programme.",
+          "limitations": [
+            "Role is attributed to the dated session; current employment and local delivery allocation are unverified."
+          ],
+          "source_period": "PegaWorld 2026",
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Robotics practice growth discussed in 2023 is not a current vacancy signal.",
+        "The event programme does not identify its Bengaluru delivery share or reporting manager.",
+        "No fresh salary or approved budget was established."
+      ],
+      "verification_attempts": [
+        {
+          "type": "verification_attempt",
+          "title": "Earlier First Citizens India requisition 24759",
+          "text": "The existing employer link was reopened but returned no readable job body. Requirements, location, application availability and current hiring status were not reverified.",
+          "source_url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "source_title": "First Citizens India Workday requisition 24759",
+          "source_kind": "employer",
+          "access": "unreadable",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "not_verified",
+          "confidence": "direct",
+          "location": null,
+          "salary": null,
+          "limitations": [
+            "Do not promote this observation to an active opening.",
+            "Preserve the earlier job observation separately with its own access/status/date."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ANZ Bank",
+      "category": "gcc",
+      "aliases": [
+        "ANZ",
+        "Australia and New Zealand Banking Group"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "text": "The official case study supports workflow modernization, Pega Cloud and automated DevOps with Deployment Manager. It names home lending, disputes and payments. It does not verify the older KYC/CDH/OpenShift bundle or its Bengaluru allocation.",
+          "source_url": "https://www.pega.com/customers/anz-bank-platform",
+          "source_title": "ANZ Bank future-proofs operations with Pega Cloud",
+          "source_kind": "vendor_case_study",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct",
+          "previous_claim": "Corporate KYC, BPM workflow automation, Pega CDH, DevOps/OpenShift deployments.",
+          "previous_source": "portal/research/master_catalog.json; preserved directory.json historical snapshot",
+          "verdict": "partially_supported",
+          "source_period": "Undated customer case study; linked to the 2025 modernization session"
+        },
+        {
+          "type": "project",
+          "text": "ANZ reports consolidating more than 20 applications into five stacks, a shared workflow used by 53 teams and a single platform CoE. These are application/business-team measures, not a count of Pega engineers. Blueprint was used for a fraud/scams workflow.",
+          "source_url": "https://www.pega.com/customers/anz-bank-platform",
+          "source_title": "ANZ Bank future-proofs operations with Pega Cloud",
+          "source_kind": "vendor_case_study",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Andrew Calyvopoulos",
+          "title": "Product Area Lead",
+          "employer_as_stated": "ANZ Bank",
+          "location_as_stated": "Greater Melbourne Area",
+          "profile_url": "https://au.linkedin.com/in/andrew-calyvopoulos-b4659746",
+          "source_url": "https://www.pega.com/customers/anz-bank-platform",
+          "source_title": "ANZ Bank future-proofs operations with Pega Cloud",
+          "source_kind": "vendor_case_study",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "access": "page",
+          "pega_connection": "Official customer case study names him as ANZ’s Product Area Lead.",
+          "work_summary": "Associated with ANZ’s Pega modernization account; profile geography comes from the public index.",
+          "limitations": [
+            "Role attribution comes from the case study; profile geography is indexed and may be stale.",
+            "Shared posts are not treated as his authored project report.",
+            "No Bengaluru delivery allocation was established."
+          ],
+          "field_sources": {
+            "title": {
+              "url": "https://www.pega.com/customers/anz-bank-platform",
+              "access": "page"
+            },
+            "employer_as_stated": {
+              "url": "https://www.pega.com/customers/anz-bank-platform",
+              "access": "page"
+            },
+            "location_as_stated": {
+              "url": "https://au.linkedin.com/in/andrew-calyvopoulos-b4659746",
+              "access": "search_index"
+            },
+            "profile_url": {
+              "url": "https://au.linkedin.com/in/andrew-calyvopoulos-b4659746",
+              "access": "search_index"
+            }
+          },
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "The 53 teams use a workflow; they are not 53 Pega development squads.",
+        "The original 3–5 Bengaluru team estimate and stable-team description were not verified.",
+        "Future agentic AI/orchestration plans are not established live deployments or vacancies."
+      ]
+    }
+  ],
+  "crosscheck_summary": {
+    "company_count": 5,
+    "web_action_count": 18,
+    "search_query_count": 10,
+    "page_open_count": 8,
+    "crosscheck_count": 7,
+    "claims_total": 11,
+    "professional_observation_count": 15,
+    "active_openings_confirmed": 0,
+    "preservation": "Additive input only. No original company, professional, project, movement or job observations were changed or removed.",
+    "method": "Compared precise preserved assertions with independently retrieved Pega customer/session sources and public LinkedIn index entries. Negative verdicts mean the bounded sources did not establish the assertion, not that the assertion is false.",
+    "materially_new_context": [
+      "CBA: historical Trebla Smart POS onboarding/maintenance project detail on Anjana A’s indexed profile, plus additional public professional leads.",
+      "ANZ: application-stack consolidation, shared workflow reach, Deployment Manager, consolidated CoE and Blueprint fraud/scams context.",
+      "First Citizens: 2023 OCR/reconciliation practice and historical leader John Montoya; separates historical global staffing from Bengaluru estimates.",
+      "JPMorgan: dated product/operations speaker Kate Stern Jones and narrow scope of the sanctions metrics."
+    ],
+    "limitations": [
+      "No current salary was verified.",
+      "Search indexes can be stale; certification and company experience do not establish current employment or local project allocation.",
+      "No departure was converted into a vacancy.",
+      "First Citizens Workday returned no readable body; Anjana’s direct profile open failed.",
+      "Professional records may already exist in the retained catalogue; observations are additions to evidence, not an asserted count of new people."
+    ],
+    "names_not_exactly_matched_in_saved_catalogue": [
+      "Shabaz (Bharath)",
+      "Saranya M",
+      "Dhananjaya Reddy",
+      "Gurushankar C N",
+      "Gopicharan Chiluka",
+      "Kate Stern Jones",
+      "John Montoya"
+    ],
+    "new_name_count_note": "Exact normalized-name comparison only; do not treat every unmatched spelling or new URL as a new person. Historical event participants remain historical."
+  }
+}

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch03 · Data Model, Data Pages, Declaratives, Decisioning | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch02_case_management_bpm.html">&larr; Chapter 02</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch04_ui_constellation_dx.html">Next: Chapter 04 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 03 &middot; Platform foundation</div>
+    <h1>Data Model, Data Pages, Declaratives &amp; Decisioning</h1>
+    <p class="subtitle">The case has a journey but no real data. This chapter gives it some: what a case should store and what it should only look up, why Pega saves a case as a BLOB and what that costs, how a data page fetches Dana's account once and shares it correctly between Marcus and Priya, how a savable page writes a change back and when the write actually commits, and then the rule types that derive, decide and validate: declaratives, data transforms, activities, decision tables, circumstancing and validation.</p>
+    <div class="meta">
+      <div><strong>17</strong><span>Sections</span></div>
+      <div><strong>12,334</strong><span>Words</span></div>
+      <div><strong>3</strong><span>Data page scopes</span></div>
+      <div><strong>10</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 02 ended with <code>AM-10417</code> travelling correctly from intake to resolution, but with the review screen showing nothing real: Dana's address and balances live in the core, and the case does not own them. This chapter makes the application able to fetch, hold, derive, decide on and validate that data. The scenario ledger is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <p>The first four sections settle what the case stores and how Pega stores it; the fifth, data pages, settles how the case gets everything else, and it is the centre of the chapter. The remaining sections cover the rule types that work on that data.</p>
+    <div class="toc">
+      <a href="#s3-1">3.1 What the case holds<span>Properties: modes, types, placement</span></a>
+      <a href="#s3-2">3.2 What the case only looks up<span>Data classes and data objects</span></a>
+      <a href="#s3-3">3.3 Exposed columns and the BLOB<span>How a case is saved, and what SQL can see</span></a>
+      <a href="#s3-4">3.4 Declare Index<span>Reporting on lists inside a case</span></a>
+      <a href="#s3-5">3.5 Data pages<span>One lookup, scope, refresh, writing back</span></a>
+      <a href="#s3-6">3.6 Declarative rules<span>Derived values that stay correct</span></a>
+      <a href="#s3-7">3.7 Data transforms<span>Setting and mapping data</span></a>
+      <a href="#s3-8">3.8 Activities<span>The procedural escape hatch</span></a>
+      <a href="#s3-9">3.9 Decision rules<span>Is this change sensitive?</span></a>
+      <a href="#s3-10">3.10 Circumstancing<span>North Carolina, and a state-exemption example</span></a>
+      <a href="#s3-11">3.11 Validation<span>Refusing bad data</span></a>
+      <a href="#s3-12">3.12 Reference data<span>Where parameters should live</span></a>
+      <a href="#s3-13">3.13 The deposits data model<span>The whole shape in one place</span></a>
+      <a href="#s3-14">3.14 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s3-recap">3.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s3-ref">3.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+  </section>
+
+  <section id="s3-1" class="pagebreak">
+    <h2>3.1 What the case holds: properties</h2>
+    <p>Marcus opens <code>AM-10417</code> and the review screen has to show the customer's name, the address on file, the requested address and the accounts involved. Before deciding how to fetch any of that, Sam has to decide what the case itself stores, because everything a rule reads or writes is a <strong>property</strong>: a named, typed field on a page of a given class. <code>.AccountNumber</code> on <code>FCB-Dep-Data-Account</code> is a property. A property rule defines the name, the <em>mode</em> (a single value, a list, a group, an embedded page), the <em>type</em> (text, integer, date and so on), validation hints, the table or choices that feed it and its default display.</p>
+    <p>Properties exist because process rules need a typed, shared vocabulary. Without it every flow would pass untyped maps, the UI could not generate controls, reports could not know which columns to select, and decisions could not compare numbers correctly (the text "100" against the integer 100). Pega's modes cover almost every design need: a single value (<code>.AvailableBalance</code>); a value list (<code>.RestrictionCodes(2)</code>); a value group (<code>.Flags("OFAC")</code>); a page, which embeds one page of a class (<code>.PrimaryOwner.Name</code>); a page list (<code>.Signers(1).Name</code>); and a page group, which is keyed (<code>.Holds("HOLD-1").Amount</code>). Less common modes, such as Java object properties, exist and are rarely wanted.</p>
+    <p>The type of a single value matters more in banking than anywhere. Account numbers are <em>text</em>, not integers, because of leading zeros, check digits and length changes. Money is <em>decimal</em>, never double, because floating-point arithmetic rounds in ways that a ledger cannot tolerate. A TrueFalse property that has never been set is blank, not false, so every when rule must handle null. A DateTime is stored in GMT while a Date has no time zone, which is why a business date such as a maturity date should be a Date. An encrypted text type protects a tax ID at rest but cannot be used in filters or sorts, which has reporting consequences that 3.3 returns to.</p>
+    <table>
+      <tr><th>Type</th><th>Use</th><th>Banking caution</th></tr>
+      <tr><td>Text</td><td>Strings; most identifiers</td><td>Store account numbers as text</td></tr>
+      <tr><td>Integer</td><td>Whole numbers</td><td>Counters only, not identifiers</td></tr>
+      <tr><td>Decimal</td><td>Fixed-point money and rates</td><td>Use for balances and amounts</td></tr>
+      <tr><td>Double</td><td>Floating point</td><td>Avoid for currency</td></tr>
+      <tr><td>TrueFalse</td><td>Boolean</td><td>Blank is not false; handle null in when rules</td></tr>
+      <tr><td>Date / DateTime / TimeOfDay</td><td>Temporal values</td><td>DateTime is GMT; business dates should be Date</td></tr>
+      <tr><td>TextEncrypted / Password</td><td>Encrypted at rest; not usable in filters or sorts</td><td>Tax IDs where policy requires; remember reporting limits</td></tr>
+      <tr><td>Identifier</td><td>Key-like text</td><td>Key fields</td></tr>
+    </table>
+    <p>Where a property is defined matters as much as what it is. Sam places each one at the highest class where <em>all</em> descendants need it. Audit properties such as <code>.CorrelationID</code> sit at <code>FCB-</code>; <code>.CustomerID</code>, <code>.AccountNumber</code> and <code>.MakerOperatorID</code> (needed by Chapter 02's maker-checker control) sit at <code>FCB-Dep-Work-</code>; <code>.OrderType</code> and <code>.ResponseDueDate</code> sit only at <code>FCB-Dep-Work-LegalOrder</code>; <code>.ProductCode</code>, <code>.Status</code> and <code>.MaturityDate</code> sit on the account data class. Too high and every class carries clutter; too low and properties get copied with inconsistent types.</p>
+    <p>One practical point for the people who build in App Studio: a <em>field</em> there is a real property rule, in the right class and ruleset, created with sensible defaults and without exposing the class concept. Dev Studio shows the same rule with every tab visible, including the table-edit source for allowed values, edit-input and edit-validate references, display, security and the optimisation entry point that 3.3 uses. The difference is control, not substance.</p>
+    <p>The properties to avoid are the ones the guardrails flag. Page-list properties on the work class that will hold thousands of rows bloat the clipboard and the BLOB. Currency stored as text or double corrupts arithmetic. Dynamic property names created by activities with no property rule cannot be reported on. One property reused for two meanings across case types breaks every report that crosses them, and a Boolean stored as "Y"/"N" text in one class and as TrueFalse in another produces comparisons that fail silently.</p>
+  </section>
+
+  <section id="s3-2" class="pagebreak">
+    <h2>3.2 What the case only looks up: data classes and data objects</h2>
+    <p>The tempting move is to copy Dana's customer record into the case "so it is there": name, tax ID, all accounts, balances. The case then carries a full copy that goes stale as soon as the core changes, inflates the BLOB, and invites personal data into reports. The better design stores the <em>key</em> on the case (<code>.CustomerID</code>, <code>.AccountNumber</code>), reads the rest on demand (3.5), and copies only what must be frozen for audit, such as the address as it stood when the order was processed. A case holds identifiers and the delta being requested, never a mirror of the customer.</p>
+    <p>That design needs somewhere to describe the customer and the account as structures, and that is the job of <strong>data classes</strong> (Chapter 01 §1.4 introduced them). In App Studio the same idea appears as a <strong>data object</strong>: a named entity backed by a data class, with fields, view and list data pages, and a declared <em>system of record</em>, which may be Pega's own table, a REST service, SQL or another source. A data object generates the repeatable parts together (class, table mapping, properties, data page, maintenance UI) and keeps naming consistent. It is a productivity and governance layer; Dev Studio still shows the real rules underneath.</p>
+    <p>For Riverbend, a Customer data object has a view data page sourced from the core through the ESB, an Account data object has a list data page by customer, and a LegalOrderType data object lives in Pega's own table and is maintained by the legal operations team as reference data (3.12). Pega-provided base classes (<code>Work-</code>, <code>Data-</code>, <code>Embed-</code>, <code>Assign-</code>, <code>History-</code>, <code>Link-</code>, <code>Index-</code>, <code>Rule-</code>) are inherited from and never modified, and functional framework classes are extended in Riverbend's own layer, never edited in the framework ruleset.</p>
+    <p>A handful of system properties appear on almost every page and are worth recognising on sight: <code>pxObjClass</code> (the page's class), <code>pzInsKey</code> (the full instance key used for persistence), <code>pyID</code> (the case display ID), <code>pxCreateDateTime</code> and <code>pxCreateOperator</code>, <code>pxUpdateDateTime</code> and <code>pxUpdateOperator</code>, <code>pyStatusWork</code>, <code>pxCoverInsKey</code> and <code>pxCoveredInsKey</code> (parent and child references) and <code>pzPVStream</code>, the compressed serialised page that the next section is about.</p>
+  </section>
+
+  <section id="s3-3" class="pagebreak">
+    <h2>3.3 Exposed columns and the BLOB</h2>
+    <p>Priya wants a report: every open address change whose account number matches a given value. Sam writes a Report Definition filtering on <code>.AccountNumber</code>, and it either refuses, or runs for ninety seconds. The explanation is how Pega saves a case, and it is the single most probed data-model topic in Pega screens.</p>
+    <h3>What the BLOB is, and why Pega uses it</h3>
+    <p>When Pega saves a case or a data instance (<code>Obj-Save</code> followed by a commit), it does not create one database column per property. It serialises the entire page, including embedded pages and page lists, into one compressed binary column called <code>pzPVStream</code> in the instance's table (for cases, the work table of the class group). The same row also carries a small set of ordinary columns: the key, <code>pxObjClass</code>, creation and update stamps, status, and any properties that have been <em>exposed</em>.</p>
+    <p>The design has real advantages. A property can be added to a class without an immediate schema change. One row read returns the whole object, with no multi-table join to rebuild a page. One table can hold many subclasses with different property sets. Those are the reasons Pega pays the cost described next, and the cost is the heart of the topic: a database cannot filter, sort, index or join on content inside a compressed binary. A filter on a property that exists only in the BLOB cannot be written as a SQL <code>WHERE</code> clause, so depending on the release and report type Pega warns at design time, fails at run time or loads rows and filters in memory, which is slow and wrong for pagination. The safe statement is: a property must be exposed to be reliably filtered, sorted, grouped or joined in SQL; otherwise the report is wrong, slow or not allowed.</p>
+    <h3>Exposing a property</h3>
+    <p>An <em>exposed</em> (or optimised) property is mapped to a real column in the class's table. On save, Pega writes the value to the column and keeps it in the BLOB too. Reads of the whole page use the BLOB; reports, filters, sorts and joins use the column. Only single-value properties can be exposed this way, and the elements of a page list use Declare Index instead (3.4). Classes mapped to purpose-built or external tables can store each property in its own column with no BLOB, which is a design choice made per class, not the default for cases.</p>
+    <table>
+      <tr><th>Aspect</th><th>BLOB only</th><th>Exposed column</th></tr>
+      <tr><td>Storage</td><td>Inside <code>pzPVStream</code></td><td>Own column, and still inside the BLOB</td></tr>
+      <tr><td>Filter, sort or group in a report</td><td>No, or inefficient or unsupported</td><td>Yes, in SQL</td></tr>
+      <tr><td>Indexable by a DBA</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Joinable</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Schema change</td><td>None</td><td>A column is added, by Pega where allowed or by the DBA</td></tr>
+      <tr><td>Save cost</td><td>Baseline</td><td>Slightly higher per exposed column</td></tr>
+      <tr><td>Existing rows</td><td>Not applicable</td><td>Need a backfill: they are null until re-saved</td></tr>
+      <tr><td>Typical use</td><td>Detail read only when the case is opened</td><td>Status, dates, IDs and amounts used in reports, queues, search, SLA, joins</td></tr>
+    </table>
+    <p>The procedure is the same each time, and the bank's separation of duties shapes it. Decide the class and its table mapping and confirm the table has a free column of the right type. Use the property optimisation capability in Dev Studio (reached from the property rule or the class-level tool; the exact menu wording differs by release). Where the application's database user cannot run DDL, which is typical in a bank, the tool produces a script for the DBA to apply under change control. Run the backfill for existing rows, off-peak for large tables. Add a database index on columns used for filtering, because an exposed column with no index is still a full scan. Then read the Report Definition's generated SQL to confirm the column appears in the <code>WHERE</code> and <code>ORDER BY</code>.</p>
+    <div class="flow">SAVE (Obj-Save + Commit) of case AC-10882
+  clipboard page tree
+     |-- .pyID, .pyStatusWork, .AccountNumber, .ClosureBalance, .ResponseDueDate, .Signers(1).Name ...
+     v
+  Pega persistence layer
+     INSERT/UPDATE pc_work_dep (example mapped table)
+        pzInsKey            = "FCB-DEP-WORK AC-10882"      (key column)
+        pxObjClass          = "FCB-Dep-Work-AccountClosure"
+        pyStatusWork        = "Pending-Approval"           <- exposed
+        AccountNumber       = "CHK-8842-0117"              <- exposed (the report needed it)
+        ClosureBalance      = 4218.55                      <- exposed
+        pxUpdateDateTime    = 2026-03-09 10:15:00          (system column)
+        pzPVStream          = [compressed bytes of ENTIRE page incl. Signers(1)]   <- the BLOB
+  Signers(*).Name is NOT a column. To report on it you need Declare Index (3.4).</div>
+    <p>What to expose follows from the queries the application will actually run. Expose status, stage, case type and priority; foreign keys such as customer ID, account number and parent case ID; dates used in SLA, due and aging reports; amounts used in thresholds, authority queries or aggregates; assignment fields used for queue and supervisor reports; and properties used by batch selection. Do not expose free text, large fields, properties used on only one screen, rarely queried secondary attributes, encrypted properties (which cannot be filtered anyway) or page-valued properties (which cannot be exposed).</p>
+    <p>The consequences of getting it wrong have predictable shapes. An unexposed filter on a five-million-row work table is a full scan with BLOB decompression per row. Exposing too much makes every save write every column and slows inserts through index maintenance; a table with 150 exposed columns and 20 indexes is a design smell. A property exposed after go-live without a backfill produces reports that show only new data, and the first person to notice is a supervisor whose dashboard has "lost" last quarter. A large embedded list inflates the BLOB, which moves across the network on every open and save, so case pages should stay lean. Bulk work, such as the batch selection in Chapter 06, should select and update by exposed, indexed columns and avoid opening and re-saving large BLOB pages row by row. And analytics that is heavy belongs in a reporting store, not on the transactional table.</p>
+    <p>A diagnosis for "the legal-orders dashboard takes ninety seconds" runs as follows. Open the Report Definition and look at its SQL, or at the PDC alert for the slow query. Check whether the <code>WHERE</code> and <code>ORDER BY</code> columns are exposed, and whether they are indexed. Read the execution plan (Chapter 11 does this properly): a sequential scan on the work table means a missing index or an unexposed property. Then fix it: expose <code>ResponseDueDate</code> and <code>OrderType</code>, ask the DBA for a composite index, backfill, add a date range and pagination to the report, retest with production-like volume, and prove the improvement with the PDC trend.</p>
+    <p>Finally, the BLOB contains <em>all</em> the page's properties, including personal data, and exposed columns copy values into plaintext columns unless an encrypted type is used. The table is sensitive data and must be treated according to the bank's data classification (Chapter 10 covers masking and encryption). The anti-patterns are exposing a property after go-live with no backfill plan, exposing a hundred columns "just in case", joining work tables on unexposed properties, storing document content or JSON payloads in properties, and assuming a declarative expression's result is queryable (it is only if it is exposed).</p>
+  </section>
+
+  <section id="s3-4" class="pagebreak">
+    <h2>3.4 Declare Index: reporting on lists inside a case</h2>
+    <p>Exposure handles single values. Priya's next question, "find every case where any signer has this tax ID hash", asks about the elements of a list, and those live inside the BLOB too. A <strong>Declare Index</strong> rule maintains a separate index table with one row per element of a page list or page group, rebuilt on each save of the parent. Elements of <code>.Signers</code> on a closure case become rows that a report can join to.</p>
+    <div class="flow">Case AC-10882   .Signers  (page list)  stored inside pzPVStream
+        |
+        |  Declare Index rule fires on save of AC-10882 (declarative, engine-driven)
+        v
+Index table (class Index-FCB-Dep-Work-AccountClosure-Signers, table e.g. fcb_index_signers)
+   pzInsKey of case          | SignerName    | SignerRole | SignerTaxIDHash | pxIndexSeq
+   FCB-DEP-WORK AC-10882     | D. Whitfield  | Primary    | 7f3a...         | 1
+
+Report Definition on FCB-Dep-Work-AccountClosure joins to the index class
+   => SQL: SELECT w.pyID FROM pc_work_dep w JOIN fcb_index_signers i ON i.pzInsKey = w.pzInsKey WHERE i.SignerTaxIDHash = ?</div>
+    <p>The rule names the class being indexed, the index class (a class under <code>Index-</code> with its own table mapping, created by the DBA), the page list to iterate, the property mappings that become index columns, and an optional condition. The costs are real: extra writes on every save of the parent, which matters for hot cases; index data that can drift if the declarative engine did not run (data loaded by direct SQL, for example), with heavy reindexing tools to repair it; and huge index tables for lists with thousands of elements.</p>
+    <p>That is why a Declare Index is better seen as a patch for a data-model choice than as a first resort. If the elements have their own lifecycle or are queried a lot, they should be their own data instances (a signer table, a hold table) with exposed columns. If each element needs workflow, they should be child cases. If only "does any element match" matters for one attribute, copy a key scalar up to the parent as an exposed property. Declare Index fits when the elements are naturally embedded and cross-case search is needed without redesign, such as signers on an account case. For holds and legal orders, separate instances are the better design, giving clean reporting, locking and audit.</p>
+  </section>
+
+  <section id="s3-5" class="pagebreak">
+    <h2>3.5 Data pages: one lookup, shared correctly</h2>
+    <p>The closure case for <code>AC-10882</code> needs Dana's balance at intake, so Marcus can see what is being closed. It needs the same balance on the review screen, on Priya's approval screen, in the fulfilment step that sends the disbursement instruction, and in the confirmation letter. The straightforward design is to call the core wherever the balance is needed, and it works exactly as written: one case now makes five identical calls to a system that bills per call and takes about 400 milliseconds to answer, so each screen waits 400 ms, the bank pays five times, and the five answers can disagree with each other if the balance moves between them.</p>
+    <p>What is needed is for the answer to be fetched once, remembered, and reused wherever the same question is asked again. That is what a <strong>data page</strong> is: a rule (conventionally named with a <code>D_</code> prefix, such as <code>D_AccountBalance</code>) that says, "when someone asks for this data, here is where to get it, how long to keep it, and who can share it." The data is loaded into a clipboard page on demand and cached according to the rule, and consumers (sections, data transforms, flows, reports) simply reference <code>D_AccountBalance[AccountNumber:"CHK-8842-0117"]</code> without caring how it was fetched. It replaces the older habit of writing an activity that called a connector, copied the result into the case and repeated that in every flow, which left data stale, calls multiplied and nobody sure where a value came from. It is a declarative, cached, parameterised, read-through data access layer, which is why the guardrails prefer it to activities for reading data.</p>
+    <p>Three basic settings define the first version. The <strong>structure</strong> is a page (one object, <code>D_Customer[CustomerID:"CUS-4417"].LastName</code>) or a list (rows in <code>pxResults</code>, <code>D_AccountList[CustomerID:"CUS-4417"].pxResults(1).AccountNumber</code>), and lists are what populate dropdowns, tables and repeating layouts. The <strong>parameters</strong> make one rule hold many pages: each distinct parameter set is a separate cached instance, with a cache key of the page name and the parameter values (and, for node scope, optionally the access group). And the <strong>source</strong> is the mechanism that populates the page on a load: a connector (REST, SOAP or SQL), a Report Definition, a keyed lookup, a data transform, an activity, or, in some releases, a data set. For the balance, the source is a Connect-REST call to the core through the ESB; Chapter 05 builds that connector.</p>
+    <h3>Who shares the answer</h3>
+    <p>Marcus and Priya are different people looking at the same account, and Marcus has two cases open in two tabs. The moment the page is cached, the question "who does this copy belong to?" appears, and the <strong>scope</strong> setting is its answer. A <em>thread</em>-scope page is created in a single requestor thread and can be accessed as often as needed by processing in that thread; the definition is that it is requestor-thread scoped. In the traditional portal each open case tab usually runs on its own thread, so a thread-scope page is in practice one tab's copy, which is a consequence of how that portal allocates threads and not part of the definition; it does not hold in Constellation or for background requestors. A <em>requestor</em>-scope page is shared by every thread of one user session, so Marcus's two tabs read the same copy. A <em>node</em>-scope page is shared by every requestor executing on that JVM node, so Marcus and Priya, and everyone else on the node, read the same copy.</p>
+    <p>Each answer fits some data and endangers other data. Thread scope suits case-specific data and anything editable, and costs memory multiplied by users and threads. Requestor scope suits user-specific data such as the operator's profile and entitlements, and is dangerous for case-specific data, because the page is shared across tabs and one tab's case data can appear in another if the parameters are keyed wrongly. Node scope suits reference data that is identical for everyone (product codes, holiday calendars, state exemption tables) and is dangerous for anything user-specific or sensitive, anything consumers modify, and anything with a large parameter space, because each distinct parameter set is a separate entry in the node's memory.</p>
+    <p>That produces the first rules. A node-scope page is shared by many concurrent threads, so it must be read-only; a consumer that needs to change the data copies it into its own page, and editable pages are thread or requestor scope. Putting user-specific or access-group-specific data in a node page without access-group sharing control exposes one user's data to another. Each node has its own cache and nodes do not synchronise node-scope pages with each other, so after a reference-data change different nodes serve different values until each reloads: the classic "works on node 1, fails on node 2" incident. Two documented warnings follow. A node-scope page on a class that carries access control policies raises a <strong>severe guardrail warning</strong>, because a shared page cannot honour per-user restrictions. And in Customer Service chat, associate requestors hold their own copy of requestor-level pages, so an editable requestor-scope page edited in one chat is not seen in another phone or chat interaction.</p>
+    <table>
+      <tr><th>Scope</th><th>Who shares one copy</th><th>Safe for</th><th>Dangerous for</th></tr>
+      <tr><td>Thread</td><td>One thread of one requestor (in the traditional portal usually one case tab)</td><td>Case-specific data; editable pages</td><td>Large lists loaded per tab; wasteful for shared data</td></tr>
+      <tr><td>Requestor</td><td>All threads of one user session</td><td>User-specific data: profile, entitlements</td><td>Case-specific data: it bleeds across tabs if keyed wrongly</td></tr>
+      <tr><td>Node</td><td>All requestors on one JVM node</td><td>Reference data identical for everyone</td><td>Anything user-specific, sensitive or modified by consumers; large parameter spaces</td></tr>
+    </table>
+    <h3>When the answer goes stale</h3>
+    <p>Now the problem the five-call design hid. A data page is loaded on first reference for a parameter set and reused afterwards, so the copy of Dana's balance that Marcus loaded when he opened <code>AC-10882</code> at the start of the day is the copy Priya's approval screen reads, hours later, when the case has sat in her queue. If an in-flight card authorisation settles in between, the core's ledger balance changes while the page still holds the old one. The case is now displaying a number that is no longer true, and the disbursement instruction that follows would be built from it.</p>
+    <p>The <strong>refresh strategy</strong> answers the question "when is an already-loaded page considered stale?" The options trade freshness against load. <em>Do not reload</em> loads once and keeps the page until it is cleared; it suits static reference data, and risks staleness and inconsistent nodes. <em>Reload if older than N</em> refreshes on a time window, which suits slowly changing data such as a rates table, and leaves a window of staleness equal to N. <em>Reload once per interaction</em> refreshes at most once per user request, which suits data that must be fresh on each screen but is referenced many times on it. <em>Do not reload when</em> takes a when rule that skips the reload while a condition holds, such as never reloading once a decision is locked, at the price of logic that is hard to debug. And <em>explicit invalidation</em> removes or reloads the page in logic, as after posting an update to the core, with the risk that forgetting it shows stale values on the next screen. One documented limit: <em>reload once per interaction</em> is available only for pages with thread or requestor scope, not node scope.</p>
+    <p>For the balance, a refresh window on the page is not enough, and the reasoning is the judgement to take away. The question the application is asking at approval and at fulfilment is not "what was the balance recently?" but "what is the balance <em>now</em>, because I am about to act on it?" Data that must be exact at the moment of an action should be fetched at the step, by an explicit reload or a direct connector call, not read from a cache that may be minutes old. The cached page is right for display; the step that moves money re-reads the balance, compares it with what was approved, and returns the case to approval if it moved by more than a threshold.</p>
+    <p>The same reasoning decides how a consumer receives the data. A property can take its data from a data page by <em>copying</em> the content into the consumer's own page, a snapshot independent of any later refresh, or by <em>referencing</em> the data page directly, so the consumer always sees whatever the page currently holds and cannot change it if the page is read-only. Reference is right for display, decision inputs and dropdown options. Copy is right when the value must be frozen for audit (the address at the time a legal order was processed) or when the user will edit it, at the cost of memory and BLOB space if the copy is stored on the case. Courses name these ideas differently and the labels vary by release and by where the choice is made, so explain the behaviour rather than the label.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Marcus's review screen for <code>AC-10882</code> loaded Dana's account when he opened it at 09:10. At 09:40 the $200.00 authorisation settles and the core's ledger balance falls from $4,418.55 to $4,218.55. Priya, at 14:00, sees the old figure on her approval screen. What went wrong, and what should change?</p>
+      <p><strong>Answer.</strong> The page was loaded once and its refresh strategy did not call for a reload, so every later reference read the 09:10 copy. Two changes help: a refresh strategy appropriate to a volatile balance (reload when older than a few minutes, or once per interaction, both available at thread scope), and, more importantly, a fresh read at the fulfilment step before the disbursement instruction is built. The first keeps displays reasonably current; only the second makes the action correct, because any cache window leaves a gap. The answer depends on the data page being thread or requestor scope; at node scope there is no once-per-interaction option and one stale copy would be shared by every user on that node.</p></div>
+    <h3>When the source fails</h3>
+    <p>If the core times out or returns an error, a data page does not throw to the user by default. It loads with <strong>page messages</strong> attached (the message collection is often described as <code>pxErrorMessages</code>; confirm the exact property path on the clipboard in the version in use), and consumers must check for errors. The usual patterns: a when rule such as "data page has errors" drives the flow to an error assignment or a degraded message in the UI; the error handling is configured so that a failed load is not cached as though it had succeeded (otherwise a transient error sticks for the whole refresh window, which is verified by forcing a failure, fixing the source and observing whether the next reference retries); and there is a fallback, a stale copy, a default or an "unavailable, retry" message. Chapter 05 covers the resilience patterns that belong around the connector itself.</p>
+    <h3>Parameters, cache keys and cache size</h3>
+    <p>Parameters multiply pages, so they carry three obligations. A node-scope page parameterised by account number across millions of accounts fills the heap, so high-cardinality parameters belong at thread or requestor scope or with a short expiry. Differences in case or spacing (<code>"c123"</code> against <code>"C123"</code>) produce separate cache entries, so normalise values before the call. And a parameter such as an operator ID must never come from user input without validation, or a user can read another user's page. Short cache windows also create a stampede at the moment of expiry, when many users hit the source together; popular reference data deserves longer or jittered windows.</p>
+<h3>Writing data back: savable pages and save plans</h3>
+    <p>So far the account page has been something we read. Marcus now needs to correct Dana's address, and the system of record is the core, not Pega. We could write an activity that calls a connector, and people often do — but Pega has a mechanism built for exactly this, and the reason to understand it properly is that it controls <em>when the write actually commits</em>.</p>
+    <p>A data page's <strong>edit mode</strong> decides what may happen to it. A
+      <strong>read-only</strong> page can be modified only while it loads and during post-activity
+      processing; it appears in the clipboard's data page list. An <strong>editable</strong> page is
+      loaded read-write so a form can bind to it — but it has <em>no refresh strategy and no save
+      plan</em>, and it <em>cannot be node-scoped</em>; it appears in the clipboard's user page list
+      instead. A <strong>savable</strong> page is read-write in the same way an editable page is,
+      but it is a <em>distinct mode</em>, not editable-plus-something: it is the only mode that
+      carries a <strong>save plan</strong>, the mechanism that pushes changes back to the system of
+      record. Pega's own documentation describes a savable page loosely as "an editable Data Page
+      that can save data", which is the shorthand worth unpicking — the three modes are mutually
+      exclusive choices in one field, and the one labelled <em>Editable</em> is specifically the one
+      that cannot save.</p>
+    <p>The save plan can be a direct database save, an activity (which is where an
+      <code>Obj-Save</code> or a <code>Connect-REST</code> call would sit), a REST connector using
+      POST, PUT or PATCH, or robotic automation. A plan runs when its <em>when</em> condition is
+      true, and here is a detail that surprises people: save plans are <strong>not mutually
+      exclusive</strong>. If two conditions are true, two plans apply. There is an
+      <em>Otherwise</em> condition for the fallback case.</p>
+    <p>Only a savable page can be named in the places that trigger a save: flow action
+      post-processing, the <strong>Save Data Page</strong> shape after an assignment, and the
+      <code>Save-DataPage</code> method in an activity.</p>
+    <h4>The part that decides whether the data is really in the database</h4>
+    <p>When you save a savable page you can set the <code>WriteNow</code> parameter, and it changes
+      the transaction boundary. With <code>WriteNow</code> true the save happens
+      <strong>immediately, as its own independent transaction</strong>. With it false the save is
+      <strong>deferred</strong> and joins the larger surrounding transaction that commits later.
+      With the direct <em>Database save</em> option you do not have to set it at all.</p>
+    <p>This is the clipboard-versus-committed distinction with a switch on it. A deferred save has
+      changed nothing that another requestor or a SQL query can see; the row appears only when the
+      enclosing transaction commits. If Priya approves the address change and the case then fails
+      two steps later, a deferred save rolls back with everything else — usually what you want. An
+      immediate save does not, and now Pega and the core disagree.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Marcus edits Dana's address on a savable page, the flow action's post-processing saves it
+        with <code>WriteNow</code> false, and the next step throws. What does the core hold, and
+        what does Marcus see?</p>
+      <p><strong>Answer.</strong> The core holds the old address. The save was deferred into the
+        surrounding transaction, which rolled back, so nothing was written. Marcus sees the error
+        and the case has not advanced — consistent, if confusing, because the screen looked as
+        though the edit had been accepted. This is why a fulfilment step that must reach an external
+        system is better modelled as an explicit integration step with its own status, rather than
+        as a side effect of saving a page: with <code>WriteNow</code> true you would instead have the
+        opposite problem, a committed core change behind a failed case.</p></div>
+    <h4>So is a data page the wrong tool for writes?</h4>
+    <p>Not as a rule, and it is worth being careful here because the blanket version of this advice
+      is common and wrong. Writing a single object back to its
+      system of record is precisely what savable pages and save plans are <em>for</em>, and they
+      save you hand-written persistence logic. What they are poor at is different and narrower:
+      <strong>bulk row-by-row work</strong>, where one save per row means one call per row and a set-based
+      operation in the database would do the whole job (Chapter 05 §5.8, Chapter 11); and
+      <strong>writes that must carry business validation, approval and an audit trail</strong>, where
+      the right model is a case step with an Integrator, an idempotency key and a visible status,
+      because a save plan buried in post-processing is invisible to the business and hard to retry.</p>
+    <p>So the honest rule is about <em>which write</em>, not about data pages: a maintenance screen
+      editing reference or customer data is a good fit; placing a hold on Dana's account during
+      closure is not, because that needs approval, idempotency and a recoverable status.</p>
+    <h3>Where a data page is the wrong tool</h3>
+    <p>Reading is the data page's job, and a few reads are still better done another way. A list of a hundred thousand rows for the UI should be a paginated Report Definition or a view with server-side paging, not a data page loaded fully onto the clipboard. Data that must be strictly real-time at the moment of use is fetched at the step, as above. Bulk batch processing through parameterised pages creates one call per row, and belongs in data flows, data sets or set-based SQL (Chapter 06). Credentials and per-user tokens do not belong in data pages, and a node page must never be used as a global variable or counter. The matching anti-patterns: node scope for customer-specific data, an activity that does <code>Obj-Browse</code> in a loop instead of one list data page, a connector with no timeout, ignoring errors, huge page lists copied into the case, forgetting that a decision reading a data page on node 1 may differ from node 2 after a change, and naming a rule with a verb (<code>D_GetCustomer</code>) rather than a noun.</p>
+    <h3>Reference: data page settings and a decision matrix</h3>
+    <p class="small muted">Skip this on a first read. Every setting above has a reason; this collects them, and a worked matrix of choices for Riverbend's data.</p>
+    <table>
+      <tr><th>Setting (approximate label)</th><th>Options</th><th>What it does</th></tr>
+      <tr><td>Object type</td><td>Class of the page</td><td>Class that results are mapped into</td></tr>
+      <tr><td>Structure</td><td>Page / List</td><td>Single page, or list in <code>pxResults</code></td></tr>
+      <tr><td>Scope</td><td>Thread / Requestor / Node</td><td>Who shares the cached page</td></tr>
+      <tr><td>Edit mode</td><td>Read-only / Editable / Savable</td><td>Whether consumers may modify the page, and whether a save plan persists changes</td></tr>
+      <tr><td>Parameters</td><td>Named parameters</td><td>Each distinct set is a separate cached instance</td></tr>
+      <tr><td>Data source</td><td>Connector, Report Definition, Lookup, Data Transform, Activity (and data sets in some releases)</td><td>What populates the page on a load</td></tr>
+      <tr><td>Refresh strategy</td><td>Reload once per interaction (thread, requestor only); reload if older than N; do not reload when; combinations</td><td>When a loaded page is stale</td></tr>
+      <tr><td>Access group sharing (node)</td><td>Share across groups or one copy per group</td><td>Prevents cross-role leakage in node pages</td></tr>
+      <tr><td>Clear / expiry (node and requestor)</td><td>Time-based clearing</td><td>Frees memory for rarely used parameter sets</td></tr>
+      <tr><td>Pre- and post-load processing</td><td>Data transform or activity</td><td>Prepare parameters; map the result after load</td></tr>
+      <tr><td>Error handling</td><td>Messages and fallback</td><td>How failures surface</td></tr>
+      <tr><td>Simulation</td><td>Simulated source data</td><td>Lets tests run without the real source</td></tr>
+    </table>
+    <table>
+      <tr><th>Data (Riverbend example)</th><th>Scope</th><th>Edit mode</th><th>Refresh</th><th>Reason</th></tr>
+      <tr><td>US states and territories list</td><td>Node</td><td>Read-only</td><td>Do not reload</td><td>Identical for all; tiny; static</td></tr>
+      <tr><td>State garnishment exemption table</td><td>Node</td><td>Read-only</td><td>Reload if older than 1 hour, or after a controlled release</td><td>Legal-owned, same for all, small</td></tr>
+      <tr><td>Regulatory calendar reference (per clock; Chapter 12 §12.10)</td><td>Node</td><td>Read-only</td><td>Reload daily</td><td>Business-day SLA calculation</td></tr>
+      <tr><td>Operator entitlements and approval limit</td><td>Requestor</td><td>Read-only</td><td>Per session</td><td>User-specific, reused across tabs</td></tr>
+      <tr><td>Customer profile (from core via ESB)</td><td>Thread</td><td>Read-only</td><td>Reload once per interaction or if older than a few minutes; explicit reload after an update</td><td>Case-specific, volatile, personal data</td></tr>
+      <tr><td>Account list by customer</td><td>Thread</td><td>Read-only</td><td>Reload if older than 2 minutes</td><td>Changes with transactions</td></tr>
+      <tr><td>Draft beneficiary list being edited</td><td>Thread</td><td>Editable</td><td>No refresh strategy (editable)</td><td>Edit buffer; copy into the case on submit</td></tr>
+      <tr><td>Product catalogue / fee schedule</td><td>Node</td><td>Read-only</td><td>Reload if older than 4 hours</td><td>Shared, largish</td></tr>
+      <tr><td>Customer record to be updated in a system of record</td><td>Thread</td><td>Savable</td><td>Per interaction</td><td>The save plan writes back</td></tr>
+    </table>
+    <div class="flow">RUNTIME OF A DATA PAGE REFERENCE
+ consumer references D_AccountBalance[AccountNumber:"CHK-8842-0117"]
+   |
+   v
+ 1 Resolve rule D_AccountBalance (rule resolution, circumstancing possible)
+ 2 Compute cache key = (D_AccountBalance, AccountNumber, [access group if node])  in the scope container
+ 3 Cache hit and not stale per refresh strategy?  --YES--> return cached page (no source call)
+   | NO
+   v
+ 4 Pre-load processing (set headers, normalise parameter)
+ 5 Call data source:   Connector (REST) / Report Definition / Lookup / Data Transform / Activity
+ 6 Map response into object class (response / post-load data transform)
+ 7 Errors?  -> page messages set; consumer sees failure per error-handling config
+ 8 Store page in the scope container with load timestamp; return
+ 9 Consumers read via .pxResults / properties; read-only enforcement on shared scopes</div>
+    <p>One habit pays for itself: count source calls per user interaction in Tracer and PAL, and aim for none that are redundant. If the same data page appears twice for the same key within one interaction, it should have loaded once. Name pages for their content (<code>D_AccountList</code>, <code>D_Holds</code>), name parameters after the business key, set the applies-to class to the class of the content, and wrap vendor payloads so consumers see a canonical page while the integration class lives inside the data page (Chapter 05).</p>
+  </section>
+
+  <section id="s3-6" class="pagebreak">
+    <h2>3.6 Declarative rules: derived values that stay correct</h2>
+    <p>The closure screen shows a figure Marcus does not enter: the amount available for closure, which is the balance less the total of active holds. Computing it in the flow works until some path adds a hold and forgets to recompute. A <strong>declarative rule</strong> states a relationship ("available for closure equals balance minus total holds") or a reaction ("when this changes, do that") and lets the engine decide when to evaluate it, so that derived data stays consistent without every flow remembering to recalculate it.</p>
+    <p>Pega has several kinds, and the differences are in what triggers them. A <strong>Declare Expression</strong> computes a target property from other properties, either when its inputs change (forward chaining) or when the target is read (backward chaining). A <strong>Declare OnChange</strong> runs an activity when a watched property changes, and is rare and risky. A <strong>Declare Constraint</strong> validates a condition across properties and flags a message when violated, such as a maturity date that is not after the open date. A <strong>Declare Trigger</strong> runs an activity when an instance is created, updated or deleted, which means on every save of that class and so should be used sparingly. Declare Index (3.4) maintains index rows, and the data page rule (3.5) is itself declarative.</p>
+    <p>Forward and backward chaining are worth distinguishing because the choice has a cost. With forward chaining the engine tracks the expression's input properties and recomputes the target the moment any changes, which may in turn trigger other expressions that use it; the stored value stays current, so this suits properties that are exposed and reported on or must always be right in the saved record. The cost is paid on every input change and can cascade. With backward chaining the target is computed when referenced and has no current value (or each time, depending on the option); the cost is paid on read, which suits display-only derived values.</p>
+    <div class="flow">Declare Expression: .TotalHoldAmount   (class FCB-Dep-Work-AccountClosure, forward chaining)
+  Expression:  Sum of .Holds(*).Amount   where .Holds(*).Active = true
+  Inputs tracked: .Holds(*).Amount, .Holds(*).Active
+
+ A flow sets .Holds(2).Amount = 5000
+   -> engine detects input change
+   -> recompute .TotalHoldAmount
+   -> any expression using it (.AvailableForClosure = .Balance - .TotalHoldAmount) is recomputed in turn
+ Dependency network:  Holds(*).Amount -> TotalHoldAmount -> AvailableForClosure -> (decision table input)</div>
+    <p>The engine builds that dependency network and tracks property changes so that only affected expressions recompute. If a property is changed in a way the engine does not notice (a direct Java write, or a bulk-set method that bypasses tracking), the derived value can be stale, which is one documented reason to avoid Java steps that write properties.</p>
+    <p>The hazards come from the same machinery. A circular dependency, A depends on B and B on A, may be caught at design time or loop at run time, so draw the dependency network before adding the third expression. A Declare Trigger on case save whose activity updates and saves the same case fires itself again, so guard it with a when condition and a flag. A Declare OnChange that writes to the property it watches feeds itself. Forward chaining on a large page list recomputes aggregates over every row for each row changed, which is quadratic work during bulk population; populate in bulk and compute once with a data transform. Queue processor items that load pages with thousands of changes can trigger thousands of recomputations, so test at volume. Declare OnChange and Declare Constraint are usually better replaced by post-processing in a flow action and a validate rule (3.11), and the worst uses are an event bus built from Declare Triggers, a connector called from an OnChange, and logic hidden in declaratives that nobody can find.</p>
+  </section>
+
+  <section id="s3-7" class="pagebreak">
+    <h2>3.7 Data transforms: setting and mapping data</h2>
+    <p>When Marcus opens the closure case, the case needs to start with Dana's account number, the balance and her signers copied from the account page onto the case. That is mapping, and Pega's preferred rule for it is the <strong>data transform</strong>: a declarative, ordered list of actions that sets, copies and maps properties on a target page. It initialises pages, maps integration payloads to the canonical model and prefills forms, and it replaced activities and the older Model rules because it is readable, testable with PegaUnit, supports inheritance and raises few guardrail warnings.</p>
+    <p>Each row of a data transform has an action, a target, a relation and a source, and a transform has parameters (<code>Param.Name</code>), a source page for actions such as Update Page, and a list of ordered rows. The actions are few. <em>Set</em> assigns a value or expression to a property. <em>Update Page</em> opens a page context and runs child actions inside it. <em>Append to</em> adds an empty page to a page list; <em>Append and map to</em> adds one built from a source page. <em>Apply Data Transform</em> calls another transform, which is how reuse works. <em>For Each Page In</em> loops over a list. <em>Call</em> invokes an activity and should be rare. <em>When</em> and <em>Otherwise</em> make actions conditional. <em>Remove</em> deletes a value, page or element, and <em>Exit</em> stops the transform or a loop. A few releases add or rename minor actions, so describe the function you expect and check the action list if an unfamiliar one is named.</p>
+    <div class="flow">DATA TRANSFORM  FCB-Dep-Work-AccountClosure : InitFromCoreAccount(Param.AccountPage)
+ 1  Set      .AccountNumber             = Param.AccountPage.AccountNumber
+ 2  Set      .ClosureBalance            = Param.AccountPage.AvailableBalance
+ 3  Update Page   .PrimaryOwner
+ 3.1    Set .Name        = Param.AccountPage.Owner.Name
+ 3.2    Set .CustomerID  = Param.AccountPage.Owner.CustomerID
+ 4  For Each Page In  Param.AccountPage.Signers
+ 4.1    Append and map to  .Signers   (copy Name, Role, TaxIDHash)
+ 5  When  Param.AccountPage.HasLegalHold = true
+ 5.1    Set .HoldFlag = true
+ 5.2    Apply Data Transform  SetLegalReview   on  .
+ 6  Otherwise
+ 6.1    Set .HoldFlag = false</div>
+    <p>Because a data transform is a rule, rule resolution applies to it (Chapter 01 §1.6): the same name in a more specific class overrides the parent. To <em>extend</em> instead of replace, the override's first action applies the superclass version (the form has an option to call the same-named transform in the parent class) and then adds its own. <code>pyDefault</code> is the conventional name of the transform that Pega runs when a new page of a class is created through the standard create paths, so default values placed there are set on every creation path, but it is not applied to pages created by <code>Page-New</code> unless the method is configured to. A case also commonly runs a case-type-specific initialisation transform, set on the case type's start settings, distinct from <code>pyDefault</code>.</p>
+    <p>The comparison with an activity is the reason data transforms are preferred. A data transform sets and maps data and is highly readable, a guardrails favourite, unit testable and usable declaratively as a data page source or a UI refresh. An activity does procedural logic and system methods, is harder to read, draws warnings that each need justification, and is the only one of the two that can save, call connectors or queue work (a data transform calls an activity for that). The anti-patterns are a 300-row transform of copy-paste blocks (split it into reusable transforms), hard-coded business constants (use decision data), setting properties on the wrong page because the primary page was misunderstood, using transforms for side effects through Call, and mapping both directions in one transform.</p>
+  </section>
+
+  <section id="s3-8" class="pagebreak">
+    <h2>3.8 Activities: the procedural escape hatch</h2>
+    <p>Some things neither a declarative rule nor a data transform can do: queue background work, save an instance explicitly, call a connector from background logic, route an assignment by custom logic. For these Pega keeps the <strong>activity</strong> (<code>Rule-Obj-Activity</code>): an ordered list of steps, each calling a method or another activity, with conditions and loops. It is the oldest and most powerful rule type, and that is why the guardrails discourage it wherever a declarative alternative exists: activities are harder to read, test, reuse and upgrade, they can hide database access, bypass declaratives and invite Java steps.</p>
+    <p>The legitimate uses are narrow and worth listing, because the list is how to decide: queueing work (<code>Queue-For-Processing</code>, with the processor's activity doing the work, Chapter 06); explicit persistence in special cases (<code>Obj-Save</code>, <code>Obj-Delete</code>, <code>Commit</code>, <code>Rollback</code>); calling a connector from background logic; custom router activities; service entry points where a service rule maps to an activity; and utilities invoked from flows when no declarative construct exists.</p>
+    <p>An activity has parameters (<code>Param.X</code>), a declaration of the named pages it uses and their classes, and steps. Each step names a method, a step page (blank means the activity's primary page, and getting this wrong puts properties on the wrong page; check with Tracer's clipboard view), a description (mandatory good practice, and checked by a guardrail), a transition (a condition and an action: continue, jump, exit, exit with error) and optionally a loop or a precondition. The methods that matter are these.</p>
+    <table>
+      <tr><th>Method</th><th>Function</th><th>Notes and risks</th></tr>
+      <tr><td>Property-Set</td><td>Sets properties</td><td>Prefer a data transform</td></tr>
+      <tr><td>Page-New / Page-Copy / Page-Remove</td><td>Create, copy and remove pages</td><td>Always clean up temporary pages; <code>Page-New</code> in a long loop leaks memory</td></tr>
+      <tr><td>Obj-Open / Obj-Open-By-Handle</td><td>Open an instance by key or by handle</td><td>Locking option; opening in a loop is a performance smell</td></tr>
+      <tr><td>Obj-Save</td><td>Saves a page (to the database after commit; may be deferred)</td><td>Needs a commit unless the caller commits</td></tr>
+      <tr><td>Obj-Delete</td><td>Deletes an instance</td><td>Prefer a status-based soft delete in banking</td></tr>
+      <tr><td>Obj-Browse / Obj-List</td><td>Read multiple instances by criteria</td><td>Table scans if criteria are not indexed; prefer a Report Definition or data page</td></tr>
+      <tr><td>Queue-For-Processing</td><td>Queue an entry for a queue processor</td><td>Immediate or delayed; keep the payload small</td></tr>
+      <tr><td>Commit / Rollback</td><td>Commit or discard pending saves in the transaction</td><td>Never inside tight loops; one commit per unit of work; do not commit across a failed connector call</td></tr>
+      <tr><td>Property-Map-DecisionTable</td><td>Evaluate a decision table into a property</td><td>A Decision shape or expression is usually better</td></tr>
+      <tr><td>Page-Set-Messages / Property-Set-Messages</td><td>Attach error messages</td><td>How activities report validation errors</td></tr>
+      <tr><td>Java step</td><td>Inline Java</td><td>Severe guardrail; bypasses declarative tracking; upgrade and security risk; avoid</td></tr>
+    </table>
+    <div class="flow">ACTIVITY  FCB-Dep-Work-: QueueHoldRelease      (illustrative)
+ Param:  Param.HoldID
+ Step 1  Obj-Open-By-Handle  handle = "FCB-DEP-DATA-HOLD " + Param.HoldID    Step page = HoldPage
+         Transition: if failed -> Exit activity (with error)
+ Step 2  Property-Set         HoldPage.ReleaseRequested = true
+ Step 3  Obj-Save             Step page = HoldPage
+ Step 4  Queue-For-Processing  Activity = ProcessHoldRelease  Param.HoldID = Param.HoldID      (Queue Processor: DepHoldRelease)
+ Step 5  Commit
+         On error in 3..5: Rollback; Page-Set-Messages "Hold release queue failed"
+ Step 6  Page-Remove  HoldPage   (cleanup)</div>
+    <p>Error handling in an activity is explicit: check for page messages and use on-error transitions, because an unhandled error surfaces as a flow-error status or a broken queue item. A Java step runs hand-written Java inside the generated rule class, with no declarative change tracking, easy SQL injection or resource leaks, upgrade breakage and a severe guardrail warning; the bank-grade rule is no Java steps without a documented exception approved by the architect. The anti-patterns are <code>Obj-Browse</code> and <code>Obj-Open</code> in a loop (N+1 queries), commits inside loops over thousands of items, activities used to set properties, <code>Page-New</code> without <code>Page-Remove</code> in a long loop, swallowing errors by ignoring page messages, and activities named <code>Activity1</code>.</p>
+  </section>
+
+  <section id="s3-9" class="pagebreak">
+    <h2>3.9 Decision rules: is this change sensitive?</h2>
+    <p>Chapter 02 sent <code>AM-10417</code> down a more careful path because the address changed within 30 days of a card reissue request. Somewhere a rule decides that. If it lives in nested if/else inside an activity, it is understood only by whoever wrote it, and changing it needs a developer. <strong>Decision rules</strong> externalise logic like this ("which risk tier", "which approver level", "is this account dormant") from process and code into rules that analysts can read, tests can exercise, circumstancing can vary and releases can change without touching flows.</p>
+    <p>The rule types differ in shape, and picking the right one is most of the skill. A <strong>when rule</strong> is a boolean condition (or several joined by AND/OR) used for visibility, flow branches, skip conditions, data page refresh conditions and access conditions; name it as a question (<code>IsJointAccount</code>, <code>HasActiveLegalHold</code>) and reuse it rather than writing inline expressions. A <strong>decision table</strong> is rows of conditions mapped to a result, best for combinatorial business rules and thresholds, and unwieldy beyond three or four conditions. A <strong>decision tree</strong> is an if/else-if structure with nested conditions and calls to other rules, best for sequential or hierarchical logic where branches test different conditions. A <strong>map value</strong> is a one- or two-dimensional lookup with ranges, best for fee schedules and tier banding. <strong>Decision data</strong> holds keyed instances (limits, reason-code mappings) that analysts maintain through a landing page. Choose a table when every row tests the same conditions and business people read it as a matrix; choose a tree when the branches test different conditions or the logic is a sequence.</p>
+    <p>For Dana's request the decision is a table, <code>MaintenanceRisk</code>, whose inputs are the change type, channel, customer risk rating and recent changes, and whose results are a risk tier and a route path.</p>
+    <table>
+      <tr><th>#</th><th>Change type</th><th>Channel</th><th>Customer risk rating</th><th>Changes in last 90 days</th><th>Result: RiskTier</th><th>Result: RoutePath</th></tr>
+      <tr><td>1</td><td>Signer removal</td><td>Any</td><td>High</td><td>Any</td><td>High</td><td>EDD + L2 approval</td></tr>
+      <tr><td>2</td><td>Address change</td><td>Digital</td><td>Any</td><td>&gt;= 2</td><td>High</td><td>Manual verify</td></tr>
+      <tr><td>3</td><td>Address change</td><td>Digital</td><td>Low</td><td>0 to 1</td><td>Low</td><td>Auto verify</td></tr>
+      <tr><td>4</td><td>Address change</td><td>Branch</td><td>Low or Medium</td><td>Any</td><td>Medium</td><td>L1 verify</td></tr>
+      <tr><td>5</td><td>Beneficiary update</td><td>Any</td><td>Any</td><td>Any</td><td>Medium</td><td>L1 verify</td></tr>
+      <tr><td>6</td><td>Otherwise</td><td></td><td></td><td></td><td>Medium</td><td>L1 verify</td></tr>
+    </table>
+    <p class="small muted">Invented design values <span class="tag amber">assumed Riverbend policy</span>. Row 1 precedes row 5 deliberately: a high-risk signer removal must never fall into a generic row.</p>
+    <p>The table evaluates top to bottom and, by default, the first matching row wins (an option can evaluate all rows), so row order is part of the logic. Blank or "any" cells match everything for that column. An <em>otherwise</em> row should always exist so the result is never silently empty and a blank does not flow into routing. The result property's allowed values should be a table-edit list so an analyst cannot type a typo. The table is called from a Decision shape in a flow, a property-map method, an expression function or a transform. The pitfalls are gaps and overlaps (for each pair of rows ask whether both can match), a missing otherwise, inconsistent boundaries (use &gt;= 10000 and &lt; 10000 and document inclusive and exclusive bounds), null inputs that match a blank cell unexpectedly, and comparing text with numbers.</p>
+    <div class="flow">DECISION CALL PATH   Flow: Decision shape "RiskTier"
+  1 Flow evaluates the Decision shape -> resolves rule MaintenanceRisk (rule resolution + circumstancing by .Channel/.State if defined)
+  2 Reads inputs from the primary page (.ChangeType, .Channel, D_Customer.RiskRating, .RecentChangeCount)
+  3 Table evaluated top-to-bottom, first match returns the result
+  4 Result stored in .RiskTier / connector chosen by result mapping
+  5 Tracer shows: decision rule name, row index matched, inputs
+  6 History entry: "Risk tier High via row 1" (write it; auditors ask)</div>
+    <p>Who maintains these rules is a governance decision, not a technical one. Decision tables can be authored in App Studio for simple cases, with branch-based review and PegaUnit tests; business-owned rule changes can go through a revision-management mechanism for proposing, approving and scheduling changes (tooling names and packaging differ by release); reference data can sit in a data type with a maintenance case, giving maker-checker over changes; and developer-managed rules follow the normal release process. In a bank the point is that threshold and mapping changes follow a controlled promotion path rather than ad hoc edits in production.</p>
+    <p>One boundary belongs here. Decision rules can also call predictive models, adaptive models and scorecards authored in Prediction Studio and combined in strategies; Chapter 08 treats those. The distinction to keep in this chapter is that a decision table is deterministic and explainable: the same input always gives the same output with a visible reason, whereas a model returns a probability. Banks often require both, with a model score used as an input to a deterministic policy rule.</p>
+  </section>
+
+  <section id="s3-10" class="pagebreak">
+    <h2>3.10 Circumstancing: North Carolina, and a state-exemption example</h2>
+    <p>Chapter 01 left a thread open: the decision that marks an address change as sensitive has a North Carolina variant for Dana, and that variant is created by circumstancing. <strong>Circumstancing</strong> creates a <em>variant</em> of a rule that applies only when a condition is true: a property value, a combination of values, or a date range. The base rule and its variants share the same name, class, ruleset and version family. Rule resolution ranks variants by circumstance ahead of version and picks the highest-ranked one whose condition holds at run time, so a newer base rule does not supersede an older circumstanced variant (<a href="ch01_pega_platform_core.html#s1-6">Chapter 01 §1.6</a>, the legal-order variant example). The caller never changes: it still calls the same rule name and the right variant runs, which is the whole reason to do it this way rather than writing a branch in every rule.</p>
+    <p>There are three kinds. A <em>single-property</em> variant uses the "specialise by circumstance" action on the rule and one property and value, such as <code>.State = "NC"</code>. A <em>multiple-property</em> variant uses a Circumstance Template (which names the properties that participate) and a Circumstance Definition (which lists the value combinations and maps each to a variant). A <em>date-based</em> variant has effective start and end dates, or compares a date property to an "as of" date. In every case the base rule must exist, because it is what runs when no circumstance matches, and the circumstance property must already be set on the page at the point of call.</p>
+    <h3>A worked example: garnishment exemption by state</h3>
+    <p>The legal-order case from Chapter 02 needs to compute how much of an account to restrain, and the answer depends on the state, the order type and sometimes an effective date, because some funds are exempt from seizure under federal and state law. Riverbend's legal operations team must see the calculated amount to restrain without a developer writing if/else for fifty states.</p>
+    <div class="warning"><strong>Legal content disclaimer.</strong> Every number in this example is an <strong>invented placeholder</strong> that demonstrates mechanics <span class="tag amber">assumed Riverbend policy</span>. Real exemption rules are determined by Legal and Compliance, and Chapter 12 states the shape of the legal rules with their sources.</div>
+    <div class="flow">DATA
+  Page: FCB-Dep-Work-LegalOrder  .State, .OrderType, .EffectiveDate, .AvailableBalance, .ProtectedBenefitAmount, .DebtorCount
+
+RULES  (class FCB-Dep-Work-LegalOrder, ruleset FCBLegalRules  -- owned by Legal Ops, versioned)
+  Decision Table  CalcRestrainAmount                 <- BASE rule (federal default: restrain balance minus protected benefit amount)
+  Decision Table  CalcRestrainAmount [State=CA]      <- single-property circumstance
+  Decision Table  CalcRestrainAmount [State=TX]
+  ... other states only where they differ from the base
+  Circumstance Template  StateAndOrderType : properties (.State, .OrderType)
+  Circumstance Definition  StateAndOrderType : (CA, TaxLevy) -> CalcRestrainAmount_CA_Levy, ...
+  Date-based variant:  CalcRestrainAmount [State=CA] effective 2026-01-01 to open-ended
+  Decision Data: ExemptionParameters (keyed State+OrderType+EffectiveFrom) -> ExemptFixedAmount, PercentProtected
+
+CALLER (unchanged for any state)
+  Decision shape / data transform:  Call CalcRestrainAmount  ->  .RestrainAmount</div>
+    <p>The base rule is the federal default: for a garnishment or a tax levy the restrained amount is the available balance minus the protected benefit amount, never below zero; for a court freeze it is the full available balance and the case needs legal review; any other order type restrains nothing and needs legal review. A state variant exists only where the logic genuinely differs: one state subtracts an additional exempt amount, another restrains nothing for consumer debts and flags a review, another requires a mandatory exemption notice that triggers a correspondence variant, another restrains only the debtor's share of a joint account. Because the logic depends on both state and order type, the Circumstance Template lists those two properties and the definition maps each differing combination to a variant, so only exceptions to the base exist and the number of rules stays manageable.</p>
+    <p>For a date-based change, such as a state altering its exempt amount from 1 January 2026, a time-qualified variant is created effective that date and the old variant stays valid until the day before. The circumstance date input should be an explicit property such as <code>.OrderEffectiveDate</code> (the service date or processing date is a legal decision), not "today", so that reprocessing a December order in January produces the December answer.</p>
+    <p>When the amount for a California order looks wrong, the diagnosis is mechanical. Trace decision rules and rule resolution in Tracer and read the instance key of the winning <code>CalcRestrainAmount</code> with its state and date tag. Check <code>.State</code> on the page at call time (blank, or "California" against "CA", since the circumstance value is an exact match). Check that the circumstance property is set <em>before</em> the call, in the right order within the data transform. Check the date variant, including time zone and boundary day. Check the batch requestor's ruleset list for the latest version of the legal ruleset. Check for a cached resolution after a recent check-in. Then pin the defect with a PegaUnit case that sets a California order with a known balance and asserts the expected amount.</p>
+    <p>The pitfalls are consistent. A state with no variant and no base fails, so always keep a safe base. A circumstance property not yet set when the rule resolves falls back to the base silently, so set state first. Exact-match strings differ in case, so normalise with a value list and a data page of states. Variants multiply (fifty states times six order types times dates is hundreds of rules), so prefer data-driven parameters, a Decision Data table keyed by state, order type and effective date, when the <em>logic is the same</em> and only the numbers differ, and circumstance only when the <em>logic itself</em> differs. Ranking is class, then ruleset, then circumstance, then circumstance date, then date range, then version (Chapter 01 §1.6), and because ruleset ranks ahead of circumstance, a variant in a lower ruleset is outranked by a base rule on the same class in a higher ruleset, so test through the real application stack. And record which rule or version produced a decision on the case, for audit.</p>
+    <table>
+      <tr><th>Situation</th><th>Circumstancing</th><th>Decision Data / parameters</th></tr>
+      <tr><td>Same formula, different numbers per state</td><td>No</td><td>Yes: one rule, keyed parameter lookup</td></tr>
+      <tr><td>Different formula or steps per state</td><td>Yes</td><td>No</td></tr>
+      <tr><td>Legal owns thresholds and changes them often</td><td>Possible with revision management</td><td>Yes, via a maintained table with approval</td></tr>
+      <tr><td>Different correspondence per state</td><td>Yes: a variant of the correspondence rule</td><td>Only for merge values</td></tr>
+    </table>
+    <p>This is the trade-off the application will make wherever variation comes from, whether it is a state, a product or a market: keep logic where it genuinely differs and keep numbers as effective-dated data owned by the people who answer for them.</p>
+  </section>
+
+  <section id="s3-11" class="pagebreak">
+    <h2>3.11 Validation: refusing bad data</h2>
+    <p>Marcus types the new address and Dana's routing details, and one of them is malformed. A bad routing number, a maturity date before the open date or a negative amount in a bank produces returns, regulatory errors and failed core updates, so the application must refuse bad data before it is saved or before a flow action completes. Pega separates property-level format checks from form-level business checks.</p>
+    <p>At property level, an <strong>Edit Input</strong> rule normalises what the user typed before storage (trim, upper-case a state code, strip dashes from an account number), and an <strong>Edit Validate</strong> rule checks the value's format or range and adds an error message on failure. At form level, a <strong>Validate rule</strong> (<code>Rule-Obj-Validate</code>) is a list of property validations and conditions run together, referenced from flow actions or called with the Validate method, which can loop over page lists, call Edit Validate rules and call other Validate rules. A required setting marks a field mandatory, with a client-side check and server enforcement; a Declare Constraint (3.6) checks across properties; and custom logic can add messages with message actions or <code>Page-Set-Messages</code>.</p>
+    <p>The distinction that matters most is client side against server side. Client-side validation runs in the browser as the user types or tabs out (required, format, simple range) and gives fast feedback, and it can be bypassed by an API call, disabled JavaScript or tampering. Server-side validation runs on submit and is the authoritative enforcement. The rule is that client-side validation is a convenience, never a control: every rule a regulator cares about must also exist server side, so that a DX API or Service-REST caller cannot bypass it (Chapter 04 shows why that matters for API-driven channels).</p>
+    <div class="flow">FLOW ACTION SUBMIT  "Approve closure"
+  1 Client-side checks (required fields) -> block if fail
+  2 Request to server
+  3 Edit Input normalisation on touched properties
+  4 Flow action Validate rule runs:  required fields, Edit Validate on .RoutingNumber, loop .Signers(*) checks,
+      condition: maker != checker  -> message "Maker cannot approve own case"
+  5 Errors?  YES -> messages attached to properties/page, harness redisplays with errors, assignment not advanced
+             NO  -> post-processing data transform -> flow advances -> save/commit</div>
+    <p>That sequence is also where the maker-checker control from Chapter 02 sits server side: a validate rule that refuses the approval when the maker equals the current operator. A Validate rule has an applies-to class, ordered validation steps, message text (use field values for localisation), the property each message attaches to so it displays in the right place, and a choice between stopping on the first error and collecting all of them. The things to avoid are relying on the UI "required" setting alone, validating in post-processing after the flow has advanced, messages with no property association, hard-coded English text, and duplicating validation logic across ten flow actions instead of one reusable Validate rule.</p>
+  </section>
+
+  <section id="s3-12" class="pagebreak">
+    <h2>3.12 Reference data: where parameters should live</h2>
+    <p>Every rule in this chapter depends on facts that change on their own schedule: approval limits, hold reason codes, ACH return reason mappings, state exemption parameters, holiday calendars, branch lists, queue and skill mappings. If each lives somewhere different, hard-coded in a transform here, in a decision table there, in a spreadsheet elsewhere, change control and audit become impossible. A <strong>keyed data instance</strong> is a persisted row of a concrete data class identified by its key properties (<code>FCB-Dep-Data-LegalOrderType</code> keyed by <code>OrderTypeCode</code>), read with <code>Obj-Open</code> or a lookup data page and maintained through a UI, an import or an integration. The question is which kind of data goes where.</p>
+    <table>
+      <tr><th>Kind</th><th>Examples</th><th>Storage choice</th><th>Owner and change path</th></tr>
+      <tr><td>Enterprise master data owned elsewhere</td><td>Customer, account, product master, branch master</td><td>Not stored in Pega as master; read through a data page from the core or MDM</td><td>Source system</td></tr>
+      <tr><td>Slowly changing business parameters</td><td>Approval limits, SLA thresholds, ACH return reason mapping</td><td>Decision Data or a keyed data type with a maintenance UI</td><td>Business owner with approval</td></tr>
+      <tr><td>Legal and regulatory parameters</td><td>Exemption amounts, response windows, notice requirements</td><td>Decision Data with effective dating, or circumstanced rules</td><td>Legal and Compliance; maker-checker change, versioned</td></tr>
+      <tr><td>Pick lists and codes</td><td>State list, reason codes, document types</td><td>Field values, or a data type with a node-scope read-only data page</td><td>Product owner</td></tr>
+      <tr><td>Calendars</td><td>Holiday calendars</td><td>Calendar rules plus a yearly update process</td><td>Operations and release</td></tr>
+      <tr><td>Environment configuration</td><td>Endpoints, timeouts, feature toggles</td><td>Dynamic System Settings, not rules; never in decision tables</td><td>Platform team</td></tr>
+    </table>
+    <p>Six rules keep this manageable. One source of truth per item, with Pega holding a cache or a copy only when it must. Keyed, effective-dated rows, never overwriting history (add a new row with a new effective-from date). Reading through a node-scope read-only data page with a sensible refresh window and an explicit refresh step in the deployment runbook. Packaging reference data in the product rule for promotion and offering a validated import for large tables. Auditing every change with who, what, when and approver. And testing seed data per environment, because UAT with production-like reference data catches "works in dev, fails because the state table was empty".</p>
+    <div class="flow">REFERENCE DATA LIFECYCLE   (ACH return reason mapping as an example)
+  Business analyst raises change case "ReasonMapChange" (maker)
+     -> edits draft rows (editable data page / maintenance UI)
+     -> checker approves (maker-checker)
+     -> change saved to FCB-Dep-Data-ACHReturnReason with EffectiveFrom = next business day
+  D_ACHReturnReason (node, read-only, reload hourly) picks it up on each node
+  Audit: history + field audit on mapping rows; report "reference changes last 30 days"</div>
+  </section>
+
+  <section id="s3-13" class="pagebreak">
+    <h2>3.13 The deposits data model, in one place</h2>
+    <p>Everything the chapter has decided can be read as one picture: what Pega holds, what it reads, and where the boundary between the two sits.</p>
+    <div class="flow">                    SYSTEM OF RECORD (core banking, via ESB)                         PEGA (case + reference)
+ +--------------------------------------------------------+          +--------------------------------------------+
+ | Customer (CIF)  1 ---- * Account  1 ---- * Hold          |          | FCB-Dep-Work-*   cases (pc_work_dep)       |
+ |   CustomerID       AccountNumber  HoldID                  |  read    |   .CustomerID  .AccountNumber (exposed)    |
+ |   Name, TaxID      ProductCode    Type, Amount, Expiry    | -------> |   .MakerOperatorID  .RiskTier (exposed)    |
+ |   RiskRating       Status, Balance Source (Legal/Fraud)   | data     |   .Signers() page list (embedded, indexed) |
+ |   Address(es)      OpenDate, Maturity                     | pages    | FCB-Dep-Data-LegalOrder  (own table)       |
+ |                    Signer * ---- 1 Customer (role)        |          |   OrderID(key) State OrderType DueDate ... |
+ +--------------------------------------------------------+          | FCB-Dep-Data-Hold (Pega-side hold request) |
+         ^ canonical translation boundary (integration classes, Ch05)   | FCB-Dep-Data-ACHReturn (Reason, Deadline)  |
+                                                                      | Decision data / reference data (3.12)      |
+                                                                      +--------------------------------------------+
+DATA PAGES (read side)
+  D_Customer[CustomerID]         thread, read-only, reload per interaction      source: Connect-REST (ESB)
+  D_AccountList[CustomerID]      thread, read-only, reload if older than 2 min  source: Connect-REST
+  D_Holds[AccountNumber]         thread, read-only, reload per interaction      source: Connect-REST
+  D_LegalOrdersByAccount[Acct]   thread, read-only                              source: Report Definition (exposed cols)
+  D_StateList / D_ReasonCodes    node,   read-only, do not reload / hourly      source: data transform / lookup
+  D_OperatorLimits[OperatorID]   requestor, read-only                           source: Decision Data
+EXPOSED COLUMNS (work table): pzInsKey, pxObjClass, pyStatusWork, CustomerID, AccountNumber, RiskTier, ResponseDueDate,
+                              ClosureBalance, MakerOperatorID, pxUpdateDateTime, pyAssignedOperatorID...
+DECLARE INDEX: .Signers() -> fcb_index_signers (SignerName, TaxIDHash)
+DECLARATIVES: Declare Expression .TotalHoldAmount (forward), .AvailableForClosure = Balance - TotalHoldAmount</div>
+    <table>
+      <tr><th>Decision</th><th>Reason</th></tr>
+      <tr><td>Customer, account and hold are not stored as masters in Pega</td><td>The core is the system of record; duplicating creates reconciliation problems</td></tr>
+      <tr><td>Legal orders are their own data instances</td><td>Own lifecycle, reporting by due date and state, clean locking, not buried in a case BLOB</td></tr>
+      <tr><td>Signers embedded, with a Declare Index</td><td>A small list, read with the case; search by signer is occasional</td></tr>
+      <tr><td>Thread scope for customer data</td><td>Personal, case-specific and volatile</td></tr>
+      <tr><td>Canonical integration classes between ESB payloads and Pega classes</td><td>Isolate vendor and ESB changes (Chapter 05)</td></tr>
+      <tr><td>Exposed columns chosen from the queries</td><td>Work queues, supervisor dashboards, SLA and aging reports, batch selection</td></tr>
+    </table>
+    <p>The same pattern fits reconciliation work later: a case holds keys and the delta, the facts are read through data pages, results that must be reported on are exposed or separate instances, and the cases for breaks carry only what an investigator needs. Chapter 13 returns to this boundary when it places every layer of the application.</p>
+  </section>
+
+  <section id="s3-14" class="pagebreak">
+    <h2>3.14 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. What is the BLOB, and why does it matter?</span>
+    <p>"Pega serialises the whole page into one compressed column, pzPVStream, and also writes exposed properties into their own columns. The BLOB gives flexible schema and one-read opening of a case, but a database cannot filter, sort, index or join inside it. So anything used in a report filter, join, sort, queue or batch selection must be exposed and indexed, with a backfill for existing rows. Page-list elements use Declare Index, or better, separate instances. The BLOB also holds personal data, so masking exposed columns alone does not protect it."</p></div>
+
+    <div class="qa"><span class="q">Q2. Explain data page scope.</span>
+    <p>"Scope decides who shares one cached copy. Thread scope is requestor-thread scoped: one thread of one requestor, which in the traditional portal is usually one case tab. Requestor scope is shared by all threads of one session, and node scope by every requestor on the node. I use thread for case-specific and editable data, requestor for user-specific data, and node only for read-only reference data identical for everyone. A node page on a class with access control policies draws a severe guardrail warning."</p></div>
+
+    <div class="qa"><span class="q">Q3. How do you keep a data page's data fresh?</span>
+    <p>"By choosing a refresh strategy per data: do not reload for static reference data, reload if older than a window for slowly changing data, reload once per interaction for screens that need fresh data referenced many times, which exists only at thread and requestor scope, a do-not-reload-when condition for locked decisions, and explicit invalidation after I update the source. For data that must be exact when I act on it, such as a balance before a disbursement, I fetch at the step instead of trusting any cache window."</p></div>
+
+    <div class="qa"><span class="q">Q4. Reference or copy when consuming a data page?</span>
+    <p>"Reference is a read-through to the shared page: always current, no copy cost, and read-only pages cannot be edited. Copy is a snapshot that later refreshes do not change. I reference for display and decision inputs and copy only when the value must be frozen for audit or the user will edit it."</p></div>
+
+    <div class="qa"><span class="q">Q5. What is a savable data page, and what does WriteNow do?</span>
+    <p>"A savable page is an editable page that also has a save plan, which pushes changes back to the system of record by a database save, an activity, a REST call or robotic automation. Plans are not mutually exclusive, and there is an otherwise condition. WriteNow decides the transaction boundary: true saves immediately as an independent transaction, false defers the save into the surrounding transaction, which commits, or rolls back, later. A deferred save is invisible to other requestors and to SQL until commit."</p></div>
+
+    <div class="qa"><span class="q">Q6. Are data pages the wrong tool for writes?</span>
+    <p>"Not as a rule. A single-object write back to a system of record is what savable pages are for. They are the wrong tool for bulk row-by-row writes, where one save per row means one call per row and set-based work is better, and for writes that need approval, idempotency and an auditable status, where the right model is a case step with an integrator, an idempotency key and a visible status. A maintenance screen editing reference data fits a savable page; placing a hold on an account during closure does not."</p></div>
+
+    <div class="qa"><span class="q">Q7. Forward versus backward chaining in a Declare Expression?</span>
+    <p>"Forward chaining recomputes the target whenever an input changes, so the stored value stays current, which suits exposed and reported properties, at the cost of work on every input change. Backward chaining computes on read, which suits display-only values. Forward chaining over a large page list is quadratic during bulk population, so I populate in bulk and compute once."</p></div>
+
+    <div class="qa"><span class="q">Q8. Data transform or activity?</span>
+    <p>"A data transform for setting and mapping data: it is readable, unit testable, inheritable and guardrail friendly. An activity only where no declarative rule can do the job: queueing work, explicit saves, calling connectors from background logic, custom routers. I avoid Java steps, keep activities thin, and never commit inside a loop."</p></div>
+
+    <div class="qa"><span class="q">Q9. Circumstancing or data-driven parameters?</span>
+    <p>"If the formula is the same and only the numbers differ by state, I put the numbers in Decision Data keyed by state, order type and effective date, so Legal maintains them under change control. I circumstance only where the logic or the correspondence genuinely differs. Variants rank ahead of version, so a base-rule fix must be applied to every variant, and the circumstance property must be set before the rule resolves."</p></div>
+
+    <div class="qa"><span class="q">Q10. Why is client-side validation not enough?</span>
+    <p>"It is bypassable by an API call or tampering. Anything a regulator cares about, including maker-not-equal-checker, must be enforced server side in a validate rule or a security rule, so the DX API and Service-REST paths are covered. Client-side checks are only fast feedback."</p></div>
+  </section>
+
+  <section id="s3-recap">
+    <h2>3.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>The case now has real data. It stores keys and the requested change, reads Dana's customer and account through data pages that fetch once and share by scope, refreshes the balance where it must be exact, can write a single object back through a savable page with a known commit boundary, derives amounts declaratively, decides sensitivity from a decision table, varies by state without copying rules, and refuses bad data on the server.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Properties and data classes define what is held; saving serialises the page into a BLOB with exposed columns for anything SQL must see, and Declare Index for lists. Data pages carry scope, refresh, parameters, error handling and edit mode, with a save plan and <code>WriteNow</code> deciding when a write commits. Declarative rules, data transforms and activities form a ladder from most to least preferred, decision rules externalise logic, circumstancing varies it, and reference data lives in keyed, effective-dated, owned tables.</p>
+    <h3>What it still cannot do</h3>
+    <p>The data is right, but no one can see or edit it: there is no screen. Marcus cannot open <code>AM-10417</code>, change a field, receive a validation message or submit it. Building that screen, in the traditional UI and in Constellation, and exposing the same change through the DX API, is Chapter 04.</p>
+  </section>
+
+  <section id="s3-ref" class="pagebreak">
+    <h2>3.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. docs.pega.com pages are JavaScript-rendered and are not directly retrievable; their content was obtained through search-engine indexing.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>Pega docs: Data page definition <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-241/page/platform/data-integration/data-page-definition.html</td><td>Platform 24.1 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Scopes (node, thread, requestor); the three edit modes; editable-page restrictions; reload once per interaction limited to thread and requestor scope; the node-scope guardrail warning on classes with access control policies; associate-requestor copies in chat</td></tr>
+      <tr><td>Pega docs: Savable data pages <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-25/page/platform/data-integration/savable-data-pages.html</td><td>Platform 25 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Save plan options; the places a save is triggered; <code>WriteNow</code> semantics</td></tr>
+      <tr><td>Pega docs: Configuring a save plan in Dev Studio <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform/page/platform/data-integration/configure-save-plan-inf-studio.html</td><td>Current bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Save plans are not mutually exclusive; the Otherwise condition</td></tr>
+      <tr><td>Pega docs: General tab on the Class form <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/app-dev/general-tab-class-form.html</td><td>Platform 24.2 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Class group and pattern-inheritance semantics referenced from Chapter 01</td></tr>
+    </table>
+    <p class="small muted">Rule-resolution ranking (3.10) is sourced in Chapter 01's references.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch02_case_management_bpm.html">&larr; Previous: Chapter 02</a><a href="ch04_ui_constellation_dx.html">Next: Chapter 04 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

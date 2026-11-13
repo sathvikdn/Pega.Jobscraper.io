@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch01 · Pega Platform Core &amp; Rule Resolution | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="index.html">&larr; Index</a>
+  <a class="btn" href="ch02_case_management_bpm.html">Next: Chapter 02 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 01 &middot; Platform foundation</div>
+    <h1>Pega Platform Core &amp; Rule Resolution</h1>
+    <p class="subtitle">One address-change request, followed from the moment it arrives to the moment the right rule runs for the right customer. Along the way: what a rule is, how classes and inheritance decide where a rule can live, how rulesets and versions let a change ship safely, how the engine picks one rule from many, and what the clipboard, requestors, locks, guardrails and tests do to keep the whole thing trustworthy.</p>
+    <div class="meta">
+      <div><strong>18</strong><span>Sections</span></div>
+      <div><strong>11,052</strong><span>Words</span></div>
+      <div><strong>5-phase</strong><span>Rule resolution model</span></div>
+      <div><strong>10</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>This is the first chapter, so it starts from the application itself. Read it in order the first time. Later, jump to 1.6 (rule resolution), 1.11 (locking) and 1.12 (guardrails), because other chapters refer back to them.</p>
+    <div class="toc">
+      <a href="#s1-0">1.0 The application and the request<span>The worked example and its fixed ledger</span></a>
+      <a href="#s1-1">1.1 Why the request is not code<span>What Pega is, and how it differs from Java/Spring</span></a>
+      <a href="#s1-2">1.2 Where the work is done<span>Names and studios</span></a>
+      <a href="#s1-3">1.3 What a rule is<span>Keys, categories, common fields</span></a>
+      <a href="#s1-4">1.4 Classes<span>Where a case lives and where its rules come from</span></a>
+      <a href="#s1-5">1.5 Pattern and directed inheritance<span>Search order, class groups, a worked example</span></a>
+      <a href="#s1-6">1.6 Rule resolution<span>One rule on Dana's case, five phases, three worked examples</span></a>
+      <a href="#s1-7">1.7 Rulesets and the application stack<span>Versions, locking, built-on layers</span></a>
+      <a href="#s1-8">1.8 Branches and merge<span>Parallel team development</span></a>
+      <a href="#s1-9">1.9 The clipboard<span>The request's working memory</span></a>
+      <a href="#s1-10">1.10 Requestors and threads<span>Who is running, and the request lifecycle</span></a>
+      <a href="#s1-11">1.11 Locking and audit<span>Two operators, one case</span></a>
+      <a href="#s1-12">1.12 Guardrails<span>Keeping the rules maintainable</span></a>
+      <a href="#s1-13">1.13 Testing and packaging<span>PegaUnit, product rules, promotion</span></a>
+      <a href="#s1-14">1.14 Interview Q&amp;A<span>Short answers to the questions this chapter prepares</span></a>
+      <a href="#s1-recap">1.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s1-ref">1.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+  </section>
+
+  <section id="s1-0" class="pagebreak">
+    <h2>1.0 The application and the request we will follow</h2>
+    <div class="note"><strong>About the worked example.</strong> Every chapter in this pack follows one
+      application: <strong>Deposit Servicing</strong>, built for a fictional US bank called
+      <strong>Riverbend</strong>. The customers, accounts, balances, case IDs, staff, policies,
+      thresholds, SLAs and architecture are <strong>invented for teaching</strong>. They are not First
+      Citizens' architecture, data or policy, and nothing here should be read as describing any real
+      bank's internal processes. Where a figure is a legal requirement rather than an invented policy,
+      it is cited to the regulation. Class names keep the <code>FCB-Dep-</code> prefix purely so the
+      rule-resolution examples stay consistent across chapters.</div>
+    <p>Riverbend's Deposit Operations team services checking and savings accounts. Four people appear throughout. <strong>Dana Whitfield</strong> is a retail customer (<code>CUS-4417</code>). <strong>Marcus Reed</strong> (<code>mreed</code>) is a Deposit Operations analyst who works the <code>DepOps-Maintenance</code> queue; he can submit changes but cannot approve them. <strong>Priya Raman</strong> (<code>praman</code>) is the supervisor who approves sensitive changes and cannot approve a case she prepared herself. <strong>Sam Okonjo</strong> (<code>sokonjo</code>) builds the application, and <strong>Lena Fischer</strong> (<code>lfischer</code>) is the L2/L3 engineer who keeps it running. Two further customers appear only when the main journey cannot carry a process: Victor Osei for a legal order and Harlow Freight Co. for an ACH return.</p>
+    <p>The request that drives this chapter is small. On Monday 2 March 2026 Dana changes her mailing address in the web channel, and the application creates case <code>AM-10417</code>. Nothing about it is exotic, which is the point: the next fourteen sections explain what the platform must already know before that one case can behave correctly for Dana's state and product, and why the same application, with the same case type, must behave differently for someone else.</p>
+    <h3>The scenario ledger</h3>
+    <p>The values below are fixed for the whole pack. Later chapters link back here instead of restating them.</p>
+    <table>
+      <tr><th>Account (Dana Whitfield, <code>CUS-4417</code>)</th><th>Type</th><th>Ledger balance</th><th>Available balance</th><th>Note</th></tr>
+      <tr><td><code>CHK-8842-0117</code></td><td>Checking, opened 14 Jun 2019</td><td>$4,418.55</td><td><strong>$4,218.55</strong></td><td>A $200.00 merchant authorisation hold explains the gap between ledger and available</td></tr>
+      <tr><td><code>SAV-8842-0233</code></td><td>Savings, opened 14 Jun 2019</td><td>$12,040.00</td><td>$12,040.00</td><td>No holds</td></tr>
+    </table>
+    <table>
+      <tr><th>Date</th><th>Day</th><th>Event</th></tr>
+      <tr><td>8 Dec 2025</td><td>Mon</td><td>Dana gives oral notice of an unauthorised $212.40 debit: dispute <code>DS-10915</code></td></tr>
+      <tr><td>2 Mar 2026</td><td>Mon</td><td>Dana submits an address change through the web channel: <code>AM-10417</code>. Marcus reviews it the same day and it is flagged sensitive, because the address changed within 30 days of a card reissue request</td></tr>
+      <tr><td>3 Mar 2026</td><td>Tue</td><td>Priya approves; fulfilment updates the core; <code>AM-10417</code> resolves</td></tr>
+      <tr><td>9 Mar 2026</td><td>Mon</td><td>Dana requests closure of <code>CHK-8842-0117</code>: <code>AC-10882</code>. Balance check, hold placement, interest accrual and disbursement to <code>SAV-8842-0233</code> follow</td></tr>
+      <tr><td>10 Mar 2026</td><td>Tue</td><td>Closure confirmed; account status <code>Closed</code></td></tr>
+    </table>
+    <table>
+      <tr><th>Item</th><th>Value</th></tr>
+      <tr><td>Case IDs</td><td><code>AM-10417</code> address change, <code>AC-10882</code> closure, <code>DS-10915</code> dispute, <code>LO-20331</code> legal order (Victor Osei), <code>PE-30142</code> ACH return (Harlow Freight Co., account <code>CHK-8842-1055</code>)</td></tr>
+      <tr><td>Balance topic and events</td><td>Topic <code>rb.deposits.account.balance.v1</code>, key = account number, partition 3 for <code>CHK-8842-0117</code>; events <code>EVT-55120</code>, <code>EVT-55121</code>, <code>EVT-55122</code> (sequence 881, 882, 883)</td></tr>
+      <tr><td>Inbound file</td><td><code>RB_BAL_20260309_0730.csv</code> with trigger file <code>RB_BAL_20260309_0730.done</code>, 14,207 rows</td></tr>
+      <tr><td>Correlation ID on the core hold call</td><td><code>AC-10882-HOLD-1</code></td></tr>
+      <tr><td>Invented policy <span class="tag amber">assumed Riverbend policy</span></td><td>Address-change review goal 4 business hours, deadline 1 business day; closure target 2 business days; a change is sensitive when the address changed within 30 days of a card reissue request</td></tr>
+    </table>
+    <p>One detail that this chapter needs and the ledger does not fix: Dana's mailing address is in North Carolina, so wherever a rule varies by state, the value on her case is <code>.State = "NC"</code>.</p>
+  </section>
+
+  <section id="s1-1" class="pagebreak">
+    <h2>1.1 Why the request is not code</h2>
+    <p>The obvious way to build the address change is to write it. A controller receives Dana's form, a service validates the new address, a repository updates the customer record, a workflow object tracks whether Marcus or Priya has looked at it, and a template produces the confirmation letter. That is a few weeks of work in Java and Spring, and it works for one bank in one state.</p>
+    <p>It stops working when Riverbend's reality moves, and in a bank reality moves constantly. A regulator changes what must be verified before a mailing address is changed. A second state needs a different confirmation notice. Compliance decides that an address changed within 30 days of a card reissue now needs a supervisor. Each of those is a change to logic that the original developers wrote into code, so each is a development ticket, a build, a regression pass and a deployment of a service that otherwise did not need to change.</p>
+    <p>Pega's answer is to treat the parts that change most as data. The process the request follows, the decisions about who must review it, the mapping of fields between the customer record and the case, the screens and the letter are each stored as a <strong>rule</strong>: a small, named, versioned record in the Pega database. The engine that runs the application does not contain Riverbend's logic at all. For each thing it needs to do, it asks which rule applies to the situation in front of it (that question is <em>rule resolution</em>, the subject of 1.6), generates executable Java for that rule the first time it is needed (<em>assembly</em>), caches the result, and runs it. Changing how Riverbend treats address changes in North Carolina becomes a matter of creating a variant of one rule, not rebuilding a service.</p>
+    <p>The comparison with Spring is worth holding in the same place, because it is what most interview questions ask for.</p>
+    <table>
+      <tr><th>Dimension</th><th>Hand-written Java/Spring</th><th>Pega</th></tr>
+      <tr><td>Unit of change</td><td>Source file, commit, build</td><td>Rule instance in a ruleset version</td></tr>
+      <tr><td>Variation by state or market</td><td>if/else, strategy beans, configuration files</td><td>Circumstancing, ruleset layering, specialisation by class</td></tr>
+      <tr><td>Process engine</td><td>Embed a BPMN engine or build state machines</td><td>Flows, stages, assignments and SLAs are native</td></tr>
+      <tr><td>State</td><td>Your own schema, JPA entities, DTOs</td><td>Clipboard (an in-memory page tree) persisted as a BLOB plus exposed columns</td></tr>
+      <tr><td>Deployment</td><td>A pipeline builds an artefact</td><td>Rules are exported as product archives and imported; a pipeline tool orchestrates</td></tr>
+      <tr><td>Quality gate</td><td>Static analysis, unit tests, code review</td><td>Guardrails score, PegaUnit, check-in approvals</td></tr>
+      <tr><td>Cost of change</td><td>Slow to start, consistent</td><td>Fast to start; without governance it sprawls into rules nobody can reason about</td></tr>
+    </table>
+    <p>That last row is the honest trade-off. The platform removes the build-and-redeploy cycle from business change, and in exchange it makes it easy to create thousands of rules that interact in ways nobody planned. Most of the rest of this chapter, and a good part of the pack, is about the discipline that keeps that from happening. The failure mode to recognise early is treating Pega as Java with a graphical editor: putting all logic into Java steps or activities loses rule resolution, circumstancing, reporting and auditability at once, and the guardrails (1.12) will say so.</p>
+    <div class="flow">PLATFORM IN ONE PICTURE
+  Designer (Dev Studio / App Studio)
+        | creates / edits
+        v
+  RULES  (rows in pr4_rule_* tables, versioned in RULESETS)
+        |  loaded by
+        v
+  RULE RESOLUTION  --->  RULE ASSEMBLY (generates Java, caches)
+        |                         |
+        v                         v
+  ENGINE (flow, SLA, queue processors, listeners, services, decisioning)
+        |
+        v
+  CLIPBOARD (in-memory pages)  &lt;--read/write--&gt;  DATABASE (pc_*, pr_* tables)
+        |
+        v
+  UI (traditional sections / Constellation views / DX API JSON)</div>
+  </section>
+
+  <section id="s1-2" class="pagebreak">
+    <h2>1.2 Where the work is done: names and studios</h2>
+    <p>Sam Okonjo opens the application to build the address-change case, and the first thing he meets is that Pega has several tools for several audiences, and an older vocabulary that survives in rule names. A short orientation saves confusion later.</p>
+    <p><strong>PRPC</strong> (PegaRULES Process Commander) was the product name up to roughly version 7, and it still appears in rule prefixes: the ruleset <code>Pega-ProcessEngine</code>, the class <code>Pega-RULES</code>, the tables <code>pr_*</code>. Pega 7 and then Pega 8 introduced the name <strong>Pega Platform</strong>, and <strong>Pega Infinity</strong> is the marketing name for the 8.x-and-later generation; Constellation, DX API v2, Blueprint and the GenAI features are Infinity-era. When someone says "8.8" they mean a specific release in that line, and the traditional, section-based UI of that release behaves differently from Constellation (Chapter 04 keeps the two apart).</p>
+    <p>The tools split by who is working.</p>
+    <table>
+      <tr><th>Studio</th><th>Audience</th><th>What gets done there</th></tr>
+      <tr><td>Dev Studio</td><td>Developers, system architects</td><td>Every rule type; Tracer, Clipboard, PAL, class structure, ruleset management, integration rules, check-in and check-out, Application Quality, Rules Compare</td></tr>
+      <tr><td>App Studio</td><td>Business analysts, low-code authors</td><td>Case Designer (stages and steps), data objects and fields, Constellation views, channels, specifications, settings</td></tr>
+      <tr><td>Admin Studio</td><td>Platform administrators, production support</td><td>Node and requestor monitoring, log levels, Queue Processor and Job Scheduler monitoring, Data Flow runs, authentication settings, health and resource usage</td></tr>
+      <tr><td>Prediction Studio</td><td>Data scientists, decisioning specialists</td><td>Predictions and models (adaptive, predictive, text analytics), monitoring and governance</td></tr>
+    </table>
+    <p>Sam will spend nearly all his time in Dev Studio, because that is where every rule type is available and where Tracer and the clipboard live. Marcus and Priya never see any of them; they work in a portal that the application itself defines. Lena lives in Admin Studio and in Dev Studio's diagnostic tools, which is why Chapter 10 comes back to her.</p>
+  </section>
+
+  <section id="s1-3" class="pagebreak">
+    <h2>1.3 What a rule is</h2>
+    <p>For Dana's request Sam needs a way to say "an address change goes through Capture, Verify, Approve, Update core and Notify", a way to say "a change inside 30 days of a card reissue is sensitive", a way to fetch Dana's customer record from the core, and a letter to confirm the change. Each of those is a different kind of rule, and all rules share one anatomy.</p>
+    <p>A <strong>rule</strong> is a database record, an instance of a class that inherits from <code>Rule-</code>. It has a name (its purpose), an <strong>Applies-To class</strong>, a ruleset and version, an availability, and content that depends on the rule type. The <em>rule type</em> is simply which form you fill in: Flow, Data Transform, Decision Table, Section and so on. Rule instances live in the <code>pr4_rule_*</code> tables, one per family. Cases and customers are different: a case such as <code>AM-10417</code> is a work instance stored in a work table, not a rule, which is why changing a rule does not change cases already in flight.</p>
+    <div class="flow">Rule-Obj-Flow   FCB-Dep-Work-AccountMaintenance   ProcessAddressChange   [ruleset FCBDeposits:01-02-03]
+ ^ rule type     ^ Applies-To class                ^ Purpose/Name           ^ RuleSet:Major-Minor-Patch
+Instance key (pzInsKey):  RULE-OBJ-FLOW FCB-DEP-WORK-ACCOUNTMAINTENANCE PROCESSADDRESSCHANGE #20260210T101500.123 GMT
+Resolution key:  (rule type, class, name)  ->  many candidates;  resolution picks ONE</div>
+    <p>The last line of that key is the one to keep. When the engine needs <code>ProcessAddressChange</code> for Dana's case, there may be several instances with that name and rule type: different versions, different rulesets, different classes, circumstanced variants. The resolution key does not identify one rule, it identifies a set of candidates, and choosing among them is the job of Section 1.6.</p>
+    <p>Dev Studio groups rule types into categories, and the grouping is a useful map of what a Deposit Servicing application is made of.</p>
+    <table>
+      <tr><th>Category</th><th>Typical rule types</th><th>In the address-change case</th></tr>
+      <tr><td>Process</td><td>Flow, Flow Action, Case Type, Stage, Ticket, Service Level</td><td>The address-change flow and its review SLA</td></tr>
+      <tr><td>Decision</td><td>Decision Table, Decision Tree, Map Value, When, Strategy, Decision Data</td><td>The decision that marks a change sensitive</td></tr>
+      <tr><td>Data model</td><td>Property, Class, Data Transform, Data Page, Declare Expression, Declare Index</td><td>The customer data page, the address properties</td></tr>
+      <tr><td>Integration</td><td>Connect-REST, Connect-SOAP, Connect-SQL, Service-REST, Service-File, Service-Email, Data Set, Data Flow, Authentication Profile</td><td>The connector that updates the core</td></tr>
+      <tr><td>User interface</td><td>Section, Harness, Skin, Portal, Correspondence, Constellation View</td><td>Marcus's review screen, the confirmation letter</td></tr>
+      <tr><td>Reports</td><td>Report Definition, Summary view, Chart</td><td>Priya's list of cases past SLA</td></tr>
+      <tr><td>SysAdmin</td><td>Operator ID, Access Group, Work Queue, Calendar, Job Scheduler, Queue Processor, Listener</td><td>The <code>DepOps-Maintenance</code> work queue</td></tr>
+      <tr><td>Security</td><td>Access Role Name, Access of Role to Object, Access Deny, Privilege, Access When</td><td>The control that stops Marcus approving his own change</td></tr>
+      <tr><td>Technical</td><td>Activity, Function, Parse XML/Delimited/Structured, Field Value, Notify</td><td>A rare activity that queues background work</td></tr>
+    </table>
+    <p>Every rule also carries the same handful of administrative fields: the Applies-To class that places it in the hierarchy, the ruleset and version that place it in a layer, an availability (Section 1.6 explains the five values and why they matter), optional circumstance or date qualifiers, an optional privilege required to run it, the developer who has it checked out, and a history of who saved it and why. They look administrative, and they are the inputs rule resolution uses.</p>
+  </section>
+
+  <section id="s1-4" class="pagebreak">
+    <h2>1.4 Classes: where a case lives and where its rules come from</h2>
+    <p>Sam now has a name for the case: <code>FCB-Dep-Work-AccountMaintenance</code>. The class matters for three reasons at once, and it helps to separate them. It determines which rules apply to <code>AM-10417</code> (a rule defined on a parent class is usable by every descendant unless a more specific rule overrides it). It determines where the case is stored. And it determines which properties the case holds.</p>
+    <p>A Pega class is therefore not an object-oriented class with methods. It is a namespace and an inheritance node. The reason the platform works this way is variation: before inheritance-driven rule engines, each variation of a process meant a copy of the whole process. With a class tree Sam writes <code>ValidateSigner</code> once at <code>FCB-Dep-Work</code> and overrides it only for <code>FCB-Dep-Work-AccountClosure</code>, where signers behave differently.</p>
+    <p>Riverbend's application needs four kinds of class, and the way they differ is easiest to see from what happens to an instance of each.</p>
+    <table>
+      <tr><th>Kind</th><th>Example</th><th>Stored where</th><th>What it is for</th></tr>
+      <tr><td>Work class (concrete)</td><td><code>FCB-Dep-Work-AccountMaintenance</code></td><td>The work table of its class group, as a BLOB plus exposed columns</td><td>Case types: <code>AM-10417</code> is an instance</td></tr>
+      <tr><td>Data class</td><td><code>FCB-Dep-Data-Customer</code>, <code>FCB-Dep-Data-Account</code></td><td>Its own table, or none</td><td>Reference and master data, embedded page structures</td></tr>
+      <tr><td>Integration class</td><td><code>FCB-Dep-Int-CoreAccount</code></td><td>Not stored</td><td>The shape of a request or response to the core; the mapping target for connectors</td></tr>
+      <tr><td>Abstract framework class</td><td><code>FCB-</code>, <code>FCB-Dep-</code></td><td>Never instantiated</td><td>Hosts shared rules and properties for the classes beneath it</td></tr>
+    </table>
+    <p>Abstract and concrete are worth one more sentence. An abstract class cannot be instantiated or saved and exists only to host shared rules, which is why <code>FCB-Dep-</code> never holds a case. A concrete class can have instances, and a concrete data class also needs a keys definition and a table mapping so that Pega knows how to open one.</p>
+    <p>The fields on a class rule that matter in practice are few. The class name is prefix-based and the hyphen separates levels, which is what pattern inheritance reads. An optional directed parent names an explicit inheritance parent. For work classes the class group maps the class to a table and an ID format. The keys define the primary key and become the lookup for <code>Obj-Open</code>.</p>
+    <div class="flow">                @baseclass            (universal rules: Pega-supplied)
+                    |
+        Embed- / Data- / Work- / Rule- / History- / Index- ... (Pega base classes)
+                    |
+  FCB-                    (organisation root: shared properties, correspondence, error handling)
+    |-- FCB-Dep-                           (Deposits framework, abstract)
+    |     |-- FCB-Dep-Work                 (class group: case table + ID prefix)
+    |     |     |-- FCB-Dep-Work-AccountMaintenance     (AM-10417)
+    |     |     |-- FCB-Dep-Work-AccountClosure         (AC-10882)
+    |     |     |-- FCB-Dep-Work-LegalOrder             (LO-20331)
+    |     |-- FCB-Dep-Data-Customer        (data class, DB table)
+    |     |-- FCB-Dep-Data-Account
+    |     |-- FCB-Dep-Int-CoreAccount      (integration class, no table)
+    |-- FCB-Common-Data-Address            (reusable embedded data class)</div>
+    <p>The same hierarchy usually maps onto an application layering: an enterprise-common layer, a Deposits framework layer and an implementation layer, each with its own rulesets, so that a business unit's overrides live in the top layer without touching the framework (Section 1.7). The mistakes to avoid are the mirror images of what the tree is for: putting everything in one class so specialisation becomes impossible, creating a new case class for every minor product variation instead of using one class with circumstancing or decision rules, using work classes for reference data and bloating the work table, and putting an integration payload straight into the case rather than into an integration class that is mapped.</p>
+  </section>
+
+  <section id="s1-5" class="pagebreak">
+    <h2>1.5 Pattern inheritance and directed inheritance</h2>
+    <p>When the engine needs <code>InitCase</code> for Dana's case, it begins in <code>FCB-Dep-Work-AccountMaintenance</code> and, if the rule is not there, has to go up. How it goes up is inheritance, and there are two kinds.</p>
+    <p><strong>Pattern inheritance</strong> comes from the name. The engine strips trailing segments at each hyphen: <code>FCB-Dep-Work-AccountMaintenance</code>, then <code>FCB-Dep-Work-</code>, then <code>FCB-Dep-</code>, then <code>FCB-</code>. You get it by naming classes sensibly. <strong>Directed inheritance</strong> is an explicit parent set on the class rule, used when a class needs to inherit from somewhere outside its own name path, such as a Pega framework class or a shared cover class.</p>
+    <p>The order of consultation is interleaved, and that is where the common wrong answer comes from. The engine searches the class itself, then its pattern chain; then it moves to the directed parent and runs a <em>fresh pattern search from that class</em>; it repeats until <code>@baseclass</code>. A rule not found at <code>@baseclass</code> is an error. It is not "all the pattern parents, then all the directed ones".</p>
+    <p>A separate idea is often mixed up with this one, and the distinction pays off in diagnosis. The <strong>class group</strong> is a persistence concept: it decides which table a case instance is written to and its ID prefix, and work classes in a group share one table. Directed inheritance is a rule-resolution concept. They are independent, so a class can belong to a class group and also have an unrelated directed parent. There is one documented interaction: belonging to a class group forces the "Find by name first (Pattern)?" checkbox on automatically. And one documented edge case: if the directed parent is the longest prefix of the class name ending in a hyphen, selecting or clearing that checkbox makes no difference to resolution.</p>
+    <p>Here is the inheritance search on a concrete rule. Sam has written a data transform named <code>InitCase</code> that sets default values on a new case. For an address-change case the engine looks for it like this.</p>
+    <table>
+      <tr><th>Class searched</th><th><code>InitCase</code> exists?</th><th>Effect for <code>AM-10417</code></th></tr>
+      <tr><td><code>FCB-Dep-Work-AccountMaintenance</code></td><td>No</td><td>continue up</td></tr>
+      <tr><td><code>FCB-Dep-Work-</code></td><td>Yes (sets a default SLA flag)</td><td><strong>Chosen</strong> unless a candidate with a better rank is found</td></tr>
+      <tr><td><code>FCB-Dep-</code></td><td>Yes (generic)</td><td>shadowed</td></tr>
+      <tr><td><code>Work-</code></td><td>Pega-supplied default</td><td>shadowed</td></tr>
+    </table>
+    <p>If <code>FCB-Dep-Work-AccountClosure</code> later defines its own <code>InitCase</code>, it wins for closure cases only, and address changes keep using <code>FCB-Dep-Work-</code>. To <em>extend</em> rather than replace, the closure-level rule applies the superclass version first (data transforms have an explicit option to do so) and then adds its own settings. The note about class group and the "Find by name first" option is documented in the Class form's General tab; the interleaved search is described in Pega Academy's inheritance topic (references at the end of the chapter).</p>
+    <p>Directed inheritance has a legitimate use and a standing temptation. The use: a data class that must reuse another class tree, such as an integration class directed to a common data class to inherit property definitions, or a framework class that wants Pega's cover-class behaviour while sitting in Riverbend's naming. The temptation is long chains of directed parents for convenience. They make resolution hard to reason about at three in the morning, so keep them to the minimum necessary and write them down.</p>
+  </section>
+
+  <section id="s1-6" class="pagebreak">
+    <h2>1.6 Rule resolution: which rule runs for Dana</h2>
+    <p>Everything so far has been about where rules can sit. The question this section answers is what the engine does when several of them could apply. The answer is a small algorithm in five phases, and the most useful way to learn it is to run it on a single real lookup.</p>
+    <h3>One rule, three candidates</h3>
+    <p>Marcus opens <code>AM-10417</code>, and the review screen needs to know how much scrutiny the change deserves. That is a decision table named <code>ReviewRequirement</code>, Applies-To class <code>FCB-Dep-Work-AccountMaintenance</code>. Sam has authored it three times over the project's life, and all three exist in the database:</p>
+    <table>
+      <tr><th>#</th><th>Where it is</th><th>Qualifier</th><th>What it says</th></tr>
+      <tr><td>1</td><td><code>FCBDeposits:01-02-04</code>, on <code>FCB-Dep-Work-AccountMaintenance</code></td><td><code>.State = "NC"</code></td><td>North Carolina variant: adds a second identity check for sensitive changes</td></tr>
+      <tr><td>2</td><td><code>FCBDeposits:01-03-02</code>, on <code>FCB-Dep-Work-AccountMaintenance</code></td><td>none</td><td>The base rule, patched last week to read the new 30-day card-reissue flag</td></tr>
+      <tr><td>3</td><td><code>FCBDeposits:01-01-00</code>, on <code>FCB-Dep-Work-</code></td><td>none</td><td>The original generic version on the parent class</td></tr>
+    </table>
+    <p>Dana's case has <code>.State = "NC"</code>. Which row runs? Intuition says the newest, row 2, because it has the latest patch. The platform says row 1, and the rest of this section is the explanation.</p>
+    <h3>Gather, filter, rank</h3>
+    <p>First the engine <strong>gathers</strong>: starting in the Applies-To class it walks up the inheritance structure (Section 1.5) and collects every instance of that rule type and name it finds on the way. Here that is all three rows. Then it <strong>filters</strong> out candidates that cannot apply at all. A candidate is dropped if its ruleset is not on the operator's ruleset list, if its version is higher than the version the list allows (a list entry <code>FCBDeposits:01-02</code> permits 01-02-xx but not 01-03-xx), or if its availability is Not Available.</p>
+    <p>That second condition matters immediately. Marcus is logged into the production application, whose ruleset list allows <code>FCBDeposits:01-03</code>, so row 2 survives. If his access group were still pinned to 01-02, row 2 would be filtered out before ranking, and he would see the older behaviour for a different reason than the one coming next.</p>
+    <p>The survivors are then <strong>ranked</strong>, and the order of the sort keys is the thing to remember. First, class: the candidate closest to the Applies-To class ranks highest. Second, ruleset: the order of the operator's ruleset list. Third, circumstance (property or template). Fourth, circumstance date. Fifth, date and time range. Sixth, version, highest first within a ruleset. Rows 1 and 2 sit on the same class, so class does not separate them. They are in the same ruleset, so ruleset does not either. The third key does: row 1 is circumstanced on a property, row 2 is not. Row 1 therefore ranks above row 2, and version, the key that favours row 2, is not consulted until the sixth.</p>
+    <p>Pega states the reason directly: version is ranked last so that "circumstanced Rules are not automatically overridden if the base Rule is updated in a more recent Ruleset version." That sentence is the whole design. If the newest version always won, fixing the base rule would silently destroy every circumstanced variant, so the platform makes the opposite choice and leaves the maintenance burden with the developer.</p>
+    <p>Two clean-up steps follow ranking. If any candidate is marked Withdrawn, every candidate in a lower version of the same ruleset with the same Applies-To class, purpose and qualifiers is removed. And the highest-ranked candidate that has <em>no</em> qualifiers becomes the <strong>default candidate</strong>, the one that always matches; everything ranked below it is discarded, because it could never be reached. In this example row 2 is the default, and row 3 is discarded.</p>
+    <h3>Cache, then qualify at runtime</h3>
+    <p>What gets cached is not a winner. The engine stores the remaining <em>ranked list</em> (row 1, then row 2) in the rules cache, invalidated by a rule save, a check-in or a cache refresh on the node. At runtime the engine walks that list for <em>this</em> case, user and moment, and takes the first candidate whose qualifiers are satisfied. Dana's <code>.State</code> is <code>"NC"</code>, so row 1 qualifies and runs. For a Texas customer, row 1's qualifier fails, the walk falls to the default, and row 2 runs. If the selected candidate were Blocked, the run would halt and log an error rather than fall through; if it is not yet assembled, the winner is assembled to Java now.</p>
+    <p>This is also why the cache holds a list. One cached result serves a North Carolina case and a Texas case and gives each its own rule. If it held a single resolved winner, circumstancing could not work at all, and the common wrong answer in interviews, "the resolved rule is cached", describes a system that would not be able to do what Pega does.</p>
+    <p>The consequence for Sam is practical and is the most expensive rule-resolution mistake in production. He patched the base rule and verified the fix in a state with no variant. North Carolina keeps running the old logic, silently, because its variant outranks the patch. The fix is to patch the base rule and every circumstanced variant, or to withdraw the variants deliberately, and the cheapest possible check before any base-rule fix is to look at the rule form's circumstance list.</p>
+    <h3>Seeing it in Tracer</h3>
+    <p>When Marcus reports that a Texas colleague sees different behaviour from his, Sam does not reason from memory. He runs as the affected operator (so the ruleset list is the right one), starts Tracer with data transforms, activities and rule resolution events enabled, and reads the rule instance key printed for <code>ReviewRequirement</code>: it names the class, the ruleset and version, and any circumstance tag that won. He opens the rule from that Tracer line rather than from the Records Explorer, which would open it as himself. The usual root causes, in the order they turn up: a higher ruleset layer in that market's application stack overriding the rule; a circumstanced variant on a property; a date-effective variant that went live; an operator whose ruleset list is pinned to an older version; a branch ruleset left in a personal list; and, rarely, a stale cache on one node.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Priya, logged in as a North Carolina supervisor, still sees the pre-patch behaviour after Sam checks in <code>ReviewRequirement</code> at <code>FCBDeposits:01-03-02</code>, but a Texas colleague sees the fix. Name the cause, the evidence you would look for, and two fixes.</p>
+      <p><strong>Answer.</strong> The North Carolina case resolves to the older circumstanced variant at 01-02-04, because circumstance (the third sort key) outranks version (the sixth). Tracer shows the winning instance key with its circumstance tag. One fix is to patch the variant as well; the other is to withdraw it deliberately so the default serves everyone. The assumption this depends on is that both rules sit on the same class and ruleset; if the variant sat on a more specific class, or in a lower ruleset than a base on the same class, the ranking order would change the answer, which is what the next three worked examples show.</p></div>
+    <h3>Three variations Sam has to understand</h3>
+    <p><strong>A more specific class beats a higher-priority ruleset.</strong> Riverbend keeps an overrides ruleset above the deposits ruleset, expecting it to win everything. Two candidates exist for <code>CalculateFee</code>: one on the more specific <code>FCB-Dep-Work-AccountClosure</code> in <code>FCBDeposits:01-01-01</code> (lower priority), and one on the less specific <code>FCB-Dep-Work</code> in <code>FCBOverrides:01-01-01</code> (higher priority). The closure-class candidate wins, because class is sort key one and ruleset only sort key two. The teams that expect an overrides ruleset to beat everything are then unable to explain why a class-level rule still wins; if the override must win, it belongs on the same class or a more specific one, not merely in a higher ruleset. One exception is documented: for a rule type whose class does not have "Use class-based inheritance to arrive at the correct Rule to execute" selected, class is not a ranking criterion at all and ruleset order decides.</p>
+    <p><strong>An older circumstanced rule beats a newer base rule.</strong> This is the situation already seen on Dana's case, repeated with a legal-order rule so the numbers are explicit. <code>CalculateHoldPeriod</code> on <code>FCB-Dep-Work-LegalOrder</code>, in one ruleset: a circumstanced variant for <code>.State = "CA"</code> at <code>FCBDeposits:01-02-04</code>, and a base rule just patched at <code>FCBDeposits:01-03-02</code>. For a California case the older variant wins; the base rule becomes the default and serves every other state.</p>
+    <p><strong>Not Available, Withdrawn and Blocked are three different things.</strong> They are easy to blur and the consequences differ sharply. One section rule, <code>CreateRequest</code>, one class, one ruleset, four versions present: 02-01-15, 02-01-10, 02-01-05, 02-01-01. In each case only the availability of 02-01-10 changes. If it is Available, 02-01-15 (the highest version) runs. If it is Not Available, only 02-01-10 is removed, and 02-01-15 still runs (and if 02-01-15 did not exist, 02-01-05, the next highest). If it is Withdrawn, 02-01-10 and everything at or below it in that ruleset (02-01-05 and 02-01-01) disappear, and 02-01-15 still runs because it is higher; if 02-01-15 did not exist the engine would look to the parent class or the next ruleset. If it is Blocked, nothing is removed because a blocked rule still ranks; 02-01-15 runs, but if 02-01-15 did not exist, 02-01-10 would be selected, the run would halt, an error would be logged and the section would not render, and 02-01-05 would never be reached. The mnemonic: Not Available skips one, Withdrawn deletes downwards, Blocked detonates, and Final locks the ruleset, not the rule.</p>
+    <h3>Reference: rule resolution in full</h3>
+    <p class="small muted">Skip this on a first read. It restates the algorithm and the availability states in one place so you can look up a detail later; the walkthrough above covers everything needed to understand the mechanism.</p>
+    <div class="flow">PHASE 1  GATHER CANDIDATES
+        Start in the Applies-To class and walk up the inheritance structure, collecting every
+        instance of (rule type, rule name) found on the way.
+
+        Traversal is interleaved, not "pattern first then directed":
+          search the class itself
+          -> walk its pattern-inheritance chain (truncate name segments from the right at '-')
+          -> then its directed parent, and run a *fresh pattern search from that class*
+          -> repeat until @baseclass. Not found at @baseclass = error.
+
+        Controlled by two checkboxes on the class rule:
+          "Use class-based inheritance to arrive at the correct Rule to execute?"
+              cleared -> NO superclass search at all; the rule must exist in the current class.
+          "Find by name first (Pattern)?"  (Rule-Obj-Class.pyPatternInheritance)
+              selected -> pattern chain is searched before the directed parent
+              cleared  -> pattern inheritance is bypassed; directed parent chain only
+              Directed inheritance ALWAYS applies for rule types with an Applies-To key part.
+              Classes that belong to a class group have this selected automatically.
+              It cannot be changed after the class form is saved.
+
+PHASE 2  FILTER (remove candidates that cannot apply at all)
+        - ruleset not on the requestor's ruleset list
+        - ruleset version above the version allowed by the list
+          (list entry FCBDeposits:01-02 permits 01-02-xx, not 01-03-xx)
+        - availability = Not Available
+
+PHASE 3  RANK the survivors, in this exact order
+        1. Class            closest to the Applies-To class ranks highest
+        2. Ruleset          order of the operator's ruleset list
+        3. Circumstance     property or template
+        4. Circumstance Date
+        5. Date/Time Range
+        6. Version          highest version within the same ruleset
+
+        Then two clean-up steps, in order:
+        3a. WITHDRAWN REMOVAL. For each candidate marked Withdrawn, remove every candidate in a
+            LOWER version of the SAME ruleset that matches its Applies-To class, its purpose
+            (rule type) and its qualifiers. Candidates in other classes or other rulesets survive.
+            A HIGHER version in the same ruleset marked Available also survives.
+        3b. DEFAULT CANDIDATE. The highest-ranked candidate that has NO qualifiers becomes the
+            default - the fallback that always matches. Every candidate ranked BELOW it is
+            discarded, because it could never be reached.
+
+PHASE 4  CACHE
+        The remaining ranked LIST of candidates is stored in the rules cache - not a single
+        universal winner. Invalidated by rule save, check-in, or a cache refresh on the node.
+
+PHASE 5  QUALIFY AT RUNTIME AND SELECT
+        Walk the cached ranked list top-down for THIS case, THIS user, THIS moment. Take the
+        highest-ranked candidate whose qualifiers are satisfied (circumstance values match,
+        circumstance date and date/time range contain "now"). If none qualify, the default
+        candidate runs.
+        If the selected candidate is Blocked, the run HALTS and an error is written to the log.
+        The winner is then assembled to Java if it is not already assembled.</div>
+    <p>The class-versus-ruleset question has a settled answer, and it is not genuinely ambiguous: class is the first sort key and ruleset the second, so a more specific class outranks a higher-priority ruleset, and ruleset order only breaks ties within the same class (the single exception being a class without class-based inheritance selected). Five availability states complete the picture.</p>
+    <table>
+      <tr><th>State</th><th>Used in resolution?</th><th>Effect</th><th>Dev Studio</th><th>Typical use</th></tr>
+      <tr><td>Available</td><td>Yes</td><td>Normal participation. Default on creation.</td><td>View, copy, edit, run</td><td>Default</td></tr>
+      <tr><td>Final</td><td>Yes</td><td>Cannot be edited, and cannot be copied into another ruleset under the same name. <strong>Cannot be overridden except by a higher version in the same ruleset.</strong></td><td>View and run only</td><td>Pega marks its own rules Final to signal they may change in a future release</td></tr>
+      <tr><td>Not Available</td><td>No</td><td>Filtered out. The next-highest version is considered instead.</td><td>View, copy, edit; does not run</td><td>Save a half-built rule without validation during initial development</td></tr>
+      <tr><td>Blocked</td><td><strong>Yes: it still ranks and can be selected</strong></td><td>If it is selected, the run <strong>halts</strong> and an error goes to the log. Lower candidates are <strong>not</strong> used as a fallback. A blocked <em>circumstanced</em> rule is not considered, but the other instances in the current version ruleset still are.</td><td>View, copy, edit; does not run</td><td>Stop a rule being used while a replacement is written</td></tr>
+      <tr><td>Withdrawn</td><td>No, and it removes others</td><td>Hides itself <strong>and</strong> every candidate at an equal or lower version of the same ruleset with the same Applies-To class, purpose and qualifiers. The engine then looks to the parent class or the next ruleset in the stack. A <strong>higher</strong> version in the same ruleset survives. A withdrawn <em>circumstanced</em> rule is not considered, but the other instances in the current version ruleset still are.</td><td>View, copy, edit; does not run</td><td>Retire a rule across a ruleset's history without deleting it</td></tr>
+    </table>
+    <div class="dont"><strong>Four things not to say.</strong>
+    <ul>
+      <li>"Withdrawn is basically Not Available." Not Available removes <em>one</em> candidate; Withdrawn removes a whole band of lower versions in that ruleset.</li>
+      <li>"Blocked makes resolution fall through to the next rule." It does not: it <em>fails</em>.</li>
+      <li>"Final stops anyone overriding the rule anywhere." A higher version <em>in the same ruleset</em> supersedes it.</li>
+      <li>"The resolved rule is cached." The ranked <em>candidate list</em> is cached.</li>
+    </ul></div>
+    <p>Performance follows from the cache. The ranked list is cached, so a long ruleset list or many circumstanced variants do not matter at steady state, but they slow the first hit after a deployment and widen the troubleshooting surface; keeping the ruleset list lean is worthwhile for both reasons. And because resolution is a security-relevant mechanism too, remember that Access Deny and Final or Blocked availability protect rules, while hiding something in the UI protects nothing.</p>
+  </section>
+
+  <section id="s1-7" class="pagebreak">
+    <h2>1.7 Rulesets, versions and the application stack</h2>
+    <p>The patch to <code>ReviewRequirement</code> raised a question the walkthrough passed over: where does a new version of a rule live, and how does Sam ship it without disturbing everything else? The answer is the ruleset.</p>
+    <p>A <strong>ruleset</strong> is a named container of rules (for example <code>FCBDeposits</code>). Each ruleset has versions of the form <code>MM-mm-pp</code>, major-minor-patch, such as <code>01-02-03</code>, and every rule is stored in one specific version. The <strong>ruleset list</strong> is the ordered list of ruleset and version-prefix entries that resolution uses (Phase 2 in 1.6 is a statement about this list). An <strong>application</strong> rule defines a stack of built-on applications and contributes its own rulesets to the list.</p>
+    <p>Versions exist so that change ships as a layer. Version 01-02-04 can contain only the rules that changed in a patch, resolution takes the highest version at or below the allowed prefix, and rolling back means moving the application or access group to the previous version. The three positions have conventional meanings: the major number marks a new release train that may be incompatible and is rare; the minor number marks a release with new features; the patch number marks a bug fix or hotfix overlay for production. Over time the stack of versions grows, and Pega can <em>skim</em> a ruleset, creating a new higher version that contains only the highest copy of each rule. Skimming is a release-management task, not a daily one.</p>
+    <p>Two kinds of locking get confused here, and the next section has a third. <em>Ruleset-version locking</em> is the one that matters for shipping: when 01-02-03 is released, Sam locks it with a password so no rule in it can change, creates 01-02-04 (or 01-03-01) as the new open version, and updates the application rule to include it. Production rulesets must be locked, and a hotfix is a new patch version, never an edit to a locked one. This has nothing to do with case locking, which Section 1.11 covers.</p>
+    <p>The application stack is how Riverbend layers its design. An operator's access group names an application, and the application is built on others.</p>
+    <div class="flow">Access Group:  FCBDep:Operators
+   -> Application:  FCBDepOps:01-02       (the one the operator logs into)
+        built on  -> FCBDeposits:01-02    (deposits framework)
+            built on -> FCBEnterprise:01-04   (enterprise common: addresses, audit, correspondence)
+                built on -> PegaRULES:08-xx   (Pega-supplied: Pega-ProcessEngine, Pega-UIEngine, ...)
+
+Effective RuleSet LIST built top-down:
+   Personal/branch rulesets (if any)
+   FCBDepOps_Rules:01-02-xx      <- highest priority overrides
+   FCBDeposits:01-02-xx
+   FCBEnterprise:01-04-xx
+   Pega-ProcessEngine, Pega-RULES, Pega-UIEngine, Pega-IntegrationEngine ...  <- lowest</div>
+    <p>Marcus's ruleset list is that stack, flattened. Each layer has an owner and a cadence: enterprise-common holds the shared address and party classes and audit utilities and changes slowly; the deposits framework holds case types, flows, SLAs and decision tables for all deposit products; the implementation layer holds state- or product-specific overrides and reference data; and integration rules (connectors, mappings, service packages) sit in their own ruleset so the integration lead can release them independently. The layering matters because Chapter 13 will ask where a new rule belongs, and "everything in the implementation layer" is the answer that makes a greenfield application unmaintainable.</p>
+    <p>Rulesets have a handful of fields worth knowing: prerequisites (other rulesets and versions that must be present, checked when the list is built), the version lock, whether check-out is required before editing, the update password, and validation mode. The failures to avoid follow from them: working in the highest unlocked production version, one giant ruleset version with thousands of rules that cannot be hot-fixed cleanly, skipping prerequisites so a build that works on a laptop breaks in QA, and saving a rule as a copy into another ruleset without checking class and guardrails.</p>
+  </section>
+
+  <section id="s1-8" class="pagebreak">
+    <h2>1.8 Branches and merge</h2>
+    <p>Sam is not alone. While he patches <code>ReviewRequirement</code>, a second developer is changing the address-change flow, and both work against <code>FCBDeposits</code>. If they edited the same ruleset version they would lock each other out or overwrite each other, and half-finished work would leak into the shared environment.</p>
+    <p>A <strong>branch ruleset</strong> is a temporary ruleset that shadows a base ruleset for one developer or team. It is added to the top of that developer's ruleset list, so branch rules win in resolution, while everything not changed in the branch resolves from the shared trunk. Sam's changes save into the branch; the other developer's changes save into theirs; neither sees the other's.</p>
+    <p>The life of a branch has a clear shape. It is created against the base rulesets it will shadow. Development saves into it. Branch quality shows guardrail warnings and test coverage for the branch's rules, and PegaUnit runs against them. When the branch is ready, the merge wizard detects any rule that changed in the base ruleset since the branch was cut and asks Sam to pick or combine; the branch's rules are then merged into a target ruleset version and the branch is normally deleted; and the target version is locked at release.</p>
+    <div class="flow">TRUNK  FCBDeposits:01-02-00  ----------------------------------------> release
+BRANCH FCBDeposits_AddrChg (branch ruleset of FCBDeposits)
+         dev A edits ReviewRequirement, ProcessAddressChange flow
+         dev B edits other branch  (isolated)
+MERGE  Branch Merge wizard: validate -> resolve conflicts -> target FCBDeposits:01-02-00 -> delete branch
+CI     pipeline: build product archive -> unit tests -> deploy to QA</div>
+    <p>A pipeline tool such as Deployment Manager can merge branches on a trigger and run PegaUnit and guardrail checks as gates before promotion, which is the arrangement Section 1.13 builds on. The usual ways to get hurt are long-lived branches (conflicts accumulate), the same rule edited in two branches (a conflict at merge), editing trunk rules directly "just this once", and leaving branch rulesets in the lists of production access groups, where they quietly change what resolution returns.</p>
+  </section>
+
+  <section id="s1-9" class="pagebreak">
+    <h2>1.9 The clipboard: the request's working memory</h2>
+    <p>When Marcus opens <code>AM-10417</code>, rule resolution has chosen which rules to run. Those rules now need somewhere to read and write the case's data, and that somewhere is the <strong>clipboard</strong>: each requestor's in-memory workspace, a tree of <strong>pages</strong>, where each page is an instance of a class holding properties. Rules read and write pages; a save flushes a page to the database. The clipboard is not durable, so an unsaved change to the case is lost when the session times out.</p>
+    <p>Reading the clipboard is a basic skill, and the shape of the tree for Dana's closure case, which is richer than the address change, shows the vocabulary.</p>
+    <div class="flow">CLIPBOARD (requestor R123, thread STANDARD)
+ |-- pyWorkPage        class FCB-Dep-Work-AccountClosure
+ |     |-- pyID = "AC-10882"            pyStatusWork = "Pending-Approval"
+ |     |-- AccountSummary  (page)        Balance, ProductCode, Status
+ |     |-- Signers (page list)           [1] Name=D. Whitfield  Role=Primary
+ |     |-- Holds (page group)            ("HOLD-1") Amount, ReasonCode
+ |-- pyWorkCover        (if child case)
+ |-- D_CustomerProfile_pa123 (data page, thread/requestor scope)
+ |-- pxRequestor       (operator, access group)
+ |-- pxThread          (thread-level system data)
+ `-- Param.*           (parameters for the rule currently executing)</div>
+    <p>A page directly on the clipboard is a top-level page, such as the case itself or a data page. A page-valued property inside another page is an embedded page. A <em>page list</em> is ordered and indexed from one (<code>.Signers(1).Name</code>); a <em>page group</em> is keyed by name (<code>.Holds("HOLD-1").Amount</code>); value lists and value groups do the same for simple values. When a report or list data page returns rows, they land in a page list named <code>pxResults</code>. Parameters for the rule currently running arrive on the parameter page (<code>Param.AccountNumber</code>). Two roles matter when reading rule logic: the <em>primary page</em> is the context a rule runs against, and a leading dot refers to it (<code>.Name</code>); the <em>step page</em> is the page an activity step operates on, set explicitly for each step.</p>
+    <p>The notation turns up often enough to be worth fixing in memory: <code>.Name</code> is a property of the primary page; <code>pyWorkPage.Name</code> is an explicit page reference; <code>.Signers(2).Name</code> and <code>.Holds("HOLD-1").Amount</code> address list and group elements; <code>.pxResults(1)</code> is the first result row; <code>.Signers(&lt;APPEND&gt;)</code> creates a new element, with <code>&lt;LAST&gt;</code>, <code>&lt;CURRENT&gt;</code> (the current loop element) and <code>&lt;PREPEND&gt;</code> as the other special indexes.</p>
+    <p>Saving is where the clipboard meets the database. When a case is saved and committed, Pega serialises the whole page tree into the <code>pzPVStream</code> BLOB column and copies the <em>exposed</em> properties into columns of their own; Chapter 03 explains the reporting and performance consequences, and Chapter 11 explains why SQL can only see the exposed ones. The point to carry forward is that changing a page on the clipboard is not the same as changing what is stored.</p>
+    <p>Four habits keep the clipboard from becoming a problem. Do not load very large page lists onto thread pages, because memory per requestor multiplies by concurrent users, and use paged reports or queue processors instead. Remember that a requestor-scope data page holding personal data is visible to that whole session. Remember that reading a property that does not exist yields an empty value rather than an error unless strict settings are on, so check for null explicitly. And remember that unsaved pages vanish.</p>
+  </section>
+
+  <section id="s1-10" class="pagebreak">
+    <h2>1.10 Requestors, threads and the request lifecycle</h2>
+    <p>The clipboard belongs to someone, and the question of who is the question of the <strong>requestor</strong>: a session-like context with one clipboard, one ruleset list, one access group and one operator identity. Marcus's browser session is one. The queue processor that will later update the core is another, and it behaves quite differently.</p>
+    <table>
+      <tr><th>Requestor type</th><th>Identity</th><th>Used by</th><th>Notes</th></tr>
+      <tr><td>Browser</td><td>H prefix</td><td>Interactive users</td><td>One clipboard per session, possibly several threads</td></tr>
+      <tr><td>Batch</td><td>B prefix</td><td>Agents, job schedulers, queue processors</td><td>Runs as the access group named in its rule; no UI</td></tr>
+      <tr><td>Application (service)</td><td>A prefix</td><td>Service-REST, SOAP and file requests</td><td>Uses the service package's access group; context recreated or pooled per call</td></tr>
+      <tr><td>Portal</td><td>P-type</td><td>Constellation and portal sessions</td><td>A browser-session variant</td></tr>
+      <tr><td>Listener</td><td>Background</td><td>File and Email listeners</td><td>Runs as the listener's configured access group</td></tr>
+    </table>
+    <p>The prefixes surface in logs, PDC alerts and the Admin Studio requestor list, and recognising a B- requestor in a stack trace says it was background processing, which is often the first diagnostic fork in production support. It is what Lena looks at first when someone says "the case is slow".</p>
+    <p>Within a browser requestor, each independent work context (another tab, a modal flow action) runs on its own <strong>thread</strong>, with its own thread-level pages; <code>pyWorkPage</code> is per thread. Pages at requestor scope are shared by every thread of that session, and node-scope data pages are shared across every requestor on the JVM node. That is why Marcus's two open cases do not interfere with each other, and why a node-scope page must be read-only: two users cannot safely edit a page that both of them share.</p>
+    <div class="flow">NODE (JVM)   shared: rule cache, node-scope data pages, DSS, static assemblies
+  |
+  +-- REQUESTOR H7F3A... (browser, mreed)
+  |     requestor-scope: pxRequestor, requestor-level data pages
+  |     |-- THREAD STANDARD  : pyWorkPage = AM-10417  (tab 1)
+  |     |-- THREAD OPENCASE2 : pyWorkPage = AM-10399  (tab 2)
+  +-- REQUESTOR B4C1...  (batch: queue processor running as DepBatchAG)
+  +-- REQUESTOR A9D2...  (service: Service-REST for an ESB callback)</div>
+    <p>It helps to have the whole path of one interactive request in view, because every later chapter hangs something on it. A browser request reaches the Pega servlet. Authentication identifies the operator. A requestor is created or attached, and the access group yields the application and the ruleset list. The request is mapped to a harness or portal. For each rule the engine needs, rule resolution runs (cached after the first time) and rule assembly generates Java if this rule and context have not run before. The engine executes, loading data pages (with their scope and refresh rules) and running transforms and activities. Declarative rules fire as the properties they depend on change. The clipboard is modified, and locks are taken on cases opened for update. A save and commit serialises the page tree into the BLOB and exposed columns, writes a history row and maintains index tables. The response is produced, and PAL statistics and alerts record how it went.</p>
+    <p>Background work has its own, shorter lifecycle. Work is queued, a queue processor's batch requestor picks an entry (subject to partitioning and concurrency), loads its parameters and runs an activity. Success removes the item; failure retries under a retry policy and eventually moves the item to a failed state that someone must review. Admin Studio shows the delayed and failed items and the status of the requestors. Chapter 06 takes that lifecycle apart.</p>
+  </section>
+
+  <section id="s1-11" class="pagebreak">
+    <h2>1.11 Locking and audit: two operators, one case</h2>
+    <p>On Monday afternoon Marcus has <code>AM-10417</code> open to complete his review. Priya, looking at the queue, opens the same case to see why it has not moved. The platform must stop one of them silently overwriting the other.</p>
+    <p>The default for work classes is <strong>pessimistic locking</strong>. When a user opens the case for update, the system takes a lock, a row in the lock table, and holds it until the user commits, releases or the lock times out; the second person sees the case read-only, or told it is locked by Marcus. The cost is that locks can get stuck, and parent and child cases updating one another can contend. The alternative, <strong>optimistic locking</strong>, holds no lock; at save time Pega compares the case's save timestamp with what was read, and if it has changed the save fails and the user must reload. That gives higher concurrency at the price that a user can lose edits, which suits APIs and processors better than people. The choice is made on the class group or work class rule, along with the lock timeout.</p>
+    <p>Which strategy fits depends on who is touching the case, and Riverbend's cases show three different answers. A manual maker-and-checker review of a closure wants pessimistic locking, because there is one auditable person acting. A background job applying return-file results to cases should keep transactions short and use optimistic locking or retry-on-lock, because a job must not wait on a human who left a case open overnight. A parent case with many child cases updating it is where lock contention becomes an incident, so minimise parent updates and propagate child status carefully. Digital self-service through the DX API is stateless HTTP with no long-lived lock holder, so optimistic checking with an entity tag is the natural fit. The patterns to avoid: a queue processor opening a case a user keeps open all day, a utility updating one parent from five hundred children at once, ignoring the lock timeout, and deleting rows from the lock table without understanding why they were there.</p>
+    <p>One distinction deserves stating plainly, because it is confused constantly. A Pega case lock is a <em>logical</em> lock in the lock table held for the requestor; a database row lock is held by a transaction. They have different lifetimes, different timeouts and different failure modes. Chapter 11 returns to the second kind.</p>
+    <p>The second half of the section is audit, and for a bank it carries as much weight. Regulators expect evidence of who changed a customer's address, when, and on whose approval. Pega gives several layers of it. <em>History rows</em> record who did what and when: case creation, flow action submissions, status changes, reassignments, attachments and SLA events, and they appear on the Case History tab. <em>Field-level auditing</em> captures old and new values of selected properties, so it is configured only for the ones that need it, such as account status, signer name and address. <em>System stamps</em> (<code>pxCreateDateTime</code>, <code>pxCreateOperator</code>, <code>pxUpdateDateTime</code>, <code>pxUpdateOperator</code>, <code>pxSaveDateTime</code>) are on every persistent instance. Rule history records developers' changes to rules. History tables grow without bound, so retention is a decision to make with Compliance rather than a clean-up to do later.</p>
+  </section>
+
+  <section id="s1-12" class="pagebreak">
+    <h2>1.12 Guardrails: keeping the rules maintainable</h2>
+    <p>Six months in, Riverbend has hundreds of rules, and Sam has noticed something the first section warned about: the platform lets anyone build anything, quickly, including things nobody will be able to maintain. Guardrails are Pega's response. They are best-practice rules enforced as warnings on rule forms and rolled up into a <strong>compliance score</strong> from 0 to 100 and a weighted warning count per application.</p>
+    <p>They show up in three places: as an indicator with a severity on each rule form's header, on the application's Guardrails landing page (compliance score, weighted score, warnings by rule type, the severe and unjustified lists), and as thresholds that a branch or pipeline can enforce as a gate. Severity matters: a severe warning is strongly discouraged and carries the highest weight in the weighted score, a moderate one should be reviewed, an informational one is awareness only. A warning can be justified in the rule with text, and justified warnings are tracked and reviewed rather than ignored. A common target is a compliance score of 90 or more, with 95 or more for strong teams.</p>
+    <p>The warnings group naturally into themes, and the grouping is more useful than a memorised count (Pega's own organisation varies by release and by who is describing it).</p>
+    <table>
+      <tr><th>Theme</th><th>What the guardrails check</th><th>How you satisfy it</th></tr>
+      <tr><td>Case design and process</td><td>Case types built from stages and steps, not giant flows; no unreachable shapes or flows without an end</td><td>Subprocesses and child cases; Case Designer</td></tr>
+      <tr><td>Data model</td><td>Correct property types, no ad hoc dynamic page names, no unused properties</td><td>Define properties in the right class</td></tr>
+      <tr><td>Decision logic</td><td>Decision tables, trees and when rules in preference to complex activity logic; no hard-coded constants</td><td>Externalise decisions</td></tr>
+      <tr><td>Declaratives</td><td>Judicious use; no circular dependencies; not Declare OnChange for what a data transform can do</td><td>Dependency review</td></tr>
+      <tr><td>Data access and performance</td><td>Data pages and report definitions; no Obj-Browse in loops, no unfiltered list or report, pagination</td><td>Data pages; reports on indexed columns</td></tr>
+      <tr><td>Activities and Java</td><td>Minimise activities and Java steps; no direct SQL in activities</td><td>Data transforms, data pages, Connect-SQL rules</td></tr>
+      <tr><td>User interface</td><td>Avoid custom HTML and JavaScript, deprecated controls and deep dynamic nesting</td><td>Sections, skins, auto-generated controls</td></tr>
+      <tr><td>Integration</td><td>Connectors with timeouts, error handling and authentication profiles; services with error handling and authentication; no inline credentials</td><td>Authentication profiles, error flows, keystores</td></tr>
+      <tr><td>Security</td><td>Roles defined, no wide-open privileges, no passwords in rules, no unauthenticated services</td><td>Access control and role design</td></tr>
+      <tr><td>Rule hygiene</td><td>Meaningful names and descriptions, no unreferenced rules, correct rulesets, documented justifications</td><td>Naming standards, clean-up</td></tr>
+    </table>
+    <p>Raising a score is mostly a matter of method, and the method is the same whichever application you are in. Measure first: open the landing page, sort by rule type, list the severe warnings. Then fix by pattern, not by rule, because one bad pattern (an activity that runs <code>Obj-Open</code> in a loop, say) can account for hundreds of warnings and is fixed once in a reusable data transform or data page. Replace activities with declarative rules where the behaviour is simply mapping, conditions or fetching data. Remove dead rules, since unreferenced rules and old versions attract warnings. Deal with integration warnings by adding timeouts, error handling and authentication profiles to every connector and service. Fix UI warnings by moving inline styles into skin classes and flattening nesting. Justify only what cannot be fixed, with a technical reason and a ticket. Gate the result, with a minimum score and a zero-new-severe policy in the pipeline so it cannot regress, and review it weekly because the score decays without attention.</p>
+    <p>The thing not to do is to raise the score by justifying everything. It reads as gaming, and it is: the point is to fix the root pattern and justify only legitimate exceptions.</p>
+  </section>
+
+  <section id="s1-13" class="pagebreak">
+    <h2>1.13 Testing and packaging</h2>
+    <p>Sam's patch to <code>ReviewRequirement</code> is ready, and everything in this chapter has just made the next question urgent: how does Riverbend know the patch did what it should for every state, and how does it get from his development environment to production without being retyped by hand?</p>
+    <h3>PegaUnit: making the rules testable</h3>
+    <p>A PegaUnit test case is itself a rule. It records an input (clipboard setup and parameters) and assertions about the output, and it can target activities, data transforms, decision tables and trees, when rules, data pages, flows, case types, report definitions and strategies. Run it from the rule form, in a suite, or from a pipeline. The useful elements are the assertion (property comparison, list count, a when result, messages, run duration), the suite (a regression set run together), setup and clean-up of test data, simulation of data pages and connectors so a test does not call the real core, and an application-level coverage report that measures which rules tests exercised (rule coverage, not line coverage).</p>
+    <div class="flow">PegaUnit for decision table ReviewRequirement
+  Test 1: .State = "NC", ReissueWithin30Days = true   -> Assert .ReviewLevel = "Supervisor"
+  Test 2: .State = "TX", ReissueWithin30Days = true   -> Assert .ReviewLevel = "Supervisor"
+  Test 3: .State = "NC", ReissueWithin30Days = false  -> Assert .ReviewLevel = "Standard"
+  Test 4: missing State                               -> Assert otherwise row => "Standard"
+
+Pipeline:
+  Build -> Deploy to QA -> run PegaUnit suite -> check coverage -> check guardrail threshold -> approve -> Prod</div>
+    <p>The tests that the address-change application needs follow the failure modes the chapter has described, not a generic list. Rule logic in isolation (decision tables, data transforms, when rules) is tested with mocked data sources and connectors, with one scenario test for each case-type path and each rejection path. After any base-rule fix, the same input is run once per circumstanced variant, because Section 1.6 showed how a variant silently survives. Validation failures and business rejections are tested separately: a malformed input must fail validation with a field message, and a valid request that policy refuses must route to an assignment with a reason, with neither swallowed. Access is tested by running as each role in a lower environment, attempting the forbidden action, and repeating at a higher system level, which anticipates Chapter 10's point that a control that passes in QA must be re-tested at the production level. Scenario tests (UI-driven, from App Studio) cover the main case paths, and API tests from external tools and load tests sit outside Pega.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>A fix to <code>CalculateHoldPeriod</code> passes all PegaUnit tests in the base rule's suite. Why might California still be wrong in production, and what test would have caught it?</p>
+      <p><strong>Answer.</strong> The suite tested the base rule, which is only the default candidate; the California variant is a different rule that outranks it, so the suite never ran it. A test that sets <code>.State = "CA"</code> and asserts the patched result would have run the variant. This assumes the variant exists on the same class and ruleset as the base; the general discipline is to run each fix once per circumstanced variant and to list the variants on the rule form before shipping.</p></div>
+    <h3>Packaging and deployment</h3>
+    <p>What travels between environments is a <strong>product rule</strong> (a RAP): a rule that defines what to export, which includes applications, rulesets with versions, and data instances such as operators, access groups, work queues and decision data, with optional pre- and post-import processing. The export produces an archive that is imported into the next environment, either by hand through Dev Studio or Admin Studio, or by a pipeline tool that orchestrates branch merge, build, test, deploy, promotion and rollback. A hotfix is a small package or a patched ruleset applied to production with approval.</p>
+    <div class="flow">DEV  --branch merge--&gt; DEV integration
+  -&gt; pipeline
+        1 Create product archive (rulesets + data instances)
+        2 Import to QA, run PegaUnit + scenario tests + guardrail gate
+        3 Import to UAT, business sign-off
+        4 Import to PROD (lock ruleset versions; approval task)
+        5 Post-deploy smoke test; rollback plan = previous application version / reverse package</div>
+    <p>The ways this goes wrong are specific. Exporting by hand from Dev Studio into production skips every gate. Forgetting data instances (operator IDs, work queues, decision data) means the rules arrive without what they need. Deploying unlocked rulesets leaves them editable. Having no rollback plan means a bad release is fixed by improvisation. And mixing rules and data into one unmanageable product rule makes any of these harder to see.</p>
+  </section>
+
+  <section id="s1-14" class="pagebreak">
+    <h2>1.14 Interview Q&amp;A</h2>
+    <p>Short answers, in the first person, to the questions this chapter prepares. Chapter 14 holds the full practice set.</p>
+
+    <div class="qa"><span class="q">Q1. How would you explain what Pega is to someone who only knows Java/Spring?</span>
+    <p>"Pega is a rules-driven platform where the process, decisions, data mapping and UI are stored as versioned rules in a database instead of compiled code. At runtime the engine selects the right rule for the context through rule resolution, generates and caches Java for it, and executes it. The main difference from Spring is that variation is handled by specialisation (class inheritance, ruleset layering and circumstancing) rather than by if/else or strategy beans. The trade-off is that without governance a rule platform sprawls, which is why guardrails and layering matter."</p></div>
+
+    <div class="qa"><span class="q">Q2. Explain rule resolution.</span>
+    <p>"The engine gathers every candidate with that name from the Applies-To class up the inheritance structure, filters out anything whose ruleset is not on my list, whose version is above what the list allows, or that is Not Available. It ranks what is left by class, then ruleset, then circumstance, then circumstance date, then date range, then version. Version is last, which is why a newer base rule does not override an older circumstanced one. Withdrawn rules take out the lower versions in their own ruleset, the highest unqualified candidate becomes the default, and the ranked list is cached. At runtime the engine takes the highest-ranked candidate whose circumstances match this case, falling back to the default. If that candidate is Blocked, the run fails rather than falling through."</p></div>
+
+    <div class="qa"><span class="q">Q3. Does a higher-priority ruleset beat a more specific class?</span>
+    <p>"No. Class is the first sort key and ruleset the second, so a more specific class outranks a higher ruleset, and ruleset order only breaks ties within the same class. The exception is a class without class-based inheritance selected, where class is not a ranking criterion and ruleset order decides. If an override has to win, it belongs on the same class or a more specific one."</p></div>
+
+    <div class="qa"><span class="q">Q4. Pattern versus directed inheritance?</span>
+    <p>"Pattern inheritance comes from the class name: the engine strips trailing segments at each hyphen. Directed inheritance is an explicit parent set on the class rule, for inheriting from outside the name path. The search interleaves them: the class, its pattern chain, then the directed parent with a fresh pattern search, repeating to the base class. A class group is a separate, persistence-only idea: it decides the table and ID prefix, though belonging to one forces 'Find by name first' on."</p></div>
+
+    <div class="qa"><span class="q">Q5. A rule behaves differently for one user. What do you do first?</span>
+    <p>"Run as that operator so the ruleset list is the right one, trace with rule resolution events on, and read the rule's instance key to see the class, ruleset version and circumstance that won. Then I check, in order, a higher ruleset in that user's application stack, a circumstanced variant, a date-effective variant, an access group pinned to an older version, a leftover branch ruleset and node cache staleness. The fix depends on whether the override is intentional."</p></div>
+
+    <div class="qa"><span class="q">Q6. How do rulesets and versions let you ship safely?</span>
+    <p>"A version is a layer: a patch version contains only the rules that changed, resolution takes the highest allowed version, and rollback means pointing the application back at the previous one. Released versions are locked, so a hotfix is a new patch version, never an edit. Rulesets sit in layers (enterprise, framework, implementation) so overrides live at the top without touching the framework."</p></div>
+
+    <div class="qa"><span class="q">Q7. Pessimistic versus optimistic locking?</span>
+    <p>"Pessimistic locking holds a case lock while a user has it open, which gives a clean audit story for manual approvals. Optimistic locking takes no lock and checks the save timestamp at commit, failing if the case changed, which suits APIs and processors. I avoid long-held locks from background work and many children updating one parent. A Pega case lock is a logical lock in the lock table; a database row lock is held by a transaction, with different lifetimes and timeouts."</p></div>
+
+    <div class="qa"><span class="q">Q8. What are guardrails, and how do you keep a score high?</span>
+    <p>"They are best-practice warnings on rule forms, rolled up into a compliance score. The score is a lagging indicator, so the leading control is a gate: a minimum score and no new severe warnings on changed rules, plus a review checklist. I fix by pattern, justify only genuine exceptions with an owner and a reason, and never justify warnings to raise the number."</p></div>
+
+    <div class="qa"><span class="q">Q9. What is the difference between the clipboard and what is saved?</span>
+    <p>"The clipboard is the requestor's in-memory page tree and is not durable. A save and commit serialises the page into a BLOB and copies exposed properties into columns. A change that is on the clipboard but not committed is invisible to other requestors and to SQL, and is lost if the session ends."</p></div>
+
+    <div class="qa"><span class="q">Q10. How do you package and deploy?</span>
+    <p>"A product rule defines the rulesets and data instances to include. I export that as an archive, import it into the next environment, run tests and guardrail gates, and import to production with locked ruleset versions and a rollback plan. A pipeline tool such as Deployment Manager automates those stages."</p></div>
+  </section>
+
+  <section id="s1-recap">
+    <h2>1.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>When Dana's request arrives, the platform can find the right rule for her state and product, run it against a case of the right class on a clipboard belonging to the right operator, stop Marcus and Priya overwriting each other, record who did what, and ship a fix to any of those rules as a locked version through a tested pipeline.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Rules are named, versioned records keyed by type, class and name. Classes decide both where a case is stored and where its rules are inherited from. Resolution gathers, filters and ranks candidates by class, ruleset, circumstance, circumstance date, date range and version, caches the ranked list, and qualifies it at runtime. Rulesets layer the application and carry versions; branches isolate parallel work; the clipboard, requestors and threads give each request its working memory; locks and history make concurrent work safe and auditable; guardrails and PegaUnit keep it maintainable.</p>
+    <h3>What it still cannot do</h3>
+    <p>Nothing yet moves the request through review and approval. <code>AM-10417</code> exists and behaves correctly, but no one has been given the work: there is no journey from intake to Marcus to Priya to the core, no deadline, no escalation. That is what Chapter 02 takes up.</p>
+  </section>
+
+  <section id="s1-ref" class="pagebreak">
+    <h2>1.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. Where a number is release- or date-sensitive, the applicable release or effective date is given.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>Pega Academy: Remaining rule candidates and ranking (v6) <span class="tag">training</span></td><td>https://academy.pega.com/topic/remaining-rule-candidates-and-ranking/v6</td><td>Directly retrieved 2026-10-12; release-sensitive</td><td>The six-key sort order; class-based-inheritance caution; Withdrawn removing lower versions matching class, purpose and qualifiers; default rule candidate; ranked candidates going to the rules cache; version-last rationale</td></tr>
+      <tr><td>Pega Academy: Rule resolution process and Rule availability (v6) <span class="tag">training</span></td><td>https://academy.pega.com/topic/rule-resolution-process-and-rule-availability/v6</td><td>Directly retrieved 2026-10-12; release-sensitive</td><td>All five availability states; Final overridable only by a higher version in the same ruleset; Blocked halting the run and logging an error; the circumstanced-rule notes for Blocked and Withdrawn</td></tr>
+      <tr><td>Pega Academy: Rule reuse through inheritance <span class="tag">training</span></td><td>https://academy.pega.com/topic/rule-reuse-through-inheritance/v1/in/2861/2206</td><td>Directly retrieved 2026-10-12; release-sensitive</td><td>The interleaved traversal: pattern chain, then directed parent as the basis for a fresh pattern search, repeating to @baseclass</td></tr>
+      <tr><td>Pega docs: General tab on the Class form <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/app-dev/general-tab-class-form.html</td><td>Platform 24.2 bundle; content via search index 2026-10-12; the page is JavaScript-rendered and not directly retrievable</td><td>"Use class-based inheritance&hellip;" and "Find by name first (Pattern)?" semantics; <code>pyPatternInheritance</code>; class group forcing the checkbox; immutability after save</td></tr>
+    </table>
+  </section>
+
+  <div class="chapnav"><a href="index.html">&larr; Index</a><a href="ch02_case_management_bpm.html">Next: Chapter 02 &rarr;</a></div>
+
+
+
+  </main>
+</div>
+</body>
+</html>

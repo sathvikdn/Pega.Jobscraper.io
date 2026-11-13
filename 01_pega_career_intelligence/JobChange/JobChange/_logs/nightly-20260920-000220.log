@@ -1,0 +1,421 @@
+2026-09-20 00:02:20,264  INFO      ============================================================
+2026-09-20 00:02:20,264  INFO      NIGHTLY SCAN STARTING
+2026-09-20 00:02:20,264  INFO      ============================================================
+2026-09-20 00:02:25,936  INFO      Starting full scan (all targets, fresh)...
+2026-09-20 00:02:29,886  INFO      Scan started: 582 targets
+2026-09-20 00:02:39,928  INFO      Progress: 0/582 [parallel_scan] 
+2026-09-20 00:03:10,037  INFO      Progress: 1/582 [parallel_scan] 
+2026-09-20 00:03:20,081  INFO      Progress: 4/582 [parallel_scan] 
+2026-09-20 00:03:30,132  INFO      Progress: 8/582 [parallel_scan] 
+2026-09-20 00:03:40,240  INFO      Progress: 11/582 [parallel_scan] 
+2026-09-20 00:04:20,425  INFO      Progress: 15/582 [parallel_scan] 
+2026-09-20 00:04:30,475  INFO      Progress: 17/582 [parallel_scan] 
+2026-09-20 00:04:40,523  INFO      Progress: 18/582 [parallel_scan] 
+2026-09-20 00:04:50,555  INFO      Progress: 19/582 [parallel_scan] 
+2026-09-20 00:05:00,587  INFO      Progress: 20/582 [parallel_scan] 
+2026-09-20 00:05:10,627  INFO      Progress: 21/582 [parallel_scan] 
+2026-09-20 00:05:20,658  INFO      Progress: 23/582 [parallel_scan] 
+2026-09-20 00:05:30,705  INFO      Progress: 25/582 [parallel_scan] 
+2026-09-20 00:05:40,742  INFO      Progress: 27/582 [parallel_scan] 
+2026-09-20 00:05:50,775  INFO      Progress: 31/582 [parallel_scan] 
+2026-09-20 00:06:10,848  INFO      Progress: 33/582 [parallel_scan] 
+2026-09-20 00:06:20,902  INFO      Progress: 34/582 [parallel_scan] 
+2026-09-20 00:06:30,937  INFO      Progress: 36/582 [parallel_scan] 
+2026-09-20 00:06:51,071  INFO      Progress: 37/582 [parallel_scan] 
+2026-09-20 00:07:01,114  INFO      Progress: 39/582 [parallel_scan] 
+2026-09-20 00:07:21,191  INFO      Progress: 42/582 [parallel_scan] 
+2026-09-20 00:07:31,371  INFO      Progress: 44/582 [parallel_scan] 
+2026-09-20 00:07:51,597  INFO      Progress: 45/582 [parallel_scan] 
+2026-09-20 00:08:01,747  INFO      Progress: 48/582 [parallel_scan] 
+2026-09-20 00:08:21,973  INFO      Progress: 51/582 [parallel_scan] 
+2026-09-20 00:08:42,061  INFO      Progress: 53/582 [parallel_scan] 
+2026-09-20 00:09:02,171  INFO      Progress: 55/582 [parallel_scan] 
+2026-09-20 00:09:12,211  INFO      Progress: 57/582 [parallel_scan] 
+2026-09-20 00:09:22,251  INFO      Progress: 59/582 [parallel_scan] 
+2026-09-20 00:09:32,299  INFO      Progress: 61/582 [parallel_scan] 
+2026-09-20 00:09:42,336  INFO      Progress: 63/582 [parallel_scan] 
+2026-09-20 00:09:52,375  INFO      Progress: 64/582 [parallel_scan] 
+2026-09-20 00:10:02,419  INFO      Progress: 65/582 [parallel_scan] 
+2026-09-20 00:10:12,457  INFO      Progress: 67/582 [parallel_scan] 
+2026-09-20 00:10:22,494  INFO      Progress: 68/582 [parallel_scan] VOIS
+2026-09-20 00:10:32,534  INFO      Progress: 71/582 [parallel_scan] 
+2026-09-20 00:10:42,598  INFO      Progress: 72/582 [parallel_scan] 
+2026-09-20 00:10:52,637  INFO      Progress: 75/582 [parallel_scan] 
+2026-09-20 00:11:02,718  INFO      Progress: 76/582 [parallel_scan] 
+2026-09-20 00:11:12,811  INFO      Progress: 78/582 [parallel_scan] 
+2026-09-20 00:11:22,891  INFO      Progress: 79/582 [parallel_scan] 
+2026-09-20 00:11:32,965  INFO      Progress: 80/582 [parallel_scan] 
+2026-09-20 00:11:43,025  INFO      Progress: 83/582 [parallel_scan] 
+2026-09-20 00:11:53,068  INFO      Progress: 86/582 [parallel_scan] 
+2026-09-20 00:12:03,107  INFO      Progress: 89/582 [parallel_scan] 
+2026-09-20 00:12:23,189  INFO      Progress: 91/582 [parallel_scan] 
+2026-09-20 00:12:33,224  INFO      Progress: 92/582 [parallel_scan] 
+2026-09-20 00:12:43,411  INFO      Progress: 95/582 [parallel_scan] 
+2026-09-20 00:12:53,495  INFO      Progress: 99/582 [parallel_scan] 
+2026-09-20 00:13:03,532  INFO      Progress: 101/582 [parallel_scan] 
+2026-09-20 00:13:13,620  INFO      Progress: 103/582 [parallel_scan] 
+2026-09-20 00:13:23,659  INFO      Progress: 105/582 [parallel_scan] 
+2026-09-20 00:14:03,800  INFO      Progress: 107/582 [parallel_scan] 
+2026-09-20 00:14:13,835  INFO      Progress: 109/582 [parallel_scan] 
+2026-09-20 00:14:23,867  INFO      Progress: 110/582 [parallel_scan] 
+2026-09-20 00:15:14,158  INFO      Progress: 113/582 [parallel_scan] 
+2026-09-20 00:15:24,217  INFO      Progress: 114/582 [parallel_scan] 
+2026-09-20 00:15:34,274  INFO      Progress: 115/582 [parallel_scan] 
+2026-09-20 00:15:44,344  INFO      Progress: 116/582 [parallel_scan] 
+2026-09-20 00:16:24,603  INFO      Progress: 117/582 [parallel_scan] 
+2026-09-20 00:16:34,669  INFO      Progress: 118/582 [parallel_scan] 
+2026-09-20 00:16:44,731  INFO      Progress: 119/582 [parallel_scan] 
+2026-09-20 00:16:54,780  INFO      Progress: 121/582 [parallel_scan] 
+2026-09-20 00:17:04,856  INFO      Progress: 122/582 [parallel_scan] Deloitte
+2026-09-20 00:17:24,989  INFO      Progress: 124/582 [parallel_scan] Cognizant
+2026-09-20 00:17:35,023  INFO      Progress: 126/582 [parallel_scan] 
+2026-09-20 00:17:45,097  INFO      Progress: 127/582 [parallel_scan] NTT DATA
+2026-09-20 00:18:05,180  INFO      Progress: 130/582 [parallel_scan] 
+2026-09-20 00:18:15,214  INFO      Progress: 133/582 [parallel_scan] 
+2026-09-20 00:18:35,364  INFO      Progress: 137/582 [parallel_scan] BlueRose Technologies
+2026-09-20 00:18:46,326  INFO      Progress: 138/582 [parallel_scan] Inadev India
+2026-09-20 00:18:56,493  INFO      Progress: 140/582 [parallel_scan] 
+2026-09-20 00:19:16,707  INFO      Progress: 142/582 [parallel_scan] 
+2026-09-20 00:19:26,747  INFO      Progress: 143/582 [parallel_scan] 
+2026-09-20 00:19:36,795  INFO      Progress: 145/582 [parallel_scan] 
+2026-09-20 00:19:46,845  INFO      Progress: 147/582 [parallel_scan] 
+2026-09-20 00:19:56,884  INFO      Progress: 148/582 [parallel_scan] 
+2026-09-20 00:20:06,917  INFO      Progress: 149/582 [parallel_scan] 
+2026-09-20 00:20:16,960  INFO      Progress: 152/582 [parallel_scan] Coforge
+2026-09-20 00:20:27,006  INFO      Progress: 154/582 [parallel_scan] 
+2026-09-20 00:20:37,042  INFO      Progress: 155/582 [parallel_scan] Infosys
+2026-09-20 00:20:47,077  INFO      Progress: 158/582 [parallel_scan] 
+2026-09-20 00:20:57,117  INFO      Progress: 159/582 [parallel_scan] 
+2026-09-20 00:21:07,152  INFO      Progress: 162/582 [parallel_scan] 
+2026-09-20 00:21:17,196  INFO      Progress: 164/582 [parallel_scan] Credera
+2026-09-20 00:21:37,312  INFO      Progress: 166/582 [parallel_scan] 
+2026-09-20 00:21:57,489  INFO      Progress: 167/582 [parallel_scan] 
+2026-09-20 00:22:07,550  INFO      Progress: 169/582 [parallel_scan] 
+2026-09-20 00:22:17,593  INFO      Progress: 171/582 [parallel_scan] 
+2026-09-20 00:22:27,644  INFO      Progress: 172/582 [parallel_scan] 
+2026-09-20 00:22:57,772  INFO      Progress: 174/582 [parallel_scan] 
+2026-09-20 00:23:07,825  INFO      Progress: 175/582 [parallel_scan] 
+2026-09-20 00:23:37,961  INFO      Progress: 176/582 [parallel_scan] 
+2026-09-20 00:23:48,000  INFO      Progress: 177/582 [parallel_scan] 
+2026-09-20 00:23:58,058  INFO      Progress: 179/582 [parallel_scan] 
+2026-09-20 00:24:08,092  INFO      Progress: 181/582 [parallel_scan] 
+2026-09-20 00:24:18,137  INFO      Progress: 183/582 [parallel_scan] 
+2026-09-20 00:24:58,269  INFO      Progress: 186/582 [parallel_scan] 
+2026-09-20 00:25:08,312  INFO      Progress: 188/582 [parallel_scan] 
+2026-09-20 00:25:38,682  INFO      Progress: 189/582 [parallel_scan] 
+2026-09-20 00:25:58,788  INFO      Progress: 191/582 [parallel_scan] 
+2026-09-20 00:26:08,863  INFO      Progress: 195/582 [parallel_scan] 
+2026-09-20 00:26:18,905  INFO      Progress: 197/582 [parallel_scan] 
+2026-09-20 00:26:28,941  INFO      Progress: 198/582 [parallel_scan] 
+2026-09-20 00:26:38,972  INFO      Progress: 199/582 [parallel_scan] 
+2026-09-20 00:27:09,101  INFO      Progress: 201/582 [parallel_scan] 
+2026-09-20 00:27:19,135  INFO      Progress: 203/582 [parallel_scan] 
+2026-09-20 00:27:29,172  INFO      Progress: 205/582 [parallel_scan] 
+2026-09-20 00:27:39,226  INFO      Progress: 206/582 [parallel_scan] 
+2026-09-20 00:27:49,292  INFO      Progress: 207/582 [parallel_scan] 
+2026-09-20 00:27:59,360  INFO      Progress: 208/582 [parallel_scan] 
+2026-09-20 00:28:09,445  INFO      Progress: 210/582 [parallel_scan] 
+2026-09-20 00:28:49,727  INFO      Progress: 212/582 [parallel_scan] 
+2026-09-20 00:29:09,863  INFO      Progress: 213/582 [parallel_scan] Capgemini
+2026-09-20 00:29:19,914  INFO      Progress: 215/582 [parallel_scan] 
+2026-09-20 00:29:40,040  INFO      Progress: 216/582 [parallel_scan] 
+2026-09-20 00:29:50,112  INFO      Progress: 218/582 [parallel_scan] 
+2026-09-20 00:30:00,191  INFO      Progress: 220/582 [parallel_scan] 
+2026-09-20 00:30:10,222  INFO      Progress: 221/582 [parallel_scan] 
+2026-09-20 00:30:20,285  INFO      Progress: 222/582 [parallel_scan] 
+2026-09-20 00:30:40,420  INFO      Progress: 224/582 [parallel_scan] 
+2026-09-20 00:30:50,492  INFO      Progress: 225/582 [parallel_scan] 
+2026-09-20 00:31:10,610  INFO      Progress: 228/582 [parallel_scan] 
+2026-09-20 00:31:40,837  INFO      Progress: 231/582 [parallel_scan] 
+2026-09-20 00:31:50,893  INFO      Progress: 234/582 [parallel_scan] 
+2026-09-20 00:32:00,924  INFO      Progress: 235/582 [parallel_scan] 
+2026-09-20 00:32:10,964  INFO      Progress: 237/582 [parallel_scan] 
+2026-09-20 00:32:31,080  INFO      Progress: 238/582 [parallel_scan] 
+2026-09-20 00:32:41,112  INFO      Progress: 239/582 [parallel_scan] Deloitte
+2026-09-20 00:33:21,393  INFO      Progress: 242/582 [parallel_scan] 
+2026-09-20 00:33:31,481  INFO      Progress: 245/582 [parallel_scan] 
+2026-09-20 00:33:41,521  INFO      Progress: 248/582 [parallel_scan] 
+2026-09-20 00:33:51,572  INFO      Progress: 249/582 [parallel_scan] 
+2026-09-20 00:34:11,735  INFO      Progress: 250/582 [parallel_scan] 
+2026-09-20 00:34:21,796  INFO      Progress: 252/582 [parallel_scan] 
+2026-09-20 00:34:31,856  INFO      Progress: 255/582 [parallel_scan] 
+2026-09-20 00:34:41,913  INFO      Progress: 257/582 [parallel_scan] 
+2026-09-20 00:34:51,975  INFO      Progress: 258/582 [parallel_scan] 
+2026-09-20 00:35:02,040  INFO      Progress: 259/582 [parallel_scan] EY
+2026-09-20 00:35:32,214  INFO      Progress: 260/582 [parallel_scan] Nordea
+2026-09-20 00:35:42,275  INFO      Progress: 265/582 [parallel_scan] 
+2026-09-20 00:35:52,342  INFO      Progress: 267/582 [parallel_scan] 
+2026-09-20 00:36:02,425  INFO      Progress: 269/582 [parallel_scan] 
+2026-09-20 00:36:12,487  INFO      Progress: 270/582 [parallel_scan] New York Life
+2026-09-20 00:36:32,627  INFO      Progress: 271/582 [parallel_scan] 
+2026-09-20 00:36:42,736  INFO      Progress: 327/582 [parallel_scan] Cisco
+2026-09-20 00:36:52,791  INFO      Progress: 438/582 [parallel_scan] Haparz
+2026-09-20 00:37:02,887  INFO      Progress: 545/582 [parallel_scan] Lowe’s
+2026-09-20 00:37:12,926  INFO      Progress: 576/582 [parallel_scan] 
+2026-09-20 00:37:22,963  INFO      Progress: 578/582 [parallel_scan] Target
+2026-09-20 00:37:33,014  INFO      Progress: 1/50 [linkedin_retry] The Hartford India
+2026-09-20 00:37:43,098  INFO      Progress: 2/50 [linkedin_retry] Cisco India
+2026-09-20 00:37:53,152  INFO      Progress: 3/50 [linkedin_retry] Fidelity National Financial India (FNF)
+2026-09-20 00:38:03,192  INFO      Progress: 4/50 [linkedin_retry] Marsh McLennan India (MMGS)
+2026-09-20 00:38:13,238  INFO      Progress: 5/50 [linkedin_retry] PepsiCo India
+2026-09-20 00:38:23,273  INFO      Progress: 7/50 [linkedin_retry] Carelon Global Solutions India
+2026-09-20 00:38:33,311  INFO      Progress: 8/50 [linkedin_retry] MUFG Pension & Market Services (Link Group)
+2026-09-20 00:38:43,359  INFO      Progress: 10/50 [linkedin_retry] Levi Strauss & Co. India
+2026-09-20 00:38:53,445  INFO      Progress: 11/50 [linkedin_retry] ITC Limited
+2026-09-20 00:39:03,482  INFO      Progress: 12/50 [linkedin_retry] CSC (Corporation Service Company)
+2026-09-20 00:39:13,519  INFO      Progress: 14/50 [linkedin_retry] HCLTech
+2026-09-20 00:39:33,581  INFO      Progress: 15/50 [linkedin_retry] Instellars
+2026-09-20 00:39:43,645  INFO      Progress: 17/50 [linkedin_retry] Virtusa
+2026-09-20 00:39:53,691  INFO      Progress: 18/50 [linkedin_retry] Hesso Digital
+2026-09-20 00:40:03,751  INFO      Progress: 19/50 [linkedin_retry] Ultimech
+2026-09-20 00:40:13,784  INFO      Progress: 21/50 [linkedin_retry] Capgemini
+2026-09-20 00:40:23,820  INFO      Progress: 22/50 [linkedin_retry] Cognizant
+2026-09-20 00:40:33,853  INFO      Progress: 24/50 [linkedin_retry] Coforge
+2026-09-20 00:40:43,897  INFO      Progress: 25/50 [linkedin_retry] D4 Insight
+2026-09-20 00:40:53,931  INFO      Progress: 26/50 [linkedin_retry] Fint Solutions
+2026-09-20 00:41:03,979  INFO      Progress: 28/50 [linkedin_retry] Infosys
+2026-09-20 00:41:14,061  INFO      Progress: 29/50 [linkedin_retry] KPMG India
+2026-09-20 00:41:24,139  INFO      Progress: 30/50 [linkedin_retry] Lantiqx
+2026-09-20 00:41:34,176  INFO      Progress: 31/50 [linkedin_retry] PegaOne
+2026-09-20 00:41:44,313  INFO      Progress: 32/50 [linkedin_retry] Rang Technologies Inc
+2026-09-20 00:41:54,355  INFO      Progress: 33/50 [linkedin_retry] Tata Consultancy Services
+2026-09-20 00:42:04,416  INFO      Progress: 35/50 [linkedin_retry] V2Soft
+2026-09-20 00:42:14,453  INFO      Progress: 36/50 [linkedin_retry] Booking.com
+2026-09-20 00:42:24,488  INFO      Progress: 37/50 [linkedin_retry] Cisco
+2026-09-20 00:42:34,540  INFO      Progress: 39/50 [linkedin_retry] Sun Life Financial
+2026-09-20 00:42:44,578  INFO      Progress: 40/50 [linkedin_retry] Ciberspring
+2026-09-20 00:42:54,614  INFO      Progress: 41/50 [linkedin_retry] Commonwealth Bank
+2026-09-20 00:43:04,659  INFO      Progress: 43/50 [linkedin_retry] JPMorgan Chase & Co.
+2026-09-20 00:43:14,694  INFO      Progress: 44/50 [linkedin_retry] NTT DATA Services
+2026-09-20 00:43:24,733  INFO      Progress: 45/50 [linkedin_retry] Perficient
+2026-09-20 00:43:34,765  INFO      Progress: 47/50 [linkedin_retry] ai4process
+2026-09-20 00:43:44,800  INFO      Progress: 48/50 [linkedin_retry] Barclays
+2026-09-20 00:43:54,832  INFO      Progress: 49/50 [linkedin_retry] Cognitonic Systems
+2026-09-20 00:44:04,864  INFO      Progress: 50/50 [linkedin_retry] Deloitte
+2026-09-20 00:44:14,912  INFO      Progress: 1/225 [career_portals] JPMorganChase
+2026-09-20 00:44:45,012  INFO      Progress: 2/225 [career_portals] Wells Fargo
+2026-09-20 00:44:55,052  INFO      Progress: 3/225 [career_portals] Bank of America
+2026-09-20 00:45:25,166  INFO      Progress: 4/225 [career_portals] HSBC
+2026-09-20 00:45:35,209  INFO      Progress: 5/225 [career_portals] Standard Chartered
+2026-09-20 00:45:55,300  INFO      Progress: 6/225 [career_portals] Goldman Sachs
+2026-09-20 00:46:05,357  INFO      Progress: 8/225 [career_portals] Barclays
+2026-09-20 00:46:15,410  INFO      Progress: 9/225 [career_portals] Citi India
+2026-09-20 00:46:35,498  INFO      Progress: 11/225 [career_portals] ANZ
+2026-09-20 00:46:45,560  INFO      Progress: 12/225 [career_portals] CBA
+2026-09-20 00:47:15,680  INFO      Progress: 13/225 [career_portals] NatWest Group
+2026-09-20 00:47:25,710  INFO      Progress: 14/225 [career_portals] Lloyds Banking
+2026-09-20 00:48:05,887  INFO      Progress: 15/225 [career_portals] BNP Paribas
+2026-09-20 00:48:15,924  INFO      Progress: 16/225 [career_portals] Societe Generale
+2026-09-20 00:48:25,975  INFO      Progress: 18/225 [career_portals] First Citizens Bank
+2026-09-20 00:48:36,012  INFO      Progress: 19/225 [career_portals] Allianz Technology
+2026-09-20 00:49:06,153  INFO      Progress: 21/225 [career_portals] Aflac India
+2026-09-20 00:49:16,190  INFO      Progress: 22/225 [career_portals] Sun Life India
+2026-09-20 00:49:46,353  INFO      Progress: 23/225 [career_portals] Optum / UHG India
+2026-09-20 00:50:06,457  INFO      Progress: 24/225 [career_portals] Elevance Health
+2026-09-20 00:50:16,575  INFO      Progress: 25/225 [career_portals] GE Healthcare India
+2026-09-20 00:50:26,824  INFO      Progress: 26/225 [career_portals] Roche India
+2026-09-20 00:50:36,996  INFO      Progress: 27/225 [career_portals] Verizon India
+2026-09-20 00:50:47,033  INFO      Progress: 28/225 [career_portals] BT Group India
+2026-09-20 00:50:57,069  INFO      Progress: 29/225 [career_portals] Vodafone / VOIS India
+2026-09-20 00:51:17,306  INFO      Progress: 30/225 [career_portals] Telstra India
+2026-09-20 00:51:47,526  INFO      Progress: 31/225 [career_portals] Nokia India
+2026-09-20 00:51:57,562  INFO      Progress: 32/225 [career_portals] Pegasystems
+2026-09-20 00:52:07,613  INFO      Progress: 33/225 [career_portals] Nike India
+2026-09-20 00:52:37,756  INFO      Progress: 35/225 [career_portals] John Deere India
+2026-09-20 00:53:17,942  INFO      Progress: 36/225 [career_portals] Mastercard India
+2026-09-20 00:53:27,983  INFO      Progress: 37/225 [career_portals] PayPal India
+2026-09-20 00:53:38,023  INFO      Progress: 38/225 [career_portals] Broadridge India
+2026-09-20 00:54:28,219  INFO      Progress: 39/225 [career_portals] Capital One India
+2026-09-20 00:55:08,369  INFO      Progress: 41/225 [career_portals] Evernorth / Cigna India
+2026-09-20 00:55:18,423  INFO      Progress: 42/225 [career_portals] enGen / Highmark India
+2026-09-20 00:55:28,474  INFO      Progress: 43/225 [career_portals] Maersk India
+2026-09-20 00:55:48,545  INFO      Progress: 44/225 [career_portals] Comcast India
+2026-09-20 00:55:58,605  INFO      Progress: 45/225 [career_portals] Shell India
+2026-09-20 00:56:28,731  INFO      Progress: 46/225 [career_portals] Tesco Bengaluru
+2026-09-20 00:56:58,859  INFO      Progress: 47/225 [career_portals] Dell Technologies India
+2026-09-20 00:57:39,069  INFO      Progress: 48/225 [career_portals] Toyota India
+2026-09-20 00:58:39,424  INFO      Progress: 49/225 [career_portals] General Motors India
+2026-09-20 00:58:49,485  INFO      Progress: 50/225 [career_portals] Procter & Gamble India
+2026-09-20 00:59:19,644  INFO      Progress: 51/225 [career_portals] Johnson & Johnson India
+2026-09-20 00:59:29,679  INFO      Progress: 52/225 [career_portals] Merck India
+2026-09-20 00:59:59,827  INFO      Progress: 53/225 [career_portals] Coca-Cola India
+2026-09-20 01:00:20,128  INFO      Progress: 54/225 [career_portals] AT&T India
+2026-09-20 01:00:30,164  INFO      Progress: 55/225 [career_portals] FedEx India
+2026-09-20 01:00:40,208  INFO      Progress: 56/225 [career_portals] CVS Health India
+2026-09-20 01:00:50,245  INFO      Progress: 57/225 [career_portals] Lockheed Martin India
+2026-09-20 01:01:00,282  INFO      Progress: 58/225 [career_portals] S&P Global India
+2026-09-20 01:01:20,364  INFO      Progress: 59/225 [career_portals] Zurich Insurance India
+2026-09-20 01:01:30,408  INFO      Progress: 61/225 [career_portals] Deloitte India
+2026-09-20 01:01:50,555  INFO      Progress: 62/225 [career_portals] Accenture
+2026-09-20 01:02:00,610  INFO      Progress: 63/225 [career_portals] Cognizant
+2026-09-20 01:02:10,648  INFO      Progress: 64/225 [career_portals] Capgemini
+2026-09-20 01:02:20,710  INFO      Progress: 65/225 [career_portals] EPAM Systems
+2026-09-20 01:02:50,832  INFO      Progress: 67/225 [career_portals] Infosys
+2026-09-20 01:03:00,870  INFO      Progress: 68/225 [career_portals] Wipro
+2026-09-20 01:03:10,908  INFO      Progress: 69/225 [career_portals] Tech Mahindra
+2026-09-20 01:03:41,060  INFO      Progress: 70/225 [career_portals] LTIMindtree
+2026-09-20 01:04:11,194  INFO      Progress: 71/225 [career_portals] Mphasis
+2026-09-20 01:04:41,361  INFO      Progress: 72/225 [career_portals] Synechron
+2026-09-20 01:04:51,396  INFO      Progress: 73/225 [career_portals] Virtusa
+2026-09-20 01:05:01,430  INFO      Progress: 74/225 [career_portals] Areteans / Credera
+2026-09-20 01:05:31,535  INFO      Progress: 75/225 [career_portals] Aaseya (YASH)
+2026-09-20 01:05:51,624  INFO      Progress: 76/225 [career_portals] Maantic
+2026-09-20 01:06:01,695  INFO      Progress: 77/225 [career_portals] BlueRose Technologies
+2026-09-20 01:06:31,877  INFO      Progress: 78/225 [career_portals] Inadev India
+2026-09-20 01:07:12,034  INFO      Progress: 79/225 [career_portals] fusionAIx
+2026-09-20 01:07:42,177  INFO      Progress: 80/225 [career_portals] Eclatprime
+2026-09-20 01:07:52,215  INFO      Progress: 81/225 [career_portals] Sopra Steria India
+2026-09-20 01:08:02,262  INFO      Progress: 82/225 [career_portals] Evoke Technologies
+2026-09-20 01:08:22,329  INFO      Progress: 83/225 [career_portals] Pegasystems (US HQ)
+2026-09-20 01:08:32,362  INFO      Progress: 85/225 [career_portals] Wells Fargo (US)
+2026-09-20 01:08:42,397  INFO      Progress: 86/225 [career_portals] Bank of America (US)
+2026-09-20 01:09:32,571  INFO      Progress: 87/225 [career_portals] Citi (US)
+2026-09-20 01:09:42,639  INFO      Progress: 88/225 [career_portals] First Citizens Bank (US)
+2026-09-20 01:09:52,699  INFO      Progress: 89/225 [career_portals] Capital One (US)
+2026-09-20 01:10:32,900  INFO      Progress: 90/225 [career_portals] Goldman Sachs (US)
+2026-09-20 01:10:42,955  INFO      Progress: 92/225 [career_portals] UnitedHealth / Optum (US)
+2026-09-20 01:10:52,988  INFO      Progress: 93/225 [career_portals] Cigna / Evernorth (US)
+2026-09-20 01:11:03,028  INFO      Progress: 94/225 [career_portals] Highmark Health (US)
+2026-09-20 01:11:23,136  INFO      Progress: 95/225 [career_portals] Aflac (US)
+2026-09-20 01:11:33,182  INFO      Progress: 96/225 [career_portals] Northwestern Mutual (US)
+2026-09-20 01:11:43,291  INFO      Progress: 98/225 [career_portals] Elevance Health / Anthem (US)
+2026-09-20 01:11:53,345  INFO      Progress: 100/225 [career_portals] Humana (US)
+2026-09-20 01:12:03,403  INFO      Progress: 103/225 [career_portals] Verizon (US)
+2026-09-20 01:12:13,445  INFO      Progress: 104/225 [career_portals] T-Mobile (US)
+2026-09-20 01:12:23,484  INFO      Progress: 105/225 [career_portals] Comcast (US)
+2026-09-20 01:12:33,530  INFO      Progress: 106/225 [career_portals] Dell Technologies (US)
+2026-09-20 01:13:13,745  INFO      Progress: 107/225 [career_portals] S&P Global (US)
+2026-09-20 01:13:23,799  INFO      Progress: 108/225 [career_portals] Accenture Federal (US)
+2026-09-20 01:14:04,013  INFO      Progress: 109/225 [career_portals] Booz Allen Hamilton (US)
+2026-09-20 01:14:44,185  INFO      Progress: 110/225 [career_portals] SAIC (US)
+2026-09-20 01:14:54,252  INFO      Progress: 112/225 [career_portals] Accenture (US Remote)
+2026-09-20 01:15:24,360  INFO      Progress: 113/225 [career_portals] Cognizant (US)
+2026-09-20 01:15:34,421  INFO      Progress: 114/225 [career_portals] Capgemini (US)
+2026-09-20 01:15:44,456  INFO      Progress: 115/225 [career_portals] Deloitte (US)
+2026-09-20 01:15:54,502  INFO      Progress: 116/225 [career_portals] EPAM (US Remote)
+2026-09-20 01:16:34,662  INFO      Progress: 117/225 [career_portals] Inadev (US)
+2026-09-20 01:17:04,802  INFO      Progress: 118/225 [career_portals] Areteans (US/Global)
+2026-09-20 01:17:34,929  INFO      Progress: 119/225 [career_portals] Aaseya (US)
+2026-09-20 01:17:44,972  INFO      Progress: 120/225 [career_portals] Virtusa (US)
+2026-09-20 01:17:55,006  INFO      Progress: 121/225 [career_portals] HSBC (UK)
+2026-09-20 01:18:05,039  INFO      Progress: 122/225 [career_portals] Barclays (UK)
+2026-09-20 01:18:15,072  INFO      Progress: 123/225 [career_portals] Lloyds Banking Group (UK)
+2026-09-20 01:18:55,362  INFO      Progress: 124/225 [career_portals] NatWest Group (UK)
+2026-09-20 01:19:15,543  INFO      Progress: 125/225 [career_portals] Nationwide (UK)
+2026-09-20 01:19:25,598  INFO      Progress: 126/225 [career_portals] BT Group (UK)
+2026-09-20 01:19:35,640  INFO      Progress: 127/225 [career_portals] Vodafone (UK)
+2026-09-20 01:19:45,826  INFO      Progress: 128/225 [career_portals] Standard Chartered (UK)
+2026-09-20 01:20:15,931  INFO      Progress: 129/225 [career_portals] ING Bank (Netherlands)
+2026-09-20 01:20:25,977  INFO      Progress: 130/225 [career_portals] Rabobank (Netherlands)
+2026-09-20 01:20:56,102  INFO      Progress: 132/225 [career_portals] BPM Company (Netherlands)
+2026-09-20 01:21:06,163  INFO      Progress: 133/225 [career_portals] Sopra Steria (Germany)
+2026-09-20 01:21:16,220  INFO      Progress: 134/225 [career_portals] Deutsche Bank (Germany/UK)
+2026-09-20 01:21:26,279  INFO      Progress: 135/225 [career_portals] Nordea (Finland/Nordics)
+2026-09-20 01:21:36,567  INFO      Progress: 136/225 [career_portals] BNP Paribas (France)
+2026-09-20 01:21:46,625  INFO      Progress: 137/225 [career_portals] Societe Generale (France)
+2026-09-20 01:21:56,661  INFO      Progress: 138/225 [career_portals] Santander (Spain/Europe)
+2026-09-20 01:22:36,813  INFO      Progress: 139/225 [career_portals] Zurich Insurance (Switzerland)
+2026-09-20 01:22:46,848  INFO      Progress: 140/225 [career_portals] AXA (France/Europe)
+2026-09-20 01:22:56,912  INFO      Progress: 141/225 [career_portals] Allianz (Germany/Europe)
+2026-09-20 01:23:27,106  INFO      Progress: 142/225 [career_portals] Capgemini FS Benelux
+2026-09-20 01:23:37,143  INFO      Progress: 143/225 [career_portals] WLG (Netherlands)
+2026-09-20 01:23:57,233  INFO      Progress: 144/225 [career_portals] Next Ventures (Europe)
+2026-09-20 01:24:17,330  INFO      Progress: 145/225 [career_portals] Accenture (Europe)
+2026-09-20 01:24:47,445  INFO      Progress: 146/225 [career_portals] ANZ Bank (Australia)
+2026-09-20 01:24:57,482  INFO      Progress: 147/225 [career_portals] CBA (Australia)
+2026-09-20 01:25:17,578  INFO      Progress: 148/225 [career_portals] Telstra (Australia)
+2026-09-20 01:25:57,784  INFO      Progress: 149/225 [career_portals] QBE Insurance (Australia)
+2026-09-20 01:26:07,830  INFO      Progress: 150/225 [career_portals] Suncorp (Australia)
+2026-09-20 01:26:17,885  INFO      Progress: 151/225 [career_portals] DBS Bank (Singapore)
+2026-09-20 01:26:48,084  INFO      Progress: 152/225 [career_portals] Great Eastern (Singapore)
+2026-09-20 01:27:38,357  INFO      Progress: 153/225 [career_portals] New York Life (US)
+2026-09-20 01:27:58,423  INFO      Progress: 156/225 [career_portals] CSAA Insurance (US)
+2026-09-20 01:28:18,500  INFO      Progress: 157/225 [career_portals] Farmers Insurance (US)
+2026-09-20 01:28:28,535  INFO      Progress: 158/225 [career_portals] Allied Solutions (US)
+2026-09-20 01:28:58,660  INFO      Progress: 159/225 [career_portals] Church Mutual Insurance (US)
+2026-09-20 01:29:28,827  INFO      Progress: 160/225 [career_portals] Great American Insurance (US)
+2026-09-20 01:30:09,017  INFO      Progress: 161/225 [career_portals] Delta Dental (US)
+2026-09-20 01:30:29,089  INFO      Progress: 162/225 [career_portals] Transamerica (US)
+2026-09-20 01:30:49,968  WARNING   Career scrape failed for Transamerica (US): Page.query_selector_all: Execution context was destroyed, most likely because of a navigation
+2026-09-20 01:30:59,254  INFO      Progress: 163/225 [career_portals] CVS Health (US)
+2026-09-20 01:31:09,289  INFO      Progress: 164/225 [career_portals] Molina Healthcare (US)
+2026-09-20 01:31:29,389  INFO      Progress: 165/225 [career_portals] Blue Cross Blue Shield (US)
+2026-09-20 01:31:59,525  INFO      Progress: 166/225 [career_portals] Walgreens (US)
+2026-09-20 01:32:09,569  INFO      Progress: 167/225 [career_portals] AT&T (US)
+2026-09-20 01:32:19,606  INFO      Progress: 168/225 [career_portals] General Motors (US)
+2026-09-20 01:32:29,667  INFO      Progress: 169/225 [career_portals] Toyota (US)
+2026-09-20 01:32:49,794  INFO      Progress: 170/225 [career_portals] Procter & Gamble (US)
+2026-09-20 01:32:59,831  INFO      Progress: 171/225 [career_portals] Coca-Cola (US)
+2026-09-20 01:33:19,958  INFO      Progress: 172/225 [career_portals] Lockheed Martin (US)
+2026-09-20 01:34:00,131  INFO      Progress: 173/225 [career_portals] General Dynamics IT (US)
+2026-09-20 01:34:10,172  INFO      Progress: 174/225 [career_portals] FedEx (US)
+2026-09-20 01:34:20,228  INFO      Progress: 175/225 [career_portals] Macy's (US)
+2026-09-20 01:34:30,283  INFO      Progress: 176/225 [career_portals] Target (US)
+2026-09-20 01:34:40,331  INFO      Progress: 177/225 [career_portals] Marriott (US)
+2026-09-20 01:34:50,386  INFO      Progress: 178/225 [career_portals] Caesars Entertainment (US)
+2026-09-20 01:35:20,773  INFO      Progress: 179/225 [career_portals] InterSystems (US)
+2026-09-20 01:35:30,808  INFO      Progress: 180/225 [career_portals] Merck (US)
+2026-09-20 01:36:00,914  INFO      Progress: 181/225 [career_portals] Johnson & Johnson (US)
+2026-09-20 01:36:10,947  INFO      Progress: 182/225 [career_portals] Deutsche Telekom (Germany)
+2026-09-20 01:36:41,127  INFO      Progress: 183/225 [career_portals] Siemens (Germany)
+2026-09-20 01:39:01,679  INFO      Progress: 184/225 [career_portals] BBVA (Spain)
+2026-09-20 01:39:11,721  INFO      Progress: 185/225 [career_portals] Groupama (France)
+2026-09-20 01:39:51,928  INFO      Progress: 186/225 [career_portals] Sky (UK)
+2026-09-20 01:40:22,100  INFO      Progress: 187/225 [career_portals] Centrica (UK)
+2026-09-20 01:40:32,167  INFO      Progress: 188/225 [career_portals] Bupa (UK)
+2026-09-20 01:41:12,414  INFO      Progress: 190/225 [career_portals] Westpac (Australia)
+2026-09-20 01:42:12,648  INFO      Progress: 191/225 [career_portals] Toyota Finance Australia
+2026-09-20 01:43:02,965  INFO      Progress: 192/225 [career_portals] Bupa Australia
+2026-09-20 01:43:13,018  INFO      Progress: 194/225 [career_portals] Itaú Unibanco (Brazil)
+2026-09-20 01:43:23,066  INFO      Progress: 195/225 [career_portals] Remote Pega Jobs (Worldwide)
+2026-09-20 01:43:33,180  INFO      Progress: 196/225 [career_portals] Pega Jobs USA (Broad)
+2026-09-20 01:43:53,359  INFO      Progress: 197/225 [career_portals] Pega Jobs Europe (Broad)
+2026-09-20 01:44:03,471  INFO      Progress: 198/225 [career_portals] Pega Jobs UK (Broad)
+2026-09-20 01:44:13,536  INFO      Progress: 199/225 [career_portals] Pega Jobs Netherlands (Broad)
+2026-09-20 01:44:23,608  INFO      Progress: 200/225 [career_portals] Cisco India
+2026-09-20 01:44:33,667  INFO      Progress: 201/225 [career_portals] Virtusa
+2026-09-20 01:44:43,718  INFO      Progress: 202/225 [career_portals] Accenture
+2026-09-20 01:44:53,768  INFO      Progress: 203/225 [career_portals] Capgemini
+2026-09-20 01:45:03,827  INFO      Progress: 204/225 [career_portals] Cognizant
+2026-09-20 01:45:13,881  INFO      Progress: 205/225 [career_portals] First Citizens Bank
+2026-09-20 01:45:23,924  INFO      Progress: 206/225 [career_portals] Pegasystems
+2026-09-20 01:45:33,965  INFO      Progress: 207/225 [career_portals] Infosys
+2026-09-20 01:45:44,015  INFO      Progress: 209/225 [career_portals] Barclays
+2026-09-20 01:45:54,056  INFO      Progress: 210/225 [career_portals] EPAM Systems
+2026-09-20 01:46:04,092  INFO      Progress: 211/225 [career_portals] Maantic
+2026-09-20 01:46:24,163  INFO      Progress: 212/225 [career_portals] Wells Fargo
+2026-09-20 01:46:34,201  INFO      Progress: 214/225 [career_portals] Bank of America
+2026-09-20 01:47:14,809  INFO      Progress: 215/225 [career_portals] BT Group India
+2026-09-20 01:47:24,875  INFO      Progress: 216/225 [career_portals] Evoke Technologies
+2026-09-20 01:47:45,005  INFO      Progress: 217/225 [career_portals] Mphasis
+2026-09-20 01:48:15,183  INFO      Progress: 218/225 [career_portals] Tech Mahindra
+2026-09-20 01:48:45,323  INFO      Progress: 219/225 [career_portals] Tesco Bengaluru
+2026-09-20 01:49:15,475  INFO      Progress: 220/225 [career_portals] enGen / Highmark India
+2026-09-20 01:49:25,527  INFO      Progress: 221/225 [career_portals] Optum / UHG India
+2026-09-20 01:49:35,565  INFO      Progress: 222/225 [career_portals] Allianz Technology
+2026-09-20 01:50:05,719  INFO      Progress: 223/225 [career_portals] BNP Paribas
+2026-09-20 01:50:15,749  INFO      Progress: 224/225 [career_portals] Broadridge India
+2026-09-20 01:51:05,989  INFO      Progress: 225/225 [career_portals] Nokia India
+2026-09-20 01:51:16,039  INFO      Progress: 0/6 [job_boards] Job boards
+2026-09-20 01:51:19,870  INFO      Board Indeed India: 12 pega jobs found
+2026-09-20 01:51:26,638  INFO      Board Indeed US: 0 pega jobs found
+2026-09-20 01:51:49,239  INFO      Board Shine.com: 4 pega jobs found
+2026-09-20 01:52:00,677  INFO      Board Dice: 30 pega jobs found
+2026-09-20 01:52:07,386  INFO      Board Glassdoor: 0 pega jobs found
+2026-09-20 01:52:15,729  INFO      Board SimplyHired: 14 pega jobs found
+2026-09-20 01:52:16,365  INFO      Scan complete.
+2026-09-20 01:52:19,294  INFO      Results: 854 jobs from 324 companies
+2026-09-20 01:52:19,295  INFO      Recommendations: {'excluded': 30, 'recommended': 8, 'review': 14, 'stretch': 13}
+2026-09-20 01:52:19,329  INFO      Career portals: 70/281 found jobs (24.9%)
+2026-09-20 01:52:19,330  INFO        exception: 1 failures
+2026-09-20 01:52:19,330  INFO        navigation_failed: 23 failures
+2026-09-20 01:52:19,331  INFO        no_pega_links: 2 failures
+2026-09-20 01:52:19,331  INFO        no_pega_results: 116 failures
+2026-09-20 01:52:19,331  INFO        no_search_executed: 69 failures
+2026-09-20 01:52:19,415  INFO      Job boards: 11717 additional listings
+2026-09-20 01:52:19,416  INFO      Total runtime: 110.0 minutes
+2026-09-20 01:52:19,416  INFO      Log saved to: C:\Users\DNSATHV\Desktop\calude\JobChange\JobChange\_logs\nightly-20260920-000220.log
+2026-09-20 01:52:19,416  INFO      ============================================================
+2026-09-20 01:52:19,417  INFO      NIGHTLY SCAN COMPLETE — starting portal server
+2026-09-20 01:52:19,417  INFO      ============================================================
+2026-09-20 01:52:28,646  INFO      Portal server started on port 5050 (PID 22848). Desktop shortcut: C:\Users\DNSATHV\Desktop\Pega Jobs Today.url

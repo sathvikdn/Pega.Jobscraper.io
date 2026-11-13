@@ -1,0 +1,64 @@
+{
+  "events": [
+    {
+      "id": "pegafest-blr-2025",
+      "title": "PegaFest Bangalore · official event",
+      "event_date": "2025-11-04",
+      "location": "Bengaluru · Sarjapur Road",
+      "summary": "Historical developer gathering focused on Infinity 25, learning and professional networking.",
+      "what_it_establishes": [
+        "A documented Bangalore Pega community event."
+      ],
+      "limitations": "Registration is closed. The page supplies no company roster, current hiring claims or team headcounts.",
+      "sources": [
+        {
+          "url": "https://www.pega.com/events/pegafest/bangalore",
+          "title": "Pega · Bangalore PegaFest",
+          "excerpt": "Official event date: 4 November 2025.",
+          "source_type": "official_event",
+          "checked_at": "2026-09-08"
+        }
+      ]
+    },
+    {
+      "id": "pegafest-community",
+      "title": "Bangalore community · organiser recap",
+      "event_date": "2025",
+      "location": "Bengaluru",
+      "summary": "Cathy Nelson's public recap describes the APJI tour opening in Bangalore and community discussion around Infinity 25.",
+      "what_it_establishes": [
+        "First-person evidence of a developer community gathering, useful for understanding the ecosystem."
+      ],
+      "limitations": "Its 600+ audience claim is event attendance, not any employer's team size. Attendance does not establish current employment or Bangalore residency.",
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/posts/cathybnelson_pegafest2025-lifeatpega-bangalore-activity-7393180159958290432-9Rzk",
+          "title": "Cathy Nelson · PegaFest 2025 recap",
+          "excerpt": "Public professional event account.",
+          "source_type": "public_professional_post",
+          "checked_at": "2026-09-08"
+        }
+      ]
+    },
+    {
+      "id": "pegaworld-2026",
+      "title": "PegaWorld 2026 · project research",
+      "event_date": "2026-06-07 to 2026-06-09",
+      "location": "Las Vegas · global programme",
+      "summary": "The programme covers customer-led workflow, decisioning and legacy modernisation work, including Wells Fargo, MetLife and Unum.",
+      "what_it_establishes": [
+        "Concrete project and speaker leads for company research."
+      ],
+      "limitations": "A global session does not identify a Bangalore delivery team or a vacancy. Company briefs distinguish those claims.",
+      "sources": [
+        {
+          "url": "https://www.pega.com/events/pegaworld/agenda",
+          "title": "Pega · PegaWorld 2026 agenda",
+          "excerpt": "Official agenda and session descriptions.",
+          "source_type": "official_event",
+          "checked_at": "2026-09-08"
+        }
+      ]
+    }
+  ]
+}

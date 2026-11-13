@@ -1,0 +1,665 @@
+{
+  "checked_at": "2026-09-08",
+  "baseline": "Earlier 313-target catalogue; group/rebrand/regional aliases consolidated",
+  "new_group_count": 34,
+  "refinement_group_count": 1,
+  "records": [
+    {
+      "company_id": "fresh-credera",
+      "group_id": "employer-group-credera",
+      "status": "existing",
+      "group_name": "Credera / Areteans",
+      "reason": "Already present as Areteans / Credera; the refreshed brand is not an additional employer group."
+    },
+    {
+      "company_id": "fresh-hcltech",
+      "group_id": "employer-group-hcltech",
+      "status": "existing",
+      "group_name": "HCLTech",
+      "reason": "Already present as HCL Technologies, including the HCLTech search alias."
+    },
+    {
+      "company_id": "fresh-instellars",
+      "group_id": "employer-group-instellars",
+      "status": "new",
+      "group_name": "Instellars",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-aaseya",
+      "group_id": "employer-group-aaseya",
+      "status": "existing",
+      "group_name": "Aaseya / YASH",
+      "reason": "Already present as Aaseya (YASH)."
+    },
+    {
+      "company_id": "fresh-virtusa",
+      "group_id": "employer-group-virtusa",
+      "status": "existing",
+      "group_name": "Virtusa",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-hessodigital",
+      "group_id": "employer-group-hessodigital",
+      "status": "new",
+      "group_name": "Hesso Digital",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-ultimech",
+      "group_id": "employer-group-ultimech",
+      "status": "new",
+      "group_name": "Ultimech",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-accenture",
+      "group_id": "employer-group-accenture",
+      "status": "existing",
+      "group_name": "Accenture",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-capgemini",
+      "group_id": "employer-group-capgemini",
+      "status": "existing",
+      "group_name": "Capgemini",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-cognizant",
+      "group_id": "employer-group-cognizant",
+      "status": "existing",
+      "group_name": "Cognizant",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-firstcitizensbank",
+      "group_id": "employer-group-firstcitizens",
+      "status": "existing",
+      "group_name": "First Citizens",
+      "reason": "Already present as First Citizens Bank and First Citizens India."
+    },
+    {
+      "company_id": "fresh-pegasystems",
+      "group_id": "employer-group-pegasystems",
+      "status": "existing",
+      "group_name": "Pegasystems",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-coforge",
+      "group_id": "employer-group-coforge",
+      "status": "existing",
+      "group_name": "Coforge",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-d4insight",
+      "group_id": "employer-group-d4insight",
+      "status": "new",
+      "group_name": "D4 Insight",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-fintsolutions",
+      "group_id": "employer-group-fintsolutions",
+      "status": "new",
+      "group_name": "Fint Solutions",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-futureproofablendcompany",
+      "group_id": "employer-group-blendfutureproof",
+      "status": "new",
+      "group_name": "Futureproof / Blend",
+      "reason": "No matching Futureproof or Blend group was present in the baseline."
+    },
+    {
+      "company_id": "fresh-infosys",
+      "group_id": "employer-group-infosys",
+      "status": "existing",
+      "group_name": "Infosys",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-kpmgindia",
+      "group_id": "employer-group-kpmg",
+      "status": "existing",
+      "group_name": "KPMG",
+      "reason": "Already present as KPMG India."
+    },
+    {
+      "company_id": "fresh-lantiqx",
+      "group_id": "employer-group-eclantiqx",
+      "status": "existing",
+      "group_name": "Eclantiqx / Eclatprime / Lantiqx",
+      "reason": "Lantiqx merged with already-listed Eclatprime to form Eclantiqx; not counted as a new group."
+    },
+    {
+      "company_id": "fresh-nttdatanorthamerica",
+      "group_id": "employer-group-nttdata",
+      "status": "existing",
+      "group_name": "NTT DATA",
+      "reason": "Regional NTT DATA record; NTT DATA was already in the baseline."
+    },
+    {
+      "company_id": "fresh-pegaone",
+      "group_id": "employer-group-pegaone",
+      "status": "new",
+      "group_name": "PegaOne",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-rangtechnologiesinc",
+      "group_id": "employer-group-rangtechnologies",
+      "status": "new",
+      "group_name": "Rang Technologies",
+      "reason": "No matching employer group was present in the baseline; legal suffix removed for grouping."
+    },
+    {
+      "company_id": "fresh-tataconsultancyservices",
+      "group_id": "employer-group-tataconsultancyservices",
+      "status": "existing",
+      "group_name": "Tata Consultancy Services",
+      "reason": "Already present as TCS and the tata consultancy search alias."
+    },
+    {
+      "company_id": "fresh-tenthrevolutiongroup",
+      "group_id": "employer-group-tenthrevolutiongroup",
+      "status": "new",
+      "group_name": "Tenth Revolution Group / Revolent",
+      "reason": "New group in the baseline comparison; counted once together with its Revolent subsidiary."
+    },
+    {
+      "company_id": "fresh-thakralone",
+      "group_id": "employer-group-thakralone",
+      "status": "new",
+      "group_name": "Thakral One",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-truviqsystems",
+      "group_id": "employer-group-truviqsystems",
+      "status": "new",
+      "group_name": "Truviq Systems",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-v2soft",
+      "group_id": "employer-group-v2soft",
+      "status": "new",
+      "group_name": "V2Soft",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-vmcsofttechnologiesinc",
+      "group_id": "employer-group-vmcsofttechnologies",
+      "status": "new",
+      "group_name": "VMC Soft Technologies",
+      "reason": "No matching employer group was present in the baseline; legal suffix removed for grouping."
+    },
+    {
+      "company_id": "fresh-bookingcom",
+      "group_id": "employer-group-bookingholdings",
+      "status": "existing",
+      "group_name": "Booking Holdings / Booking.com",
+      "reason": "Already represented by Booking Holdings and its booking.com search alias."
+    },
+    {
+      "company_id": "fresh-cisco",
+      "group_id": "employer-group-cisco",
+      "status": "existing",
+      "group_name": "Cisco",
+      "reason": "Already present as Cisco India."
+    },
+    {
+      "company_id": "fresh-ltm",
+      "group_id": "employer-group-ltimindtree",
+      "status": "existing",
+      "group_name": "LTM / LTIMindtree",
+      "reason": "LTIMindtree rebranded as LTM in 2026; it was already in the baseline."
+    },
+    {
+      "company_id": "fresh-sunlifefinancial",
+      "group_id": "employer-group-sunlife",
+      "status": "existing",
+      "group_name": "Sun Life",
+      "reason": "Already present as Sun Life India and Sun Life."
+    },
+    {
+      "company_id": "fresh-bookingholdings",
+      "group_id": "employer-group-bookingholdings",
+      "status": "existing",
+      "group_name": "Booking Holdings / Booking.com",
+      "reason": "Already present as Booking Holdings; consolidated with Booking.com for group counting."
+    },
+    {
+      "company_id": "fresh-ciberspring",
+      "group_id": "employer-group-ciberspring",
+      "status": "new",
+      "group_name": "Ciberspring",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-commonwealthbank",
+      "group_id": "employer-group-commonwealthbank",
+      "status": "existing",
+      "group_name": "Commonwealth Bank",
+      "reason": "Already present as CBA and Commonwealth Bank."
+    },
+    {
+      "company_id": "fresh-daimlertruckinnovationcenterindia",
+      "group_id": "employer-group-daimlertruck",
+      "status": "existing",
+      "group_name": "Daimler Truck",
+      "reason": "More specific Daimler Truck entity; the Daimler Truck group was already listed."
+    },
+    {
+      "company_id": "fresh-jpmorganchaseco",
+      "group_id": "employer-group-jpmorganchase",
+      "status": "existing",
+      "group_name": "JPMorgan Chase",
+      "reason": "Already present as JPMorganChase, JPMorgan Chase and JPMC."
+    },
+    {
+      "company_id": "fresh-nttdataservices",
+      "group_id": "employer-group-nttdata",
+      "status": "existing",
+      "group_name": "NTT DATA",
+      "reason": "NTT DATA operating brand; counted with the already-listed NTT DATA group."
+    },
+    {
+      "company_id": "fresh-perficient",
+      "group_id": "employer-group-perficient",
+      "status": "new",
+      "group_name": "Perficient",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-citi",
+      "group_id": "employer-group-citi",
+      "status": "existing",
+      "group_name": "Citi",
+      "reason": "Already represented by Citi India, Citi US and Citibank aliases."
+    },
+    {
+      "company_id": "fresh-evonsys",
+      "group_id": "employer-group-evonsys",
+      "status": "new",
+      "group_name": "EvonSys",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-accentureromania",
+      "group_id": "employer-group-accenture",
+      "status": "existing",
+      "group_name": "Accenture",
+      "reason": "Regional Accenture record; not an additional employer group."
+    },
+    {
+      "company_id": "fresh-accenturesoutheastasia",
+      "group_id": "employer-group-accenture",
+      "status": "existing",
+      "group_name": "Accenture",
+      "reason": "Regional Accenture record; not an additional employer group."
+    },
+    {
+      "company_id": "fresh-ai4process",
+      "group_id": "employer-group-ai4process",
+      "status": "new",
+      "group_name": "ai4process",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-barclays",
+      "group_id": "employer-group-barclays",
+      "status": "existing",
+      "group_name": "Barclays",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-cognitonicsystems",
+      "group_id": "employer-group-cognitonicsystems",
+      "status": "new",
+      "group_name": "Cognitonic Systems",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-deloitte",
+      "group_id": "employer-group-deloitte",
+      "status": "existing",
+      "group_name": "Deloitte",
+      "reason": "Already present as Deloitte India and Deloitte US."
+    },
+    {
+      "company_id": "fresh-delpath",
+      "group_id": "employer-group-delpath",
+      "status": "new",
+      "group_name": "Delpath",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-deutschebahn",
+      "group_id": "employer-group-deutschebahn",
+      "status": "new",
+      "group_name": "Deutsche Bahn",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-digitalxnode",
+      "group_id": "employer-group-digitalxnode",
+      "status": "new",
+      "group_name": "DigitalXNode",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-eclantiqx",
+      "group_id": "employer-group-eclantiqx",
+      "status": "existing",
+      "group_name": "Eclantiqx / Eclatprime / Lantiqx",
+      "reason": "Eclantiqx is the combined Eclatprime/Lantiqx brand; Eclatprime was already in the baseline."
+    },
+    {
+      "company_id": "fresh-engenglobal",
+      "group_id": "employer-group-engen",
+      "status": "existing",
+      "group_name": "enGen / Highmark",
+      "reason": "Already represented by enGen / Highmark India and related search aliases."
+    },
+    {
+      "company_id": "fresh-epamsystems",
+      "group_id": "employer-group-epamsystems",
+      "status": "existing",
+      "group_name": "EPAM Systems",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-ey",
+      "group_id": "employer-group-ey",
+      "status": "existing",
+      "group_name": "EY",
+      "reason": "Already present as EY India, EY US/Europe and Ernst & Young aliases."
+    },
+    {
+      "company_id": "fresh-hm",
+      "group_id": "employer-group-hm",
+      "status": "new",
+      "group_name": "H&M",
+      "reason": "New employer group found through an adjacent RPA role; this is not proof of a Pega team."
+    },
+    {
+      "company_id": "fresh-inadev",
+      "group_id": "employer-group-inadev",
+      "status": "existing",
+      "group_name": "Inadev",
+      "reason": "Already present as Inadev India and Inadev US."
+    },
+    {
+      "company_id": "fresh-innovationteam",
+      "group_id": "employer-group-innovationteam",
+      "status": "new",
+      "group_name": "InnovationTeam",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-labb",
+      "group_id": "employer-group-labb",
+      "status": "new",
+      "group_name": "labb",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-maantic",
+      "group_id": "employer-group-maantic",
+      "status": "existing",
+      "group_name": "Maantic",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-religentsystems",
+      "group_id": "employer-group-religentsystems",
+      "status": "new",
+      "group_name": "Religent Systems",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-revolentgroup",
+      "group_id": "employer-group-tenthrevolutiongroup",
+      "status": "new",
+      "group_name": "Tenth Revolution Group / Revolent",
+      "reason": "Revolent belongs to Tenth Revolution Group; both records count as one new group."
+    },
+    {
+      "company_id": "fresh-teksystems",
+      "group_id": "employer-group-teksystems",
+      "status": "new",
+      "group_name": "TEKsystems",
+      "reason": "New employer group found through adjacent integration work; this is not proof of a Pega team."
+    },
+    {
+      "company_id": "fresh-usaa",
+      "group_id": "employer-group-usaa",
+      "status": "existing",
+      "group_name": "USAA",
+      "reason": "Already present as USAA (US)."
+    },
+    {
+      "company_id": "fresh-adqura",
+      "group_id": "employer-group-adqura",
+      "status": "new",
+      "group_name": "Adqura",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-anzbank",
+      "group_id": "employer-group-anz",
+      "status": "existing",
+      "group_name": "ANZ",
+      "reason": "Already represented by ANZ, ANZ Bank and ANZ India/Australia entries."
+    },
+    {
+      "company_id": "fresh-axtel",
+      "group_id": "employer-group-axtel",
+      "status": "new",
+      "group_name": "Axtel",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-blueshieldofcalifornia",
+      "group_id": "employer-group-blueshieldofcalifornia",
+      "status": "refinement",
+      "group_name": "Blue Shield of California",
+      "reason": "A newly specific independent employer within the earlier broad Blue Cross Blue Shield bucket; excluded from the conservative new-group count."
+    },
+    {
+      "company_id": "fresh-cnofinancialgroup",
+      "group_id": "employer-group-cnofinancial",
+      "status": "existing",
+      "group_name": "CNO Financial",
+      "reason": "Already present as CNO Financial."
+    },
+    {
+      "company_id": "fresh-daimlertruckfinancialservices",
+      "group_id": "employer-group-daimlertruck",
+      "status": "existing",
+      "group_name": "Daimler Truck",
+      "reason": "More specific Daimler Truck business; counted with the already-listed Daimler Truck group."
+    },
+    {
+      "company_id": "fresh-deutschetelekomserviceseurope",
+      "group_id": "employer-group-deutschetelekom",
+      "status": "existing",
+      "group_name": "Deutsche Telekom",
+      "reason": "More specific Deutsche Telekom operating unit; the parent group was already listed."
+    },
+    {
+      "company_id": "fresh-intersystemscorporation",
+      "group_id": "employer-group-intersystems",
+      "status": "existing",
+      "group_name": "InterSystems",
+      "reason": "Already present as InterSystems (US)."
+    },
+    {
+      "company_id": "fresh-lloydsbankinggroup",
+      "group_id": "employer-group-lloydsbankinggroup",
+      "status": "existing",
+      "group_name": "Lloyds Banking Group",
+      "reason": "Already present as Lloyds Banking and Lloyds Banking Group."
+    },
+    {
+      "company_id": "fresh-metlife",
+      "group_id": "employer-group-metlife",
+      "status": "existing",
+      "group_name": "MetLife",
+      "reason": "Already present as MetLife India and MetLife US."
+    },
+    {
+      "company_id": "fresh-modivcare",
+      "group_id": "employer-group-modivcare",
+      "status": "new",
+      "group_name": "Modivcare",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-nationwidebuildingsociety",
+      "group_id": "employer-group-nationwidebuildingsociety",
+      "status": "existing",
+      "group_name": "Nationwide Building Society",
+      "reason": "Already represented by Nationwide (UK) and the nationwide building search alias."
+    },
+    {
+      "company_id": "fresh-premierbankcard",
+      "group_id": "employer-group-premierbankcard",
+      "status": "new",
+      "group_name": "PREMIER Bankcard",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-rabobank",
+      "group_id": "employer-group-rabobank",
+      "status": "existing",
+      "group_name": "Rabobank",
+      "reason": "Already present as Rabobank (Netherlands)."
+    },
+    {
+      "company_id": "fresh-siemens",
+      "group_id": "employer-group-siemens",
+      "status": "existing",
+      "group_name": "Siemens",
+      "reason": "Already present as Siemens India and Siemens Germany."
+    },
+    {
+      "company_id": "fresh-standardcharteredbank",
+      "group_id": "employer-group-standardchartered",
+      "status": "existing",
+      "group_name": "Standard Chartered",
+      "reason": "Already present as Standard Chartered India/UK."
+    },
+    {
+      "company_id": "fresh-transavia",
+      "group_id": "employer-group-transavia",
+      "status": "new",
+      "group_name": "Transavia",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-unumgroup",
+      "group_id": "employer-group-unum",
+      "status": "existing",
+      "group_name": "Unum Group",
+      "reason": "Already present as Unum Group (US)."
+    },
+    {
+      "company_id": "fresh-verizon",
+      "group_id": "employer-group-verizon",
+      "status": "existing",
+      "group_name": "Verizon",
+      "reason": "Already present as Verizon India and Verizon US."
+    },
+    {
+      "company_id": "fresh-wellsfargo",
+      "group_id": "employer-group-wellsfargo",
+      "status": "existing",
+      "group_name": "Wells Fargo",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-zurichnorthamerica",
+      "group_id": "employer-group-zurich",
+      "status": "existing",
+      "group_name": "Zurich",
+      "reason": "Regional Zurich record; Zurich Insurance was already in the baseline."
+    },
+    {
+      "company_id": "fresh-americanexpress",
+      "group_id": "employer-group-americanexpress",
+      "status": "existing",
+      "group_name": "American Express",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-bankofamerica",
+      "group_id": "employer-group-bankofamerica",
+      "status": "existing",
+      "group_name": "Bank of America",
+      "reason": "Already covered by an earlier name, brand or regional target."
+    },
+    {
+      "company_id": "fresh-ptkynerjaabadisolusindo",
+      "group_id": "employer-group-ptkynerjaabadisolusindo",
+      "status": "new",
+      "group_name": "PT Kynerja Abadi Solusindo",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-randstaddigital",
+      "group_id": "employer-group-randstaddigital",
+      "status": "new",
+      "group_name": "Randstad Digital",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    },
+    {
+      "company_id": "fresh-staidlogic",
+      "group_id": "employer-group-staidlogic",
+      "status": "new",
+      "group_name": "StaidLogic",
+      "reason": "Not represented in the earlier catalogue after reviewed aliases and regional grouping."
+    }
+  ],
+  "sources": [
+    {
+      "title": "LTIMindtree introduces new brand identity and positioning — LTM",
+      "url": "https://www.ltm.com/news-events/press-releases/2026/ltimindtree-introduces-new-brand-identity-and-positioning--ltm--"
+    },
+    {
+      "title": "Eclatprime announces Eclatprime and Lantiqx combining as Eclantiqx",
+      "url": "https://www.linkedin.com/posts/eclatprime_eclantiqx-eclatprime-lantiqx-activity-7273316919271706624-dsBO"
+    },
+    {
+      "title": "Tenth Revolution Group — Our brands, including Revolent",
+      "url": "https://www.tenthrevolution.com/culture/our-story/our-brands/"
+    },
+    {
+      "title": "Revolent — Part of Tenth Revolution Group",
+      "url": "https://www.revolentgroup.com/"
+    },
+    {
+      "title": "Blue Shield of California — About the independent member and corporate structure",
+      "url": "https://www.blueshieldca.com/about"
+    },
+    {
+      "title": "Blend360 acquires FutureproofAI",
+      "url": "https://www.blend360.com/news/blend360-acquires-futureproofai-inc-further-enhancing-customer-decision-hub-implementations-with-advanced-data-and-analytics-expertise"
+    }
+  ],
+  "limitations": [
+    "The earlier catalogue is used only as a before-and-after name baseline, not as evidence about employers, people, teams or vacancies.",
+    "New means newly represented relative to that catalogue; it does not mean a newly founded company, a confirmed vacancy or a verified salary.",
+    "The comparison consolidates reviewed brands, rebrands and regional entities for conservative employer-group counting; the fresh map retains its individual employer records.",
+    "Tenth Revolution Group and Revolent are two fresh records counted as one new group. LTM is the existing LTIMindtree lineage; Eclantiqx and Lantiqx are covered through the existing Eclatprime lineage.",
+    "Blue Shield of California is a newly specific independent employer within the previous broad Blue Cross Blue Shield bucket and is shown as one refinement outside the 34 new groups.",
+    "These groups include global and adjacent-technology opportunities. H&M and TEKsystems were found through adjacent RPA or integration roles; inclusion alone does not establish a Pega team, Bengaluru eligibility, India remote eligibility or compensation."
+  ]
+}

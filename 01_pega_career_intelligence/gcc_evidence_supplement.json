@@ -1,0 +1,32 @@
+{
+  "note": "Hand-verified evidence supplement for the GCC ranking. Every entry below was read from a search-index profile or public post during the October 2026 research pass and is recorded here so the scorer stays reproducible instead of being hand-patched. Months are measured to the AS_OF anchor of October 2026. 'source' values ending in verified_web_2026-10 mean an individual profile/post was read, not inferred.",
+  "asOf": "2026-10",
+  "companies": {
+    "Cisco India": {
+      "why": "Pillar 4 was unmeasured (tenureN=0) despite two long-tenured India Pega engineers being publicly documented. Also confirms Cisco's Pega Lead System Architect is US-based, which independently supports keeping Pillar 1 at the architect tier rather than granting India global ownership.",
+      "tenureSamples": [
+        { "name": "Ashish Malviya", "months": 68, "source": "verified_web_2026-10", "detail": "Software Engineer (Pega CSSA), Bengaluru, Feb 2021 - present. 15 yrs total experience, ex-Capgemini Sr Pega Consultant." },
+        { "name": "Dharani Murugan", "months": 52, "source": "verified_web_2026-10", "detail": "Technical Systems Engineer (Pega), Bengaluru, Jun 2022 - present. CSA + CSSA + CPDC. Led Pega 8.8 to Infinity 24.1.2 upgrade with zero business disruption; built API-triggered automatic case create/update/delete." },
+        { "name": "Vivek Kumar Sonu", "months": 19, "source": "verified_web_2026-10", "detail": "COMPLETED tenure, not current: Software Engineer (Pega) at Cisco Bengaluru Jan 2021 - Aug 2022, then left to Pegasystems where he is now Senior System Architect with CLSA Architecture 24.2. A finished 19-month stint is direct attrition evidence and is deliberately included so the average is not biased upward by only counting people who stayed." }
+      ],
+      "extraText": "Cisco India Pega engineers document a Pega 8.8 to Pega Infinity 24.1.2 platform upgrade completed with zero disruption, plus integration of Pega with external APIs for automatic case creation, update and deletion without manual intervention. Pega Lead System Architect Divya Garapati is based in San Francisco, United States, so platform architecture ownership is not evidenced as India-held. A PRPC Senior System Architect at Cisco publicly headlines looking for new opportunities.",
+      "leadershipAbroad": ["Divya Garapati - Pega Lead System Architect, San Francisco, United States"],
+      "departureSignalsAdd": 2,
+      "departureDetail": "Two exit signals: a Cisco PRPC Senior System Architect headline states 'Looking For New Opportunities' (soft signal, not a confirmed departure), and Vivek Kumar Sonu has left Cisco for Pegasystems after 19 months. Read the healthy 3.9y average alongside these two signals rather than instead of them."
+    },
+    "Goldman Sachs": {
+      "why": "Scored 35 with attrition Unknown, but two India-based Pega CLSA Vice Presidents with 5-7 year tenures are publicly documented on Marcus Collections & Recoveries. Both are ex-Pegasystems. This is a direct collections-domain match and the thin score reflected missing research coverage, not a weak team.",
+      "tenureSamples": [
+        { "name": "Pavan Kumar Raavi", "months": 82, "source": "verified_web_2026-10", "detail": "Vice President / Engineer, 'Collections and Recoveries' at Marcus by Goldman Sachs, Bengaluru, Dec 2019 - present. Pega CLSA v8.4. Previously Senior Solutions Engineer at Pegasystems (3y3m)." },
+        { "name": "Priyabharathi Ayyaswamy", "months": 64, "source": "verified_web_2026-10", "detail": "Vice President (Technology - Pega Developer), Bengaluru, Jun 2021 - present. Pega CLSA v8.8, CSSA, CSA. Ex-Pegasystems Technical Solutions Engineer." }
+      ],
+      "extraText": "Goldman Sachs India runs Pega for lending collections at Marcus and card collections for the Apple Card, publicly described by an engineer who built them. Two Bengaluru Vice Presidents hold Pega Certified Lead System Architect credentials and both joined from Pegasystems. A Goldman Sachs VP in Fraud & Disputes Engineering holds Pega LSA and followed PegaInnovate Hyderabad Smart Dispute Agentic Automation sessions. Note: the Fraud & Disputes VP is recorded elsewhere in this research as based in Richardson, Texas, United States, so he must not be counted as India headcount.",
+      "exPegasystemsHiresAdd": 2
+    },
+    "Booking Holdings India": {
+      "why": "Pillar 3 scored only 10 despite the strongest innovation evidence in the entire research set. The company-level Pega award and the Pega Day event were documented in the hub narrative but not in text the scorer reads.",
+      "extraText": "Booking.com was named a Pegasystems 2026 Industry Impact Award winner, accepted at PegaWorld 2026, recognised for Process Fabric, Voice AI and Knowledge Buddy work. Booking.com Customer Service received the 2026 Impact Award at PegaWorld 2026. Booking ran its first-ever Hybrid Pega Day across Amsterdam and Bangalore with 130+ attendees, including keynotes and sessions on Agentic AI, Process AI, Task Mining and Agentic Process Fabric Hub. Booking.com ran an internal Pega Hackathon 2026 in which an India team placed 2nd with AI-Driven Case Intelligence using the Agent-to-Agent (A2A) Protocol, and another placed 3rd with Automated Trip Heal using an AI voice agent and chatbot. Engineers publicly troubleshoot Pega Constellation 25.1.2. A six-month intern converted to a permanent Junior Pega Engineer and helped organise the hackathon.",
+      "tenureNote": "Average tenure is genuinely low here because the team converts interns and hires juniors, not because people leave. The scorer already treats this as growth rather than churn."
+    }
+  }
+}

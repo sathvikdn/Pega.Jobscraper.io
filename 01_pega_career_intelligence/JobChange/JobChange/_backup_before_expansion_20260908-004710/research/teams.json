@@ -1,0 +1,784 @@
+{
+  "as_of": "2026-09-07",
+  "teams": [
+    {
+      "id": "cba",
+      "company": "Commonwealth Bank / CommBank India",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "Employer Workday requisition REQ261027 explicitly describes Pega application engineering at Bangalore Manyata Tech Park. This is strong employer-authored evidence of local delivery capability, retained here as search-index evidence because the directly opened page returned no readable job content.",
+      "domains": [
+        "Banking enterprise workflows"
+      ],
+      "skills": [
+        "Pega Platform",
+        "Java / JEE",
+        "Spring Boot",
+        "REST APIs",
+        "Microservices",
+        "CI/CD"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers/job/Senior-Software-Engineer_REQ261027",
+          "title": "CommBank: Senior Software Engineer, REQ261027",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed employer role places Pega and Java application development, integrations and production support at Bangalore Manyata Tech Park.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Search CommBank careers for Pega and REQ261027; verify the live requisition and team remit before applying.",
+      "limitations": [
+        "Direct Workday open exposed no readable content; indexed details may lag.",
+        "No current named team member was independently verified.",
+        "Relative posting labels were not converted into an invented publication date."
+      ]
+    },
+    {
+      "id": "wells_fargo",
+      "company": "Wells Fargo",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "A recently indexed employer role and a public professional profile independently connect Wells Fargo, Pega engineering and Bengaluru. The employer posting closed on 30 August 2026 and its URL now returns 404; it demonstrates recent local capability, not an open vacancy.",
+      "domains": [
+        "Banking workflow engineering"
+      ],
+      "skills": [
+        "Pega case management",
+        "Rule resolution",
+        "Queue Processors",
+        "Job Schedulers",
+        "REST / SOAP",
+        "Constellation"
+      ],
+      "people": [
+        {
+          "name": "Ravi kiran N G",
+          "title": "Lead Pega developer (About section)",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "public_profile_claim",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+          "notes": "Indexed About section describes a lead Pega developer; employer experience lists Wells Fargo. Search cache was approximately four months old. Other people's liked posts were excluded."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-565488/lead-software-engineer-pega/",
+          "title": "Wells Fargo: Lead Software Engineer (Pega), R-565488",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-08-24",
+          "excerpt": "Bengaluru Pega engineering role posted 24 August 2026, with a 30 August deadline; direct URL now returns 404.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://in.linkedin.com/in/ravi-kiran-n-g-a1386b78",
+          "title": "Ravi kiran N G — Wells Fargo",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Profile's own About section describes lead Pega development; the indexed profile places the professional and Wells Fargo experience in Bengaluru.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Review current Wells Fargo Pega requisitions; treat R-565488 as recent team evidence only.",
+      "limitations": [
+        "R-565488 is expired and unavailable on direct open.",
+        "Profile claims are self-reported and cached; current employment is not independently confirmed.",
+        "No team size or hiring demand is inferred from the listed person."
+      ]
+    },
+    {
+      "id": "jpmorgan",
+      "company": "JPMorgan Chase & Co.",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "A public profile explicitly identifies a Bengaluru Senior Associate working as a Pega Developer at JPMorgan Chase. This supports local technical presence; current employer confirmation and specific team ownership remain outstanding.",
+      "domains": [
+        "Banking; exact local business domain unverified"
+      ],
+      "skills": [
+        "Pega development"
+      ],
+      "people": [
+        {
+          "name": "Sumana Roy",
+          "title": "Senior Associate (Pega Developer)",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "public_profile_claim",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/sumana-roy-a7698080",
+          "notes": "Title and employer are stated together in the indexed About section. Profile cache was approximately four months old; direct profile fetch failed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/in/sumana-roy-a7698080",
+          "title": "Sumana Roy — JPMorgan Chase & Co.",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed About text connects Senior Associate/Pega Developer with JPMorgan Chase; profile location is Bengaluru.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Check JPMorgan's official careers for Bengaluru Pega roles and validate the relevant business unit.",
+      "limitations": [
+        "Evidence is a cached professional claim, not an employer-verified roster.",
+        "Liked activity about payments was not used to assign this person to a payments team.",
+        "No current vacancy is established by this record."
+      ]
+    },
+    {
+      "id": "standard_chartered",
+      "company": "Standard Chartered",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "Employer requisition 55895 specifies Bangalore Pega CDH application architecture in WRB Technology. An indexed professional profile also claims a local Pega Decisioning Architect role. The requisition's posting window ended 3 July 2026.",
+      "domains": [
+        "Wealth and Retail Banking technology",
+        "Customer decisioning"
+      ],
+      "skills": [
+        "Pega CDH",
+        "Decisioning",
+        "Next Best Action",
+        "Data Flows",
+        "Data Sets",
+        "Strategies",
+        "Integration architecture"
+      ],
+      "people": [
+        {
+          "name": "VIKAS SONI",
+          "title": "Pega Decisioning Architect",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "public_profile_claim",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/vikas-soni-970018130",
+          "notes": "Own About section and own role-announcement post identify Pega decisioning architecture at Standard Chartered. Indexed cache was approximately one month old; exact start date was not exposed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://jobs.standardchartered.com/job/Prod-Specialist-Pega-CDH%2C-WRB-Tech/55895-en_GB/",
+          "title": "Standard Chartered: Prod Specialist — Pega CDH, WRB Tech, 55895",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-06-29",
+          "excerpt": "Bangalore requisition covers CDH architecture, integration and decisioning; posting window was 29 June–3 July 2026.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://in.linkedin.com/in/vikas-soni-970018130",
+          "title": "VIKAS SONI — Standard Chartered",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Bengaluru profile and its own career announcement identify a Pega Decisioning Architect role at Standard Chartered.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Search new Standard Chartered CDH/decisioning requisitions; assess whether the target is decisioning architecture or core application delivery.",
+      "limitations": [
+        "Career page could not be retrieved directly; employer detail is search-index-only.",
+        "Requisition 55895 is expired.",
+        "Profile and index timestamps are not proof of employment on the observation date."
+      ]
+    },
+    {
+      "id": "john_deere",
+      "company": "John Deere",
+      "locations": [],
+      "bangalore_evidence": "not_found",
+      "evidence_summary": "Public search found a John Deere-associated professional profile mentioning Pega experience, but the retrieved material did not establish a current Bengaluru Pega team. This is an unresolved watchlist entry.",
+      "domains": [],
+      "skills": [
+        "Pega experience mentioned; current employer use unverified"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/in/vivek-gautam-b36492104",
+          "title": "VIVEK GAUTAM — John Deere India Pvt. Ltd. (JDTCI)",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Search extract associates a professional with John Deere and mentions Pega experience; current local Pega responsibilities were not established.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "watchlist",
+      "next_action": "Look for an employer-authored Bengaluru Pega requisition or a professional source that explicitly links a current Pega role, John Deere and Bengaluru.",
+      "limitations": [
+        "No current Bengaluru technical team was established in this research pass.",
+        "A professional's Pega experience alone does not establish the employer's current platform or local team.",
+        "Search results containing unsourced departure or platform-migration claims were excluded.",
+        "Not found means insufficient evidence in this search, not proof that no team exists."
+      ]
+    },
+    {
+      "id": "first_citizens",
+      "company": "First Citizens India",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "Employer-hosted First Citizens India Workday extracts list both Pega development and Pega test engineering in Bangalore. These complementary roles support local technical delivery capability. Direct Workday rendering returned no readable content.",
+      "domains": [
+        "Banking application engineering",
+        "Pega quality assurance"
+      ],
+      "skills": [
+        "Pega development",
+        "Pega test engineering"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Software-Engineer-I---PEGA-Developer_24759-1",
+          "title": "First Citizens India: Software Engineer I — PEGA Developer, 24759",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed employer posting lists a full-time Pega developer role in Bangalore, India.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Bangalore-India/Software-Test-Engineer-II_24712-1",
+          "title": "First Citizens India: Software Test Engineer II — Pega, 24712",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed employer posting places Pega test engineering in Bangalore, India.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://svb.wd5.myworkdayjobs.com/en-US/firstcitizensindia/job/Bangalore-India/Lead-Software-Engineer---Pega-Developer_24727-1",
+          "title": "First Citizens India: Lead Software Engineer — Pega Developer, 24727",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Additional Bangalore Pega lead-engineering posting had an application deadline of 12 August 2026.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Check live First Citizens India requisitions 24759 and 24712 and their application status; use 24727 only as earlier team evidence.",
+      "limitations": [
+        "Search-index posting labels may be stale; a live application path was not verified.",
+        "Requisition 24727 is expired.",
+        "No named employee was verified.",
+        "Global First Citizens Pega use does not by itself assign a specific banking product to the Bengaluru team."
+      ]
+    },
+    {
+      "id": "american_express",
+      "company": "American Express",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "A public professional explicitly describes current Pega SRE work at American Express in Bengaluru; an employer-attributed LinkedIn engineering posting adds local Pega development evidence. Current employment and vacancy status remain unverified.",
+      "domains": [
+        "Platform reliability",
+        "Enterprise application delivery"
+      ],
+      "skills": [
+        "Pega SRE",
+        "Pega PRPC"
+      ],
+      "people": [
+        {
+          "name": "Surya Sachithanantham",
+          "title": "Pega SRE",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "public_profile_claim",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/surya-sachithanantham-598410181",
+          "notes": "Own indexed About section explicitly says the professional is serving as a Pega SRE at American Express; employer experience also shows Bengaluru. Cache was approximately four months old."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/in/surya-sachithanantham-598410181",
+          "title": "Surya Sachithanantham — American Express",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Own profile description identifies Pega SRE work at American Express; employer experience is located in Bengaluru.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-i-at-american-express-4405984673",
+          "title": "American Express: Senior Software Engineer I — Bengaluru",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed employer-attributed LinkedIn job describes Pega PRPC business application design and development in Bengaluru.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Review American Express careers for Bengaluru Pega engineering and SRE; distinguish development from production reliability responsibilities.",
+      "limitations": [
+        "Public employment claims and LinkedIn job content are search-index-only.",
+        "The employer's live application page and current vacancy status were not verified.",
+        "No assumption is made about the person's willingness to refer or change roles."
+      ]
+    },
+    {
+      "id": "booking_holdings",
+      "company": "Booking Holdings / Booking.com",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "Two public profiles explicitly connect Bengaluru Booking Holdings employment with Pega architecture; one names rental cars. A verified Pega-hosted customer presentation separately confirms Booking's customer-service modernization. The presentation itself does not locate the delivery team.",
+      "domains": [
+        "Rental cars (professional claim)",
+        "Customer-service modernization (group-level vendor presentation)"
+      ],
+      "skills": [
+        "Pega System Architecture",
+        "Pega development"
+      ],
+      "people": [
+        {
+          "name": "Datta Vandana T.",
+          "title": "Pega System Architect",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "public_profile_claim",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/datta-vandana-t",
+          "notes": "Own About section explicitly ties this role to Booking Holdings; employer experience is Bengaluru. Cache was approximately four months old."
+        },
+        {
+          "name": "Navya Chatrati",
+          "title": "Pega Senior System Architect",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "public_profile_claim",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/navya-chatrati-6a9b3a82",
+          "notes": "Own About section describes a Pega SSA in the rental-cars space; indexed experience lists Booking Holdings in Bengaluru. Cache was approximately four months old."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/in/datta-vandana-t",
+          "title": "Datta Vandana T. — Booking Holdings",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed About text identifies Pega System Architect work at Booking Holdings; profile and employer experience show Bengaluru.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://in.linkedin.com/in/navya-chatrati-6a9b3a82",
+          "title": "Navya Chatrati — Booking Holdings",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed About text describes Pega senior architecture in rental cars; employer experience lists Booking Holdings, Bengaluru.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/pegainnovate-hyd-2025-breakout-session-delivering-brilliance-customer-service",
+          "title": "PegaInnovate HYD 2025: Booking customer-service modernization",
+          "source_type": "vendor_case_study",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Pega-hosted replay describes Booking.com/Booking Holdings customer-service modernization using Pega.",
+          "status": "verified"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Search Booking Holdings Bengaluru/India careers as well as Booking.com; verify the employing entity and rental-car/customer-service team.",
+      "limitations": [
+        "Professional profiles are cached self-reports, not a verified employee directory.",
+        "Booking Holdings and Booking.com are distinct employer labels; the sources must not be treated as interchangeable legal entities.",
+        "Hyderabad in the presentation title is an event location, not evidence of the team's workplace.",
+        "No current vacancy is established."
+      ]
+    },
+    {
+      "id": "cisco",
+      "company": "Cisco",
+      "locations": [],
+      "bangalore_evidence": "uncertain",
+      "evidence_summary": "A verified Pega customer case study establishes Cisco use of Customer Service and Customer Decision Hub. It does not identify Bengaluru delivery personnel or a Bengaluru Pega technical team; global use remains the supported conclusion.",
+      "domains": [
+        "Global customer engagement",
+        "Global order and subscription workflows"
+      ],
+      "skills": [
+        "Pega Customer Service",
+        "Pega Customer Decision Hub"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://www.pega.com/customers/cisco-customer-service",
+          "title": "Cisco delivers dynamic digital customer engagement",
+          "source_type": "vendor_case_study",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Cisco combines Pega Customer Service and Customer Decision Hub with automation for customer engagement and order-related workflows.",
+          "status": "verified"
+        }
+      ],
+      "opportunity_type": "global_usage",
+      "next_action": "Seek a Cisco employer requisition or current professional role explicitly linking Pega and Bengaluru before prioritizing as a local Pega employer.",
+      "limitations": [
+        "Global product adoption and a Bangalore office do not establish a local Pega engineering team.",
+        "Profiles whose only Pega connection was a certification, liked post or unrelated activity were excluded.",
+        "No current local team, vacancy or named local technical member was established."
+      ]
+    },
+    {
+      "id": "nokia",
+      "company": "Nokia",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "A public professional profile explicitly states current Pega technical development at Nokia and places both the person and employer experience in Bengaluru. This supports local technical presence, with current employment still a self-reported claim.",
+      "domains": [
+        "Exact local application domain unverified"
+      ],
+      "skills": [
+        "Pega technical development"
+      ],
+      "people": [
+        {
+          "name": "Sudarshan Reddy",
+          "title": "Pega Technical Development Specialist",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "public_profile_claim",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/sudarshanreddytprofile",
+          "notes": "Own About section explicitly connects current Pega technical development with Nokia. Employer experience shows Bangalore Urban. Cache was approximately one month old; direct LinkedIn access returned an error."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/in/sudarshanreddytprofile",
+          "title": "Sudarshan Reddy — Nokia",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Own indexed About section identifies a current Nokia Pega technical development role; employer experience is Bangalore Urban.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Review Nokia's official Bengaluru careers for Pega and verify the owning internal application team.",
+      "limitations": [
+        "No employer-authored current Bengaluru Pega requisition was established in this pass.",
+        "The professional claim is cached and not independently confirmed.",
+        "Telecom company identity alone was not used to infer the Pega application's business domain."
+      ]
+    },
+    {
+      "id": "mbrdi",
+      "company": "Mercedes-Benz Research and Development India (MBRDI)",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "uncertain",
+      "evidence_summary": "An indexed Bengaluru MBRDI professional profile describes substantial Pega experience. The extract hides the current job title and does not explicitly say the current MBRDI assignment uses Pega, so public evidence here is suggestive rather than conclusive.",
+      "domains": [
+        "Prior BFSI Pega experience; current MBRDI domain unverified"
+      ],
+      "skills": [
+        "Pega experience",
+        "CSSA (profile claim)"
+      ],
+      "people": [
+        {
+          "name": "Moumita Dasgupta",
+          "title": "Current title not exposed in public extract",
+          "location": "Bengaluru, Karnataka, India",
+          "profile_url": null,
+          "employment_status": "uncertain",
+          "observed_at": "2026-09-07",
+          "source_url": "https://in.linkedin.com/in/mdgupta",
+          "notes": "Indexed profile lists MBRDI experience in Bengaluru and describes Pega experience in BFSI. It does not expose current title or prove Pega is used in the current assignment. Cache was approximately four months old."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/in/mdgupta",
+          "title": "Moumita Dasgupta — Mercedes-Benz Research and Development India",
+          "source_type": "search_index",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Bengaluru MBRDI profile describes Pega experience in BFSI; current job title and current project technology are not exposed.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "watchlist",
+      "next_action": "Keep the user's established MBRDI baseline separate from public research; obtain an explicit employer or current-role source before labeling this public record confirmed.",
+      "limitations": [
+        "This file deliberately excludes private resume or employment-document evidence.",
+        "Past Pega experience and current MBRDI employment do not by themselves prove current Pega project membership.",
+        "No public team size, project ownership or open position is established."
+      ]
+    },
+    {
+      "id": "pega",
+      "company": "Pegasystems (Pega)",
+      "locations": [
+        "Bengaluru",
+        "Hyderabad"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "Employer-indexed career pages explicitly locate Pega product engineering in Bangalore and Pega consulting across Bangalore/Hyderabad. These are direct descriptions of technical teams, but attempted live job URLs returned 404, so they are retained as indexed evidence rather than verified vacancies.",
+      "domains": [
+        "Product engineering",
+        "CRM analytics",
+        "Professional services delivery"
+      ],
+      "skills": [
+        "Pega PRPC",
+        "Case management",
+        "REST integration",
+        "Asynchronous processing",
+        "Java"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://www.pega.com/about/careers/22043/senior-software-engineer-pega-development",
+          "title": "Pega: Senior Software Engineer, Pega Development — 22043",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed Bangalore product-engineering role describes the Let's Get Insights scrum team and Pega enterprise application development.",
+          "status": "search_index_only"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+          "title": "Pega: Senior System Architect (Pega CSSA) — 23927",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed consulting role covers Bangalore and Hyderabad and describes designing, developing, implementing and testing Pega customer solutions.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Use Pega's current careers navigation and locate equivalent Bengaluru product engineering or consulting positions; do not rely on the expired URLs.",
+      "limitations": [
+        "Both attempted job opens returned 404.",
+        "The older product-engineering index was approximately a year old; the SSA search result was more recent but not live-verified.",
+        "Product engineering and client consulting are different career tracks.",
+        "No named employee was required to establish the employer-described historical/local technical capability."
+      ]
+    },
+    {
+      "id": "anz",
+      "company": "ANZ",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "uncertain",
+      "evidence_summary": "A verified employer page establishes an intelligent-automation team in Bengaluru and lists Pega among several acceptable platform backgrounds for a systems analyst. It does not conclusively establish that the local squad currently develops Pega, so this remains a targeted watchlist.",
+      "domains": [
+        "Document automation",
+        "Australia Retail and Commercial technology"
+      ],
+      "skills": [
+        "Systems analysis",
+        "Workflow automation",
+        "Pega listed among alternatives",
+        "REST APIs"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://careers.anz.com/job/Bengaluru-Analyst-(SystemsTech-Analyst)/1366916966/",
+          "title": "ANZ: Analyst (Systems/Tech Analyst), requisition 123198",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Bengaluru intelligent-automation analyst role lists Pega among platform alternatives; the page gives an 11 September 2026 posting deadline.",
+          "status": "verified"
+        }
+      ],
+      "opportunity_type": "watchlist",
+      "next_action": "Check the role's actual platform mix and search for a Bengaluru Pega developer/CDH role before treating ANZ as confirmed local Pega engineering.",
+      "limitations": [
+        "The role explicitly accepts several technology backgrounds; a Pega mention is not proof that the current squad uses Pega.",
+        "This is a systems-analysis role, not a dedicated Pega developer advertisement.",
+        "The visible deadline is not a guarantee that applications remain open at submission time."
+      ]
+    },
+    {
+      "id": "csc",
+      "company": "CSC (Corporation Service Company)",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "supported",
+      "evidence_summary": "An employer-attributed LinkedIn posting describes a Bengaluru Senior Software Engineer who designs and deploys Pega software within a distributed delivery team. The indexed listing explicitly says applications are no longer accepted.",
+      "domains": [
+        "APAC software delivery",
+        "Enterprise workflow applications"
+      ],
+      "skills": [
+        "Pega PRPC",
+        "BPM",
+        "Pega guardrails",
+        "Integration",
+        "Production support",
+        "Unit testing"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-csc-4400844336",
+          "title": "CSC: Senior Software Engineer — Bengaluru",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": null,
+          "excerpt": "Indexed Bengaluru role covers Pega solution delivery and production support; listing states it is no longer accepting applications.",
+          "status": "search_index_only"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Search CSC's current official careers for Pega in Bengaluru and confirm the exact employer and team; use this closed listing as team evidence.",
+      "limitations": [
+        "The LinkedIn page was available only through the search index; direct open was rate-limited.",
+        "The indexed role is closed.",
+        "CSC here means Corporation Service Company; do not conflate with the former Computer Sciences Corporation.",
+        "The precise local application domain was not established."
+      ]
+    },
+    {
+      "id": "virtusa",
+      "company": "Virtusa",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "confirmed",
+      "evidence_summary": "A directly readable employer career page explicitly recruits Pega CLM development in Bangalore and describes local technical delivery responsibilities. This confirms employer-described Bengaluru Pega delivery capability.",
+      "domains": [
+        "Client lifecycle management",
+        "Customer onboarding / KYC",
+        "Customer service"
+      ],
+      "skills": [
+        "Pega CLM",
+        "Pega Email Bot",
+        "Pega Customer Service",
+        "Case management",
+        "Decision management",
+        "CSSA"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://virtusapolaris.referrals.selectminds.com/jobs/pega-clm-78511",
+          "title": "Virtusa: Pega CLM, CREQ259726",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-06-10",
+          "excerpt": "Bangalore role posted 10 June 2026 covers Pega CLM, Email Bot, Customer Service and integrations, requiring CSSA.",
+          "status": "verified"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Review requisition CREQ259726 and current Bangalore Pega roles, checking seniority and whether delivery is at an employer or client site.",
+      "limitations": [
+        "The role requests at least seven years of Pega experience.",
+        "A visible application link is not proof that a hiring process remains active.",
+        "Client identity, local headcount and named employees are not established."
+      ]
+    },
+    {
+      "id": "ntt_data",
+      "company": "NTT DATA Services",
+      "locations": [
+        "Bengaluru"
+      ],
+      "bangalore_evidence": "confirmed",
+      "evidence_summary": "A directly readable employer page explicitly describes a Bengaluru team delivering Pega Smart Investigate and payment-investigation workflows. It gives a dated requisition and concrete technical responsibilities.",
+      "domains": [
+        "Payment operations",
+        "Exceptions, disputes and investigations",
+        "Cross-border payments"
+      ],
+      "skills": [
+        "Pega Smart Investigate",
+        "Pega PRPC",
+        "Queue Processors",
+        "Job Schedulers",
+        "REST / SOAP",
+        "MQ / Kafka",
+        "CSSA / CSA"
+      ],
+      "people": [],
+      "sources": [
+        {
+          "url": "https://careers-inc.nttdata.com/job/Bangalore-Pega-Senior-Developer-KA/1409982600/",
+          "title": "NTT DATA: Pega Smart Investigate framework, 382140",
+          "source_type": "employer",
+          "checked_at": "2026-09-07",
+          "published_at": "2026-08-15",
+          "excerpt": "Bengaluru posting dated 15 August 2026 describes a Smart Investigate team, payment automation, case engineering and banking-system integration.",
+          "status": "verified"
+        }
+      ],
+      "opportunity_type": "local_team",
+      "next_action": "Check requisition 382140, required Smart Investigate experience and onsite/hybrid arrangement through NTT DATA careers.",
+      "limitations": [
+        "The posting requires at least seven years of Pega experience and senior architecture certification.",
+        "The label 'GS Office' is not sufficient to identify a client; no client employer is inferred.",
+        "No roster or headcount is established."
+      ]
+    }
+  ],
+  "methodology": [
+    "Public research performed on 7 September 2026 using employer career pages, vendor-hosted customer material and public professional profile search extracts. No contacting, authenticated profile access, contact-data brokers or private user documents were used.",
+    "confirmed means directly readable employer evidence explicitly describes Bengaluru Pega engineering/delivery. supported means explicit local role evidence exists in a search index or self-reported professional profile but current direct confirmation is incomplete. uncertain means a material link is missing; not_found means no sufficient local technical evidence was found in this bounded pass.",
+    "Employer-authored career evidence can establish a local technical function without exposing individual employees. A job page describes capability or recruitment intent; it does not prove a current opening or an existing team's size.",
+    "Verified source status means supporting content was read on direct open. search_index_only means the supporting text was available only in a search result, even when the URL belongs to an employer.",
+    "Profile URLs are left null when a profile was not directly verified; source_url preserves the actual discovered public profile URL, not a fabricated or search-result URL.",
+    "Only each profile's own About/experience or clearly self-authored professional statements were used. Liked/reposted third-party activity, certifications alone, office presence and global case studies were not treated as proof of current local Pega employment.",
+    "Excerpts are short paraphrases of observed content. published_at is null unless an absolute publication date was visible; relative index crawl/posting labels were not converted into invented dates.",
+    "Locations list only locations supported by the relevant evidence; an empty array means no local technical location was established. Domains and skills are source-supported descriptors, not proof that every member has those skills."
+  ],
+  "limitations": [
+    "This is a bounded public-evidence map, not an employee directory or an exhaustive employer census.",
+    "Search indexes can lag by months, combine snippets from unrelated activity, and retain removed vacancies. Professional employment claims remain self-reported.",
+    "Observed_at and checked_at record this research date; they do not certify employment or vacancy availability on that date.",
+    "Absence of evidence is not evidence that a team does not exist. Global Pega use does not establish Bengaluru delivery.",
+    "No referral availability, reporting relationships, headcounts, attrition-based openings or willingness to change jobs is inferred.",
+    "Careers evidence includes closed requisitions because the objective is team presence. Each record flags known closure or failed live verification.",
+    "Live primary evidence was unavailable for several employers; those records are explicitly supported or uncertain rather than confirmed."
+  ]
+}

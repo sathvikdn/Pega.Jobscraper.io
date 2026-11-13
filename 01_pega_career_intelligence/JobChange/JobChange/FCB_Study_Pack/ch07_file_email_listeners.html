@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch07 · File Listener, SFTP, Parse Rules, Email Listener &amp; Channel | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch06_kafka_dataflow_queue_processors.html">&larr; Chapter 06</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch08_pega_ai_genai_decisioning.html">Next: Chapter 08 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 07 &middot; Integration and event processing</div>
+    <h1>File Listener, SFTP, Parse Rules, Email Listener &amp; Channel</h1>
+    <p class="subtitle">Events cover the partner that publishes them; this chapter covers the one that can only send a file, and the request that arrives as an email. It follows <code>RB_BAL_20260309_0730.csv</code>, 14,207 rows, from arrival through readiness detection, parsing, validation, queueing, database apply, reconciliation and archive, and shows a malformed row and a duplicate file being absorbed without losing the batch. Native File Listener processing is kept separate from custom SFTP polling. Then one inbound email goes through identification, attachments, case creation or update and duplicate protection.</p>
+    <div class="meta">
+      <div><strong>21</strong><span>Sections</span></div>
+      <div><strong>13,430</strong><span>Words</span></div>
+      <div><strong>14,207</strong><span>Rows in the file followed</span></div>
+      <div><strong>10</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 06 ended with balances arriving by event from the one partner that publishes them. A second partner, the processor that holds Riverbend's card and ledger extracts, can only drop files on an SFTP server, and customers and counsel write by email. This chapter makes the application able to take both in, safely. The ledger, including the file and trigger names, is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s7-1">7.1 A partner that can only send files<span>Why files persist, and the batch window</span></a>
+      <a href="#s7-2">7.2 The chain of artifacts<span>What owns which concern, in build order</span></a>
+      <a href="#s7-3">7.3 The service package for files<span>Identity of a listener-driven service</span></a>
+      <a href="#s7-4">7.4 The Service File rule<span>Unit of work and unit of commit</span></a>
+      <a href="#s7-5">7.5 The File Listener<span>Configuration and multi-node safety</span></a>
+      <a href="#s7-6">7.6 Native listening and custom SFTP polling<span>Two different mechanisms</span></a>
+      <a href="#s7-7">7.7 SFTP specifics<span>Keys, host keys, directories, PGP, checksums</span></a>
+      <a href="#s7-8">7.8 Knowing the file is complete<span>The trigger-file handshake</span></a>
+      <a href="#s7-9">7.9 Turning bytes into rows<span>Parse rules</span></a>
+      <a href="#s7-10">7.10 Bad rows and a second copy<span>Staging, isolation, duplicates, reconciliation</span></a>
+      <a href="#s7-11">7.11 Bank-grade controls<span>Arrival SLAs, dual control, retention</span></a>
+      <a href="#s7-12">7.12 Variation: an ACH return file<span>Harlow Freight Co., PE-30142</span></a>
+      <a href="#s7-13">7.13 Variations: legal-order and positive-pay files<span>Same architecture, different keys</span></a>
+      <a href="#s7-14">7.14 The file arrived and no case was created<span>Troubleshooting</span></a>
+      <a href="#s7-15">7.15 When the request is an email<span>Listener or channel</span></a>
+      <a href="#s7-16">7.16 One inbound email, followed<span>Correlation, attachments, loops, bounces, security</span></a>
+      <a href="#s7-17">7.17 Classifying email with a model<span>Understood, with its governance</span></a>
+      <a href="#s7-18">7.18 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s7-recap">7.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s7-ref">7.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+    <p class="small muted">Pega's File Listener, Service File and Email Listener screens have changed across releases, so field labels are marked "labelled approximately" and behaviours that differ by release are flagged. The sample layouts for legal orders and positive pay are teaching designs, not a published standard. NACHA record structures are standard and stated accordingly; return deadlines belong to Chapter 12.</p>
+  </section>
+
+  <section id="s7-1" class="pagebreak">
+    <h2>7.1 A partner that can only send files</h2>
+    <p>Riverbend's card and ledger processor sends a balance reconciliation extract each morning. It does not publish events and it does not expose an API; it writes a CSV to an SFTP location and that is its entire interface. This is not an anomaly. File-based integration, in which one system writes a file (CSV, fixed-width, XML, JSON, or a standard such as NACHA) to a shared location and another picks it up and processes it, is the oldest integration style and it has not gone away, for reasons that are structural in banking.</p>
+    <table>
+      <tr><th>Reason</th><th>Explanation</th><th>Deposits example</th></tr>
+      <tr><td>Industry standards are file formats</td><td>Payment networks and regulators define record layouts, not APIs</td><td>NACHA ACH files; Check 21 image cash letters; positive-pay issue files</td></tr>
+      <tr><td>Very high volume at low cost</td><td>One file carries hundreds of thousands of records with one transfer and one transaction</td><td>Nightly core extract; statement runs</td></tr>
+      <tr><td>Batch cut-offs and settlement</td><td>Settlement cycles are daily; end-of-day files define the books</td><td>Daily proof, reconciliation extracts</td></tr>
+      <tr><td>Partner capabilities</td><td>Vendors, courts, agencies, print and mail houses often support only SFTP drops</td><td>Bulk legal-order delivery by a service provider; print and mail vendor files</td></tr>
+      <tr><td>Legacy core systems</td><td>Core banking batch interfaces are file-based</td><td>Batch extracts and loads</td></tr>
+      <tr><td>Audit evidence</td><td>A file is a durable, hashable artifact that can be archived and reproduced</td><td>Evidence of what was received and when</td></tr>
+    </table>
+    <p>What a file-based interface introduces is the <strong>batch window</strong>: the period in which everything that depends on the file (returns posted, holds applied, notices queued) must finish, such as after core end-of-day close and before operations open. The window squeezes from both ends: files arrive later than planned, volumes grow, and the business opens at a fixed time. For the processor's extract, the file is due at 07:30 and operations open at 09:00, so the window is ninety minutes.</p>
+    <div class="formula">Window budget:  arrival time of file  +  transfer + validate + parse + load + process + reconcile  &lt;=  business-open deadline
+Example (illustrative): file due 07:30, operations open 09:00 => 90 min window.
+  validate+parse 4 min + load to staging 3 min + apply 5 min + reconcile 2 min = 14 min => 76 min slack.
+  If the file arrives at 08:30, slack = 90 - 60 - 14 = 16 min: still OK. At 08:50, processing cannot finish:
+  the need is a late-arrival escalation, not just a faster job.</div>
+    <p>A small file in a wide window hides the failure modes that matter at scale, which are the ones this chapter is organised around: the file is read while it is still being written (7.8); the same file is delivered twice (7.10); one bad row fails the whole file (7.10); the file never arrives and nobody notices until the morning (7.11); the record count in the trailer does not match the rows received (7.10); and encoding, line endings or a changed layout break the parser (7.9, 7.14).</p>
+  </section>
+
+  <section id="s7-2" class="pagebreak">
+    <h2>7.2 The chain of artifacts</h2>
+    <p>Before following the file, it helps to know what it passes through, because Pega's file integration is a chain of separate rules and records, and knowing which artifact owns which concern is what makes a failure quick to locate. They are created in a particular order: dependencies first.</p>
+    <table>
+      <tr><th>#</th><th>Artifact</th><th>Owns</th><th>Why in this order</th></tr>
+      <tr><td>1</td><td>Data model (integration classes, staging structure, canonical mapping)</td><td>What a record looks like once parsed and where it goes</td><td>Parse rules and the service map into it; building it last forces rework</td></tr>
+      <tr><td>2</td><td>Parse rule(s)</td><td>How the bytes of a record become clipboard properties</td><td>The service method needs a parse rule to refer to</td></tr>
+      <tr><td>3</td><td>Processing activity (and the data transforms it calls)</td><td>What to do per record or per file: validate, stage, create case</td><td>The service rule calls it</td></tr>
+      <tr><td>4</td><td>Service Package</td><td>The security envelope: the access group the service runs as</td><td>The Service File rule must belong to a package</td></tr>
+      <tr><td>5</td><td>Service File rule</td><td>The service contract: which parse rule, which activity, per-file or per-record processing</td><td>The listener invokes it</td></tr>
+      <tr><td>6</td><td>File Listener</td><td>Where to look, which file names, how often, on which nodes, as whom</td><td>It starts everything: configure it last and enable it deliberately</td></tr>
+      <tr><td>7</td><td>Supporting records</td><td>Repository or SFTP connection details, a keystore for keys, a file registry table, a reject table, alerts</td><td>Needed before the first real file</td></tr>
+    </table>
+    <p>At run time the order is the reverse of discovery: the file lands, the listener claims it, the service parses it, the activity registers, validates and stages it, and chunks are queued for a processor.</p>
+    <div class="flow">RUNTIME PATH OF A FILE
+ The processor drops  RB_BAL_20260309_0730.csv  (+ trigger file RB_BAL_20260309_0730.done)  into the SFTP inbound directory
+   |
+   v  FILE LISTENER (runs on designated background node(s)): polls the source location every N seconds for names matching the mask
+   |        - picks up the file (or trigger) and claims it so another node/thread does not
+   |        - starts a requestor with the Service Package's access group
+   v  SERVICE FILE rule: which method? process the whole file or record by record; which parse rule; which activity
+   |
+   v  PARSE RULE: splits the byte stream into records and fields -&gt; pages of the integration class (header / detail / trailer)
+   |
+   v  PROCESSING ACTIVITY (per record or per file):
+   |     1 register the file (name + hash) in the file registry; reject a duplicate
+   |     2 validate structure (header, trailer count and control totals)
+   |     3 load details to STAGING (chunked bulk insert); bad rows -&gt; reject table with reason
+   |     4 queue chunk items to a Queue Processor  OR  create cases
+   v  AFTER PROCESSING: file moved to archive (success) or error directory (failure); status recorded; summary alert; counts reconciled</div>
+    <table>
+      <tr><th>Symptom</th><th>Likely artifact</th></tr>
+      <tr><td>File not picked up at all</td><td>File Listener (location, mask, node, state) or SFTP and permissions</td></tr>
+      <tr><td>Picked up, but "access denied" or the wrong rules run</td><td>Service Package access group and ruleset versions</td></tr>
+      <tr><td>Picked up, processing activity never called</td><td>Service File rule mapping</td></tr>
+      <tr><td>Fields shifted or empty</td><td>Parse rule against the actual layout, encoding or delimiter</td></tr>
+      <tr><td>Rows loaded but no cases</td><td>Processing activity logic, validation rejects, queue processor not running</td></tr>
+      <tr><td>Everything fine but counts differ</td><td>Duplicate rows, filtered rows, trailer mismatch, restart reprocessing</td></tr>
+    </table>
+  </section>
+
+  <section id="s7-3" class="pagebreak">
+    <h2>7.3 The service package for files</h2>
+    <p>The Service Package that Chapter 05 described for REST gives file services their identity too, and for a listener it matters more, because there is no login prompt: the package's access group decides the ruleset list and roles for everything the listener does. A listener-driven service that runs under an access group pointing at an older application version is the classic "behaves differently in batch" defect, and one that runs under an administrator-like group "because it was easier" is a standing security finding.</p>
+    <p>The design guidance is to create one package per integration family (ACH, legal orders, positive pay) and not one for everything, so that one change cannot affect all; to give each a dedicated technical access group with only the case create and update and data rights the file needs and the correct application and ruleset versions; to keep the package from being callable anonymously from elsewhere, since the listener supplies the context for its own invocations but a file service must not be left callable over HTTP without authentication; to know that, if requestors are pooled, the clipboard is not clean between files, and to clear working pages; and to keep per-environment values out of the package.</p>
+  </section>
+
+  <section id="s7-4" class="pagebreak">
+    <h2>7.4 The Service File rule: unit of work and unit of commit</h2>
+    <p>Once the listener has the file, a <strong>Service File</strong> rule defines how Pega processes it: how to read it, what to map it to and which activity to run. It is named by package, class and method (<code>ACHReturns_ProcessFile</code>, say), refers to a parse rule, maps the parsed fields onto the properties of a primary page (an integration class, not the case class, with canonical mapping done afterwards in a transform, Chapter 05 §5.3), names the processing activity (thin: validate, stage, queue, with heavy logic in queue processors), and says what to do on completion and on faults. The design question that must be answered, and that is stable across releases though the tab names are not, is what the unit of work and the unit of commit are, because it decides how a failure in the middle of a file behaves.</p>
+    <p>There are three answers. <em>Record-by-record service invocation</em> runs the service method once per record: it is simple, has natural per-record isolation and low memory, but it means one transaction and one queue or database interaction per record, which is slow at a hundred thousand rows unless the activity is very light. <em>Whole-file service plus chunked bulk staging</em> is fast and set-based, with one reconciliation point, but error isolation and restart must be built. <em>File to staging only, then queue processor chunks</em> decouples arrival from processing, is restartable and parallel, at the cost of extra tables and monitoring, and is the preferred pattern for high volume and batch windows (the same shape as Chapter 06 §6.8). Two distinctions apply on faults: a whole file that is invalid is rejected as a file, while an invalid record is rejected as a row, and a record-level problem never fails the file. The transaction behaviour is release-dependent and verified, so that a failure mid-file neither rolls back a hundred and fifty thousand good rows nor commits half a file inconsistently.</p>
+  </section>
+
+  <section id="s7-5" class="pagebreak">
+    <h2>7.5 The File Listener</h2>
+    <p>The listener is the first thing that touches the processor's file. A <strong>File Listener</strong> is a background component (a Data-Admin record plus a running thread on selected nodes) that watches a location for files matching a name pattern and, when one appears, invokes a Service File rule on it. It is Pega's polling listener for files, and what it watches is a source location, which 7.6 examines.</p>
+    <table>
+      <tr><th>Field (labelled approximately)</th><th>What it does</th><th>Recommended setting and reasoning</th></tr>
+      <tr><td>Listener name and description</td><td>Identity</td><td>By integration and environment, for example <code>BalanceExtract_FL</code></td></tr>
+      <tr><td>Source location</td><td>Where to look for files</td><td>A dedicated inbound directory or repository path, one purpose per directory</td></tr>
+      <tr><td>Source name mask</td><td>The pattern files must match (wildcards such as <code>RB_BAL_*.csv</code>)</td><td>Be precise. If the mask is the trigger file, match only the trigger (7.8); a loose mask also picks up temporary and in-progress files</td></tr>
+      <tr><td>Service package, class and method</td><td>Which Service File rule to invoke</td><td>Must exist in the listener's ruleset context</td></tr>
+      <tr><td>Requestor / listener context</td><td>Identity and ruleset list for processing</td><td>A dedicated technical access group with the correct application version</td></tr>
+      <tr><td>Polling interval</td><td>How often to check the location</td><td>For a morning file, 30 to 120 seconds is ample; very short intervals add load on the storage without benefit</td></tr>
+      <tr><td>Concurrency</td><td>How many files in parallel</td><td>Usually one per integration, for ordered single-file processing; more only if files are independent</td></tr>
+      <tr><td>Node classification and startup</td><td>Which nodes host the listener thread</td><td>Background processing nodes; see multi-node safety below</td></tr>
+      <tr><td>Startup behaviour</td><td>Whether it starts with the node</td><td>Automatic in production; manual in lower environments, so test files are not consumed by accident</td></tr>
+      <tr><td>Blocked or stopped state</td><td>A listener can be stopped, so it will not run</td><td>A listener left stopped after maintenance is a top cause of "nothing happens"; alert on a listener not running</td></tr>
+      <tr><td>File encoding and data type</td><td>How bytes are decoded; text or binary</td><td>Set the encoding explicitly as the sender actually uses it; text for line-based files, binary for PGP or PDF content</td></tr>
+      <tr><td>After-processing action</td><td>What happens to the file after success or failure</td><td>Never rely on defaults: archive on success and quarantine on failure, with a timestamp suffix, so reprocessing and audit are possible</td></tr>
+      <tr><td>Retry and failure handling</td><td>Behaviour when the service fails for a file</td><td>Decide whether to leave the file for retry or move it to error; avoid infinite re-pick loops</td></tr>
+    </table>
+    <p>In a cluster with several background nodes, one file must not be processed twice. The safe designs are to run the listener on exactly one node (or rely on platform single-active behaviour with failover, whose behaviour the release is checked for), and, where several nodes can see the directory, to make pick-up exclusive, usually by renaming or moving the file to a processing location as the claim, remembering that rename atomicity and locking can differ on shared network storage. Independently of both, application-level protection rejects a duplicate name and hash even if two nodes race (7.10), and a listener with no eligible node never starts, so listener status and last-pick time are monitored.</p>
+    <div class="flow">FILE LISTENER STATE AND HEALTH
+  Configured -&gt; Started (on node X) -&gt; Polling every 60 s  ---&gt; file found? -&gt; claim -&gt; invoke service -&gt; archive/error -&gt; poll again
+        |                                  ^
+        +-- Stopped/Blocked (maintenance, error) -- files accumulate silently, no case is created
+  Monitoring: listener running? last successful poll time; files waiting older than N minutes in inbound; files in error directory;
+              daily "expected file arrived by HH:MM" check (7.11)</div>
+    <p>The listener's usual failures are a mask that also matches the file while it is uploading, polling every second against a storage service, a lower-environment listener pointed at the production directory, no archive step so processed files are re-picked after a restart, and no alert when the listener thread is stopped.</p>
+  </section>
+
+  <section id="s7-6" class="pagebreak">
+    <h2>7.6 Native listening and custom SFTP polling: two different mechanisms</h2>
+    <p>The processor's file sits on an SFTP server, and it is tempting to say "the File Listener reads the SFTP server". That sentence blurs two different mechanisms, and keeping them apart is what prevents a design from promising something the platform does not do. The first is <strong>native File Listener processing</strong>: Pega's listener monitors a <em>location Pega can see</em> and calls a Service File rule on what it finds. Pega's documentation describes the listener monitoring a folder in a file system or a configured <strong>repository</strong> and calling a file service to process the files; the repository types it lists for this use are Pega Cloud File Storage (the default in Pega Cloud), Amazon S3, Microsoft Azure and JFrog Artifactory, and the local file system, which is supported on-premises and recommended only on shared network storage, and is not supported in Pega Cloud because node-local storage there is ephemeral. The documentation also states that file listeners do not support custom repository implementations.</p>
+    <p>The second is <strong>custom SFTP polling</strong>: something that connects to a remote SFTP server, lists matching files and downloads them. That is not what the native listener's source location is described as doing. When the partner's server is the place the file lives, the pull is a separate piece of the design: an activity (scheduled by a job scheduler) that uses SFTP-capable connector or repository methods to fetch the files into a location the native listener can see, or a managed file transfer product in front that receives, scans, decrypts and lands clean files in an internal location, or, in Pega Cloud, the platform's SFTP service whose home folder is mapped to Pega Cloud File Storage, so that a partner writes to SFTP and the native listener watches the mapped repository folder. Which of these a deployment uses depends on the release and on the bank's architecture, and it is confirmed with the platform team, not assumed.</p>
+    <table>
+      <tr><th>Source</th><th>How it works</th><th>Strengths</th><th>Weaknesses</th><th>Use when</th></tr>
+      <tr><td>Direct file system path (local or mounted share), read by the native listener</td><td>The listener reads a directory visible to the node's operating system</td><td>Simple; no extra connection layer</td><td>Ties to node paths; shared-storage locking and atomicity issues; needs the mount on every eligible node; unsupported in Pega Cloud</td><td>On-premises, client-managed, with a managed share</td></tr>
+      <tr><td>Repository (file system, S3-compatible, Azure, Artifactory, Pega Cloud File Storage), read by the native listener</td><td>The listener monitors a repository folder</td><td>Environment-neutral rule; credentials managed in the record; works for cloud storage</td><td>Feature coverage varies by repository type and release; custom repositories unsupported for listeners</td><td>Cloud storage and new designs</td></tr>
+      <tr><td>Custom SFTP polling (an activity or job pulling from a partner's SFTP server)</td><td>A scheduled activity connects, lists, downloads and lands the file in a location the listener can see</td><td>Works with a partner's standard SFTP; supports key authentication</td><td>You build and operate it: polling cost, partial-upload risk (7.8), host-key management, retries, its own monitoring</td><td>A partner that offers only an SFTP drop and no landing zone Pega can read</td></tr>
+      <tr><td>Managed file transfer in front</td><td>An enterprise tool receives, scans, decrypts and lands clean files internally</td><td>Central controls: malware scan, PGP, audit, retry, scheduling</td><td>Another team and another hop</td><td>Typical in banks; Pega reads the tool's outbound directory with the native listener</td></tr>
+    </table>
+    <p>For Riverbend's extract, the design that keeps the two apart is: the processor writes the file and its trigger to the SFTP inbound area; a landing step (MFT, or a custom polling job if there is no MFT) moves complete, verified files to an internal repository folder; and the native File Listener watches that folder. Everything in 7.5 and 7.8 then concerns the native listener, and everything about connecting to the partner (keys, host keys, retries) concerns the landing step. A design that names only one of the two will have a gap in the other.</p>
+  </section>
+
+  <section id="s7-7" class="pagebreak">
+    <h2>7.7 SFTP specifics</h2>
+    <p><strong>SFTP</strong> (SSH File Transfer Protocol) transfers files over an encrypted SSH connection. It is unrelated to FTPS (FTP over TLS) despite the similar names. It uses one port, normally 22, and supports key-based authentication, which is why banks prefer it to plain FTP. Where Chapter 05 §5.14 covered the keys and rotation, this section is what the landing step and the interface agreement have to settle.</p>
+    <table>
+      <tr><th>Element</th><th>Meaning</th><th>Practice</th></tr>
+      <tr><td>SSH key pair</td><td>A private key held by the client (the landing step) and a public key installed on the server for the account</td><td>Key-based authentication, a passphrase-protected private key in the platform keystore or secrets store, one key per partner and environment</td></tr>
+      <tr><td>Host key and known-hosts</td><td>The server's own key, which the client pins to be sure it is talking to the real server</td><td>Verify the fingerprint out of band at setup; never disable host-key checking; plan for partner host-key rotation</td></tr>
+      <tr><td>Passive versus active</td><td>An FTP concept for how the data connection opens; SFTP has no such distinction (one SSH channel)</td><td>If a partner says "passive mode" they are describing FTP or FTPS: clarify the protocol in the interface agreement</td></tr>
+      <tr><td>Directory layout</td><td><code>/inbound</code>, <code>/processing</code>, <code>/archive</code>, <code>/error</code>, <code>/outbound</code></td><td>A directory per state, so a file's location is its status; the partner writes inbound only; the bank reads inbound and moves to archive</td></tr>
+      <tr><td>File naming convention</td><td>The name encodes content, source, business date and sequence, as in <code>RB_BAL_20260309_0730.csv</code></td><td>Agree a strict convention; reject non-conforming names; the date in the name helps duplicate and late-file detection</td></tr>
+      <tr><td>Control or trigger files</td><td>A small second file (<code>.done</code>, <code>.ctl</code>) written after the data file is complete</td><td>See 7.8</td></tr>
+      <tr><td>Checksums</td><td>A SHA-256 of the file supplied by the sender in the control file</td><td>The receiver recomputes and compares before processing, protecting against truncation and corruption</td></tr>
+      <tr><td>PGP-encrypted files</td><td>Content encrypted with the recipient's public key, optionally signed</td><td>Decrypt in a controlled step into a restricted area, verify the signature, delete the cleartext after processing; manage keys with the security team</td></tr>
+      <tr><td>Transfer resume and timeouts</td><td>Large transfers take time and connections drop</td><td>The sender writes to a temporary name and renames on completion, or uses control files; set connection and read timeouts; retry with backoff; do not hold a requestor thread open during a download longer than needed</td></tr>
+    </table>
+    <div class="flow">PARTNER-FACING SFTP DESIGN (illustrative)
+ /inbound   : the processor uploads ONLY here  (write-only for the partner)           bank reads, never edits in place
+ /staging   : the bank moves the file here when it starts processing                  claimed; never shared with the partner
+ /archive   : processed files kept N days (retention policy)                          immutable; hash recorded in the registry
+ /error     : rejected files + a .reason file                                         reviewed by operations
+ Rules: one account per partner; IP allow list; key-only auth; strict file naming; control file after data file; max file size agreed; daily SLA time for arrival</div>
+    <p>Key issuance, certificate authority work and managed-file-transfer administration normally sit with security and platform teams; the file integration's part is the processing side and knowing what to ask them for and how to test rotation.</p>
+  </section>
+
+  <section id="s7-8" class="pagebreak">
+    <h2>7.8 Knowing the file is complete: the trigger-file handshake</h2>
+    <p>The processor's upload is not instantaneous. The balance extract is small, but a larger file, such as the 300 MB ACH return file in 7.12, takes minutes to transfer, and during that time the file already exists in the inbound directory with its final name and a growing size. A listener polling every sixty seconds sees it, picks it up, and parses what is there so far. The result is a file that "processes successfully" with half its records, or a parse error on a truncated last line, or a missing trailer. Sometimes there is no error at all, which is worse: 100,000 of 200,000 entries are posted and nobody knows.</p>
+    <div class="flow">THE RACE
+   t=00:00  the partner starts uploading a large file                 file visible, size growing (50 MB ... 120 MB ...)
+   t=00:45  Pega listener poll: finds a name matching the mask  -&gt; claims the file -&gt; starts parsing
+   t=01:10  the upload completes (300 MB)                              Pega already read 120 MB, hit EOF mid-record, or parsed 100K of 200K rows
+   RESULT : truncated processing; "success" status; downstream counts wrong; no trailer validation if the parser stops cleanly at a line end</div>
+    <p>The defences range from weak to strong. A <em>size stability check</em> (poll twice, process only if size and modified time have not changed for N seconds) is weak: a stalled upload looks stable, and it adds latency. A sender-side <em>temporary name then rename</em> (upload as <code>.part</code> and rename when done, with the mask matching only final names) needs the sender's cooperation and depends on rename atomicity. <em>Trailer validation</em> detects truncation but does not prevent it. The strongest is a <strong>control (trigger, sentinel) file handshake</strong>: the sender writes the data file, then writes a small <code>.done</code> file only after the data file is completely uploaded and closed. The listener's mask matches <strong>only the trigger</strong>, and the trigger names the data file and can carry its size, record count and checksum, so Pega processes the data file only when the trigger exists and the data file verifies against it. It requires the sender's discipline, and the trigger must be written strictly last. A checksum comparison completes it.</p>
+    <div class="flow">SENDER (the processor)                               BANK SFTP                         PEGA (File Listener + Service File)
+   | 1 upload  RB_BAL_20260309_0730.csv  (data file)  ---------&gt; /inbound/RB_BAL_20260309_0730.csv      (listener does NOT match .csv)
+   |      ... upload in progress, size growing ...
+   | 2 upload completes; connection closes cleanly
+   | 3 compute SHA-256 and the record count
+   | 4 write trigger file  RB_BAL_20260309_0730.done  --------------&gt; /inbound/RB_BAL_20260309_0730.done
+   |      content (example):  { "file":"RB_BAL_20260309_0730.csv", "bytes":1184207, "records":14207, "sha256":"9f2c...", "businessDate":"2026-03-09" }
+   |                                                                       |  5 listener (mask = *.done) finds the trigger
+   |                                                                       |-------------------------------------------------&gt;
+   |                                                                                         6 read the trigger; derive the data file name
+   |                                                                                         7 check the data file exists; size == bytes ; wait if not yet (bounded retries)
+   |                                                                                         8 compute SHA-256 == trigger value ?  NO -&gt; quarantine + alert (corrupt/truncated)
+   |                                                                                         9 file registry: name + hash seen before? YES -&gt; duplicate: skip, log, alert
+   |                                                                                        10 move data + trigger to /staging (claim) ; process; validate header/trailer counts
+   |                                                                                        11 on success: move both to /archive with a timestamp; registry status = COMPLETE; send summary
+   |                                                                                        12 on failure: move to /error with the reason; registry status = FAILED; alert operations
+   | 13 (optional) the bank writes an acknowledgment file (ACK/NACK with counts) back to /outbound for the sender</div>
+    <table>
+      <tr><th>Condition</th><th>Detection</th><th>Action</th></tr>
+      <tr><td>Data file present, trigger never arrives</td><td>A scheduled check: data file older than N minutes with no trigger</td><td>Alert operations and the sender; do not process; escalate before the window closes</td></tr>
+      <tr><td>Trigger present, data file missing</td><td>Step 7's bounded retries exhausted</td><td>Quarantine the trigger; alert</td></tr>
+      <tr><td>Neither file by the expected time</td><td>An "expected file by 07:45" check from a job scheduler (7.11)</td><td>Missing-file alert; supervisor and sender contacted</td></tr>
+      <tr><td>Trigger written before the data file is complete (a sender bug)</td><td>Size or checksum mismatch</td><td>Hold and retry for a limited period, then reject</td></tr>
+    </table>
+    <p>Whether the mask can match the trigger alone and then process a differently named data file depends on how the Service File activity is built: usually the service method is invoked for the trigger and the activity then reads the data file through the repository or file methods; confirm the pattern on the release before presenting it as the only way. The sender-side rename technique needs no trigger and is simpler where the sender can do it. The mistakes are a mask of <code>*</code> or <code>*.csv</code> that matches files still uploading, deleting the trigger before the data file is archived (no evidence), relying on "file size looks stable" alone, processing before verifying the checksum, no alert when a trigger is missing, and a sender that writes the trigger first "to save time".</p>
+  </section>
+
+  <section id="s7-9" class="pagebreak">
+    <h2>7.9 Turning bytes into rows: parse rules</h2>
+    <p>The trigger verified, the file is now trustworthy as a whole, and the next question is what each line means. A <strong>parse rule</strong> converts text or bytes into clipboard properties (or the reverse), so that file layout knowledge is declarative and reusable and not hidden in string-splitting code. The balance extract is a delimited file with a header, detail rows and a trailer.</p>
+    <div class="flow">RB_BAL_20260309_0730.csv   (UTF-8, LF; header / detail / trailer; RFC 4180 quoting for any field containing a comma, quote or line break)
+   H,BALANCE_EXTRACT,20260309,0730,BATCH0309
+   D,0001,CHK-8842-0117,4418.55,4218.55,20260309T073000Z
+   D,0002,SAV-8842-0233,12040.00,12040.00,20260309T073000Z
+   ... (14,207 detail rows in total)
+   T,14207,198204511.06                              &lt;- trailer: record count, control total (sum of ledger balances)
+
+   VALIDATION ORDER
+   1 header present, correct file type, business date = expected (not a stale or future file)
+   2 every detail line parses; failures go to the reject table with line number and raw line
+   3 trailer present; trailer count == parsed detail count (+ rejects accounted for); control total == sum of detail amounts
+   4 any mismatch => file-level failure or "needs review" status; never silently continue</div>
+    <p>Pega has parse rules for the layouts a bank meets. <em>Parse Delimited</em> handles records separated by line breaks with delimited fields (comma, pipe, tab): the delimiter, quote character, escape handling, header-row handling and field-to-property mapping with types are defined, with attention to embedded delimiters, quotes and multi-line quoted fields, which RFC 4180 specifies for CSV. <em>Parse Structured</em> handles fixed-position layouts, including multi-record-type files such as NACHA's 94-character records: record types are identified by a position, with field start and length, padding and number formats, each record type mapped to its own page class (some documentation treats fixed-width as part of structured parsing, so confirm the rule type name in the release). <em>Parse XML</em> maps elements and attributes by path, handles namespaces and, for large files, prefers streaming over loading a whole document. JSON is handled by the JSON mapping features, transforms and parse support of the release, mapping arrays to page lists, with line-delimited JSON preferred for very large arrays; the exact rule types vary, so describe the capability.</p>
+    <p>A parse rule's configuration is mostly decisions about edge cases: record types (header, detail, trailer, addenda) with their layouts and target classes; field definitions (position or index, length, type, format such as YYMMDD for NACHA, trimming, default); mapping to integration-class properties with canonical mapping afterwards; encoding and line endings (CRLF against LF, and a byte-order mark at the start of a file that can corrupt the first field name or record type code); what happens on a malformed record (raise, skip, or capture for the reject path, preferring capture of the raw line and the reason); and strictness for numbers and dates (reject impossible dates and non-numeric amounts at parse time, keep money as decimal, and agree implied decimal places, since NACHA amounts are in cents with no decimal point). The mistakes are substring parsing inside an activity, trusting trailer counts without comparing them, ignoring a BOM or CRLF, parsing money as a float, loading a multi-gigabyte XML into memory, and failing the whole file on one malformed row, which the next section addresses.</p>
+  </section>
+
+  <section id="s7-10" class="pagebreak">
+    <h2>7.10 Bad rows and a second copy: staging, isolation, duplicates and reconciliation</h2>
+    <p>The file passes its handshake and parses, and then the realistic things happen. Six of its 14,207 rows are malformed: two have a balance field that is not a number, one has a truncated line, one has an unknown account format, and two have an impossible date. And at 07:52 the processor, which retried its upload, delivers the same file again. The design has to absorb both without failing the whole batch and without applying it twice. The foundation is not to create cases or update balances while parsing, but to separate arrival from business processing in layers.</p>
+    <div class="flow">LAYERS
+  RAW      : the original file, archived untouched with its hash (evidence, replay source)
+  STAGING  : one row per record, loaded in bulk, with: fileId, lineNumber, rawLine (or key fields), parsedFields, rowStatus (NEW, VALID, REJECTED, PROCESSED, FAILED), errorCode, errorText
+  WORK     : the balance table or cases updated from VALID staging rows by queue processor chunks (Chapter 06)
+  Benefits: parse and validate quickly; reconcile counts BEFORE business processing; restart from staging, not from the file; replay one row; dashboards read staging</div>
+    <p>Large files are read as a stream, not into memory, written to staging in batches of a thousand to five thousand rows per insert, each in its own short transaction, and then turned into chunk work items (about five hundred staging row IDs each) for a dedicated queue processor with parallel threads (Chapter 06 §6.8). The parsed rows are never held as a page list on the clipboard.</p>
+    <p>The teaching point is <strong>per-record error isolation</strong>: one malformed or invalid row must not fail the file. It is applied at every layer. At parse, a failing line is captured with its raw text, line number and reason into the reject table, and parsing continues. At validation, rows failing format or business checks are marked REJECTED with an error code and do not stop the batch. At processing, each chunk handles its rows individually, a failing row is marked FAILED with its error while the chunk's other rows commit, or the chunk is retried row by row to find the culprit. At file level, a threshold (for example two per cent rejects) stops the file and flags it for review, because a high reject rate means a layout or encoding problem, not bad rows. A reject report with line number, raw record and reason goes to the data owner, and corrected rows are resubmitted individually, as a replay of one record, not by resending the file.</p>
+    <div class="flow">THE BALANCE FILE, 6 BAD ROWS
+   parse + validate  : 14,201 VALID, 6 REJECTED (line numbers, raw lines, reasons)       reject rate 0.04 percent  &lt; 2 percent threshold -&gt; continue
+   chunk processing  : 29 chunks of ~500; 2 rows fail on a downstream constraint -&gt; marked FAILED; the chunk's others commit
+   RECONCILIATION    : trailer says 14,207 detail rows.   staged 14,207 = valid-and-applied 14,199 + rejected 6 + failed 2   OK
+   OUTPUT            : file COMPLETE_WITH_EXCEPTIONS; exceptions report; 8 items to an operations work queue; summary alert
+   NOT: "the file failed at line 9,412 so none of the 14,207 balances were updated and the window closed"</div>
+    <p>The second copy is stopped by a <strong>file registry</strong>: a table that records every file received (an ID, the interface name, file name, SHA-256, size, declared record count, business date, received and completed times, status, counts of parsed, valid, rejected, failed and processed rows, archive and error paths, and the identity and node that handled it). A unique constraint on interface plus hash lets the database arbitrate a race between two nodes. The decision when a file arrives is a short table: the same name and the same hash is an exact resend, so it is skipped, acknowledged and logged; the same name with a different hash is a corrected or replacement file, or tampering, and is not processed automatically but alerted for a business decision on whether to void the prior file; a different name with the same hash is the same content under a new name, treated as a duplicate and alerted; and a new file for a business date that already has a completed file for the same interface is a policy decision about second files and sequence numbers.</p>
+    <p>There is a subtler consequence for this particular file, because it carries <em>snapshots</em>. Suppose the duplicate had a different name, was not caught, and was applied at 09:50. Its row for <code>CHK-8842-0117</code> shows the 07:30 balances, ledger $4,418.55. The 09:40 settlement event, <code>EVT-55121</code> from Chapter 06, has already moved the ledger to $4,218.55. A file apply that simply overwrote the row would put the old balance back. The snapshot guard from Chapter 06 §6.3 applies here as well: each row carries its as-of time from the source, and the apply updates the balance only if the incoming as-of is newer than what is stored. The registry stops the same file twice; the guard stops an older file overwriting a newer fact.</p>
+    <p>Counts are reconciled, not eyeballed. The declared trailer count and control total are checked against what was staged and applied, and any non-zero difference stops processing and alerts; counts are never "adjusted to tie".</p>
+    <div class="formula">Declared (trailer): records = N_t, control total = C_t        Staged: parsed = N_p, rejected = N_r, control total of parsed amounts = C_p
+Check 1:  N_p + N_unparseable_lines == total lines read - header - trailer
+Check 2:  N_t == N_p + N_unparseable  (everything the sender declared is accounted for)
+Check 3:  C_t == sum(amounts of all parsed detail rows)    (hash total or dollar total)
+Check 4 (after processing): valid = processed + failed + still pending ; processed + failed + rejected == N_t
+Any non-zero difference: stop, flag, alert. Do not "adjust" counts to make them tie.</div>
+    <p>Reprocessing is controlled: a whole file only through an operation that checks the registry, marks the previous run superseded and relies on idempotent record application (a unique business key per record: the account plus the as-of time for balances, trace number plus file date for ACH, order number plus version for legal orders); a single record is replayed by selecting a REJECTED or FAILED staging row, correcting or re-evaluating it and re-queueing it, with an apply step that makes a second apply harmless; and staging rows are kept for the retention period as the audit trail of what each record did. The anti-patterns are a case per row inside the listener's thread, all-or-nothing file processing, trusting file names for uniqueness, deleting the file once processed (no replay, no evidence), reconciliation by eye, a registry without a unique constraint, and reprocessing by dropping the file back into the inbound directory.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>A re-delivered copy of <code>RB_BAL_20260309_0730.csv</code> arrives with the same name and the same hash at 07:52. Separately, a <em>corrected</em> file with the same name but different content arrives at 08:10. What should the registry do with each?</p>
+      <p><strong>Answer.</strong> The 07:52 copy is an exact resend: same name, same hash, so it is skipped, acknowledged to the sender and logged, and the unique constraint on interface and hash makes this safe even if two nodes see it at once. The 08:10 file has the same name but a different hash, so it is either a legitimate correction or a tampered file, and it must not be processed automatically: it is alerted and held for a business decision, including whether the earlier file's effects must be voided. This depends on the partner's contract saying whether corrections reuse the name or carry a sequence number; where the contract says a replacement gets a new sequence, a same-name different-content file is a defect to raise, not a correction.</p></div>
+  </section>
+
+  <section id="s7-11" class="pagebreak">
+    <h2>7.11 Bank-grade controls around file integration</h2>
+    <p>The mechanics above make the file processed correctly. The controls below make it provable and recoverable, which is what a bank is actually asked about. Every expected file has a due time, and absence is an incident, not silence: a job scheduler per expected file, calendar-aware so there is no alert on a bank holiday, checks the registry at the due time plus a grace period, and a missing registry row alerts supervisors and the sender, with a second escalation before the window closes (Chapter 06 §6.9). Late files have a pre-agreed treatment, processed with priority and an extended window or deferred to the next cycle, recorded and approved by operations. Manual reprocessing and force-accepting a rejected record are privileged actions that require a reason and a second approver, the maker-checker control of Chapter 02 §2.6, and are audited.</p>
+    <table>
+      <tr><th>Control</th><th>What it means</th><th>Implementation</th></tr>
+      <tr><td>Retention</td><td>Files and staging data kept per policy, then purged</td><td>Archive retention aligned with the records schedule; a purge job with an audit log; a legal-hold exemption</td></tr>
+      <tr><td>Personal and non-public data handling</td><td>Files contain account numbers, names, tax IDs</td><td>Encrypted at rest (PGP or storage encryption), restricted directories, no copies on developer machines or shared drives, masked in logs and dashboards, masked data in lower environments (Chapter 10)</td></tr>
+      <tr><td>Integrity</td><td>Evidence the file was not altered</td><td>Hash recorded at receipt; archive write-once where possible</td></tr>
+      <tr><td>Audit evidence</td><td>Prove what was received and what was done</td><td>Registry, staging statuses, reject reports and summary reports archived with the file; history entries on created cases referencing the file ID and line number</td></tr>
+      <tr><td>Access control</td><td>Who can see, move and delete files</td><td>Least privilege on SFTP accounts and directories; no interactive access for the listener's account; periodic access review</td></tr>
+      <tr><td>Monitoring</td><td>Visibility of the pipeline</td><td>A dashboard of files today by status, oldest unprocessed, reject rate and reconciliation status, with alerts as in Chapter 06 §6.13</td></tr>
+      <tr><td>Environment segregation</td><td>Test files do not reach production and vice versa</td><td>Separate SFTP accounts, directories and keys per environment; listeners disabled by default in lower environments</td></tr>
+    </table>
+    <div class="flow">EXPECTED-FILE MONITOR (job scheduler)
+   daily at 07:45 (file due 07:30 + 15 min grace), business days only (calendar rule):
+     select registry rows for interface BALANCE_EXTRACT where businessDate = today
+     none found       -&gt; page on-call + notify the partner contact; create an incident case; re-check every 15 min until 08:45
+     found but status in (FAILED, QUARANTINED) -&gt; page; found COMPLETE_WITH_EXCEPTIONS -&gt; notify the data owner
+     found COMPLETE   -&gt; record an "on time" metric</div>
+  </section>
+
+  <section id="s7-12" class="pagebreak">
+    <h2>7.12 Variation: an ACH return file for Harlow Freight Co.</h2>
+    <p>The balance extract is small and its format is the processor's own. A file in a published standard, with real deadlines behind it, shows the same architecture under more pressure. Harlow Freight Co. (<code>CHK-8842-1055</code>) originates ACH payments through Riverbend, and entries that the receiving banks cannot post come back as <strong>returns</strong>. When an entry cannot be posted (insufficient funds, closed account, no account) the receiving bank sends a return through the network; the originating bank receives the return file and must act on it, for example by reversing the credit it gave its customer and notifying them. One of those returns becomes case <code>PE-30142</code>. This example processes incoming return entries; the return deadlines and rule detail are Chapter 12's subject and belong to Compliance, and this section is the file-processing mechanics.</p>
+    <table>
+      <tr><th>Record type</th><th>Name</th><th>Content</th></tr>
+      <tr><td>1</td><td>File Header</td><td>Immediate destination and origin, file creation date and time, file ID modifier</td></tr>
+      <tr><td>5</td><td>Batch Header</td><td>Company name, standard entry class code, effective entry date, batch number</td></tr>
+      <tr><td>6</td><td>Entry Detail</td><td>One payment or return entry</td></tr>
+      <tr><td>7</td><td>Addenda</td><td>Extra data for an entry; for returns, the return addenda carries the reason</td></tr>
+      <tr><td>8</td><td>Batch Control</td><td>Entry and addenda count, entry hash, total debits and credits for the batch</td></tr>
+      <tr><td>9</td><td>File Control</td><td>Batch count, block count, entry and addenda count, entry hash, total debits and credits</td></tr>
+      <tr><td>(filler)</td><td>9-filled records</td><td>Padding so the total record count is a multiple of 10 (the blocking factor)</td></tr>
+    </table>
+    <p>Every record is exactly <strong>94 characters</strong> of fixed width, which makes it a Parse Structured layout (7.9). The entry detail (type 6) holds the record type code (position 1), the transaction code (2-3; for example 22 checking credit, 27 checking debit, 32 savings credit, 37 savings debit, with returns using the code of the entry being returned), the receiving DFI identification (4-11) and check digit (12), the account number (13-29), the <em>amount in cents with no decimal point</em> (30-39), the individual identification number (40-54), the individual name (55-76), discretionary data (77-78), the addenda indicator (79) and the trace number (80-94). The return addenda (type 7, addenda type code 99) holds the return reason code (4-6: R01, R02, R03), the original entry's trace number (7-21), the date of death (22-27, for R14 and R15), the original receiving DFI (28-35), free-text addenda information (36-79) and the return trace number (80-94). Because the amount is in cents, dividing by 100 in the wrong place is a classic mistake, and the tests use 1 cent, 100 dollars and a ten-digit maximum.</p>
+    <table>
+      <tr><th>Code</th><th>Meaning</th><th>Operational treatment (design pattern)</th></tr>
+      <tr><td>R01</td><td>Insufficient funds</td><td>Reverse the credit to the originator's customer or re-present per originator rules; notify the customer; possibly a fee. May be eligible for re-presentment per network rules (Compliance decides)</td></tr>
+      <tr><td>R02</td><td>Account closed</td><td>Do not retry; update payee and account data; notify; escalate to the originator for new instructions</td></tr>
+      <tr><td>R03</td><td>No account / unable to locate account</td><td>Do not retry; flag the receiving account data as invalid; notify the originator; fraud or error review where patterns repeat</td></tr>
+      <tr><td>R04</td><td>Invalid account number structure</td><td>Correct data; do not retry as-is</td></tr>
+      <tr><td>R07, R10</td><td>Authorisation revoked / not authorised (consumer)</td><td>Longer return window; potential dispute process (Reg E); compliance review; stop future entries</td></tr>
+    </table>
+    <p class="small muted">The codes are standard NACHA return reason codes; the treatments are illustrative design choices that Compliance and Payments Operations confirm. Return time frames are set by the Nacha rules, counted in banking days and held as reference data (Chapter 12 §12.8).</p>
+    <div class="flow">ACH RETURN FILE PROCESSING (originating-bank side)
+ /inbound/ACH_RET_20260310.ach  + .done (size, entry count, sha256)
+   1 Trigger handshake + registry (7.8, 7.10): duplicate file? hash ok?
+   2 Parse Structured: the record type in column 1 drives the layout; 1 header, N batches (5..8), file control (9), ignore 9-filler lines
+   3 Validate structure: batch control entry counts and hash totals match each batch's entries; file control totals match; block count
+        (NACHA structural validation, not business validation)
+   4 For each type 6 entry that carries a type 7 addenda 99: build a ReturnItem
+        { returnReason: "R01", originalTrace: "...", amount: 5000.00 (cents/100), accountNumber (masked in logs), traceNumber, effectiveDate }
+   5 Stage ReturnItem rows (bulk) with fileId + line numbers; REJECT malformed entries (bad amount, unknown reason, orphan addenda) with a reason
+   6 Chunk to Queue Processor "ACHReturnApply" (idempotent key = originalTrace + returnTrace + fileDate):
+        a look up the original payment (by original trace; exposed indexed column) -&gt; not found? exception case "Unmatched return"
+        b already returned/reversed? -&gt; duplicate, skip (idempotent)
+        c decision table "ReturnReasonTreatment" (R01/R02/R03/...) -&gt; treatment, SLA, correspondence template
+        d create child case "ACH Return Exception" (reason, amounts, deadline) in work queue DepOps-Payments-Exc ; post the reversal via an Integrator (idempotency key, Chapter 05 §5.9)
+        e queue correspondence (customer notice by reason; template by reason code via fragments, Chapter 02 §2.9)
+   7 Reconcile: file control entry count == staged entries; staged == applied + exceptions + rejected + failed; total amounts tie to file control
+   8 Archive file + trigger with hash; registry COMPLETE or COMPLETE_WITH_EXCEPTIONS; summary to Payments Ops; dashboard widget: returns by reason code today vs 7-day average</div>
+    <table>
+      <tr><th>#</th><th>Return code</th><th>Originator type</th><th>Result: Treatment</th><th>Result: Case SLA</th><th>Result: Correspondence</th></tr>
+      <tr><td>1</td><td>R01</td><td>Any</td><td>Reverse credit; evaluate re-presentment eligibility</td><td>Goal 2 business hours / deadline per reason, inside the network deadline <span class="tag amber">assumed Riverbend policy</span></td><td>R01 notice</td></tr>
+      <tr><td>2</td><td>R02</td><td>Any</td><td>Reverse credit; request new account details; block re-presentment</td><td>Goal 4 hours / deadline per reason <span class="tag amber">assumed Riverbend policy</span></td><td>R02 notice</td></tr>
+      <tr><td>3</td><td>R03</td><td>Any</td><td>Reverse credit; flag invalid account data; fraud review if repeated</td><td>Goal 4 hours / deadline per reason <span class="tag amber">assumed Riverbend policy</span></td><td>R03 notice</td></tr>
+      <tr><td>4</td><td>R07 or R10</td><td>Consumer</td><td>Compliance review; stop future entries; Reg E path</td><td>Deadline by compliance clock</td><td>Compliance-approved notice</td></tr>
+      <tr><td>5</td><td>Otherwise</td><td></td><td>Manual review</td><td>1 business day</td><td>None until reviewed</td></tr>
+    </table>
+    <p>The pitfalls specific to ACH are that addenda belong to the preceding entry, so an orphan addenda, or an entry missing its return addenda, is rejected and never guessed; that entry hash and control totals are structural checks while matching the original entry is separate business logic; that account numbers and names are personal data, masked in logs, dashboards and exception reports; that the same return can appear twice, which the idempotency key and registry prevent from causing a second reversal; and that deadline logic uses the calendar belonging to the clock being applied (Chapter 12 §12.10), not a single holiday list. The architecture to say aloud: structural validation using control totals, then business matching by original trace, then a decision table by reason code that drives the case, SLA and notice, an idempotent apply, and reconciliation that proves file control equals staged equals applied plus exceptions plus rejects.</p>
+  </section>
+
+  <section id="s7-13" class="pagebreak">
+    <h2>7.13 Variations: a legal-order file and a positive-pay file</h2>
+    <p>Two further file types follow the same architecture with different business keys and clocks. There is no single published standard for them as there is for NACHA, so the layouts below are teaching designs; real ones come from the sending party.</p>
+    <p>A <strong>legal-order file</strong> is a bulk delivery of garnishments or levies from a service provider. Each record is keyed by order number plus version, so an amended order supersedes and never duplicates.</p>
+    <div class="flow">ILLUSTRATIVE PIPE-DELIMITED LAYOUT  (UTF-8, LF, header/detail/trailer)
+ H|LEGAL_ORDERS|20260310|SEQ001|PROVIDER_X
+ D|ORD-77831|1|GARNISHMENT|NC|20260305|20260319|1500.00|...
+ D|ORD-77832|1|TAX_LEVY|TX|20260306|20260316|8200.50|...
+ D|ORD-77833|2|COURT_FREEZE|NY|20260306|20260311|0.00|...                 (version 2: amended order)
+ T|3|9701.50
+ Fields:  orderNo | version | orderType | jurisdictionState | serviceDate | responseDueDate | amountClaimed | debtor identifiers | issuer | reference
+ Business key per record: orderNo + version  (idempotent apply; a new version supersedes, never duplicates)</div>
+    <p>Per record, in a queue processor chunk: the key is checked (the same content is skipped as a duplicate; a higher version takes the amendment path, raising the <code>AMENDED_ORDER</code> ticket on the existing case, Chapter 02 §2.4); the customer is matched against the core (zero matches creates a "no match" case for legal operations, more than one an "ambiguous match" case for manual resolution, exactly one proceeds, and a fuzzy single match is never auto-restrained without an agreed confidence rule); a legal-order case is created (Chapter 02 §2.13) with its SLA from the response-due date on the business-day calendar; and an acknowledgement is queued per state and order type. Reconciliation proves the trailer count equals staged equals cases created plus no-match plus ambiguous plus rejected plus duplicates. The risks, and their controls, are wrong-customer restraint (strict match rules, human confirmation for anything but exact key matches, maker-checker on restraint), a missed deadline (the SLA computed at intake, escalation and a due-soon report), amended or released orders arriving as new rows (the version key, with amendment and release handled as tickets), exposure of sensitive content (a restricted role, masked dashboards, retention under Legal policy) and notice prohibitions (a decision by order type and jurisdiction, owned by Legal).</p>
+    <p>A <strong>positive-pay file</strong> serves a check-fraud control. A business customer sends the bank a file of the checks it has issued; when checks are presented, the bank compares each to the issue file; items that do not match become <em>exceptions</em> that the customer decides to pay or return by a cut-off.</p>
+    <div class="flow">ILLUSTRATIVE ISSUE FILE (CSV)                                       ILLUSTRATIVE PRESENTED-ITEMS FILE
+ H,PPAY_ISSUE,20260310,CUST_001                                        H,PRESENTED,20260310
+ D,000123456789,100245,2500.00,20260305,VENDOR LLC,I                    D,000123456789,100245,2500.00,20260310
+ D,000123456789,100246,980.25,20260305,UTILITY CO,I                     D,000123456789,100246,9800.25,20260310        &lt;- amount mismatch
+ D,000123456789,100247,0.00,20260306,VOIDED CHECK,V                     D,000123456789,100250,125.00,20260310        &lt;- not in issue file
+ T,3                                                                    T,3
+
+ MATCH LOGIC (key = account + check number):
+   present, issued, amount equal         -&gt; PAY (no exception)
+   present, issued, amount different     -&gt; EXCEPTION: AmountMismatch
+   present, not issued                   -&gt; EXCEPTION: NotIssued
+   present, issued as VOID               -&gt; EXCEPTION: VoidedCheck
+   presented twice                       -&gt; EXCEPTION: Duplicate (second presentment)</div>
+    <p>An exception becomes a child case per item; the customer is notified through a secure channel; the decision (pay or return) is due by the customer's cut-off, with a default under the customer agreement if there is no response, implemented as an audited decision rule; the SLA is the cut-off time on the business calendar and the bank's time zone; a bank override carries maker-checker; and the decision is posted to the check system through an idempotent integrator. At volume, issue items are loaded to an indexed table (account plus check number unique) and matching is a set-based SQL join in staging, not item by item in Pega. A customer may send a full replacement or incremental updates, which the contract states and the registry keeps from being mixed, and a late presented-items file is an incident.</p>
+    <p>For both file types the architecture is the one this chapter built for the balance file: handshake and registry, staging with per-row status, set-based matching in SQL for volume, a decision table for treatment, idempotent case creation and reconciliation. What differs is the business key (order number plus version; account plus check number), the cut-off clock, and the cost of acting on a wrong match, which is why restraint and pay decisions carry dual control.</p>
+  </section>
+
+  <section id="s7-14" class="pagebreak">
+    <h2>7.14 The file arrived and no case was created</h2>
+    <p>With every part in view, the diagnostic question can be answered in order. The list below runs from most to least likely, each step cheap before the next, and the evidence (screenshots, timestamps, log lines) is captured for the incident record. The first ten minutes are: where is the file (inbound, staging, archive or error, because location is state), is there a registry row and what is its status, is the listener running with a recent poll, what do the staging counts by status say, what is the queue processor's state, what do the logs show at the file's time, and which cases carry the file ID.</p>
+    <table>
+      <tr><th>#</th><th>Likely cause</th><th>How to check</th><th>Fix</th></tr>
+      <tr><td>1</td><td>The listener is not running (stopped, blocked, not started after a restart or deployment, or no node of the required type is up)</td><td>Admin Studio listener status; node list and types; last poll time; logs at node start</td><td>Start it; restore the node; alert on listener status; the file remains, so it will be picked up</td></tr>
+      <tr><td>2</td><td>The file name does not match the mask (case, extension, date pattern, trigger missing or named differently, a suffix such as <code>.part</code>)</td><td>List the directory and compare the exact name to the mask character by character; check OS case sensitivity</td><td>Correct the sender's naming or the mask; document the convention; alert on stray files older than N minutes</td></tr>
+      <tr><td>3</td><td>The file is in the wrong directory or not visible to the listener (path typo, wrong environment, missing mount, permissions, an account landing elsewhere)</td><td>Log in as the listener's identity and list the directory; check owner and permissions; compare with the sender's upload log</td><td>Fix path and permissions; one purpose per directory; environment-specific paths in configuration</td></tr>
+      <tr><td>4</td><td>The file was claimed by another listener or environment</td><td>Check whether it moved to processing or archive; check other environments' listener configuration; check the registry</td><td>Isolate directories per environment; disable lower-environment listeners by default</td></tr>
+      <tr><td>5</td><td>Skipped as a duplicate (name and hash already in the registry, perhaps from a failed earlier attempt marked complete)</td><td>Query the registry for name and hash; check status and timestamps</td><td>If the earlier run was incomplete, correct the status through the controlled reprocess procedure (dual control); do not drop the file back to the inbound directory</td></tr>
+      <tr><td>6</td><td>Rejected at file-level validation (business date, trailer count mismatch, checksum, file type)</td><td>Registry status QUARANTINED or FAILED with reason; error directory; alert history</td><td>Obtain a corrected file, or approve an exception through dual control</td></tr>
+      <tr><td>7</td><td>The service ran under the wrong context: the package access group lacks rights or points to an old application or ruleset version</td><td>Logs showing access denied or rule not found for the listener's requestor; check the access group's application version; Tracer on a test file in a lower environment as the same access group</td><td>Correct the group and versions; promote missing rules; add the listener's access group to the release checklist</td></tr>
+      <tr><td>8</td><td>Parse failure for every row (encoding or BOM, line endings, delimiter, changed layout, an extra header line)</td><td>Open the raw file in a hex-capable viewer; compare with the parse rule; 100 per cent rejects with one error means a layout problem</td><td>Fix the parse rule or ask the sender to correct; add a layout version field and a contract test with a sample file</td></tr>
+      <tr><td>9</td><td>Rows staged but rejected by validation or filtered (none became VALID)</td><td>Staging counts by status and error code; the reject report</td><td>Correct the data or the rule; resubmit rejected rows</td></tr>
+      <tr><td>10</td><td>The queue processor is not running, has no eligible node, or items are delayed or broken</td><td>Admin Studio: processor status, ready, delayed and broken counts, last error</td><td>Start it; fix the activity error; requeue broken items; check node classification</td></tr>
+      <tr><td>11</td><td>The processing activity failed and rolled back, so nothing committed</td><td>Exception logs at the processing time; PDC alerts; transaction boundary review</td><td>Fix the cause; process per chunk so a failure does not discard good rows; reprocess</td></tr>
+      <tr><td>12</td><td>Cases were created but cannot be seen (different class, status, routed to a queue the user cannot access)</td><td>Search by file ID or correlation; check queue and assignment routing; query the work table</td><td>Correct routing or access; add the file ID to the case</td></tr>
+      <tr><td>13</td><td>Business date or time zone logic rejected or deferred the file (UTC against local business date, calendar mismatch)</td><td>Compare the header date, server time zone and the calendar rule</td><td>Make business date handling explicit and tested</td></tr>
+      <tr><td>14</td><td>Infrastructure: disk full, SFTP quota, network or firewall change, an expired key or certificate, a changed host key</td><td>Server logs; an SFTP connection test from the node; the key and certificate expiry inventory</td><td>Restore capacity or credentials; rotate with overlap (Chapter 05 §5.14)</td></tr>
+    </table>
+    <p>Tests that prevent these are the same list in reverse: files with quoted commas, embedded newlines, a byte-order mark and a non-UTF-8 encoding; a few bad rows in a short file, to prove rejects are reasoned and good rows applied with the trailer reconciling; slow uploads with the trigger last and uploads without one, to prove nothing is read before the handshake; the same name twice and a different name with the same hash; and two nodes polling one location, then a re-run after a node restart, to prove single processing.</p>
+  </section>
+
+  <section id="s7-15" class="pagebreak">
+    <h2>7.15 When the request is an email: listener or channel</h2>
+    <p>The file path is built. The other request in this chapter arrives differently: a counsel's office writes to Riverbend's legal intake mailbox with an order attached as a PDF. Email integration lets Pega receive messages sent to a mailbox and turn them into work: a case created, a document attached to an existing case, a task for a person. Pega offers two broad approaches, built for different needs.</p>
+    <p>An <strong>Email Listener</strong> (with a Service Email rule) is a listener that polls a mailbox and invokes a rule that the developer authors to map the message (sender, subject, body, attachments) into an activity. Pega's documentation describes it this way: an email listener monitors an inbox on a server identified by an email account record, routes arriving messages to an email service rule, and the service activity processes the message, typically creating or updating cases and attaching attachments to them; a message carrying delivery-status information, such as an undeliverable notice, is routed to someone who investigates such things. Service Email rules can handle plain text, HTML or XML messages, a message that uses SOAP is routed to a SOAP service instead, and a change to the Service Email rule requires restarting the listener from Admin Studio before it takes effect. The control is complete: rule logic decides exactly what happens to each message. An <strong>Email Channel</strong> is a channel configuration in the application's channel settings that receives email as an interaction channel, with configurable case creation, conversation handling and, optionally, language processing. Control is configuration-driven, with extension through defined hooks. Email service rules are in fact generated automatically for some configurations, such as creating an email channel or enabling case creation by email.</p>
+    <table>
+      <tr><th>Aspect</th><th>Email Listener (Service Email)</th><th>Email Channel</th></tr>
+      <tr><td>Typical use</td><td>Structured or semi-structured inbound mail: a vendor sends reports as attachments; an operations mailbox receives forms; a notification mailbox triggers cases</td><td>Customer-facing conversational email: a customer writes, the bank replies, with threads, agent routing and possibly intent detection</td></tr>
+      <tr><td>Threading and conversation</td><td>You build correlation (case ID in subject or headers)</td><td>Provided by the channel's conversation handling (verify specifics in the release)</td></tr>
+      <tr><td>Reply and send</td><td>Correspondence rules and email accounts (Chapter 02 §2.9)</td><td>Integrated reply composition, templates and routing</td></tr>
+      <tr><td>Language analysis</td><td>Not built in; you would call an analyzer yourself</td><td>Available as a configurable option (7.17)</td></tr>
+      <tr><td>Operational surface</td><td>Listener status, mailbox health, service errors</td><td>Channel monitoring, conversation volumes, routing queues</td></tr>
+    </table>
+    <table>
+      <tr><th>Scenario</th><th>Choice</th><th>Reason</th></tr>
+      <tr><td>An operations mailbox receives bulk instruction spreadsheets from a partner</td><td>Email Listener</td><td>Structured attachment processing, deterministic mapping, no conversation</td></tr>
+      <tr><td>A customer emails requests (address change, statement) and expects replies</td><td>Email Channel</td><td>Conversation threading, routing to queues, reply handling</td></tr>
+      <tr><td>Legal orders arriving by email from a counsel's office</td><td>Email Listener with a strict sender allow-list and a manual review case</td><td>Controlled intake, high sensitivity, no automated action without review</td></tr>
+      <tr><td>Monitoring alerts creating incident cases</td><td>Email Listener</td><td>Machine-generated, structured subject</td></tr>
+      <tr><td>A high-volume service mailbox needing categorisation</td><td>Email Channel with language analysis, with a human fallback</td><td>Triage at scale, only if training data and governance exist</td></tr>
+    </table>
+    <p>The counsel's order is the second row of that table's logic, so Riverbend uses a listener. It needs an Email Account record (provider, server host and port, protocol, TLS settings, credentials held in an authentication profile or a secure store, never in the rule; modern providers may require OAuth-based authentication rather than basic passwords, and Pega's documentation covers OAuth 2.0 for email providers and a Microsoft Graph option, so the mail platform in use is confirmed). The listener names the account, the folder to monitor, the polling interval and messages per poll, and the service package, class and method of the Service Email rule; its handling after processing marks messages read or moves them to processed and failed folders; and it runs on designated background nodes with one active instance per mailbox, as a file listener does.</p>
+    <div class="flow">EMAIL LISTENER RUNTIME
+ Mailbox (legal-intake@riverbend.example) -- IMAP poll every 60 s --&gt; Email Listener (background node, one instance)
+   |  fetch up to N unread messages; mark in-progress / lock
+   v  Service Email rule: map From, Subject, Body, Attachments[], Headers
+   |  Activity:
+   |    1 loop and auto-reply checks (7.16)  -&gt; discard/flag if auto-generated
+   |    2 sender verification (allow-list / customer match)
+   |    3 correlation: an existing case token in subject or headers? -&gt; attach to that case ; else create a new case
+   |    4 extract and store attachments (type/size allow-list, malware scan, repository)
+   |    5 write an intake record (messageId, from, received time, correlation) -&gt; de-duplicate on Message-ID
+   v  after processing: move the message to the Processed folder (success) or Failed folder (error) ; alert on repeated failure</div>
+    <p>Supported protocols, mailbox authentication, conversation handling and language options differ by release and by the bank's mail platform, so the model is described and the details confirmed with the platform team.</p>
+  </section>
+
+  <section id="s7-16" class="pagebreak">
+    <h2>7.16 One inbound email, followed: correlation, attachments, loops, bounces and security</h2>
+    <p>The counsel's message arrives with the subject "Order for account holder, response required" and one PDF attached. The listener reads it, and the sequence of questions it must answer is the sequence of this section: is it automatic mail, who is it from, does it belong to a case that already exists, what do the attachments contain, and has this exact message already been processed.</p>
+    <p>Whether it belongs to an existing case is correlation, and when a customer replies to a bank email the reply should attach to the same case, not open a new one. The techniques are usually combined. A <em>case token in the subject</em> (outbound subjects carry <code>[Ref: AM-10417]</code> and the inbound parser extracts it with a strict pattern and validates that the case exists and matches the sender) is simple, but customers edit subjects and mail clients prefix "RE:" differently. <em>Standard mail headers</em> are stronger: the reply's <code>In-Reply-To</code> and <code>References</code> contain the Message-ID of the original outbound email, which is stored on the case and matched, though some clients and gateways strip or rewrite headers and forwarded emails lose them. A <em>per-case reply address</em> (<code>service+AM-10417@riverbend.example</code>) needs mail platform support. A <em>sender plus open-case heuristic</em> (attach if the sender has exactly one relevant open case) is risky with several open cases and is a candidate only, with review. For an Email Channel the channel manages conversation IDs.</p>
+    <div class="flow">CORRELATION DECISION
+   inbound message
+     In-Reply-To matches a stored outbound Message-ID?   YES -&gt; case found (high confidence)
+     else subject token [Ref: XX-nnnn] valid and sender matches the case customer/contact? YES -&gt; case found (medium)
+     else sender has exactly ONE open case of an email-eligible type?  -&gt; candidate only: create a "Review email" assignment suggesting the case
+     else -&gt; new inbound email case in the triage queue
+   ALWAYS: attach the original email (.eml) and attachments to the case; add History "Email received"; do not auto-act on instructions</div>
+    <p>The counsel's message carries no token and no In-Reply-To, so it creates a new intake case in a restricted queue, with the original message attached as an .eml and the PDF stored in a content repository, linked to the case, with its hash and metadata (Chapter 02 §2.10). Attachments are handled with care: real attachments are extracted and inline signature images and tracking pixels ignored (otherwise a case collects dozens of small logos); a type allow-list accepts PDF, common images and office documents and blocks executables and scripts, comparing the actual content type, not just the extension; size limits route oversize files and tell the sender; malware scanning happens at the gateway and again at storage, and an attachment is never rendered in the UI before it is scanned; images and office documents are converted to PDF where a standard view is needed, with password-protected files routed to manual handling; and a structured attachment such as a partner's CSV is parsed into staging as in 7.9 and 7.10, with the same registry and reconciliation controls.</p>
+    <p>Before any acknowledgement goes back to the sender, there is a trap to avoid. Suppose Pega sends "We received your request" to every inbound email, and a sender's mailbox has an out-of-office auto-reply. The auto-reply arrives in the service mailbox, which sends another acknowledgement, which triggers another auto-reply, and so on. Within an hour thousands of messages are exchanged, mailboxes fill, cases multiply and the sending domain may be flagged as spam. Two automated systems talking to each other can loop indefinitely.</p>
+    <div class="flow">THE LOOP
+   Sender mail -&gt; service mailbox -&gt; Pega auto-ack -&gt; sender's OOO auto-reply -&gt; service mailbox -&gt; Pega auto-ack -&gt; OOO auto-reply -&gt; ...
+   Consequences: mailbox flood, hundreds of junk cases, SLA noise, domain reputation damage, possible provider throttling or blocking.</div>
+    <table>
+      <tr><th>Defence</th><th>How</th></tr>
+      <tr><td>Detect auto-generated mail by headers</td><td>Treat as automatic if: <code>Auto-Submitted</code> is present and not "no"; <code>X-Auto-Response-Suppress</code> is present; <code>Precedence</code> is bulk, junk, list or auto_reply; <code>X-Autoreply</code> or <code>X-Autorespond</code> is present; list headers</td></tr>
+      <tr><td>Detect bounces and system senders</td><td>An empty envelope sender (Return-Path of &lt;&gt;), a sender such as <code>MAILER-DAEMON</code> or <code>postmaster</code>, a delivery status notification content type</td></tr>
+      <tr><td>Detect by subject patterns (last resort)</td><td>"Out of Office", "Automatic reply", "Undeliverable"; weak because of languages and variations</td></tr>
+      <tr><td>Never auto-reply to automatic mail</td><td>If any rule matches: log, optionally attach to the case, send no acknowledgement</td></tr>
+      <tr><td>Mark your own automatic mail</td><td>Add <code>Auto-Submitted: auto-replied</code> and suppression headers to acknowledgements so well-behaved systems do not answer them</td></tr>
+      <tr><td>Never reply to your own addresses</td><td>Block sending to the bank's own domain mailboxes and to the service mailbox itself</td></tr>
+      <tr><td>Rate limit per sender</td><td>A maximum number of automatic replies to one address per period (for example one acknowledgement per sender per case per day, a hard cap of five an hour); beyond it, stop and alert</td></tr>
+      <tr><td>De-duplicate by Message-ID</td><td>The same message must not create two cases (listener restart, mailbox move)</td></tr>
+      <tr><td>Circuit breaker on volume</td><td>If inbound volume to a mailbox exceeds a multiple of baseline within minutes, pause acknowledgements and alert</td></tr>
+      <tr><td>Test it</td><td>Include out-of-office and bounce samples in regression tests; run a loop simulation with two cooperating test mailboxes</td></tr>
+    </table>
+    <p>Bounces on outbound mail are the mirror image. An outbound bounce arrives asynchronously as an email to the sending or bounce address; a listener on that mailbox parses the delivery status notification, extracts the original Message-ID or case token, and records the failure. A hard bounce flags the contact point invalid and triggers a fallback (a letter, a task to verify the address), a soft bounce retries later within limits, and bounces are themselves automatic mail that must never trigger an acknowledgement (Chapter 02 §2.9).</p>
+    <table>
+      <tr><th>Risk</th><th>Control</th></tr>
+      <tr><td>Spam and bulk junk creating cases</td><td>Gateway filtering before the mailbox; sender allow-lists for sensitive mailboxes; a triage queue and a "discard as spam" action</td></tr>
+      <tr><td>Phishing and spoofed senders</td><td>Rely on SPF, DKIM and DMARC checks at the gateway; do not trust the display name; treat the From address as unverified for any sensitive action</td></tr>
+      <tr><td>Malicious attachments and links</td><td>Scan; do not auto-open; sanitise HTML; do not load external images; show the plain-text body by default in the agent UI</td></tr>
+      <tr><td>Instructions by email</td><td>Email is not authorisation: a request to change an address or release a hold is verified through a controlled process (call-back, authenticated portal); the email only starts a case</td></tr>
+      <tr><td>Personal data in email</td><td>Do not echo full account numbers back; masked references only; encrypted transport and guidance on sending sensitive data; a secure message portal where required</td></tr>
+      <tr><td>Mailbox access</td><td>A dedicated service account with least privilege, monitored sign-ins and rotated credentials (Chapter 05 §5.14)</td></tr>
+    </table>
+    <p>The last practical limit is throughput. A listener's ceiling is roughly messages per poll divided by the poll interval when the activity is quick, but per-message cost dominates: at a sixty-second poll and fifty messages per poll the ceiling is about 0.83 messages a second, and if processing a message with an attachment conversion takes two seconds, one thread handles 0.5 a second and a backlog builds during a burst. The fix is the same as the file path's: keep the listener activity thin (store the raw message and queue an item for heavy work such as conversion and parsing), raise messages per poll modestly, run one listener per mailbox, and monitor the age of the oldest unread message. Pega's documentation also lists throttling during email processing as a troubleshooting topic.</p>
+    <div class="flow">INBOUND EMAIL -&gt; CASE (target design)
+ Mailbox -&gt; Email Listener (thin) -&gt; Service Email activity:  auto-mail check, Message-ID de-dup, store .eml + attachments (scan), create an intake record
+     -&gt; Queue-For-Processing(EmailIntakeWorker, {intakeId})   [heavy work off the listener thread]
+ Queue Processor: correlation (headers, token), sender verification, attachment conversion/parsing, create or update the case, routing decision table,
+     queue an acknowledgement ONLY if allowed (not auto-mail, rate limit ok, not own domain), History entries
+ Monitoring: oldest unread age, intake backlog, failed folder count, auto-ack rate per hour, loop-breaker trips</div>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Riverbend's listener restarts in the middle of a batch of 40 messages and re-reads the last ten as unread. Two of them were counsel's emails that had already created intake cases. What prevents duplicate cases, and what would still go wrong without it?</p>
+      <p><strong>Answer.</strong> The intake record keyed on Message-ID, with a unique constraint, makes the second pass recognise the message and skip it, and the same constraint protects against two listener instances racing. Without it, each re-read creates another case and, worse, another acknowledgement, and the auto-mail and rate-limit rules become the only barrier. The key depends on Message-ID being present and unique, which a well-behaved mail platform guarantees but a forwarding gateway can rewrite; where it cannot be trusted, a hash of the message's headers and body is a fallback key.</p></div>
+  </section>
+
+  <section id="s7-17" class="pagebreak">
+    <h2>7.17 Classifying email with a model: understood, with its governance</h2>
+    <p>A high-volume customer mailbox raises one more question: can the application read what the email is about and route it? Language analysis in an email channel adds several capabilities, each a trained classifier or extractor, and not a generative model. <em>Language detection</em> identifies the language, so a Spanish message goes to a bilingual queue and template. <em>Topic detection</em> classifies the subject from the text (address change, stop payment, statement request, complaint, fraud report, legal notice). <em>Intent detection</em> infers what the sender wants done ("please close my account" against "why was I charged this fee"). <em>Entity extraction</em> pulls structured items such as account numbers, dates and amounts. <em>Sentiment detection</em> estimates tone, to escalate very negative complaints. Each prediction carries a <em>confidence score</em> used for routing.</p>
+    <div class="flow">EMAIL -&gt; ANALYSIS -&gt; ROUTING (conceptual)
+  inbound email (after auto-mail checks, de-dup, attachment scan)
+    -&gt; text analysis (configured analyzer / model): topic scores, entities, sentiment, language
+    -&gt; decision: topic with confidence &gt;= HIGH (for example 0.85) AND low-risk topic       -&gt; create a typed case, route to a queue (still verify before acting)
+                   confidence between LOW and HIGH (for example 0.5 to 0.85)                    -&gt; triage queue with the suggested topic shown to the agent
+                   confidence &lt; LOW or topic in a sensitive set (legal, fraud, complaint, death) -&gt; human triage, never auto-route; priority flag
+    -&gt; a human agent confirms or corrects the topic -&gt; the correction is recorded as feedback (training data)
+    -&gt; monitoring: precision and recall by topic, share auto-routed, override rate by agents, drift over time</div>
+    <p>The governance matters more than the mechanism. Confidence thresholds are set from measured precision per topic, not a global default, and low-confidence or sensitive topics always go to a person; legal notices, fraud reports, bereavement and regulatory complaints are never fully automated because a false negative is costly. Training needs a sizable, representative and correctly labelled set of past emails, with a privacy review before customer text is used and redaction of personal data. Evaluation before go-live uses a holdout set, a confusion matrix per topic and cost-weighted errors, with acceptance criteria agreed with the business. Monitoring tracks override rate and drift, since topics change with a new fee, product or news event, and retraining is scheduled. The predicted topic, confidence and model version are stored on the case, because an auditor may ask why an email was routed. If the service is down all mail goes to human triage, with no loss. And a classifier that routes customer communications is a model under the bank's model risk policy, needing validation and approval; Chapter 08 develops that governance. The exact analyzers, rule types and screens for text analysis in an email channel differ by release and licence, so the capabilities and governance are described and rule names are not quoted, and topic classification is kept distinct from the generative features of Chapter 08.</p>
+  </section>
+
+  <section id="s7-18" class="pagebreak">
+    <h2>7.18 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. Walk me through the artifacts for a File Listener integration, in build order.</span>
+    <p>"Data model first: integration classes for the file records and the staging structure. Then the parse rule, the processing activity, the Service Package with a least-privilege access group, the Service File rule that ties the parse rule and activity together and decides per-file or per-record processing, and finally the File Listener with the source location, name mask, polling interval, node classification and after-processing handling. Supporting pieces are the repository or landing step, keys, the file registry, the reject table and alerts. At runtime the listener picks up the file, the service parses it, the activity registers and validates it, stages the rows and queues chunks for a queue processor."</p></div>
+
+    <div class="qa"><span class="q">Q2. Does the File Listener read from an SFTP server?</span>
+    <p>"The native listener watches a location Pega can see, a file system path or a repository such as Pega Cloud File Storage, S3, Azure or Artifactory, and calls a Service File rule. Pulling from a partner's SFTP server is a different mechanism: a custom polling activity, a managed file transfer tool, or in Pega Cloud the SFTP service mapped to file storage, landing the file where the listener can see it. I keep the two separate in a design and confirm which the platform team uses."</p></div>
+
+    <div class="qa"><span class="q">Q3. How do you stop a file being processed before it is fully uploaded?</span>
+    <p>"A trigger-file handshake: the sender writes the data file, then a small trigger file last, carrying size, record count and checksum. The listener mask matches only the trigger. Pega verifies the data file exists, the size matches and the SHA-256 matches, checks the registry for a duplicate, then claims and processes it. Size stability is weaker, and a missing trigger raises an alert, not a guess."</p></div>
+
+    <div class="qa"><span class="q">Q4. One row in a 200,000-row file is malformed. What happens?</span>
+    <p>"Nothing happens to the other rows. The bad line goes to a reject table with its line number, raw text and reason, and parsing continues. Validation rejects mark rows REJECTED, chunk processing marks a failing row FAILED while the chunk's others commit, a reject-rate threshold stops the file if the rate signals a layout problem, and reconciliation proves trailer count equals applied plus rejected plus failed. Corrected rows are replayed individually."</p></div>
+
+    <div class="qa"><span class="q">Q5. The same file is delivered twice. What do you do?</span>
+    <p>"A file registry with a unique constraint on interface and hash. The same name and hash is an exact resend and is skipped and logged; the same name with different content is a correction or tampering and needs a business decision; a different name with the same hash is treated as a duplicate. For snapshot files I also apply the source as-of guard, so an older file cannot overwrite a newer balance."</p></div>
+
+    <div class="qa"><span class="q">Q6. How do you reconcile a file?</span>
+    <p>"The trailer's declared count and control total against what I staged and applied: declared equals parsed plus unparseable, control total equals the sum of parsed amounts, and after processing processed plus failed plus rejected equals declared. Any difference stops sign-off and alerts. I never adjust counts to make them tie."</p></div>
+
+    <div class="qa"><span class="q">Q7. How do you handle a NACHA return file?</span>
+    <p>"Layered: the handshake and registry, a structured parse of the 94-character records, structural validation with the batch and file control totals, then staging, then an idempotent apply keyed on original trace plus return trace. Business matching to the original entry is separate, a decision table by reason code drives the case, SLA and notice, and amounts are in cents, so I test the conversion. Deadlines come from reference data on the right calendar."</p></div>
+
+    <div class="qa"><span class="q">Q8. Email Listener or Email Channel?</span>
+    <p>"A listener when I want deterministic control over structured or semi-structured inbound mail, such as partner attachments, operations mailboxes or a counsel's office, because I author the Service Email rule. A channel for customer-facing conversational email that needs threading, agent routing and replies, and possibly language analysis. A change to a Service Email rule needs the listener restarted from Admin Studio."</p></div>
+
+    <div class="qa"><span class="q">Q9. How do you stop an auto-reply loop?</span>
+    <p>"Detect automatic mail by headers (Auto-Submitted, X-Auto-Response-Suppress, Precedence, bounce senders) and never acknowledge it; mark my own acknowledgements as auto-replied; never send to my own domain; rate-limit acknowledgements per sender; de-duplicate on Message-ID; pause acknowledgements on a volume spike; and include out-of-office and bounce samples in regression tests."</p></div>
+
+    <div class="qa"><span class="q">Q10. Can you automate email routing with a model?</span>
+    <p>"With governance. Confidence thresholds set per topic from measured precision, sensitive categories always to a person, a labelled and privacy-reviewed training set, evaluation before go-live, drift monitoring, the prediction, confidence and model version stored on the case, a human fallback, and model-risk validation. Email is never authorisation: it starts a case, and sensitive changes are verified through a controlled process."</p></div>
+  </section>
+
+  <section id="s7-recap">
+    <h2>7.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>The processor's balance file is picked up only when complete, parsed, staged, applied in chunks and reconciled to its trailer, with six malformed rows isolated and a re-delivered copy refused; an ACH return file and the two other file types follow the same path; and a counsel's email becomes a protected intake case, de-duplicated, with its attachment scanned and stored and no automatic acknowledgement to automatic mail.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>A chain of artifacts, each owning one concern; a native listener separate from the landing step that fetches from a partner; a trigger handshake and checksum; parse rules for delimited, fixed and structured layouts; staging with per-record status; a registry with a unique constraint; reconciliation by declared and observed counts; and, for email, a listener and Service Email rule with correlation, loop prevention and a thin listener thread.</p>
+    <h3>What it still cannot do</h3>
+    <p>Every input is now handled, but the judgement work still falls on people. Marcus has to find the right procedure for an unusual request and classify documents by hand, and the application so far only moves, stores and checks data. Where assistance from rules, models, retrieval and agents helps, and what a bank must govern around it, is Chapter 08.</p>
+  </section>
+
+  <section id="s7-ref" class="pagebreak">
+    <h2>7.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. docs.pega.com pages are JavaScript-rendered and not directly retrievable; their content was obtained through search-engine indexing.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>RFC 4180: Common Format and MIME Type for CSV Files <span class="tag">standard</span></td><td>https://www.rfc-editor.org/rfc/rfc4180.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>CSV quoting of fields that contain commas, quotes or line breaks</td></tr>
+      <tr><td>Pega docs: Configuring a file listener associated with a storage repository <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform/page/platform/data-integration/associating-file-listener-storage-repository.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>A file listener monitoring a repository folder and calling a file service; supported repository types; local file system on-premises only and not in Pega Cloud; custom repositories unsupported for listeners</td></tr>
+      <tr><td>Pega docs: Using Pega Cloud File storage <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/pega-cloud/page/pega-cloud/pc/pcs-using-file-storage-service.html</td><td>Content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>The Pega Cloud SFTP service mapped to a subfolder of Pega Cloud File Storage, and file listeners processing files in a repository</td></tr>
+      <tr><td>Pega docs: Creating a Service Email Rule <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/data-integration/creating-service-email-rule.html</td><td>Platform 24.2 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>How an email listener routes messages to a Service Email rule; attachments; delivery-status messages; SOAP routing; restart of the listener after a rule change</td></tr>
+      <tr><td>Pega docs: Configuring inbound email <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/data-integration/configuring-inbound-email.html</td><td>Platform 24.2 bundle; content via search index 2026-10-12 (table of contents only); page is JavaScript-rendered and not directly retrievable</td><td>Existence of OAuth 2.0 and Microsoft Graph options for email providers, email listener troubleshooting and throttling topics; details not retrieved</td></tr>
+    </table>
+    <p class="small muted">NACHA record layouts are described from the standard's structure and are not sourced to a page here; return deadlines are in Chapter 12 with their sources.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch06_kafka_dataflow_queue_processors.html">&larr; Previous: Chapter 06</a><a href="ch08_pega_ai_genai_decisioning.html">Next: Chapter 08 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

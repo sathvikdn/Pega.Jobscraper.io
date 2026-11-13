@@ -1,0 +1,5924 @@
+{
+  "meta": {
+    "title": "Pega GCC Team Intelligence - India",
+    "last_updated": "2026-09-04",
+    "total_companies": 98,
+    "description": "Comprehensive intelligence on Pega teams at Global Capability Centers in India"
+  },
+  "companies": [
+    {
+      "name": "JPMorgan Chase",
+      "sector": "Banking",
+      "locations": [
+        "Hyderabad",
+        "Bengaluru",
+        "Mumbai"
+      ],
+      "team_size": "15+",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Wholesale KYC Operations (WKO) - client onboarding, due diligence, KYC automation across 180+ countries. Low-code platform development for CIB.",
+      "tech_stack": [
+        "Pega 8.x",
+        "REST/SOAP",
+        "Java",
+        "PL/SQL",
+        "Oracle",
+        "Agile/Scrum"
+      ],
+      "domains": [
+        "KYC/Onboarding",
+        "CIB Operations",
+        "Insurance"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Ashish Agrawal",
+          "title": "Executive Director",
+          "certs": "CLSA",
+          "location": "Hyderabad",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/ashishagrawal-lsa"
+        },
+        {
+          "name": "Venkata Trinadh Desu",
+          "title": "AVP, Senior Pega Developer",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/venkatatrinadhdesu"
+        },
+        {
+          "name": "Manusha Majji",
+          "title": "Pega Developer",
+          "certs": "CSSA, CRSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/in/manushamajji"
+        },
+        {
+          "name": "Rimjhim Srivastava",
+          "title": "Project Manager",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/in/rimjhim-shrivastav"
+        }
+      ],
+      "highlights": [
+        "Processes ~30,000 KYC requirements annually",
+        "Actively hiring CSSA/CLSA at Hyderabad"
+      ],
+      "_health_score": 75,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Wells Fargo",
+      "sector": "Banking",
+      "locations": [
+        "Hyderabad",
+        "Bengaluru"
+      ],
+      "team_size": "20+",
+      "maturity": "Very High",
+      "hiring_status": "Actively Growing",
+      "projects": "Pega Smart Investigate for Payments, Swift Payments/Wires processing, Payment investigations framework, Pega GenAI-powered workflow solutions.",
+      "tech_stack": [
+        "Pega 8.x/24.x",
+        "Constellation UI",
+        "Cosmos UI",
+        "DX API",
+        "Pega GenAI",
+        "Pega Smart Investigate",
+        "CDH",
+        "CI/CD"
+      ],
+      "domains": [
+        "Payments",
+        "Smart Investigate",
+        "Lending",
+        "GenAI"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA",
+        "CPDC"
+      ],
+      "team_members": [
+        {
+          "name": "Raja Reddy Bommana",
+          "title": "VP, Lead Software Engineer",
+          "certs": "CLSA",
+          "location": "Bengaluru",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/raja-reddy-bommana"
+        },
+        {
+          "name": "Rajesh Manem",
+          "title": "VP, Pega Lead System Architect",
+          "certs": "CLSA",
+          "location": "Hyderabad",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/rajesh-manem-27ba761a"
+        },
+        {
+          "name": "Ram Epuri",
+          "title": "VP, Pega Architect",
+          "certs": "CLSA, CPDC, CSSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/ram-epuri-6399777b"
+        },
+        {
+          "name": "Praveen Kumar",
+          "title": "Sr. Decisioning Architect",
+          "certs": "CPBA, CPDS, CSSA, CSA, CDH",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/in/praveen-kumar-66165822"
+        },
+        {
+          "name": "Ravi Kiran N G",
+          "title": "Lead Software Engineer",
+          "certs": "CLSA Part 1, CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/in/ravi-kiran-n-g-a1386b78"
+        }
+      ],
+      "highlights": [
+        "Leading Pega GenAI adoption",
+        "Constellation UI, Agentic AI focus",
+        "Multiple VP-level Pega architects"
+      ],
+      "_health_score": 88,
+      "_health_grade": "A+",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "HSBC",
+      "sector": "Banking",
+      "locations": [
+        "Pune",
+        "Hyderabad",
+        "Bengaluru",
+        "Kolkata"
+      ],
+      "team_size": "15+",
+      "maturity": "Very High",
+      "hiring_status": "Actively Growing",
+      "projects": "Pega CDH implementations across global markets - Next Best Action decisioning, customer engagement, marketing, pricing engines. Cloud migration of CDH projects.",
+      "tech_stack": [
+        "Pega CDH",
+        "Pega 8.x/24.x",
+        "GCP",
+        "BigQuery",
+        "Dataflow",
+        "Pub/Sub",
+        "Adaptive Models",
+        "Pega Cloud",
+        "Agile/Scrum"
+      ],
+      "domains": [
+        "CDH Decisioning",
+        "Marketing",
+        "Next Best Action",
+        "Wealth Banking"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CPDC",
+        "CLDA"
+      ],
+      "team_members": [
+        {
+          "name": "Aditya Nath",
+          "title": "Pega Lead Decisioning Architect",
+          "certs": "CLDA, CPDC, CSA, CPMC",
+          "location": "Pune",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Aditya%20Nath%20HSBC%20Pega"
+        },
+        {
+          "name": "Punit Sharma",
+          "title": "Pega Lead System Architect",
+          "certs": "CLSA, CPDC",
+          "location": "Pune",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Punit%20Sharma%20HSBC%20Pega"
+        },
+        {
+          "name": "Amritam Das",
+          "title": "Manager - Data & Analytics",
+          "certs": "CPDC, CSSA, CSA",
+          "location": "Kolkata",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Amritam%20Das%20HSBC%20Pega"
+        },
+        {
+          "name": "Swapnil Ghatul",
+          "title": "Sr. Consultant Specialist",
+          "certs": "CSSA, CSA",
+          "location": "Pune",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Swapnil%20Ghatul%20HSBC%20Pega"
+        }
+      ],
+      "highlights": [
+        "CDH + GCP integration",
+        "Multiple CDH SME openings",
+        "Global market decisioning"
+      ],
+      "_health_score": 76,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Citibank",
+      "sector": "Banking",
+      "locations": [
+        "Chennai",
+        "Mumbai"
+      ],
+      "team_size": "20+",
+      "maturity": "Very High",
+      "hiring_status": "Actively Growing",
+      "projects": "CitiKYC Pega Workflow, Metro Pega application (CIB Markets), STARS Application, Swift MT/ISO20022 MX message processing, Offboarding workflows, Customer Service apps. Cloud-native on Red Hat OpenShift.",
+      "tech_stack": [
+        "Pega 8.6/8.8/Infinity 23/24",
+        "Constellation UI",
+        "Cosmos UI",
+        "DX APIs",
+        "Kafka",
+        "Red Hat OpenShift",
+        "Smart Investigate",
+        "SOAP/REST"
+      ],
+      "domains": [
+        "KYC Workflows",
+        "Markets (CIB)",
+        "Payments (Swift/ISO20022)",
+        "Customer Service"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Rajesh Kumar Vijayakumar",
+          "title": "SVP, Pega Lead Architect",
+          "certs": "CLSA",
+          "location": "",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/rajesh-kumar-vijayakumar-b7421b129"
+        },
+        {
+          "name": "Senthilkumar Sivashanmugam",
+          "title": "VP - Tech Lead, Lead Pega Architect",
+          "certs": "CLSA-A, CPDC",
+          "location": "",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/senthilkumar-sivashanmugam-9bb9a8a6"
+        },
+        {
+          "name": "Siva Gujjula",
+          "title": "AVP, Pega Modernization Expert",
+          "certs": "",
+          "location": "India",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Siva%20Gujjula%20Citibank%20Pega"
+        }
+      ],
+      "highlights": [
+        "Cloud-native on Red Hat OpenShift",
+        "Constellation UI adoption",
+        "VP-level hiring in Chennai"
+      ],
+      "_health_score": 83,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Bank of America",
+      "sector": "Banking",
+      "locations": [
+        "Hyderabad",
+        "Gurugram"
+      ],
+      "team_size": "10-15",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Pega Infinity upgrade/modernization (PRPC to Infinity), Cosmos UI implementation, contact preference management, CTI integration, case tracking.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Cosmos UI",
+        "SOAP/REST",
+        "Agents",
+        "Queue Processors",
+        "BIX",
+        "Java/J2EE",
+        "Oracle",
+        "AWS"
+      ],
+      "domains": [
+        "Banking Operations",
+        "Contact Preference",
+        "Case Management"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Mayank Chaudhary",
+          "title": "AVP, Pega Architect",
+          "certs": "CSSA, CSA",
+          "location": "Gurugram",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Mayank%20Chaudhary%20Bank%20of%20America%20Pega"
+        },
+        {
+          "name": "Pavani Regulagedda",
+          "title": "PEGA Senior Architect",
+          "certs": "",
+          "location": "Hyderabad",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Pavani%20Regulagedda%20Bank%20of%20America%20Pega"
+        },
+        {
+          "name": "Rajendra Dubey",
+          "title": "Sr. Analyst / CLSA",
+          "certs": "CLSA, CSSA",
+          "location": "Hyderabad",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Rajendra%20Dubey%20Bank%20of%20America%20Pega"
+        }
+      ],
+      "highlights": [
+        "PRPC to Infinity migration",
+        "Long-tenured team since 2018"
+      ],
+      "_health_score": 70,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Goldman Sachs",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru",
+        "Hyderabad"
+      ],
+      "team_size": "8-12",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Marcus by Goldman Sachs - Collections & Recoveries, Fraud & Disputes (Operational Excellence), Fraud Detection using Pega.",
+      "tech_stack": [
+        "Pega 7.x/8.x",
+        "Pega CDH",
+        "BPM",
+        "SOAP/REST",
+        "Java",
+        "Agile"
+      ],
+      "domains": [
+        "Consumer Banking (Marcus)",
+        "Collections & Recoveries",
+        "Fraud & Disputes"
+      ],
+      "certifications_required": [
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Pavan Kumar Raavi",
+          "title": "VP - Collections & Recoveries",
+          "certs": "CLSA v8.4",
+          "location": "Bengaluru",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/pavan-kumar-raavi-07593043"
+        },
+        {
+          "name": "Priyabharathi Ayyaswamy",
+          "title": "VP - Pega Developer",
+          "certs": "CLSA, CSSA",
+          "location": "Bengaluru",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Priyabharathi%20Ayyaswamy%20Goldman%20Sachs%20Pega"
+        },
+        {
+          "name": "Satish Kumar Reddy Bhima",
+          "title": "Note: Based in Richardson, Texas (US), not India | VP - Fraud & Disputes Engineering",
+          "certs": "CLSA",
+          "location": "",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/satish-kumar-reddy-bhima-80ba285b"
+        }
+      ],
+      "highlights": [
+        "Marcus platform - consumer banking",
+        "VP-level Pega architects",
+        "7-12 years experience required"
+      ],
+      "_health_score": 77,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Barclays",
+      "sector": "Banking",
+      "locations": [
+        "Pune"
+      ],
+      "team_size": "10+",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Group Economic Crime COO - Wholesale KYC Onboarding, Financial Crime Operations, Pega Marketing. Kafka/MQ integrations.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Case Management",
+        "BPM",
+        "Decisioning",
+        "Kafka",
+        "MQ",
+        "REST/SOAP",
+        "Rally/JIRA",
+        "SAFe"
+      ],
+      "domains": [
+        "KYC Onboarding",
+        "Financial Crime",
+        "Economic Crime",
+        "Investment Banking"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Abheek Chattopadhyay",
+          "title": "AVP - Pega Tech Lead",
+          "certs": "CLSA Part 1, CSSA",
+          "location": "Pune",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Abheek%20Chattopadhyay%20Barclays%20Pega"
+        },
+        {
+          "name": "Girish Gaikwad",
+          "title": "AVP - Pega Lead",
+          "certs": "CLSA, CSSA, CPBA",
+          "location": "Pune",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Girish%20Gaikwad%20Barclays%20Pega"
+        },
+        {
+          "name": "Harshad Mankar",
+          "title": "AVP - Development Lead",
+          "certs": "CLSA, CSSA, CSA",
+          "location": "Pune",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/harshadmankar89"
+        },
+        {
+          "name": "Atul Bhagat",
+          "title": "Pega SSA / Developer",
+          "certs": "CSSA, CSA",
+          "location": "Pune",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/in/atul-bhagat"
+        }
+      ],
+      "highlights": [
+        "Largest campus outside London",
+        "Financial Crime focus",
+        "Recent 2024-2025 hires"
+      ],
+      "_health_score": 82,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Deutsche Bank",
+      "sector": "Banking",
+      "locations": [
+        "Pune",
+        "Bengaluru"
+      ],
+      "team_size": "4-6",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "KYC & Client Onboarding (CLM - Client Lifecycle Management), Transaction Banking (GTB), Trade Finance. GCP integration.",
+      "tech_stack": [
+        "Pega 8.x",
+        "Google Cloud Platform",
+        "Java",
+        "CI/CD",
+        "Agile"
+      ],
+      "domains": [
+        "KYC/CLM",
+        "Client Onboarding",
+        "GTB",
+        "Trade Finance"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Mayank Jain",
+          "title": "Senior Solution Architect",
+          "certs": "CLSA, CSA, Google Cloud Architect",
+          "location": "Pune",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Mayank%20Jain%20Deutsche%20Bank%20Pega"
+        },
+        {
+          "name": "Deepika Tiwari",
+          "title": "Associate (Pega)",
+          "certs": "CSA, GCP Engineer",
+          "location": "Pune",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Deepika%20Tiwari%20Deutsche%20Bank%20Pega"
+        }
+      ],
+      "highlights": [
+        "GCP integration",
+        "KYC and onboarding focus"
+      ],
+      "_health_score": 58,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Standard Chartered",
+      "sector": "Banking",
+      "locations": [
+        "Chennai",
+        "Bengaluru"
+      ],
+      "team_size": "8-10",
+      "maturity": "Medium-High",
+      "hiring_status": "Growing",
+      "projects": "Pega CDH Decisioning, Banking workflow automation, case management.",
+      "tech_stack": [
+        "Pega 8.x",
+        "Pega CDH",
+        "Decisioning Strategies",
+        "REST/SOAP",
+        "Agile/Scrum"
+      ],
+      "domains": [
+        "CDH Decisioning",
+        "Banking Workflows",
+        "NRI Banking"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Ashutosh Hingankar",
+          "title": "Decisioning Architect",
+          "certs": "PCDS, CPDC, CSSA, CSA",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/in/ashutosh-hingankar-788984219"
+        },
+        {
+          "name": "Krishnan Govindaprasad",
+          "title": "Pega Lead System Architect",
+          "certs": "CLSA Part 1, CSSA, CSA",
+          "location": "Chennai",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Krishnan%20Govindaprasad%20Standard%20Chartered%20Pega"
+        },
+        {
+          "name": "Karthika A",
+          "title": "Lead Pega Developer",
+          "certs": "CSSA, CSA",
+          "location": "Chennai",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/in/karthika-a-9ba817102"
+        }
+      ],
+      "highlights": [
+        "+100% YoY headcount growth",
+        "CDH and BPM roles mix"
+      ],
+      "_health_score": 75,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "American Express",
+      "sector": "Banking",
+      "locations": [
+        "Gurugram"
+      ],
+      "team_size": "10+",
+      "maturity": "High",
+      "hiring_status": "Actively Growing",
+      "projects": "Enterprise Case Management Platform modernization - Dispute & Fraud processing at scale. Pega GenAI-powered capabilities. Smart Disputes framework.",
+      "tech_stack": [
+        "Pega Infinity 23.x/24.x",
+        "Constellation UI",
+        "App Studio",
+        "Pega GenAI",
+        "Smart Disputes",
+        "DX API",
+        "REST/SOAP",
+        "AWS/Azure"
+      ],
+      "domains": [
+        "Dispute & Fraud",
+        "Case Management",
+        "Customer Servicing",
+        "KYC"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Karthik Gandham",
+          "title": "Pega Solutions Architect",
+          "certs": "CLSA Part 1, CSSA, CDA, CSA",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Karthik%20Gandham%20American%20Express%20Pega"
+        },
+        {
+          "name": "Deepak Chauhan",
+          "title": "Senior Software Engineer II",
+          "certs": "CPBA, CSSA, CSA",
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Deepak%20Chauhan%20American%20Express%20Pega"
+        },
+        {
+          "name": "Rahul Kumar",
+          "title": "Senior Engineer",
+          "certs": "PCLSA",
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Rahul%20Kumar%20American%20Express%20Pega"
+        }
+      ],
+      "highlights": [
+        "GenAI-powered capabilities",
+        "Smart Disputes framework",
+        "AmexTech transformation"
+      ],
+      "_health_score": 81,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Morgan Stanley",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru",
+        "Pune"
+      ],
+      "team_size": "8-12",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "KYC, Client Onboarding, Regulatory Platforms, Docs & Letter of Credit. Constellation UI, Cosmos UI, CI/CD, Performance optimization.",
+      "tech_stack": [
+        "Pega v7-v24",
+        "Constellation UI",
+        "Cosmos UI",
+        "Customer Service Framework",
+        "Splunk",
+        "Java/Spring Boot",
+        "REST",
+        "CI/CD"
+      ],
+      "domains": [
+        "KYC",
+        "Client Onboarding",
+        "Regulatory",
+        "Letter of Credit"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Abhinav Anand",
+          "title": "CLSA / Power Platform Consultant",
+          "certs": "CLSA, CPDC",
+          "location": "Bengaluru",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Abhinav%20Anand%20Morgan%20Stanley%20Pega"
+        },
+        {
+          "name": "Rahul K",
+          "title": "Senior Manager / Sr. Pega System Arch.",
+          "certs": "CLSA Part 1, CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Rahul%20K%20Morgan%20Stanley%20Pega"
+        },
+        {
+          "name": "Snehasis Panda",
+          "title": "Senior Pega Developer",
+          "certs": "CSSA, CSA, CLSA Part 1",
+          "location": "Bengaluru",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Snehasis%20Panda%20Morgan%20Stanley%20Pega"
+        }
+      ],
+      "highlights": [
+        "Constellation UI adoption",
+        "Strong Bengaluru presence",
+        "Recent 2023-2025 hires"
+      ],
+      "_health_score": 77,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "NatWest Group",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru",
+        "Gurugram"
+      ],
+      "team_size": "10-15",
+      "maturity": "Very High",
+      "hiring_status": "Actively Growing",
+      "projects": "CLM/KYC, Pega CDH - Next Best Action / 1:1 Personalization (Segment of One), Cloud migration to Pega Cloud. 1,800 NBA actions live across 8 channels generating 9M communications.",
+      "tech_stack": [
+        "Pega CDH",
+        "NBA Designer",
+        "1:1 Operations Manager",
+        "Pega Cloud",
+        "Constellation",
+        "AIM Framework",
+        "Pega 8.8",
+        "DevOps"
+      ],
+      "domains": [
+        "CLM/KYC",
+        "CDH/NBA",
+        "Marketing",
+        "Retail Banking"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CPDC",
+        "PCDS"
+      ],
+      "team_members": [
+        {
+          "name": "Prasad S",
+          "title": "AVP, Pega Developer (CLM KYC)",
+          "certs": "CLSA-1, CSSA, CPDC, CSA",
+          "location": "Bengaluru",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/prasad-s-9841bb30a"
+        },
+        {
+          "name": "Vishambher Gupta",
+          "title": "AVP (Pega CLM KYC)",
+          "certs": "CSSA, CSA, CPDC",
+          "location": "Gurugram",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/vishambher-gupta-1806731a"
+        },
+        {
+          "name": "Karan Rajput",
+          "title": "DEPARTED - Now SVP Domain Architect at NAB | Lead Architect - Customer Decisioning",
+          "certs": "PCDS, CLSA Part 1, CPDC, CPMC, CSSA, CSA",
+          "location": "India",
+          "_role_level": 9,
+          "_role_label": "Departed",
+          "linkedin": "https://www.linkedin.com/in/karanrajput-pegadecisioningarchitect"
+        }
+      ],
+      "highlights": [
+        "PegaWorld 2025 speaker",
+        "1,800 NBA actions across 8 channels",
+        "CDH Cloud migration Phase 2"
+      ],
+      "_health_score": 66,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Lloyds Banking Group",
+      "sector": "Banking",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "8-10",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Consumer Relationships platform, AIM (Alert & Investigations Management) Framework on Pega Constellation, Economic Crime operations.",
+      "tech_stack": [
+        "Pega Constellation",
+        "AIM Framework",
+        "Pega 8.x",
+        "DevOps",
+        "CI/CD",
+        "Agile"
+      ],
+      "domains": [
+        "Consumer Relationships",
+        "Economic Crime",
+        "Alert & Investigations"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Sangram Keshari Nayak",
+          "title": "Solutions Architect",
+          "certs": "PCDC, CSSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sangram%20Keshari%20Nayak%20Lloyds%20Banking%20Group%20Pega"
+        },
+        {
+          "name": "Srinivas Yalagala",
+          "title": "Pega CLSA",
+          "certs": "CLSA, CSSA, CSA, CPSD",
+          "location": "Hyderabad",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Srinivas%20Yalagala%20Lloyds%20Banking%20Group%20Pega"
+        },
+        {
+          "name": "Vijay Mahesh Bobba",
+          "title": "Sr. Technical Application Specialist / LSA",
+          "certs": "CLSA",
+          "location": "Hyderabad",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Vijay%20Mahesh%20Bobba%20Lloyds%20Banking%20Group%20Pega"
+        }
+      ],
+      "highlights": [
+        "+70% YoY headcount growth at India centre",
+        "Pega Constellation/AIM adoption",
+        "Active hiring for 3-6 year Pega devs"
+      ],
+      "_health_score": 77,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "BNP Paribas",
+      "sector": "Banking",
+      "locations": [
+        "Chennai"
+      ],
+      "team_size": "5-8",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "Swift ISO 20022 processing, Pega Smart Investigation Framework, application modernization, SWIFT message processing.",
+      "tech_stack": [
+        "Pega 8.x/V24",
+        "Smart Investigation Framework",
+        "Swift ISO 20022",
+        "REST/SOAP",
+        "Splunk",
+        "SQL",
+        "Agile"
+      ],
+      "domains": [
+        "Corporate Banking",
+        "SWIFT Processing",
+        "Insurance"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Senthil Kannan Jayabalan",
+          "title": "Vice President / Delivery Manager",
+          "certs": "CSSA",
+          "linkedin": "https://www.linkedin.com/in/senthilkannan",
+          "_role_level": 1,
+          "_role_label": "Management"
+        },
+        {
+          "name": "Arul Mano",
+          "title": "Technical Lead / Asst. Manager",
+          "certs": "LSA Part 1, CSSA",
+          "location": "Chennai",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Arul%20Mano%20BNP%20Paribas%20Pega"
+        },
+        {
+          "name": "Beniz Xavier",
+          "title": "Pega Developer",
+          "certs": "CSSA, CSA",
+          "location": "Chennai",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Beniz%20Xavier%20BNP%20Paribas%20Pega"
+        },
+        {
+          "name": "Jeevaprabha B",
+          "title": "Associate Level 1 / Pega Developer",
+          "certs": "CSSA, CSA",
+          "location": "Chennai",
+          "linkedin": "https://www.linkedin.com/in/jeevaprabhabdev",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Multiple 2025 hires in Chennai",
+        "Building dedicated India team"
+      ],
+      "_health_score": 72,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Societe Generale",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "6-8",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Design, development, and migration of Pega applications. Application modernization. Pega Infinity 24.2, Constellation, DX components.",
+      "tech_stack": [
+        "Pega Infinity 24.2",
+        "Constellation",
+        "DX components",
+        "JavaScript",
+        "React.js",
+        "Agile"
+      ],
+      "domains": [
+        "Retail Banking",
+        "App Modernization",
+        "Migration"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Rekha B.N",
+          "title": "Lead Software Engineer - 11yr IT, 8yr PRPC",
+          "certs": "CSSA v7.1, CSA v6.2",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/rekha-b-n-408b5937",
+          "_role_level": 3,
+          "_role_label": "Lead"
+        },
+        {
+          "name": "Subramanyam Kolipakula",
+          "title": "Lead Pega Developer (SSA)",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Subramanyam%20Kolipakula%20Societe%20Generale%20Pega"
+        },
+        {
+          "name": "Sudhir Sharma",
+          "title": "Lead Software Engineer / Pega Tech Lead",
+          "certs": "CSSA, CSA, CPDC",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/sudhircse79",
+          "_role_level": 3,
+          "_role_label": "Lead"
+        },
+        {
+          "name": "Vijendra H D",
+          "title": "Lead Software Engineer",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Vijendra%20H%20D%20Societe%20Generale%20Pega"
+        },
+        {
+          "name": "Raj Shekhar Deo",
+          "title": "Software Engineering Specialist / Pega Developer",
+          "certs": "CSA, CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/raj-shekhar-deo-8a820a176",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "R V Kishore",
+          "title": "Software Engineer / PEGA Developer",
+          "certs": "CSA, CSSA",
+          "linkedin": "https://www.linkedin.com/in/rv-kishore33",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "SG Global Solution Centre (6,000-7,000 employees)",
+        "Long-tenured team"
+      ],
+      "_health_score": 71,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "ANZ Bank",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Corporate KYC, BPM workflow automation, Pega CDH, DevOps/OpenShift deployments.",
+      "tech_stack": [
+        "Pega PRPC",
+        "Pega CDH",
+        "Jenkins",
+        "OpenShift",
+        "Tibco",
+        "MQ",
+        "AppDynamics",
+        "Splunk"
+      ],
+      "domains": [
+        "Corporate KYC",
+        "Payments",
+        "BPM Workflow"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Srikanth Gaddamanugu",
+          "title": "Pega Lead System Architect",
+          "certs": "CLSA 8.6, CPDS, CPBA, CPDC",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Srikanth%20Gaddamanugu%20ANZ%20Bank%20Pega"
+        },
+        {
+          "name": "Abhigna Lahiri Jallapally",
+          "title": "Analyst / Business Analyst - Pega CSSA",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/jallapally-abhigna-lahiri",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Rajeswari Bungatavula",
+          "title": "Engineer / Pega Developer",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/rajeswari-bungatavula-68a556215",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Sanjay Royal",
+          "title": "Operations Engineer - Pega",
+          "certs": "CSSA, CSA",
+          "linkedin": "https://www.linkedin.com/in/sanjay-royal-868540143",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Mixed direct hires and vendor resources"
+      ],
+      "_health_score": 58,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "MUFG",
+      "sector": "Banking",
+      "locations": [
+        "Mumbai",
+        "Pune",
+        "Bengaluru"
+      ],
+      "team_size": "4-6",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "BPM workflow applications for banking operations, Pega application development and modernization.",
+      "tech_stack": [
+        "Pega PRPC 8.7/8.8.2",
+        "BPM",
+        "FileNet",
+        "Linux",
+        "Cloud services",
+        "CI/CD",
+        "Agile"
+      ],
+      "domains": [
+        "Banking Operations",
+        "Pension Services",
+        "Market Services"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Taha Ezzi",
+          "title": "Lead Pega Developer",
+          "certs": "CLSA Part 1, CSSA, CSA",
+          "location": "Mumbai",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/in/taha-ezzi"
+        },
+        {
+          "name": "Shubham Shinde",
+          "title": "Senior Pega Developer",
+          "certs": "CSSA, CSA",
+          "location": "Pune",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Shubham%20Shinde%20MUFG%20Pega"
+        }
+      ],
+      "highlights": [
+        "Multiple locations in India",
+        "Recent hires 2022-2024"
+      ],
+      "_health_score": 62,
+      "_health_grade": "B",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "BNY Mellon",
+      "sector": "Banking",
+      "locations": [
+        "Chennai",
+        "Pune"
+      ],
+      "team_size": "4-6",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Asset Servicing workflow automation, Routing Functionality, Cash Transaction Enrichment, Reporting Data Enrichment.",
+      "tech_stack": [
+        "Pega PRPC",
+        "Connect-SOAP/EJB",
+        "Pega CDH",
+        "Oracle",
+        "BIX Extraction",
+        "Abinitio ETL"
+      ],
+      "domains": [
+        "Asset Servicing",
+        "Securities Operations",
+        "Cash Transactions"
+      ],
+      "certifications_required": [
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Virad Fernando",
+          "title": "SVP - Principal Solution Architect",
+          "certs": "CLSA, CSSA",
+          "location": "",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Virad%20Fernando%20BNY%20Mellon%20Pega"
+        },
+        {
+          "name": "Janardhan Krishnan",
+          "title": "Lead PEGA Developer - 16yr veteran",
+          "certs": "LSA",
+          "location": "Chennai",
+          "linkedin": "https://www.linkedin.com/in/janardhan-krishnan-90042623",
+          "_role_level": 3,
+          "_role_label": "Lead"
+        },
+        {
+          "name": "Pravin Ankush",
+          "title": "Project Lead Developer - 14yr veteran",
+          "certs": "CSA, IBM BPM",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/pravin-ankush-63a05935",
+          "_role_level": 3,
+          "_role_label": "Lead"
+        },
+        {
+          "name": "Anu Kiruthika Selvaraj",
+          "title": "Senior Application Developer",
+          "certs": "CSSA",
+          "location": "Chennai",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Anu%20Kiruthika%20Selvaraj%20BNY%20Mellon%20Pega"
+        }
+      ],
+      "highlights": [
+        "Very long-tenured team (10+ years)",
+        "Established via iNautix subsidiary"
+      ],
+      "_health_score": 70,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Allianz Technology",
+      "sector": "Insurance",
+      "locations": [
+        "Trivandrum",
+        "Pune"
+      ],
+      "team_size": "6-10",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Insurance platform applications for Allianz Global entities including AGCS. Pega upgrades (8.5+), insurance case management, decisioning.",
+      "tech_stack": [
+        "Pega 8.x",
+        "Pega Infinity",
+        "Pega Decisioning",
+        "Constellation",
+        "Smart Dispute",
+        "AWS",
+        "Siebel CRM"
+      ],
+      "domains": [
+        "Insurance (P&C, Life)",
+        "Global Corporate & Specialty"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Anju Murali",
+          "title": "Senior Technical Architect",
+          "certs": "CSSA, CSA, TOGAF 9",
+          "location": "Trivandrum",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Anju%20Murali%20Allianz%20Technology%20Pega"
+        },
+        {
+          "name": "Nitin Kumar",
+          "title": "Pega Senior System Architect",
+          "certs": "CSA, CSSA",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Nitin%20Kumar%20Allianz%20Technology%20Pega"
+        },
+        {
+          "name": "Shery Alphonsa George",
+          "title": "Technical Lead",
+          "certs": "CSSA",
+          "location": "Trivandrum",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Shery%20Alphonsa%20George%20Allianz%20Technology%20Pega"
+        },
+        {
+          "name": "Alinta Kunjumon",
+          "title": "Pega CSA Engineer / Senior SE",
+          "certs": "CSA",
+          "location": "Kerala",
+          "linkedin": "https://www.linkedin.com/in/alinta-kunjumon",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Kunal Rathod",
+          "title": "Senior SE / Pega Developer",
+          "certs": "CSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/kunal-rathod-2492571a6",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Manikandan M",
+          "title": "Senior SE / Pega Developer - CSSA",
+          "certs": "CSSA, CSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/manikandan-m-166223219",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Tibin Mammen",
+          "title": "Senior SE / PEGA Developer",
+          "certs": "CSSA",
+          "location": "Trivandrum",
+          "linkedin": "https://www.linkedin.com/in/tibin-mammen-b7ab5816a",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        }
+      ],
+      "highlights": [
+        "8,000-9,000 employees at India center",
+        "Actively expanding Trivandrum and Pune",
+        "Interns completing Pega projects"
+      ],
+      "_health_score": 75,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Aflac",
+      "sector": "Insurance",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Digital Transformation of supplemental insurance. Case routing migration from Case360 to Pega. FileNet integration. PUI/PUGI frameworks.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Pega 8.x",
+        "PUI/PUGI",
+        "Pega Insurance",
+        "Constellation",
+        "DevOps",
+        "FileNet",
+        "AWS"
+      ],
+      "domains": [
+        "Supplemental Insurance",
+        "Case Management"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Rama Chandraiah Vupputuri",
+          "title": "Pega Technical Architect",
+          "certs": "CLSA-1, CPDC, CSA",
+          "location": "India",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Rama%20Chandraiah%20Vupputuri%20Aflac%20Pega"
+        },
+        {
+          "name": "Prathap Reddy",
+          "title": "Pega Lead Developer",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Prathap%20Reddy%20Aflac%20Pega"
+        }
+      ],
+      "highlights": [
+        "Team in place since 2019",
+        "PUI/PUGI insurance frameworks"
+      ],
+      "_health_score": 61,
+      "_health_grade": "B",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Sun Life",
+      "sector": "Insurance",
+      "locations": [
+        "Gurugram"
+      ],
+      "team_size": "8-12",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "BPM applications for financial services, insurance processing, case management. Life insurance and financial planning workflows.",
+      "tech_stack": [
+        "Pega PRPC 5.x-8.x",
+        "Oracle Database",
+        "Boomi integration",
+        "Agile/Scrum"
+      ],
+      "domains": [
+        "Financial Services",
+        "Life Insurance",
+        "Financial Planning"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Deepak Choudhary",
+          "title": "Lead System Architect",
+          "certs": "LSA-1",
+          "location": "Gurugram",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/in/deepak-choudhary-371ab3149"
+        },
+        {
+          "name": "Swarup Mohanty",
+          "title": "Principal Solution Architect",
+          "certs": "CSA, CSSA",
+          "location": "Gurugram",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/in/swarupmohanty"
+        },
+        {
+          "name": "Pushkar Raj",
+          "title": "Sr. Specialist Development",
+          "certs": "CLSA, CSSA",
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/in/pushkar-raj-517ba430"
+        }
+      ],
+      "highlights": [
+        "Multiple hires 2022-2024",
+        "New LSA hired Nov 2024",
+        "Mature Pega practice"
+      ],
+      "_health_score": 77,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Ameriprise Financial",
+      "sector": "Financial Services",
+      "locations": [
+        "Gurugram",
+        "Bengaluru"
+      ],
+      "team_size": "50+",
+      "maturity": "Very High",
+      "hiring_status": "Stable/Growing",
+      "projects": "Enterprise workflow automation, BPM for financial advisory. RPA (Pega Robotics), Python automation. Large-scale Pega Infinity deployment.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Pega Robotics (OpenSpan)",
+        "Automation Anywhere",
+        "UiPath",
+        "Python",
+        ".NET",
+        "AWS",
+        "Theme Cosmos"
+      ],
+      "domains": [
+        "Financial Advisory",
+        "Wealth Management",
+        "Retirement Planning"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Nand Kishor Swami",
+          "title": "Senior Manager Architect (Gen AI & Pega Robotics)",
+          "certs": "",
+          "location": "Gurugram",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/in/nand-kishor-swami-00b04329"
+        },
+        {
+          "name": "Manish Kumar",
+          "title": "Pega Technical Lead",
+          "certs": "",
+          "location": "Gurugram",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Manish%20Kumar%20Ameriprise%20Financial%20Pega"
+        },
+        {
+          "name": "Sonali Gupta",
+          "title": "Sr Pega App Develop Tech Lead",
+          "certs": "CSSA, CUIS",
+          "location": "Gurugram",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sonali%20Gupta%20Ameriprise%20Financial%20Pega"
+        },
+        {
+          "name": "Sunil Murugendrappa",
+          "title": "Workflow Automation & Robotics Leader",
+          "certs": "Pega LSA",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/in/sunil-murugendrappa-72489793"
+        }
+      ],
+      "highlights": [
+        "LARGEST confirmed Pega team (50+ engineers)",
+        "Single leader manages Pega, RPA, QA, DevOps",
+        "Long tenures (4-7+ years)"
+      ],
+      "_health_score": 72,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Empower",
+      "sector": "Financial Services",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "8-15",
+      "maturity": "High",
+      "hiring_status": "Rapidly Growing",
+      "projects": "Retirement planning & wealth management platform on Pega. Case management, workflow automation, background processing, BIX extracts. Pega Diagnostic Cloud monitoring.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Pega Gen AI",
+        "Pega Diagnostic Cloud",
+        "BIX Extracts",
+        "File Listeners",
+        "Job Schedulers",
+        "Agents",
+        "AWS"
+      ],
+      "domains": [
+        "Retirement Planning",
+        "Wealth Management"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "AnandBabu Edagotti",
+          "title": "Senior Pega Developer",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=AnandBabu%20Edagotti%20Empower%20Pega"
+        },
+        {
+          "name": "Divya Mohanraj",
+          "title": "Senior Software Engineer",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Divya%20Mohanraj%20Empower%20Pega"
+        },
+        {
+          "name": "Mithun Padmanabhan",
+          "title": "Senior Software Developer",
+          "certs": "CSA, CSSA, PCDC",
+          "location": "Bengaluru",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Mithun%20Padmanabhan%20Empower%20Pega"
+        },
+        {
+          "name": "Nithin H N",
+          "title": "Senior Software Developer - Pega CSSA",
+          "certs": "CSSA v7",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/nithin-h-n-399287121",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Sai Raghava",
+          "title": "Senior SE - Pega CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/sai-raghava-b7a6b6127",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Ashish Aryan",
+          "title": "Engineer Software - Pega CSSA",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/ashish-aryan-87497414b",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Abhimanyu Verma",
+          "title": "Lead Software Developer - ex-TCS/Cognizant",
+          "certs": "Pega Developer",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/abhimanyu-verma-1108",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "+30% YoY employee growth",
+        "Pega Gen AI adoption",
+        "Multiple hires 2022-2025"
+      ],
+      "_health_score": 74,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Charles Schwab",
+      "sector": "Financial Services",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Rapidly Growing",
+      "projects": "Pega Infinity applications, application consolidation and modernization, production support. SRE for Pega apps.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Pega PRPC 7.x/8.x",
+        "ACMS",
+        "Pega Decisioning"
+      ],
+      "domains": [
+        "Wealth Management",
+        "Financial Advisory",
+        "Brokerage"
+      ],
+      "certifications_required": [
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Prathap Kumar",
+          "title": "Pega Technology Lead",
+          "certs": "CSA v8, CSSA v8",
+          "linkedin": "https://www.linkedin.com/in/prathap-kumar-1aa645264",
+          "_role_level": 3,
+          "_role_label": "Lead"
+        },
+        {
+          "name": "Renuka Jampani",
+          "title": "Software Developer Senior (Pega) - 13yr exp",
+          "certs": "CSSA",
+          "linkedin": "https://www.linkedin.com/in/renuka-jampani-56876380",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Shantharaj Mogalapu",
+          "title": "Senior Software Specialist",
+          "certs": "CSSA",
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Shantharaj%20Mogalapu%20Charles%20Schwab%20Pega"
+        },
+        {
+          "name": "Vinay Durgam",
+          "title": "Senior Staff Engineer",
+          "certs": "CLSA, CSSA, CSA",
+          "location": "",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Vinay%20Durgam%20Charles%20Schwab%20Pega"
+        }
+      ],
+      "highlights": [
+        "NEW GCC inaugurated August 2026 in Hyderabad",
+        "501-1,000 employees",
+        "Actively hiring Pega talent"
+      ],
+      "_health_score": 76,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Mastercard",
+      "sector": "Payments",
+      "locations": [
+        "Pune"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Dispute Resolution platform, Pega BizOps/Production Support. Smart Dispute for Issuers framework. Payment processing infrastructure.",
+      "tech_stack": [
+        "Pega 8.x",
+        "Smart Dispute for Issuers",
+        "Pega BizOps",
+        "Microservices",
+        "Cloud (PCF)",
+        "Kafka",
+        "Java",
+        "Jenkins",
+        "CI/CD"
+      ],
+      "domains": [
+        "Payments",
+        "Dispute Resolution"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Koushik Anand Vadapally",
+          "title": "Senior BizOps Engineer / Pega Developer",
+          "certs": "CSA, CSSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/koushik-anand-vadapally-06188379",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Sumit Gore",
+          "title": "Senior BizOps Engineer",
+          "certs": "CSA, CSSA",
+          "location": "Pune",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sumit%20Gore%20Mastercard%20Pega"
+        },
+        {
+          "name": "Prudhvi Raghupatruni",
+          "title": "Manager Product Development - ex-Pegasystems",
+          "certs": "CSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/prudhvi-raghupatruni",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "Long-tenured team (9+ years)",
+        "+10% YoY employee growth",
+        "Smart Dispute for Issuers"
+      ],
+      "_health_score": 52,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Visa",
+      "sector": "Payments",
+      "locations": [
+        "Bengaluru",
+        "Pune"
+      ],
+      "team_size": "2-4",
+      "maturity": "Medium",
+      "hiring_status": "Moderate",
+      "projects": "Pega-based dispute processing and case management systems.",
+      "tech_stack": [
+        "Pega PRPC",
+        "Pega Robotics",
+        "ISO 8583",
+        "Java",
+        ".NET"
+      ],
+      "domains": [
+        "Payments",
+        "Dispute Processing"
+      ],
+      "certifications_required": [
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Venkata Radheshyam Yekkirala",
+          "title": "Sr. Consultant - Pega BPM",
+          "certs": "Pega BPM",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/venkata-radheshyam-yekkirala"
+        }
+      ],
+      "highlights": [
+        "LSA in Bangalore (10 years tenure)",
+        "+10% YoY India growth"
+      ],
+      "_health_score": 40,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "PayPal",
+      "sector": "Payments",
+      "locations": [
+        "Chennai",
+        "Bengaluru"
+      ],
+      "team_size": "6-10",
+      "maturity": "High",
+      "hiring_status": "Stable/Growing",
+      "projects": "Payment dispute management, CRM applications, customer case management. Long-standing Pega investment since 2011.",
+      "tech_stack": [
+        "Pega PRPC 7.x/8.x",
+        "Java",
+        "Spring Framework",
+        "Salesforce",
+        "REST/SOAP APIs"
+      ],
+      "domains": [
+        "Payments",
+        "Dispute Management",
+        "CRM",
+        "Payment Gateway"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Ashwin Kumar",
+          "title": "Software Engineer 3",
+          "certs": "CSA, CSSA, LSA-I",
+          "location": "Chennai",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Ashwin%20Kumar%20PayPal%20Pega"
+        },
+        {
+          "name": "Rajpriya Shanmugaraj",
+          "title": "Software Engineer",
+          "certs": "CSSA",
+          "location": "Chennai",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Rajpriya%20Shanmugaraj%20PayPal%20Pega"
+        }
+      ],
+      "highlights": [
+        "Pega investment since 2011",
+        "Long-tenured team (8-13+ years)",
+        "Chennai primary Pega hub"
+      ],
+      "_health_score": 65,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "FIS (TSYS/Global Payments)",
+      "sector": "Payments",
+      "locations": [
+        "Pune",
+        "Noida",
+        "Hyderabad"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Payment processing platforms, customer service applications, multi-tenant enterprise apps, Pega Chat implementation.",
+      "tech_stack": [
+        "Pega PRPC 6.x-8.x",
+        "Pega Chat",
+        "Multi-tenant apps",
+        "Java",
+        "Splunk",
+        "Datadog",
+        "AWS/Azure",
+        "CI/CD"
+      ],
+      "domains": [
+        "Payments",
+        "Card Issuing",
+        "Banking"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Akash Sharma",
+          "title": "Lead Software Engineer",
+          "certs": "CSSA",
+          "location": "Pune",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Akash%20Sharma%20FIS%20%28TSYS/Global%20Payments%29%20Pega"
+        },
+        {
+          "name": "Utkarsh Saraswat",
+          "title": "Lead Software Engineer",
+          "certs": "CSA, CSSA",
+          "location": "Noida",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Utkarsh%20Saraswat%20FIS%20%28TSYS/Global%20Payments%29%20Pega"
+        }
+      ],
+      "highlights": [
+        "TSYS merged into FIS in 2026",
+        "Pega Chat expert team",
+        "Significant team across 3 cities"
+      ],
+      "_health_score": 57,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Broadridge",
+      "sector": "Financial Services",
+      "locations": [
+        "Hyderabad",
+        "Bengaluru"
+      ],
+      "team_size": "5-8",
+      "maturity": "Medium-High",
+      "hiring_status": "Growing",
+      "projects": "Enterprise case management, workflow automation for financial services (investing, governance, communications). BPM for back-office operations.",
+      "tech_stack": [
+        "Pega PRPC",
+        "Case Management",
+        "REST APIs",
+        "Pega 8.x",
+        "AWS"
+      ],
+      "domains": [
+        "Financial Services",
+        "Wealth Management",
+        "Governance"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Suresh Kathi",
+          "title": "Technology Lead / Pega Developer",
+          "certs": "",
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Suresh%20Kathi%20Broadridge%20Pega"
+        },
+        {
+          "name": "Kiran Kumar Reddy Yandrapalli",
+          "title": "Senior Member Technical",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Kiran%20Kumar%20Reddy%20Yandrapalli%20Broadridge%20Pega"
+        },
+        {
+          "name": "Sahaja Nayuni",
+          "title": "Senior Member Technical - CSSA",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/sahaja-nayuni-59051b172",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Sairamya Pola",
+          "title": "Pega Developer",
+          "certs": "Pega Developer",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/sairamya-pola-55b063298",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Won 1st place at Pega & AWS Legacy Transformation Hackathon",
+        "+10% YoY growth",
+        "Intern programs with Pega focus"
+      ],
+      "_health_score": 62,
+      "_health_grade": "B",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Optum / UnitedHealth Group",
+      "sector": "Healthcare",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "15+",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "CPMHC application (Member, Plan, Billing, Enrollment, Pharmacy), Customer care center applications, Insurance & Healthcare workflows.",
+      "tech_stack": [
+        "Pega 8.x",
+        "Pega Constellation",
+        "Pega GenAI",
+        "REST APIs",
+        "SQL Server",
+        "Splunk",
+        "GitLab",
+        "CI/CD"
+      ],
+      "domains": [
+        "Healthcare",
+        "Health Insurance",
+        "Member Management"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Yugandhar Dasari",
+          "title": "Software Engineering Lead",
+          "certs": "CSA, CSSA",
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Yugandhar%20Dasari%20Optum%20/%20UnitedHealth%20Group%20Pega"
+        },
+        {
+          "name": "Pankaj Singh",
+          "title": "Senior Software Engineer",
+          "certs": "CSSA, Decisioning Consultant",
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Pankaj%20Singh%20Optum%20/%20UnitedHealth%20Group%20Pega"
+        },
+        {
+          "name": "Naveen Kumar Rachuri",
+          "title": "Software Engineer",
+          "certs": "CSA, CSSA, CPDC",
+          "location": "Hyderabad",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Naveen%20Kumar%20Rachuri%20Optum%20/%20UnitedHealth%20Group%20Pega"
+        },
+        {
+          "name": "Sravani K.",
+          "title": "Pega Developer",
+          "certs": "",
+          "location": "Hyderabad",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sravani%20K.%20Optum%20/%20UnitedHealth%20Group%20Pega"
+        }
+      ],
+      "highlights": [
+        "Largest healthcare Pega team in India (15+ devs)",
+        "Pega GenAI and Constellation adoption",
+        "10+ year tenured members"
+      ],
+      "_health_score": 67,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Elevance Health (Anthem)",
+      "sector": "Healthcare",
+      "locations": [
+        "Hyderabad",
+        "Gurugram"
+      ],
+      "team_size": "4+",
+      "maturity": "Medium-High",
+      "hiring_status": "Growing",
+      "projects": "Anthem Care Management Systems (ACMS), Utilization Management, Pega PRPC healthcare workflows, Health plan administration.",
+      "tech_stack": [
+        "Pega PRPC 8.4",
+        "Pega Constellation",
+        "Azure Blob",
+        "PDFTron",
+        "SOAP/REST",
+        "Java"
+      ],
+      "domains": [
+        "Healthcare",
+        "Health Insurance",
+        "Care Management"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Palanimurugan P.",
+          "title": "Enterprise Architect (Pega)",
+          "certs": "",
+          "location": "Hyderabad",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Palanimurugan%20P.%20Elevance%20Health%20%28Anthem%29%20Pega"
+        },
+        {
+          "name": "Rahul S.",
+          "title": "Senior Pega Developer",
+          "certs": "CSA, CSSA",
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Rahul%20S.%20Elevance%20Health%20%28Anthem%29%20Pega"
+        }
+      ],
+      "highlights": [
+        "GCC targeting 10,000 employees by 2027",
+        "Carelon Global Solutions",
+        "35% efficiency improvement achieved"
+      ],
+      "_health_score": 57,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Evernorth / Cigna",
+      "sector": "Healthcare",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "4+",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "Coverage Review Determination (CRD), Client Acquisition & Retention Transformation, PBM solutions, AI Center of Enablement.",
+      "tech_stack": [
+        "Pega PRPC",
+        "GenAI (Azure OpenAI, GPT, Claude)",
+        "LLM",
+        "Flask",
+        "Azure AI Services",
+        "REST APIs"
+      ],
+      "domains": [
+        "Healthcare",
+        "Pharmacy Benefit Management"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "LSA"
+      ],
+      "team_members": [
+        {
+          "name": "Jahnavi Paladara",
+          "title": "Application Development Advisor / Pega Architect",
+          "certs": "CSSA v7.2, CSA v7.1",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/jahnavi-paladara-00736b101",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Ravi Krishna Ladi",
+          "title": "Software Engineering Lead Analyst",
+          "certs": "LSA-1, CSSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Ravi%20Krishna%20Ladi%20Evernorth%20/%20Cigna%20Pega"
+        },
+        {
+          "name": "Vijay Reddy",
+          "title": "Software Engineering Lead Analyst - CSA,CSSA,CPDC,CPBA",
+          "certs": "CSA, CSSA, CPDC, CPBA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/vijay-reddy-50759258",
+          "_role_level": 3,
+          "_role_label": "Lead"
+        },
+        {
+          "name": "Manoj Kumar Reddy",
+          "title": "Pega Developer / Senior Analyst",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/manoj-kumar-reddy-870839129",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Seeion Kumari Kotapuri",
+          "title": "Pega Developer / Senior Analyst",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/seeion-kumari-kotapuri-05b71a194",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Vineetha Ganduri",
+          "title": "Pega Developer - CSSA",
+          "certs": "CSSA, CSA",
+          "linkedin": "https://www.linkedin.com/in/vineetha-ganduri",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Subbarao Tatikonda",
+          "title": "Advisor - CLSA, ex-Pegasystems",
+          "certs": "CLSA v8.8, CSSA v7.1, CSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/subbarao-tatikonda-198b7519",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "NEW India GCC Pega team (Dec 2024 hires)",
+        "AI/GenAI integration focus",
+        "50+ team led from India"
+      ],
+      "_health_score": 75,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Verizon",
+      "sector": "Telecom",
+      "locations": [
+        "Hyderabad",
+        "Bengaluru",
+        "Chennai"
+      ],
+      "team_size": "10+",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Pega CDH/Next Best Experience (NBx) for customer decisioning, MarTech Pega Decisioning, Case Management, Customer engagement & personalization.",
+      "tech_stack": [
+        "Pega 8.x",
+        "Pega CDH",
+        "NBA/NBx",
+        "REST/SOAP",
+        "Adaptive Models",
+        "AI/ML",
+        "Agile/Scrum",
+        "CI/CD"
+      ],
+      "domains": [
+        "Telecommunications",
+        "Customer Decisioning",
+        "Marketing"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CDH"
+      ],
+      "team_members": [
+        {
+          "name": "Smruti Rekha Swain",
+          "title": "Pega Tech Lead",
+          "certs": "CSA, CSSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/smrutirswain"
+        }
+      ],
+      "highlights": [
+        "CDH/NBx decisioning",
+        "10+ dev team managed by Tech Lead",
+        "Active hiring for Pega CDH Principal Engineer"
+      ],
+      "_health_score": 47,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Vodafone / VOIS",
+      "sector": "Telecom",
+      "locations": [
+        "Pune",
+        "Bengaluru"
+      ],
+      "team_size": "10+",
+      "maturity": "Very High",
+      "hiring_status": "Growing",
+      "projects": "Pega Decisioning (CDH) for customer engagement, Omni-Channel Campaigns, Customer Journeys, Process Automation.",
+      "tech_stack": [
+        "Pega CDH",
+        "Pega Marketing 8.x",
+        "Omni-Channel Campaigns",
+        "Engagement Policies",
+        "AWS Cloud",
+        "React.js",
+        "DevOps"
+      ],
+      "domains": [
+        "Telecommunications",
+        "Customer Decisioning",
+        "Marketing"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA",
+        "PSA"
+      ],
+      "team_members": [
+        {
+          "name": "Dinesh Kumar",
+          "title": "Pega Lead Decisioning Architect (DGM)",
+          "certs": "",
+          "location": "Pune",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Dinesh%20Kumar%20Vodafone%20/%20VOIS%20Pega"
+        },
+        {
+          "name": "Ganesh Mahagaonkar",
+          "title": "Senior Manager",
+          "certs": "CLSA v8.6, CPDC, CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Ganesh%20Mahagaonkar%20Vodafone%20/%20VOIS%20Pega"
+        },
+        {
+          "name": "Praveen Kesari",
+          "title": "Senior Manager",
+          "certs": "CLSA v8.8, CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Praveen%20Kesari%20Vodafone%20/%20VOIS%20Pega"
+        }
+      ],
+      "highlights": [
+        "PSA-level architect on team",
+        "Active CDH Decisioning hiring",
+        "Represented at PegaFest 2025"
+      ],
+      "_health_score": 79,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "BT Group",
+      "sector": "Telecom",
+      "locations": [
+        "Bengaluru",
+        "Hyderabad"
+      ],
+      "team_size": "6+",
+      "maturity": "Medium-High",
+      "hiring_status": "Growing",
+      "projects": "Telecom case management, Workflow automation, Pega platform upgrades, REST-based integrations, SLA management.",
+      "tech_stack": [
+        "Pega 8.6/8.7/8.8/Infinity 24.2",
+        "Pega GenAI",
+        "Blueprint",
+        "AI Agents",
+        "Constellation UI",
+        "REST/SOAP",
+        "JMS"
+      ],
+      "domains": [
+        "Telecommunications",
+        "Case Management"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Praveen Kumar",
+          "title": "Lead Pega Decisioning Consultant - PCLSA",
+          "certs": "PCLSA",
+          "linkedin": "https://www.linkedin.com/in/praveen-kumar-66165822",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Manjunatha A",
+          "title": "Software Engineering Practitioner (Tech Lead)",
+          "certs": "CSSA, GenAI, Constellation",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Manjunatha%20A%20BT%20Group%20Pega"
+        },
+        {
+          "name": "Bindhu Gunuru",
+          "title": "Senior Pega Developer - CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "linkedin": "https://www.linkedin.com/in/bindhu-gunuru-23724b12a",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Sai Pavan",
+          "title": "Pega Sr Software Development Engineer",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sai%20Pavan%20BT%20Group%20Pega"
+        },
+        {
+          "name": "Srivatsan Babu",
+          "title": "Software Engineering Pega Senior Developer",
+          "certs": "CSA v7.1, CSSA v8.6",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/srivatsan-babu-59429251",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Akshay Joshi",
+          "title": "Software Engineer Pega Professional",
+          "certs": "CSA, CSSA",
+          "location": "Bengaluru",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Akshay%20Joshi%20BT%20Group%20Pega"
+        },
+        {
+          "name": "Serika Mekala",
+          "title": "Software Engineer Pega Developer",
+          "certs": "CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/serika-mekala-01aa1219b",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Pega GenAI, Blueprint, AI Agents adoption",
+        "Ex-Pegasystems tech lead",
+        "Multiple hires 2022-2023"
+      ],
+      "_health_score": 83,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Telstra",
+      "sector": "Telecom",
+      "locations": [
+        "Hyderabad",
+        "Pune",
+        "Bengaluru"
+      ],
+      "team_size": "5+",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable/Growing",
+      "projects": "Pega BPM for telecom workflows, Salesforce Automation (SAM CRM Framework), Pega Decisioning, Customer service apps.",
+      "tech_stack": [
+        "Pega PRPC 5.5-8.5",
+        "Pega SAM CRM",
+        "Decisioning",
+        "Process AI",
+        "Constellation",
+        "REST/SOAP",
+        "SAFe"
+      ],
+      "domains": [
+        "Telecommunications",
+        "CRM",
+        "Customer Service"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Dineshkumar Jagadeesan",
+          "title": "Staff Software Engineer / CLSA",
+          "certs": "CLSA, CPDC, CSSA, CSA",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Dineshkumar%20Jagadeesan%20Telstra%20Pega"
+        },
+        {
+          "name": "Sourabh S.",
+          "title": "Senior SE - CLSA-1, SAFe 5 Agilist",
+          "certs": "CLSA Part 1, CSSA, CSA, SAFe 5",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/sourabh-soni",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Deborupa Dasgupta",
+          "title": "Lead Pega Developer",
+          "certs": "CPDC, PCDS, CSSA, CSA",
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Deborupa%20Dasgupta%20Telstra%20Pega"
+        },
+        {
+          "name": "Prachi Ranjan",
+          "title": "Senior SE - CSSA, CSA, CUIS - 9yr Pega",
+          "certs": "CSSA, CSA, CUIS",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/prachi-ranjan-8a300025",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Pradeep Koutha",
+          "title": "Senior Software Engineer",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Pradeep%20Koutha%20Telstra%20Pega"
+        },
+        {
+          "name": "Rashmi K V",
+          "title": "Pega Developer - CSSA, CSA",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/rashmi-k-v-5a474225",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Sanket Bose",
+          "title": "Software Engineer - CSA",
+          "certs": "CSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/sanket-bose-39768714b",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "High certification levels (CLSA)",
+        "All joined around 2022",
+        "3-city presence"
+      ],
+      "_health_score": 90,
+      "_health_grade": "A+",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Amdocs",
+      "sector": "Telecom",
+      "locations": [
+        "Gurugram",
+        "Pune"
+      ],
+      "team_size": "5+",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "Pega development and production support for telecom clients, Pega Decisioning, MCCM (UNICA).",
+      "tech_stack": [
+        "Pega PRPC",
+        "Pega Decisioning",
+        "MCCM (UNICA)",
+        "AEM",
+        "SQL",
+        "Linux",
+        "Snowflake"
+      ],
+      "domains": [
+        "Telecommunications"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Sai V.",
+          "title": "Pega Architect",
+          "certs": "CSA, CSSA, CPDC, Pega Robotics",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sai%20V.%20Amdocs%20Pega"
+        },
+        {
+          "name": "Aditya Teppalwar",
+          "title": "Senior PEGA Engineer",
+          "certs": "CSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/aditya-teppalwar-b93616168",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Jai Veer",
+          "title": "Senior Software Engineer",
+          "certs": "CSA, CSSA",
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Jai%20Veer%20Amdocs%20Pega"
+        },
+        {
+          "name": "Raghu Pungav",
+          "title": "Senior Pega Technical Engineer - CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "location": "Gurugram",
+          "linkedin": "https://www.linkedin.com/in/raghu-pungav-7385741aa",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        }
+      ],
+      "highlights": [
+        "Multiple recent hires (Nov-Dec 2025)",
+        "Building Pega capacity for telecom clients"
+      ],
+      "_health_score": 64,
+      "_health_grade": "B",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Ford Motor Company",
+      "sector": "Automotive",
+      "locations": [
+        "Chennai"
+      ],
+      "team_size": "8+",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Ford-PEGA COE (Center of Excellence); DPA (Digital Process Automation); RPA; LCNC COE; Pega SaaS Migration; Constellation enablement.",
+      "tech_stack": [
+        "Pega 8.x",
+        "Pega RPA v19/v22/v25",
+        "Pega DPA",
+        "Constellation",
+        "Pega SaaS/Cloud",
+        "Azure",
+        "GenAI",
+        "Deployment Manager"
+      ],
+      "domains": [
+        "Automotive",
+        "Process Automation",
+        "RPA"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Abinaya Senthilnathan",
+          "title": "Sr Software Engineer, LCNC COE Team Lead",
+          "certs": "CSSA 8.7, CSA 8.6",
+          "location": "Chennai",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Abinaya%20Senthilnathan%20Ford%20Motor%20Company%20Pega"
+        },
+        {
+          "name": "Rabi Asirwadh P",
+          "title": "Pega Platform Engineer",
+          "certs": "CSSA, CSA",
+          "location": "Chennai",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/in/rabi-asirwadh-p-a61663190"
+        },
+        {
+          "name": "Varshaa B",
+          "title": "Software Engineer, Pega RPA Governor",
+          "certs": "CSA, CSSA 8.7, CPDC 24.1",
+          "location": "Chennai",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Varshaa%20B%20Ford%20Motor%20Company%20Pega"
+        }
+      ],
+      "highlights": [
+        "Dedicated PEGA COE",
+        "SaaS Migration & Constellation enablement",
+        "Innovation showcases at Technovate 2026"
+      ],
+      "_health_score": 67,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Stellantis",
+      "sector": "Automotive",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "7+",
+      "maturity": "Medium-High",
+      "hiring_status": "Growing",
+      "projects": "Pega COE for global business processes, Enterprise Pega application development, Workflow automation.",
+      "tech_stack": [
+        "Pega Infinity 8.x",
+        "BPM",
+        "Contract Management",
+        "Case Management"
+      ],
+      "domains": [
+        "Automotive",
+        "Enterprise BPM"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Kishore Kumar Panathula",
+          "title": "Head Pega CoE, ICT India",
+          "certs": "CLSA",
+          "location": "Hyderabad",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Kishore%20Kumar%20Panathula%20Stellantis%20Pega"
+        },
+        {
+          "name": "Prachi Mittal",
+          "title": "Senior Pega Business Architect",
+          "certs": "CPBA 8.8",
+          "location": "Hyderabad",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Prachi%20Mittal%20Stellantis%20Pega"
+        },
+        {
+          "name": "Sai Dhanush Reddy",
+          "title": "Pega Developer",
+          "certs": "CSA",
+          "location": "Hyderabad",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sai%20Dhanush%20Reddy%20Stellantis%20Pega"
+        }
+      ],
+      "highlights": [
+        "Dedicated PEGA COE with Head, Business Architect",
+        "Recent hires Jan 2025",
+        "Global enterprise coverage"
+      ],
+      "_health_score": 70,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Siemens",
+      "sector": "Industrial",
+      "locations": [
+        "Bengaluru",
+        "Pune",
+        "Mumbai"
+      ],
+      "team_size": "6+",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "E2E Case Management, CCMT (Cash Collection Management Tool) - global, BPM workflows, Smart Investigate. 95% automation achieved per Pega case study.",
+      "tech_stack": [
+        "Pega 6.x-8.x",
+        "Smart Investigate",
+        "Constellation",
+        "WebSphere DataPower",
+        "Salesforce",
+        ".NET"
+      ],
+      "domains": [
+        "Industrial",
+        "Manufacturing",
+        "Global Business Services"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Renuka Deshpande",
+          "title": "Lead System Architect - CSSA, CSA",
+          "certs": "CSSA, CSA",
+          "linkedin": "https://www.linkedin.com/in/renuka-deshpande-08868a79",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Saheli Misra",
+          "title": "Solutions Architect - CLSA, 11yr BPM",
+          "certs": "CLSA v7.4, CSSA, CPMC",
+          "linkedin": "https://www.linkedin.com/in/saheli-misra-a6891a57",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Amit Abhishek",
+          "title": "Lead Pega Developer",
+          "certs": "LSA, CSSA, CSA, CPDC, Data Scientist",
+          "location": "Bengaluru",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Amit%20Abhishek%20Siemens%20Pega"
+        },
+        {
+          "name": "Anusha G",
+          "title": "Senior Software Development Engineer",
+          "certs": "CSSA, CSA",
+          "location": "",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Anusha%20G%20Siemens%20Pega"
+        },
+        {
+          "name": "Aastha Patil",
+          "title": "Software Developer Engineer / Pega Developer",
+          "certs": "CSSA v8.8, CSA v8.5",
+          "location": "Maharashtra",
+          "linkedin": "https://www.linkedin.com/in/aastha-patil-11a605193",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Rajashekar Nagireddy",
+          "title": "Pega Developer - CSSA",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/rajashekar-nagireddy-577079247",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Sandeep Punekar",
+          "title": "Pega Developer - CSA, ex-TCS",
+          "certs": "CSA",
+          "linkedin": "https://www.linkedin.com/in/sandeep-punekar-2985ab88",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "95% automation achievement (Pega case study)",
+        "Active hiring for Smart Investigate (Jul 2026)",
+        "Data Scientist + LSA on team"
+      ],
+      "_health_score": 85,
+      "_health_grade": "A+",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "S&P Global",
+      "sector": "Financial Services",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "5+",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Pega CRM Insurance framework, Ratings platform workflows, Site Reliability for Pega apps.",
+      "tech_stack": [
+        "Pega PRPC",
+        "Java",
+        "J2EE",
+        "WebLogic",
+        "Azure DevOps",
+        "Jenkins",
+        "Splunk",
+        "Pega CRM Insurance"
+      ],
+      "domains": [
+        "Financial Services",
+        "Ratings"
+      ],
+      "certifications_required": [
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Souritra Ganguly",
+          "title": "Lead Software Engineer",
+          "certs": "CSSA",
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Souritra%20Ganguly%20S%26P%20Global%20Pega"
+        },
+        {
+          "name": "Swathi Veldi",
+          "title": "Lead System Engineer",
+          "certs": "CSA, CSSA",
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Swathi%20Veldi%20S%26P%20Global%20Pega"
+        },
+        {
+          "name": "Anilkumar Vooradi",
+          "title": "Pega Developer",
+          "certs": "",
+          "location": "Hyderabad",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Anilkumar%20Vooradi%20S%26P%20Global%20Pega"
+        }
+      ],
+      "highlights": [
+        "Established team since 2018-2019",
+        "Ex-Pegasystems employees on team",
+        "CRM Insurance framework expertise"
+      ],
+      "_health_score": 58,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Conduent",
+      "sector": "Business Services",
+      "locations": [
+        "Hyderabad",
+        "Bengaluru"
+      ],
+      "team_size": "4+",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Customer experience management, Insurance applications, Pega version migration (8.1 to 8.8), Platform transition to PowerApps.",
+      "tech_stack": [
+        "Pega PRPC 8.1-8.8",
+        "PowerApps",
+        "Power Automate",
+        "Oracle"
+      ],
+      "domains": [
+        "Business Process Services",
+        "Insurance"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Sreenivasulu Ramisetty",
+          "title": "Pega Lead System Architect",
+          "certs": "CLSA",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sreenivasulu%20Ramisetty%20Conduent%20Pega"
+        },
+        {
+          "name": "Sridhar Taniparti",
+          "title": "Pega Architect",
+          "certs": "",
+          "location": "",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sridhar%20Taniparti%20Conduent%20Pega"
+        },
+        {
+          "name": "Gowsalya R",
+          "title": "App Developer & Support Engineer II - CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "linkedin": "https://www.linkedin.com/in/gowsalya-r-8822a520b",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        }
+      ],
+      "highlights": [
+        "Version migration (8.1 to 8.8)",
+        "Mixed Pega & PowerApps strategy"
+      ],
+      "_health_score": 63,
+      "_health_grade": "B",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "DHL",
+      "sector": "Logistics",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "3+",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Pega Decisioning, CDH, Production support.",
+      "tech_stack": [
+        "Pega PRPC",
+        "Pega CDH",
+        "Decisioning",
+        "Dynatrace",
+        "Kibana"
+      ],
+      "domains": [
+        "Logistics",
+        "Supply Chain"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CPDC"
+      ],
+      "team_members": [
+        {
+          "name": "Siva Jyothi Pamireddy",
+          "title": "Senior Software Developer - CLSA, CSSA, CSA",
+          "certs": "CLSA, CSSA, CSA",
+          "location": "Tamil Nadu",
+          "linkedin": "https://www.linkedin.com/in/siva-jyothi-pamireddy-4b454b14b",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Sameer Mohammad",
+          "title": "Senior Software Consultant",
+          "certs": "CSSA, CPDC",
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sameer%20Mohammad%20DHL%20Pega"
+        },
+        {
+          "name": "Yogitha K.",
+          "title": "DevOps Engineer - CSSA, CSA certified Pega developer",
+          "certs": "CSSA, CSA",
+          "linkedin": "https://www.linkedin.com/in/yogitha-k-3536ba105",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "CDH/Decisioning in logistics",
+        "Small but specialized team"
+      ],
+      "_health_score": 68,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Dell Technologies",
+      "sector": "Technology",
+      "locations": [
+        "Hyderabad",
+        "Bengaluru"
+      ],
+      "team_size": "2+",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "NGMT (Next Generation Management Tool), BPM workflows.",
+      "tech_stack": [
+        "Pega PRPC",
+        "Power BI",
+        "SQL Server"
+      ],
+      "domains": [
+        "IT Hardware",
+        "Enterprise IT"
+      ],
+      "certifications_required": [
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Prasadreddy Ponugoti",
+          "title": "Senior Software Engineer",
+          "certs": "CSA",
+          "location": "Bengaluru",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Prasadreddy%20Ponugoti%20Dell%20Technologies%20Pega"
+        },
+        {
+          "name": "Dhulappa Rajole",
+          "title": "CDH Core Developer / Pega Developer",
+          "certs": "CSA, CSSA, CPDC, Pega UI",
+          "linkedin": "https://www.linkedin.com/in/dhulappa-rajole-08780226",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Jvr Ramakrishna",
+          "title": "Pega Developer - 4yr+",
+          "certs": "Pega Developer",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/jvr-ramakrishna-060795209",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Long-tenured member (9+ years)",
+        "Enterprise management tool"
+      ],
+      "_health_score": 55,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Kotak Mahindra Bank",
+      "sector": "Banking",
+      "locations": [
+        "Mumbai",
+        "Hyderabad"
+      ],
+      "team_size": "2-4",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "Integration of Pega with core banking systems, CRM, payment gateways. CLM & KYC processes.",
+      "tech_stack": [
+        "Pega PRPC",
+        "REST/SOAP",
+        "Core Banking integration",
+        "CRM",
+        "Payment Gateways"
+      ],
+      "domains": [
+        "Banking",
+        "KYC/CLM"
+      ],
+      "certifications_required": [
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Tanmay Sonar",
+          "title": "Pega Developer - CSSA",
+          "certs": "CSSA, CSA",
+          "location": "Mumbai",
+          "linkedin": "https://www.linkedin.com/in/tanmay-sonar-141817334",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Preetam Ahuja",
+          "title": "Associate Vice President (ex-Pegasystems)",
+          "certs": "",
+          "location": "Hyderabad",
+          "_role_level": 9,
+          "_role_label": "Departed",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Preetam%20Ahuja%20Kotak%20Mahindra%20Bank%20Pega"
+        }
+      ],
+      "highlights": [
+        "Ex-Pegasystems AVP hire suggests strategic investment",
+        "Growing Pega footprint"
+      ],
+      "_health_score": 39,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "ICICI Bank",
+      "sector": "Banking",
+      "locations": [
+        "Visakhapatnam",
+        "Noida",
+        "Hyderabad"
+      ],
+      "team_size": "3+",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Banking operations automation, Customer service BPM, RPA.",
+      "tech_stack": [
+        "Pega PRPC 8.2",
+        "SOAP/REST",
+        "UiPath",
+        "BluePrism"
+      ],
+      "domains": [
+        "Banking",
+        "Process Automation"
+      ],
+      "certifications_required": [
+        "CSA"
+      ],
+      "team_members": [
+        {
+          "name": "Haseena Begum",
+          "title": "Software Associate / Pega Developer",
+          "certs": "CSA",
+          "location": "Noida",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Haseena%20Begum%20ICICI%20Bank%20Pega"
+        },
+        {
+          "name": "T Jairaj",
+          "title": "Associate Software / Pega Developer",
+          "certs": "",
+          "location": "Visakhapatnam",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=T%20Jairaj%20ICICI%20Bank%20Pega"
+        }
+      ],
+      "highlights": [
+        "Long-tenured (10-12+ years)",
+        "Mixed RPA strategy (UiPath, BluePrism, Pega)"
+      ],
+      "_health_score": 50,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Synchrony Financial",
+      "sector": "Financial Services",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "1-3",
+      "maturity": "Low-Medium",
+      "hiring_status": "Declining",
+      "projects": "Credit card servicing, financing, marketplace banking. Possibly transitioning away from Pega.",
+      "tech_stack": [
+        "Pega PRPC",
+        "IBM Case Manager",
+        "Java"
+      ],
+      "domains": [
+        "Consumer Finance",
+        "Credit Cards"
+      ],
+      "certifications_required": [
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Krishna Das",
+          "title": "Pega Developer",
+          "certs": "Pega Developer",
+          "location": "Mumbai",
+          "linkedin": "https://www.linkedin.com/in/krishna-das-83161927a"
+        }
+      ],
+      "highlights": [
+        "Ex-Pegasystems Solutions Architect joined",
+        "May be transitioning platforms"
+      ],
+      "_health_score": 30,
+      "_health_grade": "D",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Bosch",
+      "sector": "Industrial",
+      "locations": [
+        "Bengaluru",
+        "Coimbatore"
+      ],
+      "team_size": "2-4",
+      "maturity": "Low-Medium",
+      "hiring_status": "Growing",
+      "projects": "Pega Smart Investigate & UI, Medical/insurance web portal development.",
+      "tech_stack": [
+        "Pega Smart Investigate",
+        "Pega UI",
+        "Pega Cloud",
+        "APIs"
+      ],
+      "domains": [
+        "Industrial",
+        "Automotive",
+        "Manufacturing"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Charan Sai Damineni",
+          "title": "Software Engineer - CSA v8.7",
+          "certs": "CSA v8.7",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/charan-sai-damineni-713122340",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Kartik Rao Patange",
+          "title": "Associate SE - CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/pkartikrao",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Active hiring for Pega Smart Investigate (Jul 2026)",
+        "New Pega initiative"
+      ],
+      "_health_score": 54,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "The Hartford India",
+      "sector": "Insurance",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "5-10",
+      "maturity": "Low-Medium",
+      "hiring_status": "Rapidly Growing",
+      "projects": "Brand new India GCC (2026). Insurance claims workflows, Constellation UI development, case management, REST/SOAP integrations, bulk data processing, GenAI POCs. Building Pega team from scratch for P&C insurance, employee benefits, and personal lines.",
+      "tech_stack": [
+        "Pega Infinity 8.x",
+        "Constellation UI",
+        "DX API",
+        "REST/SOAP",
+        "Queue Processors",
+        "Job Schedulers",
+        "Pega GenAI",
+        "PDC",
+        "Deployment Manager",
+        "Guidewire",
+        "DuckCreek"
+      ],
+      "domains": [
+        "P&C Insurance",
+        "Employee Benefits",
+        "Personal Lines",
+        "Claims Management",
+        "Digital Transformation"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Krishna Mohan",
+          "title": "Lead Software Engineer",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Krishna%20Mohan%20The%20Hartford%20Pega"
+        },
+        {
+          "name": "Srinandhu Challa",
+          "title": "Lead Software Engineer",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Srinandhu%20Challa%20The%20Hartford%20Pega"
+        },
+        {
+          "name": "Sharmila Gurram",
+          "title": "Senior Software Engineer",
+          "certifications": [
+            "CSSA",
+            "CSA",
+            "Customer Service Developer"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sharmila%20Gurram%20The%20Hartford%20Pega"
+        }
+      ],
+      "highlights": [
+        "Brand new GCC opened 2026 in Hyderabad",
+        "Actively hiring Pega developers at multiple levels",
+        "69 employees and growing 40% monthly",
+        "Using Constellation UI and GenAI from day one",
+        "TA email: taindia@thehartford.com",
+        "Insurance domain with 200+ year company history"
+      ],
+      "_health_score": 68,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "Rabobank",
+      "sector": "Banking",
+      "locations": [],
+      "team_size": "15-20",
+      "maturity": "Very High",
+      "hiring_status": "Stable",
+      "projects": "Major Pega estate in Netherlands — KYC/CLM, lending, mortgage workflows, Pega SaaS migration, Constellation & GenAI POCs. Annual 'Proud of Pega Day' event. Multiple Pega Chapter Leads and CLSAs. No India GCC for Pega — team is entirely in Utrecht, Netherlands.",
+      "tech_stack": [
+        "Pega SaaS",
+        "Pega Constellation",
+        "Pega GenAI",
+        "Azure DevOps",
+        "Azure Key Vault",
+        "API Gateway",
+        "CI/CD Pipelines"
+      ],
+      "domains": [
+        "Banking",
+        "Agriculture Finance",
+        "Mortgage",
+        "KYC/CLM"
+      ],
+      "certifications_required": [
+        "CLSA",
+        "CSSA",
+        "CPDC"
+      ],
+      "team_members": [
+        {
+          "name": "Krishnaprakash Chandrasekaran",
+          "title": "Senior Solutions Architect & Pega Chapter Lead",
+          "certifications": [
+            "CLSA",
+            "CSSA",
+            "CPDC"
+          ],
+          "location": "Utrecht, Netherlands",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/in/krishnaprakash89"
+        },
+        {
+          "name": "Varun Kumar",
+          "title": "Senior Solutions Architect & Chapter Lead - Pega",
+          "certifications": [
+            "CLSA",
+            "CSSA"
+          ],
+          "location": "Utrecht, Netherlands",
+          "_role_level": 2,
+          "_role_label": "Architect",
+          "linkedin": "https://www.linkedin.com/in/varun-kumar-775b2929"
+        },
+        {
+          "name": "ADL Kumar",
+          "title": "Pega Lead Developer",
+          "certifications": [
+            "CLSA",
+            "CSSA"
+          ],
+          "location": "Utrecht, Netherlands",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/in/adl-kumar-03a56a178"
+        },
+        {
+          "name": "Siddhartha Das",
+          "title": "Lead Pega Developer",
+          "certifications": [
+            "CLSA"
+          ],
+          "location": "Utrecht, Netherlands",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/in/siddhartha-das-3a082233"
+        },
+        {
+          "name": "Anchal Garg",
+          "title": "Senior Pega Developer",
+          "certifications": [
+            "CSSA",
+            "CPDC"
+          ],
+          "location": "Utrecht, Netherlands",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/in/anchal-garg-90583112b"
+        }
+      ],
+      "highlights": [
+        "Global-only — no India GCC for Pega",
+        "Pega team entirely in Utrecht, Netherlands",
+        "Annual 'Proud of Pega Day' event",
+        "Heavy Pega investment with Chapter Lead structure",
+        "Exploring Constellation and GenAI"
+      ],
+      "_health_score": 80,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Commonwealth Bank",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "10-15",
+      "maturity": "Very High",
+      "hiring_status": "Stable",
+      "projects": "Payments, home loans, AML, CDH with 200+ ML models. Real-time NBA decisioning across retail banking.",
+      "tech_stack": [
+        "Pega CDH",
+        "Pega Infinity",
+        "Adaptive Models",
+        "REST APIs",
+        "Java"
+      ],
+      "domains": [
+        "Payments",
+        "Home Loans",
+        "AML",
+        "CDH/NBA"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Akhil Chakka",
+          "title": "PEGA Senior Developer - CSA, CSSA",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/chakkavijayakhil",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Deep Shikha",
+          "title": "Senior Software Engineer - CSA, CSSA, PCDC",
+          "certs": "CSSA, CSA, PCDC",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/deep-shikha-86b6061b2",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Kavya T V",
+          "title": "Senior Engineer - 5yr+ Pega veteran",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/kavya-t-v-9390a39a",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Tanuja Pedapudi",
+          "title": "Associate Software Engineer (PEGA) - CSSA",
+          "certs": "CSSA, CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/tanujapedapudi",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Avinash Mathur",
+          "title": "Software Engineer - CSSA, ex-CGI, ex-Accenture",
+          "certs": "CSSA, CSA, AWS SA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/avinash-mathur-804b5716b",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Rajesh Kumar M",
+          "title": "Software Engineer - CSSA, ex-TCS",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/rajesh-kumar-m-b35a4580",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Ravi Shankar Bukkitla",
+          "title": "Software Engineer - CSSA, ex-Infosys",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/ravi-shankar-bukkitla-359481209",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "200+ ML models in production",
+        "Real-time NBA decisioning",
+        "Major Australia bank GCC in Bengaluru"
+      ],
+      "_health_score": 45,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "NAB (National Australia Bank)",
+      "sector": "Banking",
+      "locations": [
+        "Gurugram"
+      ],
+      "team_size": "8-12",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Smart Dispute, Customer Brain CDH, payments, chargeback workflows. 2000+ adaptive models.",
+      "tech_stack": [
+        "Pega CDH",
+        "Pega Smart Dispute",
+        "Constellation",
+        "REST APIs"
+      ],
+      "domains": [
+        "Disputes",
+        "Payments",
+        "CDH/NBA",
+        "Chargeback"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CPDC"
+      ],
+      "team_members": [
+        {
+          "name": "Somil Shukla",
+          "title": "AVP & Pega Dev Lead",
+          "certifications": [
+            "LSA-1",
+            "CSSA",
+            "CPDC"
+          ],
+          "location": "Gurugram",
+          "_role_level": 1,
+          "_role_label": "Management",
+          "linkedin": "https://www.linkedin.com/in/somil-shukla-428246157"
+        },
+        {
+          "name": "Avinish Kumar",
+          "title": "Senior Analyst",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/in/avinish-kumar-48799862"
+        },
+        {
+          "name": "Harshavardhan Reddy",
+          "title": "Senior Software Engineer",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/in/harshavardhan-reddy-877a19259"
+        },
+        {
+          "name": "Sudhanshu Kumar",
+          "title": "Senior Analyst",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/in/sudhanshu-kumar-a21131169"
+        }
+      ],
+      "highlights": [
+        "Active hiring in Gurugram (2025-2026)",
+        "2000+ adaptive models",
+        "Smart Dispute platform",
+        "CDH Customer Brain"
+      ],
+      "_health_score": 75,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "UBS India",
+      "sector": "Banking",
+      "locations": [
+        "Pune"
+      ],
+      "team_size": "5-8",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Internal Pega engineering for wealth management and banking workflows. Merged Credit Suisse Pega estate.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs",
+        "Enterprise Architecture"
+      ],
+      "domains": [
+        "Wealth Management",
+        "Banking",
+        "KYC/Onboarding"
+      ],
+      "certifications_required": [
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Ankit Dangaich",
+          "title": "Director - CLSA, Pega Architect/Admin",
+          "certs": "CLSA v7",
+          "linkedin": "https://www.linkedin.com/in/ankit-dangaich-483a8713a",
+          "_role_level": 1,
+          "_role_label": "Management"
+        },
+        {
+          "name": "Anuj Malviya",
+          "title": "Associate Director / PEGA Senior System Architect",
+          "certs": "CSSA v8, CSA v7.2",
+          "linkedin": "https://www.linkedin.com/in/anuj-malviya-47a51176",
+          "_role_level": 1,
+          "_role_label": "Management"
+        },
+        {
+          "name": "Saptarshi Chakraborty",
+          "title": "Director / Pega Architect - 12yr CSSA",
+          "certs": "CSSA v5.5, CSA",
+          "linkedin": "https://www.linkedin.com/in/saptarshi-chakraborty-66483221",
+          "_role_level": 1,
+          "_role_label": "Management"
+        },
+        {
+          "name": "Ranganathan Krishnamoorthy",
+          "title": "Authorized Officer / Pega Technical Architect",
+          "certs": "CSSA v8.5, CSA, Azure AZ-900",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/ranganathan-krishnamoorthy-403aaa75",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Prakruti K S",
+          "title": "Tech Engineer / Pega Developer - CSSA",
+          "certs": "CSSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/prakruti-k-s-63333a15b",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Vaishnav Ghadage",
+          "title": "Software Engineer / Pega Developer",
+          "certs": "CSA",
+          "location": "Pune",
+          "linkedin": "https://www.linkedin.com/in/vaishnav-ghadage",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Credit Suisse Pega estate merged into UBS",
+        "Pune GCC"
+      ],
+      "_health_score": 76,
+      "_health_grade": "A",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "MetLife India GCC",
+      "sector": "Insurance",
+      "locations": [
+        "Noida",
+        "Hyderabad"
+      ],
+      "team_size": "8-12",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Intelligent automation, platform engineering for life insurance and employee benefits. Pega Constellation adoption.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Constellation",
+        "REST APIs",
+        "Data Pages"
+      ],
+      "domains": [
+        "Life Insurance",
+        "Employee Benefits",
+        "Claims",
+        "Automation"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Poorvi Jayant",
+          "title": "Pega Developer/Specialist",
+          "certifications": [
+            "CSSA",
+            "CSA",
+            "Constellation"
+          ],
+          "location": "Noida",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Poorvi%20Jayant%20MetLife%20Pega"
+        },
+        {
+          "name": "Suraj Kumar",
+          "title": "Pega Specialist",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/in/suraj-kumar-ba8b4272"
+        },
+        {
+          "name": "Nikhila P",
+          "title": "Jr. Software Platform Engineer",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Nikhila%20P%20MetLife%20Pega"
+        }
+      ],
+      "highlights": [
+        "Direct GCC hiring in Noida and Hyderabad",
+        "Growing Pega team 2025-2026",
+        "Constellation adoption"
+      ],
+      "_health_score": 67,
+      "_health_grade": "B+",
+      "_health_label": "Strong"
+    },
+    {
+      "name": "AXA India",
+      "sector": "Insurance",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "P&C insurance engineering, claims and CRM workflows.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "P&C Insurance",
+        "Claims",
+        "CRM"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Lekha A",
+          "title": "Pega Developer",
+          "certs": "Pega Developer",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/lekha-a-7aa726212"
+        }
+      ],
+      "highlights": [
+        "Direct employee evidence in Bengaluru",
+        "Global insurance leader"
+      ],
+      "_health_score": 40,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Roche India",
+      "sector": "Pharma",
+      "locations": [
+        "Pune"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "DPA/Pega workflow orchestration for clinical trials, patient journeys. Agentic automation POCs.",
+      "tech_stack": [
+        "Pega DPA",
+        "REST/SOAP",
+        "Orchestration"
+      ],
+      "domains": [
+        "Clinical Trials",
+        "Patient Journeys",
+        "CDH",
+        "Pharma Compliance"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [],
+      "highlights": [
+        "Official direct DPA roles posted",
+        "Agentic automation initiative",
+        "Pune GCC"
+      ],
+      "_health_score": 24,
+      "_health_grade": "D",
+      "_health_label": "Critical"
+    },
+    {
+      "name": "GE HealthCare India",
+      "sector": "Healthcare",
+      "locations": [
+        "Bengaluru",
+        "Hyderabad"
+      ],
+      "team_size": "5-8",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Order fulfilment, regulated Pega Cloud estate, exception handling and process intelligence.",
+      "tech_stack": [
+        "Pega Cloud",
+        "Process Intelligence",
+        "REST APIs"
+      ],
+      "domains": [
+        "Medical Devices",
+        "Order Fulfilment",
+        "Process Intelligence"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Nagendra Babu Vasa",
+          "title": "Pega Developer",
+          "certs": "Pega Developer",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/nagendra-babu-vasa-19058423a"
+        }
+      ],
+      "highlights": [
+        "Regulated cloud estate",
+        "Process intelligence initiative"
+      ],
+      "_health_score": 43,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Pfizer India",
+      "sector": "Pharma",
+      "locations": [
+        "Mumbai",
+        "Chennai"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Clinical trials workflows, drug safety (COMPASS), Pega automation for pharma operations.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs",
+        "COMPASS"
+      ],
+      "domains": [
+        "Clinical Trials",
+        "Drug Safety",
+        "Pharma Operations"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Arman Khan",
+          "title": "Pega Developer - CSA, CSSA",
+          "certs": "CSSA, CSA",
+          "location": "Mumbai",
+          "linkedin": "https://www.linkedin.com/in/arman-khan-sh310819"
+        }
+      ],
+      "highlights": [
+        "Direct + vendor mix",
+        "Agentic AI exploration"
+      ],
+      "_health_score": 30,
+      "_health_grade": "D",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Novartis India",
+      "sector": "Pharma",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "2-4",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Clinical Pega applications, low-code/no-code initiatives.",
+      "tech_stack": [
+        "Pega Infinity",
+        "LCNC"
+      ],
+      "domains": [
+        "Clinical",
+        "Pharma",
+        "AI/LCNC"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Vijay Krishna",
+          "title": "Sr Pega Developer (via vendor)",
+          "certs": "CSSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/vijaykrishna-talasila"
+        }
+      ],
+      "highlights": [
+        "Pega work likely through vendor/contractor model (EPAM, Capgemini).",
+        "Strong direct evidence",
+        "AI/LCNC initiative"
+      ],
+      "_health_score": 30,
+      "_health_grade": "D",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "John Deere India (JDTCI)",
+      "sector": "Manufacturing",
+      "locations": [
+        "Pune",
+        "Bengaluru"
+      ],
+      "team_size": "10-15",
+      "maturity": "Very High",
+      "hiring_status": "Stable",
+      "projects": "Deere Finance collections (CCMS), dealer CRM, Pega Customer Service for FS. AWS integration, telematics.",
+      "tech_stack": [
+        "Pega Customer Service",
+        "Pega Infinity",
+        "AWS",
+        "REST APIs",
+        "SAP Integration"
+      ],
+      "domains": [
+        "Finance Collections",
+        "Dealer CRM",
+        "Warranty",
+        "CDH"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [],
+      "highlights": [
+        "Highest-priority industrial target",
+        "Large direct team",
+        "AWS + telematics integration"
+      ],
+      "_health_score": 25,
+      "_health_grade": "D",
+      "_health_label": "Critical"
+    },
+    {
+      "name": "First Citizens India",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "Lending digital automation, Pega Robot Manager, KYC workflows.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Pega Robot Manager",
+        "REST APIs"
+      ],
+      "domains": [
+        "Lending",
+        "KYC",
+        "RPA/Workflow"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Nimalan Peter",
+          "title": "Lead SE / Certified Pega Robotics System Architect",
+          "certs": "Pega Robotics SA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/nimalan-peter-5425205b",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Deepak Shahi",
+          "title": "Principal Engineer - Pega CLSA, ex-Pegasystems",
+          "certs": "CLSA, CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/deepak-shahi-337470a3",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Harika Ch",
+          "title": "Developer 3 - CSSA, CPDC, ex-Pegasystems",
+          "certs": "CSSA v7.2, CSA v7.2, CPDC v8.7",
+          "location": "India",
+          "linkedin": "https://www.linkedin.com/in/harika-ch-b3431625a",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Prathyusha Davanpalli",
+          "title": "Senior SE - Pega PRPC/BPM, ex-Cigna",
+          "certs": "Pega PRPC",
+          "location": "India",
+          "linkedin": "https://www.linkedin.com/in/prathyusha-davanpalli-90a285144",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Tushar Banerjee",
+          "title": "Lead SE / Pega UX/UI Lead, ex-Pegasystems",
+          "certs": "Pega UI",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/tushar-banerjee-139366166",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "Lending automation focus",
+        "RPA expansion"
+      ],
+      "_health_score": 24,
+      "_health_grade": "D",
+      "_health_label": "Critical"
+    },
+    {
+      "name": "Booking Holdings India",
+      "sector": "Travel/Technology",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Customer Service automation and booking journey workflows on Pega platform.",
+      "tech_stack": [
+        "Pega Customer Service",
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "Travel",
+        "Customer Service",
+        "Booking Automation"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Navya Chatrati",
+          "title": "Pega Senior System Architect - Constellation",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/navya-chatrati-6a9b3a82",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Pavithra Namboodiri",
+          "title": "Pega System Architect - CSA, CSSA",
+          "certs": "CSA v8.6, CSSA v8.7",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/pavithra-namboodiri-a96b0186",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Yamini G N",
+          "title": "Pega System Architect - CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/yamini-g-n-9702a31b0",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Shreya Chaudhury",
+          "title": "Pega Developer - Customer Service Constellation",
+          "certs": "Pega Developer",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/shreya-chaudhury-6582051a5",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Satish Varma Penmetsa",
+          "title": "Pega System Architect - ex-TCS",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/penmetsasatish",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Siva Kasi Reddy Bathina",
+          "title": "Pega Developer - ex-TCS",
+          "certs": "Pega PRPC",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/siva-kasi-reddy-bathina-244849185",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "Top product referral target",
+        "Global service automation"
+      ],
+      "_health_score": 51,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Cisco India",
+      "sector": "Technology",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "8-12",
+      "maturity": "Very High",
+      "hiring_status": "Stable",
+      "projects": "30+ Pega apps across finance, logistics, and operations. Kafka + OpenShift platform modernization.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Kafka",
+        "OpenShift",
+        "CI/CD",
+        "REST APIs"
+      ],
+      "domains": [
+        "Finance",
+        "Logistics",
+        "Platform Modernization",
+        "Observability"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [],
+      "highlights": [
+        "30+ Pega applications",
+        "Kafka + OpenShift integration",
+        "Exceptional Pega estate"
+      ],
+      "_health_score": 25,
+      "_health_grade": "D",
+      "_health_label": "Critical"
+    },
+    {
+      "name": "Nokia India",
+      "sector": "Telecom",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Order orchestration, logistics, cash collections, hardware services. Constellation adoption.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Constellation",
+        "CDH",
+        "REST APIs"
+      ],
+      "domains": [
+        "Order Management",
+        "Logistics",
+        "Cash Collections",
+        "Hardware Services"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Pandav Chakma",
+          "title": "Pega Developer",
+          "certs": "Pega Developer",
+          "linkedin": "https://www.linkedin.com/in/pandav-chakma-039b91370",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Somesh Rayapati",
+          "title": "Pega Developer - CSSA, CSA",
+          "certs": "CSSA, CSA",
+          "linkedin": "https://www.linkedin.com/in/somesh-rayapati-89331b1b9",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Constellation adoption",
+        "Strong direct cluster"
+      ],
+      "_health_score": 53,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Orange Business India",
+      "sector": "Telecom",
+      "locations": [
+        "Bengaluru",
+        "Gurugram"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "SALTO/Optima telecom order implementation and provisioning. Blueprint and process mining.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Blueprint",
+        "Process Mining",
+        "REST APIs"
+      ],
+      "domains": [
+        "Telecom Order Management",
+        "Provisioning",
+        "Process Mining"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Rachit Varshney",
+          "title": "IT Business Analyst - CSA, CPBA, SAFe 6",
+          "certs": "CSA, CPBA",
+          "location": "Gurugram",
+          "linkedin": "https://www.linkedin.com/in/rachitvarshney",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Shivani Baranwal",
+          "title": "Pega Developer - CSSA",
+          "certs": "CSSA",
+          "location": "Gurugram",
+          "linkedin": "https://www.linkedin.com/in/shivani-baranwal",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Suyash Gupta",
+          "title": "Software Engineer / Junior Pega Developer",
+          "certs": "Pega Developer",
+          "location": "Gurugram",
+          "linkedin": "https://www.linkedin.com/in/suyash15gupta",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Internal estate confirmed",
+        "Blueprint/process mining"
+      ],
+      "_health_score": 58,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Maersk GSC India",
+      "sector": "Logistics",
+      "locations": [
+        "Bengaluru",
+        "Mumbai"
+      ],
+      "team_size": "5-8",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Container insurance, global logistics workflows, claims and workflow automation.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs",
+        "Claims Management"
+      ],
+      "domains": [
+        "Container Insurance",
+        "Logistics",
+        "Claims",
+        "Workflow Automation"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Abhilasha Das",
+          "title": "Software Engineer - Pega SA v6.2",
+          "certs": "Pega SA v6.2",
+          "linkedin": "https://www.linkedin.com/in/abhilasha-das-95bbb5145"
+        }
+      ],
+      "highlights": [
+        "Strong direct evidence",
+        "Claims AI initiative"
+      ],
+      "_health_score": 43,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Shell India",
+      "sector": "Energy",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Direct Pega COE with global workflows, automation and robotics platform ownership.",
+      "tech_stack": [
+        "Pega Infinity",
+        "RPA",
+        "REST APIs"
+      ],
+      "domains": [
+        "Energy",
+        "Automation",
+        "Robotics",
+        "Platform Ownership"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Bhavya Satija",
+          "title": "Associate Software Engineer - CSA",
+          "certs": "CSA",
+          "linkedin": "https://www.linkedin.com/in/bhavyasatija06",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Deepak Ojha",
+          "title": "Software Engineer - Pega CSSA, CPDC, CRSA",
+          "certs": "CSSA, CPDC, CSA, CRSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/ojha-deepak",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Bhawna Garg",
+          "title": "Pega Consultant / Senior System Architect - ex-Pegasystems",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/bhawna-garg-79b69213a",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Chinmai Sravanthi Udayagiri",
+          "title": "Software Engineer - Pega, ex-Pegasystems",
+          "certs": "Pega",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/chinmai-sravanthi-udayagiri-969342b3",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Kanti Dwivedi",
+          "title": "Senior SE / COE Platform Lead - ex-Pegasystems",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/kanti-dwivedi-353746144",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "Direct Pega COE",
+        "Referral-led hiring"
+      ],
+      "_health_score": 33,
+      "_health_grade": "D",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Nike India",
+      "sector": "Retail",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "I-Converse order consolidation, SAP integration, BPM/CRM/case management. Constellation UI.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Constellation",
+        "SAP Integration",
+        "Queue Processor",
+        "Deployment Manager"
+      ],
+      "domains": [
+        "Order Management",
+        "CRM",
+        "Case Management",
+        "Retail"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Balasubramani Veerapandian",
+          "title": "Sr. Software Engineer - PEGA CSSA v25",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/balasubramani-veerapandian-0851a1137"
+        }
+      ],
+      "highlights": [
+        "Confirmed via contractor + direct hiring signals",
+        "SAP integration",
+        "I-Converse consolidation"
+      ],
+      "_health_score": 33,
+      "_health_grade": "D",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Unilever India (Digital Hub)",
+      "sector": "FMCG",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Master data management, hyperautomation COE with 10+ Pega apps. Supply chain and operations.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Hyperautomation",
+        "REST APIs",
+        "Data Management"
+      ],
+      "domains": [
+        "Supply Chain",
+        "Master Data",
+        "FMCG Automation",
+        "COE"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CLSA"
+      ],
+      "team_members": [],
+      "highlights": [
+        "Pega work done entirely through Capgemini, Cognizant, Areteans/Credera contractors. No direct Pega hires.",
+        "10+ Pega apps",
+        "COE lead",
+        "Agentic frameworks exploration"
+      ],
+      "_health_score": 13,
+      "_health_grade": "D",
+      "_health_label": "Critical"
+    },
+    {
+      "name": "Mercedes-Benz R&D India (MBRDI)",
+      "sector": "Automotive",
+      "locations": [
+        "Bengaluru",
+        "Pune"
+      ],
+      "team_size": "15-25",
+      "maturity": "Very High",
+      "hiring_status": "Actively Growing",
+      "projects": "Enterprise Pega platform for Mercedes-Benz Financial Services (MBFS) — Dealer Warranty Management, Vehicle Service Contracts, Collections & Recovery (Kafka-based real-time), Customer Service CRM, Retail Finance Origination, Fleet Management workflows. Multi-market deployment across APAC, EU, LATAM. Pega Smart Investigate for payment investigations. Constellation UI migration underway. CDH/NBA for customer engagement and cross-sell. Integration hub with SAP, Salesforce, DMS systems via Kafka & REST APIs.",
+      "tech_stack": [
+        "Pega Infinity 23.x/24.x",
+        "Pega Constellation",
+        "Pega CDH/NBA",
+        "Pega Smart Investigate",
+        "Apache Kafka",
+        "REST/SOAP APIs",
+        "Pega Deployment Manager",
+        "Java/Spring Boot",
+        "Oracle/PostgreSQL",
+        "SAP Integration",
+        "Salesforce Integration",
+        "Azure Cloud",
+        "CI/CD (Jenkins/GitLab)",
+        "Splunk/Dynatrace",
+        "Agile/SAFe"
+      ],
+      "domains": [
+        "Automotive Finance",
+        "Dealer Warranty Management",
+        "Collections & Recovery",
+        "Customer Service CRM",
+        "Vehicle Service Contracts",
+        "Retail Finance Origination",
+        "Fleet Management",
+        "Payment Investigations"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CSA",
+        "CPDC",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "Aneesha Neeruganti",
+          "title": "Senior Pega Developer",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Hyderabad",
+          "tenure": "9+ years in Pega, 4+ years at MBRDI",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Aneesha%20Neeruganti%20Mercedes-Benz%20R%26D%20Pega"
+        }
+      ],
+      "highlights": [
+        "Largest automotive Pega team in India (15-25 devs across Pega platform)",
+        "MBRDI is Mercedes-Benz's largest R&D center outside Germany (7000+ employees)",
+        "Multi-market Pega deployment serving APAC, EU, and LATAM regions",
+        "Real-time Kafka integration processing millions of records across 50+ topics",
+        "Constellation UI migration actively underway for modernization",
+        "Pega CDH/NBA for customer engagement and cross-sell decisioning",
+        "Smart Investigate for payment and transaction investigations",
+        "Active hiring for CSSA/CLSA level Pega developers in Bengaluru",
+        "SAFe Agile at scale with dedicated Pega platform team",
+        "$250K+ annual savings achieved through Pega automation",
+        "Integration with SAP, Salesforce, dealer management systems via Kafka & REST"
+      ],
+      "_health_score": 43,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Daimler Truck India",
+      "sector": "Automotive",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "2-4",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Financial-services Pega architecture for truck leasing and warranty.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "Automotive Finance",
+        "Truck Leasing",
+        "Warranty"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Nidhi Sinha",
+          "title": "Solutions Architect - CSA, CSSA, ex-TCS",
+          "certs": "CSA, CSSA",
+          "linkedin": "https://www.linkedin.com/in/nidhi-sinha-a06b6ba4",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Sapana Mishra",
+          "title": "Principal Consultant - Pega CSSA, ex-Accenture",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/sapana-mishra-a39a85117",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        },
+        {
+          "name": "Subramanya S",
+          "title": "Senior Consultant - CSA, ex-Instellars",
+          "certs": "CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/subramanya2388",
+          "_role_level": 9,
+          "_role_label": "Departed"
+        }
+      ],
+      "highlights": [
+        "Confirmed direct",
+        "Workflow AI for financial services"
+      ],
+      "_health_score": 10,
+      "_health_grade": "D",
+      "_health_label": "Critical"
+    },
+    {
+      "name": "Renault-Nissan Tech India",
+      "sector": "Automotive",
+      "locations": [
+        "Chennai"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Direct Pega application development for automotive operations.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "Automotive",
+        "Operations",
+        "BPM"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Bharathi Priya S",
+          "title": "Software Developer / Pega CSSA",
+          "certs": "CSSA",
+          "location": "Chennai",
+          "linkedin": "https://www.linkedin.com/in/bharathi-priya-s-a36a15202",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        },
+        {
+          "name": "Megala Kumaravel",
+          "title": "Engineer - Pega CSSA v8.8",
+          "certs": "CSSA v8.8",
+          "location": "Chennai",
+          "linkedin": "https://www.linkedin.com/in/megala-kumaravel-21a281214",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Confirmed captive center",
+        "Chennai base"
+      ],
+      "_health_score": 50,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Cummins India",
+      "sector": "Manufacturing",
+      "locations": [
+        "Pune"
+      ],
+      "team_size": "2-4",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Direct Pega engineering for engine/power operations, aftermarket services.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "Engine/Power",
+        "Aftermarket",
+        "Warranty"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Deepakkumar Kumar",
+          "title": "Pega Developer",
+          "certs": "Pega Developer",
+          "linkedin": "https://www.linkedin.com/in/deepakkumar-kumar-371820184"
+        }
+      ],
+      "highlights": [
+        "Strong domain fit",
+        "Pune GCC"
+      ],
+      "_health_score": 40,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "IFFCO Tokio General Insurance",
+      "sector": "Insurance",
+      "locations": [
+        "Gurugram"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Motor claims, health policy integration, underwriting automation. PEGA + P400 + Oracle ecosystem.",
+      "tech_stack": [
+        "Pega Infinity",
+        "P400",
+        "Oracle",
+        "CRM",
+        "Angular Portal"
+      ],
+      "domains": [
+        "Motor Insurance",
+        "Health Insurance",
+        "Underwriting",
+        "Claims"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Devender",
+          "title": "Pega Lead & Senior Manager",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Gurugram",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Devender%20IFFCO%20Tokio%20General%20Insurance%20Pega"
+        },
+        {
+          "name": "Kamlesh Agarwal",
+          "title": "Senior Pega Developer",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Kamlesh%20Agarwal%20IFFCO%20Tokio%20General%20Insurance%20Pega"
+        }
+      ],
+      "highlights": [
+        "Domestic Indian insurer with direct Pega team",
+        "Motor + health + non-motor integration"
+      ],
+      "_health_score": 53,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Global Payments India",
+      "sector": "Fintech",
+      "locations": [
+        "Noida"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "Merchant acquiring, payment processing workflows.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Payment APIs",
+        "REST"
+      ],
+      "domains": [
+        "Merchant Acquiring",
+        "Payments",
+        "Fintech"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Puran Kaushal",
+          "title": "Director Application System Development - 20yr+ exp",
+          "certs": "CSSA v7.2, CSA v7.1, Scrum Master",
+          "location": "Noida",
+          "linkedin": "https://www.linkedin.com/in/puran-kaushal-38ab967",
+          "_role_level": 1,
+          "_role_label": "Management"
+        },
+        {
+          "name": "Shubham Nayak",
+          "title": "Associate Lead SE - Pega CSSA",
+          "certs": "CSA, CSSA v7.1",
+          "location": "Noida",
+          "linkedin": "https://www.linkedin.com/in/shubham-nayak-35b02bb2",
+          "_role_level": 3,
+          "_role_label": "Lead"
+        }
+      ],
+      "highlights": [
+        "Payment AI initiative"
+      ],
+      "_health_score": 50,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Pegasystems India",
+      "sector": "Platform Vendor",
+      "locations": [
+        "Hyderabad",
+        "Bengaluru"
+      ],
+      "team_size": "2000+",
+      "maturity": "Highest",
+      "hiring_status": "Growing",
+      "projects": "Product engineering, Professional Services, EBC, consulting. 50%+ of global product dev in India. 1200+ devs in Hyderabad.",
+      "tech_stack": [
+        "Pega Platform (all)",
+        "GenAI",
+        "Constellation",
+        "Blueprint",
+        "Process AI",
+        "Java",
+        "React",
+        "Postgres"
+      ],
+      "domains": [
+        "Platform Engineering",
+        "Professional Services",
+        "Cloud",
+        "AI/GenAI",
+        "Consulting"
+      ],
+      "certifications_required": [
+        "CLSA",
+        "CSSA",
+        "CPDC"
+      ],
+      "team_members": [
+        {
+          "name": "Vanaja Chittaboina",
+          "title": "Principal Engineer - CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/vanaja-chittaboina-032492147",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Vivek Kumar Sonu",
+          "title": "Senior System Architect - CLSA Architecture 24.2",
+          "certs": "CLSA 24.2, CSSA, CSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/vivek-kumar-sonu-75124a172",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Yesuraju Chokka",
+          "title": "Principal Solutions Engineer - CLSA, Constellation",
+          "certs": "CLSA v23, CSSA v23, CSSA v8.8",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/yesuraju-chokka-0576a115a",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Devarapalli Pradeep Kumar Reddy",
+          "title": "Senior Application Engineer - Smart Disputes, Constellation",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/devarapalli-pradeep-kumar-reddy-039086175",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Pradeep Kumar",
+          "title": "Senior Application Engineer - CSSA, CSA, CPDC",
+          "certs": "CSSA v8.8, CSA v8.7, CPDC",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/pradeepkumar-pega",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Shirisha Reddy Sommannagari",
+          "title": "Senior Cloud Development Engineer - Pega Cloud, GenAI",
+          "certs": "CSSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/shirisha-reddy-sommannagari-408475126",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        }
+      ],
+      "highlights": [
+        "Largest developer hub globally (Hyderabad)",
+        "50-60% global product engineering in India",
+        "Rs 60 crore new Bengaluru EBC (2026)",
+        "UAP scaling to 800-1000 grads/year"
+      ],
+      "_health_score": 90,
+      "_health_grade": "A+",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "Fidelity National Financial India (FNF)",
+      "sector": "Insurance/Title Services",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Title insurance, settlement workflows, Pega BPM for real estate and mortgage industries.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs",
+        "BPM"
+      ],
+      "domains": [
+        "Title Insurance",
+        "Settlement",
+        "Real Estate",
+        "Mortgage"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Sachin Korvi",
+          "title": "PEGA System Architect",
+          "certifications": [
+            "CSA"
+          ],
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sachin%20Korvi%20Fidelity%20National%20Financial%20%20%28FNF%29%20Pega"
+        }
+      ],
+      "highlights": [
+        "ISO 27001:2022 certified GCC",
+        "600-700 employees in India GCC",
+        "9+ year Pega veteran"
+      ],
+      "_health_score": 43,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Proximus India",
+      "sector": "Telecom",
+      "locations": [
+        "Hyderabad"
+      ],
+      "team_size": "2-4",
+      "maturity": "Medium",
+      "hiring_status": "Stable",
+      "projects": "CDH, decisioning, telecom CRM workflows.",
+      "tech_stack": [
+        "Pega CDH",
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "Telecom",
+        "CDH",
+        "CRM",
+        "Decisioning"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Abarna Ravichandran",
+          "title": "Senior Associate Consultant (Infosys) - CSA, CSSA",
+          "certs": "CSA, CSSA",
+          "location": "India",
+          "linkedin": "https://www.linkedin.com/in/abarnaravi01",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Niveditha Bandari",
+          "title": "Solution Engineer - CSA, CSSA, CPDC",
+          "certs": "CSA, CSSA, CPDC",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/niveditha-bandari-67a577114",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Confirmed direct in Hyderabad"
+      ],
+      "_health_score": 50,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Mondelez India",
+      "sector": "FMCG",
+      "locations": [
+        "India"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "MDM, PIM, BOM (Bill of Materials), Co-Packing. SAP integration via REST APIs. Multi-region deployment.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs",
+        "SAP Integration",
+        "Email Listener"
+      ],
+      "domains": [
+        "Product Data Management",
+        "Supply Chain",
+        "FMCG",
+        "BOM"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Modalavalasa Vinay Kumar",
+          "title": "Senior Associate Consultant (Infosys) - Pega SSA",
+          "certs": "CSSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/vinaykumarmodalavalasa",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Archit Kumar",
+          "title": "Technical Product Owner - PEGA (direct Mondelez)",
+          "certs": "CPBA",
+          "location": "India",
+          "linkedin": "https://www.linkedin.com/in/architkumar4p",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Pega development through Infosys, NTT Data, Ascend Avenue contractors. Archit Kumar is direct hire (Product Owner).",
+        "Multiple Pega apps (PIM, BOM, Co-Packing)",
+        "SAP integration",
+        "Multi-region (AMEA, MEU, LA)"
+      ],
+      "_health_score": 43,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "enGen / Highmark India",
+      "sector": "Healthcare",
+      "locations": [
+        "Hyderabad",
+        "Chennai"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Growing",
+      "projects": "Customer Service, CDH, Care Management, Kafka/API integrations. Risk scoring, care gaps, NBA.",
+      "tech_stack": [
+        "Pega Customer Service",
+        "Pega CDH",
+        "Kafka",
+        "REST APIs"
+      ],
+      "domains": [
+        "Healthcare",
+        "Care Management",
+        "CDH/NBA",
+        "Risk Scoring"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CPDC"
+      ],
+      "team_members": [
+        {
+          "name": "Saikumar Boorugupelli",
+          "title": "Senior Pega Developer / Consultant",
+          "certs": "CSSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/saikumar-boorugupelli-513406121",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Sathya Prakash K",
+          "title": "Senior Pega Developer - CSA, CSSA, PCDC",
+          "certs": "CSA, CSSA, PCDC",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/sathyaprakashkella",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        }
+      ],
+      "highlights": [
+        "Top healthcare target",
+        "CDH/NBA for care gaps",
+        "Kafka integration"
+      ],
+      "_health_score": 57,
+      "_health_grade": "B",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Marsh McLennan India (MMGS)",
+      "sector": "Insurance/Professional Services",
+      "locations": [
+        "Mumbai"
+      ],
+      "team_size": "3-5",
+      "maturity": "Medium-High",
+      "hiring_status": "Stable",
+      "projects": "Workflow application development on Pega Platform for global risk and insurance services.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs",
+        "Workflow Automation"
+      ],
+      "domains": [
+        "Risk Management",
+        "Insurance Brokerage",
+        "Workflow Automation"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Dhananjay Dhawale",
+          "title": "Senior Manager - Workflow Application Lead, Pega Platform",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Mumbai",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Dhananjay%20Dhawale%20Marsh%20McLennan%20%20%28MMGS%29%20Pega"
+        }
+      ],
+      "highlights": [
+        "Confirmed direct GCC in Mumbai (MMGS)",
+        "Senior Manager level Pega lead on payroll",
+        "Worlds largest insurance broker"
+      ],
+      "_health_score": 43,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "PepsiCo India",
+      "sector": "FMCG",
+      "locations": [
+        "India"
+      ],
+      "team_size": "2-4",
+      "maturity": "Low-Medium",
+      "hiring_status": "Growing",
+      "projects": "Pega BPM development for FMCG operations and supply chain.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "FMCG",
+        "Supply Chain",
+        "Operations"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Janak Bahadur",
+          "title": "Pega Developer",
+          "certifications": [],
+          "location": "India",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Janak%20Bahadur%20PepsiCo%20Pega"
+        }
+      ],
+      "highlights": [
+        "Direct Pega developer on payroll",
+        "New Pega initiative"
+      ],
+      "_health_score": 44,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Capital One India",
+      "sector": "Banking",
+      "locations": [
+        "Bengaluru",
+        "Pune"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Smart Dispute, chargeback functionality, Pega BPM for credit card and banking operations.",
+      "tech_stack": [
+        "Pega Smart Dispute",
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "Credit Cards",
+        "Smart Dispute",
+        "Chargeback",
+        "Banking"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Rohan Sharma",
+          "title": "Pega Developer",
+          "certifications": [],
+          "location": "Bengaluru",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Rohan%20Sharma%20Capital%20One%20Pega"
+        },
+        {
+          "name": "Steve Rogers",
+          "title": "Pega Developer",
+          "certifications": [],
+          "location": "Pune",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Steve%20Rogers%20Capital%20One%20Pega"
+        }
+      ],
+      "highlights": [
+        "9+ year Pega developer on team",
+        "Smart Dispute platform",
+        "Bengaluru and Pune presence"
+      ],
+      "_health_score": 53,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Mizuho Global Services India (MGS)",
+      "sector": "Banking",
+      "locations": [
+        "Navi Mumbai",
+        "Chennai"
+      ],
+      "team_size": "5-8",
+      "maturity": "Medium-High",
+      "hiring_status": "Actively Hiring",
+      "projects": "Pega BPM for banking and healthcare operations. Captive global processing center for Mizuho Bank (Japanese mega bank). Digital transformation initiative.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Constellation",
+        "GenAI Blueprint",
+        "REST/SOAP",
+        "ServiceNow",
+        "Jira"
+      ],
+      "domains": [
+        "Banking Operations",
+        "Healthcare",
+        "Digital Transformation",
+        "Incident Management"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Sagar Kanchan",
+          "title": "Officer 2 - CSSA",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Navi Mumbai",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sagar%20Kanchan%20Mizuho%20Global%20Services%20%20%28MGS%29%20Pega"
+        }
+      ],
+      "highlights": [
+        "Brand new Pega GCC (est. 2020, Pega team 2025-2026)",
+        "Actively hiring Lead Pega Support + Senior Dev + Junior Support",
+        "Hiring in Mumbai (Ghansoli) AND Chennai (Perungudi)",
+        "TA email: mgs.rec@mizuho-gs.com",
+        "Captive of Mizuho Bank - Japanese mega bank"
+      ],
+      "_health_score": 51,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Carelon Global Solutions India",
+      "sector": "Healthcare",
+      "locations": [
+        "Hyderabad",
+        "Gurugram",
+        "Bengaluru"
+      ],
+      "team_size": "15-25",
+      "maturity": "Very High",
+      "hiring_status": "Growing",
+      "projects": "Healthcare claims processing (Smart Claims Engine/SCE), customer service, care management, voice AI copilot. Subsidiary of Elevance Health (Anthem).",
+      "tech_stack": [
+        "Pega Smart Claims Engine (SCE)",
+        "Pega Infinity",
+        "Pega CDH",
+        "Voice AI",
+        "REST APIs",
+        "Kafka"
+      ],
+      "domains": [
+        "Healthcare Claims",
+        "Care Management",
+        "Customer Service",
+        "Voice AI",
+        "Provider Workflows"
+      ],
+      "certifications_required": [
+        "CSSA",
+        "CPDC",
+        "CLSA"
+      ],
+      "team_members": [
+        {
+          "name": "SAI Praneeth Patel",
+          "title": "Pega Developer / Senior System Architect",
+          "certs": "CSA, CSSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/sai-praneeth-patel-79b597129",
+          "_role_level": 2,
+          "_role_label": "Architect"
+        },
+        {
+          "name": "Jasjeet Singh",
+          "title": "Pega Tech Lead",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Gurugram",
+          "_role_level": 3,
+          "_role_label": "Lead",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Jasjeet%20Singh%20Carelon%20Global%20Solutions%20Pega"
+        },
+        {
+          "name": "AKASH ANAND",
+          "title": "Senior SE",
+          "certifications": [
+            "CLSA-1",
+            "PCDS",
+            "CSSA",
+            "CPDC"
+          ],
+          "location": "Gurugram",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=AKASH%20ANAND%20Carelon%20Global%20Solutions%20Pega"
+        },
+        {
+          "name": "Achalasri Kaza",
+          "title": "PEGA CSSA Developer / Senior SE",
+          "certs": "CSSA v8.7",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/achalasrikaza",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Jagadeesh Ponugoti",
+          "title": "Pega Developer / Sr SE",
+          "certs": "CSSA v7.2",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/jagadeesh-ponugoti-68590798",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Manoj K",
+          "title": "Senior SE",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Manoj%20K%20Carelon%20Global%20Solutions%20Pega"
+        },
+        {
+          "name": "Nagabhushanam Gaddam",
+          "title": "Pega Developer / SE II",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/nagabhushanam-gaddam-2433a482",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Nagaraju Mokidi",
+          "title": "Senior SE",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Nagaraju%20Mokidi%20Carelon%20Global%20Solutions%20Pega"
+        },
+        {
+          "name": "Nagarjun Reddy Padigapati",
+          "title": "Senior Pega Developer / Senior SE",
+          "certs": "CSSA, CSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/nagarjun-reddy-padigapati-4360a9287",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Purva Patil",
+          "title": "Sr Software Engineer / Pega Developer",
+          "certs": "CSA, CSSA, CPDC",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/purva-patil-87a5a5140",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Sai Durga",
+          "title": "Software Engineer II",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Hyderabad",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Sai%20Durga%20Carelon%20Global%20Solutions%20Pega"
+        },
+        {
+          "name": "Uday Kumar",
+          "title": "Pega Developer / Senior SE - 7yr veteran",
+          "certs": "CSA",
+          "location": "Hyderabad",
+          "linkedin": "https://www.linkedin.com/in/uday-kumar-7b930741",
+          "_role_level": 4,
+          "_role_label": "Senior"
+        },
+        {
+          "name": "Bhargava Reddy",
+          "title": "Pega Developer",
+          "certs": "CSSA",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/bhargava-reddy-5a0399250",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "8000-9000 employees in India",
+        "Subsidiary of Elevance Health (Anthem)",
+        "Pega Smart Claims Engine (SCE)",
+        "Won 1st place Pega Hackathon 2026",
+        "CLSA-1 certified dev on team",
+        "Previously Legato Health Technologies"
+      ],
+      "_health_score": 90,
+      "_health_grade": "A+",
+      "_health_label": "Excellent"
+    },
+    {
+      "name": "MUFG Pension & Market Services (Link Group)",
+      "sector": "Financial Services",
+      "locations": [
+        "Pune",
+        "Mumbai"
+      ],
+      "team_size": "5-8",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Pension and market services, data integration, stakeholder communications, shareholder management. Separate from MUFG Bank.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs",
+        "Data Integration"
+      ],
+      "domains": [
+        "Pensions",
+        "Market Services",
+        "Shareholder Management"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Praveen Tangella",
+          "title": "Pega Application Support",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "India",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/in/praveentangella"
+        },
+        {
+          "name": "Swamy Ajmeera",
+          "title": "Pega Developer",
+          "certifications": [
+            "CSA"
+          ],
+          "location": "Pune",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/in/swamy-ajmeera-0b7a97226"
+        }
+      ],
+      "highlights": [
+        "Separate from MUFG Bank",
+        "Formerly Link Group (LNK)",
+        "Pune-based India GCC"
+      ],
+      "_health_score": 53,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "Intel India",
+      "sector": "Technology / Semiconductor",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "5-10",
+      "maturity": "Very High",
+      "hiring_status": "Stable (some attrition 2025)",
+      "projects": "Cloud application development, enterprise BPM, Pega platform applications for internal operations, telecom domain applications.",
+      "tech_stack": [
+        "Pega Infinity",
+        "Pega CDH",
+        "Pega PRPC 7.x/8.x",
+        "Constellation",
+        "REST APIs",
+        "Cloud"
+      ],
+      "domains": [
+        "Cloud Applications",
+        "Enterprise BPM",
+        "Telecom",
+        "Internal IT"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA",
+        "CPDC"
+      ],
+      "team_members": [
+        {
+          "name": "Ajith Kumar",
+          "title": "Cloud App Dev Engineer",
+          "certifications": [
+            "CSSA",
+            "CPDC",
+            "CSA"
+          ],
+          "location": "Bengaluru",
+          "tenure": "Jul 2022 - Present (4 years)",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Ajith%20Kumar%20Intel%20Pega"
+        },
+        {
+          "name": "Kavitha Murthy",
+          "title": "Pega Developer / Project Manager",
+          "certifications": [
+            "CSA"
+          ],
+          "location": "Bengaluru",
+          "tenure": "Sep 2018 - Present (7+ years)",
+          "_role_level": 5,
+          "_role_label": "Developer",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Kavitha%20Murthy%20Intel%20Pega"
+        },
+        {
+          "name": "Anuj Yadav",
+          "title": "Software Engineer (ex-Intel)",
+          "certifications": [
+            "CSSA",
+            "CSA"
+          ],
+          "location": "Bengaluru",
+          "tenure": "Oct 2023 - May 2025",
+          "_role_level": 9,
+          "_role_label": "Departed",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Anuj%20Yadav%20Intel%20Pega"
+        },
+        {
+          "name": "Poonam Shaw",
+          "title": "Cloud App Dev Engineer (ex-Intel)",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Bengaluru",
+          "tenure": "May 2022 - May 2025",
+          "_role_level": 9,
+          "_role_label": "Departed",
+          "linkedin": "https://www.linkedin.com/in/poonam-shaw-908605115"
+        },
+        {
+          "name": "Pratik Raj Mishra",
+          "title": "Pega Developer (ex-Intel)",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Bengaluru",
+          "tenure": "Dec 2021 - Jan 2025",
+          "_role_level": 9,
+          "_role_label": "Departed",
+          "linkedin": "https://www.linkedin.com/in/pratik-raj-mishra-51472449"
+        }
+      ],
+      "highlights": [
+        "5+ confirmed Pega developers on direct Intel payroll",
+        "Kavitha Murthy: 7+ year Pega tenure - one of longest in any GCC",
+        "Cloud Application Development team title for Pega devs",
+        "Multiple CSSA + CPDC certified developers",
+        "Some attrition in 2025 (devs moving to AmEx, Swedbank) - replacement hiring likely"
+      ],
+      "_health_score": 35,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    },
+    {
+      "name": "Levi Strauss & Co. India",
+      "sector": "Retail / Fashion",
+      "locations": [
+        "Bengaluru"
+      ],
+      "team_size": "3-5",
+      "maturity": "High",
+      "hiring_status": "Stable",
+      "projects": "Retail operations, customer service, order management Pega applications.",
+      "tech_stack": [
+        "Pega Infinity",
+        "REST APIs"
+      ],
+      "domains": [
+        "Retail Operations",
+        "Customer Service",
+        "Order Management"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Disha Kukreja",
+          "title": "Senior Pega Developer",
+          "certifications": [
+            "CSSA"
+          ],
+          "location": "Bengaluru",
+          "tenure": "Feb 2021 - Present (5+ years)",
+          "_role_level": 4,
+          "_role_label": "Senior",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Disha%20Kukreja%20Levi%20Strauss%20%26%20Co.%20Pega"
+        },
+        {
+          "name": "Hemant M",
+          "title": "Pega Developer - CSSA, CSA, CPDC",
+          "certs": "CSSA v7.1, CSA v7.1, CPDC",
+          "location": "Bengaluru",
+          "linkedin": "https://www.linkedin.com/in/hemant-mohanan",
+          "_role_level": 5,
+          "_role_label": "Developer"
+        }
+      ],
+      "highlights": [
+        "Direct hire at Levi's Bengaluru GCC",
+        "5+ year Pega developer tenure",
+        "Retail fashion domain - niche"
+      ],
+      "_health_score": 53,
+      "_health_grade": "C+",
+      "_health_label": "Moderate"
+    },
+    {
+      "name": "ITC Limited",
+      "sector": "FMCG / Conglomerate",
+      "locations": [
+        "Gurugram"
+      ],
+      "team_size": "2-4",
+      "maturity": "Medium",
+      "hiring_status": "Growing",
+      "projects": "Enterprise BPM applications for FMCG operations, supply chain, digital transformation.",
+      "tech_stack": [
+        "Pega PRPC",
+        "REST APIs"
+      ],
+      "domains": [
+        "FMCG",
+        "Supply Chain",
+        "Enterprise Operations"
+      ],
+      "certifications_required": [
+        "CSA",
+        "CSSA"
+      ],
+      "team_members": [
+        {
+          "name": "Wax Park",
+          "title": "Pega Developer",
+          "certifications": [
+            "CSA"
+          ],
+          "location": "Gurugram",
+          "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Wax%20Park%20ITC%20Limited%20Pega"
+        }
+      ],
+      "highlights": [
+        "India's largest FMCG conglomerate using Pega directly",
+        "Separate from ITC Infotech (IT services arm)",
+        "INR 700B-800B annual revenue company"
+      ],
+      "_health_score": 44,
+      "_health_grade": "C",
+      "_health_label": "Weak"
+    }
+  ]
+}

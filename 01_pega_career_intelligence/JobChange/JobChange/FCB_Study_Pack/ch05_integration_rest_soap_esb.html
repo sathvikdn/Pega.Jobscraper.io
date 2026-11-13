@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch05 · Integration &amp; Authentication | FCB Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="ch04_ui_constellation_dx.html">&larr; Chapter 04</a>
+  <a class="btn" href="index.html">Index</a>
+  <a class="btn" href="ch06_kafka_dataflow_queue_processors.html">Next: Chapter 06 &rarr;</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 05 &middot; Integration and event processing</div>
+    <h1>Integration &amp; Authentication</h1>
+    <p class="subtitle">The screen is there and the core still knows nothing. This chapter connects them: reading Dana's account from the core, asking it to change her address and to place a hold for <code>AC-10882</code>, and then breaking that call three ways in order. The core goes slow, the core rejects the request, and the core accepts it and loses its answer. Timeouts, unknown outcomes, idempotency, retries and asynchronous fulfilment emerge from those three failures; authentication, the bulk MERGE path and the end-to-end call path complete the picture.</p>
+    <div class="meta">
+      <div><strong>19</strong><span>Sections</span></div>
+      <div><strong>16,102</strong><span>Words</span></div>
+      <div><strong>3</strong><span>Failures to design for</span></div>
+      <div><strong>11</strong><span>Interview Q&amp;A</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <p>Chapter 04 ended with Marcus able to submit <code>AM-10417</code> and Dana's web portal able to create it, but with fulfilment unable to reach the core. This chapter makes the application able to read from and write to it, safely. The ledger is in <a href="ch01_pega_platform_core.html#s1-0">Chapter 01 §1.0</a>.</p>
+    <div class="toc">
+      <a href="#s5-1">5.1 Pega calls out, and Pega is called<span>Connectors and services</span></a>
+      <a href="#s5-2">5.2 Being called: service packages<span>Inbound security and the service rule</span></a>
+      <a href="#s5-3">5.3 What the core's answer becomes<span>The canonical model</span></a>
+      <a href="#s5-4">5.4 Reading Dana's account<span>The Connect-REST build sequence</span></a>
+      <a href="#s5-5">5.5 Mapping<span>Where most integration defects live</span></a>
+      <a href="#s5-6">5.6 When the core speaks SOAP<span>WSDL, envelope, faults</span></a>
+      <a href="#s5-7">5.7 The ESB between Pega and the core<span>Sync, async, and what to negotiate</span></a>
+      <a href="#s5-8">5.8 The bulk path: Connect-SQL and MERGE<span>Many messages, one mechanism</span></a>
+      <a href="#s5-9">5.9 When the core misbehaves<span>Slow, rejecting, and silent: the three failures</span></a>
+      <a href="#s5-10">5.10 Classifying what comes back<span>Errors, logging, correlation IDs</span></a>
+      <a href="#s5-11">5.11 Proving who is calling<span>Authentication profiles and services</span></a>
+      <a href="#s5-12">5.12 OAuth 2.0 and JWT<span>Tokens in depth</span></a>
+      <a href="#s5-13">5.13 SAML 2.0 and single sign-on<span>The browser login flow</span></a>
+      <a href="#s5-14">5.14 mTLS, keys, secrets and rotation<span>The certificates that expire</span></a>
+      <a href="#s5-15">5.15 One hold, end to end<span>AC-10882 through Pega, ESB and core</span></a>
+      <a href="#s5-16">5.16 Interview Q&amp;A<span>Short answers</span></a>
+      <a href="#s5-recap">5.Z Where we are now<span>What works, and what does not yet</span></a>
+      <a href="#s5-ref">5.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+    <p class="small muted">The retry, timeout and breaker numbers in 5.9 are engineering starting points for a design discussion: they are not Pega defaults and not any bank's policy.</p>
+  </section>
+
+  <section id="s5-1" class="pagebreak">
+    <h2>5.1 Pega calls out, and Pega is called</h2>
+    <p>When Priya approves <code>AM-10417</code>, fulfilment has to tell the core to change Dana's address. When Marcus opens <code>AC-10882</code>, the screen has to read her balance. Before that is possible, the application needs a way to talk to systems it does not own, and that traffic goes in two directions. A <strong>connector</strong> is an <em>outbound</em> rule: Pega is the client and calls someone else, such as the core, a sanctions screening API or a database. A <strong>service</strong> is an <em>inbound</em> rule: Pega is the server and someone else calls it, such as the ESB posting an event, a digital channel creating a case or a replay endpoint. Everything in the integration category is one of these two or a rule that supports them (authentication, mapping, listeners, data sets).</p>
+    <p>Integration rules exist because the alternative, hand-coded calls, left the contract spread through code: build the HTTP request, set headers, serialise the payload, parse the reply, handle errors, differently for each developer. Making the contract (URL, method, headers, mapping, authentication, error handling, simulation) a declarative, reviewable and testable rule lets the platform handle the plumbing consistently.</p>
+    <table>
+      <tr><th>Direction</th><th>Rule type</th><th>Protocol</th><th>Typical Riverbend use</th></tr>
+      <tr><td>Outbound</td><td>Connect-REST</td><td>HTTP/HTTPS with JSON or XML</td><td>Get an account balance, post a hold, call sanctions screening</td></tr>
+      <tr><td>Outbound</td><td>Connect-SOAP</td><td>SOAP over HTTP with a WSDL contract</td><td>A legacy core or vendor web service</td></tr>
+      <tr><td>Outbound</td><td>Connect-SQL</td><td>JDBC to a configured database</td><td>Staging tables, reconciliation, metadata-driven MERGE</td></tr>
+      <tr><td>Outbound</td><td>Connect-JMS</td><td>JMS queues and topics</td><td>Publish to an ESB queue (whether the ESB exposes JMS is a platform decision)</td></tr>
+      <tr><td>Outbound</td><td>Connect-HTTP, Connect-File</td><td>Raw HTTP; file write</td><td>Non-JSON endpoints; a file for a downstream system</td></tr>
+      <tr><td>Inbound</td><td>Service-REST, Service-SOAP</td><td>HTTP endpoints hosted by Pega</td><td>ESB callback, digital intake, a replay endpoint</td></tr>
+      <tr><td>Inbound</td><td>Service-Email, Service-File, Service-JMS</td><td>Listeners</td><td>Email to case, return files (Chapter 07), ESB queue messages</td></tr>
+      <tr><td>Supporting</td><td>Authentication Profile and Service, Service Package, Data Page, Dataset and Data Flow</td><td>Security, container, caching, streaming</td><td>5.11 onward; Chapter 03 §3.5; Chapter 06</td></tr>
+    </table>
+    <p>A connector can be invoked in three ways, and the choice follows what the call is for. As the <em>source of a data page</em> (Chapter 03 §3.5), it suits reads such as the customer, the balance and holds, with the caveats that the data can be stale and that errors on the page must be checked. From an <em>Integrator shape</em> in a flow (Chapter 02 §2.3), it suits case-step calls with explicit error handling, including writes; the call is synchronous, so timeouts must be tight. From an <em>activity step</em>, it suits background logic and queue processor items, with the usual guardrail warnings and the risk of forgetting error handling.</p>
+    <div class="flow">OUTBOUND (connector) vs INBOUND (service)
+
+ PEGA AS CLIENT                                           PEGA AS SERVER
+ Flow / Data Page / Activity                              Caller (ESB, portal, partner)
+    |  invokes                                               |  HTTPS request
+    v                                                        v
+ Connect-REST rule  --(request mapping)--> HTTP call       Service Package (auth, access group)
+    |                                         |                |
+    |  <--(response mapping)-- HTTP reply <---+                v
+    v                                                       Service-REST rule (method, request/response mapping)
+ clipboard page (integration class)                            |  runs activity / data transform
+    |  map to canonical / work class                           v
+    v                                                       case created/updated, data saved
+ Case continues                                             HTTP response (status code + body)</div>
+    <p>The failures to avoid are the visible ones: a connector called inside a UI-critical activity with no timeout, credentials typed into the rule, response properties copied straight into the case without a mapping layer, one connector rule with ten methods, and no simulation, so nobody can unit-test the flow.</p>
+  </section>
+
+  <section id="s5-2" class="pagebreak">
+    <h2>5.2 Being called: service packages and the service rule</h2>
+    <p>Dana's web portal does not log in as Marcus. It calls Pega, and an inbound call arrives with no Pega session, so the platform must still decide three things: who the caller claims to be and whether that is true, which ruleset version applies, and what rights the call has. A <strong>Service Package</strong> is the container and security envelope that answers all three for a group of related service rules. It decides who may call (the authentication type), who the call runs as (the access group, which sets the ruleset list and roles) and some runtime options such as requestor pooling. Every inbound service rule belongs to a package, and the package name becomes part of a REST service's URL.</p>
+    <p>The main package settings are the access group the service requestor runs as; whether authentication is required (switching it off makes the service anonymous, which is almost never acceptable for banking); the authentication type (basic, a custom authentication service, an OAuth 2.0 bearer token through an authentication service, or other options depending on release); context and pooling, including whether the clipboard is cleared between requests; and whether, when the caller authenticates as an operator, that operator's own access group is used instead.</p>
+    <p>The service rule itself names a service class and method (the rule name used in the URL), a resource path and the HTTP methods it supports, each with its own processing. Its request side defines how headers, query and path parameters and the body map onto the clipboard (including JSON mapping through a data transform or mapping rule); its primary page and processing name where the request lands and which activity or transform handles it; and its response side maps the outcome to an HTTP status and body, including custom error responses and what is logged when processing fails.</p>
+    <div class="flow">SERVICE-REST RUNTIME (inbound event from the ESB)
+ ESB POST https://pega.riverbend.example/.../EventIntake  (JSON, bearer token, correlation ID header)
+   1 Servlet receives; finds service package by URL; applies authentication (validate token / mTLS client cert)
+   2 Service requestor created/pooled with package access group (ruleset list, roles)
+   3 Rule resolution: service rule by method (POST)
+   4 Request mapping: headers -> params, JSON body -> integration-class page (pyWorkPage or a named page)
+   5 Processing activity: validate, check duplicate (idempotency key), create case or queue item
+   6 Response mapping: 201/200/202 + body {caseId, status}   or  4xx with error body
+   7 Log request/response metadata (not full body), correlation ID in logs</div>
+    <p>Six inbound design rules follow. Always authenticate, preferring token-based with short expiry plus transport security, and mTLS between internal systems where mandated. Give each integration its own access group with least privilege: a service that creates cases needs create rights on those case types and nothing else. Validate the payload on the server and return a precise 4xx for client faults and 5xx only for real server faults, because callers (and the ESB) decide retries from the status code. Return <em>202 Accepted</em> with a tracking ID for work that is queued, not a 200 that claims completion. Make every state-changing operation idempotent using a caller-supplied key (5.9 explains why). And version the contract in the URL or a header and never change the meaning of a field in place.</p>
+  </section>
+
+  <section id="s5-3" class="pagebreak">
+    <h2>5.3 What the core's answer becomes: the canonical model</h2>
+    <p>The core's reply for Dana's account looks like <code>{"acctNbr":"...","stCd":"A","availBal":"4218.55",...}</code>. The first thing a developer is tempted to do is to bind a case property directly to <code>stCd</code>. The consequence arrives later: every rule, screen, decision table and report that tests <code>stCd = "A"</code> now depends on the core's code values, so a renamed field ripples into everything, and replacing or adding a core rewrites the application. Banks routinely have more than one system for the same concept, and the contract with each changes regularly.</p>
+    <p>The remedy is a <strong>canonical data model</strong>: an application-owned representation of business entities (customer, account, hold, legal order, transaction) that sits <em>between</em> external payloads and the case and data classes. External systems map into it and out of it. Inside Pega everything works with the canonical shape, while the vendor or ESB shape lives only in integration classes and mapping rules.</p>
+    <div class="flow">WITHOUT canonical model                          WITH canonical model
+ Case class                                        Case class / data class (canonical)
+   .ACCT_STAT_CD  (core's code "A","D","C")           .Status  ("Active","Dormant","Closed")
+   .CIF_NBR, .BAL_AMT_AVAIL ...                       .CustomerID, .AvailableBalance
+ UI, decisions, reports use core codes              UI, decisions, reports use canonical values
+        ^                                                    ^
+        | direct                                             | mapping layer (one place)
+ Core payload v7                                     Integration class FCB-Dep-Int-CoreAccount_v7  (vendor shape)
+                                                          ^   data transform: CoreAccountToCanonical
+                                                     Core payload v7  /  v8  /  other core system</div>
+    <table>
+      <tr><th>Layer</th><th>Class example</th><th>Owns</th><th>Changes when</th></tr>
+      <tr><td>Vendor / ESB payload shape</td><td><code>FCB-Dep-Int-CoreAccount</code> (integration class)</td><td>Exact field names and codes of the external contract</td><td>The external contract changes</td></tr>
+      <tr><td>Mapping rules</td><td>Data transforms <code>CoreAccountToCanonical</code>, <code>CanonicalHoldToCoreRequest</code></td><td>Field mapping, code translation, type conversion, defaulting</td><td>Either side changes</td></tr>
+      <tr><td>Canonical model</td><td><code>FCB-Dep-Data-Account</code>, <code>FCB-Dep-Data-Hold</code></td><td>Business meaning and allowed values</td><td>The business concept changes</td></tr>
+      <tr><td>Case and UI</td><td><code>FCB-Dep-Work-AccountClosure</code></td><td>Process, keys, decisions</td><td>Process changes</td></tr>
+    </table>
+    <p>Code translation belongs in keyed reference data (Chapter 03 §3.12), not hard-coded in transforms, so that when the core adds a status code the change is data, versioned and testable. The one rule that matters most is that an unrecognised code never defaults silently to a valid value: an unknown status maps to <code>Unknown</code>, is logged, and routes to review. The cost side is real: extra classes and transforms to maintain, design effort up front, and the risk of a canonical model with 400 fields nobody uses, so it is kept minimal and driven by actual use. The test for whether it is working is the design-review question: if the core vendor renamed a field tomorrow, how many rules change? The right answer is one data transform and its PegaUnit test. For Dana's account, <code>D_Account[AccountNumber]</code> calls the connector, maps the response into <code>FCB-Dep-Int-CoreAccount</code>, and a post-load transform produces the canonical <code>FCB-Dep-Data-Account</code> page with <code>.Status = "Active"</code> and <code>.AvailableBalance</code> as a decimal; cases and decision tables see only the canonical page.</p>
+    <p>An ESB sitting in the middle (5.7) usually has a canonical message model of its own, so there can be two canonical layers to map deliberately. The anti-patterns are using the vendor's class as the case's embedded page, business rules that test vendor codes, mapping inside a section or activity, and the same mapping repeated in many places.</p>
+  </section>
+
+  <section id="s5-4" class="pagebreak">
+    <h2>5.4 Reading Dana's account: the Connect-REST build</h2>
+    <p>Reading the balance is the first real call, and it is built in an order that is worth following exactly, because each step supplies what the next one needs. The data model comes first: integration classes for the request and response (<code>FCB-Dep-Int-HoldRequest</code>, <code>FCB-Dep-Int-HoldResponse</code> for the later write) and the canonical classes they map to, with correctly typed properties, because the connector's mapping targets must exist and guessing property names is the classic source of rework. Then the contract is obtained from the ESB team: an OpenAPI specification or sample request and response, status codes, error body, authentication method, timeouts and rate limits, because without it mappings and error handling are guesses.</p>
+    <p>Third, the authentication profile (5.11) is created so that the connector can reference it and credentials are never typed into a rule. Fourth, the connector itself is generated with the accelerator-style wizard (Create REST Integration, from a sample or a specification) or built by hand when the specification is simple or nonstandard; the wizard saves time but generates structure that must be reviewed, renamed to standards and trimmed. Fifth, the endpoint: a base URL held in a Dynamic System Setting or configuration instance so it differs by environment, a resource path with path and query parameters mapped from the page or parameters. Sixth, the method and headers: Content-Type and Accept, a correlation ID header, and for writes an idempotency key header, because headers drive traceability and safe retries.</p>
+    <p>Seventh and eighth are the mappings. The request transform maps the canonical page to the request integration class and produces the JSON body; the response transform and status handling map success to the response class and then to canonical, map the expected business outcomes (a 409, a 422) to explicit results, and map anything unexpected to a generic error, because the response contract includes its failure shapes. Ninth, timeouts and error handling: explicit connect and read timeouts, and a definition of what a connection error, a timeout, a 4xx and a 5xx each do, because the defaults are not safe for production; 5.9 and 5.10 settle what they should do. Tenth, simulation and tests: connector simulation returning a response from a data transform and PegaUnit cases for the mapping transforms, then a test with Tracer against the real endpoint in a lower environment.</p>
+    <div class="flow">CONNECT-REST: HoldPlacement (POST)  -- configuration sketch (functional, not literal field names)
+  Authentication Profile : ESB_OAuth_ClientCredentials
+  Endpoint               : {ESB_BASE_URL}/accounts/{AccountNumber}/holds        (ESB_BASE_URL from environment setting)
+  Method                 : POST
+  Headers                : Content-Type: application/json
+                           X-Correlation-ID: {pyWorkPage.CorrelationID}
+                           Idempotency-Key: AC-10882-HOLD-1       (case ID + step + sequence, stored before the first attempt)
+  Timeouts               : connect 3s, read 10s
+  Request mapping        : CanonicalHoldToCoreRequest   (canonical Hold -> FCB-Dep-Int-HoldRequest -> JSON)
+  Response mapping       : 201 -> HoldResponseToCanonical (holdRef, placedAt)
+                           409 -> outcome CONFLICT: not success by itself; resolve it (5.9)     400/422 -> PERMANENT business error
+                           429/502/503/504 -> TRANSIENT (retry policy)
+                           read timeout or connection loss on this WRITE -> UNKNOWN OUTCOME (5.9), not a transient retry
+  Simulation             : returns 201 with sample holdRef for dev and PegaUnit</div>
+    <p>Wizard names, tab names and option labels vary by release; the order and the content of each step are stable. Four habits come with the build. Connection pooling is managed by the platform, so never place a connector call per row in a loop: use a batch endpoint, a queue processor with controlled concurrency or a data flow. Do not log full request and response bodies in production because they hold personal data: log status, latency, correlation ID and a body hash or size. Validate TLS and never disable certificate verification to get something working. And keep responses lean by asking the ESB for only the fields needed.</p>
+    <p>The connector rule has a familiar shape. Its service tab holds the authentication profile, the endpoint (full URL or a base plus resource path, with a configuration reference for the host) and the methods and parameter definitions. Its request tab says how the body is built; its response tab how it is parsed and which status codes count as success. The advanced settings carry the timeouts (labelled connection and response, set explicitly), proxy and keystore options for mutual TLS (5.14), and simulation and optional pre- and post-processing transforms.</p>
+  </section>
+
+  <section id="s5-5" class="pagebreak">
+    <h2>5.5 Mapping: where most integration defects live</h2>
+    <p>The call returns, and what goes wrong next is almost always in the translation: a type that lost precision, a null that arrived as an empty string, an enumeration the core added last week, an array that sometimes arrives as a single object. Mapping is therefore treated as code with tests. The default pattern is a request or response <em>data transform</em> that maps between the canonical page and the integration page, with the connector's own message mapping doing only the JSON-to-integration-class step; it is testable with PegaUnit. Property-level JSON mapping inside the connector suits simple flat payloads. JSON-aware data transform actions suit complex or dynamic structures. Parse rules suit files and nonstandard payloads (Chapter 07). Metadata-driven mapping, where the mapping is itself data interpreted at run time, suits many similar integrations and is the subject of 5.8. An anti-corruption mapping rejects or quarantines payloads that violate the contract rather than passing bad data inward.</p>
+    <table>
+      <tr><th>Hazard</th><th>Example</th><th>Defence</th></tr>
+      <tr><td>Numeric precision</td><td>15230.55 parsed through a floating type, or sent as a string</td><td>Money as Decimal; agree string or number representation in the contract; test with 0.1 + 0.2 style cases</td></tr>
+      <tr><td>Date and time zone</td><td>The core sends a local business date; Pega stores DateTime in GMT</td><td>Date type for business dates; ISO 8601 with an explicit zone for timestamps</td></tr>
+      <tr><td>Null, missing, empty</td><td>Absent means unchanged; null means clear</td><td>Agree the semantics; map explicitly; never overwrite with blank by accident</td></tr>
+      <tr><td>Single versus array</td><td>One signer arrives as an object, several as an array</td><td>The contract says always an array; the transform defends</td></tr>
+      <tr><td>Unknown enumeration</td><td>The core adds status "F" (frozen)</td><td>Map to Unknown, log and alert; never default to a valid value</td></tr>
+      <tr><td>Field length</td><td>A name longer than the target field</td><td>Validate and truncate or reject per policy; log</td></tr>
+      <tr><td>Character encoding</td><td>Accented names, line breaks</td><td>UTF-8 end to end; test non-ASCII samples</td></tr>
+      <tr><td>Extra unknown fields</td><td>A new field added upstream</td><td>Ignore unknown fields (tolerant reader) rather than fail</td></tr>
+    </table>
+    <div class="flow">RESPONSE MAPPING FLOW
+  HTTP 200 body (JSON)
+    -> Connect-REST response mapping -> FCB-Dep-Int-CoreAccount page   (vendor shape, no business rules)
+    -> post-load data transform CoreAccountToCanonical
+         Set .AccountNumber   = Int.acctNbr
+         Set .Status          = lookup(D_StatusMap, Int.stCd)   (unknown -> "Unknown" + log + message)
+         Set .AvailableBalance = Decimal(Int.availBal)
+         For Each Page In Int.owners -> Append and map to .Owners
+    -> canonical FCB-Dep-Data-Account page (used by cases, decisions, UI)
+  ERROR: HTTP 4xx/5xx or timeout -> page messages + classified error -> flow error path / data page error check</div>
+  </section>
+
+  <section id="s5-6" class="pagebreak">
+    <h2>5.6 When the core speaks SOAP</h2>
+    <p>Not every system in a bank offers JSON. Banks still run many SOAP services in core banking, payment hubs and vendor products, because SOAP gives strict typing, WS-Security options and mature tooling. It is an XML messaging protocol with a formal, machine-readable contract, a WSDL, and the call for placing the same hold looks like this.</p>
+    <div class="flow">HTTP POST  (Content-Type: text/xml or application/soap+xml, SOAPAction header for SOAP 1.1)
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Header&gt;
+     &lt;wsse:Security&gt; ... UsernameToken or signed/timestamped elements ... &lt;/wsse:Security&gt;
+     &lt;ns:CorrelationId&gt;AC-10882-HOLD-1&lt;/ns:CorrelationId&gt;            (custom header block)
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+     &lt;ns:PlaceHoldRequest&gt; &lt;ns:AccountNumber&gt;CHK-8842-0117&lt;/ns:AccountNumber&gt; &lt;ns:Amount&gt;4218.55&lt;/ns:Amount&gt; &lt;/ns:PlaceHoldRequest&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+RESPONSE success: Body = PlaceHoldResponse.   RESPONSE failure: HTTP 500 with Body = &lt;soap:Fault&gt; (faultcode, faultstring, detail)</div>
+    <p>A wizard (Create SOAP Integration) reads the WSDL and generates the connector, integration classes and mapping rules for the chosen operations; generated class names are reviewed and unused operations trimmed. The endpoint comes from the WSDL but is overridden per environment through configuration, so a production URL never ships into a lower environment. Request and response mapping goes from clipboard to XML through the generated mapping, with namespaces and element ordering handled for you and hand-edited only with care. SOAP headers, including WS-Security username tokens and a custom correlation header, are mapped in the request configuration. Authentication is through an authentication profile and often mutual TLS (5.14). A SOAP Fault arrives as HTTP 500 with a fault body, and the mapping must separate business faults (insufficient funds, invalid account) from infrastructure faults (server busy), because treating every fault as retryable means a business fault retried five times is five rejected requests. Large binary content such as a PDF of a legal order is either base64-encoded inline, which inflates size by roughly a third and uses memory, or sent as a separate MIME part with MTOM; confirm MTOM support for the release and connector before promising it.</p>
+    <table>
+      <tr><th>Aspect</th><th>REST (JSON)</th><th>SOAP (XML)</th></tr>
+      <tr><td>Contract</td><td>OpenAPI optional, informal in practice</td><td>WSDL and XSD, strict</td></tr>
+      <tr><td>Payload size</td><td>Lean</td><td>Verbose (envelope, namespaces)</td></tr>
+      <tr><td>Error semantics</td><td>HTTP status codes plus body</td><td>HTTP 500 plus a Fault element; SOAP-level semantic faults</td></tr>
+      <tr><td>Security options</td><td>OAuth 2.0, mTLS, API keys</td><td>WS-Security, mTLS, basic over TLS</td></tr>
+      <tr><td>Idempotency</td><td>A header or field you define</td><td>A field you define in the message</td></tr>
+      <tr><td>When you meet it</td><td>New services, digital channels, an ESB facade</td><td>Legacy core, vendor products, regulated exchange</td></tr>
+    </table>
+    <p>The anti-patterns are hand-editing generated XML mapping without tests, embedding a multi-megabyte PDF as base64 in a synchronous call on the UI thread, and ignoring the WSDL version when the vendor upgrades.</p>
+  </section>
+
+  <section id="s5-7" class="pagebreak">
+    <h2>5.7 The ESB between Pega and the core <span class="tag">pattern</span></h2>
+    <p>Pega does not usually call the core directly. In most banks an <strong>Enterprise Service Bus</strong> sits between applications so that none connects to another point to point; Pega talks to the ESB, which routes, translates and calls the backends. The reason is arithmetic: with N systems integrating directly there can be up to N x (N-1) connections, each with its own protocol, format, credentials and failure behaviour, whereas a hub reduces that to N connections and centralises transformation, routing, security and monitoring, so a backend can be replaced without changing every consumer.</p>
+    <div class="flow">POINT-TO-POINT (n x (n-1))                       HUB-AND-SPOKE VIA ESB (n connections)
+  Pega --- Core                                           Pega -------\
+  Pega --- Sanctions                                      Digital ----+--&gt; ESB (routing, transformation,
+  Pega --- CRM                                            Branch -----/       security, throttling, monitoring)
+  Digital --- Core                                                              |      |       |       |
+  Digital --- CRM ...                                                          Core  Sanctions CRM  Payment hub</div>
+    <p>What the ESB brings is what Pega then relies on: routing (one logical service, the ESB picks the right core by product), transformation between formats, an enterprise canonical message model (to be mapped deliberately against Pega's own, 5.3), protocol mediation (REST in, SOAP or MQ out), throttling that sets the ceiling on queue processor concurrency, orchestration of several backend calls into one (fewer, coarser calls from Pega, but hidden latency), security enforcement so Pega authenticates to the ESB and not to each backend, reliable messaging through queues, and monitoring and audit with a correlation ID that must pass end to end.</p>
+    <p>The boundary between Pega and the ESB can take four shapes, and which one is used decides how a failure shows up. <em>Synchronous request-reply</em> (REST or SOAP) means Pega waits: right for reads needed now, such as a balance for a screen, and the caller sees a failure immediately but must handle a timeout and risks tying up threads. <em>Asynchronous with callback</em> means Pega posts a request, receives a 202 and a tracking ID, and the ESB later calls a Pega Service-REST with the result (or Pega polls): right for slow or batch-like operations and long core posting windows, with the case waiting under an SLA and a plan for a callback that never arrives. A <em>fire-and-forget event</em> to a queue or topic suits notifications and downstream updates where no result is needed. A <em>batch file</em> through SFTP suits very high volume and end-of-day settlement, reconciled by counts and trailers (Chapter 07).</p>
+    <div class="flow">ASYNC WITH CALLBACK (account closure posting)
+ Pega case step (Integrator)  --POST /closures {caseId, idempotencyKey}-->  ESB  --&gt; core posting
+        |  202 Accepted {trackingId}                                         |
+        v                                                                    | (core completes in seconds or minutes)
+ Case status "Pending-Core"; Wait shape + SLA ("no callback within 15 min -&gt; status check")
+        ^                                                                    |
+        +-- Service-REST /closureResult (idempotent, authenticated) &lt;--------+  callback {caseId, result, coreRef}
+ Callback handler: look up case by caseId, ignore if already final (duplicate callback), set result, advance flow
+ Safety net: a Job Scheduler or queue processor sweeps cases stuck in Pending-Core and calls the ESB status endpoint</div>
+    <p>An architect negotiates a short list of things with the middleware team before any of this is built, because most integration incidents are boundary disagreements.</p>
+    <table>
+      <tr><th>Topic</th><th>Question to settle</th><th>Why it matters</th></tr>
+      <tr><td>Who owns retries</td><td>Does the ESB retry failed backend calls, how many times, how long, and does Pega also retry?</td><td>Retries at both layers multiply (3 x 3 = 9 attempts) and double-post without idempotency</td></tr>
+      <tr><td>Idempotency</td><td>Does the ESB or core honour an idempotency key, and for how long is it remembered?</td><td>Without it, a timeout followed by a retry may post a hold twice</td></tr>
+      <tr><td>Sync or async per operation</td><td>Which calls return within the agreed latency, and which must be asynchronous?</td><td>Prevents blocking UI threads and cases</td></tr>
+      <tr><td>Throttling</td><td>What is the maximum request rate per consumer, and which status and header signal throttling?</td><td>Sizes queue processor concurrency; Pega backs off on 429</td></tr>
+      <tr><td>Timeouts</td><td>What is the ESB's own timeout to backends? It must be shorter than Pega's read timeout</td><td>If Pega gives up first while the ESB carries on, the outcome is unknown</td></tr>
+      <tr><td>Error contract</td><td>Which codes and body shape mean transient, permanent or business?</td><td>Drives Pega's classification (5.10)</td></tr>
+      <tr><td>Correlation ID</td><td>Is it passed to the core and returned, and in which header?</td><td>Cross-system tracing</td></tr>
+      <tr><td>Message ordering</td><td>Are events for one account delivered in order?</td><td>Affects consumers (Chapter 06)</td></tr>
+      <tr><td>Versioning and deprecation</td><td>How is the contract versioned and what notice is given for breaking changes?</td><td>Release planning</td></tr>
+      <tr><td>Non-production environments</td><td>Are there stable stubs with realistic data and failure injection?</td><td>Enables resilience testing</td></tr>
+      <tr><td>Maintenance windows</td><td>When is the core unavailable, and does the ESB queue or reject?</td><td>Degraded-mode design (5.9)</td></tr>
+      <tr><td>Observability</td><td>Can Pega support see ESB message status for a correlation ID?</td><td>Cuts triage time in production</td></tr>
+    </table>
+    <p>A caution on scope: an ESB product's internals and flow authoring belong to the middleware team, and this chapter treats the ESB as a consumer would, through its contracts.</p>
+  </section>
+
+  <section id="s5-8" class="pagebreak">
+    <h2>5.8 The bulk path: Connect-SQL and metadata-driven MERGE</h2>
+    <p>Everything so far is one call for one case. Some traffic is different in kind: fifty-odd Kafka topics (Chapter 06), each with its own JSON shape, each landing in one or more relational tables, updating rows that exist and inserting rows that do not. Hand-writing fifty mappings, fifty transforms and fifty SQL statements is slow, error-prone, and makes onboarding a new market a development project. The design response is to make the integration itself <em>data</em>.</p>
+    <p>A <strong>Connect-SQL</strong> rule runs SQL against a database configured in Pega (a database instance with a JDBC data source), mapping parameters in and result columns out. It exists so Pega can read and write non-Pega tables (staging, reconciliation, reference replicas) with SQL, instead of <code>Obj-*</code> methods that assume Pega's own table and BLOB structure. It carries the database, the statement or procedure call, parameter mappings, result mapping, a statement timeout and error handling, and a transaction behaviour that must be verified for the release because its commit semantics differ from <code>Obj-Save</code>.</p>
+    <p>The pattern has a handful of parts. A <strong>staging table</strong> receives the arrivals: the same columns as the target plus audit columns (batch ID, received time, status), populated in bulk without business logic. <strong>Metadata tables</strong> describe each integration: source message type, target table, key columns for matching, a list of column mappings (source JSON path, target column, data type, default, whether to update on match) and flags such as soft delete. A <strong>runtime resolver</strong> reads the metadata for the message type and builds the mapping at run time (the Dataset mapping is resolved, not compiled). A <strong>dynamic SQL generator</strong> builds the staging insert and the MERGE text from the metadata, with bind parameters. One generic <strong>Connect-SQL rule</strong> executes it for every target. The <strong>MERGE</strong> is the single set-based statement that updates a target row when a staging row matches on the key and inserts it when it does not. And a result and audit step records row counts (inserted, updated, rejected), batch status and error rows.</p>
+    <div class="flow">METADATA-DRIVEN UPSERT PIPELINE
+ Kafka topic -> Dataset/Data Flow -> JSON message (type = "account.balance.updated", market = "SG")
+    |
+    v  1 Resolve metadata for (message type, market):
+    |     meta_integration: target_table=acct_balance, key_cols=[account_no, market], merge_mode=UPSERT
+    |     meta_column_map:  $.acct.no -> account_no (VARCHAR)   $.bal.avail -> available_bal (DECIMAL)   $.ts -> source_ts (TIMESTAMP)
+    v  2 Extract values by JSON path (dynamic JSON-to-SQL mapping) -> row object
+    v  3 Bulk insert rows into stg_acct_balance (batch_id, row_status='NEW')        (batch/array insert, one round trip per chunk)
+    v  4 Generated MERGE (one statement per chunk), shown here in SQL Server style:
+         MERGE acct_balance AS t
+         USING (SELECT * FROM stg_acct_balance WHERE batch_id = :batch AND row_status = 'NEW') AS s
+            ON t.account_no = s.account_no AND t.market = s.market
+         WHEN MATCHED AND s.source_ts &gt; t.source_ts THEN
+              UPDATE SET t.available_bal = s.available_bal, t.source_ts = s.source_ts, t.updated_at = SYSDATETIME()
+         WHEN NOT MATCHED THEN
+              INSERT (account_no, market, available_bal, source_ts) VALUES (s.account_no, s.market, s.available_bal, s.source_ts);
+    v  5 Mark staging rows PROCESSED / REJECTED; record counts; PostgreSQL equivalent: INSERT ... ON CONFLICT (account_no, market) DO UPDATE ... WHERE excluded.source_ts &gt; target.source_ts
+    v  6 Dashboard and alerts read counts and reject rate</div>
+    <p>Why each piece is there is the design argument. Staging first, because loading into a landing table in bulk avoids <em>row-by-row Pega round trips</em> and defers <em>application-level</em> rule evaluation until the data is already inside the database. That is the real benefit, and it is worth being exact about what it is not. A bulk load is not failure-free. It can still fail on NOT NULL and CHECK constraints, on unique and primary-key violations, on foreign keys, on type and length conversion, on encoding, and on malformed input. It can fail <em>partially</em>: depending on the load method and transaction scope the result may be all-or-nothing, or a committed prefix with the remainder rejected, and the design must know which. Business rules are not escaped either; they are <em>moved</em>, either into the MERGE's conditions or into a validation pass over the staging table, and whatever they reject still needs a reject table, a count and an owner. So the loader's error-handling mode is stated explicitly, and no one says rows "cannot fail".</p>
+    <p>Metadata instead of code, because a new market or topic is then a metadata insert and a test, and mapping changes are audited data changes. MERGE instead of select-then-insert-or-update, because it is one atomic statement with no race between the check and the write, far fewer round trips, and correct under redelivery (reprocessing the same message gives the same row). A source-timestamp guard (<code>s.source_ts &gt; t.source_ts</code>) so that a late event cannot overwrite newer data, with a limit that Chapter 06 §6.3 spells out: the guard is legal for full-state snapshots only, not for partial updates or deltas. One generic Connect-SQL rule instead of fifty, which is one reviewed, guardrail-friendly rule. And rejects routed to a table, so that one bad row does not fail the batch and errors can be reviewed and replayed.</p>
+    <div class="note"><strong>Dialect and safety notes.</strong> The MERGE above is <strong>SQL Server</strong> syntax. PostgreSQL's idiom is <code>INSERT ... ON CONFLICT</code>; <code>MERGE</code> exists only in PostgreSQL 15 and later. Never blend them in one example; Chapter 11 covers both with runnable schemas. Both need the right unique key to arbitrate concurrency, and <em>duplicate source keys inside one statement</em> are a separate failure: SQL Server <code>MERGE</code> raises an error if a target row matches more than one source row, and PostgreSQL <code>ON CONFLICT DO UPDATE</code> cannot affect the same row twice in one command, so staging is de-duplicated by key and latest timestamp first. Values are always bound parameters; table and column names cannot be bound, so they come from an allow-list of validated metadata and never from string concatenation. Money is <code>NUMERIC</code> or <code>DECIMAL</code>, never float, and timestamps are <code>timestamptz</code> (PostgreSQL) or <code>datetimeoffset</code> (SQL Server) so the instant is unambiguous across zones.</div>
+    <table>
+      <tr><th>Risk</th><th>Control</th></tr>
+      <tr><td>SQL injection through dynamic SQL</td><td>Names only from allow-listed, catalogue-validated metadata; values only as bind parameters; metadata change control with maker-checker</td></tr>
+      <tr><td>Bad metadata breaks production</td><td>Validate on save (column exists, type compatible, key present); promote through environments; keep a last-known-good version</td></tr>
+      <tr><td>A wide MERGE locks tables</td><td>Chunk the MERGE (for example 5,000 to 20,000 rows); consistent key ordering; index the match keys</td></tr>
+      <tr><td>Duplicate keys within one batch</td><td>De-duplicate staging by key and latest timestamp before merging</td></tr>
+      <tr><td>Staging growth</td><td>Purge or partition processed staging rows on a schedule</td></tr>
+      <tr><td>Type conversion failures</td><td>Convert in a controlled step; reject the row, not the batch</td></tr>
+    </table>
+    <p>The same shape fits deposit reconciliation, as a design for later chapters: load the core's end-of-day balances and the subledger's into staging tables, MERGE into a reconciliation table keyed by account and business date, compute break amounts with set-based SQL, and open break cases from rows whose difference is non-zero (Chapter 12, Chapter 13).</p>
+  </section>
+
+  <section id="s5-9" class="pagebreak">
+    <h2>5.9 When the core misbehaves: slow, rejecting and silent <span class="tag">pattern</span></h2>
+    <p>On Monday 9 March, fulfilment of <code>AC-10882</code> has to place a hold on <code>CHK-8842-0117</code> through the ESB before the disbursement can follow. In testing the call works every time, and a design that only handles that is not finished. A remote call has three outcomes, not two: it succeeded, it failed, or <strong>you do not know</strong>, because the request was sent and no answer came back. The third is the dangerous one for a financial write, and nearly everything in this section is about it. The way to arrive at the full design is to break the call in three ways, in order: the core goes slow, the core says no, and the core says yes and the answer is lost.</p>
+
+    <h3>Failure one: the core goes slow</h3>
+    <p>The closure screen reads Dana's balance and the core, having a bad afternoon, takes forty seconds to answer. Nothing has failed, and that is the problem: Pega's request thread sits waiting, the user waits, and every other screen that needs the core queues behind it. The first defence is that a call must not wait forever, and a connector has two different timeouts for two different questions. The <em>connect timeout</em> bounds how long to wait to establish the connection and detects a host that is down or a firewall that is dropping packets; a healthy internal host connects in milliseconds, so two or three seconds is generous, and waiting longer only holds a thread. The <em>read</em> (response) timeout bounds how long to wait for the answer once the request is sent and detects a slow or hung backend; it is set from the measured p99 latency plus margin, not a round number, typically five to eight seconds for an interactive screen and fifteen to thirty for background work. A third, overall <em>deadline</em> for the whole business operation prevents retries from running past what the caller can wait.</p>
+    <p>The read timeout has to be chosen relative to the layer behind it. If the ESB gives up on the core after three seconds, Pega's read timeout must exceed that, say four, so that the ESB's error arrives before Pega gives up; if Pega abandons first while the ESB carries on, the outcome is unknown for a reason that was avoidable. The arithmetic for an interactive balance read makes the consequence plain.</p>
+    <div class="formula">Target: closure screen loads customer + balance in &lt;= 3 s at p95; user abandons after ~10 s
+Call chain: Pega --&gt; ESB --&gt; core
+  core p99 latency            = 1.2 s
+  ESB overhead p99            = 0.3 s
+  ESB backend timeout         = 3.0 s   (the ESB gives up on the core after 3 s)
+  Pega read timeout           = 4.0 s   (must exceed the ESB's 3.0 s, else Pega abandons first)
+  Pega connect timeout        = 2.0 s
+  Worst case for one attempt  = 2.0 + 4.0 = 6.0 s
+  One retry would exceed the 10 s budget with backoff =&gt; for READS on interactive screens: NO automatic retry;
+  show "balance unavailable, retry" with a manual retry button, and serve the last cached value if the business allows.</div>
+    <p>Pega's connectors expose connection and response timeout settings and the platform default is rarely appropriate, so explicit values are set per connector. Pega's connectors do not provide automatic exponential backoff or a circuit breaker, as far as the documentation shows, so those are built from queue processors, delayed queueing and a health flag; confirm against the release documentation before saying otherwise.</p>
+    <p>A <strong>read</strong> that times out is transient and safely retryable, because reading again changes nothing. That is where retry belongs, but not blind retry: retrying immediately, from many clients, against a backend that is struggling makes it worse. The standard form is exponential backoff with jitter.</p>
+    <div class="formula">delay(n) = random(0, min(cap, base x 2^n))        "full jitter"
+Starting parameters for a background connector call:
+  base = 1 s, cap = 60 s, max attempts = 5 (initial + 4 retries), overall deadline = 5 min
+  attempt 1 at t=0
+  retry 1 : wait random(0, 2 s)      retry 2 : random(0, 4 s)      retry 3 : random(0, 8 s)      retry 4 : random(0, 16 s)
+After max attempts: stop retrying, park the item for human or scheduled retry (not infinite).
+Why jitter: 200 queue-processor items failing at the same instant would otherwise all retry at exactly t+2s, t+4s ... (thundering herd).</div>
+    <p>What is retried is as important as how. The transient bucket for retry is: connection failures where the request was never sent (connect timeouts, connection refused, DNS failure); a read timeout on a <em>read</em>; and HTTP 429, 502, 503 and 504 for reads, honouring any <code>Retry-After</code>. It is never 400, 401 (refresh the token once and retry once, then stop), 403, 404, 409 (a conflict, not a transient), 422 or a business fault. And one category is deliberately outside the bucket: a timeout, or a 502 or 504 from a gateway that timed out behind it, on a <strong>write that may already have succeeded</strong> is an unknown outcome, and retrying it is a decision made under the rules of failure three, not a default. A 429 or 503 on a write usually means the request was refused before processing, which is safe to retry under the contract; whether a particular gateway status means "refused" or "I do not know" is exactly what the contract with the middleware team settles (5.7).</p>
+    <p>Backoff has to be implemented without holding a thread. A sleep inside an activity or flow holds a thread and a lock. Instead, a transient failure queues the work again with a delay: a queue processor supports delayed queueing (Chapter 06), the next delay is computed with the formula from an attempt count carried in the queue item, and the queue processor's own retry configuration gives fixed or limited retry where exponential backoff is not needed. A flow can use a Wait shape for case-level retries ("retry in five minutes"). After the maximum attempts the item moves to a broken or dead-letter state for human review and replay (Chapter 06).</p>
+    <div class="flow">RETRY LOOP VIA QUEUE PROCESSOR (no thread held between attempts)
+ Case step queues item {caseId, op:"PlaceHold", attempt:0, idemKey}  --&gt; QP "CoreCalls"
+ QP runs activity: call connector
+    success (2xx; a 409 is NOT success until the outcome is looked up, see below)  -&gt; update case, remove item
+    TRANSIENT failure (request never sent / refused) and attempt &lt; 5 -&gt; delay = random(0, min(60, 2^attempt)) s
+                                          -&gt; Queue-For-Processing again (delayed) with attempt+1
+    TRANSIENT failure and attempt = 5 -&gt; mark case "Core unavailable - manual retry", create ops assignment, alert
+    TIMEOUT on a write (outcome unknown)  -&gt; status = Unknown; resolve by lookup, contractually safe retry or reconciliation (below)
+    PERMANENT / business failure   -&gt; do not retry; create "fix and resubmit" assignment with error text</div>
+    <p>Retries also multiply across layers. The caller retries three times, Pega retries three times, the ESB retries three times, and one business event is up to twenty-seven calls at the core: a modest incident becomes a self-inflicted denial of service. The rule is that exactly <em>one</em> layer owns retrying for any failure class and every other layer fails fast and propagates.</p>
+    <div class="flow">Caller  --3 retries-->  Pega  --3 retries-->  ESB  --3 retries-->  Core      = up to 27 calls
+
+RULE: exactly ONE layer owns retrying for any given failure class.
+      Everyone else fails fast and propagates.
+
+Typical split:
+  Connector transport errors / 502, 503, 504 on reads ... Pega connector or the QP, ONCE
+  Business rejections (4xx that are not 408/429) ......... never retried, routed to a human
+  429 / Retry-After ...................................... honoured at the hop that received it
+  Whole-message failure after retries exhausted .......... dead-letter, then replay on purpose</div>
+    <p>The ownership is written down per integration: the retrying layer, the count, the backoff and what happens when it is exhausted. "Everything retries three times" is not a design.</p>
+    <p>The second problem a slow core causes is the one that makes it an outage for the whole application. Suppose a queue processor named <code>CoreCalls</code> has ten threads and each healthy call takes half a second: that is twenty calls a second. If the core stops answering and the read timeout is ten seconds, each thread now blocks ten seconds per call, throughput falls to one call a second, a ninety-five per cent loss, and the threads are not even doing useful work. The arithmetic of a one-hour outage at a steady twelve items a second is a backlog of about 39,600 items at recovery and a drain of around eighty minutes at the surplus rate.</p>
+    <div class="formula">Queue processor "CoreCalls": 10 threads. Healthy: avg call 0.5 s  =&gt; 10 / 0.5 = 20 calls/s = 1,200 calls/min
+Core goes down; read timeout 10 s:
+   each thread blocks 10 s per call  =&gt; 10 / 10 = 1 call/s = 60 calls/min  (95 percent throughput loss)
+   assume steady arrival of 12 items/s (720/min): during a 60 min outage ~43,200 items arrive and ~3,600 are attempted
+   backlog at recovery ~ 39,600 items; surplus capacity after recovery = 20 - 12 = 8/s
+   drain time = 39,600 / 8 = 4,950 s ~ 82 min  (and the threads were also wasted on 10 s timeouts the whole time)</div>
+    <p>Two mechanisms address that, and neither is a Pega built-in. A <strong>circuit breaker</strong> stops calling a downstream system that is known to be failing, so callers fail fast instead of waiting on timeouts and the struggling system gets room to recover. It has three states: closed (calls pass and failures are counted in a rolling window; it opens when the failure rate crosses a threshold, for example half of at least twenty calls in sixty seconds, or five in a row), open (calls fail immediately with a "downstream unavailable" outcome and no remote call is made, until a cool-down such as thirty seconds), and half-open (one to three probe calls are allowed; success closes it, failure reopens it with a longer cool-down). Pega has no built-in circuit breaker for connectors; it is something the team builds. State is kept in shared storage (a database row or a Dynamic System Setting-style flag per downstream such as <code>CORE_BREAKER = OPEN until 10:42:30</code>) because it must be shared across nodes, and a node-scope data page alone would let the nodes disagree. A wrapper checks the flag before any call and returns the unavailable outcome immediately if it is open, so cases queue for later and screens show a banner; a small health-probe job calls a cheap health endpoint during the cool-down and flips the flag back; the same flag drives a UI banner and an operations alert. If the ESB or an API gateway already provides a breaker, prefer it and use Pega's flag only to react to its signal.</p>
+    <p>A <strong>bulkhead</strong> isolates resources per downstream or per workload, named for the compartments that stop one flooded section sinking a ship, so that one failing dependency cannot exhaust shared capacity. In Pega that means separate queue processors per downstream (core calls, sanctions screening, the notification gateway), each with its own thread count and, in a larger deployment, its own node type; separate service packages and access groups with rate limits at the gateway for noisy callers; background work on dedicated nodes that never share web nodes' thread pools; separate connection pool sizing for heavy integration tables where the deployment allows; and separate queues per priority class, so payment exceptions with legal deadlines do not queue behind low-priority notifications.</p>
+    <div class="flow">WITHOUT BULKHEAD:  one QP "AllCalls" (20 threads) -&gt; sanctions API slow (30 s) -&gt; all 20 threads stuck -&gt; core calls starve, SLAs breach
+WITH BULKHEAD:     QP "CoreCalls" (10 threads), QP "Screening" (6 threads), QP "Notify" (4 threads)
+                   sanctions slow =&gt; only "Screening" saturates; core posting continues; alert on Screening queue depth only</div>
+    <p>What the application does while a dependency is unavailable is decided in advance, per integration, because the right answer differs by data and by operation. A balance shown for display may show the last known value with an "as of" timestamp, flagged stale, with actions that depend on an exact balance disabled; that is not acceptable for a closure disbursement amount. A customer profile fetch may serve a recent cached profile, or allow case creation with minimal data to be enriched later, but no decision should rest on a stale risk rating without a flag. Sanctions screening unavailable means <em>do not auto-approve</em>: the case moves to a screening-pending status, fulfilment is blocked, the call retries, and a supervisor is told if it persists. A core hold or closure post that is unavailable is accepted, queued with its idempotency key and shown as "Pending core", never reported to the customer as done until confirmed, with the SLA treatment agreed with Compliance in advance. A correspondence gateway that is unavailable queues and retries, with an alternate channel for critical notices. A reference-data service that is down uses the last cached copy. The principle to state aloud is: availability features (showing a cached balance) may fail open; control features (sanctions, authorisation, maker-checker) fail closed.</p>
+
+    <h3>Failure two: the core says no</h3>
+    <p>The core answers quickly and refuses: the account is already closed, or the amount exceeds the available balance. Nothing is wrong with the connection, and retrying would simply be refused again, five times, wasting capacity and delaying the person who has to fix the cause. A refusal is a <em>business</em> outcome: it routes to an assignment with a clear reason ("fix and resubmit"), and it is never retried. Status codes that mean "your request is wrong" (400, 401 after a single refresh, 403, 404, 405, 415, 422) are client faults and defects to fix and replay; they alert, and they are not retried. A malformed or contract-violating response (a 2xx with an invalid body, a missing mandatory field, an unknown enumeration) is quarantined and alerted, not passed inward. 5.10 turns this into a classification the mapping layer applies once.</p>
+    <p>One status needs particular care, because it is tempting to treat it as good news. Suppose Pega sends the hold with an idempotency key and receives <code>409 Conflict</code>. The shortcut reasoning is "the key was already used, so the original worked". That is unsafe: a 409 means the server refused because of a conflict, and it does not say what the conflicting thing was or how it ended.</p>
+    <table>
+      <tr><th>What a 409 might actually mean</th><th>Correct conclusion</th></tr>
+      <tr><td>Same key, same payload, original succeeded</td><td>Safe to treat as success, but only if the contract guarantees this</td></tr>
+      <tr><td>Same key, same payload, original <strong>failed</strong> or is still in flight</td><td>Not success. The outcome must be looked up</td></tr>
+      <tr><td>Same key, <strong>different</strong> payload</td><td>A genuine client bug: key reuse across different requests. Alert, never retry</td></tr>
+      <tr><td>Conflict on something unrelated (a business-state conflict such as an account already closed)</td><td>Not an idempotency response at all</td></tr>
+    </table>
+    <p>So the contract is checked for what 409 means <em>on this endpoint</em>, the original payload is confirmed to match, and the original operation's outcome is established before anything is concluded. If the contract does not define 409 for replayed keys, a 409 is an error, not a receipt.</p>
+
+    <h3>Failure three: the core says yes, and the answer is lost</h3>
+    <p>Now the hard one. Pega posts the hold; the core places it successfully; the response is lost to a timeout, a connection reset or a pod restart. Pega holds <strong>no information</strong>. This is not a failure and it is not a success: it is an <em>unknown</em>, and it is the most important state in financial integration because both obvious reactions are expensive.</p>
+    <div class="dont"><strong>Both naive responses are wrong.</strong> Retrying blindly can double-post the hold, restraining Dana's funds twice. Marking the call failed can lose a hold the core has already placed, so the disbursement proceeds against funds that were meant to be restrained. "Timeout means it failed" is the assumption that produces duplicate payments in production.</div>
+    <p>The need is for the second attempt to recognise the first operation instead of placing another hold. That property is called <strong>idempotency</strong>, and it works through an <strong>idempotency key</strong>: a unique identifier supplied by the caller for one <em>logical</em> operation, which lets the receiver recognise a repeat and return the original result instead of performing the operation again. Where the receiver honours it by contract, an unknown outcome becomes a safe retry; where it does not, a status lookup or reconciliation is needed.</p>
+    <div class="flow">TIMEOUT-UNKNOWN WITHOUT vs WITH IDEMPOTENCY
+ WITHOUT:  Pega POST hold(4218.55) -&gt; core posts hold -&gt; response lost / read timeout at Pega
+           Pega retries -&gt; core posts SECOND hold(4218.55)  =&gt; customer funds restrained twice
+ WITH:     Pega POST hold(4218.55) key=AC-10882-HOLD-1 -&gt; core posts hold, stores key -&gt; response lost
+           Pega retries same key -&gt; core recognises key -&gt; returns original result (holdRef) =&gt; one hold
+ IF the downstream has NO idempotency support: before retry, perform a status check (GET holds for the account, look for key/reference);
+           if found treat as success, else re-post. This "check-then-act" is weaker (race) but better than blind retry.</div>
+    <p>Three design points make a key work. It is deterministic for the business operation, such as case ID plus step plus sequence (<code>AC-10882-HOLD-1</code>), or a UUID generated once and stored on the case <em>before</em> the first attempt; never a new key per retry, which defeats the entire mechanism. It travels in a header (<code>Idempotency-Key</code>) or request field, and into the core's own duplicate-detection field if it has one. And the receiver stores the key with a fingerprint of the request and the response: the first time it processes and stores; a repeat with the same key and payload returns the stored response; the same key with a different payload is rejected as a conflict. The receiver remembers keys for longer than the maximum retry horizon plus replay windows, days and not minutes. When Pega is the receiver (a Service-REST), it checks a key table or a unique business key before creating, returns the existing case ID on a duplicate, and uses a unique constraint as the final guard. When Pega is the sender, the key is stored on the case or queue item before the call, reused on every retry, and reused by support for replays. Any idempotency store that Pega itself keeps is something the team builds.</p>
+    <p>When the contract does not guarantee idempotency, there are three routes to resolve an unknown outcome, in descending order of preference. A <strong>status lookup</strong> queries the core by the client-generated ID to find out what happened, which is best when the core exposes it, and is why every write carries a client-generated ID. A <strong>contractually safe retry</strong> resends with the same key relying on a documented guarantee that the core will not double-apply; it is only valid when the contract states that, and is not an assumption. <strong>Reconciliation</strong> parks the item in an unknown-outcome state and settles it against the core's end-of-day file, which is the backstop and needs a real queue and a real human process, not a log line.</p>
+    <p>The unknown outcome is modelled as its own case status, <code>Unknown</code>, not <code>Failed</code>, so it is visible, countable and alertable. An unknown-outcome queue with zero items is a healthy signal; the same items hidden inside a generic error bucket are a future audit finding. The status, the lookup and the reconciliation job are built by the team: Pega does not ship an unknown-outcome state.</p>
+    <div class="card blue"><strong>Check your understanding.</strong>
+      <p>Pega posts the hold for <code>AC-10882</code> with key <code>AC-10882-HOLD-1</code>. The call times out. The ESB team's contract says nothing about idempotency, and the core exposes a "holds by account" query. What should the case do?</p>
+      <p><strong>Answer.</strong> Set the status to <code>Unknown</code>, not <code>Failed</code> and not "retry". Then resolve it by status lookup: query the core's holds for <code>CHK-8842-0117</code> and look for the reference or key. If a hold with that reference exists, record it as placed (success); if none exists, it is now safe to post again with the same key, with a small race that reconciliation covers. Blind retry is wrong because the contract does not promise the core will recognise the key; marking it failed is wrong because the hold may exist. If the lookup itself is unavailable, the item stays Unknown and reconciliation against the end-of-day file settles it. The answer depends on the lookup being authoritative; if the core's query lags its writes, the check-then-act can still miss a hold placed seconds ago, which is why reconciliation remains the backstop.</p></div>
+
+    <h3>Accepting the request without waiting for the core</h3>
+    <p>The three failures point to one structural conclusion: a hold on the closure path should not be a synchronous call inside the user's click. The case should record <em>intent</em>, and a separate process should deliver it with retries and a key. That raises a problem of its own. If the application saves the case and then calls the core, a failure between the two leaves the case saying "done" while the core was never updated; if it calls the core first and then saves, a failed save leaves the core updated and the case unaware. This is the dual-write problem. The standard answer is the <strong>outbox pattern</strong>: in one database transaction, update the case status to "Pending-Core" and insert the intent into an explicit outbox table, commit, and let a queue processor deliver the outbox item with retries and the key; on confirmation the status advances to "Core-Confirmed", and on exhaustion an operations assignment appears. Pega has no built-in outbox; the table and the delivery processor are something the team builds. Whether <code>Queue-For-Processing</code> itself commits in the same transaction as the case update is release-dependent and not assumed here: an experiment on the deployed system settles it (Chapter 06 §6.3 describes one). Throughout, no database transaction is held open across a remote call, because that holds locks and exhausts connection pools.</p>
+    <div class="flow">THE DUAL-WRITE PROBLEM AND THE OUTBOX
+  BAD:   Obj-Save(case)  then  Connect-REST(core)       if the connector fails after the save: case says done, core not updated
+         Connect-REST(core) then Obj-Save(case)         if the save fails after the connector: core updated, case does not know
+  GOOD:  in ONE transaction:  update case status = "Pending-Core"  +  insert into an explicit outbox TABLE {key, payload}
+         (whether Queue-For-Processing commits in the same transaction is release-dependent and unproven: see Chapter 06 section 6.3)
+         commit
+         Queue Processor delivers the outbox item with retries and the idempotency key
+         on confirmation: case status = "Core-Confirmed";  on exhaustion: ops assignment
+  Never hold a database transaction open across a remote call (locks, connection pool exhaustion).</div>
+    <p>Pega's other asynchronous mechanisms fit around that: <code>Queue-For-Processing</code> to a queue processor is the default for outbound writes and any call that need not block the user; delayed queueing serves backoff and scheduled follow-ups; asynchronous connector invocation with later collection (a Connect-Wait style capability whose method names are release-specific) suits fanning out several independent reads in one request to reduce latency; and a Wait shape holds a case for a callback (5.7).</p>
+    <table>
+      <tr><th>Failure injected</th><th>Expected behaviour</th><th>Evidence</th></tr>
+      <tr><td>Downstream returns 503 for 10 minutes</td><td>Breaker opens, items queue with backoff, UI shows a banner, no thread starvation</td><td>Queue depth and thread metrics, logs</td></tr>
+      <tr><td>Downstream slow (read timeout) on a write</td><td>Timeouts honoured; unknown outcome resolved by status lookup, a contractually safe retry or reconciliation</td><td>One hold in core, not two</td></tr>
+      <tr><td>Response lost after success</td><td>Retry with the same key returns the original result</td><td>Core audit</td></tr>
+      <tr><td>429 throttled</td><td>Backoff honouring Retry-After; concurrency reduced</td><td>Rate of calls</td></tr>
+      <tr><td>Malformed or unexpected response</td><td>Quarantined, classified as permanent, ops assignment</td><td>No bad data in cases</td></tr>
+      <tr><td>Token expired or revoked mid-run</td><td>One refresh and retry; then fail with an auth alert</td><td>No retry storm on 401</td></tr>
+      <tr><td>Duplicate inbound event (ESB redelivery)</td><td>A single case created</td><td>Unique key check</td></tr>
+      <tr><td>Node restart mid-processing</td><td>Item re-processed safely (idempotent), not lost</td><td>Queue item state</td></tr>
+    </table>
+    <p>That matrix is also the test plan. With PegaUnit and simulation, each connector's success, 4xx, 5xx and malformed-body shapes are mapped to their classes with no raw status leaking downstream; a malformed payload fails at the boundary while a valid one the core rejects becomes a business assignment; token expiry mid-run gives one refresh, one retry, then an alert; a stub that applies the write and then drops the response drives the item to <code>Unknown</code> and resolves with exactly one effect; two threads firing the same request at once produce exactly one case or effect; and an item failed N times lands in a human queue where replay is audited and harmless. Load is tested at production-like volume against criteria set in advance (rate, p99, error rate, backlog drain time), with the database observed and not only Pega.</p>
+    <p>The ways this design is usually wrong are a timeout left at its default, infinite retry, retry in both the ESB and Pega without agreement, a new idempotency key for each attempt, sleeping inside an activity, one queue processor for every downstream, failing open on a compliance control, committing then calling then committing again, telling the customer "failed" when the hold may exist, and catching every exception and logging nothing useful.</p>
+  </section>
+
+  <section id="s5-10" class="pagebreak">
+    <h2>5.10 Classifying what comes back: errors, logging and correlation IDs</h2>
+    <p>Section 5.9 reached for the word "class" repeatedly: transient, permanent, business, unknown. The reason to do that once, at the mapping boundary, is that the rest of the application should react to the <em>class</em> of failure and not to raw status codes. The classification is the contract between the mapping layer and the retry and routing logic, and it must agree with 5.9: a timeout is not simply "transient".</p>
+    <table>
+      <tr><th>Class</th><th>Examples</th><th>Retry?</th><th>Handling</th></tr>
+      <tr><td>Transport, request not sent</td><td>DNS failure, connection refused, connect timeout, TLS handshake failure</td><td>Yes, with backoff (nothing was sent)</td><td>Transient; the breaker counts it</td></tr>
+      <tr><td>Transport, outcome unknown</td><td>Read timeout, connection reset or 502/504 after the request was sent, on a <strong>write</strong></td><td><strong>Not by default.</strong> Resolve by status lookup, a contractually safe retry, or reconciliation</td><td>Status <code>Unknown</code>; the breaker counts it; alert on the unknown queue</td></tr>
+      <tr><td>Transport or protocol, read</td><td>Read timeout, 502, 503, 504, 429 on a <strong>read</strong></td><td>Yes, with backoff and honouring Retry-After</td><td>Transient; degrade to cached data where allowed</td></tr>
+      <tr><td>Protocol: refused before processing</td><td>429 or 503 on a write, where the contract says the request was not processed</td><td>Yes, with backoff and Retry-After</td><td>Transient; reduce concurrency</td></tr>
+      <tr><td>Protocol: server fault</td><td>HTTP 500</td><td>Limited (often a bug); a few times, then park</td><td>Alert if repeated; on a write, the outcome may be unknown</td></tr>
+      <tr><td>Protocol: client fault</td><td>400, 401, 403, 404, 405, 415</td><td>No (401: refresh the token once)</td><td>Defect or configuration; alert; fix and replay</td></tr>
+      <tr><td>Business</td><td>409, 422, a SOAP business fault, "insufficient funds", "account closed"</td><td>No</td><td>Route to a business assignment with a reason; a 409 on a replayed key is never assumed to be success (5.9)</td></tr>
+      <tr><td>Contract violation</td><td>Malformed JSON, missing mandatory field, unknown enumeration</td><td>No</td><td>Quarantine, alert, log a payload fingerprint</td></tr>
+      <tr><td>Data / mapping</td><td>Type conversion failure, field too long</td><td>No</td><td>Reject the row and keep the batch going</td></tr>
+    </table>
+    <div class="flow">ERROR CLASSIFICATION DECISION
+ response / exception
+   connection never established?       -&gt; TRANSPORT, NOT SENT: retry with backoff (nothing was sent)
+   timeout or reset AFTER sending?      -&gt; READ: retry with backoff / degrade;  WRITE: status UNKNOWN (lookup, safe retry, or reconciliation)
+   status 429 / 503?                    -&gt; REFUSED before processing (if the contract says so): backoff + Retry-After, breaker counts
+   status 502 / 504 on a WRITE?         -&gt; treat like a timeout: UNKNOWN unless the contract says the request was not forwarded
+   status 401?                          -&gt; refresh token ONCE and retry; if still 401 -&gt; auth alert (stop; do not loop)
+   status 4xx other than 409/429?       -&gt; PERMANENT client fault: no retry, alert, fix mapping/config
+   status 409?                          -&gt; NOT success by itself: check the contract, confirm payload, look up the outcome; different payload -&gt; defect
+   status 422 / business fault?         -&gt; BUSINESS: assignment to ops with reason
+   status 2xx but body invalid?         -&gt; CONTRACT violation: quarantine
+   status 500?                          -&gt; limited retry on reads; on a write the outcome may be unknown</div>
+    <p>Logging for integrations has the same discipline. For each call, record the timestamp, system, operation, correlation ID, idempotency key, case ID, HTTP method and path (without secrets), status code, latency, attempt number and outcome class. Avoid full bodies carrying personal data, tokens, passwords and full account or tax identifiers; keep payload evidence as a size, a hash and a masked sample, or in a protected diagnostic store with short retention. Record errors with their class and stack trace for the unexpected ones, never swallowed. Track metrics as call counts, error rates by class, p50/p95/p99 latency, timeouts, breaker state and queue depth, and not averages alone.</p>
+    <p>A <strong>correlation ID</strong> is what makes a transaction followable. It is a unique identifier generated at the start of a business transaction (when the case is created, or when the first inbound message arrives) and passed to every downstream call and into every log line, so that support can follow one transaction across Pega, the ESB, the core and the log platform. It is stored on the case as an exposed column so support can search by it, sent as a header on every outbound call, written into Pega logs and history notes, and included in alerts. If an inbound request has none, one is generated and returned in the response so the caller can quote it.</p>
+    <div class="flow">CORRELATION ID PROPAGATION
+  Inbound event (ESB header X-Correlation-ID: 7b1f...) or case creation generates one
+    -&gt; stored on the case (.CorrelationID)  [exposed column, so support can search by it]
+    -&gt; sent as a header on every outbound connector call  -&gt; ESB logs it -&gt; core logs it
+    -&gt; written into Pega logs (log context where available) and history notes
+    -&gt; included in alerts and PDC cases
+  Support: search the log platform by 7b1f... =&gt; full timeline across systems.</div>
+    <p>Pega's own tools for diagnosing integrations are Tracer (connector invocation, request and response mapping, errors and transform steps, in a lower environment, never left running in production), the clipboard (integration pages and page messages after a call), PAL (counts and times of connector calls and database interactions per interaction), PDC alerts (long-running connector alerts and failure trends), connector simulation with PegaUnit (reproducing a failure shape without the live system), and Admin Studio (queue processor and broken-item status for asynchronous integrations). A requeue or replay endpoint with its dashboard is not a Pega feature: Pega has no built-in replay API, and the endpoint, its authorisation and its audit are something you build, as Chapter 06 shows.</p>
+  </section>
+
+  <section id="s5-11" class="pagebreak">
+    <h2>5.11 Proving who is calling: authentication profiles and services</h2>
+    <p>Every call so far has quietly assumed the core accepts Pega's request. Why would it? The core must be sure the caller is the application it claims to be, and Pega must be sure of the same about whoever calls it. Pega separates the two directions with two records whose names are similar enough to be confused, and the confusion is a common slip. An <strong>Authentication Profile</strong> is <em>outbound</em>: it answers "how does Pega prove its identity when calling a remote system?", and connectors (Connect-REST, Connect-SOAP, Connect-HTTP and others) reference it. An <strong>Authentication Service</strong> is <em>inbound</em>: it answers "how does Pega verify who is calling or logging in?", and operator login (SAML, OIDC, LDAP, custom) and service-package authentication (token validation) use it. Profiles are for connectors going out; services are for people and callers coming in.</p>
+    <p>The outbound profile types range from legacy to preferred. <em>Basic</em> sends a username and password in the Authorization header, base64-encoded and not encrypted, so it is only safe over TLS and should be avoided for new bank integrations when something better exists. NTLM or Kerberos-style authentication serves internal Windows services only. <em>OAuth 2.0</em> (client credentials, authorization code, and others depending on release) has Pega obtain an access token from a token endpoint and attach it as a bearer token, with the profile storing the endpoint, client ID, secret and scopes and handling caching and refresh; it is the preferred choice for service-to-service access. An <em>API key</em> sent as a header or query parameter suits simple partner APIs and is a bearer secret that must be rotated and protected. A <em>client certificate</em> (mutual TLS, 5.14) is presented during the TLS handshake and is often combined with a token. Header-based custom schemes are a last resort. Which profile types and options exist varies by release, so confirm the OAuth grant types the target release supports before promising one.</p>
+    <p>Inbound, the service types are SAML 2.0 for browser single sign-on with an enterprise identity provider (5.13); OpenID Connect for browser login and token-based access on top of OAuth 2.0; OAuth 2.0 token validation for services, in which a service package validates bearer tokens from the bank's authorisation server, by introspection or by validating a signed JWT against the issuer's published keys; LDAP or Active Directory against a directory (older but still seen); and custom login logic, which is best avoided.</p>
+    <p>Secrets handling follows four rules. Credentials live in the authentication profile (encrypted by the platform) or an external secrets store it references, never in a data transform, activity, plain-text Dynamic System Setting or source control. Credentials differ per environment, and promotion packages must not carry production secrets down or lower-environment secrets up. Each integration gets a dedicated technical identity with least privilege, so a leaked credential has a narrow blast radius. And credentials are rotated on a schedule and on suspicion of compromise (5.14). The anti-patterns are hard-coded Basic credentials in a connector header, one service account used by development, QA and production, a client secret pasted into a ticket or chat, disabling certificate validation for convenience, and a service package with authentication switched off "temporarily".</p>
+  </section>
+
+  <section id="s5-12" class="pagebreak">
+    <h2>5.12 OAuth 2.0 and JWT</h2>
+    <p>The question that OAuth answers is how the core, or the ESB in front of it, can trust Pega without ever storing Pega's long-lived password. Before OAuth, a client stored the password and sent it on every call: a leaked password gave full access indefinitely, could not be limited to one function, and could not be revoked without changing it everywhere. <strong>OAuth 2.0</strong> is a framework for <em>delegated authorisation</em>: a client obtains a short-lived <strong>access token</strong> from an <strong>authorisation server</strong> and presents it to a <strong>resource server</strong> (an API). The resource server trusts the token because the authorisation server issued it, so access can be scoped, short-lived and revocable, and one place can enforce policy and audit.</p>
+    <p>The roles map directly onto Riverbend. The resource owner is the bank (for machine access) or a customer (for user-delegated flows). The client is Pega calling the ESB, or the digital portal calling Pega's DX API. The authorisation server is the bank's identity platform. The resource server is the ESB or API gateway, or Pega itself as a Service-REST host. The grant types say how the token is obtained.</p>
+    <table>
+      <tr><th>Grant</th><th>Who it is for</th><th>Summary</th><th>Banking use</th></tr>
+      <tr><td>Client credentials</td><td>Machine to machine, no user</td><td>The client authenticates with its own ID and secret (or certificate or signed assertion) and receives a token for itself</td><td>Pega calling the ESB; the ESB calling a Pega Service-REST; batch integrations</td></tr>
+      <tr><td>Authorization code (with PKCE for public clients)</td><td>A user logging in through a browser or app</td><td>The user is redirected, authenticates and consents; the client receives a one-time code and exchanges it over a back channel for tokens</td><td>Customer or employee portal login; user-delegated API access</td></tr>
+      <tr><td>Refresh token</td><td>Long sessions without re-login</td><td>A longer-lived credential exchanged for a new access token; stored with great care</td><td>Portals and mobile apps; rarely service accounts</td></tr>
+      <tr><td>JWT bearer / assertion grants</td><td>A client proving identity with a signed JWT</td><td>Replaces a shared secret with a signed assertion</td><td>High-assurance machine access</td></tr>
+      <tr><td>Resource owner password</td><td>Legacy; avoid</td><td>The client collects the user's password directly</td><td>Deprecated in current guidance; Pega documents the password-credentials grant as deprecated from release 24.2.5</td></tr>
+    </table>
+    <p>For Pega as a client two documented points are worth knowing: the authorization code grant for a REST connector is supported only through the OIDC flow, and an existing profile using the password grant should be migrated to authorization code or client credentials. For the pipeline from Pega to the ESB, the sequence is client credentials.</p>
+    <div class="flow">PEGA (client)                         AUTHORISATION SERVER                          ESB / API GATEWAY (resource server)
+   |                                         |                                                    |
+   | 0 (configured once) Authentication Profile: token URL, client_id, client_secret (or cert), scope "accounts.holds.write"
+   | 1 Token cache check: valid token for (profile, scope)?  YES -&gt; skip to step 4 (no call to the auth server)
+   | 2 POST /token  grant_type=client_credentials, client authentication (secret / mTLS / signed JWT), scope=accounts.holds.write
+   | --------------------------------------&gt;|                                                    |
+   |                                         | 3 validate client, check allowed scopes            |
+   | &lt;-- 200 {access_token (JWT), token_type=Bearer, expires_in=300, scope} -------|               |
+   |   cache token until (expiry - safety margin of ~60 s)                                        |
+   | 4 POST /accounts/{id}/holds  Authorization: Bearer eyJhbGciOi...  X-Correlation-ID, Idempotency-Key
+   | ----------------------------------------------------------------------------------------------&gt;|
+   |                                         |       5 validate token: signature (JWKS), issuer, audience, exp, scope
+   |                                         |       6 authorise operation; route to core
+   | &lt;------------------------------------------------------------------------------ 201 {holdRef} -|
+   | 7 If 401 (token expired/revoked): discard cached token, fetch ONE new token, retry ONCE; if 401 again -&gt; alert, stop</div>
+    <p>When a human is involved, the flow is authorization code with PKCE. The client generates a random <code>code_verifier</code> and its hashed <code>code_challenge</code>, redirects the browser to the authorisation endpoint with a <code>state</code>, the user authenticates (password and multi-factor) and consents, the browser delivers a one-time code to the client, and the client exchanges code and verifier at the token endpoint over the back channel, receiving access, ID and refresh tokens; it then validates the ID token's signature, issuer, audience, nonce and expiry before creating a session.</p>
+    <p>A <strong>JSON Web Token</strong> is three base64url-encoded parts joined by dots: header, payload, signature. An access token is often a JWT so the resource server can validate it locally without calling the authorisation server on every request. The header names the signing algorithm and the key ID (<code>kid</code>) used to select the public key. The payload carries claims: issuer (<code>iss</code>), subject (<code>sub</code>), audience (<code>aud</code>), expiry, issued-at and not-before times, scope, a unique token ID (<code>jti</code>) and the client ID. The signature is an RSA signature over the first two parts made with the issuer's private key and checked with its public key.</p>
+    <table>
+      <tr><th>Validation step at the resource server</th><th>Why</th></tr>
+      <tr><td>Verify the signature with the right public key (selected by <code>kid</code> from the JWKS)</td><td>Proves the issuer created it and nobody altered it</td></tr>
+      <tr><td>Reject <code>alg: none</code> and unexpected algorithms; pin the allowed algorithms</td><td>A classic JWT attack</td></tr>
+      <tr><td>Check <code>iss</code> equals the trusted issuer</td><td>Never accept tokens from another tenant or issuer</td></tr>
+      <tr><td>Check <code>aud</code> includes this API</td><td>A token issued for another API must not work here</td></tr>
+      <tr><td>Check <code>exp</code> and <code>nbf</code> with small clock-skew tolerance</td><td>Expiry enforcement</td></tr>
+      <tr><td>Check <code>scope</code> or roles for the specific operation</td><td>Authorisation, not just authentication</td></tr>
+      <tr><td>Optionally check <code>jti</code> against revocation or replay lists</td><td>Sensitive operations</td></tr>
+    </table>
+    <p>A <strong>JSON Web Key Set</strong> (JWKS) is a JSON document the authorisation server publishes at a well-known URL listing its current public keys, each with a <code>kid</code>. Resource servers fetch and cache it and select the key by <code>kid</code>, which enables <em>key rotation without redeploying consumers</em>: the issuer adds a key, starts signing with it and later retires the old one, and consumers refresh the set when they see an unknown <code>kid</code>. Scopes describe permitted operations (<code>accounts.read</code>, <code>accounts.holds.write</code>) and should be narrow, so a reporting integration cannot place holds; the profile requests the minimum.</p>
+    <p>Token lifetime and caching are where operational problems start. Service access tokens are short, typically five to fifteen minutes, set by the authorisation server. The Authentication Profile handles acquisition and caching, so a token is not fetched per call (which doubles latency and can trip the authorisation server's rate limit). Each node may hold its own cached token, which is fine for client credentials but worth watching when many nodes and processors start together after a restart. Revocation relies on short lifetimes, introspection or a deny list. Refresh tokens are stored encrypted, bound to the client, rotated on use and never logged. Clocks are synchronised with NTP and validation tolerates thirty to sixty seconds of skew.</p>
+    <p>When the ESB or a portal calls a Pega Service-REST, Pega is the resource server: the service package uses an OAuth-style authentication service that validates the bearer token (signature, issuer, audience, expiry), maps the token's client or subject to an operator or service access group, and runs the service as that identity; scope claims can be mapped to roles or checked in the service logic. Configuration screens differ by release. The anti-patterns are long-lived access tokens, requesting every scope, one client ID shared by all integrations, logging tokens, accepting tokens without audience checks, fetching a token per request, retrying a 401 forever and ignoring clock skew.</p>
+  </section>
+
+  <section id="s5-13" class="pagebreak">
+    <h2>5.13 SAML 2.0 and single sign-on</h2>
+    <p>Marcus and Priya should not have a separate password for Pega. <strong>SAML 2.0</strong> lets a user sign in once with an <strong>Identity Provider (IdP)</strong>, and access many applications, called <strong>Service Providers (SP)</strong>, without a password for each. The IdP sends the SP a digitally signed XML <em>assertion</em> that says who the user is and optionally attributes such as groups and email; the SP trusts it because it trusts the IdP's signing certificate. The reasons a bank wants this are central control: one identity to disable so access ends everywhere, multi-factor enforced once at the IdP, and a single audit trail.</p>
+    <p>The vocabulary is small. The IdP authenticates the user; Pega is the SP. <em>Metadata</em> is XML describing an entity (entity ID, endpoints, signing and encryption certificates), exchanged at setup. The <em>ACS URL</em> is the SP endpoint that receives the assertion. The <em>assertion</em> is the signed statement, whose <em>NameID</em> identifies the subject and whose <em>attribute statement</em> carries groups and other data. <em>RelayState</em> carries the original destination URL through the login round trip, and a <em>binding</em> says how messages travel (assertions normally arrive by HTTP POST through the browser).</p>
+    <div class="flow">&lt;saml2p:Response Destination="https://pega.riverbend.example/.../acs" InResponseTo="_req123" ID="_resp456" IssueInstant="..."&gt;
+  &lt;saml2:Issuer&gt;http://idp.example/exk1abc&lt;/saml2:Issuer&gt;               who is the IdP
+  &lt;saml2p:Status&gt;&lt;saml2p:StatusCode Value="...:Success"/&gt;&lt;/saml2p:Status&gt;
+  &lt;saml2:Assertion ID="_a789" IssueInstant="..." Version="2.0"&gt;
+    &lt;ds:Signature&gt; ... RSA-SHA256 signature over the assertion, with reference to the IdP certificate ... &lt;/ds:Signature&gt;
+    &lt;saml2:Subject&gt;
+      &lt;saml2:NameID Format="...:emailAddress"&gt;mreed@riverbend.example&lt;/saml2:NameID&gt;
+      &lt;saml2:SubjectConfirmationData NotOnOrAfter="..." Recipient="https://pega.../acs" InResponseTo="_req123"/&gt;
+    &lt;/saml2:Subject&gt;
+    &lt;saml2:Conditions NotBefore="..." NotOnOrAfter="..."&gt;
+      &lt;saml2:AudienceRestriction&gt;&lt;saml2:Audience&gt;https://pega.riverbend.example/sp&lt;/saml2:Audience&gt;&lt;/saml2:AudienceRestriction&gt;
+    &lt;/saml2:Conditions&gt;
+    &lt;saml2:AuthnStatement AuthnInstant="..." SessionIndex="..."&gt;  &lt;saml2:AuthnContext&gt;...PasswordProtectedTransport / MFA...&lt;/saml2:AuthnContext&gt; &lt;/saml2:AuthnStatement&gt;
+    &lt;saml2:AttributeStatement&gt;
+      &lt;saml2:Attribute Name="groups"&gt;&lt;saml2:AttributeValue&gt;DepOps-Maker&lt;/saml2:AttributeValue&gt;&lt;/saml2:Attribute&gt;
+      &lt;saml2:Attribute Name="employeeId"&gt;&lt;saml2:AttributeValue&gt;E123456&lt;/saml2:AttributeValue&gt;&lt;/saml2:Attribute&gt;
+    &lt;/saml2:AttributeStatement&gt;
+  &lt;/saml2:Assertion&gt;
+&lt;/saml2p:Response&gt;</div>
+    <p>The flow that matters is SP-initiated. The user goes to Pega, which has no session; the authentication service of type SAML 2.0 builds an AuthnRequest (an ID, the SP entity ID, the ACS URL) with the original URL as RelayState and redirects the browser to the IdP. The IdP authenticates the user, with multi-factor, or reuses its own session, and builds a signed response and assertion with attributes, audience and expiry, which the browser POSTs to Pega's ACS URL. Pega validates the signature against the IdP certificate from metadata, the issuer, the audience (which must equal its SP entity ID), the destination and recipient (which must equal the ACS URL), <code>InResponseTo</code> (which must equal the request ID), the validity window with clock skew, and that it has not been replayed. It then maps attributes: the identifier attribute to an operator ID and groups to an access group, creating the operator on the fly if provisioning is enabled and rejecting the login otherwise. It creates the session, applies the access group and redirects to the original URL.</p>
+    <p>IdP-initiated sign-on, where the user clicks a tile in the IdP dashboard and the IdP posts an unsolicited assertion, has no request to correlate, so there is no <code>InResponseTo</code>: it is weaker, deep links are lost, and many banks disable it or add extra validation. Signing is mandatory in practice, for integrity and authenticity. Encryption is optional but common in banks, protecting the assertion's contents with the SP's public certificate, with the private key held in Pega's keystore. Neither replaces TLS on every hop.</p>
+    <p>A Pega SAML authentication service is configured by importing the IdP's metadata, setting the SP entity ID and ACS URL (Pega can generate SP metadata for the identity team), placing signing and decryption keys in the keystore and the IdP certificate in the truststore, mapping assertion attributes to operator properties and choosing the operator identifier, optionally enabling just-in-time provisioning, deriving the access group from the groups attribute through a mapping table or transform so role changes in the IdP apply at the next login, and setting session timeout, logout behaviour and clock-skew tolerance.</p>
+    <p><strong>Just-in-time provisioning</strong> creates, and optionally updates, the operator record at login from the assertion's attributes instead of pre-creating every operator. It removes a manual onboarding step and keeps role assignment driven by central groups. Its controls are what make it safe: provision only when the groups attribute maps to a known access group; default to no access if no group matches; update the access group on every login so removals take effect; never let a user-supplied attribute choose an arbitrary access group; and log provisioning events. Deprovisioning happens in the IdP and blocks new logins, but an existing Pega session lasts until its timeout, so timeouts are kept short and a periodic operator-status sync can help.</p>
+    <div class="flow">ATTRIBUTE MAPPING (illustrative)
+  Assertion groups attribute           -&gt;   Pega access group                       Pega work group
+  DepOps-Maker                         -&gt;   RiverbendDepOps:Makers                  DepOps-Intake
+  DepOps-Checker                       -&gt;   RiverbendDepOps:Checkers                DepOps-Approvers
+  DepOps-Supervisor                    -&gt;   RiverbendDepOps:Supervisors             DepOps-Supervisor
+  Audit-ReadOnly                       -&gt;   RiverbendDepOps:Auditors                (none)
+  (no matching group)                  -&gt;   login rejected (no default access)
+  Conflicting groups (Maker + Checker) -&gt;   deny or require review: segregation of duties must be enforced in the mapping, not assumed</div>
+    <p>Logout has two forms. Local logout ends the Pega session only; the user may still have an IdP session and clicking the application again logs them straight back in. Single Logout sends a logout request to the IdP, which ends its session and may notify other applications, and is fragile because every participant must support it, so many banks accept local logout, short IdP session lifetimes and idle timeouts; shared workstations in branches and contact centres require full IdP logout and short idle timeouts.</p>
+    <table>
+      <tr><th>Symptom</th><th>Typical cause</th><th>Check</th></tr>
+      <tr><td>Signature validation failed</td><td>The IdP rotated its signing certificate; the SP still holds the old one</td><td>Compare the certificate in the current IdP metadata with the one in the authentication service; re-import</td></tr>
+      <tr><td>Audience mismatch</td><td>The IdP application uses a different SP entity ID</td><td>Compare the assertion's Audience with Pega's entity ID</td></tr>
+      <tr><td>NotBefore / NotOnOrAfter failure</td><td>Clock skew</td><td>NTP; the tolerance setting</td></tr>
+      <tr><td>Destination / Recipient mismatch</td><td>A load balancer or proxy changes the external URL (http versus https, host name)</td><td>Compare the registered ACS URL with what the SP derives behind the proxy</td></tr>
+      <tr><td>Logs in with no or wrong access</td><td>Groups attribute missing, differently named, or truncated</td><td>Decode the assertion and check attribute names and values; check the mapping table</td></tr>
+      <tr><td>Redirect loop</td><td>Session cookie not set (SameSite, secure, domain) or a RelayState problem</td><td>Browser network trace; cookie attributes; proxy settings</td></tr>
+      <tr><td>Operator not found</td><td>Provisioning disabled and the operator not pre-created, or an identifier mismatch (email versus employee ID)</td><td>Compare NameID and the mapped identifier with the operator ID format</td></tr>
+    </table>
+    <p>The approach to a broken login is mechanical: decode the assertion and compare issuer, audience, destination, timestamps and attributes with what Pega expects; that finds almost every case. The identity team owns the IdP's configuration, so the three things asked of them are a groups attribute with stable naming, notice of signing-certificate rotation and a test IdP application.</p>
+  </section>
+
+  <section id="s5-14" class="pagebreak">
+    <h2>5.14 mTLS, keystores, SFTP keys, secrets and rotation</h2>
+    <p>Authentication with a token proves identity at the application layer. Beneath it, <strong>TLS</strong> encrypts traffic and lets the client verify the server through its certificate, and <strong>mutual TLS</strong> adds the reverse: the server also demands a client certificate and verifies it, so only callers holding a trusted certificate can even open a connection. Banks use it for internal service-to-service and partner links, often together with an OAuth token as two independent controls.</p>
+    <div class="flow">mTLS HANDSHAKE (simplified)
+ Pega (client)                                              ESB (server)
+   | 1 ClientHello ------------------------------------------&gt;|
+   | &lt;-- 2 ServerHello + server certificate + CertificateRequest|
+   | 3 verify server cert chain against Pega TRUSTSTORE (CA) and host name
+   | 4 send client certificate (from Pega KEYSTORE) + proof of private key (CertificateVerify) --&gt;|
+   |                                                       5 ESB verifies client cert chain against ITS truststore; maps subject to identity
+   | &lt;-- 6 Finished; encrypted channel established ---------------|
+   | 7 HTTP request (plus bearer token if required) over the channel</div>
+    <p>Two stores recur. A <strong>keystore</strong> holds <em>your own</em> private keys and certificates, the identity you present: the mTLS client certificate, the SAML signing and decryption key, a JWT signing key. A <strong>truststore</strong> holds the certificates, usually of certificate authorities, that you <em>trust</em> when verifying others. A certificate chain (leaf, intermediate, root) must be imported in full, since missing intermediates are a frequent cause of handshake failures; the common name or subject alternative name must match the endpoint's DNS name, not an IP; and certificates expire, often within a year, so an inventory with alerts at sixty and thirty days is kept, because certificate expiry is one of the most common avoidable production outages. Where keystores live differs by deployment (client-managed or Pega Cloud), so follow the platform team's standard.</p>
+    <p>File exchange (Chapter 07) uses SSH keys rather than passwords for SFTP. Pega as the client holds the <strong>private key</strong>; the server holds the matching <strong>public key</strong> in the account's authorised keys; and Pega also verifies the server's <strong>host key</strong> against a known-hosts entry to prevent interception, which is never disabled. Practice: modern key types and sizes (RSA 3072 or 4096, or Ed25519 where supported); the private key in the platform's secure keystore under a passphrase, never in a rule, repository or readable share; one identity per partner and environment, to limit the blast radius and allow independent rotation; the host key pinned and updated through a controlled process; and least-privilege directory permissions.</p>
+    <table>
+      <tr><th>Secret</th><th>Where it should live</th><th>Never</th></tr>
+      <tr><td>Client secrets, API keys, passwords</td><td>Authentication profile fields (encrypted by the platform) or an external vault integrated with it, injected per environment</td><td>In rules, transforms, plain-text DSS, source control, tickets, chat</td></tr>
+      <tr><td>Private keys</td><td>Keystore with a passphrase, restricted access</td><td>Emailed, committed, shared among environments</td></tr>
+      <tr><td>Database credentials</td><td>Database instance configuration or a vault</td><td>Hard-coded in Connect-SQL</td></tr>
+      <tr><td>Tokens</td><td>Memory (cached by the profile) for their lifetime only</td><td>Logged, stored on cases, shown in error messages</td></tr>
+    </table>
+    <p>Rotation has to be designed so that nothing drops. A client secret (ninety days or per policy) rotates with an overlap, the authorisation server accepting old and new for a window, the profile updated in each environment during it, and the old one revoked after verification. A client certificate rotates by adding the new one to the server's truststore beside the old, switching Pega's keystore entry, verifying and removing the old. An IdP signing certificate is published in metadata ahead of the switch so the SP accepts both during overlap. An SFTP key is added beside the old, switched and removed. The issuer's JWKS keys need no consumer change if validation is by <code>kid</code> and the JWKS refreshes on an unknown <code>kid</code>. A client-secret rotation as a runbook: calendar reminder and change ticket two weeks ahead, confirming dual-secret support; the new secret generated and tested in lower environments a week ahead; on the day the new secret added to the production profile with the old left valid and the 401 rate watched; a day later all nodes and processors confirmed on the new secret (the token cache refreshes on expiry); two days later the old secret revoked and 401 alerts watched for a day, with evidence documented; and a rollback of re-enabling the old secret while it is still valid.</p>
+  </section>
+
+  <section id="s5-15" class="pagebreak">
+    <h2>5.15 One hold, end to end: <code>AC-10882</code> through Pega, ESB and core</h2>
+    <p>The chapter's mechanisms, put in one scenario: placing the hold on <code>CHK-8842-0117</code> for Dana's closure on 9 March, with correlation ID and idempotency key <code>AC-10882-HOLD-1</code>. The amounts follow the ledger and the hold covers the available balance of $4,218.55.</p>
+    <div class="flow">SCENARIO: place a $4,218.55 restraint on CHK-8842-0117 (closure case AC-10882)
+
+ PEGA  (Fulfil stage, Integrator step, or queue-processor driven)
+   | A. Pre-checks: D_Account[acct] canonical page (cached), status Active?  breaker CORE = CLOSED?  token cache valid?
+   | B. Write intent: in ONE transaction  case.status = "Pending-Core"  + explicit outbox table row {AC-10882-HOLD-1, payload}   -&gt; commit
+   |
+ PEGA Queue Processor "CoreCalls" (10 threads, bulkhead)   -- attempt n --
+   | C. Auth: OAuth client-credentials token from cache (or fetch once) ; mTLS client certificate from keystore
+   | D. Request: POST {ESB}/accounts/CHK-8842-0117/holds
+   |       headers: Authorization: Bearer ... | X-Correlation-ID: AC-10882-HOLD-1 | Idempotency-Key: AC-10882-HOLD-1
+   |       body (from canonical via the request transform): { "amount": "4218.55", "reasonCode": "CLOSURE", "reference": "AC-10882", "expiry": null }
+   |       timeouts: connect 2 s, read 8 s
+   v
+ ESB  (hub: routing, transformation, throttle 50 rps per consumer, token + cert validation)
+   | E. Validate token (signature, aud, scope) and client cert; check the idempotency store (key seen?)  -&gt; no
+   | F. Transform canonical JSON -&gt; core request; route to the core by product code
+   | G. ESB -&gt; core call with an ESB timeout of 5 s (shorter than Pega's 8 s); the ESB retries one short transient core error (agreed owner)
+   v
+ CORE BANKING
+   | H. Create the hold record, return the core hold reference; core duplicate check on the reference
+   v
+ ESB: map response -&gt; 201 {holdRef:"H-889120", placedAt:"2026-03-09T10:15:00Z"}; store (key -&gt; response); log with the correlation ID
+   v
+ PEGA: I. response mapping -&gt; canonical Hold ; success path
+        - update the case: holdRef, status "Core-Confirmed"; history entry; reload D_Holds[acct] (explicit refresh)
+        - correlation ID in logs; metrics: latency, attempt count
+      FAILURE PATHS
+        - connect error / 503 on this write, request refused -&gt; TRANSIENT: delayed re-queue with jittered backoff (same key); breaker counts; after 5 attempts -&gt; ops assignment + alert
+        - read timeout or 504 (outcome unknown) -&gt; status Unknown; status lookup by reference; contractually safe retry only if the contract says so; otherwise reconciliation
+        - 409 -&gt; look up the original outcome (success only if the contract guarantees it); 409 with a different payload -&gt; defect alert
+        - 400/422/business fault -&gt; business assignment, no retry
+        - 401 -&gt; one token refresh, one retry, then an auth alert</div>
+    <p>Every control placed here answers a failure from 5.9: the outbox answers the dual write, the key answers the lost response, the shorter ESB timeout answers the avoidable unknown, the bulkhead answers the slow core, and the Unknown status answers the case where nothing can be concluded. One thing is deliberately absent: the customer is not told the hold exists until the core confirms it.</p>
+  </section>
+
+  <section id="s5-16" class="pagebreak">
+    <h2>5.16 Interview Q&amp;A</h2>
+
+    <div class="qa"><span class="q">Q1. Walk me through building a Connect-REST integration.</span>
+    <p>"I start with the data model and the contract: integration classes for request and response, the canonical classes they map to, and the OpenAPI or sample payloads, status codes, authentication and timeouts from the ESB team. Then the authentication profile, then the connector, through the accelerator or manually. The endpoint host comes from environment configuration, with the resource path, the method, and headers including a correlation ID and, for writes, an idempotency key. Request and response mapping are data transforms between the canonical page and the integration class, with expected business statuses mapped explicitly. I set connect and read timeouts and classify errors. Finally I add simulation and PegaUnit cases for each mapping transform and test against the real endpoint in a lower environment with Tracer."</p></div>
+
+    <div class="qa"><span class="q">Q2. What do you ask the ESB team before building?</span>
+    <p>"Who owns retries, because retrying in both layers multiplies calls; idempotency key support and retention; which operations are synchronous and which asynchronous with callback; throttling limits and how a 429 is signalled; the ESB's backend timeout, which must be shorter than my read timeout; the error contract; correlation ID propagation; ordering guarantees; maintenance windows; versioning; and whether support can see message status by correlation ID. I write it as a one-page integration contract per operation."</p></div>
+
+    <div class="qa"><span class="q">Q3. The core is down for four hours. What happens?</span>
+    <p>"Reads fall back to cached values with an as-of timestamp where the business allows. Writes are accepted and queued with an idempotency key through a bulkheaded queue processor. A circuit breaker, which I would build because Pega does not provide one for connectors, stops threads wasting time on timeouts, and a probe closes it. Cases show pending core. Sanctions screening fails closed. On recovery we drain at a throttled rate within the ESB's limit, duplicates are prevented only where the core honours the keys by contract, exhausted items land in a human queue, and we reconcile Pega against the core by counts and keys."</p></div>
+
+    <div class="qa"><span class="q">Q4. A write to the core times out. What do you do?</span>
+    <p>"It is an unknown outcome, not a failure and not a transient to retry. I set the case to Unknown. I resolve it by status lookup using the client-generated ID, or by a retry with the same idempotency key if the contract guarantees the core will not double-apply, or by reconciliation against the end-of-day file as the backstop. Retrying blindly can double-post and marking it failed can lose a payment. A timeout on a read, by contrast, is safely retryable."</p></div>
+
+    <div class="qa"><span class="q">Q5. You send an idempotency key and get a 409. Is that success?</span>
+    <p>"Not by itself. A 409 says there was a conflict, not what it was. It might be the original succeeding, the original failing or still in flight, a different payload under the same key, or an unrelated business-state conflict. I check what the contract defines for 409 on that endpoint, confirm the payload matches, and look up the original outcome. A different payload is a defect and alerts. If the contract does not define 409 for replayed keys, it is an error, not a receipt."</p></div>
+
+    <div class="qa"><span class="q">Q6. Where do you put the retry, and what do you retry?</span>
+    <p>"Exactly one layer owns retrying for each failure class, written down per integration with the count, backoff and exhaustion behaviour, because three layers each retrying three times is up to twenty-seven calls. I retry transient failures where the request was never sent or was refused, and reads, with exponential backoff and jitter, bounded by attempts and an overall deadline, honouring Retry-After, implemented by re-queueing with a delay and not sleeping. I never retry 400, 403, 404, 409, 422 or business faults, I refresh a token once on 401, and a timeout on a write is an unknown outcome, not a retry."</p></div>
+
+    <div class="qa"><span class="q">Q7. What is a circuit breaker and what does Pega give you?</span>
+    <p>"It stops calling a failing dependency: closed, open after a failure-rate threshold, half-open to probe. Pega gives me timeouts, error handling, queue processor retries and delayed queueing, but no built-in breaker for connectors. I would implement the pattern with a shared health flag checked before calls and a probe job, or rely on the ESB or gateway's breaker and react to its signal. The reason is thread economics: ten threads with ten-second timeouts lose about ninety-five per cent of their throughput during an outage."</p></div>
+
+    <div class="qa"><span class="q">Q8. How do you avoid the dual-write problem?</span>
+    <p>"I do not save the case and call the remote system as two independent steps. In one transaction I update the case status to pending and write an explicit outbox row, commit, and a queue processor delivers it with an idempotency key and retries. On confirmation the status advances. Pega has no built-in outbox, and I would not assume Queue-For-Processing is transactional with the case save on a given release; I would test it. I never hold a database transaction open across a remote call."</p></div>
+
+    <div class="qa"><span class="q">Q9. Staging then MERGE: can the bulk load not fail?</span>
+    <p>"It can. Staging avoids row-by-row Pega round trips and defers application-level rule evaluation, but a bulk load can still fail on NOT NULL, CHECK, unique, foreign key, type and length conversion, encoding and malformed input, and it can fail partially, so I state the loader's error-handling mode. Business rules are moved, into MERGE conditions or a validation pass over staging, and what they reject needs a reject table, a count and an owner. I de-duplicate staging by key first, because duplicate source keys break a MERGE, and I use bind parameters for values and an allow-list for identifiers."</p></div>
+
+    <div class="qa"><span class="q">Q10. OAuth client credentials, and how Pega validates inbound tokens?</span>
+    <p>"For machine integration Pega obtains a short-lived token from the token endpoint with its client ID and secret, certificate or signed assertion, with a narrow scope, caches it until shortly before expiry and attaches it as a bearer token; on 401 it refreshes once and retries once, then alerts. Inbound, the service package validates the signature against the issuer's keys, plus issuer, audience, expiry and scope, maps the client to a least-privilege access group, and runs the call under it. I ask who owns key rotation and whether the resource server pulls the JWKS, because that decides whether rotation is invisible or an outage."</p></div>
+
+    <div class="qa"><span class="q">Q11. How does SAML login work and what breaks it?</span>
+    <p>"Pega, as the service provider, builds an AuthnRequest and redirects the browser to the IdP, which authenticates the user and posts a signed assertion to Pega's ACS URL. Pega validates the signature, issuer, audience, destination, InResponseTo and timestamps, maps attributes to an operator and groups to an access group, creates the session and redirects to the original URL. What breaks it is certificate rotation, audience or destination mismatch behind a proxy, clock skew and missing group attributes, and I find the cause by decoding the assertion and comparing it with what Pega expects. IdP configuration belongs to the identity team."</p></div>
+  </section>
+
+  <section id="s5-recap">
+    <h2>5.Z Where we are now</h2>
+    <h3>What the application can do</h3>
+    <p>Pega can read Dana's account from the core through an ESB with the right credentials, map it to a canonical page, change her address and place a hold for <code>AC-10882</code> without double-posting, survive a slow or refusing core, and treat an unknown outcome as its own visible state. It can also take inbound calls securely, load many message types through one metadata-driven MERGE, and log every call under one correlation ID.</p>
+    <h3>The mechanisms behind it</h3>
+    <p>Connectors and services, a canonical model with mapping, an ordered build, explicit timeouts, backoff with jitter, one owner for retries, a breaker and bulkheads that Pega does not supply, idempotency keys with status lookup and reconciliation, an outbox for the dual write, a classification of errors that agrees with those rules, and token, SAML and certificate authentication with planned rotation.</p>
+    <h3>What it still cannot do</h3>
+    <p>Everything so far is the application asking the core for something. Balances are still up to a day old between batch runs, because nothing pushes changes to Pega when the core's data moves. Receiving a stream of those changes, one event at a time and in order, is Chapter 06.</p>
+  </section>
+
+  <section id="s5-ref" class="pagebreak">
+    <h2>5.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source actually supports and how it was obtained. docs.pega.com pages are JavaScript-rendered and not directly retrievable; their content was obtained through search-engine indexing.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / retrieval</th><th>What it supports here</th></tr>
+      <tr><td>RFC 6749: The OAuth 2.0 Authorization Framework <span class="tag">standard</span></td><td>https://www.rfc-editor.org/rfc/rfc6749.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>Roles, grant types and token endpoint behaviour</td></tr>
+      <tr><td>RFC 9110: HTTP Semantics <span class="tag">standard</span></td><td>https://www.rfc-editor.org/rfc/rfc9110.html</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>Status code meanings: 409 signals a conflict with the current state of the resource and does not itself say how an earlier request ended</td></tr>
+      <tr><td>SAML 2.0 Core (OASIS) <span class="tag">standard</span></td><td>https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf</td><td>URL verified 2026-10-12 (HTTP 200)</td><td>Assertions, protocols and the response and assertion structure</td></tr>
+      <tr><td>Pega docs: Configuring an OAuth 2.0 authentication profile <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-25/page/platform/security/configure-oauth-2-authentication-profile.html</td><td>Platform 25 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>Client credentials and authorization code grants; the authorization-code-through-OIDC restriction for REST connectors; external secret store references</td></tr>
+      <tr><td>Pega docs: Migrating from password credentials to modern OAuth 2.0 grant types <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/security/migrate-pw-creds-grant-oauth.html</td><td>Platform 24.2 bundle; content via search index 2026-10-12; page is JavaScript-rendered and not directly retrievable</td><td>The password-credentials grant is deprecated in release 24.2.5</td></tr>
+      <tr><td>Pega docs: Creating a Connect REST rule <span class="tag">support/product documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/data-integration/creating-connect-rest-rule.html</td><td>Platform 24.2 bundle; only the page title was returned by search; content not retrieved</td><td>Title cited only; the build sequence in 5.4 is described by function and is not sourced to this page</td></tr>
+    </table>
+    <p class="small muted">Resilience figures, the breaker, the outbox and the Unknown status are engineering patterns, not Pega features, and are not sourced to Pega documentation.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch04_ui_constellation_dx.html">&larr; Previous: Chapter 04</a><a href="ch06_kafka_dataflow_queue_processors.html">Next: Chapter 06 &rarr;</a></div>
+
+
+  </main>
+</div>
+</body>
+</html>

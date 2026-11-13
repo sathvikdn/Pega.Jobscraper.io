@@ -1,0 +1,149 @@
+{
+  "team_depth": [
+    {
+      "id": "gitlab-support",
+      "company": "GitLab",
+      "match_names": [
+        "GitLab (Remote)"
+      ],
+      "category": "global",
+      "team_focus": "DevSecOps support embedded in Engineering, with production troubleshooting and code contributions.",
+      "what_they_build": [
+        "Diagnostic tools, fixes and reusable documentation for self-managed and SaaS customers."
+      ],
+      "technologies": [
+        "Linux",
+        "Ruby / Rails",
+        "Git",
+        "CI/CD",
+        "Kubernetes"
+      ],
+      "learning_value": [
+        "Move from platform-specific operations to broader code and infrastructure debugging."
+      ],
+      "ownership_evidence": "The employer describes case ownership, reproduction and merge requests; feature ownership depends on the assignment.",
+      "bangalore_scope": "This remote requisition names Bangalore and asks whether the candidate is based there.",
+      "people": [],
+      "sources": [
+        {
+          "url": "https://job-boards.greenhouse.io/gitlab/jobs/8687026002",
+          "title": "GitLab · Intermediate Support Engineer",
+          "excerpt": "Official role describes distributed support, code fixes and daytime on-call rotations.",
+          "source_type": "employer_job_description",
+          "checked_at": "2026-09-08"
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "Your replay/recovery and operations tooling stories are relevant evidence to discuss."
+        ],
+        "tradeoffs": [
+          "Strong Linux, Ruby/Bash and Git skills need demonstration; Pega certification alone is insufficient.",
+          "Weekend rotations; no published India CTC or named local manager in this source."
+        ],
+        "questions_to_ask": [
+          "How much time goes into code fixes versus the ticket queue?",
+          "What level and India budget apply to my background?"
+        ]
+      }
+    },
+    {
+      "id": "twilio-api-support",
+      "company": "Twilio",
+      "match_names": [
+        "Twilio (Remote)"
+      ],
+      "category": "global",
+      "team_focus": "API and communications support across Voice, Platform Application and Segment.",
+      "what_they_build": [
+        "Resolve customer integration incidents and supply reproducible product defects to Engineering."
+      ],
+      "technologies": [
+        "REST / HTTP",
+        "SQL",
+        "JavaScript",
+        "SIP / VoIP"
+      ],
+      "learning_value": [
+        "Potential breadth in API products and customer-facing incident diagnosis."
+      ],
+      "ownership_evidence": "The advertised role owns support cases and improvement feedback; it does not establish feature-development ownership.",
+      "bangalore_scope": "Remote employment permits Karnataka. The role reports to a technical support manager based in Bengaluru.",
+      "people": [],
+      "sources": [
+        {
+          "url": "https://jobs.twilio.com/careers/job/1099553453712",
+          "title": "Twilio · Technical Support Engineer 2",
+          "excerpt": "Employer lists 2+ years, India state restrictions, shift work and a Bengaluru-based manager.",
+          "source_type": "employer_job_description",
+          "checked_at": "2026-09-08"
+        }
+      ],
+      "assessment": {
+        "priority": "consider",
+        "reasons": [
+          "REST integration and production recovery are transferable from your current work."
+        ],
+        "tradeoffs": [
+          "Telephony and full-stack troubleshooting are gaps to validate.",
+          "Shifts and weekend/holiday rosters matter. CTC is undisclosed; ₹35L is not established."
+        ],
+        "questions_to_ask": [
+          "Which product queue, shift and engineering collaboration would I join?",
+          "What is the recurring CTC and fixed component?"
+        ]
+      }
+    },
+    {
+      "id": "ibm-confluent-support",
+      "company": "IBM · Confluent support",
+      "match_names": [
+        "IBM",
+        "IBM India",
+        "IBM (India)",
+        "Confluent"
+      ],
+      "category": "gcc",
+      "team_focus": "Data-streaming production support and integration diagnosis.",
+      "what_they_build": [
+        "Troubleshoot deployment, performance, connectivity and data movement in Confluent environments."
+      ],
+      "technologies": [
+        "Kafka",
+        "Confluent",
+        "Linux",
+        "Java / JVM"
+      ],
+      "learning_value": [
+        "Deepen Kafka operations and distributed-system diagnosis beyond Pega integrations."
+      ],
+      "ownership_evidence": "The employer-authored listing describes support-case ownership and cross-team resolution plans.",
+      "bangalore_scope": "The listing identifies Bengaluru; it does not establish remote eligibility or team size.",
+      "people": [],
+      "sources": [
+        {
+          "url": "https://in.linkedin.com/jobs/view/technical-support-engineer-confluent-at-ibm-4452809825",
+          "title": "IBM · Technical Support Engineer, Confluent",
+          "excerpt": "Employer job content names Kafka, Linux and 4+ years of applied troubleshooting experience.",
+          "source_type": "employer_post_on_linkedin",
+          "checked_at": "2026-09-08"
+        }
+      ],
+      "assessment": {
+        "priority": "investigate_first",
+        "reasons": [
+          "Your Kafka throughput, replay and production-incident examples give a concrete adjacent-role story."
+        ],
+        "tradeoffs": [
+          "Confirm Linux/JVM diagnostic depth and coverage expectations.",
+          "Pay is not published; this is distinct from IBM's Pega consulting practice."
+        ],
+        "questions_to_ask": [
+          "How is four years of Pega plus Kafka production work levelled?",
+          "How much of the role is diagnosis, coding and improvement work?"
+        ]
+      }
+    }
+  ]
+}

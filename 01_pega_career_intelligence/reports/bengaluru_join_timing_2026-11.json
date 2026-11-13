@@ -1,0 +1,797 @@
+{
+  "generatedAt": "2026-11-13T08:17:10.530Z",
+  "source": "bengaluru_top50_2026-11.json",
+  "windowStart": "Nov 2025",
+  "caveat": "Public search-index tenure snippets, not verified employee histories. \"Since\" can be a role start, not an external hire. Team-associated entries do not prove Pega work; absent dates do not prove no hiring. No hiring-calendar inference is justified.",
+  "companies": [
+    {
+      "rank": 1,
+      "company": "Commonwealth Bank (CBA India)",
+      "people": 20,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Vandana P",
+          "title": "Talent Acquisition Partner",
+          "tenure": "Since Jan 2026",
+          "category": "adjacent",
+          "reason": "Not a Bengaluru Pega engineering role",
+          "year": 2026,
+          "month": "Jan"
+        }
+      ],
+      "undated": 8
+    },
+    {
+      "rank": 2,
+      "company": "First Citizens India",
+      "people": 11,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 2,
+      "recentStarts": [
+        {
+          "name": "Deepak Shahi",
+          "title": "Principal Software Engineer",
+          "tenure": "Since Apr 2026 (ex-Pegasystems decisioning engineering)",
+          "category": "team-associated",
+          "reason": "Pega assignment or exact office not independently established",
+          "year": 2026,
+          "month": "Apr"
+        },
+        {
+          "name": "Nimalan Peter",
+          "title": "Lead Software Engineer",
+          "tenure": "Since Mar 2026 (ex-EvonSys)",
+          "category": "team-associated",
+          "reason": "Pega assignment or exact office not independently established",
+          "year": 2026,
+          "month": "Mar"
+        }
+      ],
+      "excludedOrAdjacent": [
+        {
+          "name": "Krishnendu Bera",
+          "title": "Lead Analyst (AVP)",
+          "tenure": "Since Dec 2025",
+          "category": "adjacent",
+          "reason": "Not a Bengaluru Pega engineering role",
+          "year": 2025,
+          "month": "Dec"
+        },
+        {
+          "name": "Abhi Gummaraju",
+          "title": "Associate Director – Software Development",
+          "tenure": "Promoted Sep 2026",
+          "category": "internal-move",
+          "reason": "Promotion, not a company start",
+          "year": null,
+          "month": null
+        },
+        {
+          "name": "Satya Prakash Ranjan",
+          "title": "Country Head & Head of Technology",
+          "tenure": "Since Mar 2025",
+          "category": "adjacent",
+          "reason": "Not a Bengaluru Pega engineering role",
+          "year": 2025,
+          "month": "Mar"
+        },
+        {
+          "name": "Sanjoy Sarkar",
+          "title": "SVP, Head of Workflow Automation & Robotics (US)",
+          "tenure": "Since Jan 2026",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2026,
+          "month": "Jan"
+        }
+      ],
+      "undated": 5
+    },
+    {
+      "rank": 3,
+      "company": "Empower India",
+      "people": 10,
+      "recentDatedPegaRoles": 1,
+      "recentTeamAssociated": 0,
+      "recentStarts": [
+        {
+          "name": "Divya Mohanraj",
+          "title": "Senior Software Engineer – Pega",
+          "tenure": "Since Dec 2025",
+          "category": "pega-role",
+          "reason": "Role explicitly names Pega or decisioning",
+          "year": 2025,
+          "month": "Dec"
+        }
+      ],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 4,
+      "company": "Daimler Truck Innovation Center India (DTICI)",
+      "people": 9,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Sandeep Mohan",
+          "title": "Principal Consultant (index also shows NTT DATA from Jul 2026)",
+          "tenure": "DTICI since Mar 2023; may have left",
+          "category": "excluded",
+          "reason": "Former or potentially departed",
+          "year": 2023,
+          "month": "Mar"
+        }
+      ],
+      "undated": 3
+    },
+    {
+      "rank": 5,
+      "company": "Booking Holdings India",
+      "people": 13,
+      "recentDatedPegaRoles": 2,
+      "recentTeamAssociated": 1,
+      "recentStarts": [
+        {
+          "name": "Anish Kumar K P",
+          "title": "Engineering Manager",
+          "tenure": "Since Oct 2026 (ex-TCS Technical Architect)",
+          "category": "team-associated",
+          "reason": "Pega assignment or exact office not independently established",
+          "year": 2026,
+          "month": "Oct"
+        },
+        {
+          "name": "Sarabdeep Singh",
+          "title": "Engineering Manager – Pega (Bengaluru)",
+          "tenure": "Since Sep 2026 (ex-NAB SVP EM, ex-NatWest VP)",
+          "category": "pega-role",
+          "reason": "Role explicitly names Pega or decisioning",
+          "year": 2026,
+          "month": "Sep"
+        },
+        {
+          "name": "Ananda Bhat",
+          "title": "Pega Lead System Architect",
+          "tenure": "Since Jun 2026 (ex-Morgan Stanley, Coforge, Wipro)",
+          "category": "pega-role",
+          "reason": "Role explicitly names Pega or decisioning",
+          "year": 2026,
+          "month": "Jun"
+        }
+      ],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 6,
+      "company": "JPMorganChase India",
+      "people": 12,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Rohit Hundet",
+          "title": "Vice President (Hyderabad)",
+          "tenure": "Since May 2023",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2023,
+          "month": "May"
+        }
+      ],
+      "undated": 4
+    },
+    {
+      "rank": 7,
+      "company": "Nokia India",
+      "people": 7,
+      "recentDatedPegaRoles": 1,
+      "recentTeamAssociated": 0,
+      "recentStarts": [
+        {
+          "name": "Lavanya Bevara",
+          "title": "Pega System Architect",
+          "tenure": "Since Jan 2026 (ex-CBA Associate SE 2022–2026)",
+          "category": "pega-role",
+          "reason": "Role explicitly names Pega or decisioning",
+          "year": 2026,
+          "month": "Jan"
+        }
+      ],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 8,
+      "company": "Broadridge India",
+      "people": 5,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Kiran Kumar Reddy Yandrapalli",
+          "title": "Senior Member Technical (Hyderabad)",
+          "tenure": "Broadridge since May 2021; senior since Aug 2024 (ex-Pegasystems)",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2021,
+          "month": "May"
+        },
+        {
+          "name": "Suresh Kathi",
+          "title": "Technology Lead – Pega (Hyderabad)",
+          "tenure": "Since Feb 2022 (ex-Standard Chartered)",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2022,
+          "month": "Feb"
+        }
+      ],
+      "undated": 2
+    },
+    {
+      "rank": 9,
+      "company": "Telstra India",
+      "people": 6,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 10,
+      "company": "Cisco India",
+      "people": 9,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 8
+    },
+    {
+      "rank": 11,
+      "company": "Pegasystems India (Bengaluru)",
+      "people": 17,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 11
+    },
+    {
+      "rank": 12,
+      "company": "Siemens",
+      "people": 4,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 1
+    },
+    {
+      "rank": 13,
+      "company": "John Deere India (JDTCI)",
+      "people": 10,
+      "recentDatedPegaRoles": 1,
+      "recentTeamAssociated": 0,
+      "recentStarts": [
+        {
+          "name": "MalakondaReddy Boyella",
+          "title": "Senior Software Engineer – Pega (Bengaluru)",
+          "tenure": "Since Nov 2025 (ex-Infosys, Aaseya)",
+          "category": "pega-role",
+          "reason": "Role explicitly names Pega or decisioning",
+          "year": 2025,
+          "month": "Nov"
+        }
+      ],
+      "excludedOrAdjacent": [],
+      "undated": 7
+    },
+    {
+      "rank": 14,
+      "company": "Ameriprise India",
+      "people": 6,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Manish Kumar",
+          "title": "Pega Technical Lead (Gurugram)",
+          "tenure": "Since Mar 2021",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2021,
+          "month": "Mar"
+        },
+        {
+          "name": "Sonali Gupta",
+          "title": "Sr Pega App Development Tech Lead (Gurugram)",
+          "tenure": "Since Jul 2026 (ex-Cognizant)",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2026,
+          "month": "Jul"
+        }
+      ],
+      "undated": 2
+    },
+    {
+      "rank": 15,
+      "company": "Société Générale GSC",
+      "people": 6,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 16,
+      "company": "BT Group",
+      "people": 7,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 17,
+      "company": "Verizon",
+      "people": 9,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 6
+    },
+    {
+      "rank": 18,
+      "company": "Morgan Stanley",
+      "people": 6,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 1
+    },
+    {
+      "rank": 19,
+      "company": "Goldman Sachs",
+      "people": 4,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 2
+    },
+    {
+      "rank": 20,
+      "company": "VOIS (Vodafone)",
+      "people": 12,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 8
+    },
+    {
+      "rank": 21,
+      "company": "Sun Life Global Solutions",
+      "people": 10,
+      "recentDatedPegaRoles": 1,
+      "recentTeamAssociated": 0,
+      "recentStarts": [
+        {
+          "name": "Dhiraj Anand",
+          "title": "Senior Development Specialist – Pega (Bengaluru)",
+          "tenure": "Since Dec 2025 (ex-Coforge Senior Technical Lead)",
+          "category": "pega-role",
+          "reason": "Role explicitly names Pega or decisioning",
+          "year": 2025,
+          "month": "Dec"
+        }
+      ],
+      "excludedOrAdjacent": [],
+      "undated": 6
+    },
+    {
+      "rank": 22,
+      "company": "NatWest Group",
+      "people": 7,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 5
+    },
+    {
+      "rank": 23,
+      "company": "Standard Chartered",
+      "people": 7,
+      "recentDatedPegaRoles": 1,
+      "recentTeamAssociated": 0,
+      "recentStarts": [
+        {
+          "name": "Vikas Soni",
+          "title": "Pega Decisioning Architect",
+          "tenure": "Since Jan 2026 (ex-HSBC, TCS)",
+          "category": "pega-role",
+          "reason": "Role explicitly names Pega or decisioning",
+          "year": 2026,
+          "month": "Jan"
+        }
+      ],
+      "excludedOrAdjacent": [],
+      "undated": 1
+    },
+    {
+      "rank": 24,
+      "company": "Shell India",
+      "people": 5,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 2
+    },
+    {
+      "rank": 25,
+      "company": "Carelon Global Solutions India",
+      "people": 4,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 0
+    },
+    {
+      "rank": 26,
+      "company": "Wells Fargo India",
+      "people": 8,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 4
+    },
+    {
+      "rank": 27,
+      "company": "MUFG Global Service (MUFG Bank)",
+      "people": 4,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 2
+    },
+    {
+      "rank": 28,
+      "company": "ANZ",
+      "people": 6,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 4
+    },
+    {
+      "rank": 29,
+      "company": "BNY",
+      "people": 7,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 6
+    },
+    {
+      "rank": 30,
+      "company": "HSBC",
+      "people": 3,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 2
+    },
+    {
+      "rank": 31,
+      "company": "Nike India",
+      "people": 3,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 32,
+      "company": "Intel India",
+      "people": 6,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 33,
+      "company": "Levi Strauss & Co. India",
+      "people": 2,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 0
+    },
+    {
+      "rank": 34,
+      "company": "GE HealthCare",
+      "people": 3,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 1
+    },
+    {
+      "rank": 35,
+      "company": "Unilever (UniOps / Digital Hub)",
+      "people": 3,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 2
+    },
+    {
+      "rank": 36,
+      "company": "Ford Business Solutions (Bengaluru satellite)",
+      "people": 7,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 6
+    },
+    {
+      "rank": 37,
+      "company": "Mercedes-Benz R&D India (MBRDI) — current employer",
+      "people": 10,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 6
+    },
+    {
+      "rank": 38,
+      "company": "Orange Business",
+      "people": 4,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Shivani Baranwal",
+          "title": "Pega Developer (Gurugram)",
+          "tenure": "Since Sep 2024",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2024,
+          "month": "Sep"
+        },
+        {
+          "name": "Ashish Agarwal",
+          "title": "Lead Business Architect (Gurugram)",
+          "tenure": "Since Sep 2022",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2022,
+          "month": "Sep"
+        }
+      ],
+      "undated": 2
+    },
+    {
+      "rank": 39,
+      "company": "American Express",
+      "people": 3,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Deepak Chauhan",
+          "title": "Senior Software Engineer II (Gurugram)",
+          "tenure": "At Amex since Feb 2016 (retained ledger)",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2016,
+          "month": "Feb"
+        },
+        {
+          "name": "Himanshu Rajput",
+          "title": "Software Engineer II (Gurugram)",
+          "tenure": "Since May 2024 (retained ledger)",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2024,
+          "month": "May"
+        }
+      ],
+      "undated": 1
+    },
+    {
+      "rank": 40,
+      "company": "Amadeus Labs",
+      "people": 2,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 0
+    },
+    {
+      "rank": 41,
+      "company": "Dell Technologies",
+      "people": 3,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 1
+    },
+    {
+      "rank": 42,
+      "company": "Fidelity National Financial India (FNF)",
+      "people": 2,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 1
+    },
+    {
+      "rank": 43,
+      "company": "PayPal",
+      "people": 3,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Rajpriya Shanmugaraj",
+          "title": "Software Engineer – Pega (Chennai)",
+          "tenure": "Since Sep 2021",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2021,
+          "month": "Sep"
+        }
+      ],
+      "undated": 2
+    },
+    {
+      "rank": 44,
+      "company": "ING (ING Hubs India)",
+      "people": 2,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Vivek Avanigadda",
+          "title": "Pega Developer on ING (Bengaluru) via HCLTech",
+          "tenure": "Since Jan 2025",
+          "category": "excluded",
+          "reason": "Vendor rather than direct employer",
+          "year": 2025,
+          "month": "Jan"
+        }
+      ],
+      "undated": 1
+    },
+    {
+      "rank": 45,
+      "company": "Optum / UnitedHealth Group",
+      "people": 2,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Rishabh Jain",
+          "title": "Architect – Clinical Product Platform (Gurugram)",
+          "tenure": "UHG since Apr 2014; Architect since Feb 2022",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2014,
+          "month": "Apr"
+        },
+        {
+          "name": "Prateek Tiwari",
+          "title": "Senior Software Engineering Manager (Hyderabad)",
+          "tenure": "UHG since Nov 2015; Sr Manager since Mar 2026",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2015,
+          "month": "Nov"
+        }
+      ],
+      "undated": 0
+    },
+    {
+      "rank": 46,
+      "company": "Evernorth / Cigna",
+      "people": 1,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [
+        {
+          "name": "Karthik Mutupuri",
+          "title": "Software Engineering Advisor – Pega (Hyderabad)",
+          "tenure": "Since Apr 2025",
+          "category": "excluded",
+          "reason": "Outside Bengaluru",
+          "year": 2025,
+          "month": "Apr"
+        }
+      ],
+      "undated": 0
+    },
+    {
+      "rank": 47,
+      "company": "Conduent",
+      "people": 4,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 3
+    },
+    {
+      "rank": 48,
+      "company": "Deutsche Bank",
+      "people": 2,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 2
+    },
+    {
+      "rank": 49,
+      "company": "Northern Trust",
+      "people": 1,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 0
+    },
+    {
+      "rank": 50,
+      "company": "Tesco Bengaluru",
+      "people": 1,
+      "recentDatedPegaRoles": 0,
+      "recentTeamAssociated": 0,
+      "recentStarts": [],
+      "excludedOrAdjacent": [],
+      "undated": 1
+    }
+  ]
+}

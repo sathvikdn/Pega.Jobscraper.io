@@ -1,0 +1,912 @@
+{
+  "research_date": "2026-09-08",
+  "queries": [
+    {
+      "id": 1,
+      "query": "site.inadev.com Pega customer service India remote careers",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Employer India careers result explicitly lists Pega CS Developer, Full Time, Pan India, Remote; no date/years/pay.",
+      "source_date": null
+    },
+    {
+      "id": 2,
+      "query": "site.jobs.jobvite.com/ness \"Pega\" \"Bangalore\"",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Employer ATS index exposes Bangalore hybrid Pega Automation Engineer and its 3–5-year testing description.",
+      "source_date": null
+    },
+    {
+      "id": 3,
+      "query": "site.quavo.com Pega India remote careers",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Quavo careers describes fully remote work but no India eligibility; later ATS check narrows one role to United States.",
+      "source_date": null
+    },
+    {
+      "id": 4,
+      "query": "site.pega.com \"Senior System Architect\" \"India\" careers",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Pega index yields CSSA requisition23927 and India/listing pages; relative source ages retained without dating the vacancy.",
+      "source_date": null
+    },
+    {
+      "id": 5,
+      "query": "site.linkedin.com/in \"Inadev\" \"Pega\"",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Mithun R profile associates Inadev with a Bengaluru profile location and Pega experience; liked posts and undated departure inference rejected.",
+      "source_date": null
+    },
+    {
+      "id": 6,
+      "query": "site.linkedin.com/in \"Ness\" \"Pega\" \"Bengaluru\"",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Thara Puttamallaiah and Parimala Gururajachar expose Ness/Pega credentials with differing locations; current title/team not exposed. Other liked-post-only matches excluded.",
+      "source_date": null
+    },
+    {
+      "id": 7,
+      "query": "site.linkedin.com/in \"Booking\" \"Pega\" \"Bengaluru\"",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Sadhana Gopal index contains older authored Customer Service Tech material and reposts attributed to Sandeep Katukuri/Manpreet Kala; no current requisition inferred.",
+      "source_date": null
+    },
+    {
+      "id": 8,
+      "query": "site.pega.com \"Quavo\" \"Pega\"",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Quavo historical case studies/award establish Pega product relationship; irrelevant third-party material excluded.",
+      "source_date": null
+    },
+    {
+      "id": 9,
+      "query": "https://www.inadev.com/careers/india-jobs/",
+      "kind": "open",
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Opened production page confirms advertised Pan India remote role and exposes external Naukri Apply URL.",
+      "source_date": null
+    },
+    {
+      "id": 10,
+      "query": "https://jobs.jobvite.com/ness/job/oJJzAfwl",
+      "kind": "open",
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Direct Constellation requisition returned cache miss; closure not inferred.",
+      "source_date": null
+    },
+    {
+      "id": 11,
+      "query": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+      "kind": "open",
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Direct CSSA requisition23927 returned404 despite its search-index description; current vacancy not verified.",
+      "source_date": null
+    },
+    {
+      "id": 12,
+      "query": "https://www.quavo.com/careers/",
+      "kind": "open",
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Direct Quavo careers open timed out; only search-index content used.",
+      "source_date": null
+    },
+    {
+      "id": 13,
+      "query": "https://www.pega.com/ja/insights/resources/pegaworld-2025-chaos-control-testing-releasing-dynamic-pega-app-smart-test",
+      "kind": "open",
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Opened Booking.com PegaWorld2025 primary transcript; project is historical and global.",
+      "source_date": null
+    },
+    {
+      "id": 14,
+      "query": "https://www.pega.com/about/careers/job-listings",
+      "kind": "open",
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Opened current Pega employer listing; includes Bangalore SSA and India Remote filter.",
+      "source_date": null
+    },
+    {
+      "id": 15,
+      "query": "site.quavo.com OR site.ats.rippling.com/quavo \"Pega\" remote",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "Employer Rippling ATS result identifies Director Technical Support as Remote (United States),10+technical and3+management years.",
+      "source_date": null
+    },
+    {
+      "id": 16,
+      "query": "site.careers.booking.com \"Pega\" \"Bangalore\"",
+      "kind": "search",
+      "source": "web search",
+      "checked_at": "2026-09-08",
+      "outcome": "No matching official Booking careers requisition was returned. Off-target results were not attributed to Booking.",
+      "source_date": null
+    },
+    {
+      "id": 17,
+      "query": "https://www.pega.com/ja/insights/resources/pegaworld-2025-chaos-control-testing-releasing-dynamic-pega-app-smart-test",
+      "kind": "open_section",
+      "line": 80,
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Read transcript section: cancellation case/assignment API tests, correspondence, UIKit as of presentation, possible future Constellation reuse, performance testing.",
+      "source_date": null
+    },
+    {
+      "id": 18,
+      "query": "https://www.pega.com/about/careers/job-listings",
+      "kind": "open_section",
+      "line": 310,
+      "source": "primary page",
+      "checked_at": "2026-09-08",
+      "outcome": "Read listing links/locations and identified Bangalore SSA link95.",
+      "source_date": null
+    },
+    {
+      "id": 19,
+      "query": "Pega live job list: Senior System Architect (Bangalore)",
+      "kind": "click",
+      "source": "employer application link",
+      "checked_at": "2026-09-08",
+      "outcome": "Employer link leads to readable SSA23920: Bangalore, CSSA, BS+5years or Master's+3years, Apply Now visible.",
+      "source_date": null,
+      "url": "https://www.pega.com/about/careers/23920/senior-system-architect"
+    },
+    {
+      "id": 20,
+      "query": "Inadev Pega CS Developer: employer's Apply now link",
+      "kind": "click",
+      "source": "employer application link",
+      "checked_at": "2026-09-08",
+      "outcome": "Employer Apply link leads to https://www.naukri.com/job-listings-280426815546; fetch returned cache miss.",
+      "source_date": null,
+      "url": "https://www.naukri.com/job-listings-280426815546"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Inadev",
+      "category": "services",
+      "aliases": [
+        "INADEV",
+        "Inadev India"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "previous_claim": "The employer India careers page lists a Pega CS Developer position, Pan India and Remote.",
+          "verdict": "supported",
+          "text": "The opened production careers page still labels this full-time role Pan India and Remote. The listing supplies no experience, salary or posting date.",
+          "source_url": "https://www.inadev.com/careers/india-jobs/",
+          "source_title": "Inadev India jobs",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "crosscheck",
+          "previous_claim": "Mithun R: DEPARTED Jun 2026 - Now at Inadev (legacy title).",
+          "verdict": "partially_supported",
+          "text": "The public profile associates Mithun with Inadev and places the profile in Bengaluru. Its indexed farewell uses a relative age, not a verified June 2026 departure date; no replacement vacancy follows from this.",
+          "source_url": "https://in.linkedin.com/in/mithun-r-a13a501a6",
+          "source_title": "Mithun R — Inadev",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Mithun R",
+          "title": null,
+          "employer_as_stated": "Inadev",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/mithun-r-a13a501a6",
+          "source_url": "https://in.linkedin.com/in/mithun-r-a13a501a6",
+          "source_title": "Mithun R — Inadev",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "About describes more than five and a half years as a Senior Pega Developer; CSSA November 2022 and CSA August 2021 are listed.",
+          "work_summary": "Current Inadev assignment is not exposed; the employer experience entry says Asia.",
+          "limitations": [
+            "Search index was labelled crawled two months ago; relative post ages were not converted to calendar dates.",
+            "Liked migration and US architect hiring posts belong to other authors and were excluded from his work history.",
+            "Bengaluru profile location does not prove an Inadev Bengaluru office or current team roster."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "title": "Pega CS Developer",
+          "url": "https://www.naukri.com/job-listings-280426815546",
+          "location": "Pan India",
+          "description": "Employer listing explicitly offers remote employment; the Apply link resolves to this Naukri requisition, whose fetch returned cache miss.",
+          "source_url": "https://www.inadev.com/careers/india-jobs/",
+          "source_title": "Inadev India jobs",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "open_listing_observed": true,
+          "salary": null,
+          "experience_min": null,
+          "experience_max": null,
+          "remote_eligibility": "india_remote",
+          "work_mode": "remote",
+          "employment_type": "Full Time",
+          "fit": "possible",
+          "application_url": "https://www.naukri.com/job-listings-280426815546",
+          "application_access": "unavailable",
+          "limitations": [
+            "Experience, compensation, client, shift and current application acceptance remain unknown."
+          ]
+        }
+      ],
+      "limitations": [
+        "The employer listing is evidence of a publicly advertised role, not a guaranteed approved vacancy or salary match. No team size is estimated."
+      ]
+    },
+    {
+      "name": "Ness Digital Engineering",
+      "category": "services",
+      "aliases": [
+        "Ness",
+        "Ness Technologies"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "previous_claim": "Two Pega-related listings on the employer ATS are located in Bangalore with hybrid working.",
+          "verdict": "partially_supported",
+          "text": "The refreshed index exposes the Pega Automation Engineer in Bangalore, Hybrid Remote. It does not independently re-establish two current roles; the saved Constellation URL again returned cache miss.",
+          "source_url": "https://jobs.jobvite.com/ness",
+          "source_title": "Ness Digital Engineering Careers",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "crosscheck",
+          "previous_claim": "Senior Pega Constellation Developer currently appears on the employer list.",
+          "verdict": "not_verified",
+          "text": "The saved requisition could not be fetched. A retrieval failure is not proof the vacancy closed, but its current listing and detailed requirements were not verified.",
+          "source_url": "https://jobs.jobvite.com/ness/job/oJJzAfwl",
+          "source_title": "Ness: previously saved Constellation job URL",
+          "source_kind": "employer",
+          "access": "unavailable",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "inference"
+        },
+        {
+          "type": "project",
+          "text": "The advertised QA work covers Pega application tests, Java/Selenium automation, REST integrations, SQL and CI/CD; this establishes a testing delivery need, not the name of an end client.",
+          "source_url": "https://jobs.jobvite.com/ness/job/os3tAfwi",
+          "source_title": "Ness: Pega - Automation Engineer",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "pega_usage",
+          "text": "A separate indexed Pega Developer requisition specifies 5+ years, CSSA, Infinity 23/24, frontend familiarity, cloud deployment and PDC/Tracer troubleshooting. Its old index is not a current vacancy check.",
+          "source_url": "https://in.linkedin.com/jobs/view/pega-developer-at-ness-digital-engineering-4375467284",
+          "source_title": "Ness: Pega Developer",
+          "source_kind": "public_job_description",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Thara Puttamallaiah",
+          "title": null,
+          "employer_as_stated": "Ness Technologies",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/thara-puttamallaiah-964a4731",
+          "source_url": "https://in.linkedin.com/in/thara-puttamallaiah-964a4731",
+          "source_title": "Thara Puttamallaiah — Ness Technologies",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "CSSA and CSA are explicitly listed.",
+          "work_summary": "No current title or named Ness Pega assignment is exposed.",
+          "limitations": [
+            "Profile index was labelled crawled four months ago.",
+            "Pega hiring/Blueprint posts appear as liked material; neither project ownership nor recruitment authority is inferred."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Parimala Gururajachar",
+          "title": null,
+          "employer_as_stated": "Ness Technologies (India) Pvt. Ltd.",
+          "location_as_stated": "Greater Melbourne Area",
+          "profile_url": "https://au.linkedin.com/in/parimala-gururajachar",
+          "source_url": "https://au.linkedin.com/in/parimala-gururajachar",
+          "source_title": "Parimala Gururajachar — Ness Technologies",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "About states CSSA and more than 10 years of IT experience.",
+          "work_summary": "An experience entry names Ness in Bengaluru, India; the profile's present location is Greater Melbourne.",
+          "limitations": [
+            "Employment dates/title are hidden. The Bengaluru job entry cannot establish a current Bengaluru-based Ness team member."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "title": "Pega - Automation Engineer",
+          "url": "https://jobs.jobvite.com/ness/job/os3tAfwi",
+          "location": "Hybrid Remote, Bangalore, India",
+          "description": "QA role with 3–5 years of Java/Selenium/BDD/Cucumber automation and Pega testing; REST/API, SQL, CI/CD and manual testing responsibilities.",
+          "source_url": "https://jobs.jobvite.com/ness/job/os3tAfwi",
+          "source_title": "Ness: Pega - Automation Engineer",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "open_listing_observed": true,
+          "salary": null,
+          "experience_min": 3,
+          "experience_max": 5,
+          "remote_eligibility": "unknown",
+          "work_mode": "hybrid",
+          "fit": "possible",
+          "limitations": [
+            "Search-index description checked; direct JD was not reopened in this pass.",
+            "This is QA rather than a Pega SSA development role. Fully remote eligibility and salary are not established."
+          ]
+        },
+        {
+          "kind": "public_job_description",
+          "title": "Pega Developer",
+          "url": "https://in.linkedin.com/jobs/view/pega-developer-at-ness-digital-engineering-4375467284",
+          "location": "Bengaluru, Karnataka, India",
+          "description": "CSSA developer role requiring at least five years and Infinity 23/24; cached LinkedIn role evidence only.",
+          "source_url": "https://in.linkedin.com/jobs/view/pega-developer-at-ness-digital-engineering-4375467284",
+          "source_title": "Ness: Pega Developer",
+          "source_kind": "public_job_description",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "open_listing_observed": false,
+          "salary": null,
+          "experience_min": 5,
+          "experience_max": null,
+          "remote_eligibility": "unknown",
+          "fit": "stretch",
+          "limitations": [
+            "Index was labelled crawled five months ago and displayed '4 weeks ago'; neither date was converted to today's posting date.",
+            "Current employer application acceptance and work mode are unknown."
+          ]
+        }
+      ],
+      "limitations": [
+        "Named profiles corroborate individual Pega skills associated with Ness, not a verified local headcount.",
+        "Historical developer and current-index QA openings must retain their different titles, experience requirements and evidence ages."
+      ]
+    },
+    {
+      "name": "Quavo Fraud & Disputes",
+      "category": "global",
+      "aliases": [
+        "Quavo",
+        "Quavo Inc."
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "previous_claim": "Use as an international watchlist lead, not an India-remote opportunity; India eligibility unverified.",
+          "verdict": "supported",
+          "text": "The indexed employer ATS role explicitly says Remote (United States). The general careers page's fully remote benefit therefore cannot establish India eligibility.",
+          "source_url": "https://ats.rippling.com/es-419/quavo-inc/jobs/0a838aa1-48e1-40ea-9704-7f69f7f01cde",
+          "source_title": "Quavo: Director, Technical Support",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "The First Tech case study documents QFD on Pega for dispute case handling, automated low-value resolutions and Mastercard API chargeback integration. This is a historical product implementation, not a new hiring signal.",
+          "source_url": "https://www.quavo.com/wp-content/uploads/2021/07/2021-12-Quavo-First-Tech-Case-Study-SaaS-QFD.pdf",
+          "source_title": "Quavo First Tech case study",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2022",
+          "confidence": "direct"
+        },
+        {
+          "type": "pega_usage",
+          "text": "Quavo's dated partner-award announcement explicitly connects its dispute SaaS offering with the underlying Pega platform.",
+          "source_url": "https://www.quavo.com/news/quavo-inc-presented-pegasystems-award/",
+          "source_title": "Quavo: Pegasystems Innovation Event Award",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": "2021-06-18",
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Matt Libiran",
+          "title": "Senior System Architect",
+          "employer_as_stated": "Quavo",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.quavo.com/careers/",
+          "source_title": "Quavo careers",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Employer identifies an architecture role at the dispute-software company; this page does not state his certification.",
+          "work_summary": "Named technical employee testimonial; specific assignment is not described.",
+          "limitations": [
+            "Employer page is available through the index; direct open timed out. No location or profile URL was exposed."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Chadd Marks",
+          "title": "Client Release Manager",
+          "employer_as_stated": "Quavo",
+          "location_as_stated": null,
+          "profile_url": null,
+          "source_url": "https://www.quavo.com/careers/",
+          "source_title": "Quavo careers",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Employer names a release/support professional.",
+          "work_summary": "His testimonial describes an earlier production-support management role and Linux engineering background.",
+          "limitations": [
+            "Career page has no testimonial date. Do not turn its relative tenure into a start date or infer Pega certification."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "title": "Director, Technical Support",
+          "url": "https://ats.rippling.com/es-419/quavo-inc/jobs/0a838aa1-48e1-40ea-9704-7f69f7f01cde",
+          "location": "Remote (United States)",
+          "description": "Client support leadership spanning application troubleshooting, releases and go-lives. Requires 10+ technical years and 3+ years managing direct reports; Pega is preferred.",
+          "source_url": "https://ats.rippling.com/es-419/quavo-inc/jobs/0a838aa1-48e1-40ea-9704-7f69f7f01cde",
+          "source_title": "Quavo: Director, Technical Support",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "unverified",
+          "vacancy_confirmed": false,
+          "open_listing_observed": true,
+          "salary": null,
+          "experience_min": 10,
+          "experience_max": null,
+          "remote_eligibility": "us_only",
+          "work_mode": "remote",
+          "fit": "stretch",
+          "limitations": [
+            "US-restricted location excludes treating this as an India-remote option.",
+            "Employer ATS was read through search index; full application flow and salary were not checked."
+          ]
+        }
+      ],
+      "limitations": [
+        "No Bengaluru team or India-eligible Quavo requisition was verified.",
+        "The case-study footer is ©2022; its URL directory is not treated as its publication date.",
+        "Award page displays June 18, 2021 while its opening dateline says May 18, 2021; use it as historical evidence."
+      ]
+    },
+    {
+      "name": "Pegasystems",
+      "category": "gcc",
+      "aliases": [
+        "Pega",
+        "Pegasystems India"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "previous_claim": "Product engineering, Professional Services, EBC, consulting. 50%+ of global product dev in India. 1200+ devs in Hyderabad.",
+          "verdict": "partially_supported",
+          "text": "Official India material supports Bangalore and Hyderabad teams; checked job pages support consulting and engineering functions. The percentages, developer counts and EBC scope were not verified.",
+          "source_url": "https://www.pega.com/it/about/careers/pega-india",
+          "source_title": "Pega careers in India",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "crosscheck",
+          "previous_claim": "The employer careers listing includes an India - Remote location option; this does not establish that every listed job is remotely eligible.",
+          "verdict": "supported",
+          "text": "The opened listing retains that filter, while the employer FAQ says work arrangements vary by role and team.",
+          "source_url": "https://www.pega.com/about/careers/job-listings",
+          "source_title": "Pega Job Listings",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "remote_policy",
+          "text": "Pega's own careers FAQ describes a mixture of remote, hybrid and office jobs; arrangements depend on the role, team and business need.",
+          "source_url": "https://www.pega.com/about/careers",
+          "source_title": "Careers in Technology and Software",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "project",
+          "text": "Historical indexed engineering requisition 22043 names the Let's Get Insights scrum team in D&AI, building CRM products with Pega, REST, asynchronous processing and Java. This is useful product-scope evidence, not a current vacancy.",
+          "source_url": "https://www.pega.com/about/careers/22043/senior-software-engineer-pega-development",
+          "source_title": "Pega: Senior Software Engineer, Pega Development 22043",
+          "source_kind": "employer",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "crosscheck",
+          "previous_claim": "Search results present Senior System Architect (Pega CSSA), requisition 23927, as an application lead.",
+          "verdict": "conflicting",
+          "text": "The search index contains the role, but direct retrieval returned HTTP404. Keep the indexed description as stale evidence rather than marking this requisition open.",
+          "source_url": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+          "source_title": "Pega: Senior System Architect (Pega CSSA) 23927",
+          "source_kind": "employer",
+          "access": "unavailable",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        },
+        {
+          "type": "vacancy",
+          "text": "Employer requisition 23920 is readable and appears in the current listing: Bangalore Senior System Architect, Client Success, working in the Pega Consulting delivery team.",
+          "source_url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "source_title": "Pega: Senior System Architect 23920",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Bhanupriya V R",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Bengaluru, Karnataka, India",
+          "profile_url": "https://in.linkedin.com/in/bhanupriya-v-r-a9b066207",
+          "source_url": "https://in.linkedin.com/in/bhanupriya-v-r-a9b066207",
+          "source_title": "Bhanupriya V R — Pegasystems",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "CSA issued September 2024 is listed.",
+          "work_summary": "Employer and Bengaluru experience are visible, but current project and title are not.",
+          "limitations": [
+            "Profile index was labelled crawled four months ago; liked posts are excluded from work attribution."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "sudhakar siripurapu",
+          "title": null,
+          "employer_as_stated": "Pegasystems",
+          "location_as_stated": "Cambridge, Massachusetts, United States (employer experience entry)",
+          "profile_url": "https://www.linkedin.com/in/sudhakar-siripurapu-9813a615",
+          "source_url": "https://www.linkedin.com/in/sudhakar-siripurapu-9813a615",
+          "source_title": "sudhakar siripurapu — Pegasystems",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Profile lists Pega marketing and CSA/CSSA credentials.",
+          "work_summary": "Earlier Bengaluru entries and a recommendation describe Chordiant CDM work involving Ness.",
+          "limitations": [
+            "This is not evidence of a current Bangalore-based Pegasystems employee.",
+            "Recommendations describe historical work; liked customer stories do not establish project ownership."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [
+        {
+          "kind": "employer_job",
+          "title": "Senior System Architect",
+          "url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "location": "India - Karnataka - Bangalore",
+          "description": "Client Success/Consulting delivery. CSSA; requires a bachelor's plus at least five years, or a master's plus at least three years. Includes integration and end-to-end component delivery.",
+          "source_url": "https://www.pega.com/about/careers/23920/senior-system-architect",
+          "source_title": "Pega: Senior System Architect 23920",
+          "source_kind": "employer",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "confirmed_open",
+          "vacancy_confirmed": true,
+          "open_listing_observed": true,
+          "salary": null,
+          "experience_min": 5,
+          "experience_max": null,
+          "remote_eligibility": "unknown",
+          "experience_alternatives": [
+            {
+              "education": "Bachelor's degree",
+              "experience_min": 5
+            },
+            {
+              "education": "Master's degree",
+              "experience_min": 3
+            }
+          ],
+          "fit": "stretch",
+          "limitations": [
+            "Four years fits the published years only under the master's alternative; candidate education/exception must be established.",
+            "Posting date and salary are not supplied. Remote status is not stated; the general India Remote filter does not apply automatically.",
+            "Confirmed_open means readable employer requisition with an Apply Now control, not confirmed hiring budget."
+          ]
+        },
+        {
+          "kind": "employer_job",
+          "title": "Senior System Architect (Pega CSSA)",
+          "url": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+          "location": "India - Karnataka - Bangalore | India - Telangana - Hyderabad",
+          "description": "Indexed role description conflicts with direct HTTP404; retain only as an unavailable historical lead.",
+          "source_url": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+          "source_title": "Pega: Senior System Architect (Pega CSSA) 23927",
+          "source_kind": "employer",
+          "access": "unavailable",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "status": "unavailable",
+          "vacancy_confirmed": false,
+          "open_listing_observed": false,
+          "salary": null,
+          "experience_min": null,
+          "experience_max": null,
+          "remote_eligibility": "unknown",
+          "fit": "possible",
+          "limitations": [
+            "Do not treat the relative search publication age as a verified posting date or claim that 404 proves the hiring requisition was formally closed."
+          ]
+        }
+      ],
+      "limitations": [
+        "No numerical team-size, compensation, or global development-share claim was confirmed."
+      ]
+    },
+    {
+      "name": "Booking.com",
+      "category": "gcc",
+      "aliases": [
+        "Booking Holdings",
+        "Booking Holdings India",
+        "Booking.com"
+      ],
+      "claims": [
+        {
+          "type": "crosscheck",
+          "previous_claim": "Customer Service automation and booking journey workflows on Pega platform.",
+          "verdict": "supported",
+          "text": "The 2025 client transcript demonstrates cancellation cases through partner and guest approvals, driven by case/assignment APIs; tests prepare reservations, verify correspondence and clean up data.",
+          "source_url": "https://www.pega.com/ja/insights/resources/pegaworld-2025-chaos-control-testing-releasing-dynamic-pega-app-smart-test",
+          "source_title": "PegaWorld 2025: From Chaos to Control — Booking.com testing and release",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": "2025",
+          "confidence": "direct"
+        },
+        {
+          "type": "crosscheck",
+          "previous_claim": "Legacy profiles label Booking's customer-service work as Constellation; team_size 3–5.",
+          "verdict": "not_verified",
+          "text": "The 2025 speaker explicitly described UIKit and possible future reuse of API tests for Constellation. That establishes neither a completed migration nor today's UI architecture; no current Bengaluru headcount was verified.",
+          "source_url": "https://www.pega.com/ja/insights/resources/pegaworld-2025-chaos-control-testing-releasing-dynamic-pega-app-smart-test",
+          "source_title": "PegaWorld 2025: From Chaos to Control — Booking.com testing and release",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": "2025",
+          "confidence": "inference"
+        },
+        {
+          "type": "project",
+          "text": "The same historical talk discusses quality gates, nightly/on-demand integration tests and performance tests for cloud sizing. Its global service-user counts must not be shown as local engineering headcount.",
+          "source_url": "https://www.pega.com/ja/insights/resources/pegaworld-2025-chaos-control-testing-releasing-dynamic-pega-app-smart-test",
+          "source_title": "PegaWorld 2025: From Chaos to Control — Booking.com testing and release",
+          "source_kind": "event",
+          "access": "page",
+          "checked_at": "2026-09-08",
+          "source_date": "2025",
+          "confidence": "direct"
+        },
+        {
+          "type": "bangalore_team",
+          "text": "An indexed profile contains Sandeep Katukuri's older recruiting post naming a Bengaluru Pega team building customer-service applications. It is historical team evidence, not an active requisition.",
+          "source_url": "https://nl.linkedin.com/in/sadhana-gopal-b903424",
+          "source_title": "Sadhana Gopal — Booking.com",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "confidence": "direct"
+        }
+      ],
+      "people": [
+        {
+          "name": "Sadhana Gopal",
+          "title": null,
+          "employer_as_stated": "Booking.com",
+          "location_as_stated": null,
+          "profile_url": "https://nl.linkedin.com/in/sadhana-gopal-b903424",
+          "source_url": "https://nl.linkedin.com/in/sadhana-gopal-b903424",
+          "source_title": "Sadhana Gopal — Booking.com",
+          "source_kind": "professional_profile",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "The profile republishes Pega hiring posts from named colleagues.",
+          "work_summary": "An authored excerpt invites applicants to her Customer Service Tech team; that item refers to a full-stack role in Amsterdam.",
+          "limitations": [
+            "Do not attribute the republished Pega LSA vacancy to her own current team or infer a Bengaluru location.",
+            "Relative '2 j' timestamps are retained as old indexed labels, not calendar posting dates."
+          ],
+          "crosschecked": true
+        },
+        {
+          "name": "Sandeep Katukuri",
+          "title": null,
+          "employer_as_stated": "Booking.com (context of the republished hiring message)",
+          "location_as_stated": "Bengaluru, India (team vacancy location)",
+          "profile_url": null,
+          "source_url": "https://nl.linkedin.com/in/sadhana-gopal-b903424",
+          "source_title": "Sadhana Gopal — Booking.com",
+          "source_kind": "professional_post",
+          "access": "search_index",
+          "checked_at": "2026-09-08",
+          "source_date": null,
+          "pega_connection": "Named author of an older Pega LSA hiring message for a Bengaluru team.",
+          "work_summary": "The message describes building customer-service applications.",
+          "limitations": [
+            "Author is visible inside another professional's indexed repost; no independent profile or current employment date was verified.",
+            "Team vacancy location is not the person's home/current office. No active vacancy or replacement is inferred."
+          ],
+          "crosschecked": true
+        }
+      ],
+      "hiring_signals": [],
+      "limitations": [
+        "Targeted official Booking careers search did not yield a matching employer requisition in this bounded pass; this does not prove there are no openings.",
+        "Booking.com and Booking Holdings source labels are retained; parent/subsidiary names do not establish identical team ownership.",
+        "The event title establishes 2025; the exact presentation day was not reverified here."
+      ]
+    }
+  ],
+  "crosscheck_summary": {
+    "scope": "Bounded independent recheck of five remote/product employer groups against saved master_catalog.json assertions, public professional indexes and primary employer/Pega material.",
+    "company_count": 5,
+    "claim_count": 19,
+    "public_people_count": 9,
+    "hiring_signal_count": 6,
+    "crosscheck_verdict_counts": {
+      "supported": 4,
+      "partially_supported": 3,
+      "not_verified": 2,
+      "conflicting": 1
+    },
+    "query_actions": 20,
+    "distinct_search_open_click_checks": 18,
+    "section_reads": 2,
+    "source_catalogue": "portal/research/master_catalog.json (read-only)",
+    "priority_findings": [
+      "Inadev's advertised Pega CS Developer explicitly supports Pan India remote, but years/pay/application acceptance remain unknown.",
+      "Pega SSA23920 is a readable Bangalore employer opening. At four years, the published experience route depends on a master's degree; a bachelor-only profile is below its five-year minimum.",
+      "Ness QA3–5 role is hybrid and testing-focused; do not rename it SSA. A separate developer listing requires5+ and is old indexed evidence.",
+      "Quavo's identified remote role is United States-only and senior management; general remote benefits do not establish India eligibility.",
+      "Booking's2025 transcript explicitly described UIKit. It supports detailed customer-service/API-testing project knowledge, not a verified present-day Constellation rollout or local3–5-person team."
+    ],
+    "access_failures": [
+      {
+        "url": "https://jobs.jobvite.com/ness/job/oJJzAfwl",
+        "result": "cache miss",
+        "meaning": "not verified; not proof of closure"
+      },
+      {
+        "url": "https://www.pega.com/about/careers/23927/senior-system-architect-pega-cssa",
+        "result": "404",
+        "meaning": "unavailable employer page conflicts with current-looking search index"
+      },
+      {
+        "url": "https://www.quavo.com/careers/",
+        "result": "timeout",
+        "meaning": "search-index evidence only"
+      },
+      {
+        "url": "https://www.naukri.com/job-listings-280426815546",
+        "result": "cache miss",
+        "meaning": "Inadev application acceptance unverified"
+      }
+    ],
+    "date_handling": "checked_at records this research pass, not a guarantee of live index freshness. Relative ages from indexed results are not converted to calendar posting dates. Undated postings use source_date:null; PegaWorld material has year-only2025; Quavo case study uses its2022 copyright year and the award's displayed2021-06-18.",
+    "unverified": [
+      "Salary and compensation ranges for all identified roles.",
+      "Complete Bengaluru team rosters, headcounts, approved budgets or replacement vacancies.",
+      "Current Inadev client/team assignment.",
+      "Current Booking migration state and employer Pega openings.",
+      "Whether Pega's bachelor minimum can be waived for four years."
+    ],
+    "excluded_attributions": [
+      "Mithun's liked legacy-migration and Austin-hiring posts belong to other authors.",
+      "Thara and Sankar's liked Pega material does not establish Ness project ownership.",
+      "Sudhakar's liked customer story does not assign that customer project to him.",
+      "Sadhana's reposts do not make her the author or hiring owner of the Pega LSA vacancy."
+    ]
+  }
+}

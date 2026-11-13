@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch02 · Pega Customer Service | LTIM Study Pack</title>
+<link rel="stylesheet" href="assets/sourcebook.css">
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn" href="index.html">Study Pack Index</a>
+  <a class="btn" href="ch03_constellation_react.html">Next Chapter →</a>
+</div>
+<div class="book">
+  <div class="cover">
+    <div class="kicker">Chapter 02 · LTIM Pega Study Pack</div>
+    <h1>Pega Customer Service: The Strategic Application</h1>
+    <p class="subtitle">What the product actually is, how an Interaction wraps service work, how the Interaction Portal is organised, how channels and intelligence plug in, the contact-centre metrics that justify every design decision, and an honest account of what your Collections and Debt Recovery work does and does not transfer.</p>
+    <div class="meta">
+      <div><strong>12</strong><span>Sections</span></div>
+      <div><strong>16</strong><span>Interview Q&amp;A</span></div>
+      <div><strong>9.2k</strong><span>Words</span></div>
+      <div><strong>~60</strong><span>Min read</span></div>
+    </div>
+  </div>
+  <main>
+
+  <section>
+    <h2>Chapter map</h2>
+    <div class="toc">
+      <a href="#s2-1">2.1 What Pega Customer Service is<span>A strategic application on Infinity, not a feature</span></a>
+      <a href="#s2-2">2.2 Why it exists, and the metrics that justify every decision<span>AHT, NPS, first contact resolution, containment</span></a>
+      <a href="#s2-3">2.3 Interaction, service requests, case types and Microjourneys<span>The wrapper case and the work inside it</span></a>
+      <a href="#s2-4">2.4 The Interaction Portal<span>The six functional areas; UI Kit and Constellation portals</span></a>
+      <a href="#s2-5">2.5 Channels<span>Voice, email, messaging, self-service, co-browse, routing</span></a>
+      <a href="#s2-6">2.6 Intelligence: NBA, CDH, knowledge, assistants and GenAI<span>NBA Advisor, CDH, Knowledge, assistants, GenAI</span></a>
+      <a href="#s2-7">2.7 Industry editions and the named Microjourneys<span>Communications and Financial Services</span></a>
+      <a href="#s2-8">2.8 Extension points<span>Service request types, interaction drivers, routing</span></a>
+      <a href="#s2-9">2.9 The honest mapping: what your work transfers and what it does not<span>What your resume does and does not say</span></a>
+      <a href="#s2-10">2.10 Customer Service at LTM, and your ramp plan<span>What is established, what is not</span></a>
+      <a href="#s2-11">2.11 Interview Q&amp;A<span>16 questions</span></a>
+      <a href="#s2-ref">2.R Authoritative references<span>Sources and what they support</span></a>
+    </div>
+    <div class="note"><strong>Honest scope.</strong> Sathvik has not implemented or operated the Pega Customer Service strategic application, the Interaction Portal, Constellation, or Customer Decision Hub. This chapter makes him conceptually fluent and gives him an honest way to describe the customer-service-adjacent work he has actually done. Every model answer is written as understanding plus a ramp plan, never as experience. Section 2.9 is the most important section in the chapter for how he describes his own resume.</div>
+    <div class="note"><strong>Accuracy convention.</strong> Pega Customer Service is release-sensitive: names of portal areas, widgets, case types and settings change between releases, and the product ships in both a UI Kit (traditional) form and a Constellation form. Where an exact label is uncertain this chapter describes the function and flags it. Where the chapter relies on a named Pega documentation page, it says so in 2.R. Confirm any exact name against the documentation for the deployed release before quoting it to a practitioner. Numbers marked <span class="tag">ILLUSTRATIVE</span> are teaching figures, never anyone's measurement.</div>
+  </section>
+
+  <section id="s2-1" class="pagebreak">
+    <h2>2.1 What Pega Customer Service is</h2>
+    <h3>Plain-English definition</h3>
+    <p><strong>Pega Customer Service</strong> is a <em>strategic application</em>: a pre-built, industry-oriented product that sits on top of the Pega Infinity platform. It gives a contact centre or service operation a working agent desktop, a customer-interaction model, a library of ready-made service processes, and hooks for channels and decisioning. Chapter 01 introduced the platform-versus-strategic-application distinction; this chapter depends on it.</p>
+    <p>The sentence to hold on to is: <strong>it is not a platform feature and it is not something you obtain by building cases yourself.</strong> You can build customer-service-style case types on bare Infinity. That produces a customer-service <em>application</em>. It does not produce Pega Customer Service, any more than building your own spreadsheets produces a particular accounting package.</p>
+    <h3>What "strategic application" means technically</h3>
+    <table>
+      <tr><th>Layer</th><th>Bare Infinity application</th><th>Pega Customer Service</th></tr>
+      <tr><td>Class hierarchy</td><td>You design it: work classes, data classes, ruleset layers</td><td>Delivered: a framework layer with its own classes, industry extension layers above it, and your implementation layer above those</td></tr>
+      <tr><td>Data model</td><td>You design customers, accounts, interactions</td><td>Delivered: a customer, account and interaction data model, to be extended and mapped to your systems of record</td></tr>
+      <tr><td>Portal</td><td>You design landing pages and work areas</td><td>Delivered: the Interaction Portal for agents and managers, in a UI Kit form and a Constellation form</td></tr>
+      <tr><td>Case types</td><td>You build each one</td><td>Delivered: out-of-the-box service request types (for example Make Payment and Close Account) that you copy, configure and extend</td></tr>
+      <tr><td>Decisioning and knowledge hooks</td><td>You integrate them</td><td>Delivered: connection points to Next-Best-Action, Pega Knowledge and a separately licensed Customer Decision Hub</td></tr>
+      <tr><td>Upgrade path</td><td>Your own rulesets, your own regression suite</td><td>Pega ships new framework versions; you inherit improvements and must manage your layer against them</td></tr>
+    </table>
+    <div class="flow">HOW THE LAYERS STACK (conceptual; the exact ruleset and class names are release-specific)
+   Your implementation layer     your service request types, rules, integrations, branding
+        |   built on
+   Industry extension layer      industry-specific case types and data (for example Communications, Financial Services)
+        |   built on
+   Customer Service framework    Interaction model, Interaction Portal, shared service request types, hooks
+        |   built on
+   Pega Infinity platform        case management, rule engine, data pages, integration, DX API</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "Pega Customer Service is a strategic application, not a platform feature: a framework with its own class hierarchy, data model and Interaction Portal, plus ready-made service request types. The value of implementing it over building custom case types is inheriting the Interaction wrapper, the agent desktop and the upgrade path. The cost is that I am working inside its model, so I extend rather than rewrite, which is consistent with building close to out-of-the-box."</div>
+  </section>
+
+  <section id="s2-2" class="pagebreak">
+    <h2>2.2 Why it exists, and the metrics that justify every decision</h2>
+    <h3>The problem it solves</h3>
+    <p>A customer calls with a billing question, then asks to change a payment date, then reports a lost card. From the customer's point of view that is one conversation. From a typical back office it is three tickets in three systems, none of which knows about the others, and an agent switching between screens while the customer waits. Before purpose-built service applications, organisations stitched this together with a CRM front end, a case tool and a knowledge base. Each seam caused cost: re-keying data, repeated authentication, lost context on transfer, and no consistent record of what happened.</p>
+    <p>Pega Customer Service addresses the seam. It treats the <em>conversation</em> as the unit that the agent works inside, and the individual pieces of work (change a date, report a card) as service requests that run inside it with the same case engine, SLAs, routing and audit that any Pega case has.</p>
+    <h3>The metrics you must speak</h3>
+    <p>Pega Customer Service design decisions are justified in contact-centre terms. You will be expected to use this language. Four metrics dominate, with one more worth knowing.</p>
+    <table>
+      <tr><th>Metric</th><th>Definition</th><th>How it is usually computed</th><th>What moves it</th></tr>
+      <tr><td><strong>AHT</strong> (Average Handle Time)</td><td>The average time an agent spends handling a contact, from start of talk through hold and any after-contact wrap-up work</td><td>(Talk time + hold time + after-contact work time) divided by the number of contacts handled</td><td>Context pre-loaded on screen, fewer system switches, guided steps, suggested replies, automated wrap-up notes</td></tr>
+      <tr><td><strong>FCR</strong> (First Contact Resolution)</td><td>The share of enquiries fully resolved on the first contact, with no repeat contact for the same issue</td><td>Resolved-first-time contacts divided by total contacts, over a defined repeat window</td><td>Giving agents the authority and data to finish the job; fewer hand-offs; accurate knowledge</td></tr>
+      <tr><td><strong>NPS</strong> (Net Promoter Score)</td><td>A loyalty measure from asking customers how likely they are to recommend the company on a 0 to 10 scale</td><td>Percentage of promoters (9 to 10) minus percentage of detractors (0 to 6)</td><td>Overall experience over time; a consequence of the metrics above rather than a direct lever</td></tr>
+      <tr><td><strong>Containment</strong></td><td>The share of contacts fully handled in self-service or automation without reaching a live agent</td><td>Contacts resolved in self-service divided by all contacts that began in self-service</td><td>Quality of self-service journeys, digital messaging, and how well the bot or portal hands over when it cannot finish</td></tr>
+      <tr><td>CES (Customer Effort Score), worth knowing</td><td>How much effort the customer had to expend to resolve the issue</td><td>Survey-based; Pega Customer Service includes a post-conversation survey service request type of this kind</td><td>Fewer steps, no repeated information, quick resolution</td></tr>
+    </table>
+    <div class="formula">AHT = (talk time + hold time + after-contact work) / contacts handled
+FCR = contacts resolved first time / total contacts   (within a defined repeat-contact window)
+NPS = % promoters (9-10) - % detractors (0-6)
+Containment = self-service contacts resolved without an agent / self-service contacts started</div>
+    <h3>A worked example, with illustrative numbers</h3>
+    <p><span class="tag">ILLUSTRATIVE</span> A service centre handles 10,000 contacts a month at an AHT of 8 minutes: 80,000 agent minutes, about 1,333 agent hours. A redesign pre-loads customer and account context so the agent no longer asks for details or opens other systems, and automates the wrap-up note. Suppose that cuts one minute from every contact. AHT becomes 7 minutes; the work is 70,000 minutes, about 1,167 hours. The saving is about 167 hours a month at the same volume.</p>
+    <p>Now see why FCR matters more than it appears. Suppose 25 percent of contacts are repeats because the first contact did not resolve the issue: 2,500 repeat contacts at 8 minutes is 20,000 agent minutes. Raising FCR so that repeats fall to 15 percent removes 1,000 repeat contacts, 8,000 minutes, and also improves the customer's experience, which NPS later reflects. A trade-off sits inside this: an agent rushed to reduce AHT may leave an issue half-resolved, which lowers FCR and creates repeat contacts that raise total handle time. The metrics must be read together.</p>
+    <div class="flow">THE METRICS AS A SYSTEM
+   better context + guided steps ----&gt; lower AHT -----+
+   authority + accurate knowledge ---&gt; higher FCR ----+--&gt; fewer repeat contacts --&gt; lower cost
+   good self-service + clean handover -&gt; higher containment      |
+                                                                 v
+                                            customer effort falls --&gt; NPS rises over time
+   Caution: pushing AHT down alone can reduce FCR and raise repeat contacts</div>
+    <div class="warning"><strong>The honest limitation.</strong> You have not operated a contact centre, so do not quote a benchmark AHT or NPS as though you have seen one. Give the definitions and the trade-offs, and say that you would expect any Pega Customer Service design discussion to be anchored to the client's own baseline numbers. If asked for an industry figure, say you would not quote one without a source.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "In a contact-centre implementation I would ask for the baseline AHT, FCR and containment before designing anything, because each screen, suggestion and automation is a bet on moving one of them. I would also watch for a design that improves AHT at the cost of FCR, because that just moves effort into repeat contacts."</div>
+  </section>
+
+  <section id="s2-3" class="pagebreak">
+    <h2>2.3 Interaction, service requests, case types and Microjourneys</h2>
+    <h3>The Interaction as a wrapper case</h3>
+    <p>The central modelling idea in Pega Customer Service is the <strong>Interaction</strong>. An Interaction represents a conversation or contact with a customer: a phone call, a chat session, an email thread. It is a case in its own right, and it is the <em>wrapper</em> inside which the service work is done. When an agent picks up a call, an Interaction exists. It identifies the customer, holds the context of the conversation and records what happened. The actual work the customer wants done is performed by <strong>service requests</strong> launched from within the Interaction.</p>
+    <div class="flow">INTERACTION AS WRAPPER
+   Customer contacts you (voice, chat, email, digital message ...)
+        |
+        v
+   INTERACTION  (wrapper case: who is the customer, what channel, what is the conversation about)
+        |-- service request: Billing Inquiry                -- resolved during the call
+        |-- service request: Change Address                 -- resolved during the call
+        |-- service request: Report Lost Card (long-running)-- continues in the back office after the call ends
+        |
+   Interaction ends: wrap-up, outcome recorded, history preserved on the customer record</div>
+    <h3>The vocabulary, defined precisely</h3>
+    <table>
+      <tr><th>Term</th><th>What it is</th><th>Relationship to the others</th></tr>
+      <tr><td><strong>Interaction</strong></td><td>The wrapper case representing the customer contact</td><td>Contains zero, one or many service requests</td></tr>
+      <tr><td><strong>Service request type</strong></td><td>In Customer Service terminology, a case type: the template of a repeatable piece of work with stages and steps</td><td>The Pega documentation states that in the Customer Service industry a case type is called a service request type</td></tr>
+      <tr><td><strong>Service request</strong></td><td>A running instance of a service request type: one customer's billing enquiry, one address change</td><td>Launched inside an Interaction (or created from a back-office channel)</td></tr>
+      <tr><td><strong>Case type</strong></td><td>The Infinity platform term for the template of a process</td><td>Service request type is the Customer Service name for the same concept</td></tr>
+      <tr><td><strong>Microjourney</strong></td><td>One part of an overall customer journey that achieves all or a subset of the required business outcomes; in Pega applications a case type represents the work of a Microjourney</td><td>Planning concept (a business outcome) mapped to one case type or service request type</td></tr>
+    </table>
+    <h3>Microjourney, as Pega uses the term</h3>
+    <p>The Pega documentation defines a Microjourney as one part of an overall customer journey, for example a banking journey, that achieves all or a subset of the required business outcomes for the application. Its examples: the Make Payment Microjourney is the work needed to collect and apply a customer payment to an account or policy; the Change Address Microjourney is the work needed to update a customer address for an account or policy. In your Pega application a <em>case type represents the work that takes place during a Microjourney</em>. In the Customer Service industry the case type is called a service request type, and an instance is a service request.</p>
+    <p>Separately, Pega's delivery approach (Pega Express) uses the Microjourney as a planning unit. The documentation lists the key elements of a Microjourney as case types (reusable templates of business processes), personas (the parties that interact with cases through channels) and data objects (the data needed to process a case). So "Microjourney" is both a design concept (one journey slice) and a planning concept (case types plus personas plus data objects plus channels). Interviewers may use either sense; the common ground is that a Microjourney is a bounded business outcome delivered by a case type.</p>
+    <div class="note"><strong>Do not confuse these.</strong> Journey (the whole customer experience across time and channels), Microjourney (one bounded slice of it), case type (how Pega implements the slice), and service request (one running instance). Candidates often say "microjourney" to mean any small process. Use it only for a bounded business outcome.</div>
+    <h3>Why the wrapper matters</h3>
+    <ul>
+      <li><strong>Context travels.</strong> Because service requests run inside the Interaction, they inherit the identified customer and the conversational context. The agent does not re-identify the customer for each request.</li>
+      <li><strong>One conversation, one record.</strong> Reporting on contacts (volume, duration, outcome) is done on the Interaction; reporting on work (what was requested and resolved) is done on service requests. Those are different questions and the model separates them.</li>
+      <li><strong>Long-running work outlives the call.</strong> A service request can continue after the Interaction ends, with its own SLA, routing and back-office handling. That is how the call stays short while the work completes.</li>
+      <li><strong>AHT versus resolution.</strong> The Interaction timer measures handle time; the service request SLA measures resolution time. Both exist because both matter.</li>
+    </ul>
+    <div class="answer"><strong>Lead-level framing.</strong> "The Interaction is the wrapper case for the conversation; service requests are the work launched inside it, and each service request type is a case type that implements one Microjourney. The wrapper is what carries the identified customer and context, and it lets the call end while long-running work continues in the back office with its own SLA."</div>
+  </section>
+
+  <section id="s2-4" class="pagebreak">
+    <h2>2.4 The Interaction Portal</h2>
+    <h3>Plain-English definition</h3>
+    <p>The <strong>Interaction Portal</strong> is the desktop that customer service representatives (CSRs) and back-office workers use to answer and resolve customer enquiries that arrive through channels such as phone, digital messaging and email. The Pega documentation also states that managers use it to resolve escalations, track team work and generate insight reports. It is built so that an agent can serve a customer from a single screen.</p>
+    <h3>The six functional areas</h3>
+    <p>Pega Academy's topic "Pega Customer Service on Constellation" states that the Interaction Portal consists of six functional areas: Utilities and Channels, Composites, Action Area, Suggestions, Customer Details and Navigation bar (source in 2.R). The table below follows those six, with detail added from the Customer Service documentation pages cited in 2.R. The exact on-screen labels still vary by release and by the UI Kit or Constellation form, so describe the function and verify the label for the deployed version.</p>
+    <table>
+      <tr><th>Area</th><th>Function</th><th>What it is for</th></tr>
+      <tr><td><strong>Navigation bar</strong></td><td>Tools for managing work. In the Constellation Interaction Portal documentation the navigation pane includes: Create (start a demo interaction for training and test purposes), My dashboard (the default landing view for processing work, opening Pulse and viewing AHT data), Explore data (managers only: out-of-the-box insights about CSR work and creation of new insights), Dashboards, Notifications, Recents, Messaging settings, a Phone panel for CTI features, and My open email</td><td>Moving between work and tools without leaving the portal</td></tr>
+      <tr><td><strong>Customer details</strong></td><td>A customer summary pane that keeps key customer information visible throughout the interaction</td><td>The agent always sees who the customer is</td></tr>
+      <tr><td><strong>Suggestions</strong></td><td>Recommended next actions for the agent, from Customer Service's own deterministic logic or from the separately licensed Customer Decision Hub. In the documentation the Suggested actions widget sits in the lower-left of the portal</td><td>Guiding the agent toward the right service request or offer</td></tr>
+      <tr><td><strong>Action area</strong></td><td>The work area where the agent performs the current task: launching a service request, completing assignments, entering data</td><td>The place where work is actually done</td></tr>
+      <tr><td><strong>Composites</strong></td><td>Customer and account information summarised from various systems of record as well as Customer Service itself, such as interaction and case history. The documentation lists examples: recent payments, recent interactions and service cases and their status, products and services held, and other account owners or authorised users</td><td>Letting the agent avoid navigating to other systems for the information needed to serve the customer</td></tr>
+      <tr><td><strong>Utilities and channels</strong></td><td>Tools and channel panels: telephony and CTI, chat, email, notes, and other utilities available during the interaction</td><td>Handling the conversation itself and supporting tools</td></tr>
+    </table>
+    <div class="flow">THE INTERACTION PORTAL, CONCEPTUAL LAYOUT (positions vary by release)
+ +------------------------------------------------------------------------------------+
+ | NAVIGATION BAR: dashboard | notifications | recents | phone panel | email           |
+ +------------------+---------------------------------------------+-------------------+
+ | CUSTOMER DETAILS |                ACTION AREA                  | COMPOSITES        |
+ | (summary pane,   |   current service request / assignment      | account, history, |
+ |  stays visible)  |   forms, steps, resolution                  | products held     |
+ +------------------+---------------------------------------------+-------------------+
+ | SUGGESTIONS (lower left): next-best tasks, offers, articles   | UTILITIES AND     |
+ |                                                               | CHANNELS: phone,  |
+ |                                                               | chat, email, notes|
+ +------------------------------------------------------------------------------------+</div>
+    <h3>The suggestions behaviour in more detail</h3>
+    <p>The documentation for the UI Kit Interaction Portal describes suggestions appearing as notification cards: a maximum of three displayed at a time, ranked by category as recommended tasks (actions), then recommended offers, then recommended articles, with each category guaranteed a slot. Suggestions with a blue icon are from Pega Customer Service and suggestions with a green icon are from Pega Customer Decision Hub. When a card is opened or dismissed it makes room for the next ranked card. Treat this as release-specific behaviour: the exact limits and icons are documented for that portal form and may differ in the Constellation form, whose own page describes a Suggested actions widget with a new-suggestion badge that disappears after a configurable time.</p>
+    <h3>Two portals: UI Kit and Constellation</h3>
+    <p>Pega Customer Service ships the Interaction Portal in two forms, tied to the two UI architectures covered in Chapter 03.</p>
+    <table>
+      <tr><th>Aspect</th><th>UI Kit (traditional) Interaction Portal</th><th>Constellation Interaction Portal</th></tr>
+      <tr><td>UI architecture</td><td>Section and harness based, server-rendered</td><td>View based, client-rendered</td></tr>
+      <tr><td>Introduced</td><td>The original form of the product</td><td>Introduced with Pega Customer Service 23</td></tr>
+      <tr><td>How you customise</td><td>Modify header sections, composites and portal layout through App Studio and, for deeper changes, Dev Studio rules (documentation describes modifying the interaction header and configuring composite tabs)</td><td>View authoring and design-system templates in App Studio; custom needs through Constellation DX Components</td></tr>
+      <tr><td>Direction of travel</td><td>Fully supported; mature</td><td>Pega's recommended UI for new applications as of Pega Platform '23 (see Chapter 03, 3.1)</td></tr>
+      <tr><td>Documentation bundle</td><td>Customer Service bundle sections for UI Kit implementation</td><td>Customer Service bundle sections for Constellation implementation</td></tr>
+    </table>
+    <p>The same Academy topic gives the advantages of the Pega Customer Service 23 Constellation portal as fast, prescriptive, extensible and lower total cost of ownership. "Prescriptive" is the design-system trade covered in Chapter 03: Pega decides layout, and you author content.</p>
+    <h3>Coexistence</h3>
+    <p>The Academy topic describes this coexistence, and the explanation follows it. The two forms can coexist. In a Pega Customer Service coexistence arrangement the <em>Constellation</em> Interaction Portal can run service requests that were built in the <em>UI Kit</em> form. The reason is practical: an organisation with years of UI Kit service request types can move its agent desktop to Constellation while migrating individual service request types over time, instead of rebuilding everything at once. Chapter 03 explains why a UI architecture cannot be casually flipped, which is exactly why coexistence exists. Confirm the supported combinations for the specific releases in the documentation before promising a client any mixture.</p>
+    <div class="warning"><strong>Be precise with release claims.</strong> Say "Constellation Interaction Portal was introduced in Pega Customer Service 23" only if you say it as something you read, and add that you would confirm the feature coverage of the deployed release. Constellation versions of some Customer Service capabilities trail the UI Kit versions in particular releases, and the supported-features list for the target release is the authority.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "I would describe the Interaction Portal by function: navigation, customer details, suggestions, the action area, composites, and utilities and channels. The decision I would raise early in a project is which portal form the client is on, because it determines how I customise: sections and header configuration for UI Kit, views and DX Components for Constellation. And if they are mid-migration, I would ask how the coexistence is configured."</div>
+  </section>
+
+  <section id="s2-5" class="pagebreak">
+    <h2>2.5 Channels</h2>
+    <h3>Plain-English definition</h3>
+    <p>A <strong>channel</strong> is the way a customer reaches the organisation. Pega Customer Service treats the channel as an input to the Interaction: whichever way the customer arrives, an Interaction is created, the customer is identified, and the same service requests, rules and reporting apply. That uniformity is the product's main architectural benefit.</p>
+    <table>
+      <tr><th>Channel</th><th>How it appears in the application</th><th>What it needs from the client's estate</th><th>Notes</th></tr>
+      <tr><td><strong>Voice and CTI</strong></td><td>A phone panel in the Interaction Portal; an incoming call creates or links an Interaction and may trigger a screen pop of the customer</td><td>A telephony platform with computer-telephony integration; a customer-identification step (for example matching the caller)</td><td>The documentation for the navigation pane lists a Phone panel for CTI features</td></tr>
+      <tr><td><strong>Email</strong></td><td>Inbound email handled as an interaction; the agent works it from the portal, with a place to open their mailbox</td><td>A mailbox integration; rules for triage and creating cases from email</td><td>The same pattern as an email listener creating cases, with the interaction wrapper added</td></tr>
+      <tr><td><strong>Chat and digital messaging</strong></td><td>A messaging panel and settings; concurrent conversations for an agent; transcript on the Interaction</td><td>The messaging channel set-up and licensing</td><td>Documentation lists Messaging settings in the navigation pane; exact supported channels (for example particular messaging apps) are release and licence dependent</td></tr>
+      <tr><td><strong>Self-service</strong></td><td>Customers perform tasks in a web or mobile portal or through a virtual assistant; service requests are created without an agent</td><td>A customer-facing front end, authentication, and APIs exposed from Pega (see Chapter 03 for DX API and SDK options)</td><td>Containment is measured here</td></tr>
+      <tr><td><strong>Co-browse</strong></td><td>An agent and customer share a browser session during an interaction</td><td>A co-browse capability and customer consent flow</td><td>Release and licence dependent; confirm availability</td></tr>
+      <tr><td><strong>Transfer and queue routing</strong></td><td>Interactions and service requests are routed to queues or other agents by skill, priority or availability</td><td>Routing rules configured to the organisation's team structure</td><td>The same routing concepts as any Pega case, applied to a live contact</td></tr>
+      <tr><td><strong>CSR availability</strong></td><td>An agent's status (available, busy, away) that routing uses to decide who receives work</td><td>Integration with the telephony or presence platform for state</td><td>Wrongly synchronised availability is a classic source of misrouted contacts</td></tr>
+    </table>
+    <div class="flow">CHANNELS INTO ONE MODEL
+   Voice/CTI --------+
+   Email ------------+
+   Chat/messaging ---+--&gt; identify customer --&gt; INTERACTION --&gt; service requests --&gt; routing / SLA / audit
+   Self-service -----+                              ^
+   Co-browse (assist)+                              |
+                                  agent availability and queues decide who receives the contact</div>
+    <h3>What integration under a live agent's hands looks like</h3>
+    <p>Every channel adds real-time integration constraints that batch and back-office systems do not have. A CTI event must create the right Interaction before the agent answers. A customer lookup must return within a couple of seconds while someone waits on the phone. A downstream core system that takes ten seconds to respond is invisible in a batch job and unacceptable in a call. This is the part of Customer Service work where your integration experience transfers best: Connect-REST and Connect-SOAP calls with timeouts, data pages with sensible refresh strategies, and fallbacks that let the agent continue when a backing system is slow. Describe it exactly like that, without claiming CTI or messaging set-up experience.</p>
+    <div class="dont"><strong>Do not claim channel set-up.</strong> You have not configured CTI, a messaging channel or co-browse. Say that you understand how they feed the Interaction model and that your relevant experience is the integration and routing behind a live contact.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "Whatever the channel, the model is the same: identify the customer, create or link an Interaction, launch service requests, route and track them. What changes per channel is the real-time integration and the human-factors constraint that someone is waiting. I would design for the slowest dependency first."</div>
+  </section>
+
+  <section id="s2-6" class="pagebreak">
+    <h2>2.6 Intelligence: NBA, CDH, knowledge, assistants and GenAI</h2>
+    <h3>Plain-English definition</h3>
+    <p>Customer Service becomes "intelligent" by adding recommendations and assistance on top of the workflow. The purpose is to lower AHT (agents find answers faster), raise FCR (agents resolve rather than transfer), and raise consistency (every agent gets the same good guidance).</p>
+    <table>
+      <tr><th>Capability</th><th>What it does</th><th>Where it appears</th><th>Dependency and release note</th></tr>
+      <tr><td><strong>Next-Best-Action (NBA) Advisor</strong> in Customer Service</td><td>Recommends tasks, offers and articles the agent might act on during an interaction, based on the current context. The documentation describes the suggestions source as either Customer Service's deterministic logic or the separately licensed Customer Decision Hub</td><td>The Suggestions area of the portal</td><td>Deterministic suggestions are included with the application; Customer Decision Hub is separately licensed</td></tr>
+      <tr><td><strong>Customer Decision Hub (CDH)</strong></td><td>Pega's enterprise decisioning product that arbitrates across actions, offers and treatments using models, rules and constraints</td><td>Feeds suggestions to the portal, shown with a distinct icon</td><td>A separate product with its own implementation. Not in your experience</td></tr>
+      <tr><td><strong>Pega Knowledge</strong></td><td>Authoring and surfacing of articles; recommended articles appear as suggestions</td><td>Suggestions and search within the interaction</td><td>Separate product; confirm licensing</td></tr>
+      <tr><td><strong>Suggested replies and common phrases</strong></td><td>Pre-written or recommended text an agent can insert into chat or email responses</td><td>The messaging and email panels</td><td>Functional description; release and channel dependent</td></tr>
+      <tr><td><strong>CSR assistant</strong></td><td>Guidance that helps an agent through a task, for example prompts or checks during a conversation</td><td>The action area and utilities</td><td>Name and scope are release-specific; describe function only</td></tr>
+      <tr><td><strong>GenAI summarisation</strong></td><td>Generating a summary of a conversation or case to reduce after-contact work and speed hand-off</td><td>Interaction and case summaries</td><td><span class="tag amber">RELEASE-SENSITIVE</span> Availability, configuration, supported models and guardrails differ by release; confirm in the deployed version's documentation</td></tr>
+    </table>
+    <div class="flow">HOW A SUGGESTION REACHES THE AGENT
+   Interaction context (customer, intent, channel, open work)
+        |
+        v
+   Source A: Customer Service deterministic logic  --+
+   Source B: Customer Decision Hub (if licensed)   --+--&gt; ranking (tasks, offers, articles)
+   Source C: Pega Knowledge articles               --+          |
+                                                                v
+                                    Suggestions area: a few cards at a time; agent accepts or dismisses
+                                                                |
+                                         accept --&gt; launches a service request / opens an article / presents an offer</div>
+    <h3>How NBA relates to CDH, precisely</h3>
+    <p>Candidates often blur these. Next-Best-Action is the <em>pattern</em>: for a given customer at a given moment, recommend the single action (or a few) with the highest value subject to rules. Customer Decision Hub is the <em>product</em> that implements that pattern at enterprise scale, with arbitration across the organisation's actions and channels. Pega Customer Service has a built-in, simpler, deterministic source of suggestions; when an organisation also licenses CDH, Customer Service can display CDH's recommendations in the same area, and the documentation describes mapping CDH actions to Customer Service case types so that accepting a recommendation launches the right service request.</p>
+    <div class="warning"><strong>Not your experience.</strong> You have not worked with CDH, NBA strategies, Pega Knowledge or Pega's GenAI features. Describe them as conceptual understanding. For CDH specifically, say you understand the decisioning pattern and that the decisioning implementation would be owned by a decisioning specialist alongside you.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "Suggestions are a bet on AHT and FCR. I would start with deterministic, context-driven task suggestions that map to existing service request types, measure acceptance and resolution, and only then layer CDH offers with suppression rules for sensitive contexts. For generative summaries I would settle review, retention and guardrails first, and I would confirm the capability in the deployed release's documentation."</div>
+  </section>
+
+  <section id="s2-7" class="pagebreak">
+    <h2>2.7 Industry editions and the named Microjourneys</h2>
+    <h3>Why there are industry editions</h3>
+    <p>A bank and a mobile network operator both take customer calls, but the work differs. Pega Customer Service therefore ships industry layers on top of the core framework, adding data model extensions and a library of ready-made service request types for that industry's common Microjourneys. The Pega documentation lists these Microjourneys by name. Knowing a few of them is a quick, credible way to show you have read the product documentation, and it lets you discuss them concretely.</p>
+    <h3>Communications</h3>
+    <table>
+      <tr><th>Microjourney</th><th>The work it covers (functional description)</th></tr>
+      <tr><td>Billing Inquiry</td><td>Explaining charges and resolving billing questions or disputes</td></tr>
+      <tr><td>Add Mobile Device and Plan</td><td>Adding a device and a service plan to an account</td></tr>
+      <tr><td>Guided Internet Setup</td><td>Walking a customer through setting up internet service</td></tr>
+      <tr><td>Make Payment</td><td>Collecting and applying a payment</td></tr>
+      <tr><td>Move Service</td><td>Relocating service to a new address</td></tr>
+    </table>
+    <h3>Financial Services</h3>
+    <table>
+      <tr><th>Microjourney</th><th>The work it covers (functional description)</th></tr>
+      <tr><td>Change PIN</td><td>Changing a card or account PIN</td></tr>
+      <tr><td>Fee Inquiry</td><td>Explaining or disputing a fee</td></tr>
+      <tr><td>Make Payment</td><td>Collecting and applying a payment to an account</td></tr>
+      <tr><td>Manage Lost or Stolen Card</td><td>Blocking a card and arranging a replacement</td></tr>
+      <tr><td>Travel Notification</td><td>Recording that a customer will be travelling so card use is not wrongly blocked</td></tr>
+      <tr><td>Payment Inquiry</td><td>Answering questions about a payment's status</td></tr>
+      <tr><td>Repossession and Collateral Management</td><td>Handling a repossession and the related collateral</td></tr>
+      <tr><td>Manage Customer-Circumstance</td><td>Supporting customers affected by personal hardship or a life event, for example a natural disaster or poor health, who request assistance with payments or payment waivers</td></tr>
+    </table>
+    <div class="note"><strong>How these were sourced.</strong> The lists above come from the Pega Customer Service documentation as captured during research for this pack. The documentation separately describes standard case types such as Log general service request, Manage customer circumstance and a post-conversation CES survey. The right-hand descriptions are plain-language summaries by this pack, not Pega's wording. Industry offerings and names change between releases; confirm the exact list for the deployed release.</div>
+    <h3>Why these matter to you, honestly</h3>
+    <p>Two Financial Services Microjourneys sit near work you have genuinely done. <strong>Make Payment</strong> and <strong>Manage Customer-Circumstance</strong> belong to the same business territory as collections, hardship and payment arrangements. <strong>Repossession and Collateral Management</strong> sits in the territory of vehicle finance and remarketing, which is the world your applications at the Mercedes-Benz finance business served. The overlap is the <em>business domain</em>, not the <em>product</em>. You can say you understand the business problem these Microjourneys address because you have built case management in that domain, and you would study how the Pega implementation models it. You cannot say you implemented them.</p>
+    <div class="flow">MICROJOURNEY TO CASE TYPE TO SERVICE REQUEST
+   Microjourney (business outcome):   Manage Lost or Stolen Card
+        |  implemented as
+   Service request type (case type):  stages and steps: verify customer --&gt; block card --&gt; arrange replacement --&gt; confirm
+        |  instantiated per customer as
+   Service request:                   one customer's lost card, inside the Interaction on the phone
+        |  may continue after the call:  replacement dispatch, SLA, back-office routing</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "The industry layers give you ready-made service request types for common Microjourneys, such as Make Payment, Manage Lost or Stolen Card or Billing Inquiry. The implementation question is almost never 'build from scratch'; it is 'which out-of-the-box service request types do we adopt, which do we copy and adapt, and which are genuinely new', and I would keep the third category as small as possible."</div>
+  </section>
+
+  <section id="s2-8" class="pagebreak">
+    <h2>2.8 Extension points</h2>
+    <h3>Why extension discipline matters more here</h3>
+    <p>Because Customer Service is a framework, the quality of an implementation is largely determined by how well the team extends it. A team that rewrites framework rules in place creates an upgrade burden on every release; a team that extends through supported mechanisms inherits improvements. This is the strategic-application version of the "build close to out-of-the-box" philosophy in Chapter 01.</p>
+    <h3>The extension points to know</h3>
+    <table>
+      <tr><th>Extension point</th><th>What you configure</th><th>Typical decision</th><th>Release flag</th></tr>
+      <tr><td><strong>Service request types</strong></td><td>Copy an out-of-the-box service request type, adjust its stages, steps, forms and rules; or add a new one. The documentation states that out-of-the-box types can be configured, copied, or extended with new types</td><td>Adopt as is, copy and adapt, or create new. Prefer the first two</td><td>Screen labels differ between UI Kit and Constellation forms</td></tr>
+      <tr><td><strong>Interaction drivers</strong></td><td>The classification of why a customer is contacting you (the reason for the contact) and what that reason leads to: which service requests are offered, which suggestions are made</td><td>How granular the contact reasons are; whether they map to the organisation's reporting taxonomy</td><td>Naming and configuration screens vary; describe by function</td></tr>
+      <tr><td><strong>Routing</strong></td><td>Which queue or agent receives an interaction or a service request, by skill, priority, channel, language or availability</td><td>Skills-based versus queue-based; overflow and escalation paths</td><td>The mechanisms are standard Pega routing plus channel-aware behaviour</td></tr>
+      <tr><td><strong>Composites and header</strong></td><td>What customer and account data the agent sees, mapped from the client's systems of record; documentation describes configuring composite tabs and modifying the interaction header</td><td>Which fields, from which systems, loaded when</td><td>UI Kit form is configured through App Studio and rules; Constellation form is configured through views</td></tr>
+      <tr><td><strong>Suggestions</strong></td><td>Which tasks, offers and articles are recommended, and the rules that gate them; the documentation describes intent-based and CDH-mapped suggestions</td><td>Deterministic first; CDH later</td><td>Limits and display depend on portal form</td></tr>
+      <tr><td><strong>Integration layer</strong></td><td>Connectors to the client's CRM, billing, core and identity systems, feeding the customer data model</td><td>Real-time versus cached; system of record per field</td><td>Standard Infinity integration rules</td></tr>
+      <tr><td><strong>UI customisation</strong></td><td>UI Kit: sections and skin. Constellation: views, templates, and DX Components for genuine gaps (Chapter 03)</td><td>Whether a custom component is justified</td><td>Constellation custom components carry an upgrade cost</td></tr>
+    </table>
+    <div class="flow">DECISION FLOW FOR A NEW SERVICE NEED
+   Is there an out-of-the-box service request type close to this need?
+        |-- yes, close:      configure it as shipped
+        |-- yes, partly:     COPY it into your layer, adapt stages/steps/rules (do not edit the framework in place)
+        |-- no:              create a new service request type in your layer, reusing framework data and rules
+   Does the UI need something the design system does not provide?
+        |-- Constellation:   try templates and views first; DX Component only with owner, tests, retirement trigger
+        |-- UI Kit:          sections and skin; avoid custom HTML and JavaScript</div>
+    <h3>Pitfalls</h3>
+    <div class="dont"><strong>Anti-patterns:</strong> editing framework rules in place instead of copying into your own layer; creating a new service request type for something an out-of-the-box one covers; hard-coding contact reasons that do not match the reporting taxonomy; loading every customer composite eagerly on every interaction; building a custom component for a layout the template already supports; wiring suggestions to offers without suppression for complaints.</div>
+    <div class="answer"><strong>Lead-level framing.</strong> "Extending a strategic application is mostly a discipline of restraint. I would classify every requirement as adopt, adapt or new, keep customisation in my own layer, and record exceptions. Because I have built a reusable framework inside a client before, I know that the cost of a clever extension arrives at upgrade time."</div>
+  </section>
+
+  <section id="s2-9" class="pagebreak">
+    <h2>2.9 The honest mapping: what your work transfers and what it does not</h2>
+    <h3>The ambiguity, stated plainly</h3>
+    <div class="warning"><strong>The "Customer Service" line on your resume.</strong> Your resume lists Customer Service alongside Collections, Debt Recovery and Remarketing at Mercedes-Benz Financial Services. That is a <em>business function</em> built as custom case management. It is almost certainly <strong>not</strong> the Pega Customer Service strategic application. A Pega Customer Service interviewer will ask about the Interaction Portal, interaction wrapper cases, service request types and composites within two minutes. If you imply framework experience you do not have, the interview ends there. The accurate and still valuable statement is that you built case management for a customer-service business function using core Infinity.</div>
+    <h3>The exact sentence</h3>
+    <div class="answer"><strong>Say this, in your own words.</strong> "At Mercedes-Benz Financial Services I built case management for customer-service-type work, alongside Collections, Debt Recovery and Remarketing: case types, SLAs, routing, correspondence and the integrations behind them, on core Infinity 8.x. That was custom case management for the business function, not the Pega Customer Service strategic application. I have not implemented the Interaction Portal or the service request framework, and I understand them from the documentation. I would ramp quickly because the case engine underneath is the same."</div>
+    <p>Why this works: it claims the real credit (case types, SLAs, routing, correspondence, integration), it draws the line before the interviewer does, and it ends on the true bridge (the engine underneath is the same). Say it unprompted if Customer Service comes up. A candidate who draws that line first is trusted for everything else they say.</p>
+    <div class="dont"><strong>Never say:</strong> "I have worked on Pega Customer Service." "I have built the Interaction Portal." "I have used service request types." "I have configured composites." "I have worked with the CSR assistant." If an interviewer asks "which Customer Service version?" and you answer with a number, you will be asked which composite configuration you changed.</div>
+    <h3>What genuinely transfers</h3>
+    <table>
+      <tr><th>Your experience</th><th>Where it applies in Customer Service</th><th>Honest phrasing</th></tr>
+      <tr><td>Case lifecycle design: stages, steps, flow shapes, tickets</td><td>Every service request type is a case type; the lifecycle skills are identical</td><td>"The service request type is a case type; I design those daily."</td></tr>
+      <tr><td>SLAs and escalations</td><td>Service request SLAs and the manager escalations in the Interaction Portal</td><td>"I have configured goal and deadline SLAs and escalation paths in production."</td></tr>
+      <tr><td>Routing and work queues</td><td>Queue routing, skills-based assignment and transfer of service requests</td><td>"Routing is the same mechanism. I have not configured the contact-centre skill model."</td></tr>
+      <tr><td>Correspondence and SMS framework replacing four vendors</td><td>Customer communications from service requests; suggested replies live adjacent to it</td><td>"I built a reusable correspondence and SMS framework; I would study how Customer Service surfaces replies."</td></tr>
+      <tr><td>Integration under real operational pressure: Connect-REST, Service-REST, Connect-SQL, Kafka</td><td>Customer lookup, composite data, CTI-adjacent events, downstream updates</td><td>"The integration discipline carries; the Customer Service data model I would learn."</td></tr>
+      <tr><td>Seven-market APAC rollout</td><td>Multi-market, multi-language, multi-regulation service centres</td><td>"I have worked through market-specific variations in a seven-market rollout."</td></tr>
+      <tr><td>Production support, PDC, Tracer, PAL</td><td>Supporting an application where a live agent is waiting</td><td>"I have supported time-sensitive operational applications and diagnosed with PDC and Tracer."</td></tr>
+      <tr><td>Data pages and data transforms</td><td>Customer and account composites are data pages in spirit</td><td>"I know the loading, scoping and refresh trade-offs that composites depend on."</td></tr>
+    </table>
+    <h3>What does not transfer</h3>
+    <table>
+      <tr><th>Gap</th><th>Why it is a real gap</th><th>What you do about it</th></tr>
+      <tr><td>The Interaction wrapper model</td><td>You have not built or customised an Interaction, its lifecycle or its reporting</td><td>Learn the model in the Academy and the documentation; build a demo interaction in a trial environment</td></tr>
+      <tr><td>The Interaction Portal and composites</td><td>No hands-on with either form</td><td>Open the demo portal; trace one service request from launch to resolution</td></tr>
+      <tr><td>Service request type configuration</td><td>You have built case types, but not copied and extended the shipped ones</td><td>Copy one out-of-the-box type in a sandbox and note what you can and cannot change</td></tr>
+      <tr><td>Contact-centre metrics ownership</td><td>You have not owned AHT or NPS targets</td><td>Learn the vocabulary (2.2) and frame designs by the metric they move</td></tr>
+      <tr><td>Channels: CTI, messaging, co-browse</td><td>No set-up experience</td><td>Understand the Interaction model; defer set-up to specialists</td></tr>
+      <tr><td>CDH, NBA, Pega Knowledge, GenAI features</td><td>No hands-on</td><td>Conceptual fluency from 2.6; be explicit</td></tr>
+      <tr><td>Constellation Interaction Portal</td><td>No Constellation experience</td><td>Chapter 03 and its ramp plan</td></tr>
+      <tr><td>Release currency</td><td>Your experience is 8.x</td><td>Name it; verify the deployed release</td></tr>
+    </table>
+    <div class="flow">THE HONEST BRIDGE
+   What you have:      custom case management for customer-service-type work (core Infinity 8.x)
+                              |  same engine: cases, SLAs, routing, correspondence, integration
+   What you lack:      Interaction wrapper, Interaction Portal, service request framework, channels, CDH
+                              |  closed by: Academy + documentation + a sandbox walkthrough (2.10)
+   What you can say:   "I understand it; I have not implemented it; I would ramp fast."</div>
+    <h3>If the interviewer pushes</h3>
+    <div class="answer"><strong>Pushback: "So you have not used Pega Customer Service?"</strong> Answer: "Correct. I built custom case management for customer-service-type work on core Infinity, so the case engine, SLAs, routing and integrations are things I own. The framework itself, the Interaction wrapper, the Interaction Portal and the service request types, I know from documentation rather than delivery. I would rather say that now than have you find it in the second question."</div>
+    <div class="answer"><strong>Lead-level framing.</strong> The strongest thing a candidate can do on a contested claim is separate the true part from the implied part before anyone asks. That reads as precision under pressure, which is exactly what a lead is hired for.</div>
+  </section>
+
+  <section id="s2-10" class="pagebreak">
+    <h2>2.10 Customer Service at LTM, and your ramp plan</h2>
+    <h3>What is established, and what is not</h3>
+    <table>
+      <tr><th>Statement</th><th>Evidence status</th></tr>
+      <tr><td>"Pega Customer Services" is listed as one of four named strategic applications in LTM's automotive Pega practice, alongside Pega Warranty, Pega Recall and Pega Field Service Automation</td><td><span class="tag green">VERIFIED</span> LTM automotive Pega solution page</td></tr>
+      <tr><td>The Ruletronics origin of the practice names Customer Services as a capability and a named service line</td><td><span class="tag green">VERIFIED</span> LTM Pega partner page</td></tr>
+      <tr><td>LTM's publicised Pega awards are in Healthcare and Life Sciences and in Workflow Automation, not Customer Service</td><td><span class="tag green">VERIFIED</span> as to the awards; the absence of a Customer Service award is an observation about the evidence gathered</td></tr>
+      <tr><td>A current LTM employee publicly lists Pega Constellation and Pega Customer Service among his skills, with certifications on 8.x releases</td><td><span class="tag amber">JD-SOURCED</span> one person's public profile; it shows the skill exists in the company, not its scale</td></tr>
+      <tr><td>LTM has delivered a Pega Customer Service <em>Constellation</em> implementation</td><td>Not established. Do not state it</td></tr>
+    </table>
+    <div class="note"><span class="tag">INFERENCE</span> Customer Service is part of LTM's Pega offering and heritage, but it is not publicly celebrated the way healthcare and workflow automation are. A sensible expectation is that you may meet interviewers who know it deeply, because the offering exists, and that the first interview question about it will test whether you know the product or have merely worked in a customer-service business function. That is why 2.9 comes before any ramp plan.</div>
+    <h3>A ramp plan that makes the honest claim bigger</h3>
+    <p>The objective is a defensible statement of the form: "I have walked through the Customer Service product in a sandbox and can describe how an Interaction and a service request behave." Not "I have implemented it." A realistic sequence follows. Confirm every resource against the current documentation and Academy catalogue; titles and availability change.</p>
+    <table>
+      <tr><th>Step</th><th>Activity</th><th>Outcome you can truthfully state</th></tr>
+      <tr><td>1</td><td>Read the Customer Service documentation sections on the Interaction Portal, service request types and Microjourneys (the pages cited in 2.R)</td><td>You can describe the model in the product's own vocabulary</td></tr>
+      <tr><td>2</td><td>Take the relevant Pega Academy Customer Service topics (search the Academy for Customer Service and Interaction Portal)</td><td>You have completed named Academy material</td></tr>
+      <tr><td>3</td><td>Obtain a Pega environment where the Customer Service application can be installed or a demo is available (a Community or trial environment, or one offered by an employer; confirm what is available to you and under which terms)</td><td>You can open the portal</td></tr>
+      <tr><td>4</td><td>Start a demo interaction; launch an out-of-the-box service request such as Make Payment; trace it through its stages</td><td>"I have run a service request inside an Interaction in a demo environment."</td></tr>
+      <tr><td>5</td><td>Copy one service request type into your own layer; change a step and a form; note what you could and could not edit</td><td>"I have extended a service request type in a sandbox."</td></tr>
+      <tr><td>6</td><td>Look at how composites and suggestions are configured in the portal form you have</td><td>You can discuss configuration by function</td></tr>
+      <tr><td>7</td><td>Write a one-page comparison of your MBFS case types against a service request type: where they are the same, where the framework adds something</td><td>A rehearsal aid, and evidence of structured learning</td></tr>
+    </table>
+    <div class="warning"><strong>Limits of the plan.</strong> A sandbox walkthrough does not make you an implementer. After this plan the honest claim is "I have explored it hands-on in a demo environment", and the conversation in an interview should still lead with the delivery you have actually done. Do not put Pega Customer Service on your resume as a skill without that qualification.</div>
+    <h3>Resume wording</h3>
+    <table>
+      <tr><th>Resume line</th><th>Safe?</th><th>Safer version</th></tr>
+      <tr><td>"Customer Service" in a list of applications</td><td>Ambiguous: reads as the product</td><td>"Custom case management for customer-service, collections, debt recovery and remarketing processes (core Infinity 8.x)"</td></tr>
+      <tr><td>"Pega Customer Service"</td><td>No, unless you have delivered it</td><td>Omit, or "Studied: Pega Customer Service (Interaction Portal, service request types); sandbox walkthrough completed" once true</td></tr>
+    </table>
+    <div class="answer"><strong>Lead-level framing.</strong> "Customer Service is on LTM's offering list, so it will come up. I would present it as a deliberate learning area: I have mapped it onto what I own, I know where the gap is, and I would be in a demo environment within days of joining any engagement that needed it."</div>
+  </section>
+
+  <section id="s2-11" class="pagebreak">
+    <h2>2.11 Interview Q&amp;A (Sathvik's voice)</h2>
+    <p class="small muted">Model answers are conceptual understanding plus a ramp plan. None claims product experience you do not have.</p>
+
+    <div class="qa"><span class="q">Q1. What is Pega Customer Service?</span>
+    <p>"A strategic application built on Infinity: a framework with its own class hierarchy, customer and interaction data model, Interaction Portal and ready-made service request types, plus hooks to channels, knowledge and decisioning. It is not a platform feature, and building customer-service case types yourself does not give you the product. I know it from the documentation rather than from delivery."</p></div>
+
+    <div class="qa"><span class="q">Q2. Have you worked on Pega Customer Service?</span>
+    <p>"Not the product. At Mercedes-Benz Financial Services I built custom case management for customer-service-type work alongside Collections, Debt Recovery and Remarketing on core Infinity 8.x. I own the case engine side: case types, SLAs, routing, correspondence and integration. I have not implemented the Interaction Portal or the service request framework, and I have a plan to explore them in a demo environment."</p></div>
+
+    <div class="qa"><span class="q">Q3. What is an Interaction?</span>
+    <p>"The wrapper case for a customer contact. It identifies the customer, holds the conversation's context and records the outcome. The work the customer wants is done in service requests launched inside it, so context travels, and long-running work can continue in the back office after the call ends."</p></div>
+
+    <div class="qa"><span class="q">Q4. What is the difference between an Interaction, a service request type and a case type?</span>
+    <p>"An Interaction is the wrapper for the conversation. A service request type is the Customer Service name for a case type, the template for a repeatable piece of work; a service request is one running instance of it. So a service request type is a case type, and each represents the work of one Microjourney."</p></div>
+
+    <div class="qa"><span class="q">Q5. What is a Microjourney?</span>
+    <p>"As Pega defines it, one part of an overall customer journey that achieves all or a subset of the required business outcomes, for example Make Payment or Change Address. A case type represents the work in a Microjourney. In Pega's delivery approach it is also a planning unit made of case types, personas, data objects and channels. I use the term only for a bounded business outcome."</p></div>
+
+    <div class="qa"><span class="q">Q6. Walk me through the Interaction Portal.</span>
+    <p>"Pega Academy's Customer Service on Constellation topic says the Interaction Portal consists of six functional areas: the navigation bar with dashboards, notifications, recents, phone and email access; the customer details summary that stays visible; the suggestions area with recommended tasks, offers and articles; the action area where the current work is done; composites summarising customer and account information from systems of record; and utilities and channels such as telephony and messaging. Exact labels vary by release and by UI Kit or Constellation form, so I would confirm them for the deployed version."</p></div>
+
+    <div class="qa"><span class="q">Q7. What is the difference between the UI Kit and the Constellation Interaction Portal?</span>
+    <p>"The UI Kit portal is section-based and server-rendered; the Constellation portal, introduced in Pega Customer Service 23, is view-based and client-rendered on the design system. Customisation differs: header and composite configuration plus sections for UI Kit, views and DX Components for Constellation. They can coexist, with the Constellation portal running service requests built in UI Kit, which lets an organisation migrate service request types gradually. I have not worked on either in production."</p></div>
+
+    <div class="qa"><span class="q">Q8. What do AHT, FCR, NPS and containment mean, and how do they affect design?</span>
+    <p>"AHT is average handle time: talk, hold and after-contact work per contact. FCR is the share resolved on first contact. NPS is promoters minus detractors on a likelihood-to-recommend scale. Containment is the share resolved in self-service without an agent. Each feature is a bet on one of them, for example pre-loaded composites target AHT, authority and knowledge target FCR. The trap is optimising AHT alone, because rushed calls lower FCR and generate repeat contacts that raise total handle time."</p></div>
+
+    <div class="qa"><span class="q">Q9. How do suggestions work, and how does NBA relate to CDH?</span>
+    <p>"Suggestions come from Customer Service's own deterministic logic or from Customer Decision Hub if it is licensed, and are ranked into tasks, offers and articles with a small number shown at a time. Next-Best-Action is the pattern; CDH is the product implementing it at enterprise scale. I understand them conceptually and have not worked on CDH. I would start with deterministic task suggestions, measure acceptance and resolution, and only then add offers with suppression for complaint contexts."</p></div>
+
+    <div class="qa"><span class="q">Q10. How would you handle GenAI summarisation in a service implementation?</span>
+    <p>"It is release-sensitive, so I would first confirm what the deployed release supports. Then I would settle the governance before enabling it: what data goes to the model, whether an agent reviews the summary, where it is stored on the case, and how it is audited. The benefit is lower after-contact work, so it targets AHT. I have not configured Pega's GenAI features."</p></div>
+
+    <div class="qa"><span class="q">Q11. How do channels differ, and what is the common model?</span>
+    <p>"Voice with CTI, email, chat and digital messaging, self-service and co-browse each add their own real-time integration, but they feed the same model: identify the customer, create or link an Interaction, launch service requests, route and track them. Availability and routing decide who receives the contact. I have not configured the channels, but I have built the integration and routing under time pressure that sits behind them."</p></div>
+
+    <div class="qa"><span class="q">Q12. How would you extend an out-of-the-box service request type?</span>
+    <p>"Classify the need as adopt, adapt or new. Adopt as shipped when it fits; copy into my own layer and adapt when it is close; create new only when nothing fits. I would never edit framework rules in place, because that creates an upgrade burden. In a sandbox I would copy a type such as Make Payment, change a step and a form, and note what the framework allows."</p></div>
+
+    <div class="qa"><span class="q">Q13. Which Customer Service Microjourneys do you know?</span>
+    <p>"Communications has Billing Inquiry, Add Mobile Device and Plan, Guided Internet Setup, Make Payment and Move Service. Financial Services has Change PIN, Fee Inquiry, Make Payment, Manage Lost or Stolen Card, Travel Notification, Payment Inquiry, Repossession and Collateral Management and Manage Customer-Circumstance. The last two are near my domain: hardship and arrangements, and vehicle finance. That is domain overlap, not product experience."</p></div>
+
+    <div class="qa"><span class="q">Q14. Your resume says Customer Service. What exactly did you build?</span>
+    <p>"Custom case management for customer-service-type work at Mercedes-Benz Financial Services, alongside Collections, Debt Recovery and Remarketing, on core Infinity 8.x: case types, SLAs, routing, correspondence, and the REST, SOAP, SQL and Kafka integrations behind them, across seven markets. It is not the Pega Customer Service strategic application. I would rather clarify that than let the line mislead."</p></div>
+
+    <div class="qa"><span class="q">Q15. What transfers from your collections and debt recovery work?</span>
+    <p>"Case lifecycle design, SLAs and escalations, routing, correspondence, integration under a live operational load, production support, and a seven-market rollout. What does not transfer is the Interaction model, the portal, the service request framework, contact-centre metrics ownership, channel set-up and CDH. I have mapped both lists and have a plan for the second."</p></div>
+
+    <div class="qa"><span class="q">Q16. How would you ramp on Customer Service in the first month?</span>
+    <p>"Read the Interaction Portal, service request type and Microjourney documentation; complete the Academy Customer Service topics; open a demo environment, start a demo interaction and run Make Payment through its stages; copy one service request type and change a step; and write a one-page comparison against my own case types. By the end I would honestly say I have explored it hands-on in a demo environment, and I would ask the engagement lead which portal form and release the client is on."</p></div>
+  </section>
+
+  <section id="s2-ref" class="pagebreak">
+    <h2>2.R Authoritative references</h2>
+    <p class="small muted">Each row states what the source supports. Pega product pages are release- and date-sensitive; the bundle or release shown is the one the page was served from when read during research. LTM facts are from the dossier sources listed in Chapter 01's references.</p>
+    <table>
+      <tr><th>Source</th><th>URL</th><th>Release / effective date</th><th>What it supports here</th></tr>
+      <tr><td>Interaction Portal (Constellation implementation) <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/customer-service/page/customer-service/constellation-implementation/get-started/interaction-portal-intro.html</td><td>Customer Service bundle, current release at time of reading</td><td>Interaction Portal audience (CSRs, back-office workers, managers); navigation pane tools; customer composite and customer summary pane</td></tr>
+      <tr><td>Pega Customer Service on Constellation <span class="tag">Pega Academy</span></td><td>https://academy.pega.com/topic/pega-customer-service-constellation/v1</td><td>Pega Customer Service 23 Constellation Interaction Portal</td><td>The six functional areas of the Interaction Portal (stated verbatim); the four stated advantages of the Constellation portal (fast, prescriptive, extensible, lower total cost of ownership); the coexistence description</td></tr>
+      <tr><td>Service request types (Constellation implementation) <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/customer-service/page/customer-service/constellation-implementation/case/service-request-constellation.html</td><td>Customer Service bundle, current release at time of reading</td><td>The definition of a Microjourney; case type equals service request type; out-of-the-box service request types such as Make Payment and Close Account</td></tr>
+      <tr><td>Configuring service request types (UI Kit, Pega Customer Service 8.8 bundle) <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/customer-service-88/page/customer-service/uikit-implementation/case/case-intro.html</td><td>Customer Service 8.8 bundle</td><td>The same terminology in the UI Kit form: Microjourney, case type, service request</td></tr>
+      <tr><td>Pega Customer Service case types <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/customer-service/page/customer-service/uikit-implementation/case/cs-hz-case-types.html</td><td>Customer Service bundle, UI Kit implementation, current release at time of reading</td><td>Standard case types available in the New Application wizard, including Log general service request, Manage customer circumstance and the post-conversation CES survey</td></tr>
+      <tr><td>Suggestions for CSRs (Constellation) <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/customer-service/page/customer-service/constellation-implementation/guidance/suggestions-csr-constellation.html</td><td>Last updated 17 September 2025 per page</td><td>Suggestions sourced from Customer Service deterministic logic or the separately licensed Customer Decision Hub; the Suggested actions widget</td></tr>
+      <tr><td>Suggestion format options in the Interaction Portal (UI Kit) <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/customer-service/page/customer-service/uikit-implementation/nba/presentation-options.html</td><td>Customer Service bundle, UI Kit implementation, current release at time of reading</td><td>Notification cards, the maximum of three, category ranking, blue and green icons for Customer Service and CDH sources</td></tr>
+      <tr><td>Configuring content for customer composite tabs <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/customer-service-88/page/customer-service/uikit-implementation/interactions/composite-edit-content.html</td><td>Customer Service 8.8 bundle</td><td>How composite tabs are configured by administrators in the UI Kit form</td></tr>
+      <tr><td>The Microjourney in the Pega Express delivery approach FAQ <span class="tag">Pega documentation</span></td><td>https://docs.pega.com/bundle/platform-242/page/platform/app-dev/microjourney-pega-express-delivery.html</td><td>Pega Platform 24.2 bundle (also present in 24.1)</td><td>Microjourney as a planning unit: case types, personas, data objects, channels</td></tr>
+      <tr><td>Pega Customer Service industry pages (Communications and Financial Services Microjourneys) <span class="tag">Pega documentation, as captured in research</span></td><td>https://docs.pega.com (search the Customer Service bundle by the Microjourney names in 2.7)</td><td>Release-sensitive; confirm the list for the deployed release</td><td>The named Microjourney lists in 2.7</td></tr>
+      <tr><td>Pega Academy root <span class="tag">training</span></td><td>https://academy.pega.com</td><td>Release-sensitive</td><td>Search by Customer Service and Interaction Portal topic titles for the ramp plan in 2.10</td></tr>
+      <tr><td>LTM automotive Pega solution page and Pega partner page <span class="tag green">company-owned</span></td><td>https://www.ltimindtree.com/industries/manufacturing/automotive/automotive-pega-solution/ ; https://www.ltm.com/about-us/partners/pega</td><td>Retrieved 2026-10-12</td><td>Customer Services as a named strategic application and service line in 2.10</td></tr>
+    </table>
+    <p class="small muted">Contact-centre metric definitions in 2.2 are standard industry definitions and are not attributed to a Pega page. Descriptions of channel capability and the intelligence features are functional summaries; confirm availability and licensing in the documentation for the deployed release.</p>
+  </section>
+
+  <div class="chapnav"><a href="ch01_ltimindtree_pega_practice.html">← Previous: Chapter 01</a><a href="ch03_constellation_react.html">Next: Chapter 03 →</a></div>
+
+  </main>
+</div>
+</body>
+</html>

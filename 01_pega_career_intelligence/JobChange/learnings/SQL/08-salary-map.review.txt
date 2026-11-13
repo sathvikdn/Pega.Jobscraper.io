@@ -1,0 +1,349 @@
+PAGE 1
+Data-Role Salary Map — India, 2026
+Anchor your number. Negotiate from data, not gut feel.
+The ranges in this file are aggregated from publicly reported numbers (Levels.fyi India, AmbitionBox,
+recent offer screenshots circulating in developer communities and Telegram groups) plus pattern-
+matching from candidate reports we have seen over the last 12 months. Use them as anchoring, not
+gospel. Your number depends on your specific company, team, the niche skill you bring, your current
+CTC, the urgency of the hiring need, and frankly the mood of the hiring manager that quarter. Treat this
+as a sanity check — if your number is in this map's middle, you're priced fairly; if you're 30% below
+midpoint, you should be having a different conversation with your manager or with the market.
+How to read this map
+All numbers are total CTC in LPA (Lakhs Per Annum) — that's base + variable + estimated ESOP/stock
+value at offer, not just base. India compensation is almost always quoted as CTC in offer letters, so we
+match that convention.
+Variable pay assumption per tier: - Service MNCs: variable is 5–10% of CTC, almost always paid in full
+unless the company missed quarterly targets. - Product companies: variable is 10–20% of CTC, payout
+linked to individual rating + company performance. Plan for 80–90% in a normal year. - GCCs: variable is
+10–15%, usually paid out close to 100% — these orgs treat variable as deferred fixed. - Startups:
+variable is small (0–10%); the rest is ESOP. ESOPs in Indian startups are often valued at zero on exit —
+treat them as bonus optionality, not real pay.
+When a range says "8–14 LPA", read it as: 25th percentile around 8, median around 11, 75th percentile
+around 14. Hitting the top of the range requires either a niche skill premium (see Section 5) or strong
+track record (Section 6).
+By role — what each role actually is
+Hiring titles in India are messy. The same job is called four different things across four companies. Here's
+how we are bucketing roles in this map.
+hello@learnandexcel.in · learnandexcel.in
+PAGE 2
+Backend Developer (SQL-heavy) — A Java / Python / Node / Go engineer who writes SQL daily for
+application workloads. Owns transactional schemas, query performance for product features, ORM
+debugging, and the occasional ETL written in application code. Not a data engineer — their primary
+deliverable is the API or the service, with SQL as a load-bearing tool.
+Data Analyst — SQL plus a reporting tool (Tableau / Looker / PowerBI / Metabase), business-facing.
+Spends the day answering questions from product, marketing, ops, and finance. Builds dashboards,
+runs ad-hoc cohort analyses, writes weekly business reviews. Often the first data hire at a startup. Career
+path splits later into analytics engineering, data science, or product analytics.
+Analytics Engineer — The role that exists because data analysts kept writing the same CTEs and
+dashboards kept breaking. Lives in dbt on top of Snowflake / BigQuery / Redshift. Owns the modeling
+layer — staging, marts, metrics definitions. Business-facing but more rigorous than a pure analyst.
+Newish role in India (~3 years old as a distinct title), still scarce, still pays a premium.
+Data Engineer — Pipelines. Airflow / Dagster / Prefect for orchestration; Spark / Flink / dbt for
+transformation; Snowflake / Databricks / BigQuery as the warehouse; Kafka / Kinesis if streaming. Infra-
+facing role — your customer is the data scientist, the analyst, the ML engineer. You worry about late-
+arriving data, backfills, schema drift, and cost.
+BI Engineer / BI Developer — Heavy reporting stack ownership: PowerBI / Tableau / Looker / Qlik /
+SSRS. The dashboard is the deliverable. In larger enterprises this is a distinct career track; in startups it
+often blurs into analytics engineering or data analyst. Premium when paired with strong SQL and
+semantic modeling skills (LookML, DAX, Tableau calculated fields at scale).
+DBA (Database Administrator) — Postgres / Oracle / SQL Server / MySQL operations. Performance
+tuning, query plan reviews, index strategy, backup / restore, replication topology, HA, failover drills,
+version upgrades. A shrinking-but-still-paid role at large enterprises (banks, BFSI, telecom) and a quietly
+well-paid role at product companies that run their own databases instead of fully managed services.
+Salary ranges by company tier
+All numbers are total CTC in LPA. Read as 25th–75th percentile of public reports.
+Tier 1 — Service MNCs (TCS, Infosys, Wipro, Accenture, Cognizant, HCLTech,
+Capgemini, LTIMindtree)
+Lower base, less variance, predictable raise cycles (8–12% YoY on average, with promotion bumps of
+25–40%). The number on the offer letter is what you'll roughly take home — there's no hidden ESOP
+gravy here.
+Learn & Excel · Data-Role Salary Map — India 2026 2 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 3
+Role 0–2 yrs 2–5 yrs 5–8 yrs 8+ yrs
+Backend Dev (SQL-heavy) 3.5–5.5 6–10 11–18 18–30
+Data Analyst 3–5 5–9 10–16 15–25
+Analytics Engineer 4–6 7–11 12–18 18–28
+Data Engineer 4–6 7–13 14–22 22–35
+BI Engineer 3.5–5.5 6–11 11–18 17–28
+DBA 4–6 7–12 13–22 22–35
+Notes: DBA pays disproportionately well at this tier because banks and BFSI clients pay premium for
+Oracle / SQL Server depth. Service MNCs deployed at BFSI clients on long-running engagements often
+beat the top end here for true specialists.
+Tier 2 — Product Companies (Swiggy, Zomato, Razorpay, Cred, Flipkart, Myntra,
+PhonePe, Meesho, Zerodha, Groww, Nykaa, Urban Company, PolicyBazaar)
+Higher base plus a significant ESOP component. Roughly 1.5–2.5× Service MNC numbers for the same
+experience band.
+Role 0–2 yrs 2–5 yrs 5–8 yrs 8+ yrs
+Backend Dev (SQL-heavy) 12–22 22–40 40–65 60–110
+Data Analyst 9–16 16–28 28–45 40–70
+Analytics Engineer 12–20 20–35 35–55 50–85
+Data Engineer 14–24 24–42 42–70 65–120
+BI Engineer 10–18 18–32 32–50 45–75
+DBA 12–22 22–38 38–60 55–90
+Important caveat: 20–40% of these numbers may be ESOP. ESOPs in Indian private companies are often
+valued at zero on exit — either because the company didn't IPO, the secondary market refused to clear
+them, or the strike price was set high enough that the spread on a tender offer was thin. Treat ESOP as
+bonus optionality. Negotiate hard on the base + RSU/cash component. If the recruiter is leaning on the
+ESOP number to justify a low base, push back.
+Learn & Excel · Data-Role Salary Map — India 2026 3 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 4
+Tier 3 — GCCs of US/EU Firms (JP Morgan India, Goldman Sachs, Morgan Stanley,
+Wells Fargo, Walmart Labs, Target, AmEx, Bank of America, Citi, Deutsche Bank,
+Salesforce India, Microsoft India, Google India, Amazon India, Atlassian)
+Mid-to-high base, lower variable, very stable. ESOPs are real (US-listed parent). Often beat product
+companies at senior levels (8+ yrs) because Indian product companies cap senior IC growth somewhere
+around principal-engineer-ish bands.
+Role 0–2 yrs 2–5 yrs 5–8 yrs 8+ yrs
+Backend Dev (SQL-heavy) 14–25 25–45 45–75 70–140
+Data Analyst 10–18 18–32 32–55 50–90
+Analytics Engineer 14–22 22–40 40–65 60–100
+Data Engineer 15–28 28–48 48–80 75–150
+BI Engineer 11–20 20–35 35–58 50–90
+DBA 14–25 25–42 42–70 65–115
+Notes: The top of the 8+ years range (₹1.2–1.5 Cr) is Big Tech and tier-1 IBs — Google, Amazon,
+Microsoft, Atlassian, JPMorgan tech, Goldman strats. Regular GCCs (Walmart, Target, Wells, Citi)
+typically cap around ₹60–90 LPA for principal-level data / backend ICs. RSU vesting at US-listed parents
+is the real differentiator vs Indian product companies.
+Tier 4 — Indian Startups (Series A / Series B+) (Series A: $5–15M raised; Series B:
+$15–50M)
+Base is lower than product companies. ESOP is higher in percentage of CTC — sometimes meaningful
+(think early Razorpay, Cred, Zerodha hires), often not. The honest version: most Series A/B startup
+ESOPs don't pay out. Plan accordingly.
+Learn & Excel · Data-Role Salary Map — India 2026 4 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 5
+Role 0–2 yrs 2–5 yrs 5–8 yrs 8+ yrs
+Backend Dev (SQL-heavy) 8–16 16–30 28–50 45–80
+Data Analyst 7–13 13–22 22–38 32–55
+Analytics Engineer 9–16 16–28 28–45 40–65
+Data Engineer 10–18 18–32 32–55 50–85
+BI Engineer 7–14 14–24 24–40 35–60
+DBA 9–16 16–28 28–45 40–65
+Notes: At Series A/B you typically join a 2–10 person data team and own a vertical. The compensation
+discount vs product cos (roughly 15–25%) is supposed to be made up by ESOP and learning velocity.
+The ESOP rarely lands; the learning velocity often does. Decide which one matters more to you.
+Tier 5 — Early-stage startups (pre-Series A / seed / pre-seed)
+Base sometimes matches Service MNC numbers, sometimes worse. ESOP is the bet — usually 0.1–1%
+for the first 5–10 engineers, vesting over 4 years with a 1-year cliff.
+Role 0–2 yrs 2–5 yrs 5–8 yrs 8+ yrs
+Backend Dev (SQL-heavy) 5–12 12–22 22–40 35–60
+Data Analyst 4–10 10–18 18–30 25–45
+Data Engineer 6–14 14–25 25–42 38–65
+(Analytics Engineer / BI / DBA roles are rare at pre-Series A — usually one generalist does all of it.)
+High variance. The right early-stage bet at the right time pays better than 10 years at a GCC; the wrong
+one wastes 3 years and you re-enter the market with a CTC drop. Don't make this bet for the money —
+make it for the founder, the problem, and the equity terms.
+Niche skill premiums
+These are additive percentages on top of the base CTC range above. Stack them carefully — two
+premiums don't usually add linearly. If you have three of these, you're at the top of the range, full stop.
+Learn & Excel · Data-Role Salary Map — India 2026 5 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 6
+Skill Premium Applies to
+Snowflake production experience (>1 yr, real workloads, real
+warehouses)
++15–
+25%
+Data Eng, Analytics Eng
+BigQuery production experience (partitioning, clustering, BI
+Engine, cost-aware querying)
++15–
+25%
+Data Eng, Analytics Eng
+dbt expertise + analytics engineering practice (modeling,
+tests, exposures, semantic layer)
++15–
+20%
+Analytics Eng, Data
+Analyst climbing
+Spark + PySpark at production scale (Databricks / EMR,
+terabyte-day jobs)
++10–
+20%
+Data Eng
+Real-time / streaming (Kafka + Flink or Spark Streaming, end-
+to-end ownership)
++20–
+30%
+Data Eng — scarcest
+premium
+Postgres internals: replication, partitioning, performance
+tuning at scale (>500 GB)
++10–
+20%
+Backend Dev, DBA
+Databricks production experience (Unity Catalog, Delta Live
+Tables, MLflow integration)
++15–
+25%
+Data Eng
+Looker / LookML modeling (PDTs, derived tables, persistent
+caching strategy)
++10–
+15%
+Analytics Eng, BI Eng
+AWS Redshift / GCP BigQuery cost optimization with
+measurable $ saved
++10–
+15%
+Data Eng, Analytics Eng
+Airflow at scale (>500 DAGs, custom operators, CI/CD
+pipeline)
++10–
+15%
+Data Eng
+DAX / PowerBI semantic model design at enterprise scale+10–
+15%
+BI Eng
+Apache Iceberg / open table format production experience+15–
+25%
+Data Eng — niche,
+growing
+A note on stacking: "Snowflake + dbt + cost optimization" stacks as roughly +25–30% total, not +40–
+60%. The market is good at recognizing the combined picture but doesn't pay double for overlapping
+skills.
+Learn & Excel · Data-Role Salary Map — India 2026 6 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 7
+What pushes you to the top of your range
+Hiring managers fight harder for candidates who tick these. Each one is worth roughly 5–10% in your
+number.
+Owned a P0 system end-to-end — a revenue-critical pipeline, a customer-facing dashboard, the
+order-flow query that runs on every checkout. Not "contributed to". Owned: on-call, debug at 2 AM,
+design doc with your name on it.
+Snowflake / BigQuery / Redshift cost optimization with hard numbers — "I cut our warehouse
+spend from $14K/month to $6K/month by reclustering three tables and rewriting four cron queries."
+Specific dollar amounts beat vague claims every time.
+Mentor / lead a small team without the title — onboarded juniors, ran the data team standup,
+owned the on-call rotation. Recruiters can verify this in references.
+Ran a migration — Oracle to Postgres, on-prem warehouse to Snowflake, MySQL sharding, a
+Hadoop deprecation. Migrations require breadth, patience, and political capital. They pay.
+Conference talk, OSS contribution, or written content showing domain depth — even a
+moderate blog with 4 well-researched posts beats a quiet LinkedIn. Signal of taste.
+Hired a junior who stayed 1+ years — proves you can interview, onboard, and retain. Most
+engineers can't do all three.
+Internal mobility track record — switched teams 1–2 times, took on a new domain, moved from
+analyst to analytics engineer or backend to data eng. Signals adaptability.
+You can explain trade-offs out loud — "We picked Snowflake over BigQuery because our team
+already knew SQL Server semantics and our workload was bursty, not steady-state." Specificity
+wins interviews.
+Quantifiable impact in numbers your CTO would care about — latency reduced from 800 ms to
+120 ms, weekly active users up 14%, ETL runtime from 6 hours to 40 minutes, an audit failure
+turned into a clean report.
+A track record of saying "we shouldn't build this" — pushed back on a feature, prevented an
+over-engineered solution, killed a project. Senior signal.
+What pushes you to the bottom of your range
+Honest list. Recruiters and hiring managers see these patterns and adjust offers down.
+Stayed in the same role for 5+ years with no scope expansion — same team, same systems, no
+promotion, no lateral. Suggests stagnation.
+No production ownership of any system — "I worked on it" doesn't survive a 30-minute deep
+dive. If the interviewer can't ask you about an incident you debugged at 11 PM, you don't own
+anything.
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Learn & Excel · Data-Role Salary Map — India 2026 7 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 8
+Can't speak to specific numbers — vague answers about revenue impact, dataset sizes, query
+latencies, or cost. If everything is "large" and "complex", the interviewer assumes neither.
+Only worked on internal tools, never customer-facing — internal-tools-only engineers are
+perceived (sometimes unfairly) as not having shipped under real constraints.
+Can't articulate trade-offs — "We used Snowflake because it's better" without a reason is the
+death sentence of a senior interview.
+Job-hopping every 12 months without a story — switching is fine; switching with no narrative arc
+reads as opportunism.
+No mention of failure or hard-learned lessons — "everything went smoothly" in 8 years means
+you weren't in the room when things went wrong.
+Negotiation thresholds — when to push, when to accept
+Always negotiate: Any offer that lands >10% below the midpoint of your role + experience + company-
+tier range in this map. Even a polite single email pushing for 8–12% more works 50% of the time. The
+downside is zero; recruiters expect a counter.
+Worth pushing on: - Signing bonus — companies bend on this more than base because it doesn't
+recur in next year's salary budget. Especially true for product cos and GCCs. - Notice-period buyout —
+if you're servicing 60–90 days notice at your current company, ask the new employer to cover the
+buyout. They almost always will up to ₹2–5L. - Variable-pay percentage — push for a higher base and
+lower variable. Variable is a real risk: 80–90% payout in normal years means 0–60% payout in bad years.
+- Joining date flexibility — if you can join in 30 days, that itself is leverage. Use it. - ESOP refresh
+cadence at product cos — some give refresh grants every 2 years, some only at promotion. Ask.
+Hard to move: - Equity refresh in Service MNCs — rare. Don't waste leverage here. - Title — often
+locked to internal job bands. You can push from "Senior Data Engineer" to "Lead Data Engineer" maybe
+once in a negotiation cycle; never twice. - Location / remote — varies dramatically by company. Ask in
+the first call, not at offer stage. - Probation terms — almost no company will waive a 6-month probation
+just because you asked.
+Walk-away signals: - Offer is <70% of your researched range AND there is no credible 12-month path to
+growth. - Vague answers on raise cycle ("we review when we can", "depends on company
+performance"). - "We'll discuss compensation after probation" — never accept this. Discuss it now or
+walk. - Recruiter ghosts you for 2+ weeks after offer discussion — signals internal chaos. - Hiring
+manager refuses to discuss the team's last 3 attrition cases.
+• 
+• 
+• 
+• 
+• 
+Learn & Excel · Data-Role Salary Map — India 2026 8 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 9
+The "joining bonus" play
+Joining bonuses are often the easiest lever to move because the money comes from a different budget
+line — talent acquisition, not the salary budget. The new manager doesn't have to defend it as a
+recurring cost.
+Typical ranges (one-time, paid in 1–2 instalments, almost always with a claw-back clause if you exit
+within 12–24 months):
+Service MNC: ₹50K–₹3L. Smaller, but doable. Push when switching from a competitor that they
+want you out of.
+Product Company: ₹2L–₹15L. Standard, especially for niche skills (Snowflake, dbt, real-time data).
+GCC of a US firm: ₹3L–₹20L. The highest, especially if they're replacing an attrition or filling a long-
+vacant slot. AmEx, JPMC, Goldman go up to ₹25L for hard-to-find senior data engineers.
+Indian Startup (Series A/B): ₹2L–₹8L. Some swap base for joining bonus to keep cap-table optics
+clean; treat as compressed base.
+Two practical asks to layer on:
+"Can I get the joining bonus in two parts — half at joining, half at the 12-month mark — so the claw-
+back stays simple?" Most recruiters say yes; this de-risks both sides.
+"Can the notice-period buyout be paid directly to my current employer's invoice, not as a
+reimbursement?" Saves you the temporary cash crunch.
+Always read the claw-back clause carefully. Standard is full repayment if you exit before 12 months, 50%
+if you exit between 12–24 months. Anything stricter than this — push back.
+YoY salary inflation note
+A short honest framing: 2022–2023 was an anomaly. Indian product companies and GCCs ran a one-
+time correction, with 30–50% YoY jumps becoming common for mid-level data and backend engineers
+— driven by post-COVID hiring, the brief crypto/Web3 cash surge, and inflated US startup funding
+flowing into India. That window closed in mid-2023.
+2024 and 2025 normalized to 10–15% YoY raises for internal promotions and roughly 25–40% jumps
+when switching jobs. 2026 is tracking similarly — early data from Q1 hiring suggests another normalized
+year with no broad correction in sight.
+Two pockets are still seeing scarcity premiums in 2026: data engineers with production Snowflake + dbt
++ streaming exposure, and analytics engineers with strong LookML / semantic-modeling experience.
+Both groups are still seeing 35–50% job-switch jumps. Pure backend SQL roles and traditional DBA roles
+are flat-to-modest.
+• 
+• 
+• 
+• 
+1. 
+2. 
+Learn & Excel · Data-Role Salary Map — India 2026 9 / 10
+hello@learnandexcel.in · learnandexcel.in
+PAGE 10
+Don't plan your career assuming another 2022-style correction. Plan it assuming 12–15% internal growth
+and 25–35% switch premiums, with the niche-skill stacking being the only reliable way to outperform.
+One-line salary check
+If your current CTC is 30%+ below the midpoint for your role / experience / company-tier in this map,
+you are probably underpaid. Either fix that conversation internally in the next 6 months or start
+interviewing.
+If you are 20%+ above the top end of your band, you're doing something most people in the market
+can't do — protect that, document it, and don't switch for less than a 50% jump. Anything less and
+you're trading certainty for a story the new company hasn't earned the right to tell yet.
+Learn & Excel · Data-Role Salary Map — India 2026 10 / 10
+hello@learnandexcel.in · learnandexcel.in

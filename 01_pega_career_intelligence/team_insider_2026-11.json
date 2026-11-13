@@ -1,0 +1,320 @@
+{
+  "asOf": "2026-11-10",
+  "note": "Team-insider ledger: how each India Pega team is structured, who the visible people are, what they appear to build, and what working there is like. Built from search-index LinkedIn profile text (not live LinkedIn verification), public posts, employer postings and employee-review sites. Review ratings are self-selected and vary by team and manager; treat them as signals to ask about, not facts about the specific team you would join. No person was contacted.",
+  "candidate_lens": "About 4 years Pega, CSA + CSSA, Kafka/REST/SFTP integrations, auto-finance collections domain, Bengaluru preferred.",
+  "companies": [
+    {
+      "id": "pegasystems",
+      "name": "Pegasystems India",
+      "hubs": "Hyderabad (largest), Bengaluru",
+      "team_shape": "Product company, so the Pega 'team' is the product itself. The India GenAI Engineering org is led by Shyam Agarwal (Sr. Director, Hyderabad, Jan 2026, previously 16+ years leading India UI/Mobile/Integration/Robotics engineering) and Santosh Hegde (Director, ML & AI, Bengaluru, since Sep 2024). Under them sit Senior Principal engineers such as Md Azaz Ali and Krishna Rastogi (both 2026 moves into GenAI), with Principals and Software Engineers below. Separate Consulting and Client Success orgs deliver for customers from Hyderabad.",
+      "what_they_build": "Pega's own agentic AI: Agentic Case Processing, RAG/knowledge search, agent-to-agent and MCP integrations, DocAI, the GenAI Assistant Service, generative-evaluation and guardrail frameworks, and agent orchestration in 'Pega Vibe'. The 2–4-year Software Engineer role builds these capabilities with Pega rules and works with ML engineers.",
+      "vibe": "Strong learning culture and AI focus; many reviewers describe a 9-to-5 rhythm. Free lunch and dinner reported. Hybrid with 3 office days and a strict 60% attendance rule (Blind, Jun 2026).",
+      "ratings": "AmbitionBox 3.6/5 (357 reviews; WLB 3.7, promotions 2.9). Glassdoor WLB 3.8. Blind 3.3 (WLB 3.9, management 2.9).",
+      "watch_outs": "Recurring complaints about favouritism and politics among long-tenured managers, slow promotions and occasional layoffs. Consulting roles report leave depending on client approval.",
+      "your_angle": "The best band fit found (2–4 years, CSA + CSSA, Bengaluru). You would build the platform rather than use it, which is rare. Be honest that your GenAI work is tooling, not production LLM platforms.",
+      "people": [
+        {"name": "Shyam Agarwal", "role": "Sr. Director, GenAI Engineering · Hyderabad", "work": "Visible India leader for GenAI engineering after long-running UI, mobile, integration and robotics leadership.", "use": "Architecture/org context; ask what 2-4 year engineers actually own in GenAI squads."},
+        {"name": "Santosh Hegde", "role": "Director, ML & AI · Bengaluru", "work": "ML/AI leadership signal for Pega's India AI engineering footprint.", "use": "Understand AI/ML expectations before positioning your AI tooling story."},
+        {"name": "Md Azaz Ali", "role": "Senior Principal Engineer · GenAI", "work": "Senior technical IC signal around GenAI capability build-out.", "use": "Technical discovery around agentic AI, guardrails and platform engineering depth."},
+        {"name": "Krishna Rastogi", "role": "Senior Principal Engineer · GenAI", "work": "Another senior IC move into GenAI; indicates the team is senior-heavy above normal Pega application development.", "use": "Benchmark the engineering bar and what Pega-product coding differs from GCC implementation."},
+        {"name": "Mihir Chaddarwala", "role": "Principal recruiter route", "work": "Recruiting route seen in the retained product/AI dossier, not an engineering evidence source.", "use": "Use only after identifying a live product/AI requisition."}
+      ],
+      "sources": [
+        ["AmbitionBox reviews", "https://www.ambitionbox.com/reviews/pegasystems-reviews"],
+        ["Blind reviews", "https://www.teamblind.com/company/Pegasystems/reviews"],
+        ["Shyam Agarwal (index)", "https://linkedin.com/in/shyam-agarwal-a7939a5"],
+        ["Md Azaz Ali (index)", "https://linkedin.com/in/md-azaz-ali-a0010251"],
+        ["GenAI SE posting", "https://in.linkedin.com/jobs/view/software-engineer-genai-engineering-pega-developer-csa-cssa-at-pegasystems-4484663558"]
+      ]
+    },
+    {
+      "id": "cba",
+      "name": "Commonwealth Bank (CBA India)",
+      "hubs": "Bengaluru, Manyata Tech Park",
+      "team_shape": "A Bengaluru Pega CoE of about 20 developers and QA, built from scratch since 2021 by Muniprakash Ganji (Senior Engineering Manager), with knowledge transferred from Sydney and a joint onshore–offshore model. Other Pega leaders: Gurushankar C N (Engineering Manager / Chapter Lead – Pega, Fraud & Scam, CLSA) and Resmi Raveendran (Manager – Pega). NEW: CBA India is building ASB's India engineering capability (REQ266311): squads embedded in ASB tribes and chapters holding the craft. The first Pega squad for ASB was posted on 14 Oct 2026: Engineering Manager REQ266820 plus Senior Software Engineers REQ266821 and REQ266822. CBA India is led by MD & CEO Shubha Iyer.",
+      "what_they_build": "Customer Decision Hub decisioning: 620+ 'Next Best Conversations' delivered for retail banking; CBA's Customer Engagement Engine runs on Pega CDH with about 200 models and about 200 ms decisions. Also Pega CLM/KYC for Institutional Banking & Markets. The new ASB squad covers case management, integrations (APIs, events, async patterns) and Pega architecture. ASB's stated agenda is to scale Pega across decisioning, workflow, lending and financial crime; it is also setting up a Pega CoE in NZ and has Customer Service, KYC, lending and payments apps on Pega.",
+      "vibe": "40% office attendance per month (several 2025–2026 reviews); cab and shuttle provided; strong AI branding (#1 APAC bank in the Evident AI Index); graduate Launch Pad programme. Blind WLB 4.4.",
+      "ratings": "Blind 3.5 (21 reviews; WLB 4.4, management 3.0). Glassdoor WFH benefit 4.2. PrepNPlaced 2.69 across 973 reviews (career growth 2.21 lowest, salary 3.64 highest).",
+      "watch_outs": "Manyata is a long commute for many. No free meals. Some reviewers cite limited growth paths and leadership comparing itself to big tech. One engineer left after 7 months for Booking (Oct 2025).",
+      "your_angle": "Interview call received (10 Nov 2026). You'd be a founding member of a new squad. Your AU/NZ market experience, Kafka/async/replay work and collections domain map directly to the posting. Gaps: 5+ years asked, and Constellation/Pega Cloud/KYC/Customer Service are preferred. Watch the down-level risk (Software Engineer about ₹24–26L vs Senior about ₹33–40L).",
+      "people": [
+        {"name": "Muniprakash Ganji", "role": "Senior Engineering Manager · Bengaluru Pega CoE", "work": "Built and scaled the India Pega CoE with Sydney knowledge transfer and offshore delivery ownership.", "use": "Best org/team-structure route; ask how ASB squads are separated from existing CBA CDH/CLM work."},
+        {"name": "Gurushankar C N", "role": "Engineering Manager / Chapter Lead · Fraud & Scam · CLSA", "work": "Fraud/scam Pega leadership signal; chapter-style craft ownership rather than one project-only lead.", "use": "Ask about architecture standards, Pega Cloud/Constellation adoption and chapter mentorship."},
+        {"name": "Resmi Raveendran", "role": "Manager · Pega", "work": "Visible manager in the CBA Pega leadership layer.", "use": "Secondary manager route after confirming exact squad/requisition."},
+        {"name": "Rishabh Raj", "role": "SSE / Lead Pega Engineer · Bengaluru", "work": "Indexed current CBA India Pega engineer; public post previously advertised Pega developer roles.", "use": "Peer/senior referral route for Bengaluru Pega expectations."},
+        {"name": "Priyodob Kundu", "role": "Lead Engineer · Bankwest NBA/CDH / Pega Cloud 24.2", "work": "Audit evidence maps him to Bankwest next-best-action and Pega Cloud 24.2 project text.", "use": "Decisioning/Pega Cloud discovery, not proof of your ASB squad."},
+        {"name": "Anjana A", "role": "Senior Software Engineer · Bengaluru", "work": "10+ year Pega profile with Trebla/Smart POS and AI-assisted development signals.", "use": "Near-team engineering reality check; ask about day-to-day coding and internal tooling."}
+      ],
+      "dossier": "JobChange/JobChange/CBA_ASB_Pega_Interview_Dossier.html",
+      "sources": [
+        ["Muniprakash Ganji (index)", "https://linkedin.com/in/muniprakashganji"],
+        ["Engineering Manager REQ266820", "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Engineering-Manager_REQ266820"],
+        ["Glassdoor WFH benefit (India)", "https://www.glassdoor.com.au/Benefits/Commonwealth-Bank-of-Australia-Work-from-home-India-BNFT155_E7922_N115.htm"],
+        ["Blind reviews", "https://www.teamblind.com/company/Commonwealth-Bank/reviews"],
+        ["CommBank India careers", "https://www.commbank.com.au/about-us/careers/india.html"],
+        ["REQ266311 ASB India capability", "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Executive-Manager---Technology-Modernisation_REQ266311"],
+        ["ASB Pega CoE posting", "https://careers.asbgroup.co.nz/jobdetails/ajid/wqi0x/Pega-System-Architect-Software-Engineer-,AUSTRACT2SB165562.html"]
+      ]
+    },
+    {
+      "id": "booking",
+      "name": "Booking Holdings India",
+      "hubs": "Bengaluru",
+      "team_shape": "Several small Pega squads aligned to business units: Customer Service platform for Booking.com, Rental Cars, Accommodations, and a newer Trips BU Pega Delivery Team reporting to an Engineering Manager. A visible joining wave in 2025: Satish Varma Penmetsa (SA, Jan 2025, ex-TCS), Vartika Tiwari (SA, Jun 2025), Suresh Kumar (LSA, Oct 2025, Customer Service Framework + CDH), Abhijeet Das (SSA, Oct 2025, ex-CBA). Navya Chatrati (SSA, Rental Cars, Constellation) has been there since Feb 2024.",
+      "what_they_build": "Traveller customer-service journeys on Pega Customer Service Framework, Constellation UI, and CDH next-best-action for service. This is product work on Booking's own platform, not client delivery.",
+      "vibe": "Described as 'European-style' culture: respectful, WLB considered, a slower and more mature pace. Hybrid 2–3 days. Paid on-call. Travel perks and RSUs. The food is a paid salad bar, not free.",
+      "ratings": "Glassdoor Bengaluru 3.7 (143 reviews; WLB 4.0, comp 3.9, senior management 3.4).",
+      "watch_outs": "Promotions depend on business need; one Oct 2026 review blames newly hired senior management. Most visible Pega hiring here goes through contractors (TeamPlus for a Booking.com client site); direct roles are rarer.",
+      "your_angle": "SA titles at Booking sit in the 2–5-year band, so the level matches. The 2025 hires came from TCS, Aaseya and CBA, which shows the route. Ask peers which BU is hiring and whether the role is direct.",
+      "people": [
+        {"name": "Satish Varma Penmetsa", "role": "Pega System Architect · Booking.com Customer Service", "work": "Building and optimizing Booking.com customer-service platform on Pega Customer Service Framework.", "use": "Best peer referral route for customer-service platform work."},
+        {"name": "Navya Chatrati", "role": "Pega SSA · Rental Cars / Constellation", "work": "Rental Cars space with Pega Customer Service Framework and Constellation experience.", "use": "Ask how modern Constellation work is split across Rental Cars vs broader customer service."},
+        {"name": "Suresh Kumar", "role": "Pega LSA · Customer Service / CDH", "work": "Architecture-level signal for CS framework and CDH inside Booking's travel-service estate.", "use": "Architecture discovery, not first-contact referral unless there is a live senior role."},
+        {"name": "Shreya Chaudhury", "role": "Pega Developer · Constellation CS", "work": "Search-index text describes agent-facing Constellation applications for booking changes, cancellations, loyalty and backend integrations.", "use": "Best evidence of hands-on UI/case-flow content in the travel domain."},
+        {"name": "Vartika Tiwari", "role": "Pega System Architect · Bengaluru", "work": "Current SA-level Booking Holdings profile; shows mid-level entry path from service-framework experience.", "use": "Near-peer route for level, interview and team fit."}
+      ],
+      "sources": [
+        ["Satish Varma Penmetsa (index)", "https://linkedin.com/in/penmetsasatish"],
+        ["Suresh Kumar (index)", "https://linkedin.com/in/suresh-kumar-50039220"],
+        ["Navya Chatrati (index)", "https://linkedin.com/in/navya-chatrati-6a9b3a82"],
+        ["Glassdoor Bengaluru", "https://www.glassdoor.co.in/Reviews/Booking-Holdings-Bengaluru-Reviews-EI_IE1398057.0,16_IL.17,26.htm"],
+        ["Blind: Booking India culture", "https://www.teamblind.com/post/booking-holdings-india-work-and-culture-npbm5nju"]
+      ]
+    },
+    {
+      "id": "cisco",
+      "name": "Cisco India",
+      "hubs": "Bengaluru",
+      "team_shape": "A compact in-house Pega platform team of Technical Systems Engineers (for example Dharani Murugan and Praveen Inakollu, both since Jun 2022) plus Software Engineers (Ashish Malviya, since 2021). Recognition posts name Bharath Balasubramanian as a sponsor. It is a small IC-heavy group with no visible layer of Pega managers.",
+      "what_they_build": "Platform modernisation: 8.8 to Infinity 24.1.2 upgrade (Mar 2025, zero disruption), VM to OpenShift containers with Kafka and Elasticsearch externalised (presented at PegaWorld 2025), API-driven automatic case creation, and CDH support across 30+ internal finance, logistics and operations apps.",
+      "vibe": "Consistently rated the friendliest culture in this set. Onsite medical centre, gyms, 'Days for Me' and volunteering days (from the October lifestyle ledger).",
+      "ratings": "Glassdoor Bengaluru 4.2 (5,653 reviews; culture 4.5, WLB 4.5, D&I 4.5).",
+      "watch_outs": "Pay called low by some engineers; layoff news causes stress; approvals can be slow. The Pega team is small, so openings are rare.",
+      "your_angle": "The closest match to your Kafka plus platform-ownership story. Openings are rare, so this is a referral-and-wait target. Dharani is the peer route.",
+      "people": [
+        {"name": "Dharani Murugan", "role": "Technical Systems Engineer · Bengaluru", "work": "Visible Cisco Pega platform engineer; tied to API-triggered case work in the retained dossier.", "use": "Best peer route for Kafka/OpenShift/API modernization reality."},
+        {"name": "Praveen Inakollu", "role": "Technical Systems Engineer · Bengaluru", "work": "Part of the compact Cisco internal Pega platform team since 2022.", "use": "Secondary peer route; ask about run/upgrade versus feature-build split."},
+        {"name": "Ashish Malviya", "role": "Software Engineer · long-tenured Cisco Pega", "work": "Longer-tenure Pega developer signal inside Cisco India.", "use": "Ask whether openings are internal-transfer heavy and what skills make an external referral credible."},
+        {"name": "Sumit Kumar", "role": "Senior SRE / Lead Architect · PegaWorld 2025 speaker", "work": "Public PegaWorld signal for OpenShift/Kubernetes, Kafka, Elasticsearch and SRE-style platform modernization.", "use": "Best architecture signal; use for learning, not casual referral."},
+        {"name": "Bharath Balasubramanian", "role": "Sponsor / recognition route", "work": "Named in recognition context for the Cisco Pega platform workstream.", "use": "Org context only; prefer hands-on engineers first."}
+      ],
+      "sources": [
+        ["Dharani Murugan (index)", "https://linkedin.com/in/dharani-murugan-99a392184"],
+        ["PegaWorld 2025: Cisco platform modernisation", "https://www.pega.com/insights/resources/pegaworld-2025-pega-platform-modernisation"],
+        ["Glassdoor Bengaluru", "https://www.glassdoor.com/Reviews/Cisco-Bengaluru-Reviews-EI_IE1425.0,5_IL.6,15_IC2940587.htm"]
+      ]
+    },
+    {
+      "id": "ford",
+      "name": "Ford Business Solutions India (Ford-Pega CoE)",
+      "hubs": "Chennai",
+      "team_shape": "The Ford-Pega CoE (Enablement & Delivery Services) is headed by MohanKumar Annadurai (Pega Enablement Manager, LSA, ex-Sun Life, since Sep 2023). Below him: Vishalrajan S and Abinaya Senthilnathan (SSA, LCNC CoE team lead), then Software Engineers such as Varshaa B (Pega RPA v25, CPDC). The grade ladder runs Junior SWE, SWE, Senior SWE, then manager.",
+      "what_they_build": "Enterprise DPA, Pega RPA, the low-code/no-code CoE, Pega SaaS migration and Constellation adoption. Pegasystems ran an onsite Constellation bootcamp in Chennai in January 2026 on Infinity 25.",
+      "vibe": "Strong training culture and collaborative teams; pickup and drop service. Hybrid employees are asked to be in the office about 4 days a week (some roles are home-based).",
+      "ratings": "Glassdoor Chennai 4.1 (1,526 reviews; culture 4.3, WLB 4.2).",
+      "watch_outs": "Reduced hybrid, sudden layoffs, few promotions; some teams describe chaotic pseudo-agile pressure. The CoE mixes RPA and LCNC, so check whether your role is core Pega case and integration work.",
+      "your_angle": "Ranked #1 (100/100) in the hub's GCC engineering-culture ranking. An automotive domain like yours, and Constellation exposure would close your biggest skills gap. Chennai only.",
+      "people": [
+        {"name": "MohanKumar Annadurai", "role": "Pega Enablement Manager / LSA · Chennai", "work": "Heads Ford Pega CoE and enables Ford businesses with Pega/low-code technologies.", "use": "Best org-scope and hiring-route contact; ask whether role is CoE, RPA, DPA or core case work."},
+        {"name": "Vishalrajan S", "role": "Senior CoE / Constellation bootcamp host signal", "work": "Named by Pega in Ford Chennai Constellation bootcamp context.", "use": "Ask about Constellation adoption and enablement culture."},
+        {"name": "Abinaya Senthilnathan", "role": "SSA / LCNC CoE team lead signal", "work": "Visible CoE lead layer below MohanKumar in the insider ledger.", "use": "Peer-to-lead route for how hands-on the CoE roles are."},
+        {"name": "Varshaa B", "role": "SWE · Pega RPA v19/v22/v25 · CPDC", "work": "Publicly posted Ford Constellation enablement; signals junior-to-mid engineer training culture.", "use": "Near-peer route for interview level, learning path and RPA/DPA split."},
+        {"name": "Rabi Asirwadh P", "role": "Pega Platform Engineer · GCP/DevOps", "work": "SaaS migration, Nginx, external data-source connections, SSO, database artifacts and Pega platform operations.", "use": "Best platform-engineering peer for your Kafka/CI-CD/platform story."},
+        {"name": "Abinaya Elavarasan", "role": "Product Manager / Technical Architect signal", "work": "Retained team dossier links her to Ford Credit decisioning and Pega architecture.", "use": "Use for product/roadmap questions only after confirming the exact Ford Credit workstream."}
+      ],
+      "sources": [
+        ["MohanKumar Annadurai (index)", "https://linkedin.com/in/mohanleo"],
+        ["Abinaya Senthilnathan (index)", "https://linkedin.com/in/abinayasenthilnathan"],
+        ["Pega Constellation bootcamp at Ford", "https://www.linkedin.com/posts/sangeeta-kottilinga-9b71443b_pega-fordchennai-constellation-activity-7420688420076834816-0rs4"],
+        ["Glassdoor Chennai", "https://www.glassdoor.com/Reviews/Ford-Motor-Company-Chennai-Reviews-EI_IE263.0,18_IL.19,26_IM1067.htm"]
+      ]
+    },
+    {
+      "id": "citi",
+      "name": "Citi India (Pega)",
+      "hubs": "Chennai, Pune",
+      "team_shape": "Large, programme-aligned Pega teams mixing Citi employees with vendor architects (for example LTIMindtree LSAs leading 18–26-person squads). Typical internal ladder: Programming Analyst, Senior Pega Developer, AVP, VP. Example: Priya Vijayapandi went from Programming Analyst (2021) to Senior Pega Developer (2022) to AVP (Jan 2025), then earned LSA (Oct 2025). Recent move: Niranjan Kale joined Pune as Senior Pega Developer from Barclays (Oct 2026).",
+      "what_they_build": "CitiKYC Pega Workflow (headless, migrated from jBPM), Metro Pega for Markets (with Kafka), SWIFT MT and ISO 20022 MX processing, offboarding workflows, and now delinquency management for cards and loans (Chennai requisition 261005347) on Pega 24.x/25.x and OpenShift.",
+      "vibe": "Hybrid 3 days office and 2 remote. Above-average pay and faster junior promotions. Good maternity benefits.",
+      "ratings": "Glassdoor Chennai SWE 4.0 (27 reviews; WLB 4.3). AmbitionBox Chennai 3.9 (1.2k reviews; salary 4.2, promotions 3.3).",
+      "watch_outs": "Office politics reported at AVP/VP level, legacy applications, and experience that varies by manager. Vendor-heavy squads can mean you sit next to consultants doing the design.",
+      "your_angle": "The delinquency management requisition matches your collections background exactly. The ladder is clear and juniors move quickly. Chennai or Pune, not Bengaluru.",
+      "people": [
+        {"name": "P Narasimhulu V", "role": "CitiKYC / Metro Pega technical signal", "work": "Indexed work on CitiKYC, Metro Markets, Kafka and payments/message-processing patterns.", "use": "Best technical route for KYC/workflow plus Kafka questions."},
+        {"name": "Priya Vijayapandi", "role": "AVP · former Programming Analyst / Senior Pega Developer", "work": "Clear internal ladder example from analyst to AVP with LSA progress.", "use": "Ask about growth path, title expectations and team culture."},
+        {"name": "Akash Pratap", "role": "VP / Lead System Architect · Pune", "work": "CLSA/CPDC/CSSA senior architecture signal with Citi and onsite history.", "use": "Architecture route; not first peer contact for a 4-year profile."},
+        {"name": "Kavitha Kuppusamy", "role": "Senior Pega Developer · Chennai", "work": "CLSA Part 1, Pega Chat Developer and senior developer signal.", "use": "Hands-on Chennai role reality and interview-level expectations."},
+        {"name": "Christopher Pradeep John Britto", "role": "Lead System Architect · moved from Standard Chartered", "work": "Recent senior-hire signal showing Citi pulls experienced bank-Pega architects from peers.", "use": "Movement/architecture context; avoid treating as referral route without requisition."},
+        {"name": "Niranjan Kale", "role": "Senior Pega Developer · Pune", "work": "Recent move from Barclays; Smart Dispute background crossing into Citi.", "use": "Nearer peer route for Pune role content and migration from another bank."}
+      ],
+      "sources": [
+        ["P Narasimhulu V: CitiKYC / Metro (index)", "https://linkedin.com/in/p-narasimhulu"],
+        ["Priya Vijayapandi (index)", "https://linkedin.com/in/priya-vijayapandi"],
+        ["Glassdoor Chennai SWE", "https://www.glassdoor.co.in/Reviews/Citi-Software-Engineer-Chennai-Reviews-EI_IE8843.0,4_KO5,22_IL.23,30_IC2833209.htm"],
+        ["Citi req 261005347", "https://jobs.citi.com/job/chennai/pega-application-developer/287/102929640944"]
+      ]
+    },
+    {
+      "id": "jpmc",
+      "name": "JPMorganChase India (Pega)",
+      "hubs": "Hyderabad, Bengaluru",
+      "team_shape": "Deep management layer with many CLSAs. Ujas Mehta is Executive Director – Engineering in Bengaluru (Jan 2026; ex-Pegasystems; now GenAI and MCP focused) and Ashish Agrawal is ED in Hyderabad (CLSA). VPs include Rohit Hundet (Hyd, CLSA), Radhika Kundala (Hyd, Pega Solution Architect / Product Owner, Intelligent Automation) and Pankaj Kumar (Bengaluru). Associates and Software Engineer II/III sit below. A Bengaluru Senior Pega Developer left for Genpact in Oct 2026.",
+      "what_they_build": "Wholesale KYC Operations (client onboarding and due diligence across 180+ countries), Pega + Java Software Engineer III product work, and Pega/Camunda in Consumer & Community Banking.",
+      "vibe": "Structured and process-heavy but described as a fun, low-politics place by some VPs. Strong internal mobility and events. Cabs provided.",
+      "ratings": "Blind 3.5 (2,479 reviews; WLB 3.8, comp 2.9). Glassdoor India WFH benefit 4.1.",
+      "watch_outs": "Return to office is 5 days in many teams (some report 4). Compensation trails product companies. Pune is reported as weaker than Bengaluru and Hyderabad.",
+      "your_angle": "Live signal: VP Rohit Hundet posted on 26 Sep 2026 that he is looking for Pega professionals with 2–5 years of experience (213 reactions, 152 comments). That is your band. Ask him for the requisition.",
+      "people": [
+        {"name": "Ujas Mehta", "role": "Executive Director – Engineering · Bengaluru", "work": "Ex-Pegasystems leader now linked to GenAI/MCP-focused engineering signals.", "use": "Strategic architecture/org route; too senior for first referral ask."},
+        {"name": "Ashish Agrawal", "role": "Executive Director · Hyderabad · CLSA", "work": "Senior management anchor for India Pega leadership layer.", "use": "Org context and senior validation only."},
+        {"name": "Rohit Hundet", "role": "Vice President · Hyderabad · CLSA", "work": "Publicly posted 2-5 year Pega hiring for Hyderabad, Mumbai and Bangalore in Sep 2026.", "use": "Primary hiring-manager route; ask for role ID and team scope."},
+        {"name": "Radhika Kundala", "role": "Pega Solution Architect / Product Owner · Intelligent Automation", "work": "Architect/product-owner signal in JPMC intelligent automation.", "use": "Ask about product ownership, not just development tickets."},
+        {"name": "Sandeep Ega", "role": "Pega Developer Specialist · Hyderabad", "work": "Longer-tenured hands-on developer anchor in the old dossier.", "use": "Near-peer reality check for WKO/Pega development culture."},
+        {"name": "Shaik Danish", "role": "Software Engineer II · recent hire", "work": "Recent JPMC Pega hire from SI background; workflow automation/system integration signal.", "use": "Best peer route for your band and SI/GCC transition questions."}
+      ],
+      "sources": [
+        ["Rohit Hundet (index)", "https://linkedin.com/in/rohit-hundet-56a76537"],
+        ["Ujas Mehta (index)", "https://linkedin.com/in/ujas-mehta-b02b9434"],
+        ["Blind reviews", "https://www.teamblind.com/company/JPMorgan/reviews"],
+        ["Glassdoor WFH benefit (India)", "https://www.glassdoor.com.au/Benefits/JPMorganChase-Work-from-home-India-BNFT155_E5224839_N115.htm"]
+      ]
+    },
+    {
+      "id": "wells",
+      "name": "Wells Fargo India (Pega)",
+      "hubs": "Hyderabad, Bengaluru",
+      "team_shape": "Senior-heavy: the visible Pega people are mostly Lead Software Engineers with 11–18 years of experience. Examples: Raja Reddy Bommana (VP, Bengaluru, CLSA, with the bank since 2013), Ravi Kiran N G (Lead, Bengaluru), Bhanu Prakash Reddy (Lead, Hyd, CLSA), Arun Kumar Bombili (Lead and people manager, Hyd, LSA Part 1 v25 in Aug 2026) and Harinarayan Bagalkot (Lead, Hyd).",
+      "what_they_build": "Smart Investigate for Payments (SWIFT/Fed wires, payment investigations framework) plus GenAI and agentic workflow pilots.",
+      "vibe": "Stable and steady, and good for long tenure. 3 office days a week with in-office hours tracked (8–9 hours).",
+      "ratings": "Glassdoor Hyderabad 3.5 (2,313 reviews). Blind 3.2 (WLB 3.8, management 2.8).",
+      "watch_outs": "Benefits reduced and in-office hours raised in late 2025. Reviews mention old tech, politics in appraisals and vendor-driven deadlines pushed onto employees. No current India Pega requisition was found.",
+      "your_angle": "A stable place to learn payments investigations from very experienced leads, but low energy and few openings. Keep it on monitor only.",
+      "people": [
+        {"name": "Raja Reddy Bommana", "role": "VP / Lead Pega · Bengaluru · CLSA", "work": "Long-tenure senior Pega leader signal at Wells Fargo India.", "use": "Senior validation only; not first contact unless a role is live."},
+        {"name": "Ravi Kiran N G", "role": "Lead Software Engineer · Bengaluru", "work": "Retained dossier names him as a remaining CLSA/lead route after departures.", "use": "Best Bengaluru technical validation route."},
+        {"name": "Bhanu Prakash Reddy", "role": "Lead Software Engineer · Hyderabad · CLSA", "work": "Senior Pega architecture signal in Hyderabad.", "use": "Ask about payment investigations versus Workflow-as-a-Service ownership."},
+        {"name": "Arun Kumar Bombili", "role": "Lead Software Engineer / people manager · Hyderabad", "work": "Pega lead with people-management signal; LSA Part 1 v25 in 2026; banking and healthcare background.", "use": "Manager-level route for team expectations and role seniority."},
+        {"name": "Harinarayan Bagalkot", "role": "Lead Software Engineer / Senior Architect · Hyderabad", "work": "Deep Smart Investigate history from HSBC GPI/GPI Gold and current Wells Fargo lead role.", "use": "Best payments-investigations knowledge route."},
+        {"name": "Bhagyashree Choudhary", "role": "Lead Software Engineer · LSA Part 1", "work": "Promoted lead and PegaInnovate attendee; senior progression signal.", "use": "Ask about certification expectations and promotion path."}
+      ],
+      "sources": [
+        ["Raja Reddy Bommana (index)", "https://linkedin.com/in/raja-reddy-bommana"],
+        ["Ravi Kiran N G (index)", "https://linkedin.com/in/ravi-kiran-n-g-a1386b78"],
+        ["Glassdoor Hyderabad", "https://www.glassdoor.co.in/Reviews/Wells-Fargo-Hyder%C4%81b%C4%81d-Reviews-EI_IE8876.0,11_IL.12,21_IC2865319.htm"],
+        ["Glassdoor WFH benefit (India)", "https://www.glassdoor.co.in/Benefits/Wells-Fargo-Work-from-home-India-BNFT155_E8876_N115.htm"]
+      ]
+    },
+    {
+      "id": "fci",
+      "name": "First Citizens India (FC Global Services)",
+      "hubs": "Bengaluru",
+      "team_shape": "A fast-growing GCC (about 800–900 people, +140% year on year, ex-SVB India). Engineering leadership includes Abhi Gummaraju (Associate Director – Software Development, promoted Sep 2026) and Nishant Bharti (AD/VP Software Engineering). The Deposits & Shared Services Pega team uses P1 (SE I) and P2 (SE II) levels. Pega specialists include Tushar Banerjee (Pega AI, Agentic AI, MCP, UI lead, ex-Pegasystems). The Pega team was 3–5 people in the hub's earlier count and is now growing.",
+      "what_they_build": "Deposits & Shared Services Pega platform, lending automation, Pega Robot Manager, KYC workflows, and Pega GenAI / Knowledge Buddy adoption.",
+      "vibe": "2 office days a week, free food, cabs, good annual hikes and term insurance. People are described as talented and motivated.",
+      "ratings": "Glassdoor 4.0–4.2 (culture 4.3–4.5, WLB only 3.3–3.4). AmbitionBox 4.0 (202 reviews).",
+      "watch_outs": "The weakest score is WLB: US time-zone overlap means early mornings and late nights in some teams, and leave requests get questioned. 'New policies being implemented' (Jul 2026).",
+      "your_angle": "This is the team your FCB/FCI study pack targets. A growing team means early impact; confirm the US-overlap hours expected of P1/P2 before accepting.",
+      "people": [
+        {"name": "Sanjoy Sarkar", "role": "SVP / Head of Workflow Automation & Robotics · global FCB", "work": "Enterprise-wide workflow/robotics mandate spanning Pega, RPA and digital workflow ecosystems.", "use": "Global strategy context; not India referral route."},
+        {"name": "Abhi Gummaraju", "role": "Associate Director – Software Development · Bengaluru", "work": "India software leadership signal for the growing GCC technology org.", "use": "Ask about reporting line only if connected through official interview process."},
+        {"name": "Nishant Bharti", "role": "AD/VP Software Engineering signal", "work": "Engineering leadership layer in the FCI Bengaluru setup.", "use": "Org context; validate exact Pega team ownership."},
+        {"name": "Tushar Banerjee", "role": "Pega AI / Agentic AI / MCP / UI lead · ex-Pegasystems", "work": "Specialist signal for Pega GenAI, Knowledge Buddy, MCP and UI work.", "use": "Best technical contact for AI/Pega modernization angle."},
+        {"name": "Deepak Shahi", "role": "CLSA hire from Pegasystems signal", "work": "Movement evidence indicates First Citizens hired senior Pega architecture capability from the product vendor.", "use": "Architecture and growth-signal route; ask whether team is still expanding."},
+        {"name": "Software Engineer II posting", "role": "P2 Pega Developer · Deposits & Shared Services", "work": "Role text asks for Pega PRPC, banking/insurance frameworks, Pega AI/GenAI/Knowledge Buddy, REST, Kafka, JMS, SOAP and microservices.", "use": "Use this as the skill checklist for interview prep."}
+      ],
+      "sources": [
+        ["Abhi Gummaraju (index)", "https://linkedin.com/in/abhi-gummaraju-789ab039"],
+        ["Tushar Banerjee (index)", "https://linkedin.com/in/tushar-banerjee-139366166"],
+        ["Glassdoor reviews", "https://www.glassdoor.co.in/Reviews/First-Citizens-India-Reviews-E10217150.htm"],
+        ["AmbitionBox reviews", "https://www.ambitionbox.com/reviews/first-citizens-india-reviews"]
+      ]
+    },
+    {
+      "id": "vois",
+      "name": "VOIS (Vodafone)",
+      "hubs": "Pune, Bengaluru",
+      "team_shape": "Decisioning-centric Pega org with manager-style grades even for architects (Manager, Senior Manager, DGM). Dinesh Kumar (Lead Decisioning Architect, DGM, Pune), Pallavi Lengde (Senior Manager, Bengaluru, leads a 10-member CDH team), Yogesh Dixit (DGM, Principal System Architect, Pune) and Sagar Shinde (promoted to Senior Manager, Jan 2026).",
+      "what_they_build": "Pega CDH next-best-action for Vodafone markets: one team orchestrates communications across 10+ channels for 6.4M consumer and business customers of a European operator, and is planning a modernisation. Also order management and CRM case work.",
+      "vibe": "Hybrid with 8 office days a month. Strong learning and certification culture, international teams, and a friendly peer vibe.",
+      "ratings": "Glassdoor Pune 4.1 (1,075 reviews; WLB 4.3, culture 4.2). AmbitionBox 3.9 (939 reviews; promotions 3.2).",
+      "watch_outs": "Salaries below market and pay-parity issues; slow promotions and bureaucracy. Heavy CDH focus, which you have not done in production.",
+      "your_angle": "Very good WLB. Leaders publicly post openings (4–7 years Pega, Pune, Mar 2025; senior CDH 5–8 years, Oct 2025). The fit depends on whether you want to pivot into CDH.",
+      "people": [
+        {"name": "Pallavi Lengde", "role": "Senior Manager / Lead Decisioning Architect · Bengaluru", "work": "Leads a 10-member development team for a European telecom operator, 10+ channels and 6.4M consumer/business customers.", "use": "Best CDH architecture and team-shape route."},
+        {"name": "Dinesh Kumar", "role": "DGM / Lead Decisioning Architect · Pune", "work": "Senior CDH/NBA decisioning leadership signal.", "use": "Architecture route if you decide to pivot into CDH."},
+        {"name": "Yogesh Dixit", "role": "DGM / Principal System Architect · Pune", "work": "Principal system architecture layer inside VOIS Pega.", "use": "Ask about Pega architecture standards and promotion ladder."},
+        {"name": "Saurabh Singh", "role": "Manager · Vodafone Germany CDH / Constellation / GenAI", "work": "Next-best-action offers, data flows/data sets, response tracking, decisioning rules, Constellation and GenAI.", "use": "Best hands-on CDH skill-map contact."},
+        {"name": "Abhik Bandyopadhyay", "role": "Senior Manager · hiring signal", "work": "Posted for Pega CDH developers, architects and testers across Pune/Bangalore.", "use": "Use only with a role ID or clear current opening."},
+        {"name": "Ritika Pathania", "role": "General Manager · Digital Automation & AI", "work": "Posted 2026 contract need for Pega Development, Constellation and Infinity 25 hands-on skills.", "use": "Contract/urgent-opening signal, not proof of permanent GCC expansion."}
+      ],
+      "sources": [
+        ["Pallavi Lengde (index)", "https://in.linkedin.com/in/pallavi-lengde"],
+        ["Dinesh Kumar (index)", "https://linkedin.com/in/dinesh-kumar-kv"],
+        ["Glassdoor Pune", "https://www.glassdoor.com/Reviews/-VOIS-Pune-Reviews-EI_IE8261962.0,5_IL.6,10_IC2856202.htm"]
+      ]
+    },
+    {
+      "id": "sunlife",
+      "name": "Sun Life Global Solutions India",
+      "hubs": "Gurugram, Bengaluru, Hyderabad",
+      "team_shape": "Ladder: Analyst Development, Development Specialist, Senior Specialist Developer, Principal Solution Designer/Architect. Swarup Mohanty (Senior Principal Solution Architect, Gurugram), Ishu Gupta (promoted to Principal Solution Designer – Pega, Apr 2026), Vishal Kasana (Development Specialist, ex-Pegasystems, CLM/KYC, Constellation, React), Ravilla Suman (Analyst Development, CSSA, posts about Constellation, Pega CS certification Aug 2026).",
+      "what_they_build": "Insurance and wealth case management, Customer Service, and Constellation adoption; GenAI panels and an active Pega CoE (from earlier hub research).",
+      "vibe": "Strong wellbeing and women-at-work credentials (Best Companies for Women in India 2026, Workplace Wellness 2026, GPTW 2025). Hybrid by policy.",
+      "ratings": "Glassdoor SLGS 3.9 (4,339 reviews; WLB 4.0, D&I 4.1).",
+      "watch_outs": "An older Gurgaon review describes heavy politics; global reviews mention RTO budgets and 'doing more with less'. Bengaluru seats are fewer than Gurugram.",
+      "your_angle": "Constellation is used in practice here, and the ladder rewards specialists. Bengaluru and Hyderabad exist, but Gurugram is the centre of gravity.",
+      "people": [
+        {"name": "Swarup Mohanty", "role": "Senior Principal Solution Architect · Gurugram", "work": "Senior architecture layer for SLGS Pega delivery and specialist progression.", "use": "Architecture and career-ladder context."},
+        {"name": "Ishu Gupta", "role": "Principal Solution Designer – Pega", "work": "Promotion signal into principal Pega design role in Apr 2026.", "use": "Ask what specialist growth looks like after CSSA."},
+        {"name": "Vishal Kasana", "role": "Development Specialist · ex-Pegasystems", "work": "CLM/KYC, Constellation, React and GenAI profile; moved from Pegasystems into Sun Life.", "use": "Best technical peer for Constellation and onboarding/KYC crossover."},
+        {"name": "Ravilla Suman", "role": "Analyst Development / CSSA · Bengaluru hiring signal", "work": "Posted senior Pega developer hiring signal for Bengaluru and Constellation-related profile activity.", "use": "Near-peer/hiring-signal route; verify official requisition."},
+        {"name": "Rahul Chahar", "role": "Team Leader · hiring post route", "work": "Public hiring post for Pega Developer and LSA in Gurugram/Bengaluru, asking API, integration, listeners, email channel and CSSA.", "use": "Use if applying to matching role; ask for official job ID."},
+        {"name": "Baivaw Kumar Dubey", "role": "Specialist Development · Bengaluru", "work": "Constellation and GenAI signal after LTIMindtree/Coforge/Cognizant route.", "use": "Near-peer transition and Bengaluru seat reality check."}
+      ],
+      "sources": [
+        ["Swarup Mohanty (index)", "https://linkedin.com/in/swarupmohanty"],
+        ["Vishal Kasana (index)", "https://linkedin.com/in/vishal-kasana-b4569313a"],
+        ["Glassdoor SLGS overview", "https://www.glassdoor.com.au/Overview/Working-at-Sun-Life-Global-Solutions-EI_IE11568.11,36.htm"]
+      ]
+    },
+    {
+      "id": "deere",
+      "name": "John Deere India (JDTCI)",
+      "hubs": "Pune, Bengaluru",
+      "team_shape": "A small Pega group inside the technology centre: Abhishek Jain (AGM – Engineering Manager, Pune, Pega background), Shailendra Mishra (Lead Software Engineer, Bengaluru, CSSA, AWS, GenAI) and Shraddha Dudhe (Senior Software Engineer, Pune, joined Sep 2025 from TCS, CSSA Jun 2026). On the business side, John Deere Financial India appointed a new Head of Collections & Recovery for India & Thailand in Jul 2026.",
+      "what_they_build": "Deere Financial collections (CCMS), dealer CRM and Pega Customer Service for financial services, with AWS integration (from earlier hub research).",
+      "vibe": "Relaxed 9-to-6 rhythm, no micromanagement and about 26–27 leave days. Hybrid with 3 office days a week (some teams alternate weeks).",
+      "ratings": "Glassdoor Pune 3.9 (1,278 reviews; WLB 4.2, culture 4.1, only 48% positive business outlook).",
+      "watch_outs": "Slow growth and minimum increments; 'orthodox' Indian management; repetitive work. Some Deere Pega work is staffed through Coforge, so check the legal employer.",
+      "your_angle": "The closest domain to yours (collections), with a new collections leader on the business side, which may bring change. Pune-weighted.",
+      "people": [
+        {"name": "Rahul Chaher", "role": "AGM / Pega CLSA · JDF Collections", "work": "Customer Service for Financial Services, Collections Framework, Constellation, Pega Cloud/AWS, Deployment Manager and integrations.", "use": "Best architecture and domain-match contact."},
+        {"name": "Sarvesh Kumar", "role": "Former Lead Software Engineer II · Pune", "work": "Worked on Pega CS for Financial Services Framework for delinquency management using multiple integration protocols; left Apr 2026.", "use": "Best candid historical product insight; not current referral."},
+        {"name": "Shailendra Mishra", "role": "Lead Software Engineer · Bengaluru", "work": "CSSA, AWS and GenAI signal; likely platform/architecture adjacency.", "use": "Bengaluru-specific route, but verify connection to JDF collections."},
+        {"name": "Shraddha Dudhe", "role": "Senior Software Engineer · Pune", "work": "Joined Sep 2025 from TCS and earned CSSA in 2026; current hands-on team signal.", "use": "Near-peer route for current day-to-day expectations."},
+        {"name": "Girish Kulkarni", "role": "DGM / Solution Architecture · Pune", "work": "Architecture, Pega BPM, Pega Cloud, DevOps, CI/CD, robotic automation and cloud migrations across John Deere programmes.", "use": "Senior architecture route; use for understanding enterprise Pega roadmap."},
+        {"name": "Paresh Nemade", "role": "Senior Lead Software Engineer · Pune/Bengaluru signal", "work": "BPM/BRE, Pega PRPC and AWS cloud signal at JDTCI.", "use": "Platform/cloud context and senior referral route."}
+      ],
+      "sources": [
+        ["Shailendra Mishra (index)", "https://linkedin.com/in/shailendra-mishra-3585001b"],
+        ["Shraddha Dudhe (index)", "https://linkedin.com/in/shraddha-dudhe-859a92141"],
+        ["Glassdoor Pune", "https://www.glassdoor.co.in/Reviews/John-Deere-Pune-Reviews-EI_IE195.0,10_IL.11,15_IM1072.htm"]
+      ]
+    }
+  ],
+  "at_a_glance": [
+    ["Pegasystems India", "Bengaluru / Hyderabad", "3 days (60% rule)", "Glassdoor WLB 3.8 · Blind WLB 3.9", "Build Pega's own agentic AI", "Politics, slow promotions"],
+    ["Commonwealth Bank", "Bengaluru", "40% of the month", "Blind WLB 4.4", "New ASB Pega squad forming", "Commute to Manyata, career growth"],
+    ["Booking Holdings", "Bengaluru", "2–3 days", "Glassdoor WLB 4.0", "European pace, paid on-call", "Mostly contractor openings"],
+    ["Cisco", "Bengaluru", "Hybrid", "Glassdoor WLB 4.5", "Friendliest culture, platform modernisation", "Rare openings, pay"],
+    ["Ford Pega CoE", "Chennai", "About 4 days", "Glassdoor WLB 4.2", "Constellation + training culture", "Reduced hybrid, layoffs"],
+    ["Citi", "Chennai / Pune", "3 days", "Glassdoor WLB 4.3 (SWE Chennai)", "Clear ladder, collections req", "AVP/VP politics, vendor-heavy"],
+    ["JPMorganChase", "Hyderabad / Bengaluru", "4–5 days", "Blind WLB 3.8", "VP openly hiring 2–5 years", "Strict RTO, comp"],
+    ["Wells Fargo", "Hyderabad / Bengaluru", "3 days, hours tracked", "Blind WLB 3.8", "Payments investigations depth", "Old tech, benefit cuts"],
+    ["First Citizens India", "Bengaluru", "2 days", "Glassdoor WLB 3.3–3.4", "Growing team, free food", "US-hours overlap"],
+    ["VOIS", "Pune / Bengaluru", "8 days a month", "Glassdoor WLB 4.3", "CDH at scale, learning", "Below-market pay"],
+    ["Sun Life", "Gurugram / Bengaluru", "Hybrid", "Glassdoor WLB 4.0", "Wellbeing awards, Constellation", "Gurugram-centred"],
+    ["John Deere", "Pune / Bengaluru", "3 days", "Glassdoor WLB 4.2", "Collections domain match", "Slow growth"]
+  ]
+}

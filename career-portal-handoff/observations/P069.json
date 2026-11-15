@@ -1,0 +1,57 @@
+{
+  "name": "Lufthansa Systems India",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Lufthansa Systems India",
+      "url": "https://www.lufthansa-systems.com/career",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:05+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:45:05+00:00",
+        "error": "Navigation failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lufthansa-systems.com/career\nCall log:\n  - navigating to \"https://w",
+        "previous_attempt": "{\"url\": \"https://www.lufthansa-systems.com/career\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:36:40+00:00\", \"error\": \"Navigation failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lufthansa-systems.com/career\\nCall log:\\n  - navigating to \\\"https://w\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.lufthansa-systems.com/career"
+      }
+    }
+  ],
+  "id": "P069",
+  "candidate_urls": [
+    "https://www.lufthansa-systems.com/career"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.lufthansa-systems.com/career",
+      "checked_at": "2026-11-15T06:18:24.591467+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "requested_url": "https://www.lhsystems.com/career",
+      "checked_at": "2026-11-15T06:21:24.217432+00:00",
+      "http_status": 200,
+      "final_url": "https://www.lhsystems.com/career",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Airline IT jobs | Lufthansa Systems careers",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.lhsystems.com/career"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/cecb0d62701f7e608d.html.gz",
+      "sha256": "2c736151d60353dc7db0d7c8cb69b2b42defe97fe3cc27dbc7a7c2a67d2a30a5",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

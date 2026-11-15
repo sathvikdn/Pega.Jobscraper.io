@@ -1,0 +1,132 @@
+{
+  "name": "BNY",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "BNY India",
+      "url": "https://bnymellon.eightfold.ai/careers",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:27:21+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:27:21+00:00",
+        "configured_url": "https://bnymellon.eightfold.ai/careers",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://bnymellon.eightfold.ai/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "BNY Mellon India",
+      "url": "https://bnymellon.eightfold.ai/careers",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:39:59+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:39:58+00:00",
+        "configured_url": "https://bnymellon.eightfold.ai/careers",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://bnymellon.eightfold.ai/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P018",
+  "candidate_urls": [
+    "https://bnymellon.eightfold.ai/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://bnymellon.eightfold.ai/careers",
+      "checked_at": "2026-11-15T06:17:46.881927+00:00",
+      "http_status": 404,
+      "final_url": "https://bnymellon.eightfold.ai/careers",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://www.bny.com/corporate/global/en/about-us/careers/experienced-professionals.html",
+      "checked_at": "2026-11-15T06:21:22.813153+00:00",
+      "http_status": 200,
+      "final_url": "https://www.bny.com/corporate/global/en/about-us/careers/experienced-professionals.html",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Experienced Professionals | BNY",
+      "platform_signals": [
+        "Oracle Recruiting"
+      ],
+      "career_links": [
+        "https://www.bny.com/corporate/global/en/about-us/careers/experienced-professionals.html",
+        "https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html",
+        "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BNY-Careers",
+        "https://www.bny.com/corporate/global/en/about-us/careers/students.html",
+        "https://www.bny.com/corporate/global/en/about-us/careers/applying-interviewing.html",
+        "https://www.bny.com/corporate/global/en/about-us/careers/experienced-professionals.html#.html"
+      ],
+      "forms": [
+        {
+          "action": "/corporate/global/en/search-results.html",
+          "method": "get",
+          "id": "searchForm"
+        },
+        {
+          "action": "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BNY-Careers/jobs"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BNY-Careers",
+        "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BNY-Careers/jobs"
+      ],
+      "evidence_file": "evidence/520e8da26b28857d12.html.gz",
+      "sha256": "fcac6eefc5c9ab2943023c8dda0330672b091c66e95be9bb4e05e6718f74a220",
+      "discovery": "Official career page found through web research; supplemental audit"
+    },
+    {
+      "requested_url": "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BNY-Careers",
+      "checked_at": "2026-11-15T06:21:24.027285+00:00",
+      "http_status": 200,
+      "final_url": "https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BNY-Careers",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "BNY",
+      "platform_signals": [
+        "Oracle Recruiting"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://eofe.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=7DD5A133-B6C3-4AE3-B972-0B84CD43B5CD",
+        "https://eofe.fa.us2.oraclecloud.com:443"
+      ],
+      "evidence_file": "evidence/521fd826b03a9038cf.html.gz",
+      "sha256": "a3892a17d9de94e36e8c4fe070ddd809dc0d924bff4a8e96c7dd42ca53d26e98"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "name": "Eaton",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Eaton",
+      "url": "https://www.eaton.com/us/en-us/company/careers.html",
+      "final_url": "https://eaton.eightfold.ai/careers",
+      "method": "eightfold_eaton_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:43:35+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:43:31+00:00",
+        "details_checked": 24,
+        "eightfold": true,
+        "final_url": "https://eaton.eightfold.ai/careers",
+        "jobs_found": 0,
+        "method": "eightfold_eaton_api",
+        "pages_checked": 3,
+        "partial": false,
+        "reported_total": 24,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.eaton.com/us/en-us/company/careers.html",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P041",
+  "candidate_urls": [
+    "https://www.eaton.com/us/en-us/company/careers.html",
+    "https://eaton.eightfold.ai/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.eaton.com/us/en-us/company/careers.html",
+      "checked_at": "2026-11-15T06:18:09.232208+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "The read operation timed out"
+    },
+    {
+      "requested_url": "https://eaton.eightfold.ai/careers",
+      "checked_at": "2026-11-15T06:18:23.813712+00:00",
+      "http_status": 200,
+      "final_url": "https://eaton.eightfold.ai/careers",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at Eaton",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [
+        "https://app.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+        "https://jobs.eaton.com/jobs"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://eaton.eightfold.ai/careers",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css'",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css'",
+        "https://app.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css&#39;",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com&#34;},",
+        "https://eightfold.ai/privacy-policy/&#39;",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;}},",
+        "https://app.eightfold.ai&#34;},",
+        "https://eightfold.ai/privacy-policy/&#34;}},"
+      ],
+      "evidence_file": "evidence/180a8880c7a4a2a1fc.html.gz",
+      "sha256": "c8381153e93a1beca2e4950cbea2dc5704471f54efa7c1cfae429fee7f59279e"
+    },
+    {
+      "requested_url": "https://app.eightfold.ai/careers?domain=eaton.com",
+      "checked_at": "2026-11-15T06:18:26.495022+00:00",
+      "http_status": 200,
+      "final_url": "https://app.eightfold.ai/careers?domain=eaton.com",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at Eaton",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [
+        "https://app.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+        "https://jobs.eaton.com/jobs"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://app.eightfold.ai/careers?domain=eaton.com",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css'",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css'",
+        "https://77e708048c4747e1a801fa2ef5557ca6@vs-errors.eightfold.ai/10',",
+        "https://eaton.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css&#39;",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com&#34;},",
+        "https://eightfold.ai/privacy-policy/&#39;",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;}},",
+        "https://app.eightfold.ai&#34;},",
+        "https://eightfold.ai/privacy-policy/&#34;}},"
+      ],
+      "evidence_file": "evidence/69150cc344f856c2b3.html.gz",
+      "sha256": "c3712571a8a94f3ce118c4afe9a038e9682a6e4c4a3dc000a3588ebf0216b2be"
+    },
+    {
+      "requested_url": "https://eaton.eightfold.ai/careers?domain=eaton.com",
+      "checked_at": "2026-11-15T06:18:27.806800+00:00",
+      "http_status": 200,
+      "final_url": "https://eaton.eightfold.ai/careers?domain=eaton.com",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at Eaton",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [
+        "https://app.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+        "https://jobs.eaton.com/jobs"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://eaton.eightfold.ai/careers?domain=eaton.com",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css'",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css'",
+        "https://app.eightfold.ai/careers?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+        "https://eaton.eightfold.ai/careers/join&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css&#39;",
+        "https://eaton.eightfold.ai/candidate/login?domain=eaton.com&#34;},",
+        "https://eightfold.ai/privacy-policy/&#39;",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;}},",
+        "https://app.eightfold.ai&#34;},",
+        "https://eightfold.ai/privacy-policy/&#34;}},"
+      ],
+      "evidence_file": "evidence/f1beeff1e2548dadbf.html.gz",
+      "sha256": "d1d63e4e04398cd38cdb7d84192f389a2c6b68b7b840f4ef6464393614a9427b"
+    }
+  ]
+}

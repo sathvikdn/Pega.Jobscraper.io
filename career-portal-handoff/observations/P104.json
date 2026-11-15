@@ -1,0 +1,92 @@
+{
+  "name": "Stellantis",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Stellantis India",
+      "url": "https://www.careers.stellantis.com",
+      "final_url": "https://careers.stellantis.com/job-search-results/?keyword=pega",
+      "method": "stellantis_mcloud_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:18:49+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:18:48+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.stellantis.com/job-search-results/?keyword=pega",
+        "jobs_found": 0,
+        "method": "stellantis_mcloud_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "stellantis_mcloud": true,
+        "url": "https://www.careers.stellantis.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P104",
+  "candidate_urls": [
+    "https://www.careers.stellantis.com",
+    "https://careers.stellantis.com/job-search-results/?keyword=pega"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.careers.stellantis.com",
+      "checked_at": "2026-11-15T06:18:47.324640+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "requested_url": "https://careers.stellantis.com/job-search-results/?keyword=pega",
+      "checked_at": "2026-11-15T06:18:47.862498+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.stellantis.com/job-search-results/?keyword=pega",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search Jobs at Stellantis | Search Careers at Stellantis| Search Stellantis Jobs by Location & KeywordSearch Jobs at Stellantis | Search Careers at Stellantis| Search Stellantis Jobs by Location & Keyword",
+      "platform_signals": [],
+      "career_links": [
+        "https://careers.stellantis.com/job-search-results/?keyword=pega",
+        "https://careers.stellantis.com/job-search-results/",
+        "https://careers.stellantis.com/it/risultati-ricerca-posizioni/",
+        "https://careers.stellantis.com/fr-ca/resultats-de-recherche-demplois/",
+        "https://careers.stellantis.com/pt-br/resultado-da-pesquisa-de-vagas/",
+        "https://careers.stellantis.com/zh-hans/%e8%81%8c%e4%bd%8d%e6%90%9c%e7%b4%a2%e7%bb%93%e6%9e%9c/",
+        "https://careers.stellantis.com/ja/%e6%b1%82%e4%ba%ba%e6%a4%9c%e7%b4%a2%e7%b5%90%e6%9e%9c/",
+        "https://careers.stellantis.com/ko/%ec%a7%81%eb%ac%b4-%ea%b2%80%ec%83%89-%ea%b2%b0%ea%b3%bc/",
+        "https://careers.stellantis.com/es/resultados-de-busqueda-de-empleos/",
+        "https://careers.stellantis.com/",
+        "https://careers.stellantis.com/our-brands-2/",
+        "https://careers.stellantis.com/career-areas-2/",
+        "https://careers.stellantis.com/about-us/",
+        "https://careers.stellantis.com/where-we-are/",
+        "https://careers.stellantis.com/different-drives-one-destination/",
+        "https://careers.stellantis.com/early-careers/",
+        "https://careers.stellantis.com/global-students/",
+        "https://careers.stellantis.com/early-careers/students-north-america/",
+        "https://careers.stellantis.com/early-careers/graduate-program/",
+        "https://careers.stellantis.com/nextgen/",
+        "https://careers.stellantis.com",
+        "https://careers.stellantis.com/job-cart/",
+        "https://careers.stellantis.com/wp-content/uploads/sites/2404/2023/03/FCA-Applicant-Privacy-Notice-01.01.2023-1.pdf",
+        "https://careers.stellantis.com/wp-content/uploads/sites/2404/2020/01/FCA-Applicant-Privacy-Notice-DLA-CCPA-final-v01-30-20.pdf",
+        "https://careers.stellantis.com/wp-content/uploads/sites/2404/2020/09/Politica-de-Privacidade-ReS.pdf",
+        "https://careers.stellantis.com/job-search-results/?keyword=pega#top"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://jobsapi-google.m-cloud.io/api/"
+      ],
+      "evidence_file": "evidence/8b2001c79afeaeb249.html.gz",
+      "sha256": "446bca85c84bbb2bb057eb3dd126fac371857d1b452b5ede19082a2c20056b13"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "DHL",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "DHL India",
+      "url": "https://careers.dhl.com",
+      "final_url": "https://careers.dhl.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:19:04+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:18:49+00:00",
+        "details_checked": 1,
+        "final_url": "https://careers.dhl.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "listings_checked": 1,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://careers.dhl.com/global/en/search-results",
+        "reported_total": 1,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.dhl.com",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "DHL IT Services",
+      "url": "https://careers.dhl.com",
+      "final_url": "https://careers.dhl.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:26+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:29:13+00:00",
+        "details_checked": 1,
+        "final_url": "https://careers.dhl.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "listings_checked": 1,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://careers.dhl.com/global/en/search-results",
+        "reported_total": 1,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.dhl.com",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P040",
+  "candidate_urls": [
+    "https://careers.dhl.com",
+    "https://careers.dhl.com/global/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.dhl.com",
+      "checked_at": "2026-11-15T06:18:07.758106+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://careers.dhl.com/global/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:08.585443+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ]
+}

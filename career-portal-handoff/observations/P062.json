@@ -1,0 +1,125 @@
+{
+  "name": "JLR",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "JLR",
+      "url": "https://www.jaguarlandrovercareers.com",
+      "final_url": "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:42:06+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:41:56+00:00",
+        "configured_url": "https://www.jaguarlandrovercareers.com",
+        "details_checked": 0,
+        "final_url": "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://www.jaguarlandrovercareers.com/search/?q=",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://www.jaguarlandrovercareers.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P062",
+  "candidate_urls": [
+    "https://www.jaguarlandrovercareers.com",
+    "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.jaguarlandrovercareers.com",
+      "checked_at": "2026-11-15T06:18:20.250867+00:00",
+      "http_status": 200,
+      "final_url": "https://www.jaguarlandrovercareers.com",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Jobs at JLR",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://www.jaguarlandrovercareers.com#content",
+        "https://www.jaguarlandrovercareers.com",
+        "https://www.jaguarlandrovercareers.com/?locale=en_GB",
+        "https://www.jaguarlandrovercareers.com/?locale=sk_SK",
+        "https://www.jaguarlandrovercareers.com/content/Who-We-Are/?locale=en_GB",
+        "https://www.jaguarlandrovercareers.com/go/Technology/4263901/",
+        "https://www.jaguarlandrovercareers.com/go/Engineering/4263801/",
+        "https://www.jaguarlandrovercareers.com/content/Diversity-and-inclusion/",
+        "https://www.jaguarlandrovercareers.com/content/Early-Careers/",
+        "https://careers.jaguarlandrover.com/information/disclaimer",
+        "https://careers.jaguarlandrover.com/information/privacy-policy",
+        "https://careers.jaguarlandrover.com/application/files/8517/2675/0340/CCPA-California-Applicant-Employee-Privacy-Notice-2024.pdf",
+        "https://careers.jlr.com/application/files/3717/4000/2574/Recruitment_Privacy_Notice_JLR_Slovakia_20241001_002.pdf",
+        "https://careers.jaguarlandrover.com/information/accessibility",
+        "https://careers.jaguarlandrover.com/information/our-use-cookies",
+        "https://www.facebook.com/JLRCareers/",
+        "https://twitter.com/JLRCareers",
+        "https://www.instagram.com/jlrcareers/",
+        "https://www.youtube.com/user/JLRCareers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/85f9c481d81f4913b6.html.gz",
+      "sha256": "3add503a28e1b01b7a49047e533648e61a46c981f6704dddee85043f59d9f1f1"
+    },
+    {
+      "requested_url": "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=",
+      "checked_at": "2026-11-15T06:18:23.310940+00:00",
+      "http_status": 200,
+      "final_url": "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Pega - JLR Jobs",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=#content",
+        "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=",
+        "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=&locale=en_GB",
+        "https://www.jaguarlandrovercareers.com/search/?q=pega&startrow=0&locationsearch=&locale=sk_SK",
+        "https://www.jaguarlandrovercareers.com/",
+        "https://careers.jaguarlandrover.com/information/disclaimer",
+        "https://careers.jaguarlandrover.com/information/privacy-policy",
+        "https://careers.jaguarlandrover.com/application/files/8517/2675/0340/CCPA-California-Applicant-Employee-Privacy-Notice-2024.pdf",
+        "https://careers.jlr.com/application/files/3717/4000/2574/Recruitment_Privacy_Notice_JLR_Slovakia_20241001_002.pdf",
+        "https://careers.jaguarlandrover.com/information/accessibility",
+        "https://careers.jaguarlandrover.com/information/our-use-cookies",
+        "https://www.facebook.com/JLRCareers/",
+        "https://twitter.com/JLRCareers",
+        "https://www.instagram.com/jlrcareers/",
+        "https://www.youtube.com/user/JLRCareers"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/talentcommunity/subscribe/?locale=en_GB&keywords=",
+          "method": "POST",
+          "id": "emailsubscribe"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/b103208d3f8dfd4cf4.html.gz",
+      "sha256": "f7df701a2e0f9f229da0c560fbbf00ce421f4ae55a5fd549aadd0dd5e3bd2849"
+    }
+  ]
+}

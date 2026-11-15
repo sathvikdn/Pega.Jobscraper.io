@@ -1,0 +1,72 @@
+{
+  "name": "HDFC Bank",
+  "scope": "current registry lacks adapter",
+  "type": "enterprise",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "HDFC Bank",
+      "url": "https://www.hdfcbank.com/personal/about-us/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:26:57+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:26:57+00:00",
+        "error": "Navigation failed: Source returned HTTP 403",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.hdfcbank.com/personal/about-us/careers"
+      }
+    }
+  ],
+  "id": "P053",
+  "candidate_urls": [
+    "https://www.hdfcbank.com/personal/about-us/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.hdfcbank.com/personal/about-us/careers",
+      "checked_at": "2026-11-15T06:18:16.756520+00:00",
+      "http_status": 200,
+      "final_url": "https://www.hdfc.bank.in/careers",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "HDFC Bank Careers - Private Bank Job Vacancy & Recruitment | HDFC Bank",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.hdfc.bank.in/careers",
+        "https://www.hdfc.bank.in/careers#career",
+        "https://hdfcbank.ripplehire.com/candidate/careers",
+        "https://www.hdfc.bank.in/careers/inclusion",
+        "https://www.hdfc.bank.in/careers#a1",
+        "https://www.hdfc.bank.in/careers#equal",
+        "https://connect.hdfc.bank.in/applications/webforms/apply/hdfcbank-career-page/index.aspx"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/e90bfae4f70f146230.html.gz",
+      "sha256": "2f345c23e46eca441677b305dbdc7eaf8daab2f33aa9aa90e0e15d83b4ea401d"
+    },
+    {
+      "requested_url": "https://hdfcbank.ripplehire.com/candidate/careers",
+      "checked_at": "2026-11-15T06:22:07.746824+00:00",
+      "http_status": 200,
+      "final_url": "https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#list",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "HDFC Bank Careers | Latest jobs at HDFC Bank - Ripplehire.com",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/45d952bdb66b9da3d2.html.gz",
+      "sha256": "0708510c4774794490f898e5af44dbc2d70cb97cf6b1a348439d0eab64315701",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

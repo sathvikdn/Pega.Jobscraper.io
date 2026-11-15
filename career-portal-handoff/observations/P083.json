@@ -1,0 +1,103 @@
+{
+  "name": "Navistar",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Navistar India",
+      "url": "https://www.international.com/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:44:46+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:44:43+00:00",
+        "error": "Navigation failed: Source returned HTTP 404",
+        "previous_attempt": "{\"url\": \"https://www.international.com/careers\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:22:35+00:00\", \"error\": \"Navigation failed: Source returned HTTP 404\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.international.com/careers"
+      }
+    },
+    {
+      "old_company": "Navistar / International Motors",
+      "url": "https://www.international.com/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:04+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:45:02+00:00",
+        "error": "Navigation failed: Source returned HTTP 404",
+        "previous_attempt": "{\"url\": \"https://www.international.com/careers\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:33:49+00:00\", \"error\": \"Navigation failed: Source returned HTTP 404\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.international.com/careers"
+      }
+    },
+    {
+      "old_company": "Navistar",
+      "url": "https://www.international.com/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:59+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:45:57+00:00",
+        "error": "Navigation failed: Source returned HTTP 404",
+        "previous_attempt": "{\"url\": \"https://www.international.com/careers\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:37:52+00:00\", \"error\": \"Navigation failed: Source returned HTTP 404\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.international.com/careers"
+      }
+    }
+  ],
+  "id": "P083",
+  "candidate_urls": [
+    "https://www.international.com/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.international.com/careers",
+      "checked_at": "2026-11-15T06:18:32.505555+00:00",
+      "http_status": 404,
+      "final_url": "https://www.international.com/careers",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://careers.international.com/jobs",
+      "checked_at": "2026-11-15T06:21:24.332234+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.international.com/jobs",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "International Motors, LLC CareersInternational Logopop-out-linepop-out-linepop-out-linepop-out-linepop-out-linepop-out-linepop-out-linepop-out-line",
+      "platform_signals": [
+        "iCIMS"
+      ],
+      "career_links": [
+        "https://careers.international.com/",
+        "https://careers.international.com/jobs",
+        "https://careers.international.com/college-programs",
+        "https://careers.international.com/rotational-programs",
+        "https://careers.international.com/veterans",
+        "https://careers.international.com/faqs",
+        "https://careers.international.com/talent-network/talentcommunity/signup",
+        "https://apply-salary-internationalmotors.icims.com/jobs/login",
+        "https://internalcareers.international.com",
+        "https://careers.international.com/categories",
+        "https://careers.international.com/brands",
+        "https://careers.international.com/locations",
+        "https://careers.international.com/jobs#language-drop"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/f50fae4d880bcae0f3.html.gz",
+      "sha256": "00660451a3c8d982c97ae0f809e3030f342af7a9b54f15c1c58da10e55be64a6",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

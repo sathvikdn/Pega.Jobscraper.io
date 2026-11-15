@@ -1,0 +1,118 @@
+{
+  "name": "UPS",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "UPS India",
+      "url": "https://www.jobs-ups.com",
+      "final_url": "https://www.jobs-ups.com/imea/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:22:43+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:22:38+00:00",
+        "details_checked": 0,
+        "final_url": "https://www.jobs-ups.com/imea/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.jobs-ups.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "UPS",
+      "url": "https://www.jobs-ups.com",
+      "final_url": "https://www.jobs-ups.com/imea/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:33:57+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:33:52+00:00",
+        "details_checked": 0,
+        "final_url": "https://www.jobs-ups.com/imea/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.jobs-ups.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P110",
+  "candidate_urls": [
+    "https://www.jobs-ups.com",
+    "https://www.jobs-ups.com/imea/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.jobs-ups.com",
+      "checked_at": "2026-11-15T06:18:52.042857+00:00",
+      "http_status": 200,
+      "final_url": "https://www.jobs-ups.com/imea/en",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at United Parcel Service | United Parcel Service jobs",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://www.jobs-ups.com/imea/search-results",
+        "https://www.jobs-ups.com/imea/en/home",
+        "https://www.jobs-ups.com/imea/en/hourly-roles",
+        "https://www.jobs-ups.com/imea/en/job-professional/${jobSeqNo}/${title}",
+        "https://www.instagram.com/upsjobs/",
+        "https://www.tiktok.com/@upsjobs"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/aad45a016dce5a4b04.html.gz",
+      "sha256": "85ef3e7dbe1fdcdfa294efbbe8adb21fe16f80b6a51bfd5432e928d5ab1e548f"
+    },
+    {
+      "requested_url": "https://www.jobs-ups.com/imea/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:54.276517+00:00",
+      "http_status": 200,
+      "final_url": "https://www.jobs-ups.com/imea/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "pega job openings at United Parcel ServiceSearch results | Find available job openings at United Parcel Service",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://www.jobs-ups.com/imea/en/home",
+        "https://www.instagram.com/upsjobs/",
+        "https://www.instagram.com/upsjobs/?utm_source=ig_embed&utm_campaign=loading"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/ad61766f23e36f9111.html.gz",
+      "sha256": "09b4075a1752ef849d764bbf8e7d51fcf032b41e1ece873fa892be84355fb939"
+    }
+  ]
+}

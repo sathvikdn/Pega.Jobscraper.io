@@ -1,0 +1,68 @@
+{
+  "name": "Visa",
+  "scope": "current registry lacks adapter",
+  "type": "product",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Visa India",
+      "url": "https://usa.visa.com/careers.html",
+      "final_url": "https://api.smartrecruiters.com/v1/companies/Visa/postings?q=pega&limit=100&offset=0",
+      "method": "smartrecruiters_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:19:35+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:19:34+00:00",
+        "company_slug": "Visa",
+        "configured_url": "https://usa.visa.com/careers.html",
+        "details_checked": 0,
+        "final_url": "https://api.smartrecruiters.com/v1/companies/Visa/postings?q=pega&limit=100&offset=0",
+        "jobs_found": 0,
+        "method": "smartrecruiters_public_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://jobs.smartrecruiters.com/Visa",
+        "reused_attempt": false,
+        "smartrecruiters": true,
+        "source": "career_portal_playwright",
+        "url": "https://usa.visa.com/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P111",
+  "candidate_urls": [
+    "https://usa.visa.com/careers.html",
+    "https://api.smartrecruiters.com/v1/companies/Visa/postings?q=pega&limit=100&offset=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://usa.visa.com/careers.html",
+      "checked_at": "2026-11-15T06:18:52.854904+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://api.smartrecruiters.com/v1/companies/Visa/postings?q=pega&limit=100&offset=0",
+      "checked_at": "2026-11-15T06:18:53.420977+00:00",
+      "http_status": 200,
+      "final_url": "https://api.smartrecruiters.com/v1/companies/Visa/postings?q=pega&limit=100&offset=0",
+      "content_type": "application/json; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "SmartRecruiters"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/acf60f830d67d5b8ff.html.gz",
+      "sha256": "dd343c33c470fed1e87299640e449a7c124a75f563e0d8052bb781ea88e74b46"
+    }
+  ]
+}

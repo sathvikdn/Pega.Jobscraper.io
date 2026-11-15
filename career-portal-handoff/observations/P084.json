@@ -1,0 +1,157 @@
+{
+  "name": "Nokia",
+  "scope": "current registry lacks adapter",
+  "type": "product",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Nokia India",
+      "url": "https://nokia.com/careers",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:17:42+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:17:41+00:00",
+        "configured_url": "https://nokia.com/careers",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://nokia.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Nokia India",
+      "url": "https://nokia.com/careers",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:54+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:17:41+00:00",
+        "configured_url": "https://nokia.com/careers",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://nokia.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P084",
+  "candidate_urls": [
+    "https://nokia.com/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://nokia.com/careers",
+      "checked_at": "2026-11-15T06:18:33.794031+00:00",
+      "http_status": 200,
+      "final_url": "https://www.nokia.com/careers/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers | Nokia.com",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.nokia.com/careers/#block-nokia-popup-search-form",
+        "https://www.nokia.com/careers/",
+        "https://www.nokia.com/careers/#main-content",
+        "https://www.nokia.com/careers/life-at-nokia/",
+        "https://www.nokia.com/careers/students-and-graduates/",
+        "https://www.nokia.com/careers/our-locations/",
+        "https://www.nokia.com/careers/our-locations/australia-and-new-zealand/",
+        "https://www.nokia.com/careers/our-locations/belgium/",
+        "https://www.nokia.com/careers/our-locations/canada/",
+        "https://www.nokia.com/careers/our-locations/finland/",
+        "https://www.nokia.com/careers/our-locations/france/",
+        "https://www.nokia.com/careers/our-locations/germany/students-and-graduates/",
+        "https://www.nokia.com/careers/our-locations/greece/",
+        "https://www.nokia.com/careers/our-locations/hungary/",
+        "https://www.nokia.com/careers/our-locations/india/students-and-graduates/",
+        "https://www.nokia.com/careers/our-locations/italy/students-and-graduates/",
+        "https://www.nokia.com/careers/our-locations/poland/",
+        "https://www.nokia.com/careers/our-locations/portugal/",
+        "https://www.nokia.com/careers/our-locations/romania/",
+        "https://www.nokia.com/careers/our-locations/slovakia/",
+        "https://www.nokia.com/careers/our-locations/united-states/",
+        "https://www.nokia.com/careers/alumni/",
+        "https://jobs.nokia.com/en/sites/CX_1",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?keyword=AI&mode=location",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=300000009357764",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=300000009357791",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=300000009357800",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=300000009357785",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=300000009357755",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=300000009357803",
+        "https://jobs.nokia.com/en/sites/CX_1/jobs?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=300000009357776%3B300000009357752",
+        "https://jobs.nokia.com/en/sites/CX_1/",
+        "https://www.nokia.com/careers/#using-ai-when-submitting-your-application",
+        "https://www.nokia.com/careers/#using-ai-when-preparing-for-interviews",
+        "https://www.nokia.com/careers/network-infrastructure/"
+      ],
+      "forms": [
+        {
+          "action": "/search/search-opensolr/",
+          "method": "get",
+          "id": "views-exposed-form-nokia-opensolr-search-block-1"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/5ce45b4357a7ebb172.html.gz",
+      "sha256": "e2e1acd37a42e4d8d8220e74408b107d6cf092473e0837c447ace4e988ee370f"
+    },
+    {
+      "requested_url": "https://jobs.nokia.com/en/sites/CX_1/jobs",
+      "checked_at": "2026-11-15T06:22:08.757886+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.nokia.com/en/sites/CX_1/jobs",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Nokia",
+      "platform_signals": [
+        "Oracle Recruiting"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=08DCBF93-34AB-4E7B-A7A3-2526D089CBAA",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=3&themeVersion=5&brandVersion=98'/",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-16x16.png?siteNumber=CX_1&size=16x16",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-144x144.png?siteNumber=CX_1&size=144x144",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-152x152.png?siteNumber=CX_1&size=152x152",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmUI/CandExpStatic/css/ce-custom.css?themeNumber=3&lang=en&themeVersion=5&brandVersion=98&brandTlVersion=85&siteNumber=CX_1",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=3&themeVersion=5&brandVersion=98",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmUI/CandidateExperience/images?imageId=5CB783E3-0573-4B6F-9468-E43FC9F91C12",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=E5025C25-3759-4D4D-B0CC-EF5EFD1E2788",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmUI/CandidateExperience/images?imageId=AF5468C6-C5CA-4EA5-9A5E-4910424F4709",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com:443/hcmUI/CandidateExperience/images?imageId=F43F3AB7-FBE2-4A64-83D0-004FF82890AE",
+        "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=5CB783E3-0573-4B6F-9468-E43FC9F91C12"
+      ],
+      "evidence_file": "evidence/b9632c6f98c90d602a.html.gz",
+      "sha256": "40738e96577f3218ac730ad787a69fee0dd9e60c903fadee4e9607b4a1862f11",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "CNH",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "CNH",
+      "url": "https://www.cnh.com/en-US/Careers",
+      "final_url": "https://join.cnh.com/search",
+      "method": "successfactors_rmk_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:43:45+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:43:35+00:00",
+        "configured_url": "https://www.cnh.com/en-US/Careers",
+        "details_checked": 0,
+        "final_url": "https://join.cnh.com/search",
+        "jobs_found": 0,
+        "method": "successfactors_rmk_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://join.cnh.com/search",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://www.cnh.com/en-US/Careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P027",
+  "candidate_urls": [
+    "https://www.cnh.com/en-US/Careers",
+    "https://join.cnh.com/search"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.cnh.com/en-US/Careers",
+      "checked_at": "2026-11-15T06:17:53.523293+00:00",
+      "http_status": 200,
+      "final_url": "https://join.cnh.com/",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "CNH Careers",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://join.cnh.com/content/early-careers/?locale=en_US"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/9223350d06bce7ee29.html.gz",
+      "sha256": "d781b0db9fd102b6cd60bf51fa201bbd3d179b3aac27e4856e82437519c05f61"
+    },
+    {
+      "requested_url": "https://join.cnh.com/search",
+      "checked_at": "2026-11-15T06:18:00.738102+00:00",
+      "http_status": 200,
+      "final_url": "https://join.cnh.com/search",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "CNH Jobs",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://join.cnh.com/content/early-careers/?locale=en_US"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/ff97855153a767b972.html.gz",
+      "sha256": "e5410746a087a001d0cc2be3254d43ccfc17d039007ae8019d74e577623e081b"
+    }
+  ]
+}

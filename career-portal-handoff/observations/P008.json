@@ -1,0 +1,126 @@
+{
+  "name": "American Express",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "American Express",
+      "url": "https://aexp.com/careers",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:15:18+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:15:18+00:00",
+        "configured_url": "https://aexp.com/careers",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://aexp.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "American Express",
+      "url": "https://aexp.com/careers",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:07+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:15:18+00:00",
+        "configured_url": "https://aexp.com/careers",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://aexp.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "American Express India",
+      "url": "https://aexp.com/careers",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:39:49+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:39:49+00:00",
+        "configured_url": "https://aexp.com/careers",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://aexp.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P008",
+  "candidate_urls": [
+    "https://aexp.com/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://aexp.com/careers",
+      "checked_at": "2026-11-15T06:17:40.618925+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "requested_url": "https://careers.americanexpress.com/en/sites/CX_1/jobs?location=India",
+      "checked_at": "2026-11-15T06:21:22.810769+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.americanexpress.com/en/sites/CX_1/jobs?location=India",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "American Express",
+      "platform_signals": [
+        "Oracle Recruiting"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://egug.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=503D87B3-A306-443C-9311-880773067200",
+        "https://egug.fa.us2.oraclecloud.com:443",
+        "https://egug.fa.us2.oraclecloud.com:443/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=3&themeVersion=5&brandVersion=10'/",
+        "https://egug.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-16x16.png?siteNumber=CX_1&size=16x16",
+        "https://egug.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-144x144.png?siteNumber=CX_1&size=144x144",
+        "https://egug.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-152x152.png?siteNumber=CX_1&size=152x152",
+        "https://egug.fa.us2.oraclecloud.com:443/hcmUI/CandExpStatic/css/ce-custom.css?themeNumber=3&lang=en&themeVersion=5&brandVersion=10&brandTlVersion=7&siteNumber=CX_1",
+        "https://egug.fa.us2.oraclecloud.com:443/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=3&themeVersion=5&brandVersion=10",
+        "https://egug.fa.us2.oraclecloud.com/"
+      ],
+      "evidence_file": "evidence/e6b136f80b169bff5d.html.gz",
+      "sha256": "47b257d77d1deb805b7df00e2d99798174955e3705eb7b6bc175ce396e7361b3",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

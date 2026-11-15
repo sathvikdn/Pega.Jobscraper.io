@@ -1,0 +1,173 @@
+{
+  "name": "Booking Holdings",
+  "scope": "current registry lacks adapter",
+  "type": "product",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Booking.com",
+      "url": "https://jobs.booking.com/booking/jobs",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:10:22+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:10:21+00:00",
+        "error": "Navigation failed: Source returned HTTP 403",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.booking.com/booking/jobs"
+      }
+    },
+    {
+      "old_company": "Booking Holdings",
+      "url": "https://careers.bookingholdings.com",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:44:28+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:44:27+00:00",
+        "error": "Navigation failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://careers.bookingholdings.com/\nCall log:\n  - navigating to \"https://caree",
+        "previous_attempt": "{\"url\": \"https://careers.bookingholdings.com\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:18:26+00:00\", \"error\": \"Navigation failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://careers.bookingholdings.com/\\nCall log:\\n  - navigating to \\\"https://caree\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://careers.bookingholdings.com"
+      }
+    }
+  ],
+  "id": "P019",
+  "candidate_urls": [
+    "https://jobs.booking.com/",
+    "https://careers.booking.com/",
+    "https://jobs.booking.com/booking/jobs",
+    "https://careers.bookingholdings.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.booking.com/",
+      "checked_at": "2026-11-15T06:17:47.114434+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.booking.com/booking/jobs",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Booking.com Careers",
+      "platform_signals": [
+        "iCIMS"
+      ],
+      "career_links": [
+        "https://careers.booking.com/",
+        "https://careers.booking.com/teams/",
+        "https://careers.booking.com/locations/",
+        "https://careers.booking.com/blog/?page=1",
+        "https://jobs.booking.com/booking/jobs",
+        "https://careers.booking.com/our-impact/",
+        "https://careers.booking.com/our-diversity/",
+        "https://careers.booking.com/societal-impact/",
+        "https://careers.booking.com/our-journey/",
+        "https://careers.booking.com/start-your-journey/",
+        "https://careers.booking.com/early-careers/",
+        "https://careers.booking.com/hybrid-ways-of-working/",
+        "https://careers.booking.com/benefits/",
+        "https://external-workingatbooking.icims.com/jobs/login?loginOnly=1",
+        "https://careers.booking.com/blog/",
+        "https://careers.booking.com/esg/",
+        "https://jobs.booking.com/booking/talentcommunity/form",
+        "https://internal-workingatbooking.icims.com/jobs/login?loginOnly=1",
+        "https://careers.booking.com/privacy-policy/",
+        "https://careers.booking.com/diversity-statement/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/1ae82dc7363f411138.html.gz",
+      "sha256": "357edf0c9e146e1bae9690ca1dd751dc89437520b6e50c73c9e6487b9579b21f"
+    },
+    {
+      "requested_url": "https://careers.booking.com/",
+      "checked_at": "2026-11-15T06:17:49.747309+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.booking.com/",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Booking.com Careers site",
+      "platform_signals": [
+        "iCIMS"
+      ],
+      "career_links": [
+        "https://careers.booking.com/#main",
+        "https://careers.booking.com/",
+        "https://careers.booking.com/teams/",
+        "https://careers.booking.com/locations/",
+        "https://careers.booking.com/blog/",
+        "https://careers.booking.com/sustainability/",
+        "https://careers.booking.com/our-impact/",
+        "https://careers.booking.com/our-diversity/",
+        "https://careers.booking.com/societal-impact/",
+        "https://careers.booking.com/our-journey/",
+        "https://careers.booking.com/start-your-journey/",
+        "https://careers.booking.com/early-careers/",
+        "https://careers.booking.com/hybrid-ways-of-working/",
+        "https://careers.booking.com/benefits/",
+        "https://jobs.booking.com/booking/jobs",
+        "https://jobs.booking.com/",
+        "https://jobs.booking.com/booking/jobs/30613?lang=en-us",
+        "https://jobs.booking.com/booking/jobs/13402?lang=en-us",
+        "https://jobs.booking.com/booking/jobs/30189?lang=en-us",
+        "https://internal-workingatbooking.icims.com/",
+        "https://jobs.booking.com/booking/talentcommunity/form",
+        "https://careers.booking.com/privacy-policy/"
+      ],
+      "forms": [
+        {},
+        {}
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/cf3e752007495e9a0d.html.gz",
+      "sha256": "c74825467ba704e701c046753aaaab7ad6d19b74fdbe036f70451c3f3eb7a66e"
+    },
+    {
+      "requested_url": "https://jobs.booking.com/booking/jobs",
+      "checked_at": "2026-11-15T06:17:51.275722+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.booking.com/booking/jobs",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Booking.com Careers",
+      "platform_signals": [
+        "iCIMS"
+      ],
+      "career_links": [
+        "https://careers.booking.com/",
+        "https://careers.booking.com/teams/",
+        "https://careers.booking.com/locations/",
+        "https://careers.booking.com/blog/?page=1",
+        "https://jobs.booking.com/booking/jobs",
+        "https://careers.booking.com/our-impact/",
+        "https://careers.booking.com/our-diversity/",
+        "https://careers.booking.com/societal-impact/",
+        "https://careers.booking.com/our-journey/",
+        "https://careers.booking.com/start-your-journey/",
+        "https://careers.booking.com/early-careers/",
+        "https://careers.booking.com/hybrid-ways-of-working/",
+        "https://careers.booking.com/benefits/",
+        "https://external-workingatbooking.icims.com/jobs/login?loginOnly=1",
+        "https://careers.booking.com/blog/",
+        "https://careers.booking.com/esg/",
+        "https://jobs.booking.com/booking/talentcommunity/form",
+        "https://internal-workingatbooking.icims.com/jobs/login?loginOnly=1",
+        "https://careers.booking.com/privacy-policy/",
+        "https://careers.booking.com/diversity-statement/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/20b53ee35046b86ab2.html.gz",
+      "sha256": "357edf0c9e146e1bae9690ca1dd751dc89437520b6e50c73c9e6487b9579b21f"
+    }
+  ]
+}

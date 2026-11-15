@@ -1,0 +1,146 @@
+{
+  "name": "Chevron",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Chevron",
+      "url": "https://careers.chevron.com",
+      "final_url": "https://careers.chevron.com/search-jobs/pega/35016/1",
+      "method": "talentbrew_keyword_only",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:42:55+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:42:48+00:00",
+        "configured_url": "https://careers.chevron.com",
+        "details_checked": 0,
+        "final_url": "https://careers.chevron.com/search-jobs/pega/35016/1",
+        "jobs_found": 0,
+        "method": "talentbrew_keyword_only",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://careers.chevron.com/search-jobs",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "talentbrew": true,
+        "url": "https://careers.chevron.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P025",
+  "candidate_urls": [
+    "https://careers.chevron.com",
+    "https://careers.chevron.com/search-jobs/pega/35016/1"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.chevron.com",
+      "checked_at": "2026-11-15T06:17:51.795703+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.chevron.com",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Working at Chevron | Home",
+      "platform_signals": [
+        "Eightfold",
+        "TalentBrew"
+      ],
+      "career_links": [
+        "https://careers.chevron.com#content",
+        "https://careers.chevron.com/",
+        "https://careers.chevron.com/professionals",
+        "https://careers.chevron.com/professionals#global-map",
+        "https://careers.chevron.com/information-technology",
+        "https://careers.chevron.com/operations-maintenance",
+        "https://careers.chevron.com/search-jobs",
+        "https://careers.chevron.com/life-at-chevron",
+        "https://careers.chevron.com/hub",
+        "https://careers.chevron.com/diversity",
+        "https://careers.chevron.com/learning-and-development",
+        "https://careers.chevron.com/benefits",
+        "https://careers.chevron.com/military",
+        "https://careers.chevron.com/alumni",
+        "https://careers.chevron.com/how-we-hire",
+        "https://careers.chevron.com/internship",
+        "https://careers.chevron.com/early-career",
+        "https://careers.chevron.com/events",
+        "https://careers.chevron.com#search-form-fields",
+        "https://careers.chevron.com/en/fraud-alert",
+        "https://careers.chevron.com/sitemap"
+      ],
+      "forms": [
+        {
+          "action": "/search-jobs",
+          "id": "search-form-2aec59da8d"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://chevron.eightfold.ai/careers#upload"
+      ],
+      "evidence_file": "evidence/5a0a9e94935d60eaeb.html.gz",
+      "sha256": "422b8e184b30d3ba2ff86e8d2d9b73fef0e3fcbf1b972bceac4c03bc640816df"
+    },
+    {
+      "requested_url": "https://careers.chevron.com/search-jobs/pega/35016/1",
+      "checked_at": "2026-11-15T06:17:52.497527+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.chevron.com/search-jobs/pega/35016/1",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search our Job Opportunities at Chevron",
+      "platform_signals": [
+        "Eightfold",
+        "TalentBrew"
+      ],
+      "career_links": [
+        "https://careers.chevron.com/search-jobs/pega/35016/1#content",
+        "https://careers.chevron.com/search-jobs/pega/35016/1#search-results-list",
+        "https://careers.chevron.com/search-jobs/pega/35016/1#search-filters",
+        "https://careers.chevron.com/",
+        "https://careers.chevron.com/professionals",
+        "https://careers.chevron.com/professionals#global-map",
+        "https://careers.chevron.com/information-technology",
+        "https://careers.chevron.com/operations-maintenance",
+        "https://careers.chevron.com/search-jobs",
+        "https://careers.chevron.com/life-at-chevron",
+        "https://careers.chevron.com/hub",
+        "https://careers.chevron.com/diversity",
+        "https://careers.chevron.com/learning-and-development",
+        "https://careers.chevron.com/benefits",
+        "https://careers.chevron.com/military",
+        "https://careers.chevron.com/alumni",
+        "https://careers.chevron.com/how-we-hire",
+        "https://careers.chevron.com/internship",
+        "https://careers.chevron.com/early-career",
+        "https://careers.chevron.com/events",
+        "https://careers.chevron.com/search-jobs/pega/35016/1#search-form-fields",
+        "https://careers.chevron.com/en/fraud-alert",
+        "https://careers.chevron.com/search-jobs/peak/35016/1/1",
+        "https://careers.chevron.com/search-jobs/peer/35016/1/1",
+        "https://careers.chevron.com/search-jobs/para/35016/1/1",
+        "https://careers.chevron.com/search-jobs/page/35016/1/1",
+        "https://careers.chevron.com/search-jobs/peci/35016/1/1",
+        "https://careers.chevron.com/sitemap"
+      ],
+      "forms": [
+        {
+          "action": "/search-jobs",
+          "id": "search-form-b09ae9b69a"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://chevron.eightfold.ai/careers#upload"
+      ],
+      "evidence_file": "evidence/c6bfcf73b0003922da.html.gz",
+      "sha256": "8519f807b6110d6c39d37fa154600f5b7fb598bf6b90d3314834893de52ab639"
+    }
+  ]
+}

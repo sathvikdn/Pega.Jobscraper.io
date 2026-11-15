@@ -1,0 +1,189 @@
+{
+  "name": "Standard Chartered",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Standard Chartered",
+      "url": "https://sc.com/careers",
+      "final_url": "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+      "method": "successfactors_rmk_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:13:29+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:13:21+00:00",
+        "configured_url": "https://sc.com/careers",
+        "details_checked": 2,
+        "final_url": "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+        "jobs_found": 1,
+        "method": "successfactors_rmk_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "resolved_destination": "https://jobs.standardchartered.com/?utm_source=careersite",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://sc.com/careers",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Standard Chartered India",
+      "url": "https://www.sc.com/en/global-careers/",
+      "final_url": "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+      "method": "successfactors_rmk_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:30:10+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:29:54+00:00",
+        "configured_url": "https://www.sc.com/en/global-careers/",
+        "details_checked": 2,
+        "final_url": "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+        "jobs_found": 1,
+        "method": "successfactors_rmk_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "resolved_destination": "https://jobs.standardchartered.com/?utm_source=careersite",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://www.sc.com/en/global-careers/",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P103",
+  "candidate_urls": [
+    "https://sc.com/careers",
+    "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+    "https://www.sc.com/en/global-careers/"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://sc.com/careers",
+      "checked_at": "2026-11-15T06:18:46.747453+00:00",
+      "http_status": 200,
+      "final_url": "https://www.sc.com/en/global-careers/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Global career opportunities | Standard CharteredStandard CharteredStandard Chartered",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.sc.com/en/global-careers/#content",
+        "https://www.sc.com/en/global-careers/",
+        "https://www.sc.com/en/global-careers/early-careers/",
+        "https://sc.com/en/global-careers/early-careers/our-programmes/",
+        "https://sc.com/en/global-careers/early-careers/apply/",
+        "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
+        "https://www.sc.com/en/global-careers/experienced-hire/",
+        "https://www.sc.com/en/global-careers/experienced-hire/spotlight-career-opportunities/",
+        "https://www.sc.com/en/global-careers/experienced-hire/hiring-process/",
+        "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=professional_hires&utm_source=careersite",
+        "https://www.sc.com/en/global-careers/business-areas/",
+        "https://www.sc.com/en/global-careers/about-us/",
+        "https://www.sc.com/en/global-careers/our-employee-stories/",
+        "https://sc.com/en/global-careers/join-our-talent-network/",
+        "https://www.sc.com/en/global-careers/about-us/culture-values-and-purpose/",
+        "https://www.sc.com/en/global-careers/about-us/diversity-and-inclusion/",
+        "https://www.sc.com/en/global-careers/about-us/rewards-and-benefits/",
+        "https://www.sc.com/en/global-careers/about-us/career-growth/",
+        "https://www.sc.com/en/global-careers/about-us/life-at-standard-chartered/",
+        "https://jobs.standardchartered.com/?utm_source=careersite"
+      ],
+      "forms": [
+        {
+          "action": "https://www.sc.com/en/",
+          "method": "get"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://s2b.standardchartered.com/cib/cbm/api/static/login"
+      ],
+      "evidence_file": "evidence/3eafb26b03333fb81f.html.gz",
+      "sha256": "7caeb509924e2ad5b5b8e3437efecbcc42b3f5a14ad8f8708270b1dea93a808e"
+    },
+    {
+      "requested_url": "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+      "checked_at": "2026-11-15T06:18:48.442817+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Digital Product Owner Job Details | Standard Chartered Bank",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://jobs.standardchartered.com/content/Cookie-Policy/?locale=en_GB",
+        "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/#content",
+        "https://jobs.standardchartered.com/Home",
+        "https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB/",
+        "https://jobs.standardchartered.com?locale=en_GB",
+        "https://jobs.standardchartered.com?locale=ko_KR",
+        "https://jobs.standardchartered.com/talentcommunity/apply/58037/?locale=en_GB",
+        "https://www.youtube.com/@SCLifeandCareers",
+        "https://uk.linkedin.com/showcase/standard-chartered-life-and-careers/",
+        "https://www.instagram.com/standardcharteredcareers/",
+        "https://www.sc.com/en/global-careers/?utm_source=myRecruiting&utm_campaign=jobsearch&utm_term=careers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://s2b.standardchartered.com/cib/cbm/api/static/login"
+      ],
+      "evidence_file": "evidence/5761dea3a0e45b0348.html.gz",
+      "sha256": "5ae6c356e12f59068238fd354bef349a2854af0ff7e5ebd0e78d00b0ac392a24"
+    },
+    {
+      "requested_url": "https://www.sc.com/en/global-careers/",
+      "checked_at": "2026-11-15T06:18:50.599196+00:00",
+      "http_status": 200,
+      "final_url": "https://www.sc.com/en/global-careers/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Global career opportunities | Standard CharteredStandard CharteredStandard Chartered",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.sc.com/en/global-careers/#content",
+        "https://www.sc.com/en/global-careers/",
+        "https://www.sc.com/en/global-careers/early-careers/",
+        "https://sc.com/en/global-careers/early-careers/our-programmes/",
+        "https://sc.com/en/global-careers/early-careers/apply/",
+        "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
+        "https://www.sc.com/en/global-careers/experienced-hire/",
+        "https://www.sc.com/en/global-careers/experienced-hire/spotlight-career-opportunities/",
+        "https://www.sc.com/en/global-careers/experienced-hire/hiring-process/",
+        "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=professional_hires&utm_source=careersite",
+        "https://www.sc.com/en/global-careers/business-areas/",
+        "https://www.sc.com/en/global-careers/about-us/",
+        "https://www.sc.com/en/global-careers/our-employee-stories/",
+        "https://sc.com/en/global-careers/join-our-talent-network/",
+        "https://www.sc.com/en/global-careers/about-us/culture-values-and-purpose/",
+        "https://www.sc.com/en/global-careers/about-us/diversity-and-inclusion/",
+        "https://www.sc.com/en/global-careers/about-us/rewards-and-benefits/",
+        "https://www.sc.com/en/global-careers/about-us/career-growth/",
+        "https://www.sc.com/en/global-careers/about-us/life-at-standard-chartered/",
+        "https://jobs.standardchartered.com/?utm_source=careersite"
+      ],
+      "forms": [
+        {
+          "action": "https://www.sc.com/en/",
+          "method": "get"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://s2b.standardchartered.com/cib/cbm/api/static/login"
+      ],
+      "evidence_file": "evidence/429bf8b9da583ae08b.html.gz",
+      "sha256": "5dda9ff46bc6060ea97cdfb27141c4faff7b5d06ea71cf625bdeee3a6aef9d64"
+    }
+  ]
+}

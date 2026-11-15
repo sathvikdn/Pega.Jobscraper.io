@@ -1,0 +1,115 @@
+{
+  "name": "NatWest Group",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "NatWest Group",
+      "url": "https://jobs.natwestgroup.com",
+      "final_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:14:47+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:14:45+00:00",
+        "configured_url": "https://jobs.natwestgroup.com",
+        "final_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "partial": false,
+        "resolved_destination": "https://rbs.wd3.myworkdayjobs.com/RBS",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.natwestgroup.com",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday_cxs": {
+          "jobs_found": 0,
+          "pages": 1,
+          "partial": false,
+          "returned": 0,
+          "search_url": "https://rbs.wd3.myworkdayjobs.com/wday/cxs/rbs/RBS/jobs",
+          "site": "RBS",
+          "source": "workday_cxs",
+          "tenant": "rbs",
+          "total": 0,
+          "verified_empty": true,
+          "verified_search": true,
+          "workday": true
+        }
+      }
+    },
+    {
+      "old_company": "NatWest Group India",
+      "url": "https://jobs.natwestgroup.com",
+      "final_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:37:03+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:37:02+00:00",
+        "configured_url": "https://jobs.natwestgroup.com",
+        "final_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "partial": false,
+        "resolved_destination": "https://rbs.wd3.myworkdayjobs.com/RBS",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.natwestgroup.com",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday_cxs": {
+          "jobs_found": 0,
+          "pages": 1,
+          "partial": false,
+          "returned": 0,
+          "search_url": "https://rbs.wd3.myworkdayjobs.com/wday/cxs/rbs/RBS/jobs",
+          "site": "RBS",
+          "source": "workday_cxs",
+          "tenant": "rbs",
+          "total": 0,
+          "verified_empty": true,
+          "verified_search": true,
+          "workday": true
+        }
+      }
+    }
+  ],
+  "id": "P082",
+  "candidate_urls": [
+    "https://jobs.natwestgroup.com",
+    "https://rbs.wd3.myworkdayjobs.com/RBS"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.natwestgroup.com",
+      "checked_at": "2026-11-15T06:18:31.919218+00:00",
+      "http_status": 403,
+      "final_url": "https://jobs.natwestgroup.com",
+      "outcome": "access refused"
+    },
+    {
+      "requested_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+      "checked_at": "2026-11-15T06:18:32.499285+00:00",
+      "http_status": 200,
+      "final_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/b66d4a29ea523f2c85.html.gz",
+      "sha256": "a8d94fb7d21567e32c23f7a3514a7966e04eb7e0db427e805fb207aed606efbc"
+    }
+  ]
+}

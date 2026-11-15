@@ -1,0 +1,200 @@
+{
+  "name": "ExxonMobil",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "ExxonMobil India",
+      "url": "https://jobs.exxonmobil.com",
+      "final_url": "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:36:50+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:36:40+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://jobs.exxonmobil.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "ExxonMobil",
+      "url": "https://jobs.exxonmobil.com",
+      "final_url": "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:43:05+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:42:55+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://jobs.exxonmobil.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P043",
+  "candidate_urls": [
+    "https://jobs.exxonmobil.com",
+    "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.exxonmobil.com",
+      "checked_at": "2026-11-15T06:18:09.999636+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.exxonmobil.com",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at ExxonMobil",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://jobs.exxonmobil.com#content",
+        "https://jobs.exxonmobil.com/",
+        "https://jobs.exxonmobil.com",
+        "https://jobs.exxonmobil.com/go/Commercial-and-business/3840000/",
+        "https://jobs.exxonmobil.com/go/Engineering/3845600/",
+        "https://jobs.exxonmobil.com/go/Finance%2C-accounting-and-tax/3837300/",
+        "https://jobs.exxonmobil.com/go/Geoscience/3842900/",
+        "https://jobs.exxonmobil.com/go/Human-Resources/3845100/",
+        "https://jobs.exxonmobil.com/go/Information-Technology/3839100/",
+        "https://jobs.exxonmobil.com/go/Law/3910000/",
+        "https://jobs.exxonmobil.com/go/Low-Carbon-Solutions/9309600/",
+        "https://jobs.exxonmobil.com/go/Operations/3837900/",
+        "https://jobs.exxonmobil.com/go/Project-Management/3843200/",
+        "https://jobs.exxonmobil.com/go/Public-and-government-affairs/9326700/",
+        "https://jobs.exxonmobil.com/go/Research-and-technology/3844500/",
+        "https://jobs.exxonmobil.com/go/Safety%2C-security%2C-health-and-environment/3839700/",
+        "https://jobs.exxonmobil.com/go/Supply-Chain/9595300/",
+        "https://jobs.exxonmobil.com/go/Technical-and-administrative-support/3838100/",
+        "https://jobs.exxonmobil.com/go/Trading/9512600/",
+        "https://jobs.exxonmobil.com/?locale=de_DE",
+        "https://jobs.exxonmobil.com/?locale=en_US",
+        "https://jobs.exxonmobil.com/?locale=es_MX",
+        "https://jobs.exxonmobil.com/?locale=fr_FR",
+        "https://jobs.exxonmobil.com/?locale=it_IT",
+        "https://jobs.exxonmobil.com/?locale=nl_NL",
+        "https://jobs.exxonmobil.com/?locale=no_NO",
+        "https://jobs.exxonmobil.com/?locale=pt_BR",
+        "https://jobs.exxonmobil.com/?locale=ru_RU",
+        "https://jobs.exxonmobil.com/?locale=zh_CN",
+        "https://corporate.exxonmobil.com/careers",
+        "https://exxonmobil.raiserecruiting.com/?utm_source=EMcareersite",
+        "https://jobs.exxonmobil.com#cookieManagerModal"
+      ],
+      "forms": [
+        {
+          "action": "https://career4.successfactors.com/career?site=&company=exxonmobilP&lang=en%5FUS&login_ns=register&career_ns=home&navBarLevel=MY_PROFILE",
+          "method": "post"
+        },
+        {
+          "action": "/search/",
+          "method": "get"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/3af187672b54fe3b92.html.gz",
+      "sha256": "65830f81b4d13ab4ee398dd0d8bb66f7707135b0237779b4ae6796c2f72c72a2"
+    },
+    {
+      "requested_url": "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=",
+      "checked_at": "2026-11-15T06:18:12.211234+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Pega - ExxonMobil Jobs",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=#content",
+        "https://jobs.exxonmobil.com/",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=",
+        "https://jobs.exxonmobil.com/go/Commercial-and-business/3840000/",
+        "https://jobs.exxonmobil.com/go/Engineering/3845600/",
+        "https://jobs.exxonmobil.com/go/Finance%2C-accounting-and-tax/3837300/",
+        "https://jobs.exxonmobil.com/go/Geoscience/3842900/",
+        "https://jobs.exxonmobil.com/go/Human-Resources/3845100/",
+        "https://jobs.exxonmobil.com/go/Information-Technology/3839100/",
+        "https://jobs.exxonmobil.com/go/Law/3910000/",
+        "https://jobs.exxonmobil.com/go/Low-Carbon-Solutions/9309600/",
+        "https://jobs.exxonmobil.com/go/Operations/3837900/",
+        "https://jobs.exxonmobil.com/go/Project-Management/3843200/",
+        "https://jobs.exxonmobil.com/go/Public-and-government-affairs/9326700/",
+        "https://jobs.exxonmobil.com/go/Research-and-technology/3844500/",
+        "https://jobs.exxonmobil.com/go/Safety%2C-security%2C-health-and-environment/3839700/",
+        "https://jobs.exxonmobil.com/go/Supply-Chain/9595300/",
+        "https://jobs.exxonmobil.com/go/Technical-and-administrative-support/3838100/",
+        "https://jobs.exxonmobil.com/go/Trading/9512600/",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=de_DE",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=en_US",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=es_MX",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=fr_FR",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=it_IT",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=nl_NL",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=no_NO",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=pt_BR",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=ru_RU",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=&locale=zh_CN",
+        "https://jobs.exxonmobil.com/search/?q=pega&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+        "https://jobs.exxonmobil.com/search/?q=pega&sortColumn=sort_location&sortDirection=desc#hdrLocationButton",
+        "https://jobs.exxonmobil.com/search/?q=pega&sortColumn=sort_department&sortDirection=desc#hdrDepartmentButton",
+        "https://jobs.exxonmobil.com/search/?q=pega&sortColumn=sort_shifttype&sortDirection=desc#hdrShifttypeButton",
+        "https://jobs.exxonmobil.com/search/?q=pega&sortColumn=referencedate&sortDirection=desc#hdrDateButton",
+        "https://jobs.exxonmobil.com/job/Curitiba-Supply-Chain-Professional-PR-80420-000/1421183300/",
+        "https://jobs.exxonmobil.com/job/Singapore-Quantitative-Analyst-Lead%2C-V&S-LNG-98633/1411113600/",
+        "https://jobs.exxonmobil.com/job/Spring-Natural-Gas-Trader%2C-Texas-TX-77389/1390051900/",
+        "https://jobs.exxonmobil.com/job/Edmonton-Principal-Mine-Tailings-and-Closure-AB-T6B-2T4/1421144000/",
+        "https://jobs.exxonmobil.com/job/Spring-Experienced-Unconventional-Reservoir-Engineer-TX-77389/1421283900/",
+        "https://jobs.exxonmobil.com/job/Spring-GPCM-Natural-Gas-Modeling-Sr_-Analyst-TX-77389/1411057400/",
+        "https://jobs.exxonmobil.com/job/Singapore-Quantitative-Analyst-Trading-Strategies%2C-Gas-&-Power-98633/1411237300/",
+        "https://jobs.exxonmobil.com/job/Shanghai-Formulation-Development-Engineer-SH-200241/1440748200/",
+        "https://jobs.exxonmobil.com/job/Spring-Valuation-and-Structuring-Quant-Analyst%2C-LNG-TX-77389/1411098300/",
+        "https://jobs.exxonmobil.com/job/Baton-Rouge-Environmental-Coordinator-LA-70805/1411177000/",
+        "https://corporate.exxonmobil.com/careers",
+        "https://jobs.exxonmobil.com/search/?q=pega&startrow=0&locationsearch=#cookieManagerModal"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/talentcommunity/subscribe/?locale=en_US&keywords=",
+          "method": "POST",
+          "id": "emailsubscribe"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/783d7b5ca19fcec86a.html.gz",
+      "sha256": "8b68574b1376c3490ef01a1700b36ea183dd2f42804c1c9c2fffe30face515de"
+    }
+  ]
+}

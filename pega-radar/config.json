@@ -1,0 +1,48 @@
+{
+  "profile": {
+    "name": "Sathvik",
+    "career_start": "2022-08-01",
+    "city": "Bengaluru",
+    "certifications": ["CSSA"],
+    "target_lpa": 30,
+    "current_employer": "Mercedes-Benz"
+  },
+  "focus": {
+    "cities_first": ["Bengaluru"],
+    "employer_types_first": ["product", "gcc"]
+  },
+  "linkedin": {
+    "keywords": [
+      "pega",
+      "\"pega\" OR \"PRPC\" OR \"pegasystems\"",
+      "pega developer",
+      "pega architect",
+      "pega senior system architect",
+      "pega CSSA",
+      "pega lead",
+      "pega CDH decisioning",
+      "pega engineer"
+    ],
+    "other_cities": [
+      "Hyderabad, Telangana, India",
+      "Pune, Maharashtra, India",
+      "Chennai, Tamil Nadu, India",
+      "Mumbai, Maharashtra, India",
+      "Gurugram, Haryana, India",
+      "Noida, Uttar Pradesh, India",
+      "Kolkata, West Bengal, India"
+    ],
+    "detail_budget": 300,
+    "pacing_seconds": 1.0
+  },
+  "scan": {
+    "minutes": 40,
+    "workers": 6
+  },
+  "server": {
+    "port": 8765
+  },
+  "http": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+  }
+}

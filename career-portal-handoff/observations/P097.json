@@ -1,0 +1,131 @@
+{
+  "name": "Roche",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Roche India",
+      "url": "https://roche.com/careers",
+      "final_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/login",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:17:16+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:17:00+00:00",
+        "final_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/login",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 0,
+            "search_url": "https://roche.wd3.myworkdayjobs.com/wday/cxs/roche/roche-ext/jobs",
+            "site": "roche-ext",
+            "source": "workday_cxs",
+            "tenant": "roche",
+            "total": 0,
+            "verified_empty": true,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "published_search_destination": "https://careers.roche.com/global/en/search-results",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://roche.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P097",
+  "candidate_urls": [
+    "https://roche.com/careers",
+    "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/login"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://roche.com/careers",
+      "checked_at": "2026-11-15T06:18:43.857655+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.roche.com/global/en",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at Roche | Roche jobs",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://careers.roche.com/global/search-results",
+        "https://careers.roche.com/",
+        "https://careers.roche.com/global/en/area-of-expertise",
+        "https://careers.roche.com/global/en/why-join-us",
+        "https://careers.roche.com/global/en/student-and-graduate-programs",
+        "https://careers.roche.com/global/en/we-are-roche",
+        "https://careers.roche.com/global/en/c/information-technology-jobs",
+        "https://careers.roche.com/global/en/dach-region-jobs",
+        "https://careers.roche.com/global/en/roche-business-process-management",
+        "https://careers.roche.com/global/en/rewards-recognition",
+        "https://careers.roche.com/global/en/perspectives-programs",
+        "https://careers.roche.com/global/en/search-results",
+        "https://careers.roche.com/global/en/inclusion-belonging",
+        "https://careers.roche.com/global/{{oneTrust}}",
+        "https://careers.roche.com/global/en/emailpersonalinfo",
+        "https://careers.roche.com/global/en/step-by-step-guide-to-follow-roche-on-wechat"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/caf61d2e208a828eae.html.gz",
+      "sha256": "27392ac9f0c5d200cbbfa3fd8f01c1785189b35d820b750dbb0994f4fbe5cffc"
+    },
+    {
+      "requested_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/login",
+      "checked_at": "2026-11-15T06:18:46.795027+00:00",
+      "http_status": 200,
+      "final_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/login",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [
+        "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"mailto:global.privacy@roche.com\\\"",
+        "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"https:/www.roche.com/cookie-notice?_ga=2.115690310.1146705795.1649057807-654220736.1629107025\\\"",
+        "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"https:/www.roche.com/worldwide#popular\\\"",
+        "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"https:/www.roche.com/ccpa-privacy-notice\\\"",
+        "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"https:/www.gene.com/privacy-policy/full-privacy-policy/ccpa-privacy-notice\\\""
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/31f0d0154b75255935.html.gz",
+      "sha256": "28ce393196b132ee43e7d421722e87e7878e458898ecc284baa4147b1f4002e0"
+    },
+    {
+      "requested_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"mailto:global.privacy@roche.com\\\"",
+      "checked_at": "2026-11-15T06:18:48.431126+00:00",
+      "http_status": 400,
+      "final_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"mailto:global.privacy@roche.com\\\"",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"https:/www.roche.com/cookie-notice?_ga=2.115690310.1146705795.1649057807-654220736.1629107025\\\"",
+      "checked_at": "2026-11-15T06:18:49.509039+00:00",
+      "http_status": 400,
+      "final_url": "https://roche.wd3.myworkdayjobs.com/en-US/roche-ext/\\\"https:/www.roche.com/cookie-notice?_ga=2.115690310.1146705795.1649057807-654220736.1629107025\\\"",
+      "outcome": "HTTP error"
+    }
+  ]
+}

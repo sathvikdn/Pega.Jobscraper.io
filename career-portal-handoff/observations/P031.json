@@ -1,0 +1,76 @@
+{
+  "name": "Conduent",
+  "scope": "current registry lacks adapter",
+  "type": "services",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Conduent India",
+      "url": "https://jobs.conduent.com",
+      "final_url": "https://careers.conduent.com/us/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:26:52+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:26:44+00:00",
+        "configured_url": "https://jobs.conduent.com",
+        "details_checked": 0,
+        "final_url": "https://careers.conduent.com/us/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "resolved_destination": "https://careers.conduent.com/us/en/search-results?keywords=pega",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.conduent.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P031",
+  "candidate_urls": [
+    "https://jobs.conduent.com",
+    "https://careers.conduent.com/us/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.conduent.com",
+      "checked_at": "2026-11-15T06:17:58.123426+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://careers.conduent.com/us/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:17:58.881418+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.conduent.com/us/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search results | Find available job openings at Conduent",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://careers.conduent.com/us/en/home",
+        "https://careers.conduent.com/us/en/internship-program",
+        "https://careers.conduent.com/us/en/{{trustArc}}",
+        "https://careers.conduent.com/us/en/emailpersonalinfo",
+        "https://careers.conduent.com/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/adfbc467fda5b89a40.html.gz",
+      "sha256": "c56b84fc456a1c75fb3b77a65dcf8cbdbc6eb87e26d2c67f63cb256786817026"
+    }
+  ]
+}

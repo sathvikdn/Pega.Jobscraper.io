@@ -1,0 +1,101 @@
+{
+  "name": "Orange Business",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Orange Business",
+      "url": "https://www.orange-business.com/en/careers",
+      "final_url": "https://orange.jobs/gb/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:17:50+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:17:42+00:00",
+        "configured_url": "https://www.orange-business.com/en/careers",
+        "details_checked": 0,
+        "final_url": "https://orange.jobs/gb/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://orange.jobs/gb/en/search-results",
+        "reported_total": 0,
+        "resolved_destination": "https://orange.jobs/gb/en",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.orange-business.com/en/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P087",
+  "candidate_urls": [
+    "https://www.orange-business.com/en/careers",
+    "https://orange.jobs/gb/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.orange-business.com/en/careers",
+      "checked_at": "2026-11-15T06:18:36.433920+00:00",
+      "http_status": 200,
+      "final_url": "https://www.orange-business.com/en",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Your partner for digital transformation | Orange Business",
+      "platform_signals": [
+        "Drupal"
+      ],
+      "career_links": [
+        "https://orange.jobs/site/en-home/",
+        "https://www.orange-business.com/en/corporate/careers"
+      ],
+      "forms": [
+        {},
+        {
+          "action": "/en",
+          "method": "post",
+          "id": "oab-algolia-search-base-block-form"
+        },
+        {
+          "action": "/en",
+          "method": "post",
+          "id": "oab-algolia-search-base-block-form"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/d4b866344e46bda1fb.html.gz",
+      "sha256": "3567b13eb9f7dd90d00769b459883c49ea53d903cd6aaab2b52c58b5bb7f72d9"
+    },
+    {
+      "requested_url": "https://orange.jobs/gb/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:38.690998+00:00",
+      "http_status": 200,
+      "final_url": "https://orange.jobs/gb/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Find your next job at Orange | Orange JobsSearch results | Find available job openings at orange",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://orange.jobs/",
+        "https://orange.jobs/gb/en/join-talent-community"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/9274d619b84cc6c5a3.html.gz",
+      "sha256": "d91c630bff9282fbe2b55745c2e13894c256db901ce4c0314a4f3053b81b972e"
+    }
+  ]
+}

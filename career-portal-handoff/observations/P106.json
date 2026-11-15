@@ -1,0 +1,117 @@
+{
+  "name": "Tesco",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Tesco Bengaluru",
+      "url": "https://tescoplc.com/careers",
+      "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "method": "avature_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:12:45+00:00",
+      "diagnostic": {
+        "avature": true,
+        "checked_at": "2026-11-13T19:12:30+00:00",
+        "configured_url": "https://tescoplc.com/careers",
+        "details_checked": 0,
+        "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+        "jobs_found": 0,
+        "method": "avature_search",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://careers.tesco.com/careers/SearchJobs",
+        "reported_total": 0,
+        "resolved_destination": "https://tesco.avature.net/en_GB/careersmarketplace/SearchJobs",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://tescoplc.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Tesco Bengaluru",
+      "url": "https://tescoplc.com/careers",
+      "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "method": "avature_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:23:15+00:00",
+      "diagnostic": {
+        "avature": true,
+        "checked_at": "2026-11-13T19:12:30+00:00",
+        "configured_url": "https://tescoplc.com/careers",
+        "details_checked": 0,
+        "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+        "jobs_found": 0,
+        "method": "avature_search",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://careers.tesco.com/careers/SearchJobs",
+        "reported_total": 0,
+        "resolved_destination": "https://tesco.avature.net/en_GB/careersmarketplace/SearchJobs",
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://tescoplc.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P106",
+  "candidate_urls": [
+    "https://tescoplc.com/careers",
+    "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://tescoplc.com/careers",
+      "checked_at": "2026-11-15T06:18:49.817338+00:00",
+      "http_status": 403,
+      "final_url": "https://tescoplc.com/careers",
+      "outcome": "access refused"
+    },
+    {
+      "requested_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "checked_at": "2026-11-15T06:18:50.578417+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Job Search | Tesco Careers",
+      "platform_signals": [],
+      "career_links": [
+        "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega#main",
+        "https://www.tesco.com/careers",
+        "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+        "https://careers.tesco.com/en_GB/careers/SearchJobs",
+        "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+        "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+        "https://careers.tesco.com/sk_SK/careers/SearchJobs?semanticSearch=pega",
+        "https://careers.tesco.com/en_GB/careers/Login?semanticSearch=pega",
+        "https://careers.tesco.com/en_GB/careers/TalentCommunity",
+        "https://careers.tesco.com/en_GB/careers/RegisterJobAlerts",
+        "https://www.tesco.com/careers/terms-and-conditions",
+        "https://www.tesco.com/careers/cookies",
+        "https://www.tesco.com/careers/privacy-policy",
+        "https://www.tesco.com/careers/sitemap",
+        "https://www.tesco.com/careers/accessibility",
+        "https://www.tesco.com/careers/faqs-about-working-at-tesco",
+        "https://careers.tesco.com/careers/SearchJobs"
+      ],
+      "forms": [
+        {
+          "action": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "method": "post",
+          "id": "tpt_jobSortableForm"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/bb8327f8510d4d532a.html.gz",
+      "sha256": "a31552c9c65c0fb0c47a44c0dc93f595c2eb897c7cf80623b7e62fa4ccf0e9d4"
+    }
+  ]
+}

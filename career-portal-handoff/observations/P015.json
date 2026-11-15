@@ -1,0 +1,53 @@
+{
+  "name": "BMW Financial Services",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "BMW Financial Services",
+      "url": "https://www.bmwgroup.jobs",
+      "final_url": "https://www.bmwgroup.jobs/en.html",
+      "method": "bmw_jobfinder_table",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:38:00+00:00",
+      "diagnostic": {
+        "bmw": true,
+        "checked_at": "2026-11-13T19:37:54+00:00",
+        "details_checked": 0,
+        "final_url": "https://www.bmwgroup.jobs/en.html",
+        "jobs_found": 0,
+        "method": "bmw_jobfinder_table",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.bmwgroup.jobs",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P015",
+  "candidate_urls": [
+    "https://www.bmwgroup.jobs",
+    "https://www.bmwgroup.jobs/en.html"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.bmwgroup.jobs",
+      "checked_at": "2026-11-15T06:17:44.321994+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "The read operation timed out"
+    },
+    {
+      "requested_url": "https://www.bmwgroup.jobs/en.html",
+      "checked_at": "2026-11-15T06:17:58.853157+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "The read operation timed out"
+    }
+  ]
+}

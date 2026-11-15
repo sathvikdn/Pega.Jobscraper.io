@@ -1,0 +1,75 @@
+{
+  "name": "Proximus",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Proximus",
+      "url": "https://www.proximus.com/careers.html",
+      "final_url": "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:17:57+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:17:50+00:00",
+        "configured_url": "https://www.proximus.com/careers.html",
+        "details_checked": 0,
+        "final_url": "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "resolved_destination": "https://jobs.proximus.com/be/en",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.proximus.com/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P092",
+  "candidate_urls": [
+    "https://www.proximus.com/careers.html",
+    "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.proximus.com/careers.html",
+      "checked_at": "2026-11-15T06:18:39.725861+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:40.801136+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "pega job openings at Proximus",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://jobs.proximus.com/be/en/home",
+        "https://jobs.proximus.com/",
+        "https://jobs.proximus.com/be/en/emailpersonalinfo",
+        "https://jobs.proximus.com/be/en/{oneTrust}"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/6f237926d05a5c8aab.html.gz",
+      "sha256": "fff60d5981aa571b89d32c78525cc486536e664aba6b3255a856084e4d0d6108"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "name": "Novartis",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Novartis India",
+      "url": "https://www.novartis.com/careers",
+      "final_url": "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit",
+      "method": "novartis_career_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:22:17+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:22:03+00:00",
+        "details_checked": 0,
+        "final_url": "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit",
+        "jobs_found": 0,
+        "method": "novartis_career_search",
+        "novartis": true,
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://www.novartis.com/careers/career-search",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.novartis.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P085",
+  "candidate_urls": [
+    "https://www.novartis.com/careers",
+    "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.novartis.com/careers",
+      "checked_at": "2026-11-15T06:18:35.262008+00:00",
+      "http_status": 200,
+      "final_url": "https://www.novartis.com/careers",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers | Novartis",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.novartis.com/careers#main",
+        "https://www.novartis.com/careers#international",
+        "https://www.novartis.com/careers#americas",
+        "https://www.novartis.com/careers#asia-pacific",
+        "https://www.novartis.com/careers#europe",
+        "https://www.novartis.com/careers#middle-east---africa",
+        "https://www.novartis.com/careers",
+        "https://www.novartis.com/careers/career-search",
+        "https://www.novartis.com/careers/our-business-functions",
+        "https://www.novartis.com/careers/our-business-functions/careers-research-and-development",
+        "https://www.novartis.com/careers/our-business-functions/careers-operations",
+        "https://www.novartis.com/careers/our-business-functions/careers-commercial-and-sales",
+        "https://www.novartis.com/careers/our-business-functions/careers-global-functions",
+        "https://www.novartis.com/careers/why-novartis",
+        "https://www.novartis.com/careers/career-hub",
+        "https://www.novartis.com/careers/early-careers",
+        "https://www.novartis.com/careers/early-careers/graduates",
+        "https://www.novartis.com/careers/early-careers/students",
+        "https://www.novartis.com/careers/early-careers/us-biomedical-research-internship-programs",
+        "https://www.novartis.com/careers/early-careers/community-exploration-and-learning-lab-cell",
+        "https://www.novartis.com/careers/career-search?field_job_posted_date=All",
+        "https://www.novartis.com/careers/career-search?field_job_posted_date=1",
+        "https://www.novartis.com/careers/career-search?field_job_posted_date=2",
+        "https://www.novartis.com/careers/career-search?field_job_posted_date=3",
+        "https://www.novartis.com/careers/career-search?field_job_posted_date=4",
+        "https://www.novartis.com/careers#paragraph--434321",
+        "https://www.novartis.com/stories/sometimes-best-career-plans-are-ones-you-never-made",
+        "https://www.novartis.com/stories/patient-who-changed-course-my-career",
+        "https://www.novartis.com/stories/turning-personal-experience-purpose-driven-careers",
+        "https://www.novartis.com/stories/balancing-family-life-legal-career",
+        "https://www.facebook.com/novartiscareers",
+        "https://www.instagram.com/novartiscareers/",
+        "https://www.novartis.com/careers#cookie-settings-button"
+      ],
+      "forms": [
+        {
+          "action": "/search",
+          "method": "get",
+          "id": "views-exposed-form-global-search-global-search"
+        },
+        {
+          "action": "/careers/career-search",
+          "method": "get",
+          "id": "search-listing-filter-form"
+        },
+        {
+          "action": "/search",
+          "method": "get",
+          "id": "search-block-form"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/da6cb811058c92ba96.html.gz",
+      "sha256": "b0c4773e3fd89bde8cf96ea4392e021dc889a2fef6da5eeb2b0cc9d8f0403edb"
+    },
+    {
+      "requested_url": "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit",
+      "checked_at": "2026-11-15T06:18:37.512825+00:00",
+      "http_status": 200,
+      "final_url": "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Career Search | Novartis",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit#main",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit#international",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit#americas",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit#asia-pacific",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit#europe",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit#middle-east---africa",
+        "https://www.novartis.com/careers",
+        "https://www.novartis.com/careers/career-search",
+        "https://www.novartis.com/careers/our-business-functions",
+        "https://www.novartis.com/careers/our-business-functions/careers-research-and-development",
+        "https://www.novartis.com/careers/our-business-functions/careers-operations",
+        "https://www.novartis.com/careers/our-business-functions/careers-commercial-and-sales",
+        "https://www.novartis.com/careers/our-business-functions/careers-global-functions",
+        "https://www.novartis.com/careers/why-novartis",
+        "https://www.novartis.com/careers/career-hub",
+        "https://www.novartis.com/careers/early-careers",
+        "https://www.novartis.com/careers/early-careers/graduates",
+        "https://www.novartis.com/careers/early-careers/students",
+        "https://www.novartis.com/careers/early-careers/us-biomedical-research-internship-programs",
+        "https://www.novartis.com/careers/early-careers/community-exploration-and-learning-lab-cell",
+        "https://www.novartis.com/careers/career-search/notice-all-applicants-us-job-openings",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=1&op=Submit",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=2&op=Submit",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=3&op=Submit",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=4&op=Submit",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit&sort=asc&order=Job%20Title",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit&sort=asc&order=Business",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit&sort=asc&order=Site",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit&sort=asc&order=Date%20Posted",
+        "https://www.novartis.com/careers/career-search?search_api_fulltext=pega&field_job_posted_date=All&op=Submit#cookie-settings-button"
+      ],
+      "forms": [
+        {
+          "action": "/search",
+          "method": "get",
+          "id": "views-exposed-form-global-search-global-search"
+        },
+        {
+          "action": "/careers/career-search",
+          "method": "get",
+          "id": "search-listing-filter-form"
+        },
+        {
+          "action": "/search",
+          "method": "get",
+          "id": "search-block-form"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/cdae3627034938d33a.html.gz",
+      "sha256": "fc9880a280406d4080d39898d19994ec89806357d57f11fde4b6eb287c3957be"
+    }
+  ]
+}

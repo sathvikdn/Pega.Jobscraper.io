@@ -1,0 +1,107 @@
+{
+  "name": "PNC",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "PNC India",
+      "url": "https://careers.pnc.com",
+      "final_url": "https://pnc.wd5.myworkdayjobs.com/External/login",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:21:20+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:20:59+00:00",
+        "final_url": "https://pnc.wd5.myworkdayjobs.com/External/login",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 2,
+            "search_url": "https://pnc.wd5.myworkdayjobs.com/wday/cxs/pnc/External/jobs",
+            "site": "External",
+            "source": "workday_cxs",
+            "tenant": "pnc",
+            "total": 2,
+            "verified_empty": false,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "published_search_destination": "https://careers.pnc.com/global/en/search-results",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://careers.pnc.com",
+        "verified_empty": false,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P090",
+  "candidate_urls": [
+    "https://careers.pnc.com",
+    "https://pnc.wd5.myworkdayjobs.com/External/login"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.pnc.com",
+      "checked_at": "2026-11-15T06:18:38.121670+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.pnc.com/global/en",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "PNC Careers",
+      "platform_signals": [
+        "Phenom",
+        "Beamery"
+      ],
+      "career_links": [
+        "https://careers.pnc.com/global/search-results",
+        "https://careers.pnc.com/global/en/home",
+        "https://careers.pnc.com/global/en/culture",
+        "https://careers.pnc.com/global/en/talent-outreach",
+        "https://careers.pnc.com/global/en/employee-benefits",
+        "https://careers.pnc.com/global/en/our-hiring-process",
+        "https://careers.pnc.com/global/en/students",
+        "https://careers.pnc.com/global/en/search-results",
+        "https://content.pncmc.com/live/pnc/aboutus/recruiting/PNC_EO_AASection_503_and_VEVRAA_Policy.pdf",
+        "https://careers.pnc.com/global/en/emailpersonalinfo",
+        "https://careers.pnc.com/global/en/cookiesettings"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/40c0f942c7860e510d.html.gz",
+      "sha256": "8fecbcaecd03a3ef4e484214d69dbfe38622878fb7b6696a6f7ffd9040789566"
+    },
+    {
+      "requested_url": "https://pnc.wd5.myworkdayjobs.com/External/login",
+      "checked_at": "2026-11-15T06:18:43.281388+00:00",
+      "http_status": 200,
+      "final_url": "https://pnc.wd5.myworkdayjobs.com/External/login",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/86a99a969358391736.html.gz",
+      "sha256": "43b67f5d02f8d7c077b93efa91dff4fee1710176279eafc8cd529a13b7f6a406"
+    }
+  ]
+}

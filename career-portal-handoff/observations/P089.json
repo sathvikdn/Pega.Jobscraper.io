@@ -1,0 +1,129 @@
+{
+  "name": "PepsiCo",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "PepsiCo India",
+      "url": "https://www.pepsicojobs.com",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:27:49+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:27:48+00:00",
+        "error": "Navigation failed: Source returned HTTP 403",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.pepsicojobs.com"
+      }
+    }
+  ],
+  "id": "P089",
+  "candidate_urls": [
+    "https://www.pepsicojobs.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.pepsicojobs.com",
+      "checked_at": "2026-11-15T06:18:37.509132+00:00",
+      "http_status": 200,
+      "final_url": "https://www.pepsicojobs.com/main/",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "PepsiCo CareersSearch button iconFacebookInstagramYoutubeTiktokGlassdoorLinkedInIndeedHandshake",
+      "platform_signals": [
+        "Avature",
+        "iCIMS",
+        "Paradox"
+      ],
+      "career_links": [
+        "https://www.pepsicojobs.com/main",
+        "https://www.pepsicojobs.com/careerareas",
+        "https://www.pepsicojobs.com/main/careerareas/business",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Administration",
+        "https://www.pepsicojobs.com/main/jobs?categories=Health%20%26%20Safety",
+        "https://www.pepsicojobs.com/main/jobs?categories=HR",
+        "https://www.pepsicojobs.com/main/careerareas/financelegal",
+        "https://www.pepsicojobs.com/main/jobs?keywords=audit,%20accounting,%20tax,%20treasury",
+        "https://www.pepsicojobs.com/main/jobs?categories=Finance",
+        "https://www.pepsicojobs.com/main/jobs?categories=Legal%7CRisk",
+        "https://www.pepsicojobs.com/main/jobs?categories=Global%20Procurement",
+        "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+        "https://www.pepsicojobs.com/main/jobs?keywords=science",
+        "https://www.pepsicojobs.com/main/jobs?keywords=product%20engineer",
+        "https://www.pepsicojobs.com/main/jobs?keywords=packaging%20engineer",
+        "https://www.pepsicojobs.com/main/jobs?keywords=research%20analytics&sortBy=relevance&page=1",
+        "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Cybersecurity",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Data%20Science%20%26%20Analytics",
+        "https://www.pepsicojobs.com/main/jobs?keywords=eCommerce",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Information%20Technology",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Project%20Management,%20Product%20Management",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Software%20Engineer",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Strategy",
+        "https://www.pepsicojobs.com/main/jobs?categories=Transformation",
+        "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+        "https://www.pepsicojobs.com/main/jobs?categories=Communications",
+        "https://www.pepsicojobs.com/main/jobs?categories=Design",
+        "https://www.pepsicojobs.com/main/jobs?categories=Marketing",
+        "https://www.pepsicojobs.com/main/jobs?keywords=Marketing%20Analytics",
+        "https://www.pepsicojobs.com/main/jobs?categories=Sales",
+        "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+        "https://www.pepsicojobs.com/main/jobs?categories=Supply%20Chain",
+        "https://www.pepsicojobs.com/main/jobs?keywords=transportation,%20logistics",
+        "https://www.pepsicojobs.com/main/jobs?keywords=warehouse",
+        "https://www.pepsicojobs.com/main/jobs?keywords=maintenance,%20security",
+        "https://www.pepsicojobs.com/main/jobs?keywords=safety",
+        "https://www.pepsicojobs.com/main/jobs?keywords=production",
+        "https://www.pepsicojobs.com/main/careerareas/ushourly",
+        "https://www.pepsicojobs.com/main/",
+        "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Manufacturing%20%26%20Warehouse&page=1",
+        "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Distribution%20%26%20Delivery&page=1",
+        "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Sales%20%26%20Merchandising&page=1",
+        "https://www.pepsicojobs.com/our-locations",
+        "https://www.pepsicojobs.com/main/our-locations/northamerica",
+        "https://www.pepsicojobs.com/main/our-locations/northamerica/unitedstates",
+        "https://www.pepsicojobs.com/main/our-locations/northamerica/canada",
+        "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+        "https://www.pepsicojobs.com/southerncone",
+        "https://www.pepsicojobs.com/main/jobs?country=Bolivia",
+        "https://www.pepsicojobs.com/main/our-locations/latinamerica/brazil",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Colombia",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Costa%20Rica",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Dominican%20Republic",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Ecuador",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=El%20Salvador",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Guatemala",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Honduras",
+        "https://www.pepsicojobs.com/main/our-locations/latinamerica/mexico",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Peru",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Puerto%20Rico",
+        "https://www.pepsicojobs.com/latinamerica/jobs?country=Venezuela",
+        "https://www.pepsicojobs.com/main/our-locations/europe",
+        "https://www.pepsicojobs.com/europe/jobs?country=Belgium",
+        "https://www.pepsicojobs.com/main/jobs?country=Denmark",
+        "https://www.pepsicojobs.com/europe/jobs?country=France",
+        "https://www.pepsicojobs.com/europe/jobs?country=Germany",
+        "https://www.pepsicojobs.com/europe/jobs?country=Greece",
+        "https://www.pepsicojobs.com/europe/jobs?country=Ireland",
+        "https://www.pepsicojobs.com/main/jobs?country=Italy"
+      ],
+      "forms": [
+        {
+          "action": "/jobs",
+          "method": "get",
+          "id": "customSearchForm"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://sandboxpepsi.avature.net/TalentCommunity"
+      ],
+      "evidence_file": "evidence/d92219f1ec69b4792b.html.gz",
+      "sha256": "57796d77519a97687dc16fcb7dfd29b2e2720de2cd73191c62bc52accfd28202"
+    }
+  ]
+}

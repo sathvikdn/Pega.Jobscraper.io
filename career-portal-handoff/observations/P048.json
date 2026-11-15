@@ -1,0 +1,80 @@
+{
+  "name": "GE Aerospace",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "GE Aerospace",
+      "url": "https://jobs.gecareers.com/aviation/global/en",
+      "final_url": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:42:36+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:42:29+00:00",
+        "configured_url": "https://jobs.gecareers.com/aviation/global/en",
+        "final_url": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 0,
+            "search_url": "https://geaerospace.wd5.myworkdayjobs.com/wday/cxs/geaerospace/GE_ExternalSite/jobs",
+            "site": "GE_ExternalSite",
+            "source": "workday_cxs",
+            "tenant": "geaerospace",
+            "total": 0,
+            "verified_empty": true,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "resolved_destination": "https://careers.geaerospace.com/global/en/search-results?keywords=pega",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.gecareers.com/aviation/global/en",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P048",
+  "candidate_urls": [
+    "https://jobs.gecareers.com/aviation/global/en",
+    "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.gecareers.com/aviation/global/en",
+      "checked_at": "2026-11-15T06:18:14.136424+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "requested_url": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite",
+      "checked_at": "2026-11-15T06:18:14.716270+00:00",
+      "http_status": 200,
+      "final_url": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/474d93e54627f1fb5c.html.gz",
+      "sha256": "ae8caa40885972a78a96483659dda5ebdea7b6f565fb9b5f39f005d76a0488ba"
+    }
+  ]
+}

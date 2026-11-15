@@ -1,0 +1,56 @@
+{
+  "name": "Lockheed Martin",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Lockheed Martin India",
+      "url": "https://lockheedmartinjobs.com",
+      "final_url": null,
+      "method": "eightfold_observed_pcsx",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:25:54+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:24:38+00:00",
+        "configured_url": "https://lockheedmartinjobs.com",
+        "details_checked": 29,
+        "eightfold": true,
+        "jobs_found": 0,
+        "method": "eightfold_observed_pcsx",
+        "observed_api": "https://lockheedmartin.eightfold.ai/api/pcsx/search?domain=lockheedmartin.com&query=&location=&start=0&",
+        "pages_checked": 3,
+        "partial": false,
+        "reported_total": 29,
+        "resolved_destination": "https://lockheedmartin.eightfold.ai/careers",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://lockheedmartinjobs.com",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P067",
+  "candidate_urls": [
+    "https://lockheedmartinjobs.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://lockheedmartinjobs.com",
+      "checked_at": "2026-11-15T06:18:24.066069+00:00",
+      "http_status": 200,
+      "final_url": "https://lockheedmartinjobs.com/cgi-bin/ext_redir.pl",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/870bac8c826f15d0d0.html.gz",
+      "sha256": "a080cc6cef69a1928563e672675bf567af947b7d46027200f90961f868e52dcf"
+    }
+  ]
+}

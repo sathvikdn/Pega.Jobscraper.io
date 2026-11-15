@@ -1,0 +1,70 @@
+{
+  "name": "PwC Advisory GCC",
+  "scope": "related business / identity review",
+  "type": "review",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "PwC Advisory GCC",
+      "url": "https://pwc.wd3.myworkdayjobs.com/en-US/Global_Experienced_Careers?locationCountry=16dcc53e4691011e83255a4483077800",
+      "final_url": "https://pwc.wd3.myworkdayjobs.com/en-US/Global_Experienced_Careers?locationCountry=16dcc53e4691011e83255a4483077800",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:30:35+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:30:27+00:00",
+        "final_url": "https://pwc.wd3.myworkdayjobs.com/en-US/Global_Experienced_Careers?locationCountry=16dcc53e4691011e83255a4483077800",
+        "jobs_found": 1,
+        "method": "workday_cxs",
+        "partial": false,
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://pwc.wd3.myworkdayjobs.com/en-US/Global_Experienced_Careers?locationCountry=16dcc53e4691011e83255a4483077800",
+        "verified_empty": false,
+        "verified_search": true,
+        "workday_cxs": {
+          "jobs_found": 1,
+          "pages": 1,
+          "partial": false,
+          "returned": 3,
+          "search_url": "https://pwc.wd3.myworkdayjobs.com/wday/cxs/pwc/Global_Experienced_Careers/jobs",
+          "site": "Global_Experienced_Careers",
+          "source": "workday_cxs",
+          "tenant": "pwc",
+          "total": 3,
+          "verified_empty": false,
+          "verified_search": true,
+          "workday": true
+        }
+      }
+    }
+  ],
+  "identity_note": "PwC is configured as services; a separate Advisory GCC target is not established.",
+  "related_registry_entry": "PwC",
+  "id": "P093",
+  "candidate_urls": [
+    "https://pwc.wd3.myworkdayjobs.com/en-US/Global_Experienced_Careers?locationCountry=16dcc53e4691011e83255a4483077800"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://pwc.wd3.myworkdayjobs.com/en-US/Global_Experienced_Careers?locationCountry=16dcc53e4691011e83255a4483077800",
+      "checked_at": "2026-11-15T06:18:40.233811+00:00",
+      "http_status": 200,
+      "final_url": "https://pwc.wd3.myworkdayjobs.com/en-US/Global_Experienced_Careers?locationCountry=16dcc53e4691011e83255a4483077800",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/69ed8b80a1e5b806d5.html.gz",
+      "sha256": "79057c79cf4e1af0c81293f52a6ec94bbcd9d4950f25d27e4285775bc9e6d1d8"
+    }
+  ]
+}

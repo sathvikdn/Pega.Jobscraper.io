@@ -1,0 +1,76 @@
+{
+  "name": "Toyota / TFS",
+  "scope": "related business / identity review",
+  "type": "review",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Toyota / TFS",
+      "url": "https://www.toyotafinancial.com/us/en/careers.html",
+      "final_url": "https://careers.toyota.com/us/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:38:10+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:38:00+00:00",
+        "configured_url": "https://www.toyotafinancial.com/us/en/careers.html",
+        "details_checked": 0,
+        "final_url": "https://careers.toyota.com/us/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://careers.toyota.com/us/en/search-results",
+        "reported_total": 0,
+        "resolved_destination": "https://careers.toyota.com/us/en/search-results?keywords=pega",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.toyotafinancial.com/us/en/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "identity_note": "Toyota is configured; Toyota Financial Services coverage is not established.",
+  "related_registry_entry": "Toyota",
+  "id": "P108",
+  "candidate_urls": [
+    "https://www.toyotafinancial.com/us/en/careers.html",
+    "https://careers.toyota.com/us/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.toyotafinancial.com/us/en/careers.html",
+      "checked_at": "2026-11-15T06:18:50.600044+00:00",
+      "http_status": 404,
+      "final_url": "https://www.toyotafinancial.com/us/en/careers.html",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://careers.toyota.com/us/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:52.256948+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.toyota.com/us/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Job Openings | Find available job openings at Toyota",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://careers.toyota.com/us/en/",
+        "https://careers.toyota.com/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/4ebd3d908825fee73b.html.gz",
+      "sha256": "7d6ab9552ca429019592f8b55bf6bd24783a011b31e8cc739694adbb9fd02f7e"
+    }
+  ]
+}

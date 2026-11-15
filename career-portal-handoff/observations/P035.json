@@ -1,0 +1,145 @@
+{
+  "name": "Daimler Truck",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Daimler Truck India",
+      "url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "final_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "method": "beesite_search_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:11:20+00:00",
+      "diagnostic": {
+        "beesite": true,
+        "checked_at": "2026-11-13T19:11:19+00:00",
+        "details_checked": 2,
+        "final_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+        "jobs_found": 0,
+        "method": "beesite_search_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Daimler Truck Innovation Center India",
+      "url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "final_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "method": "beesite_search_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:11:21+00:00",
+      "diagnostic": {
+        "beesite": true,
+        "checked_at": "2026-11-13T19:11:20+00:00",
+        "details_checked": 2,
+        "final_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+        "jobs_found": 0,
+        "method": "beesite_search_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Daimler Truck India",
+      "url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "final_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "method": "beesite_search_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:27:21+00:00",
+      "diagnostic": {
+        "beesite": true,
+        "checked_at": "2026-11-13T19:11:19+00:00",
+        "details_checked": 2,
+        "final_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+        "jobs_found": 0,
+        "method": "beesite_search_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P035",
+  "candidate_urls": [
+    "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "checked_at": "2026-11-15T06:18:03.051489+00:00",
+      "http_status": 200,
+      "final_url": "https://locations.daimlertruck.com/en/career/locations/detail/bengaluru-daimler-truck-innovation-center-india-private-limited",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Bengaluru, Daimler Truck Innovation Center India Private Limited: Daimler Truck",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.daimlertruck.com/en/career",
+        "https://www.daimlertruck.com/en/career/professionals",
+        "https://www.daimlertruck.com/en/career/students-and-graduates",
+        "https://www.daimlertruck.com/en/career/pupils",
+        "https://www.daimlertruck.com/en/career/who-we-are",
+        "https://www.daimlertruck.com/en/career/benefits",
+        "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+        "https://locations.daimlertruck.com/en/career/locations"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/1eeb6e8f51d61a719b.html.gz",
+      "sha256": "48d029623916934f46c9d7b5adf9f3cadcbe357cafbb4cbb52e55b5c3dd37fc8"
+    },
+    {
+      "requested_url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+      "checked_at": "2026-11-15T06:22:07.745126+00:00",
+      "http_status": 200,
+      "final_url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Unsere Stellenangebote | Karriereportal | Daimler Truck AG",
+      "platform_signals": [
+        "BeeSite"
+      ],
+      "career_links": [
+        "https://jobsearch.daimlertruck.com/index.php?ac=search_result#skip-to-main-heading",
+        "https://jobsearch.daimlertruck.com/index.php?ac=search_result#skip-to-mainnav-heading",
+        "https://jobsearch.daimlertruck.com/index.php?ac=search_result&restoreLastSearch=1&language=2",
+        "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+        "https://jobsearch.daimlertruck.com/index.php?ac=jobabo",
+        "https://jobsearch.daimlertruck.com/index.php?ac=search_result#skip-to-search-result-heading",
+        "https://www.facebook.com/daimlertruckcareer",
+        "https://www.instagram.com/daimlertruckcareer/"
+      ],
+      "forms": [
+        {
+          "method": "get"
+        },
+        {
+          "method": "post"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/d8dcabc6604e983a55.html.gz",
+      "sha256": "e6720a63e866e43c5ec59c4a6502876c7a48ccf173bb1f9a5c21e41a648879a2",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "IBM · Confluent support",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "IBM · Confluent support",
+      "url": "https://jobs.ashbyhq.com/confluent",
+      "final_url": "https://jobs.ashbyhq.com/confluent",
+      "method": "ashby_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:44:20+00:00",
+      "diagnostic": {
+        "ashby": true,
+        "board": "confluent",
+        "checked_at": "2026-11-13T19:44:20+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.ashbyhq.com/confluent",
+        "jobs_found": 0,
+        "method": "ashby_public_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.ashbyhq.com/confluent",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P056",
+  "candidate_urls": [
+    "https://jobs.ashbyhq.com/confluent"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.ashbyhq.com/confluent",
+      "checked_at": "2026-11-15T06:18:18.620298+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.ashbyhq.com/confluent",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Confluent Jobs",
+      "platform_signals": [
+        "Ashby"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://cdn.ashbyprd.com/cdn_assets/b50cb9203b8003693f6bceeb8fc9b3209b460d20/favicon.svg",
+        "https://cdn.ashbyprd.com/cdn_assets/b50cb9203b8003693f6bceeb8fc9b3209b460d20/favicon.png",
+        "https://cdn.ashbyprd.com/cdn_assets/b50cb9203b8003693f6bceeb8fc9b3209b460d20/apple-touch-icon.png",
+        "https://jobs.ashbyhq.com/confluent",
+        "https://app.ashbyhq.com/api/images/org-theme-social/c99ec2e1-77a6-4bed-aa64-43577cd2a450/3bc876e4-0b32-44a8-ad43-d8e11cdc4546/f0ac0e84-8d2c-403f-b558-b57d1840cf7e.png",
+        "https://app.ashbyhq.com/api/images/org-theme-logo/c99ec2e1-77a6-4bed-aa64-43577cd2a450/3bc876e4-0b32-44a8-ad43-d8e11cdc4546/2fdb1429-7cdd-467d-a345-1ae03bb00486.png",
+        "https://app.ashbyhq.com/api/images/org-theme-wordmark/c99ec2e1-77a6-4bed-aa64-43577cd2a450/3bc876e4-0b32-44a8-ad43-d8e11cdc4546/29694139-cc53-45f0-92d8-4eee04e45848.png",
+        "https://cdn.ashbyprd.com/frontend_non_user/b50cb9203b8003693f6bceeb8fc9b3209b460d20/.vite/manifest.json",
+        "https://cdn.ashbyprd.com/cdn_assets/b50cb9203b8003693f6bceeb8fc9b3209b460d20/fonts/WhitneySSm/woff2/WhitneySSm-Book_Web.woff2",
+        "https://cdn.ashbyprd.com/cdn_assets/b50cb9203b8003693f6bceeb8fc9b3209b460d20/fonts/WhitneySSm/woff2/WhitneySSm-Medium_Web.woff2",
+        "https://cdn.ashbyprd.com/cdn_assets/b50cb9203b8003693f6bceeb8fc9b3209b460d20/fonts/WhitneySSm/woff2/WhitneySSm-Semibold_Web.woff2",
+        "https://cdn.ashbyprd.com/cdn_assets/b50cb9203b8003693f6bceeb8fc9b3209b460d20/fonts/WhitneySSm/WhitneySSm.css",
+        "https://cdn.ashbyprd.com/frontend_non_user/b50cb9203b8003693f6bceeb8fc9b3209b460d20/"
+      ],
+      "evidence_file": "evidence/dc48e60c3f429e5e30.html.gz",
+      "sha256": "2bb9fdf199dc16cc8fc0cde269763ea44261a631b763981784abf61d2af690b2"
+    }
+  ]
+}

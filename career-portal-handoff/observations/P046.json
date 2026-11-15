@@ -1,0 +1,121 @@
+{
+  "name": "Ford",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Ford Motor Company",
+      "url": "https://corporate.ford.com/careers.html",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:10:21+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:10:20+00:00",
+        "configured_url": "https://corporate.ford.com/careers.html",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://corporate.ford.com/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Ford India (FBS)",
+      "url": "https://corporate.ford.com/careers.html",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:18:38+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:18:37+00:00",
+        "configured_url": "https://corporate.ford.com/careers.html",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://corporate.ford.com/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Ford",
+      "url": "https://corporate.ford.com/careers.html",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:33:48+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:33:47+00:00",
+        "configured_url": "https://corporate.ford.com/careers.html",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://corporate.ford.com/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Ford Business Solutions India",
+      "url": "https://corporate.ford.com/careers.html",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:35:05+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:35:04+00:00",
+        "configured_url": "https://corporate.ford.com/careers.html",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://corporate.ford.com/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P046",
+  "candidate_urls": [
+    "https://corporate.ford.com/careers.html"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://corporate.ford.com/careers.html",
+      "checked_at": "2026-11-15T06:18:13.409427+00:00",
+      "http_status": 403,
+      "final_url": "https://corporate.ford.com/careers.html",
+      "outcome": "access refused"
+    }
+  ]
+}

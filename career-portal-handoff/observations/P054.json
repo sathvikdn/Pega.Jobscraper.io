@@ -1,0 +1,71 @@
+{
+  "name": "Honeywell",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Honeywell",
+      "url": "https://careers.honeywell.com",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:05+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:45:04+00:00",
+        "error": "Navigation failed: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://careers.honeywell.com/\nCall log:\n  - navigating to \"https://careers.",
+        "previous_attempt": "{\"url\": \"https://careers.honeywell.com\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:36:05+00:00\", \"error\": \"Navigation failed: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://careers.honeywell.com/\\nCall log:\\n  - navigating to \\\"https://careers.\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://careers.honeywell.com"
+      }
+    }
+  ],
+  "id": "P054",
+  "candidate_urls": [
+    "https://careers.honeywell.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.honeywell.com",
+      "checked_at": "2026-11-15T06:18:17.263742+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.honeywell.com/en/sites/Honeywell",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Honeywell",
+      "platform_signals": [
+        "Oracle Recruiting",
+        "Phenom"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://ibqbjb.fa.ocs.oraclecloud.com:443/hcmUI/CandidateExperience/images?imageId=F6FFEC9C-0349-4FF4-BC8E-34EA5672CC7A",
+        "https://ibqbjb.fa.ocs.oraclecloud.com:443",
+        "https://ibqbjb.fa.ocs.oraclecloud.com:443/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=3&themeVersion=8&brandVersion=105'/",
+        "https://ibqbjb.fa.ocs.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-16x16.png?siteNumber=CX_1&size=16x16",
+        "https://ibqbjb.fa.ocs.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-144x144.png?siteNumber=CX_1&size=144x144",
+        "https://ibqbjb.fa.ocs.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-152x152.png?siteNumber=CX_1&size=152x152",
+        "https://ibqbjb.fa.ocs.oraclecloud.com:443/hcmUI/CandExpStatic/css/ce-custom.css?themeNumber=3&lang=en&themeVersion=8&brandVersion=105&brandTlVersion=97&siteNumber=CX_1",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=B0AE30B9-B550-41F7-8771-560A8D850E6E')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=7B0E24E8-8260-4E0B-8478-38DBEC583817')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=C50BE141-62ED-43E3-8856-A8A12B12D304')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=D8523B32-1995-43AF-AAE8-E784ECDFBADE')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=410D5B04-AFF9-4AC6-AC66-36FD17477F0C')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=8AB5C950-EE90-429A-979A-BC961996735B",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=5728C286-7325-494E-847D-1FC24C777E07')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=0B9DABE2-BADA-49F1-8330-BB92C1D99BF0')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=6FEBD685-50D3-4863-9D65-C6D2DB5D8597')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=9D5EFEDC-8AE3-4176-852F-246FD6B45630')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=5623294C-D017-44D7-82FC-C30EA83F5CA3')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=054D3A1F-6627-4694-9575-2BD0A55CA334')",
+        "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/images?imageId=F8B47B40-62C8-4336-BCD9-A2BD456F53DC')"
+      ],
+      "evidence_file": "evidence/958ca58fd5c9b4b6ea.html.gz",
+      "sha256": "8960f5dd4bdfd475112c90b4d2c9022324dfafe4204741196cfdc49b9ca90621"
+    }
+  ]
+}

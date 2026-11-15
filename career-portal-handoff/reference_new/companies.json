@@ -1,0 +1,2099 @@
+{
+  "companies": [
+    {
+      "name": "Aaseya",
+      "aliases": [
+        "YASH Technologies"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Accenture",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "accenture",
+        "datacentre": "wd103",
+        "site": "AccentureCareers"
+      }
+    },
+    {
+      "name": "Aflac",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "AIG",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "aig",
+        "datacentre": "wd1",
+        "site": "aig"
+      }
+    },
+    {
+      "name": "Allianz Technology",
+      "aliases": [
+        "Allianz"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Allied Solutions",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "alliedsolutions",
+        "datacentre": "wd501",
+        "site": "Allied_External"
+      }
+    },
+    {
+      "name": "Amadeus Labs",
+      "aliases": [
+        "Amadeus"
+      ],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Amdocs",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "American Express",
+      "aliases": [
+        "Amex"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Ameriprise",
+      "aliases": [
+        "Ameriprise Financial"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "ameriprise",
+        "datacentre": "wd5",
+        "site": "Ameriprise"
+      }
+    },
+    {
+      "name": "Anlage Infotech",
+      "aliases": [
+        "Anlage"
+      ],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "ANZ",
+      "aliases": [
+        "ANZ Bank"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Areteans",
+      "aliases": [
+        "Credera"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Artech LLC",
+      "aliases": [
+        "Artech"
+      ],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "AT&T",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "att",
+        "datacentre": "wd1",
+        "site": "ATTGeneral"
+      }
+    },
+    {
+      "name": "AXA",
+      "aliases": [
+        "AXA XL",
+        "Axa Insurance"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Bank of America",
+      "aliases": [
+        "BofA"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Barclays",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "barclays",
+        "datacentre": "wd3",
+        "site": "External_Career_Site_Barclays"
+      }
+    },
+    {
+      "name": "BD",
+      "aliases": [
+        "Becton Dickinson"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Birlasoft",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "BlueRose Technologies",
+      "aliases": [
+        "BlueRose"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "BNP Paribas",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "BNY",
+      "aliases": [
+        "BNY Mellon"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Boeing",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "boeing",
+        "datacentre": "wd1",
+        "site": "EXTERNAL_CAREERS"
+      }
+    },
+    {
+      "name": "Booking Holdings",
+      "aliases": [
+        "Booking.com"
+      ],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Booz Allen Hamilton",
+      "aliases": [
+        "Booz Allen"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "bah",
+        "datacentre": "wd1",
+        "site": "BAH_Jobs"
+      }
+    },
+    {
+      "name": "Bosch",
+      "aliases": [
+        "Bosch Global Software Technologies",
+        "BGSW",
+        "Bosch Global"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "BP",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "bpinternational",
+        "datacentre": "wd3",
+        "site": "bpCareers"
+      }
+    },
+    {
+      "name": "Broadridge",
+      "aliases": [
+        "Broadridge Financial Solutions"
+      ],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "broadridge",
+        "datacentre": "wd5",
+        "site": "Careers"
+      }
+    },
+    {
+      "name": "BT Group",
+      "aliases": [
+        "BT",
+        "British Telecom"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Bupa",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "elvh.fa.em2.oraclecloud.com",
+        "site": "CX_2001"
+      }
+    },
+    {
+      "name": "Caesars Entertainment",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "edmn.fa.us2.oraclecloud.com",
+        "site": "CX_1"
+      }
+    },
+    {
+      "name": "Capgemini",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Capital One",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "capitalone",
+        "datacentre": "wd12",
+        "site": "Capital_One"
+      }
+    },
+    {
+      "name": "Carelon Global Solutions",
+      "aliases": [
+        "Elevance Health",
+        "Anthem",
+        "Carelon"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "elevancehealth",
+        "datacentre": "wd1",
+        "site": "ANT"
+      }
+    },
+    {
+      "name": "Carrier",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "carrier",
+        "datacentre": "wd5",
+        "site": "jobs"
+      }
+    },
+    {
+      "name": "Charles Schwab",
+      "aliases": [
+        "Schwab"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Cisco",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Citi",
+      "aliases": [
+        "Citibank",
+        "Citigroup"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "citi",
+        "datacentre": "wd5",
+        "site": "2"
+      }
+    },
+    {
+      "name": "CNO Financial",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "cnoinc",
+        "datacentre": "wd5",
+        "site": "Careers"
+      }
+    },
+    {
+      "name": "Coca-Cola",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Coforge",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Cognizant",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Collabera",
+      "aliases": [],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Comcast",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "comcast",
+        "datacentre": "wd115",
+        "site": "Comcast_Careers"
+      }
+    },
+    {
+      "name": "Commonwealth Bank",
+      "aliases": [
+        "CBA",
+        "CommBank"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "cba",
+        "datacentre": "wd3",
+        "site": "CommBank_Careers"
+      }
+    },
+    {
+      "name": "Conduent",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": true,
+      "linkedin_query": false
+    },
+    {
+      "name": "CSC",
+      "aliases": [
+        "Corporation Service Company"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "oracle",
+        "host": "hczw.fa.us2.oraclecloud.com",
+        "site": "CX_1001"
+      }
+    },
+    {
+      "name": "Cummins",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "CVS Health",
+      "aliases": [
+        "CVS India"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Cyient",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Daimler Truck",
+      "aliases": [
+        "Daimler Truck Innovation Center India",
+        "DTICI"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "DBS Bank",
+      "aliases": [
+        "DBS"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "dbs",
+        "datacentre": "wd3",
+        "site": "DBS_Careers"
+      }
+    },
+    {
+      "name": "Dell Technologies",
+      "aliases": [
+        "Dell"
+      ],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Deloitte",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Deutsche Bank",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "DHL",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "DP World",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "ehpv.fa.em2.oraclecloud.com",
+        "site": "CX_1"
+      }
+    },
+    {
+      "name": "DXC Technology",
+      "aliases": [
+        "DXC"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "EAI Systems",
+      "aliases": [
+        "EAI"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Eclatprime",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Empower",
+      "aliases": [
+        "Empower Retirement"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "empower",
+        "datacentre": "wd12",
+        "site": "empower"
+      }
+    },
+    {
+      "name": "enGen",
+      "aliases": [
+        "Highmark Health",
+        "Highmark",
+        "Thryve Digital"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "highmarkhealth",
+        "datacentre": "wd1",
+        "site": "highmark"
+      }
+    },
+    {
+      "name": "EPAM Systems",
+      "aliases": [
+        "EPAM"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Evernorth",
+      "aliases": [
+        "Cigna",
+        "The Cigna Group"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "cigna",
+        "datacentre": "wd5",
+        "site": "cignacareers"
+      }
+    },
+    {
+      "name": "Eviden",
+      "aliases": [
+        "Atos"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Evoke Technologies",
+      "aliases": [
+        "Evoke Tech"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "EY",
+      "aliases": [
+        "Ernst & Young"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "FedEx",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Fidelity Investments",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "fmr",
+        "datacentre": "wd1",
+        "site": "FidelityCareers"
+      }
+    },
+    {
+      "name": "Fidelity National Financial",
+      "aliases": [
+        "FNF"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "fntg",
+        "datacentre": "wd5",
+        "site": "FNF-Careers"
+      }
+    },
+    {
+      "name": "First Citizens Bank",
+      "aliases": [
+        "First Citizens India",
+        "FC Global Services"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "svb",
+        "datacentre": "wd5",
+        "site": "firstcitizensindia"
+      }
+    },
+    {
+      "name": "FIS",
+      "aliases": [
+        "Fidelity National Information Services",
+        "Fidelity National Information"
+      ],
+      "type": "product",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "fis",
+        "datacentre": "wd5",
+        "site": "SearchJobs"
+      }
+    },
+    {
+      "name": "Fiserv",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "fiserv",
+        "datacentre": "wd5",
+        "site": "EXT"
+      }
+    },
+    {
+      "name": "Ford",
+      "aliases": [
+        "Ford Motor",
+        "Ford Business Solutions"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "fusionAIx",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "GE HealthCare",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "gehc",
+        "datacentre": "wd5",
+        "site": "GEHC_ExternalSite"
+      }
+    },
+    {
+      "name": "General Motors",
+      "aliases": [
+        "GM"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Genpact",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "genpact",
+        "datacentre": "wd108",
+        "site": "External_Careers"
+      }
+    },
+    {
+      "name": "Global Payments",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Goldman Sachs",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "HCL Technologies",
+      "aliases": [
+        "HCLTech"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "HDFC Bank",
+      "aliases": [],
+      "type": "enterprise",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Hexaware",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Horizontal",
+      "aliases": [
+        "Horizontal Talent"
+      ],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "HSBC",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "ICICI Bank",
+      "aliases": [],
+      "type": "enterprise",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "IFFCO Tokio",
+      "aliases": [],
+      "type": "enterprise",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Inadev",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Infosys",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "ING",
+      "aliases": [
+        "ING Hubs India",
+        "ING Bank"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Innova ESI",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Intel",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "intel",
+        "datacentre": "wd1",
+        "site": "External"
+      }
+    },
+    {
+      "name": "ITC Limited",
+      "aliases": [],
+      "type": "enterprise",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "John Deere",
+      "aliases": [
+        "JDTCI"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Johnson & Johnson",
+      "aliases": [
+        "J&J"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "jj",
+        "datacentre": "wd5",
+        "site": "JJ"
+      }
+    },
+    {
+      "name": "Johnson Controls",
+      "aliases": [
+        "JCI"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "jci",
+        "datacentre": "wd5",
+        "site": "JCI"
+      }
+    },
+    {
+      "name": "JPMorganChase",
+      "aliases": [
+        "JPMorgan",
+        "JPMC"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "oracle",
+        "host": "jpmc.fa.oraclecloud.com",
+        "site": "CX_1001"
+      }
+    },
+    {
+      "name": "Jyotirgamay Solutions",
+      "aliases": [
+        "Jyotirgamay"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Ketan Software",
+      "aliases": [],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Kotak Mahindra Bank",
+      "aliases": [
+        "Kotak Mahindra",
+        "Kotak"
+      ],
+      "type": "enterprise",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "hcbt.fa.em2.oraclecloud.com",
+        "site": "CX"
+      }
+    },
+    {
+      "name": "KPMG",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "ejgk.fa.em2.oraclecloud.com",
+        "site": "CX_3"
+      }
+    },
+    {
+      "name": "Levi Strauss & Co.",
+      "aliases": [
+        "Levi Strauss",
+        "Levi's"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "levistraussandco",
+        "datacentre": "wd5",
+        "site": "External"
+      }
+    },
+    {
+      "name": "Liberty Mutual",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Lloyds Banking Group",
+      "aliases": [
+        "Lloyds Bank",
+        "Lloyds Technology Centre",
+        "Lloyds Banking"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "lbg",
+        "datacentre": "wd3",
+        "site": "LBG_Careers",
+        "more_sites": [
+          "Lloyds_Technology_Centre"
+        ]
+      }
+    },
+    {
+      "name": "Lockheed Martin",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Lowe's",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "lowes",
+        "datacentre": "wd5",
+        "site": "LWS_External_CS"
+      }
+    },
+    {
+      "name": "LPL Financial",
+      "aliases": [
+        "LPL"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "LTIMindtree",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Maantic",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Macquarie",
+      "aliases": [
+        "Macquarie Group"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "mq",
+        "datacentre": "wd3",
+        "site": "CareersatMQ"
+      }
+    },
+    {
+      "name": "Macy's",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "ebwh.fa.us2.oraclecloud.com",
+        "site": "CX_1001"
+      }
+    },
+    {
+      "name": "Maersk",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "maersk",
+        "datacentre": "wd3",
+        "site": "Maersk_Careers"
+      }
+    },
+    {
+      "name": "Manulife",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Marriott",
+      "aliases": [
+        "Marriott International"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "ejwl.fa.us2.oraclecloud.com",
+        "site": "CX"
+      }
+    },
+    {
+      "name": "Marsh McLennan",
+      "aliases": [
+        "MMGS"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Mastech Holdings",
+      "aliases": [
+        "Mastech"
+      ],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Mastercard",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "mastercard",
+        "datacentre": "wd1",
+        "site": "CorporateCareers"
+      }
+    },
+    {
+      "name": "Maximus",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Medtronic",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Mercedes-Benz Research and Development India",
+      "aliases": [
+        "Mercedes-Benz",
+        "MBRDI"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": false,
+      "current_employer": true
+    },
+    {
+      "name": "Merck",
+      "aliases": [
+        "MSD"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "msd",
+        "datacentre": "wd5",
+        "site": "SearchJobs"
+      }
+    },
+    {
+      "name": "Merkle",
+      "aliases": [
+        "dentsu"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "dentsuaegis",
+        "datacentre": "wd3",
+        "site": "DAN_GLOBAL"
+      }
+    },
+    {
+      "name": "MetLife",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Mizuho Global Services",
+      "aliases": [
+        "MGS"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Mondelez",
+      "aliases": [
+        "Mondelez International"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Morgan Stanley",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "ms",
+        "datacentre": "wd5",
+        "site": "External"
+      }
+    },
+    {
+      "name": "Mphasis",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "MUFG",
+      "aliases": [
+        "MUFG Bank",
+        "MUFG Global Service",
+        "Mitsubishi UFJ"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "mufgub",
+        "datacentre": "wd3",
+        "site": "MUFG-Careers"
+      }
+    },
+    {
+      "name": "MUFG Pension & Market Services",
+      "aliases": [
+        "Link Group"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "hcmn.fa.ap1.oraclecloud.com",
+        "site": "CX_1001"
+      }
+    },
+    {
+      "name": "National Australia Bank",
+      "aliases": [
+        "NAB"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "NatWest Group",
+      "aliases": [
+        "NatWest"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Navistar",
+      "aliases": [
+        "International Motors"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Ness Digital Engineering",
+      "aliases": [
+        "Ness",
+        "Ness Digital"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Nike",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "nike",
+        "datacentre": "wd1",
+        "site": "nke",
+        "more_sites": [
+          "nke2"
+        ]
+      }
+    },
+    {
+      "name": "Nokia",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Northern Trust",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "ntrs",
+        "datacentre": "wd1",
+        "site": "northerntrust"
+      }
+    },
+    {
+      "name": "Nous Infosystems",
+      "aliases": [
+        "Nous Info"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Novartis",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "NTT DATA",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": true,
+      "linkedin_query": false
+    },
+    {
+      "name": "Optum",
+      "aliases": [
+        "UnitedHealth Group",
+        "UHG",
+        "UnitedHealth"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Orange Business",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "PayPal",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "paypal",
+        "datacentre": "wd1",
+        "site": "jobs"
+      }
+    },
+    {
+      "name": "Pegasystems",
+      "aliases": [
+        "Pega"
+      ],
+      "type": "product",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "People Prime Worldwide",
+      "aliases": [
+        "People Prime"
+      ],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "PepsiCo",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Persistent Systems",
+      "aliases": [
+        "Persistent"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Pfizer",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "pfizer",
+        "datacentre": "wd1",
+        "site": "PfizerCareers"
+      }
+    },
+    {
+      "name": "Philips",
+      "aliases": [
+        "Philips Healthcare"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "philips",
+        "datacentre": "wd3",
+        "site": "jobs-and-careers"
+      }
+    },
+    {
+      "name": "PNC",
+      "aliases": [
+        "PNC Financial Services",
+        "PNC Financial"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Prime Therapeutics",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "primetherapeutics",
+        "datacentre": "wd1",
+        "site": "PrimeTherapeuticsCareers"
+      }
+    },
+    {
+      "name": "Procter & Gamble",
+      "aliases": [
+        "P&G"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Proximus",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "PruTech Solutions",
+      "aliases": [
+        "PruTech"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Publicis Sapient",
+      "aliases": [
+        "Sapient"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "PwC",
+      "aliases": [
+        "PricewaterhouseCoopers",
+        "Pricewaterhouse"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "pwc",
+        "datacentre": "wd3",
+        "site": "Global_Experienced_Careers"
+      }
+    },
+    {
+      "name": "Quess Corp",
+      "aliases": [
+        "Quess"
+      ],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Renault Nissan Technology",
+      "aliases": [
+        "Renault-Nissan",
+        "RNTBCI"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Roche",
+      "aliases": [
+        "Roche Diagnostics"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "S&P Global",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "spgi",
+        "datacentre": "wd5",
+        "site": "SPGI_Careers"
+      }
+    },
+    {
+      "name": "Scadea",
+      "aliases": [],
+      "type": "staffing",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Shell",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "shell",
+        "datacentre": "wd3",
+        "site": "ShellCareers"
+      }
+    },
+    {
+      "name": "Siemens",
+      "aliases": [
+        "Siemens Technology"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Sky",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "sky",
+        "datacentre": "wd3",
+        "site": "sky_careers"
+      }
+    },
+    {
+      "name": "Societe Generale",
+      "aliases": [
+        "Société Générale",
+        "SocGen",
+        "Societe Generale Global Solution Centre"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Sonata Software",
+      "aliases": [
+        "Sonata"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Sopra Steria",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Standard Chartered",
+      "aliases": [
+        "Standard Chartered Bank"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "State Street",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "statestreet",
+        "datacentre": "wd1",
+        "site": "Global"
+      }
+    },
+    {
+      "name": "Stellantis",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Sun Life",
+      "aliases": [
+        "Sun Life Global Solutions"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "sunlife",
+        "datacentre": "wd3",
+        "site": "Experienced-Jobs"
+      }
+    },
+    {
+      "name": "Synchrony",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "synchronyfinancial",
+        "datacentre": "wd5",
+        "site": "careers"
+      }
+    },
+    {
+      "name": "Synechron",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "synechron",
+        "datacentre": "wd1",
+        "site": "SynechronCareers"
+      }
+    },
+    {
+      "name": "Target",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "target",
+        "datacentre": "wd5",
+        "site": "targetcareers"
+      }
+    },
+    {
+      "name": "Tata Consultancy Services",
+      "aliases": [
+        "TCS",
+        "Tata Consultancy"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Tech Mahindra",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Telstra",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "telstra",
+        "datacentre": "wd3",
+        "site": "Telstra_Careers"
+      }
+    },
+    {
+      "name": "Tesco",
+      "aliases": [
+        "Tesco Bengaluru"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "The Hartford",
+      "aliases": [
+        "Hartford"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "thehartford",
+        "datacentre": "wd5",
+        "site": "Careers_External"
+      }
+    },
+    {
+      "name": "Toyota",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "U.S. Bank",
+      "aliases": [
+        "U.S. Bancorp"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "usbank",
+        "datacentre": "wd1",
+        "site": "US_Bank_Careers"
+      }
+    },
+    {
+      "name": "UBS",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Uni-Pega",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Unilever",
+      "aliases": [
+        "Hindustan Unilever"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "unilever",
+        "datacentre": "wd3",
+        "site": "Unilever_Experienced_Professionals"
+      }
+    },
+    {
+      "name": "Unisys",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "unisys",
+        "datacentre": "wd5",
+        "site": "External"
+      }
+    },
+    {
+      "name": "UPS",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "UST",
+      "aliases": [
+        "UST Global"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Vanguard",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "vanguard",
+        "datacentre": "wd5",
+        "site": "vanguard_external"
+      }
+    },
+    {
+      "name": "Verizon",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "verizon",
+        "datacentre": "wd12",
+        "site": "verizon-careers"
+      }
+    },
+    {
+      "name": "Virtusa",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": true,
+      "linkedin_query": false
+    },
+    {
+      "name": "Visa",
+      "aliases": [],
+      "type": "product",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Vodafone",
+      "aliases": [
+        "VOIS",
+        "Vodafone Intelligent Solutions"
+      ],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true
+    },
+    {
+      "name": "Voya Financial",
+      "aliases": [
+        "Voya"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "godirect",
+        "datacentre": "wd5",
+        "site": "voya_jobs"
+      }
+    },
+    {
+      "name": "Wells Fargo",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": true,
+      "linkedin_query": true,
+      "ats": {
+        "kind": "workday",
+        "tenant": "wf",
+        "datacentre": "wd1",
+        "site": "WellsFargoJobs"
+      }
+    },
+    {
+      "name": "Western Union",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "workday",
+        "tenant": "westernunion",
+        "datacentre": "wd5",
+        "site": "WesternUnionJobs"
+      }
+    },
+    {
+      "name": "Westpac",
+      "aliases": [],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "ebuu.fa.ap1.oraclecloud.com",
+        "site": "CX"
+      }
+    },
+    {
+      "name": "Wipro",
+      "aliases": [],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Xperteez Technology",
+      "aliases": [
+        "Xperteez"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false
+    },
+    {
+      "name": "Zensar Technologies",
+      "aliases": [
+        "Zensar"
+      ],
+      "type": "services",
+      "bengaluru": null,
+      "linkedin_query": false,
+      "ats": {
+        "kind": "oracle",
+        "host": "fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com",
+        "site": "CX_1"
+      }
+    },
+    {
+      "name": "Zurich Insurance",
+      "aliases": [
+        "Zurich"
+      ],
+      "type": "gcc",
+      "bengaluru": null,
+      "linkedin_query": false
+    }
+  ]
+}

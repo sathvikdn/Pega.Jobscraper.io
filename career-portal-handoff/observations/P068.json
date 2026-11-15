@@ -1,0 +1,121 @@
+{
+  "name": "LPL Financial",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "LPL Financial India",
+      "url": "https://careers.lpl.com",
+      "final_url": "https://career.lpl.com/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:26:22+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:26:08+00:00",
+        "details_checked": 1,
+        "final_url": "https://career.lpl.com/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "listings_checked": 1,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://career.lpl.com/search-results",
+        "reported_total": 1,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.lpl.com",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P068",
+  "candidate_urls": [
+    "https://careers.lpl.com",
+    "https://career.lpl.com/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.lpl.com",
+      "checked_at": "2026-11-15T06:18:24.583212+00:00",
+      "http_status": 200,
+      "final_url": "https://career.lpl.com/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Discover Job Opportunities at LPL Financial",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://career.lpl.com/search-results",
+        "https://career.lpl.com/#acc-skip-content",
+        "https://career.lpl.com/",
+        "https://career.lpl.com/who-we-are",
+        "https://career.lpl.com/our-community-impact",
+        "https://career.lpl.com/location",
+        "https://career.lpl.com/Culture-Inclusion",
+        "https://career.lpl.com/benefits-and-perks",
+        "https://career.lpl.com/recruitment-process",
+        "https://career.lpl.com/full-time-programs-at-lpl-financial",
+        "https://career.lpl.com/internship",
+        "https://career.lpl.com/early-career-events",
+        "https://career.lpl.com/tech",
+        "https://career.lpl.com/client-service",
+        "https://career.lpl.com/jointalentcommunity",
+        "https://career.lpl.com/cookie-settings",
+        "https://career.lpl.com/emailpersonalinfo"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/6aee0728cc1a46bf99.html.gz",
+      "sha256": "aeb8b308afe41c25bd7b272fbf97254650c6fcc8b50bc8098260ba05b6ffd4db"
+    },
+    {
+      "requested_url": "https://career.lpl.com/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:27.382786+00:00",
+      "http_status": 200,
+      "final_url": "https://career.lpl.com/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search results | Find available job openings at LPL Financial",
+      "platform_signals": [
+        "Workday",
+        "Phenom"
+      ],
+      "career_links": [
+        "https://career.lpl.com/search-results?keywords=pega&from=0#acc-skip-content",
+        "https://career.lpl.com/",
+        "https://career.lpl.com/who-we-are",
+        "https://career.lpl.com/our-community-impact",
+        "https://career.lpl.com/location",
+        "https://career.lpl.com/Culture-Inclusion",
+        "https://career.lpl.com/benefits-and-perks",
+        "https://career.lpl.com/recruitment-process",
+        "https://career.lpl.com/full-time-programs-at-lpl-financial",
+        "https://career.lpl.com/internship",
+        "https://career.lpl.com/early-career-events",
+        "https://career.lpl.com/tech",
+        "https://career.lpl.com/client-service",
+        "https://career.lpl.com/search-results",
+        "https://career.lpl.com/cookie-settings",
+        "https://career.lpl.com/emailpersonalinfo"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1",
+        "https://lplfinancial.wd1.myworkdayjobs.com/External/job/Austin-TX/SVP--Agent-Support-Enablement_R-054599/apply"
+      ],
+      "evidence_file": "evidence/38451440a7ad18d043.html.gz",
+      "sha256": "501fb00d33d77c199c8c3aa76d09ec27412dddcd3a510cdf3ca762f5332f08fb"
+    }
+  ]
+}

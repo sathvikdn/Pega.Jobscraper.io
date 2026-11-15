@@ -1,3 +1,31 @@
+# Pega job scanners and career portal research
+
+## Current scraper: Pega Radar (15 November 2026)
+
+The current standalone scanner is in [pega-radar/](pega-radar/). Start with its [README](pega-radar/README.md) and [architecture](pega-radar/ARCHITECTURE.md).
+
+```powershell
+cd pega-radar
+python radar.py serve
+```
+
+Open http://127.0.0.1:8765/. See the app README for scanning and scheduling commands. Runtime databases, logs and Python caches are excluded from this new app upload.
+
+## Claude implementation handoff
+
+1. Read [CLAUDE_PROMPT.md](career-portal-handoff/CLAUDE_PROMPT.md).
+2. Read [CLAUDE_CHANGE_BRIEF.md](career-portal-handoff/CLAUDE_CHANGE_BRIEF.md) for priorities and acceptance criteria.
+3. Use the [117-target audit report](career-portal-handoff/REPORT.md) and [machine-readable manifest](career-portal-handoff/portal-manifest.json).
+4. The [complete ZIP](career-portal-handoff.zip) includes observations, compressed evidence and reference source snapshots.
+
+Local paths in the handoff describe the research machine. In this repository, implement changes in `pega-radar/`. The `career-portal-handoff/reference_new/` and `reference_old/` directories are reference snapshots, not the active application.
+
+The audit identified 25 targets with responding Workday searches, 77 with reachable pages but unverified integrations, and 15 unresolved targets. The proposed portal expansion is **not yet implemented**. The 68 configured product/GCC portals are a configuration baseline, not proof of successful current coverage.
+
+The existing `01_pega_career_intelligence/` tree contains the older application and career-intelligence archive. Its original upload documentation follows.
+
+---
+
 # Job Scraper and Career Portals Upload Copy 2026-11-13
 
 ## Purpose

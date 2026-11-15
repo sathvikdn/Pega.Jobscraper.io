@@ -1,0 +1,68 @@
+{
+  "name": "Qualcomm",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Qualcomm",
+      "url": "https://careers.qualcomm.com",
+      "final_url": null,
+      "method": "eightfold_observed_pcsx",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:41:27+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:41:15+00:00",
+        "details_checked": 2,
+        "eightfold": true,
+        "jobs_found": 0,
+        "method": "eightfold_observed_pcsx",
+        "observed_api": "https://careers.qualcomm.com/api/pcsx/job_cart?domain=qualcomm.com",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.qualcomm.com",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P094",
+  "candidate_urls": [
+    "https://careers.qualcomm.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.qualcomm.com",
+      "checked_at": "2026-11-15T06:18:41.570198+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.qualcomm.com/careers",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Qualcomm Careers | Engineering Jobs and More | Qualcomm",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css'",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css'",
+        "https://77e708048c4747e1a801fa2ef5557ca6@vs-errors.eightfold.ai/10',",
+        "https://app.eightfold.ai/careers?domain=qualcomm.com",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css&#39;",
+        "https://qualcomm.eightfold.ai/careerhub",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;}},",
+        "https://app.eightfold.ai&#34;},",
+        "https://eightfold.ai/privacy-policy/&#34;}},"
+      ],
+      "evidence_file": "evidence/2e32b1b79002c7db0f.html.gz",
+      "sha256": "5d0ed8a748a7a93322e34cdfaffa09476b5c539d8e316cddc2fa987756af4942"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "name": "Liberty Mutual",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Liberty Mutual India",
+      "url": "https://jobs.libertymutual.com",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:44:43+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:44:43+00:00",
+        "error": "Navigation failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://jobs.libertymutual.com/\nCall log:\n  - navigating to \"https://jobs.liber",
+        "previous_attempt": "{\"url\": \"https://jobs.libertymutual.com\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:21:21+00:00\", \"error\": \"Navigation failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://jobs.libertymutual.com/\\nCall log:\\n  - navigating to \\\"https://jobs.liber\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.libertymutual.com"
+      }
+    }
+  ],
+  "id": "P066",
+  "candidate_urls": [
+    "https://jobs.libertymutual.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.libertymutual.com",
+      "checked_at": "2026-11-15T06:18:23.306847+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "requested_url": "https://searchjobs.libertymutualgroup.com/careers",
+      "checked_at": "2026-11-15T06:21:24.153135+00:00",
+      "http_status": 200,
+      "final_url": "https://searchjobs.libertymutualgroup.com/careers",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at Liberty Mutual Insurance",
+      "platform_signals": [
+        "Eightfold",
+        "Taleo"
+      ],
+      "career_links": [
+        "https://jobs.libertymutualgroup.com/",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/overview",
+        "https://jobs.libertymutualgroup.com/#top",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/overview/",
+        "https://jobs.libertymutualgroup.com/testimonials/",
+        "https://jobs.libertymutualgroup.com/careers/",
+        "https://jobs.libertymutualgroup.com/careers/areas/",
+        "https://jobs.libertymutualgroup.com/careers/digital-technology/",
+        "https://jobs.libertymutualgroup.com/careers/claims/",
+        "https://jobs.libertymutualgroup.com/careers/sales/",
+        "https://jobs.libertymutualgroup.com/careers/campus/undergraduate-internships/",
+        "https://jobs.libertymutualgroup.com/careers/campus/graduate-internships-development-programs/",
+        "https://jobs.libertymutualgroup.com/careers/campus/internships/",
+        "https://jobs.libertymutualgroup.com/careers/campus/discovery-programs/",
+        "https://jobs.libertymutualgroup.com/locations/",
+        "https://jobs.libertymutualgroup.com/talent-community/",
+        "https://jobs.libertymutualgroup.com/accommodations/",
+        "https://jobs.libertymutualgroup.com",
+        "https://jobs.libertymutualgroup.com/careers",
+        "https://jobs.libertymutualgroup.com/locations"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css"
+      ],
+      "evidence_file": "evidence/67e0c84a6ee598d082.html.gz",
+      "sha256": "f3c9fda4770b8c936143e36f4201a3fef9a2c12233cdef9c706de5035f9bfc5b",
+      "discovery": "Official career page found through web research; supplemental audit"
+    },
+    {
+      "requested_url": "https://jobs.libertymutualgroup.com/",
+      "checked_at": "2026-11-15T06:21:25.697662+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.libertymutualgroup.com/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Homepage - Liberty Mutual Careers",
+      "platform_signals": [
+        "iCIMS"
+      ],
+      "career_links": [
+        "https://jobs.libertymutualgroup.com/#content",
+        "https://internal-libertymutual.icims.com/jobs/login?loginOnly=1&sso_connection=hs-11156-samlp",
+        "https://jobs.libertymutualgroup.com/home",
+        "https://jobs.libertymutualgroup.com/",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/overview",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/overview/",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/identity-and-values/",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/benefits/",
+        "https://jobs.libertymutualgroup.com/commitment-our-people/",
+        "https://jobs.libertymutualgroup.com/military-and-veterans/",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/alternate-career-paths/",
+        "https://jobs.libertymutualgroup.com/life-at-liberty/resources/",
+        "https://jobs.libertymutualgroup.com/careers/areas/",
+        "https://jobs.libertymutualgroup.com/careers/digital-technology/",
+        "https://jobs.libertymutualgroup.com/careers/claims/",
+        "https://jobs.libertymutualgroup.com/careers/sales/",
+        "https://jobs.libertymutualgroup.com/careers/early-talent/",
+        "https://jobs.libertymutualgroup.com/careers/early-talent/internships-coops-apprenticeships/",
+        "https://jobs.libertymutualgroup.com/careers/early-talent/entry-level/",
+        "https://jobs.libertymutualgroup.com/locations/",
+        "https://searchjobs.libertymutualgroup.com/careers",
+        "https://searchjobs.libertymutualgroup.com/careers?elementor_library=elementor-header-426&elementor-preview=426&ver=1692974535",
+        "https://jobs.libertymutualgroup.com/careers/sales/comparion/",
+        "https://jobs.libertymutualgroup.com/talent-community/",
+        "https://jobs.libertymutualgroup.com/careers/areas",
+        "https://jobs.libertymutualgroup.com/careers/digital-technology",
+        "https://jobs.libertymutualgroup.com/careers/claims",
+        "https://jobs.libertymutualgroup.com/careers/customer-service",
+        "https://jobs.libertymutualgroup.com/careers/campus/graduate-internships-development-programs",
+        "https://jobs.libertymutualgroup.com/careers/sales",
+        "https://jobs.libertymutualgroup.com/careers/campus/undergraduate-internships",
+        "https://jobs.libertymutualgroup.com/life-at-liberty",
+        "https://jobs.libertymutualgroup.com/locations",
+        "https://jobs.libertymutualgroup.com/video-transcript-pursue-your-tomorrow",
+        "https://jobs.libertymutualgroup.com/careers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/2bbdca28b41c25a8b6.html.gz",
+      "sha256": "2ae1b3a8267661140eb6cd0a876f68a02517e9c8de10607eadf279d411066d83",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

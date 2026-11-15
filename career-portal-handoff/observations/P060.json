@@ -1,0 +1,54 @@
+{
+  "name": "ING",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "ING",
+      "url": "https://www.ing.jobs",
+      "final_url": "https://careers.ing.com/en/search-jobs/pega/41236/1",
+      "method": "talentbrew_keyword_only",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:35:34+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:35:19+00:00",
+        "configured_url": "https://www.ing.jobs",
+        "details_checked": 3,
+        "final_url": "https://careers.ing.com/en/search-jobs/pega/41236/1",
+        "jobs_found": 0,
+        "method": "talentbrew_keyword_only",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 3,
+        "resolved_destination": "https://careers.ing.com/en/search-jobs",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "talentbrew": true,
+        "url": "https://www.ing.jobs",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P060",
+  "candidate_urls": [
+    "https://www.ing.jobs",
+    "https://careers.ing.com/en/search-jobs/pega/41236/1"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.ing.jobs",
+      "checked_at": "2026-11-15T06:18:20.080616+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://careers.ing.com/en/search-jobs/pega/41236/1",
+      "checked_at": "2026-11-15T06:18:21.041938+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ]
+}

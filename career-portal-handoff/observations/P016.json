@@ -1,0 +1,79 @@
+{
+  "name": "BMW TechWorks",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "BMW TechWorks",
+      "url": "https://www.bmwgroup.jobs",
+      "final_url": "https://www.bmwgroup.jobs/en.html",
+      "method": "bmw_jobfinder_table",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:42:10+00:00",
+      "diagnostic": {
+        "bmw": true,
+        "checked_at": "2026-11-13T19:42:06+00:00",
+        "details_checked": 0,
+        "final_url": "https://www.bmwgroup.jobs/en.html",
+        "jobs_found": 0,
+        "method": "bmw_jobfinder_table",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.bmwgroup.jobs",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P016",
+  "candidate_urls": [
+    "https://www.bmwgroup.jobs",
+    "https://www.bmwgroup.jobs/en.html"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.bmwgroup.jobs",
+      "checked_at": "2026-11-15T06:17:44.321994+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "The read operation timed out"
+    },
+    {
+      "requested_url": "https://www.bmwgroup.jobs/en.html",
+      "checked_at": "2026-11-15T06:17:58.853157+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "The read operation timed out"
+    },
+    {
+      "requested_url": "https://www.bmwtechworks.in/careers/",
+      "checked_at": "2026-11-15T06:21:22.811668+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>",
+      "discovery": "Official career page found through web research; supplemental audit"
+    },
+    {
+      "requested_url": "https://careers-bmwtechworks.peoplestrong.com/",
+      "checked_at": "2026-11-15T06:21:23.512203+00:00",
+      "http_status": 200,
+      "final_url": "https://careers-bmwtechworks.peoplestrong.com/",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Candidate Portal",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/9cd8cff9c4c652e418.html.gz",
+      "sha256": "04e099ac52489b237c193c66858b1adb75999c971283f34dffb1894c668e02c6",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Deutsche Telekom Digital Labs",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Deutsche Telekom Digital Labs",
+      "url": "https://www.telekom.com/en/careers",
+      "final_url": "https://api.smartrecruiters.com/v1/companies/DeutscheTelekom/postings?q=pega&limit=100&offset=0",
+      "method": "smartrecruiters_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:35:51+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:35:50+00:00",
+        "company_slug": "DeutscheTelekom",
+        "details_checked": 0,
+        "final_url": "https://api.smartrecruiters.com/v1/companies/DeutscheTelekom/postings?q=pega&limit=100&offset=0",
+        "jobs_found": 0,
+        "method": "smartrecruiters_public_api",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "smartrecruiters": true,
+        "source": "career_portal_playwright",
+        "url": "https://www.telekom.com/en/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P039",
+  "candidate_urls": [
+    "https://www.telekom.com/en/careers",
+    "https://api.smartrecruiters.com/v1/companies/DeutscheTelekom/postings?q=pega&limit=100&offset=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.telekom.com/en/careers",
+      "checked_at": "2026-11-15T06:18:06.699847+00:00",
+      "http_status": 200,
+      "final_url": "https://www.telekom.com/en/telekom-as-an-employer",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Telekom as an Employer | Deutsche Telekom",
+      "platform_signals": [],
+      "career_links": [
+        "https://careers.telekom.com/en"
+      ],
+      "forms": [
+        {}
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/81145f0016cb74df4f.html.gz",
+      "sha256": "3d19faf6d7ab4545e1286c7806902468ff5759c9b26e179d459f2b35a981084b"
+    },
+    {
+      "requested_url": "https://api.smartrecruiters.com/v1/companies/DeutscheTelekom/postings?q=pega&limit=100&offset=0",
+      "checked_at": "2026-11-15T06:18:09.016168+00:00",
+      "http_status": 200,
+      "final_url": "https://api.smartrecruiters.com/v1/companies/DeutscheTelekom/postings?q=pega&limit=100&offset=0",
+      "content_type": "application/json; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "SmartRecruiters"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/b780d19a9ff514a2b7.html.gz",
+      "sha256": "dd343c33c470fed1e87299640e449a7c124a75f563e0d8052bb781ea88e74b46"
+    }
+  ]
+}

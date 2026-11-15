@@ -1,0 +1,82 @@
+{
+  "name": "IFFCO Tokio",
+  "scope": "current registry lacks adapter",
+  "type": "enterprise",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "IFFCO Tokio",
+      "url": "https://www.iffcotokio.co.in/career",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:44:42+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:44:38+00:00",
+        "error": "Navigation failed: Source returned HTTP 404",
+        "previous_attempt": "{\"url\": \"https://www.iffcotokio.co.in/career\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:21:20+00:00\", \"error\": \"Navigation failed: Source returned HTTP 404\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.iffcotokio.co.in/career"
+      }
+    },
+    {
+      "old_company": "IFFCO Tokio India",
+      "url": "https://www.iffcotokio.co.in/career",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:46:10+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:46:07+00:00",
+        "error": "Navigation failed: Source returned HTTP 404",
+        "previous_attempt": "{\"url\": \"https://www.iffcotokio.co.in/career\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:40:39+00:00\", \"error\": \"Navigation failed: Source returned HTTP 404\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.iffcotokio.co.in/career"
+      }
+    }
+  ],
+  "id": "P058",
+  "candidate_urls": [
+    "https://www.iffcotokio.co.in/career"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.iffcotokio.co.in/career",
+      "checked_at": "2026-11-15T06:18:19.427405+00:00",
+      "http_status": 404,
+      "final_url": "https://www.iffcotokio.co.in/career",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://www.iffcotokio.co.in/about-us/careers",
+      "checked_at": "2026-11-15T06:21:23.512935+00:00",
+      "http_status": 200,
+      "final_url": "https://www.iffcotokio.co.in/about-us/careers",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers - Join Us - IFFCO-TOKIO",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.iffcotokio.co.in/about-us/careers"
+      ],
+      "forms": [
+        {
+          "action": "/content/iffcotokio/search.json",
+          "method": "post"
+        },
+        {
+          "id": "policy"
+        },
+        {}
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/a199cfb0e1ec73751a.html.gz",
+      "sha256": "7779575d199eafa08520447257d0f57ba57516833ae6531e38b67ae96d744bc5",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

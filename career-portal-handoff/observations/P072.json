@@ -1,0 +1,157 @@
+{
+  "name": "MassMutual India",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "MassMutual India",
+      "url": "https://careers.massmutual.com",
+      "final_url": "https://careers.massmutual.com/search-jobs/pega/724/1",
+      "method": "talentbrew_keyword_only",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:35:19+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:35:07+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.massmutual.com/search-jobs/pega/724/1",
+        "jobs_found": 0,
+        "method": "talentbrew_keyword_only",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://careers.massmutual.com/search-jobs",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "talentbrew": true,
+        "url": "https://careers.massmutual.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P072",
+  "candidate_urls": [
+    "https://careers.massmutual.com",
+    "https://careers.massmutual.com/search-jobs/pega/724/1"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.massmutual.com",
+      "checked_at": "2026-11-15T06:18:27.250188+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.massmutual.com",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Financial Services and Insurance Jobs and Careers with MassMutual",
+      "platform_signals": [
+        "TalentBrew"
+      ],
+      "career_links": [
+        "https://careers.massmutual.com#content",
+        "https://careers.massmutual.com/",
+        "https://careers.massmutual.com/actuarial-jobs",
+        "https://careers.massmutual.com/customer-service-jobs",
+        "https://careers.massmutual.com/corporate-function-jobs",
+        "https://careers.massmutual.com/finance-jobs",
+        "https://careers.massmutual.com/investment-jobs",
+        "https://careers.massmutual.com/sales-jobs",
+        "https://careers.massmutual.com/technology-jobs",
+        "https://careers.massmutual.com/underwriting-jobs",
+        "https://careers.massmutual.com/benefits",
+        "https://careers.massmutual.com/inclusion",
+        "https://careers.massmutual.com/learning-and-development",
+        "https://careers.massmutual.com/students",
+        "https://careers.massmutual.com/#office-locations",
+        "https://careers.massmutualindia.com/",
+        "https://careers.massmutualromania.com/",
+        "https://careers.massmutual.com/search-jobs",
+        "https://careers.massmutual.com/saved-jobs",
+        "https://tbcdn.talentbrew.com/company/724/gst-v1_0/docs/career-growth.pdf",
+        "https://careers.massmutual.com#featured-tab",
+        "https://careers.massmutual.com#viewed-tab",
+        "https://careers.massmutual.com#saved-tab",
+        "https://careers.massmutual.com/job/springfield/strategic-executive-communications-consultant-operations-strategy/724/103263961024",
+        "https://careers.massmutual.com/job/springfield/investment-operations-analyst/724/103083633088",
+        "https://careers.massmutual.com/job/boston/actuarial-associate-actuarial-leadership-development-program/724/102021477152",
+        "https://careers.massmutual.com",
+        "https://careers.massmutual.com/sys/tc/sign-in?status=greeting&id=d13b8bff-2ba6-4f2e-9169-157592951f41&lang=en",
+        "https://careers.massmutual.com/sitemap",
+        "https://careers.massmutual.com/cookie-management"
+      ],
+      "forms": [
+        {
+          "action": "/search-jobs",
+          "id": "search-form-351f7954fe"
+        },
+        {
+          "action": "/form/submit",
+          "id": "form-1b5c700267"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/562c7cd95c3e16c284.html.gz",
+      "sha256": "39f632158fcc89ba8439b9481c4873f7f45c99bcd88f07af09612646313fb9d6"
+    },
+    {
+      "requested_url": "https://careers.massmutual.com/search-jobs/pega/724/1",
+      "checked_at": "2026-11-15T06:18:29.472063+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.massmutual.com/search-jobs/pega/724/1",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search our Job Opportunities at MassMutual",
+      "platform_signals": [
+        "TalentBrew"
+      ],
+      "career_links": [
+        "https://careers.massmutual.com/search-jobs/pega/724/1#content",
+        "https://careers.massmutual.com/search-jobs/pega/724/1#search-results-list",
+        "https://careers.massmutual.com/search-jobs/pega/724/1#search-filters",
+        "https://careers.massmutual.com/",
+        "https://careers.massmutual.com/actuarial-jobs",
+        "https://careers.massmutual.com/customer-service-jobs",
+        "https://careers.massmutual.com/corporate-function-jobs",
+        "https://careers.massmutual.com/finance-jobs",
+        "https://careers.massmutual.com/investment-jobs",
+        "https://careers.massmutual.com/sales-jobs",
+        "https://careers.massmutual.com/technology-jobs",
+        "https://careers.massmutual.com/underwriting-jobs",
+        "https://careers.massmutual.com/benefits",
+        "https://careers.massmutual.com/inclusion",
+        "https://careers.massmutual.com/learning-and-development",
+        "https://careers.massmutual.com/students",
+        "https://careers.massmutual.com/#office-locations",
+        "https://careers.massmutualindia.com/",
+        "https://careers.massmutualromania.com/",
+        "https://careers.massmutual.com/search-jobs",
+        "https://careers.massmutual.com/saved-jobs",
+        "https://careers.massmutual.com/search-jobs/peer/724/1/1",
+        "https://careers.massmutual.com/search-jobs/peak/724/1/1",
+        "https://careers.massmutual.com/search-jobs/perl/724/1/1",
+        "https://careers.massmutual.com/search-jobs/pvwa/724/1/1",
+        "https://careers.massmutual.com/search-jobs/pega/724/1",
+        "https://careers.massmutual.com/sys/tc/sign-in?status=greeting&id=d13b8bff-2ba6-4f2e-9169-157592951f41&lang=en",
+        "https://careers.massmutual.com/sitemap",
+        "https://careers.massmutual.com/cookie-management"
+      ],
+      "forms": [
+        {
+          "action": "/search-jobs",
+          "id": "search-form-39f0ef2e45"
+        },
+        {
+          "action": "/form/submit",
+          "id": "form-60c2ae587d"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/d262322b7e29da2ada.html.gz",
+      "sha256": "ac8f7ca717c4fc85bc5c72a973008a4c433ec7a4662f363c834bf61a5fe0e1e6"
+    }
+  ]
+}

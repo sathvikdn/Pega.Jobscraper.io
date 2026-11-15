@@ -1,0 +1,71 @@
+{
+  "name": "Danske Bank",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Danske Bank",
+      "url": "https://danskebank.com/Job",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:11:00+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:10:45+00:00",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://ejqi.fa.ocs.oraclecloud.eu/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://danskebank.com/Job",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P036",
+  "candidate_urls": [
+    "https://danskebank.com/Job"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://danskebank.com/Job",
+      "checked_at": "2026-11-15T06:18:03.417537+00:00",
+      "http_status": 200,
+      "final_url": "https://danskebank.com/Job",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers | Danske Bank | Use your curiosity to connect what matters",
+      "platform_signals": [
+        "Oracle Recruiting"
+      ],
+      "career_links": [
+        "https://danskebank.com/careers",
+        "https://danskebank.com/careers/apply",
+        "https://danskebank.com/careers/life-at-danske-bank",
+        "https://danskebank.com/careers/students-and-graduates",
+        "https://danskebank.com/careers/it-professionals",
+        "https://danskebank.com/careers/professionals",
+        "https://danskebank.com/careers/leaders"
+      ],
+      "forms": [
+        {
+          "action": "#"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://ejqi.fa.ocs.oraclecloud.eu/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions"
+      ],
+      "evidence_file": "evidence/552914518343b3d8e2.html.gz",
+      "sha256": "d72447e4bb4b1e9fcde079c756281eaf23877152b5272ce3be62470bf3c3888f"
+    }
+  ]
+}

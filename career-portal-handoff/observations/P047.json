@@ -1,0 +1,48 @@
+{
+  "name": "Ford Credit",
+  "scope": "related business / identity review",
+  "type": "review",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Ford Credit",
+      "url": "https://corporate.ford.com/careers.html",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:38:15+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:38:14+00:00",
+        "configured_url": "https://corporate.ford.com/careers.html",
+        "details_checked": 0,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://corporate.ford.com/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "identity_note": "Ford is configured; separate Ford Credit portal coverage is not established.",
+  "related_registry_entry": "Ford",
+  "id": "P047",
+  "candidate_urls": [
+    "https://corporate.ford.com/careers.html"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://corporate.ford.com/careers.html",
+      "checked_at": "2026-11-15T06:18:13.409427+00:00",
+      "http_status": 403,
+      "final_url": "https://corporate.ford.com/careers.html",
+      "outcome": "access refused"
+    }
+  ]
+}

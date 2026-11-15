@@ -1,0 +1,200 @@
+{
+  "name": "Amdocs",
+  "scope": "current registry lacks adapter",
+  "type": "product",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Amdocs India",
+      "url": "https://www.amdocs.com/careers",
+      "final_url": null,
+      "method": "eightfold_observed_pcsx",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:23:07+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:22:52+00:00",
+        "configured_url": "https://www.amdocs.com/careers",
+        "details_checked": 3,
+        "eightfold": true,
+        "jobs_found": 0,
+        "method": "eightfold_observed_pcsx",
+        "observed_api": "https://amdocs.eightfold.ai/api/pcsx/job_cart?domain=amdocs.com",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 3,
+        "resolved_destination": "https://amdocs.eightfold.ai/careers",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.amdocs.com/careers",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P007",
+  "candidate_urls": [
+    "https://www.amdocs.com/careers/you-without-limits/india",
+    "https://jobs.amdocs.com/careers",
+    "https://www.amdocs.com/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.amdocs.com/careers/you-without-limits/india",
+      "checked_at": "2026-11-15T06:17:40.264967+00:00",
+      "http_status": 200,
+      "final_url": "https://www.amdocs.com/careers/you-without-limits/india",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "You Without Limits - India",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://www.amdocs.com/careers/you-without-limits/india#main-content",
+        "https://jobs.amdocs.com/careers/join?domain=amdocs.com",
+        "https://jobs.amdocs.com/careerhub/me?action=edit&trackApplicationStatus=false&hl=en&profile_type=candidate&domain=amdocs.com&customredirect=1",
+        "https://jobs.amdocs.com/careers?domain=amdocs.com#upload",
+        "https://www.amdocs.com/careers/home",
+        "https://www.amdocs.com/careers/locations",
+        "https://www.amdocs.com/careers/fields-of-work",
+        "https://www.amdocs.com/careers/you-without-limits/india",
+        "https://www.amdocs.com/careers/life-at-amdocs",
+        "https://www.amdocs.com/careers/benefits",
+        "https://www.addtoany.com/add_to/linkedin?linkurl=https://www.amdocs.com/careers/you-without-limits/india",
+        "https://www.addtoany.com/add_to/twitter?linkurl=https://www.amdocs.com/careers/you-without-limits/india",
+        "https://www.addtoany.com/add_to/facebook?linkurl=https://www.amdocs.com/careers/you-without-limits/india",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=123062&company=amdocs",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=123346&company=amdocs",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=126645&company=amdocs",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=123413&company=amdocs",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=116549&company=amdocs",
+        "https://jobs.amdocs.com/job/Pune-SW-Test-Engineer-MH/783723200/?locale=en_US",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=124219&company=amdocs",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=120573&company=amdocs",
+        "https://career4.successfactors.com/sfcareer/jobreqcareer?jobId=121450&company=amdocs",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=121446",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=125693",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=124254",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=124154",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=126641",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=126061",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=129168",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=125813",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=124158",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=126601",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=125870",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=121666",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=127604",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=129686",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=119835",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=126316",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=126102",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=115480",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=112315",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=121088",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=124892",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=127797",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=126046",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=129755",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=126249",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=127365",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=123215",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=127642",
+        "https://jobs.amdocs.com/lp/talent/33bd5b11a69e67d7/?locale=en_US&recID=123150",
+        "https://www.amdocs.com/careers/you-without-limits/india?category=award"
+      ],
+      "forms": [
+        {
+          "id": "careersSearchForm"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/f53aa2b67ce6a44e96.html.gz",
+      "sha256": "12343e60b3a9607037d455968179c1a5034b7534fbffc49855a89f3206c38292"
+    },
+    {
+      "requested_url": "https://jobs.amdocs.com/careers",
+      "checked_at": "2026-11-15T06:17:41.501322+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.amdocs.com/careers",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at Amdocs",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [
+        "https://jobs.amdocs.com/careers/join?domain=amdocs.com",
+        "https://jobs.amdocs.com/careerhub/me?action=edit&trackApplicationStatus=false&hl=en&profile_type=candidate&domain=amdocs.com&customredirect=1",
+        "https://jobs.amdocs.com/careers?domain=amdocs.com#upload",
+        "https://www.amdocs.com/careers/home",
+        "https://www.amdocs.com/careers/locations",
+        "https://www.amdocs.com/careers/fields-of-work",
+        "https://www.amdocs.com/careers/life-at-amdocs",
+        "https://www.amdocs.com/careers/benefits",
+        "https://jobs.amdocs.com/content/Search-by-Location/?locale=en_US&utm_source=careersite",
+        "https://jobs.amdocs.com/content/fields-of-work/?locale=en_US",
+        "https://app.eightfold-eu.ai/careers?domain=amdocs.com#upload"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css'",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css'",
+        "https://77e708048c4747e1a801fa2ef5557ca6@vs-errors.eightfold.ai/10',",
+        "https://app.eightfold-eu.ai/careers?domain=amdocs.com#upload",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css&#39;",
+        "https://app.eightfold-eu.ai/careers?domain=amdocs.com&#34;},",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;}},",
+        "https://app.eightfold.ai&#34;},",
+        "https://eightfold.ai/privacy-policy/&#34;}},",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-vvinta/1722947063::benefits.png&#34;,",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-vvinta/1722946936::lifeatamdocs&#34;,",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-vvinta/1722946117::amdocs-partners&#34;},",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-vvinta/1722946426::amdocs+news&#34;},",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-vvinta/1722946696::industry+assoc&#34;},",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-vvinta/1722946884::opportunities&#34;},",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-vvinta/1722947279::careersatamdocs&#34;},"
+      ],
+      "evidence_file": "evidence/53978a33787191db81.html.gz",
+      "sha256": "8705124e960617eeb2cc0979eaa9a8422225bc2d29f1770b6a0a5daa1cb70791"
+    },
+    {
+      "requested_url": "https://www.amdocs.com/careers",
+      "checked_at": "2026-11-15T06:17:42.692782+00:00",
+      "http_status": 200,
+      "final_url": "https://www.amdocs.com/careers/home",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Explore Opportunities at Amdocs for Career Growth",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.amdocs.com/careers/home#main-content",
+        "https://jobs.amdocs.com/careers/join?domain=amdocs.com",
+        "https://jobs.amdocs.com/careerhub/me?action=edit&trackApplicationStatus=false&hl=en&profile_type=candidate&domain=amdocs.com&customredirect=1",
+        "https://jobs.amdocs.com/careers?domain=amdocs.com#upload",
+        "https://www.amdocs.com/careers/home",
+        "https://www.amdocs.com/careers/locations",
+        "https://www.amdocs.com/careers/fields-of-work",
+        "https://www.amdocs.com/careers/life-at-amdocs",
+        "https://www.amdocs.com/careers/benefits",
+        "https://jobs.amdocs.com/careers",
+        "https://www.amdocs.com/careers/home?category=award"
+      ],
+      "forms": [
+        {
+          "id": "careersSearch"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/8b26884aac325ac988.html.gz",
+      "sha256": "46c691f6b4bfc9d66218bd585ee1ec6900e87e596ca7639bcd8d0d51d389993c"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Global Payments",
+  "scope": "current registry lacks adapter",
+  "type": "product",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Global Payments India",
+      "url": "https://jobs.globalpayments.com",
+      "final_url": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:20:32+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:20:31+00:00",
+        "configured_url": "https://jobs.globalpayments.com",
+        "final_url": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "partial": false,
+        "resolved_destination": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.globalpayments.com",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday_cxs": {
+          "jobs_found": 0,
+          "pages": 1,
+          "partial": false,
+          "returned": 0,
+          "search_url": "https://tsys.wd1.myworkdayjobs.com/wday/cxs/tsys/TSYS/jobs",
+          "site": "TSYS",
+          "source": "workday_cxs",
+          "tenant": "tsys",
+          "total": 0,
+          "verified_empty": true,
+          "verified_search": true,
+          "workday": true
+        }
+      }
+    },
+    {
+      "old_company": "Global Payments / TSYS India",
+      "url": "https://jobs.globalpayments.com",
+      "final_url": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:39:51+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:39:49+00:00",
+        "configured_url": "https://jobs.globalpayments.com",
+        "final_url": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "partial": false,
+        "resolved_destination": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.globalpayments.com",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday_cxs": {
+          "jobs_found": 0,
+          "pages": 1,
+          "partial": false,
+          "returned": 0,
+          "search_url": "https://tsys.wd1.myworkdayjobs.com/wday/cxs/tsys/TSYS/jobs",
+          "site": "TSYS",
+          "source": "workday_cxs",
+          "tenant": "tsys",
+          "total": 0,
+          "verified_empty": true,
+          "verified_search": true,
+          "workday": true
+        }
+      }
+    }
+  ],
+  "id": "P051",
+  "candidate_urls": [
+    "https://jobs.globalpayments.com",
+    "https://tsys.wd1.myworkdayjobs.com/TSYS"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.globalpayments.com",
+      "checked_at": "2026-11-15T06:18:15.053235+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+      "checked_at": "2026-11-15T06:18:15.681355+00:00",
+      "http_status": 200,
+      "final_url": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/f0fc4b7e6f4a13fb5d.html.gz",
+      "sha256": "d76de1d69dace25cea485d4aa0771062807da823d1caaadd4f3828ae5f5417dc"
+    }
+  ]
+}

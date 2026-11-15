@@ -1,0 +1,58 @@
+{
+  "name": "Airtel",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Airtel",
+      "url": "https://www.airtel.in/careers",
+      "final_url": "https://careers.airtel.com/search?q=pega+jobs",
+      "method": "none",
+      "status": "unverified",
+      "checked_at": "2026-11-13T19:47:29+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:47:09+00:00",
+        "final_url": "https://careers.airtel.com/search?q=pega+jobs",
+        "jobs_found": 0,
+        "method": "none",
+        "previous_attempt": "{\"url\": \"https://www.airtel.in/careers\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:41:27+00:00\", \"searched\": false, \"final_url\": \"https://careers.airtel.com/search?q=pega+jobs\", \"jobs_found\": 0, \"method\": \"none\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "searched": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.airtel.in/careers"
+      }
+    }
+  ],
+  "id": "P004",
+  "candidate_urls": [
+    "https://www.airtel.in/careers",
+    "https://careers.airtel.com/search?q=pega+jobs"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.airtel.in/careers",
+      "checked_at": "2026-11-15T06:17:39.020288+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.airtel.com/",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Airtel Careers",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/0e343cc859cedd7f82.html.gz",
+      "sha256": "12b5e1a1024e22eea6205b3771d3ed658f009c7576e2749a1c9eed4a449541ea"
+    },
+    {
+      "requested_url": "https://careers.airtel.com/search?q=pega+jobs",
+      "checked_at": "2026-11-15T06:17:39.972032+00:00",
+      "http_status": 404,
+      "final_url": "https://careers.airtel.com/search?q=pega+jobs",
+      "outcome": "HTTP error"
+    }
+  ]
+}

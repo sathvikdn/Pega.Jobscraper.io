@@ -1,0 +1,103 @@
+{
+  "name": "Estes Express",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Estes Express",
+      "url": "https://www.work4estes.com",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:34:01+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:33:57+00:00",
+        "configured_url": "https://www.work4estes.com",
+        "details_checked": 4,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 4,
+        "resolved_destination": "https://ecwr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.work4estes.com",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Estes Express India",
+      "url": "https://www.work4estes.com",
+      "final_url": null,
+      "method": "oracle_public_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:40:56+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:40:51+00:00",
+        "configured_url": "https://www.work4estes.com",
+        "details_checked": 4,
+        "jobs_found": 0,
+        "method": "oracle_public_api",
+        "oracle": true,
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 4,
+        "resolved_destination": "https://ecwr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.work4estes.com",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P042",
+  "candidate_urls": [
+    "https://www.work4estes.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.work4estes.com",
+      "checked_at": "2026-11-15T06:18:09.404217+00:00",
+      "http_status": 200,
+      "final_url": "https://work4estes.com/en/sites/work4estes",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Estes Express Lines",
+      "platform_signals": [
+        "Oracle Recruiting",
+        "TalentBrew"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://ecwr.fa.us2.oraclecloud.com:443",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=5&themeVersion=5&brandVersion=57'/",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-16x16.png?siteNumber=CX_1&size=16x16",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-144x144.png?siteNumber=CX_1&size=144x144",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/siteFavicon/favicon-152x152.png?siteNumber=CX_1&size=152x152",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmUI/CandExpStatic/css/ce-custom.css?themeNumber=5&lang=en&themeVersion=5&brandVersion=57&brandTlVersion=50&siteNumber=CX_1",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmUI/CandExpStatic/js/ce-custom.js?themeNumber=5&themeVersion=5&brandVersion=57",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=3EEBA277-3BFA-4423-B068-496DC55E7D62);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=1DB89CD2-CD02-4C0A-B084-223B7ED97385);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=24243460-2889-4EE7-82E6-3E96C681962B);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=D6469A8D-8704-4965-8951-C50ED92E2543);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=EDF71EEF-05A2-44E2-A06C-85CF010A616E);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=3EC9B35D-0784-42CE-B028-767CA069F83A);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=161A7A5F-68DE-43CC-974A-3D6EA9E973BD);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=E5E91977-C168-4136-90D7-0748F2A43DBB);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=74923D4B-5C83-49CF-A286-C26E5276F157);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=08C7C5B9-0551-4585-A68A-7A4EC2DE2FF2);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=024F979F-DB0A-41E4-A49A-CCBA92AE9A5C);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=B76E0B3F-B141-49A7-A421-6556AB1A01E9);",
+        "https://ecwr.fa.us2.oraclecloud.com:443/hcmRestApi/CandidateExperience/images?imageId=87162B70-3CCD-4156-A5D4-5F6F396835AC);"
+      ],
+      "evidence_file": "evidence/dd3eb9c9de0ac960b9.html.gz",
+      "sha256": "997ae642a6f9604ecdd7f28ccb583cd917fafd04761e880e3e5ca85df1e99ed2"
+    }
+  ]
+}

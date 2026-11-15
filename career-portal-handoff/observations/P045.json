@@ -1,0 +1,125 @@
+{
+  "name": "FIS (TSYS)",
+  "scope": "related business / identity review",
+  "type": "review",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "FIS (TSYS)",
+      "url": "https://careers.fisglobal.com",
+      "final_url": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/introduceYourself",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:38:33+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:38:25+00:00",
+        "final_url": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/introduceYourself",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 0,
+            "search_url": "https://fis.wd5.myworkdayjobs.com/wday/cxs/fis/SearchJobs/jobs",
+            "site": "SearchJobs",
+            "source": "workday_cxs",
+            "tenant": "fis",
+            "total": 0,
+            "verified_empty": true,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://careers.fisglobal.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "identity_note": "Old label combines different registry employers; needs identity clarification.",
+  "related_registry_entry": "FIS / Global Payments",
+  "id": "P045",
+  "candidate_urls": [
+    "https://careers.fisglobal.com",
+    "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/introduceYourself"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.fisglobal.com",
+      "checked_at": "2026-11-15T06:18:13.408711+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.fisglobal.com/us/en",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at FIS Global | FIS Global jobs",
+      "platform_signals": [
+        "Workday",
+        "Phenom"
+      ],
+      "career_links": [
+        "https://careers.fisglobal.com/us/search-results",
+        "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/login",
+        "https://careers.fisglobal.com/us/en/recruitment-scams",
+        "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/3688271_Report_FISPaymentsGenderPayGapReport2024-1746714956361.pdf",
+        "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/3688234_Report_FISBankingGenderPaygapreport2024-1746714955585.pdf",
+        "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/3688187_FISCapitalMarketsGenderPayGapReport2024-1746714954666.pdf",
+        "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/FIS_2025BenefitsSnapshot-1741374429024.pdf"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1",
+        "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/introduceYourself",
+        "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/login"
+      ],
+      "evidence_file": "evidence/fc0ce3faadf5970d04.html.gz",
+      "sha256": "7e8bb7b75967618da7ccdaaafec38a159eb4c7a9984d4a83bdd036c2d524f8a4"
+    },
+    {
+      "requested_url": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/introduceYourself",
+      "checked_at": "2026-11-15T06:18:18.605982+00:00",
+      "http_status": 200,
+      "final_url": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/introduceYourself",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/b1bef1d778c2760fbf.html.gz",
+      "sha256": "c1c715f56e04a054732c3ed07fdadc7647817278b49021e39f071cd16b59a403"
+    },
+    {
+      "requested_url": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/login",
+      "checked_at": "2026-11-15T06:18:20.055331+00:00",
+      "http_status": 200,
+      "final_url": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/login",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/edb9bae1d34d2a4703.html.gz",
+      "sha256": "10c30c9e3f270ae0df1b04981adb29c5aa9c4b94c7175ab0debb9caf96b42356"
+    }
+  ]
+}

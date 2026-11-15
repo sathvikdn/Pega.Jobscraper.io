@@ -1,0 +1,109 @@
+{
+  "name": "IKEA",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "IKEA",
+      "url": "https://www.ikea.com/global/en/work-with-us/",
+      "final_url": "https://jobs.ikea.com/en/search-jobs/pega/22908/1",
+      "method": "talentbrew_keyword_only",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:36+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:29:26+00:00",
+        "configured_url": "https://www.ikea.com/global/en/work-with-us/",
+        "details_checked": 0,
+        "final_url": "https://jobs.ikea.com/en/search-jobs/pega/22908/1",
+        "jobs_found": 0,
+        "method": "talentbrew_keyword_only",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://jobs.ikea.com/en/search-jobs",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "talentbrew": true,
+        "url": "https://www.ikea.com/global/en/work-with-us/",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P059",
+  "candidate_urls": [
+    "https://www.ikea.com/global/en/work-with-us/",
+    "https://jobs.ikea.com/en/search-jobs/pega/22908/1"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.ikea.com/global/en/work-with-us/",
+      "checked_at": "2026-11-15T06:18:19.616787+00:00",
+      "http_status": 404,
+      "final_url": "https://www.ikea.com/global/en/work-with-us/",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://jobs.ikea.com/en/search-jobs/pega/22908/1",
+      "checked_at": "2026-11-15T06:18:20.439571+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.ikea.com/en/search-jobs/pega/22908/1",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search our Job Opportunities at IKEA",
+      "platform_signals": [
+        "TalentBrew"
+      ],
+      "career_links": [
+        "https://jobs.ikea.com/en/search-jobs/pega/22908/1#content",
+        "https://jobs.ikea.com/en/search-jobs/pega/22908/1#search-results-list",
+        "https://jobs.ikea.com/en/search-jobs/pega/22908/1#search-filters",
+        "https://jobs.ikea.com/en",
+        "https://jobs.ikeachina.cn",
+        "https://jobs.ikea.com/en/search-jobs/pega/22908/1",
+        "https://jobs.ikea.com/fr/recherche-d'offres/pega/22908/1",
+        "https://jobs.ikea.com/nl/vacatures-zoeken/pega/22908/1",
+        "https://jobs.ikea.com/de/jobsuche/pega/22908/1",
+        "https://jobs.ikea.com/es/buscar-trabajo/pega/22908/1",
+        "https://jobs.ikea.com/it/lavori-di-ricerca/pega/22908/1",
+        "https://jobs.ikea.com/pt-br/busca-de-vagas/pega/22908/1",
+        "https://jobs.ikea.com/pl/szukanie-pracy/pega/22908/1",
+        "https://jobs.ikea.com/sv/jobbsökande/pega/22908/1",
+        "https://jobs.ikea.com/da/soeg-jobs/pega/22908/1",
+        "https://jobs.ikea.com/hu/álláskeresés/pega/22908/1",
+        "https://jobs.ikea.com/fi/hae-tyopaikkoja/pega/22908/1",
+        "https://jobs.ikea.com/no/søk-jobber/pega/22908/1",
+        "https://jobs.ikea.com/cs/vyhledávat-nabídky/pega/22908/1",
+        "https://jobs.ikea.com/uk/пошук-вакансій/pega/22908/1",
+        "https://jobs.ikea.com/sr/pretraži-poslove/pega/22908/1",
+        "https://jobs.ikea.com/hr/pretraga-poslova/pega/22908/1",
+        "https://jobs.ikea.com/ro/căutare-posturi-vacante/pega/22908/1",
+        "https://jobs.ikea.com/ja/検索ジョブ/pega/22908/1",
+        "https://jobs.ikea.com/ar/البحث-عن-وظائف/pega/22908/1",
+        "https://jobs.ikea.com/sl/iskanje-delovna-mesta/pega/22908/1",
+        "https://jobs.ikea.com/en/search-jobs/perk/22908/1/1",
+        "https://jobs.ikea.com/en/search-jobs/para/22908/1/1",
+        "https://jobs.ikea.com/en/search-jobs/peut/22908/1/1",
+        "https://jobs.ikea.com/en/search-jobs/peak/22908/1/1",
+        "https://jobs.ikea.com/en/search-jobs/proga/22908/1/1",
+        "https://jobs.ikea.com/cookie-management",
+        "https://jobs.ikea.com/cookie-statement",
+        "https://jobs.ikea.com/terms",
+        "https://jobs.ikea.com/accessibility",
+        "https://jobs.ikea.com/sitemap"
+      ],
+      "forms": [
+        {
+          "action": "/en/search-jobs",
+          "id": "search-form-76c34dab0e"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/d21d2ed409ce68268f.html.gz",
+      "sha256": "9cb1ec58d417066954208ece7557aecabdc0f2569485872d107fc0e37df9cf62"
+    }
+  ]
+}

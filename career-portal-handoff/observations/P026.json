@@ -1,0 +1,77 @@
+{
+  "name": "Cisco",
+  "scope": "current registry lacks adapter",
+  "type": "product",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Cisco",
+      "url": "https://jobs.cisco.com",
+      "final_url": "https://careers.cisco.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:10:18+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:10:11+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.cisco.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.cisco.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Cisco India",
+      "url": "https://jobs.cisco.com",
+      "final_url": "https://careers.cisco.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:27:30+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:27:23+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.cisco.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.cisco.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P026",
+  "candidate_urls": [
+    "https://jobs.cisco.com",
+    "https://careers.cisco.com/global/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.cisco.com",
+      "checked_at": "2026-11-15T06:17:53.020379+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://careers.cisco.com/global/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:17:53.600909+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ]
+}

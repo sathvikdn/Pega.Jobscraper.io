@@ -1,0 +1,119 @@
+{
+  "name": "HSBC",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "HSBC",
+      "url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+      "final_url": null,
+      "method": "eightfold_observed_v2",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:13:21+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:13:06+00:00",
+        "configured_url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+        "details_checked": 2,
+        "eightfold": true,
+        "jobs_found": 0,
+        "method": "eightfold_observed_v2",
+        "observed_api": "https://portal.careers.hsbc.com/api/apply/v2/jobs/563774612634179?domain=hsbc.com&hl=en",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://portal.careers.hsbc.com/careers?hl=en",
+        "reported_total": 2,
+        "resolved_destination": "https://portal.careers.hsbc.com/careers",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "HSBC India",
+      "url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+      "final_url": null,
+      "method": "eightfold_observed_v2",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:39:11+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:38:57+00:00",
+        "configured_url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+        "details_checked": 2,
+        "eightfold": true,
+        "jobs_found": 0,
+        "method": "eightfold_observed_v2",
+        "observed_api": "https://portal.careers.hsbc.com/api/apply/v2/jobs/563774612634179?domain=hsbc.com&hl=en",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://portal.careers.hsbc.com/careers?hl=en",
+        "reported_total": 2,
+        "resolved_destination": "https://portal.careers.hsbc.com/careers",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P055",
+  "candidate_urls": [
+    "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+      "checked_at": "2026-11-15T06:18:18.322258+00:00",
+      "http_status": 200,
+      "final_url": "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Job Search | HSBC Group",
+      "platform_signals": [],
+      "career_links": [
+        "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India#main",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=headerLink_logo",
+        "https://mycareer.hsbc.com/en_GB/external/SearchJobs",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=headerLink_earlyCareers",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=headerLink_whereWeHire",
+        "https://mycareer.hsbc.com/en_GB/external/ContactCreate",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=headerLink_contacts",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=headerLink_profile",
+        "https://mycareer.hsbc.com/en_GB/external/SearchJobs/?q=pega&locationsearch=India",
+        "https://mycareer.hsbc.com/es_ES/external/SearchJobs/?q=pega&locationsearch=India",
+        "https://mycareer.hsbc.com/fr_CA/external/SearchJobs/?q=pega&locationsearch=India",
+        "https://mycareer.hsbc.com/fr_FR/external/SearchJobs/?q=pega&locationsearch=India",
+        "https://mycareer.hsbc.com/zh_CN/external/SearchJobs/?q=pega&locationsearch=India",
+        "https://portal.careers.hsbc.com/careers",
+        "https://mycareer.hsbc.com/en_GB/talentcommunity",
+        "https://mycareer.hsbc.com/jobrecommendations/",
+        "https://mycareer.hsbc.com/en_GB/external/SearchJobs?scrollToJobsSection=true",
+        "https://mycareer.hsbc.com/en_GB/external/RecentlyViewedJobsPopup",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=socialLink_twitter",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=socialLink_linkedIn",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=socialLink_instagram",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=socialLink_facebook",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=socialLink_youtube",
+        "https://mycareer.hsbc.com/termsandconditions",
+        "https://mycareer.hsbc.com/dataprivacy/",
+        "https://mycareer.hsbc.com/en_GB/external/Speedbump?url=footerLink_cookiePolicy",
+        "https://mycareer.hsbc.com/accessibility",
+        "https://mycareer.hsbc.com/onlinesecurity",
+        "https://mycareer.hsbc.com/en_GB/external/Feedback"
+      ],
+      "forms": [
+        {
+          "action": "https://mycareer.hsbc.com/en_GB/external/SearchJobs#anchor__search-jobs",
+          "method": "get",
+          "id": "tpt_jobSortableForm"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/52e80bb6049ea4fb3b.html.gz",
+      "sha256": "6152031b56598caf2b250effe693174ab452e0c7c80e3eeddd9376c935fc1664"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "name": "Ayvens / LeasePlan",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Ayvens / LeasePlan",
+      "url": "https://www.ayvens.com/en-cp/careers/",
+      "final_url": "https://ayvens.wd3.myworkdayjobs.com/AyvensCareers",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:36:04+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:35:51+00:00",
+        "final_url": "https://ayvens.wd3.myworkdayjobs.com/AyvensCareers",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 0,
+            "search_url": "https://ayvens.wd3.myworkdayjobs.com/wday/cxs/ayvens/AyvensCareers/jobs",
+            "site": "AyvensCareers",
+            "source": "workday_cxs",
+            "tenant": "ayvens",
+            "total": 0,
+            "verified_empty": true,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "published_search_destination": "https://www.ayvens.com/en-cp/careers/open-positions/",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://www.ayvens.com/en-cp/careers/",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P012",
+  "candidate_urls": [
+    "https://www.ayvens.com/en-cp/careers/",
+    "https://ayvens.wd3.myworkdayjobs.com/AyvensCareers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.ayvens.com/en-cp/careers/",
+      "checked_at": "2026-11-15T06:17:43.250024+00:00",
+      "http_status": 200,
+      "final_url": "https://www.ayvens.com/en-cp/careers/",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Join a global leader in sustainable mobility | Ayvens",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.ayvens.com/en-cp/careers/#main-content",
+        "https://www.ayvens.com/en-cp/careers/",
+        "https://www.ayvens.com/en-cp/careers/our-promise/",
+        "https://www.ayvens.com/en-cp/careers/our-culture/",
+        "https://www.ayvens.com/en-cp/careers/open-positions/",
+        "https://www.ayvens.com/en-cp/careers/open-positions/#HQ",
+        "https://www.ayvens.com/en-cp/careers/open-positions/global-careers/",
+        "https://www.ayvens.com/en-cp/careers/ayvens-global-applicant-privacy-statement/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/1f8db380b837db7d4e.html.gz",
+      "sha256": "fe305d0e6a51f91ec729ad4e60b0640a2bcccf7a0238e8c9ba538b89df1c6064"
+    },
+    {
+      "requested_url": "https://ayvens.wd3.myworkdayjobs.com/AyvensCareers",
+      "checked_at": "2026-11-15T06:17:45.829085+00:00",
+      "http_status": 200,
+      "final_url": "https://ayvens.wd3.myworkdayjobs.com/AyvensCareers",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/66eb14178b9ebb7f1e.html.gz",
+      "sha256": "57985814d6f40a6cf510b4eed48faa8f7b0b04c6fb12ccea58ec464c9e0e924f"
+    }
+  ]
+}

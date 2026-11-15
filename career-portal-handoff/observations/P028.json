@@ -1,0 +1,143 @@
+{
+  "name": "Coca-Cola",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Coca-Cola India",
+      "url": "https://coca-colacompany.com/careers",
+      "final_url": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:24:04+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:23:58+00:00",
+        "configured_url": "https://coca-colacompany.com/careers",
+        "final_url": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 0,
+            "search_url": "https://coke.wd1.myworkdayjobs.com/wday/cxs/coke/coca-cola-careers/jobs",
+            "site": "coca-cola-careers",
+            "source": "workday_cxs",
+            "tenant": "coke",
+            "total": 0,
+            "verified_empty": true,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "resolved_destination": "https://careers.coca-colacompany.com/",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://coca-colacompany.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P028",
+  "candidate_urls": [
+    "https://coca-colacompany.com/careers",
+    "https://coke.wd1.myworkdayjobs.com/coca-cola-careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://coca-colacompany.com/careers",
+      "checked_at": "2026-11-15T06:17:54.132557+00:00",
+      "http_status": 200,
+      "final_url": "https://www.coca-colacompany.com/careers",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at The Coca-Cola Company",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.coca-colacompany.com/careers",
+        "https://www.coca-colacompany.com/careers#reciteme-launch",
+        "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+        "https://www.coca-colacompany.com/careers/life-at-coca-cola#our-culture",
+        "https://www.coca-colacompany.com/careers/life-at-coca-cola#benefits",
+        "https://www.coca-colacompany.com/careers/life-at-coca-cola/career-development",
+        "https://www.coca-colacompany.com/careers/work-with-us",
+        "https://www.coca-colacompany.com/careers/career-areas",
+        "https://www.coca-colacompany.com/careers/career-areas/our-military-community",
+        "https://www.coca-colacompany.com/careers/career-areas/accessible-workplace",
+        "https://www.coca-colacompany.com/careers/early-careers",
+        "https://www.coca-colacompany.com/careers/hiring-process",
+        "https://www.coca-colacompany.com/careers/hiring-process#application-process",
+        "https://www.coca-colacompany.com/careers/hiring-process#interview",
+        "https://www.coca-colacompany.com/careers/hiring-process#offers",
+        "https://careers.coca-colacompany.com/",
+        "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#early-careers",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#rgm",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#pacs",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#marketing",
+        "https://www.coca-colacompany.com/careers/career-areas/digital-and-technology-careers",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#sales",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#finance-and-accounting",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#technical",
+        "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#supply-chain",
+        "https://careers.coca-colacompany.com/?store_id=United%20States%20of%20America",
+        "https://careers.coca-colacompany.com/?store_id=Brazil",
+        "https://careers.coca-colacompany.com/?store_id=France",
+        "https://careers.coca-colacompany.com/?store_id=Mexico",
+        "https://careers.coca-colacompany.com/?store_id=Egypt",
+        "https://careers.coca-colacompany.com/?store_id=Ireland",
+        "https://careers.coca-colacompany.com/?store_id=Belgium",
+        "https://careers.coca-colacompany.com/?store_id=Singapore",
+        "https://careers.coca-colacompany.com/?store_id=India",
+        "https://careers.coca-colacompany.com/?store_id=Kenya",
+        "https://careers.coca-colacompany.com/?store_id=Japan",
+        "https://careers.coca-colacompany.com/?store_id=Turkey",
+        "https://careers.coca-colacompany.com/?store_id=Indonesia",
+        "https://careers.coca-colacompany.com/?store_id=Argentina",
+        "https://careers.coca-colacompany.com/?store_id=Poland",
+        "https://careers.coca-colacompany.com/?store_id=China",
+        "https://careers.coca-colacompany.com/?store_id=Chile",
+        "https://www.coca-colacompany.com/policies-and-practices/employment/recruitment-scams-fraudulent-activity",
+        "https://www.coca-colacompany.com/careers#js-open-onetrust-preference-center"
+      ],
+      "forms": [
+        {
+          "action": "/search"
+        },
+        {
+          "action": "/search"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/cf27172438947f06d0.html.gz",
+      "sha256": "03423f0091f248d36686650c095fc98d706c3d728383a583aae250b053b245ca"
+    },
+    {
+      "requested_url": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers",
+      "checked_at": "2026-11-15T06:17:56.758015+00:00",
+      "http_status": 200,
+      "final_url": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/c3bbf1655003862531.html.gz",
+      "sha256": "923e4d4b8913159f0376de3193a1cd7456c4db69a80026a8134e883abe6d1ddf"
+    }
+  ]
+}

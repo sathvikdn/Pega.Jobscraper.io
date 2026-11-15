@@ -1,0 +1,137 @@
+{
+  "name": "Procter & Gamble",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Procter & Gamble India",
+      "url": "https://pgcareers.com",
+      "final_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/login",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:23:55+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:23:41+00:00",
+        "final_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/login",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "india_facet_count": 0,
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 9,
+            "search_url": "https://pg.wd5.myworkdayjobs.com/wday/cxs/pg/1000/jobs",
+            "site": "1000",
+            "source": "workday_cxs",
+            "tenant": "pg",
+            "total": 9,
+            "verified_empty": true,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "published_search_destination": "https://www.pgcareers.com/in/en/search-results",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://pgcareers.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P091",
+  "candidate_urls": [
+    "https://pgcareers.com",
+    "https://pg.wd5.myworkdayjobs.com/en-US/1000/login"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://pgcareers.com",
+      "checked_at": "2026-11-15T06:18:39.455770+00:00",
+      "http_status": 200,
+      "final_url": "https://www.pgcareers.com/in/en",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at P&G India - Jobs, Internships, Events | P&G Careers",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://www.pgcareers.com/in/search-results",
+        "https://www.pgcareers.com/in/en",
+        "https://www.pgcareers.com/in/en/design",
+        "https://www.pgcareers.com/in/en/engineering-new",
+        "https://www.pgcareers.com/in/en/finance-and-accounting",
+        "https://www.pgcareers.com/in/en/human-resources",
+        "https://www.pgcareers.com/in/en/information-technology",
+        "https://www.pgcareers.com/in/en/legal-patent",
+        "https://www.pgcareers.com/in/en/manufacturing-quality-assurance",
+        "https://www.pgcareers.com/in/en/marketing-brand-management",
+        "https://www.pgcareers.com/in/en/research-and-development",
+        "https://www.pgcareers.com/in/en/sales",
+        "https://www.pgcareers.com/in/en/supply-chain-logistics",
+        "https://www.pgcareers.com/in/en/other-careers",
+        "https://www.pgplantjobs.com/global/en",
+        "https://www.pgcareers.com/in/en/about-us",
+        "https://www.pgcareers.com/in/en/culture-2025",
+        "https://www.pgcareers.com/in/en/benefits",
+        "https://www.pgcareers.com/in/en/leadership-development",
+        "https://www.pgcareers.com/in/en/jointalentcommunity",
+        "https://www.instagram.com/pgcareers/",
+        "https://www.facebook.com/pgcareers/",
+        "https://www.pgcareers.com/",
+        "https://www.pgcareers.com/in/en/home"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/c49385d7371eadfc55.html.gz",
+      "sha256": "2416c32e1fe6f6d41e6daf7769b23cb976643ab693abcfdb642a7d5b17236a9c"
+    },
+    {
+      "requested_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/login",
+      "checked_at": "2026-11-15T06:18:43.035739+00:00",
+      "http_status": 200,
+      "final_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/login",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [
+        "https://pg.wd5.myworkdayjobs.com/en-US/1000/\\\"https:/privacypolicy.pg.com/employee/candidate/\\\"",
+        "https://pg.wd5.myworkdayjobs.com/en-US/1000/\\\"http:/preferencecenter.pg.com/en-us/datarequests/\\\""
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/c5089d00e619bb3476.html.gz",
+      "sha256": "c4d261e96c5f5de7d89e83f63c21440f0ab30eb067ecafbee3072885bac1a081"
+    },
+    {
+      "requested_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/\\\"https:/privacypolicy.pg.com/employee/candidate/\\\"",
+      "checked_at": "2026-11-15T06:18:44.680314+00:00",
+      "http_status": 400,
+      "final_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/\\\"https:/privacypolicy.pg.com/employee/candidate/\\\"",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/\\\"http:/preferencecenter.pg.com/en-us/datarequests/\\\"",
+      "checked_at": "2026-11-15T06:18:46.028023+00:00",
+      "http_status": 400,
+      "final_url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/\\\"http:/preferencecenter.pg.com/en-us/datarequests/\\\"",
+      "outcome": "HTTP error"
+    }
+  ]
+}

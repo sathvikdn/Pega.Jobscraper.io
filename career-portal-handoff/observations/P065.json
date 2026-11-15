@@ -1,0 +1,83 @@
+{
+  "name": "Komatsu",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Komatsu",
+      "url": "https://www.komatsu.com/en/careers/",
+      "final_url": "https://komatsu.jobs/go/View-All-Jobs/8425800/",
+      "method": "successfactors_rmk_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:43:57+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:43:45+00:00",
+        "configured_url": "https://www.komatsu.com/en/careers/",
+        "details_checked": 0,
+        "final_url": "https://komatsu.jobs/go/View-All-Jobs/8425800/",
+        "jobs_found": 0,
+        "method": "successfactors_rmk_api",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://komatsu.jobs/go/View-All-Jobs/8425800/",
+        "reported_total": 0,
+        "resolved_destination": "https://komatsu.jobs/",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://www.komatsu.com/en/careers/",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P065",
+  "candidate_urls": [
+    "https://www.komatsu.com/en/careers/",
+    "https://komatsu.jobs/go/View-All-Jobs/8425800/"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.komatsu.com/en/careers/",
+      "checked_at": "2026-11-15T06:18:21.995156+00:00",
+      "http_status": 200,
+      "final_url": "https://www.komatsu.com/en-us/careers",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers | Komatsu",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.komatsu.com/en-us/careers",
+        "https://komatsu.jobs/",
+        "https://www.komatsu.com/en-us/careers/employee-stories",
+        "https://www.komatsu.com/en-us/careers/career-development",
+        "https://komatsu.jobs/go/Engineering/8420900/",
+        "https://komatsu.jobs/go/Field-Service/8421300/",
+        "https://komatsu.jobs/go/Finance/8421500/",
+        "https://komatsu.jobs/go/Human-Resources/8421900/",
+        "https://komatsu.jobs/go/Information-Technology/8422000/",
+        "https://komatsu.jobs/go/LegalCompliance/8422800/",
+        "https://komatsu.jobs/go/Manufacturing/8422900/",
+        "https://komatsu.jobs/go/Marketing/9796500/",
+        "https://komatsu.jobs/go/Product-Support/8423100/",
+        "https://komatsu.jobs/go/Sales/8423700/",
+        "https://komatsu.jobs/go/Smart-Technology/8424200/",
+        "https://komatsu.jobs/go/Supply-ChainProcurement/8424500/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/a9df0c1efea6952a92.html.gz",
+      "sha256": "6482cdb687aee38ca9271131fb17450737211bd5c4c6d1cb0f9503eb6a844845"
+    },
+    {
+      "requested_url": "https://komatsu.jobs/go/View-All-Jobs/8425800/",
+      "checked_at": "2026-11-15T06:18:26.475192+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    }
+  ]
+}

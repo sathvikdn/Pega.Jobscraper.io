@@ -1,0 +1,121 @@
+{
+  "name": "ITC Limited",
+  "scope": "current registry lacks adapter",
+  "type": "enterprise",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "ITC Limited",
+      "url": "https://www.itcportal.com/careers/",
+      "final_url": "https://recruitment.itcportal.com/jobs/Careers",
+      "method": "zoho_embedded_json",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:28:22+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:28:17+00:00",
+        "configured_url": "https://www.itcportal.com/careers/",
+        "details_checked": 48,
+        "final_url": "https://recruitment.itcportal.com/jobs/Careers",
+        "jobs_found": 0,
+        "method": "zoho_embedded_json",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 48,
+        "resolved_destination": "https://recruitment.itcportal.com/jobs/Careers",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.itcportal.com/careers/",
+        "verified_empty": true,
+        "verified_search": true,
+        "zoho_recruit": true
+      }
+    },
+    {
+      "old_company": "ITC Limited",
+      "url": "https://www.itcportal.com/careers/",
+      "final_url": "https://recruitment.itcportal.com/jobs/Careers",
+      "method": "zoho_embedded_json",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:36+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:28:17+00:00",
+        "configured_url": "https://www.itcportal.com/careers/",
+        "details_checked": 48,
+        "final_url": "https://recruitment.itcportal.com/jobs/Careers",
+        "jobs_found": 0,
+        "method": "zoho_embedded_json",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 48,
+        "resolved_destination": "https://recruitment.itcportal.com/jobs/Careers",
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://www.itcportal.com/careers/",
+        "verified_empty": true,
+        "verified_search": true,
+        "zoho_recruit": true
+      }
+    }
+  ],
+  "id": "P061",
+  "candidate_urls": [
+    "https://www.itcportal.com/careers/",
+    "https://recruitment.itcportal.com/jobs/Careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.itcportal.com/careers/",
+      "checked_at": "2026-11-15T06:18:20.176064+00:00",
+      "http_status": 200,
+      "final_url": "https://itcportal.com/careers.html",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers",
+      "platform_signals": [
+        "Zoho Recruit"
+      ],
+      "career_links": [
+        "https://itcportal.com/careers.html",
+        "https://itcportal.com/careers/what-do-we-have-in-store-for-you.html",
+        "https://itcportal.com/careers/what-sets-us-apart.html",
+        "https://itcportal.com/careers/learning-and-development.html",
+        "https://itcportal.com/careers/diversity-inclusion.html",
+        "https://itcportal.com/careers/career-avenues.html",
+        "https://itcportal.com/careers/our-voices.html",
+        "https://itcportal.com/careers/itc-kites.html",
+        "https://itcportal.com/careers/itc-aut.html",
+        "https://itcportal.com/careers/itc-interrobang.html",
+        "https://itcportal.com/careers/experience-itc.html",
+        "https://itcportal.com/careers/itc-masterclass.html",
+        "https://itcportal.com/careers/itc-catalyst-series.html",
+        "https://recruitment.itcportal.com/jobs/Careers#summer-internship",
+        "https://recruitment.itcportal.com/jobs/Careers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/c0ebd4b39fe2c03665.html.gz",
+      "sha256": "d59f3f7aca7b8fadd3a41cd2176b41924f603dc41e48ce16cf262026469f403b"
+    },
+    {
+      "requested_url": "https://recruitment.itcportal.com/jobs/Careers",
+      "checked_at": "2026-11-15T06:18:21.414462+00:00",
+      "http_status": 200,
+      "final_url": "https://recruitment.itcportal.com/jobs/Careers",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": true,
+      "outcome": "reachable",
+      "title": "Careers at ITC",
+      "platform_signals": [
+        "Zoho Recruit"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/9d9f2f1106989882d1.html.gz",
+      "sha256": "83e3501547016df56b019b5224a32765c7d3c76a45debf4e78c123025cda296e"
+    }
+  ]
+}

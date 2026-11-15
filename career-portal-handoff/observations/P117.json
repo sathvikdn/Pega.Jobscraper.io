@@ -1,0 +1,110 @@
+{
+  "name": "Zurich Insurance",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Zurich Insurance India",
+      "url": "https://zurich.com/careers",
+      "final_url": "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:26:08+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:25:55+00:00",
+        "configured_url": "https://zurich.com/careers",
+        "details_checked": 2,
+        "final_url": "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://www.careers.zurich.com/search",
+        "reported_total": 2,
+        "resolved_destination": "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://zurich.com/careers",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P117",
+  "candidate_urls": [
+    "https://zurich.com/careers",
+    "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://zurich.com/careers",
+      "checked_at": "2026-11-15T06:18:55.476337+00:00",
+      "http_status": 200,
+      "final_url": "https://www.zurich.com/careers",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/3e5e131b34ec4695ae.html.gz",
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d"
+    },
+    {
+      "requested_url": "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=",
+      "checked_at": "2026-11-15T06:18:57.306558+00:00",
+      "http_status": 200,
+      "final_url": "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Pega - Zurich Insurance Company Ltd. Jobs",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=#content",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=",
+        "https://www.careers.zurich.com/search/\\",
+        "https://careers.zurich.com/search/",
+        "https://www.zurich.com/careers",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=de_DE",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=en_US",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=es_ES",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=fr_FR",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=it_IT",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=ja_JP",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=pt_PT",
+        "https://www.careers.zurich.com/search/?q=pega&startrow=0&locationsearch=&locale=zh_CN",
+        "https://www.careers.zurich.com/search",
+        "https://www.careers.zurich.com/",
+        "https://www.careers.zurich.com/search/?q=pega&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+        "https://www.careers.zurich.com/search/?q=pega&sortColumn=sort_department&sortDirection=desc#hdrDepartmentButton",
+        "https://www.careers.zurich.com/search/?q=pega&sortColumn=sort_location&sortDirection=desc#hdrLocationButton",
+        "https://www.careers.zurich.com/search/?q=pega&sortColumn=referencedate&sortDirection=desc#hdrDateButton",
+        "https://www.careers.zurich.com/job/Schaumburg-Innoveo-Skye-Solution-Architect-IL-60159/1376254057/",
+        "https://www.careers.zurich.com/job/Mumbai-Senior-Product-Manager-Case-Management-&-BPM-MH/1376611457/",
+        "https://www.zurich.com/en/careers/search-and-apply"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/talentcommunity/subscribe/?locale=en_US&keywords=",
+          "method": "POST",
+          "id": "emailsubscribe"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/20243617fc60521658.html.gz",
+      "sha256": "e74d17c0a1cc5cdebf067336090294123d146a695e3c0442f3182d895157496c"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "name": "CVS Health",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "CVS Health India",
+      "url": "https://jobs.cvshealth.com",
+      "final_url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/login",
+      "method": "employer_linked_board",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:24:38+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:24:25+00:00",
+        "final_url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/login",
+        "jobs_found": 0,
+        "linked_board_attempts": [
+          {
+            "jobs_found": 0,
+            "pages": 1,
+            "partial": false,
+            "returned": 0,
+            "search_url": "https://cvshealth.wd1.myworkdayjobs.com/wday/cxs/cvshealth/CVS_Health_Careers/jobs",
+            "site": "CVS_Health_Careers",
+            "source": "workday_cxs",
+            "tenant": "cvshealth",
+            "total": 0,
+            "verified_empty": true,
+            "verified_search": true,
+            "workday": true
+          }
+        ],
+        "method": "employer_linked_board",
+        "partial": false,
+        "published_search_destination": "https://jobs.cvshealth.com/us/en/search-results",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.cvshealth.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "CVS Health / Aetna",
+      "url": "https://jobs.cvshealth.com",
+      "final_url": "https://jobs.cvshealth.com/us/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:36:28+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:36:13+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.cvshealth.com/us/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://jobs.cvshealth.com/us/en/search-results",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.cvshealth.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P033",
+  "candidate_urls": [
+    "https://jobs.cvshealth.com",
+    "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/login",
+    "https://jobs.cvshealth.com/us/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.cvshealth.com",
+      "checked_at": "2026-11-15T06:18:02.029933+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.cvshealth.com/us/en/home",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "CVS Health Careers",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://jobs.cvshealth.com/us/en/search-results",
+        "https://jobs.cvshealth.com/us/en/home",
+        "https://jobs.cvshealth.com/us/en/careerareas",
+        "https://jobs.cvshealth.com/us/en/life",
+        "https://jobs.cvshealth.com/us/en/who-we-are",
+        "https://jobs.cvshealth.com/us/en/jointalentcommunity",
+        "https://jobs.cvshealth.com/us/en/hiring-process",
+        "https://jobs.cvshealth.com/us/en/events",
+        "https://jobs.cvshealth.com/us/en/blog",
+        "https://cdn.phenompeople.com/CareerConnectResources/CVSCHLUS/documents/2025-CVS-EEO-Statement_wet-signature-1757513868342.pdf",
+        "https://cdn.phenompeople.com/CareerConnectResources/CVSCHLUS/documents/EEOC_KnowYourRights_screen_reader_10_20-1715835527320-1750776283673.pdf",
+        "https://www.facebook.com/CVSCareers/",
+        "https://www.linkedin.com/showcase/cvs-health-careers",
+        "https://www.instagram.com/cvscareers ",
+        "https://www.tiktok.com/@cvscareers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/391294d7aeef815094.html.gz",
+      "sha256": "b4bb9eee7160cb2517434e15512c5e7fc3ab292a0e19c129ec74759f25d6d982"
+    },
+    {
+      "requested_url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/login",
+      "checked_at": "2026-11-15T06:18:05.768875+00:00",
+      "http_status": 200,
+      "final_url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/login",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [
+        "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/\\\"https:/www.cvshealth.com/privacy-policy/workforce.html\\\""
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/3e346a70d5d4310288.html.gz",
+      "sha256": "68579878c4326d236fbfad36c8468ac337de2c7b6a7c17bf3fc0104550d8213e"
+    },
+    {
+      "requested_url": "https://jobs.cvshealth.com/us/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:07.358722+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.cvshealth.com/us/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search CVS Health Jobs | Find Your Next Career OpportunitySearch results | Find available job openings at Blue tech migration",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://jobs.cvshealth.com/us/en/home",
+        "https://jobs.cvshealth.com/us/en/jointalentcommunity",
+        "https://jobs.cvshealth.com/us/en/careerareas",
+        "https://jobs.cvshealth.com/us/en/life",
+        "https://jobs.cvshealth.com/us/en/who-we-are",
+        "https://cdn.phenompeople.com/CareerConnectResources/CVSCHLUS/documents/2025-CVS-EEO-Statement_wet-signature-1757513868342.pdf",
+        "https://cdn.phenompeople.com/CareerConnectResources/CVSCHLUS/documents/EEOC_KnowYourRights_screen_reader_10_20-1715835527320-1750776283673.pdf",
+        "https://www.facebook.com/CVSCareers/",
+        "https://www.linkedin.com/showcase/cvs-health-careers",
+        "https://www.instagram.com/cvscareers ",
+        "https://www.tiktok.com/@cvscareers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/89ca34cb2126d264b6.html.gz",
+      "sha256": "0c5094e7e18b0f55e1af7930768c05b44f843528195cb4450c1bfe7dd6b092a9"
+    },
+    {
+      "requested_url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/\\\"https:/www.cvshealth.com/privacy-policy/workforce.html\\\"",
+      "checked_at": "2026-11-15T06:18:09.407989+00:00",
+      "http_status": 400,
+      "final_url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/\\\"https:/www.cvshealth.com/privacy-policy/workforce.html\\\"",
+      "outcome": "HTTP error"
+    }
+  ]
+}

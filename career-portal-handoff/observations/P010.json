@@ -1,0 +1,238 @@
+{
+  "name": "AstraZeneca",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "AstraZeneca",
+      "url": "https://careers.astrazeneca.com",
+      "final_url": "https://careers.astrazeneca.com/search-jobs/pega/7684/1",
+      "method": "talentbrew_keyword_only",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:35:50+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:35:43+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.astrazeneca.com/search-jobs/pega/7684/1",
+        "jobs_found": 0,
+        "method": "talentbrew_keyword_only",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "talentbrew": true,
+        "url": "https://careers.astrazeneca.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P010",
+  "candidate_urls": [
+    "https://careers.astrazeneca.com",
+    "https://careers.astrazeneca.com/search-jobs/pega/7684/1"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.astrazeneca.com",
+      "checked_at": "2026-11-15T06:17:41.864280+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.astrazeneca.com",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Working at AstraZenecanp_cross_2773798_C3D800 Copy 3",
+      "platform_signals": [
+        "Eightfold",
+        "TalentBrew"
+      ],
+      "career_links": [
+        "https://careers.astrazeneca.com#content",
+        "https://careers.astrazeneca.com/",
+        "https://careers.astrazeneca.com/saved-jobs",
+        "https://careers.astrazeneca.com/about-us",
+        "https://careers.astrazeneca.com/life-at-astrazeneca",
+        "https://careers.astrazeneca.com/locations",
+        "https://careers.alexion.com/",
+        "https://careers.astrazeneca.com/biopharmaceuticals-business-unit",
+        "https://careers.astrazeneca.com/biopharmaceuticals-r-and-d",
+        "https://careers.astrazeneca.com/enterpriseai",
+        "https://careers.astrazeneca.com/enabling",
+        "https://fusionpharma.com/careers/",
+        "https://careers.astrazeneca.com/business-area-it",
+        "https://careers.astrazeneca.com/international",
+        "https://careers.astrazeneca.com/oncology-business-unit",
+        "https://careers.astrazeneca.com/oncology-r-and-d",
+        "https://careers.astrazeneca.com/business-area-operations",
+        "https://careers.astrazeneca.com/early-talent",
+        "https://careers.astrazeneca.com/our-people",
+        "https://careers.astrazeneca.com/application-hints-tips",
+        "https://careers.astrazeneca.com/aiguidance",
+        "https://careers.astrazeneca.com/faqs",
+        "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+        "https://careers.astrazeneca.com#search-form-fields",
+        "https://astrazeneca.eightfold.ai/careers",
+        "https://careers.astrazeneca.com/canada",
+        "https://careers.astrazeneca.com/india",
+        "https://careers.astrazeneca.com/mexico",
+        "https://careers.astrazeneca.com/lisbon",
+        "https://careers.astrazeneca.com/spain",
+        "https://careers.astrazeneca.com/sweden",
+        "https://careers.astrazeneca.com/united-kingdom",
+        "https://careers.astrazeneca.com/united-states",
+        "https://jobs.alexion.com/",
+        "https://careers.astrazeneca.com/lifelonglearning",
+        "https://actionfraud.police.uk/fraud-az-recruitment-scams",
+        "https://careers.astrazeneca.com/sitemap",
+        "https://careers.astrazeneca.com/candidate-privacy-notice",
+        "https://twitter.com/astrazenecajobs"
+      ],
+      "forms": [
+        {
+          "action": "/search-jobs",
+          "id": "search-form-e28a976e8b"
+        },
+        {
+          "action": "/search-jobs",
+          "id": "search-form-235987b272"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+        "https://astrazeneca.eightfold.ai/careers"
+      ],
+      "evidence_file": "evidence/271c29eb4e752f3e79.html.gz",
+      "sha256": "0a31c50bc8f21260794a59b93c38099e8048e788e105b4dbe5c81cae7fb4fc8e"
+    },
+    {
+      "requested_url": "https://careers.astrazeneca.com/search-jobs/pega/7684/1",
+      "checked_at": "2026-11-15T06:17:42.431474+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.astrazeneca.com/search-jobs/pega/7684/1",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search our Job Opportunities at AstraZeneca",
+      "platform_signals": [
+        "Eightfold",
+        "TalentBrew"
+      ],
+      "career_links": [
+        "https://careers.astrazeneca.com/search-jobs/pega/7684/1#content",
+        "https://careers.astrazeneca.com/search-jobs/pega/7684/1#search-results-list",
+        "https://careers.astrazeneca.com/search-jobs/pega/7684/1#search-filters",
+        "https://careers.astrazeneca.com/",
+        "https://careers.astrazeneca.com/saved-jobs",
+        "https://careers.astrazeneca.com/about-us",
+        "https://careers.astrazeneca.com/life-at-astrazeneca",
+        "https://careers.astrazeneca.com/locations",
+        "https://careers.alexion.com/",
+        "https://careers.astrazeneca.com/biopharmaceuticals-business-unit",
+        "https://careers.astrazeneca.com/biopharmaceuticals-r-and-d",
+        "https://careers.astrazeneca.com/enterpriseai",
+        "https://careers.astrazeneca.com/enabling",
+        "https://fusionpharma.com/careers/",
+        "https://careers.astrazeneca.com/business-area-it",
+        "https://careers.astrazeneca.com/international",
+        "https://careers.astrazeneca.com/oncology-business-unit",
+        "https://careers.astrazeneca.com/oncology-r-and-d",
+        "https://careers.astrazeneca.com/business-area-operations",
+        "https://careers.astrazeneca.com/early-talent",
+        "https://careers.astrazeneca.com/our-people",
+        "https://careers.astrazeneca.com/application-hints-tips",
+        "https://careers.astrazeneca.com/aiguidance",
+        "https://careers.astrazeneca.com/faqs",
+        "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+        "https://careers.astrazeneca.com/search-jobs/pega/7684/1#search-form-fields",
+        "https://job-search.astrazeneca.cn/china-jobs",
+        "https://astrazeneca.eightfold.ai/careers",
+        "https://careers.astrazeneca.com/search-jobs/pela/7684/1/1",
+        "https://careers.astrazeneca.com/search-jobs/pe%c3%a7a/7684/1/1",
+        "https://careers.astrazeneca.com/search-jobs/peer/7684/1/1",
+        "https://careers.astrazeneca.com/search-jobs/para/7684/1/1",
+        "https://careers.astrazeneca.com/search-jobs/peek/7684/1/1",
+        "https://careers.astrazeneca.com/#scroll-to-form",
+        "https://careers.astrazeneca.com/sitemap",
+        "https://careers.astrazeneca.com/candidate-privacy-notice",
+        "https://twitter.com/astrazenecajobs"
+      ],
+      "forms": [
+        {
+          "action": "/search-jobs",
+          "id": "search-form-cfb1126a08"
+        },
+        {
+          "action": "/search-jobs",
+          "id": "search-form-4dde013380"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+        "https://astrazeneca.eightfold.ai/careers"
+      ],
+      "evidence_file": "evidence/8353f7c84b54dbde70.html.gz",
+      "sha256": "5d82d82d831f8ed2bb4d285cedeb140eb013fda79c052aaa206b8fef9ee08d1e"
+    },
+    {
+      "requested_url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+      "checked_at": "2026-11-15T06:17:43.830217+00:00",
+      "http_status": 200,
+      "final_url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at AstraZeneca",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&amp;hl=en",
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://astrazeneca.eightfold.ai/careers?domain=astrazeneca.com&#34;,"
+      ],
+      "evidence_file": "evidence/1f36a315f065c6980e.html.gz",
+      "sha256": "be9957b63d057dba85b9b442e277c5915f23373ea89c17e94d25be8cbcf8a2c6"
+    },
+    {
+      "requested_url": "https://astrazeneca.eightfold.ai/careers",
+      "checked_at": "2026-11-15T06:17:44.638850+00:00",
+      "http_status": 200,
+      "final_url": "https://astrazeneca.eightfold.ai/careers",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at AstraZeneca",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://astrazeneca.eightfold.ai/careers",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css'",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css'",
+        "https://astrazeneca.eightfold.ai/careers?domain=astrazeneca.com&#34;,",
+        "https://astrazeneca.eightfold.ai/careers?domain=astrazeneca.com&amp;microsite=alexion&#34;,",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/1731648414::jq-css-bundle.css&#39;",
+        "https://static.vscdn.net/images/careers/demo/eightfolddemo-pcsx-demo/bootstrap-style.css&#39;",
+        "https://astrazeneca.eightfold.ai/careers&#34;},",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;}},",
+        "https://eightfold.ai/privacy-policy/&#39;",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;},",
+        "https://app.eightfold.ai&#34;},",
+        "https://eightfold.ai/privacy-policy/&#34;}},"
+      ],
+      "evidence_file": "evidence/47d71d846e6bde81b0.html.gz",
+      "sha256": "3c83a7cff9c0206e677c2a291b9c00f90cffa6b53f0dbae82fe5bef80d845940"
+    }
+  ]
+}

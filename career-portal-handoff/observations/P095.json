@@ -1,0 +1,36 @@
+{
+  "name": "Rabobank",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Rabobank",
+      "url": "https://www.rabobank.jobs",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:31:06+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:31:05+00:00",
+        "error": "Navigation failed: Source returned HTTP 403",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.rabobank.jobs"
+      }
+    }
+  ],
+  "id": "P095",
+  "candidate_urls": [
+    "https://www.rabobank.jobs"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.rabobank.jobs",
+      "checked_at": "2026-11-15T06:18:41.674015+00:00",
+      "http_status": 403,
+      "final_url": "https://www.rabobank.jobs",
+      "outcome": "access refused"
+    }
+  ]
+}

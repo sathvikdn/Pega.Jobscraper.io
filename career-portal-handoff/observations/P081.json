@@ -1,0 +1,150 @@
+{
+  "name": "National Australia Bank",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "NAB",
+      "url": "https://www.nab.com.au/about-us/careers",
+      "final_url": null,
+      "method": "eightfold_observed_pcsx",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:15:09+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:15:00+00:00",
+        "configured_url": "https://www.nab.com.au/about-us/careers",
+        "details_checked": 1,
+        "eightfold": true,
+        "jobs_found": 0,
+        "method": "eightfold_observed_pcsx",
+        "observed_api": "https://nab.eightfold.ai/api/pcsx/search?domain=nab.com.au&query=&location=&start=0&",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 1,
+        "resolved_destination": "https://nab.eightfold.ai/careers",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.nab.com.au/about-us/careers",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "NAB Innovation Centre India",
+      "url": "https://www.nab.com.au/about-us/careers",
+      "final_url": null,
+      "method": "eightfold_observed_pcsx",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:54+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:29:44+00:00",
+        "configured_url": "https://www.nab.com.au/about-us/careers",
+        "details_checked": 1,
+        "eightfold": true,
+        "jobs_found": 0,
+        "method": "eightfold_observed_pcsx",
+        "observed_api": "https://nab.eightfold.ai/api/pcsx/search?domain=nab.com.au&query=&location=&start=0&",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 1,
+        "resolved_destination": "https://nab.eightfold.ai/careers",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.nab.com.au/about-us/careers",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P081",
+  "candidate_urls": [
+    "https://www.nab.com.au/about-us/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.nab.com.au/about-us/careers",
+      "checked_at": "2026-11-15T06:18:31.918813+00:00",
+      "http_status": 200,
+      "final_url": "https://www.nab.com.au/about-us/careers",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Growing customer obsessed colleagues | Careers at NAB - NAB",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [
+        "https://www.nab.com.au/about-us/careers#login",
+        "https://www.nab.com.au/about-us/careers#main-content",
+        "https://www.nab.com.au/about-us/careers",
+        "https://www.nab.com.au/about-us/careers/benefits",
+        "https://careers.nab.com.au/en/listing/",
+        "https://www.nab.com.au/about-us/careers/business-areas",
+        "https://www.nab.com.au/about-us/careers/early-careers",
+        "https://www.nab.com.au/about-us/careers/first-nations-careers",
+        "https://www.nab.com.au/about-us/careers#career-opportunities",
+        "https://www.nab.com.au/about-us/careers#early-careers",
+        "https://www.nab.com.au/about-us/careers#global-innovation",
+        "https://www.nab.com.au/about-us/careers#who-we-are",
+        "https://www.nab.com.au/about-us/careers#hear-from-our-people",
+        "https://www.nab.com.au/about-us/careers/inclusion-diversity",
+        "https://nab.eightfold.ai/careers?start=0&pid=563980770445908&sort_by=hot&browser=external",
+        "https://www.nab.com.au/about-us/careers/business-areas/business-private-banking",
+        "https://www.nab.com.au/about-us/careers/business-areas/corporate-institutional-banking",
+        "https://www.nab.com.au/about-us/careers/business-areas/personal-banking",
+        "https://www.nab.com.au/about-us/careers/business-areas/technology-digital",
+        "https://australiandisabilitynetwork.org.au/how-we-can-help-you/become-a-disability-confident-recruiter/",
+        "https://www.nab.com.au/about-us/careers/nabindia",
+        "https://www.nab.com.au/about-us/careers/nabvietnam",
+        "https://www.nab.com.au/about-us/careers/people-culture",
+        "https://www.nab.com.au/about-us/careers/social-impact-community",
+        "https://www.nab.com.au/about-us/careers/who-we-are",
+        "https://careers.nab.com.au/"
+      ],
+      "forms": [
+        {
+          "action": "/search",
+          "method": "get",
+          "id": "search-form-mobile"
+        },
+        {
+          "action": "/search",
+          "method": "get"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://nab.eightfold.ai/careers?start&#61;0&amp;pid&#61;563980770445908&amp;sort_by&#61;hot&amp;browser&#61;external"
+      ],
+      "evidence_file": "evidence/4507e9253fe529020a.html.gz",
+      "sha256": "a7529b17e9813c4d213efe32081b684c413b4b1eaa6b96de36d596894e337af8"
+    },
+    {
+      "requested_url": "https://nab.eightfold.ai/careers?start=0&pid=563980770445908&sort_by=hot&browser=external",
+      "checked_at": "2026-11-15T06:18:32.997173+00:00",
+      "http_status": 200,
+      "final_url": "https://nab.eightfold.ai/careers?start=0&pid=563980770445908&sort_by=hot&browser=external",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers at National Australia Bank",
+      "platform_signals": [
+        "Eightfold"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://static.vscdn.net/fonts/css/eightfold-font-base.css",
+        "https://nab.eightfold.ai/careers?start=0&amp;pid=563980770445908&amp;sort_by=hot&amp;browser=external",
+        "https://nab.eightfold.ai/careers&#34;,",
+        "https://nab.eightfold.ai/careers?microsite=bnz&#34;,",
+        "https://app.eightfold.ai&#34;},",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;}},",
+        "https://eightfold.ai/privacy-policy/&#39;",
+        "https://static.vscdn.net/images/eightfolddemo-araparla.com/login-background.png&#34;},"
+      ],
+      "evidence_file": "evidence/a418dbba9b9410923f.html.gz",
+      "sha256": "acc974dbe33b52c93877e9282d6e14975fb486064d2a63e3a4a5d5e07acbcd1c"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "name": "Marsh McLennan",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Marsh McLennan India (MMGS)",
+      "url": "https://careers.marshmclennan.com",
+      "final_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:27:48+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:27:31+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://careers.marsh.com/global/en/search-results",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.marshmclennan.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Marsh McLennan India (MMGS)",
+      "url": "https://careers.marshmclennan.com",
+      "final_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:43+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:27:31+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://careers.marsh.com/global/en/search-results",
+        "reported_total": 0,
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://careers.marshmclennan.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Marsh McLennan India",
+      "url": "https://careers.marshmclennan.com",
+      "final_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:41:14+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:40:57+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://careers.marsh.com/global/en/search-results",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.marshmclennan.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P071",
+  "candidate_urls": [
+    "https://careers.marshmclennan.com",
+    "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.marshmclennan.com",
+      "checked_at": "2026-11-15T06:18:25.581790+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.marsh.com/global/en",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": true,
+      "outcome": "reachable",
+      "title": "Careers at Marsh | Marsh jobs",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/bbae706c3906d41720.html.gz",
+      "sha256": "1305ca9727503caa230b84eec56292604c206c525960b0ca5d3de3a570e19c21"
+    },
+    {
+      "requested_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:18:33.813613+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.marsh.com/global/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search results | Marsh careers",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://careers.marsh.com/global/en/home",
+        "https://careers.marsh.com/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.googleapis.com/maps/api/js",
+        "https://content-us.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/1f37d5eeae92a1704c.html.gz",
+      "sha256": "7fff89d513ba255824841dab8084f471474cac3e7fc82b59222ffb7444cf6c02"
+    }
+  ]
+}

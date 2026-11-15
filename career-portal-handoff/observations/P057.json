@@ -1,0 +1,79 @@
+{
+  "name": "ICICI Bank",
+  "scope": "current registry lacks adapter",
+  "type": "enterprise",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "ICICI Bank",
+      "url": "https://www.icicicareers.com",
+      "final_url": "https://careers.icici.bank.in/CareerApplicant/Career/job-listing/",
+      "method": "icici_portal_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:27:05+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:26:57+00:00",
+        "configured_url": "https://www.icicicareers.com",
+        "details_checked": 0,
+        "final_url": "https://careers.icici.bank.in/CareerApplicant/Career/job-listing/",
+        "icici": true,
+        "jobs_found": 0,
+        "method": "icici_portal_search",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://careers.icici.bank.in/CareerApplicant/Career/job-listing/",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.icicicareers.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P057",
+  "candidate_urls": [
+    "https://www.icicicareers.com",
+    "https://careers.icici.bank.in/CareerApplicant/Career/job-listing/"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.icicicareers.com",
+      "checked_at": "2026-11-15T06:18:18.816215+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.icici.bank.in/CareerApplicant/Career/Home/",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.google.com/maps/api/js?key=AIzaSyCj3NEwMVtI0ywFbsl-33zWdAcevGmFgBs&libraries=places"
+      ],
+      "evidence_file": "evidence/20bbb732196936683d.html.gz",
+      "sha256": "3853fa3f0388c9335777b100ac12ca0c6e16fcf8f38ca56a3832bbe1fb37eae4"
+    },
+    {
+      "requested_url": "https://careers.icici.bank.in/CareerApplicant/Career/job-listing/",
+      "checked_at": "2026-11-15T06:18:19.511733+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.icici.bank.in/CareerApplicant/Career/job-listing/",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maps.google.com/maps/api/js?key=AIzaSyCj3NEwMVtI0ywFbsl-33zWdAcevGmFgBs&libraries=places"
+      ],
+      "evidence_file": "evidence/f842db5adc3e8e9bc3.html.gz",
+      "sha256": "4f112f5e408242dd4b2ecb6f76afe7d9223885545aacdc36597cd2b6c9899598"
+    }
+  ]
+}

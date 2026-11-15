@@ -1,0 +1,104 @@
+{
+  "name": "BT Group",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "BT Group India",
+      "url": "https://bt.com/careers",
+      "final_url": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+      "method": "successfactors_rmk_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:11:19+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:11:10+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+        "jobs_found": 0,
+        "method": "successfactors_rmk_api",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://bt.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "BT Group India",
+      "url": "https://bt.com/careers",
+      "final_url": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+      "method": "successfactors_rmk_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:17:18+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:11:10+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+        "jobs_found": 0,
+        "method": "successfactors_rmk_api",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+        "reported_total": 0,
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://bt.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "BT Group",
+      "url": "https://bt.com/careers",
+      "final_url": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+      "method": "successfactors_rmk_api",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:31:40+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:31:30+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+        "jobs_found": 0,
+        "method": "successfactors_rmk_api",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://bt.com/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P021",
+  "candidate_urls": [
+    "https://bt.com/careers",
+    "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://bt.com/careers",
+      "checked_at": "2026-11-15T06:17:49.223237+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://jobs.bt.com/search/?q=&locationsearch=&searchResultView=LIST",
+      "checked_at": "2026-11-15T06:17:50.904801+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ]
+}

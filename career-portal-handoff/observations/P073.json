@@ -1,0 +1,209 @@
+{
+  "name": "Maximus",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Maximus India",
+      "url": "https://careers.maximus.com",
+      "final_url": "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+      "method": "avature_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:26:30+00:00",
+      "diagnostic": {
+        "avature": true,
+        "checked_at": "2026-11-13T19:26:22+00:00",
+        "configured_url": "https://careers.maximus.com",
+        "details_checked": 0,
+        "final_url": "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+        "jobs_found": 0,
+        "method": "avature_search",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://maximus.avature.net/careers/SearchJobs",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.maximus.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P073",
+  "candidate_urls": [
+    "https://careers.maximus.com",
+    "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.maximus.com",
+      "checked_at": "2026-11-15T06:18:27.373841+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "requested_url": "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+      "checked_at": "2026-11-15T06:18:27.877740+00:00",
+      "http_status": 200,
+      "final_url": "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Job Search | Maximus",
+      "platform_signals": [
+        "Avature"
+      ],
+      "career_links": [
+        "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1#main",
+        "https://maximus.avature.net/careers",
+        "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+        "https://maximus.avature.net/careers/SearchJobs",
+        "https://maximus.avature.net/careers/Login?listFilterMode=1",
+        "https://maximus.avature.net/careers/RecommendedJobsMethods",
+        "https://maximus.avature.net/GlobalTalentCommunity",
+        "https://maximus.com/avature-terms-of-use",
+        "https://maximus.com/avature-global-privacy-statement",
+        "https://www.instagram.com/maximuscareers/"
+      ],
+      "forms": [
+        {
+          "action": "https://maximus.avature.net/careers/SearchJobs",
+          "method": "post",
+          "id": "tpt_jobSortableForm"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+        "https://maximus.avature.net/portal/4/images/logo--hiring-organization.png",
+        "https://maximus.avature.net/portal/4/images/icon--remove.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--remove--hover.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--add.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--add--hover.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--edit.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--edit--hover.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--share.svg);",
+        "https://maximus.avature.net/portal/4/images/desktop-atoms-arrows-right.svg);",
+        "https://maximus.avature.net/portal/4/images/desktop-atoms-arrows-left.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--caret--down.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--caret--down--disabled.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--caret--up.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--clear.svg);",
+        "https://maximus.avature.net/portal/4/images/icons-exclamation-circle.webp);",
+        "https://maximus.avature.net/portal/4/images/icon--user.svg);",
+        "https://maximus.avature.net/portal/4/images/close.svg);",
+        "https://maximus.avature.net/portal/4/images/banner--main--desktop.webp);",
+        "https://maximus.avature.net/portal/4/images/banner--user.webp);"
+      ],
+      "evidence_file": "evidence/b33415bc65c681f380.html.gz",
+      "sha256": "1811515cb801ed4ade9fb73cc053ecb81381f056b6c6e46d86d4f85ff4de718e"
+    },
+    {
+      "requested_url": "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+      "checked_at": "2026-11-15T06:18:27.877740+00:00",
+      "http_status": 200,
+      "final_url": "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Job Search | Maximus",
+      "platform_signals": [
+        "Avature"
+      ],
+      "career_links": [
+        "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1#main",
+        "https://maximus.avature.net/careers",
+        "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+        "https://maximus.avature.net/careers/SearchJobs",
+        "https://maximus.avature.net/careers/Login?listFilterMode=1",
+        "https://maximus.avature.net/careers/RecommendedJobsMethods",
+        "https://maximus.avature.net/GlobalTalentCommunity",
+        "https://maximus.com/avature-terms-of-use",
+        "https://maximus.com/avature-global-privacy-statement",
+        "https://www.instagram.com/maximuscareers/"
+      ],
+      "forms": [
+        {
+          "action": "https://maximus.avature.net/careers/SearchJobs",
+          "method": "post",
+          "id": "tpt_jobSortableForm"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maximus.avature.net/careers/SearchJobs/pega?listFilterMode=1",
+        "https://maximus.avature.net/portal/4/images/logo--hiring-organization.png",
+        "https://maximus.avature.net/portal/4/images/icon--remove.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--remove--hover.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--add.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--add--hover.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--edit.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--edit--hover.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--share.svg);",
+        "https://maximus.avature.net/portal/4/images/desktop-atoms-arrows-right.svg);",
+        "https://maximus.avature.net/portal/4/images/desktop-atoms-arrows-left.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--caret--down.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--caret--down--disabled.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--caret--up.svg);",
+        "https://maximus.avature.net/portal/4/images/icon--clear.svg);",
+        "https://maximus.avature.net/portal/4/images/icons-exclamation-circle.webp);",
+        "https://maximus.avature.net/portal/4/images/icon--user.svg);",
+        "https://maximus.avature.net/portal/4/images/close.svg);",
+        "https://maximus.avature.net/portal/4/images/banner--main--desktop.webp);",
+        "https://maximus.avature.net/portal/4/images/banner--user.webp);"
+      ],
+      "evidence_file": "evidence/b33415bc65c681f380.html.gz",
+      "sha256": "1811515cb801ed4ade9fb73cc053ecb81381f056b6c6e46d86d4f85ff4de718e"
+    },
+    {
+      "requested_url": "https://maximus.avature.net/careers",
+      "checked_at": "2026-11-15T06:18:30.349082+00:00",
+      "http_status": 200,
+      "final_url": "https://maximus.avature.net/careers",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Explore Global Career Opportunities with Maximus!​",
+      "platform_signals": [
+        "Avature"
+      ],
+      "career_links": [
+        "https://maximus.avature.net/careers",
+        "https://maximus.avature.net/careers/USHome",
+        "https://www.maximuscanada.ca/careers",
+        "https://jobs.maximusuk.co.uk/",
+        "https://india.maximus.com/careers",
+        "https://maximus.avature.net/eventslisting",
+        "https://maximus.avature.net/GlobalTalentCommunity",
+        "https://maximus.avature.net/careers/Login",
+        "https://maximus.avature.net/careers/RecommendedJobsMethods",
+        "https://maximus.avature.net/careers/Job-Search",
+        "https://maximus.com/avature-terms-of-use",
+        "https://maximus.com/avature-global-privacy-statement",
+        "https://www.instagram.com/maximuscareers/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://maximus.avature.net/careers/Job-Search",
+        "https://maximus.avature.net/careers/USHome",
+        "https://maximus.avature.net/careers",
+        "https://maximus.avature.net/eventslisting",
+        "https://maximus.avature.net/GlobalTalentCommunity",
+        "https://maximus.avature.net/careers/Login",
+        "https://maximus.avature.net/careers/RecommendedJobsMethods",
+        "https://maximus.avature.net/careers/Job-Search_US",
+        "https://maximus.avature.net/portal/4/images/logo--small.svg&quot;,&quot;srcMobile&quot;:&quot;https://maximus.avature.net/portal/4/images/logo--small.svg&quot;,&quot;srcTablet&quot;:&quot;https://maximus.avature.net/portal/4/images/logo--small.svg&quot;,&quo",
+        "https://maximus.avature.net/portal/4/images/logo--small.svg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;title&quot;:&quot;Open",
+        "https://maximus.avature.net/portal/4/images/logo--small.svg",
+        "https://maximus.com/avature-terms-of-use",
+        "https://maximus.com/avature-global-privacy-statement"
+      ],
+      "evidence_file": "evidence/3eaee4de0edabe56b9.html.gz",
+      "sha256": "229a20f51771bd6ff71646df3b475a1649658e8dfd4b5e22baa5bc5730542fe3"
+    }
+  ]
+}

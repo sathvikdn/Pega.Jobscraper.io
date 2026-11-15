@@ -1,0 +1,130 @@
+{
+  "name": "Cummins",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Cummins India",
+      "url": "https://www.cummins.com/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:18:49+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:18:49+00:00",
+        "error": "Navigation failed: Source returned HTTP 403",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://www.cummins.com/careers"
+      }
+    }
+  ],
+  "id": "P032",
+  "candidate_urls": [
+    "https://www.cummins.com/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.cummins.com/careers",
+      "checked_at": "2026-11-15T06:18:00.584034+00:00",
+      "http_status": 200,
+      "final_url": "https://www.cummins.com/en-in/careers",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers | Cummins Inc.",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.cummins.com/en-in/careers#main-content",
+        "https://www.cummins.com/en-in/careers",
+        "https://www.cummins.com/en-in/careers/adm",
+        "https://www.cummins.com/en-in/careers/cummins-talent-acquisition-privacy-statement-consent",
+        "https://cummins.jobs",
+        "https://cummins.jobs/?vs=1715&utm_campaign=search_opportunities_button&utm_medium=Other&utm_source=cummins.com%22target=%22_blank%22&_gl=1*o1es3l*_gcl_au*MTkzOTA5NjcxOC4xNzM1OTM1NDcz*_ga*NTA0MDUwNzUuMTczNTkzNTQ2OQ..*_ga_34358ZFEWS*MTczNjQ1MDc1MS43LjEuMTczNjQ1MjA3OC42MC4wLjA.&_ga=2.246479940.1553910548.1736450752-50405075.1735935469",
+        "https://www.cummins.com/en-in/news/tag/careers",
+        "https://www.cummins.com/en-in/news/2020/07/15/career-new-power-gives-sujin-power-help-drive-sustainable-travel",
+        "https://www.cummins.com/en-in/news/2026/09/22/technician-area-general-manager-john-ds-career-growth-cummins-inc",
+        "https://www.cummins.com/en-in/news/2026/08/18/engineering-career-continuous-growth-ana-ws-journey-cummins-inc",
+        "https://www.cummins.com/en-in/news/2026/07/22/driving-innovation-purpose-kaushik-career-cummins-inc"
+      ],
+      "forms": [
+        {
+          "action": "/en-in/search",
+          "method": "get",
+          "id": "views-exposed-form-search-page-1"
+        },
+        {
+          "action": "/en-in/search",
+          "method": "get",
+          "id": "views-exposed-form-search-page-1"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/a7101671746e792d03.html.gz",
+      "sha256": "fe1e73d34fd83f1fa4c2458fe442ee33f534d0502a7e2c9654d384e51325d8b7"
+    },
+    {
+      "requested_url": "https://cummins.jobs",
+      "checked_at": "2026-11-15T06:22:07.743465+00:00",
+      "http_status": 200,
+      "final_url": "https://cummins.jobs",
+      "content_type": "text/html",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Home - Cummins",
+      "platform_signals": [
+        "Oracle Recruiting"
+      ],
+      "career_links": [
+        "https://cummins.jobs#main",
+        "https://cummins.jobs/jobs/",
+        "https://cummins-veterans.jobs/",
+        "https://cummins.jobs/career-path/engineering/jobs/",
+        "https://cummins.jobs/career-path/manufacturing/jobs/",
+        "https://cummins.jobs/career-path/service/jobs/",
+        "https://cummins.jobs/jobs",
+        "https://cummins.jobs/career-path/apprenticeships/jobs/",
+        "https://cummins.jobs/career-path/communications/jobs/",
+        "https://cummins.jobs/career-path/cooperative/jobs/",
+        "https://cummins.jobs/career-path/corporate-responsibility/jobs/",
+        "https://cummins.jobs/career-path/environment/jobs/",
+        "https://cummins.jobs/career-path/ethics-and-compliance/jobs/",
+        "https://cummins.jobs/career-path/finance/jobs/",
+        "https://cummins.jobs/career-path/general-management/jobs/",
+        "https://cummins.jobs/career-path/government-relations/jobs/",
+        "https://cummins.jobs/career-path/health-safety/jobs/",
+        "https://cummins.jobs/career-path/human-resources/jobs/",
+        "https://cummins.jobs/career-path/information-technology/jobs/",
+        "https://cummins.jobs/career-path/internships/jobs/",
+        "https://cummins.jobs/career-path/law/jobs/",
+        "https://cummins.jobs/career-path/logistics/jobs/",
+        "https://cummins.jobs/career-path/marketing/jobs/",
+        "https://cummins.jobs/recruitment-job-type/office/jobs/",
+        "https://cummins.jobs/career-path/purchasing/jobs/",
+        "https://cummins.jobs/career-path/quality/jobs/",
+        "https://cummins.jobs/career-path/repower/jobs/",
+        "https://cummins.jobs/career-path/sales/jobs/",
+        "https://cummins.jobs/career-path/strategy/jobs/",
+        "https://cummins.jobs/career-path/supply-chain/jobs/",
+        "https://www.cummins.com/careers#benefits",
+        "https://careers.cummins.com/"
+      ],
+      "forms": [
+        {
+          "id": "search"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/my-profile/sign-in",
+        "https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/fscmUI/redwood/internalmobility/opportunitymarketplace",
+        "https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1006/pages/7016"
+      ],
+      "evidence_file": "evidence/30552b5766a24863fc.html.gz",
+      "sha256": "9c5176c13f17cc806d40c34557938a5cae7b40e7bb8556182a4fff7da7904f59",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

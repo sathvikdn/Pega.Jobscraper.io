@@ -1,0 +1,127 @@
+{
+  "name": "Renault Nissan Technology",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Renault-Nissan Tech India",
+      "url": "https://www.renaultgroup.com/en/our-company/careers/",
+      "final_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:22:34+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:22:33+00:00",
+        "configured_url": "https://www.renaultgroup.com/en/our-company/careers/",
+        "final_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "partial": false,
+        "resolved_destination": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://www.renaultgroup.com/en/our-company/careers/",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday_cxs": {
+          "jobs_found": 0,
+          "pages": 1,
+          "partial": false,
+          "returned": 0,
+          "search_url": "https://alliancewd.wd3.myworkdayjobs.com/wday/cxs/alliancewd/renault-group-careers/jobs",
+          "site": "renault-group-careers",
+          "source": "workday_cxs",
+          "tenant": "alliancewd",
+          "total": 0,
+          "verified_empty": true,
+          "verified_search": true,
+          "workday": true
+        }
+      }
+    },
+    {
+      "old_company": "Renault-Nissan Tech",
+      "url": "https://www.renaultgroup.com/en/our-company/careers/",
+      "final_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:33:49+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:33:48+00:00",
+        "configured_url": "https://www.renaultgroup.com/en/our-company/careers/",
+        "final_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "partial": false,
+        "resolved_destination": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+        "reused_attempt": false,
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://www.renaultgroup.com/en/our-company/careers/",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday_cxs": {
+          "jobs_found": 0,
+          "pages": 1,
+          "partial": false,
+          "returned": 0,
+          "search_url": "https://alliancewd.wd3.myworkdayjobs.com/wday/cxs/alliancewd/renault-group-careers/jobs",
+          "site": "renault-group-careers",
+          "source": "workday_cxs",
+          "tenant": "alliancewd",
+          "total": 0,
+          "verified_empty": true,
+          "verified_search": true,
+          "workday": true
+        }
+      }
+    }
+  ],
+  "id": "P096",
+  "candidate_urls": [
+    "https://www.renaultgroup.com/en/our-company/careers/",
+    "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.renaultgroup.com/en/our-company/careers/",
+      "checked_at": "2026-11-15T06:18:42.629880+00:00",
+      "http_status": 200,
+      "final_url": "https://www.renaultgroup.com/en/finance/key-figures/",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Key figures - Renault Group",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.renaultgroup.com/en/careers/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/3e0a1aec8089dac769.html.gz",
+      "sha256": "b706d7218d56c6bde42960d82fee4f74fd260dbd2018e2b954a7d5a9f4abc4fd"
+    },
+    {
+      "requested_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+      "checked_at": "2026-11-15T06:18:45.253736+00:00",
+      "http_status": 200,
+      "final_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/e0f9fbb9a34c365e25.html.gz",
+      "sha256": "56873d1e1a8c467765ea1d2d14bca342306e14f9a55458e5613261dd583667c7"
+    }
+  ]
+}

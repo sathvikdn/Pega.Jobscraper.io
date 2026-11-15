@@ -1,0 +1,60 @@
+{
+  "name": "T-Mobile / TMUS Global Solutions",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "T-Mobile / TMUS Global Solutions",
+      "url": "https://www.t-mobile.com/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:04+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:45:04+00:00",
+        "error": "Navigation failed: Page.goto: net::ERR_CONNECTION_RESET at https://www.t-mobile.com/careers\nCall log:\n  - navigating to \"https://www.t-mobi",
+        "previous_attempt": "{\"url\": \"https://www.t-mobile.com/careers\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:35:50+00:00\", \"error\": \"Navigation failed: Page.goto: net::ERR_CONNECTION_RESET at https://www.t-mobile.com/careers\\nCall log:\\n  - navigating to \\\"https://www.t-mobi\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.t-mobile.com/careers"
+      }
+    }
+  ],
+  "id": "P105",
+  "candidate_urls": [
+    "https://www.t-mobile.com/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.t-mobile.com/careers",
+      "checked_at": "2026-11-15T06:18:49.277799+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>"
+    },
+    {
+      "requested_url": "https://talent500.com/t-mobile/careers/india/",
+      "checked_at": "2026-11-15T06:21:24.540325+00:00",
+      "http_status": 200,
+      "final_url": "https://talent500.com/t-mobile/careers/india/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "India – TMobile",
+      "platform_signals": [],
+      "career_links": [
+        "https://talent500.com/t-mobile/careers/india/#content",
+        "https://talent500.com/t-mobile/careers/",
+        "https://talent500.com/t-mobile/careers/india/",
+        "https://talent500.com/jobs/t-mobile/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/2375a64a2be8a417c1.html.gz",
+      "sha256": "282279e8166ca41013ebab4ad888e3fbcb330f856b0021ce3648f5b68cce241d",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "name": "Volvo Cars",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Volvo Cars",
+      "url": "https://www.volvocars.com/intl/v/careers",
+      "final_url": "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:42:29+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:42:17+00:00",
+        "configured_url": "https://www.volvocars.com/intl/v/careers",
+        "details_checked": 0,
+        "final_url": "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://jobs.volvocars.com/go/All-Jobs/3823101/",
+        "reported_total": 0,
+        "resolved_destination": "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://www.volvocars.com/intl/v/careers",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P114",
+  "candidate_urls": [
+    "https://www.volvocars.com/intl/v/careers",
+    "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.volvocars.com/intl/v/careers",
+      "checked_at": "2026-11-15T06:18:55.181066+00:00",
+      "http_status": 403,
+      "final_url": "https://www.volvocars.com/intl/v/careers",
+      "outcome": "access refused"
+    },
+    {
+      "requested_url": "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=",
+      "checked_at": "2026-11-15T06:18:55.918358+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Pega - Volvo Car Corporation Jobs",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=#content",
+        "https://jobs.volvocars.com/",
+        "https://jobs.volvocars.com/go/All-Jobs/3823101/",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=",
+        "https://jobs.volvocars.com/search/?q=&locationsearch=Belgium",
+        "https://jobs.volvocars.com/search/?q=&locationsearch=Sweden",
+        "https://jobs.volvocars.com/search/?q=&locationsearch=US",
+        "https://jobs.volvocars.com/search/?q=&locationsearch=China",
+        "https://jobs.volvocars.com/search/?q=&locationsearch=Slovakia",
+        "https://jobs.volvocars.com/search/?q=&locationsearch=Poland",
+        "https://jobs.volvocars.com/search/?q=&locationsearch=India",
+        "https://jobs.volvocars.com/talentcommunity/subscribe/?locale=en_US",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=&locale=de_DE",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=&locale=en_US",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=&locale=es_ES",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=&locale=fr_FR",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=&locale=nl_BE",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=&locale=sv_SE",
+        "https://jobs.volvocars.com/search/?q=pega&startrow=0&locationsearch=&locale=zh_CN",
+        "https://jobs.volvocars.com/job/Ghent-Stage-enof-masterproef-Maintenance-BE-9000/934446501/",
+        "https://jobs.volvocars.com/job/Ghent-Werkplekleren-voor-student-technische-graduaatsopleiding-BE-9000/933144001/",
+        "https://jobs.volvocars.com/job/Ghent-Stage-enof-eindwerk-ondersteunende-diensten-BE-9000/933142701/",
+        "https://jobs.volvocars.com/job/Northlake-Sr-Mgr-Strategic-Network%2C-Central-Region-TX-76247/1381017733/",
+        "https://jobs.volvocars.com/job/Mahwah-Service-Technician-NJ-07430/1427593133/",
+        "https://jobs.volvocars.com/job/Ridgeville-Area-Leader-Manufacturing-Engineering-SC-29472/1448252733/",
+        "https://jobs.volvocars.com/job/Ridgeville-Direct-Material-Buyer-SC-29472/1433075633/",
+        "https://jobs.volvocars.com/job/Gothenburg-Quality-Manager-40531/1457257733/",
+        "https://jobs.volvocars.com/job/Shanghai-AI-Voice-Interaction-Product-Owner-201807/1457120333/",
+        "https://jobs.volvocars.com/job/Kosice-Senior-Accountant-%28VCK%29-040-01/1457147733/",
+        "https://jobs.volvocars.com/job/Mahwah-Cybersecurity-Engineer-NJ-07430/1447840533/",
+        "https://jobs.volvocars.com/job/Ridgeville-Direct-Material-Buyer-SC-29472/1447718133/",
+        "https://jobs.volvocars.com/job/Ridgeville-Direct-Material-Buyer-%28Injection-Molded-Plastics%29-SC-29472/1447724533/",
+        "https://jobs.volvocars.com/job/Ridgeville-Systems-Engineer-SC-29472/1437336933/",
+        "https://jobs.volvocars.com/job/Ridgeville-Senior-Industrial-Engineer-Potting-SC-29472/1457006733/",
+        "https://jobs.volvocars.com/job/Olofstrom-Examensarbete-inom-Stamping-Service-och-Underh%C3%A5ll-p%C3%A5-Volvo-Cars-i-Olofstr%C3%B6m-29380/1436771233/",
+        "https://jobs.volvocars.com/job/Ridgeville-Legal-Counsel-Ridgeville%2C-SC-%28On-site%29-SC-29472/1425431533/",
+        "https://jobs.volvocars.com/job/Floby-Underh%C3%A5llstekniker-Volvo-Cars-Floby/1244608301/",
+        "https://jobs.volvocars.com/job/Kosice-Maintenance-Engineer-%28Robotics%29-Body-in-White-%28VCK%29-040-01/1191010401/",
+        "https://jobs.volvocars.com/job/Ridgeville-SPM-Engineer-SC-29472/1432062933/",
+        "https://group.volvocars.com/careers",
+        "https://jobs.volvocars.com/content/Cookies-and-Privacy/?locale=en_US"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/talentcommunity/subscribe/?locale=en_US&keywords=",
+          "method": "POST",
+          "id": "emailsubscribe"
+        },
+        {
+          "action": "/talentcommunity/subscribe/?locale=en_US&keywords=",
+          "method": "POST",
+          "id": "emailsubscribe-clone"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/b65b8177d1c354c1a3.html.gz",
+      "sha256": "8e07454eb1e83e3066c1a45cc736d974f7efe23c81863f6c8eefd1b72b8a9d1e"
+    }
+  ]
+}

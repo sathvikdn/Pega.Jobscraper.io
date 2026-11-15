@@ -1,0 +1,109 @@
+{
+  "name": "Allianz Technology",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Allianz Technology",
+      "url": "https://careers.allianz.com",
+      "final_url": "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:15:37+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:15:30+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.allianz.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Allianz Technology",
+      "url": "https://careers.allianz.com",
+      "final_url": "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:29:07+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:15:30+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://careers.allianz.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Allianz Technology India",
+      "url": "https://careers.allianz.com",
+      "final_url": "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:40:39+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:40:34+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.allianz.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P005",
+  "candidate_urls": [
+    "https://careers.allianz.com",
+    "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.allianz.com",
+      "checked_at": "2026-11-15T06:17:39.022459+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://careers.allianz.com/global/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:17:39.644518+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://careers.allianz.com/global/en/search-results?qcountry=India",
+      "checked_at": "2026-11-15T06:21:22.809488+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

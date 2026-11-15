@@ -1,0 +1,65 @@
+{
+  "name": "Mercedes-Benz Research and Development India",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Mercedes-Benz R&D India",
+      "url": "https://jobs.mercedes-benz.com",
+      "final_url": null,
+      "method": "beesite_search_api",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:44:43+00:00",
+      "diagnostic": {
+        "beesite": true,
+        "checked_at": "2026-11-13T19:44:43+00:00",
+        "details_checked": 0,
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+        "jobs_found": 0,
+        "method": "beesite_search_api",
+        "pages_checked": 0,
+        "partial": true,
+        "previous_attempt": "{\"url\": \"https://jobs.mercedes-benz.com\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:22:33+00:00\", \"beesite\": true, \"method\": \"beesite_search_api\", \"partial\": true, \"pages_checked\": 0, \"details_checked\": 0, \"error\": \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>\", \"jobs_found\": 0, \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.mercedes-benz.com"
+      }
+    },
+    {
+      "old_company": "Mercedes-Benz R&D India",
+      "url": "https://jobs.mercedes-benz.com",
+      "final_url": null,
+      "method": "beesite_search_api",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:02+00:00",
+      "diagnostic": {
+        "beesite": true,
+        "checked_at": "2026-11-13T19:45:02+00:00",
+        "details_checked": 0,
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+        "jobs_found": 0,
+        "method": "beesite_search_api",
+        "pages_checked": 0,
+        "partial": true,
+        "previous_attempt": "{\"url\": \"https://jobs.mercedes-benz.com\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:22:33+00:00\", \"beesite\": true, \"method\": \"beesite_search_api\", \"partial\": true, \"pages_checked\": 0, \"details_checked\": 0, \"error\": \"<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>\", \"jobs_found\": 0, \"reused_attempt\": true}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.mercedes-benz.com"
+      }
+    }
+  ],
+  "id": "P076",
+  "candidate_urls": [
+    "https://jobs.mercedes-benz.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.mercedes-benz.com",
+      "checked_at": "2026-11-15T06:18:02.550796+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ]
+}

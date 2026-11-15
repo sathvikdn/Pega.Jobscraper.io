@@ -1,0 +1,77 @@
+{
+  "name": "Goldman Sachs",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "Goldman Sachs",
+      "url": "https://higher.gs.com/roles?q=pega&location=India",
+      "final_url": "https://higher.gs.com/roles?q=pega&location=India",
+      "method": "goldman_higher_graphql",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:13:31+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:13:29+00:00",
+        "details_checked": 1,
+        "final_url": "https://higher.gs.com/roles?q=pega&location=India",
+        "goldman_graphql": true,
+        "jobs_found": 0,
+        "method": "goldman_higher_graphql",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 1,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://higher.gs.com/roles?q=pega&location=India",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Goldman Sachs India",
+      "url": "https://higher.gs.com/roles?q=pega&location=India",
+      "final_url": "https://higher.gs.com/roles?q=pega&location=India",
+      "method": "goldman_higher_graphql",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:38:50+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:38:49+00:00",
+        "details_checked": 1,
+        "final_url": "https://higher.gs.com/roles?q=pega&location=India",
+        "goldman_graphql": true,
+        "jobs_found": 0,
+        "method": "goldman_higher_graphql",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 1,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://higher.gs.com/roles?q=pega&location=India",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P052",
+  "candidate_urls": [
+    "https://higher.gs.com/roles?q=pega&location=India"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://higher.gs.com/roles?q=pega&location=India",
+      "checked_at": "2026-11-15T06:18:16.066284+00:00",
+      "http_status": 200,
+      "final_url": "https://higher.gs.com/results",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Opportunities | Goldman Sachs",
+      "platform_signals": [],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/c6637152fae56ae992.html.gz",
+      "sha256": "d95a6d06c52a2b9cec53fedb1e1f06029a02920ef4d34be7562dbee391288b25"
+    }
+  ]
+}

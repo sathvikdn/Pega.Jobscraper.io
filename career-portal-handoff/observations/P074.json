@@ -1,0 +1,89 @@
+{
+  "name": "Medtronic",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Medtronic India",
+      "url": "https://medtronic.eightfold.ai/careers",
+      "final_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:22:21+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:22:17+00:00",
+        "details_checked": 0,
+        "final_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "pages_checked": 2,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://medtronic.eightfold.ai/careers",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday": true
+      }
+    },
+    {
+      "old_company": "Medtronic",
+      "url": "https://medtronic.eightfold.ai/careers",
+      "final_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+      "method": "workday_cxs",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:33:05+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:33:01+00:00",
+        "details_checked": 0,
+        "final_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+        "jobs_found": 0,
+        "method": "workday_cxs",
+        "pages_checked": 2,
+        "partial": false,
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://medtronic.eightfold.ai/careers",
+        "verified_empty": true,
+        "verified_search": true,
+        "workday": true
+      }
+    }
+  ],
+  "id": "P074",
+  "candidate_urls": [
+    "https://medtronic.eightfold.ai/careers",
+    "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://medtronic.eightfold.ai/careers",
+      "checked_at": "2026-11-15T06:18:27.786104+00:00",
+      "http_status": 404,
+      "final_url": "https://medtronic.eightfold.ai/careers",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+      "checked_at": "2026-11-15T06:18:29.307285+00:00",
+      "http_status": 200,
+      "final_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/eecbe5fdeef9b8a5f5.html.gz",
+      "sha256": "855afd8fa40e209406254ccfca416bd738adf97946fae0f1f42eb7fc2342b40c"
+    }
+  ]
+}

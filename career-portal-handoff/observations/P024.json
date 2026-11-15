@@ -1,0 +1,37 @@
+{
+  "name": "Charter / Spectrum",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Charter / Spectrum",
+      "url": "https://jobs.spectrum.com",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:27+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:45:05+00:00",
+        "error": "Navigation failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://jobs.spectrum.com/\nCall log:\n  - navigating to \"https://jobs.spectrum.c",
+        "previous_attempt": "{\"url\": \"https://jobs.spectrum.com\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:36:50+00:00\", \"error\": \"Navigation failed: Page.goto: Timeout 12000ms exceeded.\\nCall log:\\n  - navigating to \\\"https://jobs.spectrum.com/\\\", waiting until \\\"domcontent\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://jobs.spectrum.com"
+      }
+    }
+  ],
+  "id": "P024",
+  "candidate_urls": [
+    "https://jobs.spectrum.com"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.spectrum.com",
+      "checked_at": "2026-11-15T06:17:51.478125+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    }
+  ]
+}

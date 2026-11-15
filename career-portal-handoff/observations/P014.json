@@ -1,0 +1,204 @@
+{
+  "name": "BD",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "BD / Becton Dickinson",
+      "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+      "final_url": "https://jobs.bd.com/en/search-jobs/pega/159/1",
+      "method": "talentbrew_keyword_only",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:30:26+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:30:10+00:00",
+        "configured_url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+        "details_checked": 3,
+        "final_url": "https://jobs.bd.com/en/search-jobs/pega/159/1",
+        "jobs_found": 0,
+        "method": "talentbrew_keyword_only",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 3,
+        "resolved_destination": "https://jobs.bd.com/en/search-jobs",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "talentbrew": true,
+        "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P014",
+  "candidate_urls": [
+    "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+    "https://jobs.bd.com/en/search-jobs/pega/159/1"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+      "checked_at": "2026-11-15T06:17:44.318294+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search India Jobs at Becton Dickinson & Company",
+      "platform_signals": [
+        "Workday",
+        "TalentBrew",
+        "Paradox"
+      ],
+      "career_links": [
+        "https://jobs.bd.com/en/location/india-jobs/159/1269750/2#content",
+        "https://jobs.bd.com/",
+        "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+        "https://jobs.bd.com/fr-ca/lieu/india-jobs/159/1269750/2",
+        "https://jobs.bd.com/ja/ロケーション/india-jobs/159/1269750/2",
+        "https://jobs.bd.com/pt-br/localização/india-jobs/159/1269750/2",
+        "https://jobs.bd.com/es/ubicación/india-jobs/159/1269750/2",
+        "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login",
+        "https://jobs.bd.com/saved-jobs",
+        "https://jobs.bd.com/search-jobs",
+        "https://jobs.bd.com/en",
+        "https://jobs.bd.com/en/about-us",
+        "https://jobs.bd.com/en/blog",
+        "https://jobs.bd.com/en/your-career-at-BD",
+        "https://jobs.bd.com/en/our-culture",
+        "https://jobs.bd.com/en/inclusion-and-engagement",
+        "https://jobs.bd.com/en/locations",
+        "https://jobs.bd.com/en/career-areas",
+        "https://jobs.bd.com/en/faqs",
+        "https://jobs.bd.com/en/blog-how-to-get-your-application-noticed",
+        "https://jobs.bd.com/en/blog-how-to-prepare-for-an-interview",
+        "https://jobs.bd.com/en/blog-ai-usage-tips-and-best-practices",
+        "https://jobs.bd.com/en/search-jobs",
+        "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224",
+        "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976",
+        "https://jobs.bd.com/en/job/gurgaon/sr-area-sales-manager/159/100658945344",
+        "https://jobs.bd.com/en/job/new-delhi/area-sales-manager/159/99429812608",
+        "https://jobs.bd.com/en/job/bengaluru/r-and-d-manager/159/103105838096",
+        "https://jobs.bd.com/en/job/kolkata/area-sales-manager-hospital/159/102933835936",
+        "https://jobs.bd.com/en/job/mumbai/senior-area-sales-manager/159/102933834704",
+        "https://jobs.bd.com/en/job/kolkata/area-sales-manager/159/102929778880",
+        "https://jobs.bd.com/en/job/hyderabad/senior-area-manager/159/102929776128",
+        "https://jobs.bd.com/en/job/bengaluru/manager-quality-systems/159/102845122176",
+        "https://jobs.bd.com/en/job/mumbai/sr-area-sales-manager/159/102759574688",
+        "https://jobs.bd.com/en/job/gurgaon/integration-leader-sa-contract/159/102458622384",
+        "https://jobs.bd.com/en/job/surat/area-sales-manager/159/102277849312",
+        "https://jobs.bd.com/en/job/gurgaon/deputy-marketing-manager/159/102239506624",
+        "https://jobs.bd.com/en/job/bengaluru/associate-staff-engineer/159/102149580480",
+        "https://jobs.bd.com/en/location/india-jobs/159/1269750/2/1",
+        "https://jobs.bd.com/en/location/india-jobs/159/1269750/2/2",
+        "https://jobs.bd.com/en/bd-privacy-policy",
+        "https://jobs.bd.com/beware-of-job-scams",
+        "https://jobs.bd.com/career-areas",
+        "https://jobs.bd.com/sitemap",
+        "https://jobs.bd.com/bd-privacy-policy",
+        "https://jobs.bd.com/cookiepolicy"
+      ],
+      "forms": [
+        {
+          "action": "/en/search-jobs",
+          "id": "search-form-54fe9ed69e"
+        },
+        {
+          "action": "/en/form/submit",
+          "id": "job-alert-form"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login"
+      ],
+      "evidence_file": "evidence/5f8ff37144c12f2c78.html.gz",
+      "sha256": "6dc788e8df1af494bbc57f0ac8e82a03cad78d05554cf276ea77ead90fbd73df"
+    },
+    {
+      "requested_url": "https://jobs.bd.com/en/search-jobs/pega/159/1",
+      "checked_at": "2026-11-15T06:17:45.385479+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.bd.com/en/search-jobs/pega/159/1",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search our Job Opportunities at Becton Dickinson & Company",
+      "platform_signals": [
+        "Workday",
+        "TalentBrew",
+        "Paradox"
+      ],
+      "career_links": [
+        "https://jobs.bd.com/en/search-jobs/pega/159/1#content",
+        "https://jobs.bd.com/",
+        "https://jobs.bd.com/en/search-jobs/pega/159/1",
+        "https://jobs.bd.com/fr-ca/recherche-d'offres/pega/159/1",
+        "https://jobs.bd.com/ja/検索ジョブ/pega/159/1",
+        "https://jobs.bd.com/pt-br/busca-de-vagas/pega/159/1",
+        "https://jobs.bd.com/es/buscar-trabajo/pega/159/1",
+        "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login",
+        "https://jobs.bd.com/saved-jobs",
+        "https://jobs.bd.com/search-jobs",
+        "https://jobs.bd.com/en",
+        "https://jobs.bd.com/en/about-us",
+        "https://jobs.bd.com/en/blog",
+        "https://jobs.bd.com/en/your-career-at-BD",
+        "https://jobs.bd.com/en/our-culture",
+        "https://jobs.bd.com/en/inclusion-and-engagement",
+        "https://jobs.bd.com/en/locations",
+        "https://jobs.bd.com/en/career-areas",
+        "https://jobs.bd.com/en/faqs",
+        "https://jobs.bd.com/en/blog-how-to-get-your-application-noticed",
+        "https://jobs.bd.com/en/blog-how-to-prepare-for-an-interview",
+        "https://jobs.bd.com/en/blog-ai-usage-tips-and-best-practices",
+        "https://jobs.bd.com/en/search-jobs",
+        "https://jobs.bd.com/en/job/irvine/manager-apm-business-process-and-data-lead-ats/159/102794058464",
+        "https://jobs.bd.com/en/job/curitiba/especialista-processos-industriais-pl/159/101619711056",
+        "https://jobs.bd.com/en/job/franklin-lakes/quality-system-specialist-digital-quality-solution-delivery-and-integration/159/101941875792",
+        "https://jobs.bd.com/en/locations-china",
+        "https://jobs.bd.com/en/bd-privacy-policy",
+        "https://jobs.bd.com/beware-of-job-scams",
+        "https://jobs.bd.com/career-areas",
+        "https://jobs.bd.com/sitemap",
+        "https://jobs.bd.com/bd-privacy-policy",
+        "https://jobs.bd.com/cookiepolicy"
+      ],
+      "forms": [
+        {
+          "action": "/en/search-jobs",
+          "id": "search-form-e518fcb76a"
+        },
+        {
+          "action": "/en/form/submit",
+          "id": "job-alert-form"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login"
+      ],
+      "evidence_file": "evidence/44a9b4da21c83a4f92.html.gz",
+      "sha256": "7ea6388bc813055fd2f61c0d4672bbe94bd0cc2bbbdf64fbe5b84538dc6e2d49"
+    },
+    {
+      "requested_url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login",
+      "checked_at": "2026-11-15T06:17:47.390527+00:00",
+      "http_status": 200,
+      "final_url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/bc822cc49d644a5eb9.html.gz",
+      "sha256": "c12a4424a8447993dfac6047c13ffacb73b33a5b308166b8a113134cfc469c86"
+    }
+  ]
+}

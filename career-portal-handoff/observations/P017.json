@@ -1,0 +1,88 @@
+{
+  "name": "BNP Paribas",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "BNP Paribas",
+      "url": "https://group.bnpparibas/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:14:48+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:14:48+00:00",
+        "error": "Navigation failed: Source returned HTTP 403",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://group.bnpparibas/careers"
+      }
+    },
+    {
+      "old_company": "BNP Paribas",
+      "url": "https://group.bnpparibas/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:29:07+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:14:48+00:00",
+        "error": "Navigation failed: Source returned HTTP 403",
+        "reused_attempt": true,
+        "source": "career_portal_playwright",
+        "url": "https://group.bnpparibas/careers"
+      }
+    },
+    {
+      "old_company": "BNP Paribas India",
+      "url": "https://group.bnpparibas/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "deferred",
+      "checked_at": "2026-11-13T19:39:58+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:39:58+00:00",
+        "error": "Navigation failed: Source access denied for this run",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://group.bnpparibas/careers"
+      }
+    }
+  ],
+  "id": "P017",
+  "candidate_urls": [
+    "https://group.bnpparibas/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://group.bnpparibas/careers",
+      "checked_at": "2026-11-15T06:17:46.340536+00:00",
+      "http_status": 403,
+      "final_url": "https://group.bnpparibas/careers",
+      "outcome": "access refused"
+    },
+    {
+      "requested_url": "https://www.bnpparibas.bank.in/en/work-with-us/apply-now/",
+      "checked_at": "2026-11-15T06:21:22.812166+00:00",
+      "http_status": 200,
+      "final_url": "https://www.bnpparibas.bank.in/en/work-with-us/apply-now/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Apply Now - BNP Paribas India",
+      "platform_signals": [],
+      "career_links": [
+        "https://group.bnpparibas/en/careers/all-job-offers/india",
+        "https://group.bnpparibas/en/careers/all-job-offers?country=2326%7C45%7C47%7C49%7C50%7C54%7C61%7C62%7C63%7C64%7C65%7C66%7C67%7C68&experience=2318",
+        "https://group.bnpparibas/en/careers/all-job-offers?country=2326%7C45%7C47%7C49%7C50%7C54%7C61%7C62%7C63%7C64%7C65%7C66%7C67%7C68&experience=2321"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/5ea9027a12a266cdad.html.gz",
+      "sha256": "cd65fd4c9930fc2eafe0586033af9a91e402894ae1e9d2278f94aa3767ea3ba5",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

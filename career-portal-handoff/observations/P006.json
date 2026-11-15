@@ -1,0 +1,63 @@
+{
+  "name": "Amadeus Labs",
+  "scope": "current registry lacks adapter",
+  "type": "product",
+  "linkedin_specific": true,
+  "history": [],
+  "id": "P006",
+  "candidate_urls": [
+    "https://amadeus.com/en/careers/overview"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://amadeus.com/en/careers/overview",
+      "checked_at": "2026-11-15T06:17:39.046837+00:00",
+      "http_status": 200,
+      "final_url": "https://amadeus.com/en/careers/overview",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Amadeus Careers | Bring the world closer.",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [
+        "https://amadeus.com/en/careers/overview",
+        "https://amadeus.com/en/careers/locations",
+        "https://amadeus.com/en/careers/teams",
+        "https://amadeus.com/en/careers/life-at-amadeus",
+        "https://amadeus.com/en/careers/how-we-hire",
+        "https://amadeus.wd502.myworkdayjobs.com/jobs",
+        "https://amadeus.com/en/careers/life-at-amadeus/dream-destination",
+        "https://amadeus.com/en/careers/life-at-amadeus/dare-to-grow",
+        "https://amadeus.com/en/careers/life-at-amadeus/drive-innovation"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://amadeus.wd502.myworkdayjobs.com/jobs"
+      ],
+      "evidence_file": "evidence/0b3f1451bb6916dfd8.html.gz",
+      "sha256": "5005f97c619e99309cd472a1e60b89cbc475c8231fe326d64cfdad6ec680de9b"
+    },
+    {
+      "requested_url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+      "checked_at": "2026-11-15T06:17:40.778403+00:00",
+      "http_status": 200,
+      "final_url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+      "content_type": "application/json",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "",
+      "platform_signals": [
+        "Workday"
+      ],
+      "career_links": [],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/12b9b86b40fb0b387b.html.gz",
+      "sha256": "ac029343179d8300ca9651a94a189941dad4e8d2af6225cde9128c34b4b10cd9"
+    }
+  ]
+}

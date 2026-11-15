@@ -1,0 +1,81 @@
+{
+  "name": "Mizuho Global Services",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Mizuho Global Services India (MGS)",
+      "url": "https://www.mizuhogroup.com/careers",
+      "final_url": "https://www.mizuhogroup.com/search?q=pega+jobs",
+      "method": "none",
+      "status": "unverified",
+      "checked_at": "2026-11-13T19:46:46+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:46:23+00:00",
+        "configured_url": "https://www.mizuhogroup.com/careers",
+        "final_url": "https://www.mizuhogroup.com/search?q=pega+jobs",
+        "jobs_found": 0,
+        "method": "none",
+        "previous_attempt": "{\"url\": \"https://www.mizuhogroup.com/careers\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:27:49+00:00\", \"configured_url\": \"https://www.mizuhogroup.com/careers\", \"resolved_destination\": \"https://www.mizuhogroup.com/asia-pacific/mizuho-global-services/careers\", \"searched\": true, \"final_url\": \"https://www.mizuhogroup.com/search?q=pega+jobs\", \"jobs_found\": 0, \"method\": \"none\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "resolved_destination": "https://www.mizuhogroup.com/asia-pacific/mizuho-global-services/careers",
+        "searched": true,
+        "source": "career_portal_playwright",
+        "url": "https://www.mizuhogroup.com/careers"
+      }
+    }
+  ],
+  "id": "P079",
+  "candidate_urls": [
+    "https://www.mizuhogroup.com/careers",
+    "https://www.mizuhogroup.com/search?q=pega+jobs"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.mizuhogroup.com/careers",
+      "checked_at": "2026-11-15T06:18:30.267083+00:00",
+      "http_status": 200,
+      "final_url": "https://www.mizuhogroup.com/careers",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Careers | Mizuho Financial Groupback-to-top-blueback-to-top-blue",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.mizuhogroup.com/careers",
+        "https://www.mizuhogroup.com/americas/careers",
+        "https://www.mizuhogroup.com/emea/careers",
+        "https://www.mizuhogroup.com/careers#next",
+        "https://www.mizuhogroup.com/asia-pacific/careers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/f7908d9062571dd070.html.gz",
+      "sha256": "165ebac3236d33fc861e86d3a5eebbe7a4086c45109ea11d40e0ce998e3119d8"
+    },
+    {
+      "requested_url": "https://www.mizuhogroup.com/search?q=pega+jobs",
+      "checked_at": "2026-11-15T06:18:31.095258+00:00",
+      "http_status": 200,
+      "final_url": "https://www.mizuhogroup.com/search?q=pega+jobs",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Search Resultsback-to-top-blue",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.mizuhogroup.com/search?q=pega+jobs",
+        "https://www.mizuhogroup.com/americas/careers",
+        "https://www.mizuhogroup.com/emea/careers",
+        "https://www.mizuhogroup.com/careers"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/9af800e5e09d1a2894.html.gz",
+      "sha256": "5b5b9cfa75b31b65ac5dbe14cdcc92c2bee1f1b73683b534d68a911f1ad4b165"
+    }
+  ]
+}

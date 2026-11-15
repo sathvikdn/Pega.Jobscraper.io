@@ -1,0 +1,165 @@
+{
+  "name": "Aflac",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Aflac India",
+      "url": "https://careers.aflac.com",
+      "final_url": "https://careers.aflac.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:16:02+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:15:50+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.aflac.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://careers.aflac.com/viewalljobs/",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://careers.aflac.com",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P002",
+  "candidate_urls": [
+    "https://careers.aflac.com",
+    "https://careers.aflac.com/search/?q=pega&startrow=0&locationsearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.aflac.com",
+      "checked_at": "2026-11-15T06:17:39.018755+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.aflac.com",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Aflac Careers Home",
+      "platform_signals": [
+        "SuccessFactors",
+        "Paradox"
+      ],
+      "career_links": [
+        "https://careers.aflac.com#content",
+        "https://careers.aflac.com/",
+        "https://careers.aflac.com",
+        "https://careers.aflac.com/content/Who-we-are/?locale=en_US",
+        "https://careers.aflac.com/content/Aflac-Locations/?locale=en_US",
+        "https://careers.aflac.com/content/Benefits/?locale=en_US",
+        "https://careers.aflac.com/go/View-All-Jobs/8697400/",
+        "https://careers.aflac.com/go/Accounting-Finance-Jobs/8698000/",
+        "https://careers.aflac.com/go/Actuarial-Risk-Jobs/8698100/",
+        "https://careers.aflac.com/go/Customer-Experience-Jobs/8696900/",
+        "https://careers.aflac.com/go/Data-Analytics-Jobs/8698300/",
+        "https://careers.aflac.com/go/HR-Legal-Jobs/8698200/",
+        "https://careers.aflac.com/go/Investments-Jobs/8697800/",
+        "https://careers.aflac.com/go/Operational-Support-Jobs/8697000/",
+        "https://careers.aflac.com/go/Sales-Marketing-Jobs/8697900/",
+        "https://careers.aflac.com/go/Technology-Jobs/8697100/",
+        "https://careers.aflac.com/go/University-Programs/8697500/",
+        "https://careers.aflac.com/content/Locations/?locale=en_US",
+        "https://careers.aflac.com/go/Global-Investments-Jobs/8697200/",
+        "https://careers.aflac.com/go/Aflac-Ventures-Jobs/8697700/",
+        "https://careers.aflac.com/go/Communicorp-Jobs/8697600/",
+        "https://careers.aflac.com/go/Aflac-Dental-and-Vision-Jobs/8876500/",
+        "https://careers.aflac.com/talentcommunity/subscribe/?locale=en_US",
+        "https://careers.aflac.com/content/Careers-Privacy-Agreement/?locale=en_US",
+        "https://careers.aflac.com/content/Texting/?locale=en_US",
+        "https://careers.aflac.com/viewalljobs/",
+        "https://careers.aflac.com/topjobs/",
+        "https://careers.aflac.com/go/Texting-Terms-of-Use/9555600/"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "https://career4.successfactors.com/career?site=&company=aflacP&lang=en%5FUS&login_ns=register&career_ns=home&navBarLevel=MY_PROFILE",
+          "method": "post"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/8f42c5fab0e63f6268.html.gz",
+      "sha256": "da83ce2c11419c302af61e06d38a0dd8ed7dd7f0311a456ab1c5ee488ef65ba8"
+    },
+    {
+      "requested_url": "https://careers.aflac.com/search/?q=pega&startrow=0&locationsearch=",
+      "checked_at": "2026-11-15T06:17:42.088079+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.aflac.com/search/?q=pega&startrow=0&locationsearch=",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Pega - Aflac, Incorporated Jobs",
+      "platform_signals": [
+        "SuccessFactors",
+        "Paradox"
+      ],
+      "career_links": [
+        "https://careers.aflac.com/search/?q=pega&startrow=0&locationsearch=#content",
+        "https://careers.aflac.com/",
+        "https://careers.aflac.com/search/?q=pega&startrow=0&locationsearch=",
+        "https://careers.aflac.com/content/Who-we-are/?locale=en_US",
+        "https://careers.aflac.com/content/Aflac-Locations/?locale=en_US",
+        "https://careers.aflac.com/content/Benefits/?locale=en_US",
+        "https://careers.aflac.com/go/View-All-Jobs/8697400/",
+        "https://careers.aflac.com/go/Accounting-Finance-Jobs/8698000/",
+        "https://careers.aflac.com/go/Actuarial-Risk-Jobs/8698100/",
+        "https://careers.aflac.com/go/Customer-Experience-Jobs/8696900/",
+        "https://careers.aflac.com/go/Data-Analytics-Jobs/8698300/",
+        "https://careers.aflac.com/go/HR-Legal-Jobs/8698200/",
+        "https://careers.aflac.com/go/Investments-Jobs/8697800/",
+        "https://careers.aflac.com/go/Operational-Support-Jobs/8697000/",
+        "https://careers.aflac.com/go/Sales-Marketing-Jobs/8697900/",
+        "https://careers.aflac.com/go/Technology-Jobs/8697100/",
+        "https://careers.aflac.com/go/University-Programs/8697500/",
+        "https://careers.aflac.com/content/Locations/?locale=en_US",
+        "https://careers.aflac.com/go/Global-Investments-Jobs/8697200/",
+        "https://careers.aflac.com/go/Aflac-Ventures-Jobs/8697700/",
+        "https://careers.aflac.com/go/Communicorp-Jobs/8697600/",
+        "https://careers.aflac.com/go/Aflac-Dental-and-Vision-Jobs/8876500/",
+        "https://careers.aflac.com/talentcommunity/subscribe/?locale=en_US",
+        "https://careers.aflac.com/content/Careers-Privacy-Agreement/?locale=en_US",
+        "https://careers.aflac.com/content/Texting/?locale=en_US",
+        "https://careers.aflac.com/viewalljobs/",
+        "https://careers.aflac.com/topjobs/",
+        "https://careers.aflac.com/go/Texting-Terms-of-Use/9555600/"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/talentcommunity/subscribe/?locale=en_US&keywords=",
+          "method": "POST",
+          "id": "emailsubscribe"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/07d8cfe950383a38a6.html.gz",
+      "sha256": "c9700330433513ffbda2fc923801af2ad06700c50a6ac25d901ac4bca2bb23b6"
+    }
+  ]
+}

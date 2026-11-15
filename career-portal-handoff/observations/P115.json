@@ -1,0 +1,63 @@
+{
+  "name": "VW Digital Solutions",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "VW Digital Solutions",
+      "url": "https://www.cariad.technology/careers/",
+      "final_url": "https://jobs.volkswagen-group.com/cariad/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:42:17+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:42:10+00:00",
+        "configured_url": "https://www.cariad.technology/careers/",
+        "details_checked": 0,
+        "final_url": "https://jobs.volkswagen-group.com/cariad/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 0,
+        "resolved_destination": "https://jobs.volkswagen-group.com/cariad/search/?q=pega&startrow=0&locationsearch=",
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://www.cariad.technology/careers/",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P115",
+  "candidate_urls": [
+    "https://www.cariad.technology/careers/",
+    "https://jobs.volkswagen-group.com/cariad/search/?q=pega&startrow=0&locationsearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.cariad.technology/careers/",
+      "checked_at": "2026-11-15T06:18:55.470266+00:00",
+      "http_status": 500,
+      "final_url": "https://www.cariad.technology/careers/",
+      "outcome": "HTTP error"
+    },
+    {
+      "requested_url": "https://jobs.volkswagen-group.com/cariad/search/?q=pega&startrow=0&locationsearch=",
+      "checked_at": "2026-11-15T06:18:56.111906+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "requested_url": "https://www.vwg-digitalsolutions.in/",
+      "checked_at": "2026-11-15T06:22:09.690470+00:00",
+      "http_status": null,
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

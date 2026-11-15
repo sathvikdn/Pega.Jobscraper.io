@@ -1,0 +1,173 @@
+{
+  "name": "ANZ",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": true,
+  "history": [
+    {
+      "old_company": "ANZ Bank",
+      "url": "https://careers.anz.com",
+      "final_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:10:11+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:09:52+00:00",
+        "details_checked": 2,
+        "final_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://careers.anz.com",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "ANZ",
+      "url": "https://careers.anz.com",
+      "final_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:14:23+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:14:11+00:00",
+        "details_checked": 2,
+        "final_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://careers.anz.com",
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "ANZ Bank India",
+      "url": "https://careers.anz.com",
+      "final_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+      "method": "successfactors_form",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:40:34+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:40:22+00:00",
+        "details_checked": 2,
+        "final_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+        "jobs_found": 0,
+        "method": "successfactors_form",
+        "pages_checked": 1,
+        "partial": false,
+        "reported_total": 2,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "successfactors": true,
+        "url": "https://careers.anz.com",
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P009",
+  "candidate_urls": [
+    "https://careers.anz.com",
+    "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.anz.com",
+      "checked_at": "2026-11-15T06:17:41.124353+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.anz.com",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "ANZ Bank Careers",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://careers.anz.com#content",
+        "https://careers.anz.com",
+        "https://career10.successfactors.com/career?career_company=anzbanking&lang=en_GB&company=anzbanking&site=&loginFlowRequired=true&_s.crb=uIpkKAgu6Xvu1Urm5DZ9vOp9v4lbHaOC4t88gMQQc2A%3d",
+        "https://career10.successfactors.com/career?company=anzbanking&site=&lang=en_GB&requestParams=&login_ns=register&jobPipeline=Direct&clientId=jobs2web&navBarLevel=MY%5fPROFILE&_s.crb=aMQPVDAkqOg6T9HuCABQOsTw7wcx7FO3c2NFc4Y8XVw%3d",
+        "https://careers.anz.com/ANZ.COM",
+        "https://careers.anz.com/ANZ.CO.NZ",
+        "https://careers.anz.com/go/ANZ-Jobs-List/4739210/",
+        "https://careers.anz.com/",
+        "https://www.anz.co.nz/careers/",
+        "https://careers.anz.com/content/Global-Privacy-Statement/?locale=en_GB"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/search/",
+          "method": "get"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/f1db49d81be0576919.html.gz",
+      "sha256": "86f4c3eda43820e76ed3b3ddb700fa92ed5af40dfeaf1ef5f65a5e813215a907"
+    },
+    {
+      "requested_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+      "checked_at": "2026-11-15T06:17:42.291126+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Pega - ANZ Banking Group Limited Jobs",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=#content",
+        "https://careers.anz.com",
+        "https://career10.successfactors.com/career?career_company=anzbanking&lang=en_GB&company=anzbanking&site=&loginFlowRequired=true&_s.crb=uIpkKAgu6Xvu1Urm5DZ9vOp9v4lbHaOC4t88gMQQc2A%3d",
+        "https://career10.successfactors.com/career?company=anzbanking&site=&lang=en_GB&requestParams=&login_ns=register&jobPipeline=Direct&clientId=jobs2web&navBarLevel=MY%5fPROFILE&_s.crb=aMQPVDAkqOg6T9HuCABQOsTw7wcx7FO3c2NFc4Y8XVw%3d",
+        "https://careers.anz.com/search/?q=pega&startrow=0&locationsearch=",
+        "https://careers.anz.com/",
+        "https://careers.anz.com/search/?q=pega#reset",
+        "https://careers.anz.com/job/Docklands-Decisioning-Lead/1370184566/",
+        "https://careers.anz.com/job/Docklands-Credit-Assessment-Officer/1369990266/",
+        "https://www.anz.co.nz/careers/",
+        "https://careers.anz.com/content/Global-Privacy-Statement/?locale=en_GB"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/talentcommunity/subscribe/?locale=en_GB&keywords=",
+          "method": "POST",
+          "id": "emailsubscribe"
+        },
+        {
+          "action": "/search/#searchresults",
+          "method": "get",
+          "id": "searchfilter"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/0493ed808db33e0387.html.gz",
+      "sha256": "aab08bed69a5f2205c8f4bf8d69e483e92c8f13ae419c05e394eb7455429931a"
+    }
+  ]
+}

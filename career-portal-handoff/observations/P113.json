@@ -1,0 +1,117 @@
+{
+  "name": "Vodafone Idea",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "Vodafone Idea",
+      "url": "https://www.myvi.in/careers",
+      "final_url": null,
+      "method": "career_portal_playwright",
+      "status": "failed",
+      "checked_at": "2026-11-13T19:45:57+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:45:27+00:00",
+        "error": "Navigation failed: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.myvi.in/careers\", waiting until \"domconten",
+        "previous_attempt": "{\"url\": \"https://www.myvi.in/careers\", \"source\": \"career_portal_playwright\", \"checked_at\": \"2026-11-13T19:37:22+00:00\", \"error\": \"Navigation failed: Page.goto: Timeout 12000ms exceeded.\\nCall log:\\n  - navigating to \\\"https://www.myvi.in/careers\\\", waiting until \\\"domconten\", \"reused_attempt\": false}",
+        "recovery_attempt": 1,
+        "source": "career_portal_playwright",
+        "url": "https://www.myvi.in/careers"
+      }
+    }
+  ],
+  "id": "P113",
+  "candidate_urls": [
+    "https://www.myvi.in/careers"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.myvi.in/careers",
+      "checked_at": "2026-11-15T06:18:54.547635+00:00",
+      "http_status": 200,
+      "final_url": "https://www.myvi.in/careers",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Vi (Vodafone Idea) Careers | Explore Career Opportunities at Vodafone Idea (Vi)",
+      "platform_signals": [],
+      "career_links": [
+        "https://www.myvi.in/careers",
+        "https://careers.vodafoneidea.com/search/",
+        "https://careers.vodafoneidea.com/go/VIBS-Jobs/4269301/",
+        "https://careers.vodafoneidea.com/go/MarketingDigital-Jobs/4268901/",
+        "https://careers.vodafoneidea.com/go/Retail-Jobs/4269001/",
+        "https://careers.vodafoneidea.com/go/Sales-and-Distribution-Jobs/4269101/",
+        "https://careers.vodafoneidea.com/go/Commercial-Finance-Jobs/4268801/"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/1453a9599dab103b10.html.gz",
+      "sha256": "539d0fb253da76c72416360a7ceb4e6fee7150f72532de0fd39c8b465f7c4aad"
+    },
+    {
+      "requested_url": "https://careers.vodafoneidea.com/search/",
+      "checked_at": "2026-11-15T06:22:09.689942+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.vodafoneidea.com/search/",
+      "content_type": "text/html;charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Vodafoneidea Jobs",
+      "platform_signals": [
+        "SuccessFactors"
+      ],
+      "career_links": [
+        "https://careers.vodafoneidea.com/search/#content",
+        "https://vodafoneidea.jobs2web.com/",
+        "https://careers.vodafoneidea.com/search/",
+        "https://careers.vodafoneidea.com/",
+        "https://careers.vodafoneidea.com/go/All-Current-Job-Opportunities/4268701/",
+        "https://careers.vodafoneidea.com/go/Commercial-Finance-Jobs/4268801/",
+        "https://careers.vodafoneidea.com/go/MarketingDigital-Jobs/4268901/",
+        "https://careers.vodafoneidea.com/go/Retail-Jobs/4269001/",
+        "https://careers.vodafoneidea.com/go/Sales-and-Distribution-Jobs/4269101/",
+        "https://careers.vodafoneidea.com/go/Technology-IOTCloud-Jobs/4269201/",
+        "https://careers.vodafoneidea.com/go/VIBS-Jobs/4269301/",
+        "https://careers.vodafoneidea.com/talentcommunity/subscribe/?locale=en_GB",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=referencedate&sortDirection=desc",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=referencedate&sortDirection=desc&startrow=7",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=referencedate&sortDirection=desc&startrow=14",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=referencedate&sortDirection=desc&startrow=21",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=referencedate&sortDirection=desc&startrow=28",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=referencedate&sortDirection=desc&startrow=343",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=sort_department&sortDirection=desc#hdrDepartmentButton",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=sort_location&sortDirection=desc#hdrLocationButton",
+        "https://careers.vodafoneidea.com/search/?q=&sortColumn=referencedate&sortDirection=asc#hdrDateButton",
+        "https://careers.vodafoneidea.com/search/?q=#reset",
+        "https://careers.vodafoneidea.com/job/Mumbai-Manager-247-Desk-Maha/1447895833/",
+        "https://careers.vodafoneidea.com/job/Mumbai-AGM-Corp-FP&A%2C-Technology-Finance-Maha/1448030533/",
+        "https://careers.vodafoneidea.com/job/Hyderabad-AGM-Area-Sales-Tela/1447902933/",
+        "https://careers.vodafoneidea.com/job/Patna-Manager-Response-and-Resolution-Exec-Biha/1447909333/",
+        "https://careers.vodafoneidea.com/job/Pune-Manager-OSS-&-Tools-Maha/1437517433/",
+        "https://careers.vodafoneidea.com/job/Jaipur-Manager-Vi-Store-Operations-Raja/1447899133/",
+        "https://careers.vodafoneidea.com/job/Hyderabad-Manager-TES-Tela/1448025033/",
+        "https://careers.vodafoneidea.com/viewalljobs/"
+      ],
+      "forms": [
+        {
+          "action": "/search/",
+          "method": "get"
+        },
+        {
+          "action": "/search/#searchresults",
+          "method": "get",
+          "id": "searchfilter"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/12e7d140f8e479990b.html.gz",
+      "sha256": "061e36c94a6b34974f845b3c0221794a21c0cd1e1e25b2f80d4e526171da8695",
+      "discovery": "Official career page found through web research; supplemental audit"
+    }
+  ]
+}

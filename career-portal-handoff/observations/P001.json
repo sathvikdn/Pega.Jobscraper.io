@@ -1,0 +1,105 @@
+{
+  "name": "ABB",
+  "scope": "missing registry entry",
+  "type": "original target; classify before adding",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "ABB",
+      "url": "https://careers.abb/global/en",
+      "final_url": "https://careers.abb/global/en/search-results?keywords=pega&from=0",
+      "method": "phenom_embedded_search",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:43:31+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:43:15+00:00",
+        "details_checked": 0,
+        "final_url": "https://careers.abb/global/en/search-results?keywords=pega&from=0",
+        "jobs_found": 0,
+        "method": "phenom_embedded_search",
+        "pages_checked": 1,
+        "partial": false,
+        "phenom": true,
+        "published_search_destination": "https://careers.abb/global/en/search-results",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "url": "https://careers.abb/global/en",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P001",
+  "candidate_urls": [
+    "https://careers.abb/global/en",
+    "https://careers.abb/global/en/search-results?keywords=pega&from=0"
+  ],
+  "observations": [
+    {
+      "requested_url": "https://careers.abb/global/en",
+      "checked_at": "2026-11-15T06:17:39.017669+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.abb/global/en",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Job and Career opportunities at ABB | ABB Careers",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://careers.abb/global/search-results",
+        "https://careers.abb/global/en/home",
+        "https://careers.abb/",
+        "https://www.facebook.com/ABBCareer/",
+        "https://www.instagram.com/abbcareer/",
+        "https://www.youtube.com/@abbcareer",
+        "https://careers.abb/global/en/employee-stories",
+        "https://careers.abb/global/en/story-beatrice",
+        "https://careers.abb/global/en/story-boda",
+        "https://careers.abb/global/en/story-hanuman",
+        "https://careers.abb/global/en/life-at-abb",
+        "https://careers.abb/global/en/di-at-abb",
+        "https://careers.abb/global/en/how-to-apply",
+        "https://careers.abb/global/en/abb-locations",
+        "https://careers.abb/global/en/cookiesettings"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/77f7805471171ad7c3.html.gz",
+      "sha256": "4ed602125ba6a8d008bbfc4421e165c7593f40f37f8723b6d08831eb508711e1"
+    },
+    {
+      "requested_url": "https://careers.abb/global/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T06:17:40.938433+00:00",
+      "http_status": 200,
+      "final_url": "https://careers.abb/global/en/search-results?keywords=pega&from=0",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Explore career opportunities at ABB | Job openings",
+      "platform_signals": [
+        "Phenom"
+      ],
+      "career_links": [
+        "https://careers.abb/global/en/home",
+        "https://careers.abb/",
+        "https://careers.abb/global/en/jointalentcommunity",
+        "https://careers.abb/global/en/life-at-abb",
+        "https://careers.abb/global/en/fraud-warning",
+        "https://careers.abb/global/en/cookiesettings"
+      ],
+      "forms": [],
+      "structured_jobposting": false,
+      "endpoint_hints": [
+        "https://content-ir.phenompeople.com/api/content-delivery/caasContentV1"
+      ],
+      "evidence_file": "evidence/400891909611d1e6b1.html.gz",
+      "sha256": "7ebebf7c7e6196260374e13374ce54a6b8798a1f7ca274658e3c20a888cd24c6"
+    }
+  ]
+}

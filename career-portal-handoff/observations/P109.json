@@ -1,0 +1,115 @@
+{
+  "name": "UBS",
+  "scope": "current registry lacks adapter",
+  "type": "gcc",
+  "linkedin_specific": false,
+  "history": [
+    {
+      "old_company": "UBS",
+      "url": "https://www.ubs.com/global/en/careers.html",
+      "final_url": "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709#keyWordSearch=pega&locationSearch=",
+      "method": "ubs_brassring_ajax",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:14:11+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:13:53+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709#keyWordSearch=pega&locationSearch=",
+        "jobs_found": 0,
+        "method": "ubs_brassring_ajax",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://www.ubs.com/global/en/careers/search-jobs.html",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "ubs_brassring": true,
+        "url": "https://www.ubs.com/global/en/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    },
+    {
+      "old_company": "Credit Suisse / UBS India",
+      "url": "https://www.ubs.com/global/en/careers.html",
+      "final_url": "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709#keyWordSearch=pega&locationSearch=",
+      "method": "ubs_brassring_ajax",
+      "status": "searched",
+      "checked_at": "2026-11-13T19:34:20+00:00",
+      "diagnostic": {
+        "checked_at": "2026-11-13T19:34:01+00:00",
+        "details_checked": 0,
+        "final_url": "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709#keyWordSearch=pega&locationSearch=",
+        "jobs_found": 0,
+        "method": "ubs_brassring_ajax",
+        "pages_checked": 1,
+        "partial": false,
+        "published_search_destination": "https://www.ubs.com/global/en/careers/search-jobs.html",
+        "reported_total": 0,
+        "reused_attempt": false,
+        "source": "career_portal_playwright",
+        "ubs_brassring": true,
+        "url": "https://www.ubs.com/global/en/careers.html",
+        "verified_empty": true,
+        "verified_search": true
+      }
+    }
+  ],
+  "id": "P109",
+  "candidate_urls": [
+    "https://www.ubs.com/global/en/careers.html",
+    "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709#keyWordSearch=pega&locationSearch="
+  ],
+  "observations": [
+    {
+      "requested_url": "https://www.ubs.com/global/en/careers.html",
+      "checked_at": "2026-11-15T06:18:51.228868+00:00",
+      "http_status": 403,
+      "final_url": "https://www.ubs.com/global/en/careers.html",
+      "outcome": "access refused"
+    },
+    {
+      "requested_url": "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709",
+      "checked_at": "2026-11-15T06:18:51.960153+00:00",
+      "http_status": 200,
+      "final_url": "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "outcome": "reachable",
+      "title": "Job Search | UBS - Experienced professionals - job boards",
+      "platform_signals": [
+        "Beamery",
+        "BrassRing"
+      ],
+      "career_links": [
+        "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709#0",
+        "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709",
+        "https://jobs.ubs.com/TGnewUI/Search/home/{{job.Link}}",
+        "https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5012&PageType=searchResults&SearchType=linkquery&LinkID=15709#JobDetailsClose"
+      ],
+      "forms": [
+        {
+          "id": "applyForm"
+        },
+        {
+          "id": "powerSearchForm"
+        },
+        {
+          "id": "applyForm"
+        },
+        {
+          "id": "applyForm"
+        },
+        {
+          "action": "../../../tgwebhost/SMSiteLoginAccount.aspx?SID=^jLaHwSXLvuI_slp_rhc_RX3nqNrXFAHBHCmh23HQpkgNiEo/mPLsEuU3KACLB9eVRR4uUaBJ",
+          "method": "post",
+          "id": "frmSMSiteLoginAccount"
+        }
+      ],
+      "structured_jobposting": false,
+      "endpoint_hints": [],
+      "evidence_file": "evidence/137586af2cbdc8ff1d.html.gz",
+      "sha256": "495816b9f4fc8681a83d804b2bdb9f564b59413b535360400eebd46e600aee5d"
+    }
+  ]
+}

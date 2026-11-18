@@ -1,0 +1,94 @@
+{
+  "id": "C015",
+  "company": {
+    "name": "ANZ",
+    "aliases": [
+      "ANZ Bank"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://careers.anz.com",
+    "portals": [
+      {
+        "kind": "successfactors",
+        "host": "careers.anz.com",
+        "state": "candidate",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.anz.com",
+      "checked_at": "2026-11-15T23:49:08.455223+00:00",
+      "links": [
+        {
+          "url": "https://careers.anz.com#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.anz.com",
+          "text": ""
+        },
+        {
+          "url": "https://career10.successfactors.com/career?career_company=anzbanking&lang=en_GB&company=anzbanking&site=&loginFlowRequired=true&_s.crb=uIpkKAgu6Xvu1Urm5DZ9vOp9v4lbHaOC4t88gMQQc2A%3d",
+          "text": "View profile"
+        },
+        {
+          "url": "https://career10.successfactors.com/career?company=anzbanking&site=&lang=en_GB&requestParams=&login_ns=register&jobPipeline=Direct&clientId=jobs2web&navBarLevel=MY%5fPROFILE&_s.crb=aMQPVDAkqOg6T9HuCABQOsTw7wcx7FO3c2NFc4Y8XVw%3d",
+          "text": "Create account"
+        },
+        {
+          "url": "https://careers.anz.com",
+          "text": ""
+        },
+        {
+          "url": "https://careers.anz.com",
+          "text": ""
+        },
+        {
+          "url": "https://career10.successfactors.com/career?career_company=anzbanking&lang=en_GB&company=anzbanking&site=&loginFlowRequired=true&_s.crb=uIpkKAgu6Xvu1Urm5DZ9vOp9v4lbHaOC4t88gMQQc2A%3d",
+          "text": "View profile"
+        },
+        {
+          "url": "https://career10.successfactors.com/career?company=anzbanking&site=&lang=en_GB&requestParams=&login_ns=register&jobPipeline=Direct&clientId=jobs2web&navBarLevel=MY%5fPROFILE&_s.crb=aMQPVDAkqOg6T9HuCABQOsTw7wcx7FO3c2NFc4Y8XVw%3d",
+          "text": "Create account"
+        },
+        {
+          "url": "https://careers.anz.com/ANZ.COM",
+          "text": "ANZ.COM Home"
+        },
+        {
+          "url": "https://careers.anz.com/ANZ.CO.NZ",
+          "text": "ANZ.CO.NZ Home"
+        },
+        {
+          "url": "https://careers.anz.com/go/ANZ-Jobs-List/4739210/",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://careers.anz.com/",
+          "text": "ANZ Home"
+        },
+        {
+          "url": "https://www.anz.co.nz/careers/",
+          "text": "ANZ NZ"
+        },
+        {
+          "url": "https://careers.anz.com/content/Global-Privacy-Statement/?locale=en_GB",
+          "text": "Privacy"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.anz.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "ANZ Bank Careers",
+      "evidence": "evidence/f1db49d81be057691962.html.gz",
+      "sha256": "ad3841c8fb81a1489678597956ac82c81855e3df2e37053d792fe7dc340e26f0"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

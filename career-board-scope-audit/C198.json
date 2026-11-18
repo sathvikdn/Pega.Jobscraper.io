@@ -1,0 +1,2777 @@
+{
+  "id": "C198",
+  "company": {
+    "name": "Rolls-Royce",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.rolls-royce.com/en/jobs",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://careers.rolls-royce.com/en/jobs",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Careers site without a known vacancy provider; needs a site-specific parser"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.rolls-royce.com/en/jobs",
+      "checked_at": "2026-11-15T23:50:57.118615+00:00",
+      "links": [
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs#maincontent",
+          "text": "skip to main content"
+        },
+        {
+          "url": "https://www.rolls-royce.com",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/stellenangebote",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/emplois",
+          "text": "French"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs#mob-menu-wrap",
+          "text": "menu"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/stellenangebote",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/emplois",
+          "text": "French"
+        },
+        {
+          "url": "https://www.rolls-royce.com/",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?search=Engineer",
+          "text": "Engineer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=United+States+of+America&city=Indianapolis",
+          "text": "Indianapolis"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?department=Customer+Management",
+          "text": "Sales"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/recruitment-fraud",
+          "text": "LEARN MORE"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Student & graduate programmes"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professional careers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://www.facebook.com/people/Rolls-Royce-Careers/61556507182135/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://twitter.com/rollsroyce",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/RollsRoyceplc",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.linkedin.com/company/rolls-royce",
+          "text": "Linkedin"
+        },
+        {
+          "url": "https://www.instagram.com/rollsroyce_careers/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.flickr.com/photos/rolls-royceplc",
+          "text": "Flickr"
+        },
+        {
+          "url": "https://www.rolls-royce.com/investors/investor-contacts/alert-service.aspx",
+          "text": "Sign up to get the latest news"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/contact-us",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-map",
+          "text": "Site map"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-services/privacy-statement",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/use-of-cookies.aspx",
+          "text": "Use of cookies"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs##",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/legal-information.aspx",
+          "text": "Legal Information"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/recruitment-fraud",
+          "text": "Recruitment Fraud"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.rolls-royce.com/en/jobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Rolls Royce Jobs | Professionals, Apprenticeships, & Graduates | Rolls-Royce",
+      "evidence": "evidence/3d2dd01f27d1cf2b96fc.html.gz",
+      "sha256": "07c66baf1dc520cc12d7717437ba440ac36d2bf3b2061b8d33f8ef8a2e934151"
+    },
+    {
+      "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+      "checked_at": "2026-11-15T23:50:58.644452+00:00",
+      "links": [
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india#maincontent",
+          "text": "skip to main content"
+        },
+        {
+          "url": "https://www.rolls-royce.com",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/studierende-und-absolventen/indien",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/etudiants-et-diplomes/inde",
+          "text": "French"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india#mob-menu-wrap",
+          "text": "menu"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/studierende-und-absolventen/indien",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/etudiants-et-diplomes/inde",
+          "text": "French"
+        },
+        {
+          "url": "https://www.rolls-royce.com/",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Discover the Power of You"
+        },
+        {
+          "url": "https://pages.hireez.com/rolls-royce/ao-technicians-singapore?source=CareerSite",
+          "text": "Share your CV"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://pages.hireez.com/cielo-rolls-royce-us/us_talent_community5?source=ControlsEngineeringLandingPage",
+          "text": "Register Your Interest"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Uncover your Potential"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?seniority=Intern_Graduate&country=India",
+          "text": "See All"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "See Our Jobs"
+        },
+        {
+          "url": "https://meetandengage.com/rollsroyceemergingtalentsupport#event-ammulyjnu",
+          "text": "ASK US"
+        },
+        {
+          "url": "https://www.instagram.com/rollsroyce_careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/rollsroyce_careers",
+          "text": "INSTAGRAM"
+        },
+        {
+          "url": "https://www.linkedin.com/company/rolls-royce",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/rolls-royce",
+          "text": "LINKEDIN"
+        },
+        {
+          "url": "https://www.youtube.com/rollsroyceplc",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/rollsroyceplc",
+          "text": "YOUTUBE"
+        },
+        {
+          "url": "https://www.facebook.com/RollsRoyceGroup",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/RollsRoyceGroup",
+          "text": "FACEBOOK"
+        },
+        {
+          "url": "https://twitter.com/share?url=https://careers.rolls-royce.com/en/students-and-graduates/india&text=",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/sharer.php?u=https://careers.rolls-royce.com/en/students-and-graduates/india&title=&summary=&description=&",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://careers.rolls-royce.com/en/students-and-graduates/india&title=&summary=&source=",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/cdn-cgi/l/email-protection#fbc4888e99919e988fc6a994979788d6a99482989edec9cbdebec9dec3cbdec2c8dec9cbb2959f929add9a968bc099949f82c6b2dec9cb8f93948e9c938fdec9cb8f939288dec9cb8b9a9c9edec9cb96929c938fdec9cb92958f9e899e888fdec9cb82948edec8badec9cb938f8f8b88dec8badec9bddec9bd989a899e9e8988d58994979788d6899482989ed5989496dec9bd9e95dec9bd888f8e9f9e958f88d69a959fd69c899a9f8e9a8f9e88dec9bd92959f929a",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Search & Apply"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://www.facebook.com/people/Rolls-Royce-Careers/61556507182135/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://twitter.com/rollsroyce",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/RollsRoyceplc",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.linkedin.com/company/rolls-royce",
+          "text": "Linkedin"
+        },
+        {
+          "url": "https://www.instagram.com/rollsroyce_careers/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.flickr.com/photos/rolls-royceplc",
+          "text": "Flickr"
+        },
+        {
+          "url": "https://www.rolls-royce.com/investors/investor-contacts/alert-service.aspx",
+          "text": "Sign up to get the latest news"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/contact-us",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-map",
+          "text": "Site map"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-services/privacy-statement",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/use-of-cookies.aspx",
+          "text": "Use of cookies"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india##",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/legal-information.aspx",
+          "text": "Legal Information"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/recruitment-fraud",
+          "text": "Recruitment Fraud"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India Student & Graduate Programmes - Rolls-Royce | Rolls-Royce",
+      "evidence": "evidence/85839aa323ef19035ff4.html.gz",
+      "sha256": "52a160fb89bb2b85a1d2f16669aa3382d331fd56af5a14f656ea6361daf68b8f"
+    },
+    {
+      "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+      "checked_at": "2026-11-15T23:51:00.097475+00:00",
+      "links": [
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience#maincontent",
+          "text": "skip to main content"
+        },
+        {
+          "url": "https://www.rolls-royce.com",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/studierende-und-absolventen/indien/work-experience",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/etudiants-et-diplomes/inde/work-experience",
+          "text": "French"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience#mob-menu-wrap",
+          "text": "menu"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/studierende-und-absolventen/indien/work-experience",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/etudiants-et-diplomes/inde/work-experience",
+          "text": "French"
+        },
+        {
+          "url": "https://www.rolls-royce.com/",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Discover the Power of You"
+        },
+        {
+          "url": "https://pages.hireez.com/rolls-royce/ao-technicians-singapore?source=CareerSite",
+          "text": "Share your CV"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://pages.hireez.com/cielo-rolls-royce-us/us_talent_community5?source=ControlsEngineeringLandingPage",
+          "text": "Register Your Interest"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Uncover your Potential"
+        },
+        {
+          "url": "https://www.rolls-royce.springpod.com/en-in",
+          "text": "VISIT THE PLATFORM"
+        },
+        {
+          "url": "https://meetandengage.com/rollsroyceemergingtalentsupport#event-ammulyjnu",
+          "text": "ASK US"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/share?url=https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience&text=",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/sharer.php?u=https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience&title=&summary=&description=&",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience&title=&summary=&source=",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/cdn-cgi/l/email-protection#3a05494f58505f594e07685556564917685543595f1f080a1f7f081f020a1f03091f080a6d5548511f080a7f424a5f48535f54595f1c5b574a0158555e4307731f080a4e52554f5d524e1f080a4e5253491f080a4a5b5d5f1f080a57535d524e1f080a53544e5f485f494e1f080a43554f1f097b1f080a524e4e4a491f097b1f087c1f087c595b485f5f484914485556564917485543595f145955571f087c5f541f087c494e4f5e5f544e49175b545e175d485b5e4f5b4e5f491f087c53545e535b1f087c4d554851175f424a5f48535f54595f",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Search & Apply"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://www.facebook.com/people/Rolls-Royce-Careers/61556507182135/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://twitter.com/rollsroyce",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/RollsRoyceplc",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.linkedin.com/company/rolls-royce",
+          "text": "Linkedin"
+        },
+        {
+          "url": "https://www.instagram.com/rollsroyce_careers/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.flickr.com/photos/rolls-royceplc",
+          "text": "Flickr"
+        },
+        {
+          "url": "https://www.rolls-royce.com/investors/investor-contacts/alert-service.aspx",
+          "text": "Sign up to get the latest news"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/contact-us",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-map",
+          "text": "Site map"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-services/privacy-statement",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/use-of-cookies.aspx",
+          "text": "Use of cookies"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience##",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/legal-information.aspx",
+          "text": "Legal Information"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/recruitment-fraud",
+          "text": "Recruitment Fraud"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India Work Experience - Rolls-Royce | Rolls-Royce",
+      "evidence": "evidence/5a98958009db6844cc29.html.gz",
+      "sha256": "d634ec668bb0c1da71d0ef269aa632a047328d6838b4aeb69f8db239a1aea647"
+    },
+    {
+      "url": "https://careers.rolls-royce.com/en/our-locations/india",
+      "checked_at": "2026-11-15T23:51:00.891685+00:00",
+      "links": [
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india#maincontent",
+          "text": "skip to main content"
+        },
+        {
+          "url": "https://www.rolls-royce.com",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/unsere-standorte/indien",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/nos-emplacements/inde",
+          "text": "French"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india#mob-menu-wrap",
+          "text": "menu"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/unsere-standorte/indien",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/nos-emplacements/inde",
+          "text": "French"
+        },
+        {
+          "url": "https://www.rolls-royce.com/",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Discover the Power of You"
+        },
+        {
+          "url": "https://pages.hireez.com/rolls-royce/ao-technicians-singapore?source=CareerSite",
+          "text": "Share your CV"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://pages.hireez.com/cielo-rolls-royce-us/us_talent_community5?source=ControlsEngineeringLandingPage",
+          "text": "Register Your Interest"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Uncover your Potential"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?search=Design",
+          "text": "Design"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?search=Systems",
+          "text": "Systems"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?search=Engineer",
+          "text": "Engineer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=India",
+          "text": "Join our team"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=Japan%7CTürkiye%7CIndonesia%7CSingapore%7CIndia%7CMalaysia%7CThailand%7CChina%7CKorea%2C+Republic+of%7COman&department=Engineering",
+          "text": "Join our team"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Discover live roles"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=India",
+          "text": "See All"
+        },
+        {
+          "url": "https://pages.hireez.com/rolls-royce/careers-talent-community-navigation",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/cdn-cgi/l/email-protection#defe8cbbadb1abacbdb7b0b99fadb7bf8ebfbdb7b8b7bd9e8cb1b2b2adf38cb1a7bdbbf0bdb1b3",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=India",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Search & Apply"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://www.facebook.com/people/Rolls-Royce-Careers/61556507182135/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://twitter.com/rollsroyce",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/RollsRoyceplc",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.linkedin.com/company/rolls-royce",
+          "text": "Linkedin"
+        },
+        {
+          "url": "https://www.instagram.com/rollsroyce_careers/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.flickr.com/photos/rolls-royceplc",
+          "text": "Flickr"
+        },
+        {
+          "url": "https://www.rolls-royce.com/investors/investor-contacts/alert-service.aspx",
+          "text": "Sign up to get the latest news"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/contact-us",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-map",
+          "text": "Site map"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-services/privacy-statement",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/use-of-cookies.aspx",
+          "text": "Use of cookies"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india##",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/legal-information.aspx",
+          "text": "Legal Information"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/recruitment-fraud",
+          "text": "Recruitment Fraud"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.rolls-royce.com/en/our-locations/india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Rolls-Royce India Careers | Rolls-Royce",
+      "evidence": "evidence/9988b679d1812b9980e7.html.gz",
+      "sha256": "bec715f574b7d36087ecdf3ffe122a9310d338f20e3d87e5a3c9744ea377eaa3"
+    },
+    {
+      "url": "https://careers.rolls-royce.com/en/jobs?country=United+States+of+America&city=Indianapolis",
+      "checked_at": "2026-11-15T23:51:02.210918+00:00",
+      "links": [
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=United+States+of+America&city=Indianapolis#maincontent",
+          "text": "skip to main content"
+        },
+        {
+          "url": "https://www.rolls-royce.com",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/stellenangebote",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/emplois",
+          "text": "French"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": ""
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=United+States+of+America&city=Indianapolis#mob-menu-wrap",
+          "text": "menu"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/phd",
+          "text": "PhD"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-kingdom/enterprise-skills-accelerator",
+          "text": "Enterprise Skills Accelerator"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/apprenticeships-and-school-leavers",
+          "text": "Apprenticeships & School Leavers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/germany/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/united-states/internships-and-graduates",
+          "text": "Internships & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/india/work-experience",
+          "text": "Work Experience"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates/rest-of-the-world",
+          "text": "Rest of the World"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/engineering/controls-engineering-usa",
+          "text": "Controls Engineering USA"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/manufacturing-engineering",
+          "text": "Manufacturing Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/digital-and-it",
+          "text": "Digital & IT"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/supply-chain-and-procurement",
+          "text": "Supply Chain & Procurement"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/project-management",
+          "text": "Project Management"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/sales-and-marketing",
+          "text": "Sales & Marketing"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/finance-and-legal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals/switch-into-aerospace-engineering",
+          "text": "Switch into Aerospace Engineering"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-kingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/united-states",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations/singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Purpose & Behaviours"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/our-people-deal",
+          "text": "Our People Deal"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/reward",
+          "text": "Reward"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/extraordinary-leadership",
+          "text": "Extraordinary Leadership"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/engagement-and-recognition",
+          "text": "Engagement & Recognition"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/capability-and-skills",
+          "text": "Capability & Skills"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/performance",
+          "text": "Performance"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/talent",
+          "text": "Talent"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/de/stellenangebote",
+          "text": "German"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/fr-ca/emplois",
+          "text": "French"
+        },
+        {
+          "url": "https://www.rolls-royce.com/",
+          "text": "Rolls-Royce.com"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?search=Engineer",
+          "text": "Engineer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=United+States+of+America&city=Indianapolis",
+          "text": "Indianapolis"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?department=Customer+Management",
+          "text": "Sales"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/recruitment-fraud",
+          "text": "LEARN MORE"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Student & graduate programmes"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professional careers"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/our-offer/purpose-and-behaviours",
+          "text": "Our Offer"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://www.facebook.com/people/Rolls-Royce-Careers/61556507182135/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://twitter.com/rollsroyce",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/RollsRoyceplc",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.linkedin.com/company/rolls-royce",
+          "text": "Linkedin"
+        },
+        {
+          "url": "https://www.instagram.com/rollsroyce_careers/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.flickr.com/photos/rolls-royceplc",
+          "text": "Flickr"
+        },
+        {
+          "url": "https://www.rolls-royce.com/investors/investor-contacts/alert-service.aspx",
+          "text": "Sign up to get the latest news"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/contact-us",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-map",
+          "text": "Site map"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/site-services/privacy-statement",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/use-of-cookies.aspx",
+          "text": "Use of cookies"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/jobs?country=United+States+of+America&city=Indianapolis##",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.rolls-royce.com/site-services/legal-information.aspx",
+          "text": "Legal Information"
+        },
+        {
+          "url": "https://careers.rolls-royce.com/en/recruitment-fraud",
+          "text": "Recruitment Fraud"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.rolls-royce.com/en/jobs?country=United+States+of+America&city=Indianapolis",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Rolls Royce Jobs | Professionals, Apprenticeships, & Graduates | Rolls-Royce",
+      "evidence": "evidence/93c2bd8200d19a920176.html.gz",
+      "sha256": "db5be599d4924baa000bad899e66f7053571186b8e3c218ae36f99b71b202859"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

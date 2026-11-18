@@ -1,0 +1,38 @@
+{
+  "id": "C123",
+  "company": {
+    "name": "John Deere",
+    "aliases": [
+      "JDTCI"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.deere.com/en-us/our-company/careers",
+    "portals": [
+      {
+        "kind": "successfactors",
+        "host": "jobs.deere.com",
+        "state": "candidate",
+        "scope": "global",
+        "note": "jobs.deere.com; Eightfold markers are also present, so the active search must be confirmed by verify"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.deere.com/en-us/our-company/careers",
+      "checked_at": "2026-11-15T23:50:17.344592+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.deere.com/en-us/our-company/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at John Deere | John Deere US",
+      "evidence": "evidence/8cb3d080abb2031694eb.html.gz",
+      "sha256": "3e6bccd9f7b7552bb7ff223bb2e3ee4eeadc1b7c112c34696ccaf3466bbe7166"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

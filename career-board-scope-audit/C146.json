@@ -1,0 +1,38 @@
+{
+  "id": "C146",
+  "company": {
+    "name": "Marriott",
+    "aliases": [
+      "Marriott International"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://ejwl.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "ejwl.fa.us2.oraclecloud.com",
+        "site": "CX",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://ejwl.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX",
+      "checked_at": "2026-11-15T23:50:29.771276+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://ejwl.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Marriott",
+      "evidence": "evidence/1bd30998294e5508359a.html.gz",
+      "sha256": "0b92ed52bb684756f34f18bff381d7d0e4e7de41226b256b5bb653ab78a74df3"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

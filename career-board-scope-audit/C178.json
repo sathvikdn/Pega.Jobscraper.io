@@ -1,0 +1,1205 @@
+{
+  "id": "C178",
+  "company": {
+    "name": "PayPal",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://careers.pypl.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "paypal",
+        "datacentre": "wd1",
+        "site": "jobs",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.pypl.com",
+      "checked_at": "2026-11-15T23:50:46.803747+00:00",
+      "links": [
+        {
+          "url": "https://careers.pypl.com/home/default.aspx#main-content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/default.aspx",
+          "text": "How We Recruit"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+          "text": "Applying"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/Interviewing/default.aspx",
+          "text": "Interviewing"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/new-hire-experience/default.aspx",
+          "text": "New hire experience"
+        },
+        {
+          "url": "https://careers.pypl.com/career-in-fintech/default.aspx",
+          "text": "Careers in Fintech"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "University Hiring"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/north-america-latin-america/default.aspx",
+          "text": "North America and Latin America"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/asia-pacific/default.aspx",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/europe-middle-east--africa/default.aspx",
+          "text": "Europe, Middle East, & Africa"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/intern-hub/default.aspx",
+          "text": "Intern Hub"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/University-Overview/default.aspx#university-job-tiles-container-interns",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.pypl.com/categories/default.aspx",
+          "text": "Job Category"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "Locations"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/luxembourg/default.aspx",
+          "text": "Luxembourg"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/ireland/default.aspx",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/germany/default.aspx",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/china/default.aspx",
+          "text": "China"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/paypal-mexico-overview/default.aspx",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/us-overview/default.aspx",
+          "text": "US Overview"
+        },
+        {
+          "url": "https://about.pypl.com/how-we-work/employees-and-culture/default.aspx",
+          "text": "Belonging"
+        },
+        {
+          "url": "https://careers.pypl.com/benefits/default.aspx",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/default.aspx",
+          "text": "Careers Blog"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/blog-details/default.aspx",
+          "text": "Blog Details"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "My Profile"
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx#maincontent",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.pypl.com/home",
+          "text": ""
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers/join?domain=paypal.com",
+          "text": "Join Talent Community"
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": ""
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/default.aspx",
+          "text": "How We Recruit"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+          "text": "Applying"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/Interviewing/default.aspx",
+          "text": "Interviewing"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/new-hire-experience/default.aspx",
+          "text": "New hire experience"
+        },
+        {
+          "url": "https://careers.pypl.com/career-in-fintech/default.aspx",
+          "text": "Careers in Fintech"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "University Hiring"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/north-america-latin-america/default.aspx",
+          "text": "North America and Latin America"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/asia-pacific/default.aspx",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/europe-middle-east--africa/default.aspx",
+          "text": "Europe, Middle East, & Africa"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/intern-hub/default.aspx",
+          "text": "Intern Hub"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/University-Overview/default.aspx#university-job-tiles-container-interns",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.pypl.com/categories/default.aspx",
+          "text": "Job Category"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "Locations"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/luxembourg/default.aspx",
+          "text": "Luxembourg"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/ireland/default.aspx",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/germany/default.aspx",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/china/default.aspx",
+          "text": "China"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/paypal-mexico-overview/default.aspx",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/us-overview/default.aspx",
+          "text": "US Overview"
+        },
+        {
+          "url": "https://about.pypl.com/how-we-work/employees-and-culture/default.aspx",
+          "text": "Belonging"
+        },
+        {
+          "url": "https://careers.pypl.com/benefits/default.aspx",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/default.aspx",
+          "text": "Careers Blog"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/blog-details/default.aspx",
+          "text": "Blog Details"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "My Profile"
+        },
+        {
+          "url": "https://careers.pypl.com/Categories/default.aspx",
+          "text": "Browse Jobs by Category"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "Browse Jobs by Location"
+        },
+        {
+          "url": "https://paypal.willhire.co/",
+          "text": "Browse PayPal Contractor Opportunities Powered by Magnit"
+        },
+        {
+          "url": "https://careers.pypl.com/inclusive-hiring/default.aspx",
+          "text": "Building Better Teams"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/default.aspx",
+          "text": "Get Started"
+        },
+        {
+          "url": "https://about.pypl.com/how-we-work/employees-and-culture/default.aspx",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://worklife.alight.com/ah-angular-afirst-web/#/web/paypal/cp/pre_auth_home",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careerhub",
+          "text": "Find new ways to grow your career"
+        },
+        {
+          "url": "https://careers.pypl.com/Contact-Us/default.aspx",
+          "text": "We're here to help"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careerhub",
+          "text": "Find new ways to grow your career"
+        },
+        {
+          "url": "https://careers.pypl.com/Contact-Us/default.aspx",
+          "text": "We're here to help"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers/join?domain=paypal.com",
+          "text": "Sign Up"
+        },
+        {
+          "url": "https://careers.pypl.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/paypalcareers/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/paypal",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.instagram.com/paypal_careers/?hl=en",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.paypal.com/us/smarthelp/home",
+          "text": "Help"
+        },
+        {
+          "url": "https://careers.pypl.com/Contact-Us/default.aspx",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/paypal-fees",
+          "text": "Fees"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/paypal-safety-and-security",
+          "text": "Security"
+        },
+        {
+          "url": "https://www.paypal.com/us/digital-wallet/mobile-apps",
+          "text": "Apps"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/shopping-selection",
+          "text": "Shop"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/enterprise",
+          "text": "Enterprise"
+        },
+        {
+          "url": "https://www.paypal.com/us/business/platforms-and-marketplaces",
+          "text": "Partners"
+        },
+        {
+          "url": "https://careers.pypl.com/How-We-Recruit/default.aspx",
+          "text": "Feedback"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/country-worldwide",
+          "text": "See all countries, current language: English"
+        },
+        {
+          "url": "https://about.pypl.com",
+          "text": "About"
+        },
+        {
+          "url": "https://newsroom.paypal-corp.com/",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/jobs",
+          "text": "Job"
+        },
+        {
+          "url": "https://investor.pypl.com/home/default.aspx",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://careers.pypl.com/site-map/default.aspx",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/ua/privacy-full",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx#manage-cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/ua/legalhub-full",
+          "text": "Legal"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.pypl.com/home/default.aspx",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "PayPal Careers - Opening Possibilities for all",
+      "evidence": "evidence/9afec16631683aaeb9a5.html.gz",
+      "sha256": "a47238a79c70389b7d923436dc289af808b749cdb81614fd0eff18ca8dd16da9"
+    },
+    {
+      "url": "https://careers.pypl.com/locations/india/default.aspx",
+      "checked_at": "2026-11-15T23:50:48.181283+00:00",
+      "links": [
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx#main-content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/default.aspx",
+          "text": "How We Recruit"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+          "text": "Applying"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/Interviewing/default.aspx",
+          "text": "Interviewing"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/new-hire-experience/default.aspx",
+          "text": "New hire experience"
+        },
+        {
+          "url": "https://careers.pypl.com/career-in-fintech/default.aspx",
+          "text": "Careers in Fintech"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "University Hiring"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/north-america-latin-america/default.aspx",
+          "text": "North America and Latin America"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/asia-pacific/default.aspx",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/europe-middle-east--africa/default.aspx",
+          "text": "Europe, Middle East, & Africa"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/intern-hub/default.aspx",
+          "text": "Intern Hub"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/University-Overview/default.aspx#university-job-tiles-container-interns",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.pypl.com/categories/default.aspx",
+          "text": "Job Category"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "Locations"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/luxembourg/default.aspx",
+          "text": "Luxembourg"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/ireland/default.aspx",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/germany/default.aspx",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/china/default.aspx",
+          "text": "China"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/paypal-mexico-overview/default.aspx",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/us-overview/default.aspx",
+          "text": "US Overview"
+        },
+        {
+          "url": "https://about.pypl.com/how-we-work/employees-and-culture/default.aspx",
+          "text": "Belonging"
+        },
+        {
+          "url": "https://careers.pypl.com/benefits/default.aspx",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/default.aspx",
+          "text": "Careers Blog"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/blog-details/default.aspx",
+          "text": "Blog Details"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "My Profile"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx#maincontent",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.pypl.com/home",
+          "text": ""
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/default.aspx",
+          "text": "How We Recruit"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+          "text": "Applying"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/Interviewing/default.aspx",
+          "text": "Interviewing"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/new-hire-experience/default.aspx",
+          "text": "New hire experience"
+        },
+        {
+          "url": "https://careers.pypl.com/career-in-fintech/default.aspx",
+          "text": "Careers in Fintech"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "University Hiring"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/north-america-latin-america/default.aspx",
+          "text": "North America and Latin America"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/asia-pacific/default.aspx",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/europe-middle-east--africa/default.aspx",
+          "text": "Europe, Middle East, & Africa"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/intern-hub/default.aspx",
+          "text": "Intern Hub"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/University-Overview/default.aspx#university-job-tiles-container-interns",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.pypl.com/categories/default.aspx",
+          "text": "Job Category"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "Locations"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/luxembourg/default.aspx",
+          "text": "Luxembourg"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/ireland/default.aspx",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/germany/default.aspx",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/china/default.aspx",
+          "text": "China"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/paypal-mexico-overview/default.aspx",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/us-overview/default.aspx",
+          "text": "US Overview"
+        },
+        {
+          "url": "https://about.pypl.com/how-we-work/employees-and-culture/default.aspx",
+          "text": "Belonging"
+        },
+        {
+          "url": "https://careers.pypl.com/benefits/default.aspx",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/default.aspx",
+          "text": "Careers Blog"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/blog-details/default.aspx",
+          "text": "Blog Details"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "My Profile"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers?location=india&domain=paypal.com",
+          "text": "View all jobs in India"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers?location=Bangalore%2C%20Karnataka%2C%20India",
+          "text": "Bangalore Positions"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers?location=Chennai%2C%20Tamil%20Nadu%2C%20India",
+          "text": "Chennai Positions"
+        },
+        {
+          "url": "https://m.youtube.com/watch?v=4lOiO8PAxfw&feature=youtu.be",
+          "text": ""
+        },
+        {
+          "url": "https://worklife.alight.com/ah-angular-afirst-web/#/web/paypal/cp/india?linkId=L_PreAuthINDLandingPg&technicalNameForLink=L_PreAuthINDLandingPg&userFriendlyNameForLink=India%20Pre%20Auth%20Landing%20Page%20link&domain=Consumer%20Experience&baseClientIndicator=Client&isUCCELink=true&flavorCheck=true ",
+          "text": "India benefits page"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers/join?domain=paypal.com",
+          "text": "Sign Up"
+        },
+        {
+          "url": "https://careers.pypl.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/paypalcareers/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/paypal",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.instagram.com/paypal_careers/?hl=en",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.paypal.com/us/smarthelp/home",
+          "text": "Help"
+        },
+        {
+          "url": "https://careers.pypl.com/Contact-Us/default.aspx",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/paypal-fees",
+          "text": "Fees"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/paypal-safety-and-security",
+          "text": "Security"
+        },
+        {
+          "url": "https://www.paypal.com/us/digital-wallet/mobile-apps",
+          "text": "Apps"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/shopping-selection",
+          "text": "Shop"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/enterprise",
+          "text": "Enterprise"
+        },
+        {
+          "url": "https://www.paypal.com/us/business/platforms-and-marketplaces",
+          "text": "Partners"
+        },
+        {
+          "url": "https://careers.pypl.com/How-We-Recruit/default.aspx",
+          "text": "Feedback"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/country-worldwide",
+          "text": "See all countries, current language: English"
+        },
+        {
+          "url": "https://about.pypl.com",
+          "text": "About"
+        },
+        {
+          "url": "https://newsroom.paypal-corp.com/",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/jobs",
+          "text": "Job"
+        },
+        {
+          "url": "https://investor.pypl.com/home/default.aspx",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://careers.pypl.com/site-map/default.aspx",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/ua/privacy-full",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx#manage-cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/ua/legalhub-full",
+          "text": "Legal"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.pypl.com/locations/india/default.aspx",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "PayPal Careers - Locations - India",
+      "evidence": "evidence/2c96847697b7d665ed64.html.gz",
+      "sha256": "8edc130893ac6a29f9655337fb5a8fa2fed082816c4300ddaae114400d2c687c"
+    },
+    {
+      "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+      "checked_at": "2026-11-15T23:50:49.838519+00:00",
+      "links": [
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx#main-content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/default.aspx",
+          "text": "How We Recruit"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+          "text": "Applying"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/Interviewing/default.aspx",
+          "text": "Interviewing"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/new-hire-experience/default.aspx",
+          "text": "New hire experience"
+        },
+        {
+          "url": "https://careers.pypl.com/career-in-fintech/default.aspx",
+          "text": "Careers in Fintech"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "University Hiring"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/north-america-latin-america/default.aspx",
+          "text": "North America and Latin America"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/asia-pacific/default.aspx",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/europe-middle-east--africa/default.aspx",
+          "text": "Europe, Middle East, & Africa"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/intern-hub/default.aspx",
+          "text": "Intern Hub"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/University-Overview/default.aspx#university-job-tiles-container-interns",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.pypl.com/categories/default.aspx",
+          "text": "Job Category"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "Locations"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/luxembourg/default.aspx",
+          "text": "Luxembourg"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/ireland/default.aspx",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/germany/default.aspx",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/china/default.aspx",
+          "text": "China"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/paypal-mexico-overview/default.aspx",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/us-overview/default.aspx",
+          "text": "US Overview"
+        },
+        {
+          "url": "https://about.pypl.com/how-we-work/employees-and-culture/default.aspx",
+          "text": "Belonging"
+        },
+        {
+          "url": "https://careers.pypl.com/benefits/default.aspx",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/default.aspx",
+          "text": "Careers Blog"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/blog-details/default.aspx",
+          "text": "Blog Details"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "My Profile"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx#maincontent",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.pypl.com/home",
+          "text": ""
+        },
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/default.aspx",
+          "text": "How We Recruit"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+          "text": "Applying"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/Interviewing/default.aspx",
+          "text": "Interviewing"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/new-hire-experience/default.aspx",
+          "text": "New hire experience"
+        },
+        {
+          "url": "https://careers.pypl.com/career-in-fintech/default.aspx",
+          "text": "Careers in Fintech"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "University Hiring"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/university-overview/default.aspx",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/north-america-latin-america/default.aspx",
+          "text": "North America and Latin America"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/asia-pacific/default.aspx",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/europe-middle-east--africa/default.aspx",
+          "text": "Europe, Middle East, & Africa"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/intern-hub/default.aspx",
+          "text": "Intern Hub"
+        },
+        {
+          "url": "https://careers.pypl.com/university-hiring/University-Overview/default.aspx#university-job-tiles-container-interns",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://careers.pypl.com/categories/default.aspx",
+          "text": "Job Category"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "Locations"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/luxembourg/default.aspx",
+          "text": "Luxembourg"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/ireland/default.aspx",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/germany/default.aspx",
+          "text": "Germany"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/china/default.aspx",
+          "text": "China"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/india/default.aspx",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/paypal-mexico-overview/default.aspx",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/us-overview/default.aspx",
+          "text": "US Overview"
+        },
+        {
+          "url": "https://about.pypl.com/how-we-work/employees-and-culture/default.aspx",
+          "text": "Belonging"
+        },
+        {
+          "url": "https://careers.pypl.com/benefits/default.aspx",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/default.aspx",
+          "text": "Careers Blog"
+        },
+        {
+          "url": "https://careers.pypl.com/blog/blog-details/default.aspx",
+          "text": "Blog Details"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "My Profile"
+        },
+        {
+          "url": "https://careers.pypl.com/locations/default.aspx",
+          "text": "location"
+        },
+        {
+          "url": "https://careers.pypl.com/Categories/default.aspx",
+          "text": "category"
+        },
+        {
+          "url": "https://paypal.wd1.myworkdayjobs.com/jobs/login",
+          "text": "Login page"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers?query=&location=&Country=",
+          "text": "PayPal Careers Page"
+        },
+        {
+          "url": "https://careers.pypl.com/candidate-privacy-statement/",
+          "text": "PayPal Candidate Privacy Statement"
+        },
+        {
+          "url": "https://careers.pypl.com/How-We-Recruit/Interviewing",
+          "text": "interviewing at PayPal"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers/join?domain=paypal.com",
+          "text": "Sign Up"
+        },
+        {
+          "url": "https://careers.pypl.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/paypalcareers/",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/paypal",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.instagram.com/paypal_careers/?hl=en",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.paypal.com/us/smarthelp/home",
+          "text": "Help"
+        },
+        {
+          "url": "https://careers.pypl.com/Contact-Us/default.aspx",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/paypal-fees",
+          "text": "Fees"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/paypal-safety-and-security",
+          "text": "Security"
+        },
+        {
+          "url": "https://www.paypal.com/us/digital-wallet/mobile-apps",
+          "text": "Apps"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/shopping-selection",
+          "text": "Shop"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/enterprise",
+          "text": "Enterprise"
+        },
+        {
+          "url": "https://www.paypal.com/us/business/platforms-and-marketplaces",
+          "text": "Partners"
+        },
+        {
+          "url": "https://careers.pypl.com/How-We-Recruit/default.aspx",
+          "text": "Feedback"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/country-worldwide",
+          "text": "See all countries, current language: English"
+        },
+        {
+          "url": "https://about.pypl.com",
+          "text": "About"
+        },
+        {
+          "url": "https://newsroom.paypal-corp.com/",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/jobs",
+          "text": "Job"
+        },
+        {
+          "url": "https://investor.pypl.com/home/default.aspx",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://careers.pypl.com/site-map/default.aspx",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/ua/privacy-full",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx#manage-cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.paypal.com/us/webapps/mpp/ua/legalhub-full",
+          "text": "Legal"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "paypal",
+          "datacentre": "wd1",
+          "site": "jobs",
+          "source_link": "https://paypal.wd1.myworkdayjobs.com/jobs/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.pypl.com/how-we-recruit/applying/default.aspx",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "PayPal Careers - How We Recruit - Applying",
+      "evidence": "evidence/0ab9d6cfd8cf5037f4ce.html.gz",
+      "sha256": "9a4dd7e45a81df45108d3a4877f3e22221b0c51a9eb144427eb8ab65f7042386"
+    },
+    {
+      "url": "https://paypal.eightfold.ai/careers?location=india&domain=paypal.com",
+      "checked_at": "2026-11-15T23:50:51.429548+00:00",
+      "links": [
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": ""
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "Candidate Login"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers/join?domain=paypal.com",
+          "text": "Join Talent Community"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://paypal.eightfold.ai/careers?location=india&domain=paypal.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at PayPal",
+      "evidence": "evidence/2a7e84a10e64f6600deb.html.gz",
+      "sha256": "152d03254ddb3625b53921b83b6d42d81eb1f62b637c8d26bce3c9762f764d94"
+    },
+    {
+      "url": "https://paypal.eightfold.ai/careers?location=Bangalore%2C%20Karnataka%2C%20India",
+      "checked_at": "2026-11-15T23:50:52.541798+00:00",
+      "links": [
+        {
+          "url": "https://careers.pypl.com/home/default.aspx",
+          "text": ""
+        },
+        {
+          "url": "https://paypal.eightfold.ai/candidate/login?domain=paypal.com",
+          "text": "Candidate Login"
+        },
+        {
+          "url": "https://paypal.eightfold.ai/careers/join?domain=paypal.com",
+          "text": "Join Talent Community"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://paypal.eightfold.ai/careers?location=Bangalore%2C%20Karnataka%2C%20India",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at PayPal",
+      "evidence": "evidence/56f97c64f38dcb1ad36a.html.gz",
+      "sha256": "cd64083a314dbd0d89e81af02587e7c7d68b14c8830490acd4fc33d388ed3b1e"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

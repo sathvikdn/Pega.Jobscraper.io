@@ -1,0 +1,35 @@
+{
+  "id": "C097",
+  "company": {
+    "name": "Ford Credit",
+    "aliases": [
+      "Ford Motor Credit"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "parent": "Ford",
+    "career_url": "https://corporate.ford.com/careers.html",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://corporate.ford.com/careers.html",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "The careers site refused the 15 Nov audit request (HTTP 403); respected, not worked around. No public feed is known"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://corporate.ford.com/careers.html",
+      "checked_at": "2026-11-15T23:50:09.181681+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 403,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,98 @@
+{
+  "id": "C137",
+  "company": {
+    "name": "Lowe's",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://talent.lowes.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "lowes",
+        "datacentre": "wd5",
+        "site": "LWS_External_CS",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://talent.lowes.com",
+      "checked_at": "2026-11-15T23:50:25.827683+00:00",
+      "links": [
+        {
+          "url": "https://talent.lowes.com/us/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://talent.lowes.com/us/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://talent.lowes.com/",
+          "text": ""
+        },
+        {
+          "url": "https://talent.lowes.com/us/en/corporate-careers",
+          "text": "ExploreCareers"
+        },
+        {
+          "url": "https://talent.lowes.com/us/en/store-careers",
+          "text": "ExploreCareers"
+        },
+        {
+          "url": "https://talent.lowes.com/us/en/supply-chain-careers",
+          "text": "ExploreCareers"
+        },
+        {
+          "url": "https://talent.lowes.com/us/en/tech",
+          "text": "ExploreCareers"
+        },
+        {
+          "url": "https://talent.lowes.com/us/en/sales",
+          "text": "ExploreCareers"
+        },
+        {
+          "url": "https://talent.lowes.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/lowescareers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/lowe's-home-improvement/jobs/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/Lowescareers",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/lowescareers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.tiktok.com/@lowescareers?_t=8kSYXrnXEoY&_r=1",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@lowescareers/videos?themeRefresh=1",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://talent.lowes.com/us/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers Home | Lowe's Careers",
+      "evidence": "evidence/812a68d9620da4cff881.html.gz",
+      "sha256": "4b906676f6261a73ecb23d32a7fd9bebc791a9b922630a3a6e6fc29a4e04f3c5"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

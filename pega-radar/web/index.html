@@ -10,93 +10,95 @@
   <script src="/static/app.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#list">Skip to roles</a>
-
-  <header class="masthead">
-    <div class="masthead-row">
-      <div class="brand">
-        <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
-          <circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".6"/>
-          <path d="M16 16 L26 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
-          <circle cx="22.5" cy="20.5" r="2" fill="currentColor"/>
-        </svg>
-        <div>
-          <h1 class="brand-name">Pega Radar</h1>
-          <p class="brand-sub" id="scanned-at">Loading…</p>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="Pega Radar home">
+          <svg class="brand-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 8a8 8 0 1 0 8 8M16 16 28 4M21 4h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-name">Pega Radar</span>
+        </a>
+        <nav class="tabs" id="tabs" aria-label="Views"></nav>
+        <div class="header-tools">
+          <button type="button" class="btn btn-icon" id="theme-button" aria-label="Switch colour theme" title="Switch colour theme">
+            <svg class="icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5a5.5 5.5 0 0 1 0 11z" fill="currentColor"/></svg>
+          </button>
+          <button type="button" class="btn btn-icon" id="help-button" aria-label="Help and keyboard shortcuts" title="Keyboard shortcuts (?)">?</button>
+          <div class="profile-focus" id="profile-focus"></div>
         </div>
       </div>
-
-      <div class="masthead-actions">
-        <button type="button" class="btn btn-primary" id="scan-button">
-          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-            <path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M12.5 1.5v3h-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span id="scan-button-label">Scan now</span>
-        </button>
-        <a class="btn" id="export-button" href="/api/export.csv" download>Export CSV</a>
-        <button type="button" class="btn btn-icon" id="theme-button" aria-label="Switch colour theme" title="Switch colour theme">
-          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-            <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/>
-          </svg>
-        </button>
-        <button type="button" class="btn btn-icon" id="help-button" aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">?</button>
+    </header>
+    <div class="workspace">
+      <header class="masthead">
+        <div class="masthead-row">
+          <div class="scan-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <p id="scanned-at">Connecting to your radar…</p>
+            <details class="scan-help">
+              <summary>Details</summary>
+              <div class="scan-note">
+                <p id="scan-detail" hidden></p>
+                <p>A full scan searches every source. A retry checks only the sources that failed or were not reached. Partial means some sources could not finish.</p>
+              </div>
+            </details>
+          </div>
+          <div class="masthead-actions">
+            <a class="export-link" id="export-button" href="/api/export.csv" download>Export CSV</a>
+            <button type="button" class="btn btn-small" id="retry-button">Retry incomplete sources</button>
+            <button type="button" class="btn btn-primary" id="scan-button">
+              <svg class="icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M12.5 1.5v3h-3"/></svg>
+              <span id="scan-button-label">Full scan</span>
+            </button>
+          </div>
+        </div>
+        <div class="scan-progress" id="scan-progress" role="status" aria-live="polite" hidden>
+          <div class="scan-progress-track"><div class="scan-progress-fill" id="scan-progress-fill"></div></div>
+          <span class="scan-progress-text" id="scan-progress-text"></span>
+        </div>
+      </header>
+      <div class="strip strip-bad" id="offline-strip" role="alert" hidden>
+        <strong>Disconnected.</strong> Start Pega Radar again, then
+        <button type="button" class="link" id="offline-retry">retry</button>.
       </div>
-    </div>
-
-    <div class="scan-progress" id="scan-progress" role="status" aria-live="polite" hidden>
-      <div class="scan-progress-track"><div class="scan-progress-fill" id="scan-progress-fill"></div></div>
-      <span class="scan-progress-text" id="scan-progress-text"></span>
-    </div>
-
-    <dl class="readout" id="readout" aria-label="Summary"></dl>
-  </header>
-
-  <div class="strip strip-bad" id="offline-strip" role="alert" hidden>
-    <strong>Disconnected</strong> — start Pega Radar again, then
-    <button type="button" class="link" id="offline-retry">retry</button>.
-  </div>
-  <div class="strip strip-warn" id="attention-strip" role="status" hidden></div>
-  <p class="strip strip-note">
-    Naukri and Foundit are not covered — they refuse automated access. Keep their e-mail alerts switched on.
-  </p>
-
-  <main class="page">
-    <nav class="tabs" id="tabs" aria-label="Views"></nav>
-
+      <div class="strip strip-warn" id="attention-strip" role="status" hidden></div>
+      <main class="page" id="main-content" tabindex="-1">
+        <div class="view-heading">
+          <div>
+            <h1 id="view-title">New roles</h1>
+            <p id="view-description">Find the role worth your next move.</p>
+          </div>
+          <span class="workspace-emblem" aria-hidden="true"><svg viewBox="0 0 64 64" width="64" height="64"><circle cx="32" cy="32" r="27"/><circle cx="32" cy="32" r="17"/><circle cx="32" cy="32" r="7"/><path d="M32 32 55 9"/></svg></span>
+        </div>
+        <dl class="readout" id="readout" aria-label="All tracked roles"></dl>
     <section id="jobs-view" aria-label="Roles">
       <div class="filters" id="filters" role="search" aria-label="Filters">
-        <div class="segmented" role="group" aria-label="Location">
-          <button type="button" data-filter="bengaluru" data-value="on">Bengaluru</button>
-          <button type="button" data-filter="bengaluru" data-value="off">All India</button>
-        </div>
-        <div class="segmented" role="group" aria-label="Employer type">
-          <button type="button" data-filter="focus" data-value="on">Product + GCC</button>
-          <button type="button" data-filter="focus" data-value="off">All employers</button>
-        </div>
         <label class="search">
           <span class="visually-hidden">Search title, company or description</span>
-          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-            <circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <input type="search" id="search" placeholder="Search title, company, description" autocomplete="off" spellcheck="false">
+          <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input type="search" id="search" placeholder="Search roles, companies or skills" autocomplete="off" spellcheck="false">
           <kbd>/</kbd>
         </label>
-        <label class="slider">
-          <span>Min fit <output id="min-score-value" for="min-score">0</output></span>
-          <input type="range" id="min-score" min="0" max="100" step="5" value="0">
-        </label>
-        <label class="sort">
-          <span>Sort</span>
-          <select id="sort">
-            <option value="score">Best fit</option>
-            <option value="posted">Recently posted</option>
-            <option value="first_seen">Recently found</option>
-          </select>
-        </label>
+        <details class="more-filters" id="more-filters">
+          <summary><svg class="icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M2 4h12M2 12h12M5 2v4M11 10v4"/></svg>Refine search</summary>
+          <div class="more-filters-panel">
+            <p class="filter-label">Location</p>
+            <div class="segmented" role="group" aria-label="Location">
+              <button type="button" data-filter="bengaluru" data-value="on">Bengaluru</button>
+              <button type="button" data-filter="bengaluru" data-value="off">All India</button>
+            </div>
+            <p class="filter-label">Employer</p>
+            <div class="segmented" role="group" aria-label="Employer type">
+              <button type="button" data-filter="focus" data-value="on">Product + GCC</button>
+              <button type="button" data-filter="focus" data-value="off">All employers</button>
+            </div>
+            <label class="slider"><span>Minimum fit <output id="min-score-value" for="min-score">0</output></span><input type="range" id="min-score" min="0" max="100" step="5" value="0"></label>
+            <p class="filter-hint">Fit ranks relevance. It is not a hiring probability.</p>
+          </div>
+        </details>
+        <label class="sort"><span class="visually-hidden">Sort roles</span><select id="sort"><option value="score">Best fit first</option><option value="posted">Recently posted</option><option value="first_seen">Recently found</option></select></label>
       </div>
 
       <div class="chips" id="filter-chips" role="group" aria-label="Active filters"></div>
@@ -109,8 +111,175 @@
       <button type="button" class="btn load-more" id="load-more" hidden>Load more</button>
     </section>
 
+    <section id="coverage-view" aria-label="Employer coverage" hidden>
+      <h2>Employer coverage</h2>
+      <p class="muted">
+        Every employer on the original target list, how it is searched, and what happened the last time it was tried.
+      </p>
+      <div class="tile-groups" id="coverage-tiles"></div>
+
+      <details class="explainer">
+        <summary>How coverage works</summary>
+        <dl class="glossary">
+          <dt>Portal</dt>
+          <dd>An employer’s own careers site, or the hiring system behind it, that lists its jobs.</dd>
+          <dt>Candidate</dt>
+          <dd>A portal Pega Radar can read, taken from research, that nobody has yet checked against the live site. Shown as “unverified”.</dd>
+          <dt>Inventory</dt>
+          <dd>The list of employers and what is on file for each — separate from what happened when they were scanned.</dd>
+        </dl>
+        <p>
+          <strong>Configured is not attempted, and attempted is not successful.</strong> An employer is
+          <em>configured</em> when a career portal Pega Radar can read is on file for it. It is <em>attempted</em>
+          when a scan actually reached that portal. It is <em>successful</em> only when the portal answered completely
+          (OK, or Empty when it has no Pega roles today).
+        </p>
+        <p>
+          <strong>Verified</strong> portals were checked against the live site. <strong>Unverified</strong>
+          (candidate) portals are implemented from research and are scanned — their results are real — but nobody has
+          yet confirmed them live.
+        </p>
+        <p>
+          Dashed labels are gaps in the inventory, not scan results: <em>Not configured</em> (no portal on file),
+          <em>Unsupported portal</em> (it cannot be read without a browser), <em>Wrong scope</em> (the board does not
+          cover India or this business), <em>Identity unresolved</em> (the listed name could not be matched to an
+          employer). None of these is ever reported as Empty.
+        </p>
+        <p>
+          The LinkedIn keyword query is a search for the word Pega plus the employer’s name. It is not a company
+          filter and is never counted as coverage of that employer.
+        </p>
+        <p>
+          <strong>To verify unverified portals:</strong> on your PC, open a command prompt in the pega-radar folder and
+          run <code>python radar.py verify</code>. It makes a few small live checks per portal and writes a report to
+          <code>data/acceptance</code>. Send the report file (<code>data/acceptance/verify-….md</code>) to whoever
+          maintains your copy of Pega Radar; once it is agreed, <code>python radar.py verify --promote</code> marks the
+          portals that passed as verified.
+        </p>
+        <p>
+          <strong>Possibly closed</strong> on a role means every employer site or job board that listed it has re-read
+          its full listing and no longer shows it. Roles seen only on LinkedIn are never flagged, and no role is ever
+          deleted.
+        </p>
+      </details>
+
+      <div class="filters" id="coverage-filters" role="search" aria-label="Coverage filters">
+        <label class="search">
+          <span class="visually-hidden">Search employers</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="search" id="coverage-search" placeholder="Search employer, portal, next action" autocomplete="off" spellcheck="false">
+        </label>
+        <label class="sort"><span>Inventory</span>
+          <select id="coverage-inventory" data-coverage-filter="inventory">
+            <option value="">Any</option>
+            <option value="configured">Configured</option>
+            <option value="not configured">Not configured</option>
+            <option value="unsupported">Unsupported portal</option>
+            <option value="wrong scope only">Wrong scope</option>
+            <option value="identity unresolved">Identity unresolved</option>
+          </select>
+        </label>
+        <label class="sort"><span>Latest result</span>
+          <select id="coverage-status" data-coverage-filter="status">
+            <option value="">Any</option>
+            <option value="ok">OK</option>
+            <option value="empty">Empty</option>
+            <option value="partial">Partial</option>
+            <option value="blocked">Blocked</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="skipped">Skipped</option>
+            <option value="error">Error</option>
+            <option value="not_reached">Not reached (time budget)</option>
+            <option value="never">Never attempted</option>
+          </select>
+        </label>
+        <label class="sort"><span>Type</span>
+          <select id="coverage-type" data-coverage-filter="type">
+            <option value="">Any</option>
+            <option value="product">Product</option>
+            <option value="gcc">GCC</option>
+            <option value="enterprise">Enterprise</option>
+            <option value="services">Services</option>
+            <option value="staffing">Staffing</option>
+            <option value="unknown">Unclassified</option>
+          </select>
+        </label>
+        <label class="sort"><span>Bengaluru</span>
+          <select id="coverage-bengaluru" data-coverage-filter="bengaluru">
+            <option value="">Any</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="unknown">Not known</option>
+          </select>
+        </label>
+        <label class="sort"><span>Portal</span>
+          <select id="coverage-portal" data-coverage-filter="portal">
+            <option value="">Any</option>
+            <option value="verified">Verified</option>
+            <option value="candidate">Unverified (candidate)</option>
+          </select>
+        </label>
+        <label class="sort"><span>Sort</span>
+          <select id="coverage-sort">
+            <option value="attention">Needs attention first</option>
+            <option value="name">Name</option>
+            <option value="jobs">Roles on file</option>
+            <option value="stale">Longest without success</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="result-row">
+        <p class="result-line" id="coverage-line" role="status" aria-live="polite"></p>
+        <a class="btn btn-small" href="/api/coverage.csv" download>Export CSV</a>
+      </div>
+      <div class="table-wrap" id="coverage-table">
+        <table class="coverage">
+          <thead>
+            <tr>
+              <th scope="col">Employer</th>
+              <th scope="col">How it is searched</th>
+              <th scope="col">Latest result</th>
+              <th scope="col" class="num">Roles on file</th>
+              <th scope="col">Next action</th>
+            </tr>
+          </thead>
+          <tbody id="coverage-rows"></tbody>
+        </table>
+      </div>
+      <div class="empty" id="coverage-empty" hidden></div>
+    </section>
+
     <section id="sources-view" aria-label="Sources" hidden></section>
+    <footer class="mobile-footer">
+      <a href="/api/export.csv" download>Export roles as CSV</a>
+      <p class="mobile-coverage-caveat">Keep Naukri and Foundit e-mail alerts on. These boards are not scanned.</p>
+    </footer>
   </main>
+    </div>
+  </div>
+
+
+  <template id="onboard-art">
+    <div class="signal-art" role="img" aria-label="Pega Radar brings employer career sites, LinkedIn and India job boards into one role search. Ready to scan.">
+      <div class="signal-field"></div>
+      <svg class="signal-orbits" viewBox="0 0 520 500" aria-hidden="true">
+        <circle cx="270" cy="250" r="190"/><circle cx="270" cy="250" r="140"/><circle cx="270" cy="250" r="87"/>
+        <path d="M80 250h380M270 60v380" class="signal-cross"/>
+        <path d="M270 250 419 131" class="signal-radius"/>
+        <circle class="signal-dot" cx="419" cy="131" r="6"/><circle class="signal-dot dot-soft" cx="114" cy="359" r="5"/>
+        <circle class="signal-dot dot-soft" cx="313" cy="66" r="4"/>
+      </svg>
+      <div class="signal-core"><svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M24 14a10 10 0 1 0 10 10M24 24 41 7M31 7h10v10"/></svg></div>
+      <div class="source-node node-careers"><span class="source-symbol"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 17V5l6-3 6 3v12M2 17h16M8 17v-4h4v4M7 7h1m4 0h1M7 10h1m4 0h1"/></svg></span><span><strong>Career sites</strong><small>Direct from employers</small></span></div>
+      <div class="source-node node-linkedin"><span class="source-symbol linkedin-symbol">in</span><span><strong>LinkedIn</strong><small>Public job listings</small></span></div>
+      <div class="source-node node-boards"><span class="source-symbol"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14v12H3zM3 8h14M7 8v8M10 11h4m-4 2h3"/></svg></span><span><strong>India job boards</strong><small>A wider search</small></span></div>
+      <span class="ready-label"><span></span>Ready to scan</span>
+    </div>
+  </template>
 
   <dialog class="drawer" id="drawer" aria-labelledby="drawer-title">
     <div class="drawer-body" id="drawer-body"></div>
@@ -129,6 +298,7 @@
       <dt><kbd>Esc</kbd></dt><dd>Close the open panel</dd>
       <dt><kbd>?</kbd></dt><dd>Show this list</dd>
     </dl>
+    <p>What the Coverage tab shows is explained there, under “How coverage works”.</p>
     <button type="button" class="btn" id="help-close" autofocus>Close</button>
     </div>
   </dialog>

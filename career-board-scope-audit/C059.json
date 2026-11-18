@@ -1,0 +1,81 @@
+{
+  "id": "C059",
+  "company": {
+    "name": "Columbia Sportswear",
+    "aliases": [
+      "Columbia Sportswear Company"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.columbiasportswearcompany.com/careers/",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "columbiasportswearcompany",
+        "datacentre": "wd5",
+        "site": "retail",
+        "state": "wrong_scope",
+        "scope": "global",
+        "note": "Retail-store board for the United States; no corporate or India board is evidenced"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.columbiasportswearcompany.com/careers/",
+      "checked_at": "2026-11-15T23:49:45.496384+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.columbiasportswearcompany.com/careers/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/3427398b8be0faa65386.html.gz",
+      "sha256": "ea0fa5b0b09e2c37726cac67fd83d916038b0f1ec30763e970ec748bf985eb6e"
+    },
+    {
+      "url": "https://www.columbiasportswearcompany.com/careers/frequently-asked-questions",
+      "checked_at": "2026-11-15T23:51:26.444716+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.columbiasportswearcompany.com/careers/frequently-asked-questions",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/da81c93c4a5796f912dc.html.gz",
+      "sha256": "ea0fa5b0b09e2c37726cac67fd83d916038b0f1ec30763e970ec748bf985eb6e",
+      "discovery": "Supplemental web research: official employer/ATS page; validate entity independently."
+    },
+    {
+      "url": "https://columbiasportswearcompany.wd5.myworkdayjobs.com/columbia_career_site",
+      "checked_at": "2026-11-15T23:51:27.426002+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "columbiasportswearcompany",
+          "datacentre": "wd5",
+          "site": "columbia_career_site",
+          "source_link": "https://columbiasportswearcompany.wd5.myworkdayjobs.com/columbia_career_site"
+        },
+        {
+          "tenant": "columbiasportswearcompany",
+          "datacentre": "wd5",
+          "site": "Columbia_Career_Site",
+          "source_link": "https://columbiasportswearcompany.wd5.myworkdayjobs.com/Columbia_Career_Site"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://columbiasportswearcompany.wd5.myworkdayjobs.com/columbia_career_site",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/0d0bd2fbace62b9b3af6.html.gz",
+      "sha256": "768c99c66439a1a3f8de516c7dbe195a23be7a4b28a83e4321968aeda2f7aa5d",
+      "discovery": "Supplemental web research: official employer/ATS page; validate entity independently."
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

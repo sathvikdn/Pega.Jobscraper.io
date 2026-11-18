@@ -1,0 +1,34 @@
+{
+  "id": "C039",
+  "company": {
+    "name": "BT Group",
+    "aliases": [
+      "BT",
+      "British Telecom"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://bt.com/careers",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://bt.com/careers",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "The careers site could not be reached in the 15 Nov audit (TLS or network error), so its vacancy provider is unknown; needs a manual look before an adapter can be chosen"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://bt.com/careers",
+      "checked_at": "2026-11-15T23:49:28.915562+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

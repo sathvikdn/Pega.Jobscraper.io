@@ -1,0 +1,36 @@
+{
+  "id": "C105",
+  "company": {
+    "name": "Goldman Sachs",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://higher.gs.com/results",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://higher.gs.com/results",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Script-driven job search with no public feed identified; needs a site-specific client"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://higher.gs.com/results",
+      "checked_at": "2026-11-15T23:50:12.250588+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://higher.gs.com/results",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Opportunities | Goldman Sachs",
+      "evidence": "evidence/78fc3929fbc15aa360fb.html.gz",
+      "sha256": "d95a6d06c52a2b9cec53fedb1e1f06029a02920ef4d34be7562dbee391288b25"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

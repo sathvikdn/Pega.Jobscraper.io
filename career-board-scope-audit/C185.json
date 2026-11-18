@@ -1,0 +1,146 @@
+{
+  "id": "C185",
+  "company": {
+    "name": "PNC",
+    "aliases": [
+      "PNC Financial Services",
+      "PNC Financial"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.pnc.com/global/en",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "pnc",
+        "datacentre": "wd5",
+        "site": "External",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.pnc.com/global/en",
+      "checked_at": "2026-11-15T23:50:49.596529+00:00",
+      "links": [
+        {
+          "url": "https://careers.pnc.com/global/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/feed/hashtag/?keywords=teampnc",
+          "text": "#TeamPNC"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/culture",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/talent-outreach",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/employee-benefits",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/our-hiring-process",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/students",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/search-results",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.pnc.com/en/about-pnc/media/awards-and-recognition.html",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://flows.beamery.com/pnc/tc-signup",
+          "text": "Click to Join"
+        },
+        {
+          "url": "https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12ScreenRdr.pdf",
+          "text": "Know Your Rights: Workplace Discrimination is Illegal"
+        },
+        {
+          "url": "https://mandatoryview.com/?LicenceId=1f6ffd2c-9547-4e5f-9a9c-73912a77a958&ProductType=IntranetLicense&SubType=PG",
+          "text": "CLICK HERE to access to all labor law ePosters."
+        },
+        {
+          "url": "https://content.pncmc.com/live/pnc/aboutus/recruiting/PNC_EO_AASection_503_and_VEVRAA_Policy.pdf",
+          "text": "CLICK HERE to access PNC Equal Opportunity and Affirmative Action (Section 503 & VEVRAA) Policy"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/IER_RighttoWorkPoster.pdf",
+          "text": "Right to work (in English)"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/IER_RighttoWorkPosterES.pdf",
+          "text": "Derecho al Trabajar (en Español)"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/emailpersonalinfo",
+          "text": "Personal Information"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/cookiesettings",
+          "text": "Career Site Cookie Settings"
+        },
+        {
+          "url": "https://careers.pnc.com/global/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/pncbank",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/pnc-bank",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/pncbank",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/pncbank/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/pnc",
+          "text": ""
+        },
+        {
+          "url": "https://www.pinterest.com/PNC/",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.pnc.com/global/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "PNC Careers",
+      "evidence": "evidence/af41e416c93d93092824.html.gz",
+      "sha256": "140f036023aa5324c659d8d2a2197864bcbbdd73118c8fd3f97e82fa8bf9bdcc"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

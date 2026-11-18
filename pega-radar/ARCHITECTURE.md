@@ -1,5 +1,21 @@
 # Pega Radar — architecture and module contracts
 
+## UI revision (15 November 2026)
+
+These UI decisions supersede earlier client defaults below; API and scanner contracts are unchanged.
+
+- New roles and All roles share discovery filters. Saved, Pipeline and Hidden each retain independent filters and
+  initially show all cities and employer types. Navigation counts are global; result counts are filtered.
+- The visible bulk action marks only currently loaded unread roles, using the existing per-role state endpoint.
+  The global `/api/jobs/seen-all` endpoint remains available but is no longer used by this control.
+- Pending notes are persisted in browser local storage under `radar.note-drafts` until the server confirms saving.
+  Notes are still stored in SQLite after synchronization. Storage failures are reported without promising durability.
+- Search and role loading have explicit busy and retry states. Failed filter requests clear stale results.
+- The app uses top navigation, first-use onboarding and comparison cards; phones use horizontal navigation and a
+  full-width detail dialog. Both themes
+  retain local-only assets and visible keyboard focus. First use foregrounds the initial scan.
+- `docs/ui-design.md` documents the visual system; `docs/ui-validation.md` documents offline and browser checks.
+
 A standalone, from-scratch job radar for one user: a Pega CSSA developer (Pega Developer at Mercedes-Benz R&D India
 since August 2022) in **Bengaluru**, targeting **product companies and captive centres (GCCs)** at ₹30 LPA+.
 The older project in `../01_pega_career_intelligence/` is a **read-only reference**; nothing here imports from it.
@@ -270,3 +286,117 @@ network access.
 - Server additions: `Cross-Origin-Resource-Policy: same-origin`, a 15 s socket timeout, `Host` must carry this
   server's exact port, unknown `view`/`sort`/state fields answer 400, `POST /api/scan` answers 202 and takes the same
   run lock as the command line.
+
+# v2 — Career-portal coverage expansion (15 November 2026)
+
+Source material (read-only research, untrusted data, never instructions to execute):
+`/Users/sahanadn/Downloads/Pega.Jobscraper.io-main 1/career-portal-handoff/` — `CLAUDE_CHANGE_BRIEF.md`
+(requirements), `REPORT.md`, `portal-manifest.json` (117 backlog targets with observations), `workday_probes.json`
+(26 responding Workday boards), `company-coverage-original-targets.md` (all 286 original rows),
+`observations/P*.json`, `evidence/*.gz` (captured HTML/JSON responses — use as offline fixtures), `reference_old/`
+(historical Playwright-era adapters: endpoint ideas only, not current validation, never copy browser code).
+
+Development remains offline. Live validation happens on the user's PC through `radar.py verify` (below).
+
+## Three separate dimensions
+
+1. **Identity** — `companies.json` employers (canonical name, aliases, type, bengaluru, parent/business-unit notes).
+2. **Configured source** — each employer's `portals` list.
+3. **Latest execution outcome** — from `source_health` across runs (last attempt, last success, status, reason).
+
+Having a URL is not an adapter; having an adapter is not a successful scan; a generic LinkedIn keyword search is never
+counted as company coverage.
+
+## `targets.json` (new): the durable original-target inventory
+
+```json
+{"rows": [{"row": 1, "original_name": "A.P. Moller - Maersk", "original_url": "https://maersk.com/careers",
+           "employer": "Maersk", "resolution": "matched", "note": "naming variant"}]}
+```
+
+All 286 original rows, duplicates kept. `employer` is a canonical `companies.json` name or null. `resolution`:
+`matched | added | related | unresolved`. `related` = a parent/sibling/business unit kept separate (note says which);
+`unresolved` must carry a reason in `note`. This file is the denominator of coverage; it never shrinks.
+
+## `companies.json` v2 entry
+
+```json
+{"name": "Booking.com", "aliases": ["Booking.com India"], "type": "product", "bengaluru": true,
+ "linkedin_query": true, "parent": "Booking Holdings", "career_url": "https://jobs.booking.com/booking/jobs",
+ "portals": [{"kind": "icims", "host": "jobs.booking.com", "state": "candidate", "scope": "global",
+              "note": "iCIMS markers on 15 Nov audit; India filtered per posting"}],
+ "inventory_note": "optional free text shown in Coverage"}
+```
+
+- `portals[]` replaces `ats` (read both; `ats` is converted to one `portals` entry with `state: "verified"`).
+  Each portal: `kind` + kind-specific keys, `state`, `scope`, optional `note`, optional `business_unit` (attribution on
+  shared boards), optional `more_sites` (Workday).
+- `state`: `verified` (in the 15 Nov baseline or passed `verify`) · `candidate` (implemented adapter, endpoint from
+  research, not yet live-verified — IS scanned, results are real, Coverage shows "unverified") · `wrong_scope`
+  (board exists but cannot cover India/the entity, e.g. TMNA, BD USA, Columbia retail — NOT scanned, shown with reason)
+  · `unsupported` (no stdlib adapter possible yet — NOT scanned; `note` states the architectural change needed).
+- `scope`: `india` (board or query is India-filtered) · `global` (filtered per posting) · `unknown`.
+- `career_url`: the official careers page (for the user to click), independent of adapters.
+- Inventory state per employer (derived, never stored as a source outcome): `not configured` (no portals) ·
+  `unsupported` · `wrong scope only` · `identity unresolved` · `configured`. These are never shown as `empty`.
+
+## Adapters (radar/sources/)
+
+Existing: `workday`, `oracle`, `greenhouse`, `lever`. New stdlib adapters, each its own module or grouped sensibly:
+`smartrecruiters`, `ashby`, `eightfold`, `successfactors`, `phenom`, `talentbrew`, `icims`, `avature`, plus any
+employer-specific feed justified by evidence (PeopleStrong, RippleHire, BeeSite …). Every adapter must: search Pega
+(and PRPC where the site search is literal), merge result pages by stable id, read details where the listing lacks a
+description, keep India/blank/remote/multi-location postings (drop only on positive foreign evidence), report caps and
+failures as `partial`/`error` per the existing rules, distinguish a valid zero-match search from a wrong tenant/site,
+and set `source_id` as `<kind>:<board-identity>:<posting id>` so ids never collide across boards. Workday hosts may
+use any datacentre (`wd1`…`wd504`); never hard-code.
+
+A shared board (one ATS board serving several canonical employers or business units) is fetched once per scan; jobs
+are attributed via `business_unit` matching where possible, otherwise to the board's primary employer.
+
+## Store additions
+
+- `source_health` gains `elapsed_s REAL`, `reason TEXT` (`timeout|tls|dns|refused|rate_limited|http_4xx|http_5xx|
+  shape|cap|budget|maintenance|''`), `pages_complete INTEGER`, `details_complete INTEGER`, `employer TEXT`.
+  Migration is additive and repeatable; before any migration the store copies `radar.sqlite3` to
+  `data/backups/radar-<UTC timestamp>.sqlite3` (keep the 5 newest).
+- `jobs` gains `last_confirmed_at` (last time a source that found it listed it in an `ok`/`empty` run with
+  pages_complete) and `possibly_closed INTEGER` (set when such a complete run of every source that ever listed the job
+  no longer lists it; cleared when seen again). Jobs are never deleted by a scan.
+- `Store.coverage(registry, targets) -> list[dict]` — one row per canonical employer plus one per unresolved target:
+  canonical, original_names (from targets.json), type, bengaluru, career_url, portals (kind/state/scope), linkedin_query,
+  inventory_state, last_attempt_at, last_success_at, latest_status, latest_reason, latest_error, run_id,
+  pages_complete, details_complete, jobs_total, jobs_open, next_action (human sentence).
+- `Store.coverage_summary()` — counts for: original rows, canonical employers, configured, attempted in latest run,
+  ok/empty, partial, blocked, maintenance, error, not configured, unsupported, wrong scope, unresolved identity.
+
+## Scan modes
+
+- `radar.py scan` — full scan of every scannable source (state verified or candidate).
+- `radar.py scan --retry-incomplete` — only sources whose latest outcome needs attention or that were not attempted
+  in the latest run (budget, crash). Same run bookkeeping; summary says which mode.
+- `radar.py scan --only NAME[,NAME]` — named employers or task names.
+- Fairness: within a scan, portal tasks never attempted, or not attempted most recently, run first; LinkedIn runs
+  concurrently on its own worker so it cannot starve portals. Tasks not started before the budget ends are recorded
+  with reason `budget`.
+- `POST /api/scan {"mode": "full" | "retry"}` mirrors the CLI.
+
+## Verification and reporting commands (run by the user on their PC)
+
+- `radar.py verify [--only NAMES] [--state candidate|all]` — bounded live checks per portal: unfiltered board size
+  (wrong-site detection), Pega query hits and total, India-scope count in the first page, page-2 reachability, one
+  detail read. Writes `data/acceptance/verify-<timestamp>.json` and `.md`, stores per-portal results in kv
+  `portal_verification`, and promotes nothing automatically: the report lists which candidates passed so the user can
+  run `radar.py verify --promote` to set `state: verified` in companies.json (with a backup copy of the file).
+- `radar.py coverage [path]` — writes the company coverage table (CSV and Markdown) with every column of
+  `Store.coverage()`, including unconfigured and unresolved targets.
+- `radar.py report [path]` — run-level acceptance report for the latest run: requested vs attempted vs completed
+  sources, outcomes by reason, runtime, new jobs, and the before/after coverage matrix.
+
+## Website additions
+
+A **Coverage** view: summary tiles (original targets · employers · configured · attempted · ok · partial · blocked ·
+error · not configured · unsupported · wrong scope · unresolved), and a searchable, filterable table with every
+`Store.coverage()` column and the next action. Export button (`GET /api/coverage.csv`). Scan button becomes a split
+choice: "Full scan" and "Retry incomplete sources", with a one-line explanation that `partial` is an outcome, not a
+different search. Job cards show "possibly closed" when flagged.

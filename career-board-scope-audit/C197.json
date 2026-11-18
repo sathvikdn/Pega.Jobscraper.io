@@ -1,0 +1,141 @@
+{
+  "id": "C197",
+  "company": {
+    "name": "Roche",
+    "aliases": [
+      "Roche Diagnostics"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.roche.com/global/en",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "roche",
+        "datacentre": "wd3",
+        "site": "roche-ext",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified; the board lists Hyderabad postings"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.roche.com/global/en",
+      "checked_at": "2026-11-15T23:50:56.990269+00:00",
+      "links": [
+        {
+          "url": "https://careers.roche.com/global/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://careers.roche.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.roche.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.roche.com/global/en/area-of-expertise",
+          "text": "​​​​Learn more"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/why-join-us",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/student-and-graduate-programs",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/student-and-graduate-programs",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/we-are-roche",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/c/information-technology-jobs",
+          "text": "Roche is at the forefront of technological advancements in healthcare. Elevate your career with us by joining our tech team.Whether you're a software "
+        },
+        {
+          "url": "https://careers.roche.com/global/en/dach-region-jobs",
+          "text": "At Roche, we embrace the unique power of each person to transform the lives of patients and society, regardless of age, beliefs, ability, identity, ba"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/roche-business-process-management",
+          "text": "Our global team of more than 3,000 employees at Roche Services & Solutions (RSS) plays a crucial role in enabling Roche to thrive in a competitive and"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/rewards-recognition",
+          "text": "We encourage strong performance, and we recognise our employees for their contribution to our success. We offer competitive pay and benefits in every "
+        },
+        {
+          "url": "https://careers.roche.com/global/en/perspectives-programs",
+          "text": "If you are a talented early in career professional aiming to become a leader and reach your full potential through international professional experien"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/search-results",
+          "text": "Experience working at Roche"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/inclusion-belonging",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://www.rnib.org.uk/living-with-sight-loss/equality-and-employment/employers/visibly-better-employer-quality-standard/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.roche.com/global/{{oneTrust}}",
+          "text": "Cookie Preferences"
+        },
+        {
+          "url": "https://careers.roche.com/global/en/emailpersonalinfo",
+          "text": "Personal Information"
+        },
+        {
+          "url": "https://careers.roche.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/roche",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/roche",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/roche",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/roche/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/roche",
+          "text": ""
+        },
+        {
+          "url": "https://careers.roche.com/global/en/step-by-step-guide-to-follow-roche-on-wechat",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.roche.com/global/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Roche | Roche jobs",
+      "evidence": "evidence/1ff8fb3f851f9da6d329.html.gz",
+      "sha256": "c8028d5f1ee0154cd109bbd572661732613b2524d942beac5fdf2a9ad22474aa"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

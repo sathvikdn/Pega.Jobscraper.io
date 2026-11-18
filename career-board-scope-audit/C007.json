@@ -1,0 +1,38 @@
+{
+  "id": "C007",
+  "company": {
+    "name": "Airtel",
+    "aliases": [
+      "Bharti Airtel"
+    ],
+    "type": "enterprise",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.airtel.com/",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://careers.airtel.com/",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "No known vacancy provider was identified on the careers page; needs a site-specific parser once its job feed is found"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.airtel.com/",
+      "checked_at": "2026-11-15T23:49:03.416400+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.airtel.com/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Airtel Careers",
+      "evidence": "evidence/6c11a69588abdf41317b.html.gz",
+      "sha256": "12b5e1a1024e22eea6205b3771d3ed658f009c7576e2749a1c9eed4a449541ea"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

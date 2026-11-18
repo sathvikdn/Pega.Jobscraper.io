@@ -1,0 +1,32 @@
+{
+  "id": "C242",
+  "company": {
+    "name": "Western Union",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.westernunion.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "westernunion",
+        "datacentre": "wd5",
+        "site": "WesternUnionJobs",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.westernunion.com",
+      "checked_at": "2026-11-15T23:51:21.986118+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

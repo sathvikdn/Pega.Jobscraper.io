@@ -20,6 +20,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlsplit
 
+from radar.acceptance import coverage_csv
 from radar.model import csv_cell
 
 BIND_HOST = '127.0.0.1'          # never configurable: this server is for the local user only
@@ -36,6 +37,7 @@ STATIC_FILES = {
 VIEWS = ('new', 'all', 'saved', 'applied', 'hidden')
 SORTS = ('score', 'posted', 'first_seen')
 EMPLOYER_TYPES = ('product', 'gcc', 'enterprise', 'services', 'staffing', 'unknown')
+SCAN_MODES = ('full', 'retry')        # mirrors `radar.py scan` and `radar.py scan --retry-incomplete`
 USER_STATUSES = ('new', 'interested', 'applied', 'interviewing', 'offer', 'rejected')
 STATE_FLAGS = ('saved', 'hidden', 'seen')
 
@@ -80,26 +82,28 @@ class ScanController:
         self._lock = threading.Lock()
         self._running = False
         self._started_at = ''
+        self._mode = None
         self._last_summary = None
         self._error = None
 
-    def start(self):
-        """Start a scan. Returns False when one is already running."""
+    def start(self, mode='full'):
+        """Start a scan in one of SCAN_MODES. Returns False when one is already running."""
         with self._lock:
             if self._running:
                 return False
             self._running = True
+            self._mode = mode
             self._started_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
             self._error = None
-        threading.Thread(target=self._run, name='radar-scan', daemon=True).start()
+        threading.Thread(target=self._run, args=(mode,), name='radar-scan', daemon=True).start()
         return True
 
-    def _run(self):
+    def _run(self, mode):
         summary, error = None, None
         try:
             from radar.scan import run_scan, scan_lock   # lazy: the server starts even if a scan cannot
             with scan_lock(self._store.path.parent):     # never overlap a scheduled or command-line scan
-                summary = run_scan(self._config, self._store)
+                summary = run_scan(self._config, self._store, mode=mode)
         except Exception as exc:              # a failed scan must be reported, never kill the server
             traceback.print_exc()
             error = f'{type(exc).__name__}: {exc}'
@@ -111,10 +115,10 @@ class ScanController:
 
     def status(self):
         with self._lock:
-            running, started_at = self._running, self._started_at
+            running, started_at, mode = self._running, self._started_at, self._mode
             summary, error = self._last_summary, self._error
         progress = self._store.kv_get('scan_progress') if running else None
-        return {'running': running, 'progress': progress if self._is_live(progress, started_at) else None,
+        return {'running': running, 'mode': mode, 'progress': progress if self._is_live(progress, started_at) else None,
                 'last_summary': summary, 'error': error}
 
     @staticmethod
@@ -179,15 +183,40 @@ def parse_state_update(body):
     return body
 
 
+def parse_scan_request(body):
+    """Validate the body of POST /api/scan and return the scan mode."""
+    unknown = sorted(set(body) - {'mode'})
+    if unknown:
+        raise ApiError(HTTPStatus.BAD_REQUEST, f'unknown field: {unknown[0]}')
+    mode = body.get('mode', 'full')
+    if mode not in SCAN_MODES:
+        raise ApiError(HTTPStatus.BAD_REQUEST, f'mode must be one of {", ".join(SCAN_MODES)}')
+    return mode
+
+
+def load_coverage(store, config):
+    """`(rows, summary)`: one row per employer or unresolved target, and the counts over them.
+
+    Built by the scan's own function, so the website, a scan and the command-line exports can never
+    read different employer or target files or disagree about which portals are configured. The
+    files are read again on every request, so an edit shows up without restarting the server.
+    """
+    from radar.scan import load_coverage as scan_coverage    # lazy, like run_scan: the server starts even if a scan cannot
+    return scan_coverage(store, config)
+
+
+UTF8_BOM = b'\xef\xbb\xbf'                    # lets Excel read the encoding of a CSV download
+
+
 def export_csv(rows):
-    """All rows as CSV bytes with a UTF-8 BOM so Excel reads the encoding correctly."""
+    """All rows as CSV bytes, with every cell neutralised against spreadsheet formulas."""
     columns = list(dict.fromkeys(key for row in rows for key in row))
     out = io.StringIO(newline='')
     writer = csv.writer(out, lineterminator='\r\n')
     writer.writerow(csv_cell(name) for name in columns)
     for row in rows:
         writer.writerow(csv_cell(row.get(name)) for name in columns)
-    return b'\xef\xbb\xbf' + out.getvalue().encode('utf-8')
+    return UTF8_BOM + out.getvalue().encode('utf-8')
 
 
 def make_handler(store, config, token, scan_controller):
@@ -268,12 +297,21 @@ def make_handler(store, config, token, scan_controller):
                 self.send_json(HTTPStatus.OK, self.find_job(path[len('/api/jobs/'):]))
             elif path == '/api/scan/status':
                 self.send_json(HTTPStatus.OK, scan_controller.status())
+            elif path == '/api/coverage':
+                rows, summary = load_coverage(store, config)
+                self.send_json(HTTPStatus.OK, {'summary': summary, 'rows': rows})
             elif path == '/api/export.csv':
-                filename = f'pega-radar-{date.today().isoformat()}.csv'
-                self.send_body(HTTPStatus.OK, 'text/csv; charset=utf-8', export_csv(store.export_rows()),
-                               [('Content-Disposition', f'attachment; filename="{filename}"')])
+                self.send_csv('pega-radar', export_csv(store.export_rows()))
+            elif path == '/api/coverage.csv':
+                rows, _ = load_coverage(store, config)
+                self.send_csv('pega-radar-coverage', UTF8_BOM + coverage_csv(rows).encode('utf-8'))
             else:
                 raise ApiError(HTTPStatus.NOT_FOUND, 'not found')
+
+        def send_csv(self, name, body):
+            filename = f'{name}-{date.today().isoformat()}.csv'
+            self.send_body(HTTPStatus.OK, 'text/csv; charset=utf-8', body,
+                           [('Content-Disposition', f'attachment; filename="{filename}"')])
 
         def send_static(self, name):
             """Serve one of the allow-listed files; the request path never reaches the filesystem."""
@@ -287,7 +325,8 @@ def make_handler(store, config, token, scan_controller):
                 'token': token,
                 'profile': config.get('profile', {}),
                 'stats': store.stats(),
-                'latest_run': store.latest_run(),
+                'latest_run': store.latest_run(),                    # the most recent run by itself
+                'coverage_run': store.latest_coverage_run(),         # every source as of now: last full run + retries
                 'scan': scan_controller.status(),
             }
 
@@ -309,7 +348,7 @@ def make_handler(store, config, token, scan_controller):
             if path == '/api/jobs/seen-all':
                 self.send_json(HTTPStatus.OK, {'marked': store.mark_all_seen()})
             elif path == '/api/scan':
-                if not scan_controller.start():
+                if not scan_controller.start(parse_scan_request(body)):
                     self.send_json(HTTPStatus.CONFLICT, {'error': 'a scan is already running',
                                                          'scan': scan_controller.status()})
                 else:

@@ -1,0 +1,35 @@
+{
+  "id": "C048",
+  "company": {
+    "name": "Charter Communications",
+    "aliases": [
+      "Charter",
+      "Spectrum",
+      "Charter / Spectrum"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.spectrum.com",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://jobs.spectrum.com",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "The careers site could not be reached in the 15 Nov audit (TLS or network error), so its vacancy provider is unknown; needs a manual look before an adapter can be chosen"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.spectrum.com",
+      "checked_at": "2026-11-15T23:49:33.879268+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

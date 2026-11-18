@@ -1,0 +1,46 @@
+{
+  "id": "C038",
+  "company": {
+    "name": "Broadridge",
+    "aliases": [
+      "Broadridge Financial Solutions"
+    ],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://broadridge.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "broadridge",
+        "datacentre": "wd5",
+        "site": "Careers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://broadridge.com/careers",
+      "checked_at": "2026-11-15T23:49:28.914035+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "broadridge",
+          "datacentre": "wd5",
+          "site": "Careers",
+          "source_link": "https://broadridge.wd5.myworkdayjobs.com/Careers"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://broadridge.wd5.myworkdayjobs.com/Careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/008071e3b624e828cf64.html.gz",
+      "sha256": "46b8c121d4926c3f3d2c3db894af24f162ddd0e097d0246733b0aeb0a54d2ff8"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

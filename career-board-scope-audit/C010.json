@@ -1,0 +1,736 @@
+{
+  "id": "C010",
+  "company": {
+    "name": "Amadeus Labs",
+    "aliases": [
+      "Amadeus"
+    ],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://amadeus.com/en/careers/overview",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "amadeus",
+        "datacentre": "wd502",
+        "site": "jobs",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://amadeus.com/en/careers/overview",
+      "checked_at": "2026-11-15T23:49:05.912498+00:00",
+      "links": [
+        {
+          "url": "https://amadeus.com/en",
+          "text": ""
+        },
+        {
+          "url": "https://amadeus.com/en/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://amadeus.com/en/search",
+          "text": "Search"
+        },
+        {
+          "url": "https://amadeus.com/de",
+          "text": "German"
+        },
+        {
+          "url": "https://amadeus.com/es",
+          "text": "Spanish"
+        },
+        {
+          "url": "https://amadeus.com/fr",
+          "text": "French"
+        },
+        {
+          "url": "https://amadeus.com/en/all-solutions",
+          "text": "View all"
+        },
+        {
+          "url": "https://amadeus.com/en/airlines/overview",
+          "text": "Amadeus for Airlines"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/artificial-intelligence/airlines",
+          "text": "AI for Airlines"
+        },
+        {
+          "url": "https://amadeus.com/en/airlines/products/altea-passenger-service-system",
+          "text": "Amadeus Altéa Passenger Service System"
+        },
+        {
+          "url": "https://amadeus.com/en/airlines/products/professional-services",
+          "text": "Professional Services for Airlines"
+        },
+        {
+          "url": "https://amadeus.com/en/airlines/products/nevio",
+          "text": "Amadeus Nevio"
+        },
+        {
+          "url": "https://www.navitaire.com/",
+          "text": "Navitaire New Skies"
+        },
+        {
+          "url": "https://amadeus.com/en/airlines/products/all",
+          "text": "View all airline products"
+        },
+        {
+          "url": "https://amadeus.com/en/airlines/products/airline-distribution",
+          "text": "Air Distribution"
+        },
+        {
+          "url": "https://amadeus.com/en/airports/overview",
+          "text": "Amadeus for Airports"
+        },
+        {
+          "url": "https://amadeus.com/en/airports/products/airport-operations",
+          "text": "Amadeus Solutions for Airport Operations"
+        },
+        {
+          "url": "https://amadeus.com/en/airports/products/passenger-experience",
+          "text": "Amadeus Solutions for Passenger Services"
+        },
+        {
+          "url": "https://amadeus.com/en/airports/products/ground-handling",
+          "text": "Amadeus Solutions for Ground Handlers"
+        },
+        {
+          "url": "https://amadeus.com/en/airports/products/baggage-services",
+          "text": "Amadeus Solutions for Baggage Services"
+        },
+        {
+          "url": "https://amadeus.com/en/airports/products/all",
+          "text": "View all airport products"
+        },
+        {
+          "url": "https://amadeus.com/en/border-control/overview",
+          "text": "Amadeus for Border Authorities"
+        },
+        {
+          "url": "https://amadeus.com/en/border-control/products/control",
+          "text": "Amadeus Control"
+        },
+        {
+          "url": "https://amadeus.com/en/border-control/products/seamless-gate",
+          "text": "Amadeus Seamless Gate®"
+        },
+        {
+          "url": "https://amadeus.com/en/border-control/products/inspector",
+          "text": "Amadeus Inspector"
+        },
+        {
+          "url": "https://amadeus.com/en/border-control/products/all",
+          "text": "All Border Authorities Products"
+        },
+        {
+          "url": "https://amadeus.com/en/border-control/products/passenger-data-gateway",
+          "text": "Amadeus Passenger Data Gateway"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/overview",
+          "text": "Amadeus Cytric"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/products/business-travel-booking",
+          "text": "Amadeus Cytric Easy"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/products/travel-expense-management",
+          "text": "Amadeus Cytric Expense"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/capabilities/data-and-reporting",
+          "text": "Amadeus Cytric Insights"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/products/all",
+          "text": "View all Cytric products"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/capabilities/data-and-reporting",
+          "text": "Data & Reporting for Corporate Travel"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/capabilities/risk-management",
+          "text": "Risk Management"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/capabilities/sustainable-business-travel",
+          "text": "Sustainable Business Travel"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/capabilities/all",
+          "text": "All Amadeus Cytric Solutions"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/integrations/cytric-microsoft-365-teams",
+          "text": "Travel & Expense Solution for Microsoft Teams"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/overview",
+          "text": "Amadeus for Travel Sellers"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/products/selling-platform-connect",
+          "text": "Amadeus Selling Platform Connect"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/products/travel-platform-gds",
+          "text": "Amadeus Travel Platform"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/products/hey-mobile-app",
+          "text": "Amadeus Hey! Mobile"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/products/all",
+          "text": "View all travel seller products"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/content/ndc-travel-agents",
+          "text": "NDC"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/content/amadeus-flight-content",
+          "text": "Air Content"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/content/low-cost-carriers",
+          "text": "Low-Cost Carriers"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/content/all",
+          "text": "View all travel content"
+        },
+        {
+          "url": "https://www.amadeus-hospitality.com/",
+          "text": "Amadeus for Hospitality"
+        },
+        {
+          "url": "https://www.amadeus-hospitality.com/hotel-management-software/",
+          "text": "Solutions for Hotels"
+        },
+        {
+          "url": "https://www.amadeus-hospitality.com/destination-management/",
+          "text": "Solutions for Destinations"
+        },
+        {
+          "url": "https://outpayce.com/en",
+          "text": "Outpayce"
+        },
+        {
+          "url": "https://amadeus.com/en/payments/voxel",
+          "text": "Voxel: B2B Payments and e-Invoicing"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/artificial-intelligence",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/biometrics",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/feedback-improvement",
+          "text": "Amadeus Listens"
+        },
+        {
+          "url": "https://amadeus.com/en/support/overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://amadeus.com/en/support/community",
+          "text": "Amadeus Live Travel Community"
+        },
+        {
+          "url": "https://myamadeus-services.amadeus.com/csm",
+          "text": "Login to My Amadeus Services"
+        },
+        {
+          "url": "https://amadeus.com/en/training/overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://amadeus.com/en/training/become-learning-partner",
+          "text": "Amadeus Learning Partners"
+        },
+        {
+          "url": "https://learning-universe.amadeus.com/",
+          "text": "Login to Amadeus Learning Universe"
+        },
+        {
+          "url": "https://myamadeus-services.amadeus.com/csm",
+          "text": "Login"
+        },
+        {
+          "url": "https://amadeus.com/en/partners",
+          "text": "Amadeus Partners​"
+        },
+        {
+          "url": "https://partners.amadeus.com/s/",
+          "text": "Partner Marketplace"
+        },
+        {
+          "url": "https://amadeus.com/en/startups",
+          "text": "Amadeus for Startups"
+        },
+        {
+          "url": "https://amadeus.com/en/newsroom/press-releases/amadeus-accelerates-strategic-partnership-microsoft",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/newsroom/press-releases/amadeus-google-partnership-cloud-operations-travel-industry",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/blog",
+          "text": "Amadeus Blog"
+        },
+        {
+          "url": "https://amadeus.com/en/resources",
+          "text": "Resource Center"
+        },
+        {
+          "url": "https://amadeus.com/en/engineering-blog",
+          "text": "Engineering Blog"
+        },
+        {
+          "url": "https://amadeus.com/en/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-glossary",
+          "text": "Travel Glossary"
+        },
+        {
+          "url": "https://amadeus.com/en/trending-topics/transforming-travel",
+          "text": "Transforming Travel"
+        },
+        {
+          "url": "https://amadeus.com/en/resources/white-paper/agentic-ai-airlines",
+          "text": "Airlines in the agentic age: use cases and ideas"
+        },
+        {
+          "url": "https://amadeus.com/en/resources/white-paper/corporate-travel-ai-operator-orchestrator",
+          "text": "Orchestrating Success: AI in corporate travel"
+        },
+        {
+          "url": "https://amadeus.com/en/resources/white-paper/transforming-operational-efficiency-with-ai-and-agentic-flows",
+          "text": "Unlocking the power of AI agents in travel"
+        },
+        {
+          "url": "https://amadeus.com/en/resources/research/travel-trends",
+          "text": "Discover now"
+        },
+        {
+          "url": "https://amadeus.com/en/resources/white-paper/agentic-ai-airlines",
+          "text": "Access whitepaper"
+        },
+        {
+          "url": "https://amadeus.com/en/newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://amadeus.com/en/diversity-and-inclusion",
+          "text": "Diversity & Inclusion"
+        },
+        {
+          "url": "https://amadeus.com/en/about/overview",
+          "text": "About us"
+        },
+        {
+          "url": "https://amadeus.com/en/about/leadership",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://amadeus.com/en/about/awards",
+          "text": "Awards"
+        },
+        {
+          "url": "https://amadeus.com/en/about/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/teams",
+          "text": "Teams"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/life-at-amadeus",
+          "text": "Life at Amadeus"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/how-we-hire",
+          "text": "How we hire"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/research",
+          "text": "Research"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/incubation",
+          "text": "Amadeus Innovation Studio"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/ventures",
+          "text": "Ventures"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/cloud",
+          "text": "Cloud"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/artificial-intelligence",
+          "text": "Artificial Intelligence"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/biometrics",
+          "text": "Biometrics"
+        },
+        {
+          "url": "https://amadeus.com/en/sustainability/overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://amadeus.com/en/sustainability/solutions-customers",
+          "text": "Solutions for customers"
+        },
+        {
+          "url": "https://amadeus.com/en/sustainability/travel-ecosystem",
+          "text": "Travel ecosystem"
+        },
+        {
+          "url": "https://amadeus.com/en/sustainability/people-business-practices",
+          "text": "People and business practices"
+        },
+        {
+          "url": "https://amadeus.com/en/annual-reports/global-report-2025",
+          "text": "Read the report"
+        },
+        {
+          "url": "https://amadeus.com/en/newsroom/press-releases/amadeus-q3-2026-solid-growth-ai-partnerships",
+          "text": "View the results"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/teams",
+          "text": "Teams"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/life-at-amadeus",
+          "text": "Life at Amadeus"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/how-we-hire",
+          "text": "How we hire"
+        },
+        {
+          "url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+          "text": "Apply now"
+        },
+        {
+          "url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+          "text": "Explore our opportunities"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/life-at-amadeus/dream-destination",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/life-at-amadeus/dare-to-grow",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/life-at-amadeus/drive-innovation",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/blog/articles/how-build-environment-top-technology",
+          "text": "Read the blog post"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/locations",
+          "text": "See all locations"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/teams",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.com/en/about/awards",
+          "text": "See all awards"
+        },
+        {
+          "url": "https://amadeus.com/en/blog/articles",
+          "text": "Visit our blog"
+        },
+        {
+          "url": "https://amadeus.com/en/blog/articles/focused-on-great-workplace-experience",
+          "text": "Blog We’re focused on a great workplace experience, and it’s being noticed Mar 19, 2024 Ana Doval"
+        },
+        {
+          "url": "https://amadeus.com/en/blog/articles/my-journey-into-cybersecurity",
+          "text": "Blog My journey into cybersecurity Mar 8, 2024 Virginie Amar"
+        },
+        {
+          "url": "https://amadeus.com/en/blog/articles/amadeus-volunteer-day-support-local-communities",
+          "text": "Blog From Madrid to Manila, Amadeus Volunteer Day helps support local communities Dec 5, 2023 Ana Doval"
+        },
+        {
+          "url": "https://amadeus.com/en/blog/articles/training-service-dog-other-ways-to-support-inclusion",
+          "text": "Blog Training a service dog and other ways to support inclusion Dec 1, 2023 Axel Mueller"
+        },
+        {
+          "url": "https://amadeus.com/en/diversity-and-inclusion",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+          "text": "Explore our opportunities"
+        },
+        {
+          "url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+          "text": "Apply now"
+        },
+        {
+          "url": "https://amadeus.com/en",
+          "text": "Home"
+        },
+        {
+          "url": "https://amadeus.com/en",
+          "text": ""
+        },
+        {
+          "url": "https://amadeus.com/de",
+          "text": "German"
+        },
+        {
+          "url": "https://amadeus.com/es",
+          "text": "Spanish"
+        },
+        {
+          "url": "https://amadeus.com/en/about/overview",
+          "text": "About Amadeus"
+        },
+        {
+          "url": "https://amadeus.com/en/careers/overview",
+          "text": "Careers"
+        },
+        {
+          "url": "https://amadeus.com/en/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://amadeus.com/en/investors",
+          "text": "Investor relations"
+        },
+        {
+          "url": "https://amadeus.com/en/innovation/overview",
+          "text": "Innovation"
+        },
+        {
+          "url": "https://amadeus.com/en/annual-reports",
+          "text": "Global Reports"
+        },
+        {
+          "url": "https://amadeus.com/en/newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://amadeus.com/en/about/locations",
+          "text": "Offices"
+        },
+        {
+          "url": "https://amadeus.com/en/airlines/overview",
+          "text": "Airlines"
+        },
+        {
+          "url": "https://amadeus.com/en/airports/overview",
+          "text": "Airports"
+        },
+        {
+          "url": "https://amadeus.com/en/border-control/overview",
+          "text": "Border Authorities"
+        },
+        {
+          "url": "https://amadeus.com/en/cytric/overview",
+          "text": "Corporate Travel & Expense"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-sellers/overview",
+          "text": "Travel sellers"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-intelligence/overview",
+          "text": "Travel Intelligence"
+        },
+        {
+          "url": "https://www.amadeus-hospitality.com/",
+          "text": "Hospitality"
+        },
+        {
+          "url": "https://amadeus.com/en/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://amadeus.com/en/blog/topic/customer-stories",
+          "text": "Customer stories"
+        },
+        {
+          "url": "https://amadeus.com/en/resources",
+          "text": "Resource center"
+        },
+        {
+          "url": "https://amadeus.com/en/training/overview",
+          "text": "Training"
+        },
+        {
+          "url": "https://amadeus.com/en/travel-glossary",
+          "text": "Travel Glossary"
+        },
+        {
+          "url": "https://amadeus.com/en/support/overview",
+          "text": "Customer support"
+        },
+        {
+          "url": "https://myamadeus-services.amadeus.com/csm",
+          "text": "My Amadeus Services"
+        },
+        {
+          "url": "https://amadeus.com/en/support/community",
+          "text": "Community"
+        },
+        {
+          "url": "https://developers.amadeus.com/",
+          "text": "Developers"
+        },
+        {
+          "url": "https://amadeus.com/en/support/travelers",
+          "text": "Traveler FAQs"
+        },
+        {
+          "url": "https://www.navitaire.com/",
+          "text": "Navitaire"
+        },
+        {
+          "url": "https://outpayce.com/en",
+          "text": "Outpayce"
+        },
+        {
+          "url": "https://www.voxelgroup.net/",
+          "text": "Voxel"
+        },
+        {
+          "url": "https://amadeus.com/en/policies/amadeus-policies",
+          "text": "Privacy & Legal Notices"
+        },
+        {
+          "url": "https://amadeus.com/en/policies/cookies-policy",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://amadeus.com/en/speak-up-channel",
+          "text": "Speak-up"
+        },
+        {
+          "url": "https://amadeus.com/en/policies/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://amadeus.com/en/compliance-info",
+          "text": "Compliance"
+        },
+        {
+          "url": "https://amadeus.com/en/policies/accessibility-statement",
+          "text": "Accessibility Statement"
+        },
+        {
+          "url": "https://amadeus.com/en/trust/overview",
+          "text": "Trust Center"
+        },
+        {
+          "url": "https://www.facebook.com/AmadeusITGroup/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/amadeusitgroup",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/AmadeusITGroup",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/amadeus",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/AmadeusITGroup",
+          "text": ""
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "amadeus",
+          "datacentre": "wd502",
+          "site": "jobs",
+          "source_link": "https://amadeus.wd502.myworkdayjobs.com/jobs"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://amadeus.com/en/careers/overview",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Amadeus Careers | Bring the world closer.",
+      "evidence": "evidence/0b3f1451bb6916dfd86b.html.gz",
+      "sha256": "f06a424a3b5cba4b8721646bbf962d530b3ece542342130906fa2cc96dfb5fbe"
+    },
+    {
+      "url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+      "checked_at": "2026-11-15T23:49:07.335439+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "amadeus",
+          "datacentre": "wd502",
+          "site": "jobs",
+          "source_link": "https://amadeus.wd502.myworkdayjobs.com/jobs"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://amadeus.wd502.myworkdayjobs.com/jobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/12b9b86b40fb0b387be6.html.gz",
+      "sha256": "606a15ebc8e297d6f7e222bb3a0e1ccd2d887cdd843dca9210861169a088814b"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

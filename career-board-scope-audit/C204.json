@@ -1,0 +1,44 @@
+{
+  "id": "C204",
+  "company": {
+    "name": "Sky",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://sky.wd3.myworkdayjobs.com/sky_careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "sky",
+        "datacentre": "wd3",
+        "site": "sky_careers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://sky.wd3.myworkdayjobs.com/sky_careers",
+      "checked_at": "2026-11-15T23:51:00.143152+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "sky",
+          "datacentre": "wd3",
+          "site": "sky_careers",
+          "source_link": "https://sky.wd3.myworkdayjobs.com/sky_careers"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://sky.wd3.myworkdayjobs.com/sky_careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/cd0484515ce7d9c2f3af.html.gz",
+      "sha256": "d02f5cdec2e60b5ce43fc3aebd1bbaca02256f16af64c76d70261966e8f3039c"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

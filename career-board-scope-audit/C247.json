@@ -1,0 +1,37 @@
+{
+  "id": "C247",
+  "company": {
+    "name": "Zurich Insurance",
+    "aliases": [
+      "Zurich"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.zurich.com/careers",
+    "portals": [
+      {
+        "kind": "successfactors",
+        "host": "www.careers.zurich.com",
+        "state": "candidate",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.zurich.com/careers",
+      "checked_at": "2026-11-15T23:51:23.482100+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.zurich.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/37c0c63b869ea64a483d.html.gz",
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

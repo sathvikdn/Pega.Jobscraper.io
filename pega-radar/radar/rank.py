@@ -15,6 +15,11 @@ from pathlib import Path
 from .model import CITY_ALIASES, PEGA_RE, cities, company_key
 
 EMPLOYER_TYPES = ('product', 'gcc', 'enterprise', 'services', 'staffing', 'unknown')
+# A portal is one employer career board. Only verified and candidate portals are scanned.
+PORTAL_STATES = ('verified', 'candidate', 'wrong_scope', 'unsupported')
+SCANNABLE_STATES = ('verified', 'candidate')
+PORTAL_SCOPES = ('india', 'global', 'unknown')
+TARGET_RESOLUTIONS = ('matched', 'added', 'related', 'unresolved')
 
 # ── score weights ──
 W_PEGA_DEV_TITLE = 30     # the title names Pega and it is a developer-track role
@@ -168,6 +173,37 @@ def _same_employer(short, long):
     return len(short) >= 2 or all(word in _GENERIC_WORDS for word in long[len(short):])
 
 
+def employer_portals(entry) -> list[dict]:
+    """The career boards configured for a companies.json entry, as a list of portal dicts.
+
+    The v1 `ats` block is read as one verified portal (it was in the live-checked baseline).
+    Every portal comes back with `kind`, `state` and `scope` filled in.
+    """
+    listed = entry.get('portals')
+    portals = [dict(portal) for portal in listed if isinstance(portal, dict)] if isinstance(listed, list) else []
+    legacy = entry.get('ats')
+    if not portals and isinstance(legacy, dict):
+        portals = [{**legacy, 'state': 'verified'}]
+    for portal in portals:
+        portal['kind'] = str(portal.get('kind') or '')
+        if portal.get('state') not in PORTAL_STATES:
+            portal['state'] = 'candidate'        # an unknown state is never trusted as verified
+        if portal.get('scope') not in PORTAL_SCOPES:
+            portal['scope'] = 'unknown'
+    return portals
+
+
+def _employer(entry) -> dict:
+    kind = entry.get('type')
+    return {'name': entry['name'], 'aliases': [str(alias) for alias in entry.get('aliases') or []],
+            'type': kind if kind in EMPLOYER_TYPES else 'unknown',
+            'bengaluru': entry.get('bengaluru') if isinstance(entry.get('bengaluru'), bool) else None,
+            'linkedin_query': entry.get('linkedin_query') is True, 'parent': entry.get('parent') or None,
+            'career_url': entry.get('career_url') or None, 'portals': employer_portals(entry),
+            'inventory_note': entry.get('inventory_note') or None,
+            'current_employer': entry.get('current_employer') is True}
+
+
 class Registry:
     """companies.json in memory. Works with no entries at all (name patterns only)."""
 
@@ -185,6 +221,11 @@ class Registry:
 
     def __len__(self):
         return len(self.entries)
+
+    @property
+    def employers(self) -> list[dict]:
+        """Every employer in a uniform shape: identity, careers page and its `portals`."""
+        return [_employer(entry) for entry in self.entries]
 
     def find(self, company) -> dict | None:
         """The registry entry for a company name: exact key, then whole-word matches only."""
@@ -236,6 +277,29 @@ def load_registry(path) -> Registry:
         return Registry()
     companies = document.get('companies') if isinstance(document, dict) else document
     return Registry(companies if isinstance(companies, list) else ())
+
+
+def load_targets(path) -> list[dict]:
+    """The rows of targets.json, the original target inventory that coverage is measured against.
+
+    A missing or malformed file is an empty inventory, not an error: coverage then lists the
+    registry's employers only.
+    """
+    try:
+        document = json.loads(Path(path).read_text(encoding='utf-8-sig'))
+    except (OSError, ValueError, TypeError):
+        return []
+    rows = document.get('rows') if isinstance(document, dict) else document
+    targets = []
+    for row in rows if isinstance(rows, list) else ():
+        if not isinstance(row, dict) or not row.get('original_name'):
+            continue
+        resolution = row.get('resolution')
+        targets.append({'row': row.get('row'), 'original_name': str(row['original_name']),
+                        'original_url': row.get('original_url') or None, 'employer': row.get('employer') or None,
+                        'resolution': resolution if resolution in TARGET_RESOLUTIONS else 'unresolved',
+                        'note': row.get('note') or None})
+    return targets
 
 
 # ───────────────────────────── text evidence ─────────────────────────────
@@ -379,8 +443,14 @@ def make_ranker(config, registry, today=None):
     own_words = _name_words(profile.get('current_employer'))
     own_entry = registry.find(profile.get('current_employer'))
 
+    flagged = any(entry.get('current_employer') is True for entry in registry.entries)
+
     def is_current_employer(company, entry):
-        if entry is not None and (entry.get('current_employer') is True or entry is own_entry):
+        if entry is not None and flagged:
+            # The registry names the exact entity. Its parent group and sister companies share the
+            # name's first words but are separate employers, so the config name is not consulted.
+            return entry.get('current_employer') is True
+        if entry is not None and entry is own_entry:
             return True
         words = _name_words(company)
         return bool(own_words) and (words == own_words or _same_employer(own_words, words))

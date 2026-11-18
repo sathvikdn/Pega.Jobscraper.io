@@ -1,0 +1,3846 @@
+{
+  "id": "C181",
+  "company": {
+    "name": "PepsiCo",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.pepsicojobs.com/main/",
+    "portals": [
+      {
+        "kind": "icims",
+        "host": "www.pepsicojobs.com",
+        "path": "main",
+        "state": "candidate",
+        "scope": "global",
+        "note": "iCIMS career-site markers in the captured page; search not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.pepsicojobs.com/main/",
+      "checked_at": "2026-11-15T23:50:48.821813+00:00",
+      "links": [
+        {
+          "url": "https://www.pepsicojobs.com/main",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/careerareas",
+          "text": "View all career areas"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Administration",
+          "text": "Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Health%20%26%20Safety",
+          "text": "Health & Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=HR",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=audit,%20accounting,%20tax,%20treasury",
+          "text": "Accounting"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Finance",
+          "text": "Finance"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Legal%7CRisk",
+          "text": "Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Global%20Procurement",
+          "text": "Procurement"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=science",
+          "text": "Food & Life Sciences"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=product%20engineer",
+          "text": "Product Engineer"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=packaging%20engineer",
+          "text": "Packaging Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=research%20analytics&sortBy=relevance&page=1",
+          "text": "Research Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Cybersecurity",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Data%20Science%20%26%20Analytics",
+          "text": "Data Science & Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=eCommerce",
+          "text": "eCommerce"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Information%20Technology",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Project%20Management,%20Product%20Management",
+          "text": "Project & Product Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Software%20Engineer",
+          "text": "Software Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Strategy",
+          "text": "Strategy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Transformation",
+          "text": "Transformation"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Communications",
+          "text": "Communications"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Design",
+          "text": "Design"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Marketing",
+          "text": "Marketing"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Marketing%20Analytics",
+          "text": "Marketing Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Sales",
+          "text": "Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Supply%20Chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=transportation,%20logistics",
+          "text": "Transportation & Logistics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=warehouse",
+          "text": "Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=maintenance,%20security",
+          "text": "Maintenance & Security"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=safety",
+          "text": "Operations Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=production",
+          "text": "Production"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Manufacturing%20%26%20Warehouse&page=1",
+          "text": "Manufacturing & Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Distribution%20%26%20Delivery&page=1",
+          "text": "Distribution & Delivery"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Sales%20%26%20Merchandising&page=1",
+          "text": "Sales & Merchandising"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/our-locations",
+          "text": "View all locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/unitedstates",
+          "text": "United States"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Bolivia",
+          "text": "Bolivia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/brazil",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Chile"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Colombia",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Costa%20Rica",
+          "text": "Costa Rica"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Dominican%20Republic",
+          "text": "Dominican Republic"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Ecuador",
+          "text": "Ecuador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=El%20Salvador",
+          "text": "El Salvador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Guatemala",
+          "text": "Guatemala"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Honduras",
+          "text": "Honduras"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/mexico",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Paraguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Peru",
+          "text": "Peru"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Puerto%20Rico",
+          "text": "Puerto Rico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Venezuela",
+          "text": "Venezuela"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Belgium",
+          "text": "Belgium"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Denmark",
+          "text": "Denmark"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=France",
+          "text": "France"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Greece",
+          "text": "Greece"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ireland",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Italy",
+          "text": "Italy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Netherlands",
+          "text": "Netherlands"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe/poland",
+          "text": "Poland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Russia",
+          "text": "Russia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Spain",
+          "text": "Spain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Turkey",
+          "text": "Turkey"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ukraine",
+          "text": "Ukraine"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/unitedkingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?location=West%20Balkans",
+          "text": "West Balkans"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Australia",
+          "text": "Australia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac/china",
+          "text": "China"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=indonesia",
+          "text": "Indonesia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=japan",
+          "text": "Japan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=malaysia",
+          "text": "Malaysia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=New%20Zealand",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=philippines",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=south%20korea",
+          "text": "South Korea"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Thailand",
+          "text": "Thailand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Vietnam",
+          "text": "Vietnam"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/egypt",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Ethiopia",
+          "text": "Ethiopia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+          "text": "India"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Israel",
+          "text": "Israel"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Lebanon",
+          "text": "Lebanon"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Nigeria",
+          "text": "Nigeria"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Pakistan",
+          "text": "Pakistan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Saudi%20Arabia",
+          "text": "Saudi Arabia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/southafrica",
+          "text": "South Africa"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?location=United%20Arab%20Emirates",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Get started here"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/main/talentcommunity/events?lang=en-us",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/internshipsprograms",
+          "text": "Internships & Programs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "View all"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture/",
+          "text": "View all of Life at Pepsico"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/about-pepsico",
+          "text": "About Pepsico"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/category/innovation/",
+          "text": "Sustainability & Innovation"
+        },
+        {
+          "url": "https://www.pepsico.com/our-impact/inclusion-for-growth",
+          "text": "Inclusion for Growth"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "Explore PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "Find Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Candidate Dashboard"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=en-US",
+          "text": "English"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=zh-CN",
+          "text": "中国 - 中文"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=fr-CA",
+          "text": "Canada - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=fr-FR",
+          "text": "France - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=it-IT",
+          "text": "Italiano"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=pl-PL",
+          "text": "Polski"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=pt-BR",
+          "text": "Português"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=es-MX",
+          "text": "Spanish"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=de-DE",
+          "text": "German"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/?lang=he-IL",
+          "text": "Hebrew"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Administration",
+          "text": "Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Health%20%26%20Safety",
+          "text": "Health & Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=HR",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Go to HR & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=audit,%20accounting,%20tax,%20treasury",
+          "text": "Accounting"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Finance",
+          "text": "Finance"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Legal%7CRisk",
+          "text": "Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Global%20Procurement",
+          "text": "Procurement"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Go to Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=science",
+          "text": "Food & Life Sciences"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=product%20engineer",
+          "text": "Product Engineer"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=packaging%20engineer",
+          "text": "Packaging Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=research%20analytics&sortBy=relevance&page=1 ",
+          "text": "Research Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=R%26D",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Go to Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Cybersecurity",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Data%20Science%20%26%20Analytics",
+          "text": "Data Science & Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=eCommerce",
+          "text": "eCommerce"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Information%20Technology",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Project%20Management,%20Product%20Management",
+          "text": "Project & Product Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Software%20Engineer",
+          "text": "Software Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Strategy",
+          "text": "Strategy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Transformation",
+          "text": "Transformation"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Go to Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Communications",
+          "text": "Communications"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Design",
+          "text": "Design"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Marketing",
+          "text": "Marketing"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=Marketing%20Analytics",
+          "text": "Marketing Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Sales",
+          "text": "Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Go to Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?categories=Supply%20Chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=transportation,%20logistics",
+          "text": "Transportation & Logistics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=warehouse",
+          "text": "Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=maintenance,%20security",
+          "text": "Maintenance & Security"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=safety",
+          "text": "Operations Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs?keywords=production",
+          "text": "Production"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Go to Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Manufacturing,%20Warehouse&sortBy=relevance&page=1&country=United%20States%7CUSA",
+          "text": "Manufacturing & Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?sortBy=relevance&page=1&country=United%20States%7CUSA&keywords=Distribution,%20Delivery",
+          "text": "Distribution & Delivery"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?sortBy=relevance&page=1&country=United%20States%7CUSA&keywords=sales,%20merchandising",
+          "text": "Sales & Merchandising"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "Go to U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/internshipsprograms",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/internshipsprograms#CampusEvents",
+          "text": "Search events"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2024/09/30/the-pepsico-way-growing-careers-pepsico-jobs/",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.pepsico.com/our-brands/creating-smiles/our-products",
+          "text": "Learn more about our brands"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2025/11/19/seed-to-smile/?utm_campaign=26Q1COE_Seedtosmile_pepsicojobs",
+          "text": "Read more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2025/11/19/seed-to-smile/?utm_campaign=26Q1COE_Seedtosmile_pepsicojobs",
+          "text": "Read more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2026/01/28/fooddrinkmoments/?utm_campaign=26Q1COE_FooDrink_pepsicojobs",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2026/01/28/fooddrinkmoments/?utm_campaign=26Q1COE_FooDrink_pepsicojobs",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2026/02/25/space-to-be-you/?utm_campaign=26Q1COE_SpaceToBeYou_pepsicojobs",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2026/02/25/space-to-be-you/?utm_campaign=26Q1COE_SpaceToBeYou_pepsicojobs",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2026/05/04/celebrating-excellence/?utm_campaign=26Q2COE_CelExcel_pepsicojobs",
+          "text": "Read more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2026/05/04/celebrating-excellence/?utm_campaign=26Q2COE_CelExcel_pepsicojobs",
+          "text": "Read more"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Get to know our culture"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/join/talentcommunity/form",
+          "text": "Join Today"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2022/04/21/seed-to-shelf-quaker/",
+          "text": "Read more"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2020/07/01/creating-sustainable-packaging/",
+          "text": "Read more"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/categories",
+          "text": "Job Function"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/V3.FOOTER.NAV_LOGO_LINK",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Students"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Life at PepsiCo"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Applicant Help"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://www.pepsico.com/legal/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/privacypolicy-countries",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.pepsico.com/",
+          "text": "PepsiCo Global"
+        },
+        {
+          "url": "https://www.pepsicobeveragefacts.com/",
+          "text": "PepsiCo Beverage Facts"
+        },
+        {
+          "url": "https://www.facebook.com/PepsiCoJOBS/",
+          "text": "Facebook Pepsico Facebook Link"
+        },
+        {
+          "url": "https://www.instagram.com/pepsicojobs/",
+          "text": "Instagram Pepsico Instagram Link"
+        },
+        {
+          "url": "https://www.youtube.com/user/PepsiCoJOBS",
+          "text": "Youtube Pepsico Youtube Link"
+        },
+        {
+          "url": "https://www.tiktok.com/@pepsi",
+          "text": "Tiktok Pepsico Tiktok Link"
+        },
+        {
+          "url": "https://www.glassdoor.com/Jobs/PepsiCo-Jobs-E522.htm",
+          "text": "Glassdoor Pepsico Glassdoor Link"
+        },
+        {
+          "url": "https://www.linkedin.com/company/pepsico/",
+          "text": "LinkedIn Pepsico LinkedIn Link"
+        },
+        {
+          "url": "https://www.indeed.com/q-PepsiCo-jobs.html?vjk=b991620edcacedf2",
+          "text": "Indeed Pepsico Indeed Link"
+        },
+        {
+          "url": "https://app.joinhandshake.com/employers/pepsico-11332",
+          "text": "Handshake Pepsico Handshake Link"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.pepsicojobs.com/main/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "PepsiCo CareersSearch button iconFacebookInstagramYoutubeTiktokGlassdoorLinkedInIndeedHandshake",
+      "evidence": "evidence/6a86e6b28b313f9577b0.html.gz",
+      "sha256": "d6020ab3419dbb24ccb64037363f2a5e1d6b36f406549b270f06b907265ad4e9"
+    },
+    {
+      "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+      "checked_at": "2026-11-15T23:50:53.227751+00:00",
+      "links": [
+        {
+          "url": "https://www.pepsicojobs.com/main",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/careerareas",
+          "text": "View all career areas"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Administration",
+          "text": "Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Health%20%26%20Safety",
+          "text": "Health & Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=HR",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=audit,%20accounting,%20tax,%20treasury",
+          "text": "Accounting"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Finance",
+          "text": "Finance"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Legal%7CRisk",
+          "text": "Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Global%20Procurement",
+          "text": "Procurement"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=science",
+          "text": "Food & Life Sciences"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=product%20engineer",
+          "text": "Product Engineer"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=packaging%20engineer",
+          "text": "Packaging Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=research%20analytics&sortBy=relevance&page=1",
+          "text": "Research Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Cybersecurity",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Data%20Science%20%26%20Analytics",
+          "text": "Data Science & Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=eCommerce",
+          "text": "eCommerce"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Information%20Technology",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Project%20Management,%20Product%20Management",
+          "text": "Project & Product Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Software%20Engineer",
+          "text": "Software Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Strategy",
+          "text": "Strategy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Transformation",
+          "text": "Transformation"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Communications",
+          "text": "Communications"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Design",
+          "text": "Design"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Marketing",
+          "text": "Marketing"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Marketing%20Analytics",
+          "text": "Marketing Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Sales",
+          "text": "Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Supply%20Chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=transportation,%20logistics",
+          "text": "Transportation & Logistics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=warehouse",
+          "text": "Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=maintenance,%20security",
+          "text": "Maintenance & Security"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=safety",
+          "text": "Operations Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=production",
+          "text": "Production"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Manufacturing%20%26%20Warehouse&page=1",
+          "text": "Manufacturing & Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Distribution%20%26%20Delivery&page=1",
+          "text": "Distribution & Delivery"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Sales%20%26%20Merchandising&page=1",
+          "text": "Sales & Merchandising"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/our-locations",
+          "text": "View all locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/unitedstates",
+          "text": "United States"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Bolivia",
+          "text": "Bolivia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/brazil",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Chile"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Colombia",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Costa%20Rica",
+          "text": "Costa Rica"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Dominican%20Republic",
+          "text": "Dominican Republic"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Ecuador",
+          "text": "Ecuador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=El%20Salvador",
+          "text": "El Salvador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Guatemala",
+          "text": "Guatemala"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Honduras",
+          "text": "Honduras"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/mexico",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Paraguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Peru",
+          "text": "Peru"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Puerto%20Rico",
+          "text": "Puerto Rico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Venezuela",
+          "text": "Venezuela"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Belgium",
+          "text": "Belgium"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Denmark",
+          "text": "Denmark"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=France",
+          "text": "France"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Greece",
+          "text": "Greece"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ireland",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Italy",
+          "text": "Italy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Netherlands",
+          "text": "Netherlands"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe/poland",
+          "text": "Poland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Russia",
+          "text": "Russia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Spain",
+          "text": "Spain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Turkey",
+          "text": "Turkey"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ukraine",
+          "text": "Ukraine"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/unitedkingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?location=West%20Balkans",
+          "text": "West Balkans"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Australia",
+          "text": "Australia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac/china",
+          "text": "China"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=indonesia",
+          "text": "Indonesia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=japan",
+          "text": "Japan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=malaysia",
+          "text": "Malaysia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=New%20Zealand",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=philippines",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=south%20korea",
+          "text": "South Korea"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Thailand",
+          "text": "Thailand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Vietnam",
+          "text": "Vietnam"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/egypt",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Ethiopia",
+          "text": "Ethiopia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+          "text": "India"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Israel",
+          "text": "Israel"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Lebanon",
+          "text": "Lebanon"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Nigeria",
+          "text": "Nigeria"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Pakistan",
+          "text": "Pakistan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Saudi%20Arabia",
+          "text": "Saudi Arabia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/southafrica",
+          "text": "South Africa"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?location=United%20Arab%20Emirates",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Get started here"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/main/talentcommunity/events?lang=en-us",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/internshipsprograms",
+          "text": "Internships & Programs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "View all"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture/",
+          "text": "View all of Life at Pepsico"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/about-pepsico",
+          "text": "About Pepsico"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/category/innovation/",
+          "text": "Sustainability & Innovation"
+        },
+        {
+          "url": "https://www.pepsico.com/our-impact/inclusion-for-growth",
+          "text": "Inclusion for Growth"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "Explore PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "Find Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Candidate Dashboard"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=en-US",
+          "text": "English"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=zh-CN",
+          "text": "中国 - 中文"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=fr-CA",
+          "text": "Canada - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=fr-FR",
+          "text": "France - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=it-IT",
+          "text": "Italiano"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=pl-PL",
+          "text": "Polski"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=pt-BR",
+          "text": "Português"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=es-MX",
+          "text": "Spanish"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=de-DE",
+          "text": "German"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=he-IL",
+          "text": "Hebrew"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/our-locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs",
+          "text": "See open positions"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs",
+          "text": "Search jobs by city & state"
+        },
+        {
+          "url": "https://www.youtube.com/embed/wJVjzs4IXqY",
+          "text": "Watch video"
+        },
+        {
+          "url": "https://www.youtube.com/embed/0Bb60T5BQyA",
+          "text": "Watch video"
+        },
+        {
+          "url": "https://www.greatplacetowork.in/great/company/pepsico-india",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs",
+          "text": "See all open positions"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2021/02/19/a-small-global-team-one-big-idea-to-save-water/?_gl=1*1udb3iz*_gcl_au*MjIwNDQwMDY0LjE3NjAxNTgzMjE.*_ga*NDAwNDI0NTU3LjE3NTg2OTg0NDg.*_ga_4RLR6SR858*czE3NjQ1OTEzNTMkbzI0JGcxJHQxNzY0NTkyMjA1JGoxMyRsMCRoNTU2MjA4MjQ.",
+          "text": "Read their story"
+        },
+        {
+          "url": "https://www.youtube.com/embed/brlfvkE7KG0?si=5d6JkKuKeLNeO3a2",
+          "text": "Turn on video"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2022/03/07/candid-conversations-womens-history-month/?_gl=1*1x89xj3*_gcl_au*MjIwNDQwMDY0LjE3NjAxNTgzMjE.*_ga*NDAwNDI0NTU3LjE3NTg2OTg0NDg.*_ga_4RLR6SR858*czE3NjQ1OTEzNTMkbzI0JGcxJHQxNzY0NTkyMjA1JGoxMyRsMCRoNTU2MjA4MjQ.",
+          "text": "Dance at work with her"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2020/09/29/check-out-my-workspace-wfh-experience-pepsico-india/",
+          "text": "Watch video"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/join/talentcommunity/form",
+          "text": "Join today"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/categories",
+          "text": "Job Function"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/V3.FOOTER.NAV_LOGO_LINK",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Students"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Life at PepsiCo"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Applicant Help"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://www.pepsico.com/legal/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/privacypolicy-countries",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.pepsico.com/",
+          "text": "PepsiCo Global"
+        },
+        {
+          "url": "https://www.pepsicobeveragefacts.com/",
+          "text": "PepsiCo Beverage Facts"
+        },
+        {
+          "url": "https://www.facebook.com/PepsiCoJOBS/",
+          "text": "Facebook Pepsico Facebook Link"
+        },
+        {
+          "url": "https://www.instagram.com/pepsicojobs/",
+          "text": "Instagram Pepsico Instagram Link"
+        },
+        {
+          "url": "https://www.youtube.com/user/PepsiCoJOBS",
+          "text": "Youtube Pepsico Youtube Link"
+        },
+        {
+          "url": "https://www.tiktok.com/@pepsi",
+          "text": "Tiktok Pepsico Tiktok Link"
+        },
+        {
+          "url": "https://www.glassdoor.com/Jobs/PepsiCo-Jobs-E522.htm",
+          "text": "Glassdoor Pepsico Glassdoor Link"
+        },
+        {
+          "url": "https://www.linkedin.com/company/pepsico/",
+          "text": "LinkedIn Pepsico LinkedIn Link"
+        },
+        {
+          "url": "https://www.indeed.com/q-PepsiCo-jobs.html?vjk=b991620edcacedf2",
+          "text": "Indeed Pepsico Indeed Link"
+        },
+        {
+          "url": "https://app.joinhandshake.com/employers/pepsico-11332",
+          "text": "Handshake Pepsico Handshake Link"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India – Join our team at PepsiCoSearch button iconFacebookInstagramYoutubeTiktokGlassdoorLinkedInIndeedHandshake",
+      "evidence": "evidence/cd613f379806b06489c2.html.gz",
+      "sha256": "34b36a1f987dca167204e0ca1125bcd57620753bccf4b4b2ae013edaa1e25260"
+    },
+    {
+      "url": "https://www.pepsicojobs.com/jobs",
+      "checked_at": "2026-11-15T23:50:57.519421+00:00",
+      "links": [
+        {
+          "url": "https://www.pepsicojobs.com/main",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/careerareas",
+          "text": "View all career areas"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Administration",
+          "text": "Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Health%20%26%20Safety",
+          "text": "Health & Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=HR",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=audit,%20accounting,%20tax,%20treasury",
+          "text": "Accounting"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Finance",
+          "text": "Finance"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Legal%7CRisk",
+          "text": "Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Global%20Procurement",
+          "text": "Procurement"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=science",
+          "text": "Food & Life Sciences"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=product%20engineer",
+          "text": "Product Engineer"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=packaging%20engineer",
+          "text": "Packaging Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=research%20analytics&sortBy=relevance&page=1",
+          "text": "Research Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Cybersecurity",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Data%20Science%20%26%20Analytics",
+          "text": "Data Science & Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=eCommerce",
+          "text": "eCommerce"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Information%20Technology",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Project%20Management,%20Product%20Management",
+          "text": "Project & Product Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Software%20Engineer",
+          "text": "Software Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Strategy",
+          "text": "Strategy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Transformation",
+          "text": "Transformation"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Communications",
+          "text": "Communications"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Design",
+          "text": "Design"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Marketing",
+          "text": "Marketing"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Marketing%20Analytics",
+          "text": "Marketing Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Sales",
+          "text": "Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Supply%20Chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=transportation,%20logistics",
+          "text": "Transportation & Logistics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=warehouse",
+          "text": "Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=maintenance,%20security",
+          "text": "Maintenance & Security"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=safety",
+          "text": "Operations Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=production",
+          "text": "Production"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Manufacturing%20%26%20Warehouse&page=1",
+          "text": "Manufacturing & Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Distribution%20%26%20Delivery&page=1",
+          "text": "Distribution & Delivery"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Sales%20%26%20Merchandising&page=1",
+          "text": "Sales & Merchandising"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/our-locations",
+          "text": "View all locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/unitedstates",
+          "text": "United States"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Bolivia",
+          "text": "Bolivia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/brazil",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Chile"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Colombia",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Costa%20Rica",
+          "text": "Costa Rica"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Dominican%20Republic",
+          "text": "Dominican Republic"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Ecuador",
+          "text": "Ecuador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=El%20Salvador",
+          "text": "El Salvador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Guatemala",
+          "text": "Guatemala"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Honduras",
+          "text": "Honduras"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/mexico",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Paraguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Peru",
+          "text": "Peru"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Puerto%20Rico",
+          "text": "Puerto Rico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Venezuela",
+          "text": "Venezuela"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Belgium",
+          "text": "Belgium"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Denmark",
+          "text": "Denmark"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=France",
+          "text": "France"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Greece",
+          "text": "Greece"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ireland",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Italy",
+          "text": "Italy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Netherlands",
+          "text": "Netherlands"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe/poland",
+          "text": "Poland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Russia",
+          "text": "Russia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Spain",
+          "text": "Spain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Turkey",
+          "text": "Turkey"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ukraine",
+          "text": "Ukraine"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/unitedkingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?location=West%20Balkans",
+          "text": "West Balkans"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Australia",
+          "text": "Australia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac/china",
+          "text": "China"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=indonesia",
+          "text": "Indonesia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=japan",
+          "text": "Japan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=malaysia",
+          "text": "Malaysia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=New%20Zealand",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=philippines",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=south%20korea",
+          "text": "South Korea"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Thailand",
+          "text": "Thailand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Vietnam",
+          "text": "Vietnam"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/egypt",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Ethiopia",
+          "text": "Ethiopia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+          "text": "India"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Israel",
+          "text": "Israel"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Lebanon",
+          "text": "Lebanon"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Nigeria",
+          "text": "Nigeria"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Pakistan",
+          "text": "Pakistan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Saudi%20Arabia",
+          "text": "Saudi Arabia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/southafrica",
+          "text": "South Africa"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?location=United%20Arab%20Emirates",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Get started here"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/main/talentcommunity/events?lang=en-us",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/internshipsprograms",
+          "text": "Internships & Programs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "View all"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture/",
+          "text": "View all of Life at Pepsico"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/about-pepsico",
+          "text": "About Pepsico"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/category/innovation/",
+          "text": "Sustainability & Innovation"
+        },
+        {
+          "url": "https://www.pepsico.com/our-impact/inclusion-for-growth",
+          "text": "Inclusion for Growth"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "Explore PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "Find Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Candidate Dashboard"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=en-US",
+          "text": "English"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=zh-CN",
+          "text": "中国 - 中文"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=fr-CA",
+          "text": "Canada - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=fr-FR",
+          "text": "France - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=it-IT",
+          "text": "Italiano"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=pl-PL",
+          "text": "Polski"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=pt-BR",
+          "text": "Português"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=es-MX",
+          "text": "Spanish"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=de-DE",
+          "text": "German"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?lang=he-IL",
+          "text": "Hebrew"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/categories",
+          "text": "Job Function"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/join/talentcommunity/form",
+          "text": "Join today"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/V3.FOOTER.NAV_LOGO_LINK",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Students"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Life at PepsiCo"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Applicant Help"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://www.pepsico.com/legal/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/privacypolicy-countries",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.pepsico.com/",
+          "text": "PepsiCo Global"
+        },
+        {
+          "url": "https://www.pepsicobeveragefacts.com/",
+          "text": "PepsiCo Beverage Facts"
+        },
+        {
+          "url": "https://www.facebook.com/PepsiCoJOBS/",
+          "text": "Facebook Pepsico Facebook Link"
+        },
+        {
+          "url": "https://www.instagram.com/pepsicojobs/",
+          "text": "Instagram Pepsico Instagram Link"
+        },
+        {
+          "url": "https://www.youtube.com/user/PepsiCoJOBS",
+          "text": "Youtube Pepsico Youtube Link"
+        },
+        {
+          "url": "https://www.tiktok.com/@pepsi",
+          "text": "Tiktok Pepsico Tiktok Link"
+        },
+        {
+          "url": "https://www.glassdoor.com/Jobs/PepsiCo-Jobs-E522.htm",
+          "text": "Glassdoor Pepsico Glassdoor Link"
+        },
+        {
+          "url": "https://www.linkedin.com/company/pepsico/",
+          "text": "LinkedIn Pepsico LinkedIn Link"
+        },
+        {
+          "url": "https://www.indeed.com/q-PepsiCo-jobs.html?vjk=b991620edcacedf2",
+          "text": "Indeed Pepsico Indeed Link"
+        },
+        {
+          "url": "https://app.joinhandshake.com/employers/pepsico-11332",
+          "text": "Handshake Pepsico Handshake Link"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.pepsicojobs.com/main/jobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "PepsiCo CareersSearch button iconFacebookInstagramYoutubeTiktokGlassdoorLinkedInIndeedHandshake",
+      "evidence": "evidence/b4c49e4bd0390cc96aea.html.gz",
+      "sha256": "acbc24ae2766204b3e49707af802ae69642ee0b2cdbf0096e08cf3a36f99a104"
+    },
+    {
+      "url": "https://www.pepsicojobs.com/india/jobs",
+      "checked_at": "2026-11-15T23:51:02.554886+00:00",
+      "links": [
+        {
+          "url": "https://www.pepsicojobs.com/main",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/careerareas",
+          "text": "View all career areas"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Administration",
+          "text": "Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Health%20%26%20Safety",
+          "text": "Health & Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=HR",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=audit,%20accounting,%20tax,%20treasury",
+          "text": "Accounting"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Finance",
+          "text": "Finance"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Legal%7CRisk",
+          "text": "Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Global%20Procurement",
+          "text": "Procurement"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=science",
+          "text": "Food & Life Sciences"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=product%20engineer",
+          "text": "Product Engineer"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=packaging%20engineer",
+          "text": "Packaging Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=research%20analytics&sortBy=relevance&page=1",
+          "text": "Research Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Cybersecurity",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Data%20Science%20%26%20Analytics",
+          "text": "Data Science & Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=eCommerce",
+          "text": "eCommerce"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Information%20Technology",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Project%20Management,%20Product%20Management",
+          "text": "Project & Product Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Software%20Engineer",
+          "text": "Software Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Strategy",
+          "text": "Strategy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Transformation",
+          "text": "Transformation"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Communications",
+          "text": "Communications"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Design",
+          "text": "Design"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Marketing",
+          "text": "Marketing"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Marketing%20Analytics",
+          "text": "Marketing Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Sales",
+          "text": "Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Supply%20Chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=transportation,%20logistics",
+          "text": "Transportation & Logistics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=warehouse",
+          "text": "Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=maintenance,%20security",
+          "text": "Maintenance & Security"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=safety",
+          "text": "Operations Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=production",
+          "text": "Production"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Manufacturing%20%26%20Warehouse&page=1",
+          "text": "Manufacturing & Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Distribution%20%26%20Delivery&page=1",
+          "text": "Distribution & Delivery"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Sales%20%26%20Merchandising&page=1",
+          "text": "Sales & Merchandising"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/our-locations",
+          "text": "View all locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/unitedstates",
+          "text": "United States"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Bolivia",
+          "text": "Bolivia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/brazil",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Chile"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Colombia",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Costa%20Rica",
+          "text": "Costa Rica"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Dominican%20Republic",
+          "text": "Dominican Republic"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Ecuador",
+          "text": "Ecuador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=El%20Salvador",
+          "text": "El Salvador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Guatemala",
+          "text": "Guatemala"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Honduras",
+          "text": "Honduras"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/mexico",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Paraguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Peru",
+          "text": "Peru"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Puerto%20Rico",
+          "text": "Puerto Rico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Venezuela",
+          "text": "Venezuela"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Belgium",
+          "text": "Belgium"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Denmark",
+          "text": "Denmark"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=France",
+          "text": "France"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Greece",
+          "text": "Greece"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ireland",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Italy",
+          "text": "Italy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Netherlands",
+          "text": "Netherlands"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe/poland",
+          "text": "Poland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Russia",
+          "text": "Russia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Spain",
+          "text": "Spain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Turkey",
+          "text": "Turkey"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ukraine",
+          "text": "Ukraine"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/unitedkingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?location=West%20Balkans",
+          "text": "West Balkans"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Australia",
+          "text": "Australia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac/china",
+          "text": "China"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=indonesia",
+          "text": "Indonesia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=japan",
+          "text": "Japan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=malaysia",
+          "text": "Malaysia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=New%20Zealand",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=philippines",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=south%20korea",
+          "text": "South Korea"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Thailand",
+          "text": "Thailand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Vietnam",
+          "text": "Vietnam"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/egypt",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Ethiopia",
+          "text": "Ethiopia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+          "text": "India"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Israel",
+          "text": "Israel"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Lebanon",
+          "text": "Lebanon"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Nigeria",
+          "text": "Nigeria"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Pakistan",
+          "text": "Pakistan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Saudi%20Arabia",
+          "text": "Saudi Arabia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/southafrica",
+          "text": "South Africa"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?location=United%20Arab%20Emirates",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Get started here"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/main/talentcommunity/events?lang=en-us",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/internshipsprograms",
+          "text": "Internships & Programs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "View all"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture/",
+          "text": "View all of Life at Pepsico"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/about-pepsico",
+          "text": "About Pepsico"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/category/innovation/",
+          "text": "Sustainability & Innovation"
+        },
+        {
+          "url": "https://www.pepsico.com/our-impact/inclusion-for-growth",
+          "text": "Inclusion for Growth"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "Explore PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "Find Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Candidate Dashboard"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=en-US",
+          "text": "English"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=zh-CN",
+          "text": "中国 - 中文"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=fr-CA",
+          "text": "Canada - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=fr-FR",
+          "text": "France - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=it-IT",
+          "text": "Italiano"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=pl-PL",
+          "text": "Polski"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=pt-BR",
+          "text": "Português"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=es-MX",
+          "text": "Spanish"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=de-DE",
+          "text": "German"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs?lang=he-IL",
+          "text": "Hebrew"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/categories",
+          "text": "Job Function"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/join/talentcommunity/form",
+          "text": "Join today"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/V3.FOOTER.NAV_LOGO_LINK",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Students"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Life at PepsiCo"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Applicant Help"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://www.pepsico.com/legal/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/privacypolicy-countries",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.pepsico.com/",
+          "text": "PepsiCo Global"
+        },
+        {
+          "url": "https://www.pepsicobeveragefacts.com/",
+          "text": "PepsiCo Beverage Facts"
+        },
+        {
+          "url": "https://www.facebook.com/PepsiCoJOBS/",
+          "text": "Facebook Pepsico Facebook Link"
+        },
+        {
+          "url": "https://www.instagram.com/pepsicojobs/",
+          "text": "Instagram Pepsico Instagram Link"
+        },
+        {
+          "url": "https://www.youtube.com/user/PepsiCoJOBS",
+          "text": "Youtube Pepsico Youtube Link"
+        },
+        {
+          "url": "https://www.tiktok.com/@pepsi",
+          "text": "Tiktok Pepsico Tiktok Link"
+        },
+        {
+          "url": "https://www.glassdoor.com/Jobs/PepsiCo-Jobs-E522.htm",
+          "text": "Glassdoor Pepsico Glassdoor Link"
+        },
+        {
+          "url": "https://www.linkedin.com/company/pepsico/",
+          "text": "LinkedIn Pepsico LinkedIn Link"
+        },
+        {
+          "url": "https://www.indeed.com/q-PepsiCo-jobs.html?vjk=b991620edcacedf2",
+          "text": "Indeed Pepsico Indeed Link"
+        },
+        {
+          "url": "https://app.joinhandshake.com/employers/pepsico-11332",
+          "text": "Handshake Pepsico Handshake Link"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.pepsicojobs.com/india/jobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India – Join our team at PepsiCoSearch button iconFacebookInstagramYoutubeTiktokGlassdoorLinkedInIndeedHandshake",
+      "evidence": "evidence/3dfd291b08301c372dda.html.gz",
+      "sha256": "c88fe0f1cd1a6efd20ecc9fff51e58f0425577959df651a9ef047184251993aa"
+    },
+    {
+      "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=en-US",
+      "checked_at": "2026-11-15T23:51:06.695919+00:00",
+      "links": [
+        {
+          "url": "https://www.pepsicojobs.com/main",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/careerareas",
+          "text": "View all career areas"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Administration",
+          "text": "Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Health%20%26%20Safety",
+          "text": "Health & Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=HR",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=audit,%20accounting,%20tax,%20treasury",
+          "text": "Accounting"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Finance",
+          "text": "Finance"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Legal%7CRisk",
+          "text": "Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Global%20Procurement",
+          "text": "Procurement"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=science",
+          "text": "Food & Life Sciences"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=product%20engineer",
+          "text": "Product Engineer"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=packaging%20engineer",
+          "text": "Packaging Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=research%20analytics&sortBy=relevance&page=1",
+          "text": "Research Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Cybersecurity",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Data%20Science%20%26%20Analytics",
+          "text": "Data Science & Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=eCommerce",
+          "text": "eCommerce"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Information%20Technology",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Project%20Management,%20Product%20Management",
+          "text": "Project & Product Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Software%20Engineer",
+          "text": "Software Engineering"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Strategy",
+          "text": "Strategy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Transformation",
+          "text": "Transformation"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Communications",
+          "text": "Communications"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Design",
+          "text": "Design"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Marketing",
+          "text": "Marketing"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=Marketing%20Analytics",
+          "text": "Marketing Analytics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Sales",
+          "text": "Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?categories=Supply%20Chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=transportation,%20logistics",
+          "text": "Transportation & Logistics"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=warehouse",
+          "text": "Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=maintenance,%20security",
+          "text": "Maintenance & Security"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=safety",
+          "text": "Operations Safety"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?keywords=production",
+          "text": "Production"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=en-US",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Manufacturing%20%26%20Warehouse&page=1",
+          "text": "Manufacturing & Warehouse"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Distribution%20%26%20Delivery&page=1",
+          "text": "Distribution & Delivery"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?brand=Hourly%20Frontline&categories=Sales%20%26%20Merchandising&page=1",
+          "text": "Sales & Merchandising"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/our-locations",
+          "text": "View all locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/unitedstates",
+          "text": "United States"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Bolivia",
+          "text": "Bolivia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/brazil",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Chile"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Colombia",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Costa%20Rica",
+          "text": "Costa Rica"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Dominican%20Republic",
+          "text": "Dominican Republic"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Ecuador",
+          "text": "Ecuador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=El%20Salvador",
+          "text": "El Salvador"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Guatemala",
+          "text": "Guatemala"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Honduras",
+          "text": "Honduras"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica/mexico",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Paraguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Peru",
+          "text": "Peru"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Puerto%20Rico",
+          "text": "Puerto Rico"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/southerncone",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/latinamerica/jobs?country=Venezuela",
+          "text": "Venezuela"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Belgium",
+          "text": "Belgium"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Denmark",
+          "text": "Denmark"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=France",
+          "text": "France"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Germany",
+          "text": "Germany"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Greece",
+          "text": "Greece"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ireland",
+          "text": "Ireland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Italy",
+          "text": "Italy"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Netherlands",
+          "text": "Netherlands"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe/poland",
+          "text": "Poland"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Russia",
+          "text": "Russia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Spain",
+          "text": "Spain"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Turkey",
+          "text": "Turkey"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?country=Ukraine",
+          "text": "Ukraine"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/unitedkingdom",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/europe/jobs?location=West%20Balkans",
+          "text": "West Balkans"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Australia",
+          "text": "Australia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac/china",
+          "text": "China"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=indonesia",
+          "text": "Indonesia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=japan",
+          "text": "Japan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=malaysia",
+          "text": "Malaysia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=New%20Zealand",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=philippines",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=south%20korea",
+          "text": "South Korea"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?location=singapore",
+          "text": "Singapore"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Thailand",
+          "text": "Thailand"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac/jobs?country=Vietnam",
+          "text": "Vietnam"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/egypt",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Ethiopia",
+          "text": "Ethiopia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india",
+          "text": "India"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Israel",
+          "text": "Israel"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Lebanon",
+          "text": "Lebanon"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Nigeria",
+          "text": "Nigeria"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/jobs?country=Pakistan",
+          "text": "Pakistan"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?country=Saudi%20Arabia",
+          "text": "Saudi Arabia"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/southafrica",
+          "text": "South Africa"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/amesa/jobs?location=United%20Arab%20Emirates",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Get started here"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/main/talentcommunity/events?lang=en-us",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/internshipsprograms",
+          "text": "Internships & Programs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "View all"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture/",
+          "text": "View all of Life at Pepsico"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/about-pepsico",
+          "text": "About Pepsico"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/category/innovation/",
+          "text": "Sustainability & Innovation"
+        },
+        {
+          "url": "https://www.pepsico.com/our-impact/inclusion-for-growth",
+          "text": "Inclusion for Growth"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "Explore PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/jobs",
+          "text": "Find Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Candidate Dashboard"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=en-US",
+          "text": "English"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=zh-CN",
+          "text": "中国 - 中文"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=fr-CA",
+          "text": "Canada - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=fr-FR",
+          "text": "France - Français"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=it-IT",
+          "text": "Italiano"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=pl-PL",
+          "text": "Polski"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=pt-BR",
+          "text": "Português"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=es-MX",
+          "text": "Spanish"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=de-DE",
+          "text": "German"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=he-IL",
+          "text": "Hebrew"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/our-locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs",
+          "text": "See open positions"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs",
+          "text": "Search jobs by city & state"
+        },
+        {
+          "url": "https://www.youtube.com/embed/wJVjzs4IXqY",
+          "text": "Watch video"
+        },
+        {
+          "url": "https://www.youtube.com/embed/0Bb60T5BQyA",
+          "text": "Watch video"
+        },
+        {
+          "url": "https://www.greatplacetowork.in/great/company/pepsico-india",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/jobs",
+          "text": "See all open positions"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2021/02/19/a-small-global-team-one-big-idea-to-save-water/?_gl=1*1udb3iz*_gcl_au*MjIwNDQwMDY0LjE3NjAxNTgzMjE.*_ga*NDAwNDI0NTU3LjE3NTg2OTg0NDg.*_ga_4RLR6SR858*czE3NjQ1OTEzNTMkbzI0JGcxJHQxNzY0NTkyMjA1JGoxMyRsMCRoNTU2MjA4MjQ.",
+          "text": "Read their story"
+        },
+        {
+          "url": "https://www.youtube.com/embed/brlfvkE7KG0?si=5d6JkKuKeLNeO3a2",
+          "text": "Turn on video"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2022/03/07/candid-conversations-womens-history-month/?_gl=1*1x89xj3*_gcl_au*MjIwNDQwMDY0LjE3NjAxNTgzMjE.*_ga*NDAwNDI0NTU3LjE3NTg2OTg0NDg.*_ga_4RLR6SR858*czE3NjQ1OTEzNTMkbzI0JGcxJHQxNzY0NTkyMjA1JGoxMyRsMCRoNTU2MjA4MjQ.",
+          "text": "Dance at work with her"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/blog/2020/09/29/check-out-my-workspace-wfh-experience-pepsico-india/",
+          "text": "Watch video"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/join/talentcommunity/form",
+          "text": "Join today"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/categories",
+          "text": "Job Function"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/india/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa/V3.FOOTER.NAV_LOGO_LINK",
+          "text": ""
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/business",
+          "text": "Human Resources & Administration"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/financelegal",
+          "text": "Finance & Legal"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/researchdevelopment",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/technologyinnovation",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/marketingsales",
+          "text": "Marketing & Sales"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/procurementdistribution",
+          "text": "Supply Chain Management"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/careerareas/ushourly",
+          "text": "U.S. Hourly Jobs"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/northamerica",
+          "text": "North America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/latinamerica",
+          "text": "Latin America"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/apac",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/main/our-locations/amesa",
+          "text": "Africa & Middle East"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/students",
+          "text": "Students"
+        },
+        {
+          "url": "https://life.pepsicojobs.com/culture",
+          "text": "Life at PepsiCo"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/applicant-help",
+          "text": "Applicant Help"
+        },
+        {
+          "url": "https://stories.pepsicojobs.com/",
+          "text": "PepsiCo Stories"
+        },
+        {
+          "url": "https://www.pepsico.com/who-we-are/our-commitments/global-code-of-conduct",
+          "text": "Global Code of Conduct"
+        },
+        {
+          "url": "https://www.pepsico.com/legal/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.pepsicojobs.com/privacypolicy-countries",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.pepsico.com/",
+          "text": "PepsiCo Global"
+        },
+        {
+          "url": "https://www.pepsicobeveragefacts.com/",
+          "text": "PepsiCo Beverage Facts"
+        },
+        {
+          "url": "https://www.facebook.com/PepsiCoJOBS/",
+          "text": "Facebook Pepsico Facebook Link"
+        },
+        {
+          "url": "https://www.instagram.com/pepsicojobs/",
+          "text": "Instagram Pepsico Instagram Link"
+        },
+        {
+          "url": "https://www.youtube.com/user/PepsiCoJOBS",
+          "text": "Youtube Pepsico Youtube Link"
+        },
+        {
+          "url": "https://www.tiktok.com/@pepsi",
+          "text": "Tiktok Pepsico Tiktok Link"
+        },
+        {
+          "url": "https://www.glassdoor.com/Jobs/PepsiCo-Jobs-E522.htm",
+          "text": "Glassdoor Pepsico Glassdoor Link"
+        },
+        {
+          "url": "https://www.linkedin.com/company/pepsico/",
+          "text": "LinkedIn Pepsico LinkedIn Link"
+        },
+        {
+          "url": "https://www.indeed.com/q-PepsiCo-jobs.html?vjk=b991620edcacedf2",
+          "text": "Indeed Pepsico Indeed Link"
+        },
+        {
+          "url": "https://app.joinhandshake.com/employers/pepsico-11332",
+          "text": "Handshake Pepsico Handshake Link"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.pepsicojobs.com/main/our-locations/amesa/india?lang=en-US",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India – Join our team at PepsiCoSearch button iconFacebookInstagramYoutubeTiktokGlassdoorLinkedInIndeedHandshake",
+      "evidence": "evidence/482eb54914bd97c7146f.html.gz",
+      "sha256": "5cea313002574faf3703537f9429b39f8afbfe776f8648df2cbfe5f418673386"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,36 @@
+{
+  "id": "C223",
+  "company": {
+    "name": "Toyota Financial Services",
+    "aliases": [
+      "TFS"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "parent": "Toyota",
+    "career_url": "https://www.toyotafinancial.com/us/en/careers.html",
+    "portals": [
+      {
+        "kind": "phenom",
+        "host": "careers.toyota.com",
+        "locale_path": "us/en",
+        "state": "wrong_scope",
+        "scope": "global",
+        "note": "Toyota North America careers site; it cannot cover India roles"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.toyotafinancial.com/us/en/careers.html",
+      "checked_at": "2026-11-15T23:51:11.216912+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 404,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,33 @@
+{
+  "id": "C043",
+  "company": {
+    "name": "Capital One",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://capitalone.com/tech/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "capitalone",
+        "datacentre": "wd12",
+        "site": "Capital_One",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://capitalone.com/tech/careers",
+      "checked_at": "2026-11-15T23:49:30.486059+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 404,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "C009",
+  "company": {
+    "name": "Allied Solutions",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://alliedsolutions.wd501.myworkdayjobs.com/Allied_External",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "alliedsolutions",
+        "datacentre": "wd501",
+        "site": "Allied_External",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://alliedsolutions.wd501.myworkdayjobs.com/Allied_External",
+      "checked_at": "2026-11-15T23:49:04.478485+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "alliedsolutions",
+          "datacentre": "wd501",
+          "site": "Allied_External",
+          "source_link": "https://alliedsolutions.wd501.myworkdayjobs.com/Allied_External"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://alliedsolutions.wd501.myworkdayjobs.com/Allied_External",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/fcc564ac335823453404.html.gz",
+      "sha256": "4ce3f7af7b2e05e7be74be893e3792ac3e79d6240812709c070762572052f2f4"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

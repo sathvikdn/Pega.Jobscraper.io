@@ -1,0 +1,151 @@
+{
+  "id": "C095",
+  "company": {
+    "name": "Fiserv",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.careers.fiserv.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "fiserv",
+        "datacentre": "wd5",
+        "site": "EXT",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.careers.fiserv.com",
+      "checked_at": "2026-11-15T23:50:07.731340+00:00",
+      "links": [
+        {
+          "url": "https://careers.fiserv.com/us/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://www.fiserv.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.fiserv.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.fiserv.com/en/about-fiserv.html",
+          "text": "About Fiserv"
+        },
+        {
+          "url": "https://careers.fiserv.com/us/en/benefits",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.fiserv.com/us/en/featured-locations",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.fiserv.com/us/en/candidate-resource-center",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.fiserv.com/us/en/search-results",
+          "text": "Explore jobs"
+        },
+        {
+          "url": "https://careers.fiserv.com/us/en/jointalentcommunity",
+          "text": "Join Now"
+        },
+        {
+          "url": "https://www.fiserv.com/en/about-fiserv/hr-privacy-notice.html",
+          "text": "HR Privacy Notice"
+        },
+        {
+          "url": "https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12ScreenRdr.pdf",
+          "text": "Know Your Rights: U.S. Equal Employment Opportunity"
+        },
+        {
+          "url": "https://careers.fiserv.com/us/en/cookiesettings",
+          "text": "Career Site Cookie Settings"
+        },
+        {
+          "url": "https://www.fiserv.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.fiserv.com/en/about-fiserv/contact-us.html",
+          "text": "Get in touch."
+        },
+        {
+          "url": "https://www.linkedin.com/company/fiserv/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/fiserv",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.fiserv.com/us/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Fiserv",
+      "evidence": "evidence/725e58cb6602322e2e36.html.gz",
+      "sha256": "02c964cc3752e9dd24e31a59266abd05b2636ff86b1dfc4feaf7bc7fe16cb6b1"
+    },
+    {
+      "url": "https://careers.fiserv.com/us/en/search-results",
+      "checked_at": "2026-11-15T23:50:10.485318+00:00",
+      "links": [
+        {
+          "url": "https://www.fiserv.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.fiserv.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.fiserv.com/us/en/cookiesettings",
+          "text": "Career Site Cookie Settings"
+        },
+        {
+          "url": "https://www.fiserv.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.fiserv.com/en/about-fiserv/contact-us.html",
+          "text": "Get in touch."
+        },
+        {
+          "url": "https://www.linkedin.com/company/fiserv/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/fiserv",
+          "text": ""
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "fiserv",
+          "datacentre": "wd5",
+          "site": "EXT",
+          "source_link": "https://fiserv.wd5.myworkdayjobs.com/EXT/job/Bengaluru---GS-India/SDE_R-10406535/apply"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.fiserv.com/us/en/search-results",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Jobs at FiservSearch results  | Find available job openings at Fiserv",
+      "evidence": "evidence/2aaf2758775ffe6a8edb.html.gz",
+      "sha256": "69ceb9617971e3861e657db9ddf69fbf348c0c249eb8df1b5a3e1f0bfc1327cd"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

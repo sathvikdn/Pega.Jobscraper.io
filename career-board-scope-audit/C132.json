@@ -1,0 +1,36 @@
+{
+  "id": "C132",
+  "company": {
+    "name": "KPMG",
+    "aliases": [],
+    "type": "services",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "ejgk.fa.em2.oraclecloud.com",
+        "site": "CX_3",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3",
+      "checked_at": "2026-11-15T23:50:22.100422+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "KPMG Global Services",
+      "evidence": "evidence/49bdaebcd447409c5072.html.gz",
+      "sha256": "67fad5af3c66d16aaaabc38735892a5daaca7c7e36d08a63a09975c17d83b37a"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

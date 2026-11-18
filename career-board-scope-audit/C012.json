@@ -1,0 +1,39 @@
+{
+  "id": "C012",
+  "company": {
+    "name": "American Express",
+    "aliases": [
+      "Amex"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://careers.americanexpress.com/en/sites/CX_1/jobs?location=India",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "egug.fa.us2.oraclecloud.com",
+        "site": "CX_1",
+        "state": "candidate",
+        "scope": "global",
+        "note": "careers.americanexpress.com fronts this Oracle host (site CX_1); search not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.americanexpress.com/en/sites/CX_1/jobs?location=India",
+      "checked_at": "2026-11-15T23:49:07.730575+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.americanexpress.com/en/sites/CX_1/jobs?location=India",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "American Express",
+      "evidence": "evidence/e6b136f80b169bff5dcf.html.gz",
+      "sha256": "7c8e6af3db96409d11d6444fe6a43c2d2b9742ccc956d0bc0f6061f581bcfe62"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

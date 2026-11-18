@@ -10,6 +10,8 @@ from __future__ import annotations
 import email.utils
 import json
 import random
+import socket
+import ssl
 import threading
 import time
 import urllib.error
@@ -30,13 +32,58 @@ RETRY_AFTER_CAP = 600.0      # never trust a Retry-After longer than this many s
 JITTER = 0.25                # up to +25 % on every gap so requests are not metronomic
 MAX_BODY = 20 * 1024 * 1024  # bytes; a larger reply (also after gzip) is refused, never held in memory
 TOO_LARGE = 'response too large'
+BUDGET_SPENT = 'time budget exhausted'
+CIRCUIT_OPEN = 'circuit open'
+# Why a call failed, for coverage reports: timeout | tls | dns | refused (the site said no) |
+# unreachable (no connection could be made or kept) | rate_limited | http_4xx | http_5xx, plus budget
+# (time ran out), cap (reply too large) and shape (not a usable request or reply). '' means it did not fail.
+REASONS = ('timeout', 'tls', 'dns', 'refused', 'unreachable', 'rate_limited', 'http_4xx', 'http_5xx', 'budget',
+           'cap', 'shape')
+
+
+def _status_reason(status) -> str:
+    if status in THROTTLE_STATUSES:
+        return 'rate_limited'
+    if status in BLOCK_STATUSES:
+        return 'refused'
+    if status >= 500:
+        return 'http_5xx'
+    return 'http_4xx' if status >= 400 else ''
+
+
+def _network_failure(error, host, timeout):
+    """(reason, readable message) for an exception raised while talking to `host`.
+
+    Certificate and name-resolution trouble is the user's network (proxy, antivirus, DNS), not the
+    site refusing, so each gets its own reason and a message that says what to check.
+    """
+    cause = error.reason if isinstance(getattr(error, 'reason', None), BaseException) else error
+    detail = f'{type(cause).__name__}: {str(cause)[:140]}'
+    if isinstance(cause, ssl.SSLCertVerificationError):
+        return 'tls', f'TLS certificate could not be verified — check proxy/antivirus certificate ({host})'
+    if isinstance(cause, ssl.SSLError):
+        return 'tls', f'TLS connection to {host} failed ({detail})'
+    if isinstance(cause, socket.gaierror):
+        return 'dns', f'DNS lookup failed for {host}'
+    if isinstance(cause, TimeoutError) or 'timed out' in str(cause).lower():
+        return 'timeout', f'Timed out after {timeout:g} s waiting for {host}'
+    if isinstance(cause, ConnectionRefusedError):
+        return 'refused', f'Connection refused by {host}'
+    if isinstance(cause, OSError):
+        # Reset, network down, no route, proxy trouble: nothing says the site itself refused.
+        return 'unreachable', f'Could not reach {host} ({detail})'
+    return 'shape', f'Unusable reply from {host} ({detail})'
 
 
 class Response:
-    """The outcome of one call. `status` is 0 when no HTTP answer was received."""
+    """The outcome of one call. `status` is 0 when no HTTP answer was received.
 
-    def __init__(self, status, text, url, error='', headers=None):
+    `reason` classifies a failure (see REASONS) and is '' for a success; `error` is the readable text.
+    """
+
+    def __init__(self, status, text, url, error='', headers=None, reason=None):
         self.status, self.text, self.url, self.error = status, text, url, error
+        self.reason = _status_reason(status) if reason is None else reason
         self._headers = {str(key).lower(): value for key, value in (headers or {}).items()}
 
     @property
@@ -57,13 +104,13 @@ class Response:
         return self._headers.get(str(name).lower())
 
     def __repr__(self):
-        return f'Response(status={self.status}, url={self.url!r}, error={self.error!r})'
+        return f'Response(status={self.status}, url={self.url!r}, error={self.error!r}, reason={self.reason!r})'
 
 
 class _Host:
     """Pacing, counters and breaker state for one hostname. Guarded by Http._lock."""
 
-    __slots__ = ('base', 'pacing', 'next_at', 'requests', 'blocked', 'errors', 'failures', 'successes', 'open')
+    __slots__ = ('base', 'pacing', 'next_at', 'requests', 'blocked', 'errors', 'failures', 'successes', 'open', 'reason')
 
     def __init__(self, base):
         self.base = self.pacing = max(0.0, float(base))
@@ -71,6 +118,7 @@ class _Host:
         self.requests = self.blocked = self.errors = 0
         self.failures = self.successes = 0   # consecutive counts
         self.open = False
+        self.reason = ''                     # why the last failure happened; reported while the breaker is open
 
 
 def _default_opener(request, timeout):
@@ -142,7 +190,7 @@ class Http:
         parts = urllib.parse.urlsplit(str(url))
         host = (parts.hostname or '').lower()
         if parts.scheme not in ('http', 'https') or not host:
-            return Response(0, '', url, 'unsupported URL')
+            return Response(0, '', url, 'unsupported URL', reason='shape')
         merged = {'User-Agent': self.user_agent, 'Accept': accept, 'Accept-Language': 'en-US,en;q=0.9',
                   'Accept-Encoding': 'gzip'}
         merged.update(headers or {})
@@ -151,41 +199,48 @@ class Http:
             refusal = self._take_turn(host)
             if refusal:
                 # Keep the real failure visible when the budget runs out between retries.
-                return last if attempt and refusal == 'time budget exhausted' else Response(0, '', url, refusal)
-            last = self._attempt(url, data, merged)
+                if attempt and refusal == BUDGET_SPENT:
+                    return last
+                return Response(0, '', url, refusal, reason='budget' if refusal == BUDGET_SPENT else self._last_reason(host))
+            last = self._attempt(url, data, merged, host)
             if last.error == TOO_LARGE:
                 return last                      # asking again would only download it again
             if not self._record(host, last, attempt):
                 return last
         return last
 
+    def _last_reason(self, host):
+        with self._lock:
+            state = self._hosts.get(host)
+            return (state.reason if state else '') or 'unreachable'
+
     def _take_turn(self, host):
         """Wait for this host's next free slot. Returns a reason string when the call must not be made."""
         if self.expired():
-            return 'time budget exhausted'
+            return BUDGET_SPENT
         with self._lock:
             state = self._hosts.get(host)
             if state is None:
                 state = self._hosts[host] = _Host(self._pacing.get(host, self.default_pacing))
             if state.open:
-                return 'circuit open'
+                return CIRCUIT_OPEN
             now = self._clock()
             slot = max(now, state.next_at)
             if self.deadline is not None and slot >= self.deadline:
-                return 'time budget exhausted'   # the slot is past the budget: do not sleep for nothing
+                return BUDGET_SPENT   # the slot is past the budget: do not sleep for nothing
             state.next_at = slot + state.pacing * (1 + random.uniform(0, JITTER))
         if slot > now:
             self._sleep(slot - now)
             if self.expired():
-                return 'time budget exhausted'
+                return BUDGET_SPENT
         with self._lock:
             if state.open:                       # another thread tripped the breaker while we waited
-                return 'circuit open'
+                return CIRCUIT_OPEN
             state.requests += 1
             self.requests += 1
         return None
 
-    def _attempt(self, url, data, headers):
+    def _attempt(self, url, data, headers, host):
         try:
             request = urllib.request.Request(url, data=data, headers=headers)
             reply = self._opener(request, self.timeout)
@@ -206,10 +261,11 @@ class Http:
                 body = b''
             status, final_url = error.code, url
         except Exception as error:   # URLError, timeout, TLS, connection reset, malformed reply
-            return Response(0, '', url, f'{type(error).__name__}: {str(error)[:140]}')
+            reason, message = _network_failure(error, host, self.timeout)
+            return Response(0, '', url, message, reason=reason)
         text = self._decode(body, reply_headers)
         if text is None:
-            return Response(0, '', url, TOO_LARGE)
+            return Response(0, '', url, TOO_LARGE, reason='cap')
         return Response(status, text, final_url, '' if 200 <= status < 300 else f'HTTP {status}', reply_headers)
 
     @staticmethod
@@ -249,6 +305,7 @@ class Http:
                 return False
             state.successes = 0
             state.failures += 1
+            state.reason = response.reason
             if response.blocked:
                 state.blocked += 1
             else:

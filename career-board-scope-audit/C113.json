@@ -1,0 +1,36 @@
+{
+  "id": "C113",
+  "company": {
+    "name": "ICICI Bank",
+    "aliases": [],
+    "type": "enterprise",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.icici.bank.in/CareerApplicant/Career/Home/",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://careers.icici.bank.in/CareerApplicant/Career/job-listing/",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Bank-built careers application; needs a site-specific parser"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.icici.bank.in/CareerApplicant/Career/Home/",
+      "checked_at": "2026-11-15T23:50:14.699372+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.icici.bank.in/CareerApplicant/Career/Home/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/b7d9ded91bc82f59d8f8.html.gz",
+      "sha256": "4f112f5e408242dd4b2ecb6f76afe7d9223885545aacdc36597cd2b6c9899598"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

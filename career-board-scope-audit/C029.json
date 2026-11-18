@@ -1,0 +1,39 @@
+{
+  "id": "C029",
+  "company": {
+    "name": "BMW TechWorks",
+    "aliases": [
+      "BMW TechWorks India"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "parent": "BMW Group",
+    "career_url": "https://careers-bmwtechworks.peoplestrong.com/",
+    "portals": [
+      {
+        "kind": "peoplestrong",
+        "host": "careers-bmwtechworks.peoplestrong.com",
+        "state": "unsupported",
+        "scope": "india",
+        "note": "PeopleStrong candidate portal: it loads jobs from script through an undocumented API, so reading it needs a JavaScript runtime or a published feed"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers-bmwtechworks.peoplestrong.com/",
+      "checked_at": "2026-11-15T23:49:19.266145+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers-bmwtechworks.peoplestrong.com/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Candidate Portal",
+      "evidence": "evidence/9cd8cff9c4c652e41800.html.gz",
+      "sha256": "9a2e527d4f5379eb96c6d05fd96df320f2cc625c3dc48a4f1d6037b49a0e554c"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

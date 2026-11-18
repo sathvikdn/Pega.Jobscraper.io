@@ -1,0 +1,40 @@
+{
+  "id": "C156",
+  "company": {
+    "name": "Merck",
+    "aliases": [
+      "MSD",
+      "Merck Sharp & Dohme"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.merck.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "msd",
+        "datacentre": "wd5",
+        "site": "SearchJobs",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.merck.com",
+      "checked_at": "2026-11-15T23:50:33.453559+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://jobs.merck.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/711d7a819347abbb9055.html.gz",
+      "sha256": "4902b70b804b17e4360c212b55bb343807ef2204aa058db8acdcd67de3afc37d"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

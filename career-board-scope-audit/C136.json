@@ -1,0 +1,36 @@
+{
+  "id": "C136",
+  "company": {
+    "name": "Lockheed Martin",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://lockheedmartinjobs.com",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://lockheedmartinjobs.com",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Only a redirect script was reachable; vacancy provider not identified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://lockheedmartinjobs.com",
+      "checked_at": "2026-11-15T23:50:24.543414+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://lockheedmartinjobs.com/cgi-bin/ext_redir.pl",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/870bac8c826f15d0d03f.html.gz",
+      "sha256": "a080cc6cef69a1928563e672675bf567af947b7d46027200f90961f868e52dcf"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

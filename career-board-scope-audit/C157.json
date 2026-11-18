@@ -1,0 +1,46 @@
+{
+  "id": "C157",
+  "company": {
+    "name": "Merkle",
+    "aliases": [
+      "dentsu"
+    ],
+    "type": "services",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "dentsuaegis",
+        "datacentre": "wd3",
+        "site": "DAN_GLOBAL",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL",
+      "checked_at": "2026-11-15T23:50:33.454358+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "dentsuaegis",
+          "datacentre": "wd3",
+          "site": "DAN_GLOBAL",
+          "source_link": "https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/673ea438db9e0bce3e36.html.gz",
+      "sha256": "6b6e2edbcd444fd2c33b91ae679d0235bdd699b160ef090b4ddb61961abbfcd7"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

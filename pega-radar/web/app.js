@@ -11,18 +11,61 @@ const NOTES_DEBOUNCE_MS = 700;
 const NOTES_RETRY_MS = 3000;
 const NOTES_RETRY_MAX_MS = 30000;
 const MAX_FAILURES = 5;                // consecutive unanswered requests before "Disconnected"
-const VIEWS = [['new', 'New'], ['all', 'All'], ['saved', 'Saved'], ['applied', 'Pipeline'], ['hidden', 'Hidden']];
+const VIEWS = [['new', 'New roles'], ['all', 'All roles'], ['saved', 'Saved'], ['applied', 'Pipeline'], ['hidden', 'Hidden']];
+const VIEW_COPY = {
+  new: ['Fresh on your radar.', 'A closer look at the Pega roles worth your attention.'],
+  all: ['Find your next move.', 'Compare the work, the expectations and the opportunity.'],
+  saved: ['Your shortlist', 'The roles you want to come back to, across all locations and employers.'],
+  applied: ['Your application pipeline', 'Keep track of each application and its next step.'],
+  hidden: ['Hidden roles', 'Out of your way, still here whenever you need them.'],
+  coverage: ['Employer coverage', 'See which employers are searched and where the gaps are.'],
+  sources: ['Scan sources', 'Check what answered, what needs attention, and how fresh your results are.'],
+};
 const STATUSES = [['new', 'New'], ['interested', 'Interested'], ['applied', 'Applied'],
   ['interviewing', 'Interviewing'], ['offer', 'Offer'], ['rejected', 'Rejected']];
 const SORTS = ['score', 'posted', 'first_seen'];
 const TYPE_LABELS = {product: 'Product', gcc: 'GCC', enterprise: 'Enterprise', services: 'Services', staffing: 'Staffing', unknown: 'Unclassified'};
-const READOUT = [['new', 'New (unread)'], ['new_bengaluru', 'New in Bengaluru'], ['new_product_gcc', 'New at product / GCC'],
-  ['saved', 'Saved'], ['applied', 'Pipeline'], ['total', 'Total tracked']];
+const READOUT = [['total', 'Roles on file'], ['new', 'Unread'], ['saved', 'Saved'], ['applied', 'In pipeline']];
 const ATTENTION = ['partial', 'blocked', 'maintenance', 'skipped', 'error'];   // radar.model.needs_attention
 const STATUS_TONE = {ok: 'good', empty: 'quiet', skipped: 'warn', partial: 'warn', maintenance: 'warn', blocked: 'bad', error: 'bad'};
 const WIDE = {city: 'all', types: '', q: '', min_score: 0};
+const MODE_LABELS = {full: 'Full scan', retry: 'Retry of incomplete sources'};
+const CLOSED_TIP = 'Every employer site or job board that listed this role has re-read its full listing and no longer shows it. '
+  + 'Roles seen only on LinkedIn are never flagged.';
+const NOT_REACHED_LABEL = 'Not reached (time budget)';
+const SOURCE_STATES = {not_reached: 'not reached'};
+const NO_COVERAGE_FILTERS = {q: '', inventory: '', status: '', type: '', bengaluru: '', portal: ''};
+/* [group, [[label, coverage filter that the tile counts and applies] or [label, null, summary key]]] */
+const TILE_GROUPS = [
+  ['Inventory', [['Original targets', null, 'original_rows'], ['Employers', null, 'employers'],
+    ['Configured', {inventory: 'configured'}], ['Unverified portal', {portal: 'candidate'}],
+    ['Not configured', {inventory: 'not configured'}], ['Unsupported', {inventory: 'unsupported'}],
+    ['Wrong scope', {inventory: 'wrong scope only'}], ['Identity unresolved', {inventory: 'identity unresolved'}]]],
+  ['Last scan', [['Attempted', null, 'attempted'], [NOT_REACHED_LABEL, {status: 'not_reached'}],
+    ['Never attempted', {status: 'never'}]]],
+  ['Latest outcome', [['OK', {status: 'ok'}], ['Empty', {status: 'empty'}], ['Partial', {status: 'partial'}],
+    ['Blocked', {status: 'blocked'}], ['Maintenance', {status: 'maintenance'}], ['Error', {status: 'error'}],
+    ['Skipped', {status: 'skipped'}]]],
+];
+/* Inventory gaps are facts about what is on file, never scan outcomes; they get their own (dashed) look. */
+const INVENTORY_GAPS = {'not configured': ['Not configured', 'none'], unsupported: ['Unsupported portal', 'unsupported'],
+  'wrong scope only': ['Wrong scope', 'scope'], 'identity unresolved': ['Identity unresolved', 'identity']};
+const PORTAL_STATES = {verified: 'verified', candidate: 'unverified', wrong_scope: 'wrong scope', unsupported: 'unsupported'};
+/* "Needs attention first": failures, then incomplete, never tried, inventory gaps, and healthy rows last. */
+const COVERAGE_RANK = {blocked: 0, error: 0, maintenance: 0, partial: 1, skipped: 1, not_reached: 2, never: 2, gap: 3, empty: 4, ok: 5};
+/* Outcomes "Retry incomplete sources" would run again. */
+const RETRYABLE = ['partial', 'blocked', 'maintenance', 'error', 'skipped', 'not_reached', 'never'];
+const NOTHING_TO_RETRY = 'Nothing to retry — every configured source answered in the latest scan';
 const PEGA_TERMS = /\b(pega(?:systems|rules)?|prpc|cssa|csa|lsa|cpdc|cdh|customer decision hub|dev studio|app studio|constellation|case management|decisioning)\b/gi;
 const ICONS = {
+  new: 'M2 3h12v10H2zM2 9h3l1 2h4l1-2h3',
+  all: 'M2.5 2.5h4v4h-4zM9.5 2.5h4v4h-4zM2.5 9.5h4v4h-4zM9.5 9.5h4v4h-4z',
+  saved: 'M4 2h8v12l-4-2.5L4 14z',
+  applied: 'M2.5 4.5h11v9h-11zM5.5 4.5v-2h5v2M2.5 8h11M7 8v2h2V8',
+  hidden: 'M2 2l12 12M6.6 6.6a2 2 0 0 0 2.8 2.8M4.2 4.4C2.8 5.3 1.8 6.7 1.3 8c.9 2.3 3.4 4.5 6.7 4.5 1 0 2-.2 2.8-.6M7 3.6l1-.1c3.3 0 5.8 2.2 6.7 4.5-.3.8-.8 1.6-1.5 2.3',
+  coverage: 'M8 1.5a6.5 6.5 0 1 0 6.5 6.5M8 4.5a3.5 3.5 0 1 0 3.5 3.5M8 8l5-5M11 2.5h3v3',
+  sources: 'M2 3.5h12v3H2zM2 9.5h12v3H2zM4.5 5h.1M4.5 11h.1',
+  location: 'M12.5 6.5c0 3-4.5 7-4.5 7s-4.5-4-4.5-7a4.5 4.5 0 1 1 9 0zM8 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z',
   star: 'M8 1.8l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.6l-3.8 2 .7-4.3-3.1-3 4.3-.6z',
   hide: 'M2 2l12 12M6.6 6.6a2 2 0 0 0 2.8 2.8M4.2 4.4C2.8 5.3 1.8 6.7 1.3 8c.9 2.3 3.4 4.5 6.7 4.5 1 0 2-.2 2.8-.6M7 3.6l1-.1c3.3 0 5.8 2.2 6.7 4.5-.3.8-.8 1.6-1.5 2.3',
   show: 'M1.3 8C2.2 5.7 4.7 3.5 8 3.5s5.8 2.2 6.7 4.5c-.9 2.3-3.4 4.5-6.7 4.5S2.2 10.3 1.3 8zM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z',
@@ -44,8 +87,9 @@ function storedGet(key) {
 function storedSet(key, value) {
   try {
     localStorage.setItem(key, value);
+    return true;
   } catch {
-    // storage unavailable: preferences simply do not persist
+    return false;
   }
 }
 
@@ -65,17 +109,17 @@ function toggleTheme() {
 applyTheme();
 darkQuery.addEventListener('change', applyTheme);
 
-function loadFilters() {
+function loadFilters(key = 'radar.filters', focused = true) {
   let saved = null;
   try {
-    saved = JSON.parse(storedGet('radar.filters'));
+    saved = JSON.parse(storedGet(key));
   } catch {
     saved = null;
   }
   saved = saved && typeof saved === 'object' ? saved : {};
   return {
-    bengaluru: saved.bengaluru !== false,
-    focus: saved.focus !== false,
+    bengaluru: typeof saved.bengaluru === 'boolean' ? saved.bengaluru : focused,
+    focus: typeof saved.focus === 'boolean' ? saved.focus : focused,
     minScore: Math.min(100, Math.max(0, Number(saved.minScore) || 0)),
     sort: SORTS.includes(saved.sort) ? saved.sort : 'score',
     q: '',                                     // kept exactly as typed; trimmed only for the request
@@ -84,20 +128,34 @@ function loadFilters() {
 
 function saveFilters() {
   const {bengaluru, focus, minScore, sort} = state.filters;
-  storedSet('radar.filters', JSON.stringify({bengaluru, focus, minScore, sort}));
+  const group = filterGroup(state.view);
+  storedSet(group === 'discovery' ? 'radar.filters' : `radar.filters.${group}`, JSON.stringify({bengaluru, focus, minScore, sort}));
 }
+
+function filterGroup(view) {
+  return ['saved', 'applied', 'hidden'].includes(view) ? view : 'discovery';
+}
+
+const filterSets = {
+  discovery: loadFilters(),
+  saved: loadFilters('radar.filters.saved', false),
+  applied: loadFilters('radar.filters.applied', false),
+  hidden: loadFilters('radar.filters.hidden', false),
+};
 
 /* ---------- state ---------- */
 
 const state = {
   token: '',
   stats: {},
+  profile: {},
   counts: {},                                  // per-view totals under the active filters
-  latestRun: null,
+  latestRun: null,                             // the most recent run by itself: header and failure notice
+  sourcesRun: null,                            // every source as of now: the last full run merged with later retries
   scan: {running: false},
   scanTimer: null,
   view: 'new',
-  filters: loadFilters(),
+  filters: filterSets.discovery,
   jobs: [],
   total: 0,
   outside: 0,
@@ -106,9 +164,17 @@ const state = {
   cursor: -1,
   detail: null,
   detailTicket: 0,
+  markingSeen: false,
+};
+const coverage = {
+  loaded: false,
+  rows: [],
+  summary: {},
+  filters: {...NO_COVERAGE_FILTERS},
+  sort: 'attention',
 };
 const cards = new Map();                       // job id -> <li>
-const pendingNotes = new Map();                // job id -> {value, sending, warned}: text not yet on the server
+const pendingNotes = restoreNotes();            // drafts survive reloads until the server has saved them
 const notesSync = {timer: null, delay: NOTES_RETRY_MS};
 const connection = {failures: 0, offline: false};
 let overviewTimer = null;
@@ -204,6 +270,11 @@ function range(low, high, prefix, unit) {
 function scoreBand(score) {
   if (score >= 70) return 'high';
   return score >= 45 ? 'mid' : 'low';
+}
+
+/* The five job tabs share the list; Coverage and Sources are views of their own. */
+function isJobView() {
+  return VIEWS.some(([view]) => view === state.view);
 }
 
 function findJob(id) {
@@ -315,14 +386,37 @@ async function refreshOverview() {
   const data = await request('/api/bootstrap');
   state.token = data.token;
   state.stats = data.stats || {};
+  state.profile = data.profile || {};
   state.latestRun = data.latest_run || null;
+  state.sourcesRun = data.coverage_run || state.latestRun;
   state.scan = data.scan || {running: false};
+  renderProfile(data.profile || {});
   renderScannedAt();
   renderReadout();
   renderAttention();
   renderTabs();
   renderScan();
   if (state.view === 'sources') renderSources();
+}
+
+function renderProfile(profile) {
+  const node = $('profile-focus');
+  if (!node) return;
+  node.replaceChildren(
+    el('div', {class: 'profile-person'}, el('span', {class: 'profile-avatar', 'aria-hidden': 'true'},
+      String(profile.name || 'P').slice(0, 1).toUpperCase()),
+    el('div', {}, el('strong', {}, profile.name || 'Your workspace'),
+      el('p', {}, (profile.certifications || []).join(', ') || 'Pega developer'))),
+    el('p', {class: 'profile-location'}, icon('location'), profile.city || 'India'),
+    Number(profile.target_lpa) > 0 && el('p', {class: 'profile-target'}, `Target: ₹${Number(profile.target_lpa)} LPA+`));
+}
+
+/* requested / attempted / completed source counts of a scan, from its progress or its summary. */
+function scanCounts(info) {
+  if (!info || info.requested === undefined || info.requested === null) return '';
+  const unreached = Array.isArray(info.not_attempted) ? info.not_attempted.length : Number(info.not_attempted) || 0;
+  const missed = unreached ? ` · ${unreached} not reached` : '';
+  return `${Number(info.requested) || 0} requested · ${Number(info.attempted) || 0} attempted · ${Number(info.completed) || 0} completed${missed}`;
 }
 
 /* After a change: refresh the tiles and the tab counts, but leave the list rows where they are. */
@@ -334,15 +428,28 @@ function scheduleOverview() {
 }
 
 async function refreshCounts() {
-  if (state.view === 'sources') return;
+  if (!isJobView()) return;
   const data = await api(jobsUrl({limit: 1}));
   state.counts = data.counts || {};
   renderTabs();
 }
 
-/* The run that supplies coverage: latest_run carries null fields when every scan so far has failed. */
-function coverageRun() {
-  return state.latestRun && state.latestRun.id ? state.latestRun : null;
+/* A run object carries null fields when every scan so far has failed; then there is nothing to show. */
+function completedRun(run) {
+  return run && run.id ? run : null;
+}
+
+/* The run the "Scanned …" line describes: the most recent one that actually attempted something.
+   An empty retry no longer leaves a run behind, but an older database may still hold one. */
+function headerRun() {
+  const latest = completedRun(state.latestRun);
+  const empty = latest && latest.summary && Number(latest.summary.requested) === 0;
+  return empty ? completedRun(state.sourcesRun) : latest;
+}
+
+/* A source the time budget cut off was not attempted; it is never shown as an error or a skip. */
+function healthStatus(row) {
+  return row.reason === 'budget' ? 'not_reached' : row.status;
 }
 
 function failedAttempt() {
@@ -352,35 +459,48 @@ function failedAttempt() {
 
 function renderScannedAt() {
   const node = $('scanned-at');
-  const run = coverageRun();
+  const detail = $('scan-detail');
+  const run = headerRun();
   if (!run) {
     node.textContent = state.latestRun ? 'No completed scan yet' : 'No scan yet';
+    if (detail) {
+      detail.textContent = 'The first scan can take up to 40 minutes. You can keep using Radar while it runs.';
+      detail.hidden = false;
+    }
     node.removeAttribute('title');
     return;
   }
   const when = run.finished_at || run.started_at;
-  node.textContent = `Scanned ${ago(when)}${run.status === 'partial' ? ' · partial' : ''}`;
+  const summary = run.summary || {};
+  const counts = scanCounts(summary);
+  node.textContent = `Scanned ${ago(when)}${run.status === 'partial' ? ' · ended partial' : ''}`;
+  if (detail) {
+    detail.textContent = counts ? `${MODE_LABELS[summary.mode] || 'Scan'}: ${counts}.` : '';
+    detail.hidden = !counts;
+  }
   node.title = new Date(when).toLocaleString();
 }
 
 function renderReadout() {
   $('readout').replaceChildren(...READOUT.map(([key, label]) => el('div', {class: 'readout-item'},
     el('dt', {}, label), el('dd', {}, String(Number(state.stats[key]) || 0)))));
+  $('readout').hidden = !isJobView() || !Number(state.stats.total);
 }
 
 function attentionRows() {
-  const health = (state.latestRun && state.latestRun.health) || [];
+  const health = (state.sourcesRun && state.sourcesRun.health) || [];
   return health.filter((row) => ATTENTION.includes(row.status));
 }
 
 function failedAttemptLine(attempt) {
   const reason = attempt.error ? `: ${attempt.error}` : '';
-  const tail = coverageRun() ? ' — showing coverage from the previous scan.' : '. No scan has completed yet.';
+  const tail = completedRun(state.sourcesRun) ? ' — showing coverage from the previous scan.' : '. No scan has completed yet.';
   return el('p', {}, el('strong', {}, `The last scan at ${clockTime(attempt.finished_at)} failed`), `${reason}${tail}`);
 }
 
 function attentionLine(rows) {
-  const named = rows.filter((row) => row.kind !== 'ats').map((row) => `${row.label || row.source} (${row.status})`);
+  const named = rows.filter((row) => row.kind !== 'ats')
+    .map((row) => `${row.label || row.source} (${healthStatus(row).replace('_', ' ')})`);
   const employers = rows.length - named.length;
   if (employers) named.push(plural(employers, 'employer site'));
   const list = named.length > 1 ? `${named.slice(0, -1).join(', ')} and ${named[named.length - 1]}` : named[0];
@@ -399,38 +519,50 @@ function renderAttention() {
 
 function renderScan() {
   const {running, progress} = state.scan;
+  const nothingToRetry = !retryNeeded();
   $('scan-button').disabled = Boolean(running);
-  $('scan-button-label').textContent = running ? 'Scanning…' : 'Scan now';
+  $('retry-button').disabled = Boolean(running) || nothingToRetry;
+  $('retry-button').hidden = !completedRun(state.sourcesRun) && !failedAttempt();
+  $('retry-button').title = nothingToRetry ? NOTHING_TO_RETRY : 'Re-run only the sources that failed or were not reached';
+  $('scan-button-label').textContent = running && state.scan.mode !== 'retry' ? 'Scanning…' : 'Full scan';
+  $('retry-button').textContent = running && state.scan.mode === 'retry' ? 'Retrying…' : 'Retry incomplete sources';
   $('scan-progress').hidden = !running;
+  if (isJobView() && !state.jobs.length && !state.loading) renderEmpty();
   if (!running) return;
   const info = progress && typeof progress === 'object' ? progress : {};
-  const done = Number(info.done) || 0;
-  const total = Number(info.total) || 0;
+  const counts = scanCounts(info);
+  const done = Number(counts ? info.attempted : info.done) || 0;
+  const total = Number(counts ? info.requested : info.total) || 0;
   const fill = $('scan-progress-fill');
   fill.classList.toggle('is-indeterminate', total === 0);
   fill.style.width = total ? `${Math.min(100, Math.round((done / total) * 100))}%` : '';
-  const parts = [total ? `${done} of ${plural(total, 'source')}` : 'Starting…'];
+  const parts = [MODE_LABELS[info.mode || state.scan.mode] || MODE_LABELS.full,
+    counts || (total ? `${done} of ${plural(total, 'source')}` : 'Starting…')];
   const active = Array.isArray(info.running) ? info.running : [];
   if (active.length) parts.push(`${active.slice(0, 2).join(', ')}${active.length > 2 ? ` +${active.length - 2}` : ''}`);
   if (Number(info.new)) parts.push(`${Number(info.new)} new so far`);
   $('scan-progress-text').textContent = parts.join(' · ');
 }
 
-async function startScan() {
+async function startScan(mode) {
   try {
-    await api('/api/scan', {});
+    await api('/api/scan', {mode});
   } catch (error) {
     if (error.status !== 409) {
       toast(`Could not start the scan: ${error.message}`, {kind: 'error'});
       return;
     }
   }
-  watchScan();
+  watchScan(mode);
 }
 
-function watchScan() {
+function startFullScan() {
+  return startScan('full');
+}
+
+function watchScan(mode = state.scan.mode) {
   if (state.scanTimer) return;
-  state.scan = {...state.scan, running: true};
+  state.scan = {...state.scan, running: true, mode};
   renderScan();
   state.scanTimer = setInterval(pollScan, 1500);
   pollScan();
@@ -457,6 +589,11 @@ async function pollScan() {
   clearInterval(state.scanTimer);
   state.scanTimer = null;
   const summary = status.last_summary || {};
+  const idle = summary.status === 'nothing_to_retry' || (summary.mode === 'retry' && Number(summary.requested) === 0);
+  if (!status.error && idle) {
+    toast(`${NOTHING_TO_RETRY}.`);      // nothing ran, so the header, Sources and the lists stay exactly as they were
+    return;
+  }
   if (status.error) {
     toast(`Scan failed: ${status.error}`, {kind: 'error'});
   } else if (summary.status === 'failed') {
@@ -467,28 +604,56 @@ async function pollScan() {
     toast(fresh ? `Scan finished: ${plural(fresh, 'new role')}, ${local} in Bengaluru.` : 'Scan finished: nothing new.');
   }
   await refreshOverview().catch((error) => toast(error.message, {kind: 'error'}));
+  loadCoverage();
   reloadJobs();
 }
 
 /* ---------- tabs and filters ---------- */
 
 function renderTabs() {
+  document.body.classList.toggle('is-welcome', isFirstUse());
+  const focused = $('tabs').contains(document.activeElement) ? document.activeElement.dataset.view : null;
   const tab = (view, label, count, alert) => el('button', {
-    type: 'button', class: 'tab', 'aria-current': state.view === view ? 'page' : null, onclick: () => setView(view),
-  }, label, count === null ? null : el('span', {class: `tab-count${alert ? ' is-alert' : ''}`}, String(count)));
+    type: 'button', class: `tab${['hidden', 'coverage', 'sources'].includes(view) ? ' utility-tab' : ''}`, 'data-view': view,
+    'aria-controls': ['coverage', 'sources'].includes(view) ? `${view}-view` : 'jobs-view',
+    'aria-current': state.view === view ? 'page' : null, onclick: () => setView(view),
+  }, icon(view), el('span', {class: 'tab-label'}, label),
+  count === null ? null : el('span', {class: `tab-count${alert ? ' is-alert' : ''}`, hidden: count === 0,
+    title: alert ? 'Sources needing attention' : 'Across all locations and employers'}, String(count)));
   const attention = attentionRows().length + (failedAttempt() ? 1 : 0);
+  const count = (view) => {
+    const key = view === 'all' ? 'total' : view;
+    return key in state.stats ? Number(state.stats[key]) || 0 : null;
+  };
   $('tabs').replaceChildren(
-    ...VIEWS.map(([view, label]) => tab(view, label, view in state.counts ? Number(state.counts[view]) || 0 : null, false)),
-    el('span', {class: 'tabs-gap'}),
-    tab('sources', 'Sources', attention || null, true));
+    ...VIEWS.map(([view, label]) => tab(view, label, count(view), false)),
+    el('span', {class: 'nav-group'}, 'Your radar'),
+    tab('coverage', 'Employer coverage', null, false),
+    tab('sources', 'Scan sources', attention || null, true));
+  if (focused) {
+    const replacement = $('tabs').querySelector(`[data-view="${focused}"]`);
+    if (replacement) replacement.focus();
+  }
+  const [title, description] = VIEW_COPY[state.view] || VIEW_COPY.new;
+  if ($('view-title')) $('view-title').textContent = title;
+  if ($('view-description')) $('view-description').textContent = description;
 }
 
 function setView(view) {
+  clearTimeout(searchTimer);
+  clearTimeout(sliderTimer);
+  state.loadTicket += 1;
+  state.loading = false;
   state.view = view;
+  state.filters = filterSets[filterGroup(view)];
+  renderFilters();
   renderTabs();
-  $('jobs-view').hidden = view === 'sources';
+  renderReadout();
+  $('jobs-view').hidden = !isJobView();
+  $('coverage-view').hidden = view !== 'coverage';
   $('sources-view').hidden = view !== 'sources';
   if (view === 'sources') renderSources();
+  else if (view === 'coverage') loadCoverage();
   else loadJobs();
 }
 
@@ -591,9 +756,14 @@ async function fetchRows(count) {
    by offset from the rows already on screen would skip some; re-reading the first `count` cannot.
    `keep` preserves the scroll position and the keyboard cursor. Returns false when the load failed. */
 async function loadJobs({count = PAGE_SIZE, keep = false} = {}) {
-  if (state.view === 'sources') return true;
+  if (!isJobView()) return true;
   const ticket = ++state.loadTicket;
   state.loading = true;
+  $('jobs-view').setAttribute('aria-busy', 'true');
+  $('result-line').textContent = state.jobs.length ? 'Updating roles…' : 'Loading roles…';
+  $('load-more').disabled = true;
+  $('seen-all').disabled = true;
+  $('empty').hidden = true;
   try {
     const [page, wide] = await Promise.all([
       fetchRows(count),
@@ -618,10 +788,22 @@ async function loadJobs({count = PAGE_SIZE, keep = false} = {}) {
     return true;
   } catch (error) {
     if (ticket !== state.loadTicket) return true;
-    toast(`Could not load roles: ${error.message}`, {kind: 'error'});
+    $('list').replaceChildren();
+    state.jobs = [];
+    cards.clear();
+    $('load-more').hidden = true;
+    $('seen-all').hidden = true;
+    $('result-line').textContent = 'Roles could not be loaded.';
+    showEmpty('Could not load these roles', `${error.message}. Try again to see results for the current filters.`,
+      'Try again', () => loadJobs());
     return false;
   } finally {
-    if (ticket === state.loadTicket) state.loading = false;
+    if (ticket === state.loadTicket) {
+      state.loading = false;
+      $('jobs-view').setAttribute('aria-busy', 'false');
+      $('load-more').disabled = false;
+      $('seen-all').disabled = state.markingSeen;
+    }
   }
 }
 
@@ -634,6 +816,7 @@ function loadMore() {
 }
 
 function renderListChrome() {
+  $('jobs-view').classList.toggle('is-first-run', isFirstUse());
   const line = $('result-line');
   line.replaceChildren(isFiltered() ? `${plural(state.total, 'role')} match${state.total === 1 ? 'es' : ''}` : plural(state.total, 'role'));
   if (state.outside > 0) {
@@ -641,6 +824,10 @@ function renderListChrome() {
       el('button', {type: 'button', class: 'link', onclick: widenFilters}, 'show all'));
   }
   $('seen-all').hidden = state.view !== 'new' || state.jobs.length === 0;
+  const unread = state.jobs.filter((job) => job.is_new);
+  $('seen-all').textContent = `Mark these ${unread.length} as read`;
+  $('seen-all').title = 'Only the unread roles currently loaded in this list will be marked as read';
+  $('seen-all').hidden = state.view !== 'new' || unread.length === 0;
   $('load-more').hidden = state.jobs.length >= state.total;
   renderEmpty();
 }
@@ -651,35 +838,87 @@ function emptyState() {
       `${plural(state.outside, 'role')} in this view ${state.outside === 1 ? 'is' : 'are'} outside them.`,
       `Show all ${state.outside}`, widenFilters];
   }
-  if (!coverageRun() && !Number(state.stats.total)) {
-    return ['No roles yet', 'Run your first scan to look for Pega roles across India. It takes a few minutes.',
-      'Run your first scan', startScan];
+  switch (state.view) {
+    case 'saved':
+      return ['Keep your next move in sight', 'Save a role using its star. Your shortlist stays here while you explore.',
+        'Explore roles', () => setView('all')];
+    case 'applied':
+      return ['Your next chapter starts with a role',
+        'When you apply, change the role’s status to Applied. Track interviews, offers and outcomes here.',
+        'Explore roles', () => setView('all')];
+    case 'hidden':
+      return ['Nothing hidden', 'Roles you hide are kept here. You can restore them at any time.',
+        'Explore roles', () => setView('all')];
+  }
+  if (state.scan.running) {
+    return ['Your radar is searching', 'You can keep browsing while the scan runs. New results appear here when it finishes.',
+      'View scan sources', () => setView('sources')];
+  }
+  if (!completedRun(state.latestRun) && !Number(state.stats.total)) {
+    return ['Find your next Pega opportunity',
+      'Search employer career sites and job boards in one place. Your first scan can take up to 40 minutes; you can keep using Radar while it runs.',
+      'Run your first scan', startFullScan];
   }
   switch (state.view) {
     case 'new':
-      return ['Inbox clear', 'Roles you have not opened yet appear here for 14 days. Everything found so far is under All.',
-        'Go to All', () => setView('all')];
-    case 'saved':
-      return ['No saved roles yet', 'Press s, or the star on a role, to keep it here.', null, null];
-    case 'applied':
-      return ['Nothing in your pipeline yet',
-        'Set a role’s status to Applied, Interviewing, Offer or Rejected and it is tracked here.', null, null];
-    case 'hidden':
-      return ['Nothing hidden', 'Roles you hide (x) are kept here, out of the way, with their status untouched.', null, null];
+      return ['Inbox clear', 'Unread roles stay here for 14 days. Revisit everything found so far in All roles.',
+        'Explore all roles', () => setView('all')];
     default:
-      return ['No roles found', 'Run a scan to look again.', 'Scan now', startScan];
+      return ['No roles found', 'Run a scan to look again.', 'Full scan', startFullScan];
   }
 }
 
 function showEmpty(title, text, actionLabel, action) {
   $('empty').hidden = false;
-  $('empty').replaceChildren(el('h2', {}, title), el('p', {}, text),
+  $('empty').classList.remove('welcome');
+  $('empty').replaceChildren(el('div', {class: 'empty-art', 'aria-hidden': 'true'}, icon('coverage')),
+    el('h2', {}, title), el('p', {}, text),
     actionLabel && el('button', {type: 'button', class: 'btn btn-primary', onclick: action}, actionLabel));
 }
 
 function renderEmpty() {
   $('empty').hidden = state.jobs.length > 0;
-  if (!state.jobs.length) showEmpty(...emptyState());
+  if (!state.jobs.length) {
+    if (isFirstUse()) showWelcome(...emptyState());
+    else showEmpty(...emptyState());
+  }
+}
+
+function isFirstUse() {
+  return Boolean(state.token) && !Number(state.stats.total) && !completedRun(state.latestRun)
+    && ['new', 'all'].includes(state.view);
+}
+
+function showWelcome(title, text, actionLabel, action) {
+  const profile = state.profile;
+  const brief = (label, value) => el('div', {}, el('dt', {}, label), el('dd', {}, value));
+  const template = $('onboard-art');
+  const art = template && template.content ? template.content.cloneNode(true)
+    : el('div', {class: 'empty-art', 'aria-hidden': 'true'}, icon('coverage'));
+  if (state.scan.running && template && template.content) {
+    art.querySelector('.ready-label').replaceChildren(el('span'), 'Searching sources');
+    art.querySelector('.signal-art').setAttribute('aria-label',
+      'Pega Radar is searching employer career sites, LinkedIn and India job boards.');
+  }
+  $('empty').hidden = false;
+  $('empty').classList.add('welcome');
+  $('empty').replaceChildren(
+    el('div', {class: 'welcome-copy'},
+      el('h1', {}, state.scan.running ? 'Your radar is searching' : 'Pega roles.\nOn your terms.'),
+      el('p', {class: 'welcome-intro'}, state.scan.running
+        ? 'Keep exploring while your sources are checked. New roles appear here when the scan finishes.'
+        : 'Employer career sites, LinkedIn and India job boards. Brought together for your next move.'),
+      el('dl', {class: 'search-brief', 'aria-label': 'Your search brief'},
+        brief('Location first', profile.city || 'Bengaluru'),
+        brief('Employer focus', 'Product + GCC'),
+        brief('Certification', (profile.certifications || []).join(', ') || 'Pega developer'),
+        Number(profile.target_lpa) > 0 && brief('Your salary target', `₹${Number(profile.target_lpa)} LPA+`)),
+      el('div', {class: 'welcome-actions'},
+        actionLabel && el('button', {type: 'button', class: 'btn btn-primary', onclick: action},
+          icon(state.scan.running ? 'sources' : 'coverage'), actionLabel),
+        el('button', {type: 'button', class: 'link', onclick: () => setView('coverage')}, 'Explore coverage')),
+      el('p', {class: 'welcome-note'}, 'Runs on your device. Your first scan can take up to 40 minutes; you can keep using Radar while it runs.')),
+    art);
 }
 
 function employerBadge(job) {
@@ -697,22 +936,36 @@ function metaItems(job) {
   ].filter(Boolean).map((item) => (typeof item === 'string' ? el('span', {}, item) : item));
 }
 
+function closedMark(job) {
+  if (!job.possibly_closed) return null;
+  const confirmed = job.last_confirmed_at ? ` Last confirmed ${ago(job.last_confirmed_at)}.` : '';
+  return el('span', {class: 'badge closed-mark', title: CLOSED_TIP + confirmed}, 'Possibly closed');
+}
+
 function scoreChip(job) {
   const score = Math.round(Number(job.score) || 0);
-  return el('span', {class: `score score-${scoreBand(score)}`, title: `Fit score ${score} of 100`}, String(score));
+  return el('span', {class: `score score-${scoreBand(score)}`,
+    'aria-label': `Fit score ${score} of 100. A relevance ranking, not a hiring probability.`,
+    title: 'A relevance ranking out of 100, not a hiring probability'},
+    String(score), el('span', {class: 'score-label'}, 'Fit'));
 }
 
 function saveButton(job, withLabel) {
   return el('button', {
     type: 'button', class: `btn btn-quiet star${job.saved ? ' is-on' : ''}`, 'data-role': 'save',
-    'aria-pressed': String(Boolean(job.saved)), 'aria-label': withLabel ? null : (job.saved ? 'Remove from saved' : 'Save'),
-    title: 'Save (s)', onclick: () => toggleSaved(job),
+    'aria-pressed': String(Boolean(job.saved)), 'aria-label': withLabel ? null : `${job.saved ? 'Unsave' : 'Save'} ${job.title || 'role'}`,
+    title: job.saved ? 'Remove from saved (s)' : 'Save role (s)', onclick: () => toggleSaved(job),
   }, icon('star'), withLabel && (job.saved ? 'Saved' : 'Save'));
 }
 
 function statusSelect(job) {
-  const select = el('select', {class: 'status-select', 'data-role': 'status', 'aria-label': 'Status',
-    onchange: () => updateState(job.id, {status: select.value})},
+  const select = el('select', {class: 'status-select', 'data-role': 'status', 'aria-label': `Application status for ${job.title || 'role'}`,
+    onchange: async () => {
+      if (await updateState(job.id, {status: select.value})) {
+        toast(`Status updated to ${STATUSES.find(([value]) => value === select.value)[1]}.`);
+        if (state.view === 'applied' || state.view === 'new' || select.value === 'rejected') reloadJobs();
+      }
+    }},
   STATUSES.map(([value, label]) => el('option', {value}, label)));
   select.value = job.status || 'new';
   return select;
@@ -724,22 +977,48 @@ function hideButton(job, withLabel) {
     title: `${label} (x)`, onclick: () => toggleHidden(job)}, icon(job.hidden ? 'show' : 'hide'), withLabel && label);
 }
 
+const CAUTION_REASON = /not a developer|not read|only mentioned|not stated|stretch|lead or architect|junior|advertised only|stale|current employer|capped at/i;
+
+function visibleReasons(job) {
+  const reasons = (job.fit && job.fit.reasons) || [];
+  return [...reasons.filter((reason) => CAUTION_REASON.test(reason)),
+    ...reasons.filter((reason) => !CAUTION_REASON.test(reason))].slice(0, 3);
+}
+
+function cardFacts(job) {
+  const fact = (label, value) => el('div', {}, el('dt', {}, label), el('dd', {}, value));
+  return el('dl', {class: 'job-facts'},
+    fact('Location', job.city || job.location || 'Not specified'),
+    fact('Experience', range(job.experience_min, job.experience_max, '', 'years') || 'Not specified'),
+    fact('Salary', range(job.salary_min_lpa, job.salary_max_lpa, '₹', 'LPA') || 'Not listed'));
+}
+
 function renderCard(job) {
-  const reasons = ((job.fit && job.fit.reasons) || []).slice(0, 3);
+  const reasons = visibleReasons(job);
+  const posted = postedAgo(job.posted_at);
   const card = el('li', {class: `job band-${scoreBand(Number(job.score) || 0)}`, onclick: (event) => {
     if (event.target.closest('button, a, select')) return;
     openJob(job.id);
   }},
-  scoreChip(job),
+  el('div', {class: 'job-top'},
+    el('span', {class: `company-avatar avatar-${job.employer_type || 'unknown'}`, 'aria-hidden': 'true'},
+      (job.company || '?').trim().split(/\s+/).slice(0, 2).map((word) => word[0]).join('').toUpperCase()),
+    el('div', {class: 'job-company'}, el('span', {class: 'company'}, job.company || 'Unknown employer'), employerBadge(job)),
+    job.is_new && el('span', {class: 'new-mark'}, 'New')),
   el('div', {class: 'job-main'},
     el('div', {class: 'job-head'},
-      el('button', {type: 'button', class: 'job-title', 'data-role': 'title', onclick: () => openJob(job.id)}, job.title || 'Untitled role'),
-      job.is_new && el('span', {class: 'new-mark'}, 'New'),
+      el('button', {type: 'button', class: 'job-title', 'data-role': 'title',
+        title: job.title || 'Untitled role', onclick: () => openJob(job.id)}, job.title || 'Untitled role'),
+      closedMark(job),
       job.notes && el('span', {class: 'badge note-mark'}, 'Notes')),
-    el('div', {class: 'job-company'}, el('span', {class: 'company'}, job.company || 'Unknown employer'), employerBadge(job)),
-    el('div', {class: 'job-meta'}, metaItems(job), (job.sources || []).map((name) => el('span', {class: 'badge source'}, name))),
-    reasons.length > 0 && el('ul', {class: 'job-reasons'}, reasons.map((reason) => el('li', {}, reason)))),
-  el('div', {class: 'job-actions'}, saveButton(job, false), statusSelect(job), hideButton(job, false)));
+    cardFacts(job),
+    reasons.length > 0 && el('ul', {class: 'job-reasons'},
+      reasons.map((reason) => el('li', {class: CAUTION_REASON.test(reason) ? 'is-caution' : null}, reason)))),
+  el('div', {class: 'job-source'},
+    el('span', {}, (job.sources || []).join(', ')),
+    el('span', {}, posted ? `Posted ${posted}` : `Found ${ago(job.first_seen_at)}`)),
+  el('div', {class: 'job-side'}, el('div', {class: 'job-score'}, scoreChip(job)),
+    el('div', {class: 'job-actions'}, saveButton(job, true), statusSelect(job), hideButton(job, false))));
   cards.set(job.id, card);
   return card;
 }
@@ -772,6 +1051,7 @@ function moveCursor(delta) {
   if (!state.jobs.length) return;
   setCursor(Math.min(state.jobs.length - 1, Math.max(0, state.cursor + delta)));
   if ($('drawer').open) openJob(state.jobs[state.cursor].id);
+  else cards.get(state.jobs[state.cursor].id).querySelector('[data-role="title"]').focus({preventScroll: true});
 }
 
 /* ---------- saving state: optimistic, rolled back on failure ---------- */
@@ -782,7 +1062,13 @@ async function updateState(id, patch) {
   targets.forEach((job) => Object.assign(job, patch));
   refreshJob(id);
   try {
-    await api(stateUrl(id), patch);
+    const result = await api(stateUrl(id), patch);
+    // Saving or advancing a role also marks it read on the server.
+    if (result && result.seen) {
+      targets.forEach((job) => Object.assign(job, {seen: true, is_new: false}));
+      refreshJob(id);
+      if (isJobView()) renderListChrome();
+    }
     scheduleOverview();
     return true;
   } catch (error) {
@@ -793,8 +1079,11 @@ async function updateState(id, patch) {
   }
 }
 
-function toggleSaved(job) {
-  updateState(job.id, {saved: !job.saved});
+async function toggleSaved(job) {
+  const saved = !job.saved;
+  if (!(await updateState(job.id, {saved}))) return;
+  toast(saved ? 'Added to your shortlist.' : 'Removed from your shortlist.');
+  if (state.view === 'saved') reloadJobs();
 }
 
 /* Hiding is its own flag and never touches the status. The row leaves the view straight away. */
@@ -823,20 +1112,39 @@ function toggleHidden(job) {
 /* Opening a role takes it out of the "new" inbox. The card keeps its place until the next reload. */
 function markSeen(job) {
   if (job.seen) return;
-  copiesOf(job.id).forEach((copy) => Object.assign(copy, {seen: true, is_new: false}));
+  const targets = copiesOf(job.id);
+  const previous = targets.map((copy) => ({seen: copy.seen, is_new: copy.is_new}));
+  targets.forEach((copy) => Object.assign(copy, {seen: true, is_new: false}));
   refreshJob(job.id);
+  renderListChrome();
   api(stateUrl(job.id), {seen: true}).then(scheduleOverview, () => {
-    // Not worth interrupting reading for: the role just stays unread and is marked next time.
+    targets.forEach((copy, index) => Object.assign(copy, previous[index]));
+    refreshJob(job.id);
+    renderListChrome();
   });
 }
 
 async function markAllSeen() {
-  try {
-    await api('/api/jobs/seen-all', {});
-  } catch (error) {
-    toast(`Could not mark them as seen: ${error.message}`, {kind: 'error'});
-    return;
-  }
+  if (state.markingSeen || state.loading) return;
+  const unread = state.jobs.filter((job) => job.is_new).map((job) => job.id);
+  state.markingSeen = true;
+  $('seen-all').disabled = true;
+  let marked = 0;
+  const queue = [...unread];
+  await Promise.all(Array.from({length: Math.min(5, queue.length)}, async () => {
+    while (queue.length) {
+      const id = queue.shift();
+      try {
+        await api(stateUrl(id), {seen: true});
+        marked += 1;
+      } catch { /* Keep failed items unread; report the total below. */ }
+    }
+  }));
+  state.markingSeen = false;
+  $('seen-all').disabled = false;
+  toast(marked === unread.length ? `${plural(marked, 'role')} marked as read.`
+    : `${marked} of ${unread.length} marked as read. The rest are still unread; try again.`,
+  {kind: marked === unread.length ? 'info' : 'error'});
   scheduleOverview();
   loadJobs();
 }
@@ -893,9 +1201,14 @@ async function syncDrawer() {
 
 function onDrawerClosed() {
   flushNotes();
+  const id = state.detail && state.detail.id;
   state.detail = null;
   state.detailTicket += 1;
   if (hashJobId()) history.replaceState(null, '', location.pathname + location.search);
+  const next = state.jobs[state.cursor] || state.jobs[0];
+  const card = cards.get(id) || cards.get(next && next.id);
+  if (card) card.querySelector('[data-role="title"]').focus({preventScroll: true});
+  else if ($('main-content')) $('main-content').focus({preventScroll: true});
 }
 
 function closeButton() {
@@ -949,7 +1262,8 @@ function fitSection(job) {
   const labels = Object.entries(fit.labels || {}).filter(([, value]) => typeof value === 'string' && value);
   if (!reasons.length && !labels.length) return null;
   return el('section', {class: 'drawer-section'},
-    el('h3', {}, 'Why it fits'),
+    el('h3', {}, 'How this role matches'),
+    el('p', {class: 'fit-explanation muted'}, 'Fit ranks relevance to your search. It is not a hiring probability.'),
     reasons.length > 0 && el('ul', {class: 'reasons'}, reasons.map((reason) => el('li', {}, reason))),
     labels.length > 0 && el('p', {class: 'fit-labels'},
       labels.map(([key, value]) => el('span', {class: 'badge'}, `${key.replace(/_/g, ' ')}: ${value}`))));
@@ -989,17 +1303,37 @@ function renderDetail(job) {
       closeButton(),
       el('div', {class: 'drawer-title-row'}, scoreChip(job), drawerTitle(job.title || 'Untitled role')),
       el('div', {class: 'job-company'}, el('span', {class: 'company'}, job.company || 'Unknown employer'), employerBadge(job)),
-      el('div', {class: 'job-meta'}, metaItems(job), job.posted_at && el('span', {}, `Found ${ago(job.first_seen_at)}`))),
+      el('div', {class: 'job-meta'}, metaItems(job), job.posted_at && el('span', {}, `Found ${ago(job.first_seen_at)}`),
+        job.last_confirmed_at && el('span', {}, `Last confirmed ${ago(job.last_confirmed_at)}`)),
+      job.possibly_closed && el('p', {class: 'closed-note'}, el('strong', {}, 'Possibly closed. '), CLOSED_TIP,
+        ' Open the posting to check.')),
     detailActions(job),
     fitSection(job),
+    descriptionSection(job),
     notesSection(job),
     sightingsSection(job),
-    descriptionSection(job),
   ].filter(Boolean));
   $('drawer-body').scrollTop = 0;
 }
 
 /* ---------- notes autosave: text stays queued until the server has it ---------- */
+
+function restoreNotes() {
+  try {
+    const values = JSON.parse(storedGet('radar.note-drafts')) || {};
+    return new Map(Object.entries(values).filter(([, value]) => typeof value === 'string')
+      .map(([id, value]) => [id, {value: value.slice(0, 5000), sending: false, warned: false, durable: true}]));
+  } catch {
+    return new Map();
+  }
+}
+
+function persistNotes() {
+  const saved = storedSet('radar.note-drafts', JSON.stringify(Object.fromEntries(
+    [...pendingNotes].map(([id, entry]) => [id, entry.value]))));
+  pendingNotes.forEach((entry) => { entry.durable = saved; });
+  return saved;
+}
 
 function setNotesStatus(id, text) {
   const node = $('notes-status');
@@ -1020,6 +1354,7 @@ function queueNotes(id, value) {
   const entry = pendingNotes.get(id) || {value, sending: false, warned: false};
   entry.value = value;
   pendingNotes.set(id, entry);
+  persistNotes();
   setNotesStatus(id, 'Saving…');
   scheduleNotes(NOTES_DEBOUNCE_MS);
 }
@@ -1033,7 +1368,9 @@ async function saveNotes(id, entry) {
     setNotesStatus(id, 'Not saved — retrying');
     if (!entry.warned) {
       entry.warned = true;
-      toast(`Notes not saved yet (${error.message}). They are kept and will be retried.`, {kind: 'error'});
+      toast(`Notes not saved yet (${error.message}). ${entry.durable
+        ? 'A draft is saved in this browser and will be retried.'
+        : 'Keep this tab open until they finish saving.'}`, {kind: 'error'});
     }
     return false;
   } finally {
@@ -1043,6 +1380,7 @@ async function saveNotes(id, entry) {
   refreshJob(id);
   if (entry.value === value) {
     pendingNotes.delete(id);
+    persistNotes();
     setNotesStatus(id, 'Saved');
   }
   return true;
@@ -1066,6 +1404,7 @@ async function flushNotes() {
 /* ---------- sources ---------- */
 
 function statusPill(status, text) {
+  if (status === 'not_reached') return el('span', {class: 'pill pill-gap gap-unreached'}, text || NOT_REACHED_LABEL);
   return el('span', {class: `pill pill-${STATUS_TONE[status] || 'quiet'}`}, text || status);
 }
 
@@ -1091,40 +1430,250 @@ function employerList(title, rows, describe, open) {
 
 function renderSources() {
   const view = $('sources-view');
-  const run = coverageRun();
+  const run = completedRun(state.sourcesRun);
   const attempt = failedAttempt();
   if (!run) {
     view.replaceChildren(el('div', {class: 'empty'},
       el('h2', {}, attempt ? 'No scan has completed yet' : 'No scan yet'),
       el('p', {}, attempt ? `The last attempt failed${attempt.error ? `: ${attempt.error}` : '.'}`
         : 'Run your first scan to see which sources answered.'),
-      el('button', {type: 'button', class: 'btn btn-primary', onclick: startScan}, attempt ? 'Scan again' : 'Run your first scan')));
+      el('button', {type: 'button', class: 'btn btn-primary', onclick: startFullScan}, attempt ? 'Scan again' : 'Run your first scan')));
     return;
   }
   const health = run.health || [];
+  const retries = (run.later_runs || []).length;
   const sites = health.filter((row) => row.kind === 'ats');
   const others = health.filter((row) => row.kind !== 'ats');
   view.replaceChildren(...[
-    el('h2', {}, 'Sources in the last completed scan'),
-    el('p', {class: 'muted'}, `Scanned ${ago(run.finished_at || run.started_at)} · run ${run.status || 'unknown'}.`),
+    el('h2', {}, 'Sources as they stand now'),
+    el('p', {class: 'muted'}, `Last full scan ${ago(run.finished_at || run.started_at)} (ended ${run.status || 'unknown'})`
+      + (retries ? `, with each source’s newer result from ${plural(retries, 'later retry run')}.` : '.')),
     el('div', {class: 'table-wrap'}, el('table', {class: 'sources'},
       el('thead', {}, el('tr', {}, ['Source', 'Status', 'Listings seen', 'Roles kept', 'Note'].map((name, index) =>
         el('th', {scope: 'col', class: index === 2 || index === 3 ? 'num' : null}, name)))),
       el('tbody', {},
-        others.map((row) => sourceRow(row.label || row.source, statusPill(row.status), Number(row.found) || 0, Number(row.kept) || 0, row.error)),
+        others.map((row) => sourceRow(row.label || row.source, statusPill(healthStatus(row)), Number(row.found) || 0, Number(row.kept) || 0, row.error)),
         sites.length > 0 && employerRow(sites)))),
     employerList('Employer sites that did not answer', sites.filter((row) => ATTENTION.includes(row.status)),
-      (row) => el('span', {class: 'muted'}, [row.status, row.error].filter(Boolean).join(' — ')), true),
+      (row) => el('span', {class: 'muted'}, [healthStatus(row).replace('_', ' '), row.error].filter(Boolean).join(' — ')), true),
     employerList('Employer sites with Pega roles', sites.filter((row) => Number(row.kept) > 0),
       (row) => el('span', {class: 'muted'}, plural(Number(row.kept), 'role')), false),
     el('p', {class: 'muted'}, 'Not covered: Naukri and Foundit refuse automated access. Keep their e-mail alerts switched on.'),
   ].filter(Boolean));
 }
 
+/* ---------- coverage: every employer on the original list, how it is searched, what happened ---------- */
+
+async function loadCoverage() {
+  let data;
+  try {
+    data = await api('/api/coverage');
+  } catch (error) {
+    $('coverage-table').hidden = true;
+    $('coverage-empty').hidden = false;
+    $('coverage-empty').replaceChildren(el('h2', {}, 'Coverage could not be loaded'), el('p', {}, error.message),
+      el('button', {type: 'button', class: 'btn btn-primary', onclick: loadCoverage}, 'Retry'));
+    return;
+  }
+  coverage.rows = Array.isArray(data.rows) ? data.rows : [];
+  coverage.summary = data.summary || {};
+  coverage.loaded = true;
+  renderCoverage();
+  renderScan();                                // the Retry button depends on what is incomplete
+}
+
+/* False only when coverage is known and no configured source is failed, cut off or untried. */
+function retryNeeded() {
+  return !coverage.loaded || coverage.rows.some((row) => RETRYABLE.includes(coverageOutcome(row)));
+}
+
+/* What the Latest result column and its filter show: a scan status, 'never', or 'gap' for inventory gaps. */
+function coverageOutcome(row) {
+  if (row.inventory_state !== 'configured') return 'gap';
+  return row.latest_status || 'never';
+}
+
+function bengaluruKey(row) {
+  if (row.bengaluru === null || row.bengaluru === undefined) return 'unknown';
+  return row.bengaluru ? 'yes' : 'no';
+}
+
+function coverageName(row) {
+  return row.canonical || (row.original_names || [])[0] || 'Unnamed target';
+}
+
+function coverageMatches(row, filters) {
+  const portals = row.portals || [];
+  const needle = filters.q.trim().toLowerCase();
+  const haystack = [row.canonical, ...(row.original_names || []), ...portals.map((portal) => portal.kind),
+    row.next_action, row.latest_error, row.latest_reason].filter(Boolean).join(' ').toLowerCase();
+  return (!needle || haystack.includes(needle))
+    && (!filters.inventory || row.inventory_state === filters.inventory)
+    && (!filters.status || coverageOutcome(row) === filters.status)
+    && (!filters.type || (row.type || 'unknown') === filters.type)
+    && (!filters.bengaluru || bengaluruKey(row) === filters.bengaluru)
+    && (!filters.portal || portals.some((portal) => portal.state === filters.portal));
+}
+
+function rolesOnFile(row) {
+  return Number(row.jobs_on_file ?? row.jobs_total) || 0;
+}
+
+function coverageOrder(sort) {
+  const byName = (a, b) => coverageName(a).localeCompare(coverageName(b));
+  const rank = (row) => COVERAGE_RANK[coverageOutcome(row)] ?? COVERAGE_RANK.never;
+  const lastSuccess = (row) => Date.parse(row.last_success_at) || 0;
+  const isGap = (row) => Number(coverageOutcome(row) === 'gap');       // never scanned, so never "without success"
+  const orders = {
+    name: byName,
+    attention: (a, b) => rank(a) - rank(b) || byName(a, b),
+    jobs: (a, b) => rolesOnFile(b) - rolesOnFile(a) || byName(a, b),
+    stale: (a, b) => isGap(a) - isGap(b) || lastSuccess(a) - lastSuccess(b) || byName(a, b),
+  };
+  return orders[sort] || orders.attention;
+}
+
+function outcomePill(row) {
+  const outcome = coverageOutcome(row);
+  if (outcome === 'gap') {
+    const [label, slug] = INVENTORY_GAPS[row.inventory_state] || [row.inventory_state || 'Not configured', 'none'];
+    return el('span', {class: `pill pill-gap gap-${slug}`}, label);
+  }
+  return outcome === 'never' ? el('span', {class: 'pill pill-gap gap-never'}, 'Never attempted') : statusPill(outcome);
+}
+
+function portalBadge(portal) {
+  const state = PORTAL_STATES[portal.state] || portal.state || 'unknown';
+  const scanned = portal.state === 'verified' || portal.state === 'candidate';
+  return el('li', {},
+    el('span', {class: `portal portal-${scanned ? portal.state : 'off'}`},
+      el('strong', {}, portal.kind || 'portal'), ` · ${state} · ${portal.scope || 'unknown'} scope`,
+      portal.business_unit && ` · ${portal.business_unit}`),
+    portal.note && el('p', {class: 'muted small'}, portal.note));
+}
+
+function completeness(label, value) {
+  if (value === null || value === undefined) return null;
+  return `${label} ${value ? 'complete' : 'incomplete'}`;
+}
+
+function coverageEmployerCell(row) {
+  const name = coverageName(row);
+  const others = (row.original_names || []).filter((original) => original !== name);
+  return el('td', {'data-label': 'Employer'},
+    el('div', {class: 'job-company'}, el('span', {class: 'company'}, name),
+      row.type && employerBadge({employer_type: row.type}),
+      row.bengaluru === true && el('span', {class: 'badge blr-mark'}, 'Bengaluru')),
+    row.parent && el('p', {class: 'muted small'}, `Part of ${row.parent}`),
+    others.length > 0 && el('p', {class: 'muted small'}, `Listed as: ${others.join('; ')}`),
+    row.inventory_note && el('p', {class: 'small note'}, row.inventory_note));
+}
+
+function coverageSearchCell(row) {
+  const portals = row.portals || [];
+  return el('td', {'data-label': 'How it is searched'},
+    portals.length ? el('ul', {class: 'portals'}, portals.map(portalBadge)) : el('p', {class: 'muted small'}, 'No portal on file'),
+    el('p', {class: 'small'}, externalLink(row.career_url, {}, 'Careers page', icon('external'))),
+    el('p', {class: 'muted small', title: 'A LinkedIn search for the word Pega plus this employer’s name. It is not a company filter and is not counted as coverage.'},
+      `LinkedIn keyword query: ${row.linkedin_query ? 'yes' : 'no'}`));
+}
+
+function coverageResultCell(row) {
+  const attempted = Boolean(row.last_attempt_at);
+  const detail = [row.latest_reason, row.latest_error].filter(Boolean).join(' — ');
+  const ages = [attempted && `Attempted ${ago(row.last_attempt_at)}`,
+    row.last_success_at ? `last success ${ago(row.last_success_at)}` : (attempted && 'never succeeded')].filter(Boolean).join(' · ');
+  const complete = attempted
+    ? [completeness('Pages', row.pages_complete), completeness('details', row.details_complete)].filter(Boolean).join(' · ') : '';
+  const tasks = (row.sources || []).length > 1 ? row.sources : [];      // several portals: the pill shows the worst
+  return el('td', {'data-label': 'Latest result'}, outcomePill(row),
+    detail && el('p', {class: 'small note'}, detail),
+    tasks.length > 0 && el('ul', {class: 'muted small'}, tasks.map((source) =>
+      el('li', {}, `${source.task}: ${[SOURCE_STATES[source.status] || source.status || 'never attempted', source.reason].filter(Boolean).join(', ')}`))),
+    ages && el('p', {class: 'muted small'}, ages),
+    complete && el('p', {class: 'muted small'}, complete));
+}
+
+function coverageRow(row) {
+  const onFile = rolesOnFile(row);
+  return el('tr', {class: `cov cov-${coverageOutcome(row)}`},
+    coverageEmployerCell(row),
+    coverageSearchCell(row),
+    coverageResultCell(row),
+    el('td', {class: 'num', 'data-label': 'Roles on file'}, String(onFile),
+      onFile > 0 && el('p', {class: 'muted small'}, `${Number(row.jobs_open) || 0} seen in last 30 days, not flagged closed`)),
+    el('td', {'data-label': 'Next action'}, row.next_action || ''));
+}
+
+function renderCoverage() {
+  $('coverage-tiles').replaceChildren(...TILE_GROUPS.map(([title, tiles]) => el('section', {class: 'tile-group'},
+    el('h3', {}, title), el('div', {class: 'tiles'}, tiles.map((tile) => coverageTile(...tile))))));
+  const shown = coverage.rows.filter((row) => coverageMatches(row, coverage.filters)).sort(coverageOrder(coverage.sort));
+  $('coverage-rows').replaceChildren(...shown.map(coverageRow));
+  $('coverage-line').textContent = shown.length === coverage.rows.length
+    ? plural(coverage.rows.length, 'row') : `${shown.length} of ${plural(coverage.rows.length, 'row')} match`;
+  $('coverage-table').hidden = shown.length === 0;
+  $('coverage-empty').hidden = shown.length > 0;
+  if (shown.length) return;
+  $('coverage-empty').replaceChildren(...(coverage.rows.length
+    ? [el('h2', {}, 'No employer matches these filters'),
+      el('button', {type: 'button', class: 'btn', onclick: clearCoverageFilters}, 'Clear filters')]
+    : [el('h2', {}, 'No coverage data yet'), el('p', {}, 'The employer list (companies.json and targets.json) is empty or missing.')]));
+}
+
+/* A tile either counts the rows one filter would show (and applies that filter when clicked), or
+   shows a figure from the summary that no filter can reproduce. */
+function coverageTile(label, filter, summaryKey) {
+  if (!filter) {
+    const value = coverage.summary[summaryKey];
+    return el('div', {class: 'tile'}, el('span', {class: 'tile-value'}, value === undefined || value === null ? '–' : String(value)),
+      el('span', {class: 'tile-label'}, label));
+  }
+  const only = {...NO_COVERAGE_FILTERS, ...filter};
+  const active = Object.keys(only).every((key) => coverage.filters[key] === only[key]);
+  return el('button', {type: 'button', class: 'tile', 'aria-pressed': String(active), title: active ? 'Showing these rows — click to show all' : 'Show these rows',
+    onclick: () => setCoverageFilters(active ? NO_COVERAGE_FILTERS : only)},
+  el('span', {class: 'tile-value'}, String(coverage.rows.filter((row) => coverageMatches(row, only)).length)),
+  el('span', {class: 'tile-label'}, label));
+}
+
+function setCoverageFilters(filters) {
+  coverage.filters = {...filters};
+  $('coverage-search').value = coverage.filters.q;
+  for (const select of $('coverage-filters').querySelectorAll('[data-coverage-filter]')) {
+    select.value = coverage.filters[select.dataset.coverageFilter];
+  }
+  renderCoverage();
+}
+
+function clearCoverageFilters() {
+  setCoverageFilters(NO_COVERAGE_FILTERS);
+}
+
+function bindCoverageFilters() {
+  $('coverage-search').addEventListener('input', () => {
+    coverage.filters.q = $('coverage-search').value;
+    renderCoverage();
+  });
+  $('coverage-filters').addEventListener('change', (event) => {
+    const key = event.target.dataset.coverageFilter;
+    if (key) coverage.filters[key] = event.target.value;
+    else if (event.target.id === 'coverage-sort') coverage.sort = event.target.value;
+    renderCoverage();
+  });
+}
+
 /* ---------- keyboard ---------- */
 
 function onKeydown(event) {
   if (event.ctrlKey || event.metaKey || event.altKey) return;
+  const refinement = $('more-filters');
+  if (event.key === 'Escape' && refinement && refinement.open && !$('drawer').open) {
+    refinement.open = false;
+    refinement.querySelector('summary').focus();
+    event.preventDefault();
+    return;
+  }
   const target = event.target;
   if (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) {
     if (event.key === 'Escape' && target.id === 'search') target.blur();
@@ -1132,11 +1681,13 @@ function onKeydown(event) {
   }
   if ($('help').open) return;
   const inDrawer = $('drawer').open;
-  const listActive = state.view !== 'sources';
+  const listActive = isJobView();
   const current = inDrawer ? state.detail : (listActive ? state.jobs[state.cursor] : null);
   const arrows = !inDrawer && listActive;
   if (event.key === '?') $('help').showModal();
-  else if (event.key === '/' && arrows) $('search').focus();
+  else if (event.key === '/' && !inDrawer && (listActive || state.view === 'coverage')) {
+    (state.view === 'coverage' ? $('coverage-search') : $('search')).focus();
+  }
   else if ((event.key === 'j' && listActive) || (event.key === 'ArrowDown' && arrows)) moveCursor(1);
   else if ((event.key === 'k' && listActive) || (event.key === 'ArrowUp' && arrows)) moveCursor(-1);
   else if (event.key === 'Enter' && arrows && current && !target.closest('button, a, summary')) openJob(current.id);
@@ -1158,6 +1709,8 @@ async function start() {
     return;
   }
   if (state.scan.running) watchScan();
+  if (pendingNotes.size) flushNotes();
+  loadCoverage();                              // in the background: it decides whether Retry has anything to do
   if (!(await loadJobs()) && !state.jobs.length) showLoadError('The list of roles could not be loaded.');
   syncDrawer();
 }
@@ -1171,7 +1724,8 @@ function showLoadError(detail) {
 }
 
 function init() {
-  $('scan-button').addEventListener('click', startScan);
+  $('scan-button').addEventListener('click', startFullScan);
+  $('retry-button').addEventListener('click', () => startScan('retry'));
   $('theme-button').addEventListener('click', toggleTheme);
   $('help-button').addEventListener('click', () => $('help').showModal());
   $('help-close').addEventListener('click', () => $('help').close());
@@ -1187,10 +1741,15 @@ function init() {
   }
   $('drawer').addEventListener('close', onDrawerClosed);
   document.addEventListener('keydown', onKeydown);
+  document.addEventListener('click', (event) => {
+    const refinement = $('more-filters');
+    if (refinement && refinement.open && !refinement.contains(event.target)) refinement.open = false;
+  });
   window.addEventListener('hashchange', syncDrawer);
   window.addEventListener('pagehide', flushNotes);
   setInterval(renderScannedAt, 60000);
   bindFilters();
+  bindCoverageFilters();
   renderFilters();
   return start();
 }

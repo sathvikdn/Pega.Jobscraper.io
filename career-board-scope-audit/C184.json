@@ -1,0 +1,165 @@
+{
+  "id": "C184",
+  "company": {
+    "name": "Philips",
+    "aliases": [
+      "Philips Healthcare"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.careers.philips.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "philips",
+        "datacentre": "wd3",
+        "site": "jobs-and-careers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.careers.philips.com",
+      "checked_at": "2026-11-15T23:50:49.113329+00:00",
+      "links": [
+        {
+          "url": "https://www.careers.philips.com/in/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en/our-business-units-precision-diagnosis#PD-JOBS",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/global/en/philips-recruitment-fraud-notice",
+          "text": "Recruitment Fraud Notice"
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en/search-results",
+          "text": "Find jobs"
+        },
+        {
+          "url": "https://www.careers.philips.com/student/in/en/internships-apprenticeship-and-graduate-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en/search-results",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en/life-at-philips",
+          "text": "Learn more about life at Philips"
+        },
+        {
+          "url": "https://www.careers.philips.com/in/diversity-and-inclusion",
+          "text": "Learn more about diversity at Philips"
+        },
+        {
+          "url": "https://www.philips.com/a-w/about/news/archive/standard/news/articles/2023/20231019-philips-ranks-1-in-health-care-equipment-and-services-sector-on-forbes-2023-worlds-best-employers-list.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.philips.com/a-w/about/awards-and-recognition",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en/jointalentcommunity",
+          "text": "Join our talent community"
+        },
+        {
+          "url": "https://www.careers.philips.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/philips",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/LifeAtPhilips",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/lifeatphilips/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/PHILIPS",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.careers.philips.com/in/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Philips Careers | India",
+      "evidence": "evidence/17de5108775596b5397f.html.gz",
+      "sha256": "7af5e7a6748ab4bdef39c639cec90dca8cd69b2dbe5f3576527d156042826a86"
+    },
+    {
+      "url": "https://www.careers.philips.com/in/en/search-results",
+      "checked_at": "2026-11-15T23:50:51.571568+00:00",
+      "links": [
+        {
+          "url": "https://www.careers.philips.com/in/en/our-business-units-precision-diagnosis#PD-JOBS",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.careers.philips.com/in/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/philips",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/LifeAtPhilips",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/lifeatphilips/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/PHILIPS",
+          "text": ""
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "philips",
+          "datacentre": "wd3",
+          "site": "jobs-and-careers",
+          "source_link": "https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/India---Remote-Based/Account-Manager---IS_584565"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.careers.philips.com/in/en/search-results",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Search results | Find the available job openings at Philips",
+      "evidence": "evidence/1743aa729aaf30ceeae6.html.gz",
+      "sha256": "f04678851e66fa80b8e6fdcdefd6125d03fc5bded5df9f88951b1299d52e8377"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

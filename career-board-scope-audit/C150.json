@@ -1,0 +1,65 @@
+{
+  "id": "C150",
+  "company": {
+    "name": "Mastercard",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.mastercard.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "mastercard",
+        "datacentre": "wd1",
+        "site": "CorporateCareers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.mastercard.com",
+      "checked_at": "2026-11-15T23:50:30.563871+00:00",
+      "links": [
+        {
+          "url": "https://careers.mastercard.com/us/en/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://urldefense.com/v3/__https:/recruitifi.com/app/public/agency-registration?solicited_employer=29ff2c14-c17f-464e-af41-7a06608dde7d&solicited_employer_profile=4804c30b-261d-4b52-b392-07830d7a7352__;!!NDdRaFrjhKsg!vYsI00yYE34pps5GJLOU0ikQH9P4Qk4vpdB2jCBJ4n8iWYwHZp0T3mGylgXB-2DgWjFDBc0Of6aLUfOW_6N5M6o$",
+          "text": "join our RecruitiFi community."
+        },
+        {
+          "url": "https://careers.mastercard.com/us/en/fraud-alert",
+          "text": "here."
+        },
+        {
+          "url": "https://www.dol.gov/agencies/ofccp/posters?utm_medium=email&utm_source=govdelivery",
+          "text": "EEO"
+        },
+        {
+          "url": "https://www.dol.gov/agencies/ofccp/self-id-forms",
+          "text": "View the government form"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "mastercard",
+          "datacentre": "wd1",
+          "site": "CorporateCareers",
+          "source_link": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.mastercard.com/us/en/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Mastercard | Search Jobs and Opportunities",
+      "evidence": "evidence/22c73c1f7460cbc7f372.html.gz",
+      "sha256": "268949358a4c2b6d9114301a4a2dbbbf0f675bac9ecfaee651f33e1860b9ad8d"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

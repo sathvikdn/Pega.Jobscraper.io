@@ -1,0 +1,4273 @@
+{
+  "id": "C216",
+  "company": {
+    "name": "Target",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://corporate.target.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "target",
+        "datacentre": "wd5",
+        "site": "targetcareers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://corporate.target.com/careers",
+      "checked_at": "2026-11-15T23:51:08.096141+00:00",
+      "links": [
+        {
+          "url": "https://corporate.target.com/careers#site-nav-toggle",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers#site-nav-logo",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers#site-content",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://corporate.target.com/careers#site-footer",
+          "text": "Skip to footer"
+        },
+        {
+          "url": "https://corporate.target.com/careers#targetChatButton",
+          "text": "Skip to chat"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Target Corporate Home"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team",
+          "text": "Leadership & Team"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team/human-capital-management",
+          "text": "Human Capital Management"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history",
+          "text": "Purpose & History"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities",
+          "text": "Serving & Strengthening Communities"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation",
+          "text": "Target Foundation"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/hometown",
+          "text": "Hometown"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/national",
+          "text": "National"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/charter",
+          "text": "Charter"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/volunteerism",
+          "text": "Volunteerism"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving",
+          "text": "Corporate Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/community-engagement-funds",
+          "text": "Community Engagement Funds"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/target-circle-community-giving",
+          "text": "Target Circle Community Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/twin-cities-market",
+          "text": "Twin Cities Market"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our Corporate Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments",
+          "text": "Our Commitments"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/belonging",
+          "text": "Belonging at the Bullseye"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/workplace-health-safety",
+          "text": "Workplace Health & Safety"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/history-timeline",
+          "text": "History Timeline"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores",
+          "text": "About Our Stores"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-north-central-region",
+          "text": "East North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-south-central-region",
+          "text": "East South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/middle-atlantic-region",
+          "text": "Middle Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/mountain-region",
+          "text": "Mountain Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/new-england-region",
+          "text": "New England Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/pacific-region",
+          "text": "Pacific Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/south-atlantic-region",
+          "text": "South Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-north-central-region",
+          "text": "West North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-south-central-region",
+          "text": "West South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-amenities",
+          "text": "Store Amenities"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-savings-events",
+          "text": "Store Savings Events"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/my-store-my-story",
+          "text": "My Store, My Story"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services",
+          "text": "Products & Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/pickup-delivery",
+          "text": "Pickup & Delivery Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/brand-founders",
+          "text": "Brand Founders at Target"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact & Help"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Target's latest annual report"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Brands you'll only find at Target"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/lifestyle",
+          "text": "Lifestyle"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/company",
+          "text": "Company"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/team",
+          "text": "Team"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/guest-experience",
+          "text": "Guest Experience"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Resources for the press"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial news"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-alerts",
+          "text": "Create Job Alert"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores",
+          "text": "Stores"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/leadership",
+          "text": "Store Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/hourly",
+          "text": "Store Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/explore-our-warehouse-experience",
+          "text": "Explore Our Warehouse Experience"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/leadership",
+          "text": "Supply Chain Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/hourly",
+          "text": "Supply Chain Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate",
+          "text": "Corporate"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/administrative-support",
+          "text": "Administrative Support"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/assets-protection-and-corporate-security",
+          "text": "Assets Protection & Corporate Security"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/business-operations",
+          "text": "Business Operations"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/corporate-affairs",
+          "text": "Corporate Affairs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/finance-and-accounting",
+          "text": "Finance & Accounting"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/global-supply-chain-and-logistics",
+          "text": "Global Supply Chain & Logistics"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/insights-strategy-and-growth",
+          "text": "Insights, Strategy & Growth"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/legal-affairs-risk-and-compliance",
+          "text": "Legal Affairs, Risk & Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/marketing-and-digital",
+          "text": "Marketing & Digital"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/merchandising-and-global-sourcing",
+          "text": "Merchandising & Global Sourcing"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/product-management",
+          "text": "Product Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/project-and-program-management",
+          "text": "Project & Program Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/real-estate-design-and-property-management",
+          "text": "Real Estate, Design & Property Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/roundel",
+          "text": "Roundel"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/service-centers-and-business-enablement",
+          "text": "Service Centers & Business Enablement"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-tech",
+          "text": "Target Tech"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/ux-design-research-and-accessibility",
+          "text": "UX Design, Research & Accessibility"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level",
+          "text": "Intern & Entry-Level"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/finance-leadership-development-program",
+          "text": "Financial Leadership Development Program"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/entry-level-opportunities",
+          "text": "Entry-Level Opportunities"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/interview-guide",
+          "text": "Interview Guide"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/recorded-video-interviews",
+          "text": "Recorded Video Interviews"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://corporate.target.com/careers/faqs",
+          "text": "Careers FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/pay-and-benefits",
+          "text": "Pay & Benefits"
+        },
+        {
+          "url": "https://corporate.target.com/careers/growth-and-development",
+          "text": "Growth & Development"
+        },
+        {
+          "url": "https://corporate.target.com/careers/seasonal-events",
+          "text": "Holiday recruiting events"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-map",
+          "text": "Job Map"
+        },
+        {
+          "url": "https://corporate.target.com/careers/fraudulent-job-postings",
+          "text": "Fraudulent Job Postings"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/careers-mobile-terms-and-conditions",
+          "text": "Careers Mobile Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "California Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/mutual-arbitration-agreement",
+          "text": "Mutual Arbitration Agreement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/our-sustainability-approach",
+          "text": "Our Sustainability Approach"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices",
+          "text": "Product: Everyday Access to Sustainable Choices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/circular-design",
+          "text": "Circular Design"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory",
+          "text": "Product Safety, Quality & Regulatory"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/food-safety",
+          "text": "Food Safety, Quality & Regulatory Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/product-safety",
+          "text": "Product Safety, Quality & Regulatory Tools & Processes"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients",
+          "text": "Responsible Materials & Ingredients"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/animal-welfare",
+          "text": "Animal Welfare"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/chemical-policy",
+          "text": "Chemicals Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/commitment-to-sustainable-seafood",
+          "text": "Commitment to Sustainable Seafood"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/cotton-commitment",
+          "text": "Cotton Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/forest-products-policy",
+          "text": "Forest Products Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/palm-oil",
+          "text": "Palm Oil Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations",
+          "text": "Planet: Resilient & Efficient Operations"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate",
+          "text": "Climate"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/climate-policy",
+          "text": "Climate Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/supply-chain-resilience",
+          "text": "Supply Chain Resilience"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/nature",
+          "text": "Nature"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/operational-waste",
+          "text": "Operational Waste"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities",
+          "text": "People: Thriving Team & Communities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains",
+          "text": "Responsible Supply Chains"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights",
+          "text": "Human Rights"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights/policies",
+          "text": "Supply Chain Labor & Human Rights Policies"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/sourcing-manufacturing-practices",
+          "text": "Responsible Sourcing and Manufacturing Practices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers",
+          "text": "Suppliers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-support",
+          "text": "Supplier Support"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/standards-of-vendor-engagement",
+          "text": "Standards of Vendor Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-intake-form",
+          "text": "Supplier Intake Form"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/traceability-transparency",
+          "text": "Supply Chain Traceability & Transparency"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/audit-program",
+          "text": "Audit Program"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting",
+          "text": "Governance & Reporting"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/priorities",
+          "text": "Sustainability & Governance Priorities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Reporting & Progress"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress/archive",
+          "text": "Reporting Archive"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business",
+          "text": "Responsible Business"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/code-of-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/business-partner-code-of-conduct",
+          "text": "Business Partner Code of Conduct"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement",
+          "text": "Public Policy & Civic Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/civic-activity",
+          "text": "Civic Activity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/issue-advocacy",
+          "text": "Issue Advocacy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/political-engagement",
+          "text": "Political Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/environmental-management-systems-strategy",
+          "text": "Environmental Management Systems & Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance",
+          "text": "Corporate Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-of-directors-and-management",
+          "text": "Board of Directors & Management"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-committees-and-charters",
+          "text": "Board Committees & Charters"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-skills-and-diversity",
+          "text": "Board Skills & Diversity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/communities",
+          "text": "Our efforts to serve and strengthen communities"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/investors/corporate-overview",
+          "text": "Corporate Overview"
+        },
+        {
+          "url": "https://corporate.target.com/investors/events-presentations",
+          "text": "Events & Presentations"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information",
+          "text": "Financial Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial News"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/summary-financials",
+          "text": "Summary Financials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information",
+          "text": "Stock Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/historical",
+          "text": "Historical Stock Price Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/investment-calculator",
+          "text": "Investment Calculator"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Annual Reports and Proxy Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/annual-reports-and-archive",
+          "text": "Annual Reports and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/proxy-information-and-archive",
+          "text": "Proxy Information and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/sec-filings",
+          "text": "SEC Filings"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services",
+          "text": "Shareholder Services"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services/request-materials",
+          "text": "Request Materials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/investor-email-alerts",
+          "text": "Investor Email Alerts"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our corporate strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Our latest sustainability reporting"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://corporate.target.com/press/releases",
+          "text": "Releases"
+        },
+        {
+          "url": "https://corporate.target.com/press/fact-sheets",
+          "text": "Fact Sheets"
+        },
+        {
+          "url": "https://corporate.target.com/press/statements",
+          "text": "Statements"
+        },
+        {
+          "url": "https://corporate.target.com/press/multimedia-library",
+          "text": "Multimedia Library"
+        },
+        {
+          "url": "https://corporate.target.com/press/faqs",
+          "text": "Media FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Target"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "Fast facts about Target"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Shop"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-alerts",
+          "text": "Create a job alert"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-alerts",
+          "text": "Create a job alert"
+        },
+        {
+          "url": "https://target.wd5.myworkdayjobs.com/targetcareers/login?redirect=%2Ftargetcareers%2FuserHome",
+          "text": "Go to Workday applicant portal"
+        },
+        {
+          "url": "https://wd5.myworkday.com/target/d/task/1c7a175445dc1000388e0927a6bdda42.htmld",
+          "text": "Go to Workday team member portal"
+        },
+        {
+          "url": "https://corporate.target.com/careers/seasonal",
+          "text": "Learn more about seasonal jobs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas",
+          "text": "Explore all careers areas"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/store/stores",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/corporate/corporate",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture",
+          "text": "More about culture"
+        },
+        {
+          "url": "https://corporate.target.com/careers/growth-and-development",
+          "text": "More about growth"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture",
+          "text": "More about culture"
+        },
+        {
+          "url": "https://corporate.target.com/careers/pay-and-benefits",
+          "text": "More benefits"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Career Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Target.com"
+        },
+        {
+          "url": "https://www.target.com/store-locator/find-stores",
+          "text": "Find a Store"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/subscription",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/TargetNews",
+          "text": "Target news (opens Twitter in a new window)"
+        },
+        {
+          "url": "https://facebook.com/Target.Careers",
+          "text": "Target careers (opens Facebook in a new window)"
+        },
+        {
+          "url": "https://instagram.com/TeamTarget",
+          "text": "Team Target (opens Instagram in a new window)"
+        },
+        {
+          "url": "https://www.linkedin.com/company/target",
+          "text": "Target company (opens LinkedIn in a new window)"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/rss-feeds",
+          "text": "Target RSS feeds"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Social media directory"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/workday-mobile-terms-and-conditions",
+          "text": "Careers Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "CA Employment Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/hr-privacy",
+          "text": "Your Privacy Choices"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "target",
+          "datacentre": "wd5",
+          "site": "targetcareers",
+          "source_link": "https://target.wd5.myworkdayjobs.com/targetcareers/login?redirect=%2Ftargetcareers%2FuserHome"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://corporate.target.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Jobs at Target",
+      "evidence": "evidence/e368f8a432fc5936d12b.html.gz",
+      "sha256": "5a83b83c089882ec1118b2b71497f5ecf4c181d32b69fe33eaf787dc5226e624"
+    },
+    {
+      "url": "https://corporate.target.com/careers/job-search/store/stores",
+      "checked_at": "2026-11-15T23:51:09.893006+00:00",
+      "links": [
+        {
+          "url": "https://corporate.target.com/careers/job-search/store/stores#site-nav-toggle",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/store/stores#site-nav-logo",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/store/stores#site-content",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/store/stores#site-footer",
+          "text": "Skip to footer"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/store/stores#targetChatButton",
+          "text": "Skip to chat"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Target Corporate Home"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team",
+          "text": "Leadership & Team"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team/human-capital-management",
+          "text": "Human Capital Management"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history",
+          "text": "Purpose & History"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities",
+          "text": "Serving & Strengthening Communities"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation",
+          "text": "Target Foundation"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/hometown",
+          "text": "Hometown"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/national",
+          "text": "National"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/charter",
+          "text": "Charter"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/volunteerism",
+          "text": "Volunteerism"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving",
+          "text": "Corporate Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/community-engagement-funds",
+          "text": "Community Engagement Funds"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/target-circle-community-giving",
+          "text": "Target Circle Community Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/twin-cities-market",
+          "text": "Twin Cities Market"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our Corporate Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments",
+          "text": "Our Commitments"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/belonging",
+          "text": "Belonging at the Bullseye"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/workplace-health-safety",
+          "text": "Workplace Health & Safety"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/history-timeline",
+          "text": "History Timeline"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores",
+          "text": "About Our Stores"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-north-central-region",
+          "text": "East North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-south-central-region",
+          "text": "East South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/middle-atlantic-region",
+          "text": "Middle Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/mountain-region",
+          "text": "Mountain Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/new-england-region",
+          "text": "New England Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/pacific-region",
+          "text": "Pacific Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/south-atlantic-region",
+          "text": "South Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-north-central-region",
+          "text": "West North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-south-central-region",
+          "text": "West South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-amenities",
+          "text": "Store Amenities"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-savings-events",
+          "text": "Store Savings Events"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/my-store-my-story",
+          "text": "My Store, My Story"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services",
+          "text": "Products & Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/pickup-delivery",
+          "text": "Pickup & Delivery Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/brand-founders",
+          "text": "Brand Founders at Target"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact & Help"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Target's latest annual report"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Brands you'll only find at Target"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/lifestyle",
+          "text": "Lifestyle"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/company",
+          "text": "Company"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/team",
+          "text": "Team"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/guest-experience",
+          "text": "Guest Experience"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Resources for the press"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial news"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-alerts",
+          "text": "Create Job Alert"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores",
+          "text": "Stores"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/leadership",
+          "text": "Store Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/hourly",
+          "text": "Store Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/explore-our-warehouse-experience",
+          "text": "Explore Our Warehouse Experience"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/leadership",
+          "text": "Supply Chain Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/hourly",
+          "text": "Supply Chain Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate",
+          "text": "Corporate"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/administrative-support",
+          "text": "Administrative Support"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/assets-protection-and-corporate-security",
+          "text": "Assets Protection & Corporate Security"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/business-operations",
+          "text": "Business Operations"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/corporate-affairs",
+          "text": "Corporate Affairs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/finance-and-accounting",
+          "text": "Finance & Accounting"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/global-supply-chain-and-logistics",
+          "text": "Global Supply Chain & Logistics"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/insights-strategy-and-growth",
+          "text": "Insights, Strategy & Growth"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/legal-affairs-risk-and-compliance",
+          "text": "Legal Affairs, Risk & Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/marketing-and-digital",
+          "text": "Marketing & Digital"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/merchandising-and-global-sourcing",
+          "text": "Merchandising & Global Sourcing"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/product-management",
+          "text": "Product Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/project-and-program-management",
+          "text": "Project & Program Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/real-estate-design-and-property-management",
+          "text": "Real Estate, Design & Property Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/roundel",
+          "text": "Roundel"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/service-centers-and-business-enablement",
+          "text": "Service Centers & Business Enablement"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-tech",
+          "text": "Target Tech"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/ux-design-research-and-accessibility",
+          "text": "UX Design, Research & Accessibility"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level",
+          "text": "Intern & Entry-Level"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/finance-leadership-development-program",
+          "text": "Financial Leadership Development Program"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/entry-level-opportunities",
+          "text": "Entry-Level Opportunities"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/interview-guide",
+          "text": "Interview Guide"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/recorded-video-interviews",
+          "text": "Recorded Video Interviews"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://corporate.target.com/careers/faqs",
+          "text": "Careers FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/pay-and-benefits",
+          "text": "Pay & Benefits"
+        },
+        {
+          "url": "https://corporate.target.com/careers/growth-and-development",
+          "text": "Growth & Development"
+        },
+        {
+          "url": "https://corporate.target.com/careers/seasonal-events",
+          "text": "Holiday recruiting events"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-map",
+          "text": "Job Map"
+        },
+        {
+          "url": "https://corporate.target.com/careers/fraudulent-job-postings",
+          "text": "Fraudulent Job Postings"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/careers-mobile-terms-and-conditions",
+          "text": "Careers Mobile Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "California Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/mutual-arbitration-agreement",
+          "text": "Mutual Arbitration Agreement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/our-sustainability-approach",
+          "text": "Our Sustainability Approach"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices",
+          "text": "Product: Everyday Access to Sustainable Choices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/circular-design",
+          "text": "Circular Design"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory",
+          "text": "Product Safety, Quality & Regulatory"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/food-safety",
+          "text": "Food Safety, Quality & Regulatory Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/product-safety",
+          "text": "Product Safety, Quality & Regulatory Tools & Processes"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients",
+          "text": "Responsible Materials & Ingredients"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/animal-welfare",
+          "text": "Animal Welfare"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/chemical-policy",
+          "text": "Chemicals Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/commitment-to-sustainable-seafood",
+          "text": "Commitment to Sustainable Seafood"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/cotton-commitment",
+          "text": "Cotton Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/forest-products-policy",
+          "text": "Forest Products Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/palm-oil",
+          "text": "Palm Oil Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations",
+          "text": "Planet: Resilient & Efficient Operations"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate",
+          "text": "Climate"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/climate-policy",
+          "text": "Climate Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/supply-chain-resilience",
+          "text": "Supply Chain Resilience"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/nature",
+          "text": "Nature"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/operational-waste",
+          "text": "Operational Waste"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities",
+          "text": "People: Thriving Team & Communities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains",
+          "text": "Responsible Supply Chains"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights",
+          "text": "Human Rights"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights/policies",
+          "text": "Supply Chain Labor & Human Rights Policies"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/sourcing-manufacturing-practices",
+          "text": "Responsible Sourcing and Manufacturing Practices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers",
+          "text": "Suppliers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-support",
+          "text": "Supplier Support"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/standards-of-vendor-engagement",
+          "text": "Standards of Vendor Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-intake-form",
+          "text": "Supplier Intake Form"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/traceability-transparency",
+          "text": "Supply Chain Traceability & Transparency"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/audit-program",
+          "text": "Audit Program"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting",
+          "text": "Governance & Reporting"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/priorities",
+          "text": "Sustainability & Governance Priorities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Reporting & Progress"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress/archive",
+          "text": "Reporting Archive"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business",
+          "text": "Responsible Business"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/code-of-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/business-partner-code-of-conduct",
+          "text": "Business Partner Code of Conduct"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement",
+          "text": "Public Policy & Civic Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/civic-activity",
+          "text": "Civic Activity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/issue-advocacy",
+          "text": "Issue Advocacy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/political-engagement",
+          "text": "Political Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/environmental-management-systems-strategy",
+          "text": "Environmental Management Systems & Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance",
+          "text": "Corporate Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-of-directors-and-management",
+          "text": "Board of Directors & Management"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-committees-and-charters",
+          "text": "Board Committees & Charters"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-skills-and-diversity",
+          "text": "Board Skills & Diversity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/communities",
+          "text": "Our efforts to serve and strengthen communities"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/investors/corporate-overview",
+          "text": "Corporate Overview"
+        },
+        {
+          "url": "https://corporate.target.com/investors/events-presentations",
+          "text": "Events & Presentations"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information",
+          "text": "Financial Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial News"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/summary-financials",
+          "text": "Summary Financials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information",
+          "text": "Stock Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/historical",
+          "text": "Historical Stock Price Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/investment-calculator",
+          "text": "Investment Calculator"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Annual Reports and Proxy Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/annual-reports-and-archive",
+          "text": "Annual Reports and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/proxy-information-and-archive",
+          "text": "Proxy Information and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/sec-filings",
+          "text": "SEC Filings"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services",
+          "text": "Shareholder Services"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services/request-materials",
+          "text": "Request Materials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/investor-email-alerts",
+          "text": "Investor Email Alerts"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our corporate strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Our latest sustainability reporting"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://corporate.target.com/press/releases",
+          "text": "Releases"
+        },
+        {
+          "url": "https://corporate.target.com/press/fact-sheets",
+          "text": "Fact Sheets"
+        },
+        {
+          "url": "https://corporate.target.com/press/statements",
+          "text": "Statements"
+        },
+        {
+          "url": "https://corporate.target.com/press/multimedia-library",
+          "text": "Multimedia Library"
+        },
+        {
+          "url": "https://corporate.target.com/press/faqs",
+          "text": "Media FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Target"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "Fast facts about Target"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Shop"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Target.com"
+        },
+        {
+          "url": "https://www.target.com/store-locator/find-stores",
+          "text": "Find a Store"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/subscription",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/TargetNews",
+          "text": "Target news (opens Twitter in a new window)"
+        },
+        {
+          "url": "https://facebook.com/Target.Careers",
+          "text": "Target careers (opens Facebook in a new window)"
+        },
+        {
+          "url": "https://instagram.com/TeamTarget",
+          "text": "Team Target (opens Instagram in a new window)"
+        },
+        {
+          "url": "https://www.linkedin.com/company/target",
+          "text": "Target company (opens LinkedIn in a new window)"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/rss-feeds",
+          "text": "Target RSS feeds"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Social media directory"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/workday-mobile-terms-and-conditions",
+          "text": "Careers Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "CA Employment Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/hr-privacy",
+          "text": "Your Privacy Choices"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "target",
+          "datacentre": "wd5",
+          "site": "targetcareers",
+          "source_link": "https://target.wd5.myworkdayjobs.com/targetcareers/login?redirect=%2Ftargetcareers%2FuserHome"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://corporate.target.com/careers/job-search/store/stores",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Stores jobs at TARGET",
+      "evidence": "evidence/448b35c728503fdea15e.html.gz",
+      "sha256": "a434ced145c55453f824efdf1923da1799d08141ead40300e2a77ecdc3de958b"
+    },
+    {
+      "url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain",
+      "checked_at": "2026-11-15T23:51:11.588651+00:00",
+      "links": [
+        {
+          "url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain#site-nav-toggle",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain#site-nav-logo",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain#site-content",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain#site-footer",
+          "text": "Skip to footer"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain#targetChatButton",
+          "text": "Skip to chat"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Target Corporate Home"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team",
+          "text": "Leadership & Team"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team/human-capital-management",
+          "text": "Human Capital Management"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history",
+          "text": "Purpose & History"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities",
+          "text": "Serving & Strengthening Communities"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation",
+          "text": "Target Foundation"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/hometown",
+          "text": "Hometown"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/national",
+          "text": "National"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/charter",
+          "text": "Charter"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/volunteerism",
+          "text": "Volunteerism"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving",
+          "text": "Corporate Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/community-engagement-funds",
+          "text": "Community Engagement Funds"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/target-circle-community-giving",
+          "text": "Target Circle Community Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/twin-cities-market",
+          "text": "Twin Cities Market"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our Corporate Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments",
+          "text": "Our Commitments"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/belonging",
+          "text": "Belonging at the Bullseye"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/workplace-health-safety",
+          "text": "Workplace Health & Safety"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/history-timeline",
+          "text": "History Timeline"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores",
+          "text": "About Our Stores"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-north-central-region",
+          "text": "East North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-south-central-region",
+          "text": "East South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/middle-atlantic-region",
+          "text": "Middle Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/mountain-region",
+          "text": "Mountain Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/new-england-region",
+          "text": "New England Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/pacific-region",
+          "text": "Pacific Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/south-atlantic-region",
+          "text": "South Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-north-central-region",
+          "text": "West North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-south-central-region",
+          "text": "West South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-amenities",
+          "text": "Store Amenities"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-savings-events",
+          "text": "Store Savings Events"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/my-store-my-story",
+          "text": "My Store, My Story"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services",
+          "text": "Products & Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/pickup-delivery",
+          "text": "Pickup & Delivery Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/brand-founders",
+          "text": "Brand Founders at Target"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact & Help"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Target's latest annual report"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Brands you'll only find at Target"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/lifestyle",
+          "text": "Lifestyle"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/company",
+          "text": "Company"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/team",
+          "text": "Team"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/guest-experience",
+          "text": "Guest Experience"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Resources for the press"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial news"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-alerts",
+          "text": "Create Job Alert"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores",
+          "text": "Stores"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/leadership",
+          "text": "Store Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/hourly",
+          "text": "Store Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/explore-our-warehouse-experience",
+          "text": "Explore Our Warehouse Experience"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/leadership",
+          "text": "Supply Chain Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/hourly",
+          "text": "Supply Chain Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate",
+          "text": "Corporate"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/administrative-support",
+          "text": "Administrative Support"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/assets-protection-and-corporate-security",
+          "text": "Assets Protection & Corporate Security"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/business-operations",
+          "text": "Business Operations"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/corporate-affairs",
+          "text": "Corporate Affairs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/finance-and-accounting",
+          "text": "Finance & Accounting"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/global-supply-chain-and-logistics",
+          "text": "Global Supply Chain & Logistics"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/insights-strategy-and-growth",
+          "text": "Insights, Strategy & Growth"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/legal-affairs-risk-and-compliance",
+          "text": "Legal Affairs, Risk & Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/marketing-and-digital",
+          "text": "Marketing & Digital"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/merchandising-and-global-sourcing",
+          "text": "Merchandising & Global Sourcing"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/product-management",
+          "text": "Product Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/project-and-program-management",
+          "text": "Project & Program Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/real-estate-design-and-property-management",
+          "text": "Real Estate, Design & Property Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/roundel",
+          "text": "Roundel"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/service-centers-and-business-enablement",
+          "text": "Service Centers & Business Enablement"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-tech",
+          "text": "Target Tech"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/ux-design-research-and-accessibility",
+          "text": "UX Design, Research & Accessibility"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level",
+          "text": "Intern & Entry-Level"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/finance-leadership-development-program",
+          "text": "Financial Leadership Development Program"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/entry-level-opportunities",
+          "text": "Entry-Level Opportunities"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/interview-guide",
+          "text": "Interview Guide"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/recorded-video-interviews",
+          "text": "Recorded Video Interviews"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://corporate.target.com/careers/faqs",
+          "text": "Careers FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/pay-and-benefits",
+          "text": "Pay & Benefits"
+        },
+        {
+          "url": "https://corporate.target.com/careers/growth-and-development",
+          "text": "Growth & Development"
+        },
+        {
+          "url": "https://corporate.target.com/careers/seasonal-events",
+          "text": "Holiday recruiting events"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-map",
+          "text": "Job Map"
+        },
+        {
+          "url": "https://corporate.target.com/careers/fraudulent-job-postings",
+          "text": "Fraudulent Job Postings"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/careers-mobile-terms-and-conditions",
+          "text": "Careers Mobile Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "California Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/mutual-arbitration-agreement",
+          "text": "Mutual Arbitration Agreement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/our-sustainability-approach",
+          "text": "Our Sustainability Approach"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices",
+          "text": "Product: Everyday Access to Sustainable Choices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/circular-design",
+          "text": "Circular Design"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory",
+          "text": "Product Safety, Quality & Regulatory"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/food-safety",
+          "text": "Food Safety, Quality & Regulatory Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/product-safety",
+          "text": "Product Safety, Quality & Regulatory Tools & Processes"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients",
+          "text": "Responsible Materials & Ingredients"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/animal-welfare",
+          "text": "Animal Welfare"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/chemical-policy",
+          "text": "Chemicals Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/commitment-to-sustainable-seafood",
+          "text": "Commitment to Sustainable Seafood"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/cotton-commitment",
+          "text": "Cotton Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/forest-products-policy",
+          "text": "Forest Products Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/palm-oil",
+          "text": "Palm Oil Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations",
+          "text": "Planet: Resilient & Efficient Operations"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate",
+          "text": "Climate"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/climate-policy",
+          "text": "Climate Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/supply-chain-resilience",
+          "text": "Supply Chain Resilience"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/nature",
+          "text": "Nature"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/operational-waste",
+          "text": "Operational Waste"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities",
+          "text": "People: Thriving Team & Communities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains",
+          "text": "Responsible Supply Chains"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights",
+          "text": "Human Rights"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights/policies",
+          "text": "Supply Chain Labor & Human Rights Policies"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/sourcing-manufacturing-practices",
+          "text": "Responsible Sourcing and Manufacturing Practices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers",
+          "text": "Suppliers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-support",
+          "text": "Supplier Support"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/standards-of-vendor-engagement",
+          "text": "Standards of Vendor Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-intake-form",
+          "text": "Supplier Intake Form"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/traceability-transparency",
+          "text": "Supply Chain Traceability & Transparency"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/audit-program",
+          "text": "Audit Program"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting",
+          "text": "Governance & Reporting"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/priorities",
+          "text": "Sustainability & Governance Priorities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Reporting & Progress"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress/archive",
+          "text": "Reporting Archive"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business",
+          "text": "Responsible Business"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/code-of-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/business-partner-code-of-conduct",
+          "text": "Business Partner Code of Conduct"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement",
+          "text": "Public Policy & Civic Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/civic-activity",
+          "text": "Civic Activity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/issue-advocacy",
+          "text": "Issue Advocacy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/political-engagement",
+          "text": "Political Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/environmental-management-systems-strategy",
+          "text": "Environmental Management Systems & Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance",
+          "text": "Corporate Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-of-directors-and-management",
+          "text": "Board of Directors & Management"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-committees-and-charters",
+          "text": "Board Committees & Charters"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-skills-and-diversity",
+          "text": "Board Skills & Diversity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/communities",
+          "text": "Our efforts to serve and strengthen communities"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/investors/corporate-overview",
+          "text": "Corporate Overview"
+        },
+        {
+          "url": "https://corporate.target.com/investors/events-presentations",
+          "text": "Events & Presentations"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information",
+          "text": "Financial Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial News"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/summary-financials",
+          "text": "Summary Financials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information",
+          "text": "Stock Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/historical",
+          "text": "Historical Stock Price Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/investment-calculator",
+          "text": "Investment Calculator"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Annual Reports and Proxy Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/annual-reports-and-archive",
+          "text": "Annual Reports and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/proxy-information-and-archive",
+          "text": "Proxy Information and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/sec-filings",
+          "text": "SEC Filings"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services",
+          "text": "Shareholder Services"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services/request-materials",
+          "text": "Request Materials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/investor-email-alerts",
+          "text": "Investor Email Alerts"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our corporate strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Our latest sustainability reporting"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://corporate.target.com/press/releases",
+          "text": "Releases"
+        },
+        {
+          "url": "https://corporate.target.com/press/fact-sheets",
+          "text": "Fact Sheets"
+        },
+        {
+          "url": "https://corporate.target.com/press/statements",
+          "text": "Statements"
+        },
+        {
+          "url": "https://corporate.target.com/press/multimedia-library",
+          "text": "Multimedia Library"
+        },
+        {
+          "url": "https://corporate.target.com/press/faqs",
+          "text": "Media FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Target"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "Fast facts about Target"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Shop"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Target.com"
+        },
+        {
+          "url": "https://www.target.com/store-locator/find-stores",
+          "text": "Find a Store"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/subscription",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/TargetNews",
+          "text": "Target news (opens Twitter in a new window)"
+        },
+        {
+          "url": "https://facebook.com/Target.Careers",
+          "text": "Target careers (opens Facebook in a new window)"
+        },
+        {
+          "url": "https://instagram.com/TeamTarget",
+          "text": "Team Target (opens Instagram in a new window)"
+        },
+        {
+          "url": "https://www.linkedin.com/company/target",
+          "text": "Target company (opens LinkedIn in a new window)"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/rss-feeds",
+          "text": "Target RSS feeds"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Social media directory"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/workday-mobile-terms-and-conditions",
+          "text": "Careers Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "CA Employment Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/hr-privacy",
+          "text": "Your Privacy Choices"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "target",
+          "datacentre": "wd5",
+          "site": "targetcareers",
+          "source_link": "https://target.wd5.myworkdayjobs.com/targetcareers/login?redirect=%2Ftargetcareers%2FuserHome"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://corporate.target.com/careers/job-search/supply-chain/supply-chain",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Supply Chain jobs at TARGET",
+      "evidence": "evidence/fabb3cba78741218a815.html.gz",
+      "sha256": "bbf53749308d8e174355fb0f493ba117d580cc8553aefb76e10a0401678f4715"
+    },
+    {
+      "url": "https://corporate.target.com/careers/job-search/corporate/corporate",
+      "checked_at": "2026-11-15T23:51:13.320747+00:00",
+      "links": [
+        {
+          "url": "https://corporate.target.com/careers/job-search/corporate/corporate#site-nav-toggle",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/corporate/corporate#site-nav-logo",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/corporate/corporate#site-content",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/corporate/corporate#site-footer",
+          "text": "Skip to footer"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/corporate/corporate#targetChatButton",
+          "text": "Skip to chat"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Target Corporate Home"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team",
+          "text": "Leadership & Team"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team/human-capital-management",
+          "text": "Human Capital Management"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history",
+          "text": "Purpose & History"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities",
+          "text": "Serving & Strengthening Communities"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation",
+          "text": "Target Foundation"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/hometown",
+          "text": "Hometown"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/national",
+          "text": "National"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/charter",
+          "text": "Charter"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/volunteerism",
+          "text": "Volunteerism"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving",
+          "text": "Corporate Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/community-engagement-funds",
+          "text": "Community Engagement Funds"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/target-circle-community-giving",
+          "text": "Target Circle Community Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/twin-cities-market",
+          "text": "Twin Cities Market"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our Corporate Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments",
+          "text": "Our Commitments"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/belonging",
+          "text": "Belonging at the Bullseye"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/workplace-health-safety",
+          "text": "Workplace Health & Safety"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/history-timeline",
+          "text": "History Timeline"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores",
+          "text": "About Our Stores"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-north-central-region",
+          "text": "East North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-south-central-region",
+          "text": "East South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/middle-atlantic-region",
+          "text": "Middle Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/mountain-region",
+          "text": "Mountain Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/new-england-region",
+          "text": "New England Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/pacific-region",
+          "text": "Pacific Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/south-atlantic-region",
+          "text": "South Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-north-central-region",
+          "text": "West North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-south-central-region",
+          "text": "West South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-amenities",
+          "text": "Store Amenities"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-savings-events",
+          "text": "Store Savings Events"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/my-store-my-story",
+          "text": "My Store, My Story"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services",
+          "text": "Products & Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/pickup-delivery",
+          "text": "Pickup & Delivery Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/brand-founders",
+          "text": "Brand Founders at Target"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact & Help"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Target's latest annual report"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Brands you'll only find at Target"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/lifestyle",
+          "text": "Lifestyle"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/company",
+          "text": "Company"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/team",
+          "text": "Team"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/guest-experience",
+          "text": "Guest Experience"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Resources for the press"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial news"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-alerts",
+          "text": "Create Job Alert"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores",
+          "text": "Stores"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/leadership",
+          "text": "Store Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/hourly",
+          "text": "Store Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/explore-our-warehouse-experience",
+          "text": "Explore Our Warehouse Experience"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/leadership",
+          "text": "Supply Chain Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/hourly",
+          "text": "Supply Chain Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate",
+          "text": "Corporate"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/administrative-support",
+          "text": "Administrative Support"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/assets-protection-and-corporate-security",
+          "text": "Assets Protection & Corporate Security"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/business-operations",
+          "text": "Business Operations"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/corporate-affairs",
+          "text": "Corporate Affairs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/finance-and-accounting",
+          "text": "Finance & Accounting"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/global-supply-chain-and-logistics",
+          "text": "Global Supply Chain & Logistics"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/insights-strategy-and-growth",
+          "text": "Insights, Strategy & Growth"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/legal-affairs-risk-and-compliance",
+          "text": "Legal Affairs, Risk & Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/marketing-and-digital",
+          "text": "Marketing & Digital"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/merchandising-and-global-sourcing",
+          "text": "Merchandising & Global Sourcing"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/product-management",
+          "text": "Product Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/project-and-program-management",
+          "text": "Project & Program Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/real-estate-design-and-property-management",
+          "text": "Real Estate, Design & Property Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/roundel",
+          "text": "Roundel"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/service-centers-and-business-enablement",
+          "text": "Service Centers & Business Enablement"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-tech",
+          "text": "Target Tech"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/ux-design-research-and-accessibility",
+          "text": "UX Design, Research & Accessibility"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level",
+          "text": "Intern & Entry-Level"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/finance-leadership-development-program",
+          "text": "Financial Leadership Development Program"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/entry-level-opportunities",
+          "text": "Entry-Level Opportunities"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/interview-guide",
+          "text": "Interview Guide"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/recorded-video-interviews",
+          "text": "Recorded Video Interviews"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://corporate.target.com/careers/faqs",
+          "text": "Careers FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/pay-and-benefits",
+          "text": "Pay & Benefits"
+        },
+        {
+          "url": "https://corporate.target.com/careers/growth-and-development",
+          "text": "Growth & Development"
+        },
+        {
+          "url": "https://corporate.target.com/careers/seasonal-events",
+          "text": "Holiday recruiting events"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-map",
+          "text": "Job Map"
+        },
+        {
+          "url": "https://corporate.target.com/careers/fraudulent-job-postings",
+          "text": "Fraudulent Job Postings"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/careers-mobile-terms-and-conditions",
+          "text": "Careers Mobile Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "California Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/mutual-arbitration-agreement",
+          "text": "Mutual Arbitration Agreement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/our-sustainability-approach",
+          "text": "Our Sustainability Approach"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices",
+          "text": "Product: Everyday Access to Sustainable Choices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/circular-design",
+          "text": "Circular Design"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory",
+          "text": "Product Safety, Quality & Regulatory"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/food-safety",
+          "text": "Food Safety, Quality & Regulatory Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/product-safety",
+          "text": "Product Safety, Quality & Regulatory Tools & Processes"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients",
+          "text": "Responsible Materials & Ingredients"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/animal-welfare",
+          "text": "Animal Welfare"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/chemical-policy",
+          "text": "Chemicals Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/commitment-to-sustainable-seafood",
+          "text": "Commitment to Sustainable Seafood"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/cotton-commitment",
+          "text": "Cotton Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/forest-products-policy",
+          "text": "Forest Products Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/palm-oil",
+          "text": "Palm Oil Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations",
+          "text": "Planet: Resilient & Efficient Operations"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate",
+          "text": "Climate"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/climate-policy",
+          "text": "Climate Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/supply-chain-resilience",
+          "text": "Supply Chain Resilience"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/nature",
+          "text": "Nature"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/operational-waste",
+          "text": "Operational Waste"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities",
+          "text": "People: Thriving Team & Communities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains",
+          "text": "Responsible Supply Chains"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights",
+          "text": "Human Rights"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights/policies",
+          "text": "Supply Chain Labor & Human Rights Policies"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/sourcing-manufacturing-practices",
+          "text": "Responsible Sourcing and Manufacturing Practices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers",
+          "text": "Suppliers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-support",
+          "text": "Supplier Support"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/standards-of-vendor-engagement",
+          "text": "Standards of Vendor Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-intake-form",
+          "text": "Supplier Intake Form"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/traceability-transparency",
+          "text": "Supply Chain Traceability & Transparency"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/audit-program",
+          "text": "Audit Program"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting",
+          "text": "Governance & Reporting"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/priorities",
+          "text": "Sustainability & Governance Priorities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Reporting & Progress"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress/archive",
+          "text": "Reporting Archive"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business",
+          "text": "Responsible Business"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/code-of-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/business-partner-code-of-conduct",
+          "text": "Business Partner Code of Conduct"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement",
+          "text": "Public Policy & Civic Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/civic-activity",
+          "text": "Civic Activity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/issue-advocacy",
+          "text": "Issue Advocacy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/political-engagement",
+          "text": "Political Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/environmental-management-systems-strategy",
+          "text": "Environmental Management Systems & Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance",
+          "text": "Corporate Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-of-directors-and-management",
+          "text": "Board of Directors & Management"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-committees-and-charters",
+          "text": "Board Committees & Charters"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-skills-and-diversity",
+          "text": "Board Skills & Diversity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/communities",
+          "text": "Our efforts to serve and strengthen communities"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/investors/corporate-overview",
+          "text": "Corporate Overview"
+        },
+        {
+          "url": "https://corporate.target.com/investors/events-presentations",
+          "text": "Events & Presentations"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information",
+          "text": "Financial Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial News"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/summary-financials",
+          "text": "Summary Financials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information",
+          "text": "Stock Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/historical",
+          "text": "Historical Stock Price Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/investment-calculator",
+          "text": "Investment Calculator"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Annual Reports and Proxy Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/annual-reports-and-archive",
+          "text": "Annual Reports and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/proxy-information-and-archive",
+          "text": "Proxy Information and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/sec-filings",
+          "text": "SEC Filings"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services",
+          "text": "Shareholder Services"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services/request-materials",
+          "text": "Request Materials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/investor-email-alerts",
+          "text": "Investor Email Alerts"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our corporate strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Our latest sustainability reporting"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://corporate.target.com/press/releases",
+          "text": "Releases"
+        },
+        {
+          "url": "https://corporate.target.com/press/fact-sheets",
+          "text": "Fact Sheets"
+        },
+        {
+          "url": "https://corporate.target.com/press/statements",
+          "text": "Statements"
+        },
+        {
+          "url": "https://corporate.target.com/press/multimedia-library",
+          "text": "Multimedia Library"
+        },
+        {
+          "url": "https://corporate.target.com/press/faqs",
+          "text": "Media FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Target"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "Fast facts about Target"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Shop"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Target.com"
+        },
+        {
+          "url": "https://www.target.com/store-locator/find-stores",
+          "text": "Find a Store"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/subscription",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/TargetNews",
+          "text": "Target news (opens Twitter in a new window)"
+        },
+        {
+          "url": "https://facebook.com/Target.Careers",
+          "text": "Target careers (opens Facebook in a new window)"
+        },
+        {
+          "url": "https://instagram.com/TeamTarget",
+          "text": "Team Target (opens Instagram in a new window)"
+        },
+        {
+          "url": "https://www.linkedin.com/company/target",
+          "text": "Target company (opens LinkedIn in a new window)"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/rss-feeds",
+          "text": "Target RSS feeds"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Social media directory"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/workday-mobile-terms-and-conditions",
+          "text": "Careers Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "CA Employment Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/hr-privacy",
+          "text": "Your Privacy Choices"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "target",
+          "datacentre": "wd5",
+          "site": "targetcareers",
+          "source_link": "https://target.wd5.myworkdayjobs.com/targetcareers/login?redirect=%2Ftargetcareers%2FuserHome"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://corporate.target.com/careers/job-search/corporate/corporate",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Corporate jobs at TARGET",
+      "evidence": "evidence/5486bd358a019c9aaa72.html.gz",
+      "sha256": "72e330ebf5cfd61e7f7ab10bef33c5831d054f0500c598e542986269675a118c"
+    },
+    {
+      "url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs",
+      "checked_at": "2026-11-15T23:51:15.000676+00:00",
+      "links": [
+        {
+          "url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs#site-nav-toggle",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs#site-nav-logo",
+          "text": "Skip to main navigation"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs#site-content",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs#site-footer",
+          "text": "Skip to footer"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs#targetChatButton",
+          "text": "Skip to chat"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Target Corporate Home"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team",
+          "text": "Leadership & Team"
+        },
+        {
+          "url": "https://corporate.target.com/about/leadership-team/human-capital-management",
+          "text": "Human Capital Management"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history",
+          "text": "Purpose & History"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities",
+          "text": "Serving & Strengthening Communities"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation",
+          "text": "Target Foundation"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/hometown",
+          "text": "Hometown"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/national",
+          "text": "National"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/target-foundation/charter",
+          "text": "Charter"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/volunteerism",
+          "text": "Volunteerism"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving",
+          "text": "Corporate Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/community-engagement-funds",
+          "text": "Community Engagement Funds"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/target-circle-community-giving",
+          "text": "Target Circle Community Giving"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/communities/grants-corporate-giving/twin-cities-market",
+          "text": "Twin Cities Market"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our Corporate Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments",
+          "text": "Our Commitments"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/belonging",
+          "text": "Belonging at the Bullseye"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-commitments/workplace-health-safety",
+          "text": "Workplace Health & Safety"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/history-timeline",
+          "text": "History Timeline"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores",
+          "text": "About Our Stores"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-north-central-region",
+          "text": "East North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/east-south-central-region",
+          "text": "East South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/middle-atlantic-region",
+          "text": "Middle Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/mountain-region",
+          "text": "Mountain Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/new-england-region",
+          "text": "New England Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/pacific-region",
+          "text": "Pacific Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/south-atlantic-region",
+          "text": "South Atlantic Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-north-central-region",
+          "text": "West North Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/about-our-stores/west-south-central-region",
+          "text": "West South Central Region"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-amenities",
+          "text": "Store Amenities"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/store-savings-events",
+          "text": "Store Savings Events"
+        },
+        {
+          "url": "https://corporate.target.com/about/locations/my-store-my-story",
+          "text": "My Store, My Story"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services",
+          "text": "Products & Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/pickup-delivery",
+          "text": "Pickup & Delivery Services"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/brand-founders",
+          "text": "Brand Founders at Target"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact & Help"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Target's latest annual report"
+        },
+        {
+          "url": "https://corporate.target.com/about/products-services/target-brands",
+          "text": "Brands you'll only find at Target"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/lifestyle",
+          "text": "Lifestyle"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/company",
+          "text": "Company"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/team",
+          "text": "Team"
+        },
+        {
+          "url": "https://corporate.target.com/news-features/guest-experience",
+          "text": "Guest Experience"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Resources for the press"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial news"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-alerts",
+          "text": "Create Job Alert"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores",
+          "text": "Stores"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/leadership",
+          "text": "Store Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/stores/hourly",
+          "text": "Store Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain",
+          "text": "Supply Chain"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/explore-our-warehouse-experience",
+          "text": "Explore Our Warehouse Experience"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/leadership",
+          "text": "Supply Chain Leadership"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/supply-chain/hourly",
+          "text": "Supply Chain Hourly"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate",
+          "text": "Corporate"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/administrative-support",
+          "text": "Administrative Support"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/assets-protection-and-corporate-security",
+          "text": "Assets Protection & Corporate Security"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/business-operations",
+          "text": "Business Operations"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/corporate-affairs",
+          "text": "Corporate Affairs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/finance-and-accounting",
+          "text": "Finance & Accounting"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/global-supply-chain-and-logistics",
+          "text": "Global Supply Chain & Logistics"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/human-resources",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/insights-strategy-and-growth",
+          "text": "Insights, Strategy & Growth"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/legal-affairs-risk-and-compliance",
+          "text": "Legal Affairs, Risk & Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/marketing-and-digital",
+          "text": "Marketing & Digital"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/merchandising-and-global-sourcing",
+          "text": "Merchandising & Global Sourcing"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/product-management",
+          "text": "Product Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/project-and-program-management",
+          "text": "Project & Program Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/real-estate-design-and-property-management",
+          "text": "Real Estate, Design & Property Management"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/roundel",
+          "text": "Roundel"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/service-centers-and-business-enablement",
+          "text": "Service Centers & Business Enablement"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-brands",
+          "text": "Target Brands"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/target-tech",
+          "text": "Target Tech"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/corporate/ux-design-research-and-accessibility",
+          "text": "UX Design, Research & Accessibility"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level",
+          "text": "Intern & Entry-Level"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/finance-leadership-development-program",
+          "text": "Financial Leadership Development Program"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/entry-level-opportunities",
+          "text": "Entry-Level Opportunities"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/intern-entry-level/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-areas/global",
+          "text": "Global"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/interview-guide",
+          "text": "Interview Guide"
+        },
+        {
+          "url": "https://corporate.target.com/careers/hiring-process/recorded-video-interviews",
+          "text": "Recorded Video Interviews"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://corporate.target.com/careers/culture/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://corporate.target.com/careers/faqs",
+          "text": "Careers FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/careers/pay-and-benefits",
+          "text": "Pay & Benefits"
+        },
+        {
+          "url": "https://corporate.target.com/careers/growth-and-development",
+          "text": "Growth & Development"
+        },
+        {
+          "url": "https://corporate.target.com/careers/seasonal-events",
+          "text": "Holiday recruiting events"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-map",
+          "text": "Job Map"
+        },
+        {
+          "url": "https://corporate.target.com/careers/fraudulent-job-postings",
+          "text": "Fraudulent Job Postings"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/careers-mobile-terms-and-conditions",
+          "text": "Careers Mobile Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "California Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/mutual-arbitration-agreement",
+          "text": "Mutual Arbitration Agreement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/our-sustainability-approach",
+          "text": "Our Sustainability Approach"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices",
+          "text": "Product: Everyday Access to Sustainable Choices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/circular-design",
+          "text": "Circular Design"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory",
+          "text": "Product Safety, Quality & Regulatory"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/food-safety",
+          "text": "Food Safety, Quality & Regulatory Compliance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/safety-quality-regulatory/product-safety",
+          "text": "Product Safety, Quality & Regulatory Tools & Processes"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients",
+          "text": "Responsible Materials & Ingredients"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/animal-welfare",
+          "text": "Animal Welfare"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/chemical-policy",
+          "text": "Chemicals Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/commitment-to-sustainable-seafood",
+          "text": "Commitment to Sustainable Seafood"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/cotton-commitment",
+          "text": "Cotton Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/forest-products-policy",
+          "text": "Forest Products Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/product-everyday-access-to-sustainable-choices/responsible-materials-ingredients/palm-oil",
+          "text": "Palm Oil Commitment"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations",
+          "text": "Planet: Resilient & Efficient Operations"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate",
+          "text": "Climate"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/climate-policy",
+          "text": "Climate Policy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/climate/supply-chain-resilience",
+          "text": "Supply Chain Resilience"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/nature",
+          "text": "Nature"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/planet-resilient-efficient-operations/operational-waste",
+          "text": "Operational Waste"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities",
+          "text": "People: Thriving Team & Communities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains",
+          "text": "Responsible Supply Chains"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights",
+          "text": "Human Rights"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/human-rights/policies",
+          "text": "Supply Chain Labor & Human Rights Policies"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/sourcing-manufacturing-practices",
+          "text": "Responsible Sourcing and Manufacturing Practices"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers",
+          "text": "Suppliers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-support",
+          "text": "Supplier Support"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/standards-of-vendor-engagement",
+          "text": "Standards of Vendor Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/suppliers/supplier-intake-form",
+          "text": "Supplier Intake Form"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/traceability-transparency",
+          "text": "Supply Chain Traceability & Transparency"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/people-thriving-team-communities/responsible-supply-chains/audit-program",
+          "text": "Audit Program"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting",
+          "text": "Governance & Reporting"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/priorities",
+          "text": "Sustainability & Governance Priorities"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Reporting & Progress"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress/archive",
+          "text": "Reporting Archive"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business",
+          "text": "Responsible Business"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/code-of-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/business-partner-code-of-conduct",
+          "text": "Business Partner Code of Conduct"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement",
+          "text": "Public Policy & Civic Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/civic-activity",
+          "text": "Civic Activity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/issue-advocacy",
+          "text": "Issue Advocacy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/public-policy-civic-engagement/political-engagement",
+          "text": "Political Engagement"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/responsible-business/environmental-management-systems-strategy",
+          "text": "Environmental Management Systems & Strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance",
+          "text": "Corporate Governance"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-of-directors-and-management",
+          "text": "Board of Directors & Management"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-committees-and-charters",
+          "text": "Board Committees & Charters"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/corporate-governance/board-skills-and-diversity",
+          "text": "Board Skills & Diversity"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/communities",
+          "text": "Our efforts to serve and strengthen communities"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/investors/corporate-overview",
+          "text": "Corporate Overview"
+        },
+        {
+          "url": "https://corporate.target.com/investors/events-presentations",
+          "text": "Events & Presentations"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information",
+          "text": "Financial Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/financial-news",
+          "text": "Financial News"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/summary-financials",
+          "text": "Summary Financials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information",
+          "text": "Stock Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/historical",
+          "text": "Historical Stock Price Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/financial-information/stock-information/investment-calculator",
+          "text": "Investment Calculator"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual",
+          "text": "Annual Reports and Proxy Information"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/annual-reports-and-archive",
+          "text": "Annual Reports and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/annual/proxy-information-and-archive",
+          "text": "Proxy Information and Archive"
+        },
+        {
+          "url": "https://corporate.target.com/investors/sec-filings",
+          "text": "SEC Filings"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services",
+          "text": "Shareholder Services"
+        },
+        {
+          "url": "https://corporate.target.com/investors/shareholder-services/request-materials",
+          "text": "Request Materials"
+        },
+        {
+          "url": "https://corporate.target.com/investors/investor-email-alerts",
+          "text": "Investor Email Alerts"
+        },
+        {
+          "url": "https://corporate.target.com/about/purpose-history/our-corporate-strategy",
+          "text": "Our corporate strategy"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance/governance-and-reporting/reporting-progress",
+          "text": "Our latest sustainability reporting"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://corporate.target.com/press/releases",
+          "text": "Releases"
+        },
+        {
+          "url": "https://corporate.target.com/press/fact-sheets",
+          "text": "Fact Sheets"
+        },
+        {
+          "url": "https://corporate.target.com/press/statements",
+          "text": "Statements"
+        },
+        {
+          "url": "https://corporate.target.com/press/multimedia-library",
+          "text": "Multimedia Library"
+        },
+        {
+          "url": "https://corporate.target.com/press/faqs",
+          "text": "Media FAQs"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Target"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "Fast facts about Target"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Shop"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/careers/job-search",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://corporate.target.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://corporate.target.com/news-features",
+          "text": "News & Features"
+        },
+        {
+          "url": "https://corporate.target.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://corporate.target.com/sustainability-governance",
+          "text": "Sustainability & Governance"
+        },
+        {
+          "url": "https://corporate.target.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://corporate.target.com/press",
+          "text": "Press"
+        },
+        {
+          "url": "https://www.target.com/",
+          "text": "Target.com"
+        },
+        {
+          "url": "https://www.target.com/store-locator/find-stores",
+          "text": "Find a Store"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/subscription",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://corporate.target.com/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/TargetNews",
+          "text": "Target news (opens Twitter in a new window)"
+        },
+        {
+          "url": "https://facebook.com/Target.Careers",
+          "text": "Target careers (opens Facebook in a new window)"
+        },
+        {
+          "url": "https://instagram.com/TeamTarget",
+          "text": "Team Target (opens Instagram in a new window)"
+        },
+        {
+          "url": "https://www.linkedin.com/company/target",
+          "text": "Target company (opens LinkedIn in a new window)"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help/rss-feeds",
+          "text": "Target RSS feeds"
+        },
+        {
+          "url": "https://corporate.target.com/about/contact-help",
+          "text": "Social media directory"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice",
+          "text": "Careers Privacy"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/workday-mobile-terms-and-conditions",
+          "text": "Careers Terms & Conditions"
+        },
+        {
+          "url": "https://corporate.target.com/careers/career-privacy-notice/california-privacy-notice",
+          "text": "CA Employment Privacy Notice"
+        },
+        {
+          "url": "https://corporate.target.com/hr-privacy",
+          "text": "Your Privacy Choices"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "target",
+          "datacentre": "wd5",
+          "site": "targetcareers",
+          "source_link": "https://target.wd5.myworkdayjobs.com/targetcareers/login?redirect=%2Ftargetcareers%2FuserHome"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://corporate.target.com/careers/job-search/internships/internships-entry-level-programs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Internships & Entry Level Programs jobs at TARGET",
+      "evidence": "evidence/fb6a9b4db1c1e49602f7.html.gz",
+      "sha256": "58ccb0b8e74f36e759d47422e05cc9241d9e2cb9dc44f284cefd317975471149"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

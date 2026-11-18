@@ -1,0 +1,44 @@
+{
+  "id": "C228",
+  "company": {
+    "name": "Unisys",
+    "aliases": [],
+    "type": "services",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://unisys.wd5.myworkdayjobs.com/External",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "unisys",
+        "datacentre": "wd5",
+        "site": "External",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://unisys.wd5.myworkdayjobs.com/External",
+      "checked_at": "2026-11-15T23:51:13.562820+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "unisys",
+          "datacentre": "wd5",
+          "site": "External",
+          "source_link": "https://unisys.wd5.myworkdayjobs.com/External"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://unisys.wd5.myworkdayjobs.com/External",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/a796b400f5bf5e37f48b.html.gz",
+      "sha256": "957da9c01d1d74448db7ab28d7655f887c77c8bce9e822f2c4df8d039c51230a"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

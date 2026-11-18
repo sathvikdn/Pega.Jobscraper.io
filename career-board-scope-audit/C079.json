@@ -1,0 +1,125 @@
+{
+  "id": "C079",
+  "company": {
+    "name": "Eaton",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://eaton.eightfold.ai/careers",
+    "portals": [
+      {
+        "kind": "eightfold",
+        "host": "eaton.eightfold.ai",
+        "domain": "eaton.com",
+        "state": "candidate",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://eaton.eightfold.ai/careers",
+      "checked_at": "2026-11-15T23:49:56.017711+00:00",
+      "links": [
+        {
+          "url": "https://app.eightfold.ai/careers?domain=eaton.com",
+          "text": ""
+        },
+        {
+          "url": "https://eaton.eightfold.ai/careers?domain=eaton.com",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://eaton.eightfold.ai/careers/join",
+          "text": "Join Talent Community"
+        },
+        {
+          "url": "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+          "text": "Sign In"
+        },
+        {
+          "url": "https://jobs.eaton.com/jobs",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://eaton.eightfold.ai/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Eaton",
+      "evidence": "evidence/180a8880c7a4a2a1fc95.html.gz",
+      "sha256": "4fe6c6b9959e64990e290f6935135c99ba7d48386bdf96428ff149a5c5d10559"
+    },
+    {
+      "url": "https://eaton.eightfold.ai/careers?domain=eaton.com",
+      "checked_at": "2026-11-15T23:49:58.307536+00:00",
+      "links": [
+        {
+          "url": "https://app.eightfold.ai/careers?domain=eaton.com",
+          "text": ""
+        },
+        {
+          "url": "https://eaton.eightfold.ai/careers?domain=eaton.com",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://eaton.eightfold.ai/careers/join",
+          "text": "Join Talent Community"
+        },
+        {
+          "url": "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+          "text": "Sign In"
+        },
+        {
+          "url": "https://jobs.eaton.com/jobs",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://eaton.eightfold.ai/careers?domain=eaton.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Eaton",
+      "evidence": "evidence/f1beeff1e2548dadbf66.html.gz",
+      "sha256": "33f7e8200a0e093ce799244286f135c4fae717320e44c97f35adc3a4e7f0256b"
+    },
+    {
+      "url": "https://app.eightfold.ai/careers?domain=eaton.com",
+      "checked_at": "2026-11-15T23:50:00.681763+00:00",
+      "links": [
+        {
+          "url": "https://app.eightfold.ai/careers?domain=eaton.com",
+          "text": ""
+        },
+        {
+          "url": "https://eaton.eightfold.ai/careers?domain=eaton.com",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://eaton.eightfold.ai/careers/join",
+          "text": "Join Talent Community"
+        },
+        {
+          "url": "https://eaton.eightfold.ai/candidate/login?domain=eaton.com",
+          "text": "Sign In"
+        },
+        {
+          "url": "https://jobs.eaton.com/jobs",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://app.eightfold.ai/careers?domain=eaton.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Eaton",
+      "evidence": "evidence/69150cc344f856c2b37c.html.gz",
+      "sha256": "3dbdc45839947dda22781284695e704776ac6ee122119307311403ccf39fc84f"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

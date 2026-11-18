@@ -1,0 +1,46 @@
+{
+  "id": "C142",
+  "company": {
+    "name": "Macquarie",
+    "aliases": [
+      "Macquarie Group"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://mq.wd3.myworkdayjobs.com/CareersatMQ",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "mq",
+        "datacentre": "wd3",
+        "site": "CareersatMQ",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://mq.wd3.myworkdayjobs.com/CareersatMQ",
+      "checked_at": "2026-11-15T23:50:27.932482+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "mq",
+          "datacentre": "wd3",
+          "site": "CareersatMQ",
+          "source_link": "https://mq.wd3.myworkdayjobs.com/CareersatMQ"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://mq.wd3.myworkdayjobs.com/CareersatMQ",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/8e0382f8dada7149914d.html.gz",
+      "sha256": "6b2a9dfe45704da1804dcad0d50b2fcc9245e7f0c31109d65820ec1be0bf8697"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

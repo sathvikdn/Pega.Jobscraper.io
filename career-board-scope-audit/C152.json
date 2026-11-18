@@ -1,0 +1,45 @@
+{
+  "id": "C152",
+  "company": {
+    "name": "Medtronic",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "medtronic",
+        "datacentre": "wd1",
+        "site": "MedtronicCareers",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified; the search is loose (905 of 955 postings matched \"Pega\"), so many details are read"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+      "checked_at": "2026-11-15T23:50:31.165489+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "medtronic",
+          "datacentre": "wd1",
+          "site": "MedtronicCareers",
+          "source_link": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://medtronic.wd1.myworkdayjobs.com/MedtronicCareers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/eecbe5fdeef9b8a5f5be.html.gz",
+      "sha256": "e83dfc721bf945c9a3ead1843b6735f22e6712171b2887208c8c936ac99bdb0f"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,36 @@
+{
+  "id": "C143",
+  "company": {
+    "name": "Macy's",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "ebwh.fa.us2.oraclecloud.com",
+        "site": "CX_1001",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+      "checked_at": "2026-11-15T23:50:28.820813+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://ebwh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Macy\\'s",
+      "evidence": "evidence/cdc52246dadad06d47e7.html.gz",
+      "sha256": "5c4f6ca7226b5f53d478bdbef8eaf1a22c9c5a230a7eb493003e54debe03a688"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

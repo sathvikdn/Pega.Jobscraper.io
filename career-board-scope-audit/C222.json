@@ -1,0 +1,1157 @@
+{
+  "id": "C222",
+  "company": {
+    "name": "Toyota",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://toyota.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "toyota",
+        "datacentre": "wd503",
+        "site": "TMNA",
+        "state": "wrong_scope",
+        "scope": "global",
+        "note": "Toyota Motor North America board; it cannot cover India roles"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://toyota.com/careers",
+      "checked_at": "2026-11-15T23:51:11.096776+00:00",
+      "links": [
+        {
+          "url": "https://careers.toyota.com/us/en/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/",
+          "text": ""
+        },
+        {
+          "url": "https://toyota.wd503.myworkdayjobs.com/TMNA",
+          "text": "Apply Now to Join Our Team!"
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/toyota-financial-services-jobs",
+          "text": "Apply Now to Join Our Team!"
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/tfs-data-and-technology-jobs",
+          "text": "Apply Now for TFS Data & Technology Roles!"
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/jointalentcommunity",
+          "text": "Join our talent community"
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/ttr",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/tfs-data-technology",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://careers.toyota.com/us/en/connected-technologies",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://amrd.toyota.com/division/ivs/",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://toyota.willhire.co/",
+          "text": "View Contingent Opportunities"
+        },
+        {
+          "url": "https://careers.toyota.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyota.com/support/privacy-notice/",
+          "text": "Privacy Notice"
+        },
+        {
+          "url": "https://www.toyota.com/support/legal-terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "toyota",
+          "datacentre": "wd503",
+          "site": "TMNA",
+          "source_link": "https://toyota.wd503.myworkdayjobs.com/TMNA"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.toyota.com/us/en/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Toyota | Toyota jobs",
+      "evidence": "evidence/3beb9b92a14027498b1d.html.gz",
+      "sha256": "1914ca83e162edd4930693ff94a03f38fdb7ce99a529210c27f4b6d71a8013fc"
+    },
+    {
+      "url": "https://www.toyotaconnected.co.in/careers",
+      "checked_at": "2026-11-15T23:51:15.583814+00:00",
+      "links": [
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "Insights"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "Techceleration"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech Radar"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "+555 666 777 85"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "contact@company.com"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": "Packsui Template"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "InsightsOur Tech & Business use cases"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates Inside Toyota Connected India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "CultureUnveiling Life at TC India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "TechcelerationLet’s talk tech event by TC India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech RadarTech resources on emerging mobility trends"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "CONTACT"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#Join-a-community-in-Careers",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#Open-positions",
+          "text": "Open Roles"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#Benefits-Careers",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Join our Community"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#Join-a-community-in-Careers",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#Open-positions",
+          "text": "Open Roles"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#Benefits-Careers",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#form-join-community",
+          "text": "Join our Community"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "{ \"items\": [ { \"url\": \"https://youtube.com/watch?v=DBp4l1IywOs?si=nyFGyjk9XlQkAcJt\", \"originalUrl\": \"https://youtube.com/watch?v=DBp4l1IywOs?si=nyFGyj"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/discover-why-we-are-a-great-place-to-work",
+          "text": "Discover firsthand, why we are a Great Place to WorkTC India ranked 14th in the Top 50 Best Workplaces in IndiaRead this story"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+          "text": "TC India has been a great place for me to start my career. Sahil shares his experience as a campus recruit Read this story"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/strength-in-code-power-in-diversity-thats-the-mantra-of-our-women-engineers-at-tcin",
+          "text": "We are a bunch of inquisitive engineers at TCIN. Women in mobility tech at TCINRead this story"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/the-story-of-growth-and-learning-at-tc-india",
+          "text": "The story of growth & learning at TC India.Our tribe members share their journey here Read this story"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-indias-compassionate-leadership-vision",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-indias-compassionate-leadership-vision",
+          "text": "Toyota Connected India's Compassionate Leadership VisionEmpathy Contributes to Positive Outcomes and is the Most Important Leadership Skill"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/explore-what-makes-our-workplace-a-top-choice-for-millennials",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/explore-what-makes-our-workplace-a-top-choice-for-millennials",
+          "text": "Explore What Makes Our Workplace a Top Choice for Millennials Toyota Connected India shines as a beacon of excellence, prioritizing the well-being and"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/awarded-indias-best-workplaces-building-a-culture-of-innovation-by-all",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/awarded-indias-best-workplaces-building-a-culture-of-innovation-by-all",
+          "text": "Awarded India's Best Workplaces Building a Culture of Innovation by AllRecognized by GPTW as TOP 25 among India's Best Workplaces Building a Culture o"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/benefits",
+          "text": "Discover our benefits"
+        },
+        {
+          "url": "https://toyotaconnected.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6aa0e08a82525",
+          "text": "More Details"
+        },
+        {
+          "url": "https://toyotaconnected.darwinbox.in/ms/candidatev2/main/careers/jobDetails/a6ac4fd669e1ac",
+          "text": "More Details"
+        },
+        {
+          "url": "https://toyotaconnected.darwinbox.in/ms/candidate/careers",
+          "text": "View all Openings"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers#form-join-community",
+          "text": "sign up for job alerts"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/policy-pages/privacy-policy",
+          "text": "Toyota Connected India Privacy Policy"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "contact us via email."
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "Insights"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "Techceleration"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech Radar"
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/policy-pages/csr-policy",
+          "text": "CSR Policy"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/policy-pages/privacy-policy",
+          "text": "Privacy Policy"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.toyotaconnected.co.in/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Join Our Innovative Community | Toyota Connected India Careers",
+      "evidence": "evidence/bc9c7ecfd438ae453fd7.html.gz",
+      "sha256": "a81dac517c48495230451e6d243cbcfb92c60b9a5a6148886dd31d9136e910e3"
+    },
+    {
+      "url": "https://toyota.wd503.myworkdayjobs.com/TMNA",
+      "checked_at": "2026-11-15T23:51:16.172737+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "toyota",
+          "datacentre": "wd503",
+          "site": "TMNA",
+          "source_link": "https://toyota.wd503.myworkdayjobs.com/TMNA"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://toyota.wd503.myworkdayjobs.com/TMNA",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/d79c5421a8385a70cc0f.html.gz",
+      "sha256": "ecf5be81ca1b3280b292630de0b79c180e1934bc809f851bf226e7fcd7a2a1ff"
+    },
+    {
+      "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+      "checked_at": "2026-11-15T23:51:17.648931+00:00",
+      "links": [
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "Insights"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "Techceleration"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech Radar"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+          "text": "+555 666 777 85"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+          "text": "contact@company.com"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": "Packsui Template"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "InsightsOur Tech & Business use cases"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates Inside Toyota Connected India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "CultureUnveiling Life at TC India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "TechcelerationLet’s talk tech event by TC India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech RadarTech resources on emerging mobility trends"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "CONTACT"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+          "text": "My profile"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/explore-what-makes-our-workplace-a-top-choice-for-millennials",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/explore-what-makes-our-workplace-a-top-choice-for-millennials",
+          "text": "Explore What Makes Our Workplace a Top Choice for Millennials Toyota Connected India shines as a beacon of excellence, prioritizing the well-being and"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/the-story-of-growth-and-learning-at-tc-india",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/the-story-of-growth-and-learning-at-tc-india",
+          "text": "The Story of Growth at Toyota Connected IndiaAt Toyota Connected India, We offer an equal opportunity for all our people to flourish and find the true"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/25-years-of-connected-possibilities-toyota-connecteds-transformation-from-japan-to-india",
+          "text": "25 years of Connected Possibilities: Toyota Connected’s transformation from Japan to IndiaRead article"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/from-idea-to-impact-how-toyota-connected-india-is-unifying-fleet-management-for-smarter-mobility",
+          "text": "From Idea to Impact: How Toyota Connected India is Unifying Fleet Management for Smarter MobilityRead article"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "Insights"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "Insights"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "Techceleration"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech Radar"
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/policy-pages/csr-policy",
+          "text": "CSR Policy"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/policy-pages/privacy-policy",
+          "text": "Privacy Policy"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.toyotaconnected.co.in/article/sahil-chronicles-his-campus-to-corporate-journey-at-tcin",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Sahil Chronicles His Campus to Corporate Journey at TCIN",
+      "evidence": "evidence/af32ae554c7992ae67bd.html.gz",
+      "sha256": "c66f9c74f2e7766ecc04b66665e33f85462fb37326bcb8b3346896c144760d8e"
+    },
+    {
+      "url": "https://medium.com/toyota-connected-india",
+      "checked_at": "2026-11-15T23:51:18.168611+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 403,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.toyotaconnected.co.in/category/news-updates",
+      "checked_at": "2026-11-15T23:51:18.613282+00:00",
+      "links": [
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "Insights"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "Techceleration"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech Radar"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "+555 666 777 85"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "contact@company.com"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": "Packsui Template"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "InsightsOur Tech & Business use cases"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates Inside Toyota Connected India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "CultureUnveiling Life at TC India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "TechcelerationLet’s talk tech event by TC India"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech RadarTech resources on emerging mobility trends"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "CONTACT"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-tcin-at-the-toyota-swarm-global-hackathon-2023",
+          "text": "TC India at the Toyota SWARM, Global Hackathon 2023."
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-tcin-at-the-toyota-swarm-global-hackathon-2023",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tcins-code-infused-journey-at-pycon-2023",
+          "text": "TCIN's Code-Infused Journey at PyCon 2023"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tcins-code-infused-journey-at-pycon-2023",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/state-of-art-office-engineering-center-at-bangalore",
+          "text": "State-of-art office engineering center at Bangalore"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/state-of-art-office-engineering-center-at-bangalore",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-awarded-indias-best-workplace-for-millennials",
+          "text": "Toyota Connected India awarded India's Best Workplace for Millennials"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-awarded-indias-best-workplace-for-millennials",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-at-the-caev-event",
+          "text": "TC India at the CAEV event"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-at-the-caev-event",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/path-toward-vehicle-autonomy-may-be-longer-but-will-be-fruitful",
+          "text": "Path toward vehicle autonomy may be longer but will be fruitful"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/path-toward-vehicle-autonomy-may-be-longer-but-will-be-fruitful",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/awarded-indias-best-workplaces-building-a-culture-of-innovation-by-all",
+          "text": "Awarded India's Best Workplaces Building a Culture of Innovation by All"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/awarded-indias-best-workplaces-building-a-culture-of-innovation-by-all",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/innovating-against-time-at-toyota-hackathons",
+          "text": "Innovating against time at Toyota Hackathons"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/innovating-against-time-at-toyota-hackathons",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-hosted-the-global-engineering-summit-2023",
+          "text": "TC India hosted the Global Engineering Summit, 2023"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-hosted-the-global-engineering-summit-2023",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/how-data-can-elevate-customer-experience",
+          "text": "How Data Can Elevate Customer Experience"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/how-data-can-elevate-customer-experience",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/how-data-can-elevate-customer-experience",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/how-data-can-elevate-customer-experience",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/how-data-can-elevate-customer-experience",
+          "text": "How Data Can Elevate Customer ExperienceConnected Mobility is transforming customer experience by using data to create more personalized, safer , and "
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-tcin-at-the-toyota-swarm-global-hackathon-2023",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-tcin-at-the-toyota-swarm-global-hackathon-2023",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-tcin-at-the-toyota-swarm-global-hackathon-2023",
+          "text": "TC India at the Toyota SWARM, Global Hackathon 2023. Toyota Connected engineers came together to create solutions that matter most!"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tcins-code-infused-journey-at-pycon-2023",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tcins-code-infused-journey-at-pycon-2023",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tcins-code-infused-journey-at-pycon-2023",
+          "text": "TCIN's Code-Infused Journey at PyCon 2023TCIN is committed to giving back to the Python tech community"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-awarded-indias-best-workplace-for-millennials",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-awarded-indias-best-workplace-for-millennials",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/toyota-connected-india-awarded-indias-best-workplace-for-millennials",
+          "text": "Toyota Connected India awarded India's Best Workplace for MillennialsToyota Connected India ranks in India's top 50 Best Workplaces for Millennials."
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/state-of-art-office-engineering-center-at-bangalore",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/state-of-art-office-engineering-center-at-bangalore",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/state-of-art-office-engineering-center-at-bangalore",
+          "text": "State-of-art office engineering center at BangaloreInaugurating our State-of-the-Art Workspace in Bangalore"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-at-the-caev-event",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-at-the-caev-event",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-at-the-caev-event",
+          "text": "TC India at the CAEV eventChange in the auto industry has accelerated over the years, with a need for safety, hyper-personalization, and predictive te"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/awarded-indias-best-workplaces-building-a-culture-of-innovation-by-all",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/awarded-indias-best-workplaces-building-a-culture-of-innovation-by-all",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/awarded-indias-best-workplaces-building-a-culture-of-innovation-by-all",
+          "text": "Awarded India's Best Workplaces Building a Culture of Innovation by AllRecognized by GPTW as TOP 25 among India's Best Workplaces Building a Culture o"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-hosted-the-global-engineering-summit-2023",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-hosted-the-global-engineering-summit-2023",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/tc-india-hosted-the-global-engineering-summit-2023",
+          "text": "TC India hosted the Global Engineering Summit, 2023The week-long workshop discussed trends, emerging technology, and globalization of products and ser"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/innovating-against-time-at-toyota-hackathons",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/innovating-against-time-at-toyota-hackathons",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/innovating-against-time-at-toyota-hackathons",
+          "text": "Innovating against time at Toyota HackathonsWe need to give our hundred percent to bring a solution to life, which requires a quick turnaround and it "
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/path-toward-vehicle-autonomy-may-be-longer-but-will-be-fruitful",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/path-toward-vehicle-autonomy-may-be-longer-but-will-be-fruitful",
+          "text": "Read"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/article/path-toward-vehicle-autonomy-may-be-longer-but-will-be-fruitful",
+          "text": "Path toward vehicle autonomy may be longer but will be fruitfulExcerpts from discussion with GK Senthil, CEO, Toyota Connected India."
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/technology",
+          "text": "Mobility"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/insights",
+          "text": "Insights"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/news-updates",
+          "text": "News & Updates"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/category/culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/techceleration",
+          "text": "Techceleration"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/tech-radar",
+          "text": "Tech Radar"
+        },
+        {
+          "url": "https://www.youtube.com/@ToyotaConnectedIndia",
+          "text": ""
+        },
+        {
+          "url": "https://medium.com/toyota-connected-india",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/tcin_india",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/TCIN.India/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/toyota-connected-india-pvt-ltd/",
+          "text": ""
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/policy-pages/csr-policy",
+          "text": "CSR Policy"
+        },
+        {
+          "url": "https://www.toyotaconnected.co.in/policy-pages/privacy-policy",
+          "text": "Privacy Policy"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.toyotaconnected.co.in/category/news-updates",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "News & Updates  | Toyota Connected India Blog",
+      "evidence": "evidence/82ee0c059ead28f34456.html.gz",
+      "sha256": "bf756e22af16a90c113c8e89e4ee11c8a8e1738d87a4134688c3cdf563ab9ade"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,47 @@
+{
+  "id": "C133",
+  "company": {
+    "name": "Levi Strauss & Co.",
+    "aliases": [
+      "Levi Strauss",
+      "Levi's"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://levistraussandco.wd5.myworkdayjobs.com/External",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "levistraussandco",
+        "datacentre": "wd5",
+        "site": "External",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://levistraussandco.wd5.myworkdayjobs.com/External",
+      "checked_at": "2026-11-15T23:50:22.167926+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "levistraussandco",
+          "datacentre": "wd5",
+          "site": "External",
+          "source_link": "https://levistraussandco.wd5.myworkdayjobs.com/External"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://levistraussandco.wd5.myworkdayjobs.com/External",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/7226a63f7a5ac9cba743.html.gz",
+      "sha256": "35395af8492f70f50676a06dff4fa9cec9c40a46a7da28188afcad22d83a4647"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

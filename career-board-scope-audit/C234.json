@@ -1,0 +1,31 @@
+{
+  "id": "C234",
+  "company": {
+    "name": "Visa",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://usa.visa.com/careers.html",
+    "portals": [
+      {
+        "kind": "smartrecruiters",
+        "company_id": "Visa",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Postings API answered in the audit"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://usa.visa.com/careers.html",
+      "checked_at": "2026-11-15T23:51:17.389845+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

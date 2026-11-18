@@ -1,0 +1,36 @@
+{
+  "id": "C192",
+  "company": {
+    "name": "Qualcomm",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.qualcomm.com/careers",
+    "portals": [
+      {
+        "kind": "eightfold",
+        "host": "careers.qualcomm.com",
+        "domain": "qualcomm.com",
+        "state": "candidate",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.qualcomm.com/careers",
+      "checked_at": "2026-11-15T23:50:54.840666+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.qualcomm.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Qualcomm Careers | Engineering Jobs and More | Qualcomm",
+      "evidence": "evidence/bb3482e7289be4f38e53.html.gz",
+      "sha256": "7346eec1a239dfed2447e23c71802d86f42c752314b34065c06fcff5afa1f79e"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

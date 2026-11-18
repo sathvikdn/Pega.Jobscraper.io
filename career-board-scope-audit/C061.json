@@ -1,0 +1,1451 @@
+{
+  "id": "C061",
+  "company": {
+    "name": "Commonwealth Bank",
+    "aliases": [
+      "CBA",
+      "CommBank"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://commbank.com.au/about-us/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "cba",
+        "datacentre": "wd3",
+        "site": "CommBank_Careers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://commbank.com.au/about-us/careers",
+      "checked_at": "2026-11-15T23:49:46.793531+00:00",
+      "links": [
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html#skipmaincontent",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html#skiplogon",
+          "text": "Skip to log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html#skipsearch",
+          "text": "Skip to search"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/?ei=mv_cbalogo",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": "Log on"
+        },
+        {
+          "url": "https://www.my.commbank.com.au/netbank/Logon/Logon.aspx?ei=mv_logon-NB",
+          "text": "NetBank log on"
+        },
+        {
+          "url": "https://www3.my.commbiz.commbank.com.au/cbp/login?ei=mv_logon-commbiz&cbaauth=prelogin",
+          "text": "CommBiz log on"
+        },
+        {
+          "url": "https://www2.commsec.com.au/secure/login?ei=mv_logon-commsec",
+          "text": "CommSec log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_locate-us",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/travel/travel-insurance.html?ei=mv_search-pop1",
+          "text": "Travel insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/international/foreign-exchange-calculator.html?ei=mv_search-pop2",
+          "text": "Foreign exchange calculator"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/home-loan-forms/mortgage-discharge/start?ei=glo-search-pop3",
+          "text": "Discharge/ Refinance authority form"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/how-do-i-activate-my-commbank-card.html?ei=mv_search-pop4",
+          "text": "Activate a CommBank card"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital-banking/cardless-cash.html?ei=mv_search-pop5",
+          "text": "Cardless cash"
+        },
+        {
+          "url": "https://www.commbank.com.au/products/interest-rates-and-fees.html?ei=mv_search-pop6",
+          "text": "Interest rates & fees"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=mv_search-support",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_search-locate",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/contact-us.html?ei=mv_search-contact",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html",
+          "text": "About us"
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=d903bb3fedad45039383f6de334ad4db",
+          "text": "Explore roles"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/security/job-scams.html",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": "Dismiss"
+        },
+        {
+          "url": "https://cba.avature.net/ourtalentcommunities",
+          "text": "Join our Talent Community"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/commbank-life.html",
+          "text": "Life at CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/support.html",
+          "text": "Support Hub"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/rewards-and-benefits.html",
+          "text": "Rewards & Benefits"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html#terms",
+          "text": "1"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html#terms",
+          "text": "2"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html#terms",
+          "text": "2"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html#terms",
+          "text": "2"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/technology.html",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/graduate-intern-programs.html",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/working-here/indigenouscareers.html",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/community-skilling.html",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/rewards-and-benefits.html",
+          "text": "Explore more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/rewards-and-benefits.html",
+          "text": "Explore more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/rewards-and-benefits.html",
+          "text": "Explore more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/rewards-and-benefits.html",
+          "text": "Explore more"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/business-private-banking.html?ei=BPB",
+          "text": "Business Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": "CommBank India"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/cyber.html?ei=cyber",
+          "text": "Cyber"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/analytics.html?ei=analytics",
+          "text": "Data & Analytics"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/engineering.html?ei=Engineering",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/product-management.html",
+          "text": "Product Management"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/guidance-support-services.html?ei=GroupServices",
+          "text": "Guidance & Support Services"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/customer-service.html?ei=CustomerService",
+          "text": "Customer Service"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/institutional-banking-markets.html?ei=InstitutionalBanking",
+          "text": "Institutional Banking & Markets"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/retail-banking-services.html?ei=RBS",
+          "text": "Retail Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/lending.html",
+          "text": "Lending"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/technology.html?ei=Technology",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2026/04/commbank-recognised-as-top-on-linkedin-companies-list.html",
+          "text": "Newsroom article"
+        },
+        {
+          "url": "https://www.commbank.com.au/content/dam/commbank-assets/investors/docs/results/fy25/2025-annual-report.pdf",
+          "text": "2025 CommBank Annual Report"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/security.html?ei=CB-footer_security",
+          "text": "Security & scams"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/compliments-and-complaints.html?ei=CB-footer_complaints",
+          "text": "Complaints & compliments"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/financial-support/financial-hardship.html?ei=CB-footer_FinAssistance",
+          "text": "Financial assistance"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=CB-footer_Help",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/accessibility.html?ei=CB-footer_accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html?ei=CB-footer_aboutus",
+          "text": "About CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html?ei=CB-footer_careers",
+          "text": "Careers at CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives.html?ei=CB-footer_corporate-responsibility",
+          "text": "Corporate responsibility"
+        },
+        {
+          "url": "https://www.commbank.com.au/newsroom.html?ei=CB-footer_newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/investors.html?ei=CB-footer_investors",
+          "text": "Investor centre"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info.html?ei=CB-footer_ImportantDocs",
+          "text": "Important documents"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/policies-and-practices/banking-code-of-practice.html?ei=CB-footer_codeofpractice",
+          "text": "Banking Code of Practice"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info/cookies.html?ei=CB-footer_cookies",
+          "text": "Cookies policy"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/privacy.html?ei=CB-footer_privacy",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/performance-reporting.html#social",
+          "text": "Modern Slavery Statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/opportunity-from-community/acknowledgement-of-country.html?ei=footer_aoc",
+          "text": "Traditional Owners"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "cba",
+          "datacentre": "wd3",
+          "site": "CommBank_Careers",
+          "source_link": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=d903bb3fedad45039383f6de334ad4db"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.commbank.com.au/about-us/careers.html",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers - CommBank",
+      "evidence": "evidence/d98ca2c836312f641627.html.gz",
+      "sha256": "a931208dd1452b874702ffa9f8a51f93ae88e36ff7b8f26f08d964008766a0fa"
+    },
+    {
+      "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+      "checked_at": "2026-11-15T23:49:47.575694+00:00",
+      "links": [
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skipmaincontent",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skiplogon",
+          "text": "Skip to log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skipsearch",
+          "text": "Skip to search"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/?ei=mv_cbalogo",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": "Log on"
+        },
+        {
+          "url": "https://www.my.commbank.com.au/netbank/Logon/Logon.aspx?ei=mv_logon-NB",
+          "text": "NetBank log on"
+        },
+        {
+          "url": "https://www3.my.commbiz.commbank.com.au/cbp/login?ei=mv_logon-commbiz&cbaauth=prelogin",
+          "text": "CommBiz log on"
+        },
+        {
+          "url": "https://www2.commsec.com.au/secure/login?ei=mv_logon-commsec",
+          "text": "CommSec log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_locate-us",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/travel/travel-insurance.html?ei=mv_search-pop1",
+          "text": "Travel insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/international/foreign-exchange-calculator.html?ei=mv_search-pop2",
+          "text": "Foreign exchange calculator"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/home-loan-forms/mortgage-discharge/start?ei=glo-search-pop3",
+          "text": "Discharge/ Refinance authority form"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/how-do-i-activate-my-commbank-card.html?ei=mv_search-pop4",
+          "text": "Activate a CommBank card"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital-banking/cardless-cash.html?ei=mv_search-pop5",
+          "text": "Cardless cash"
+        },
+        {
+          "url": "https://www.commbank.com.au/products/interest-rates-and-fees.html?ei=mv_search-pop6",
+          "text": "Interest rates & fees"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=mv_search-support",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_search-locate",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/contact-us.html?ei=mv_search-contact",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html",
+          "text": "About us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": "Careers"
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=c4f78be1a8f14da0ab49ce1162348a5e",
+          "text": "Explore roles"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#purpose",
+          "text": "Our purpose"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#people",
+          "text": "Our people"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#benefits",
+          "text": "Our benefits"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#impact",
+          "text": "Our impact"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#partners",
+          "text": "Our partners"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#teams",
+          "text": "Our teams"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "¹"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "²"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "³"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "⁴"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "⁵"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/08/tech-ai-partnership.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/03/anthropic.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2024/03/microsoft-ai-partnership.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers",
+          "text": "Search & Apply"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/faq.html?ei=help_faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/application-process.html?ei=help_applicationprocess",
+          "text": "Application process"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/get-in-touch.html?ei=help_contact",
+          "text": "Get in touch"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/10/commbank-among-best-banks-ai-maturity1.html",
+          "text": "#1 bank in the Asia-Pacific region and #4 globally in the 2025 Evident AI Index"
+        },
+        {
+          "url": "https://analyticsindiamag.com/ai-highlights/50-best-firms-for-data-scientists-to-work-for-2025/",
+          "text": "#2 among the Top 50 Firms for Data Scientists in India 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/etedge_etedgegcc2025-etedgegccsummit-etnowgccsummit-activity-7311089534274867201-d1FP/",
+          "text": "Top 25 Impactful Global Capability Centers of India, 2025 by ET Edge"
+        },
+        {
+          "url": "https://aimresearch.co/product/20-best-firms-for-women-in-tech-to-work-for-2025",
+          "text": "20 Best Firms for Women in Technology to Work For 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://analyticsindiamag.com/ai-highlights/meet-the-winners-best-firms-for-diversity-inclusion-in-tech-awards/",
+          "text": "Best Firms for Diversity & Inclusion in Technology 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/security.html?ei=CB-footer_security",
+          "text": "Security & scams"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=CB-footer_Help",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/financial-support/financial-hardship.html?ei=CB-footer_FinAssistance",
+          "text": "Financial assistance"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/compliments-and-complaints.html?ei=CB-footer_complaints",
+          "text": "Complaints & compliments"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/accessibility.html?ei=CB-footer_accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html?ei=CB-footer_aboutus",
+          "text": "About CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html?ei=CB-footer_careers",
+          "text": "Careers at CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/sustainability.html?ei=CB-footer_sustainability",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.commbank.com.au/newsroom.html?ei=CB-footer_newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/investors.html?ei=CB-footer_investors",
+          "text": "Investor centre"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info.html?ei=CB-footer_ImportantDocs",
+          "text": "Important documents"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/policies-and-practices/banking-code-of-practice.html?ei=CB-footer_codeofpractice",
+          "text": "Banking Code of Practice"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info/cookies.html?ei=CB-footer_cookies",
+          "text": "Cookies policy"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/privacy.html?ei=CB-footer_privacy",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/performance-reporting.html#social",
+          "text": "Modern Slavery Statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/opportunity-from-community/acknowledgement-of-country.html?ei=footer_aoc",
+          "text": "Traditional Owners"
+        },
+        {
+          "url": "https://www.commbank.com.au/",
+          "text": "Commonwealth Bank"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "cba",
+          "datacentre": "wd3",
+          "site": "CommBank_Careers",
+          "source_link": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=c4f78be1a8f14da0ab49ce1162348a5e"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "CommBank India",
+      "evidence": "evidence/d4a99adebd760a494ac5.html.gz",
+      "sha256": "508dab0f318cd1a6fef9c1ac624e4898df37cc2ebc010865c5fb9db7c43d475a"
+    },
+    {
+      "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=d903bb3fedad45039383f6de334ad4db",
+      "checked_at": "2026-11-15T23:49:48.277386+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "cba",
+          "datacentre": "wd3",
+          "site": "CommBank_Careers",
+          "source_link": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=d903bb3fedad45039383f6de334ad4db"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=d903bb3fedad45039383f6de334ad4db",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/8d37c4c93ab3f95631a8.html.gz",
+      "sha256": "b6e9c9ff6307c6714502eceedc4b00eadb83419f9f4e6d08a6b2f2c9f4d815d8"
+    },
+    {
+      "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+      "checked_at": "2026-11-15T23:49:47.575694+00:00",
+      "links": [
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skipmaincontent",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skiplogon",
+          "text": "Skip to log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skipsearch",
+          "text": "Skip to search"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/?ei=mv_cbalogo",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": "Log on"
+        },
+        {
+          "url": "https://www.my.commbank.com.au/netbank/Logon/Logon.aspx?ei=mv_logon-NB",
+          "text": "NetBank log on"
+        },
+        {
+          "url": "https://www3.my.commbiz.commbank.com.au/cbp/login?ei=mv_logon-commbiz&cbaauth=prelogin",
+          "text": "CommBiz log on"
+        },
+        {
+          "url": "https://www2.commsec.com.au/secure/login?ei=mv_logon-commsec",
+          "text": "CommSec log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_locate-us",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/travel/travel-insurance.html?ei=mv_search-pop1",
+          "text": "Travel insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/international/foreign-exchange-calculator.html?ei=mv_search-pop2",
+          "text": "Foreign exchange calculator"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/home-loan-forms/mortgage-discharge/start?ei=glo-search-pop3",
+          "text": "Discharge/ Refinance authority form"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/how-do-i-activate-my-commbank-card.html?ei=mv_search-pop4",
+          "text": "Activate a CommBank card"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital-banking/cardless-cash.html?ei=mv_search-pop5",
+          "text": "Cardless cash"
+        },
+        {
+          "url": "https://www.commbank.com.au/products/interest-rates-and-fees.html?ei=mv_search-pop6",
+          "text": "Interest rates & fees"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=mv_search-support",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_search-locate",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/contact-us.html?ei=mv_search-contact",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html",
+          "text": "About us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": "Careers"
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=c4f78be1a8f14da0ab49ce1162348a5e",
+          "text": "Explore roles"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#purpose",
+          "text": "Our purpose"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#people",
+          "text": "Our people"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#benefits",
+          "text": "Our benefits"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#impact",
+          "text": "Our impact"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#partners",
+          "text": "Our partners"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#teams",
+          "text": "Our teams"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "¹"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "²"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "³"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "⁴"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "⁵"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/08/tech-ai-partnership.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/03/anthropic.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2024/03/microsoft-ai-partnership.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers",
+          "text": "Search & Apply"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/faq.html?ei=help_faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/application-process.html?ei=help_applicationprocess",
+          "text": "Application process"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/get-in-touch.html?ei=help_contact",
+          "text": "Get in touch"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/10/commbank-among-best-banks-ai-maturity1.html",
+          "text": "#1 bank in the Asia-Pacific region and #4 globally in the 2025 Evident AI Index"
+        },
+        {
+          "url": "https://analyticsindiamag.com/ai-highlights/50-best-firms-for-data-scientists-to-work-for-2025/",
+          "text": "#2 among the Top 50 Firms for Data Scientists in India 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/etedge_etedgegcc2025-etedgegccsummit-etnowgccsummit-activity-7311089534274867201-d1FP/",
+          "text": "Top 25 Impactful Global Capability Centers of India, 2025 by ET Edge"
+        },
+        {
+          "url": "https://aimresearch.co/product/20-best-firms-for-women-in-tech-to-work-for-2025",
+          "text": "20 Best Firms for Women in Technology to Work For 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://analyticsindiamag.com/ai-highlights/meet-the-winners-best-firms-for-diversity-inclusion-in-tech-awards/",
+          "text": "Best Firms for Diversity & Inclusion in Technology 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/security.html?ei=CB-footer_security",
+          "text": "Security & scams"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=CB-footer_Help",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/financial-support/financial-hardship.html?ei=CB-footer_FinAssistance",
+          "text": "Financial assistance"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/compliments-and-complaints.html?ei=CB-footer_complaints",
+          "text": "Complaints & compliments"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/accessibility.html?ei=CB-footer_accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html?ei=CB-footer_aboutus",
+          "text": "About CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html?ei=CB-footer_careers",
+          "text": "Careers at CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/sustainability.html?ei=CB-footer_sustainability",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.commbank.com.au/newsroom.html?ei=CB-footer_newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/investors.html?ei=CB-footer_investors",
+          "text": "Investor centre"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info.html?ei=CB-footer_ImportantDocs",
+          "text": "Important documents"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/policies-and-practices/banking-code-of-practice.html?ei=CB-footer_codeofpractice",
+          "text": "Banking Code of Practice"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info/cookies.html?ei=CB-footer_cookies",
+          "text": "Cookies policy"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/privacy.html?ei=CB-footer_privacy",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/performance-reporting.html#social",
+          "text": "Modern Slavery Statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/opportunity-from-community/acknowledgement-of-country.html?ei=footer_aoc",
+          "text": "Traditional Owners"
+        },
+        {
+          "url": "https://www.commbank.com.au/",
+          "text": "Commonwealth Bank"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "cba",
+          "datacentre": "wd3",
+          "site": "CommBank_Careers",
+          "source_link": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=c4f78be1a8f14da0ab49ce1162348a5e"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "CommBank India",
+      "evidence": "evidence/d4a99adebd760a494ac5.html.gz",
+      "sha256": "508dab0f318cd1a6fef9c1ac624e4898df37cc2ebc010865c5fb9db7c43d475a"
+    },
+    {
+      "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+      "checked_at": "2026-11-15T23:49:47.575694+00:00",
+      "links": [
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skipmaincontent",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skiplogon",
+          "text": "Skip to log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#skipsearch",
+          "text": "Skip to search"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/?ei=mv_cbalogo",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": "Log on"
+        },
+        {
+          "url": "https://www.my.commbank.com.au/netbank/Logon/Logon.aspx?ei=mv_logon-NB",
+          "text": "NetBank log on"
+        },
+        {
+          "url": "https://www3.my.commbiz.commbank.com.au/cbp/login?ei=mv_logon-commbiz&cbaauth=prelogin",
+          "text": "CommBiz log on"
+        },
+        {
+          "url": "https://www2.commsec.com.au/secure/login?ei=mv_logon-commsec",
+          "text": "CommSec log on"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/banking.html?ei=mv_banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.commbank.com.au/home-loans.html?ei=mv_home-loans",
+          "text": "Home loans"
+        },
+        {
+          "url": "https://www.commbank.com.au/insurance.html?ei=mv_insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/investing-and-super.html?ei=mv_investing-super",
+          "text": "Investing & Super"
+        },
+        {
+          "url": "https://www.commbank.com.au/business.html?ei=mv_business",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.commbank.com.au/institutional.html?ei=mv_institutional",
+          "text": "Institutional"
+        },
+        {
+          "url": "https://www.commbank.com.au/commbank-yello.html?ei=mv_cbyello",
+          "text": "CommBank Yello"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_locate-us",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/travel/travel-insurance.html?ei=mv_search-pop1",
+          "text": "Travel insurance"
+        },
+        {
+          "url": "https://www.commbank.com.au/international/foreign-exchange-calculator.html?ei=mv_search-pop2",
+          "text": "Foreign exchange calculator"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/home-loan-forms/mortgage-discharge/start?ei=glo-search-pop3",
+          "text": "Discharge/ Refinance authority form"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/how-do-i-activate-my-commbank-card.html?ei=mv_search-pop4",
+          "text": "Activate a CommBank card"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital-banking/cardless-cash.html?ei=mv_search-pop5",
+          "text": "Cardless cash"
+        },
+        {
+          "url": "https://www.commbank.com.au/products/interest-rates-and-fees.html?ei=mv_search-pop6",
+          "text": "Interest rates & fees"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=mv_search-support",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/digital/locate-us/?ei=mv_search-locate",
+          "text": "Locate us"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/contact-us.html?ei=mv_search-contact",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html",
+          "text": "About us"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html",
+          "text": "Careers"
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=c4f78be1a8f14da0ab49ce1162348a5e",
+          "text": "Explore roles"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#purpose",
+          "text": "Our purpose"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#people",
+          "text": "Our people"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#benefits",
+          "text": "Our benefits"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#impact",
+          "text": "Our impact"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#partners",
+          "text": "Our partners"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#teams",
+          "text": "Our teams"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "¹"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "²"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "³"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": ""
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "⁴"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india#terms",
+          "text": "⁵"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/08/tech-ai-partnership.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/03/anthropic.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2024/03/microsoft-ai-partnership.html",
+          "text": "Find out more"
+        },
+        {
+          "url": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers",
+          "text": "Search & Apply"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/faq.html?ei=help_faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/application-process.html?ei=help_applicationprocess",
+          "text": "Application process"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers/get-in-touch.html?ei=help_contact",
+          "text": "Get in touch"
+        },
+        {
+          "url": "https://www.commbank.com.au/articles/newsroom/2025/10/commbank-among-best-banks-ai-maturity1.html",
+          "text": "#1 bank in the Asia-Pacific region and #4 globally in the 2025 Evident AI Index"
+        },
+        {
+          "url": "https://analyticsindiamag.com/ai-highlights/50-best-firms-for-data-scientists-to-work-for-2025/",
+          "text": "#2 among the Top 50 Firms for Data Scientists in India 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/etedge_etedgegcc2025-etedgegccsummit-etnowgccsummit-activity-7311089534274867201-d1FP/",
+          "text": "Top 25 Impactful Global Capability Centers of India, 2025 by ET Edge"
+        },
+        {
+          "url": "https://aimresearch.co/product/20-best-firms-for-women-in-tech-to-work-for-2025",
+          "text": "20 Best Firms for Women in Technology to Work For 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://analyticsindiamag.com/ai-highlights/meet-the-winners-best-firms-for-diversity-inclusion-in-tech-awards/",
+          "text": "Best Firms for Diversity & Inclusion in Technology 2025 by Analytics India Magazine"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/security.html?ei=CB-footer_security",
+          "text": "Security & scams"
+        },
+        {
+          "url": "https://www.commbank.com.au/support.html?ei=CB-footer_Help",
+          "text": "Help & support"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/financial-support/financial-hardship.html?ei=CB-footer_FinAssistance",
+          "text": "Financial assistance"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/compliments-and-complaints.html?ei=CB-footer_complaints",
+          "text": "Complaints & compliments"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/accessibility.html?ei=CB-footer_accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us.html?ei=CB-footer_aboutus",
+          "text": "About CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/careers.html?ei=CB-footer_careers",
+          "text": "Careers at CommBank"
+        },
+        {
+          "url": "https://www.commbank.com.au/sustainability.html?ei=CB-footer_sustainability",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.commbank.com.au/newsroom.html?ei=CB-footer_newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/investors.html?ei=CB-footer_investors",
+          "text": "Investor centre"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info.html?ei=CB-footer_ImportantDocs",
+          "text": "Important documents"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/policies-and-practices/banking-code-of-practice.html?ei=CB-footer_codeofpractice",
+          "text": "Banking Code of Practice"
+        },
+        {
+          "url": "https://www.commbank.com.au/important-info/cookies.html?ei=CB-footer_cookies",
+          "text": "Cookies policy"
+        },
+        {
+          "url": "https://www.commbank.com.au/support/privacy.html?ei=CB-footer_privacy",
+          "text": "Privacy statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/performance-reporting.html#social",
+          "text": "Modern Slavery Statement"
+        },
+        {
+          "url": "https://www.commbank.com.au/about-us/opportunity-initiatives/opportunity-from-community/acknowledgement-of-country.html?ei=footer_aoc",
+          "text": "Traditional Owners"
+        },
+        {
+          "url": "https://www.commbank.com.au/",
+          "text": "Commonwealth Bank"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "cba",
+          "datacentre": "wd3",
+          "site": "CommBank_Careers",
+          "source_link": "https://cba.wd3.myworkdayjobs.com/CommBank_Careers?locationCountry=c4f78be1a8f14da0ab49ce1162348a5e"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.commbank.com.au/about-us/careers/india.html?ei=india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "CommBank India",
+      "evidence": "evidence/d4a99adebd760a494ac5.html.gz",
+      "sha256": "508dab0f318cd1a6fef9c1ac624e4898df37cc2ebc010865c5fb9db7c43d475a"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

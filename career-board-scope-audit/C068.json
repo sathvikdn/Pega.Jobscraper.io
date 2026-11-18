@@ -1,0 +1,153 @@
+{
+  "id": "C068",
+  "company": {
+    "name": "Daimler Truck",
+    "aliases": [
+      "Daimler Truck Innovation Center India",
+      "DTICI"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+    "portals": [
+      {
+        "kind": "beesite",
+        "api": "https://global-jobboard-api-jobsearch.daimlertruck.com/search/",
+        "channel": "12",
+        "state": "candidate",
+        "scope": "global",
+        "note": "jobsearch.daimlertruck.com is a BeeSite board (linked from the Bengaluru location page); the API address comes from the earlier scanner and has not been re-checked"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+      "checked_at": "2026-11-15T23:49:51.645905+00:00",
+      "links": [
+        {
+          "url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result#skip-to-main-heading",
+          "text": "Zum Inhalt"
+        },
+        {
+          "url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result#skip-to-mainnav-heading",
+          "text": "Zur Navigation"
+        },
+        {
+          "url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result&restoreLastSearch=1&language=2",
+          "text": "En"
+        },
+        {
+          "url": "https://www.daimlertruck.com",
+          "text": ""
+        },
+        {
+          "url": "https://www.daimlertruck.com/karriere",
+          "text": "Karriere"
+        },
+        {
+          "url": "https://www.daimlertruck.com/karriere/berufserfahrene",
+          "text": "Berufserfahrene"
+        },
+        {
+          "url": "https://www.daimlertruck.com/karriere/studierende-absolventen",
+          "text": "Studierende & Absolventen"
+        },
+        {
+          "url": "https://www.daimlertruck.com/karriere/schueler",
+          "text": "Schüler"
+        },
+        {
+          "url": "https://www.daimlertruck.com/karriere/wer-wir-sind",
+          "text": "Wer wir sind"
+        },
+        {
+          "url": "https://www.daimlertruck.com/karriere/benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+          "text": "Jobs (aktuell)"
+        },
+        {
+          "url": "https://jobsearch.daimlertruck.com/index.php?ac=jobabo",
+          "text": "Job Abo"
+        },
+        {
+          "url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result#skip-to-search-result-heading",
+          "text": "Zum Suchergebnis"
+        },
+        {
+          "url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result#skip-to-search-result-heading",
+          "text": "Zum Suchergebnis"
+        },
+        {
+          "url": "https://www.facebook.com/sharer/sharer.php?u=ZZZZZ_JS_LINK_TO_SHARE_ZZZZZ",
+          "text": "Teilen über Facebook"
+        },
+        {
+          "url": "https://twitter.com/share?url=ZZZZZ_JS_LINK_TO_SHARE_ZZZZZ",
+          "text": "Teilen über Twitter"
+        },
+        {
+          "url": "https://www.linkedin.com/shareArticle?mini=true&url=ZZZZZ_JS_LINK_TO_SHARE_ZZZZZ&title=ZZZZZ_JS_JOBAD_TITLE_ENCODED_ZZZZZ",
+          "text": "Teilen über LinkedIn"
+        },
+        {
+          "url": "https://www.daimlertruck.com/kontakt",
+          "text": "Kontakt"
+        },
+        {
+          "url": "https://www.daimlertruck.com/anbieter-rechtliche-hinweise",
+          "text": "Anbieter & Rechtliche Hinweise"
+        },
+        {
+          "url": "https://www.daimlertruck.com/datenschutz",
+          "text": "Datenschutz & Cookies"
+        },
+        {
+          "url": "https://www.freightlinertrucks.com",
+          "text": ""
+        },
+        {
+          "url": "https://thomasbuiltbuses.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.westernstartrucks.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.daimlertruck.com/mercedes-benz-websites",
+          "text": ""
+        },
+        {
+          "url": "https://www.bharatbenz.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.setra-bus.com/de_DE/home.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/daimlertruckcareer",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/daimlertruckcareer/",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://jobsearch.daimlertruck.com/index.php?ac=search_result",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Unsere Stellenangebote | Karriereportal | Daimler Truck AG",
+      "evidence": "evidence/d8dcabc6604e983a5579.html.gz",
+      "sha256": "093d61905edad5e3faf918dd3af4b72264619cb8c38fe0d0d50fab7930976ecc"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

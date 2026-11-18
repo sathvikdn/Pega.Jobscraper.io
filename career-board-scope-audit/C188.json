@@ -1,0 +1,73 @@
+{
+  "id": "C188",
+  "company": {
+    "name": "Proximus",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0",
+    "portals": [
+      {
+        "kind": "phenom",
+        "host": "jobs.proximus.com",
+        "locale_path": "be/en",
+        "state": "candidate",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0",
+      "checked_at": "2026-11-15T23:50:53.984607+00:00",
+      "links": [
+        {
+          "url": "https://jobs.proximus.com/be/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.proximus.com/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.proximus.com/be/en/emailpersonalinfo",
+          "text": "Personal Information"
+        },
+        {
+          "url": "https://jobs.proximus.com/be/en/{oneTrust}",
+          "text": "Career Site Cookie Settings"
+        },
+        {
+          "url": "https://jobs.proximus.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/WeAreProximus",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/ProximusGroup",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/proximus",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/proximusgroup/",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://jobs.proximus.com/be/en/search-results?keywords=pega&from=0",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "pega job openings at Proximus",
+      "evidence": "evidence/6f237926d05a5c8aab8e.html.gz",
+      "sha256": "11585e30a464230643c5a7ce1c47b4271147996a655eb50f1baa29453ce4dd8a"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

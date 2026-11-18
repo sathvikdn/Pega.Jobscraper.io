@@ -1,0 +1,3317 @@
+{
+  "id": "C032",
+  "company": {
+    "name": "Boeing",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.boeing.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "boeing",
+        "datacentre": "wd1",
+        "site": "EXTERNAL_CAREERS",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.boeing.com",
+      "checked_at": "2026-11-15T23:49:24.502128+00:00",
+      "links": [
+        {
+          "url": "https://jobs.boeing.com#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://jobs.boeing.com/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "All Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Washington Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "South Carolina Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": "Business"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Data Science and Analytics"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Veteran Opportunities"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": "Learn more about engineering"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "Learn more about manufacturing"
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Washington manufacturing jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "South Carolina manufacturing jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": "Learn more about business"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Learn more about cybersecurity"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Learn more about data science and analytics"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Learn more about information technology"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Learn more about veteran opportunities"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "Learn more about U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/working-here",
+          "text": "Working Here"
+        },
+        {
+          "url": "https://jobs.boeing.com/benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.boeing.com/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://jobs.boeing.com/entry-level",
+          "text": "Entry-level"
+        },
+        {
+          "url": "https://jobs.boeing.com/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/team-boeing-stories",
+          "text": "#TeamBoeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "Fraud alert"
+        },
+        {
+          "url": "https://jobs.boeing.com/saved-jobs",
+          "text": "0 Saved Jobs"
+        },
+        {
+          "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "Find U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": "Learn more about engineering"
+        },
+        {
+          "url": "https://jobs.boeing.com/category/engineering-jobs/185/11125/1",
+          "text": "See Engineering Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "Learn more about manufacturing"
+        },
+        {
+          "url": "https://jobs.boeing.com/category/manufacturing-jobs/185/2635/1",
+          "text": "See Manufacturing Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": "Learn more about business"
+        },
+        {
+          "url": "https://jobs.boeing.com/category/business-jobs/185-18469/11126/1",
+          "text": "See Business Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Learn more about cybersecurity"
+        },
+        {
+          "url": "https://jobs.boeing.com/category/cybersecurity-jobs/185-18469/4744/1",
+          "text": "See Cybersecurity Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Learn more about data science and analytics"
+        },
+        {
+          "url": "https://jobs.boeing.com/category/data-science-and-analytics-jobs/185-18469/18389/1",
+          "text": "See Data Science and Analytics Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Learn more about information technology"
+        },
+        {
+          "url": "https://jobs.boeing.com/category/information-technology-jobs/185/2630/1",
+          "text": "See Information Technology Jobs"
+        },
+        {
+          "url": "https://www.boeing.com/innovation/sustainability",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://jobs.boeing.com/security-clearance-jobs",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-missouri",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.boeing.com/principles/environment/index.page",
+          "text": "Our Environment"
+        },
+        {
+          "url": "https://jobs.boeing.com/#career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://www.boeing.com/principles/community-engagement.page",
+          "text": "Community Engagement"
+        },
+        {
+          "url": "https://www.boeing.com/innovation/",
+          "text": "Innovation is in our DNA"
+        },
+        {
+          "url": "https://boeing.avature.net/skillbridge",
+          "text": "Boeing Career SkillBridge Program"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=HvxfarP5ENY",
+          "text": "Shaping Tomorrow's Innovations"
+        },
+        {
+          "url": "https://youtu.be/JbMV9smabrI",
+          "text": "Tresha, Chief Engineer"
+        },
+        {
+          "url": "https://youtu.be/zKmT5TohI6A",
+          "text": "Kariza, Composite Research Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/ERP",
+          "text": "Boeing's Employee Referral Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Christina",
+          "text": "‘Understand the challenges to see the opportunities’"
+        },
+        {
+          "url": "https://boeing.avature.net/mscap",
+          "text": "Military Spouse Career Accelerator Pilot Program"
+        },
+        {
+          "url": "https://www.boeing.co.uk/working-at-boeing/graduates-apprentices-internships",
+          "text": "Graduates, apprentices and internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/building-leaders",
+          "text": "Get your degree on us"
+        },
+        {
+          "url": "https://app.oplign.com/Account/LaunchKiosk5EyesCAN?SelectedCompany=2&Mode=84d5c458-a369-4786-b1a3-0ed15877ced2",
+          "text": "Translate your military experience"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Jennifer-Boeing",
+          "text": "‘I was encouraged to get out of my comfort zone’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Laura",
+          "text": "‘We’re solving the world’s hardest problems’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rodney",
+          "text": "'People are here to learn and grow’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-KC",
+          "text": "An engineer's career takes flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Suellen",
+          "text": "'I leaped into the unknown'"
+        },
+        {
+          "url": "https://jobs.boeing.com/BTAP",
+          "text": "Boeing Technical Apprenticeship Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Dr-Sinclair",
+          "text": "'Speaking up can save lives'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Romina",
+          "text": "Giving Back to the Country She Loves"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-emily-flight-test-engineer",
+          "text": "“You can have five careers at Boeing.”"
+        },
+        {
+          "url": "https://jobs.boeing.com/TMCF",
+          "text": "Thurgood Marshall College Fund"
+        },
+        {
+          "url": "https://jobs.boeing.com/Improvement-through-education-is-a-two-way-street-for-one-Italian-engineer",
+          "text": "Continuous Improvement: Meet Enrica, Industrial Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Tony-Crutchfield-Is-Leading-By-Example",
+          "text": "Leading by Example: Meet Tony, Vice President of Army Systems"
+        },
+        {
+          "url": "https://jobs.boeing.com/angelie-vincent-product-development-engineer-shares-journey-with-autism",
+          "text": "Angelie Vincent, Product Development Engineer, Recounts Her Journey With Autism"
+        },
+        {
+          "url": "https://jobs.boeing.com/Nathan-9to5",
+          "text": "Meet Nathan: Phantom Works Operations Analyst"
+        },
+        {
+          "url": "https://jobs.boeing.com/accommodations",
+          "text": "Accessibility Accommodations"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Lee",
+          "text": "It’s No Ordinary 9 to 5 For Manufacturing Engineer Lee"
+        },
+        {
+          "url": "https://jobs.boeing.com/building-leaders",
+          "text": "We never stop growing"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Danielle-Ankita",
+          "text": "'What are your qualifications?'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Cybersecurity-guard-meet-a-product-security-engineer",
+          "text": "Cyber Security Guard: Meet Anna Guthrie, Product Security Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Aslihan",
+          "text": "Unlock the secret to conquering fear"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Chad",
+          "text": "“There’s no better place to explore new roles and opportunities than Boeing.”"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Tresha",
+          "text": "‘When you feel like the professor, it’s time to be the student again’"
+        },
+        {
+          "url": "https://jobs.boeing.com/oSTEM",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Thomas",
+          "text": "'I feel a part of the Boeing family'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Ken-Li",
+          "text": "‘I’m inspired by the belief that we can always improve’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Suba-Iyer",
+          "text": "Meet Suba, a Space Launch Systems Leader who Broke Barriers"
+        },
+        {
+          "url": "https://jobs.boeing.com/interns-to-innovators-space-launch-systems-engineers-blaze-paths-to-success",
+          "text": "From Interns to Innovators: Systems Engineers Blaze Paths to Success"
+        },
+        {
+          "url": "https://jobs.boeing.com/Sanh-Ha-flight-engineer-who-is-deaf-adapts-and-excels",
+          "text": "Meet Sanh, 777X Design Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/From-Making-Soap-to-Making-a-Difference-Meet-Oscar-Johnson",
+          "text": "From Making Soap to Making a Difference: Meet Oscar Johnson"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Bo",
+          "text": "Meet Bo, E-7A Wedgetail Systems Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "Recruitment Fraud Alert"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Nelson-Akwari",
+          "text": "From soccer pro to Boeing engineer and leader"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Susana",
+          "text": "Keeping the World Moving"
+        },
+        {
+          "url": "https://jobs.boeing.com/SHPE",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Clocking-In-How-studying-several-hours-a-week-changed-one-employee’s-life",
+          "text": "Clocking In: How 7 Hours a Week Changed Jesus’ Life"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Alex-Campos",
+          "text": "Three Keys to Mission Success"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kristin-Innes",
+          "text": "Building a Family On Their Terms"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Jimmy-M",
+          "text": "Not Your Ordinary 9 to 5"
+        },
+        {
+          "url": "https://jobs.boeing.com/debra-stacia-team-boeing",
+          "text": "‘If you do right, right will follow you’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Defense-Leader-Inspires-Native-American-Students-with-STEM",
+          "text": "Meet KJ"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-TyQuish",
+          "text": "'It's hard to describe the thrill of it'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kyle-Weiskircher",
+          "text": "An Engineer's Creative Edge Helps Customers Chart Their Course"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rakesh",
+          "text": "It's a learner's paradise: Meet Rakesh Nanda"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Sandra",
+          "text": "The Best Call That I've Made"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Sarah-W",
+          "text": "Automation is the Future"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Satyaki",
+          "text": "Meet Satyaki, Helicopter Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Stephanie-Y",
+          "text": "‘I gained a family of leaders’"
+        },
+        {
+          "url": "https://jobs.boeing.com/UK-EOEStatement",
+          "text": "UK Equal Opportunity Statement"
+        },
+        {
+          "url": "https://jobs.boeing.com/NON-US-EOEStatement",
+          "text": "Non US EOE Statement"
+        },
+        {
+          "url": "https://jobs.boeing.com/virtual-interview-tips",
+          "text": "5 Tips for Acing Your Virtual Interview"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Antara",
+          "text": "'Never stop learning'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Abbey-Carlson",
+          "text": "Meet Abbey Carlson: Former Intern Turned Space and Launch Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Francis",
+          "text": "Meet Francis: Inventor Strives to Make Space Safer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Hana",
+          "text": "‘Engineering reaches every industry; it’s part of everyday life’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Jae",
+          "text": "Jae’s Early Fascination With Flight Led to a Role at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Marcie-Purser",
+          "text": "A Veteran's Secret Weapon"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kimberly-S",
+          "text": "'The possibilities are endless'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Boeing-Starliner-Spacecraft-Technician",
+          "text": "Meet OB, Starliner Spacecraft Technician"
+        },
+        {
+          "url": "https://jobs.boeing.com/Kristine-Ramos-Space-Launch-Engineer",
+          "text": "Aim High: Meet Kristine, Space Launch Systems Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meetNixon",
+          "text": "‘I’m a lifelong learner’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Dama",
+          "text": "‘I don’t just translate — I bridge gaps’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Kaomi",
+          "text": "‘I’ve challenged myself to grow’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-wilton",
+          "text": "'Helping people reach their potential inspires me'"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Vadym",
+          "text": "‘I encourage others to take this opportunity!’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Pete-Kunz-Chief-Engineer",
+          "text": "'Lean into discomfort': Career Advice From a Chief Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rayni-Sivley",
+          "text": "'It may not be easy, but it will pay off': Meet Rayni Sivley"
+        },
+        {
+          "url": "https://jobs.boeing.com/V22-Team-Boeing-Story",
+          "text": "Love at First Flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-ronak",
+          "text": "The sky’s the limit"
+        },
+        {
+          "url": "https://jobs.boeing.com/NSBE",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/dr-brooks-team-boeing",
+          "text": "Excellence with Caring' is Key: Meet Dr. Nathan Brooks"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Amani",
+          "text": "AI creator changes how autonomous systems work"
+        },
+        {
+          "url": "https://jobs.boeing.com/PortlandEMT",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/sweindia",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/phantom-works-careers",
+          "text": "Explore careers with Boeing Phantom Works"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Jenna",
+          "text": "Jenna’s career path has been anything but traditional."
+        },
+        {
+          "url": "https://jobs.boeing.com/NABA2024",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/DisabilityIN",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/VirginiaTechEngineeringExpo",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/ALPFA",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/TristanCrumley",
+          "text": "Tristan Crumley | Design Engineer Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/AdrianSosa",
+          "text": "Adrian Sosa | Structures Design Engineer Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/MyaBeathley",
+          "text": "Mya Beathley | Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/EvaStrang",
+          "text": "Eva Strang | Strategy Analyst Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/ElisaRwagasanaIshimwe",
+          "text": "Elisa Rwagasana Ishimwe | Information Technology and Data Analytics Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/NiyathiGorantla",
+          "text": "Niyathi Gorantla | Sustainability Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/TMCFLeadershipInstitute",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Atira",
+          "text": "Atira Sarat | Sustainability Innovation Research Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-AdrianL",
+          "text": "Adrian Loekman | Airplane Maintenance Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Doan",
+          "text": "Đoàn Sĩ Anh | Retrofit Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/UWevents",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Dominic-B",
+          "text": "A passion for propulsion helps fuel the future of flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/security-clearance-levels-aerospace-defense-job",
+          "text": "Security clearance levels for aerospace & defense jobs explained"
+        },
+        {
+          "url": "https://jobs.boeing.com/top-industries-hiring-security-cleared-professionals",
+          "text": "High-demand jobs for people with security clearances"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq-security-clearance-jobs",
+          "text": "FAQs on applying for jobs that require a security clearance."
+        },
+        {
+          "url": "https://jobs.boeing.com/military-spouses-careers",
+          "text": "Career development for military spouses at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/application-guide",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Tori",
+          "text": "From excavating bones to building Boeing systems"
+        },
+        {
+          "url": "https://jobs.boeing.com/bpet",
+          "text": "Boeing Pre-Employment Training Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/bpet-sc",
+          "text": "Boeing Pre-Employment Training Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-job-skill-match",
+          "text": "Match your skills to aerospace manufacturing careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "Manufacturing in North Charleston"
+        },
+        {
+          "url": "https://jobs.boeing.com/bmac",
+          "text": "Boeing Manufacturing Accelerated Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Tyson",
+          "text": "Navy roots guide leader of our UK fabrication site"
+        },
+        {
+          "url": "https://jobs.boeing.com/Veterans-SkillBridge",
+          "text": "Easing the Transition of U.S. Service Members"
+        },
+        {
+          "url": "https://jobs.boeing.com/BTAP-team-boeing",
+          "text": "A clear path to a rewarding career"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Maisie",
+          "text": "Beyond the dials: Finding the feel for a test aircraft"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Zach",
+          "text": "How an apprenticeship launched a leadership journey"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Will",
+          "text": "“Boeing needs quality people who ‘give a damn’”"
+        },
+        {
+          "url": "https://jobs.boeing.com/employee-career-growth-stories",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/career-growth-faq",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/aerospace-industry-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/south-carolina-relocation-faq",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network",
+          "text": "Two Ways To Stay Connected"
+        },
+        {
+          "url": "https://jobs.boeing.com/Benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.boeing.com/working-here",
+          "text": "Working Here"
+        },
+        {
+          "url": "https://jobs.boeing.com/team-boeing-stories",
+          "text": "Inside Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "url": "https://jobs.boeing.com/events",
+          "text": "Search for Events in Your Area"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Military and Veterans"
+        },
+        {
+          "url": "https://jobs.boeing.com/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Manufacturing and Quality Roles in Seattle"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-korea",
+          "text": "Boeing in South Korea"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-india",
+          "text": "Boeing in India"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-the-uk",
+          "text": "Boeing in the UK"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-the-DC-metro",
+          "text": "Boeing in Washington, D.C."
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-missouri",
+          "text": "Boeing in Missouri"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-poland",
+          "text": "Boeing in Poland"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-oklahoma",
+          "text": "Boeing in Oklahoma"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-alabama",
+          "text": "Boeing in Alabama"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-california",
+          "text": "Boeing in California"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-brazil",
+          "text": "Boeing in Brazil"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-texas",
+          "text": "Boeing in Texas"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-japan",
+          "text": "Boeing in Japan"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-arizona",
+          "text": "Boeing in Arizona"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-south-carolina",
+          "text": "Boeing in South Carolina"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-washington",
+          "text": "Boeing in Washington State"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Cybersecurity Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/electronic-and-electrical-engineering-careers",
+          "text": "Electronic and Electrical Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/finance-careers",
+          "text": "Finance Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/flight-engineering-careers",
+          "text": "Flight Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/it-internships",
+          "text": "Information Technology Internships at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/electrical-engineering-internships",
+          "text": "Electrical Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/human-resources-careers",
+          "text": "Human Resources Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/industrial-engineering-careers",
+          "text": "Industrial Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/test-engineering-careers",
+          "text": "Test and Evaluation Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/software-engineering-careers",
+          "text": "Software Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/supply-chain-management-careers",
+          "text": "Supply Chain Management Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/systems-engineering-careers",
+          "text": "Systems Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-operations-internships",
+          "text": "Business Operations Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/safety-and-airworthiness",
+          "text": "Safety & Airworthiness"
+        },
+        {
+          "url": "https://jobs.boeing.com/human-resources-internships",
+          "text": "Human Resources Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/supply-chain-internships",
+          "text": "Supply Chain Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Data Science and Analytics Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Information Technology Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/materials-process-and-physics-careers",
+          "text": "Materials, Process and Physics Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/mechanical-and-structural-engineering-careers",
+          "text": "Mechanical and Structural Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-security-engineering-careers",
+          "text": "Product Security Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/production-engineering-careers",
+          "text": "Production Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "Manufacturing Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/specialty-engineering-internships",
+          "text": "Specialty Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/software-engineering-internships",
+          "text": "Software Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/systems-engineering-internships",
+          "text": "Systems Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/test-and-evaluation-internships",
+          "text": "Test & Evaluation Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/quality-engineering-internships",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/quality-specialist-internships",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/global-real-estate-and-facilities-internships",
+          "text": "Global Real Estate and Facilities Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/finance-internships",
+          "text": "Finance Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/flight-engineering-internships",
+          "text": "Flight Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/industrial-engineering-internships",
+          "text": "Industrial Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/materials-process-physics-engineering-internships",
+          "text": "Materials, Process & Physics Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/mechanical-structural-internships",
+          "text": "Mechanical & Structural Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/global-real-estate-and-facilities-engineering-internships",
+          "text": "Facilities and Asset Management Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-ukraine",
+          "text": "Boeing in Ukraine"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-australia",
+          "text": "Boeing in Australia"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-support-engineering-internships",
+          "text": "Product Support Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-security-engineering-internships",
+          "text": "Product Security Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/production-engineering-internships",
+          "text": "Production Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/safety-airworthiness-engineering-internships",
+          "text": "Safety & Airworthiness Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/entry-level",
+          "text": "Entry-Level Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-germany",
+          "text": "Boeing in Germany"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-andrew",
+          "text": "Shop‑floor wisdom, family support fuels new Boeing engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-voices-career-growth",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/job/el-segundo/associate-or-mid-level-ground-systems-engineer-for-milsatcom-program/185/100143319696",
+          "text": "Associate or Mid-level Ground Systems Engineer for MILSATCOM Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/el-segundo/dsp-comm-engineer-associate-or-mid-level/185/100835575344",
+          "text": "DSP Comm Engineer (Associate or Mid-level)"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/el-segundo/lead-or-senior-satellite-systems-ground-systems-engineer/185/97892516672",
+          "text": "Lead or Senior Satellite Systems Ground Systems Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/search-jobs",
+          "text": "View all of our available opportunities"
+        },
+        {
+          "url": "https://jobs.boeing.com/search-jobs",
+          "text": "View all of our available opportunities"
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network#tab-panel-job-alerts",
+          "text": "Sign up for Job Alerts"
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network",
+          "text": "Sign up for our Talent Community"
+        },
+        {
+          "url": "https://boeing.avature.net/MVP",
+          "text": "Sign up for our Veteran Talent Community"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "protect yourself"
+        },
+        {
+          "url": "https://jobs.boeing.com/NON-US-EOEStatement",
+          "text": "individuals outside the U.S."
+        },
+        {
+          "url": "https://jobs.boeing.com/UK-EOEStatement",
+          "text": "residents of the UK"
+        },
+        {
+          "url": "https://jobs.boeing.com/accommodations",
+          "text": "Request an accommodation for your application"
+        },
+        {
+          "url": "https://jobs.boeing.com/en/application-guide",
+          "text": "visit our application guide"
+        },
+        {
+          "url": "https://www.boeing.com/careers/privacy-statement.page",
+          "text": "Applicant Privacy"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/185/v2_1/docs/EEOC_KnowYourRights_2022.pdf",
+          "text": "Know Your Rights: Workplace Discrimination is Illegal (PDF)"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/EVerifyParticipationPoster.pdf",
+          "text": "Boeing participates in E-Verify. Details in English and Spanish (PDF)"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/IER_RightToWorkPoster%20Eng_Es.pdf",
+          "text": "Right to Work Statement in English and Spanish (PDF)."
+        },
+        {
+          "url": "https://www.facebook.com/BoeingCareers",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/boeing",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.twitter.com/Boeing",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/Boeing",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://www.instagram.com/boeing",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://jobs.boeing.com/sitemap",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.boeing.com/site-terms.page",
+          "text": "Site Terms"
+        },
+        {
+          "url": "https://www.boeing.com/privacy-and-cookie-policy.page",
+          "text": "Privacy & Cookie Statement"
+        },
+        {
+          "url": "https://www.boeing.com/privacy-and-cookie-policy.page#IBA",
+          "text": "Ad Choices"
+        },
+        {
+          "url": "https://www.boeing.com/",
+          "text": "Boeing.com"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "boeing",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREERS",
+          "source_link": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://jobs.boeing.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Explore new horizons with Boeing",
+      "evidence": "evidence/dcc98cfe4067f5c90c45.html.gz",
+      "sha256": "b22d2b013f167d8227d3a5e776d8e08c30d85ef521163cd992f2ec2ff380c7f7"
+    },
+    {
+      "url": "https://jobs.boeing.com/sweindia",
+      "checked_at": "2026-11-15T23:49:25.445477+00:00",
+      "links": [
+        {
+          "url": "https://jobs.boeing.com/sweindia#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://jobs.boeing.com/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "All Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Washington Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "South Carolina Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": "Business"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Data Science and Analytics"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Veteran Opportunities"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": "Learn more about engineering"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "Learn more about manufacturing"
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Washington manufacturing jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "South Carolina manufacturing jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": "Learn more about business"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Learn more about cybersecurity"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Learn more about data science and analytics"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Learn more about information technology"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Learn more about veteran opportunities"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "Learn more about U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/working-here",
+          "text": "Working Here"
+        },
+        {
+          "url": "https://jobs.boeing.com/benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.boeing.com/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://jobs.boeing.com/entry-level",
+          "text": "Entry-level"
+        },
+        {
+          "url": "https://jobs.boeing.com/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/team-boeing-stories",
+          "text": "#TeamBoeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "Fraud alert"
+        },
+        {
+          "url": "https://jobs.boeing.com/saved-jobs",
+          "text": "0 Saved Jobs"
+        },
+        {
+          "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "Find U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/electrical-engineering-manager/185/63469181456",
+          "text": "Electrical Engineering Manager"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/lead-software-engineer/185/63473768832",
+          "text": "Lead Software Engineer Avionics"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/software-embedded-engineering-manager/185/63459688592",
+          "text": "Software Engineering Embedded Manager"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/java-full-stack-developer/185/63459688608",
+          "text": "Software Engineer - Java Full Stack Developer"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/electronics-product-asic-fpga-verification-manager/185/63469183824",
+          "text": "Electronics Product ASIC FPGA Verification Manager"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/associate-software-engineer-fms/185/63459688624",
+          "text": "Software Engineer - C++"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/experienced-electronics-systems-design-and-analysis-engineer/185/63473769152",
+          "text": "System Design and Analysis Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/java-full-stack-developer/185/63459688608",
+          "text": "Electronics Product Development Manager"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/engineering-manager-electronic-product-sustenance-and-cad/185/63469183168",
+          "text": "Engineering Manager - Electronic Product Sustenance and CAD"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/electronics-product-development-manager/185/63473769248",
+          "text": "Electronics Product (UAS) Development Manager"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/airframe-service-engineering-manager/185/63469182240",
+          "text": "Airframe Service Engineering Manager"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/bengaluru/experienced-project-management-specialist/185/63469182928",
+          "text": "Experienced Project Management Specialist"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/chennai/experienced-structural-and-payload-design-engineer/185/60453049136",
+          "text": "Structural Analysis & Payloads Design Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/job/chennai/senior-manager-production-engineering/185/64056936816",
+          "text": "Senior Manager - Production Engineering"
+        },
+        {
+          "url": "https://www.boeing.com/principles/environment/index.page",
+          "text": "Our Environment"
+        },
+        {
+          "url": "https://jobs.boeing.com/#career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://www.boeing.com/principles/community-engagement.page",
+          "text": "Community Engagement"
+        },
+        {
+          "url": "https://www.boeing.com/innovation/",
+          "text": "Innovation is in our DNA"
+        },
+        {
+          "url": "https://boeing.avature.net/skillbridge",
+          "text": "Boeing Career SkillBridge Program"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=HvxfarP5ENY",
+          "text": "Shaping Tomorrow's Innovations"
+        },
+        {
+          "url": "https://youtu.be/JbMV9smabrI",
+          "text": "Tresha, Chief Engineer"
+        },
+        {
+          "url": "https://youtu.be/zKmT5TohI6A",
+          "text": "Kariza, Composite Research Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/ERP",
+          "text": "Boeing's Employee Referral Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Christina",
+          "text": "‘Understand the challenges to see the opportunities’"
+        },
+        {
+          "url": "https://boeing.avature.net/mscap",
+          "text": "Military Spouse Career Accelerator Pilot Program"
+        },
+        {
+          "url": "https://www.boeing.co.uk/working-at-boeing/graduates-apprentices-internships",
+          "text": "Graduates, apprentices and internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/building-leaders",
+          "text": "Get your degree on us"
+        },
+        {
+          "url": "https://app.oplign.com/Account/LaunchKiosk5EyesCAN?SelectedCompany=2&Mode=84d5c458-a369-4786-b1a3-0ed15877ced2",
+          "text": "Translate your military experience"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Jennifer-Boeing",
+          "text": "‘I was encouraged to get out of my comfort zone’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Laura",
+          "text": "‘We’re solving the world’s hardest problems’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rodney",
+          "text": "'People are here to learn and grow’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-KC",
+          "text": "An engineer's career takes flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Suellen",
+          "text": "'I leaped into the unknown'"
+        },
+        {
+          "url": "https://jobs.boeing.com/BTAP",
+          "text": "Boeing Technical Apprenticeship Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Dr-Sinclair",
+          "text": "'Speaking up can save lives'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Romina",
+          "text": "Giving Back to the Country She Loves"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-emily-flight-test-engineer",
+          "text": "“You can have five careers at Boeing.”"
+        },
+        {
+          "url": "https://jobs.boeing.com/TMCF",
+          "text": "Thurgood Marshall College Fund"
+        },
+        {
+          "url": "https://jobs.boeing.com/Improvement-through-education-is-a-two-way-street-for-one-Italian-engineer",
+          "text": "Continuous Improvement: Meet Enrica, Industrial Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Tony-Crutchfield-Is-Leading-By-Example",
+          "text": "Leading by Example: Meet Tony, Vice President of Army Systems"
+        },
+        {
+          "url": "https://jobs.boeing.com/angelie-vincent-product-development-engineer-shares-journey-with-autism",
+          "text": "Angelie Vincent, Product Development Engineer, Recounts Her Journey With Autism"
+        },
+        {
+          "url": "https://jobs.boeing.com/Nathan-9to5",
+          "text": "Meet Nathan: Phantom Works Operations Analyst"
+        },
+        {
+          "url": "https://jobs.boeing.com/accommodations",
+          "text": "Accessibility Accommodations"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Lee",
+          "text": "It’s No Ordinary 9 to 5 For Manufacturing Engineer Lee"
+        },
+        {
+          "url": "https://jobs.boeing.com/building-leaders",
+          "text": "We never stop growing"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Danielle-Ankita",
+          "text": "'What are your qualifications?'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Cybersecurity-guard-meet-a-product-security-engineer",
+          "text": "Cyber Security Guard: Meet Anna Guthrie, Product Security Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Aslihan",
+          "text": "Unlock the secret to conquering fear"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Chad",
+          "text": "“There’s no better place to explore new roles and opportunities than Boeing.”"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Tresha",
+          "text": "‘When you feel like the professor, it’s time to be the student again’"
+        },
+        {
+          "url": "https://jobs.boeing.com/oSTEM",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Thomas",
+          "text": "'I feel a part of the Boeing family'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Ken-Li",
+          "text": "‘I’m inspired by the belief that we can always improve’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Suba-Iyer",
+          "text": "Meet Suba, a Space Launch Systems Leader who Broke Barriers"
+        },
+        {
+          "url": "https://jobs.boeing.com/interns-to-innovators-space-launch-systems-engineers-blaze-paths-to-success",
+          "text": "From Interns to Innovators: Systems Engineers Blaze Paths to Success"
+        },
+        {
+          "url": "https://jobs.boeing.com/Sanh-Ha-flight-engineer-who-is-deaf-adapts-and-excels",
+          "text": "Meet Sanh, 777X Design Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/From-Making-Soap-to-Making-a-Difference-Meet-Oscar-Johnson",
+          "text": "From Making Soap to Making a Difference: Meet Oscar Johnson"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Bo",
+          "text": "Meet Bo, E-7A Wedgetail Systems Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "Recruitment Fraud Alert"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Nelson-Akwari",
+          "text": "From soccer pro to Boeing engineer and leader"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Susana",
+          "text": "Keeping the World Moving"
+        },
+        {
+          "url": "https://jobs.boeing.com/SHPE",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Clocking-In-How-studying-several-hours-a-week-changed-one-employee’s-life",
+          "text": "Clocking In: How 7 Hours a Week Changed Jesus’ Life"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Alex-Campos",
+          "text": "Three Keys to Mission Success"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kristin-Innes",
+          "text": "Building a Family On Their Terms"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Jimmy-M",
+          "text": "Not Your Ordinary 9 to 5"
+        },
+        {
+          "url": "https://jobs.boeing.com/debra-stacia-team-boeing",
+          "text": "‘If you do right, right will follow you’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Defense-Leader-Inspires-Native-American-Students-with-STEM",
+          "text": "Meet KJ"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-TyQuish",
+          "text": "'It's hard to describe the thrill of it'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kyle-Weiskircher",
+          "text": "An Engineer's Creative Edge Helps Customers Chart Their Course"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rakesh",
+          "text": "It's a learner's paradise: Meet Rakesh Nanda"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Sandra",
+          "text": "The Best Call That I've Made"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Sarah-W",
+          "text": "Automation is the Future"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Satyaki",
+          "text": "Meet Satyaki, Helicopter Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Stephanie-Y",
+          "text": "‘I gained a family of leaders’"
+        },
+        {
+          "url": "https://jobs.boeing.com/UK-EOEStatement",
+          "text": "UK Equal Opportunity Statement"
+        },
+        {
+          "url": "https://jobs.boeing.com/NON-US-EOEStatement",
+          "text": "Non US EOE Statement"
+        },
+        {
+          "url": "https://jobs.boeing.com/virtual-interview-tips",
+          "text": "5 Tips for Acing Your Virtual Interview"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Antara",
+          "text": "'Never stop learning'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Abbey-Carlson",
+          "text": "Meet Abbey Carlson: Former Intern Turned Space and Launch Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Francis",
+          "text": "Meet Francis: Inventor Strives to Make Space Safer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Hana",
+          "text": "‘Engineering reaches every industry; it’s part of everyday life’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Jae",
+          "text": "Jae’s Early Fascination With Flight Led to a Role at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Marcie-Purser",
+          "text": "A Veteran's Secret Weapon"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kimberly-S",
+          "text": "'The possibilities are endless'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Boeing-Starliner-Spacecraft-Technician",
+          "text": "Meet OB, Starliner Spacecraft Technician"
+        },
+        {
+          "url": "https://jobs.boeing.com/Kristine-Ramos-Space-Launch-Engineer",
+          "text": "Aim High: Meet Kristine, Space Launch Systems Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meetNixon",
+          "text": "‘I’m a lifelong learner’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Dama",
+          "text": "‘I don’t just translate — I bridge gaps’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Kaomi",
+          "text": "‘I’ve challenged myself to grow’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-wilton",
+          "text": "'Helping people reach their potential inspires me'"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Vadym",
+          "text": "‘I encourage others to take this opportunity!’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Pete-Kunz-Chief-Engineer",
+          "text": "'Lean into discomfort': Career Advice From a Chief Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rayni-Sivley",
+          "text": "'It may not be easy, but it will pay off': Meet Rayni Sivley"
+        },
+        {
+          "url": "https://jobs.boeing.com/V22-Team-Boeing-Story",
+          "text": "Love at First Flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-ronak",
+          "text": "The sky’s the limit"
+        },
+        {
+          "url": "https://jobs.boeing.com/NSBE",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/dr-brooks-team-boeing",
+          "text": "Excellence with Caring' is Key: Meet Dr. Nathan Brooks"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Amani",
+          "text": "AI creator changes how autonomous systems work"
+        },
+        {
+          "url": "https://jobs.boeing.com/PortlandEMT",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/phantom-works-careers",
+          "text": "Explore careers with Boeing Phantom Works"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Jenna",
+          "text": "Jenna’s career path has been anything but traditional."
+        },
+        {
+          "url": "https://jobs.boeing.com/NABA2024",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/DisabilityIN",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/VirginiaTechEngineeringExpo",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/ALPFA",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/TristanCrumley",
+          "text": "Tristan Crumley | Design Engineer Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/AdrianSosa",
+          "text": "Adrian Sosa | Structures Design Engineer Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/MyaBeathley",
+          "text": "Mya Beathley | Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/EvaStrang",
+          "text": "Eva Strang | Strategy Analyst Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/ElisaRwagasanaIshimwe",
+          "text": "Elisa Rwagasana Ishimwe | Information Technology and Data Analytics Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/NiyathiGorantla",
+          "text": "Niyathi Gorantla | Sustainability Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/TMCFLeadershipInstitute",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Atira",
+          "text": "Atira Sarat | Sustainability Innovation Research Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-AdrianL",
+          "text": "Adrian Loekman | Airplane Maintenance Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Doan",
+          "text": "Đoàn Sĩ Anh | Retrofit Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/UWevents",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Dominic-B",
+          "text": "A passion for propulsion helps fuel the future of flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/security-clearance-levels-aerospace-defense-job",
+          "text": "Security clearance levels for aerospace & defense jobs explained"
+        },
+        {
+          "url": "https://jobs.boeing.com/top-industries-hiring-security-cleared-professionals",
+          "text": "High-demand jobs for people with security clearances"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq-security-clearance-jobs",
+          "text": "FAQs on applying for jobs that require a security clearance."
+        },
+        {
+          "url": "https://jobs.boeing.com/military-spouses-careers",
+          "text": "Career development for military spouses at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/application-guide",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Tori",
+          "text": "From excavating bones to building Boeing systems"
+        },
+        {
+          "url": "https://jobs.boeing.com/bpet",
+          "text": "Boeing Pre-Employment Training Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/bpet-sc",
+          "text": "Boeing Pre-Employment Training Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-job-skill-match",
+          "text": "Match your skills to aerospace manufacturing careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "Manufacturing in North Charleston"
+        },
+        {
+          "url": "https://jobs.boeing.com/bmac",
+          "text": "Boeing Manufacturing Accelerated Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Tyson",
+          "text": "Navy roots guide leader of our UK fabrication site"
+        },
+        {
+          "url": "https://jobs.boeing.com/Veterans-SkillBridge",
+          "text": "Easing the Transition of U.S. Service Members"
+        },
+        {
+          "url": "https://jobs.boeing.com/BTAP-team-boeing",
+          "text": "A clear path to a rewarding career"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Maisie",
+          "text": "Beyond the dials: Finding the feel for a test aircraft"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Zach",
+          "text": "How an apprenticeship launched a leadership journey"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Will",
+          "text": "“Boeing needs quality people who ‘give a damn’”"
+        },
+        {
+          "url": "https://jobs.boeing.com/employee-career-growth-stories",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/career-growth-faq",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/aerospace-industry-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/south-carolina-relocation-faq",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network",
+          "text": "Two Ways To Stay Connected"
+        },
+        {
+          "url": "https://jobs.boeing.com/Benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.boeing.com/working-here",
+          "text": "Working Here"
+        },
+        {
+          "url": "https://jobs.boeing.com/team-boeing-stories",
+          "text": "Inside Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "url": "https://jobs.boeing.com/events",
+          "text": "Search for Events in Your Area"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Military and Veterans"
+        },
+        {
+          "url": "https://jobs.boeing.com/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Manufacturing and Quality Roles in Seattle"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-korea",
+          "text": "Boeing in South Korea"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-india",
+          "text": "Boeing in India"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-the-uk",
+          "text": "Boeing in the UK"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-the-DC-metro",
+          "text": "Boeing in Washington, D.C."
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-missouri",
+          "text": "Boeing in Missouri"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-poland",
+          "text": "Boeing in Poland"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-oklahoma",
+          "text": "Boeing in Oklahoma"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-alabama",
+          "text": "Boeing in Alabama"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-california",
+          "text": "Boeing in California"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-brazil",
+          "text": "Boeing in Brazil"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-texas",
+          "text": "Boeing in Texas"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-japan",
+          "text": "Boeing in Japan"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-arizona",
+          "text": "Boeing in Arizona"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-south-carolina",
+          "text": "Boeing in South Carolina"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-washington",
+          "text": "Boeing in Washington State"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Cybersecurity Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/electronic-and-electrical-engineering-careers",
+          "text": "Electronic and Electrical Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/finance-careers",
+          "text": "Finance Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/flight-engineering-careers",
+          "text": "Flight Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/it-internships",
+          "text": "Information Technology Internships at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/electrical-engineering-internships",
+          "text": "Electrical Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/human-resources-careers",
+          "text": "Human Resources Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/industrial-engineering-careers",
+          "text": "Industrial Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/test-engineering-careers",
+          "text": "Test and Evaluation Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/software-engineering-careers",
+          "text": "Software Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/supply-chain-management-careers",
+          "text": "Supply Chain Management Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/systems-engineering-careers",
+          "text": "Systems Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-operations-internships",
+          "text": "Business Operations Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/safety-and-airworthiness",
+          "text": "Safety & Airworthiness"
+        },
+        {
+          "url": "https://jobs.boeing.com/human-resources-internships",
+          "text": "Human Resources Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/supply-chain-internships",
+          "text": "Supply Chain Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Data Science and Analytics Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Information Technology Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/materials-process-and-physics-careers",
+          "text": "Materials, Process and Physics Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/mechanical-and-structural-engineering-careers",
+          "text": "Mechanical and Structural Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-security-engineering-careers",
+          "text": "Product Security Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/production-engineering-careers",
+          "text": "Production Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "Manufacturing Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/specialty-engineering-internships",
+          "text": "Specialty Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/software-engineering-internships",
+          "text": "Software Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/systems-engineering-internships",
+          "text": "Systems Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/test-and-evaluation-internships",
+          "text": "Test & Evaluation Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/quality-engineering-internships",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/quality-specialist-internships",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/global-real-estate-and-facilities-internships",
+          "text": "Global Real Estate and Facilities Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/finance-internships",
+          "text": "Finance Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/flight-engineering-internships",
+          "text": "Flight Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/industrial-engineering-internships",
+          "text": "Industrial Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/materials-process-physics-engineering-internships",
+          "text": "Materials, Process & Physics Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/mechanical-structural-internships",
+          "text": "Mechanical & Structural Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/global-real-estate-and-facilities-engineering-internships",
+          "text": "Facilities and Asset Management Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-ukraine",
+          "text": "Boeing in Ukraine"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-australia",
+          "text": "Boeing in Australia"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-support-engineering-internships",
+          "text": "Product Support Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-security-engineering-internships",
+          "text": "Product Security Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/production-engineering-internships",
+          "text": "Production Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/safety-airworthiness-engineering-internships",
+          "text": "Safety & Airworthiness Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/entry-level",
+          "text": "Entry-Level Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-germany",
+          "text": "Boeing in Germany"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-andrew",
+          "text": "Shop‑floor wisdom, family support fuels new Boeing engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-voices-career-growth",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/search-jobs",
+          "text": "View all of our available opportunities"
+        },
+        {
+          "url": "https://jobs.boeing.com/search-jobs",
+          "text": "View all of our available opportunities"
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network#tab-panel-job-alerts",
+          "text": "Sign up for Job Alerts"
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network",
+          "text": "Sign up for our Talent Community"
+        },
+        {
+          "url": "https://boeing.avature.net/MVP",
+          "text": "Sign up for our Veteran Talent Community"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "protect yourself"
+        },
+        {
+          "url": "https://jobs.boeing.com/NON-US-EOEStatement",
+          "text": "individuals outside the U.S."
+        },
+        {
+          "url": "https://jobs.boeing.com/UK-EOEStatement",
+          "text": "residents of the UK"
+        },
+        {
+          "url": "https://jobs.boeing.com/accommodations",
+          "text": "Request an accommodation for your application"
+        },
+        {
+          "url": "https://jobs.boeing.com/en/application-guide",
+          "text": "visit our application guide"
+        },
+        {
+          "url": "https://www.boeing.com/careers/privacy-statement.page",
+          "text": "Applicant Privacy"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/185/v2_1/docs/EEOC_KnowYourRights_2022.pdf",
+          "text": "Know Your Rights: Workplace Discrimination is Illegal (PDF)"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/EVerifyParticipationPoster.pdf",
+          "text": "Boeing participates in E-Verify. Details in English and Spanish (PDF)"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/IER_RightToWorkPoster%20Eng_Es.pdf",
+          "text": "Right to Work Statement in English and Spanish (PDF)."
+        },
+        {
+          "url": "https://www.facebook.com/BoeingCareers",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/boeing",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.twitter.com/Boeing",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/Boeing",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://www.instagram.com/boeing",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://jobs.boeing.com/sitemap",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.boeing.com/site-terms.page",
+          "text": "Site Terms"
+        },
+        {
+          "url": "https://www.boeing.com/privacy-and-cookie-policy.page",
+          "text": "Privacy & Cookie Statement"
+        },
+        {
+          "url": "https://www.boeing.com/privacy-and-cookie-policy.page#IBA",
+          "text": "Ad Choices"
+        },
+        {
+          "url": "https://www.boeing.com/",
+          "text": "Boeing.com"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "boeing",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREERS",
+          "source_link": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://jobs.boeing.com/sweindia",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/a6f876092435bf92042b.html.gz",
+      "sha256": "6779f850dcc430d79ad49e2507dc779ad8a4fdafe68c9999567c34b33d37c617"
+    },
+    {
+      "url": "https://jobs.boeing.com/boeing-in-india",
+      "checked_at": "2026-11-15T23:49:26.144780+00:00",
+      "links": [
+        {
+          "url": "https://jobs.boeing.com/boeing-in-india#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://jobs.boeing.com/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "All Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Washington Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "South Carolina Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": "Business"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Data Science and Analytics"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Veteran Opportunities"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": "Learn more about engineering"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "Learn more about manufacturing"
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Washington manufacturing jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "South Carolina manufacturing jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": "Learn more about business"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Learn more about cybersecurity"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Learn more about data science and analytics"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Learn more about information technology"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Learn more about veteran opportunities"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "Learn more about U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/working-here",
+          "text": "Working Here"
+        },
+        {
+          "url": "https://jobs.boeing.com/benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.boeing.com/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://jobs.boeing.com/entry-level",
+          "text": "Entry-level"
+        },
+        {
+          "url": "https://jobs.boeing.com/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/team-boeing-stories",
+          "text": "#TeamBoeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "Fraud alert"
+        },
+        {
+          "url": "https://jobs.boeing.com/saved-jobs",
+          "text": "0 Saved Jobs"
+        },
+        {
+          "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://boeing.talentnet.community/",
+          "text": "Find U.S. Contract Jobs"
+        },
+        {
+          "url": "https://jobs.boeing.com/building-leaders",
+          "text": "generous tuition assistance and upskilling resources"
+        },
+        {
+          "url": "https://jobs.boeing.com/location/india-country-jobs/185/1269750/2",
+          "text": "Search all jobs in India"
+        },
+        {
+          "url": "https://www.boeing.com/principles/environment/index.page",
+          "text": "Our Environment"
+        },
+        {
+          "url": "https://jobs.boeing.com/#career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://www.boeing.com/principles/community-engagement.page",
+          "text": "Community Engagement"
+        },
+        {
+          "url": "https://www.boeing.com/innovation/",
+          "text": "Innovation is in our DNA"
+        },
+        {
+          "url": "https://boeing.avature.net/skillbridge",
+          "text": "Boeing Career SkillBridge Program"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=HvxfarP5ENY",
+          "text": "Shaping Tomorrow's Innovations"
+        },
+        {
+          "url": "https://youtu.be/JbMV9smabrI",
+          "text": "Tresha, Chief Engineer"
+        },
+        {
+          "url": "https://youtu.be/zKmT5TohI6A",
+          "text": "Kariza, Composite Research Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/ERP",
+          "text": "Boeing's Employee Referral Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Christina",
+          "text": "‘Understand the challenges to see the opportunities’"
+        },
+        {
+          "url": "https://boeing.avature.net/mscap",
+          "text": "Military Spouse Career Accelerator Pilot Program"
+        },
+        {
+          "url": "https://www.boeing.co.uk/working-at-boeing/graduates-apprentices-internships",
+          "text": "Graduates, apprentices and internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/building-leaders",
+          "text": "Get your degree on us"
+        },
+        {
+          "url": "https://app.oplign.com/Account/LaunchKiosk5EyesCAN?SelectedCompany=2&Mode=84d5c458-a369-4786-b1a3-0ed15877ced2",
+          "text": "Translate your military experience"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Jennifer-Boeing",
+          "text": "‘I was encouraged to get out of my comfort zone’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Laura",
+          "text": "‘We’re solving the world’s hardest problems’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rodney",
+          "text": "'People are here to learn and grow’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-KC",
+          "text": "An engineer's career takes flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Suellen",
+          "text": "'I leaped into the unknown'"
+        },
+        {
+          "url": "https://jobs.boeing.com/BTAP",
+          "text": "Boeing Technical Apprenticeship Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Dr-Sinclair",
+          "text": "'Speaking up can save lives'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Romina",
+          "text": "Giving Back to the Country She Loves"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-emily-flight-test-engineer",
+          "text": "“You can have five careers at Boeing.”"
+        },
+        {
+          "url": "https://jobs.boeing.com/TMCF",
+          "text": "Thurgood Marshall College Fund"
+        },
+        {
+          "url": "https://jobs.boeing.com/Improvement-through-education-is-a-two-way-street-for-one-Italian-engineer",
+          "text": "Continuous Improvement: Meet Enrica, Industrial Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Tony-Crutchfield-Is-Leading-By-Example",
+          "text": "Leading by Example: Meet Tony, Vice President of Army Systems"
+        },
+        {
+          "url": "https://jobs.boeing.com/angelie-vincent-product-development-engineer-shares-journey-with-autism",
+          "text": "Angelie Vincent, Product Development Engineer, Recounts Her Journey With Autism"
+        },
+        {
+          "url": "https://jobs.boeing.com/Nathan-9to5",
+          "text": "Meet Nathan: Phantom Works Operations Analyst"
+        },
+        {
+          "url": "https://jobs.boeing.com/accommodations",
+          "text": "Accessibility Accommodations"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Lee",
+          "text": "It’s No Ordinary 9 to 5 For Manufacturing Engineer Lee"
+        },
+        {
+          "url": "https://jobs.boeing.com/building-leaders",
+          "text": "We never stop growing"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Danielle-Ankita",
+          "text": "'What are your qualifications?'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Cybersecurity-guard-meet-a-product-security-engineer",
+          "text": "Cyber Security Guard: Meet Anna Guthrie, Product Security Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Aslihan",
+          "text": "Unlock the secret to conquering fear"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Chad",
+          "text": "“There’s no better place to explore new roles and opportunities than Boeing.”"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Tresha",
+          "text": "‘When you feel like the professor, it’s time to be the student again’"
+        },
+        {
+          "url": "https://jobs.boeing.com/oSTEM",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Thomas",
+          "text": "'I feel a part of the Boeing family'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Ken-Li",
+          "text": "‘I’m inspired by the belief that we can always improve’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Suba-Iyer",
+          "text": "Meet Suba, a Space Launch Systems Leader who Broke Barriers"
+        },
+        {
+          "url": "https://jobs.boeing.com/interns-to-innovators-space-launch-systems-engineers-blaze-paths-to-success",
+          "text": "From Interns to Innovators: Systems Engineers Blaze Paths to Success"
+        },
+        {
+          "url": "https://jobs.boeing.com/Sanh-Ha-flight-engineer-who-is-deaf-adapts-and-excels",
+          "text": "Meet Sanh, 777X Design Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/From-Making-Soap-to-Making-a-Difference-Meet-Oscar-Johnson",
+          "text": "From Making Soap to Making a Difference: Meet Oscar Johnson"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Bo",
+          "text": "Meet Bo, E-7A Wedgetail Systems Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "Recruitment Fraud Alert"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Nelson-Akwari",
+          "text": "From soccer pro to Boeing engineer and leader"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Susana",
+          "text": "Keeping the World Moving"
+        },
+        {
+          "url": "https://jobs.boeing.com/SHPE",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Clocking-In-How-studying-several-hours-a-week-changed-one-employee’s-life",
+          "text": "Clocking In: How 7 Hours a Week Changed Jesus’ Life"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Alex-Campos",
+          "text": "Three Keys to Mission Success"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kristin-Innes",
+          "text": "Building a Family On Their Terms"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Jimmy-M",
+          "text": "Not Your Ordinary 9 to 5"
+        },
+        {
+          "url": "https://jobs.boeing.com/debra-stacia-team-boeing",
+          "text": "‘If you do right, right will follow you’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Defense-Leader-Inspires-Native-American-Students-with-STEM",
+          "text": "Meet KJ"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-TyQuish",
+          "text": "'It's hard to describe the thrill of it'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kyle-Weiskircher",
+          "text": "An Engineer's Creative Edge Helps Customers Chart Their Course"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rakesh",
+          "text": "It's a learner's paradise: Meet Rakesh Nanda"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Sandra",
+          "text": "The Best Call That I've Made"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Sarah-W",
+          "text": "Automation is the Future"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Satyaki",
+          "text": "Meet Satyaki, Helicopter Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Stephanie-Y",
+          "text": "‘I gained a family of leaders’"
+        },
+        {
+          "url": "https://jobs.boeing.com/UK-EOEStatement",
+          "text": "UK Equal Opportunity Statement"
+        },
+        {
+          "url": "https://jobs.boeing.com/NON-US-EOEStatement",
+          "text": "Non US EOE Statement"
+        },
+        {
+          "url": "https://jobs.boeing.com/virtual-interview-tips",
+          "text": "5 Tips for Acing Your Virtual Interview"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Antara",
+          "text": "'Never stop learning'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Abbey-Carlson",
+          "text": "Meet Abbey Carlson: Former Intern Turned Space and Launch Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Francis",
+          "text": "Meet Francis: Inventor Strives to Make Space Safer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Hana",
+          "text": "‘Engineering reaches every industry; it’s part of everyday life’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Jae",
+          "text": "Jae’s Early Fascination With Flight Led to a Role at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Marcie-Purser",
+          "text": "A Veteran's Secret Weapon"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Kimberly-S",
+          "text": "'The possibilities are endless'"
+        },
+        {
+          "url": "https://jobs.boeing.com/Boeing-Starliner-Spacecraft-Technician",
+          "text": "Meet OB, Starliner Spacecraft Technician"
+        },
+        {
+          "url": "https://jobs.boeing.com/Kristine-Ramos-Space-Launch-Engineer",
+          "text": "Aim High: Meet Kristine, Space Launch Systems Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/meetNixon",
+          "text": "‘I’m a lifelong learner’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Dama",
+          "text": "‘I don’t just translate — I bridge gaps’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Kaomi",
+          "text": "‘I’ve challenged myself to grow’"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-wilton",
+          "text": "'Helping people reach their potential inspires me'"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Vadym",
+          "text": "‘I encourage others to take this opportunity!’"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Pete-Kunz-Chief-Engineer",
+          "text": "'Lean into discomfort': Career Advice From a Chief Engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Rayni-Sivley",
+          "text": "'It may not be easy, but it will pay off': Meet Rayni Sivley"
+        },
+        {
+          "url": "https://jobs.boeing.com/V22-Team-Boeing-Story",
+          "text": "Love at First Flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-ronak",
+          "text": "The sky’s the limit"
+        },
+        {
+          "url": "https://jobs.boeing.com/NSBE",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/dr-brooks-team-boeing",
+          "text": "Excellence with Caring' is Key: Meet Dr. Nathan Brooks"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Amani",
+          "text": "AI creator changes how autonomous systems work"
+        },
+        {
+          "url": "https://jobs.boeing.com/PortlandEMT",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/sweindia",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/phantom-works-careers",
+          "text": "Explore careers with Boeing Phantom Works"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Jenna",
+          "text": "Jenna’s career path has been anything but traditional."
+        },
+        {
+          "url": "https://jobs.boeing.com/NABA2024",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/DisabilityIN",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/VirginiaTechEngineeringExpo",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/ALPFA",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/TristanCrumley",
+          "text": "Tristan Crumley | Design Engineer Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/AdrianSosa",
+          "text": "Adrian Sosa | Structures Design Engineer Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/MyaBeathley",
+          "text": "Mya Beathley | Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/EvaStrang",
+          "text": "Eva Strang | Strategy Analyst Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/ElisaRwagasanaIshimwe",
+          "text": "Elisa Rwagasana Ishimwe | Information Technology and Data Analytics Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/NiyathiGorantla",
+          "text": "Niyathi Gorantla | Sustainability Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/TMCFLeadershipInstitute",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Atira",
+          "text": "Atira Sarat | Sustainability Innovation Research Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-AdrianL",
+          "text": "Adrian Loekman | Airplane Maintenance Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Doan",
+          "text": "Đoàn Sĩ Anh | Retrofit Engineering Intern"
+        },
+        {
+          "url": "https://jobs.boeing.com/UWevents",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Dominic-B",
+          "text": "A passion for propulsion helps fuel the future of flight"
+        },
+        {
+          "url": "https://jobs.boeing.com/security-clearance-levels-aerospace-defense-job",
+          "text": "Security clearance levels for aerospace & defense jobs explained"
+        },
+        {
+          "url": "https://jobs.boeing.com/top-industries-hiring-security-cleared-professionals",
+          "text": "High-demand jobs for people with security clearances"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq-security-clearance-jobs",
+          "text": "FAQs on applying for jobs that require a security clearance."
+        },
+        {
+          "url": "https://jobs.boeing.com/military-spouses-careers",
+          "text": "Career development for military spouses at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/application-guide",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/Meet-Tori",
+          "text": "From excavating bones to building Boeing systems"
+        },
+        {
+          "url": "https://jobs.boeing.com/bpet",
+          "text": "Boeing Pre-Employment Training Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/bpet-sc",
+          "text": "Boeing Pre-Employment Training Program"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-job-skill-match",
+          "text": "Match your skills to aerospace manufacturing careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-jobs-north-charleston",
+          "text": "Manufacturing in North Charleston"
+        },
+        {
+          "url": "https://jobs.boeing.com/bmac",
+          "text": "Boeing Manufacturing Accelerated Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Tyson",
+          "text": "Navy roots guide leader of our UK fabrication site"
+        },
+        {
+          "url": "https://jobs.boeing.com/Veterans-SkillBridge",
+          "text": "Easing the Transition of U.S. Service Members"
+        },
+        {
+          "url": "https://jobs.boeing.com/BTAP-team-boeing",
+          "text": "A clear path to a rewarding career"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Maisie",
+          "text": "Beyond the dials: Finding the feel for a test aircraft"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Zach",
+          "text": "How an apprenticeship launched a leadership journey"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-Will",
+          "text": "“Boeing needs quality people who ‘give a damn’”"
+        },
+        {
+          "url": "https://jobs.boeing.com/employee-career-growth-stories",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/career-growth-faq",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/aerospace-industry-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/south-carolina-relocation-faq",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network",
+          "text": "Two Ways To Stay Connected"
+        },
+        {
+          "url": "https://jobs.boeing.com/Benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.boeing.com/working-here",
+          "text": "Working Here"
+        },
+        {
+          "url": "https://jobs.boeing.com/team-boeing-stories",
+          "text": "Inside Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://jobs.boeing.com/faq",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "url": "https://jobs.boeing.com/events",
+          "text": "Search for Events in Your Area"
+        },
+        {
+          "url": "https://jobs.boeing.com/veterans",
+          "text": "Military and Veterans"
+        },
+        {
+          "url": "https://jobs.boeing.com/internships",
+          "text": "Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/engineering-careers",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/bca",
+          "text": "Manufacturing and Quality Roles in Seattle"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-korea",
+          "text": "Boeing in South Korea"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-the-uk",
+          "text": "Boeing in the UK"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-the-DC-metro",
+          "text": "Boeing in Washington, D.C."
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-missouri",
+          "text": "Boeing in Missouri"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-poland",
+          "text": "Boeing in Poland"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-oklahoma",
+          "text": "Boeing in Oklahoma"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-alabama",
+          "text": "Boeing in Alabama"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-california",
+          "text": "Boeing in California"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-brazil",
+          "text": "Boeing in Brazil"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-texas",
+          "text": "Boeing in Texas"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-japan",
+          "text": "Boeing in Japan"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-arizona",
+          "text": "Boeing in Arizona"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-south-carolina",
+          "text": "Boeing in South Carolina"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-washington",
+          "text": "Boeing in Washington State"
+        },
+        {
+          "url": "https://jobs.boeing.com/cybersecurity-careers",
+          "text": "Cybersecurity Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/electronic-and-electrical-engineering-careers",
+          "text": "Electronic and Electrical Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/finance-careers",
+          "text": "Finance Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/flight-engineering-careers",
+          "text": "Flight Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/it-internships",
+          "text": "Information Technology Internships at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/electrical-engineering-internships",
+          "text": "Electrical Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/human-resources-careers",
+          "text": "Human Resources Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/industrial-engineering-careers",
+          "text": "Industrial Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/test-engineering-careers",
+          "text": "Test and Evaluation Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/software-engineering-careers",
+          "text": "Software Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/supply-chain-management-careers",
+          "text": "Supply Chain Management Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/systems-engineering-careers",
+          "text": "Systems Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/business-operations-internships",
+          "text": "Business Operations Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/safety-and-airworthiness",
+          "text": "Safety & Airworthiness"
+        },
+        {
+          "url": "https://jobs.boeing.com/human-resources-internships",
+          "text": "Human Resources Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/supply-chain-internships",
+          "text": "Supply Chain Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/data-science-and-analytics-careers",
+          "text": "Data Science and Analytics Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/information-technology-careers",
+          "text": "Information Technology Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/materials-process-and-physics-careers",
+          "text": "Materials, Process and Physics Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/mechanical-and-structural-engineering-careers",
+          "text": "Mechanical and Structural Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-security-engineering-careers",
+          "text": "Product Security Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/production-engineering-careers",
+          "text": "Production Engineering Careers at Boeing"
+        },
+        {
+          "url": "https://jobs.boeing.com/manufacturing-careers",
+          "text": "Manufacturing Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/specialty-engineering-internships",
+          "text": "Specialty Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/software-engineering-internships",
+          "text": "Software Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/systems-engineering-internships",
+          "text": "Systems Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/test-and-evaluation-internships",
+          "text": "Test & Evaluation Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/quality-engineering-internships",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/quality-specialist-internships",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/global-real-estate-and-facilities-internships",
+          "text": "Global Real Estate and Facilities Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/finance-internships",
+          "text": "Finance Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/flight-engineering-internships",
+          "text": "Flight Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/industrial-engineering-internships",
+          "text": "Industrial Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/materials-process-physics-engineering-internships",
+          "text": "Materials, Process & Physics Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/mechanical-structural-internships",
+          "text": "Mechanical & Structural Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/global-real-estate-and-facilities-engineering-internships",
+          "text": "Facilities and Asset Management Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-ukraine",
+          "text": "Boeing in Ukraine"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-australia",
+          "text": "Boeing in Australia"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-support-engineering-internships",
+          "text": "Product Support Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/product-security-engineering-internships",
+          "text": "Product Security Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/production-engineering-internships",
+          "text": "Production Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/safety-airworthiness-engineering-internships",
+          "text": "Safety & Airworthiness Engineering Internships"
+        },
+        {
+          "url": "https://jobs.boeing.com/entry-level",
+          "text": "Entry-Level Careers"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-in-germany",
+          "text": "Boeing in Germany"
+        },
+        {
+          "url": "https://jobs.boeing.com/meet-andrew",
+          "text": "Shop‑floor wisdom, family support fuels new Boeing engineer"
+        },
+        {
+          "url": "https://jobs.boeing.com/boeing-voices-career-growth",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.boeing.com/search-jobs",
+          "text": "View all of our available opportunities"
+        },
+        {
+          "url": "https://jobs.boeing.com/search-jobs",
+          "text": "View all of our available opportunities"
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network#tab-panel-job-alerts",
+          "text": "Sign up for Job Alerts"
+        },
+        {
+          "url": "https://jobs.boeing.com/talent-network",
+          "text": "Sign up for our Talent Community"
+        },
+        {
+          "url": "https://boeing.avature.net/MVP",
+          "text": "Sign up for our Veteran Talent Community"
+        },
+        {
+          "url": "https://jobs.boeing.com/fraud-alert",
+          "text": "protect yourself"
+        },
+        {
+          "url": "https://jobs.boeing.com/NON-US-EOEStatement",
+          "text": "individuals outside the U.S."
+        },
+        {
+          "url": "https://jobs.boeing.com/UK-EOEStatement",
+          "text": "residents of the UK"
+        },
+        {
+          "url": "https://jobs.boeing.com/accommodations",
+          "text": "Request an accommodation for your application"
+        },
+        {
+          "url": "https://jobs.boeing.com/en/application-guide",
+          "text": "visit our application guide"
+        },
+        {
+          "url": "https://www.boeing.com/careers/privacy-statement.page",
+          "text": "Applicant Privacy"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/185/v2_1/docs/EEOC_KnowYourRights_2022.pdf",
+          "text": "Know Your Rights: Workplace Discrimination is Illegal (PDF)"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/EVerifyParticipationPoster.pdf",
+          "text": "Boeing participates in E-Verify. Details in English and Spanish (PDF)"
+        },
+        {
+          "url": "https://www.e-verify.gov/sites/default/files/everify/posters/IER_RightToWorkPoster%20Eng_Es.pdf",
+          "text": "Right to Work Statement in English and Spanish (PDF)."
+        },
+        {
+          "url": "https://www.facebook.com/BoeingCareers",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/boeing",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.twitter.com/Boeing",
+          "text": "Twitter"
+        },
+        {
+          "url": "https://www.youtube.com/user/Boeing",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://www.instagram.com/boeing",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://jobs.boeing.com/sitemap",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.boeing.com/site-terms.page",
+          "text": "Site Terms"
+        },
+        {
+          "url": "https://www.boeing.com/privacy-and-cookie-policy.page",
+          "text": "Privacy & Cookie Statement"
+        },
+        {
+          "url": "https://www.boeing.com/privacy-and-cookie-policy.page#IBA",
+          "text": "Ad Choices"
+        },
+        {
+          "url": "https://www.boeing.com/",
+          "text": "Boeing.com"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "boeing",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREERS",
+          "source_link": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://jobs.boeing.com/boeing-in-india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Boeing in India",
+      "evidence": "evidence/9d2003bca60b6bae7c5f.html.gz",
+      "sha256": "80aa991ad3cecc2567089b981a98b30e1465a41a5a81a08f9e3fd49b78145ded"
+    },
+    {
+      "url": "https://jobs.boeing.com/job/bengaluru/electrical-engineering-manager/185/63469181456",
+      "checked_at": "2026-11-15T23:49:26.764607+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 404,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://jobs.boeing.com/job/bengaluru/lead-software-engineer/185/63473768832",
+      "checked_at": "2026-11-15T23:49:28.227460+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 404,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

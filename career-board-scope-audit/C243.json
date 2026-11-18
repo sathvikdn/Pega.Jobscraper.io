@@ -1,0 +1,36 @@
+{
+  "id": "C243",
+  "company": {
+    "name": "Westpac",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://ebuu.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "ebuu.fa.ap1.oraclecloud.com",
+        "site": "CX",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://ebuu.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX",
+      "checked_at": "2026-11-15T23:51:22.101796+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://ebuu.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Westpac Group",
+      "evidence": "evidence/1dd255a458265e2fb0fe.html.gz",
+      "sha256": "068806ec14e028e7ad0d9edfe65563ccf4b6b2b37ff73b04f49006c19feaafb6"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

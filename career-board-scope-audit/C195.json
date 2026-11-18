@@ -1,0 +1,47 @@
+{
+  "id": "C195",
+  "company": {
+    "name": "Renault Group",
+    "aliases": [
+      "Renault"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "alliancewd",
+        "datacentre": "wd3",
+        "site": "renault-group-careers",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Group-wide Renault board; Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified. It does not establish coverage of Renault Nissan Technology (India)"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+      "checked_at": "2026-11-15T23:50:55.873964+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "alliancewd",
+          "datacentre": "wd3",
+          "site": "renault-group-careers",
+          "source_link": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://alliancewd.wd3.myworkdayjobs.com/en-US/renault-group-careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/e0f9fbb9a34c365e25ef.html.gz",
+      "sha256": "8a102f83610fe8310402e1e1564790d7c5f5698944cc3ebfc2ff259e25a72fb2"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

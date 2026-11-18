@@ -1,0 +1,28 @@
+{
+  "id": "C239",
+  "company": {
+    "name": "VW Digital Solutions",
+    "aliases": [
+      "Volkswagen Digital Solutions",
+      "VWDS"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": null,
+    "portals": [],
+    "inventory_note": "No careers portal is evidenced: the saved URL belongs to CARIAD, a different Volkswagen software company."
+  },
+  "observations": [
+    {
+      "url": "https://vwg-digitalsolutions.in/",
+      "checked_at": "2026-11-15T23:51:26.471203+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>",
+      "discovery": "Supplemental web research: official employer/ATS page; validate entity independently."
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

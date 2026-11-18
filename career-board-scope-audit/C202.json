@@ -1,0 +1,37 @@
+{
+  "id": "C202",
+  "company": {
+    "name": "Shell",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://shell.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "shell",
+        "datacentre": "wd3",
+        "site": "ShellCareers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://shell.com/careers",
+      "checked_at": "2026-11-15T23:50:59.098545+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.shell.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at Shell | Shell Global",
+      "evidence": "evidence/4f06b6fb1b01030b2b16.html.gz",
+      "sha256": "06a2c09f5043cf1e415767ce79a6419233f0a5228548e8d9e0b92dd04411413c"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

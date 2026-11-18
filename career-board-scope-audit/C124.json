@@ -1,0 +1,30 @@
+{
+  "id": "C124",
+  "company": {
+    "name": "John Deere Financial",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "parent": "John Deere",
+    "career_url": "https://www.deere.com/en/our-company/john-deere-careers/",
+    "portals": [],
+    "inventory_note": "No separate portal is evidenced; John Deere's board may list its roles but does not establish coverage."
+  },
+  "observations": [
+    {
+      "url": "https://www.deere.com/en/our-company/john-deere-careers/",
+      "checked_at": "2026-11-15T23:50:19.368630+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.deere.com/en-us/our-company/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at John Deere | John Deere US",
+      "evidence": "evidence/fae6d43684d6c5fc8cc3.html.gz",
+      "sha256": "3e6bccd9f7b7552bb7ff223bb2e3ee4eeadc1b7c112c34696ccaf3466bbe7166"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

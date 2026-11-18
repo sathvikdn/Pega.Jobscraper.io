@@ -1,0 +1,45 @@
+{
+  "id": "C099",
+  "company": {
+    "name": "GE Aerospace",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "geaerospace",
+        "datacentre": "wd5",
+        "site": "GE_ExternalSite",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite",
+      "checked_at": "2026-11-15T23:50:09.937953+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "geaerospace",
+          "datacentre": "wd5",
+          "site": "GE_ExternalSite",
+          "source_link": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/474d93e54627f1fb5c14.html.gz",
+      "sha256": "23b8f943922fa3ae4733f4a16bc36b0d1f921f21b287ce522e3edd4b741ab02b"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

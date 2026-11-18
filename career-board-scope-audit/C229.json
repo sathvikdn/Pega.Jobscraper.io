@@ -1,0 +1,94 @@
+{
+  "id": "C229",
+  "company": {
+    "name": "UPS",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.jobs-ups.com/imea/en",
+    "portals": [
+      {
+        "kind": "phenom",
+        "host": "www.jobs-ups.com",
+        "locale_path": "imea/en",
+        "state": "candidate",
+        "scope": "global",
+        "note": "India, Middle East and Africa site"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.jobs-ups.com/imea/en",
+      "checked_at": "2026-11-15T23:51:14.923844+00:00",
+      "links": [
+        {
+          "url": "https://www.jobs-ups.com/imea/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://www.jobs-ups.com/imea/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.jobs-ups.com/imea/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.jobs-ups.com/imea/en/hourly-roles",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://www.jobs-ups.com/imea/en/job-professional/${jobSeqNo}/${title}",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://www.instagram.com/upsjobs/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/upsjobs/",
+          "text": ""
+        },
+        {
+          "url": "https://www.tiktok.com/@upsjobs",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/upsjobs/",
+          "text": ""
+        },
+        {
+          "url": "https://www.tiktok.com/@upsjobs",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/upsjobs/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/upsjobs/",
+          "text": "Instagram @upsjobs"
+        },
+        {
+          "url": "https://www.tiktok.com/@upsjobs",
+          "text": "TikTok @upsjobs"
+        },
+        {
+          "url": "https://www.jobs-ups.com/imea/en/home",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.jobs-ups.com/imea/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at United Parcel Service | United Parcel Service jobs",
+      "evidence": "evidence/b959071db7b08f1d5723.html.gz",
+      "sha256": "642c02f509d4d8eacbdd37900934fcc41c11a0d59c5f5c616053dbabc46b8086"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

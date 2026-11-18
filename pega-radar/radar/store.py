@@ -15,11 +15,16 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from .model import CITY_ALIASES, EMPLOYER_SOURCE, cities, company_key, now_iso
+from .rank import SCANNABLE_STATES
 
 USER_STATUSES = ('new', 'interested', 'applied', 'interviewing', 'offer', 'rejected')
 NEW_DAYS = 14             # a job nobody has looked at stops counting as new after this long
 MAX_PAGE = 500
 UNTITLED = 'Pega role (title not given)'
+BACKUPS_KEPT = 5
+OPEN_DAYS = 30            # a job counts as open while it was listed within this many days
+MASS_DROP_MINIMUM = 3     # a complete read that drops this many postings, and over half the board, needs a second read
+NOT_REACHED = 'not_reached'   # coverage outcome of a source the time budget cut off; not an attempt
 MERGE_DAYS = 30           # beyond this gap a same-titled posting is a new opening, not the old one again
 MAX_NOTES = 20000
 
@@ -32,12 +37,14 @@ CREATE TABLE IF NOT EXISTS jobs(
     experience_min REAL, experience_max REAL, salary_min_lpa REAL, salary_max_lpa REAL,
     posted_at TEXT, requisition_id TEXT, first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL,
     first_run_id TEXT, last_run_id TEXT, score INTEGER NOT NULL DEFAULT 0, fit_json TEXT NOT NULL DEFAULT '{}',
-    pega_title INTEGER NOT NULL DEFAULT 0, pega_duty INTEGER NOT NULL DEFAULT 0);
+    pega_title INTEGER NOT NULL DEFAULT 0, pega_duty INTEGER NOT NULL DEFAULT 0,
+    last_confirmed_at TEXT, possibly_closed INTEGER NOT NULL DEFAULT 0);
 CREATE INDEX IF NOT EXISTS jobs_company ON jobs(company_key);
 CREATE INDEX IF NOT EXISTS jobs_first_run ON jobs(first_run_id);
 CREATE TABLE IF NOT EXISTS sightings(
     source TEXT NOT NULL, source_id TEXT NOT NULL, job_id TEXT NOT NULL, url TEXT NOT NULL DEFAULT '',
     label TEXT NOT NULL DEFAULT '', first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL,
+    task TEXT, kind TEXT, missing_since TEXT, suspect_since TEXT,
     PRIMARY KEY(source, source_id));
 CREATE INDEX IF NOT EXISTS sightings_job ON sightings(job_id);
 CREATE TABLE IF NOT EXISTS user_state(
@@ -47,15 +54,43 @@ CREATE TABLE IF NOT EXISTS runs(
     id TEXT PRIMARY KEY, started_at TEXT NOT NULL, finished_at TEXT, status TEXT NOT NULL, summary_json TEXT);
 CREATE TABLE IF NOT EXISTS source_health(
     run_id TEXT NOT NULL, source TEXT, label TEXT, kind TEXT, status TEXT, found INTEGER, kept INTEGER,
-    requests INTEGER, error TEXT);
+    requests INTEGER, error TEXT, elapsed_s REAL, reason TEXT NOT NULL DEFAULT '', pages_complete INTEGER,
+    details_complete INTEGER, employer TEXT, task TEXT, at TEXT);
 CREATE INDEX IF NOT EXISTS source_health_run ON source_health(run_id);
 CREATE TABLE IF NOT EXISTS kv(key TEXT PRIMARY KEY, value_json TEXT NOT NULL);
 '''
 
+# Columns added after the first release, as (table, column, definition). A database created by an
+# older version gets them through ALTER TABLE; the list only ever grows, so applying it is repeatable.
+_ADDED_COLUMNS = (
+    ('user_state', 'hidden', 'INTEGER NOT NULL DEFAULT 0'), ('user_state', 'seen_at', 'TEXT'),
+    ('source_health', 'elapsed_s', 'REAL'), ('source_health', 'reason', "TEXT NOT NULL DEFAULT ''"),
+    ('source_health', 'pages_complete', 'INTEGER'), ('source_health', 'details_complete', 'INTEGER'),
+    ('source_health', 'employer', 'TEXT'), ('source_health', 'task', 'TEXT'), ('source_health', 'at', 'TEXT'),
+    ('jobs', 'last_confirmed_at', 'TEXT'), ('jobs', 'possibly_closed', 'INTEGER NOT NULL DEFAULT 0'),
+    ('sightings', 'task', 'TEXT'), ('sightings', 'kind', 'TEXT'), ('sightings', 'missing_since', 'TEXT'),
+    ('sightings', 'suspect_since', 'TEXT'),
+)
+# Indexes on added columns are created after the columns exist.
+_ADDED_INDEXES = ('CREATE INDEX IF NOT EXISTS sightings_task ON sightings(task)',
+                  'CREATE INDEX IF NOT EXISTS source_health_task ON source_health(task)')
+_HEALTH_COLUMNS = ('source', 'label', 'kind', 'status', 'found', 'kept', 'requests', 'error', 'elapsed_s', 'reason',
+                   'pages_complete', 'details_complete', 'employer', 'task', 'at')
+# Worst first: an employer with several portals is summarised by its worst latest outcome.
+# None stands for a portal that was never attempted: worse than a board that was read, since nothing is known.
+_SEVERITY = ('error', 'blocked', 'maintenance', 'partial', 'skipped', NOT_REACHED, None, 'ok', 'empty')
+
+def unreached(row) -> bool:
+    """True for an outcome that records a source was NOT read because the time budget ended before
+    any answer came. A source that was partly read before the budget ended is `partial`, a real attempt."""
+    return row['reason'] == 'budget' and row['status'] in ('error', 'skipped')
+
+
 _JOB_COLUMNS = ('id', 'title', 'company', 'company_key', 'employer_type', 'city', 'cities_json', 'location',
                 'is_bengaluru', 'url', 'apply_url', 'description', 'experience_min', 'experience_max',
                 'salary_min_lpa', 'salary_max_lpa', 'posted_at', 'requisition_id', 'first_seen_at', 'last_seen_at',
-                'first_run_id', 'last_run_id', 'score', 'fit_json', 'pega_title', 'pega_duty')
+                'first_run_id', 'last_run_id', 'score', 'fit_json', 'pega_title', 'pega_duty',
+                'last_confirmed_at', 'possibly_closed')
 # Filled from a later sighting only while still empty ("never clear a field with an empty value").
 _FILL_IF_EMPTY = ('company', 'location', 'apply_url', 'requisition_id', 'experience_min', 'experience_max',
                   'salary_min_lpa', 'salary_max_lpa')
@@ -113,22 +148,65 @@ class Store:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self._db() as db:
             db.execute('PRAGMA journal_mode=WAL')
+            missing = self._missing_columns(db)
+        if missing:
+            self.backup()                     # an older database is about to change: keep a copy first
+        with self._db() as db:
             db.executescript(_SCHEMA)
-            outdated = 'hidden' not in {row['name'] for row in db.execute('PRAGMA table_info(user_state)')}
-        if outdated:
-            self._migrate_user_state()
+        if missing:
+            self._migrate()
+        with self._db() as db:
+            for statement in _ADDED_INDEXES:
+                db.execute(statement)
 
-    def _migrate_user_state(self):
-        """Bring a database from before `hidden` and `seen_at` existed up to date, keeping every row."""
+    @staticmethod
+    def _missing_columns(db):
+        """Added columns that existing tables lack. Empty for a new database and for a current one."""
+        missing = []
+        for table in dict.fromkeys(table for table, _, _ in _ADDED_COLUMNS):
+            present = {row['name'] for row in db.execute(f'PRAGMA table_info({table})')}
+            if present:
+                missing += [(table, column, definition) for owner, column, definition in _ADDED_COLUMNS
+                            if owner == table and column not in present]
+        return missing
+
+    def _migrate(self):
+        """Add whatever columns this database lacks. Additive only: no row is removed or rewritten,
+        except that the old `hidden` status becomes the `hidden` flag."""
         with self._db(write=True) as db:
-            columns = {row['name'] for row in db.execute('PRAGMA table_info(user_state)')}
-            if 'hidden' not in columns:       # checked again under the write lock: another process may have won
-                db.execute('ALTER TABLE user_state ADD COLUMN hidden INTEGER NOT NULL DEFAULT 0')
-            if 'seen_at' not in columns:
-                db.execute('ALTER TABLE user_state ADD COLUMN seen_at TEXT')
-            # Hiding used to be a status, which overwrote where the job stood in the pipeline.
-            db.execute("UPDATE user_state SET hidden = 1, status = 'new', seen_at = COALESCE(seen_at, updated_at) "
-                       "WHERE status = 'hidden'")
+            missing = self._missing_columns(db)   # read again under the write lock: another process may have won
+            for table, column, definition in missing:
+                db.execute(f'ALTER TABLE {table} ADD COLUMN {column} {definition}')
+            if ('user_state', 'hidden') in {(table, column) for table, column, _ in missing}:
+                # Hiding used to be a status, which overwrote where the job stood in the pipeline.
+                db.execute("UPDATE user_state SET hidden = 1, status = 'new', seen_at = COALESCE(seen_at, updated_at) "
+                           "WHERE status = 'hidden'")
+
+    def backup(self) -> Path:
+        """Copy the database to <data>/backups/radar-<UTC time>.sqlite3 and keep the newest few."""
+        folder = self.path.parent / 'backups'
+        folder.mkdir(parents=True, exist_ok=True)
+        stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+        target = folder / f'radar-{stamp}.sqlite3'
+        serial = 1
+        while target.exists():
+            serial += 1
+            target = folder / f'radar-{stamp}-{serial}.sqlite3'
+        source = sqlite3.connect(str(self.path), timeout=30)
+        try:
+            copy = sqlite3.connect(str(target))
+            try:
+                source.backup(copy)           # consistent even while the write-ahead log holds changes
+            finally:
+                copy.close()
+        finally:
+            source.close()
+        for old in sorted(folder.glob('radar-*.sqlite3'), key=lambda item: item.name, reverse=True)[BACKUPS_KEPT:]:
+            try:
+                old.unlink()
+            except OSError:
+                pass
+        return target
 
     @contextmanager
     def _db(self, write=False):
@@ -177,14 +255,97 @@ class Store:
                 return None
             row = db.execute("SELECT * FROM runs WHERE finished_at IS NOT NULL AND status IN ('complete', 'partial') "
                              'ORDER BY finished_at DESC, rowid DESC LIMIT 1').fetchone()
-            health = [dict(item) for item in db.execute(
-                'SELECT source, label, kind, status, found, kept, requests, error FROM source_health '
-                'WHERE run_id=? ORDER BY rowid', (row['id'],))] if row else []
+            health = [self._health(item) for item in db.execute(
+                f'SELECT {", ".join(_HEALTH_COLUMNS)} FROM source_health WHERE run_id=? ORDER BY rowid',
+                (row['id'],))] if row else []
         return {'id': row['id'] if row else None, 'started_at': row['started_at'] if row else None,
                 'finished_at': row['finished_at'] if row else None, 'status': row['status'] if row else None,
                 'summary': json.loads(row['summary_json'] or '{}') if row else {}, 'health': health,
                 'last_attempt': {'id': attempt['id'], 'status': attempt['status'], 'finished_at': attempt['finished_at'],
                                  'error': json.loads(attempt['summary_json'] or '{}').get('error')}}
+
+    def latest_coverage_run(self) -> dict | None:
+        """The state of every source as of now: the last full run, with each source's outcome replaced
+        by its newest one from any later retry or `only` run.
+
+        `latest_run()` describes the most recent run by itself, which after a narrow retry is a handful
+        of sources; this is the one for a "Sources" table. Same shape as `latest_run()`, each health row
+        also carrying `run_id`, plus `later_runs` (ids of the runs merged in). A source the budget cut
+        off in a later run keeps its earlier real outcome. Falls back to the newest good run when no
+        full run exists; None when no run has ever finished.
+        """
+        base = self.latest_run()
+        if base is None or base['id'] is None:
+            return base
+        with self._db() as db:
+            good = db.execute("SELECT id, summary_json FROM runs WHERE finished_at IS NOT NULL "
+                              "AND status IN ('complete', 'partial') ORDER BY finished_at, rowid").fetchall()
+            full = [row['id'] for row in good if json.loads(row['summary_json'] or '{}').get('mode', 'full') == 'full']
+            ids = [row['id'] for row in good]
+            chain = ids[ids.index(full[-1]):] if full else ids[-1:]
+            merged = {}
+            for run_id in chain:
+                for row in db.execute(f'SELECT run_id, {", ".join(_HEALTH_COLUMNS)} FROM source_health '
+                                      'WHERE run_id=? ORDER BY rowid', (run_id,)):
+                    key = row['task'] or (row['kind'], row['label'])
+                    if unreached(row) and key in merged:
+                        continue
+                    merged[key] = self._health(row)
+            first = db.execute('SELECT * FROM runs WHERE id=?', (chain[0],)).fetchone()
+        return {**base, 'id': first['id'], 'started_at': first['started_at'], 'finished_at': first['finished_at'],
+                'status': first['status'], 'summary': json.loads(first['summary_json'] or '{}'),
+                'health': list(merged.values()), 'later_runs': chain[1:]}
+
+    @staticmethod
+    def _health(row) -> dict:
+        item = dict(row)
+        for flag in ('pages_complete', 'details_complete'):
+            item[flag] = None if item[flag] is None else bool(item[flag])
+        return item
+
+    def task_history(self) -> dict:
+        """{task name: its latest health row plus `run_id`, `run_started_at` and three run numbers}.
+
+        Runs are numbered in the order they were started (`run_seq`), which is exact where a
+        timestamp to the second is not: two runs in the same second still have an order.
+        `run_seq` is the run of the latest row. `attempted_run_seq` is the run of the latest row
+        in which the source was actually read (see `unreached`), and `attempted_full_run_seq` the
+        same counting full scans only; each is None when there is no such row. Fair ordering uses
+        the last one: a narrow `only` or retry run must not send a source to the back of the next
+        full scan.
+        """
+        with self._db() as db:
+            rows = db.execute(
+                f'SELECT {", ".join("h." + column for column in _HEALTH_COLUMNS)}, h.run_id, r.rowid AS run_seq, '
+                'r.started_at AS run_started_at, r.summary_json FROM source_health h JOIN runs r ON r.id = h.run_id '
+                'WHERE h.task IS NOT NULL ORDER BY h.rowid').fetchall()
+        history, attempted, attempted_full, modes = {}, {}, {}, {}
+        for row in rows:
+            item = self._health(row)
+            summary = item.pop('summary_json')
+            history[row['task']] = item
+            if unreached(row):
+                continue
+            attempted[row['task']] = row['run_seq']
+            if row['run_id'] not in modes:
+                # A run that never finished has no summary; its mode is unknown, so it is not counted as full.
+                modes[row['run_id']] = json.loads(summary).get('mode', 'full') if summary else None
+            if modes[row['run_id']] == 'full':
+                attempted_full[row['task']] = row['run_seq']
+        for task, item in history.items():
+            item['attempted_run_seq'] = attempted.get(task)
+            item['attempted_full_run_seq'] = attempted_full.get(task)
+        return history
+
+    def latest_full_run_seq(self):
+        """The run number (see `task_history`) of the most recent full scan that finished as complete
+        or partial, or None."""
+        with self._db() as db:
+            for row in db.execute("SELECT rowid AS seq, summary_json FROM runs WHERE finished_at IS NOT NULL "
+                                  "AND status IN ('complete', 'partial') ORDER BY rowid DESC"):
+                if json.loads(row['summary_json'] or '{}').get('mode', 'full') == 'full':
+                    return row['seq']
+        return None
 
     def run_counts(self, run_id) -> dict:
         """How many jobs a run saw for the first time, in total and in the two focus groups."""
@@ -201,24 +362,96 @@ class Store:
         """Upsert every job of one source result and record the source's health for the run.
 
         Returns {'new': [job ids], 'updated': [job ids], 'kept': n}. `kept` is how many of the
-        result's jobs were actually stored, and is what the health row records.
+        result's jobs were actually stored, and is what the health row records. A `note` key is
+        added when a suspicious mass drop was not treated as closures; the health row says so too.
+
+        A result that read its whole board (status ok or empty with `pages_complete`) also confirms
+        the jobs it lists and notes which of its earlier postings are gone; see `_note_absences`.
         """
         now = now_iso()
-        new, updated, kept = [], [], 0
+        new, updated, kept, listed = [], [], 0, set()
+        authoritative = result.get('status') in ('ok', 'empty') and result.get('pages_complete') is True
         with self._db(write=True) as db:
             for job in result.get('jobs') or ():
                 if not isinstance(job, dict):
                     continue                      # nothing to store; `kept` will show the shortfall
-                job_id, created = self._upsert(db, run_id, result, self._complete(job), ranker, now)
+                job = self._complete(job)
+                job_id, created = self._upsert(db, run_id, result, job, ranker, now, authoritative)
+                listed.add((job.get('source') or result.get('source') or '', job['source_id']))
                 kept += 1
                 if created:
                     new.append(job_id)
                 elif job_id not in new and job_id not in updated:
                     updated.append(job_id)
-            db.execute('INSERT INTO source_health VALUES (?,?,?,?,?,?,?,?,?)',
-                       (run_id, result.get('source'), result.get('label'), result.get('kind'), result.get('status'),
-                        max(result.get('found') or 0, kept), kept, result.get('requests', 0), result.get('error')))
-        return {'new': new, 'updated': updated, 'kept': kept}
+            note = self._note_absences(db, result, listed, now) if authoritative else None
+            # On a board shared by several employers the caller says how many of the stored jobs
+            # are this employer's own (`own_kept`); the others are credited to their employers' rows.
+            recorded = {**result, 'found': max(result.get('found') or 0, kept), 'kept': result.get('own_kept', kept)}
+            if note:
+                recorded['error'] = '; '.join(filter(None, [result.get('error'), note]))
+            self._write_health(db, run_id, recorded, now)
+        return {'new': new, 'updated': updated, 'kept': kept, **({'note': note} if note else {})}
+
+    def record_health(self, run_id, result):
+        """Record a source outcome without touching any job, e.g. for an employer whose shared board
+        was fetched by another task."""
+        with self._db(write=True) as db:
+            self._write_health(db, run_id, result, now_iso())
+
+    @staticmethod
+    def _write_health(db, run_id, result, now):
+        values = {column: result.get(column) for column in _HEALTH_COLUMNS}
+        values.update(reason=result.get('reason') or '', at=now, found=result.get('found') or 0,
+                      kept=result.get('kept') or 0, requests=result.get('requests') or 0)
+        for flag in ('pages_complete', 'details_complete'):
+            values[flag] = None if values[flag] is None else int(bool(values[flag]))
+        db.execute(f'INSERT INTO source_health(run_id, {", ".join(_HEALTH_COLUMNS)}) '
+                   f'VALUES (?, {", ".join("?" * len(_HEALTH_COLUMNS))})',
+                   [run_id, *(values[column] for column in _HEALTH_COLUMNS)])
+
+    def _note_absences(self, db, result, listed, now):
+        """After a complete read of a board, mark its earlier postings that are no longer listed.
+
+        A job becomes "possibly closed" only when every board that can prove absence has dropped it
+        and nothing has listed it since. LinkedIn is a time-windowed search, so a posting missing
+        from it proves nothing; partial, blocked and failed runs never get here. Nothing is deleted.
+        """
+        task = result.get('task')
+        if not task or result.get('kind') == 'linkedin':
+            return None
+        # On a shared board the sightings are filed under each employer's own task; together they
+        # are the board's listing.
+        tasks = sorted({task, *(name for name, _ in (result.get('shared_tasks') or {}).values())})
+        current = db.execute('SELECT source, source_id, job_id, suspect_since FROM sightings '
+                             f"WHERE missing_since IS NULL AND task IN ({', '.join('?' * len(tasks))})", tasks).fetchall()
+        gone = [row for row in current if (row['source'], row['source_id']) not in listed]
+        notes = []
+        if len(gone) >= MASS_DROP_MINIMUM and len(gone) * 2 > len(current):
+            # Most of a board vanishing in one read is far more often a changed site or a narrowed
+            # search than that many roles closing together. Those postings are only remembered as
+            # suspects; if the next complete read still lacks them, the closure is believed.
+            fresh = [row for row in gone if row['suspect_since'] is None]
+            gone = [row for row in gone if row['suspect_since'] is not None]
+            for row in fresh:
+                db.execute('UPDATE sightings SET suspect_since=? WHERE source=? AND source_id=?',
+                           (now, row['source'], row['source_id']))
+            if fresh:
+                notes.append(f'listing dropped {len(fresh)} of {len(current)} jobs at once; not treated as closures')
+            if gone:
+                notes.append(f'{len(gone)} closures confirmed on a second complete read')
+        for row in gone:
+            db.execute('UPDATE sightings SET missing_since=?, suspect_since=NULL WHERE source=? AND source_id=?',
+                       (now, row['source'], row['source_id']))
+        for job_id in {row['job_id'] for row in gone}:
+            sightings = db.execute('SELECT task, kind, missing_since, last_seen_at FROM sightings WHERE job_id=?',
+                                   (job_id,)).fetchall()
+            provable = [item for item in sightings if item['task'] and item['kind'] != 'linkedin']
+            if any(item['missing_since'] is None for item in provable):
+                continue                          # another board still lists it
+            dropped = max(item['missing_since'] for item in provable)
+            if not any(item['last_seen_at'] > dropped for item in sightings):
+                db.execute('UPDATE jobs SET possibly_closed=1 WHERE id=?', (job_id,))
+        return '; '.join(notes) or None
 
     @staticmethod
     def _complete(job):
@@ -265,7 +498,7 @@ class Store:
             return row['id']
         return None
 
-    def _upsert(self, db, run_id, result, job, ranker, now):
+    def _upsert(self, db, run_id, result, job, ranker, now, authoritative=False):
         source = job.get('source') or result.get('source') or ''
         source_id = str(job['source_id'])
         key = getattr(ranker, 'canonical', company_key)(job.get('company'))
@@ -302,14 +535,21 @@ class Store:
             merged_cities = json.loads(row['cities_json'] or '[]')
             merged_cities += [city for city in found_cities if city not in merged_cities]
         row.update(city=merged_cities[0] if merged_cities else '', cities_json=json.dumps(merged_cities),
-                   is_bengaluru=int('Bengaluru' in merged_cities), last_seen_at=now, last_run_id=run_id)
+                   is_bengaluru=int('Bengaluru' in merged_cities), last_seen_at=now, last_run_id=run_id,
+                   possibly_closed=0)                 # listed again, so not closed
+        if authoritative:
+            row['last_confirmed_at'] = now
         self._apply_rank(row, ranker)
         db.execute(f'INSERT OR REPLACE INTO jobs({", ".join(_JOB_COLUMNS)}) VALUES ({", ".join("?" * len(_JOB_COLUMNS))})',
                    [row[column] for column in _JOB_COLUMNS])
-        db.execute('INSERT INTO sightings(source, source_id, job_id, url, label, first_seen_at, last_seen_at) '
-                   'VALUES (?,?,?,?,?,?,?) ON CONFLICT(source, source_id) DO UPDATE SET '
-                   'job_id=excluded.job_id, url=excluded.url, label=excluded.label, last_seen_at=excluded.last_seen_at',
-                   (source, source_id, row['id'], job.get('url') or '', result.get('label') or '', now, now))
+        # A posting on a board several employers share is filed under the employer it belongs to.
+        task, label = (result.get('shared_tasks') or {}).get(key) or (result.get('task'), result.get('label'))
+        db.execute('INSERT INTO sightings(source, source_id, job_id, url, label, first_seen_at, last_seen_at, task, kind) '
+                   'VALUES (?,?,?,?,?,?,?,?,?) ON CONFLICT(source, source_id) DO UPDATE SET '
+                   'job_id=excluded.job_id, url=excluded.url, label=excluded.label, last_seen_at=excluded.last_seen_at, '
+                   'task=COALESCE(excluded.task, task), kind=COALESCE(excluded.kind, kind), missing_since=NULL, '
+                   'suspect_since=NULL',
+                   (source, source_id, row['id'], job.get('url') or '', label or '', now, now, task, result.get('kind')))
         return row['id'], created
 
     @staticmethod
@@ -343,7 +583,8 @@ class Store:
         item = dict(row)
         item['cities'] = json.loads(item.pop('cities_json') or '[]')
         item['fit'] = json.loads(item.pop('fit_json') or '{}')
-        for flag in ('is_bengaluru', 'pega_title', 'pega_duty', 'saved', 'hidden', 'is_new', 'has_description'):
+        for flag in ('is_bengaluru', 'pega_title', 'pega_duty', 'saved', 'hidden', 'is_new', 'has_description',
+                     'possibly_closed'):
             item[flag] = bool(item[flag])
         item['seen'] = item['seen_at'] is not None
         item['sources'] = sources
@@ -500,16 +741,180 @@ class Store:
             rows = db.execute(
                 'SELECT j.id, j.score, j.title, j.company, j.employer_type, j.city, j.location, j.posted_at, '
                 'j.experience_min, j.experience_max, j.salary_min_lpa, j.salary_max_lpa, j.url, j.apply_url, '
-                f'j.requisition_id, j.first_seen_at, j.last_seen_at, {_STATE_SELECT} '
+                f'j.requisition_id, j.first_seen_at, j.last_seen_at, j.last_confirmed_at, j.possibly_closed, {_STATE_SELECT} '
                 'FROM jobs j LEFT JOIN user_state u ON u.job_id = j.id ORDER BY ' + _SORTS['score']).fetchall()
             sources = self._sources(db)
         exported = []
         for row in rows:
             item = dict(row)
             item['saved'], item['hidden'] = bool(item['saved']), bool(item['hidden'])
+            item['possibly_closed'] = bool(item['possibly_closed'])
             item['sources'] = ', '.join(sources.get(item['id'], []))
             exported.append(item)
         return exported
+
+    # ── coverage ──
+
+    def coverage(self, registry, targets, tasks=None) -> list[dict]:
+        """One row per registry employer and one per unresolved original target. Reads only.
+
+        Three things are kept apart: who the employer is, which portals are configured, and what
+        the latest attempt of those portals produced.
+
+        `tasks` maps an employer name to the task names of its portals as configured today (see
+        `scan.portal_tasks`, which is used when it is omitted). Only those tasks' outcomes count:
+        health left behind by a portal that was since edited or removed is ignored, so a corrected
+        board starts again as never attempted.
+
+        `latest_status` is the worst outcome among the employer's current portals: a source status,
+        'not_reached' when the time budget cut it off (that is not an attempt), or None when a
+        portal has never been attempted or nothing is scannable. It is never a made-up `empty`.
+
+        Job counts: `jobs_total` is every job ever attributed to the employer; `jobs_on_file` leaves
+        out those the user hid or rejected; `jobs_open` are the on-file jobs not flagged possibly
+        closed and listed by some source within the last 30 days.
+        """
+        if tasks is None:
+            from .scan import portal_tasks   # imported here: scan builds on the store, not the reverse
+            tasks = portal_tasks(registry)
+        current = {}
+        for employer, names in (tasks or {}).items():
+            current.setdefault(registry.canonical_key(employer), []).extend(names)
+        originals, unresolved = {}, []
+        for target in targets or ():
+            entry = registry.find(target['employer']) if target.get('employer') else None
+            if entry is None or target.get('resolution') == 'unresolved':
+                unresolved.append(target)
+            else:
+                originals.setdefault(entry['name'], []).append(target)
+        recent = (datetime.now(timezone.utc) - timedelta(days=OPEN_DAYS)).isoformat(timespec='seconds')
+        with self._db() as db:
+            latest, attempted, succeeded = {}, {}, {}
+            for row in db.execute(f'SELECT run_id, {", ".join(_HEALTH_COLUMNS)} FROM source_health '
+                                  'WHERE task IS NOT NULL ORDER BY rowid'):
+                latest[row['task']] = row
+                if not unreached(row):                   # a source the budget cut off was not attempted
+                    attempted[row['task']] = row
+                    if row['status'] in ('ok', 'empty'):
+                        succeeded[row['task']] = row['at']
+            jobs = {row['company_key']: row for row in db.execute(
+                'SELECT j.company_key, COUNT(*) AS total, '
+                f"COALESCE(SUM({_VIEWS['all']}), 0) AS on_file, "
+                f"COALESCE(SUM({_VIEWS['all']} AND j.possibly_closed = 0 AND j.last_seen_at >= ?), 0) AS open "
+                f'{_FROM} GROUP BY j.company_key', (recent,))}
+        rows = []
+        for employer in sorted(registry.employers, key=lambda item: item['name'].lower()):
+            key = registry.canonical_key(employer['name'])
+            states = [portal['state'] for portal in employer['portals']]
+            if any(state in SCANNABLE_STATES for state in states):
+                inventory = 'configured'
+            elif not states:
+                inventory = 'not configured'
+            else:
+                inventory = 'unsupported' if 'unsupported' in states else 'wrong scope only'
+            sources = []
+            for name in dict.fromkeys(current.get(key, ())) if inventory == 'configured' else ():
+                row, real = latest.get(name), attempted.get(name)
+                status = None if row is None else NOT_REACHED if unreached(row) else row['status']
+                sources.append({'task': name, 'status': status, 'reason': (row['reason'] or None) if row else None,
+                                'error': row['error'] if row else None, 'at': real['at'] if real else None,
+                                'run_id': real['run_id'] if real else None,
+                                'pages_complete': None if real is None or real['pages_complete'] is None
+                                else bool(real['pages_complete']),
+                                'details_complete': None if real is None or real['details_complete'] is None
+                                else bool(real['details_complete']),
+                                'last_success_at': succeeded.get(name)})
+            if inventory == 'configured' and not sources:
+                # Scannable on paper, but no task exists for it (for example a kind without an adapter).
+                sources.append({'task': None, 'status': None, 'reason': None, 'error': None, 'at': None, 'run_id': None,
+                                'pages_complete': None, 'details_complete': None, 'last_success_at': None})
+            worst = min(sources, key=lambda item: _SEVERITY.index(item['status'])
+                        if item['status'] in _SEVERITY else 0, default=None)
+            newest = max((item for item in sources if item['at']), key=lambda item: item['at'], default=None)
+            matched = originals.get(employer['name'], [])
+            counts = jobs.get(key)
+            row = {
+                'canonical': employer['name'],
+                'original_names': list(dict.fromkeys(target['original_name'] for target in matched)),
+                'original_rows': [target['row'] for target in matched],
+                'type': employer['type'], 'bengaluru': employer['bengaluru'], 'parent': employer['parent'],
+                'career_url': employer['career_url'],
+                'portals': [{name: portal.get(name) for name in ('kind', 'state', 'scope', 'note', 'business_unit')}
+                            for portal in employer['portals']],
+                'linkedin_query': employer['linkedin_query'],
+                'inventory_state': inventory, 'inventory_note': employer['inventory_note'],
+                'unverified': any(state == 'candidate' for state in states),
+                'last_attempt_at': newest['at'] if newest else None,
+                'last_success_at': max(filter(None, (item['last_success_at'] for item in sources)), default=None),
+                'latest_status': worst['status'] if worst else None,
+                'latest_reason': worst['reason'] if worst else None,
+                'latest_error': worst['error'] if worst else None,
+                'run_id': newest['run_id'] if newest else None,
+                'pages_complete': self._complete_flag(sources, 'pages_complete'),
+                'details_complete': self._complete_flag(sources, 'details_complete'),
+                'jobs_total': counts['total'] if counts else 0,
+                'jobs_on_file': counts['on_file'] if counts else 0,
+                'jobs_open': counts['open'] if counts else 0,
+                'sources': [{name: item[name] for name in ('task', 'status', 'reason', 'at', 'run_id')} for item in sources],
+            }
+            row['next_action'] = _next_action(row)
+            rows.append(row)
+        for target in unresolved:
+            row = dict.fromkeys(COVERAGE_COLUMNS)
+            row.update(canonical=None, original_names=[target['original_name']], original_rows=[target['row']],
+                       career_url=target.get('original_url'), portals=[], linkedin_query=False, unverified=False,
+                       inventory_state='identity unresolved',
+                       inventory_note=target.get('note') or (f"named employer {target['employer']!r} is not in companies.json"
+                                                             if target.get('employer') else None),
+                       jobs_total=0, jobs_on_file=0, jobs_open=0, sources=[])
+            row['next_action'] = _next_action(row)
+            rows.append(row)
+        return rows
+
+    @staticmethod
+    def _complete_flag(sources, name):
+        """True when every current portal was attempted and reported the flag true; False when any
+        reported false; None when a portal was never attempted or none said."""
+        flags = [item[name] for item in sources]
+        if any(flag is False for flag in flags):
+            return False
+        return True if flags and all(flag is True for flag in flags) else None
+
+    def coverage_summary(self, rows) -> dict:
+        """Counts for the coverage tiles, computed from the rows of `coverage()`.
+
+        Outcome counts are over employers with a scannable portal, by `latest_status`: `ok` includes
+        empty, `error` includes skipped, `not_reached` are those the time budget cut off and
+        `never_attempted` those with a portal that has never been tried. `attempted` counts the
+        employers actually attempted in the most recent finished run.
+        """
+        with self._db() as db:
+            latest = db.execute('SELECT id FROM runs WHERE finished_at IS NOT NULL '
+                                'ORDER BY finished_at DESC, rowid DESC LIMIT 1').fetchone()
+        latest_run_id = latest['id'] if latest else None
+        configured = [row for row in rows if row['inventory_state'] == 'configured']
+
+        def outcome(*statuses):
+            return sum(1 for row in configured if row['latest_status'] in statuses)
+
+        def inventory(state):
+            return sum(1 for row in rows if row['inventory_state'] == state)
+        return {
+            'original_rows': sum(len(row['original_rows'] or ()) for row in rows),
+            'employers': sum(1 for row in rows if row['canonical'] is not None),
+            'configured': len(configured),
+            'attempted': sum(1 for row in configured if latest_run_id and any(
+                source['run_id'] == latest_run_id for source in row['sources'])),
+            'never_attempted': outcome(None),
+            'not_reached': outcome(NOT_REACHED),
+            'ok': outcome('ok', 'empty'), 'partial': outcome('partial'), 'blocked': outcome('blocked'),
+            'maintenance': outcome('maintenance'), 'error': outcome('error', 'skipped'),
+            'unverified': sum(1 for row in configured if row['unverified']),
+            'not_configured': inventory('not configured'), 'unsupported': inventory('unsupported'),
+            'wrong_scope': inventory('wrong scope only'), 'unresolved': inventory('identity unresolved'),
+            'run_id': latest_run_id,
+            'generated_at': now_iso(),
+        }
 
     # ── key/value ──
 
@@ -527,3 +932,49 @@ class Store:
         with self._db(write=True) as db:
             db.execute('INSERT OR REPLACE INTO kv(key, value_json) VALUES (?,?)',
                        (key, json.dumps(value, ensure_ascii=False, default=str)))
+
+
+# Every key of a coverage row, in the order exports list them.
+COVERAGE_COLUMNS = ('canonical', 'original_names', 'original_rows', 'type', 'bengaluru', 'parent', 'career_url', 'portals',
+                    'linkedin_query', 'inventory_state', 'inventory_note', 'unverified', 'last_attempt_at',
+                    'last_success_at', 'latest_status', 'latest_reason', 'latest_error', 'run_id', 'pages_complete',
+                    'details_complete', 'jobs_total', 'jobs_on_file', 'jobs_open', 'sources', 'next_action')
+
+_REASON_ACTIONS = {
+    'tls': 'Fix certificate trust on this PC (proxy or antivirus certificate), then retry incomplete sources.',
+    'dns': 'The site name did not resolve; check the network or the configured host, then retry.',
+    'timeout': 'The site did not answer in time; retry incomplete sources.',
+    'refused': 'The site refused the request; open the careers page by hand and keep its own job alert on.',
+    'unreachable': 'The site could not be reached; check the network or VPN, then retry incomplete sources.',
+    'rate_limited': 'The site asked to slow down; retry incomplete sources later.',
+    'http_4xx': 'The configured board address was rejected; check the tenant or site in companies.json.',
+    'http_5xx': 'The site had a server error; retry incomplete sources later.',
+    'shape': 'The site answered in an unexpected form; the adapter needs an update.',
+    'cap': 'The site returns more results than can be paged; the adapter needs a narrower query.',
+    'budget': 'Not reached within the time budget; run "Retry incomplete sources".',
+    'maintenance': 'The site was in maintenance; retry incomplete sources later.',
+}
+
+
+def _next_action(row) -> str:
+    """What the user should do about one coverage row, in a sentence."""
+    state, status = row['inventory_state'], row['latest_status']
+    note = f" ({row['inventory_note']})" if row.get('inventory_note') else ''
+    portal_note = next((portal['note'] for portal in row['portals'] if portal.get('note')), None)
+    if state == 'identity unresolved':
+        return 'Decide which employer this target refers to' + note + '.'
+    if state == 'not configured':
+        return 'No career portal is configured; only general LinkedIn discovery applies. Use the careers page' + note + '.'
+    if state == 'unsupported':
+        return 'No adapter is possible yet: ' + (portal_note or 'see the portal note') + '.'
+    if state == 'wrong scope only':
+        return 'The known board does not cover India or this entity: ' + (portal_note or 'see the portal note') + '.'
+    if status is None:
+        return 'Not attempted yet; run a full scan.'
+    if status == NOT_REACHED:
+        return _REASON_ACTIONS['budget']
+    if status in ('ok', 'empty'):
+        return ('Read correctly, but a portal is unverified; run "radar.py verify" to confirm it.' if row['unverified']
+                else 'Nothing to do; the latest attempt read this employer in full.')
+    return _REASON_ACTIONS.get(row['latest_reason'] or ('refused' if status == 'blocked' else status),
+                               'The latest attempt was incomplete; run "Retry incomplete sources".')

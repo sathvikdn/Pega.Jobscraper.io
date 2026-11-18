@@ -1,0 +1,39 @@
+{
+  "id": "C071",
+  "company": {
+    "name": "Dell Technologies",
+    "aliases": [
+      "Dell"
+    ],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "enterpriseplatform.dell.com",
+        "site": "careers",
+        "state": "candidate",
+        "scope": "global",
+        "note": "jobs.dell.com redirects to this Dell-hosted Oracle Recruiting site; only the custom domain is evidenced, so the API path must be confirmed by verify"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers",
+      "checked_at": "2026-11-15T23:49:53.117475+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Dell",
+      "evidence": "evidence/43d03087cccb930a5946.html.gz",
+      "sha256": "1097c3c3e8f84a08f974c73a6442c9ab05081981764506d84604c015afe2d0c1"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

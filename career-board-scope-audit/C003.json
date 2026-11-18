@@ -1,0 +1,33 @@
+{
+  "id": "C003",
+  "company": {
+    "name": "Accenture",
+    "aliases": [],
+    "type": "services",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "accenture",
+        "datacentre": "wd103",
+        "site": "AccentureCareers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers",
+      "checked_at": "2026-11-15T23:49:02.426331+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 429,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 429: Too Many Requests"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,121 @@
+{
+  "id": "C066",
+  "company": {
+    "name": "CVS Health",
+    "aliases": [
+      "CVS India"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.cvshealth.com/us/en/home",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "cvshealth",
+        "datacentre": "wd1",
+        "site": "CVS_Health_Careers",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified; jobs.cvshealth.com (Phenom) is a front end for this board"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.cvshealth.com/us/en/home",
+      "checked_at": "2026-11-15T23:49:49.998181+00:00",
+      "links": [
+        {
+          "url": "https://jobs.cvshealth.com/us/en/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/careerareas",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/life",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/who-we-are",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/jointalentcommunity",
+          "text": "Sign Up Now"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/hiring-process",
+          "text": "Explore our hiring process"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/events",
+          "text": "Check out upcoming events"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/blog",
+          "text": "View All Stories"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/search-results",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/careerareas",
+          "text": "Explore next: Career Areas"
+        },
+        {
+          "url": "https://jobs.cvshealth.com/us/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://cdn.phenompeople.com/CareerConnectResources/CVSCHLUS/documents/2025-CVS-EEO-Statement_wet-signature-1757513868342.pdf",
+          "text": "CVS Health Affirmative Action and Equal Employment Opportunity Policy Statement"
+        },
+        {
+          "url": "https://cdn.phenompeople.com/CareerConnectResources/CVSCHLUS/documents/EEOC_KnowYourRights_screen_reader_10_20-1715835527320-1750776283673.pdf",
+          "text": "Know Your Rights"
+        },
+        {
+          "url": "https://www.facebook.com/CVSCareers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/showcase/cvs-health-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/cvscareers ",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/CVSPharmacyVideos",
+          "text": ""
+        },
+        {
+          "url": "https://www.tiktok.com/@cvscareers",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://jobs.cvshealth.com/us/en/home",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "CVS Health Careers",
+      "evidence": "evidence/7d5919d1bc33089b8b7f.html.gz",
+      "sha256": "253e9e4b0c387e7efc06d6af198956f582fb3a1e4b33d25fb606077818305044"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

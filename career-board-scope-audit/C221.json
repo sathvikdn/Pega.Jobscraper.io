@@ -1,0 +1,34 @@
+{
+  "id": "C221",
+  "company": {
+    "name": "The Hartford",
+    "aliases": [
+      "Hartford"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.thehartford.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "thehartford",
+        "datacentre": "wd5",
+        "site": "Careers_External",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.thehartford.com/careers",
+      "checked_at": "2026-11-15T23:51:10.997077+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

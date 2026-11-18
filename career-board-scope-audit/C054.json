@@ -1,0 +1,2536 @@
+{
+  "id": "C054",
+  "company": {
+    "name": "Coca-Cola",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.coca-colacompany.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "coke",
+        "datacentre": "wd1",
+        "site": "coca-cola-careers",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.coca-colacompany.com/careers",
+      "checked_at": "2026-11-15T23:49:45.288033+00:00",
+      "links": [
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/media-center",
+          "text": "News"
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers#reciteme-launch",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Our Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/purpose-and-vision",
+          "text": "Our Vision & Purpose"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/coca-cola-system",
+          "text": "The Coca‑Cola System"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/leadership",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/board-of-directors",
+          "text": "Our Board of Directors"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us#sustainability",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us#sustainability",
+          "text": "Sustainability Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/environment",
+          "text": "Environment"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/people-and-communities",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/people-and-communities/the-coca-cola-foundation",
+          "text": "The Coca‑Cola Foundation"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history",
+          "text": "Coca‑Cola History"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history",
+          "text": "Coca‑Cola History Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history#timeline",
+          "text": "Our Timeline"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea",
+          "text": "Our Origins"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle",
+          "text": "Our First Bottle"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment",
+          "text": "Sports & Entertainment"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment",
+          "text": "Sports & Entertainment Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment/fifa-2026",
+          "text": "The Coca‑Cola Company and FIFA World Cup 2026™ Partnership"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment/fifa-world-cup-trophy-tour-by-coca-cola",
+          "text": "FIFA World Cup™ Trophy Tour by Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "Sparkling"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "Sparkling Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/coca-cola",
+          "text": "Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/diet-coke",
+          "text": "Diet Coke"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/fanta",
+          "text": "Fanta"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/sprite",
+          "text": "Sprite"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "Hydration"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "Hydration Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/bodyarmor",
+          "text": "BODYARMOR"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/dasani",
+          "text": "Dasani"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/powerade",
+          "text": "Powerade"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/smartwater",
+          "text": "smartwater"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/topo-chico",
+          "text": "Topo Chico"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "Coffee & Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "Coffee & Tea Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/costa-coffee",
+          "text": "Costa Coffee"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/fuze",
+          "text": "FUZE"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/gold-peak",
+          "text": "Gold Peak Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/peace-tea",
+          "text": "Peace Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "Juices, Dairy & Plant-Based"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "Juices, Dairy & Plant-Based Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/fairlife",
+          "text": "fairlife"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/innocent",
+          "text": "innocent"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/minute-maid",
+          "text": "Minute Maid"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/simply",
+          "text": "Simply"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "Alcohol Ready-to-Drink"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "Alcohol Ready-to-Drink Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/fresca-mixed",
+          "text": "Fresca Mixed"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/jack-daniels-coca-cola",
+          "text": "Jack Daniel's & Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/simply-spiked",
+          "text": "Simply Spiked"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/topo-chico-hard-seltzer",
+          "text": "Topo Chico Hard"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+          "text": "Life at Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+          "text": "Life at Coca‑Cola Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola#our-culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola#benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola/career-development",
+          "text": "Career Development"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/work-with-us",
+          "text": "Work With Us"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Career Areas Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/our-military-community",
+          "text": "Military"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/accessible-workplace",
+          "text": "Accessible Workplace"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/early-careers",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process",
+          "text": "Hiring Process Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#application-process",
+          "text": "Application Process"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#interview",
+          "text": "Interview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#offers",
+          "text": "Offers"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Job Search Overview"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Coca‑Cola Company Jobs"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+          "text": "Coca‑Cola System Jobs"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/media-center",
+          "text": ""
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "See Open Roles"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+          "text": "Life at Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#early-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#rgm",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#pacs",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#marketing",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/digital-and-technology-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#sales",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#finance-and-accounting",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#technical",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/a-role-for-everyone#supply-chain",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Discover All Our Teams"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=United%20States%20of%20America",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Brazil",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=France",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=United%20States%20of%20America",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Mexico",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Egypt",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Ireland",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Belgium",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Singapore",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=India",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Kenya",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Japan",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Turkey",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=United%20States%20of%20America",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Indonesia",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Argentina",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "See Open Roles in Your Location"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Poland",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=China",
+          "text": ""
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/?store_id=Chile",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process",
+          "text": "Our Hiring Process"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/policies-and-practices/employment/recruitment-scams-fraudulent-activity",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://www.fastcompany.com/91025697/advertising-marketing-most-innovative-companies-2024",
+          "text": "2025 Most Innovative Companies - Advertising & Marketing"
+        },
+        {
+          "url": "https://time.com/7315547/worlds-best-companies-of-2025/",
+          "text": "2025 World's Best Companies"
+        },
+        {
+          "url": "https://fortune.com/ranking/aiq/",
+          "text": "2025 Fortune AIQ 50 Ranking 2025"
+        },
+        {
+          "url": "https://www.kantar.com/campaigns/brandz-downloads/kantar-brandz-most-valuable-global-brands-2025",
+          "text": "2025 Top Most Valuable Global Brands"
+        },
+        {
+          "url": "https://www.hrc.org/resources/corporations/coca-cola-co.-the",
+          "text": "2025 Equality 100 Award CEI Recipient, Human Rights Campaign 2025"
+        },
+        {
+          "url": "https://www.kornferry.com/about-us/press/fortune-and-korn-ferry-reveal-the-2026-worlds-most-admired-companies-list",
+          "text": "2026 World's Most Admired Companies"
+        },
+        {
+          "url": "https://time.com/7333715/best-companies-future-leaders-2026/",
+          "text": "2026 The Best Companies for Future Leaders"
+        },
+        {
+          "url": "https://americanopportunityindex.org/ranking?tab=top100",
+          "text": "2024 AOI Best Place to Work For Career Growth"
+        },
+        {
+          "url": "https://www.canneslions.com/news/final-lion-winners-announced-at-the-2024-cannes-lions-international-festival",
+          "text": "2024 Creative Brand Of The Year"
+        },
+        {
+          "url": "https://disabilityin.org/what-we-do/disability-equality-index/2024companies/",
+          "text": "2024 Disability Equality Index For Best Places to Work For Disability Inclusion"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history",
+          "text": "Our History"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Our Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Our Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Our Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Our Brands"
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/policies-and-practices",
+          "text": "Policies, Practices & Reports"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/faq",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": "International"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en#global-privacy-notices",
+          "text": "Cookies Policy"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers#js-open-onetrust-preference-center",
+          "text": "Cookies Settings"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/supplemental-us-privacy-notice",
+          "text": "Notice at Collection"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/do-not-sell-or-share-my-personal-information",
+          "text": "Do Not Sell or Share My Personal Information"
+        },
+        {
+          "url": "https://www.coca-cola.com/us/en/legal/terms-of-service",
+          "text": "Terms of Service"
+        },
+        {
+          "url": "https://www.facebook.com/TheCocaColaCo",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/the-coca-cola-company/",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.instagram.com/TheCocaColaCo/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.youtube.com/user/CocaColaCo",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/supplemental-us-privacy-notice",
+          "text": "Notice at Collection"
+        },
+        {
+          "url": "https://www.coca-cola.com/us/en/legal/terms-of-service",
+          "text": "Terms of Service"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.coca-colacompany.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at The Coca-Cola Company",
+      "evidence": "evidence/1bba8c487ac7b78b434d.html.gz",
+      "sha256": "03423f0091f248d36686650c095fc98d706c3d728383a583aae250b053b245ca"
+    },
+    {
+      "url": "https://careers.coca-colacompany.com/?store_id=India",
+      "checked_at": "2026-11-15T23:49:46.779457+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "coke",
+          "datacentre": "wd1",
+          "site": "coca-cola-careers",
+          "source_link": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers?store_id=India"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers?store_id=India",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/3b04d6d28ccdf2aae514.html.gz",
+      "sha256": "59b960ce335e3229f2e8e5f90f01fd2824e777cf043dab28c8160dfdaa4ca96f"
+    },
+    {
+      "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+      "checked_at": "2026-11-15T23:49:49.187450+00:00",
+      "links": [
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/media-center",
+          "text": "News"
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs#reciteme-launch",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Our Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/purpose-and-vision",
+          "text": "Our Vision & Purpose"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/coca-cola-system",
+          "text": "The Coca‑Cola System"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/leadership",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/board-of-directors",
+          "text": "Our Board of Directors"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us#sustainability",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us#sustainability",
+          "text": "Sustainability Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/environment",
+          "text": "Environment"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/people-and-communities",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/people-and-communities/the-coca-cola-foundation",
+          "text": "The Coca‑Cola Foundation"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history",
+          "text": "Coca‑Cola History"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history",
+          "text": "Coca‑Cola History Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history#timeline",
+          "text": "Our Timeline"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea",
+          "text": "Our Origins"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle",
+          "text": "Our First Bottle"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment",
+          "text": "Sports & Entertainment"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment",
+          "text": "Sports & Entertainment Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment/fifa-2026",
+          "text": "The Coca‑Cola Company and FIFA World Cup 2026™ Partnership"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment/fifa-world-cup-trophy-tour-by-coca-cola",
+          "text": "FIFA World Cup™ Trophy Tour by Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "Sparkling"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "Sparkling Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/coca-cola",
+          "text": "Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/diet-coke",
+          "text": "Diet Coke"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/fanta",
+          "text": "Fanta"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/sprite",
+          "text": "Sprite"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "Hydration"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "Hydration Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/bodyarmor",
+          "text": "BODYARMOR"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/dasani",
+          "text": "Dasani"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/powerade",
+          "text": "Powerade"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/smartwater",
+          "text": "smartwater"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/topo-chico",
+          "text": "Topo Chico"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "Coffee & Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "Coffee & Tea Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/costa-coffee",
+          "text": "Costa Coffee"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/fuze",
+          "text": "FUZE"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/gold-peak",
+          "text": "Gold Peak Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/peace-tea",
+          "text": "Peace Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "Juices, Dairy & Plant-Based"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "Juices, Dairy & Plant-Based Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/fairlife",
+          "text": "fairlife"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/innocent",
+          "text": "innocent"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/minute-maid",
+          "text": "Minute Maid"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/simply",
+          "text": "Simply"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "Alcohol Ready-to-Drink"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "Alcohol Ready-to-Drink Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/fresca-mixed",
+          "text": "Fresca Mixed"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/jack-daniels-coca-cola",
+          "text": "Jack Daniel's & Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/simply-spiked",
+          "text": "Simply Spiked"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/topo-chico-hard-seltzer",
+          "text": "Topo Chico Hard"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+          "text": "Life at Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+          "text": "Life at Coca‑Cola Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola#our-culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola#benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola/career-development",
+          "text": "Career Development"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/work-with-us",
+          "text": "Work With Us"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Career Areas Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/our-military-community",
+          "text": "Military"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/accessible-workplace",
+          "text": "Accessible Workplace"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/early-careers",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process",
+          "text": "Hiring Process Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#application-process",
+          "text": "Application Process"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#interview",
+          "text": "Interview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#offers",
+          "text": "Offers"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Job Search Overview"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Coca‑Cola Company Jobs"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+          "text": "Coca‑Cola System Jobs"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/media-center",
+          "text": ""
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/abarta",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/northeast/search/",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/southwest",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/heartland",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/liberty",
+          "text": ""
+        },
+        {
+          "url": "https://jobportal.reyesholdings.com/rccb/jobs?page=1",
+          "text": ""
+        },
+        {
+          "url": "https://cokeflorida.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://chesterman.com/careers",
+          "text": ""
+        },
+        {
+          "url": "https://ccclark.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://corinthcoke.com/career-opportunities/",
+          "text": ""
+        },
+        {
+          "url": "https://www.durangococacola.com/",
+          "text": ""
+        },
+        {
+          "url": "https://randccb.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colahighcountry.com/#careers",
+          "text": ""
+        },
+        {
+          "url": "https://mccbw.com/coca-cola-application/",
+          "text": ""
+        },
+        {
+          "url": "https://www.odomcorp.com/odom-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.cocacolaozarks.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://vikingcocacola.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cokecanada.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://fairlife.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaunited.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.atlanticbottling.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.cokeconsolidated.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.aberdeencocacola.com/careers-1",
+          "text": ""
+        },
+        {
+          "url": "https://adacocacola.com/index.php/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colafemsa.com/en/join-coca-cola-femsa/apply-here.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.arcacontal.com/es/empleo/trabaja-en-arca-continental",
+          "text": ""
+        },
+        {
+          "url": "https://bepensa.csod.com/ux/ats/careersite/1/home?c=bepensa",
+          "text": ""
+        },
+        {
+          "url": "https://www.cef.com.mx/",
+          "text": ""
+        },
+        {
+          "url": "https://www.koandina.com/en/work-with-us/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.airavirtual.com/corporacion_rica",
+          "text": ""
+        },
+        {
+          "url": "https://jvalle.teamtailor.com/jobs",
+          "text": ""
+        },
+        {
+          "url": "https://solarcocacola.gupy.io/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaembonor.evaluar.com/bolsa-de-trabajo/",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/about-us",
+          "text": ""
+        },
+        {
+          "url": "https://slmgbeverages.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://costacareers.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.innocentdrinks.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://careerscci.com/?locale=en_US",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbji.co.jp/recruit/",
+          "text": ""
+        },
+        {
+          "url": "https://www.hokuriku.ccbc.co.jp/?page_id=76",
+          "text": ""
+        },
+        {
+          "url": "https://en.ccbji.co.jp/",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbagroup.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.eccbc.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://ng.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbagroup.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.eccbc.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://ng.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbji.co.jp/recruit/",
+          "text": ""
+        },
+        {
+          "url": "https://www.hokuriku.ccbc.co.jp/?page_id=76",
+          "text": ""
+        },
+        {
+          "url": "https://en.ccbji.co.jp/",
+          "text": ""
+        },
+        {
+          "url": "https://careerscci.com/?locale=en_US",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs/coca-cola-hbc",
+          "text": ""
+        },
+        {
+          "url": "https://costacareers.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.innocentdrinks.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/about-us",
+          "text": ""
+        },
+        {
+          "url": "https://slmgbeverages.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colafemsa.com/en/join-coca-cola-femsa/apply-here.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.arcacontal.com/es/empleo/trabaja-en-arca-continental",
+          "text": ""
+        },
+        {
+          "url": "https://bepensa.csod.com/ux/ats/careersite/1/home?c=bepensa",
+          "text": ""
+        },
+        {
+          "url": "https://www.cef.com.mx/",
+          "text": ""
+        },
+        {
+          "url": "https://www.koandina.com/en/work-with-us/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.airavirtual.com/corporacion_rica",
+          "text": ""
+        },
+        {
+          "url": "https://jvalle.teamtailor.com/jobs",
+          "text": ""
+        },
+        {
+          "url": "https://solarcocacola.gupy.io/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaembonor.evaluar.com/bolsa-de-trabajo/",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/abarta",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/northeast/search/",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/southwest",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/heartland",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/liberty",
+          "text": ""
+        },
+        {
+          "url": "https://jobportal.reyesholdings.com/rccb/jobs?page=1",
+          "text": ""
+        },
+        {
+          "url": "https://cokeflorida.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://chesterman.com/careers",
+          "text": ""
+        },
+        {
+          "url": "https://ccclark.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://corinthcoke.com/career-opportunities/",
+          "text": ""
+        },
+        {
+          "url": "https://www.durangococacola.com/",
+          "text": ""
+        },
+        {
+          "url": "https://randccb.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colahighcountry.com/#careers",
+          "text": ""
+        },
+        {
+          "url": "https://mccbw.com/coca-cola-application/",
+          "text": ""
+        },
+        {
+          "url": "https://www.odomcorp.com/odom-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.cocacolaozarks.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://vikingcocacola.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cokecanada.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://fairlife.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaunited.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.atlanticbottling.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.cokeconsolidated.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.aberdeencocacola.com/careers-1",
+          "text": ""
+        },
+        {
+          "url": "https://adacocacola.com/index.php/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Our Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Our Brands"
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/policies-and-practices",
+          "text": "Policies, Practices & Reports"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/faq",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": "International"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en#global-privacy-notices",
+          "text": "Cookies Policy"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs#js-open-onetrust-preference-center",
+          "text": "Cookies Settings"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/supplemental-us-privacy-notice",
+          "text": "Notice at Collection"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/do-not-sell-or-share-my-personal-information",
+          "text": "Do Not Sell or Share My Personal Information"
+        },
+        {
+          "url": "https://www.coca-cola.com/us/en/legal/terms-of-service",
+          "text": "Terms of Service"
+        },
+        {
+          "url": "https://www.facebook.com/TheCocaColaCo",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/the-coca-cola-company/",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.instagram.com/TheCocaColaCo/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.youtube.com/user/CocaColaCo",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/supplemental-us-privacy-notice",
+          "text": "Notice at Collection"
+        },
+        {
+          "url": "https://www.coca-cola.com/us/en/legal/terms-of-service",
+          "text": "Terms of Service"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "System Jobs",
+      "evidence": "evidence/07b238ffa5c147504630.html.gz",
+      "sha256": "217fb124c0f5494ddca7792c4a2ad3b88787244f856bd7a140b7506714c8c44b"
+    },
+    {
+      "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+      "checked_at": "2026-11-15T23:49:49.187450+00:00",
+      "links": [
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/media-center",
+          "text": "News"
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs#reciteme-launch",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Our Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/purpose-and-vision",
+          "text": "Our Vision & Purpose"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/coca-cola-system",
+          "text": "The Coca‑Cola System"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/leadership",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/board-of-directors",
+          "text": "Our Board of Directors"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us#sustainability",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us#sustainability",
+          "text": "Sustainability Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/environment",
+          "text": "Environment"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/people-and-communities",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/people-and-communities/the-coca-cola-foundation",
+          "text": "The Coca‑Cola Foundation"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history",
+          "text": "Coca‑Cola History"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history",
+          "text": "Coca‑Cola History Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history#timeline",
+          "text": "Our Timeline"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea",
+          "text": "Our Origins"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle",
+          "text": "Our First Bottle"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment",
+          "text": "Sports & Entertainment"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment",
+          "text": "Sports & Entertainment Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment/fifa-2026",
+          "text": "The Coca‑Cola Company and FIFA World Cup 2026™ Partnership"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/sports-and-entertainment/fifa-world-cup-trophy-tour-by-coca-cola",
+          "text": "FIFA World Cup™ Trophy Tour by Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "Sparkling"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "Sparkling Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/coca-cola",
+          "text": "Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/diet-coke",
+          "text": "Diet Coke"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/fanta",
+          "text": "Fanta"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks/sprite",
+          "text": "Sprite"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/sparkling-soft-drinks",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "Hydration"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "Hydration Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/bodyarmor",
+          "text": "BODYARMOR"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/dasani",
+          "text": "Dasani"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/powerade",
+          "text": "Powerade"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/smartwater",
+          "text": "smartwater"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration/topo-chico",
+          "text": "Topo Chico"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/waters-and-hydration",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "Coffee & Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "Coffee & Tea Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/costa-coffee",
+          "text": "Costa Coffee"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/fuze",
+          "text": "FUZE"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/gold-peak",
+          "text": "Gold Peak Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea/peace-tea",
+          "text": "Peace Tea"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/coffee-tea",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "Juices, Dairy & Plant-Based"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "Juices, Dairy & Plant-Based Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/fairlife",
+          "text": "fairlife"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/innocent",
+          "text": "innocent"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/minute-maid",
+          "text": "Minute Maid"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based/simply",
+          "text": "Simply"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/juices-dairy-and-plant-based",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "Alcohol Ready-to-Drink"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "Alcohol Ready-to-Drink Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/fresca-mixed",
+          "text": "Fresca Mixed"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/jack-daniels-coca-cola",
+          "text": "Jack Daniel's & Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/simply-spiked",
+          "text": "Simply Spiked"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink/topo-chico-hard-seltzer",
+          "text": "Topo Chico Hard"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands/alcohol-ready-to-drink",
+          "text": "View all brands"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+          "text": "Life at Coca‑Cola"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola",
+          "text": "Life at Coca‑Cola Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola#our-culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola#benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/life-at-coca-cola/career-development",
+          "text": "Career Development"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/work-with-us",
+          "text": "Work With Us"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Career Areas Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/our-military-community",
+          "text": "Military"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/career-areas/accessible-workplace",
+          "text": "Accessible Workplace"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/early-careers",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process",
+          "text": "Hiring Process"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process",
+          "text": "Hiring Process Overview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#application-process",
+          "text": "Application Process"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#interview",
+          "text": "Interview"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/hiring-process#offers",
+          "text": "Offers"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Job Search"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Job Search Overview"
+        },
+        {
+          "url": "https://careers.coca-colacompany.com/",
+          "text": "Coca‑Cola Company Jobs"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+          "text": "Coca‑Cola System Jobs"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/media-center",
+          "text": ""
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/abarta",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/northeast/search/",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/southwest",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/heartland",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/liberty",
+          "text": ""
+        },
+        {
+          "url": "https://jobportal.reyesholdings.com/rccb/jobs?page=1",
+          "text": ""
+        },
+        {
+          "url": "https://cokeflorida.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://chesterman.com/careers",
+          "text": ""
+        },
+        {
+          "url": "https://ccclark.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://corinthcoke.com/career-opportunities/",
+          "text": ""
+        },
+        {
+          "url": "https://www.durangococacola.com/",
+          "text": ""
+        },
+        {
+          "url": "https://randccb.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colahighcountry.com/#careers",
+          "text": ""
+        },
+        {
+          "url": "https://mccbw.com/coca-cola-application/",
+          "text": ""
+        },
+        {
+          "url": "https://www.odomcorp.com/odom-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.cocacolaozarks.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://vikingcocacola.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cokecanada.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://fairlife.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaunited.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.atlanticbottling.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.cokeconsolidated.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.aberdeencocacola.com/careers-1",
+          "text": ""
+        },
+        {
+          "url": "https://adacocacola.com/index.php/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colafemsa.com/en/join-coca-cola-femsa/apply-here.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.arcacontal.com/es/empleo/trabaja-en-arca-continental",
+          "text": ""
+        },
+        {
+          "url": "https://bepensa.csod.com/ux/ats/careersite/1/home?c=bepensa",
+          "text": ""
+        },
+        {
+          "url": "https://www.cef.com.mx/",
+          "text": ""
+        },
+        {
+          "url": "https://www.koandina.com/en/work-with-us/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.airavirtual.com/corporacion_rica",
+          "text": ""
+        },
+        {
+          "url": "https://jvalle.teamtailor.com/jobs",
+          "text": ""
+        },
+        {
+          "url": "https://solarcocacola.gupy.io/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaembonor.evaluar.com/bolsa-de-trabajo/",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/about-us",
+          "text": ""
+        },
+        {
+          "url": "https://slmgbeverages.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://costacareers.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.innocentdrinks.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://careerscci.com/?locale=en_US",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbji.co.jp/recruit/",
+          "text": ""
+        },
+        {
+          "url": "https://www.hokuriku.ccbc.co.jp/?page_id=76",
+          "text": ""
+        },
+        {
+          "url": "https://en.ccbji.co.jp/",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbagroup.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.eccbc.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://ng.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbagroup.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.eccbc.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://ng.coca-colahellenic.com/en/working-with-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccbji.co.jp/recruit/",
+          "text": ""
+        },
+        {
+          "url": "https://www.hokuriku.ccbc.co.jp/?page_id=76",
+          "text": ""
+        },
+        {
+          "url": "https://en.ccbji.co.jp/",
+          "text": ""
+        },
+        {
+          "url": "https://careerscci.com/?locale=en_US",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs/coca-cola-hbc",
+          "text": ""
+        },
+        {
+          "url": "https://costacareers.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.innocentdrinks.co.uk/",
+          "text": ""
+        },
+        {
+          "url": "https://www.ccep.jobs/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/career",
+          "text": ""
+        },
+        {
+          "url": "https://www.hccb.in/about-us",
+          "text": ""
+        },
+        {
+          "url": "https://slmgbeverages.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colafemsa.com/en/join-coca-cola-femsa/apply-here.html",
+          "text": ""
+        },
+        {
+          "url": "https://www.arcacontal.com/es/empleo/trabaja-en-arca-continental",
+          "text": ""
+        },
+        {
+          "url": "https://bepensa.csod.com/ux/ats/careersite/1/home?c=bepensa",
+          "text": ""
+        },
+        {
+          "url": "https://www.cef.com.mx/",
+          "text": ""
+        },
+        {
+          "url": "https://www.koandina.com/en/work-with-us/",
+          "text": ""
+        },
+        {
+          "url": "https://jobs.airavirtual.com/corporacion_rica",
+          "text": ""
+        },
+        {
+          "url": "https://jvalle.teamtailor.com/jobs",
+          "text": ""
+        },
+        {
+          "url": "https://solarcocacola.gupy.io/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaembonor.evaluar.com/bolsa-de-trabajo/",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/abarta",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/northeast/search/",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/southwest",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/heartland",
+          "text": ""
+        },
+        {
+          "url": "https://conaservices.jobs2web.com/liberty",
+          "text": ""
+        },
+        {
+          "url": "https://jobportal.reyesholdings.com/rccb/jobs?page=1",
+          "text": ""
+        },
+        {
+          "url": "https://cokeflorida.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://chesterman.com/careers",
+          "text": ""
+        },
+        {
+          "url": "https://ccclark.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://corinthcoke.com/career-opportunities/",
+          "text": ""
+        },
+        {
+          "url": "https://www.durangococacola.com/",
+          "text": ""
+        },
+        {
+          "url": "https://randccb.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://coca-colahighcountry.com/#careers",
+          "text": ""
+        },
+        {
+          "url": "https://mccbw.com/coca-cola-application/",
+          "text": ""
+        },
+        {
+          "url": "https://www.odomcorp.com/odom-careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.cocacolaozarks.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://vikingcocacola.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cokecanada.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://fairlife.com/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://cocacolaunited.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.atlanticbottling.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.cokeconsolidated.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.aberdeencocacola.com/careers-1",
+          "text": ""
+        },
+        {
+          "url": "https://adacocacola.com/index.php/careers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.swirecc.com/Careers",
+          "text": ""
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us",
+          "text": "Our Company"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/brands",
+          "text": "Our Brands"
+        },
+        {
+          "url": "https://investors.coca-colacompany.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/policies-and-practices",
+          "text": "Policies, Practices & Reports"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/faq",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/about-us/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": "International"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en#global-privacy-notices",
+          "text": "Cookies Policy"
+        },
+        {
+          "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs#js-open-onetrust-preference-center",
+          "text": "Cookies Settings"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/supplemental-us-privacy-notice",
+          "text": "Notice at Collection"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/do-not-sell-or-share-my-personal-information",
+          "text": "Do Not Sell or Share My Personal Information"
+        },
+        {
+          "url": "https://www.coca-cola.com/us/en/legal/terms-of-service",
+          "text": "Terms of Service"
+        },
+        {
+          "url": "https://www.facebook.com/TheCocaColaCo",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/company/the-coca-cola-company/",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.instagram.com/TheCocaColaCo/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.youtube.com/user/CocaColaCo",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.coca-cola.com/country-selector",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://datatrust.coca-cola.com/us/en/notices/supplemental-us-privacy-notice",
+          "text": "Notice at Collection"
+        },
+        {
+          "url": "https://www.coca-cola.com/us/en/legal/terms-of-service",
+          "text": "Terms of Service"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.coca-colacompany.com/careers/job-search/systemjobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "System Jobs",
+      "evidence": "evidence/07b238ffa5c147504630.html.gz",
+      "sha256": "217fb124c0f5494ddca7792c4a2ad3b88787244f856bd7a140b7506714c8c44b"
+    },
+    {
+      "url": "https://www.coca-colacompany.com/careers/job-search/systemjobs/coca-cola-hbc",
+      "checked_at": "2026-11-15T23:49:50.752834+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 404,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

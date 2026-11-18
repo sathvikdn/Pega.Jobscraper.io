@@ -1,0 +1,1006 @@
+{
+  "id": "C140",
+  "company": {
+    "name": "Lufthansa Systems",
+    "aliases": [
+      "Lufthansa Systems India",
+      "LH Systems"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.lhsystems.com/career",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://www.lhsystems.com/career",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Careers page without a known vacancy provider; needs a site-specific parser"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.lhsystems.com/career",
+      "checked_at": "2026-11-15T23:50:27.587123+00:00",
+      "links": [
+        {
+          "url": "https://www.lhsystems.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/contact",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial",
+          "text": "Commercial & Financial"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxrevenue-accounting",
+          "text": "Revenue Accounting"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxone-order",
+          "text": "Accounting Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxpayment-hub",
+          "text": "Payment Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxpayment-reconciliation",
+          "text": "Payment Reconciliation"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/revenue-integrity",
+          "text": "Revenue Integrity"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/profitlineprice",
+          "text": "Pricing"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/ndc-one-order",
+          "text": "NDC"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/group-sales-tool",
+          "text": "Group Sales Tool"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/integrated-planning-steering/netline",
+          "text": "Integrated Planning & Steering"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications",
+          "text": "Pilot Applications"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-mpilot",
+          "text": "iOS-Based Navigation Solution"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-eroute-manual",
+          "text": "Windows-Based Navigation Solution"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-weather",
+          "text": "Advanced Weather for Flight Ops"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-amm",
+          "text": "Airport Ground Navigation"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-mbriefing",
+          "text": "Paperless Briefing Solution"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/netlineload-cockpitmobile",
+          "text": "Load Control"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data",
+          "text": "Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-fms",
+          "text": "Navigation Data (FMS)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-sky-data",
+          "text": "Navigation Data (ARINC 424, ...)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-surface-data-nextview-terrain",
+          "text": "Terrain Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-surface-data-obstacles",
+          "text": "Obstacle Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-airport-obstacle-data-service",
+          "text": "Airport Obstacle Data (incl. EOSID)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-amdb",
+          "text": "Airport Mapping Database"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-developer-portal",
+          "text": "Aeronautical Data (+ Integrations)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-desktop-assessment-service",
+          "text": "Low Visibility Operations Support"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center",
+          "text": "Operations Control Center"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/lido-flight-4d",
+          "text": "Flight Planning"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/lido-flight-4d",
+          "text": "Flight Monitoring"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netline-crew",
+          "text": "Crew Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netlineops",
+          "text": "Operations Control"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netlineload",
+          "text": "Weight & Balance/ Load Control"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netlinehubcontrol",
+          "text": "Turnaround & Passenger Connection"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services",
+          "text": "AI & Other Services"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/zerog-ai-aviation",
+          "text": "Data & AI Solutions"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/netlineops-aiocc",
+          "text": "AI Operations Control Assistant"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/customer-enablement-consulting",
+          "text": "Customer Enablement & Consulting"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/global-aviation-cloud",
+          "text": "Cloud"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling",
+          "text": "Network Planning & Scheduling"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-plan-schedule/netlineplan",
+          "text": "Network Planning"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netlinehubdesigner",
+          "text": "Hub & Network Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netline-fleetassigner",
+          "text": "Fleet Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-plan-schedule/netlinesched",
+          "text": "Scheduling"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netline-rotationoptimizer",
+          "text": "Rotation Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-plan-schedule/schedconnect",
+          "text": "CodeShare Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netline-slot",
+          "text": "Airport Slot Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management",
+          "text": "Holistic Crew Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management/netline-crew-planning-applications",
+          "text": "Crew Planning Applications"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management/netline-crew-tracking-applications",
+          "text": "Crew Tracking Applications"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management/netline-crew-interaction-apps",
+          "text": "Crew Interaction Apps"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-mpilot-pilot-navigation-app-airlines",
+          "text": "Lido mPilot"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-eroute-manual",
+          "text": "Lido eRoute Manual"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-weather",
+          "text": "Lido Weather"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-amm",
+          "text": "Lido AMM"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lidombriefing",
+          "text": "Lido mBriefing"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-flight-4d",
+          "text": "Lido Flight 4D"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-fms",
+          "text": "Lido FMS"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-surface-data-next-view-terrain",
+          "text": "Lido Surface Data NEXTView (Terrain)"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-surface-data-obstacles",
+          "text": "Lido Surface Data Obstacles"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-sky-data",
+          "text": "Lido Sky Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-amdb",
+          "text": "Lido AMDB"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-airport-obstacle-data-service",
+          "text": "Lido Airport Obstacle Data Service"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-developer-portal",
+          "text": "Lido Developer Portal"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-desktop-assessment-service",
+          "text": "Lido Desktop Assessment Service"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/profitlineprice",
+          "text": "ProfitLine/Price"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/ndc-one-order",
+          "text": "NDC & ONE Order"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/revenue-integrity",
+          "text": "Revenue Integrity"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/group-sales-tool",
+          "text": "Group Sales Tool"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/global-aviation-cloud",
+          "text": "Global Aviation Cloud"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/zerog-ai-aviation",
+          "text": "zeroG – AI in Aviation"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netlinehubdesigner",
+          "text": "NetLine HubDesigner"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-fleetassigner",
+          "text": "NetLine FleetAssigner"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-plan",
+          "text": "NetLine Plan"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-sched",
+          "text": "NetLine Sched"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-rotationoptimizer",
+          "text": "NetLine RotationOptimizer"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-slot",
+          "text": "NetLine Slot"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/schedconnect",
+          "text": "SchedConnect"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-crew",
+          "text": "NetLine Crew"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netlineops",
+          "text": "NetLine Ops ++"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-hubcontrol",
+          "text": "NetLine HubControl"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netlineload",
+          "text": "NetLine Load"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxrevenue-accounting",
+          "text": "SIRAX/Revenue Accounting"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxone-order",
+          "text": "SIRAX/ONE Order"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxpayment-hub",
+          "text": "SIRAX/Payment Hub"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxpayment-reconciliation",
+          "text": "SIRAX/Payment Reconciliation"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/news",
+          "text": "News Room"
+        },
+        {
+          "url": "https://www.lhsystems.com/video-gallery/customer-reviews",
+          "text": "Customer Statements"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/registration",
+          "text": "Newsletter Registration"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/events-online-conferences",
+          "text": "Events & Online Conferences"
+        },
+        {
+          "url": "https://www.lhsystems.com/blogs",
+          "text": "Corporate Blog"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/company-information",
+          "text": "Company information"
+        },
+        {
+          "url": "https://www.lhsystems.com/career",
+          "text": "Career"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-hungaria",
+          "text": "Lufthansa Systems Hungária"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-poland",
+          "text": "Lufthansa Systems Poland"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-india",
+          "text": "Lufthansa Systems India"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-flightnav",
+          "text": "Lufthansa Systems FlightNav"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/zerog",
+          "text": "zeroG"
+        },
+        {
+          "url": "https://www.lhsystems.com/about-us/about-us",
+          "text": "Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/30-years-innovation",
+          "text": "30 years of innovation"
+        },
+        {
+          "url": "https://www.lhsystems.com/about-us/downloads",
+          "text": "Downloads"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/downloads/galleries",
+          "text": "Galleries"
+        },
+        {
+          "url": "https://www.lhsystems.com/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/sustainability/how-our-products-innovations-contribute-operational-and-resource-efficiency",
+          "text": "How our products contribute to efficiency"
+        },
+        {
+          "url": "https://www.lhsystems.com/corporate-responsibility",
+          "text": "Corporate Responsibility"
+        },
+        {
+          "url": "https://www.lhsystems.com/contact",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands",
+          "text": "Go to products page"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/registration",
+          "text": "Subscribe to our newsletter"
+        },
+        {
+          "url": "https://www.facebook.com/LufthansaSystems",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/lufthansasystems/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/lufthansa-systems",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/LHsystems",
+          "text": ""
+        },
+        {
+          "url": "https://www.xing.com/companies/lufthansasystems",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/imprint",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        },
+        {
+          "url": "https://www.lhsystems.com/privacy-policy",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        },
+        {
+          "url": "https://www.lhsystems.com/sitemap",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        },
+        {
+          "url": "https://www.lufthansagroup.com/en/company/",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.lhsystems.com/career",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Airline IT jobs | Lufthansa Systems careers",
+      "evidence": "evidence/cecb0d62701f7e608d38.html.gz",
+      "sha256": "2c736151d60353dc7db0d7c8cb69b2b42defe97fe3cc27dbc7a7c2a67d2a30a5"
+    },
+    {
+      "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-india",
+      "checked_at": "2026-11-15T23:50:29.379510+00:00",
+      "links": [
+        {
+          "url": "https://www.lhsystems.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/contact",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial",
+          "text": "Commercial & Financial"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxrevenue-accounting",
+          "text": "Revenue Accounting"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxone-order",
+          "text": "Accounting Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxpayment-hub",
+          "text": "Payment Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/siraxpayment-reconciliation",
+          "text": "Payment Reconciliation"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/revenue-integrity",
+          "text": "Revenue Integrity"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/profitlineprice",
+          "text": "Pricing"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/ndc-one-order",
+          "text": "NDC"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/commercial-financial/group-sales-tool",
+          "text": "Group Sales Tool"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/integrated-planning-steering/netline",
+          "text": "Integrated Planning & Steering"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications",
+          "text": "Pilot Applications"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-mpilot",
+          "text": "iOS-Based Navigation Solution"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-eroute-manual",
+          "text": "Windows-Based Navigation Solution"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-weather",
+          "text": "Advanced Weather for Flight Ops"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-amm",
+          "text": "Airport Ground Navigation"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/lido-mbriefing",
+          "text": "Paperless Briefing Solution"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/pilot-applications/netlineload-cockpitmobile",
+          "text": "Load Control"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data",
+          "text": "Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-fms",
+          "text": "Navigation Data (FMS)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-sky-data",
+          "text": "Navigation Data (ARINC 424, ...)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-surface-data-nextview-terrain",
+          "text": "Terrain Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-surface-data-obstacles",
+          "text": "Obstacle Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-airport-obstacle-data-service",
+          "text": "Airport Obstacle Data (incl. EOSID)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-amdb",
+          "text": "Airport Mapping Database"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-developer-portal",
+          "text": "Aeronautical Data (+ Integrations)"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/data/lido-desktop-assessment-service",
+          "text": "Low Visibility Operations Support"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center",
+          "text": "Operations Control Center"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/lido-flight-4d",
+          "text": "Flight Planning"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/lido-flight-4d",
+          "text": "Flight Monitoring"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netline-crew",
+          "text": "Crew Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netlineops",
+          "text": "Operations Control"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netlineload",
+          "text": "Weight & Balance/ Load Control"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/operations-control-center/netlinehubcontrol",
+          "text": "Turnaround & Passenger Connection"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services",
+          "text": "AI & Other Services"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/zerog-ai-aviation",
+          "text": "Data & AI Solutions"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/netlineops-aiocc",
+          "text": "AI Operations Control Assistant"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/customer-enablement-consulting",
+          "text": "Customer Enablement & Consulting"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/ai-other-services/global-aviation-cloud",
+          "text": "Cloud"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling",
+          "text": "Network Planning & Scheduling"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-plan-schedule/netlineplan",
+          "text": "Network Planning"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netlinehubdesigner",
+          "text": "Hub & Network Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netline-fleetassigner",
+          "text": "Fleet Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-plan-schedule/netlinesched",
+          "text": "Scheduling"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netline-rotationoptimizer",
+          "text": "Rotation Optimization"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-plan-schedule/schedconnect",
+          "text": "CodeShare Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/network-planning-scheduling/netline-slot",
+          "text": "Airport Slot Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management",
+          "text": "Holistic Crew Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management/netline-crew-planning-applications",
+          "text": "Crew Planning Applications"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management/netline-crew-tracking-applications",
+          "text": "Crew Tracking Applications"
+        },
+        {
+          "url": "https://www.lhsystems.com/solutions/holistic-crew-management/netline-crew-interaction-apps",
+          "text": "Crew Interaction Apps"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-mpilot-pilot-navigation-app-airlines",
+          "text": "Lido mPilot"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-eroute-manual",
+          "text": "Lido eRoute Manual"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-weather",
+          "text": "Lido Weather"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-amm",
+          "text": "Lido AMM"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lidombriefing",
+          "text": "Lido mBriefing"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-flight-4d",
+          "text": "Lido Flight 4D"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-fms",
+          "text": "Lido FMS"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-surface-data-next-view-terrain",
+          "text": "Lido Surface Data NEXTView (Terrain)"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-surface-data-obstacles",
+          "text": "Lido Surface Data Obstacles"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-sky-data",
+          "text": "Lido Sky Data"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-amdb",
+          "text": "Lido AMDB"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-airport-obstacle-data-service",
+          "text": "Lido Airport Obstacle Data Service"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-developer-portal",
+          "text": "Lido Developer Portal"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/lido/lido-desktop-assessment-service",
+          "text": "Lido Desktop Assessment Service"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/profitlineprice",
+          "text": "ProfitLine/Price"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/ndc-one-order",
+          "text": "NDC & ONE Order"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/revenue-integrity",
+          "text": "Revenue Integrity"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/group-sales-tool",
+          "text": "Group Sales Tool"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/global-aviation-cloud",
+          "text": "Global Aviation Cloud"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/other/zerog-ai-aviation",
+          "text": "zeroG – AI in Aviation"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netlinehubdesigner",
+          "text": "NetLine HubDesigner"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-fleetassigner",
+          "text": "NetLine FleetAssigner"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-plan",
+          "text": "NetLine Plan"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-sched",
+          "text": "NetLine Sched"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-rotationoptimizer",
+          "text": "NetLine RotationOptimizer"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-slot",
+          "text": "NetLine Slot"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/schedconnect",
+          "text": "SchedConnect"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-crew",
+          "text": "NetLine Crew"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netlineops",
+          "text": "NetLine Ops ++"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netline-hubcontrol",
+          "text": "NetLine HubControl"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/netline/netlineload",
+          "text": "NetLine Load"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxrevenue-accounting",
+          "text": "SIRAX/Revenue Accounting"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxone-order",
+          "text": "SIRAX/ONE Order"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxpayment-hub",
+          "text": "SIRAX/Payment Hub"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands/sirax/siraxpayment-reconciliation",
+          "text": "SIRAX/Payment Reconciliation"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/news",
+          "text": "News Room"
+        },
+        {
+          "url": "https://www.lhsystems.com/video-gallery/customer-reviews",
+          "text": "Customer Statements"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/registration",
+          "text": "Newsletter Registration"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/events-online-conferences",
+          "text": "Events & Online Conferences"
+        },
+        {
+          "url": "https://www.lhsystems.com/blogs",
+          "text": "Corporate Blog"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/company-information",
+          "text": "Company information"
+        },
+        {
+          "url": "https://www.lhsystems.com/career",
+          "text": "Career"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-hungaria",
+          "text": "Lufthansa Systems Hungária"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-poland",
+          "text": "Lufthansa Systems Poland"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-india",
+          "text": "Lufthansa Systems India"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-flightnav",
+          "text": "Lufthansa Systems FlightNav"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/our-subsidiaries/zerog",
+          "text": "zeroG"
+        },
+        {
+          "url": "https://www.lhsystems.com/about-us/about-us",
+          "text": "Management"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/30-years-innovation",
+          "text": "30 years of innovation"
+        },
+        {
+          "url": "https://www.lhsystems.com/about-us/downloads",
+          "text": "Downloads"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/downloads/galleries",
+          "text": "Galleries"
+        },
+        {
+          "url": "https://www.lhsystems.com/our-locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://www.lhsystems.com/company/sustainability/how-our-products-innovations-contribute-operational-and-resource-efficiency",
+          "text": "How our products contribute to efficiency"
+        },
+        {
+          "url": "https://www.lhsystems.com/corporate-responsibility",
+          "text": "Corporate Responsibility"
+        },
+        {
+          "url": "https://www.lhsystems.com/contact",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://www.lhsystems.com/product-brands",
+          "text": "Go to products page"
+        },
+        {
+          "url": "https://www.lhsystems.com/current-topics/registration",
+          "text": "Subscribe to our newsletter"
+        },
+        {
+          "url": "https://www.facebook.com/LufthansaSystems",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/lufthansasystems/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/lufthansa-systems",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/LHsystems",
+          "text": ""
+        },
+        {
+          "url": "https://www.xing.com/companies/lufthansasystems",
+          "text": ""
+        },
+        {
+          "url": "https://www.lhsystems.com/imprint",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        },
+        {
+          "url": "https://www.lhsystems.com/privacy-policy",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        },
+        {
+          "url": "https://www.lhsystems.com/sitemap",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        },
+        {
+          "url": "https://www.lufthansagroup.com/en/company/",
+          "text": ".css-upu9f2{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:curren"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Lufthansa Systems India | Company information",
+      "evidence": "evidence/1d273210bee583415045.html.gz",
+      "sha256": "e601df0ed0d3fcd7522cecdd82417f3eb0cfbe95e16be1a5c3f8210c540a21be"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,46 @@
+{
+  "id": "C035",
+  "company": {
+    "name": "Booz Allen Hamilton",
+    "aliases": [
+      "Booz Allen"
+    ],
+    "type": "services",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "bah",
+        "datacentre": "wd1",
+        "site": "BAH_Jobs",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs",
+      "checked_at": "2026-11-15T23:49:26.342688+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "bah",
+          "datacentre": "wd1",
+          "site": "BAH_Jobs",
+          "source_link": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/f46d2fd7f7ac38bfc97a.html.gz",
+      "sha256": "4504e5994caf7ac19219bfb10abed0be76bb7cc3884aeb197d190eb17a0268ff"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

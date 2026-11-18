@@ -1,0 +1,35 @@
+{
+  "id": "C212",
+  "company": {
+    "name": "Sun Life",
+    "aliases": [
+      "Sun Life Global Solutions"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://sunlife.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "sunlife",
+        "datacentre": "wd3",
+        "site": "Experienced-Jobs",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://sunlife.com/careers",
+      "checked_at": "2026-11-15T23:51:05.001683+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 403,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,999 @@
+{
+  "id": "C024",
+  "company": {
+    "name": "BD",
+    "aliases": [
+      "Becton Dickinson"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "bdx",
+        "datacentre": "wd1",
+        "site": "EXTERNAL_CAREER_SITE_USA",
+        "state": "wrong_scope",
+        "scope": "global",
+        "note": "USA-only career site (and its search ignored the keyword in the probe); not India coverage"
+      },
+      {
+        "kind": "talentbrew",
+        "host": "jobs.bd.com",
+        "org_id": "159",
+        "locale_path": "en",
+        "state": "candidate",
+        "scope": "global",
+        "note": "jobs.bd.com has an India jobs page; the listing backend behind it is unverified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+      "checked_at": "2026-11-15T23:49:14.475417+00:00",
+      "links": [
+        {
+          "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://jobs.bd.com/",
+          "text": "Go to homepage"
+        },
+        {
+          "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+          "text": "English English"
+        },
+        {
+          "url": "https://jobs.bd.com/fr-ca/lieu/india-jobs/159/1269750/2",
+          "text": "Français Français"
+        },
+        {
+          "url": "https://jobs.bd.com/ja/ロケーション/india-jobs/159/1269750/2",
+          "text": "日本語 日本語"
+        },
+        {
+          "url": "https://jobs.bd.com/pt-br/localização/india-jobs/159/1269750/2",
+          "text": "Português Português"
+        },
+        {
+          "url": "https://jobs.bd.com/es/ubicación/india-jobs/159/1269750/2",
+          "text": "Español Español"
+        },
+        {
+          "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login",
+          "text": "Manage Application"
+        },
+        {
+          "url": "https://jobs.bd.com/saved-jobs",
+          "text": "Saved Jobs 0"
+        },
+        {
+          "url": "https://jobs.bd.com/search-jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en",
+          "text": "Careers at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/about-us",
+          "text": "About Us"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://jobs.bd.com/en/your-career-at-BD",
+          "text": "Your Career at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/our-culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://jobs.bd.com/en/inclusion-and-engagement",
+          "text": "Inclusion and Engagement"
+        },
+        {
+          "url": "https://jobs.bd.com/en/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://jobs.bd.com/en/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-get-your-application-noticed",
+          "text": "Application Tips"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-prepare-for-an-interview",
+          "text": "Interview Tips"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-ai-usage-tips-and-best-practices",
+          "text": "AI & Your Job Search"
+        },
+        {
+          "url": "https://jobs.bd.com/en/search-jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224",
+          "text": "Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976",
+          "text": "Area Sales Manager / Sr. Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/gurgaon/sr-area-sales-manager/159/100658945344",
+          "text": "Sr. Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/new-delhi/area-sales-manager/159/99429812608",
+          "text": "Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/r-and-d-manager/159/103105838096",
+          "text": "R&D Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/kolkata/area-sales-manager-hospital/159/102933835936",
+          "text": "Area Sales manager-Hospital"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/mumbai/senior-area-sales-manager/159/102933834704",
+          "text": "Senior Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/kolkata/area-sales-manager/159/102929778880",
+          "text": "Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/hyderabad/senior-area-manager/159/102929776128",
+          "text": "Senior Area Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/manager-quality-systems/159/102845122176",
+          "text": "Manager, Quality Systems"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/mumbai/sr-area-sales-manager/159/102759574688",
+          "text": "Sr. Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/gurgaon/integration-leader-sa-contract/159/102458622384",
+          "text": "Integration Leader – SA (Contract)"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/surat/area-sales-manager/159/102277849312",
+          "text": "Area Sales Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/gurgaon/deputy-marketing-manager/159/102239506624",
+          "text": "Deputy Marketing Manager"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/associate-staff-engineer/159/102149580480",
+          "text": "Associate Staff Engineer"
+        },
+        {
+          "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2/1",
+          "text": "Previous Page"
+        },
+        {
+          "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2/2",
+          "text": "Next Page"
+        },
+        {
+          "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+          "text": "Show All"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://jobs.bd.com/en/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "Applicant FAQs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/your-career-at-BD",
+          "text": "Your Career at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/career-areas",
+          "text": "Career Areas at BD"
+        },
+        {
+          "url": "https://pages.hireez.com/cielo-becton-dickinson-global/bef39ffc?source=website_EN",
+          "text": "Join Our Talent Pool"
+        },
+        {
+          "url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+          "text": "Remove"
+        },
+        {
+          "url": "https://jobs.bd.com/en/bd-privacy-policy",
+          "text": "privacy policy"
+        },
+        {
+          "url": "https://jobs.bd.com/beware-of-job-scams",
+          "text": "click here"
+        },
+        {
+          "url": "https://www.instagram.com/becton_dickinson/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.linkedin.com/company/3102/",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.facebook.com/BectonDickinsonandCo",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCPGmutY43EjP_3ijOugNGnA",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://twitter.com/BDandCo",
+          "text": "X"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "url": "https://jobs.bd.com/career-areas",
+          "text": "Jobs By Category"
+        },
+        {
+          "url": "https://jobs.bd.com/sitemap",
+          "text": "Site Map"
+        },
+        {
+          "url": "https://www.bd.com/en-us/about-bd/policies/terms-of-use",
+          "text": "(opens in new window/tab)Terms of Use"
+        },
+        {
+          "url": "https://jobs.bd.com/bd-privacy-policy",
+          "text": "(opens in new window/tab)Candidate Privacy Notices at BD"
+        },
+        {
+          "url": "https://www.bd.com/en-us/about-bd/policies/cookies-policy",
+          "text": "(opens in new window/tab)Cookie Policy"
+        },
+        {
+          "url": "https://jobs.bd.com/cookiepolicy",
+          "text": "(opens in new window/tab)Cookie Policy (EMEA)"
+        },
+        {
+          "url": "https://privacyportal-eu.onetrust.com/webform/29abe976-120d-4d7e-9a5c-6762f9a8b2cc/94e389b3-9560-4cd2-9233-6f80a01efb3f",
+          "text": "(opens in new window/tab)Your Privacy Choices (US only)"
+        },
+        {
+          "url": "https://jobs.bd.com/",
+          "text": "Go to homepage"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/bd_equal_employment_opportunity_statement.pdf",
+          "text": "BD EEO Statement"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/EEOC_Know_Your_Rights_Eng_Span.pdf",
+          "text": "EEO is the Law"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/E-Verify_Participation_Poster_ES.pdf",
+          "text": "E-Verify Participation Poster"
+        },
+        {
+          "url": "https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlaen.pdf",
+          "text": "FMLA"
+        },
+        {
+          "url": "https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppac.pdf",
+          "text": "PPA"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/IER_RightToWorkPoster_Eng_Es-1.pdf",
+          "text": "Right to Work (English/Spanish)"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "bdx",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREER_SITE_USA",
+          "source_link": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://jobs.bd.com/en/location/india-jobs/159/1269750/2",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Search India Jobs at Becton Dickinson & Company",
+      "evidence": "evidence/5f8ff37144c12f2c78e7.html.gz",
+      "sha256": "7be985dd0806df42f24ed545ef1d8f86b21f23e3d3c8c0a95c06765867360a35"
+    },
+    {
+      "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224",
+      "checked_at": "2026-11-15T23:49:16.305736+00:00",
+      "links": [
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://jobs.bd.com/",
+          "text": "Go to homepage"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224",
+          "text": "English English"
+        },
+        {
+          "url": "https://jobs.bd.com/fr-ca/emploi/chennai/area-sales-manager/159/103235948224",
+          "text": "Français Français"
+        },
+        {
+          "url": "https://jobs.bd.com/ja/%e3%82%b8%e3%83%a7%e3%83%96/%e3%83%81%e3%82%a7%e3%83%b3%e3%83%8a%e3%82%a4/area-sales-manager/159/103235948224",
+          "text": "日本語 日本語"
+        },
+        {
+          "url": "https://jobs.bd.com/pt-br/vaga/chennai/area-sales-manager/159/103235948224",
+          "text": "Português Português"
+        },
+        {
+          "url": "https://jobs.bd.com/es/trabajo/chennai/area-sales-manager/159/103235948224",
+          "text": "Español Español"
+        },
+        {
+          "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login",
+          "text": "Manage Application"
+        },
+        {
+          "url": "https://jobs.bd.com/saved-jobs",
+          "text": "Saved Jobs 0"
+        },
+        {
+          "url": "https://jobs.bd.com/search-jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en",
+          "text": "Careers at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/about-us",
+          "text": "About Us"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://jobs.bd.com/en/your-career-at-BD",
+          "text": "Your Career at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/our-culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://jobs.bd.com/en/inclusion-and-engagement",
+          "text": "Inclusion and Engagement"
+        },
+        {
+          "url": "https://jobs.bd.com/en/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://jobs.bd.com/en/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-get-your-application-noticed",
+          "text": "Application Tips"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-prepare-for-an-interview",
+          "text": "Interview Tips"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-ai-usage-tips-and-best-practices",
+          "text": "AI & Your Job Search"
+        },
+        {
+          "url": "https://jobs.bd.com/en/search-jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Chennai---Kochar-Globe/Area-Sales-Manager_R-559155/apply",
+          "text": "Apply Now"
+        },
+        {
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjobs.bd.com%2fen%2fjob%2fchennai%2farea-sales-manager%2f159%2f103235948224%3futm_source%3dfacebook.com%26utm_medium%3dsocial_post%26utm_campaign%3dBecton_Dickinson_%26_Company_social",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://x.com/intent/post?text=Area+Sales+Manager&url=https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224?utm_source=twitter.com%26utm_medium=social_post%26utm_campaign=Becton_Dickinson_%26_Company_social",
+          "text": "X"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#anchor-overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#anchor-responsibilities",
+          "text": "Responsibilities"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#anchor-success-profile",
+          "text": "Success Profile"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#anchor-culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#anchor-rewards",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#anchor-map",
+          "text": "Map"
+        },
+        {
+          "url": "https://bd.com/careers",
+          "text": "https://bd.com/careers"
+        },
+        {
+          "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Chennai---Kochar-Globe/Area-Sales-Manager_R-559155/apply",
+          "text": "Apply Now"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job_location/chennai/area-sales-manager/159/103235948224/973394",
+          "text": "Start Exploring"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#related-jobs",
+          "text": "Related Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#viewed-jobs",
+          "text": "Viewed Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224#saved-jobs",
+          "text": "Saved Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/canaan/machine-operator-nights/159/102903826112",
+          "text": "View role"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/canaan/machine-operator-nights/159/102903826016",
+          "text": "View role"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/canaan/molding-machine-operator-12-hour-days/159/102903825920",
+          "text": "View role"
+        },
+        {
+          "url": "https://jobs.bd.com/en/search-jobs",
+          "text": "View All Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/search-jobs",
+          "text": "search open opportunities now."
+        },
+        {
+          "url": "https://jobs.bd.com/search-jobs",
+          "text": "search open opportunities now."
+        },
+        {
+          "url": "https://jobs.bd.com/en/career-areas",
+          "text": "Career Areas at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "Applicant FAQs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-get-your-application-noticed",
+          "text": "How to Get Your Application Noticed"
+        },
+        {
+          "url": "https://pages.hireez.com/cielo-becton-dickinson-global/bef39ffc?source=website_EN",
+          "text": "Join Our Talent Pool"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224",
+          "text": "Remove"
+        },
+        {
+          "url": "https://jobs.bd.com/en/bd-privacy-policy",
+          "text": "privacy policy"
+        },
+        {
+          "url": "https://jobs.bd.com/beware-of-job-scams",
+          "text": "click here"
+        },
+        {
+          "url": "https://www.instagram.com/becton_dickinson/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.linkedin.com/company/3102/",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.facebook.com/BectonDickinsonandCo",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCPGmutY43EjP_3ijOugNGnA",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://twitter.com/BDandCo",
+          "text": "X"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "url": "https://jobs.bd.com/career-areas",
+          "text": "Jobs By Category"
+        },
+        {
+          "url": "https://jobs.bd.com/sitemap",
+          "text": "Site Map"
+        },
+        {
+          "url": "https://www.bd.com/en-us/about-bd/policies/terms-of-use",
+          "text": "(opens in new window/tab)Terms of Use"
+        },
+        {
+          "url": "https://jobs.bd.com/bd-privacy-policy",
+          "text": "(opens in new window/tab)Candidate Privacy Notices at BD"
+        },
+        {
+          "url": "https://www.bd.com/en-us/about-bd/policies/cookies-policy",
+          "text": "(opens in new window/tab)Cookie Policy"
+        },
+        {
+          "url": "https://jobs.bd.com/cookiepolicy",
+          "text": "(opens in new window/tab)Cookie Policy (EMEA)"
+        },
+        {
+          "url": "https://privacyportal-eu.onetrust.com/webform/29abe976-120d-4d7e-9a5c-6762f9a8b2cc/94e389b3-9560-4cd2-9233-6f80a01efb3f",
+          "text": "(opens in new window/tab)Your Privacy Choices (US only)"
+        },
+        {
+          "url": "https://jobs.bd.com/",
+          "text": "Go to homepage"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/bd_equal_employment_opportunity_statement.pdf",
+          "text": "BD EEO Statement"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/EEOC_Know_Your_Rights_Eng_Span.pdf",
+          "text": "EEO is the Law"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/E-Verify_Participation_Poster_ES.pdf",
+          "text": "E-Verify Participation Poster"
+        },
+        {
+          "url": "https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlaen.pdf",
+          "text": "FMLA"
+        },
+        {
+          "url": "https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppac.pdf",
+          "text": "PPA"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/IER_RightToWorkPoster_Eng_Es-1.pdf",
+          "text": "Right to Work (English/Spanish)"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "bdx",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREER_SITE_USA",
+          "source_link": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login"
+        },
+        {
+          "tenant": "bdx",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREER_SITE_INDIA",
+          "source_link": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Chennai---Kochar-Globe/Area-Sales-Manager_R-559155/apply"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://jobs.bd.com/en/job/chennai/area-sales-manager/159/103235948224",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Area Sales Manager at Becton Dickinson & Company",
+      "evidence": "evidence/4da7580b500edd1275c4.html.gz",
+      "sha256": "8a67537d0558c42756e48988be38a2399ca375bfd584ef404d19e9e10c26a511"
+    },
+    {
+      "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976",
+      "checked_at": "2026-11-15T23:49:18.290232+00:00",
+      "links": [
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://jobs.bd.com/",
+          "text": "Go to homepage"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976",
+          "text": "English English"
+        },
+        {
+          "url": "https://jobs.bd.com/fr-ca/emploi/bangalore/area-sales-manager-sr-area-sales-manager/159/102536092976",
+          "text": "Français Français"
+        },
+        {
+          "url": "https://jobs.bd.com/ja/%e3%82%b8%e3%83%a7%e3%83%96/%e3%83%8f%e3%83%b3%e3%82%ab%e3%83%ad%e3%83%bc%e3%83%ab/area-sales-manager-sr-area-sales-manager/159/102536092976",
+          "text": "日本語 日本語"
+        },
+        {
+          "url": "https://jobs.bd.com/pt-br/vaga/bangalore/area-sales-manager-sr-area-sales-manager/159/102536092976",
+          "text": "Português Português"
+        },
+        {
+          "url": "https://jobs.bd.com/es/trabajo/bangalore/area-sales-manager-sr-area-sales-manager/159/102536092976",
+          "text": "Español Español"
+        },
+        {
+          "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login",
+          "text": "Manage Application"
+        },
+        {
+          "url": "https://jobs.bd.com/saved-jobs",
+          "text": "Saved Jobs 0"
+        },
+        {
+          "url": "https://jobs.bd.com/search-jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en",
+          "text": "Careers at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/about-us",
+          "text": "About Us"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://jobs.bd.com/en/your-career-at-BD",
+          "text": "Your Career at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/our-culture",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://jobs.bd.com/en/inclusion-and-engagement",
+          "text": "Inclusion and Engagement"
+        },
+        {
+          "url": "https://jobs.bd.com/en/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://jobs.bd.com/en/career-areas",
+          "text": "Career Areas"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-get-your-application-noticed",
+          "text": "Application Tips"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-prepare-for-an-interview",
+          "text": "Interview Tips"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-ai-usage-tips-and-best-practices",
+          "text": "AI & Your Job Search"
+        },
+        {
+          "url": "https://jobs.bd.com/en/search-jobs",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Bengaluru---Cornich-Al-Latheef/Area-Sales-Manager---Sr-Area-Sales-Manager_R-557827-1/apply",
+          "text": "Apply Now"
+        },
+        {
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjobs.bd.com%2fen%2fjob%2fbengaluru%2farea-sales-manager-sr-area-sales-manager%2f159%2f102536092976%3futm_source%3dfacebook.com%26utm_medium%3dsocial_post%26utm_campaign%3dBecton_Dickinson_%26_Company_social",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://x.com/intent/post?text=Area+Sales+Manager+%2f+Sr.+Area+Sales+Manager&url=https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976?utm_source=twitter.com%26utm_medium=social_post%26utm_campaign=Becton_Dickinson_%26_Company_social",
+          "text": "X"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#anchor-overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#anchor-responsibilities",
+          "text": "Responsibilities"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#anchor-success-profile",
+          "text": "Success Profile"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#anchor-culture",
+          "text": "Culture"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#anchor-rewards",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#anchor-map",
+          "text": "Map"
+        },
+        {
+          "url": "https://bd.com/careers",
+          "text": "https://bd.com/careers"
+        },
+        {
+          "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Bengaluru---Cornich-Al-Latheef/Area-Sales-Manager---Sr-Area-Sales-Manager_R-557827-1/apply",
+          "text": "Apply Now"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job_location/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976/973394",
+          "text": "Start Exploring"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#related-jobs",
+          "text": "Related Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#viewed-jobs",
+          "text": "Viewed Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976#saved-jobs",
+          "text": "Saved Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/canaan/machine-operator-nights/159/102903826112",
+          "text": "View role"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/canaan/machine-operator-nights/159/102903826016",
+          "text": "View role"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/canaan/molding-machine-operator-12-hour-days/159/102903825920",
+          "text": "View role"
+        },
+        {
+          "url": "https://jobs.bd.com/en/search-jobs",
+          "text": "View All Jobs"
+        },
+        {
+          "url": "https://jobs.bd.com/search-jobs",
+          "text": "search open opportunities now."
+        },
+        {
+          "url": "https://jobs.bd.com/search-jobs",
+          "text": "search open opportunities now."
+        },
+        {
+          "url": "https://jobs.bd.com/en/career-areas",
+          "text": "Career Areas at BD"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "Applicant FAQs"
+        },
+        {
+          "url": "https://jobs.bd.com/en/blog-how-to-get-your-application-noticed",
+          "text": "How to Get Your Application Noticed"
+        },
+        {
+          "url": "https://pages.hireez.com/cielo-becton-dickinson-global/bef39ffc?source=website_EN",
+          "text": "Join Our Talent Pool"
+        },
+        {
+          "url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976",
+          "text": "Remove"
+        },
+        {
+          "url": "https://jobs.bd.com/en/bd-privacy-policy",
+          "text": "privacy policy"
+        },
+        {
+          "url": "https://jobs.bd.com/beware-of-job-scams",
+          "text": "click here"
+        },
+        {
+          "url": "https://www.instagram.com/becton_dickinson/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.linkedin.com/company/3102/",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.facebook.com/BectonDickinsonandCo",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCPGmutY43EjP_3ijOugNGnA",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://twitter.com/BDandCo",
+          "text": "X"
+        },
+        {
+          "url": "https://jobs.bd.com/en/faqs",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "url": "https://jobs.bd.com/career-areas",
+          "text": "Jobs By Category"
+        },
+        {
+          "url": "https://jobs.bd.com/sitemap",
+          "text": "Site Map"
+        },
+        {
+          "url": "https://www.bd.com/en-us/about-bd/policies/terms-of-use",
+          "text": "(opens in new window/tab)Terms of Use"
+        },
+        {
+          "url": "https://jobs.bd.com/bd-privacy-policy",
+          "text": "(opens in new window/tab)Candidate Privacy Notices at BD"
+        },
+        {
+          "url": "https://www.bd.com/en-us/about-bd/policies/cookies-policy",
+          "text": "(opens in new window/tab)Cookie Policy"
+        },
+        {
+          "url": "https://jobs.bd.com/cookiepolicy",
+          "text": "(opens in new window/tab)Cookie Policy (EMEA)"
+        },
+        {
+          "url": "https://privacyportal-eu.onetrust.com/webform/29abe976-120d-4d7e-9a5c-6762f9a8b2cc/94e389b3-9560-4cd2-9233-6f80a01efb3f",
+          "text": "(opens in new window/tab)Your Privacy Choices (US only)"
+        },
+        {
+          "url": "https://jobs.bd.com/",
+          "text": "Go to homepage"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/bd_equal_employment_opportunity_statement.pdf",
+          "text": "BD EEO Statement"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/EEOC_Know_Your_Rights_Eng_Span.pdf",
+          "text": "EEO is the Law"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/E-Verify_Participation_Poster_ES.pdf",
+          "text": "E-Verify Participation Poster"
+        },
+        {
+          "url": "https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlaen.pdf",
+          "text": "FMLA"
+        },
+        {
+          "url": "https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppac.pdf",
+          "text": "PPA"
+        },
+        {
+          "url": "https://tbcdn.talentbrew.com/company/159/v3_0/docs/IER_RightToWorkPoster_Eng_Es-1.pdf",
+          "text": "Right to Work (English/Spanish)"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "bdx",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREER_SITE_USA",
+          "source_link": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/login"
+        },
+        {
+          "tenant": "bdx",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREER_SITE_INDIA",
+          "source_link": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Bengaluru---Cornich-Al-Latheef/Area-Sales-Manager---Sr-Area-Sales-Manager_R-557827-1/apply"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://jobs.bd.com/en/job/bengaluru/area-sales-manager-sr-area-sales-manager/159/102536092976",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Area Sales Manager / Sr. Area Sales Manager at Becton Dickinson & Company",
+      "evidence": "evidence/3dfb0280eb4778d9c321.html.gz",
+      "sha256": "e323211ec944b59b796be1e847c114aafa62105ef6c9f0b3bb5564a8927a8939"
+    },
+    {
+      "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Chennai---Kochar-Globe/Area-Sales-Manager_R-559155/apply",
+      "checked_at": "2026-11-15T23:49:20.259042+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "bdx",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREER_SITE_INDIA",
+          "source_link": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Chennai---Kochar-Globe/Area-Sales-Manager_R-559155/apply"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Chennai---Kochar-Globe/Area-Sales-Manager_R-559155/apply",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/a9687fb7700d2bf34917.html.gz",
+      "sha256": "eba8a06b372f767e59f8f3b1c7e3335811718e24b86bb92851ef2f2f5698b95d"
+    },
+    {
+      "url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Bengaluru---Cornich-Al-Latheef/Area-Sales-Manager---Sr-Area-Sales-Manager_R-557827-1/apply",
+      "checked_at": "2026-11-15T23:49:21.744168+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "bdx",
+          "datacentre": "wd1",
+          "site": "EXTERNAL_CAREER_SITE_INDIA",
+          "source_link": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Bengaluru---Cornich-Al-Latheef/Area-Sales-Manager---Sr-Area-Sales-Manager_R-557827-1/apply"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_INDIA/job/IND-Bengaluru---Cornich-Al-Latheef/Area-Sales-Manager---Sr-Area-Sales-Manager_R-557827-1/apply",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/f28a3964a5120dd8d01d.html.gz",
+      "sha256": "3851f57d4b2c95c3dc4994750ae3991c483028caa5c8ea23e713c7e3839aba89"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

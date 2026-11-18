@@ -1,0 +1,37 @@
+{
+  "id": "C109",
+  "company": {
+    "name": "Honeywell",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.honeywell.com/en/sites/Honeywell",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "ibqbjb.fa.ocs.oraclecloud.com",
+        "site": "CX_1",
+        "state": "candidate",
+        "scope": "global",
+        "note": "careers.honeywell.com fronts this Oracle host (site number CX_1); search not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.honeywell.com/en/sites/Honeywell",
+      "checked_at": "2026-11-15T23:50:12.660585+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.honeywell.com/en/sites/Honeywell",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Honeywell",
+      "evidence": "evidence/d229e59f553945e9d9a4.html.gz",
+      "sha256": "c5f894a2a32ff078e4f4b56ccd5fb2123d96c3968ea8386fd5ccee68cccc197b"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

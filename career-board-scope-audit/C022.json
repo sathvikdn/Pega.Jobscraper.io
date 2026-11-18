@@ -1,0 +1,1635 @@
+{
+  "id": "C022",
+  "company": {
+    "name": "Bank of America",
+    "aliases": [
+      "BofA"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.bankofamerica.com/en-us",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "ghr",
+        "datacentre": "wd1",
+        "site": "lateral-apac",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Asia-Pacific lateral-hire board; Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      },
+      {
+        "kind": "workday",
+        "tenant": "ghr",
+        "datacentre": "wd1",
+        "site": "lateral-us",
+        "state": "wrong_scope",
+        "scope": "global",
+        "note": "United States lateral-hire board; it cannot cover India roles"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.bankofamerica.com/en-us",
+      "checked_at": "2026-11-15T23:49:10.799549+00:00",
+      "links": [
+        {
+          "url": "https://careers.bankofamerica.com/en-us#mainContentStart",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.bankofamerica.com/",
+          "text": "Personal"
+        },
+        {
+          "url": "https://www.bankofamerica.com/business/",
+          "text": "Small business"
+        },
+        {
+          "url": "https://www.ml.com/wealthmanagement.html",
+          "text": "Wealth management"
+        },
+        {
+          "url": "https://business.bofa.com/content/boaml/en_us/home.html",
+          "text": "Businesses & institutions"
+        },
+        {
+          "url": "https://about.bankofamerica.com/en#fbid=94lLoRE7UeG",
+          "text": "About us"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization.html",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process.html",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience.html",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs.html",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process.html",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?&ref=search&start=0&rows=10&search=getAllJobs",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For professionals"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/services/saml_login.html",
+          "text": "Employees"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login",
+          "text": "Professional Applicants"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/user-36/xf-1c8d608fd721/wid-1/candidate/login",
+          "text": "Campus Applicants"
+        },
+        {
+          "url": "https://d1io3yog0oux5.cloudfront.net/_f82206939a66ed34de379a2550ec3e53/bankofamerica/db/867/10497/annual_report/BAC+2025+Annual+Report.pdf",
+          "text": "Annual Report"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search.html?ref=search&search=getAllJobs&rows=10&start=0",
+          "text": "For professionals"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?ref=search&start=0&rows=10&search=getAllJobs",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us#simple-quiz-open-take-career-quiz",
+          "text": "Take career quiz"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/career-development",
+          "text": "Professional development"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/opportunity-inclusion/veterans",
+          "text": "Military employment and support"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/community-college",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/06/bofa-to-welcome-nearly-4000-summer-interns-and-campus-recruits.html",
+          "text": "Press Release"
+        },
+        {
+          "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/09/bofa-to-hire-1-000-additional-apprentices-and-invest-one-hundred",
+          "text": "Press Release"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search.html?ref=search&search=getAllJobs&rows=10&start=0",
+          "text": "For professionals"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?ref=search&start=0&rows=10&search=getAllJobs",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us#start-over",
+          "text": "Start over"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://youradchoices.com/control",
+          "text": "YourAdChoices layer"
+        },
+        {
+          "url": "https://www.networkadvertising.org/choices",
+          "text": "Network Advertising Initiative's Opt-Out Tool layer"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/online-privacy-notice/?request_locale=en_US",
+          "text": "Bank of America Online Privacy Notice"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/faq/online-privacy/?request_locale=en_US",
+          "text": "Online Privacy FAQs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-recruitment-scams",
+          "text": "Recruitment Scams"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/privacy-notice",
+          "text": "Data protection notice"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/pay-transparency",
+          "text": "Pay transparency"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/privacy-overview/",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/overview/",
+          "text": "Security"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/dam/enterprise/careers/en-us/Terms-and-Conditions-of-Employment.pdf",
+          "text": "Terms and Conditions of Employment"
+        },
+        {
+          "url": "https://www.bankofamerica.com/help/equalhousing_popup.go?request_locale=en_US",
+          "text": "Equal Housing Lender"
+        },
+        {
+          "url": "https://www.instagram.com/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/bank-of-america/",
+          "text": "Bank of America"
+        },
+        {
+          "url": "https://www.linkedin.com/company/merrilllynch/",
+          "text": "Merrill Lynch"
+        },
+        {
+          "url": "https://www.pinterest.com/bankofamerica/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12.pdf",
+          "text": "Know your Rights"
+        },
+        {
+          "url": "https://dcba.lacounty.gov/wp-content/uploads/2024/08/FCOE-Official-Notice-Eng-Final-8.30.2024.pdf",
+          "text": "View the LA County Fair Chance Ordinance"
+        },
+        {
+          "url": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsipc.org%2F&data=05%7C02%7Ccaleb.fritchtnitch%40groupeconnect.com%7C9e352cfebfa74c6626c808dd930c4da4%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C638828403272867218%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pRTlYjNsOgoOax3xtLL5DK6po4mjlI1UfItQbzZGNVQ%3D&reserved=0",
+          "text": "Member SIPC"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-us",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.bankofamerica.com/en-us",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Bank of America Careers Site - Apply at Bank of America",
+      "evidence": "evidence/711a990ebd670734d1df.html.gz",
+      "sha256": "a98082c3e507372ee05b98829d3192b5fa258f7ff0e32851d5bf653a819b6a93"
+    },
+    {
+      "url": "https://careers.bankofamerica.com/en-us/job-search/india",
+      "checked_at": "2026-11-15T23:49:12.276562+00:00",
+      "links": [
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search/india#mainContentStart",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.bankofamerica.com/",
+          "text": "Personal"
+        },
+        {
+          "url": "https://www.bankofamerica.com/business/",
+          "text": "Small business"
+        },
+        {
+          "url": "https://www.ml.com/wealthmanagement.html",
+          "text": "Wealth management"
+        },
+        {
+          "url": "https://business.bofa.com/content/boaml/en_us/home.html",
+          "text": "Businesses & institutions"
+        },
+        {
+          "url": "https://about.bankofamerica.com/en#fbid=94lLoRE7UeG",
+          "text": "About us"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization.html",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process.html",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience.html",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs.html",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process.html",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?&ref=search&start=0&rows=10&search=getAllJobs",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For professionals"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/services/saml_login.html",
+          "text": "Employees"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login",
+          "text": "Professional Applicants"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/user-36/xf-1c8d608fd721/wid-1/candidate/login",
+          "text": "Campus Applicants"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26037470/software-engineer-ii-b-gbs-ind-multiple-locations",
+          "text": "Software Engineer II B - GBS IND"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+          "text": "Team Developer"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26034408/team-leader-multiple-locations",
+          "text": "Team Leader"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+          "text": "Team Leader"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26035810/senior-manager-mumbai-india",
+          "text": "Senior Manager"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26038129/senior-team-member-multiple-locations",
+          "text": "Senior Team Member"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26038301/data-scientist-i-a-gbs-ind-chennai-india",
+          "text": "Data Scientist I A - GBS IND"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26041023/team-developer-multiple-locations",
+          "text": "Team Developer"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26041643/sr-operations-manager-mumbai-india",
+          "text": "Sr. Operations Manager"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26041649/team-member-chennai-india",
+          "text": "Team Member"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040615/assistant-manager-hyderabad-india",
+          "text": "Assistant Manager"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040104/info-security-consultant-ii-a-multiple-locations",
+          "text": "Info Security Consultant II A"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26025193/offensive-security-professional-ii-b-multiple-locations",
+          "text": "Offensive Security Professional II B"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26035395/info-security-exposure-management-specialist-i-b-multiple-locations",
+          "text": "Info Security Exposure Management Specialist I B"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26037962/software-engineer-iii-gbs-ind-chennai-india",
+          "text": "Software Engineer III - GBS IND"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+          "text": "Software Engineer III - GBS IND"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036531/sr-analyst-mumbai-india",
+          "text": "Sr. Analyst"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039219/team-mgr-apps-prog-chennai-india",
+          "text": "Team Mgr - Apps Prog"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26029358/manager-gurugram-india",
+          "text": "Manager"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26037975/team-member-gurugram-india",
+          "text": "Team Member"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://youradchoices.com/control",
+          "text": "YourAdChoices layer"
+        },
+        {
+          "url": "https://www.networkadvertising.org/choices",
+          "text": "Network Advertising Initiative's Opt-Out Tool layer"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/online-privacy-notice/?request_locale=en_US",
+          "text": "Bank of America Online Privacy Notice"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/faq/online-privacy/?request_locale=en_US",
+          "text": "Online Privacy FAQs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-recruitment-scams",
+          "text": "Recruitment Scams"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/privacy-notice",
+          "text": "Data protection notice"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/pay-transparency",
+          "text": "Pay transparency"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/privacy-overview/",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/overview/",
+          "text": "Security"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/dam/enterprise/careers/en-us/Terms-and-Conditions-of-Employment.pdf",
+          "text": "Terms and Conditions of Employment"
+        },
+        {
+          "url": "https://www.bankofamerica.com/help/equalhousing_popup.go?request_locale=en_US",
+          "text": "Equal Housing Lender"
+        },
+        {
+          "url": "https://www.instagram.com/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/bank-of-america/",
+          "text": "Bank of America"
+        },
+        {
+          "url": "https://www.linkedin.com/company/merrilllynch/",
+          "text": "Merrill Lynch"
+        },
+        {
+          "url": "https://www.pinterest.com/bankofamerica/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12.pdf",
+          "text": "Know your Rights"
+        },
+        {
+          "url": "https://dcba.lacounty.gov/wp-content/uploads/2024/08/FCOE-Official-Notice-Eng-Final-8.30.2024.pdf",
+          "text": "View the LA County Fair Chance Ordinance"
+        },
+        {
+          "url": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsipc.org%2F&data=05%7C02%7Ccaleb.fritchtnitch%40groupeconnect.com%7C9e352cfebfa74c6626c808dd930c4da4%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C638828403272867218%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pRTlYjNsOgoOax3xtLL5DK6po4mjlI1UfItQbzZGNVQ%3D&reserved=0",
+          "text": "Member SIPC"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-us",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.bankofamerica.com/en-us/job-search/india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Jobs in India | Bank of America Careers",
+      "evidence": "evidence/2e19af35b465aa797e93.html.gz",
+      "sha256": "ed7b2f77b68cfcd46cf3daed8c09de7f3e997757ba59684a5b615ae331404591"
+    },
+    {
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+      "checked_at": "2026-11-15T23:49:14.101170+00:00",
+      "links": [
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india#mainContentStart",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.bankofamerica.com/",
+          "text": "Personal"
+        },
+        {
+          "url": "https://www.bankofamerica.com/business/",
+          "text": "Small business"
+        },
+        {
+          "url": "https://www.ml.com/wealthmanagement.html",
+          "text": "Wealth management"
+        },
+        {
+          "url": "https://business.bofa.com/content/boaml/en_us/home.html",
+          "text": "Businesses & institutions"
+        },
+        {
+          "url": "https://about.bankofamerica.com/en#fbid=94lLoRE7UeG",
+          "text": "About us"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization.html",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process.html",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience.html",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs.html",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process.html",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?&ref=search&start=0&rows=10&search=getAllJobs",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For professionals"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/services/saml_login.html",
+          "text": "Employees"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login",
+          "text": "Professional Applicants"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/user-36/xf-1c8d608fd721/wid-1/candidate/login",
+          "text": "Campus Applicants"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+          "text": "Back to search results"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Refer a friend"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Refer a friend"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+          "text": "Mindspace, Link Road Malad, Mumbai, 400064"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://youradchoices.com/control",
+          "text": "YourAdChoices layer"
+        },
+        {
+          "url": "https://www.networkadvertising.org/choices",
+          "text": "Network Advertising Initiative's Opt-Out Tool layer"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/online-privacy-notice/?request_locale=en_US",
+          "text": "Bank of America Online Privacy Notice"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/faq/online-privacy/?request_locale=en_US",
+          "text": "Online Privacy FAQs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-recruitment-scams",
+          "text": "Recruitment Scams"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/privacy-notice",
+          "text": "Data protection notice"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/pay-transparency",
+          "text": "Pay transparency"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/privacy-overview/",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/overview/",
+          "text": "Security"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/dam/enterprise/careers/en-us/Terms-and-Conditions-of-Employment.pdf",
+          "text": "Terms and Conditions of Employment"
+        },
+        {
+          "url": "https://www.bankofamerica.com/help/equalhousing_popup.go?request_locale=en_US",
+          "text": "Equal Housing Lender"
+        },
+        {
+          "url": "https://www.instagram.com/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/bank-of-america/",
+          "text": "Bank of America"
+        },
+        {
+          "url": "https://www.linkedin.com/company/merrilllynch/",
+          "text": "Merrill Lynch"
+        },
+        {
+          "url": "https://www.pinterest.com/bankofamerica/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12.pdf",
+          "text": "Know your Rights"
+        },
+        {
+          "url": "https://dcba.lacounty.gov/wp-content/uploads/2024/08/FCOE-Official-Notice-Eng-Final-8.30.2024.pdf",
+          "text": "View the LA County Fair Chance Ordinance"
+        },
+        {
+          "url": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsipc.org%2F&data=05%7C02%7Ccaleb.fritchtnitch%40groupeconnect.com%7C9e352cfebfa74c6626c808dd930c4da4%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C638828403272867218%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pRTlYjNsOgoOax3xtLL5DK6po4mjlI1UfItQbzZGNVQ%3D&reserved=0",
+          "text": "Member SIPC"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-us",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login"
+        },
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-ba_continuum",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.bankofamerica.com/en-us/job-detail/26036525/software-engineer-iii-gbs-ind-mumbai-india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Job ID:26036525 - Software Engineer III - GBS IND - Mumbai, India",
+      "evidence": "evidence/e8d79087a4bd93235238.html.gz",
+      "sha256": "06f551f301a8be3e2bd7817d590ac24ce24f02fc74cafc52b7c4e71f5feb5f90"
+    },
+    {
+      "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+      "checked_at": "2026-11-15T23:49:15.182400+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-ba_continuum",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Mumbai/Software-Engineer-III---GBS-IND_26036525",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/7ed57d421f7554f57564.html.gz",
+      "sha256": "cd1a5c4f91b5996e4f55ec5fc0bce42b836bf7f9ef174c8bbeddc89a8ea928c4"
+    },
+    {
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+      "checked_at": "2026-11-15T23:49:16.766865+00:00",
+      "links": [
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india#mainContentStart",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.bankofamerica.com/",
+          "text": "Personal"
+        },
+        {
+          "url": "https://www.bankofamerica.com/business/",
+          "text": "Small business"
+        },
+        {
+          "url": "https://www.ml.com/wealthmanagement.html",
+          "text": "Wealth management"
+        },
+        {
+          "url": "https://business.bofa.com/content/boaml/en_us/home.html",
+          "text": "Businesses & institutions"
+        },
+        {
+          "url": "https://about.bankofamerica.com/en#fbid=94lLoRE7UeG",
+          "text": "About us"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization.html",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process.html",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience.html",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs.html",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process.html",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?&ref=search&start=0&rows=10&search=getAllJobs",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For professionals"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/services/saml_login.html",
+          "text": "Employees"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login",
+          "text": "Professional Applicants"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/user-36/xf-1c8d608fd721/wid-1/candidate/login",
+          "text": "Campus Applicants"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+          "text": "Back to search results"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Refer a friend"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Refer a friend"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+          "text": "Building 15A, Zone 1, Gift Sez, Gandhinagar, 382355"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://youradchoices.com/control",
+          "text": "YourAdChoices layer"
+        },
+        {
+          "url": "https://www.networkadvertising.org/choices",
+          "text": "Network Advertising Initiative's Opt-Out Tool layer"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/online-privacy-notice/?request_locale=en_US",
+          "text": "Bank of America Online Privacy Notice"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/faq/online-privacy/?request_locale=en_US",
+          "text": "Online Privacy FAQs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-recruitment-scams",
+          "text": "Recruitment Scams"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/privacy-notice",
+          "text": "Data protection notice"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/pay-transparency",
+          "text": "Pay transparency"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/privacy-overview/",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/overview/",
+          "text": "Security"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/dam/enterprise/careers/en-us/Terms-and-Conditions-of-Employment.pdf",
+          "text": "Terms and Conditions of Employment"
+        },
+        {
+          "url": "https://www.bankofamerica.com/help/equalhousing_popup.go?request_locale=en_US",
+          "text": "Equal Housing Lender"
+        },
+        {
+          "url": "https://www.instagram.com/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/bank-of-america/",
+          "text": "Bank of America"
+        },
+        {
+          "url": "https://www.linkedin.com/company/merrilllynch/",
+          "text": "Merrill Lynch"
+        },
+        {
+          "url": "https://www.pinterest.com/bankofamerica/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12.pdf",
+          "text": "Know your Rights"
+        },
+        {
+          "url": "https://dcba.lacounty.gov/wp-content/uploads/2024/08/FCOE-Official-Notice-Eng-Final-8.30.2024.pdf",
+          "text": "View the LA County Fair Chance Ordinance"
+        },
+        {
+          "url": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsipc.org%2F&data=05%7C02%7Ccaleb.fritchtnitch%40groupeconnect.com%7C9e352cfebfa74c6626c808dd930c4da4%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C638828403272867218%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pRTlYjNsOgoOax3xtLL5DK6po4mjlI1UfItQbzZGNVQ%3D&reserved=0",
+          "text": "Member SIPC"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-us",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login"
+        },
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-ba_continuum",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.bankofamerica.com/en-us/job-detail/26039606/team-developer-gandhinagar-india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Job ID:26039606 - Team Developer - Gandhinagar, India",
+      "evidence": "evidence/ec783cdab60eb888ad21.html.gz",
+      "sha256": "b4e44e0d9350d2da76958ce43437eef6428b8d05027c7b98bfa549c1db7d7ad8"
+    },
+    {
+      "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+      "checked_at": "2026-11-15T23:49:17.864505+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-ba_continuum",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Developer_26039606",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/985be62928703b02d7c6.html.gz",
+      "sha256": "03765a5dea2aff27ade390185f00b4483f2d78de433c34a61a2ead91baeb2f8d"
+    },
+    {
+      "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+      "checked_at": "2026-11-15T23:49:19.380884+00:00",
+      "links": [
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india#mainContentStart",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.bankofamerica.com/",
+          "text": "Personal"
+        },
+        {
+          "url": "https://www.bankofamerica.com/business/",
+          "text": "Small business"
+        },
+        {
+          "url": "https://www.ml.com/wealthmanagement.html",
+          "text": "Wealth management"
+        },
+        {
+          "url": "https://business.bofa.com/content/boaml/en_us/home.html",
+          "text": "Businesses & institutions"
+        },
+        {
+          "url": "https://about.bankofamerica.com/en#fbid=94lLoRE7UeG",
+          "text": "About us"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization.html",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process.html",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience.html",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs.html",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process.html",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?&ref=search&start=0&rows=10&search=getAllJobs",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For professionals"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search.html?ref=search&search=getAllJobs&start=0&rows=10",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/services/saml_login.html",
+          "text": "Employees"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login",
+          "text": "Professional Applicants"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/user-36/xf-1c8d608fd721/wid-1/candidate/login",
+          "text": "Campus Applicants"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+          "text": "Back to search results"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Refer a friend"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Refer a friend"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/enterprise/careers/us/en/mycareers/home/internal-job-eligibility-criteria",
+          "text": "posting eligibility requirements"
+        },
+        {
+          "url": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653",
+          "text": "Acknowledge"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+          "text": ""
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+          "text": "Building 15A, Zone 1, Gift Sez, Gandhinagar, 382355"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/great-place-to-work",
+          "text": "Great place to work"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company",
+          "text": "What we do"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/organization",
+          "text": "How we’re organized"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/company/values",
+          "text": "Our mission and vision"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/hiring-process",
+          "text": "Hiring process"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students",
+          "text": "For students"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/campus-experience",
+          "text": "The campus experience"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/programs",
+          "text": "Student programs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/application-process",
+          "text": "Joining the team"
+        },
+        {
+          "url": "https://bankcampuscareers.tal.net/vx/lang-en-GB/mobile-0/brand-4/xf-6f0048376f93/candidate/jobboard/vacancy/2/adv/",
+          "text": "Campus Events"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/students/job-search",
+          "text": "Opportunities"
+        },
+        {
+          "url": "https://youradchoices.com/control",
+          "text": "YourAdChoices layer"
+        },
+        {
+          "url": "https://www.networkadvertising.org/choices",
+          "text": "Network Advertising Initiative's Opt-Out Tool layer"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/online-privacy-notice/?request_locale=en_US",
+          "text": "Bank of America Online Privacy Notice"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/faq/online-privacy/?request_locale=en_US",
+          "text": "Online Privacy FAQs"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/job-recruitment-scams",
+          "text": "Recruitment Scams"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/privacy-notice",
+          "text": "Data protection notice"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/pay-transparency",
+          "text": "Pay transparency"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/en-us/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/privacy-overview/",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.bankofamerica.com/security-center/overview/",
+          "text": "Security"
+        },
+        {
+          "url": "https://careers.bankofamerica.com/content/dam/enterprise/careers/en-us/Terms-and-Conditions-of-Employment.pdf",
+          "text": "Terms and Conditions of Employment"
+        },
+        {
+          "url": "https://www.bankofamerica.com/help/equalhousing_popup.go?request_locale=en_US",
+          "text": "Equal Housing Lender"
+        },
+        {
+          "url": "https://www.instagram.com/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/bank-of-america/",
+          "text": "Bank of America"
+        },
+        {
+          "url": "https://www.linkedin.com/company/merrilllynch/",
+          "text": "Merrill Lynch"
+        },
+        {
+          "url": "https://www.pinterest.com/bankofamerica/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/bankofamerica",
+          "text": ""
+        },
+        {
+          "url": "https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12.pdf",
+          "text": "Know your Rights"
+        },
+        {
+          "url": "https://dcba.lacounty.gov/wp-content/uploads/2024/08/FCOE-Official-Notice-Eng-Final-8.30.2024.pdf",
+          "text": "View the LA County Fair Chance Ordinance"
+        },
+        {
+          "url": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsipc.org%2F&data=05%7C02%7Ccaleb.fritchtnitch%40groupeconnect.com%7C9e352cfebfa74c6626c808dd930c4da4%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C638828403272867218%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pRTlYjNsOgoOax3xtLL5DK6po4mjlI1UfItQbzZGNVQ%3D&reserved=0",
+          "text": "Member SIPC"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-us",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login"
+        },
+        {
+          "tenant": "ghr",
+          "datacentre": "wd1",
+          "site": "lateral-ba_continuum",
+          "source_link": "https://ghr.wd1.myworkdayjobs.com/lateral-ba_continuum/job/Gandhinagar/Team-Leader_26040653"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.bankofamerica.com/en-us/job-detail/26040653/team-leader-gandhinagar-india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Job ID:26040653 - Team Leader - Gandhinagar, India",
+      "evidence": "evidence/3a386363a3a4379223e2.html.gz",
+      "sha256": "563f42426b02776d61bc5f9d3c58c96baf5b4aa0cdff0df78753a834b53ca11e"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

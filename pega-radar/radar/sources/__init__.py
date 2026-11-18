@@ -13,6 +13,7 @@ import re
 from datetime import datetime, timezone
 
 from ..model import company_key, make_result
+from ..rank import SCANNABLE_STATES, employer_portals
 
 LINKEDIN_PRIORITY = 0
 ATS_FOCUS_PRIORITY = 10      # product companies and captive centres with a known Bengaluru team
@@ -59,6 +60,9 @@ class Task:
     def __init__(self, name, label, kind, priority, adapter, source=None):
         self.name, self.label, self.kind, self.priority = name, label, kind, priority
         self.source = source or label
+        self.employer = None        # canonical companies.json name, for employer-site tasks
+        self.portal = None          # the registry `portals` entry this task reads
+        self.board = None           # identity of the physical board; the scan fetches a shared board once
         self._adapter = adapter
         self._pending = None
 
@@ -66,7 +70,7 @@ class Task:
         self._pending = None
         try:
             if http.expired():
-                return make_result(self.source, self.label, self.kind, status='skipped',
+                return make_result(self.source, self.label, self.kind, status='skipped', reason='budget',
                                    error='the time budget ran out before this source started')
             outcome = self._adapter(Meter(http), ctx)
             if isinstance(outcome, tuple):
@@ -140,6 +144,31 @@ def registry_companies(registry):
     return list(registry or [])
 
 
+def probe_portal(http, employer, portal):
+    """The bounded live check of one portal behind `radar.py verify`, with the requests it cost."""
+    from . import portals
+    meter = Meter(http)
+    return {**portals.probe(meter, portal), 'requests': meter.count}
+
+
+def _read_portal(http, ctx, employer, label, portal, units=()):
+    """Read one portal for `employer` and file the result under `label`.
+
+    Every kind gets the scan context: boards keep a memory in the store of what they have already
+    read, and return it as a `commit` to run once the jobs are saved. The jobs always carry the employer's canonical name; only the result's label tells an
+    employer's second board from its first.
+    """
+    from . import ats, portals
+    read = ats.run if portal.get('kind') in ats.ADAPTERS else portals.run
+    outcome = read(http, employer, portal, ctx)
+    result = outcome[0] if isinstance(outcome, tuple) else outcome
+    result['label'] = label
+    result['employer'] = employer     # the board's primary employer; each job's `company` says whose it is
+    # On a shared board a posting that names another employer's business unit is that employer's.
+    portals.attribute(result, units)
+    return outcome
+
+
 def build_tasks(config, registry, store):
     """All tasks for one scan, lowest `priority` first: LinkedIn, employer sites, then job boards.
 
@@ -147,18 +176,43 @@ def build_tasks(config, registry, store):
     is part of the agreed signature.
     """
     # Imported here because these modules import the helpers above from this package.
-    from . import ats, boards, linkedin
+    from . import ats, boards, linkedin, portals
 
     companies = registry_companies(registry)
     tasks = [Task('linkedin', 'LinkedIn', 'linkedin', LINKEDIN_PRIORITY,
                   lambda http, ctx: linkedin.run(http, ctx, companies))]
+    # A board may serve several employers. Its primary employer is the one that names no business
+    # unit; the others say which unit of the board they are, and postings naming that unit are theirs.
+    # Whichever employer's task ends up fetching the board, the attribution is the same.
+    primary, units = {}, {}
     for company in companies:
-        block = company.get('ats')
-        if block:
-            tasks.append(Task(ats.task_name(block), company['name'], 'ats',
-                              ATS_FOCUS_PRIORITY if is_focus(company) else ATS_PRIORITY,
-                              lambda http, ctx, company=company: ats.run(http, company['name'], company['ats']),
-                              source=ats.SOURCE))
+        for portal in employer_portals(company):
+            if portal['state'] not in SCANNABLE_STATES:
+                continue
+            board = ':'.join(ats.identity(portal))
+            if not portal.get('business_unit'):
+                primary.setdefault(board, company['name'])
+            else:
+                units.setdefault(board, []).append((company['name'], portal['business_unit']))
+    names = set()
+    for company in companies:
+        # `wrong_scope` and `unsupported` portals are listed in the registry but never fetched.
+        scanned = [portal for portal in employer_portals(company) if portal['state'] in SCANNABLE_STATES]
+        for position, portal in enumerate(scanned):
+            identity = ats.identity(portal)
+            name = portals.task_name(portal)
+            if name in names:   # a board another employer also uses
+                name += ':' + company_key(company['name'])
+            names.add(name)
+            label = company['name'] if not position else f"{company['name']} ({portal['kind']} {identity[-1]})"
+            board = ':'.join(identity)
+            shared = tuple(units.get(board, ())) if board in primary else ()
+            task = Task(name, label, 'ats', ATS_FOCUS_PRIORITY if is_focus(company) else ATS_PRIORITY,
+                        lambda http, ctx, employer=primary.get(board, company['name']), label=label, portal=portal,
+                        shared=shared: _read_portal(http, ctx, employer, label, portal, shared),
+                        source=ats.SOURCE)
+            task.employer, task.portal, task.board = company['name'], portal, board
+            tasks.append(task)
     for name, adapter in boards.BOARDS.items():
         tasks.append(Task('board:' + company_key(name), name, 'board', BOARD_PRIORITY,
                           lambda http, ctx, adapter=adapter: adapter(http)))

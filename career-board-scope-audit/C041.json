@@ -1,0 +1,36 @@
+{
+  "id": "C041",
+  "company": {
+    "name": "Caesars Entertainment",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://edmn.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "edmn.fa.us2.oraclecloud.com",
+        "site": "CX_1",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://edmn.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+      "checked_at": "2026-11-15T23:49:30.256818+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://edmn.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Caesars Entertainment",
+      "evidence": "evidence/2d4851abdaa5db37a94f.html.gz",
+      "sha256": "824c3d90a47da8fe76139910256f8efa8bd3d08f087575934f1895eef99048e9"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

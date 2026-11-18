@@ -1,0 +1,981 @@
+{
+  "id": "C220",
+  "company": {
+    "name": "Tesco",
+    "aliases": [
+      "Tesco Bengaluru"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+    "portals": [
+      {
+        "kind": "avature",
+        "host": "careers.tesco.com",
+        "search_param": "semanticSearch",
+        "path": "en_GB/careers",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Avature-style SearchJobs route on a custom domain; vendor not confirmed"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "checked_at": "2026-11-15T23:51:10.872802+00:00",
+      "links": [
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega#main",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "EN"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": "CZ (Czech Republic)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "English"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": "HU (Hungary)"
+        },
+        {
+          "url": "https://careers.tesco.com/sk_SK/careers/SearchJobs?semanticSearch=pega",
+          "text": "SK (Slovakia)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/Login?semanticSearch=pega",
+          "text": "My profile"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Tesco Careers"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Reset"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "Sort by"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/TalentCommunity",
+          "text": "Let's connect"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RegisterJobAlerts",
+          "text": "Create a job alert"
+        },
+        {
+          "url": "https://www.tescoplc.com",
+          "text": "Tesco PLC"
+        },
+        {
+          "url": "https://www.tesco.com",
+          "text": "Tesco.com"
+        },
+        {
+          "url": "https://www.tescomobile.com",
+          "text": "Tesco Mobile"
+        },
+        {
+          "url": "https://www.tescoinsurance.com/",
+          "text": "Tesco Insurance"
+        },
+        {
+          "url": "https://www.tesco.com/careers/terms-and-conditions",
+          "text": "Terms and conditions"
+        },
+        {
+          "url": "https://www.tesco.com/careers/cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.tesco.com/careers/privacy-policy",
+          "text": "Privacy policy"
+        },
+        {
+          "url": "https://www.tesco.com/careers/sitemap",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.tesco.com/careers/accessibility",
+          "text": "Accessibility information"
+        },
+        {
+          "url": "https://www.tesco.com/careers/faqs-about-working-at-tesco",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://careers.tesco.com/careers/SearchJobs",
+          "text": "Job search"
+        },
+        {
+          "url": "https://www.facebook.com/tesco",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/-tesco/mycompany/verification/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Overview/Working-at-Tesco-EI_IE10250.11,16.htm",
+          "text": ""
+        },
+        {
+          "url": "https://uk.indeed.com/cmp/Tesco/about",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/tesco/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@TescoMedia",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Job Search | Tesco Careers",
+      "evidence": "evidence/bb8327f8510d4d532a52.html.gz",
+      "sha256": "ee790f2cfb7a429ea4696f53eceda7f1ef168548a880072a26551029ff23b16f"
+    },
+    {
+      "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "checked_at": "2026-11-15T23:51:10.872802+00:00",
+      "links": [
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega#main",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "EN"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": "CZ (Czech Republic)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "English"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": "HU (Hungary)"
+        },
+        {
+          "url": "https://careers.tesco.com/sk_SK/careers/SearchJobs?semanticSearch=pega",
+          "text": "SK (Slovakia)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/Login?semanticSearch=pega",
+          "text": "My profile"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Tesco Careers"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Reset"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "Sort by"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/TalentCommunity",
+          "text": "Let's connect"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RegisterJobAlerts",
+          "text": "Create a job alert"
+        },
+        {
+          "url": "https://www.tescoplc.com",
+          "text": "Tesco PLC"
+        },
+        {
+          "url": "https://www.tesco.com",
+          "text": "Tesco.com"
+        },
+        {
+          "url": "https://www.tescomobile.com",
+          "text": "Tesco Mobile"
+        },
+        {
+          "url": "https://www.tescoinsurance.com/",
+          "text": "Tesco Insurance"
+        },
+        {
+          "url": "https://www.tesco.com/careers/terms-and-conditions",
+          "text": "Terms and conditions"
+        },
+        {
+          "url": "https://www.tesco.com/careers/cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.tesco.com/careers/privacy-policy",
+          "text": "Privacy policy"
+        },
+        {
+          "url": "https://www.tesco.com/careers/sitemap",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.tesco.com/careers/accessibility",
+          "text": "Accessibility information"
+        },
+        {
+          "url": "https://www.tesco.com/careers/faqs-about-working-at-tesco",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://careers.tesco.com/careers/SearchJobs",
+          "text": "Job search"
+        },
+        {
+          "url": "https://www.facebook.com/tesco",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/-tesco/mycompany/verification/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Overview/Working-at-Tesco-EI_IE10250.11,16.htm",
+          "text": ""
+        },
+        {
+          "url": "https://uk.indeed.com/cmp/Tesco/about",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/tesco/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@TescoMedia",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Job Search | Tesco Careers",
+      "evidence": "evidence/bb8327f8510d4d532a52.html.gz",
+      "sha256": "ee790f2cfb7a429ea4696f53eceda7f1ef168548a880072a26551029ff23b16f"
+    },
+    {
+      "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+      "checked_at": "2026-11-15T23:51:12.953662+00:00",
+      "links": [
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs#main",
+          "text": "Skip to content"
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "EN"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs",
+          "text": "CZ (Czech Republic)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "English"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs",
+          "text": "HU (Hungary)"
+        },
+        {
+          "url": "https://careers.tesco.com/sk_SK/careers/SearchJobs",
+          "text": "SK (Slovakia)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/Login",
+          "text": "My profile"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Tesco Careers"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": "Sort by"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs/?jobRecordsPerPage=10&jobOffset=10",
+          "text": "Next >>"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Customer-Delivery-Driver-Bracknell-Superstore/220683",
+          "text": "Customer Delivery Driver - Bracknell Superstore"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Customer-Delivery-Driver-Bracknell-Superstore/220683",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FCustomer-Delivery-Driver-Bracknell-Superstore%2F220683",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220683",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Customer-Assistant-Festive-Parnell-st/220680",
+          "text": "Customer Assistant (Festive) - - Parnell st"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Customer-Assistant-Festive-Parnell-st/220680",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FCustomer-Assistant-Festive-Parnell-st%2F220680",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220680",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Customer-Service-Assistant/220676",
+          "text": "One Stop - Customer Service Assistant"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Customer-Service-Assistant/220676",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FOne-Stop-Customer-Service-Assistant%2F220676",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220676",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Tesco-Colleague-Penrith-Express/220674",
+          "text": "Tesco Colleague - Penrith Express"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Tesco-Colleague-Penrith-Express/220674",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FTesco-Colleague-Penrith-Express%2F220674",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220674",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Customer-Service-Assistant/220669",
+          "text": "One Stop - Customer Service Assistant"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Customer-Service-Assistant/220669",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FOne-Stop-Customer-Service-Assistant%2F220669",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220669",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Customer-Service-Assistant/220668",
+          "text": "One Stop - Customer Service Assistant"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Customer-Service-Assistant/220668",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FOne-Stop-Customer-Service-Assistant%2F220668",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220668",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Store-Manager/220660",
+          "text": "One Stop - Store Manager"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/One-Stop-Store-Manager/220660",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FOne-Stop-Store-Manager%2F220660",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220660",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Tesco-Colleague-Newmarket-Express/220684",
+          "text": "Tesco Colleague - Newmarket Express"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Tesco-Colleague-Newmarket-Express/220684",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FTesco-Colleague-Newmarket-Express%2F220684",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220684",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Cafe-Chef/220682",
+          "text": "Cafe Chef"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Cafe-Chef/220682",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FCafe-Chef%2F220682",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220682",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Cafe-Team-Member/220681",
+          "text": "Cafe Team Member"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/JobDetail/Cafe-Team-Member/220681",
+          "text": "Read more"
+        },
+        {
+          "url": "https://wa.me?text=https%3A%2F%2Fcareers.tesco.com%2Fen_GB%2Fcareers%2FJobDetail%2FCafe-Team-Member%2F220681",
+          "text": "WhatsApp"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RedirectApply?jobId=220681",
+          "text": "Apply"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs/?jobRecordsPerPage=10&jobOffset=10",
+          "text": "Next >>"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/TalentCommunity",
+          "text": "Let's connect"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/RegisterJobAlerts",
+          "text": "Create a job alert"
+        },
+        {
+          "url": "https://www.tescoplc.com",
+          "text": "Tesco PLC"
+        },
+        {
+          "url": "https://www.tesco.com",
+          "text": "Tesco.com"
+        },
+        {
+          "url": "https://www.tescomobile.com",
+          "text": "Tesco Mobile"
+        },
+        {
+          "url": "https://www.tescoinsurance.com/",
+          "text": "Tesco Insurance"
+        },
+        {
+          "url": "https://www.tesco.com/careers/terms-and-conditions",
+          "text": "Terms and conditions"
+        },
+        {
+          "url": "https://www.tesco.com/careers/cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.tesco.com/careers/privacy-policy",
+          "text": "Privacy policy"
+        },
+        {
+          "url": "https://www.tesco.com/careers/sitemap",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.tesco.com/careers/accessibility",
+          "text": "Accessibility information"
+        },
+        {
+          "url": "https://www.tesco.com/careers/faqs-about-working-at-tesco",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://careers.tesco.com/careers/SearchJobs",
+          "text": "Job search"
+        },
+        {
+          "url": "https://www.facebook.com/tesco",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/-tesco/mycompany/verification/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Overview/Working-at-Tesco-EI_IE10250.11,16.htm",
+          "text": ""
+        },
+        {
+          "url": "https://uk.indeed.com/cmp/Tesco/about",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/tesco/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@TescoMedia",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.tesco.com/en_GB/careers/SearchJobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Job Search | Tesco Careers",
+      "evidence": "evidence/ddbb0a35c66ea9cd3568.html.gz",
+      "sha256": "b5ec0f9ae8fc833c31d06112660a284312cfb9bf724c797181ed7ef8d23ce8fc"
+    },
+    {
+      "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+      "checked_at": "2026-11-15T23:51:16.018377+00:00",
+      "links": [
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega#main",
+          "text": "Přejít na obsah"
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Hlavní stránka"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Hlavní stránka"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs",
+          "text": "Hledat"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": "CZ"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": "CZ (Czech Republic)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "English"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": "HU (Hungary)"
+        },
+        {
+          "url": "https://careers.tesco.com/sk_SK/careers/SearchJobs?semanticSearch=pega",
+          "text": "SK (Slovakia)"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/Login?semanticSearch=pega",
+          "text": "Můj profil"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs",
+          "text": "Tesco Careers"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs",
+          "text": "Resetovat"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": "Seřadit podle"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/TalentCommunity",
+          "text": "Ozvěte se nám"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/RegisterJobAlerts",
+          "text": "Vytvořte si upozornění na pracovní místo"
+        },
+        {
+          "url": "https://www.tescoplc.com",
+          "text": "Tesco PLC"
+        },
+        {
+          "url": "https://www.tesco.com",
+          "text": "Tesco.com"
+        },
+        {
+          "url": "https://www.tescomobile.com",
+          "text": "Tesco Mobile"
+        },
+        {
+          "url": "https://www.tescoinsurance.com/",
+          "text": "Tesco Insurance"
+        },
+        {
+          "url": "https://www.tesco.com/careers/terms-and-conditions",
+          "text": "Podmínky"
+        },
+        {
+          "url": "https://www.tesco.com/careers/cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.tesco.com/careers/privacy-policy",
+          "text": "Zásady ochrany osobních údajů"
+        },
+        {
+          "url": "https://www.tesco.com/careers/sitemap",
+          "text": "Mapa stránky"
+        },
+        {
+          "url": "https://www.tesco.com/careers/accessibility",
+          "text": "Informace o přístupnosti"
+        },
+        {
+          "url": "https://www.tesco.com/careers/faqs-about-working-at-tesco",
+          "text": "Často kladené otázky"
+        },
+        {
+          "url": "https://careers.tesco.com/careers/SearchJobs",
+          "text": "Hledat pracovní pozici"
+        },
+        {
+          "url": "https://www.facebook.com/tesco",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/-tesco/mycompany/verification/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Overview/Working-at-Tesco-EI_IE10250.11,16.htm",
+          "text": ""
+        },
+        {
+          "url": "https://uk.indeed.com/cmp/Tesco/about",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/tesco/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@TescoMedia",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Hledání pracovních míst | Tesco Careers",
+      "evidence": "evidence/db925f57103509255093.html.gz",
+      "sha256": "4227ea28878285df1cccbd16b717a42445b56c8ff6d5f6e3c36a8ee678387b26"
+    },
+    {
+      "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+      "checked_at": "2026-11-15T23:51:18.169318+00:00",
+      "links": [
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega#main",
+          "text": "Ugrás a tartalomra"
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Főoldal"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://www.tesco.com/careers",
+          "text": "Főoldal"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs",
+          "text": "Keresés"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": "HU"
+        },
+        {
+          "url": "https://careers.tesco.com/cs_CZ/careers/SearchJobs?semanticSearch=pega",
+          "text": "CZ (Czech Republic)"
+        },
+        {
+          "url": "https://careers.tesco.com/en_GB/careers/SearchJobs?semanticSearch=pega",
+          "text": "English"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": "HU (Hungary)"
+        },
+        {
+          "url": "https://careers.tesco.com/sk_SK/careers/SearchJobs?semanticSearch=pega",
+          "text": "SK (Slovakia)"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/Login?semanticSearch=pega",
+          "text": "Saját profil"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs",
+          "text": "Tesco Careers"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": ""
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs",
+          "text": "Visszaállítás"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+          "text": "Rendezés az alábbi alapján:"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/TalentCommunity",
+          "text": "Lépj velünk kapcsolatba"
+        },
+        {
+          "url": "https://careers.tesco.com/hu_HU/careers/RegisterJobAlerts",
+          "text": "Hozz létre állásértesítőt"
+        },
+        {
+          "url": "https://www.tescoplc.com",
+          "text": "Tesco PLC"
+        },
+        {
+          "url": "https://www.tesco.com",
+          "text": "Tesco.com"
+        },
+        {
+          "url": "https://www.tescomobile.com",
+          "text": "Tesco Mobile"
+        },
+        {
+          "url": "https://www.tescoinsurance.com/",
+          "text": "Tesco Insurance"
+        },
+        {
+          "url": "https://www.tesco.com/careers/terms-and-conditions",
+          "text": "Felhasználási feltételek"
+        },
+        {
+          "url": "https://www.tesco.com/careers/cookies",
+          "text": "Cookie-k"
+        },
+        {
+          "url": "https://www.tesco.com/careers/privacy-policy",
+          "text": "Adatvédelmi szabályzat"
+        },
+        {
+          "url": "https://www.tesco.com/careers/sitemap",
+          "text": "Oldaltérkép"
+        },
+        {
+          "url": "https://www.tesco.com/careers/accessibility",
+          "text": "Akadálymentességi információk"
+        },
+        {
+          "url": "https://www.tesco.com/careers/faqs-about-working-at-tesco",
+          "text": "GYIK"
+        },
+        {
+          "url": "https://careers.tesco.com/careers/SearchJobs",
+          "text": "Álláskeresés"
+        },
+        {
+          "url": "https://www.facebook.com/tesco",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/-tesco/mycompany/verification/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Overview/Working-at-Tesco-EI_IE10250.11,16.htm",
+          "text": ""
+        },
+        {
+          "url": "https://uk.indeed.com/cmp/Tesco/about",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/tesco/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/@TescoMedia",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.tesco.com/hu_HU/careers/SearchJobs?semanticSearch=pega",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Álláskeresés | Tesco Careers",
+      "evidence": "evidence/9c003219421f3ecbdfdd.html.gz",
+      "sha256": "0f11cea673ad4b3e100fbb7d93f85c34d532c085d8cdc7c0d342e714b5e7f1bf"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "C145",
+  "company": {
+    "name": "Manulife",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://manulife.wd3.myworkdayjobs.com/MFCJH_Jobs",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "manulife",
+        "datacentre": "wd3",
+        "site": "MFCJH_Jobs",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://manulife.wd3.myworkdayjobs.com/MFCJH_Jobs",
+      "checked_at": "2026-11-15T23:50:29.256883+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "manulife",
+          "datacentre": "wd3",
+          "site": "MFCJH_Jobs",
+          "source_link": "https://manulife.wd3.myworkdayjobs.com/MFCJH_Jobs"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://manulife.wd3.myworkdayjobs.com/MFCJH_Jobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/af0f5e8770a990062b49.html.gz",
+      "sha256": "6f63df334159c66d2dbb4ea5d8aef9611d5566ac737e156419a0dad110947249"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

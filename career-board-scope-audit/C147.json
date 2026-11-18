@@ -1,0 +1,38 @@
+{
+  "id": "C147",
+  "company": {
+    "name": "Marsh McLennan",
+    "aliases": [
+      "MMGS"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.marsh.com/global/en",
+    "portals": [
+      {
+        "kind": "phenom",
+        "host": "careers.marsh.com",
+        "locale_path": "global/en",
+        "state": "candidate",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.marsh.com/global/en",
+      "checked_at": "2026-11-15T23:50:30.000188+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.marsh.com/global/en",
+      "truncated": true,
+      "outcome": "page reachable",
+      "title": "Careers at Marsh | Marsh jobs",
+      "evidence": "evidence/a05e5efaaae5a5da3a43.html.gz",
+      "sha256": "260947133f358ebe00da4beebc36704d3100e5842d6dba27b985084e3f798ee0"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

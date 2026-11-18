@@ -1,0 +1,1577 @@
+{
+  "id": "C102",
+  "company": {
+    "name": "General Motors",
+    "aliases": [
+      "GM"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://search-careers.gm.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "generalmotors",
+        "datacentre": "wd5",
+        "site": "Careers_GM",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://search-careers.gm.com",
+      "checked_at": "2026-11-15T23:50:10.973954+00:00",
+      "links": [
+        {
+          "url": "https://search-careers.gm.com#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/cookies/#content",
+          "text": "Manage Preferences"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/",
+          "text": ""
+        },
+        {
+          "url": "https://search-careers.gm.com/en/",
+          "text": ""
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/faq/",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/recruitment-scam-alerts/",
+          "text": "Recruitment Scam Alerts"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/",
+          "text": "Working at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/",
+          "text": "Working at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/culture/",
+          "text": "Culture"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/product-technology/",
+          "text": "Product & Technology"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/growth-and-mentorship/",
+          "text": "Growth and Mentorship"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/people-communities/",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/military-community/",
+          "text": "Military Community"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/",
+          "text": "Life at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/environment-and-sustainability/",
+          "text": "Environment and Sustainability"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/benefits/",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "Teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "Teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/administration/",
+          "text": "Administration"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/ai-ml/",
+          "text": "AI/ML"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/autonomy/",
+          "text": "Autonomy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/battery/",
+          "text": "Battery"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/communications/",
+          "text": "Communications"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/corporate-strategy-development-planning/",
+          "text": "Corporate Strategy, Development & Planning"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/creative-design/",
+          "text": "Creative Design"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/data-management-analytics/",
+          "text": "Data Management & Analytics"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/defense/",
+          "text": "Defense"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/energy/",
+          "text": "Energy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/engineering/",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/facilities-real-estate/",
+          "text": "Facilities & Real Estate"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/finance/",
+          "text": "Finance"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/human-resources/",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/information-technology/",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/legal/",
+          "text": "Legal"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/manufacturing/",
+          "text": "Manufacturing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/medical/",
+          "text": "Medical"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/motorsports/",
+          "text": "Motorsports"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/production-skilled-trades/",
+          "text": "Production & Skilled Trades"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/public-policy/",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/purchasing-supply-chain/",
+          "text": "Purchasing & Supply Chain"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/quality/",
+          "text": "Quality"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/research-development/",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/sales-service-marketing/",
+          "text": "Sales, Service & Marketing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/security/",
+          "text": "Security"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/software/",
+          "text": "Software"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/workplace-safety/",
+          "text": "Workplace Safety"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "Locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "Locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/united-states/",
+          "text": "United States"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/detroit-mi/",
+          "text": "Detroit, MI"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/austin-tx/",
+          "text": "Austin, TX"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/mountain-view-ca/",
+          "text": "Mountain View, CA"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/seattle-wa/",
+          "text": "Seattle, WA"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/argentina/",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/australia/",
+          "text": "Australia"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/brazil/",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/canada/",
+          "text": "Canada"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/chile/",
+          "text": "Chile"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/china/",
+          "text": "China"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/colombia/",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/egypt/",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/france/",
+          "text": "France"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/germany/",
+          "text": "Germany"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/india/",
+          "text": "India"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/ireland-united-kingdom/",
+          "text": "Ireland & United Kingdom"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/israel/",
+          "text": "Israel"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/japan/",
+          "text": "Japan"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/korea/",
+          "text": "Korea"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/mexico/",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/norway/",
+          "text": "Norway"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/new-zealand/",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/peru/",
+          "text": "Peru"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/philippines/",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/sweden/",
+          "text": "Sweden"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/switzerland/",
+          "text": "Switzerland"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/united-arab-emirates/",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/uruguay/",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/internship-program/",
+          "text": "Internship Program"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/track-program/",
+          "text": "TRACK Program"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/",
+          "text": "English"
+        },
+        {
+          "url": "https://search-careers.gm.com/es/",
+          "text": "español"
+        },
+        {
+          "url": "https://search-careers.gm.com/fr/",
+          "text": "français"
+        },
+        {
+          "url": "https://search-careers.gm.com/fr-ca/",
+          "text": "français (Canada)"
+        },
+        {
+          "url": "https://search-careers.gm.com/kr/",
+          "text": "한국어"
+        },
+        {
+          "url": "https://search-careers.gm.com/pt/",
+          "text": "português"
+        },
+        {
+          "url": "https://search-careers.gm.com/zh/",
+          "text": "中文(简体)"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/saved-jobs/",
+          "text": "Saved jobs 0"
+        },
+        {
+          "url": "https://generalmotors.avature.net/TalentCommunity",
+          "text": "Join Talent Network"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/recruitment-scam-alerts/",
+          "text": "click here"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/culture/",
+          "text": "Our Culture"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/people-communities/",
+          "text": "Our People"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=JBRJezVYX2w",
+          "text": "Play Video"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/",
+          "text": "See how to apply"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "View our current teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/engineering/",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/manufacturing/",
+          "text": "Manufacturing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/information-technology/",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/production-skilled-trades/",
+          "text": "Production & Skilled Trades"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "View our current teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/",
+          "text": "View all our opportunities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/",
+          "text": "View all our opportunities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "View all locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/united-states/",
+          "text": "United States"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/detroit-mi/",
+          "text": "Detroit, MI"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/austin-tx/",
+          "text": "Austin, TX"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/australia/",
+          "text": "Australia"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "View all locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/",
+          "text": "View all stories"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/employee-stories/the-women-who-have-and-who-will-shape-us/",
+          "text": "Read more"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/employee-stories/where-veteran-experience-can-lead-at-gm/",
+          "text": "Where Veteran Experience Can Lead at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/employee-stories/from-the-field-to-cadillac-what-customers-taught-me-about-marketing/",
+          "text": "From the field to Cadillac: What customers taught me about marketing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/employee-stories/driven-to-serve-navy-veteran-keely-bosn-keeps-cadillac-racing-ready/",
+          "text": "Driven to Serve: Navy veteran Keely Bosn keeps Cadillac Racing ready"
+        },
+        {
+          "url": "https://www.facebook.com/generalmotorscareers/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/gm",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/groups/2753851/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLE45D6E9B243DA601",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/generalmotors/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.com/Overview/Working-at-General-Motors-EI_IE279.11,25.htm",
+          "text": ""
+        },
+        {
+          "url": "https://www.gm.com/",
+          "text": "GM.com"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/faq/",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://investor.gm.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.gm.com/gm-brands",
+          "text": "Dealers & Suppliers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/people-communities/",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/sitemap/",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.gm.com/contact",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.gm.com/user-guidelines.html",
+          "text": "User Guidelines"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/recruitment-scam-alerts/",
+          "text": "Recruitment Scam Alerts"
+        },
+        {
+          "url": "https://www.gm.com/commitments/sustainability",
+          "text": "Supply Chain Responsibility"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/privacy/",
+          "text": "Privacy Statement"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/cookies/",
+          "text": "Cookies Preferences"
+        },
+        {
+          "url": "https://www.gm.com/copyright-trademark.html",
+          "text": "Copyright/Trademark"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/accessibility-equal-opportunity-employer/",
+          "text": "Accessibility & Equal Opportunity Employer"
+        },
+        {
+          "url": "https://happydance.love/?utm_source=careers_site&utm_medium=platform_referral&utm_campaign=powered_by&utm_content=generalmotors",
+          "text": "Happydance"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://search-careers.gm.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "GM Jobs | General Motors Careers",
+      "evidence": "evidence/c37b51c3a14470500d05.html.gz",
+      "sha256": "8ace4f046f25fc88af180760a539edaa65260486900a43ef66a7b41ce3799123"
+    },
+    {
+      "url": "https://search-careers.gm.com/en/locations/india/",
+      "checked_at": "2026-11-15T23:50:13.193040+00:00",
+      "links": [
+        {
+          "url": "https://search-careers.gm.com/en/locations/india/#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/cookies/#content",
+          "text": "Manage Preferences"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/",
+          "text": ""
+        },
+        {
+          "url": "https://search-careers.gm.com/en/",
+          "text": ""
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/faq/",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/recruitment-scam-alerts/",
+          "text": "Recruitment Scam Alerts"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/",
+          "text": "Working at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/",
+          "text": "Working at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/culture/",
+          "text": "Culture"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/product-technology/",
+          "text": "Product & Technology"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/growth-and-mentorship/",
+          "text": "Growth and Mentorship"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/people-communities/",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/military-community/",
+          "text": "Military Community"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/",
+          "text": "Life at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/environment-and-sustainability/",
+          "text": "Environment and Sustainability"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/benefits/",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "Teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "Teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/administration/",
+          "text": "Administration"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/ai-ml/",
+          "text": "AI/ML"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/autonomy/",
+          "text": "Autonomy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/battery/",
+          "text": "Battery"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/communications/",
+          "text": "Communications"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/corporate-strategy-development-planning/",
+          "text": "Corporate Strategy, Development & Planning"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/creative-design/",
+          "text": "Creative Design"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/data-management-analytics/",
+          "text": "Data Management & Analytics"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/defense/",
+          "text": "Defense"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/energy/",
+          "text": "Energy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/engineering/",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/facilities-real-estate/",
+          "text": "Facilities & Real Estate"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/finance/",
+          "text": "Finance"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/human-resources/",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/information-technology/",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/legal/",
+          "text": "Legal"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/manufacturing/",
+          "text": "Manufacturing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/medical/",
+          "text": "Medical"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/motorsports/",
+          "text": "Motorsports"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/production-skilled-trades/",
+          "text": "Production & Skilled Trades"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/public-policy/",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/purchasing-supply-chain/",
+          "text": "Purchasing & Supply Chain"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/quality/",
+          "text": "Quality"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/research-development/",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/sales-service-marketing/",
+          "text": "Sales, Service & Marketing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/security/",
+          "text": "Security"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/software/",
+          "text": "Software"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/workplace-safety/",
+          "text": "Workplace Safety"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "Locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "Locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/united-states/",
+          "text": "United States"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/detroit-mi/",
+          "text": "Detroit, MI"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/austin-tx/",
+          "text": "Austin, TX"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/mountain-view-ca/",
+          "text": "Mountain View, CA"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/seattle-wa/",
+          "text": "Seattle, WA"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/argentina/",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/australia/",
+          "text": "Australia"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/brazil/",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/canada/",
+          "text": "Canada"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/chile/",
+          "text": "Chile"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/china/",
+          "text": "China"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/colombia/",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/egypt/",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/france/",
+          "text": "France"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/germany/",
+          "text": "Germany"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/india/",
+          "text": "India"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/ireland-united-kingdom/",
+          "text": "Ireland & United Kingdom"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/israel/",
+          "text": "Israel"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/japan/",
+          "text": "Japan"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/korea/",
+          "text": "Korea"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/mexico/",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/norway/",
+          "text": "Norway"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/new-zealand/",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/peru/",
+          "text": "Peru"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/philippines/",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/sweden/",
+          "text": "Sweden"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/switzerland/",
+          "text": "Switzerland"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/united-arab-emirates/",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/uruguay/",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/internship-program/",
+          "text": "Internship Program"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/track-program/",
+          "text": "TRACK Program"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/india/",
+          "text": "English"
+        },
+        {
+          "url": "https://search-careers.gm.com/es/ubicaciones/india/",
+          "text": "español"
+        },
+        {
+          "url": "https://search-careers.gm.com/fr/nos-sites/inde/",
+          "text": "français"
+        },
+        {
+          "url": "https://search-careers.gm.com/fr-ca/emplacements/inde/",
+          "text": "français (Canada)"
+        },
+        {
+          "url": "https://search-careers.gm.com/kr/locations/인도/",
+          "text": "한국어"
+        },
+        {
+          "url": "https://search-careers.gm.com/pt/localizacoes/india/",
+          "text": "português"
+        },
+        {
+          "url": "https://search-careers.gm.com/zh/地点/印度/",
+          "text": "中文(简体)"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/saved-jobs/",
+          "text": "Saved jobs 0"
+        },
+        {
+          "url": "https://generalmotors.avature.net/TalentCommunity",
+          "text": "Join Talent Network"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=rcuUAWM8418",
+          "text": "Play Video"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/",
+          "text": "Explore our career opportunities"
+        },
+        {
+          "url": "https://flows.beamery.com/generalmotors/talcom/0",
+          "text": "Get Job Alerts & Company Updates"
+        },
+        {
+          "url": "https://www.facebook.com/generalmotorscareers/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/gm",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/groups/2753851/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLE45D6E9B243DA601",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/generalmotors/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.com/Overview/Working-at-General-Motors-EI_IE279.11,25.htm",
+          "text": ""
+        },
+        {
+          "url": "https://www.gm.com/",
+          "text": "GM.com"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/faq/",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://investor.gm.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.gm.com/gm-brands",
+          "text": "Dealers & Suppliers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/people-communities/",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/sitemap/",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.gm.com/contact",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.gm.com/user-guidelines.html",
+          "text": "User Guidelines"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/recruitment-scam-alerts/",
+          "text": "Recruitment Scam Alerts"
+        },
+        {
+          "url": "https://www.gm.com/commitments/sustainability",
+          "text": "Supply Chain Responsibility"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/privacy/",
+          "text": "Privacy Statement"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/cookies/",
+          "text": "Cookies Preferences"
+        },
+        {
+          "url": "https://www.gm.com/copyright-trademark.html",
+          "text": "Copyright/Trademark"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/accessibility-equal-opportunity-employer/",
+          "text": "Accessibility & Equal Opportunity Employer"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://search-careers.gm.com/en/locations/india/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India | Locations at GM  - Love what you do, where you are | General Motors Careers",
+      "evidence": "evidence/36366467d0d0b8a71cd7.html.gz",
+      "sha256": "6ba66f6d0a3ba8a41ec7a2793f65ddaa87ee5cf45df5a0ffa062d05c327dcb90"
+    },
+    {
+      "url": "https://search-careers.gm.com/en/jobs/",
+      "checked_at": "2026-11-15T23:50:15.133265+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 403,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://search-careers.gm.com/en/locations/india/",
+      "checked_at": "2026-11-15T23:50:13.193040+00:00",
+      "links": [
+        {
+          "url": "https://search-careers.gm.com/en/locations/india/#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/cookies/#content",
+          "text": "Manage Preferences"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/",
+          "text": ""
+        },
+        {
+          "url": "https://search-careers.gm.com/en/",
+          "text": ""
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/",
+          "text": "Jobs"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/faq/",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/recruitment-scam-alerts/",
+          "text": "Recruitment Scam Alerts"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/",
+          "text": "Working at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/",
+          "text": "Working at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/culture/",
+          "text": "Culture"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/product-technology/",
+          "text": "Product & Technology"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/growth-and-mentorship/",
+          "text": "Growth and Mentorship"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/people-communities/",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/military-community/",
+          "text": "Military Community"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/gm-life-stories/",
+          "text": "Life at GM"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/environment-and-sustainability/",
+          "text": "Environment and Sustainability"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/benefits/",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "Teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/",
+          "text": "Teams"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/administration/",
+          "text": "Administration"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/ai-ml/",
+          "text": "AI/ML"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/autonomy/",
+          "text": "Autonomy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/battery/",
+          "text": "Battery"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/communications/",
+          "text": "Communications"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/corporate-strategy-development-planning/",
+          "text": "Corporate Strategy, Development & Planning"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/creative-design/",
+          "text": "Creative Design"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/data-management-analytics/",
+          "text": "Data Management & Analytics"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/defense/",
+          "text": "Defense"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/energy/",
+          "text": "Energy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/engineering/",
+          "text": "Engineering"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/facilities-real-estate/",
+          "text": "Facilities & Real Estate"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/finance/",
+          "text": "Finance"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/human-resources/",
+          "text": "Human Resources"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/information-technology/",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/legal/",
+          "text": "Legal"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/manufacturing/",
+          "text": "Manufacturing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/medical/",
+          "text": "Medical"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/motorsports/",
+          "text": "Motorsports"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/production-skilled-trades/",
+          "text": "Production & Skilled Trades"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/public-policy/",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/purchasing-supply-chain/",
+          "text": "Purchasing & Supply Chain"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/quality/",
+          "text": "Quality"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/research-development/",
+          "text": "Research & Development"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/sales-service-marketing/",
+          "text": "Sales, Service & Marketing"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/security/",
+          "text": "Security"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/software/",
+          "text": "Software"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/teams/workplace-safety/",
+          "text": "Workplace Safety"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "Locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/",
+          "text": "Locations"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/united-states/",
+          "text": "United States"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/detroit-mi/",
+          "text": "Detroit, MI"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/austin-tx/",
+          "text": "Austin, TX"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/mountain-view-ca/",
+          "text": "Mountain View, CA"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/seattle-wa/",
+          "text": "Seattle, WA"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/argentina/",
+          "text": "Argentina"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/australia/",
+          "text": "Australia"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/brazil/",
+          "text": "Brazil"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/canada/",
+          "text": "Canada"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/chile/",
+          "text": "Chile"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/china/",
+          "text": "China"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/colombia/",
+          "text": "Colombia"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/egypt/",
+          "text": "Egypt"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/france/",
+          "text": "France"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/germany/",
+          "text": "Germany"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/india/",
+          "text": "India"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/ireland-united-kingdom/",
+          "text": "Ireland & United Kingdom"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/israel/",
+          "text": "Israel"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/japan/",
+          "text": "Japan"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/korea/",
+          "text": "Korea"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/mexico/",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/norway/",
+          "text": "Norway"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/new-zealand/",
+          "text": "New Zealand"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/peru/",
+          "text": "Peru"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/philippines/",
+          "text": "Philippines"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/sweden/",
+          "text": "Sweden"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/switzerland/",
+          "text": "Switzerland"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/united-arab-emirates/",
+          "text": "United Arab Emirates"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/uruguay/",
+          "text": "Uruguay"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/internship-program/",
+          "text": "Internship Program"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/early-careers/track-program/",
+          "text": "TRACK Program"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/locations/india/",
+          "text": "English"
+        },
+        {
+          "url": "https://search-careers.gm.com/es/ubicaciones/india/",
+          "text": "español"
+        },
+        {
+          "url": "https://search-careers.gm.com/fr/nos-sites/inde/",
+          "text": "français"
+        },
+        {
+          "url": "https://search-careers.gm.com/fr-ca/emplacements/inde/",
+          "text": "français (Canada)"
+        },
+        {
+          "url": "https://search-careers.gm.com/kr/locations/인도/",
+          "text": "한국어"
+        },
+        {
+          "url": "https://search-careers.gm.com/pt/localizacoes/india/",
+          "text": "português"
+        },
+        {
+          "url": "https://search-careers.gm.com/zh/地点/印度/",
+          "text": "中文(简体)"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/saved-jobs/",
+          "text": "Saved jobs 0"
+        },
+        {
+          "url": "https://generalmotors.avature.net/TalentCommunity",
+          "text": "Join Talent Network"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=rcuUAWM8418",
+          "text": "Play Video"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/jobs/",
+          "text": "Explore our career opportunities"
+        },
+        {
+          "url": "https://flows.beamery.com/generalmotors/talcom/0",
+          "text": "Get Job Alerts & Company Updates"
+        },
+        {
+          "url": "https://www.facebook.com/generalmotorscareers/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/gm",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/groups/2753851/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLE45D6E9B243DA601",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/generalmotors/",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.com/Overview/Working-at-General-Motors-EI_IE279.11,25.htm",
+          "text": ""
+        },
+        {
+          "url": "https://www.gm.com/",
+          "text": "GM.com"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/faq/",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://investor.gm.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.gm.com/gm-brands",
+          "text": "Dealers & Suppliers"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/working-at-gm/people-communities/",
+          "text": "People & Communities"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/sitemap/",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://www.gm.com/contact",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.gm.com/user-guidelines.html",
+          "text": "User Guidelines"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/",
+          "text": "How We Hire"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/how-we-hire/recruitment-scam-alerts/",
+          "text": "Recruitment Scam Alerts"
+        },
+        {
+          "url": "https://www.gm.com/commitments/sustainability",
+          "text": "Supply Chain Responsibility"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/privacy/",
+          "text": "Privacy Statement"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/cookies/",
+          "text": "Cookies Preferences"
+        },
+        {
+          "url": "https://www.gm.com/copyright-trademark.html",
+          "text": "Copyright/Trademark"
+        },
+        {
+          "url": "https://search-careers.gm.com/en/accessibility-equal-opportunity-employer/",
+          "text": "Accessibility & Equal Opportunity Employer"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://search-careers.gm.com/en/locations/india/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India | Locations at GM  - Love what you do, where you are | General Motors Careers",
+      "evidence": "evidence/36366467d0d0b8a71cd7.html.gz",
+      "sha256": "6ba66f6d0a3ba8a41ec7a2793f65ddaa87ee5cf45df5a0ffa062d05c327dcb90"
+    },
+    {
+      "url": "https://search-careers.gm.com/es/ubicaciones/india/",
+      "checked_at": "2026-11-15T23:50:15.609802+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "not retried after host refusal"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

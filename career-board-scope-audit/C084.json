@@ -1,0 +1,40 @@
+{
+  "id": "C084",
+  "company": {
+    "name": "Estes Express",
+    "aliases": [
+      "Estes Express Lines",
+      "Estes"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://work4estes.com/en/sites/work4estes",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "ecwr.fa.us2.oraclecloud.com",
+        "site": "CX_1",
+        "state": "candidate",
+        "scope": "global",
+        "note": "work4estes.com fronts this Oracle host (site number CX_1); a US carrier, so India roles may not exist"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://work4estes.com/en/sites/work4estes",
+      "checked_at": "2026-11-15T23:50:00.310554+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://work4estes.com/en/sites/work4estes",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Estes Express Lines",
+      "evidence": "evidence/e444a59c6a6100789589.html.gz",
+      "sha256": "997ae642a6f9604ecdd7f28ccb583cd917fafd04761e880e3e5ca85df1e99ed2"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

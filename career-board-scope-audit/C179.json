@@ -1,0 +1,1237 @@
+{
+  "id": "C179",
+  "company": {
+    "name": "Pegasystems",
+    "aliases": [
+      "Pega"
+    ],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://www.pega.com/about/careers/job-listings",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://www.pega.com/about/careers/job-listings",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Pega's own job-listings page; no known vacancy provider was identified, so it needs a site-specific parser"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.pega.com/about/careers/job-listings",
+      "checked_at": "2026-11-15T23:50:48.035075+00:00",
+      "links": [
+        {
+          "url": "https://www.pega.com/about/careers/job-listings#main-content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.pega.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.pega.com/products/platform",
+          "text": "Explore Pega Platform"
+        },
+        {
+          "url": "https://www.pega.com/products/platform",
+          "text": "Pega Platform Overview"
+        },
+        {
+          "url": "https://trust.pega.com",
+          "text": "Security & Compliance"
+        },
+        {
+          "url": "https://www.pega.com/products/cloud",
+          "text": "Cloud"
+        },
+        {
+          "url": "https://docs.pega.com/bundle/keeping-current/page/keeping-current/kc/keeping-current-with-pega.html",
+          "text": "Keeping current with Pega"
+        },
+        {
+          "url": "https://www.pega.com/infinity",
+          "text": "Latest release: Pega Infinity '26"
+        },
+        {
+          "url": "https://www.pega.com/products/platform/workflow-automation",
+          "text": "Workflow Automation"
+        },
+        {
+          "url": "https://www.pega.com/technology/agentic-workflows",
+          "text": "AI Agents"
+        },
+        {
+          "url": "https://www.pega.com/technology/generative-ai",
+          "text": "Gen AI"
+        },
+        {
+          "url": "https://www.pega.com/products/platform/ai-decisioning",
+          "text": "Predictive AI"
+        },
+        {
+          "url": "https://www.pega.com/products/platform/capabilities",
+          "text": "All capabilities"
+        },
+        {
+          "url": "https://www.pega.com/try-pega",
+          "text": "Demos & Trials"
+        },
+        {
+          "url": "https://www.pega.com/demos",
+          "text": "Product Demo Videos"
+        },
+        {
+          "url": "https://www.pega.com/blueprint",
+          "text": "Pega Blueprint®"
+        },
+        {
+          "url": "https://www.pega.com/customer-engagement-blueprint",
+          "text": "Pega Customer Engagement Blueprint"
+        },
+        {
+          "url": "https://www.pega.com/platform-trial",
+          "text": "Platform Trial"
+        },
+        {
+          "url": "https://www.pega.com/blueprint",
+          "text": ""
+        },
+        {
+          "url": "https://www.pega.com/blueprint",
+          "text": "Go from idea to app in a flash"
+        },
+        {
+          "url": "https://www.pega.com/products/crm-applications",
+          "text": "Pega CRM Products"
+        },
+        {
+          "url": "https://www.pega.com/products/decision-hub",
+          "text": "Customer Decision Hub"
+        },
+        {
+          "url": "https://www.pega.com/products/customer-service",
+          "text": "Customer Service"
+        },
+        {
+          "url": "https://www.pega.com/products/sales-automation",
+          "text": "Sales Automation"
+        },
+        {
+          "url": "https://www.pega.com/products",
+          "text": "All products"
+        },
+        {
+          "url": "https://www.pega.com/industries",
+          "text": "Industries"
+        },
+        {
+          "url": "https://www.pega.com/industries/financial-services",
+          "text": "Financial Services"
+        },
+        {
+          "url": "https://www.pega.com/industries/insurance",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.pega.com/industries/healthcare",
+          "text": "Healthcare & Life Sciences"
+        },
+        {
+          "url": "https://www.pega.com/industries/communications",
+          "text": "Communications Service Providers"
+        },
+        {
+          "url": "https://www.pega.com/industries/government",
+          "text": "Government"
+        },
+        {
+          "url": "https://www.pega.com/industries/manufacturing",
+          "text": "Manufacturing & High-Tech"
+        },
+        {
+          "url": "https://www.pega.com/industries/manufacturing/automotive",
+          "text": "Automotive"
+        },
+        {
+          "url": "https://www.pega.com/industries",
+          "text": "See all industries"
+        },
+        {
+          "url": "https://www.pega.com/products",
+          "text": "View all"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=industry%3A1656",
+          "text": "Financial Services"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=industry%3A1676",
+          "text": "Insurance"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=industry%3A1671&f%5B1%5D=industry%3A1686",
+          "text": "Healthcare & Life Sciences"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=industry%3A1681",
+          "text": "Communications Service Providers"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=industry%3A1666",
+          "text": "Government"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=industry%3A1661&f%5B1%5D=industry%3A26791",
+          "text": "Manufacturing & High-Tech"
+        },
+        {
+          "url": "https://www.pega.com/customers",
+          "text": "View all customer success stories"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=solution%3A10261",
+          "text": "Customer Engagement"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=solution%3A10231",
+          "text": "Customer Service"
+        },
+        {
+          "url": "https://www.pega.com/customers?f%5B0%5D=solution%3A10236&f%5B1%5D=solution%3A10241&f%5B2%5D=solution%3A10256",
+          "text": "Intelligent Automation"
+        },
+        {
+          "url": "https://www.pega.com/customers",
+          "text": "View all customer success stories"
+        },
+        {
+          "url": "https://www.pega.com/customers/deutsche-telekom-customer-service",
+          "text": "Blueprint drives Deutsche Telekom’s CX leap"
+        },
+        {
+          "url": "https://www.pega.com/technology/center-out",
+          "text": "Business Architecture"
+        },
+        {
+          "url": "https://www.pega.com/case-management",
+          "text": "Case Management"
+        },
+        {
+          "url": "https://www.pega.com/why-pega",
+          "text": "See what sets us apart"
+        },
+        {
+          "url": "https://www.pega.com/technology/autonomous-enterprise",
+          "text": "Autonomous Enterprise"
+        },
+        {
+          "url": "https://www.pega.com/ai-innovation",
+          "text": "AI Innovation"
+        },
+        {
+          "url": "https://www.pega.com/workflow-automation",
+          "text": "Workflow Automation"
+        },
+        {
+          "url": "https://www.pega.com/enterprise-ai",
+          "text": "Enterprise AI"
+        },
+        {
+          "url": "https://www.pega.com/next-best-action",
+          "text": "Next Best Action"
+        },
+        {
+          "url": "https://www.pega.com/low-code",
+          "text": "Low Code"
+        },
+        {
+          "url": "https://www.pega.com/tech-knowledge",
+          "text": "View all"
+        },
+        {
+          "url": "https://www.pega.com/blueprint",
+          "text": "Pega Blueprint®"
+        },
+        {
+          "url": "https://www.pega.com/platform-trial",
+          "text": "Platform Trial"
+        },
+        {
+          "url": "https://academy.pega.com",
+          "text": "Pega Academy"
+        },
+        {
+          "url": "https://www.pega.com/gartner-boat-mq-2026",
+          "text": "BOAT Magic Quadrant"
+        },
+        {
+          "url": "https://www.pega.com/gartner-boat-cc-2026",
+          "text": "BOAT Critical Capabilities"
+        },
+        {
+          "url": "https://www.pega.com/forrester-ai-platforms-2026",
+          "text": "AI Platforms"
+        },
+        {
+          "url": "https://www.pega.com/forrester-rtim-2025",
+          "text": "Real-time Decisions and AI"
+        },
+        {
+          "url": "https://www.pega.com/forrester-tei-decision-hub",
+          "text": "Total Economic Impact™ study"
+        },
+        {
+          "url": "https://www.pega.com/analyst-reports",
+          "text": "See all analyst reports"
+        },
+        {
+          "url": "https://www.pega.com/services/partnerships",
+          "text": "Partners"
+        },
+        {
+          "url": "https://www.pega.com/services/partnerships",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.pega.com/services/partnerships/partner-finder/results",
+          "text": "Find a Partner"
+        },
+        {
+          "url": "https://community.pega.com/marketplace/search",
+          "text": "Pega Marketplace"
+        },
+        {
+          "url": "https://partners.pega.com",
+          "text": "Partner Portal"
+        },
+        {
+          "url": "https://www.pega.com/launchpad",
+          "text": "Pega Launchpad"
+        },
+        {
+          "url": "https://www.pega.com/services/consulting",
+          "text": "Consulting"
+        },
+        {
+          "url": "https://www.pega.com/services/consulting/centers-of-excellence",
+          "text": "Centers of Excellence"
+        },
+        {
+          "url": "https://www.pega.com/services/consulting",
+          "text": "Consulting Overview"
+        },
+        {
+          "url": "https://www.pega.com/services/pega-catalyst",
+          "text": "Pega Catalyst"
+        },
+        {
+          "url": "https://academy.pega.com/",
+          "text": "Training & Certifications"
+        },
+        {
+          "url": "https://academy.pega.com/authorized-training-partners",
+          "text": "Authorized Training Partners"
+        },
+        {
+          "url": "https://academy.pega.com",
+          "text": "Pega Academy"
+        },
+        {
+          "url": "https://academy.pega.com/certifications",
+          "text": "Certifications"
+        },
+        {
+          "url": "https://academy.pega.com/search",
+          "text": "Learning Library"
+        },
+        {
+          "url": "https://academy.pega.com/genai-socrates",
+          "text": "Pega GenAI Socrates™"
+        },
+        {
+          "url": "https://community.pega.com/training/university-academic-program",
+          "text": "University Academic Program"
+        },
+        {
+          "url": "https://community.pega.com/",
+          "text": "Support & Community"
+        },
+        {
+          "url": "https://community.pega.com/",
+          "text": "Community"
+        },
+        {
+          "url": "https://docs.pega.com",
+          "text": "Knowledgebase"
+        },
+        {
+          "url": "https://forums.pega.com/",
+          "text": "Pega Forums"
+        },
+        {
+          "url": "https://www.pega.com/services",
+          "text": "View all"
+        },
+        {
+          "url": "https://www.pega.com/events",
+          "text": "In-Person Events"
+        },
+        {
+          "url": "https://www.pega.com/events/pegaworld",
+          "text": "PegaWorld 2027"
+        },
+        {
+          "url": "https://www.pega.com/events",
+          "text": "View all events"
+        },
+        {
+          "url": "https://www.pega.com/events/webinars",
+          "text": "Featured Webinars"
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/chaos-conductors-turning-market-disruption-your-competitive-symphony",
+          "text": "Chaos Conductors: Turning Market Disruption into Your Competitive Symphony"
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/breaking-campaign-calendar-agile-marketing-works",
+          "text": "Breaking the campaign calendar"
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/automation-autonomy-rise-agentic-ai-contact-centers",
+          "text": "From automation to autonomy"
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/building-ai-amplified-marketing-resilience-tomorrow",
+          "text": "Building AI-amplified marketing resilience for tomorrow"
+        },
+        {
+          "url": "https://www.pega.com/insights/resources/transforming-customer-engagement-measurable-business-impact",
+          "text": "Transforming Customer Engagement into Measurable Business Impact"
+        },
+        {
+          "url": "https://www.pega.com/events/webinars",
+          "text": "View all webinars"
+        },
+        {
+          "url": "https://www.pega.com/events/pegaworld",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.pega.com/about",
+          "text": "About Us"
+        },
+        {
+          "url": "https://www.pega.com/about",
+          "text": "Company"
+        },
+        {
+          "url": "https://www.pega.com/about/leadership",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://www.pega.com/about/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.pega.com/impact",
+          "text": "Impact at Pega"
+        },
+        {
+          "url": "https://www.pega.com/about/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.pega.com/about/news/press-releases",
+          "text": "Press Releases"
+        },
+        {
+          "url": "https://www.pega.com/about/news/media-coverage",
+          "text": "Media Coverage"
+        },
+        {
+          "url": "https://www.pega.com/about/company/awards",
+          "text": "Awards"
+        },
+        {
+          "url": "https://www.pega.com/analyst-reports",
+          "text": "Analyst Reports"
+        },
+        {
+          "url": "https://www.pega.com/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://www.pega.com/about/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.pega.com/about/careers",
+          "text": "Careers at Pega"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/search",
+          "text": "Current Openings"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/culture-and-benefits",
+          "text": "Culture & Benefits"
+        },
+        {
+          "url": "https://www.pega.com/",
+          "text": "Pega.com"
+        },
+        {
+          "url": "https://partners.pega.com",
+          "text": "Partners"
+        },
+        {
+          "url": "https://www.pega.com/events/pegaworld",
+          "text": "PegaWorld"
+        },
+        {
+          "url": "https://www.pega.com/MyPega",
+          "text": "My Pega"
+        },
+        {
+          "url": "https://community.pega.com",
+          "text": "Community"
+        },
+        {
+          "url": "https://forums.pega.com",
+          "text": "Forums"
+        },
+        {
+          "url": "https://docs.pega.com",
+          "text": "Documentation"
+        },
+        {
+          "url": "https://academy.pega.com/",
+          "text": "Academy"
+        },
+        {
+          "url": "https://www.pega.com/about/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.pega.com/user/login?destination=/about/careers/job-listings",
+          "text": "Log in"
+        },
+        {
+          "url": "https://www.pega.com/user/register?destination=www.pega.com/about/careers/job-listings",
+          "text": "sign up"
+        },
+        {
+          "url": "https://www.pega.com/user/login?destination=/about/careers/job-listings",
+          "text": "Log in"
+        },
+        {
+          "url": "https://www.pega.com/user/register?destination=www.pega.com/about/careers/job-listings",
+          "text": "sign up"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings",
+          "text": "English"
+        },
+        {
+          "url": "https://www.pega.com/fr/about/careers/job-listings",
+          "text": "Français"
+        },
+        {
+          "url": "https://www.pega.com/de/about/careers/job-listings",
+          "text": "Deutsch"
+        },
+        {
+          "url": "https://www.pega.com/it/about/careers/job-listings",
+          "text": "Italiano"
+        },
+        {
+          "url": "https://www.pega.com/ja/about/careers/job-listings",
+          "text": "日本語"
+        },
+        {
+          "url": "https://www.pega.com/pt-br/about/careers/job-listings",
+          "text": "Português"
+        },
+        {
+          "url": "https://www.pega.com/es/about/careers/job-listings",
+          "text": "Español"
+        },
+        {
+          "url": "https://www.pega.com/MyPega",
+          "text": "My Pega"
+        },
+        {
+          "url": "https://www.pega.com/MyPega/Profile",
+          "text": "My Profile"
+        },
+        {
+          "url": "https://accounts.pega.com/notifications/preferences",
+          "text": "My Notifications"
+        },
+        {
+          "url": "https://www.pega.com/user/reset?destination=/about/careers/job-listings",
+          "text": "Not Name? Click here"
+        },
+        {
+          "url": "https://www.google.com/chrome",
+          "text": "Google Chrome"
+        },
+        {
+          "url": "https://www.mozilla.org/firefox",
+          "text": "Mozilla Firefox"
+        },
+        {
+          "url": "https://www.microsoft.com/edge",
+          "text": "Microsoft Edge"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings#close-deprecation-modal",
+          "text": "Close Deprecation Notice"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24336#search-results",
+          "text": "Client Success"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24341#search-results",
+          "text": "Client Support"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24351#search-results",
+          "text": "Engineering & Cloud"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24361#search-results",
+          "text": "Finance"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24366#search-results",
+          "text": "General Administration"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24371#search-results",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24381#search-results",
+          "text": "Legal"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24386#search-results",
+          "text": "Marketing"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24391#search-results",
+          "text": "People"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A38341#search-results",
+          "text": "Product Engineering"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24406#search-results",
+          "text": "Professional Services"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24311#search-results",
+          "text": "Sales"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=category%3A24416#search-results",
+          "text": "User Experience/Design"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25796#search-results",
+          "text": "Australia - Sydney"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A33521#search-results",
+          "text": "Brazil - Sao Paulo - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25831#search-results",
+          "text": "Canada - ON- TOR - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A27041#search-results",
+          "text": "France - Paris"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25866#search-results",
+          "text": "Germany - BW - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25906#search-results",
+          "text": "Germany - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25951#search-results",
+          "text": "India - Karnataka - Bangalore"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25956#search-results",
+          "text": "India - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25961#search-results",
+          "text": "India - Telangana - Hyderabad"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25966#search-results",
+          "text": "Italy - Milan - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25981#search-results",
+          "text": "Japan - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25986#search-results",
+          "text": "Japan - Tokyo"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25991#search-results",
+          "text": "Netherlands - Amsterdam"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25996#search-results",
+          "text": "Netherlands - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26006#search-results",
+          "text": "Poland - Krakow"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26011#search-results",
+          "text": "Poland - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26031#search-results",
+          "text": "Sweden - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26061#search-results",
+          "text": "UK - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26096#search-results",
+          "text": "US - California - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26116#search-results",
+          "text": "US - DC - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26131#search-results",
+          "text": "US - Florida - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26141#search-results",
+          "text": "US - Georgia - Atlanta - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26146#search-results",
+          "text": "US - Georgia - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26171#search-results",
+          "text": "US - Illinois - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26211#search-results",
+          "text": "US - Maryland - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26221#search-results",
+          "text": "US - Massachusetts - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A35571#search-results",
+          "text": "US - Massachusetts - Waltham"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26286#search-results",
+          "text": "US - New Jersey - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26296#search-results",
+          "text": "US - New York - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26301#search-results",
+          "text": "US - North Carolina - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26321#search-results",
+          "text": "US - Oregon - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26346#search-results",
+          "text": "US - Tennessee - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26351#search-results",
+          "text": "US - Texas - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A26376#search-results",
+          "text": "US - Virginia - Remote"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23970/talent-advisory-partner",
+          "text": "Talent Advisory Partner"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23970/talent-advisory-partner",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24137/senior-systems-and-storage-engineer",
+          "text": "Senior Systems and Storage Engineer"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24137/senior-systems-and-storage-engineer",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24143/client-executive",
+          "text": "Client Executive"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24143/client-executive",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23979/senior-manager-av",
+          "text": "Senior Manager, AV"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23979/senior-manager-av",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24048/manager-delivery-excellence",
+          "text": "Manager, Delivery Excellence"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24048/manager-delivery-excellence",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24139/lead-business-architect",
+          "text": "Lead Business Architect"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24139/lead-business-architect",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24134/senior-accounts-receivable-analyst",
+          "text": "Senior Accounts Receivable Analyst"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24134/senior-accounts-receivable-analyst",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24132/senior-technical-support-engineer-integration",
+          "text": "Senior Technical Support Engineer, Integration"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24132/senior-technical-support-engineer-integration",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24128/senior-manager-agile-delivery",
+          "text": "Senior Manager, Agile Delivery"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24128/senior-manager-agile-delivery",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24136/principal-systems-and-storage-engineer",
+          "text": "Principal Systems and Storage Engineer"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24136/principal-systems-and-storage-engineer",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24133/client-executive-slg",
+          "text": "Client Executive - SLG"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24133/client-executive-slg",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24111/senior-system-architect",
+          "text": "Senior System Architect"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24111/senior-system-architect",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24108/project-delivery-leader",
+          "text": "Project Delivery Leader"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24108/project-delivery-leader",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24109/senior-system-architect",
+          "text": "Senior System Architect"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24109/senior-system-architect",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24110/system-architect",
+          "text": "System Architect"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24110/system-architect",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24006/senior-applications-engineer",
+          "text": "Senior Applications Engineer"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24006/senior-applications-engineer",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24005/senior-applications-engineer",
+          "text": "Senior Applications Engineer"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24005/senior-applications-engineer",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24123/software-engineer-genai-engineering-pega-developer-csa-cssa",
+          "text": "Software Engineer, GenAI Engineering (Pega Developer CSA, CSSA)"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24123/software-engineer-genai-engineering-pega-developer-csa-cssa",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24124/software-engineer-genai-engineering-ai/ml",
+          "text": "Software Engineer, GenAI Engineering (AI/ML)"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24124/software-engineer-genai-engineering-ai/ml",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24129/senior-payroll-specialist",
+          "text": "Senior Payroll Specialist"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24129/senior-payroll-specialist",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24087/lead-system-architect",
+          "text": "Lead System Architect"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24087/lead-system-architect",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24082/vice-president-client-growth",
+          "text": "Vice President of Client Growth"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24082/vice-president-client-growth",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24084/lead-system-architect-pega-clsa",
+          "text": "Lead System Architect (Pega CLSA)"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24084/lead-system-architect-pega-clsa",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24118/client-executive-dow",
+          "text": "Client Executive - DOW"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24118/client-executive-dow",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24112/senior-system-architect",
+          "text": "Senior System Architect"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24112/senior-system-architect",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23978/principal-av-engineer-events-lead",
+          "text": "Principal AV Engineer, Events Lead"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/23978/principal-av-engineer-events-lead",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24127/sr-director-client-growth-latam",
+          "text": "Sr. Director of Client Growth - LATAM"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24127/sr-director-client-growth-latam",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24122/senior-system-architect",
+          "text": "Senior System Architect"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24122/senior-system-architect",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24083/senior-manager-web-ux-and-design",
+          "text": "Senior Manager, Web UX and Design"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24083/senior-manager-web-ux-and-design",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24104/senior-manager-web-strategy-and-experience",
+          "text": "Senior Manager, Web Strategy and Experience"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/24104/senior-manager-web-strategy-and-experience",
+          "text": "Learn More and Apply"
+        },
+        {
+          "url": "https://www.pega.com/about/careers/job-listings",
+          "text": "https://www.pega.com/about/careers/job-listings"
+        },
+        {
+          "url": "https://www.indeed.com/career-advice/interviewing/interview-scams",
+          "text": "https://www.indeed.com/career-advice/interviewing/interview-scams"
+        },
+        {
+          "url": "https://fightcybercrime.org/business-job-opportunity-imposter-scams/",
+          "text": "https://fightcybercrime.org/business-job-opportunity-imposter-scams/"
+        },
+        {
+          "url": "https://www.pega.com/blueprint/dashboard",
+          "text": "Pega Blueprint®"
+        },
+        {
+          "url": "https://www.pega.com/customer-engagement-blueprint/dashboard",
+          "text": "Pega Customer Engagement Blueprint™"
+        },
+        {
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https://www.pega.com/about/careers/job-listings&src=sdkpreparse",
+          "text": "Share via Facebook"
+        },
+        {
+          "url": "https://twitter.com/intent/tweet?url=https://www.pega.com/about/careers/job-listings&text=Careers%20Search&via=pega",
+          "text": "Share via X"
+        },
+        {
+          "url": "https://www.linkedin.com/shareArticle?url=https://www.pega.com/about/careers/job-listings&title=Careers%20Search",
+          "text": "Share via LinkedIn"
+        },
+        {
+          "url": "https://www.pega.com/cdn-cgi/l/email-protection#bf80cccaddd5dadccb82fcdecddadacdcc9a8d8fecdadecddcd799ded2cf84ddd0dbc682f69a8d8fccdec89a8d8fcbd7d6cc9a8d8fd0d19a8d8fefdad8de91dcd0d29a8d8fded1db9a8d8fcbd7d0cad8d7cb9a8d8fc6d0ca9a8d8fd2d6d8d7cb9a8d8fd9d6d1db9a8d8fd6cb9a8d8fd6d1cbdacddacccbd6d1d89a8cfe9a8d8fd7cbcbcfcc9a8cfe9a8df99a8df9c8c8c891cfdad8de91dcd0d29a8df9deddd0cacb9a8df9dcdecddadacdcc9a8df9d5d0dd92d3d6cccbd6d1d8cc",
+          "text": "Share via Email"
+        },
+        {
+          "url": "https://www.linkedin.com/company/165426",
+          "text": "Linkedin"
+        },
+        {
+          "url": "https://twitter.com/pega",
+          "text": "X (Twitter)"
+        },
+        {
+          "url": "https://www.instagram.com/pegasystems",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.youtube.com/user/Pegasystems",
+          "text": "Youtube"
+        },
+        {
+          "url": "https://www.pega.com/about",
+          "text": "About Pega"
+        },
+        {
+          "url": "https://www.pega.com/about/office-locations",
+          "text": "Office Locations"
+        },
+        {
+          "url": "https://www.pega.com/about/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.pega.com/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://community.pega.com/",
+          "text": "Community"
+        },
+        {
+          "url": "https://forums.pega.com/",
+          "text": "Pega Forums"
+        },
+        {
+          "url": "https://academy.pega.com",
+          "text": "Pega Academy Training"
+        },
+        {
+          "url": "https://design.pega.com/",
+          "text": "Product Design"
+        },
+        {
+          "url": "https://partners.pega.com/",
+          "text": "Partners"
+        },
+        {
+          "url": "https://www.pega.com/events/pegaworld",
+          "text": "PegaWorld Conference"
+        },
+        {
+          "url": "https://www.pega.com/blog",
+          "text": "Blog"
+        },
+        {
+          "url": "https://my.pega.com",
+          "text": "MyPega"
+        },
+        {
+          "url": "https://www.pega.com/analyst-reports",
+          "text": "Analyst Reports"
+        },
+        {
+          "url": "https://www.pega.com/demos",
+          "text": "Demo Videos"
+        },
+        {
+          "url": "https://www.pega.com/platform-trial",
+          "text": "Pega Platform Trial"
+        },
+        {
+          "url": "https://www.pega.com/services",
+          "text": "Partners & Consulting Services"
+        },
+        {
+          "url": "https://trust.pega.com",
+          "text": "Trust Center"
+        },
+        {
+          "url": "https://www.pega.com/tech-knowledge",
+          "text": "Tech Knowledge"
+        },
+        {
+          "url": "https://www.pega.com",
+          "text": "English"
+        },
+        {
+          "url": "https://www.pega.com/fr",
+          "text": "Français"
+        },
+        {
+          "url": "https://www.pega.com/de",
+          "text": "Deutsch"
+        },
+        {
+          "url": "https://www.pega.com/it",
+          "text": "Italiano"
+        },
+        {
+          "url": "https://www.pega.com/ja",
+          "text": "日本語"
+        },
+        {
+          "url": "https://www.pega.com/pt-br",
+          "text": "Português"
+        },
+        {
+          "url": "https://www.pega.com/es",
+          "text": "Español"
+        },
+        {
+          "url": "https://www.pega.com/terms",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.pega.com/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://www.pega.com/trademarks",
+          "text": "Trademarks"
+        },
+        {
+          "url": "https://www.pega.com/privacy-and-security",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.pega.com/privacy/preference-center",
+          "text": "Your Privacy Choices"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.pega.com/about/careers/job-listings",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Job Listings | Pega",
+      "evidence": "evidence/12ab1bd759dfd6b24797.html.gz",
+      "sha256": "7b1a336e8e14cbaa9067633ddc771b197f86516163673bd167de57c3e637d605"
+    },
+    {
+      "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25951",
+      "checked_at": "2026-11-15T23:50:48.640188+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 403,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25956",
+      "checked_at": "2026-11-15T23:50:49.071968+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "not retried after host refusal"
+    },
+    {
+      "url": "https://www.pega.com/about/careers/job-listings?f%5B0%5D=location%3A25961",
+      "checked_at": "2026-11-15T23:50:49.084576+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "not retried after host refusal"
+    },
+    {
+      "url": "https://www.pega.com/about/careers/23970/talent-advisory-partner",
+      "checked_at": "2026-11-15T23:50:49.084605+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "not retried after host refusal"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "C101",
+  "company": {
+    "name": "GE Vernova",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "gevernova",
+        "datacentre": "wd5",
+        "site": "Vernova_ExternalSite",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite",
+      "checked_at": "2026-11-15T23:50:10.628476+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "gevernova",
+          "datacentre": "wd5",
+          "site": "Vernova_ExternalSite",
+          "source_link": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/95b380fa6b5eeeede0e0.html.gz",
+      "sha256": "7609271f69c9c066a3622890bc3e121fac70e017df8e3764680164ab2ce59c98"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

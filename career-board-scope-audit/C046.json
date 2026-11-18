@@ -1,0 +1,32 @@
+{
+  "id": "C046",
+  "company": {
+    "name": "Carrier",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.carrier.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "carrier",
+        "datacentre": "wd5",
+        "site": "jobs",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.carrier.com",
+      "checked_at": "2026-11-15T23:49:32.405829+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

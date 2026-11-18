@@ -1,0 +1,46 @@
+{
+  "id": "C070",
+  "company": {
+    "name": "DBS Bank",
+    "aliases": [
+      "DBS"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://dbs.wd3.myworkdayjobs.com/DBS_Careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "dbs",
+        "datacentre": "wd3",
+        "site": "DBS_Careers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://dbs.wd3.myworkdayjobs.com/DBS_Careers",
+      "checked_at": "2026-11-15T23:49:53.112794+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "dbs",
+          "datacentre": "wd3",
+          "site": "DBS_Careers",
+          "source_link": "https://dbs.wd3.myworkdayjobs.com/DBS_Careers"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://dbs.wd3.myworkdayjobs.com/DBS_Careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/5154cc24c1b4f0f13e0d.html.gz",
+      "sha256": "f59034871d7cc3d79090fb9bacfcbed49748739081accb411173a6fb33004fe7"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

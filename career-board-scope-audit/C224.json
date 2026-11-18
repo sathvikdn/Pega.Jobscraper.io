@@ -1,0 +1,95 @@
+{
+  "id": "C224",
+  "company": {
+    "name": "U.S. Bank",
+    "aliases": [
+      "U.S. Bancorp"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.usbank.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "usbank",
+        "datacentre": "wd1",
+        "site": "US_Bank_Careers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.usbank.com",
+      "checked_at": "2026-11-15T23:51:12.004016+00:00",
+      "links": [
+        {
+          "url": "https://careers.usbank.com/global/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://careers.usbank.com/global/en#acc-skip-content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.usbank.com/global/en/ways-we-work",
+          "text": "ways we work"
+        },
+        {
+          "url": "https://careers.usbank.com/global/en/e-verify",
+          "text": "eVerify"
+        },
+        {
+          "url": "https://careers.usbank.com/global/en/recruitment-process",
+          "text": "How we hire"
+        },
+        {
+          "url": "https://careers.usbank.com/global/en/employee-resources",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.linkedin.com/company/us-bank",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.in/Reviews/U-S-Bank-Reviews-E8937.htm",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/usbank",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/usbank/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/usbank/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/usbank",
+          "text": ""
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "usbank",
+          "datacentre": "wd1",
+          "site": "US_Bank_Careers",
+          "source_link": "https://usbank.wd1.myworkdayjobs.com/US_Bank_Careers/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.usbank.com/global/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at U.S. Bank | Find a Career",
+      "evidence": "evidence/f7224eb2b72dbb12561c.html.gz",
+      "sha256": "768f4596a9de14df043b1c7903bc904034b4fe4045de83857f9864508baeabaf"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

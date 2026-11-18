@@ -1,0 +1,36 @@
+{
+  "id": "C040",
+  "company": {
+    "name": "Bupa",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://elvh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "elvh.fa.em2.oraclecloud.com",
+        "site": "CX_2001",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://elvh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001",
+      "checked_at": "2026-11-15T23:49:29.020123+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://elvh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "BAS  Kariyer",
+      "evidence": "evidence/a8861a83ac855b92e652.html.gz",
+      "sha256": "d87644a2429b221d9ecdb7e4ae8541f8baceab79ecd1443c9f3fadb91cae5685"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

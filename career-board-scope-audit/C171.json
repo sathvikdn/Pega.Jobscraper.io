@@ -1,0 +1,37 @@
+{
+  "id": "C171",
+  "company": {
+    "name": "Nokia",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://jobs.nokia.com/en/sites/CX_1/jobs",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com",
+        "site": "CX_1",
+        "state": "candidate",
+        "scope": "global",
+        "note": "jobs.nokia.com fronts this Oracle host (site CX_1); search not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.nokia.com/en/sites/CX_1/jobs",
+      "checked_at": "2026-11-15T23:50:42.554143+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://jobs.nokia.com/en/sites/CX_1/jobs",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Nokia",
+      "evidence": "evidence/b9632c6f98c90d602a9e.html.gz",
+      "sha256": "40738e96577f3218ac730ad787a69fee0dd9e60c903fadee4e9607b4a1862f11"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

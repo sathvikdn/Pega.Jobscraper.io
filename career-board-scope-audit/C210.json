@@ -1,0 +1,44 @@
+{
+  "id": "C210",
+  "company": {
+    "name": "State Street",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://statestreet.wd1.myworkdayjobs.com/Global",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "statestreet",
+        "datacentre": "wd1",
+        "site": "Global",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://statestreet.wd1.myworkdayjobs.com/Global",
+      "checked_at": "2026-11-15T23:51:02.915404+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "statestreet",
+          "datacentre": "wd1",
+          "site": "Global",
+          "source_link": "https://statestreet.wd1.myworkdayjobs.com/Global"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://statestreet.wd1.myworkdayjobs.com/Global",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/e6076891c5161c43e624.html.gz",
+      "sha256": "635a37a4d95d536e5ab59281bc491f40065a5d31499418e4394989986e5fea25"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

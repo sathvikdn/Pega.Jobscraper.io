@@ -1,0 +1,47 @@
+{
+  "id": "C167",
+  "company": {
+    "name": "NatWest Group",
+    "aliases": [
+      "NatWest"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "rbs",
+        "datacentre": "wd3",
+        "site": "RBS",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified; the board held only 75 postings, so it may not be the main one"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+      "checked_at": "2026-11-15T23:50:39.751614+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "rbs",
+          "datacentre": "wd3",
+          "site": "RBS",
+          "source_link": "https://rbs.wd3.myworkdayjobs.com/RBS"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://rbs.wd3.myworkdayjobs.com/RBS",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/b66d4a29ea523f2c857d.html.gz",
+      "sha256": "a989a46609fd63a2d9970a374534ddcdeb83cc6ff2e22700aeee8c4f9227b0b1"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

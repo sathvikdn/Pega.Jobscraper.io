@@ -1,0 +1,157 @@
+{
+  "id": "C187",
+  "company": {
+    "name": "Procter & Gamble",
+    "aliases": [
+      "P&G"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.pgcareers.com/in/en",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "pg",
+        "datacentre": "wd5",
+        "site": "1000",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.pgcareers.com/in/en",
+      "checked_at": "2026-11-15T23:50:53.094664+00:00",
+      "links": [
+        {
+          "url": "https://www.pgcareers.com/in/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en",
+          "text": ""
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/design",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/engineering-new",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/finance-and-accounting",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/human-resources",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/information-technology",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/legal-patent",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/manufacturing-quality-assurance",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/marketing-brand-management",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/research-and-development",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/sales",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/supply-chain-logistics",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/other-careers",
+          "text": "View Opportunities"
+        },
+        {
+          "url": "https://www.pgplantjobs.com/global/en",
+          "text": "Visit pgplantjobs.com"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/about-us",
+          "text": "Explore More"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/culture-2025",
+          "text": "Explore More"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/benefits",
+          "text": "Explore More"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/leadership-development",
+          "text": "Explore More"
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/jointalentcommunity",
+          "text": "Sign Up Now"
+        },
+        {
+          "url": "https://www.linkedin.com/company/procter-and-gamble/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/pgcareers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/pgcareers/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/experiencePGnow",
+          "text": ""
+        },
+        {
+          "url": "https://www.pgcareers.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.pgcareers.com/in/en/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/procter-and-gamble/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/pgcareers/",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.pgcareers.com/in/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at P&G India - Jobs, Internships, Events | P&G Careers",
+      "evidence": "evidence/05ebe106969664aa5d22.html.gz",
+      "sha256": "8390a36c230f58531f9d5d45a5c4d4363809b4dc1850f927fab9c0ab01941a4b"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

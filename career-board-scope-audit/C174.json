@@ -1,0 +1,5473 @@
+{
+  "id": "C174",
+  "company": {
+    "name": "Novartis",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.novartis.com/careers",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://www.novartis.com/careers/career-search",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Site-built career search (Drupal); needs a site-specific parser"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.novartis.com/careers",
+      "checked_at": "2026-11-15T23:50:44.548479+00:00",
+      "links": [
+        {
+          "url": "https://www.novartis.com/careers#main",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/careers#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/careers#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/careers#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/careers#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/careers#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/careers#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/careers#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/careers#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/careers#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/careers#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors",
+          "text": "Board of Directors"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/giovanni-caforio",
+          "text": "Giovanni Caforio"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/simon-moroney",
+          "text": "Simon Moroney"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/nancy-c-andrews",
+          "text": "Nancy C. Andrews"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/ton-buechner",
+          "text": "Ton Buechner"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/patrice-bula",
+          "text": "Patrice Bula"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/elizabeth-liz-doherty",
+          "text": "Elizabeth (Liz) Doherty"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/bridgette-heller",
+          "text": "Bridgette Heller"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/frans-van-houten",
+          "text": "Frans van Houten"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/elizabeth-mcnally",
+          "text": "Elizabeth McNally"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/ana-de-pro-gonzalo",
+          "text": "Ana de Pro Gonzalo"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/charles-swanton",
+          "text": "Charles Swanton"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/john-d-young",
+          "text": "John D. Young"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/charlotte-pamer-wieser",
+          "text": "Charlotte Pamer-Wieser"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee",
+          "text": "Executive Committee"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/vasant-narasimhan",
+          "text": "Vasant (Vas) Narasimhan"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/shreeram-aradhye",
+          "text": "Shreeram Aradhye"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/victor-bulto",
+          "text": "Victor Bulto"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/aharon-ronny-gal-phd",
+          "text": "Aharon (Ronny) Gal"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/karen-hale",
+          "text": "Karen L. Hale"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/patrick-horber-md",
+          "text": "Patrick Horber"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/rob-kowalski",
+          "text": "Rob Kowalski"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/steffen-lang",
+          "text": "Steffen Lang"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/fiona-marshall",
+          "text": "Fiona Marshall"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/mukul-mehta",
+          "text": "Mukul Mehta"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/lutz-hegemann",
+          "text": "Lutz Hegemann"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/teresa-jose",
+          "text": "Teresa Jose"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/michelle-weese",
+          "text": "Michelle Weese"
+        },
+        {
+          "url": "https://www.novartis.com/about/products",
+          "text": "Products"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas",
+          "text": "Therapeutic areas"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/cardiovascular-renal-and-metabolic",
+          "text": "Cardiovascular, renal and metabolic"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/immunology",
+          "text": "Immunology"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/neuroscience",
+          "text": "Neuroscience"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/oncology",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://www.novartis.com/about/people-and-culture",
+          "text": "People and culture"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion",
+          "text": "Inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/promoting-inclusion",
+          "text": "Promoting inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/building-belonging",
+          "text": "Building belonging"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/parental-leave",
+          "text": "Parental leave"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/caring-mental-health-and-wellbeing-our-people",
+          "text": "Caring for the mental health and wellbeing of our people"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-gene-therapies",
+          "text": "Novartis Gene Therapies"
+        },
+        {
+          "url": "https://www.novartis.com/about/manufacturing",
+          "text": "Manufacturing"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality",
+          "text": "Quality"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/novartis-quality-management-system-qms",
+          "text": "Novartis quality management system (QMS)"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/audit-program-and-regulatory-inspections",
+          "text": "Audit program and regulatory inspections"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/product-and-patient-safety-training",
+          "text": "Product and patient safety training"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/product-recalls",
+          "text": "Product recalls"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/third-party-suppliers",
+          "text": "Third-party suppliers"
+        },
+        {
+          "url": "https://www.novartis.com/about/awards-and-recognition",
+          "text": "Awards and recognition"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union",
+          "text": "Novartis and the European Union"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/why-europe-matters-novartis",
+          "text": "Why Europe matters to Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/biotech-act",
+          "text": "Biotech Act"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/critical-medicines-act",
+          "text": "Critical Medicines Act"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/general-pharmaceutical-legislation",
+          "text": "General Pharmaceutical Legislation"
+        },
+        {
+          "url": "https://www.novartis.com/about/30-years-novartis-powered-250-years-innovation",
+          "text": "30 years of Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/patients-and-caregivers",
+          "text": "Patients and caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/patients-and-caregivers/novartis-commitment-patients-and-caregivers",
+          "text": "Novartis commitment to patients and caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/diseases",
+          "text": "Diseases"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/patient-organization-funding",
+          "text": "Patient organization funding"
+        },
+        {
+          "url": "https://www.novartis.com/news/stories/patient-perspectives",
+          "text": "Patients perspectives stories"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals",
+          "text": "Healthcare professionals"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/medical-congresses-and-events",
+          "text": "Medical congresses and events"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/medical-congresses-and-events/asco-annual-meeting",
+          "text": "ASCO Annual Meeting"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/medical-congresses-and-events/asco-annual-meeting/asco-2023",
+          "text": "ASCO 2023"
+        },
+        {
+          "url": "https://www.novartis.com/about/products",
+          "text": "Products"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/managed-access-programs",
+          "text": "Managed Access Programs"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/managed-access-programs/zolgensma-global-managed-access-program-gmap",
+          "text": "Zolgensma® Global Managed Access Program (gMAP)"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/managed-access-programs/managed-access-patient-privacy-notice-and-consent-templates",
+          "text": "Managed Access patient privacy notice and consent templates"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/novartis-external-funding",
+          "text": "Novartis external funding"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/healthcare-professional-resources-country",
+          "text": "Healthcare professional resources by country"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/investigator-initiated-trials-studies-clinical-and-investigator-initiated-research-non-clinical",
+          "text": "Investigator-initiated trials / studies"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/novartis-medical-information",
+          "text": "Novartis medical information"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/novartis-medical-information/submit-medical-enquiry",
+          "text": "Submit medical enquiry"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/payments-healthcare-professionals",
+          "text": "Payments to Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development",
+          "text": "Research and development"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/technology-platforms",
+          "text": "Technology platforms"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas",
+          "text": "Research disease areas"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/cardiovascular-and-metabolic-disease-research-novartis",
+          "text": "Cardiovascular and metabolic disease research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/diseases-aging-and-regenerative-medicine-dare-research-novartis",
+          "text": "Diseases of Aging and Regenerative medicine (DARe)"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/dax-exploratory-disease-research-novartis",
+          "text": "DAx: exploratory disease research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/global-health-disease-area-research-novartis",
+          "text": "Global Health disease area research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/immunology-disease-research-novartis",
+          "text": "Immunology disease research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/neuroscience-research-novartis",
+          "text": "Neuroscience research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/oncology-research-novartis",
+          "text": "Oncology research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-collaborations",
+          "text": "Research collaborations"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/collaborations",
+          "text": "Collaborations"
+        },
+        {
+          "url": "https://www.novartis.com/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access",
+          "text": "Access"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access/novartis-access-principles",
+          "text": "Novartis access principles"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability",
+          "text": "Environmental sustainability"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability/climate",
+          "text": "Climate"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability/nature",
+          "text": "Nature"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance",
+          "text": "Ethics, risk and compliance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/ethical-behavior",
+          "text": "Ethical behavior"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/compliance",
+          "text": "Compliance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/human-rights",
+          "text": "Human rights"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/learning-and-engagement",
+          "text": "Learning and engagement"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/integrated-risk-assurance",
+          "text": "Integrated risk assurance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health",
+          "text": "Global health"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health/innovative-healthcare-models",
+          "text": "Innovative healthcare models"
+        },
+        {
+          "url": "https://www.novartis.com/diseases/malaria",
+          "text": "Malaria"
+        },
+        {
+          "url": "https://www.novartis.com/diseases/neglected-tropical-diseases",
+          "text": "Neglected Tropical Diseases"
+        },
+        {
+          "url": "https://www.novartisfoundation.org/",
+          "text": "Novartis Foundation"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health/sub-saharan-africa",
+          "text": "Sub-Saharan Africa"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion",
+          "text": "Inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/esg/index",
+          "text": "ESG index"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub",
+          "text": "Reporting and transparency hub"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/esg-rating-performance",
+          "text": "ESG rating performance"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/patient-organization-funding",
+          "text": "Patient organization funding"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/payments-healthcare-professionals",
+          "text": "Payments to healthcare professionals"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/public-policy",
+          "text": "Public policy"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/animal-research",
+          "text": "Animal research"
+        },
+        {
+          "url": "https://www.novartis.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.novartis.com/investors/event-calendar",
+          "text": "Event calendar"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data",
+          "text": "Financial data"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/annual-results",
+          "text": "Novartis annual results"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/quarterly-results",
+          "text": "Novartis quarterly results"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/sec-filings",
+          "text": "Novartis SEC filings"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/product-sales",
+          "text": "Product sales"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/fixed-income-securities",
+          "text": "Fixed-income securities"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/expected-currency-impact",
+          "text": "Expected currency impact"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis",
+          "text": "Share data and analysis"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/share-monitor",
+          "text": "Share monitor"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/dividend-information",
+          "text": "Dividend information"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/share-ownership",
+          "text": "Share ownership"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/share-overview",
+          "text": "Share overview"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/return-investment-calculator",
+          "text": "Return on investment calculator"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information",
+          "text": "Shareholder information"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/general-meetings",
+          "text": "General Meetings"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/american-depositary-receipts-adr",
+          "text": "American Depositary Receipts (ADR)"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/share-buy-back",
+          "text": "Share buyback"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/frequently-asked-questions",
+          "text": "Frequently asked questions"
+        },
+        {
+          "url": "https://www.novartis.com/investors/company-overview",
+          "text": "Company overview"
+        },
+        {
+          "url": "https://www.novartis.com/investors/company-overview/corporate-governance",
+          "text": "Corporate governance"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub",
+          "text": "Reporting and transparency hub"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/esg-rating-performance",
+          "text": "ESG rating performance"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/reporting-archive",
+          "text": "Reporting archive"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/social-impact-and-sustainability-targets",
+          "text": "Social Impact & Sustainability targets"
+        },
+        {
+          "url": "https://www.novartis.com/news/stay-up-to-date",
+          "text": "Publications order form"
+        },
+        {
+          "url": "https://www.novartis.com/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/news/newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.novartis.com/news/media-library",
+          "text": "Media library"
+        },
+        {
+          "url": "https://www.novartis.com/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://www.novartis.com/news/stay-up-to-date",
+          "text": "Subscribe"
+        },
+        {
+          "url": "https://www.novartis.com/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://www.novartis.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search",
+          "text": "Career search"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions",
+          "text": "Our business functions"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-research-and-development",
+          "text": "Careers in research and development"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-operations",
+          "text": "Careers in operations"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-commercial-and-sales",
+          "text": "Careers in commercial and sales"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-global-functions",
+          "text": "Careers in global functions"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Why Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub",
+          "text": "Career hub"
+        },
+        {
+          "url": "https://novartis.willhire.co",
+          "text": "Temporary contracts"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers",
+          "text": "Early careers"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/graduates",
+          "text": "Graduates"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/students",
+          "text": "Students"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/us-biomedical-research-internship-programs",
+          "text": "US Biomedical Research internship programs"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/community-exploration-and-learning-lab-cell",
+          "text": "Community exploration and learning lab (CELL)"
+        },
+        {
+          "url": "https://www.novartis.com/clinicaltrials",
+          "text": "Clinical trials"
+        },
+        {
+          "url": "https://www.novartis.com/partnering",
+          "text": "Partnering"
+        },
+        {
+          "url": "https://www.novartis.com/supplier-portal",
+          "text": "Supplier portal"
+        },
+        {
+          "url": "https://www.novartis.com/report",
+          "text": "Report side effects"
+        },
+        {
+          "url": "https://www.novartis.com/contacts",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search?field_job_posted_date=All",
+          "text": "All"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search?field_job_posted_date=1",
+          "text": "Today"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search?field_job_posted_date=2",
+          "text": "This Week"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search?field_job_posted_date=3",
+          "text": "Last Two Weeks"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search?field_job_posted_date=4",
+          "text": "This Month"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-research-and-development",
+          "text": "Research & Development Turning breakthrough science into life-changing treatments."
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-operations",
+          "text": "Operations Creating meaningful impact through best-in-class products, services, and solutions."
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-commercial-and-sales",
+          "text": "Commercial & Sales Making our innovative products more widely accessible and bringing them to patients faster."
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-global-functions",
+          "text": "Global Functions Shaping our future as a focused innovative medicines company."
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search",
+          "text": "Explore all opportunities"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Learn more"
+        },
+        {
+          "url": "https://www.novartis.com/careers#paragraph--434321",
+          "text": "Previous"
+        },
+        {
+          "url": "https://www.novartis.com/careers#paragraph--434321",
+          "text": "Next"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers",
+          "text": "Students and graduates Discover how you can build a brighter future with our early career opportunities."
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub",
+          "text": "Get set to apply Find out what to expect during your application process and beyond."
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search",
+          "text": "Job search Explore our opportunities and see where you could make the biggest impact."
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/people-organization-commitment-statement.pdf",
+          "text": "People and Organization Commitment Statement Learn about our public commitments related to our people and organization, demonstrating our dedication t"
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/novartis-life-handbook.pdf#page=6",
+          "text": "Competitive pay Market-benchmarked salary ranges, with an offer reflecting your experience and skills."
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/novartis-life-handbook.pdf#page=9",
+          "text": "Recognition programs Celebrate your colleagues’ personal milestones and recognize each other’s contributions. Send engaging e-cards or award monetary "
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/novartis-life-handbook.pdf#page=8",
+          "text": "Market competitive incentives Be rewarded for individual and company impact through our competitively benchmarked annual bonus and long-term equity sh"
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/novartis-life-handbook.pdf#page=9",
+          "text": "Generous parental leave Following the birth or adoption of a child, we offer at least 14 weeks paid parental leave to every new parent at Novartis."
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/novartis-life-handbook.pdf#page=20",
+          "text": "Health and wellbeing We offer medical and life insurance as well as benefits to support your overall wellbeing."
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/novartis-life-handbook.pdf#page=13",
+          "text": "Professional and leadership development Access thousands of courses, tools and resources, including coaching opportunities and internal talent and lea"
+        },
+        {
+          "url": "https://www.novartis.com/stories/sometimes-best-career-plans-are-ones-you-never-made",
+          "text": "Sometimes the best career plans are the ones you never made An apprenticeship, a curious mindset and a career full of surprises. Nicole shares her jou"
+        },
+        {
+          "url": "https://www.novartis.com/stories/patient-who-changed-course-my-career",
+          "text": "The patient who changed the course of my career A patient with ALS changed Nazem's career path, inspiring his move from clinical care to developing ne"
+        },
+        {
+          "url": "https://www.novartis.com/stories/full-circle-story-growth-purpose-and-coming-home-novartis",
+          "text": "Full Circle: A Story of Growth, Purpose and Coming Home to Novartis A dream of working with racehorses to becoming a Clinical Development leader. An i"
+        },
+        {
+          "url": "https://www.novartis.com/stories/day-ai-made-me-rethink-what-science-could-do",
+          "text": "The Day AI Made Me Rethink What Science Could Do A single, unexpected move revealed a new kind of possibility and changed how I saw the future of drug"
+        },
+        {
+          "url": "https://www.novartis.com/stories/supercharging-rd-how-ai-helps-us-bring-medicines-patients-faster",
+          "text": "Supercharging R&D: How AI helps us to bring medicines to patients faster Max leads AI innovation in pharmaceutical development at Novartis. His story "
+        },
+        {
+          "url": "https://www.novartis.com/stories/turning-personal-experience-purpose-driven-careers",
+          "text": "Turning personal experience into purpose-driven careers What drives someone to dedicate their career to reimagining medicine? Three women at Novartis "
+        },
+        {
+          "url": "https://www.novartis.com/stories/science-motion-autumn-and-sabrinas-noteworthy-novartis-adventure",
+          "text": "Science in Motion: Autumn and Sabrina's Noteworthy Novartis Adventure In the ever-evolving world of STEM, where innovation and discovery are to the fo"
+        },
+        {
+          "url": "https://www.novartis.com/stories/parental-leave-leadership-opportunity",
+          "text": "Parental leave – A leadership opportunity We believe in the importance of balancing professional and personal responsibilities. This belief is embodie"
+        },
+        {
+          "url": "https://www.novartis.com/stories/biologist-head-hunter",
+          "text": "Biologist to Head-hunter Sharing my career journey and decision to relocate to Ireland was an opportunity to pause and reflect, strengthening my belie"
+        },
+        {
+          "url": "https://www.novartis.com/stories/every-number-has-story-my-journey-novartis-refugee",
+          "text": "Every number has a story – my journey to Novartis as a Refugee The current refugee crisis is one of the world's greatest humanitarian challenges. Svit"
+        },
+        {
+          "url": "https://www.novartis.com/stories/workplace-inclusion-really-important",
+          "text": "Is workplace inclusion really that important? We think so and here are just some of the reasons why: we believe our workplace should reflect today’s e"
+        },
+        {
+          "url": "https://www.novartis.com/stories/personal-journey-full-circle-from-curiosity-about-life-earth-transformative-therapies-novartis",
+          "text": "A personal journey full circle, from curiosity about life on Earth to transformative therapies at Novartis When I was young, my interest in science in"
+        },
+        {
+          "url": "https://www.novartis.com/stories/balancing-family-life-legal-career",
+          "text": "Balancing family life with a legal career How do you achieve a healthy work-life balance? It’s a question we often ask ourselves at Novartis. We take "
+        },
+        {
+          "url": "https://www.novartis.com/stories/mentoring-matters-how-we-grow-together-novartis",
+          "text": "Mentoring matters: how we grow together at Novartis You can be successful, as an individual or as a business, without having to do it all on your own."
+        },
+        {
+          "url": "https://www.novartis.com/stories/belonging-here-how-novartis-helped-me-come-out-transgender-woman",
+          "text": "Belonging here: How Novartis helped me come out as a transgender woman When I was in my late forties, I came to the realization that I was transgender"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://www.linkedin.com/company/novartis",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCw671bjnadQQV0UnV0DdsMQ",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://www.facebook.com/novartiscareers",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.instagram.com/novartiscareers/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.novartis.com/patients-and-caregivers",
+          "text": "Patients and caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals",
+          "text": "Healthcare professionals"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development",
+          "text": "Researchers"
+        },
+        {
+          "url": "https://www.novartis.com/careers",
+          "text": "Job seekers"
+        },
+        {
+          "url": "https://www.novartis.com/news",
+          "text": "Journalists"
+        },
+        {
+          "url": "https://www.novartis.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.novartis.com/events/novartis-financial-results-q3-2026",
+          "text": "Q3 2026"
+        },
+        {
+          "url": "https://www.novartis.com/about/30-years-novartis-powered-250-years-innovation",
+          "text": "30 years of Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access",
+          "text": "Access"
+        },
+        {
+          "url": "https://www.novartis.com/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/ethical-behavior/speakup",
+          "text": "SpeakUp"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/about/products",
+          "text": "Products"
+        },
+        {
+          "url": "https://www.novartis.com/clinicaltrials",
+          "text": "Clinical trials"
+        },
+        {
+          "url": "https://www.novartis.com/partnering",
+          "text": "Partnering"
+        },
+        {
+          "url": "https://www.novartis.com/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/cardiovascular-renal-and-metabolic",
+          "text": "Cardiovascular, renal and metabolic"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/immunology",
+          "text": "Immunology"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/neuroscience",
+          "text": "Neuroscience"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/oncology",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://www.linkedin.com/company/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://x.com/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/terms-use",
+          "text": "Terms of use"
+        },
+        {
+          "url": "https://www.novartis.com/privacy",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.novartis.com/careers#cookie-settings-button",
+          "text": "Cookie settings"
+        },
+        {
+          "url": "https://www.novartis.com/contacts",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/about/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.novartis.com/sitemap.xml",
+          "text": "Site map"
+        },
+        {
+          "url": "https://www.novartis.com/open-source",
+          "text": "Open source"
+        },
+        {
+          "url": "https://www.novartis.com/accessibility",
+          "text": "Web accessibility"
+        },
+        {
+          "url": "https://www.novartis.com/novartis-directory",
+          "text": "Novartis Site Directory"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.novartis.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers | Novartis",
+      "evidence": "evidence/da6cb811058c92ba96e7.html.gz",
+      "sha256": "b0c4773e3fd89bde8cf96ea4392e021dc889a2fef6da5eeb2b0cc9d8f0403edb"
+    },
+    {
+      "url": "https://www.novartis.com/in-en/",
+      "checked_at": "2026-11-15T23:50:45.178814+00:00",
+      "links": [
+        {
+          "url": "https://www.novartis.com/in-en/#main",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india",
+          "text": "Novartis in India"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team",
+          "text": "India Country Leadership Team"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers",
+          "text": "Patients and Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers/novartis-commitment-patients-and-caregivers",
+          "text": "Novartis Commitment to Patients and Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/diseases",
+          "text": "Diseases"
+        },
+        {
+          "url": "https://www.report.novartis.com",
+          "text": "Adverse Event Reporting"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals",
+          "text": "Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals/healthcare-professional-resources",
+          "text": "Healthcare professional country resource"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis Pipeline"
+        },
+        {
+          "url": "https://www.report.novartis.com",
+          "text": "Adverse Event Reporting"
+        },
+        {
+          "url": "https://www.novartis.com/clinicaltrials",
+          "text": "Novartis Clinical Trials"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior",
+          "text": "Ethical Behavior"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior/code-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior/speakup",
+          "text": "SpeakUp"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance",
+          "text": "Ethics, Risk and Compliance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access",
+          "text": "Access"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability",
+          "text": "Environmental Sustainability"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health",
+          "text": "Global Health"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors",
+          "text": "Investors | Corporate Governance"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors/novartis-india-corporate-policies",
+          "text": "Corporate Policies"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors/ucpmp",
+          "text": "UCPMP"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/news-archive",
+          "text": "News Archive"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/media-contacts",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers/career-search?country%5B0%5D=LOC_IN&field_alternative_country%5B0%5D=LOC_IN",
+          "text": "Career Search"
+        },
+        {
+          "url": "https://www.novartis.com/about/diversity-inclusion",
+          "text": "Diversity and Inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions",
+          "text": "Our Business Functions"
+        },
+        {
+          "url": "https://www.novartis.com/about/strategy/people-and-culture",
+          "text": "People and Culture"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Why Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility",
+          "text": "Corporate Social Responsibility"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility/environment",
+          "text": "Environment"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility/health",
+          "text": "Health"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/novartis-society-integrated-report",
+          "text": "View the online summary"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Join Us"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about",
+          "text": "About Novartis We discover and develop breakthrough treatments and find new ways to deliver them to as many people as possible."
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers",
+          "text": "Patients and Caregivers Novartis works with the patient community around the world to discover new ways to improve and extend people’s lives."
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals",
+          "text": "Healthcare Professionals Novartis works closely with healthcare professionals around the work to support their treatment of patients and collaborate o"
+        },
+        {
+          "url": "https://www.novartis.com/about/strategy/people-and-culture",
+          "text": "People and Culture Novartis is building an Inspired, Curious and Unbossed culture."
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Careers 769 million lives touched by our products. Join us."
+        },
+        {
+          "url": "https://twitter.com/digital/status/2117481480394039419",
+          "text": "@novartisindia"
+        },
+        {
+          "url": "https://twitter.com/digital/status/2117481480394039419",
+          "text": "The visit also provided an important moment to reflect on the role of technology in our work. As we become more fluent in an AI-enabled world, being h"
+        },
+        {
+          "url": "https://twitter.com/digital/status/2117481179985117514",
+          "text": "@novartisindia"
+        },
+        {
+          "url": "https://twitter.com/digital/status/2117481179985117514",
+          "text": "Bold science requires bold thinking, deep collaboration, and the capabilities to turn possibility into progress for patients. Fiona Marshall’s visit t"
+        },
+        {
+          "url": "https://twitter.com/digital/status/2114691095737278543",
+          "text": "@novartisindia"
+        },
+        {
+          "url": "https://twitter.com/digital/status/2114691095737278543",
+          "text": "Thank you, Vas, for the candour, perspective and ambition you brought to your time with us in India, and for reconnecting us with the purpose that uni"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#card3-paragraph--10171",
+          "text": "Previous"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#card3-paragraph--10171",
+          "text": "Next"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers",
+          "text": "Patients & Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals",
+          "text": "Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/contact-us",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://urldefense.com/v3/__https:/smartodr.in__;!!N3hqHg43uw!su9B1QnRuIwVeBUhQmCZz6xxVC9smd9r8DmxU7S8XEZRK-Ngeo7hAiPV6-ScuJ24c_J8UI-njobnk7oG3D5DNUL13KQkn6c$",
+          "text": "For Online resolution of disputes in the Indian Securities Market – please click SMART ODR Portal"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/news-archive",
+          "text": "News Archive"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/media-contacts",
+          "text": "Media Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis Clinical Pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global site"
+        },
+        {
+          "url": "https://www.medhub.novartis.co.in/",
+          "text": "Novartis MedHub India"
+        },
+        {
+          "url": "https://x.com/NovartisIndia/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/novartis-india/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/channel/UC4CtpyQzbi4bHIgvzVAnp-A/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/NovartisIN/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/novartisindia/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/in-en/privacy-policy",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/terms-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.novartis.com/accessibility",
+          "text": "Web Accessibility"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#cookie-settings-button",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/sitemap.xml",
+          "text": "Site Map"
+        },
+        {
+          "url": "https://www.novartis.com/novartis-directory",
+          "text": "Novartis Site Directory"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.novartis.com/in-en/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Novartis India",
+      "evidence": "evidence/35a9dba432eddb3cc47d.html.gz",
+      "sha256": "c900b2f38c45b2e8dd08c46f11581a036d0d190f4bdbb4ffac4449e0b661bbaa"
+    },
+    {
+      "url": "https://www.novartis.com/careers/career-hub",
+      "checked_at": "2026-11-15T23:50:45.703804+00:00",
+      "links": [
+        {
+          "url": "https://www.novartis.com/careers/career-hub#main",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors",
+          "text": "Board of Directors"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/giovanni-caforio",
+          "text": "Giovanni Caforio"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/simon-moroney",
+          "text": "Simon Moroney"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/nancy-c-andrews",
+          "text": "Nancy C. Andrews"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/ton-buechner",
+          "text": "Ton Buechner"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/patrice-bula",
+          "text": "Patrice Bula"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/elizabeth-liz-doherty",
+          "text": "Elizabeth (Liz) Doherty"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/bridgette-heller",
+          "text": "Bridgette Heller"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/frans-van-houten",
+          "text": "Frans van Houten"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/elizabeth-mcnally",
+          "text": "Elizabeth McNally"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/ana-de-pro-gonzalo",
+          "text": "Ana de Pro Gonzalo"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/charles-swanton",
+          "text": "Charles Swanton"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/john-d-young",
+          "text": "John D. Young"
+        },
+        {
+          "url": "https://www.novartis.com/about/board-directors/charlotte-pamer-wieser",
+          "text": "Charlotte Pamer-Wieser"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee",
+          "text": "Executive Committee"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/vasant-narasimhan",
+          "text": "Vasant (Vas) Narasimhan"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/shreeram-aradhye",
+          "text": "Shreeram Aradhye"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/victor-bulto",
+          "text": "Victor Bulto"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/aharon-ronny-gal-phd",
+          "text": "Aharon (Ronny) Gal"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/karen-hale",
+          "text": "Karen L. Hale"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/patrick-horber-md",
+          "text": "Patrick Horber"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/rob-kowalski",
+          "text": "Rob Kowalski"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/steffen-lang",
+          "text": "Steffen Lang"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/fiona-marshall",
+          "text": "Fiona Marshall"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/mukul-mehta",
+          "text": "Mukul Mehta"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/lutz-hegemann",
+          "text": "Lutz Hegemann"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/teresa-jose",
+          "text": "Teresa Jose"
+        },
+        {
+          "url": "https://www.novartis.com/about/executive-committee/michelle-weese",
+          "text": "Michelle Weese"
+        },
+        {
+          "url": "https://www.novartis.com/about/products",
+          "text": "Products"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas",
+          "text": "Therapeutic areas"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/cardiovascular-renal-and-metabolic",
+          "text": "Cardiovascular, renal and metabolic"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/immunology",
+          "text": "Immunology"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/neuroscience",
+          "text": "Neuroscience"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/oncology",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://www.novartis.com/about/people-and-culture",
+          "text": "People and culture"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion",
+          "text": "Inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/promoting-inclusion",
+          "text": "Promoting inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/building-belonging",
+          "text": "Building belonging"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/parental-leave",
+          "text": "Parental leave"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion/caring-mental-health-and-wellbeing-our-people",
+          "text": "Caring for the mental health and wellbeing of our people"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-gene-therapies",
+          "text": "Novartis Gene Therapies"
+        },
+        {
+          "url": "https://www.novartis.com/about/manufacturing",
+          "text": "Manufacturing"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality",
+          "text": "Quality"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/novartis-quality-management-system-qms",
+          "text": "Novartis quality management system (QMS)"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/audit-program-and-regulatory-inspections",
+          "text": "Audit program and regulatory inspections"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/product-and-patient-safety-training",
+          "text": "Product and patient safety training"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/product-recalls",
+          "text": "Product recalls"
+        },
+        {
+          "url": "https://www.novartis.com/about/quality/third-party-suppliers",
+          "text": "Third-party suppliers"
+        },
+        {
+          "url": "https://www.novartis.com/about/awards-and-recognition",
+          "text": "Awards and recognition"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union",
+          "text": "Novartis and the European Union"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/why-europe-matters-novartis",
+          "text": "Why Europe matters to Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/biotech-act",
+          "text": "Biotech Act"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/critical-medicines-act",
+          "text": "Critical Medicines Act"
+        },
+        {
+          "url": "https://www.novartis.com/about/novartis-and-european-union/general-pharmaceutical-legislation",
+          "text": "General Pharmaceutical Legislation"
+        },
+        {
+          "url": "https://www.novartis.com/about/30-years-novartis-powered-250-years-innovation",
+          "text": "30 years of Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/patients-and-caregivers",
+          "text": "Patients and caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/patients-and-caregivers/novartis-commitment-patients-and-caregivers",
+          "text": "Novartis commitment to patients and caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/diseases",
+          "text": "Diseases"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/patient-organization-funding",
+          "text": "Patient organization funding"
+        },
+        {
+          "url": "https://www.novartis.com/news/stories/patient-perspectives",
+          "text": "Patients perspectives stories"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals",
+          "text": "Healthcare professionals"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/medical-congresses-and-events",
+          "text": "Medical congresses and events"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/medical-congresses-and-events/asco-annual-meeting",
+          "text": "ASCO Annual Meeting"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/medical-congresses-and-events/asco-annual-meeting/asco-2023",
+          "text": "ASCO 2023"
+        },
+        {
+          "url": "https://www.novartis.com/about/products",
+          "text": "Products"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/managed-access-programs",
+          "text": "Managed Access Programs"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/managed-access-programs/zolgensma-global-managed-access-program-gmap",
+          "text": "Zolgensma® Global Managed Access Program (gMAP)"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/managed-access-programs/managed-access-patient-privacy-notice-and-consent-templates",
+          "text": "Managed Access patient privacy notice and consent templates"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/novartis-external-funding",
+          "text": "Novartis external funding"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/healthcare-professional-resources-country",
+          "text": "Healthcare professional resources by country"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/investigator-initiated-trials-studies-clinical-and-investigator-initiated-research-non-clinical",
+          "text": "Investigator-initiated trials / studies"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/novartis-medical-information",
+          "text": "Novartis medical information"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/novartis-medical-information/submit-medical-enquiry",
+          "text": "Submit medical enquiry"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/payments-healthcare-professionals",
+          "text": "Payments to Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development",
+          "text": "Research and development"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/technology-platforms",
+          "text": "Technology platforms"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas",
+          "text": "Research disease areas"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/cardiovascular-and-metabolic-disease-research-novartis",
+          "text": "Cardiovascular and metabolic disease research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/diseases-aging-and-regenerative-medicine-dare-research-novartis",
+          "text": "Diseases of Aging and Regenerative medicine (DARe)"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/dax-exploratory-disease-research-novartis",
+          "text": "DAx: exploratory disease research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/global-health-disease-area-research-novartis",
+          "text": "Global Health disease area research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/immunology-disease-research-novartis",
+          "text": "Immunology disease research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/neuroscience-research-novartis",
+          "text": "Neuroscience research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-disease-areas/oncology-research-novartis",
+          "text": "Oncology research at Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/research-collaborations",
+          "text": "Research collaborations"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development/collaborations",
+          "text": "Collaborations"
+        },
+        {
+          "url": "https://www.novartis.com/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access",
+          "text": "Access"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access/novartis-access-principles",
+          "text": "Novartis access principles"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability",
+          "text": "Environmental sustainability"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability/climate",
+          "text": "Climate"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability/nature",
+          "text": "Nature"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance",
+          "text": "Ethics, risk and compliance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/ethical-behavior",
+          "text": "Ethical behavior"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/compliance",
+          "text": "Compliance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/human-rights",
+          "text": "Human rights"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/learning-and-engagement",
+          "text": "Learning and engagement"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/integrated-risk-assurance",
+          "text": "Integrated risk assurance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health",
+          "text": "Global health"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health/innovative-healthcare-models",
+          "text": "Innovative healthcare models"
+        },
+        {
+          "url": "https://www.novartis.com/diseases/malaria",
+          "text": "Malaria"
+        },
+        {
+          "url": "https://www.novartis.com/diseases/neglected-tropical-diseases",
+          "text": "Neglected Tropical Diseases"
+        },
+        {
+          "url": "https://www.novartisfoundation.org/",
+          "text": "Novartis Foundation"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health/sub-saharan-africa",
+          "text": "Sub-Saharan Africa"
+        },
+        {
+          "url": "https://www.novartis.com/about/inclusion",
+          "text": "Inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/esg/index",
+          "text": "ESG index"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub",
+          "text": "Reporting and transparency hub"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/esg-rating-performance",
+          "text": "ESG rating performance"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/patient-organization-funding",
+          "text": "Patient organization funding"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals/payments-healthcare-professionals",
+          "text": "Payments to healthcare professionals"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/public-policy",
+          "text": "Public policy"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/animal-research",
+          "text": "Animal research"
+        },
+        {
+          "url": "https://www.novartis.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.novartis.com/investors/event-calendar",
+          "text": "Event calendar"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data",
+          "text": "Financial data"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/annual-results",
+          "text": "Novartis annual results"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/quarterly-results",
+          "text": "Novartis quarterly results"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/sec-filings",
+          "text": "Novartis SEC filings"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/product-sales",
+          "text": "Product sales"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/fixed-income-securities",
+          "text": "Fixed-income securities"
+        },
+        {
+          "url": "https://www.novartis.com/investors/financial-data/expected-currency-impact",
+          "text": "Expected currency impact"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis",
+          "text": "Share data and analysis"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/share-monitor",
+          "text": "Share monitor"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/dividend-information",
+          "text": "Dividend information"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/share-ownership",
+          "text": "Share ownership"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/share-overview",
+          "text": "Share overview"
+        },
+        {
+          "url": "https://www.novartis.com/investors/share-data-and-analysis/return-investment-calculator",
+          "text": "Return on investment calculator"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information",
+          "text": "Shareholder information"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/general-meetings",
+          "text": "General Meetings"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/american-depositary-receipts-adr",
+          "text": "American Depositary Receipts (ADR)"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/share-buy-back",
+          "text": "Share buyback"
+        },
+        {
+          "url": "https://www.novartis.com/investors/shareholder-information/frequently-asked-questions",
+          "text": "Frequently asked questions"
+        },
+        {
+          "url": "https://www.novartis.com/investors/company-overview",
+          "text": "Company overview"
+        },
+        {
+          "url": "https://www.novartis.com/investors/company-overview/corporate-governance",
+          "text": "Corporate governance"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub",
+          "text": "Reporting and transparency hub"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/esg-rating-performance",
+          "text": "ESG rating performance"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/reporting-archive",
+          "text": "Reporting archive"
+        },
+        {
+          "url": "https://www.novartis.com/investors/reporting-and-transparency-hub/social-impact-and-sustainability-targets",
+          "text": "Social Impact & Sustainability targets"
+        },
+        {
+          "url": "https://www.novartis.com/news/stay-up-to-date",
+          "text": "Publications order form"
+        },
+        {
+          "url": "https://www.novartis.com/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/news/newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.novartis.com/news/media-library",
+          "text": "Media library"
+        },
+        {
+          "url": "https://www.novartis.com/stories",
+          "text": "Stories"
+        },
+        {
+          "url": "https://www.novartis.com/news/stay-up-to-date",
+          "text": "Subscribe"
+        },
+        {
+          "url": "https://www.novartis.com/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://www.novartis.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-search",
+          "text": "Career search"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions",
+          "text": "Our business functions"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-research-and-development",
+          "text": "Careers in research and development"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-operations",
+          "text": "Careers in operations"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-commercial-and-sales",
+          "text": "Careers in commercial and sales"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions/careers-global-functions",
+          "text": "Careers in global functions"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Why Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub",
+          "text": "Career hub"
+        },
+        {
+          "url": "https://novartis.willhire.co",
+          "text": "Temporary contracts"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers",
+          "text": "Early careers"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/graduates",
+          "text": "Graduates"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/students",
+          "text": "Students"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/us-biomedical-research-internship-programs",
+          "text": "US Biomedical Research internship programs"
+        },
+        {
+          "url": "https://www.novartis.com/careers/early-careers/community-exploration-and-learning-lab-cell",
+          "text": "Community exploration and learning lab (CELL)"
+        },
+        {
+          "url": "https://www.novartis.com/clinicaltrials",
+          "text": "Clinical trials"
+        },
+        {
+          "url": "https://www.novartis.com/partnering",
+          "text": "Partnering"
+        },
+        {
+          "url": "https://www.novartis.com/supplier-portal",
+          "text": "Supplier portal"
+        },
+        {
+          "url": "https://www.novartis.com/report",
+          "text": "Report side effects"
+        },
+        {
+          "url": "https://www.novartis.com/contacts",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.novartis.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://novartis.willhire.co/",
+          "text": "Search projects"
+        },
+        {
+          "url": "https://www.novartis.com/sites/novartis_com/files/new-joiners-faq.pdf",
+          "text": "Onboarding Your journey with us starts now! We want you to have a fantastic onboarding experience. Our goal is to make sure that you feel a sense of b"
+        },
+        {
+          "url": "https://www.linkedin.com/company/novartis",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCw671bjnadQQV0UnV0DdsMQ",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://www.facebook.com/novartiscareers",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.instagram.com/novartiscareers/",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.novartis.com/patients-and-caregivers",
+          "text": "Patients and caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/healthcare-professionals",
+          "text": "Healthcare professionals"
+        },
+        {
+          "url": "https://www.novartis.com/research-and-development",
+          "text": "Researchers"
+        },
+        {
+          "url": "https://www.novartis.com/careers",
+          "text": "Job seekers"
+        },
+        {
+          "url": "https://www.novartis.com/news",
+          "text": "Journalists"
+        },
+        {
+          "url": "https://www.novartis.com/investors",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.novartis.com/events/novartis-financial-results-q3-2026",
+          "text": "Q3 2026"
+        },
+        {
+          "url": "https://www.novartis.com/about/30-years-novartis-powered-250-years-innovation",
+          "text": "30 years of Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access",
+          "text": "Access"
+        },
+        {
+          "url": "https://www.novartis.com/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance/ethical-behavior/speakup",
+          "text": "SpeakUp"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/about/products",
+          "text": "Products"
+        },
+        {
+          "url": "https://www.novartis.com/clinicaltrials",
+          "text": "Clinical trials"
+        },
+        {
+          "url": "https://www.novartis.com/partnering",
+          "text": "Partnering"
+        },
+        {
+          "url": "https://www.novartis.com/events",
+          "text": "Events"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/cardiovascular-renal-and-metabolic",
+          "text": "Cardiovascular, renal and metabolic"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/immunology",
+          "text": "Immunology"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/neuroscience",
+          "text": "Neuroscience"
+        },
+        {
+          "url": "https://www.novartis.com/about/therapeutic-areas/oncology",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://www.linkedin.com/company/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://x.com/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/user/novartis",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/terms-use",
+          "text": "Terms of use"
+        },
+        {
+          "url": "https://www.novartis.com/privacy",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.novartis.com/careers/career-hub#cookie-settings-button",
+          "text": "Cookie settings"
+        },
+        {
+          "url": "https://www.novartis.com/contacts",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/about/locations",
+          "text": "Locations"
+        },
+        {
+          "url": "https://www.novartis.com/sitemap.xml",
+          "text": "Site map"
+        },
+        {
+          "url": "https://www.novartis.com/open-source",
+          "text": "Open source"
+        },
+        {
+          "url": "https://www.novartis.com/accessibility",
+          "text": "Web accessibility"
+        },
+        {
+          "url": "https://www.novartis.com/novartis-directory",
+          "text": "Novartis Site Directory"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.novartis.com/careers/career-hub",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Career hub | Novartis",
+      "evidence": "evidence/22282da8add075a6e701.html.gz",
+      "sha256": "149b2a424d31fad8663c4cafd96b1282aa713358d75ac342cf4d6b90b762c49c"
+    },
+    {
+      "url": "https://www.novartis.com/in-en/about/novartis-india",
+      "checked_at": "2026-11-15T23:50:47.007619+00:00",
+      "links": [
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#main",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india",
+          "text": "Novartis in India"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team",
+          "text": "India Country Leadership Team"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers",
+          "text": "Patients and Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers/novartis-commitment-patients-and-caregivers",
+          "text": "Novartis Commitment to Patients and Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/diseases",
+          "text": "Diseases"
+        },
+        {
+          "url": "https://www.report.novartis.com",
+          "text": "Adverse Event Reporting"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals",
+          "text": "Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals/healthcare-professional-resources",
+          "text": "Healthcare professional country resource"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis Pipeline"
+        },
+        {
+          "url": "https://www.report.novartis.com",
+          "text": "Adverse Event Reporting"
+        },
+        {
+          "url": "https://www.novartis.com/clinicaltrials",
+          "text": "Novartis Clinical Trials"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior",
+          "text": "Ethical Behavior"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior/code-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior/speakup",
+          "text": "SpeakUp"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance",
+          "text": "Ethics, Risk and Compliance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access",
+          "text": "Access"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability",
+          "text": "Environmental Sustainability"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health",
+          "text": "Global Health"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors",
+          "text": "Investors | Corporate Governance"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors/novartis-india-corporate-policies",
+          "text": "Corporate Policies"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors/ucpmp",
+          "text": "UCPMP"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/news-archive",
+          "text": "News Archive"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/media-contacts",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers/career-search?country%5B0%5D=LOC_IN&field_alternative_country%5B0%5D=LOC_IN",
+          "text": "Career Search"
+        },
+        {
+          "url": "https://www.novartis.com/about/diversity-inclusion",
+          "text": "Diversity and Inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions",
+          "text": "Our Business Functions"
+        },
+        {
+          "url": "https://www.novartis.com/about/strategy/people-and-culture",
+          "text": "People and Culture"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Why Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility",
+          "text": "Corporate Social Responsibility"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility/environment",
+          "text": "Environment"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility/health",
+          "text": "Health"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/development",
+          "text": "Development Hub in India India serves as an important hub for Development, supporting various stages of development of medicines researched globally b"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/node/210656",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://nilpharma.co.in/",
+          "text": "https://nilpharma.co.in/"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers",
+          "text": "Patients & Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals",
+          "text": "Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/contact-us",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://urldefense.com/v3/__https:/smartodr.in__;!!N3hqHg43uw!su9B1QnRuIwVeBUhQmCZz6xxVC9smd9r8DmxU7S8XEZRK-Ngeo7hAiPV6-ScuJ24c_J8UI-njobnk7oG3D5DNUL13KQkn6c$",
+          "text": "For Online resolution of disputes in the Indian Securities Market – please click SMART ODR Portal"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/news-archive",
+          "text": "News Archive"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/media-contacts",
+          "text": "Media Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis Clinical Pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global site"
+        },
+        {
+          "url": "https://www.medhub.novartis.co.in/",
+          "text": "Novartis MedHub India"
+        },
+        {
+          "url": "https://x.com/NovartisIndia/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/novartis-india/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/channel/UC4CtpyQzbi4bHIgvzVAnp-A/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/NovartisIN/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/novartisindia/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/in-en/privacy-policy",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/terms-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.novartis.com/accessibility",
+          "text": "Web Accessibility"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#cookie-settings-button",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/sitemap.xml",
+          "text": "Site Map"
+        },
+        {
+          "url": "https://www.novartis.com/novartis-directory",
+          "text": "Novartis Site Directory"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.novartis.com/in-en/about/novartis-india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Novartis in India | Novartis India",
+      "evidence": "evidence/75d8b7bffd039e6d37b8.html.gz",
+      "sha256": "f0148819d40b715fd77c60b062b9a03c50a7ecc57adb85afde1369069ba48992"
+    },
+    {
+      "url": "https://www.novartis.com/in-en/about/india-country-leadership-team",
+      "checked_at": "2026-11-15T23:50:48.300784+00:00",
+      "links": [
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#main",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#asia-pacific",
+          "text": "Asia Pacific"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#europe",
+          "text": "Europe"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#international",
+          "text": "International"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team#middle-east---africa",
+          "text": "Middle East & Africa"
+        },
+        {
+          "url": "https://www.novartis.com/al-en/",
+          "text": "Albania | English"
+        },
+        {
+          "url": "https://www.novartis.com/al-sq/",
+          "text": "Albania | Shqip"
+        },
+        {
+          "url": "https://www.novartis.com/ar-es/",
+          "text": "Argentina | Español"
+        },
+        {
+          "url": "https://www.novartis.com/au-en/",
+          "text": "Australia | English"
+        },
+        {
+          "url": "https://www.novartis.com/at-de/",
+          "text": "Austria | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/be-fr/",
+          "text": "Belgium | Français"
+        },
+        {
+          "url": "https://www.novartis.com/be-nl/",
+          "text": "Belgium | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/br-pt/",
+          "text": "Brazil | Português"
+        },
+        {
+          "url": "https://www.novartis.com/bg-bg/",
+          "text": "Bulgaria | Български"
+        },
+        {
+          "url": "https://www.novartis.com/ca-en/",
+          "text": "Canada | English"
+        },
+        {
+          "url": "https://www.novartis.com/ca-fr/",
+          "text": "Canada | Français"
+        },
+        {
+          "url": "https://www.novartis.com/acc-es/",
+          "text": "Andean & CAC | Español"
+        },
+        {
+          "url": "https://www.novartis.com/co-es/",
+          "text": "Colombia | Español"
+        },
+        {
+          "url": "https://www.novartis.com/cz-cs/",
+          "text": "Czech Republic | Česky"
+        },
+        {
+          "url": "https://www.novartis.com/cz-en/",
+          "text": "Czech Republic | English"
+        },
+        {
+          "url": "https://www.novartis.com/dk-da/",
+          "text": "Denmark | Dansk"
+        },
+        {
+          "url": "https://www.novartis.com/eg-en/",
+          "text": "Egypt | English"
+        },
+        {
+          "url": "https://www.novartis.com/ee-et/",
+          "text": "Estonia | Eesti"
+        },
+        {
+          "url": "https://www.novartis.com/fi-fi/",
+          "text": "Finland | Suomalainen"
+        },
+        {
+          "url": "https://www.novartis.com/fr-fr/",
+          "text": "France | Français"
+        },
+        {
+          "url": "https://www.novartis.com/de-de/",
+          "text": "Germany | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/gr-el/",
+          "text": "Greece | Ελληνικά"
+        },
+        {
+          "url": "https://www.novartis.com/hk-zh/",
+          "text": "Hong Kong S.A.R. | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/hu-hu/",
+          "text": "Hungary | Magyar"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "India | English"
+        },
+        {
+          "url": "https://www.novartis.com/id-en/",
+          "text": "Indonesia | English"
+        },
+        {
+          "url": "https://www.novartis.com/ie-en/",
+          "text": "Ireland | English"
+        },
+        {
+          "url": "https://www.novartis.com/il-he/",
+          "text": "Israel | עברית"
+        },
+        {
+          "url": "https://www.novartis.com/it-it/",
+          "text": "Italy | Italiano"
+        },
+        {
+          "url": "https://www.novartis.com/jp-ja/",
+          "text": "Japan | 日本語"
+        },
+        {
+          "url": "https://www.novartis.com/kr-ko/",
+          "text": "Korea | 한국어"
+        },
+        {
+          "url": "https://www.novartis.com/lv-lv/",
+          "text": "Latvia | Latvian"
+        },
+        {
+          "url": "https://www.novartis.com/lt-lt/",
+          "text": "Lithuania | Lithuanian"
+        },
+        {
+          "url": "https://www.novartis.com.cn/",
+          "text": "Mainland China | 中文"
+        },
+        {
+          "url": "https://www.novartis.com/my-en/",
+          "text": "Malaysia | English"
+        },
+        {
+          "url": "https://www.novartis.com/mx-es/",
+          "text": "Mexico | Español"
+        },
+        {
+          "url": "https://www.novartis.com/nl-nl/",
+          "text": "Netherlands | Nederlands"
+        },
+        {
+          "url": "https://www.novartis.com/no-no/",
+          "text": "Norway | Norsk"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global | English"
+        },
+        {
+          "url": "https://www.novartisfoundation.org",
+          "text": "Novartis Foundation | English"
+        },
+        {
+          "url": "https://www.novartis.com/ph-en/",
+          "text": "Philippines | English"
+        },
+        {
+          "url": "https://www.novartis.com/pl-pl/",
+          "text": "Poland | Polski"
+        },
+        {
+          "url": "https://www.novartis.com/pt-pt/",
+          "text": "Portugal | Português"
+        },
+        {
+          "url": "https://www.novartis.com/ro-ro/",
+          "text": "Romania | Română"
+        },
+        {
+          "url": "https://www.novartis.ru",
+          "text": "Russia | Русский"
+        },
+        {
+          "url": "https://www.novartis.com/sa-ar/",
+          "text": "Saudi Arabia | العربية"
+        },
+        {
+          "url": "https://www.novartis.com/rs-sr/",
+          "text": "Serbia | Srpski"
+        },
+        {
+          "url": "https://www.novartis.com/sg-en/",
+          "text": "Singapore | English"
+        },
+        {
+          "url": "https://www.novartis.com/sk-sk/",
+          "text": "Slovakia | Slovensky"
+        },
+        {
+          "url": "https://www.novartis.com/si-sl/",
+          "text": "Slovenia | Slovenščina"
+        },
+        {
+          "url": "https://www.novartis.com/si-en/",
+          "text": "Slovenia | English"
+        },
+        {
+          "url": "https://www.novartis.com/za-en/",
+          "text": "South Africa | English"
+        },
+        {
+          "url": "https://www.novartis.com/es-es/",
+          "text": "Spain | Español"
+        },
+        {
+          "url": "https://www.novartis.com/se-se/",
+          "text": "Sweden | Svenska"
+        },
+        {
+          "url": "https://www.novartis.com/ch-de/",
+          "text": "Switzerland | Deutsch"
+        },
+        {
+          "url": "https://www.novartis.com/ch-fr/",
+          "text": "Switzerland | Français"
+        },
+        {
+          "url": "https://www.novartis.com/tw-zh/",
+          "text": "Taiwan | 繁體中文"
+        },
+        {
+          "url": "https://www.novartis.com/th-th/",
+          "text": "Thailand | ภาษาไทย"
+        },
+        {
+          "url": "https://www.novartis.com/tr-tr/",
+          "text": "Türkiye | Türkçe"
+        },
+        {
+          "url": "https://www.novartis.com/ua-uk/",
+          "text": "Ukraine | українська"
+        },
+        {
+          "url": "https://www.novartis.com/uk-en/",
+          "text": "United Kingdom | English"
+        },
+        {
+          "url": "https://www.novartis.com/us-en/",
+          "text": "United States | English"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/novartis-india",
+          "text": "Novartis in India"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/india-country-leadership-team",
+          "text": "India Country Leadership Team"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers",
+          "text": "Patients and Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers/novartis-commitment-patients-and-caregivers",
+          "text": "Novartis Commitment to Patients and Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/diseases",
+          "text": "Diseases"
+        },
+        {
+          "url": "https://www.report.novartis.com",
+          "text": "Adverse Event Reporting"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals",
+          "text": "Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals/healthcare-professional-resources",
+          "text": "Healthcare professional country resource"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis Pipeline"
+        },
+        {
+          "url": "https://www.report.novartis.com",
+          "text": "Adverse Event Reporting"
+        },
+        {
+          "url": "https://www.novartis.com/clinicaltrials",
+          "text": "Novartis Clinical Trials"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior",
+          "text": "Ethical Behavior"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior/code-ethics",
+          "text": "Code of Ethics"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg/ethical-behavior/speakup",
+          "text": "SpeakUp"
+        },
+        {
+          "url": "https://www.novartis.com/esg/ethics-risk-and-compliance",
+          "text": "Ethics, Risk and Compliance"
+        },
+        {
+          "url": "https://www.novartis.com/esg/access",
+          "text": "Access"
+        },
+        {
+          "url": "https://www.novartis.com/esg/environmental-sustainability",
+          "text": "Environmental Sustainability"
+        },
+        {
+          "url": "https://www.novartis.com/esg/global-health",
+          "text": "Global Health"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors",
+          "text": "Investors | Corporate Governance"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors/novartis-india-corporate-policies",
+          "text": "Corporate Policies"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/investors/ucpmp",
+          "text": "UCPMP"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/news-archive",
+          "text": "News Archive"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/media-contacts",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers/career-search?country%5B0%5D=LOC_IN&field_alternative_country%5B0%5D=LOC_IN",
+          "text": "Career Search"
+        },
+        {
+          "url": "https://www.novartis.com/about/diversity-inclusion",
+          "text": "Diversity and Inclusion"
+        },
+        {
+          "url": "https://www.novartis.com/careers/our-business-functions",
+          "text": "Our Business Functions"
+        },
+        {
+          "url": "https://www.novartis.com/about/strategy/people-and-culture",
+          "text": "People and Culture"
+        },
+        {
+          "url": "https://www.novartis.com/careers/why-novartis",
+          "text": "Why Novartis"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility",
+          "text": "Corporate Social Responsibility"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility/environment",
+          "text": "Environment"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/corporate-social-responsibility/health",
+          "text": "Health"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.novartis.com",
+          "text": "Post"
+        },
+        {
+          "url": "https://www.novartis.com",
+          "text": "Share"
+        },
+        {
+          "url": "https://www.novartis.com",
+          "text": "Whatsapp"
+        },
+        {
+          "url": "https://www.novartis.com",
+          "text": "Linkedin"
+        },
+        {
+          "url": "https://www.novartis.com",
+          "text": "Email"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/node/64861/printable/print",
+          "text": "Print"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/node/64861/printable/pdf",
+          "text": "PDF"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/patients-and-caregivers",
+          "text": "Patients & Caregivers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/healthcare-professionals",
+          "text": "Healthcare Professionals"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/esg",
+          "text": "ESG"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/about/contact-us",
+          "text": "Contacts"
+        },
+        {
+          "url": "https://urldefense.com/v3/__https:/smartodr.in__;!!N3hqHg43uw!su9B1QnRuIwVeBUhQmCZz6xxVC9smd9r8DmxU7S8XEZRK-Ngeo7hAiPV6-ScuJ24c_J8UI-njobnk7oG3D5DNUL13KQkn6c$",
+          "text": "For Online resolution of disputes in the Indian Securities Market – please click SMART ODR Portal"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news",
+          "text": "News"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/news-archive",
+          "text": "News Archive"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/news/media-contacts",
+          "text": "Media Contacts"
+        },
+        {
+          "url": "https://www.novartis.com/research-development/novartis-pipeline",
+          "text": "Novartis Clinical Pipeline"
+        },
+        {
+          "url": "https://www.novartis.com/",
+          "text": "Global site"
+        },
+        {
+          "url": "https://www.medhub.novartis.co.in/",
+          "text": "Novartis MedHub India"
+        },
+        {
+          "url": "https://x.com/NovartisIndia/",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/novartis-india/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/channel/UC4CtpyQzbi4bHIgvzVAnp-A/",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/NovartisIN/",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/novartisindia/",
+          "text": ""
+        },
+        {
+          "url": "https://www.novartis.com/in-en/privacy-policy",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/terms-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.novartis.com/accessibility",
+          "text": "Web Accessibility"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/#cookie-settings-button",
+          "text": "Cookie Settings"
+        },
+        {
+          "url": "https://www.novartis.com/in-en/sitemap.xml",
+          "text": "Site Map"
+        },
+        {
+          "url": "https://www.novartis.com/novartis-directory",
+          "text": "Novartis Site Directory"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.novartis.com/in-en/about/india-country-leadership-team",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "India Country Leadership Team | Novartis India",
+      "evidence": "evidence/a2c11954da4bae9f06e5.html.gz",
+      "sha256": "d8f51dd1bb03f7cad8dd077d49189660c6fdb59dbc956a9e0c8b80cdd0768477"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

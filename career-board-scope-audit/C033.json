@@ -1,0 +1,24 @@
+{
+  "id": "C033",
+  "company": {
+    "name": "Booking Holdings",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://careers.bookingholdings.com",
+    "portals": [],
+    "inventory_note": "The group site lists its brands; each brand recruits on its own site. Booking.com is configured as its own entry."
+  },
+  "observations": [
+    {
+      "url": "https://careers.bookingholdings.com",
+      "checked_at": "2026-11-15T23:49:24.716407+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

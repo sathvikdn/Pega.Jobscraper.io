@@ -272,11 +272,17 @@ def make_job(source, source_id, title, company, url, location, *, posted_at=None
 
 
 def make_result(source, label, kind, *, status='ok', jobs=(), found=0, requests=0, error=None,
-                sweep_complete=None) -> dict:
+                sweep_complete=None, reason='', elapsed_s=None, pages_complete=None, details_complete=None,
+                employer=None) -> dict:
     """The outcome of one source. `found` is listings seen, `kept` is Pega roles returned.
 
-    `sweep_complete` is for time-windowed sources: True when every query of the look-back window was
-    answered, even if the result is `partial` for another reason. The key is present only when given.
+    `reason` classifies a failure for coverage reports: timeout | tls | dns | refused | rate_limited |
+    http_4xx | http_5xx (from `Response.reason`), or shape | cap | budget | maintenance; '' when none.
+    The remaining keys are present only when given:
+    - `sweep_complete`: a time-windowed source answered every query of its look-back window.
+    - `pages_complete`: every result page of the board was read, so a posting that is absent is
+      really no longer listed. `details_complete`: every description that had to be read was read.
+    - `employer`: the canonical employer a portal result belongs to. `elapsed_s`: seconds it took.
     """
     if status not in STATUSES:
         raise ValueError(f'unknown result status {status!r}')
@@ -285,9 +291,15 @@ def make_result(source, label, kind, *, status='ok', jobs=(), found=0, requests=
     jobs = list(jobs)
     result = {'source': source, 'label': label, 'kind': kind, 'status': status,
               'found': max(int(found or 0), len(jobs)), 'kept': len(jobs),
-              'requests': int(requests or 0), 'error': _text(error) or None, 'jobs': jobs}
-    if sweep_complete is not None:
-        result['sweep_complete'] = bool(sweep_complete)
+              'requests': int(requests or 0), 'error': _text(error) or None, 'reason': _text(reason), 'jobs': jobs}
+    for key, value in (('sweep_complete', sweep_complete), ('pages_complete', pages_complete),
+                       ('details_complete', details_complete)):
+        if value is not None:
+            result[key] = bool(value)
+    if elapsed_s is not None:
+        result['elapsed_s'] = round(float(elapsed_s), 1)
+    if employer:
+        result['employer'] = _text(employer)
     return result
 
 
@@ -337,6 +349,8 @@ DEFAULT_CONFIG = {
         'pacing_seconds': 1.0,
     },
     'scan': {'minutes': 40, 'workers': 6},
+    # The most new descriptions one employer board reads per run; a loose board catches up over a few runs.
+    'portals': {'detail_budget_per_board': 120},
     'server': {'port': 8765},
     'http': {'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
                            '(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'},

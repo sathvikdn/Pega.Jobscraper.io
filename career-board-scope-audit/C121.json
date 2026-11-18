@@ -1,0 +1,417 @@
+{
+  "id": "C121",
+  "company": {
+    "name": "ITC Limited",
+    "aliases": [],
+    "type": "enterprise",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://itcportal.com/careers.html",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://recruitment.itcportal.com/jobs/Careers",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "Zoho Recruit careers site; no Zoho Recruit adapter exists"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://itcportal.com/careers.html",
+      "checked_at": "2026-11-15T23:50:16.707626+00:00",
+      "links": [
+        {
+          "url": "https://itcportal.com/home.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/about-itc.html",
+          "text": "About ITC"
+        },
+        {
+          "url": "https://itcportal.com/about-itc.html#item_1703235070322-tab",
+          "text": "About Us"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/itc-policies.html",
+          "text": "Our Policies"
+        },
+        {
+          "url": "https://itcportal.com/about-itc.html#item_1703240300929-tab",
+          "text": "Mission, Vision & Core Values"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/code-of-conduct.html",
+          "text": "Code of Conduct"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/corporate-governance.html",
+          "text": "Corporate Governance"
+        },
+        {
+          "url": "https://itcportal.com/about-itc.html#item_1706181954224-tab",
+          "text": "History & Evolution"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/our-profile.html",
+          "text": "Our Profile"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/history-and-evolution.html",
+          "text": "Our History"
+        },
+        {
+          "url": "https://itcportal.com/about-itc.html#item_1703248966516-tab",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/leadership-speaks.html",
+          "text": "Leadership Speaks"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability.html",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://itcportal.com/about-itc.html#item_1703404654521-tab",
+          "text": "Awards"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/itc-research-and-development.html",
+          "text": "ITC Research and Development"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses.html",
+          "text": "Businesses"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg.html",
+          "text": "FMCG"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg/food.html",
+          "text": "Food"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg/food/its-food-expert-solutions.html",
+          "text": "ITC Expert Food Solutions"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg/Personal-care.html",
+          "text": "Personal Care"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg/education-and-stationery.html",
+          "text": "Education and Stationery"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg/aagarbatti.html",
+          "text": "Agarbatti"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg/safety-matches.html",
+          "text": "Safety Matches"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/fmcg/cigarette.html",
+          "text": "Cigarette"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/paperboards-and-specialty-papers.html",
+          "text": "Paperboards & Specialty Papers"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/packaging.html",
+          "text": "Packaging"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/agri-business.html",
+          "text": "Agri"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/agri-business/itc-spices.html",
+          "text": "ITC Spices"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/agri-business/agri-business-iltd.html",
+          "text": "ILTD"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/agri-business/itc-maars.html",
+          "text": "ITCMAARS"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/agri-business/itc-mission-millets.html",
+          "text": "ITC Mission Millets"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/Information-Technology.html",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/group-companies.html",
+          "text": "Group Companies"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/group-companies.html#item_1708060373927-tab",
+          "text": "ITC Infotech"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/group-companies.html#item_1708259555396-tab",
+          "text": "Surya Nepal Pvt Ltd"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/group-companies.html#item_1724160416702-tab",
+          "text": "Russel Credit Ltd"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/group-companies.html#item_1724160423771-tab",
+          "text": "Technico Pty Ltd"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/group-companies.html",
+          "text": "ITC Filtrona Limited"
+        },
+        {
+          "url": "https://www.itchotels.com/in/en",
+          "text": "ITC Hotels Limited"
+        },
+        {
+          "url": "https://itcportal.com/itc-businesses/world-of-brands.html",
+          "text": "World of Brands"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability.html",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability/itc-s-sustainability-vision-and-strategy.html",
+          "text": "Sustainability Vision & Strategy"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability/itc-s-double-materiality-analysis-page-.html",
+          "text": "Double Materiality"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/itc-policies.html#sus-policy",
+          "text": "Sustainability Policies"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability.html#sustainability-interventions",
+          "text": "Sustainability Interventions"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability/corporate-social-responsibility.html",
+          "text": "Corporate Social Responsibility"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/itc-policies/csr-policy.html",
+          "text": "ITC CSR Policy"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability/itc-social-investment-impact-studies.html",
+          "text": "ITC Social Investments Impact Studies"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability/rfps-for-impact-assessments.html",
+          "text": "RFP for Impact Assessment & Studies"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability/sustainability-reports.html",
+          "text": "Sustainability Reports"
+        },
+        {
+          "url": "https://itcportal.com/media-centre.html",
+          "text": "Media Centre"
+        },
+        {
+          "url": "https://itcportal.com/media-centre/press-releases.html",
+          "text": "Press Releases"
+        },
+        {
+          "url": "https://itcportal.com/media-centre/itc-stories.html",
+          "text": "Everyday Stories"
+        },
+        {
+          "url": "https://itcportal.com/media-centre/press-report.html",
+          "text": "Press Reports"
+        },
+        {
+          "url": "https://itcportal.com/investors.html",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://itcportal.com/careers.html",
+          "text": "Careers"
+        },
+        {
+          "url": "https://itcportal.com/contact-us.html",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://itcportal.com/investors.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/media-centre.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/contact-us.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/home.html",
+          "text": "Home"
+        },
+        {
+          "url": "https://itcportal.com/careers/what-do-we-have-in-store-for-you.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/careers/what-sets-us-apart.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/careers/learning-and-development.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/careers/diversity-inclusion.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/careers/career-avenues.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/careers/our-voices.html",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/careers/itc-kites.html",
+          "text": "Know more"
+        },
+        {
+          "url": "https://itcportal.com/careers/itc-aut.html",
+          "text": "Know more"
+        },
+        {
+          "url": "https://itcportal.com/careers/itc-interrobang.html",
+          "text": "Know more"
+        },
+        {
+          "url": "https://itcportal.com/careers/experience-itc.html",
+          "text": "Know more"
+        },
+        {
+          "url": "https://itcportal.com/careers/itc-masterclass.html",
+          "text": "Know more"
+        },
+        {
+          "url": "https://itcportal.com/careers/itc-catalyst-series.html",
+          "text": "Know more"
+        },
+        {
+          "url": "https://recruitment.itcportal.com/jobs/Careers#summer-internship",
+          "text": ""
+        },
+        {
+          "url": "https://pankh.itcportal.com/#management-trainee",
+          "text": ""
+        },
+        {
+          "url": "https://recruitment.itcportal.com/jobs/Careers",
+          "text": "Know more"
+        },
+        {
+          "url": "https://www.instagram.com/itc_limited/?hl=en",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/ITCCorpCom?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/itc-limited/",
+          "text": ""
+        },
+        {
+          "url": "https://whatsapp.com/channel/0029VaCQlwL0QeanX4PE0j0F",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCA6kL19PkfpLSu57zIyWHrg",
+          "text": ""
+        },
+        {
+          "url": "https://itcportal.com/contact-us.html",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://itcportal.com/itc-on-social-media.html",
+          "text": "ITC on Social Media"
+        },
+        {
+          "url": "https://itcportal.com/sitemap.html",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://itcportal.com/careers.html",
+          "text": "Careers"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/itc-policies.html",
+          "text": "Our Policies"
+        },
+        {
+          "url": "https://itcportal.com/terms-of-use.html",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/itc-policies/privacy-policy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://itcportal.com/brochure-download.html",
+          "text": "ITC Publications in your mail"
+        },
+        {
+          "url": "https://itcportal.com/about-itc/sustainability.html",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://itcportal.com/itc-apps.html",
+          "text": "ITC Apps"
+        },
+        {
+          "url": "https://itcportal.com/itc-websites.html",
+          "text": "ITC Websites"
+        },
+        {
+          "url": "https://itcportal.com/itc-resources.html",
+          "text": "ITC Resources"
+        },
+        {
+          "url": "https://itcportal.com/itc-video-gallery.html",
+          "text": "ITC Video Gallery"
+        },
+        {
+          "url": "https://itcportal.com/contact-us.html",
+          "text": "contactus@itc.in"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://itcportal.com/careers.html",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers",
+      "evidence": "evidence/89aae0d19ef9e7996abf.html.gz",
+      "sha256": "d59f3f7aca7b8fadd3a41cd2176b41924f603dc41e48ce16cf262026469f403b"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

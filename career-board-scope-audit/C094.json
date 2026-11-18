@@ -1,0 +1,184 @@
+{
+  "id": "C094",
+  "company": {
+    "name": "FIS",
+    "aliases": [
+      "Fidelity National Information Services",
+      "Fidelity National Information"
+    ],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.fisglobal.com/us/en",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "fis",
+        "datacentre": "wd5",
+        "site": "SearchJobs",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.fisglobal.com/us/en",
+      "checked_at": "2026-11-15T23:50:06.227062+00:00",
+      "links": [
+        {
+          "url": "https://careers.fisglobal.com/us/search-results",
+          "text": "Search results"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/awards",
+          "text": "Awards"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/fis-client-stories",
+          "text": "Client Stories"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/company-history",
+          "text": "Company History"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/executive-team",
+          "text": "Executive Team"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/fis-events",
+          "text": "FIS Events"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/media-room",
+          "text": "Media Room"
+        },
+        {
+          "url": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/login",
+          "text": "My Applications"
+        },
+        {
+          "url": "https://careers.fisglobal.com/us/en/recruitment-scams",
+          "text": "recruitment scams"
+        },
+        {
+          "url": "https://www.dol.gov/sites/dolgov/files/ofccp/regs/compliance/posters/pdf/eeopost.pdf",
+          "text": ""
+        },
+        {
+          "url": "https://www.eeoc.gov/poster",
+          "text": "here"
+        },
+        {
+          "url": "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/3688271_Report_FISPaymentsGenderPayGapReport2024-1746714956361.pdf",
+          "text": "here"
+        },
+        {
+          "url": "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/3688234_Report_FISBankingGenderPaygapreport2024-1746714955585.pdf",
+          "text": "here"
+        },
+        {
+          "url": "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/3688187_FISCapitalMarketsGenderPayGapReport2024-1746714954666.pdf",
+          "text": "here"
+        },
+        {
+          "url": "https://careers.fisglobal.com/us/en/recruitment-scams",
+          "text": "recruitment scams"
+        },
+        {
+          "url": "https://pp-cdn.phenompeople.com/CareerConnectResources/prod/FIGLUS/documents/FIS_2025BenefitsSnapshot-1741374429024.pdf",
+          "text": "FIS EMPLOYEE BENEFITS (U.S.)"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/company-history",
+          "text": "Company History"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/executive-team",
+          "text": "Executive Team"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/global-community-involvement",
+          "text": "Community Involvement"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/fis-client-stories",
+          "text": "Client Stories"
+        },
+        {
+          "url": "https://www.fisglobal.com/myfistore",
+          "text": "myFIStore"
+        },
+        {
+          "url": "https://www.investor.fisglobal.com/",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.fisglobal.com/about-us/media-room",
+          "text": "Media Room"
+        },
+        {
+          "url": "https://www.fisglobal.com/contact-us",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/fis/",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/intent/tweet?url=@FISGlobal",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/sharer.php?u=133955986688773",
+          "text": ""
+        },
+        {
+          "url": "https://www.fisglobal.com/privacy",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.fisglobal.com/cookies",
+          "text": "Cookies"
+        },
+        {
+          "url": "https://www.fisglobal.com/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.fisglobal.com/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www.fisglobal.com/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://showcase.fisglobal.com/pref-center",
+          "text": "Preference Center"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "fis",
+          "datacentre": "wd5",
+          "site": "SearchJobs",
+          "source_link": "https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/login"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://careers.fisglobal.com/us/en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at FIS Global | FIS Global jobs",
+      "evidence": "evidence/67105a8dbcdff47a169f.html.gz",
+      "sha256": "84339ee4c3db0434eaafde55a8758b5dcbcf90611d65334a1b23898a8172e95d"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

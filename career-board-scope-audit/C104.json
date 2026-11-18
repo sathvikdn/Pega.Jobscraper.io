@@ -1,0 +1,36 @@
+{
+  "id": "C104",
+  "company": {
+    "name": "Global Payments",
+    "aliases": [
+      "TSYS"
+    ],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://jobs.globalpayments.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "tsys",
+        "datacentre": "wd1",
+        "site": "TSYS",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Global Payments recruits on the Workday tenant of its TSYS business; Board answered the 15 Nov search probe; India scope is filtered per posting and not yet verified",
+        "business_unit": "TSYS"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.globalpayments.com",
+      "checked_at": "2026-11-15T23:50:11.799943+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

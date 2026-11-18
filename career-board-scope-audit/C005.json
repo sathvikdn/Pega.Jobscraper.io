@@ -1,0 +1,1057 @@
+{
+  "id": "C005",
+  "company": {
+    "name": "AIG",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.aig.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "aig",
+        "datacentre": "wd1",
+        "site": "aig",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.aig.com/careers",
+      "checked_at": "2026-11-15T23:49:02.427469+00:00",
+      "links": [
+        {
+          "url": "https://www.aig.com/careers#main",
+          "text": "Skip To Main Content"
+        },
+        {
+          "url": "https://www.aig.com/home",
+          "text": ""
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions",
+          "text": "Risk Solutions"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions",
+          "text": "Risk Solutions"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/why-aig",
+          "text": "For brokers: Why Choose AIG?"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business",
+          "text": "Businesses & Enterprise Solutions"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/why-aig",
+          "text": "Why AIG: Solutions Information for Brokers"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/why-aig/product-highlight-sheet-library",
+          "text": "Product Highlight Sheet Library"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/why-aig/us-producer-appointment-and-licensing",
+          "text": "U.S. Producer Appointment & Licensing"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/why-aig/your-aig-team",
+          "text": "Your AIG Team"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/accident-and-health",
+          "text": "Accident & Health"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/accident-and-health/corporate-risk",
+          "text": "Corporate Risk"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/accident-and-health/special-risk",
+          "text": "Special Risk"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/fronting-and-captive-services",
+          "text": "Captive Solutions"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty",
+          "text": "Casualty"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/excess-casualty",
+          "text": "Excess Casualty"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/foreign-casualty",
+          "text": "Foreign Casualty"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/defense-base-act",
+          "text": "Defense Base Act"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/primary-casualty",
+          "text": "Primary Casualty"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/aig-risk-management",
+          "text": "AIG Risk Management"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/environmental",
+          "text": "Environmental"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/environmental/environmental-response-services",
+          "text": "Pollution Incident & Environmental Response"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/environmental/pollution-incident-and-environmental-response-program/pier-specialist-search",
+          "text": "PIER Specialist Search"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/truck-insurance-group",
+          "text": "Trucking"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/worldrisk-foreign-commercial",
+          "text": "WorldRisk Foreign Commercial Package"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/casualty/specialty-energy-middle-market",
+          "text": "Specialty Energy Middle Market"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/commercial-property",
+          "text": "Commercial Property"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/commercial-property/retail-property",
+          "text": "Retail Property"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/commercial-property/builders-risk",
+          "text": "Builders Risk"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/cyber",
+          "text": "Cyber"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/why-aig/aig-data-center-insurance-solutions",
+          "text": "Data Centers"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines",
+          "text": "Excess & Surplus Lines"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines/lexington-casualty",
+          "text": "Casualty"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines/lexington-professional-liability-architects-and-engineers",
+          "text": "Professional Liability: Architect & Engineers"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines/lexington-professional-liability-healthcare",
+          "text": "Professional Liability: Healthcare"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines/lexington-property",
+          "text": "Property"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines/lexington-builders-risk",
+          "text": "Builders Risk"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines/lexpro",
+          "text": "LexPro"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/excess-and-surplus-lines/western-world",
+          "text": "Western World"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability",
+          "text": "Management & Professional Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/public-management-liability",
+          "text": "Public Company Management Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/private-and-non-profit-management-liability",
+          "text": "Private and Non-Profit Organization Management Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/financial-institutions",
+          "text": "Financial Institutions Solutions"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/professional-liability",
+          "text": "Professional Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/crime-and-financial-institution-bonds",
+          "text": "Crime and Fidelity"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/employment-practices-liability",
+          "text": "Employment Practices Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/directors-and-officers-liability",
+          "text": "Directors & Officers Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/fiduciary-liability",
+          "text": "Fiduciary Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/kidnap-ransom-and-extortion",
+          "text": "Kidnap, Ransom & Extortion"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/aig-statement-series",
+          "text": "AIG Statement Series"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/mergers-and-acquisitions",
+          "text": "Mergers & Acquisitions"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/mergers-and-acquisitions/representations-and-warranties",
+          "text": "Representations & Warranties"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/mergers-and-acquisitions/tax-liability",
+          "text": "Tax Insurance"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/management-and-professional-liability/mergers-and-acquisitions/mergers-and-acquisitions-claims-reports",
+          "text": "M&A Claims Intelligence Series"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/multinational",
+          "text": "Multinational Solutions"
+        },
+        {
+          "url": "https://www.aig.com/content/aig/america-canada/us_aig/en/home/risk-solutions/business/private-equity",
+          "text": "Private Equity"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/aig-programs",
+          "text": "Programs"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/aig-programs/new-program-ideas",
+          "text": "New Program Ideas"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/aig-programs/why-aig-programs",
+          "text": "Why AIG Programs"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/aig-programs/programs-loss-control-services",
+          "text": "Loss Control Services"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/aig-programs/programs-loss-control-safety-bulletins",
+          "text": "Loss Control Safety Bulletins"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/aviation",
+          "text": "Aviation"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/trade-credit",
+          "text": "Trade Credit"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/trade-credit/tradenable",
+          "text": "TradEnable"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/political-risk",
+          "text": "Political Risk"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/energy",
+          "text": "Energy"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/energy/energy-property",
+          "text": "Energy Property"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/marine",
+          "text": "Marine"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/marine/ocean-cargo",
+          "text": "Ocean Cargo"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/marine/inland-marine",
+          "text": "Inland Marine"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/specialty-risks/marine/marine-liability",
+          "text": "Marine Liability"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/warranty-and-service-programs",
+          "text": "Warranty & Service Programs"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/business/warranty-and-service-programs/warranty-management",
+          "text": "Warranty Management"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/individual",
+          "text": "Individuals & Families Solutions"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "×"
+        },
+        {
+          "url": "https://www.aig.com/home/claims",
+          "text": "Claims"
+        },
+        {
+          "url": "https://www.aig.com/home/claims",
+          "text": "Claims"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/claims-intelligence-series",
+          "text": "AIG Claims Intelligence Series"
+        },
+        {
+          "url": "https://www.aig.com/home/claims",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/report-a-claim",
+          "text": "Report a Claim"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/intellirisk",
+          "text": "Intellirisk Claims Risk Management"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/intellirisk/contact-us",
+          "text": "Contact IntelliRisk"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/catastrophe-preparedness",
+          "text": "Catastrophe Preparedness"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/catastrophe-preparedness/hurricanes",
+          "text": "Hurricanes"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/catastrophe-preparedness/floods",
+          "text": "Floods"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/catastrophe-preparedness/wildfires",
+          "text": "Wildfires"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/catastrophe-preparedness/winter-storms",
+          "text": "Winter Storms"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/catastrophe-preparedness/earthquakes",
+          "text": "Earthquakes"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/workers-compensation-claims",
+          "text": "Workers' Compensation"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/why-aig-claims",
+          "text": "Why AIG Claims"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/global-claims-capabilities",
+          "text": "Global Claims Capabilities"
+        },
+        {
+          "url": "https://www.aig.com/home/claims/claims-intelligence-series",
+          "text": "Claims Intelligence Series"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "×"
+        },
+        {
+          "url": "https://www.aig.com/home/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.aig.com/home/careers",
+          "text": "Careers at AIG"
+        },
+        {
+          "url": "https://aig.wd1.myworkdayjobs.com/aig",
+          "text": "Find your place – apply today!"
+        },
+        {
+          "url": "https://www.aig.com/home/careers",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/experienced-professionals",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/military-and-veterans",
+          "text": "Military & Veterans"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/life-at-aig",
+          "text": "Life at AIG"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/purpose-and-values",
+          "text": "Purpose & Values"
+        },
+        {
+          "url": "https://talentcommunity.aig.com/flows/Talent-Community",
+          "text": "AIG Talent Community"
+        },
+        {
+          "url": "https://aig.wd1.myworkdayjobs.com/aig",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "×"
+        },
+        {
+          "url": "https://www.aig.com/home/about",
+          "text": "About"
+        },
+        {
+          "url": "https://www.aig.com/home/about",
+          "text": "About AIG"
+        },
+        {
+          "url": "https://www.aig.com/home/about/leadership-and-governance",
+          "text": "Meet our leaders"
+        },
+        {
+          "url": "https://www.aig.com/home/about",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.aig.com/home/about/leadership-and-governance",
+          "text": "Leadership & Governance"
+        },
+        {
+          "url": "https://www.aig.com/home/about/leadership-and-governance/corporate-governance-documents",
+          "text": "Corporate Governance Documents"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility",
+          "text": "Corporate Responsibility"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility/culture-and-inclusion",
+          "text": "Culture & Inclusion"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility/culture-and-inclusion/employee-resource-groups",
+          "text": "Employee Resource Groups"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility/sustainability",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility/political-activities-and-contributions",
+          "text": "Political Activities & Contributions"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility/aig-gives-back",
+          "text": "AIG Gives Back"
+        },
+        {
+          "url": "https://www.aig.com/home/about/aig-womens-open",
+          "text": "AIG Women's Open"
+        },
+        {
+          "url": "https://www.aig.com/home/about/history",
+          "text": "History"
+        },
+        {
+          "url": "https://www.aig.com/home/about/cyber-and-information-security",
+          "text": "Cyber & Information Security"
+        },
+        {
+          "url": "https://www.aig.com/home/about/disaster-notifications",
+          "text": "Disaster Notifications"
+        },
+        {
+          "url": "https://www.aig.com/home/about/social-media-guidelines",
+          "text": "Social Media Guidelines"
+        },
+        {
+          "url": "https://www.aig.com/home/about/supplier-relations",
+          "text": "Supplier Relations"
+        },
+        {
+          "url": "https://www.aig.com/home/about/supplier-relations/supplier-privacy-notices",
+          "text": "Supplier Privacy Notices"
+        },
+        {
+          "url": "https://www.aig.com/home/about/supplier-relations/supplier-diversity",
+          "text": "Supplier Diversity"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "×"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/webcasts-and-presentations",
+          "text": "View our financial results"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/annual-reports-and-proxy-statements",
+          "text": "Annual Reports & Proxy Statements"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/financial-reporting-and-statutory-statements",
+          "text": "Financial Reporting"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/sec-filings",
+          "text": "SEC Filings"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/stock-information",
+          "text": "Stock Information"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/webcasts-and-presentations",
+          "text": "Webcasts & Presentations"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/contact-us",
+          "text": "Contact Investor Relations & FAQs"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/aig-2025-annual-report",
+          "text": "AIG 2025 Annual Report"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "×"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom",
+          "text": "News"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom",
+          "text": "AIG Newsroom"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom/stories",
+          "text": "Read our Newsroom stories"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom/stories",
+          "text": "Newsroom Stories"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom/news-releases",
+          "text": "News Releases"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom/media-contacts",
+          "text": "Media Contacts"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom/media-contacts#faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "×"
+        },
+        {
+          "url": "https://www.aig.com/home/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.aig.com/home/contact",
+          "text": "Contact AIG"
+        },
+        {
+          "url": "https://www.aig.com/home/contact",
+          "text": "Overview"
+        },
+        {
+          "url": "https://www.aig.com/home/contact#accordion-6150612a1e-item-96d22c18fd",
+          "text": "Individuals"
+        },
+        {
+          "url": "https://www.aig.com/home/contact#accordion-6150612a1e-item-bc9a3c3740",
+          "text": "Business"
+        },
+        {
+          "url": "https://www.aig.com/home/contact#accordion-6150612a1e-item-287db3e010",
+          "text": "Claims"
+        },
+        {
+          "url": "https://www.aig.com/home/contact#accordion-6150612a1e-item-aa417dfdd8",
+          "text": "Investors"
+        },
+        {
+          "url": "https://www.aig.com/home/contact#accordion-6150612a1e-item-6b28d9991b",
+          "text": "Press"
+        },
+        {
+          "url": "https://www.aig.com/home/contact.html#accordion-6150612a1e-item-2c78c43ca3",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.aig.com/home/contact#accordion-6150612a1e-item-8ac7579e74",
+          "text": "Suppliers"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "×"
+        },
+        {
+          "url": "https://www.aig.com/home/worldwide",
+          "text": ""
+        },
+        {
+          "url": "https://www.privateclientselect.com/contact-us/make-a-payment",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://claims.agbenefitsolutions.com/lin/faces/LinLogin.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-271.aig.com/irweb/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/cplogin/login/cp/html/en/jsp/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://learner.intuition.com/AIG/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-271.aig.com/irweb/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/cplogin/login/cp/html/en/jsp/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://learner.intuition.com/AIG/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www.producermanagementportal.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-271.aig.com/irweb/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://learner.intuition.com/AIG/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/cplogin/login/cp/html/en/jsp/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www.aig.com/home/contact",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.privateclientselect.com/producer-login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://claims.agbenefitsolutions.com/lin/faces/LinLogin.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-271.aig.com/irweb/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/cplogin/login/cp/html/en/jsp/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://learner.intuition.com/AIG/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-271.aig.com/irweb/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/cplogin/login/cp/html/en/jsp/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://learner.intuition.com/AIG/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www.producermanagementportal.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-249.aig.com/",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-271.aig.com/irweb/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://learner.intuition.com/AIG/login",
+          "text": "Login"
+        },
+        {
+          "url": "https://www-1.aig.com/cplogin/login/cp/html/en/jsp/login.jsp",
+          "text": "Login"
+        },
+        {
+          "url": "https://www.aig.com/home/contact",
+          "text": "Contact us"
+        },
+        {
+          "url": "https://www.aig.com/home",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://aig.wd1.myworkdayjobs.com/aig",
+          "text": "Careers"
+        },
+        {
+          "url": "https://aig.wd1.myworkdayjobs.com/aig",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/experienced-professionals",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/experienced-professionals#cr",
+          "text": "Career Returners"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/students-and-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/military-and-veterans",
+          "text": "Military & Veterans"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/life-at-aig",
+          "text": "Life at AIG"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/purpose-and-values",
+          "text": "Purpose and Values"
+        },
+        {
+          "url": "https://talentcommunity.aig.com/flows/Talent-Community",
+          "text": "AIG Talent Community"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility/culture-and-inclusion",
+          "text": "Commitment to Culture & Inclusion"
+        },
+        {
+          "url": "https://www.aig.com/home/about/corporate-responsibility/culture-and-inclusion",
+          "text": "More about Culture & Inclusion"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/aig-2025-annual-report",
+          "text": "AIG 2025 Annual Report: A Milestone Year of Progress"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations/aig-2025-annual-report",
+          "text": "READ THE ANNUAL REPORT"
+        },
+        {
+          "url": "https://www.aig.com/content/dam/aig/america-canada/us/documents/careers/osc-right-to-work-poster-brochure.pdf",
+          "text": "Right to Work"
+        },
+        {
+          "url": "https://www.aig.com/content/dam/aig/america-canada/us/documents/careers/osc-right-to-work-poster-es-brochure.pdf",
+          "text": "Derecho a Trabajar"
+        },
+        {
+          "url": "https://www.aig.com/content/dam/aig/america-canada/us/documents/careers/e-verify-participation-poster-es-brochure.pdf",
+          "text": "E-Verify"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/benefits",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/students-and-graduates",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://www.aig.com/home/careers/experienced-professionals",
+          "text": "Learn More"
+        },
+        {
+          "url": "https://www.facebook.com/AIGInsurance",
+          "text": "facebook"
+        },
+        {
+          "url": "https://www.instagram.com/aiginsurance/",
+          "text": "instagram"
+        },
+        {
+          "url": "https://www.linkedin.com/company/aig",
+          "text": "linkedin"
+        },
+        {
+          "url": "https://www.youtube.com/user/AIG",
+          "text": "youtube"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions",
+          "text": "Risk Solutions"
+        },
+        {
+          "url": "https://www.aig.com/home/claims",
+          "text": "Claims"
+        },
+        {
+          "url": "https://www.aig.com/home/investor-relations",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://www.aig.com/home/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.aig.com/home/about",
+          "text": "About AIG"
+        },
+        {
+          "url": "https://www.aig.com/home/newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.aig.com/home/contact",
+          "text": "Contact AIG"
+        },
+        {
+          "url": "https://www.aig.com/home/worldwide",
+          "text": "Worldwide"
+        },
+        {
+          "url": "https://www.aig.com/about-our-ads",
+          "text": "About AIG Ads"
+        },
+        {
+          "url": "https://www.aig.com/terms-of-use",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.aig.com/cookie-policy",
+          "text": "Cookie Policy"
+        },
+        {
+          "url": "https://www.aig.com/privacy-policy",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.aig.com/careers#page-dialog-footerlink-1",
+          "text": "Do Not Sell or Share My Personal Information"
+        },
+        {
+          "url": "https://www.aig.com/legal-notice",
+          "text": "Additional Legal Notices"
+        },
+        {
+          "url": "https://www.aig.com/accessibility-statement",
+          "text": "Accessibility Statement"
+        },
+        {
+          "url": "https://www.aig.com/enterprise-resilience-disclosure",
+          "text": "Enterprise Resilience"
+        },
+        {
+          "url": "https://www.aig.com/home/risk-solutions/why-aig/producer-notifications",
+          "text": "Producer Notifications"
+        },
+        {
+          "url": "https://www.aig.com/fraud-warning",
+          "text": "Fraud Warning"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+        },
+        {
+          "url": "https://www.aig.com/careers#page-dialog-footerlink-2",
+          "text": "Opt-out from the sale or sharing of your personal information."
+        },
+        {
+          "url": "https://www.aig.com/privacy-policy",
+          "text": "For information about our privacy practices, please review our Privacy Notice"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "close"
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+        },
+        {
+          "url": "https://www.aig.com/california-consumer-privacy-act-notice",
+          "text": "More information about our privacy practices."
+        },
+        {
+          "url": "https://www.aig.com/careers",
+          "text": "close"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "aig",
+          "datacentre": "wd1",
+          "site": "aig",
+          "source_link": "https://aig.wd1.myworkdayjobs.com/aig"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.aig.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at AIG | AIG US",
+      "evidence": "evidence/5ba4877b625e658a2b89.html.gz",
+      "sha256": "a41d3e4422b11199b60d0272ce5764f1de3511d1c2107bee6f511f46c2e4e421"
+    },
+    {
+      "url": "https://aig.wd1.myworkdayjobs.com/aig",
+      "checked_at": "2026-11-15T23:49:04.786725+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "aig",
+          "datacentre": "wd1",
+          "site": "aig",
+          "source_link": "https://aig.wd1.myworkdayjobs.com/aig"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://aig.wd1.myworkdayjobs.com/aig",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/b0e500e327121f97c1c4.html.gz",
+      "sha256": "f6381d336b0bce026a6e91fd4aeaa3864deb6937ad79d365f72b5baf01cd9f9d"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

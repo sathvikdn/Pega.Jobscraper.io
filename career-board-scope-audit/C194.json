@@ -1,0 +1,32 @@
+{
+  "id": "C194",
+  "company": {
+    "name": "Rabobank",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.rabobank.jobs",
+    "portals": [
+      {
+        "kind": "custom",
+        "url": "https://www.rabobank.jobs",
+        "state": "unsupported",
+        "scope": "unknown",
+        "note": "The careers site refused the 15 Nov audit request (HTTP 403); respected, not worked around. No public feed is known"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.rabobank.jobs",
+      "checked_at": "2026-11-15T23:50:55.614971+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 403,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

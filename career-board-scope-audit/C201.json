@@ -1,0 +1,32 @@
+{
+  "id": "C201",
+  "company": {
+    "name": "Schneider Electric",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.se.com/ww/en/about-us/careers/overview.jsp",
+    "portals": [
+      {
+        "kind": "smartrecruiters",
+        "company_id": "SchneiderElectric2",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Postings API answered in the audit"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.se.com/ww/en/about-us/careers/overview.jsp",
+      "checked_at": "2026-11-15T23:50:58.615760+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 403,
+      "outcome": "HTTP error",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,994 @@
+{
+  "id": "C018",
+  "company": {
+    "name": "AstraZeneca",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.astrazeneca.com",
+    "portals": [
+      {
+        "kind": "talentbrew",
+        "host": "careers.astrazeneca.com",
+        "org_id": "7684",
+        "state": "candidate",
+        "scope": "global",
+        "note": "An Eightfold talent site also exists; the search results are served here"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.astrazeneca.com",
+      "checked_at": "2026-11-15T23:49:08.641989+00:00",
+      "links": [
+        {
+          "url": "https://careers.astrazeneca.com#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.astrazeneca.com/saved-jobs",
+          "text": ""
+        },
+        {
+          "url": "https://job-search.astrazeneca.com",
+          "text": "English"
+        },
+        {
+          "url": "https://job-search.astrazeneca.ru",
+          "text": "русский"
+        },
+        {
+          "url": "https://job-search.astrazeneca.de",
+          "text": "Deutsch"
+        },
+        {
+          "url": "https://job-search.astrazeneca.fr",
+          "text": "Français"
+        },
+        {
+          "url": "https://job-search.astrazeneca.cn",
+          "text": "中文"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/about-us",
+          "text": "About AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/life-at-astrazeneca",
+          "text": "Life at AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.alexion.com/",
+          "text": "Alexion"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-business-unit",
+          "text": "BioPharmaceuticals"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-r-and-d",
+          "text": "BioPharmaceuticals R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/enterpriseai",
+          "text": "Enterprise AI"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/enabling",
+          "text": "Enabling Functions"
+        },
+        {
+          "url": "https://fusionpharma.com/careers/",
+          "text": "Fusion Pharma"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-it",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/international",
+          "text": "International"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-business-unit",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-r-and-d",
+          "text": "Oncology R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-operations",
+          "text": "Operations"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/early-talent",
+          "text": "Early Talent"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/our-people",
+          "text": "Our People"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/application-hints-tips",
+          "text": "Application Hints & Tips"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/aiguidance",
+          "text": "Candidate Guidance on AI Use"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+          "text": "Join Talent Network"
+        },
+        {
+          "url": "https://careers.astrazeneca.com#search-form-fields",
+          "text": "SEARCH ROLES"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers",
+          "text": "GET MATCHED TO A JOB UPLOAD YOUR RESUME"
+        },
+        {
+          "url": "https://careers.astrazeneca.com#search-form-fields",
+          "text": "SEARCH ROLES"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers",
+          "text": "GET MATCHED TO A JOB UPLOAD YOUR RESUME"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/canada",
+          "text": "Canada"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/india",
+          "text": "India"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/mexico",
+          "text": "Mexico"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/lisbon",
+          "text": "Portugal"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/spain",
+          "text": "Spain"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/sweden",
+          "text": "Sweden"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/united-kingdom",
+          "text": "UK"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/united-states",
+          "text": "US"
+        },
+        {
+          "url": "https://jobs.alexion.com/",
+          "text": "Alexion We expanded our scientific footprint with the acquisition of Alexion's cutting-edge work in rare disease therapeutics."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/lifelonglearning",
+          "text": "Lifelong Learning Helping you to continuously learn, grow and evolve through your career with us, in our lifelong learning environment."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/our-people",
+          "text": "Our Values Explore how our values guide how we work together, shape our beliefs and behaviours."
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://actionfraud.police.uk/fraud-az-recruitment-scams",
+          "text": "United Kingdom"
+        },
+        {
+          "url": "https://www.usa.gov/stop-scams-frauds",
+          "text": "United States"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://policy.cookiereports.com/f5985167-en-gb.html",
+          "text": "Cookie Policy"
+        },
+        {
+          "url": "https://www.azprivacy.astrazeneca.com/",
+          "text": "Privacy policy"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/candidate-privacy-notice",
+          "text": "Job Application Privacy Notice"
+        },
+        {
+          "url": "https://www.astrazeneca-us.com/legal-notice.html",
+          "text": "Legal notice"
+        },
+        {
+          "url": "https://www.astrazeneca.com",
+          "text": "Astrazeneca.com"
+        },
+        {
+          "url": "https://www.instagram.com/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/AstraZeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/astrazenecajobs",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.astrazeneca.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Working at AstraZenecanp_cross_2773798_C3D800 Copy 3",
+      "evidence": "evidence/271c29eb4e752f3e79bb.html.gz",
+      "sha256": "bd8e319a475760a5cd42cfe50671a0f82d66835acde18f70a73f70314ec33b39"
+    },
+    {
+      "url": "https://careers.astrazeneca.com/india",
+      "checked_at": "2026-11-15T23:49:09.199022+00:00",
+      "links": [
+        {
+          "url": "https://careers.astrazeneca.com/india#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.astrazeneca.com/about-us",
+          "text": "About AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/life-at-astrazeneca",
+          "text": "Life at AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-it",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-business-unit",
+          "text": "BioPharmaceuticals"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-business-unit",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-operations",
+          "text": "Operations"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-r-and-d",
+          "text": "BioPharmaceuticals R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/international",
+          "text": "International"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/enabling",
+          "text": "Enabling functions"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-r-and-d",
+          "text": "Oncology R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/early-talent",
+          "text": "Early Talent"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/inclusion-diversity",
+          "text": "Inclusion & Diversity"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/application-hints-tips",
+          "text": "Application Hints & Tips"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/saved-jobs",
+          "text": ""
+        },
+        {
+          "url": "https://job-search.astrazeneca.com",
+          "text": "English"
+        },
+        {
+          "url": "https://job-search.astrazeneca.ru",
+          "text": "русский"
+        },
+        {
+          "url": "https://job-search.astrazeneca.de",
+          "text": "Deutsch"
+        },
+        {
+          "url": "https://job-search.astrazeneca.fr",
+          "text": "Français"
+        },
+        {
+          "url": "https://job-search.astrazeneca.cn",
+          "text": "中文"
+        },
+        {
+          "url": "https://job-search.astrazeneca.se",
+          "text": "Svenska"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/india#search-form-fields",
+          "text": "Search roles"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/locations",
+          "text": "Back to locations"
+        },
+        {
+          "url": "https://in.linkedin.com/company/astrazenecaindia",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/astrazenecaindia/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128",
+          "text": "Senior Consultant, AI/ML Engineering"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608",
+          "text": "Associate Web Delivery"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/chennai/lead-consultant-coupa-and-s-4hana-procurement/7684/101851618336",
+          "text": "Lead Consultant - Coupa and S/4HANA Procurement"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/chennai/engineer-cmdb-data-quality/7684/103207788096",
+          "text": "ENGINEER - CMDB DATA QUALITY"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/search-jobs/?orgIds=7684&alcpm=1269750",
+          "text": "View all of our available opportunities"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/our-people",
+          "text": "Inclusion & Diversity The success of AstraZeneca is founded on innovation, creativity and diversity. Find out more."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/about-us",
+          "text": "About Us We are AstraZeneca, one of the world’s most forward-thinking and connected Biopharmaceutical companies. Find out more."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/life-at-astrazeneca",
+          "text": "Life at AstraZeneca At AstraZeneca, our purpose is to help patients all over the world by delivering life-changing medicines as one collaborative team"
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm",
+          "text": "see our latest Glassdoor reviews here"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://policy.cookiereports.com/f5985167-en-gb.html",
+          "text": "Cookie Policy"
+        },
+        {
+          "url": "https://www.azprivacy.astrazeneca.com/",
+          "text": "Privacy policy"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/candidate-privacy-notice",
+          "text": "Job Application Privacy Notice"
+        },
+        {
+          "url": "https://www.astrazeneca-us.com/legal-notice.html",
+          "text": "Legal notice"
+        },
+        {
+          "url": "https://www.astrazeneca.com",
+          "text": "Astrazeneca.com"
+        },
+        {
+          "url": "https://www.instagram.com/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/AstraZeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/astrazenecajobs",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.astrazeneca.com/india",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "AstraZeneca in India",
+      "evidence": "evidence/7625743749881b7ab63d.html.gz",
+      "sha256": "abfcd8054d411467f331aefd7da4075fb580ead9d8cd51394b24d63624b90722"
+    },
+    {
+      "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+      "checked_at": "2026-11-15T23:49:10.968392+00:00",
+      "links": [
+        {
+          "url": "https://www.linkedin.com/company/astrazeneca/posts/?feedView=all",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/astrazeneca?igsh=djJjNDV3ZnR3dWIz",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/AstraZeneca",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers at AstraZeneca",
+      "evidence": "evidence/1f36a315f065c6980e3e.html.gz",
+      "sha256": "fc48490034239a5cb2b3887aeab5da6428b922c50058fea34b1930825e070aea"
+    },
+    {
+      "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128",
+      "checked_at": "2026-11-15T23:49:12.219955+00:00",
+      "links": [
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.astrazeneca.com/about-us",
+          "text": "About AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/life-at-astrazeneca",
+          "text": "Life at AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.alexion.com/",
+          "text": "Alexion"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-business-unit",
+          "text": "BioPharmaceuticals"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-r-and-d",
+          "text": "BioPharmaceuticals R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/enterpriseai",
+          "text": "Enterprise AI"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/enabling",
+          "text": "Enabling Functions"
+        },
+        {
+          "url": "https://fusionpharma.com/careers/",
+          "text": "Fusion Pharma"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-it",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/international",
+          "text": "International"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-business-unit",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-r-and-d",
+          "text": "Oncology R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-operations",
+          "text": "Operations"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/early-talent",
+          "text": "Early Talent"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/our-people",
+          "text": "Our People"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/application-hints-tips",
+          "text": "Application Hints & Tips"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/aiguidance",
+          "text": "Candidate Guidance on AI Use"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+          "text": "Join Talent Network"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#search-form-fields",
+          "text": "SEARCH ROLES"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/saved-jobs",
+          "text": ""
+        },
+        {
+          "url": "https://job-search.astrazeneca.com",
+          "text": "English"
+        },
+        {
+          "url": "https://job-search.astrazeneca.ru",
+          "text": "русский"
+        },
+        {
+          "url": "https://job-search.astrazeneca.de",
+          "text": "Deutsch"
+        },
+        {
+          "url": "https://job-search.astrazeneca.fr",
+          "text": "Français"
+        },
+        {
+          "url": "https://job-search.astrazeneca.cn",
+          "text": "中文"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#search-form-fields",
+          "text": "Search roles"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#anchor-overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#anchor-whatyoulldo",
+          "text": "What you'll do"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#anchor-successprofile",
+          "text": "Success profile"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#anchor-responsibilties",
+          "text": "Responsibilities"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#anchor-whyjoin",
+          "text": "Reasons to join"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128#anchor-benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/job/563877691851427?domain=astrazeneca.com",
+          "text": "Apply now"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/job/563877691851427?domain=astrazeneca.com",
+          "text": "Apply now"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job_location/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128/952212",
+          "text": "Explore the local area Take a look at the map to see what’s nearby."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128",
+          "text": "See Thomas's Story"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128",
+          "text": "See Larry's Story"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128",
+          "text": "See Stephanie's Story"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/about-us",
+          "text": "About Us We are AstraZeneca, one of the world’s most forward-thinking and connected BioPharmaceutical companies. Explore our world."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/life-at-astrazeneca",
+          "text": "Life at AstraZeneca At AstraZeneca, our purpose is to help patients all over the world by delivering life-changing medicines as one collaborative team"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/our-people",
+          "text": "Inclusion & Diversity The success of AstraZeneca is founded on innovation, creativity and diversity. Discover what this means for you."
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm",
+          "text": "see our latest Glassdoor reviews here"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://policy.cookiereports.com/f5985167-en-gb.html",
+          "text": "Cookie Policy"
+        },
+        {
+          "url": "https://www.azprivacy.astrazeneca.com/",
+          "text": "Privacy policy"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/candidate-privacy-notice",
+          "text": "Job Application Privacy Notice"
+        },
+        {
+          "url": "https://www.astrazeneca-us.com/legal-notice.html",
+          "text": "Legal notice"
+        },
+        {
+          "url": "https://www.astrazeneca.com",
+          "text": "Astrazeneca.com"
+        },
+        {
+          "url": "https://www.instagram.com/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/AstraZeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/astrazenecajobs",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.astrazeneca.com/job/bengaluru/senior-consultant-ai-ml-engineering/7684/103245988128",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/c5277a7fb4c4ef05b4d7.html.gz",
+      "sha256": "586644e40c180291dce987dbc788facb460079ce17908c24e34285536ccd0cfc"
+    },
+    {
+      "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608",
+      "checked_at": "2026-11-15T23:49:14.540484+00:00",
+      "links": [
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#content",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.astrazeneca.com/about-us",
+          "text": "About AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/life-at-astrazeneca",
+          "text": "Life at AstraZeneca"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/locations",
+          "text": "Our Locations"
+        },
+        {
+          "url": "https://careers.alexion.com/",
+          "text": "Alexion"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-business-unit",
+          "text": "BioPharmaceuticals"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/biopharmaceuticals-r-and-d",
+          "text": "BioPharmaceuticals R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/enterpriseai",
+          "text": "Enterprise AI"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/enabling",
+          "text": "Enabling Functions"
+        },
+        {
+          "url": "https://fusionpharma.com/careers/",
+          "text": "Fusion Pharma"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-it",
+          "text": "Information Technology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/international",
+          "text": "International"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-business-unit",
+          "text": "Oncology"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/oncology-r-and-d",
+          "text": "Oncology R&D"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/business-area-operations",
+          "text": "Operations"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/early-talent",
+          "text": "Early Talent"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/our-people",
+          "text": "Our People"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/application-hints-tips",
+          "text": "Application Hints & Tips"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/aiguidance",
+          "text": "Candidate Guidance on AI Use"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/faqs",
+          "text": "FAQs"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+          "text": "Join Talent Network"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#search-form-fields",
+          "text": "SEARCH ROLES"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/saved-jobs",
+          "text": ""
+        },
+        {
+          "url": "https://job-search.astrazeneca.com",
+          "text": "English"
+        },
+        {
+          "url": "https://job-search.astrazeneca.ru",
+          "text": "русский"
+        },
+        {
+          "url": "https://job-search.astrazeneca.de",
+          "text": "Deutsch"
+        },
+        {
+          "url": "https://job-search.astrazeneca.fr",
+          "text": "Français"
+        },
+        {
+          "url": "https://job-search.astrazeneca.cn",
+          "text": "中文"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#search-form-fields",
+          "text": "Search roles"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#anchor-overview",
+          "text": "Overview"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#anchor-whatyoulldo",
+          "text": "What you'll do"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#anchor-successprofile",
+          "text": "Success profile"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#anchor-responsibilties",
+          "text": "Responsibilities"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#anchor-whyjoin",
+          "text": "Reasons to join"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608#anchor-benefits",
+          "text": "Benefits"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/job/563877691851358?domain=astrazeneca.com",
+          "text": "Apply now"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/job/563877691851358?domain=astrazeneca.com",
+          "text": "Apply now"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job_location/bengaluru/associate-web-delivery/7684/103239724608/952212",
+          "text": "Explore the local area Take a look at the map to see what’s nearby."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608",
+          "text": "See Thomas's Story"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608",
+          "text": "See Larry's Story"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608",
+          "text": "See Stephanie's Story"
+        },
+        {
+          "url": "https://astrazeneca.eightfold.ai/careers/join?domain=astrazeneca.com&hl=en",
+          "text": "Sign up"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/about-us",
+          "text": "About Us We are AstraZeneca, one of the world’s most forward-thinking and connected BioPharmaceutical companies. Explore our world."
+        },
+        {
+          "url": "https://careers.astrazeneca.com/life-at-astrazeneca",
+          "text": "Life at AstraZeneca At AstraZeneca, our purpose is to help patients all over the world by delivering life-changing medicines as one collaborative team"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/our-people",
+          "text": "Inclusion & Diversity The success of AstraZeneca is founded on innovation, creativity and diversity. Discover what this means for you."
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm",
+          "text": "see our latest Glassdoor reviews here"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/sitemap",
+          "text": "Site map"
+        },
+        {
+          "url": "https://policy.cookiereports.com/f5985167-en-gb.html",
+          "text": "Cookie Policy"
+        },
+        {
+          "url": "https://www.azprivacy.astrazeneca.com/",
+          "text": "Privacy policy"
+        },
+        {
+          "url": "https://careers.astrazeneca.com/candidate-privacy-notice",
+          "text": "Job Application Privacy Notice"
+        },
+        {
+          "url": "https://www.astrazeneca-us.com/legal-notice.html",
+          "text": "Legal notice"
+        },
+        {
+          "url": "https://www.astrazeneca.com",
+          "text": "Astrazeneca.com"
+        },
+        {
+          "url": "https://www.instagram.com/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/AstraZeneca",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/astrazeneca",
+          "text": ""
+        },
+        {
+          "url": "https://twitter.com/astrazenecajobs",
+          "text": ""
+        },
+        {
+          "url": "https://www.glassdoor.co.uk/Reviews/AstraZeneca-Reviews-E9214.htm",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.astrazeneca.com/job/bengaluru/associate-web-delivery/7684/103239724608",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/690c8a0e82d72cecb413.html.gz",
+      "sha256": "da12ce62a193903e47e698737b6e8cb8d4ecd96cd8cfd7d436744be2b22cd347"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "C091",
+  "company": {
+    "name": "Fidelity Investments",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://india.fidelity.com/careers/",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "fmr",
+        "datacentre": "wd1",
+        "site": "FidelityCareers",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://india.fidelity.com/careers/",
+      "checked_at": "2026-11-15T23:50:02.740336+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://india.fidelity.com/careers/",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Page Unavailable - Jobs in Fidelity",
+      "evidence": "evidence/689ff4a560be99b0bd10.html.gz",
+      "sha256": "234b40bcd64bb7626e25ecec0faec791446ffbe2f4c313cbdd64f84c488647e6"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

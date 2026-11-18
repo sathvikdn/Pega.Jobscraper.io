@@ -11,6 +11,8 @@ import gzip
 import importlib.util
 import io
 import json
+import socket
+import ssl
 import os
 import sqlite3
 import subprocess
@@ -26,7 +28,8 @@ from unittest import mock
 PROJECT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT))
 
-from radar import model, net, rank, scan  # noqa: E402
+from radar import acceptance, model, net, rank, scan  # noqa: E402
+from radar import store as radar_store  # noqa: E402
 from radar.store import Store, title_key  # noqa: E402
 
 TODAY = date(2026, 11, 14)
@@ -235,7 +238,9 @@ class ModelShapeTest(unittest.TestCase):
     def test_make_result(self):
         jobs = [model.make_job('Hirist', '1', 'Pega Developer', 'Acme', 'u', 'Pune')]
         result = model.make_result('Hirist', 'Hirist', 'board', jobs=jobs, found=40, requests=3)
-        self.assertEqual(set(result), {'source', 'label', 'kind', 'status', 'found', 'kept', 'requests', 'error', 'jobs'})
+        self.assertEqual(set(result), {'source', 'label', 'kind', 'status', 'found', 'kept', 'requests', 'error',
+                                       'reason', 'jobs'})
+        self.assertEqual(result['reason'], '')
         self.assertEqual((result['status'], result['found'], result['kept'], result['requests']), ('ok', 40, 1, 3))
         self.assertIsNone(result['error'])
         self.assertEqual(model.make_result('s', 'l', 'ats', jobs=jobs)['found'], 1)   # never fewer seen than kept
@@ -247,6 +252,15 @@ class ModelShapeTest(unittest.TestCase):
         swept = model.make_result('LinkedIn', 'LinkedIn', 'linkedin', status='partial', sweep_complete=True)
         self.assertIs(swept['sweep_complete'], True)
         self.assertIs(model.make_result('LinkedIn', 'LinkedIn', 'linkedin', sweep_complete=False)['sweep_complete'], False)
+
+    def test_make_result_passes_through_the_optional_coverage_keys(self):
+        result = model.make_result('Employer site', 'Acme', 'ats', status='partial', reason='timeout', elapsed_s=12.345,
+                                   pages_complete=False, details_complete=1, employer='Acme', error='page 3 timed out')
+        self.assertEqual((result['reason'], result['elapsed_s'], result['pages_complete'], result['details_complete'],
+                          result['employer']), ('timeout', 12.3, False, True, 'Acme'))
+        plain = model.make_result('Hirist', 'Hirist', 'board')
+        for key in ('elapsed_s', 'pages_complete', 'details_complete', 'employer', 'sweep_complete'):
+            self.assertNotIn(key, plain)
 
     def test_needs_attention(self):
         flagged = {status: model.needs_attention({'status': status}) for status in model.STATUSES}
@@ -516,13 +530,58 @@ class NetTest(unittest.TestCase):
 
     def test_never_raises(self):
         for failure in (TimeoutError('timed out'), ConnectionResetError('reset'), ValueError('bad reply'),
-                        urllib.error.URLError('dns')):
+                        urllib.error.URLError('unknown trouble')):
             http = self.client(failure, default_pacing=0)
             response = http.get('https://a.test/x', retries=0)
             self.assertEqual(response.status, 0)
-            self.assertIn(type(failure).__name__, response.error)
+            self.assertTrue(response.error and response.reason, failure)
             self.assertFalse(response.ok or response.blocked)
             self.assertIsNone(response.json())
+
+    def test_network_failures_are_classified_with_readable_text(self):
+        cases = (
+            (TimeoutError('timed out'), 'timeout', 'Timed out after 25 s waiting for a.test'),
+            (urllib.error.URLError(TimeoutError('timed out')), 'timeout', 'Timed out after 25 s waiting for a.test'),
+            (urllib.error.URLError(socket.timeout('The read operation timed out')), 'timeout', 'Timed out'),
+            (urllib.error.URLError(ssl.SSLCertVerificationError(1, 'certificate verify failed: unable to get local issuer')),
+             'tls', 'TLS certificate could not be verified — check proxy/antivirus certificate'),
+            (ssl.SSLError(1, 'wrong version number'), 'tls', 'TLS connection to a.test failed'),
+            (urllib.error.URLError(socket.gaierror(11001, 'getaddrinfo failed')), 'dns', 'DNS lookup failed for a.test'),
+            (urllib.error.URLError(ConnectionRefusedError(10061, 'actively refused')), 'refused', 'Connection refused by a.test'),
+            (ConnectionResetError('reset by peer'), 'unreachable', 'Could not reach a.test (ConnectionResetError'),
+            (OSError(101, 'Network is unreachable'), 'unreachable', 'Could not reach a.test (OSError'),
+            (urllib.error.URLError('no route to host'), 'unreachable', 'Could not reach a.test (URLError'),
+            (ValueError('bad chunk'), 'shape', 'Unusable reply from a.test (ValueError: bad chunk)'),
+        )
+        for failure, reason, text in cases:
+            response = self.client(failure, default_pacing=0).get('https://a.test/x', retries=0)
+            self.assertEqual(response.reason, reason, failure)
+            self.assertIn(text, response.error, failure)
+
+    def test_http_statuses_have_reasons(self):
+        for status, reason in ((200, ''), (204, ''), (429, 'rate_limited'), (999, 'rate_limited'), (401, 'refused'),
+                               (403, 'refused'), (406, 'refused'), (400, 'http_4xx'), (404, 'http_4xx'), (410, 'http_4xx'),
+                               (500, 'http_5xx'), (503, 'http_5xx')):
+            response = self.client(FakeReply(status), default_pacing=0).get('https://a.test/x', retries=0)
+            self.assertEqual((response.status, response.reason), (status, reason))
+
+    def test_calls_that_were_never_sent_have_reasons_too(self):
+        http = self.client(urllib.error.URLError(socket.gaierror(11001, 'getaddrinfo failed')), default_pacing=0)
+        http.get('https://down.test/a')
+        http.get('https://down.test/b')                                  # the breaker opens on DNS failures
+        blocked = http.get('https://down.test/c')
+        self.assertEqual((blocked.error, blocked.reason), (net.CIRCUIT_OPEN, 'dns'))   # why the host was given up
+        http = self.client(FakeReply(), deadline=self.clock.now - 1)
+        late = http.get('https://a.test/x')
+        self.assertEqual((late.error, late.reason), (net.BUDGET_SPENT, 'budget'))
+        self.assertEqual(self.client(FakeReply()).get('file:///etc/passwd').reason, 'shape')
+        with mock.patch.object(net, 'MAX_BODY', 10):
+            self.assertEqual(self.client(FakeReply(body=b'x' * 11)).get('https://a.test/x').reason, 'cap')
+
+    def test_tls_verification_is_never_switched_off(self):
+        source = (PROJECT / 'radar' / 'net.py').read_text(encoding='utf-8')
+        for forbidden in ('CERT_NONE', '_create_unverified_context', 'check_hostname = False', 'verify=False'):
+            self.assertNotIn(forbidden, source)
 
     def test_only_http_urls_are_requested(self):
         http = self.client(FakeReply())
@@ -1066,11 +1125,15 @@ class StoreRunTest(StoreCase):
         run = self.store.latest_run()
         self.assertEqual((run['id'], run['status'], run['summary']), (self.run_id, 'partial', {'new': 1, 'attention': ['Shine']}))
         self.assertLessEqual(run['started_at'], run['finished_at'])
-        self.assertEqual(run['health'], [
+        basics = ('source', 'label', 'kind', 'status', 'found', 'kept', 'requests', 'error')
+        self.assertEqual([{key: row[key] for key in basics} for row in run['health']], [
             {'source': 'LinkedIn', 'label': 'LinkedIn', 'kind': 'linkedin', 'status': 'ok', 'found': 25, 'kept': 1,
              'requests': 4, 'error': None},
             {'source': 'Shine', 'label': 'Shine', 'kind': 'board', 'status': 'blocked', 'found': 0, 'kept': 0,
              'requests': 1, 'error': 'HTTP 403'}])
+        self.assertEqual(set(run['health'][0]) - set(basics),
+                         {'elapsed_s', 'reason', 'pages_complete', 'details_complete', 'employer', 'task', 'at'})
+        self.assertEqual((run['health'][0]['reason'], run['health'][0]['pages_complete']), ('', None))
         self.assertEqual(run['last_attempt'], {'id': self.run_id, 'status': 'partial', 'finished_at': run['finished_at'],
                                                'error': None})
 
@@ -1430,6 +1493,19 @@ class RankerTest(unittest.TestCase):
         other = self.score(company='Mercedes Motors Dealership')
         self.assertFalse(other['fit']['labels']['current_employer'])
 
+    def test_a_registry_flag_keeps_sister_companies_and_the_parent_group_apart(self):
+        registry = rank.Registry([
+            {'name': 'Mercedes-Benz Research and Development India', 'type': 'gcc', 'current_employer': True},
+            {'name': 'Mercedes-Benz Group', 'type': 'gcc'}, {'name': 'Mercedes-Benz Mobility', 'type': 'gcc'}])
+        ranker = rank.make_ranker(model.load_config(), registry, today=TODAY)     # config still says "Mercedes-Benz"
+
+        def current(company):
+            return ranker(model.make_job('s', '1', 'Pega Developer', company, 'u', 'Bengaluru'))['fit']['labels']['current_employer']
+        self.assertTrue(current('Mercedes-Benz Research and Development India'))
+        self.assertFalse(current('Mercedes-Benz Group'))
+        self.assertFalse(current('Mercedes-Benz Mobility'))
+        self.assertTrue(current('Mercedes-Benz Trucks Unlisted'))             # not in the registry: the config name decides
+
     def test_the_current_employer_can_be_flagged_in_the_registry(self):
         registry = rank.Registry([{'name': 'MBRDI', 'aliases': ['Mercedes-Benz Research and Development India'],
                                    'type': 'gcc', 'current_employer': True},
@@ -1512,9 +1588,9 @@ class RankerTest(unittest.TestCase):
 
 class FakeTask:
     def __init__(self, name, kind='board', priority=10, status='ok', jobs=(), raises=None, found=0, requests=1,
-                 error=None, returns=None, journal=None):
+                 error=None, returns=None, journal=None, reason=''):
         self.name, self.label, self.kind, self.priority = name, name, kind, priority
-        self._outcome = dict(status=status, jobs=jobs, found=found, requests=requests, error=error)
+        self._outcome = dict(status=status, jobs=jobs, found=found, requests=requests, error=error, reason=reason)
         self._raises, self._returns, self._journal = raises, returns, journal
         self.ctx = None
 
@@ -1577,7 +1653,12 @@ class ScanTest(ScanCase):
         summary = self.run_scan(self.mixed_tasks())
         self.assertEqual(set(summary) - {'window_days'},
                          {'run_id', 'started_at', 'finished_at', 'minutes', 'status', 'new', 'new_bengaluru',
-                          'new_product_gcc', 'requests', 'sources', 'attention'})
+                          'new_product_gcc', 'requests', 'sources', 'attention', 'mode', 'configured', 'requested',
+                          'attempted', 'completed', 'not_attempted', 'reasons', 'unmatched'})
+        self.assertEqual((summary['mode'], summary['configured'], summary['requested'], summary['attempted'],
+                          summary['completed'], summary['not_attempted'], summary['unmatched']),
+                         ('full', 6, 6, 6, 3, [], []))
+        self.assertEqual(summary['reasons'], {'refused': 1, 'unknown': 2})
         self.assertEqual(summary['status'], 'partial')
         self.assertEqual((summary['new'], summary['new_bengaluru'], summary['new_product_gcc']), (4, 2, 2))
         self.assertEqual(summary['requests'], 17)
@@ -1740,6 +1821,12 @@ class ScanTest(ScanCase):
         final = self.store.kv_get(scan.KV_PROGRESS)
         self.assertEqual((final['run_id'], final['state'], final['status']), (summary['run_id'], 'finished', 'partial'))
         self.assertEqual((final['total'], final['done'], final['new'], final['running']), (6, 6, 4, []))
+        self.assertEqual((final['mode'], final['requested'], final['attempted'], final['completed'],
+                          final['not_attempted']), ('full', 6, 6, 3, []))
+        for key in ('requested', 'attempted', 'completed'):
+            self.assertEqual(final[key], summary[key], key)             # the live counts end equal to the summary's
+        self.assertEqual((seen[0]['requested'], seen[0]['attempted'], seen[0]['completed']), (0, 0, 0))
+        self.assertEqual([snapshot['attempted'] for snapshot in seen], sorted(snapshot['attempted'] for snapshot in seen))
         self.assertEqual(sorted(final['attention']), ['Instahyre', 'Naukri', 'Shine'])
         self.assertEqual(seen[-1], final)
         self.assertEqual(seen[0]['state'], 'running')
@@ -1758,8 +1845,10 @@ class ScanTest(ScanCase):
         second = self.run_scan([Poll('Hirist', status='empty')], progress=seen.append)
         self.assertEqual((polled[0]['run_id'], polled[0]['state']), (second['run_id'], 'running'))
         self.assertNotEqual(polled[0]['run_id'], first['run_id'])
+        # The very first snapshot replaces the old one before the run even has an id.
         self.assertEqual((seen[0]['run_id'], seen[0]['state'], seen[0]['total'], seen[0]['done'], seen[0]['new']),
-                         (second['run_id'], 'running', 0, 0, 0))
+                         (None, 'running', 0, 0, 0))
+        self.assertEqual(seen[1]['run_id'], second['run_id'])
 
     def test_the_fresh_snapshot_is_written_before_sources_are_built(self):
         self.run_scan([FakeTask('Hirist', status='empty')])
@@ -1771,7 +1860,8 @@ class ScanTest(ScanCase):
         fake_sources = mock.MagicMock(build_tasks=build_tasks)
         with mock.patch.dict(sys.modules, {'radar.sources': fake_sources}):
             summary = scan.run_scan(self.config, self.store, http=FakeHttp())
-        self.assertEqual((snapshots[0]['run_id'], snapshots[0]['state']), (summary['run_id'], 'running'))
+        self.assertEqual((snapshots[0]['run_id'], snapshots[0]['state']), (None, 'running'))   # not the old finished one
+        self.assertEqual(self.store.kv_get(scan.KV_PROGRESS)['run_id'], summary['run_id'])
 
     def test_a_failing_progress_callback_does_not_stop_the_scan(self):
         def broken(_snapshot):
@@ -1998,7 +2088,7 @@ def load_cli():
     return module
 
 
-class CliTest(unittest.TestCase):
+class CliCase(unittest.TestCase):
     def setUp(self):
         folder = tempfile.TemporaryDirectory()
         self.addCleanup(folder.cleanup)
@@ -2025,6 +2115,7 @@ class CliTest(unittest.TestCase):
         store.set_state(ids[0], hidden=True)
         return store
 
+class CliTest(CliCase):
     def test_data_dir_follows_the_environment(self):
         self.assertEqual(self.cli.data_dir(), self.data)
         with mock.patch.dict(os.environ, {'PEGA_RADAR_DATA': ''}):
@@ -2063,12 +2154,13 @@ class CliTest(unittest.TestCase):
     def test_scan_exit_codes(self):
         from radar import scan as scan_module
         for status, expected in (('complete', 0), ('partial', 2), ('failed', 1)):
-            summary = {'status': status, 'attention': ['Shine'] if status == 'partial' else []}
+            summary = {'status': status, 'attention': ['Shine'] if status == 'partial' else [], 'mode': 'full',
+                       'attempted': 3, 'requested': 3, 'completed': 2, 'new': 1, 'unmatched': [], 'not_attempted': []}
             with mock.patch.object(scan_module, 'run_scan', return_value=summary) as run, \
                     mock.patch.object(scan_module, 'setup_console_logging'):
                 code, output = self.invoke('scan', '--minutes', '5')
             self.assertEqual(code, expected, status)
-            self.assertEqual(run.call_args.kwargs['minutes'], 5)
+            self.assertEqual(run.call_args.kwargs, {'minutes': 5, 'only': None, 'mode': 'full'})
             self.assertEqual('Shine' in output, status == 'partial')
         self.assertFalse((self.data / scan_module.LOCK_NAME).exists())
 
@@ -2106,6 +2198,1614 @@ class LauncherFilesTest(unittest.TestCase):
                        'New-TimeSpan -Hours 2', '-MultipleInstances IgnoreNew', '-StartWhenAvailable',
                        '-LogonType Interactive', '-WorkingDirectory $ProjectDir', 'Unregister-ScheduledTask'):
             self.assertIn(needle, text)
+
+
+# ───────────────────────────── v2: registry and targets ─────────────────────────────
+
+V2_COMPANIES = [
+    {'name': 'Acme', 'aliases': ['Acme Corp'], 'type': 'product', 'bengaluru': True, 'linkedin_query': True,
+     'career_url': 'https://careers.acme.test', 'parent': 'Acme Holdings',
+     'portals': [{'kind': 'workday', 'tenant': 'acme', 'datacentre': 'wd503', 'site': 'Careers', 'state': 'verified',
+                  'scope': 'india'}]},
+    {'name': 'Booking.com', 'type': 'product', 'bengaluru': True,
+     'portals': [{'kind': 'icims', 'host': 'jobs.booking.test', 'state': 'candidate', 'scope': 'global', 'note': 'research'}]},
+    {'name': 'Legacy Bank', 'type': 'gcc', 'ats': {'kind': 'greenhouse', 'board': 'legacybank'}},
+    {'name': 'Toyota', 'type': 'gcc', 'bengaluru': None,
+     'portals': [{'kind': 'workday', 'tenant': 'tmna', 'state': 'wrong_scope', 'scope': 'global', 'note': 'TMNA is US only'}]},
+    {'name': 'HDFC Bank', 'type': 'enterprise',
+     'portals': [{'kind': 'ripplehire', 'state': 'unsupported', 'scope': 'unknown', 'note': 'needs a browser session'}],
+     'inventory_note': 'RippleHire front end'},
+    {'name': 'Nothing Configured', 'type': 'gcc'},
+]
+V2_TARGETS = {'rows': [
+    {'row': 1, 'original_name': 'ACME Corporation', 'original_url': 'https://acme.test', 'employer': 'Acme',
+     'resolution': 'matched', 'note': 'naming variant'},
+    {'row': 2, 'original_name': 'Acme India', 'employer': 'Acme', 'resolution': 'related', 'note': 'business unit'},
+    {'row': 3, 'original_name': 'Booking', 'employer': 'Booking.com', 'resolution': 'added'},
+    {'row': 4, 'original_name': 'Mystery Systems', 'original_url': 'https://mystery.test/careers', 'employer': None,
+     'resolution': 'unresolved', 'note': 'two companies share this name'},
+    {'row': 5, 'original_name': 'Ghost Ltd', 'employer': 'Ghost', 'resolution': 'matched'},
+    {'row': 6, 'original_name': 'Toyota Motor', 'employer': 'Toyota', 'resolution': 'matched'},
+]}
+
+
+def v2_registry():
+    return rank.Registry(V2_COMPANIES)
+
+
+# The task names radar.sources builds for the scannable portals above, whatever its naming scheme.
+V2_TASKS = {employer: names[0] for employer, names in scan.portal_tasks(v2_registry()).items()}
+
+
+def v2_targets(folder):
+    path = Path(folder) / 'targets.json'
+    path.write_text(json.dumps(V2_TARGETS), encoding='utf-8')
+    return rank.load_targets(path)
+
+
+class RegistryV2Test(unittest.TestCase):
+    def test_employers_have_a_uniform_shape(self):
+        employers = {employer['name']: employer for employer in v2_registry().employers}
+        self.assertEqual(set(employers['Acme']), {'name', 'aliases', 'type', 'bengaluru', 'linkedin_query', 'parent',
+                                                  'career_url', 'portals', 'inventory_note', 'current_employer'})
+        acme = employers['Acme']
+        self.assertEqual((acme['parent'], acme['career_url'], acme['linkedin_query'], acme['bengaluru']),
+                         ('Acme Holdings', 'https://careers.acme.test', True, True))
+        self.assertEqual(acme['portals'][0]['datacentre'], 'wd503')           # any Workday datacentre is kept as given
+        bare = employers['Nothing Configured']
+        self.assertEqual((bare['portals'], bare['parent'], bare['career_url'], bare['bengaluru'], bare['linkedin_query']),
+                         ([], None, None, None, False))
+
+    def test_a_legacy_ats_block_becomes_one_verified_portal(self):
+        legacy = next(employer for employer in v2_registry().employers if employer['name'] == 'Legacy Bank')
+        self.assertEqual(legacy['portals'], [{'kind': 'greenhouse', 'board': 'legacybank', 'state': 'verified',
+                                              'scope': 'unknown'}])
+        both = rank.employer_portals({'name': 'X', 'ats': {'kind': 'lever', 'board': 'old'},
+                                      'portals': [{'kind': 'ashby', 'board': 'new', 'state': 'candidate', 'scope': 'india'}]})
+        self.assertEqual([portal['kind'] for portal in both], ['ashby'])       # portals replaces ats
+
+    def test_an_unknown_state_is_never_trusted_as_verified(self):
+        portals = rank.employer_portals({'name': 'X', 'portals': [{'kind': 'lever', 'board': 'x', 'state': 'trusted'},
+                                                                  'junk', {'kind': 'ashby', 'scope': 'mars'}]})
+        self.assertEqual([(portal['kind'], portal['state'], portal['scope']) for portal in portals],
+                         [('lever', 'candidate', 'unknown'), ('ashby', 'candidate', 'unknown')])
+
+    def test_load_targets(self):
+        with tempfile.TemporaryDirectory() as folder:
+            self.assertEqual(rank.load_targets(Path(folder) / 'missing.json'), [])   # an empty inventory, not a crash
+            targets = v2_targets(folder)
+            self.assertEqual(len(targets), 6)
+            self.assertEqual(targets[0], {'row': 1, 'original_name': 'ACME Corporation', 'original_url': 'https://acme.test',
+                                          'employer': 'Acme', 'resolution': 'matched', 'note': 'naming variant'})
+            self.assertEqual((targets[3]['employer'], targets[3]['resolution']), (None, 'unresolved'))
+            path = Path(folder) / 'targets.json'
+            for text in ('', '{broken', '[]', '{"rows": null}'):
+                path.write_text(text, encoding='utf-8')
+                self.assertEqual(rank.load_targets(path), [], text)
+            path.write_text(json.dumps({'rows': [{'original_name': 'A', 'resolution': 'guessed'}, {'row': 2}, 'junk']}),
+                            encoding='utf-8')
+            self.assertEqual(rank.load_targets(path), [{'row': None, 'original_name': 'A', 'original_url': None,
+                                                       'employer': None, 'resolution': 'unresolved', 'note': None}])
+
+
+# ───────────────────────────── v2: store ─────────────────────────────
+
+V1_SCHEMA = """
+CREATE TABLE jobs(
+    id TEXT PRIMARY KEY, title TEXT NOT NULL, company TEXT NOT NULL DEFAULT '', company_key TEXT NOT NULL DEFAULT '',
+    employer_type TEXT NOT NULL DEFAULT 'unknown', city TEXT NOT NULL DEFAULT '', cities_json TEXT NOT NULL DEFAULT '[]',
+    location TEXT NOT NULL DEFAULT '', is_bengaluru INTEGER NOT NULL DEFAULT 0,
+    url TEXT NOT NULL DEFAULT '', apply_url TEXT, description TEXT NOT NULL DEFAULT '',
+    experience_min REAL, experience_max REAL, salary_min_lpa REAL, salary_max_lpa REAL,
+    posted_at TEXT, requisition_id TEXT, first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL,
+    first_run_id TEXT, last_run_id TEXT, score INTEGER NOT NULL DEFAULT 0, fit_json TEXT NOT NULL DEFAULT '{}',
+    pega_title INTEGER NOT NULL DEFAULT 0, pega_duty INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE sightings(
+    source TEXT NOT NULL, source_id TEXT NOT NULL, job_id TEXT NOT NULL, url TEXT NOT NULL DEFAULT '',
+    label TEXT NOT NULL DEFAULT '', first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL,
+    PRIMARY KEY(source, source_id));
+CREATE TABLE user_state(
+    job_id TEXT PRIMARY KEY, saved INTEGER NOT NULL DEFAULT 0, status TEXT NOT NULL DEFAULT 'new',
+    notes TEXT NOT NULL DEFAULT '', updated_at TEXT NOT NULL, hidden INTEGER NOT NULL DEFAULT 0, seen_at TEXT);
+CREATE TABLE runs(id TEXT PRIMARY KEY, started_at TEXT NOT NULL, finished_at TEXT, status TEXT NOT NULL, summary_json TEXT);
+CREATE TABLE source_health(
+    run_id TEXT NOT NULL, source TEXT, label TEXT, kind TEXT, status TEXT, found INTEGER, kept INTEGER,
+    requests INTEGER, error TEXT);
+CREATE TABLE kv(key TEXT PRIMARY KEY, value_json TEXT NOT NULL);
+INSERT INTO jobs(id, title, company, company_key, city, cities_json, location, is_bengaluru, url, description,
+                 first_seen_at, last_seen_at, first_run_id, last_run_id, score)
+    VALUES ('job1', 'Pega Developer', 'Acme', 'acme', 'Bengaluru', '["Bengaluru"]', 'Bengaluru', 1,
+            'https://careers.acme.test/1', 'Build Pega applications.', '2026-11-14T02:00:00+00:00',
+            '2026-11-14T02:00:00+00:00', 'run-old', 'run-old', 77),
+           ('job2', 'Pega Architect', 'Globex', 'globex', 'Pune', '["Pune"]', 'Pune', 0, 'https://x.test/2', '',
+            '2026-11-14T02:00:00+00:00', '2026-11-14T02:00:00+00:00', 'run-old', 'run-old', 40);
+INSERT INTO sightings VALUES ('Employer site', 'R1', 'job1', 'https://careers.acme.test/1', 'Acme',
+                              '2026-11-14T02:00:00+00:00', '2026-11-14T02:00:00+00:00'),
+                             ('LinkedIn', '42', 'job1', 'https://www.linkedin.com/jobs/view/42', 'LinkedIn',
+                              '2026-11-14T02:00:00+00:00', '2026-11-14T02:00:00+00:00');
+INSERT INTO user_state VALUES ('job1', 1, 'applied', 'Spoke to the recruiter on Friday.', '2026-11-14T03:00:00+00:00', 0,
+                               '2026-11-14T03:00:00+00:00'),
+                              ('job2', 0, 'new', '', '2026-11-14T03:00:00+00:00', 1, NULL);
+INSERT INTO runs VALUES ('run-old', '2026-11-14T01:30:00+00:00', '2026-11-14T02:05:00+00:00', 'partial', '{"new": 2}');
+INSERT INTO source_health VALUES ('run-old', 'Employer site', 'Acme', 'ats', 'ok', 12, 1, 3, NULL),
+                                 ('run-old', 'Shine', 'Shine', 'board', 'blocked', 0, 0, 1, 'HTTP 403');
+INSERT INTO kv VALUES ('linkedin_checkpoint', '{"done": ["pega|Bengaluru"]}');
+"""
+
+
+class MigrationTest(unittest.TestCase):
+    def setUp(self):
+        folder = tempfile.TemporaryDirectory()
+        self.addCleanup(folder.cleanup)
+        self.data = Path(folder.name) / 'data'
+        self.data.mkdir()
+        self.path = self.data / 'radar.sqlite3'
+
+    def v1_database(self):
+        db = sqlite3.connect(self.path)
+        db.executescript(V1_SCHEMA)
+        db.close()
+
+    def backups(self):
+        return sorted(path.name for path in (self.data / 'backups').glob('radar-*.sqlite3')) \
+            if (self.data / 'backups').exists() else []
+
+    def test_a_new_database_needs_no_backup(self):
+        Store(self.path)
+        Store(self.path)
+        self.assertEqual(self.backups(), [])
+
+    def test_a_v1_database_is_backed_up_then_migrated_with_everything_intact(self):
+        self.v1_database()
+        store = Store(self.path)
+        self.assertEqual(len(self.backups()), 1)
+        self.assertRegex(self.backups()[0], r'^radar-\d{8}T\d{6}Z\.sqlite3$')
+        backup = sqlite3.connect(self.data / 'backups' / self.backups()[0])
+        self.assertEqual(backup.execute('SELECT COUNT(*) FROM jobs').fetchone()[0], 2)        # the copy is the old data
+        self.assertNotIn('possibly_closed', {row[1] for row in backup.execute('PRAGMA table_info(jobs)')})
+        backup.close()
+
+        job = store.job('job1')
+        self.assertEqual((job['title'], job['company'], job['score'], job['description'], job['is_bengaluru']),
+                         ('Pega Developer', 'Acme', 77, 'Build Pega applications.', True))
+        self.assertEqual((job['saved'], job['status'], job['notes'], job['seen']),
+                         (True, 'applied', 'Spoke to the recruiter on Friday.', True))
+        self.assertEqual((job['possibly_closed'], job['last_confirmed_at']), (False, None))
+        self.assertEqual([sighting['source'] for sighting in job['sightings']], ['Employer site', 'LinkedIn'])
+        self.assertTrue(store.job('job2')['hidden'])
+        self.assertEqual(store.kv_get('linkedin_checkpoint'), {'done': ['pega|Bengaluru']})
+        run = store.latest_run()
+        self.assertEqual((run['id'], run['summary'], len(run['health'])), ('run-old', {'new': 2}, 2))
+        self.assertEqual((run['health'][0]['reason'], run['health'][0]['task'], run['health'][0]['pages_complete']),
+                         ('', None, None))
+        self.assertEqual(store.known_ids('LinkedIn'), {'42'})
+
+        # The identity links still work: the same sighting updates the same job, with its state untouched.
+        saved = store.save_result(store.start_run(), model.make_result(
+            'LinkedIn', 'LinkedIn', 'linkedin', jobs=[model.make_job('LinkedIn', '42', 'Pega Developer', 'Acme', 'u',
+                                                                     'Bengaluru')]), plain_ranker)
+        self.assertEqual(saved['updated'], ['job1'])
+        self.assertEqual(store.job('job1')['notes'], 'Spoke to the recruiter on Friday.')
+
+    def test_migration_is_repeatable(self):
+        self.v1_database()
+        Store(self.path)
+        Store(self.path)
+        Store(self.path)
+        self.assertEqual(len(self.backups()), 1)                             # nothing left to migrate, so no new copy
+        db = sqlite3.connect(self.path)
+        columns = [row[1] for row in db.execute('PRAGMA table_info(source_health)')]
+        db.close()
+        self.assertEqual(len(columns), len(set(columns)))
+        for column in ('elapsed_s', 'reason', 'pages_complete', 'details_complete', 'employer'):
+            self.assertIn(column, columns)
+
+    def test_a_half_migrated_database_is_finished(self):
+        self.v1_database()
+        db = sqlite3.connect(self.path)
+        db.execute('ALTER TABLE jobs ADD COLUMN last_confirmed_at TEXT')
+        db.execute("ALTER TABLE source_health ADD COLUMN reason TEXT NOT NULL DEFAULT ''")
+        db.close()
+        store = Store(self.path)
+        self.assertFalse(store.job('job1')['possibly_closed'])
+        self.assertEqual(len(self.backups()), 1)
+
+    def test_only_the_five_newest_backups_are_kept(self):
+        store = Store(self.path)
+        folder = self.data / 'backups'
+        folder.mkdir()
+        for day in range(1, 8):
+            (folder / f'radar-2026010{day}T000000Z.sqlite3').write_bytes(b'old')
+        (folder / 'companies-20260101T000000Z.json').write_text('{}', encoding='utf-8')
+        made = store.backup()
+        names = self.backups()
+        self.assertEqual(len(names), 5)
+        self.assertIn(made.name, names)
+        self.assertNotIn('radar-20260101T000000Z.sqlite3', names)
+        self.assertTrue((folder / 'companies-20260101T000000Z.json').exists())   # other backups are not touched
+        again = store.backup()                                               # the same second gets its own file
+        self.assertNotEqual(again.name, made.name)
+
+
+class ClosureTest(StoreCase):
+    def board(self, *ids, task='ats:workday:acme', status='ok', pages_complete=True, label='Acme', run_id=None, **extra):
+        jobs = [self.employer(source_id, title=f'Pega Developer {source_id}') for source_id in ids]
+        if not ids and status == 'ok':
+            status = 'empty'
+        result = model.make_result(model.EMPLOYER_SOURCE, label, 'ats', status=status, jobs=jobs,
+                                   pages_complete=pages_complete, employer=label, **extra)
+        result['task'] = task
+        return self.store.save_result(run_id or self.run_id, result, plain_ranker)
+
+    def state(self, job_id):
+        job = self.store.job(job_id)
+        return job['possibly_closed'], job['last_confirmed_at'] is not None
+
+    def test_a_complete_run_confirms_what_it_lists_and_flags_what_it_dropped(self):
+        first, second = self.board('1', '2')['new']
+        self.assertEqual((self.state(first), self.state(second)), ((False, True), (False, True)))
+        self.board('1')                                                    # a complete read no longer lists 2
+        self.assertEqual((self.state(first), self.state(second)), ((False, True), (True, True)))
+        self.assertEqual(self.store.jobs()[1], 2)                          # flagged, never deleted
+        rows = {row['id']: row for row in self.store.jobs()[0]}
+        self.assertTrue(rows[second]['possibly_closed'])
+        self.assertIn('last_confirmed_at', rows[second])
+        self.board('1', '2')                                               # listed again: cleared
+        self.assertEqual(self.state(second), (False, True))
+
+    def test_an_empty_complete_run_flags_everything_it_used_to_list(self):
+        ids = self.board('1', '2')['new']
+        self.board()
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [True, True])
+
+    def test_a_mass_drop_is_only_believed_on_a_second_complete_read(self):
+        ids = self.board('1', '2', '3', '4', '5', '6')['new']
+        first = self.board('1', '2')                                       # 4 of 6 vanish in one read
+        self.assertEqual(first['note'], 'listing dropped 4 of 6 jobs at once; not treated as closures')
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [False] * 6)
+        self.store.finish_run(self.run_id, 'complete', {})
+        health = self.store.latest_run()['health'][-1]
+        self.assertEqual((health['status'], health['error']),
+                         ('ok', 'listing dropped 4 of 6 jobs at once; not treated as closures'))
+        second = self.board('1', '2')                                      # the next complete read still lacks them
+        self.assertEqual(second['note'], '4 closures confirmed on a second complete read')
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [False, False, True, True, True, True])
+        self.assertNotIn('note', self.board('1', '2'))                     # nothing further to say
+
+    def test_a_mass_drop_that_comes_back_flags_nothing(self):
+        ids = self.board('1', '2', '3', '4', '5', '6')['new']
+        self.assertIn('dropped 4 of 6', self.board('1', '2')['note'])
+        self.assertNotIn('note', self.board('1', '2', '3', '4', '5', '6'))   # the site recovered: all six are back
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [False] * 6)
+        self.assertIn('dropped 4 of 6', self.board('1', '2')['note'])      # a new drop starts from scratch
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [False] * 6)
+
+    def test_an_incomplete_read_between_does_not_confirm_a_mass_drop(self):
+        ids = self.board('1', '2', '3', '4', '5', '6')['new']
+        self.board('1', '2')
+        self.board('1', status='partial')                                  # proves nothing either way
+        self.board(status='error', reason='timeout')
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [False] * 6)
+        self.assertIn('4 closures confirmed', self.board('1', '2')['note'])
+
+    def test_a_growing_mass_drop_confirms_the_old_part_and_suspects_the_new(self):
+        ids = self.board('1', '2', '3', '4', '5', '6', '7', '8')['new']
+        self.assertIn('dropped 5 of 8', self.board('1', '2', '3')['note'])
+        saved = self.board()                                               # now everything is gone
+        self.assertEqual(saved['note'], 'listing dropped 3 of 8 jobs at once; not treated as closures; '
+                                        '5 closures confirmed on a second complete read')
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [False] * 3 + [True] * 5)
+        self.assertNotIn('dropped', self.board()['note'])                  # and the last three on the read after that
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [True] * 8)
+
+    def test_exactly_half_or_fewer_than_three_is_believed(self):
+        ids = self.board('1', '2', '3', '4')['new']
+        self.assertNotIn('note', self.board('1', '2'))                     # 2 of 4: under the minimum of three
+        self.assertEqual([self.state(job_id)[0] for job_id in ids], [False, False, True, True])
+        more = self.board('1', '2', '5', '6', '7', '8')['new']
+        self.assertNotIn('note', self.board('1', '2', '5'))                # 3 of 6: half, not more than half
+        self.assertEqual([self.state(job_id)[0] for job_id in more], [False, True, True, True])
+
+    def test_incomplete_or_failed_runs_never_flag(self):
+        job_id = self.board('1', '2')['new'][1]
+        for outcome in ({'status': 'partial'}, {'status': 'error', 'reason': 'timeout'}, {'status': 'blocked'},
+                        {'status': 'maintenance'}, {'status': 'ok', 'pages_complete': False},
+                        {'status': 'ok', 'pages_complete': None}, {'status': 'empty', 'pages_complete': None}):
+            ids = () if outcome['status'] != 'ok' else ('1',)
+            self.board(*ids, **outcome)
+            self.assertFalse(self.state(job_id)[0], outcome)
+
+    def test_a_run_that_did_not_read_every_page_does_not_confirm(self):
+        job_id = self.board('1', pages_complete=None)['new'][0]
+        self.assertEqual(self.state(job_id), (False, False))
+        self.board('1', status='partial')
+        self.assertEqual(self.state(job_id), (False, False))
+
+    def test_only_the_task_that_listed_a_job_can_drop_it(self):
+        mine = self.board('1')['new'][0]
+        other = self.store.save_result(self.run_id, {**model.make_result(
+            model.EMPLOYER_SOURCE, 'Globex', 'ats', jobs=[self.employer('g1', company='Globex')], pages_complete=True),
+            'task': 'ats:lever:globex'}, plain_ranker)['new'][0]
+        self.board('1')
+        self.assertFalse(self.state(other)[0])                             # Acme's board says nothing about Globex
+        self.board(task='ats:lever:globex', label='Globex')
+        self.assertEqual((self.state(mine)[0], self.state(other)[0]), (False, True))
+
+    def test_a_job_on_two_boards_is_flagged_only_when_both_drop_it(self):
+        job_id = self.board('1')['new'][0]
+        board = model.make_result('Hirist', 'Hirist', 'board', pages_complete=True, jobs=[
+            model.make_job('Hirist', 'h1', 'Pega Developer 1', 'Acme', 'https://hirist.test/h1', 'Bengaluru')])
+        board['task'] = 'board:hirist'
+        self.assertEqual(self.store.save_result(self.run_id, board, plain_ranker)['updated'], [job_id])
+        self.board()                                                       # the employer site drops it
+        self.assertFalse(self.state(job_id)[0])                            # Hirist still lists it
+        gone = model.make_result('Hirist', 'Hirist', 'board', status='empty', pages_complete=True)
+        gone['task'] = 'board:hirist'
+        self.store.save_result(self.run_id, gone, plain_ranker)
+        self.assertTrue(self.state(job_id)[0])
+
+    def test_linkedin_neither_proves_absence_nor_is_ignored_when_it_still_lists_the_job(self):
+        job_id = self.board('1')['new'][0]
+        card = model.make_result('LinkedIn', 'LinkedIn', 'linkedin', pages_complete=True,
+                                 jobs=[self.linkedin('77', title='Pega Developer 1')])
+        card['task'] = 'linkedin'
+        self.assertEqual(self.store.save_result(self.run_id, card, plain_ranker)['updated'], [job_id])
+        quiet = model.make_result('LinkedIn', 'LinkedIn', 'linkedin', status='empty', pages_complete=True)
+        quiet['task'] = 'linkedin'
+        self.store.save_result(self.run_id, quiet, plain_ranker)           # a time-windowed search proves nothing
+        self.assertFalse(self.state(job_id)[0])
+        with mock.patch('radar.store.now_iso', return_value='2099-01-01T00:00:00+00:00'):
+            self.board()                                                   # the employer site drops it
+        self.assertTrue(self.state(job_id)[0])
+        with mock.patch('radar.store.now_iso', return_value='2099-01-02T00:00:00+00:00'):
+            self.store.save_result(self.run_id, card, plain_ranker)        # LinkedIn lists it after that: open again
+        self.assertFalse(self.state(job_id)[0])
+
+    def test_sightings_from_before_tasks_were_recorded_are_never_flagged(self):
+        legacy = self.save(self.employer('old'), source=model.EMPLOYER_SOURCE, label='Acme', kind='ats')['new'][0]
+        self.board()
+        self.assertFalse(self.state(legacy)[0])
+
+    def test_user_state_and_export_survive_a_closure(self):
+        job_id = self.board('1')['new'][0]
+        self.store.set_state(job_id, status='applied', notes='sent CV')
+        self.board()
+        job = self.store.job(job_id)
+        self.assertEqual((job['possibly_closed'], job['status'], job['notes']), (True, 'applied', 'sent CV'))
+        exported = self.store.export_rows()[0]
+        self.assertEqual((exported['possibly_closed'], exported['last_confirmed_at'] is not None), (True, True))
+
+
+class HealthAndHistoryTest(StoreCase):
+    def test_health_rows_carry_the_new_columns(self):
+        result = model.make_result(model.EMPLOYER_SOURCE, 'Acme', 'ats', status='partial', reason='timeout', elapsed_s=41.26,
+                                   pages_complete=False, details_complete=True, employer='Acme', error='page 3 timed out')
+        result['task'] = 'ats:workday:acme'
+        self.store.save_result(self.run_id, result, plain_ranker)
+        self.store.record_health(self.run_id, {'source': model.EMPLOYER_SOURCE, 'label': 'Acme India', 'kind': 'ats',
+                                               'status': 'partial', 'found': 9, 'kept': 2, 'reason': 'timeout',
+                                               'employer': 'Acme India', 'task': 'ats:workday:acme-india'})
+        self.store.finish_run(self.run_id, 'partial', {})
+        first, second = self.store.latest_run()['health']
+        self.assertEqual((first['reason'], first['elapsed_s'], first['pages_complete'], first['details_complete'],
+                          first['employer'], first['task']), ('timeout', 41.3, False, True, 'Acme', 'ats:workday:acme'))
+        self.assertIsNotNone(first['at'])
+        self.assertEqual((second['label'], second['kept'], second['found'], second['requests'], second['pages_complete']),
+                         ('Acme India', 2, 9, 0, None))
+        self.assertEqual(self.store.jobs()[1], 0)                          # record_health touches no job
+
+    def test_task_history_is_the_latest_row_per_task(self):
+        def outcome(task, status, run_id):
+            result = model.make_result('Hirist', task, 'board', status=status)
+            result['task'] = task
+            self.store.save_result(run_id, result, plain_ranker)
+        outcome('board:a', 'error', self.run_id)
+        outcome('board:b', 'empty', self.run_id)
+        second = self.store.start_run()
+        outcome('board:a', 'empty', second)
+        self.store.save_result(second, model.make_result('Old', 'Old', 'board'), plain_ranker)   # no task name
+        history = self.store.task_history()
+        self.assertEqual(set(history), {'board:a', 'board:b'})
+        self.assertEqual((history['board:a']['status'], history['board:a']['run_id']), ('empty', second))
+        self.assertEqual(history['board:b']['run_id'], self.run_id)
+        self.assertTrue(history['board:a']['run_started_at'])
+        self.assertEqual(history['board:a']['run_seq'], history['board:b']['run_seq'] + 1)   # runs are numbered in order
+
+    def test_latest_coverage_run_merges_later_narrow_runs_into_the_last_full_one(self):
+        def outcome(task, status, run_id, **extra):
+            result = model.make_result('Hirist', task, 'board', status=status, **extra)
+            result['task'] = task
+            self.store.save_result(run_id, result, plain_ranker)
+        self.assertIsNone(self.store.latest_coverage_run())
+        for task, status in (('board:a', 'empty'), ('board:b', 'blocked'), ('board:c', 'error')):
+            outcome(task, status, self.run_id)
+        self.store.finish_run(self.run_id, 'partial', {'mode': 'full', 'requested': 3})
+        retry = self.store.start_run()
+        outcome('board:b', 'empty', retry)
+        outcome('board:c', 'error', retry, reason='budget')                # cut off again: keeps its real outcome
+        with mock.patch('radar.store.now_iso', return_value='2099-01-01T00:00:00+00:00'):
+            self.store.finish_run(retry, 'partial', {'mode': 'retry', 'requested': 2})
+        failed = self.store.start_run()
+        outcome('board:a', 'error', failed)
+        with mock.patch('radar.store.now_iso', return_value='2099-01-02T00:00:00+00:00'):
+            self.store.finish_run(failed, 'failed', {'mode': 'full', 'error': 'boom'})
+
+        self.assertEqual((self.store.latest_run()['id'], len(self.store.latest_run()['health'])), (retry, 2))   # the narrow run
+        run = self.store.latest_coverage_run()
+        self.assertEqual((run['id'], run['summary'], run['later_runs'], run['last_attempt']['status']),
+                         (self.run_id, {'mode': 'full', 'requested': 3}, [retry], 'failed'))
+        self.assertEqual({row['task']: (row['status'], row['reason'], row['run_id']) for row in run['health']},
+                         {'board:a': ('empty', '', self.run_id), 'board:b': ('empty', '', retry),
+                          'board:c': ('error', '', self.run_id)})
+
+    def test_latest_coverage_run_without_a_full_run(self):
+        result = model.make_result('Hirist', 'Hirist', 'board', status='empty')
+        result['task'] = 'board:hirist'
+        self.store.save_result(self.run_id, result, plain_ranker)
+        self.store.finish_run(self.run_id, 'complete', {'mode': 'only'})
+        run = self.store.latest_coverage_run()
+        self.assertEqual((run['id'], run['later_runs'], [row['task'] for row in run['health']]),
+                         (self.run_id, [], ['board:hirist']))
+
+    def test_latest_full_run_seq(self):
+        # Every run here starts and finishes within the same second: the order still has to be exact.
+        self.assertIsNone(self.store.latest_full_run_seq())
+        self.store.finish_run(self.run_id, 'complete', {'mode': 'full'})
+        first = self.store.latest_full_run_seq()
+        self.store.finish_run(self.store.start_run(), 'partial', {'mode': 'retry'})
+        self.store.finish_run(self.store.start_run(), 'failed', {'mode': 'full'})
+        self.store.start_run()                                             # still running
+        self.assertEqual(self.store.latest_full_run_seq(), first)          # retry, failed and unfinished runs do not count
+        self.store.finish_run(self.store.start_run(), 'partial', {})       # a summary without a mode is a full scan
+        self.assertEqual(self.store.latest_full_run_seq(), first + 4)
+
+
+class CoverageTest(StoreCase):
+    def setUp(self):
+        super().setUp()
+        self.registry = v2_registry()
+        self.targets = v2_targets(self.folder)
+
+    def attempt(self, employer, status='ok', task=None, run_id=None, jobs=(), **extra):
+        result = model.make_result(model.EMPLOYER_SOURCE, employer, 'ats', status=status, jobs=jobs, employer=employer,
+                                   **extra)
+        result['task'] = task or V2_TASKS[employer]
+        ranker = rank.make_ranker(model.load_config(), self.registry, today=TODAY)
+        return self.store.save_result(run_id or self.run_id, result, ranker)
+
+    def rows(self):
+        return {row['canonical'] or 'target: ' + row['original_names'][0]: row
+                for row in self.store.coverage(self.registry, self.targets)}
+
+    def test_every_employer_and_every_unresolved_target_has_a_row(self):
+        rows = self.rows()
+        self.assertEqual(set(rows), {'Acme', 'Booking.com', 'Legacy Bank', 'Toyota', 'HDFC Bank', 'Nothing Configured',
+                                     'target: Mystery Systems', 'target: Ghost Ltd'})
+        for row in rows.values():
+            self.assertEqual(tuple(row), radar_store.COVERAGE_COLUMNS)
+            self.assertTrue(row['next_action'])
+
+    def test_identity_configuration_and_inventory_states(self):
+        rows = self.rows()
+        acme = rows['Acme']
+        self.assertEqual((acme['original_names'], acme['original_rows'], acme['type'], acme['bengaluru'], acme['parent'],
+                          acme['career_url'], acme['linkedin_query']),
+                         (['ACME Corporation', 'Acme India'], [1, 2], 'product', True, 'Acme Holdings',
+                          'https://careers.acme.test', True))
+        self.assertEqual(acme['portals'], [{'kind': 'workday', 'state': 'verified', 'scope': 'india', 'note': None,
+                                            'business_unit': None}])
+        self.assertEqual({name: row['inventory_state'] for name, row in rows.items()}, {
+            'Acme': 'configured', 'Booking.com': 'configured', 'Legacy Bank': 'configured',
+            'Toyota': 'wrong scope only', 'HDFC Bank': 'unsupported', 'Nothing Configured': 'not configured',
+            'target: Mystery Systems': 'identity unresolved', 'target: Ghost Ltd': 'identity unresolved'})
+        self.assertEqual((rows['Booking.com']['unverified'], rows['Acme']['unverified']), (True, False))
+        unresolved = rows['target: Mystery Systems']
+        self.assertEqual((unresolved['canonical'], unresolved['career_url'], unresolved['inventory_note'], unresolved['portals']),
+                         (None, 'https://mystery.test/careers', 'two companies share this name', []))
+        self.assertIn("'Ghost' is not in companies.json", rows['target: Ghost Ltd']['inventory_note'])
+        self.assertEqual(rows['HDFC Bank']['inventory_note'], 'RippleHire front end')
+
+    def test_the_task_names_come_from_the_portals_configured_today(self):
+        self.assertEqual(sorted(V2_TASKS), ['Acme', 'Booking.com', 'Legacy Bank'])   # only scannable portals get a task
+        self.assertEqual(len(set(V2_TASKS.values())), 3)
+        self.assertEqual(scan.portal_tasks(rank.Registry()), {})
+
+    def test_nothing_unattempted_is_ever_shown_as_empty(self):
+        for name, row in self.rows().items():
+            self.assertIsNone(row['latest_status'], name)
+            self.assertIsNone(row['last_attempt_at'])
+            self.assertEqual((row['jobs_total'], row['jobs_on_file'], row['jobs_open']), (0, 0, 0))
+            self.assertEqual([source['task'] for source in row['sources']], [V2_TASKS[name]] if name in V2_TASKS else [])
+            self.assertTrue(all(source['status'] is None for source in row['sources']))
+        self.attempt('Acme', status='empty', pages_complete=True)
+        rows = self.rows()
+        self.assertEqual(rows['Acme']['latest_status'], 'empty')            # attempted and really empty
+        for name in ('Booking.com', 'Toyota', 'HDFC Bank', 'Nothing Configured', 'target: Mystery Systems'):
+            self.assertIsNone(rows[name]['latest_status'], name)
+
+    def test_latest_outcome_success_time_and_completeness(self):
+        self.attempt('Acme', jobs=[self.employer('1'), self.employer('2', title='Pega Lead')], pages_complete=True,
+                     details_complete=True)
+        first = self.rows()['Acme']
+        self.assertEqual((first['latest_status'], first['latest_reason'], first['pages_complete'], first['details_complete'],
+                          first['jobs_total'], first['jobs_open'], first['run_id']), ('ok', None, True, True, 2, 2, self.run_id))
+        self.assertEqual(first['last_success_at'], first['last_attempt_at'])
+        second_run = self.store.start_run()
+        with mock.patch('radar.store.now_iso', return_value='2099-01-01T00:00:00+00:00'):
+            self.attempt('Acme', status='partial', reason='timeout', error='page 2 timed out', pages_complete=False,
+                         run_id=second_run)
+        row = self.rows()['Acme']
+        self.assertEqual((row['latest_status'], row['latest_reason'], row['latest_error'], row['pages_complete'],
+                          row['run_id'], row['last_attempt_at']),
+                         ('partial', 'timeout', 'page 2 timed out', False, second_run, '2099-01-01T00:00:00+00:00'))
+        self.assertEqual(row['last_success_at'], first['last_success_at'])  # the earlier success is still remembered
+        self.assertEqual(row['sources'], [{'task': V2_TASKS['Acme'], 'status': 'partial', 'reason': 'timeout',
+                                           'at': '2099-01-01T00:00:00+00:00', 'run_id': second_run}])
+
+    def test_several_portals_are_summarised_by_the_worst_latest_outcome(self):
+        tasks = {'Acme': ['ats:workday:acme', 'ats:icims:acme']}
+        self.attempt('Acme', task='ats:workday:acme', pages_complete=True, jobs=[self.employer('1')])
+        row = {item['canonical']: item for item in self.store.coverage(self.registry, self.targets, tasks)}['Acme']
+        # One board read, the other never tried: nothing is known about half of this employer.
+        self.assertEqual((row['latest_status'], row['pages_complete'], [source['status'] for source in row['sources']]),
+                         (None, None, ['ok', None]))
+        self.assertIn('Not attempted yet', row['next_action'])
+        self.assertIsNotNone(row['last_success_at'])
+        self.attempt('Acme', task='ats:icims:acme', status='blocked', reason='refused', error='HTTP 403')
+        row = {item['canonical']: item for item in self.store.coverage(self.registry, self.targets, tasks)}['Acme']
+        self.assertEqual((row['latest_status'], row['latest_reason'], row['latest_error'], len(row['sources'])),
+                         ('blocked', 'refused', 'HTTP 403', 2))
+        self.attempt('Acme', task='ats:icims:acme', status='empty', pages_complete=True)
+        row = {item['canonical']: item for item in self.store.coverage(self.registry, self.targets, tasks)}['Acme']
+        self.assertEqual((row['latest_status'], row['pages_complete']), ('ok', True))
+
+    def test_outcomes_of_portals_no_longer_configured_are_ignored(self):
+        # 1. A corrected board: the old tenant's error must not stick to the employer.
+        self.attempt('Acme', task='ats:workday:acme-old-tenant', status='error', reason='http_4xx', error='HTTP 404')
+        # 2. An edited portal: the old board's success says nothing about the new one.
+        self.attempt('Booking.com', task='ats:icims:old.booking.test', pages_complete=True)
+        # 3. An employer whose portal was removed, and one that never had a scannable one.
+        self.attempt('Nothing Configured', task='ats:lever:nothing', pages_complete=True)
+        self.attempt('Toyota', task='ats:workday:tmna', pages_complete=True)
+        self.store.save_result(self.run_id, model.make_result(model.EMPLOYER_SOURCE, 'Legacy Bank', 'ats', status='error',
+                                                              error='HTTP 500'), plain_ranker)   # a v1 row, no task name
+        rows = self.rows()
+        for name in ('Acme', 'Booking.com', 'Legacy Bank', 'Nothing Configured', 'Toyota'):
+            row = rows[name]
+            self.assertEqual((row['latest_status'], row['last_attempt_at'], row['last_success_at'], row['run_id']),
+                             (None, None, None, None), name)
+        self.assertIn('Not attempted yet', rows['Acme']['next_action'])
+        self.assertIn('Not attempted yet', rows['Booking.com']['next_action'])
+        self.assertEqual(rows['Nothing Configured']['sources'], [])
+        exported = {line['canonical']: line for line in csv.DictReader(io.StringIO(acceptance.coverage_csv(rows.values())))}
+        self.assertEqual((exported['Nothing Configured']['latest_status'], exported['Toyota']['latest_status'],
+                          exported['Booking.com']['latest_status']), ('', '', ''))
+        summary = self.store.coverage_summary(list(rows.values()))
+        self.assertEqual((summary['ok'], summary['error'], summary['never_attempted'], summary['attempted']), (0, 0, 3, 0))
+
+    def test_a_source_the_budget_cut_off_is_not_reached_not_attempted(self):
+        self.attempt('Acme', pages_complete=True)
+        good = self.rows()['Acme']
+        later = self.store.start_run()
+        with mock.patch('radar.store.now_iso', return_value='2099-01-01T00:00:00+00:00'):
+            self.attempt('Acme', status='error', reason='budget', error='not run: the time budget was used up', run_id=later)
+            self.attempt('Booking.com', status='error', reason='budget', error='not run', run_id=later)
+            self.store.finish_run(later, 'partial', {})
+        rows = self.rows()
+        acme, booking = rows['Acme'], rows['Booking.com']
+        self.assertEqual((acme['latest_status'], acme['latest_reason']), ('not_reached', 'budget'))
+        self.assertEqual((acme['last_attempt_at'], acme['run_id'], acme['last_success_at']),
+                         (good['last_attempt_at'], self.run_id, good['last_success_at']))   # its last real attempt
+        self.assertEqual((booking['latest_status'], booking['last_attempt_at'], booking['run_id']), ('not_reached', None, None))
+        self.assertIn('time budget', booking['next_action'])
+        summary = self.store.coverage_summary(list(rows.values()))
+        self.assertEqual((summary['attempted'], summary['not_reached'], summary['error'], summary['ok'],
+                          summary['never_attempted'], summary['run_id']), (0, 2, 0, 0, 1, later))
+
+    def test_job_counts(self):
+        ids = self.attempt('Acme', jobs=[self.employer(str(n), title=f'Pega Developer {n}') for n in range(5)],
+                           pages_complete=True)['new']
+        self.store.set_state(ids[0], hidden=True)
+        self.store.set_state(ids[1], status='rejected')
+        self.attempt('Acme', jobs=[self.employer(str(n), title=f'Pega Developer {n}') for n in (0, 1, 2, 3)],
+                     pages_complete=True)                                    # posting 4 is gone: possibly closed
+        row = self.rows()['Acme']
+        self.assertEqual((row['jobs_total'], row['jobs_on_file'], row['jobs_open']), (5, 3, 2))
+        old = (datetime.now(timezone.utc) - timedelta(days=31)).isoformat(timespec='seconds')
+        db = sqlite3.connect(self.store.path)
+        db.execute('UPDATE jobs SET last_seen_at=? WHERE id=?', (old, ids[2]))
+        db.commit()
+        db.close()
+        row = self.rows()['Acme']
+        self.assertEqual((row['jobs_total'], row['jobs_on_file'], row['jobs_open']), (5, 3, 1))   # not listed for 30 days
+
+    def test_reading_coverage_writes_nothing(self):
+        self.attempt('Acme', pages_complete=True)
+        self.store.finish_run(self.run_id, 'complete', {})
+
+        def snapshot():
+            db = sqlite3.connect(self.store.path)
+            try:
+                return {table: db.execute(f'SELECT * FROM {table} ORDER BY 1').fetchall()
+                        for table in ('kv', 'jobs', 'sightings', 'source_health', 'runs', 'user_state')}
+            finally:
+                db.close()
+        before = snapshot()
+        rows = self.store.coverage(self.registry, self.targets)
+        self.store.coverage_summary(rows)
+        self.store.latest_coverage_run()
+        self.assertEqual(snapshot(), before)
+        self.assertEqual(before['kv'], [])
+
+    def test_possibly_closed_jobs_are_not_counted_as_open(self):
+        self.attempt('Acme', jobs=[self.employer('1'), self.employer('2', title='Pega Lead')], pages_complete=True)
+        self.attempt('Acme', jobs=[self.employer('1')], pages_complete=True)
+        row = self.rows()['Acme']
+        self.assertEqual((row['jobs_total'], row['jobs_open']), (2, 1))
+
+    def test_next_action_says_what_to_do(self):
+        self.attempt('Acme', pages_complete=True)
+        self.attempt('Booking.com', pages_complete=True)
+        self.attempt('Legacy Bank', status='error', reason='tls', error='TLS certificate could not be verified')
+        rows = self.rows()
+        self.assertIn('Nothing to do', rows['Acme']['next_action'])
+        self.assertIn('radar.py verify', rows['Booking.com']['next_action'])
+        self.assertIn('certificate', rows['Legacy Bank']['next_action'])
+        self.assertIn('TMNA is US only', rows['Toyota']['next_action'])
+        self.assertIn('needs a browser session', rows['HDFC Bank']['next_action'])
+        self.assertIn('No career portal is configured', rows['Nothing Configured']['next_action'])
+        self.assertIn('two companies share this name', rows['target: Mystery Systems']['next_action'])
+        self.attempt('Legacy Bank', status='error', reason='unreachable')
+        self.assertIn('could not be reached; check the network or VPN', self.rows()['Legacy Bank']['next_action'])
+        for reason in ('dns', 'timeout', 'refused', 'unreachable', 'rate_limited', 'http_4xx', 'http_5xx', 'shape', 'cap',
+                       'maintenance'):
+            self.attempt('Legacy Bank', status='error', reason=reason)
+            self.assertNotIn('incomplete; run', self.rows()['Legacy Bank']['next_action'], reason)   # a specific sentence
+
+    def test_summary_counts(self):
+        self.attempt('Acme', pages_complete=True)
+        self.attempt('Booking.com', status='partial', reason='cap')
+        self.store.finish_run(self.run_id, 'partial', {})
+        rows = self.store.coverage(self.registry, self.targets)
+        summary = self.store.coverage_summary(rows)
+        expected = {'original_rows': 6, 'employers': 6, 'configured': 3, 'attempted': 2, 'never_attempted': 1,
+                    'not_reached': 0, 'ok': 1, 'partial': 1, 'blocked': 0, 'maintenance': 0, 'error': 0, 'unverified': 1,
+                    'not_configured': 1, 'unsupported': 1, 'wrong_scope': 1, 'unresolved': 2, 'run_id': self.run_id}
+        self.assertEqual({key: summary[key] for key in expected}, expected)
+        self.assertEqual(set(summary), set(expected) | {'generated_at'})
+        # Every configured employer is in exactly one outcome group.
+        self.assertEqual(sum(summary[key] for key in ('ok', 'partial', 'blocked', 'maintenance', 'error', 'not_reached',
+                                                      'never_attempted')), summary['configured'])
+        # A later run that attempts only one employer: outcomes keep each employer's latest attempt.
+        later = self.store.start_run()
+        self.attempt('Legacy Bank', status='blocked', reason='refused', run_id=later)
+        with mock.patch('radar.store.now_iso', return_value='2099-01-01T00:00:00+00:00'):
+            self.store.finish_run(later, 'partial', {'mode': 'only'})
+        summary = self.store.coverage_summary(self.store.coverage(self.registry, self.targets))
+        self.assertEqual((summary['attempted'], summary['ok'], summary['partial'], summary['blocked'],
+                          summary['never_attempted'], summary['run_id']), (1, 1, 1, 1, 0, later))
+
+    def test_load_inventory_uses_the_configured_paths(self):
+        companies = self.folder / 'companies.json'
+        companies.write_text(json.dumps({'companies': V2_COMPANIES}), encoding='utf-8')
+        registry, targets = scan.load_inventory({'companies_path': str(companies),
+                                                 'targets_path': str(self.folder / 'targets.json')})
+        self.assertEqual((len(registry), len(targets)), (6, 6))
+        registry, targets = scan.load_inventory({'companies_path': str(self.folder / 'none.json'),
+                                                 'targets_path': str(self.folder / 'none-either.json')})
+        self.assertEqual((len(registry), targets), (0, []))
+
+    def test_coverage_works_without_targets_or_employers(self):
+        rows = self.store.coverage(self.registry, [])
+        self.assertEqual(len(rows), 6)
+        self.assertTrue(all(row['original_names'] == [] for row in rows))
+        only_targets = self.store.coverage(rank.Registry(), self.targets)
+        self.assertEqual({row['inventory_state'] for row in only_targets}, {'identity unresolved'})
+        self.assertEqual(len(only_targets), 6)
+        self.assertEqual(self.store.coverage(rank.Registry(), []), [])
+
+
+# ───────────────────────────── v2: scan modes, fairness, shared boards ─────────────────────────────
+
+class PortalTask(FakeTask):
+    def __init__(self, name, employer=None, board=None, **options):
+        options.setdefault('kind', 'ats')
+        super().__init__(name, **options)
+        self.label = employer or name
+        self.employer, self.board = employer, board
+
+
+class ScanModesTest(ScanCase):
+    def setUp(self):
+        super().setUp()
+        self.config['targets_path'] = str(self.data / 'no-targets.json')
+
+    def tasks(self, **statuses):
+        return [PortalTask('ats:a', 'Alpha', status=statuses.get('a', 'empty')),
+                PortalTask('ats:b', 'Beta Pvt Ltd', status=statuses.get('b', 'empty')),
+                PortalTask('ats:c', 'Gamma', status=statuses.get('c', 'empty')),
+                FakeTask('board:hirist', status=statuses.get('hirist', 'empty'))]
+
+    def ran(self, tasks):
+        return [task.name for task in tasks if task.ctx is not None]
+
+    def test_full_mode_is_the_default_and_is_recorded(self):
+        tasks = self.tasks(b='blocked')
+        summary = self.run_scan(tasks)
+        self.assertEqual((summary['mode'], summary['configured'], summary['requested'], summary['attempted'],
+                          summary['completed']), ('full', 4, 4, 4, 3))
+        self.assertEqual(self.store.latest_run()['summary']['mode'], 'full')
+        self.assertEqual(self.store.kv_get(scan.KV_PROGRESS)['mode'], 'full')
+        by_label = {source['label']: source for source in summary['sources']}
+        self.assertEqual((by_label['Alpha']['task'], by_label['Alpha']['employer'], by_label['Beta Pvt Ltd']['reason']),
+                         ('ats:a', 'Alpha', 'refused'))
+        self.assertIsInstance(by_label['Alpha']['elapsed_s'], float)
+        health = {row['task']: row for row in self.store.latest_run()['health']}
+        self.assertEqual((health['ats:b']['employer'], health['ats:b']['reason']), ('Beta Pvt Ltd', 'refused'))
+        self.assertIsNotNone(health['ats:a']['elapsed_s'])
+
+    def test_retry_runs_only_what_needs_attention(self):
+        self.run_scan(self.tasks(b='blocked', hirist='error'))
+        tasks = self.tasks()
+        summary = self.run_scan(tasks, mode='retry')
+        self.assertEqual(sorted(self.ran(tasks)), ['ats:b', 'board:hirist'])
+        self.assertEqual((summary['mode'], summary['configured'], summary['requested'], summary['attempted'],
+                          summary['status']), ('retry', 4, 2, 2, 'complete'))
+        latest = self.store.latest_run()
+
+        def run_rows():
+            db = sqlite3.connect(self.store.path)
+            try:
+                return db.execute('SELECT COUNT(*) FROM runs').fetchone()[0]
+            finally:
+                db.close()
+        runs, seen, tasks = run_rows(), [], self.tasks()
+        nothing = self.run_scan(tasks, mode='retry', progress=seen.append)   # everything is fine now
+        self.assertEqual((self.ran(tasks), nothing['requested'], nothing['status'], nothing['sources'], nothing['run_id'],
+                          nothing['mode'], nothing['configured']), ([], 0, 'nothing_to_retry', [], None, 'retry', 4))
+        self.assertEqual(run_rows(), runs)                                 # no run was recorded
+        self.assertEqual(self.store.latest_run(), latest)                  # so the last real run is still the latest
+        progress = self.store.kv_get(scan.KV_PROGRESS)
+        self.assertEqual((progress['state'], progress['status'], progress['run_id']), ('finished', 'nothing_to_retry', None))
+        self.assertEqual(seen[-1], progress)
+        self.assertEqual(self.run_scan(self.tasks(b='error'), mode='retry-incomplete')['mode'], 'retry')   # the CLI spelling
+
+    def test_retry_includes_sources_never_attempted_or_missed_by_the_last_full_run(self):
+        self.run_scan(self.tasks()[:2])                                    # Gamma and Hirist did not exist yet
+        tasks = self.tasks()
+        self.run_scan(tasks, mode='retry')
+        self.assertEqual(sorted(self.ran(tasks)), ['ats:c', 'board:hirist'])
+        self.run_scan(self.tasks()[:3])                                    # a later full run without Hirist
+        tasks = self.tasks()
+        self.run_scan(tasks, mode='retry')
+        self.assertEqual(self.ran(tasks), ['board:hirist'])                # not attempted since that full run started
+
+    def test_only_selects_by_employer_task_or_label(self):
+        tasks = self.tasks()
+        summary = self.run_scan(tasks, only=['beta', 'ats:c', 'Nobody Inc'])
+        self.assertEqual(sorted(self.ran(tasks)), ['ats:b', 'ats:c'])       # "beta" matches "Beta Pvt Ltd"
+        self.assertEqual((summary['mode'], summary['requested'], summary['unmatched']), ('only', 2, ['Nobody Inc']))
+        tasks = self.tasks()
+        self.assertEqual(self.run_scan(tasks, only=['board:hirist'])['requested'], 1)
+
+    def test_only_accepts_an_alias_from_the_registry(self):
+        companies = self.data / 'companies.json'
+        companies.write_text(json.dumps({'companies': [{'name': 'Alpha', 'aliases': ['ALP', 'Alpha Global'], 'type': 'gcc'}]}),
+                             encoding='utf-8')
+        self.config['companies_path'] = str(companies)
+        tasks = self.tasks()
+        summary = self.run_scan(tasks, only=['ALP'])
+        self.assertEqual((self.ran(tasks), summary['unmatched']), (['ats:a'], []))
+
+    def test_only_with_no_match_is_a_failed_run_that_runs_nothing(self):
+        tasks = self.tasks()
+        summary = self.run_scan(tasks, only=['Nobody Inc'])
+        self.assertEqual((summary['status'], self.ran(tasks)), ('failed', []))
+        self.assertIn('Nobody Inc', summary['error'])
+
+    def test_an_only_or_retry_run_does_not_shorten_the_look_back_fallback(self):
+        self.run_scan(self.tasks(), only=['Alpha'])
+        self.assertIsNone(self.store.kv_get(scan.KV_LAST_COMPLETE))
+
+    def test_unknown_mode_is_rejected(self):
+        with self.assertRaises(ValueError):
+            self.run_scan(self.tasks(), mode='everything')
+
+    def test_sources_cut_by_the_budget_are_recorded_with_reason_budget(self):
+        tasks = self.tasks()
+        summary = self.run_scan(tasks, http=FakeHttp(expired=True))
+        self.assertEqual(self.ran(tasks), [])
+        self.assertEqual((summary['requested'], summary['attempted'], summary['completed'], len(summary['not_attempted']),
+                          summary['reasons'], summary['status']), (4, 0, 0, 4, {'budget': 4}, 'partial'))
+        self.assertTrue(all(source['status'] == 'error' and source['reason'] == 'budget' for source in summary['sources']))
+        self.assertEqual({row['reason'] for row in self.store.latest_run()['health']}, {'budget'})
+        progress = self.store.kv_get(scan.KV_PROGRESS)
+        self.assertEqual((progress['requested'], progress['attempted'], progress['completed'], progress['done']), (4, 0, 0, 4))
+        self.assertEqual(sorted(progress['not_attempted']), sorted(summary['not_attempted']))   # the same labels, as a list
+        tasks = self.tasks()
+        self.run_scan(tasks, mode='retry')
+        self.assertEqual(len(self.ran(tasks)), 4)                          # all of them are retried
+
+    def test_the_scan_summary_and_coverage_agree_about_a_budget_cut(self):
+        companies = self.data / 'companies.json'
+        companies.write_text(json.dumps({'companies': V2_COMPANIES}), encoding='utf-8')
+        self.config['companies_path'] = str(companies)
+        tasks = [PortalTask(name, employer, status='empty') for employer, name in V2_TASKS.items()]
+        summary = self.run_scan(tasks, http=FakeHttp(expired=True))
+        rows, counts = scan.load_coverage(self.store, self.config)
+        self.assertEqual((summary['attempted'], len(summary['not_attempted'])), (0, 3))
+        self.assertEqual((counts['attempted'], counts['not_reached'], counts['error'], counts['ok']), (0, 3, 0, 0))
+        self.assertTrue(all(row['last_attempt_at'] is None for row in rows))
+        matrix = self.store.kv_get(scan.KV_MATRIX)
+        self.assertEqual((matrix['before']['Acme'], matrix['after']['Acme']), ('never attempted', 'not_reached'))
+
+    def test_never_attempted_and_longest_waiting_sources_start_first(self):
+        self.config['scan']['workers'] = 1
+        journal = []
+
+        def tasks():
+            return [PortalTask('ats:a', 'Alpha', priority=10, status='empty', journal=journal),
+                    PortalTask('ats:b', 'Beta', priority=20, status='empty', journal=journal),
+                    PortalTask('ats:c', 'Gamma', priority=30, status='empty', journal=journal),
+                    PortalTask('ats:d', 'Delta', priority=40, status='empty', journal=journal)]
+        self.run_scan(tasks()[:2])                                         # run 1 reaches only Alpha and Beta
+        del journal[:]
+        self.run_scan(tasks()[:3], only=['Alpha'])                         # run 2, in the same second, attempts Alpha again
+        del journal[:]
+        history = self.store.task_history()
+        self.assertEqual(history['ats:a']['attempted_run_seq'], history['ats:a']['attempted_full_run_seq'] + 1)
+        self.assertEqual(history['ats:a']['attempted_full_run_seq'], history['ats:b']['attempted_full_run_seq'])
+        self.run_scan(list(reversed(tasks())))                             # the order the tasks arrive in is irrelevant
+        # Never read by a full scan first (Gamma, Delta), then the first full scan's cohort by priority. Alpha's
+        # hand-run `only` scan does not send it to the back.
+        self.assertEqual(journal, ['ats:c', 'ats:d', 'ats:a', 'ats:b'])
+
+    def test_a_backlog_rotates_so_every_portal_is_attempted(self):
+        # Ten portals and time for four per run: nothing may be starved, however many runs it takes.
+        self.config['scan']['workers'] = 1
+        names = [f'ats:p{number:02d}' for number in range(10)]
+        attempted_in = {}
+        for run in range(1, 4):
+            journal = []
+
+            class Budget(FakeHttp):
+                def expired(self):
+                    return len(journal) >= 4
+            tasks = [PortalTask(name, f'Employer {index:02d}', priority=10 + index, status='empty', journal=journal)
+                     for index, name in enumerate(names)]
+            summary = self.run_scan(list(reversed(tasks)), http=Budget())   # no clock involved, and any input order
+            self.assertEqual((len(journal), summary['attempted'], len(summary['not_attempted'])), (4, 4, 6), run)
+            for name in journal:
+                attempted_in.setdefault(name, run)
+            if run == 1:
+                self.assertEqual(journal, names[:4])                       # priority order while nothing has a history
+            elif run == 2:
+                self.assertEqual(journal, names[4:8])                      # the ones cut off go first
+            else:
+                self.assertEqual(journal, names[8:] + names[:2])           # then the last two, then the longest-waiting
+        self.assertEqual(sorted(attempted_in), names)                      # all ten within ceil(10 / 4) = 3 full runs
+        history = self.store.task_history()
+        last = history['ats:p09']['run_seq']
+        self.assertEqual((history['ats:p09']['reason'], history['ats:p09']['attempted_full_run_seq']), ('', last))
+        self.assertEqual((history['ats:p04']['reason'], history['ats:p04']['attempted_full_run_seq']),
+                         ('budget', last - 1))                             # cut off in run 3; last really ran in run 2
+
+    def test_equal_priority_and_history_is_ordered_by_task_name(self):
+        self.config['scan']['workers'] = 1
+        names = ['ats:delta', 'ats:alpha', 'ats:charlie', 'ats:bravo']
+        for arrival in (names, list(reversed(names)), sorted(names)):
+            journal = []
+            self.run_scan([PortalTask(name, name, priority=20, status='empty', journal=journal) for name in arrival])
+            self.assertEqual(journal, sorted(names), arrival)
+
+    def test_linkedin_has_its_own_worker(self):
+        self.config['scan']['workers'] = 1
+        portal_started, release = threading.Event(), threading.Event()
+        order = []
+
+        class SlowPortal(PortalTask):
+            def run(self, http, ctx):
+                portal_started.set()
+                release.wait(5)
+                order.append(self.name)
+                return super().run(http, ctx)
+
+        class LinkedIn(FakeTask):
+            def run(self, http, ctx):
+                portal_started.wait(5)                                     # the portal is busy on the only portal worker
+                order.append(self.name)
+                release.set()
+                return super().run(http, ctx)
+        summary = self.run_scan([SlowPortal('ats:slow', 'Slow', priority=10, status='empty'),
+                                 LinkedIn('linkedin', kind='linkedin', priority=0, status='empty', found=3)])
+        self.assertEqual(order, ['linkedin', 'ats:slow'])                  # LinkedIn ran while the portal was still busy
+        self.assertEqual((summary['attempted'], summary['status']), (2, 'complete'))
+
+    def test_a_shared_board_is_fetched_once_and_recorded_for_each_employer(self):
+        registry_path = self.data / 'companies.json'
+        registry_path.write_text(json.dumps({'companies': [{'name': 'Parent Group', 'type': 'gcc'},
+                                                           {'name': 'Unit India', 'type': 'gcc'},
+                                                           {'name': 'Quiet Unit', 'type': 'gcc'}]}), encoding='utf-8')
+        self.config['companies_path'] = str(registry_path)
+        jobs = [board_job(model.EMPLOYER_SOURCE, 'w1', company='Parent Group'),
+                board_job(model.EMPLOYER_SOURCE, 'w2', company='Unit India Pvt Ltd', title='Pega Lead'),
+                board_job(model.EMPLOYER_SOURCE, 'w3', company='Unit India', title='Pega Architect')]
+        primary = PortalTask('ats:workday:parent', 'Parent Group', board='workday:parent.wd3:Careers', priority=10)
+        primary._returns = {**model.make_result(model.EMPLOYER_SOURCE, 'Parent Group', 'ats', jobs=jobs, found=40,
+                                                pages_complete=True, details_complete=True), }
+        unit = PortalTask('ats:workday:unit', 'Unit India', board='workday:parent.wd3:Careers', priority=20)
+        quiet = PortalTask('ats:workday:quiet', 'Quiet Unit', board='workday:parent.wd3:Careers', priority=30)
+        other = PortalTask('ats:lever:other', 'Other Co', board='lever:other', status='empty')
+        summary = self.run_scan([quiet, unit, other, primary])
+        self.assertEqual(self.ran([primary, unit, quiet, other]), ['ats:workday:parent', 'ats:lever:other'])
+        by_label = {source['label']: source for source in summary['sources']}
+        self.assertEqual({label: (source['status'], source['kept']) for label, source in by_label.items()},
+                         {'Parent Group': ('ok', 1), 'Unit India': ('ok', 2), 'Quiet Unit': ('empty', 0),
+                          'Other Co': ('empty', 0)})                        # each employer is credited with its own jobs
+        self.assertEqual(sum(source['kept'] for source in summary['sources']), 3)   # which add up to what was stored
+        self.assertEqual((by_label['Unit India']['shared_with'], by_label['Unit India']['employer'],
+                          by_label['Unit India']['pages_complete'], by_label['Unit India']['task']),
+                         ('ats:workday:parent', 'Unit India', True, 'ats:workday:unit'))
+        self.assertNotIn('shared_with', by_label['Parent Group'])
+        self.assertEqual((summary['requested'], summary['attempted'], summary['completed'], summary['new']), (4, 4, 4, 3))
+        health = {row['task']: row for row in self.store.latest_run()['health']}
+        self.assertEqual((health['ats:workday:unit']['status'], health['ats:workday:unit']['kept'],
+                          health['ats:workday:unit']['employer']), ('ok', 2, 'Unit India'))
+        self.assertEqual((health['ats:workday:parent']['kept'], health['ats:workday:parent']['found']), (1, 40))
+        self.assertEqual(self.store.jobs()[1], 3)
+        # Each sighting is filed under the task and label of the employer the posting belongs to.
+        filed = {row['company']: [(sighting['label'], sighting['source_id']) for sighting in self.store.job(row['id'])['sightings']]
+                 for row in self.store.jobs()[0]}
+        self.assertEqual(filed['Parent Group'], [('Parent Group', 'w1')])
+        self.assertEqual(sorted(label for sightings in filed.values() for label, _ in sightings),
+                         ['Parent Group', 'Unit India', 'Unit India'])
+        db = sqlite3.connect(self.store.path)
+        self.assertEqual(dict(db.execute('SELECT source_id, task FROM sightings')),
+                         {'w1': 'ats:workday:parent', 'w2': 'ats:workday:unit', 'w3': 'ats:workday:unit'})
+        db.close()
+        self.assertEqual(self.store.kv_get(scan.KV_PROGRESS)['done'], 4)
+
+    def test_a_follower_can_be_the_reader_and_closures_cover_the_whole_shared_board(self):
+        companies = self.data / 'companies.json'
+        companies.write_text(json.dumps({'companies': [{'name': 'Group', 'type': 'gcc'},
+                                                       {'name': 'Group Research India', 'type': 'gcc'}]}), encoding='utf-8')
+        self.config['companies_path'] = str(companies)
+
+        def scan_board(*ids):
+            jobs = [board_job(model.EMPLOYER_SOURCE, source_id, title=f'Pega Developer {source_id}',
+                              company='Group' if source_id.startswith('g') else 'Group Research India') for source_id in ids]
+            # The Bengaluru unit has the higher priority, so its task reads the board for the group too.
+            unit = PortalTask('ats:beesite:unit', 'Group Research India', board='beesite:group', priority=10)
+            unit._returns = {**model.make_result(model.EMPLOYER_SOURCE, 'Group Research India', 'ats', jobs=jobs,
+                                                 pages_complete=True), 'employer': 'Group'}
+            group = PortalTask('ats:beesite:group', 'Group', board='beesite:group', priority=20)
+            summary = self.run_scan([group, unit])
+            self.assertEqual(self.ran([unit, group]), ['ats:beesite:unit'])
+            return {source['label']: source['kept'] for source in summary['sources']}
+        self.assertEqual(scan_board('g1', 'g2', 'r1', 'r2', 'r3', 'r4'), {'Group Research India': 4, 'Group': 2})
+        self.assertEqual(scan_board('g1', 'r1', 'r2', 'r3', 'r4'), {'Group Research India': 4, 'Group': 1})
+        # g2 was filed under the group's task, not the reader's, and is still noticed as gone.
+        state = {job['title']: job['possibly_closed'] for job in self.store.jobs()[0]}
+        self.assertEqual((state['Pega Developer g2'], state['Pega Developer g1'], state['Pega Developer r1']), (True, False, False))
+        health = {row['task']: row for row in self.store.latest_run()['health']}
+        self.assertEqual((health['ats:beesite:group']['kept'], health['ats:beesite:group']['employer'],
+                          health['ats:beesite:unit']['kept']), (1, 'Group', 4))
+
+    def test_a_shared_board_is_always_read_by_the_same_task(self):
+        def tasks():
+            jobs = [board_job(model.EMPLOYER_SOURCE, 'w1', company='Parent Group'),
+                    board_job(model.EMPLOYER_SOURCE, 'w2', company='Unit India', title='Pega Lead')]
+            primary = PortalTask('ats:workday:parent', 'Parent Group', board='b1', priority=10)
+            primary._returns = model.make_result(model.EMPLOYER_SOURCE, 'Parent Group', 'ats', jobs=jobs, pages_complete=True)
+            unit = PortalTask('ats:workday:unit', 'Unit India', board='b1', priority=20)
+            return primary, unit, PortalTask('ats:lever:other', 'Other Co', status='empty')
+        primary, unit, other = tasks()
+        summary = self.run_scan([primary, unit, other], only=['Unit India'])   # only the second employer was asked for
+        self.assertEqual(self.ran([primary, unit, other]), ['ats:workday:parent'])   # the board's owner reads it
+        self.assertEqual((summary['requested'], summary['attempted'], summary['unmatched']), (2, 2, []))
+        self.assertEqual({source['label']: source['kept'] for source in summary['sources']}, {'Parent Group': 1, 'Unit India': 1})
+        # A later run in which the unit's task waited longer still has the owner read the board.
+        later = '2099-01-01T00:00:00+00:00'
+        with mock.patch('radar.store.now_iso', return_value=later), mock.patch('radar.scan.now_iso', return_value=later):
+            self.run_scan([tasks()[0]], only=['Parent Group'])
+        primary, unit, other = tasks()
+        self.run_scan([unit, other, primary])
+        self.assertEqual(sorted(self.ran([primary, unit, other])), ['ats:lever:other', 'ats:workday:parent'])
+        db = sqlite3.connect(self.store.path)
+        self.assertEqual(dict(db.execute('SELECT source_id, task FROM sightings')),
+                         {'w1': 'ats:workday:parent', 'w2': 'ats:workday:unit'})   # filed by employer, read by one task
+        db.close()
+
+    def test_attribution_on_a_shared_board_is_the_same_whatever_is_selected(self):
+        companies = self.data / 'companies.json'
+        companies.write_text(json.dumps({'companies': [{'name': 'Group', 'type': 'gcc'}, {'name': 'Group Mobility', 'type': 'gcc'},
+                                                       {'name': 'Group Research India', 'type': 'gcc'}]}), encoding='utf-8')
+        self.config['companies_path'] = str(companies)
+
+        def scan_board(**options):
+            jobs = [board_job(model.EMPLOYER_SOURCE, source_id, title=f'Pega Developer {source_id}', company=company)
+                    for source_id, company in (('g1', 'Group'), ('g2', 'Group'), ('m1', 'Group Mobility'),
+                                               ('r1', 'Group Research India'), ('r2', 'Group Research India'))]
+            unit = PortalTask('ats:beesite:unit', 'Group Research India', board='beesite:group', priority=10)
+            unit._returns = model.make_result(model.EMPLOYER_SOURCE, 'Group Research India', 'ats', jobs=jobs,
+                                              pages_complete=True)
+            members = [unit, PortalTask('ats:beesite:group', 'Group', board='beesite:group', priority=20),
+                       PortalTask('ats:beesite:mobility', 'Group Mobility', board='beesite:group', priority=20),
+                       PortalTask('ats:lever:other', 'Other Co', status='empty')]
+            summary = self.run_scan(members, **options)
+            db = sqlite3.connect(self.store.path)
+            filed = dict(db.execute('SELECT source_id, task FROM sightings'))
+            labels = dict(db.execute('SELECT source_id, label FROM sightings'))
+            db.close()
+            return ({source['label']: (source['status'], source['kept']) for source in summary['sources']}, filed, labels,
+                    summary)
+        expected_counts = {'Group Research India': ('ok', 2), 'Group': ('ok', 2), 'Group Mobility': ('ok', 1)}
+        expected_filed = {'g1': 'ats:beesite:group', 'g2': 'ats:beesite:group', 'm1': 'ats:beesite:mobility',
+                          'r1': 'ats:beesite:unit', 'r2': 'ats:beesite:unit'}
+        for options in ({'only': ['Group Research India']}, {'only': ['Group Mobility']}, {'only': ['Group']}, {}):
+            counts, filed, labels, summary = scan_board(**options)
+            counts.pop('Other Co', None)
+            self.assertEqual((counts, filed), (expected_counts, expected_filed), options)
+            self.assertEqual(labels['g1'], 'Group', options)               # never relabelled to the reader
+            if 'only' in options:
+                self.assertEqual((summary['requested'], summary['attempted']), (3, 3), options)   # the whole board
+        self.assertEqual(self.store.jobs()[1], 5)
+
+    def test_a_source_that_started_as_the_budget_ended_is_not_reached_everywhere(self):
+        companies = self.data / 'companies.json'
+        companies.write_text(json.dumps({'companies': V2_COMPANIES}), encoding='utf-8')
+        self.config['companies_path'] = str(companies)
+        # Acme started but its first request met the deadline: no answer at all. Booking.com read one
+        # page before the time ran out: that is a real, partial attempt.
+        tasks = [PortalTask(V2_TASKS['Acme'], 'Acme', status='error', reason='budget', error='the time budget ran out',
+                            requests=0),
+                 PortalTask(V2_TASKS['Booking.com'], 'Booking.com', status='partial', reason='budget', found=10,
+                            error='stopped at page 2: the time budget ran out'),
+                 PortalTask(V2_TASKS['Legacy Bank'], 'Legacy Bank', status='empty')]
+        summary = self.run_scan(tasks)
+        self.assertEqual(self.ran(tasks), list(V2_TASKS.values()))         # all three did start
+        self.assertEqual((summary['attempted'], summary['not_attempted'], summary['completed']), (2, ['Acme'], 1))
+        progress = self.store.kv_get(scan.KV_PROGRESS)
+        self.assertEqual((progress['attempted'], progress['not_attempted']), (2, ['Acme']))
+        rows, counts = scan.load_coverage(self.store, self.config)
+        by_name = {row['canonical']: row for row in rows}
+        self.assertEqual((by_name['Acme']['latest_status'], by_name['Acme']['last_attempt_at']), ('not_reached', None))
+        self.assertEqual(by_name['Booking.com']['latest_status'], 'partial')
+        self.assertIsNotNone(by_name['Booking.com']['last_attempt_at'])
+        self.assertEqual((counts['attempted'], counts['not_reached'], counts['partial'], counts['ok'], counts['error']),
+                         (2, 1, 1, 1, 0))                                   # the same split as the scan summary
+        history = self.store.task_history()
+        self.assertIsNone(history[V2_TASKS['Acme']]['attempted_run_seq'])
+        self.assertIsNotNone(history[V2_TASKS['Booking.com']]['attempted_run_seq'])
+
+    def test_a_failed_shared_board_fails_for_every_employer_on_it(self):
+        primary = PortalTask('ats:workday:parent', 'Parent Group', board='b1', status='blocked', error='HTTP 403',
+                             priority=1)
+        unit = PortalTask('ats:workday:unit', 'Unit India', board='b1', priority=2)
+        summary = self.run_scan([primary, unit])
+        self.assertEqual({source['label']: (source['status'], source['reason']) for source in summary['sources']},
+                         {'Parent Group': ('blocked', 'refused'), 'Unit India': ('blocked', 'refused')})
+        self.assertEqual(sorted(summary['attention']), ['Parent Group', 'Unit India'])
+        retry = [PortalTask('ats:workday:parent', 'Parent Group', board='b1', status='empty', priority=1),
+                 PortalTask('ats:workday:unit', 'Unit India', board='b1', priority=2)]
+        self.assertEqual(self.run_scan(retry, mode='retry')['requested'], 2)   # both are retried together
+
+    def test_the_coverage_matrix_and_summary_are_refreshed_by_a_scan(self):
+        companies = self.data / 'companies.json'
+        companies.write_text(json.dumps({'companies': V2_COMPANIES}), encoding='utf-8')
+        self.config['companies_path'] = str(companies)
+        (self.data / 'targets.json').write_text(json.dumps(V2_TARGETS), encoding='utf-8')
+        self.config['targets_path'] = str(self.data / 'targets.json')
+        summary = self.run_scan([PortalTask(V2_TASKS['Acme'], 'Acme', status='empty'),
+                                 PortalTask(V2_TASKS['Booking.com'], 'Booking.com', status='blocked'),
+                                 PortalTask(V2_TASKS['Legacy Bank'], 'Legacy Bank', status='empty')], only=['Acme', 'Booking.com'])
+        matrix = self.store.kv_get(scan.KV_MATRIX)
+        self.assertEqual(matrix['run_id'], summary['run_id'])
+        self.assertEqual((matrix['before']['Acme'], matrix['after']['Acme']), ('never attempted', 'empty'))
+        self.assertEqual((matrix['before']['Booking.com'], matrix['after']['Booking.com']), ('never attempted', 'blocked'))
+        self.assertEqual(matrix['after']['Legacy Bank'], 'never attempted')
+        self.assertEqual((matrix['after']['Toyota'], matrix['after']['target: Mystery Systems']),
+                         ('wrong scope only', 'identity unresolved'))
+        rows, counts = scan.load_coverage(self.store, self.config)
+        self.assertEqual((counts['original_rows'], counts['attempted'], counts['ok'], counts['blocked'],
+                          counts['never_attempted'], counts['run_id']), (6, 2, 1, 1, 1, summary['run_id']))
+        self.assertIsNone(self.store.kv_get('coverage_summary'))           # nothing is cached any more
+
+
+# ───────────────────────────── v2: verify, coverage export, report ─────────────────────────────
+
+GOOD_PROBE = {'board_ok': True, 'board_size': 412, 'pega_total': 3, 'india_in_first_page': 2, 'page2_ok': None,
+              'detail_ok': True, 'rows_parsed': 20, 'inconclusive': False, 'notes': ['India filtered'], 'status': 'ok',
+              'requests': 4}
+
+
+class VerifyTest(StoreCase):
+    def setUp(self):
+        super().setUp()
+        self.registry = v2_registry()
+        self.calls = []
+
+    def probe(self, outcomes=None):
+        def run(http, employer, portal):
+            self.calls.append((employer['name'], portal['kind']))
+            outcome = (outcomes or {}).get(employer['name'], GOOD_PROBE)
+            if isinstance(outcome, Exception):
+                raise outcome
+            return outcome
+        return run
+
+    def test_outcome_is_exactly_the_agreed_rule(self):
+        cases = (({}, 'passed'), ({'page2_ok': True}, 'passed'), ({'page2_ok': None, 'detail_ok': None}, 'passed'),
+                 ({'pega_total': 0}, 'passed'),                             # a readable search with rows parsed and no Pega today
+                 ({'rows_parsed': 1}, 'passed'),
+                 ({'board_ok': False}, 'failed'), ({'board_ok': None}, 'failed'), ({'pega_total': None}, 'failed'),
+                 ({'page2_ok': False}, 'failed'), ({'detail_ok': False}, 'failed'),
+                 ({'detail_ok': False, 'inconclusive': True}, 'failed'),    # a failure is a failure
+                 ({'rows_parsed': 0}, 'inconclusive'),                      # the board answered with rows nobody could parse
+                 ({'rows_parsed': None}, 'inconclusive'), ({'rows_parsed': True}, 'inconclusive'),
+                 ({'inconclusive': True}, 'inconclusive'),                  # e.g. a global board with no India posting
+                 ({'inconclusive': True, 'rows_parsed': 50, 'india_in_first_page': 0}, 'inconclusive'),
+                 ({'probe_passed': False}, 'inconclusive'),                # the adapter's own verdict can only tighten ours
+                 ({'probe_passed': True}, 'passed'), ({'probe_passed': True, 'rows_parsed': 0}, 'inconclusive'),
+                 ({'probe_passed': True, 'board_ok': False}, 'failed'))
+        for change, expected in cases:
+            record = {**GOOD_PROBE, **change}
+            self.assertEqual(acceptance.outcome(record), expected, change)
+            self.assertIs(acceptance.passed(record), expected == 'passed', change)
+        without_count = {key: value for key, value in GOOD_PROBE.items() if key != 'rows_parsed'}
+        self.assertEqual(acceptance.outcome(without_count), 'inconclusive')   # no proof that anything was parsed
+        self.assertEqual(acceptance.outcome({}), 'failed')
+
+    def test_the_report_has_three_buckets(self):
+        outcomes = {'Acme': GOOD_PROBE, 'Booking.com': {**GOOD_PROBE, 'inconclusive': True, 'india_in_first_page': 0,
+                                                        'notes': ['no India posting on the first page']},
+                    'Legacy Bank': {**GOOD_PROBE, 'board_ok': False, 'status': 'error', 'notes': ['board: HTTP 404']}}
+        report = acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe(outcomes), state='all')
+        by_name = {record['employer']: record for record in report['results']}
+        self.assertEqual({name: (record['outcome'], record['passed']) for name, record in by_name.items()},
+                         {'Acme': ('passed', True), 'Booking.com': ('inconclusive', False), 'Legacy Bank': ('failed', False)})
+        self.assertEqual((report['passed'], report['inconclusive'], report['failed']),
+                         ([by_name['Acme']['key']], [by_name['Booking.com']['key']], [by_name['Legacy Bank']['key']]))
+        text = acceptance.verify_markdown(report)
+        self.assertIn('Passed: 1. Inconclusive: 1. Failed: 1.', text)
+        passed_at, inconclusive_at, failed_at = (text.index(heading) for heading in
+                                                 ('## Passed (1)', '## Inconclusive (1)', '## Failed (1)'))
+        self.assertTrue(passed_at < text.index('| Acme |') < inconclusive_at < text.index('| Booking.com |') < failed_at
+                        < text.index('| Legacy Bank |'))
+        self.assertNotIn('--promote', text)                                # the only pass is already verified
+        empty = acceptance.verify_markdown({**report, 'results': []})
+        self.assertEqual(empty.count('None.'), 3)
+
+    def test_candidates_are_probed_and_results_stored(self):
+        report = acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe())
+        self.assertEqual(self.calls, [('Booking.com', 'icims')])            # verified, wrong-scope and unsupported are skipped
+        self.assertEqual((report['state'], report['checked'], len(report['passed']), report['inconclusive'],
+                          report['failed']), ('candidate', 1, 1, [], []))
+        record = report['results'][0]
+        self.assertEqual((record['employer'], record['kind'], record['state'], record['scope'], record['portal_index'],
+                          record['passed'], record['pega_total'], record['notes'], record['board_size'],
+                          record['india_in_first_page'], record['status'], record['requests'], record['outcome'],
+                          record['rows_parsed']),
+                         ('Booking.com', 'icims', 'candidate', 'global', 0, True, 3, ['India filtered'], 412, 2, 'ok', 4,
+                          'passed', 20))
+        self.assertTrue(set(acceptance.PROBE_KEYS) <= set(record))
+        self.assertEqual(self.store.kv_get(acceptance.KV_VERIFICATION), {record['key']: record})
+
+    def test_a_real_adapter_probe_result_reaches_the_report_whole(self):
+        # The adapters' own probe, run offline against canned replies: every field it returns must
+        # arrive in the record and the report, under the adapters' names.
+        from radar.sources import probe_portal
+        board = json.dumps({'jobs': [
+            {'id': 1, 'title': 'Pega Developer', 'absolute_url': 'https://boards.greenhouse.io/acme/jobs/1',
+             'location': {'name': 'Bengaluru, India'}, 'content': 'Build Pega applications', 'updated_at': '2026-11-10T00:00:00Z'},
+            {'id': 2, 'title': 'Java Developer', 'absolute_url': 'https://boards.greenhouse.io/acme/jobs/2',
+             'location': {'name': 'Pune'}, 'content': 'Spring'}], 'meta': {'total': 2}})
+
+        class Canned:
+            def __init__(self, body):
+                self.body = body
+
+            def expired(self):
+                return False
+
+            def host_open(self, host):
+                return True
+
+            def get(self, url, **options):
+                if self.body is None:
+                    return net.Response(0, '', url, 'DNS lookup failed for boards-api.greenhouse.io', reason='dns')
+                return net.Response(200, self.body, url)
+
+            def post_json(self, url, payload, **options):
+                return self.get(url)
+        registry = rank.Registry([
+            {'name': 'Acme', 'type': 'product', 'portals': [{'kind': 'greenhouse', 'board': 'acme', 'state': 'candidate',
+                                                             'scope': 'global'}]},
+            {'name': 'Broken', 'type': 'gcc', 'portals': [{'kind': 'workday', 'tenant': 'x', 'state': 'candidate',
+                                                           'scope': 'india'}]}])
+        employer = registry.entries[0]
+        direct = probe_portal(Canned(board), employer, rank.employer_portals(employer)[0])
+        report = acceptance.run_verify(self.store, registry, Canned(board), only=['Acme'])   # the default, real probe
+        record = report['results'][0]
+        kept = {key for key in direct if not key.startswith('_')} - {'board_total', 'india_first_page', 'passed'}
+        self.assertEqual({key: record[key] for key in kept}, {key: direct[key] for key in kept})
+        self.assertEqual((record['board_ok'], record['board_size'], record['pega_total'], record['india_in_first_page'],
+                          record['status']), (True, 2, 1, 1, 'ok'))
+        self.assertEqual(record['outcome'], acceptance.outcome(direct))      # judged from the adapter's own figures
+        self.assertGreaterEqual(record['requests'], 1)
+        self.assertRegex(acceptance.verify_markdown(report), r'\| Acme \| greenhouse \| candidate \| ok \| 2 \| \d* ?\| 1 \| 1 \|')
+
+        failed = acceptance.run_verify(self.store, registry, Canned(None), state='all')
+        by_name = {item['employer']: item for item in failed['results']}
+        self.assertEqual((by_name['Acme']['outcome'], by_name['Acme']['status'], by_name['Acme']['pega_total']),
+                         ('failed', 'error', None))
+        self.assertIn('DNS lookup failed', ' '.join(by_name['Acme']['notes']))
+        self.assertIn('portal settings lack', ' '.join(by_name['Broken']['notes']))   # a mis-configured portal is reported
+        self.assertIn('DNS lookup failed', acceptance.verify_markdown(failed))
+
+    def test_a_probe_cannot_overwrite_which_portal_a_record_is_about(self):
+        report = acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=lambda http, employer, portal: {
+            **GOOD_PROBE, 'employer': 'Someone Else', 'kind': 'lever', 'passed': False, 'outcome': 'failed',
+            'future_field': 7, '_working': 1})
+        record = report['results'][0]
+        self.assertEqual((record['employer'], record['kind'], record['passed'], record['future_field']),
+                         ('Booking.com', 'icims', False, 7))
+        self.assertEqual((record['outcome'], record['probe_passed']), ('inconclusive', False))   # its verdict only tightens
+        self.assertNotIn('_working', record)
+
+    def test_state_all_includes_verified_portals_and_only_filters_by_name(self):
+        acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe(), state='all')
+        self.assertEqual(self.calls, [('Acme', 'workday'), ('Booking.com', 'icims'), ('Legacy Bank', 'greenhouse')])
+        del self.calls[:]
+        acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe(), state='all',
+                              only=['acme corp', 'Toyota'])
+        self.assertEqual(self.calls, [('Acme', 'workday')])                 # an alias matches; wrong scope is never probed
+
+    def test_a_failing_or_raising_probe_is_recorded_not_fatal(self):
+        outcomes = {'Acme': RuntimeError('adapter bug'),
+                    'Booking.com': {**GOOD_PROBE, 'board_ok': False, 'reason': 'http_4xx', 'error': 'HTTP 404'},
+                    'Legacy Bank': 'not a dict'}
+        report = acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe(outcomes), state='all')
+        by_name = {record['employer']: record for record in report['results']}
+        self.assertEqual(report['passed'], [])
+        self.assertIn('RuntimeError: adapter bug', by_name['Acme']['error'])
+        self.assertEqual((by_name['Booking.com']['passed'], by_name['Booking.com']['reason']), (False, 'http_4xx'))
+        self.assertIn('TypeError', by_name['Legacy Bank']['error'])
+
+    def test_nothing_is_probed_after_the_budget(self):
+        report = acceptance.run_verify(self.store, self.registry, FakeHttp(expired=True), probe=self.probe(), state='all')
+        self.assertEqual(self.calls, [])
+        self.assertEqual({record['reason'] for record in report['results']}, {'budget'})
+        self.assertEqual(report['passed'], [])
+
+    def test_later_checks_merge_into_the_stored_results(self):
+        acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe())
+        acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe(), state='all', only=['Acme'])
+        self.assertEqual(sorted(record['employer'] for record in self.store.kv_get(acceptance.KV_VERIFICATION).values()),
+                         ['Acme', 'Booking.com'])
+
+    def test_reports_are_written_as_json_and_markdown(self):
+        report = acceptance.run_verify(self.store, self.registry, FakeHttp(), probe=self.probe(
+            {'Booking.com': {**GOOD_PROBE, 'notes': ['a | pipe', 'second\nline']}}))
+        json_path, md_path = acceptance.write_verify(report, self.folder / 'data' / 'acceptance')
+        self.assertRegex(json_path.name, r'^verify-\d{8}-\d{6}\.json$')
+        self.assertEqual(md_path.name, json_path.with_suffix('.md').name)
+        self.assertEqual(json.loads(json_path.read_text(encoding='utf-8'))['results'][0]['employer'], 'Booking.com')
+        text = md_path.read_text(encoding='utf-8')
+        self.assertIn('| Booking.com | icims | candidate | ok | 412 | 20 | 3 | 2 |', text)
+        self.assertIn('radar.py verify --promote', text)
+        self.assertIn('a \\| pipe; second line', text)                      # table cells cannot break the table
+
+    def test_portal_key_follows_the_board_not_its_state(self):
+        portal = {'kind': 'icims', 'host': 'jobs.booking.test', 'state': 'candidate', 'scope': 'global', 'note': 'x'}
+        key = acceptance.portal_key('Booking.com', portal)
+        self.assertEqual(key, acceptance.portal_key('Booking.com', {**portal, 'state': 'verified', 'note': 'checked'}))
+        self.assertNotEqual(key, acceptance.portal_key('Booking.com', {**portal, 'host': 'careers.booking.test'}))
+        self.assertNotEqual(key, acceptance.portal_key('Agoda', portal))
+
+
+class PromoteTest(StoreCase):
+    def setUp(self):
+        super().setUp()
+        self.companies = self.folder / 'companies.json'
+        self.companies.write_text(json.dumps({'companies': V2_COMPANIES}, indent=1), encoding='utf-8')
+        self.backups = self.folder / 'data' / 'backups'
+
+    def verify(self, outcome=GOOD_PROBE):
+        acceptance.run_verify(self.store, rank.load_registry(self.companies), FakeHttp(),
+                              probe=lambda http, employer, portal: outcome)
+
+    def states(self):
+        return {entry['name']: [portal['state'] for portal in entry.get('portals', [])]
+                for entry in json.loads(self.companies.read_text(encoding='utf-8'))['companies']}
+
+    def test_promote_marks_passed_candidates_and_backs_the_file_up(self):
+        before = self.companies.read_text(encoding='utf-8')
+        self.verify()
+        self.assertEqual(self.states()['Booking.com'], ['candidate'])       # verify alone changes nothing
+        promoted = acceptance.promote(self.companies, self.store, self.backups)
+        self.assertEqual(promoted, [{'employer': 'Booking.com', 'kind': 'icims'}])
+        states = self.states()
+        self.assertEqual((states['Booking.com'], states['Toyota'], states['HDFC Bank'], states['Acme']),
+                         (['verified'], ['wrong_scope'], ['unsupported'], ['verified']))
+        copies = list(self.backups.glob('companies-*.json'))
+        self.assertEqual(len(copies), 1)
+        self.assertEqual(copies[0].read_text(encoding='utf-8'), before)
+        self.assertFalse(self.companies.with_suffix('.json.tmp').exists())
+        after = json.loads(self.companies.read_text(encoding='utf-8'))['companies']
+        self.assertEqual(after[2], V2_COMPANIES[2])                         # untouched entries are unchanged
+        self.assertEqual(len(rank.load_registry(self.companies)), 6)
+        self.assertEqual(acceptance.promote(self.companies, self.store, self.backups), [])   # nothing left to promote
+        self.assertEqual(len(list(self.backups.glob('companies-*.json'))), 1)
+
+    def test_a_portal_that_did_not_pass_is_not_promoted(self):
+        self.verify({**GOOD_PROBE, 'detail_ok': False})
+        self.assertEqual(acceptance.promote(self.companies, self.store, self.backups), [])
+        self.assertEqual(self.states()['Booking.com'], ['candidate'])
+        self.assertFalse(self.backups.exists())                             # no change, so no backup either
+
+    def test_a_board_edited_after_verification_is_not_promoted(self):
+        self.verify()
+        document = json.loads(self.companies.read_text(encoding='utf-8'))
+        document['companies'][1]['portals'][0]['host'] = 'other.booking.test'
+        self.companies.write_text(json.dumps(document), encoding='utf-8')
+        self.assertEqual(acceptance.promote(self.companies, self.store, self.backups), [])
+
+    def test_nothing_verified_yet(self):
+        self.assertEqual(acceptance.promote(self.companies, self.store, self.backups), [])
+
+    def test_an_inconclusive_check_is_not_promoted(self):
+        for change in ({'inconclusive': True}, {'rows_parsed': 0}):
+            self.verify({**GOOD_PROBE, **change})
+            self.assertEqual(acceptance.promote(self.companies, self.store, self.backups), [], change)
+        self.assertEqual(self.states()['Booking.com'], ['candidate'])
+
+    def test_a_check_older_than_thirty_days_is_not_promoted(self):
+        old = (datetime.now(timezone.utc) - timedelta(days=31)).isoformat(timespec='seconds')
+        with mock.patch('radar.acceptance.now_iso', return_value=old):
+            self.verify()
+        self.assertEqual(acceptance.promote(self.companies, self.store, self.backups), [])
+        recent = (datetime.now(timezone.utc) - timedelta(days=29)).isoformat(timespec='seconds')
+        with mock.patch('radar.acceptance.now_iso', return_value=recent):
+            self.verify()
+        self.assertEqual(len(acceptance.promote(self.companies, self.store, self.backups)), 1)
+
+    def test_a_record_stored_under_the_old_rule_is_judged_again(self):
+        self.verify()
+        records = self.store.kv_get(acceptance.KV_VERIFICATION)
+        for record in records.values():
+            del record['rows_parsed']                                       # as written before parsing was required
+            record['passed'] = True
+        self.store.kv_set(acceptance.KV_VERIFICATION, {**records, 'junk': 'not a record'})
+        self.assertEqual(acceptance.promote(self.companies, self.store, self.backups), [])
+
+
+class CoverageExportTest(StoreCase):
+    def setUp(self):
+        super().setUp()
+        result = model.make_result(model.EMPLOYER_SOURCE, 'Acme', 'ats', status='partial', reason='timeout',
+                                   error='=cmd|page 2 timed out', employer='Acme', pages_complete=False)
+        result['task'] = V2_TASKS['Acme']
+        self.store.save_result(self.run_id, result, plain_ranker)
+        self.rows = self.store.coverage(v2_registry(), v2_targets(self.folder))
+        self.summary = self.store.coverage_summary(self.rows)
+
+    def test_csv_has_every_column_and_every_row(self):
+        table = list(csv.DictReader(io.StringIO(acceptance.coverage_csv(self.rows))))
+        self.assertEqual(list(table[0]), list(radar_store.COVERAGE_COLUMNS))
+        self.assertEqual(len(table), 8)
+        by_name = {row['canonical'] or row['original_names']: row for row in table}
+        acme = by_name['Acme']
+        self.assertEqual((acme['original_names'], acme['portals'], acme['latest_status'], acme['latest_reason'],
+                          acme['pages_complete'], acme['sources'], acme['inventory_state']),
+                         ('ACME Corporation; Acme India', 'workday (verified, india)', 'partial', 'timeout', 'no',
+                          V2_TASKS['Acme'] + ': partial [timeout]', 'configured'))
+        self.assertEqual(acme['latest_error'], "'=cmd|page 2 timed out")     # untrusted text cannot run as a formula
+        self.assertEqual((by_name['Nothing Configured']['latest_status'], by_name['Nothing Configured']['inventory_state']),
+                         ('', 'not configured'))
+        self.assertEqual(by_name['Mystery Systems']['inventory_state'], 'identity unresolved')
+
+    def test_markdown_and_files(self):
+        csv_path, md_path = acceptance.write_coverage(self.rows, self.summary, self.folder / 'out' / 'coverage')
+        self.assertEqual((csv_path.name, md_path.name), ('coverage.csv', 'coverage.md'))
+        self.assertTrue(csv_path.read_bytes().startswith(b'\xef\xbb\xbf'))
+        text = md_path.read_text(encoding='utf-8')
+        for needle in ('Original target rows: 6', 'Canonical employers: 6', 'identity unresolved: 2',
+                       '| Acme | ACME Corporation; Acme India | product | yes | workday (verified, india) |',
+                       '| (unresolved) | Mystery Systems |', 'never shown as empty', '=cmd\\|page 2'):
+            self.assertIn(needle, text)
+        again, _ = acceptance.write_coverage(self.rows, self.summary, self.folder / 'out' / 'named.csv')
+        self.assertEqual(again.name, 'named.csv')
+
+
+class ReportTest(ScanCase):
+    def report(self):
+        rows, summary = scan.load_coverage(self.store, self.config)
+        return acceptance.report_markdown(self.store, rows, summary)
+
+    def setUp(self):
+        super().setUp()
+        companies = self.data / 'companies.json'
+        companies.write_text(json.dumps({'companies': V2_COMPANIES}), encoding='utf-8')
+        (self.data / 'targets.json').write_text(json.dumps(V2_TARGETS), encoding='utf-8')
+        self.config['companies_path'], self.config['targets_path'] = str(companies), str(self.data / 'targets.json')
+
+    def test_before_any_scan(self):
+        self.assertIn('No scan has finished yet', self.report())
+
+    def test_report_of_a_run(self):
+        summary = self.run_scan([
+            PortalTask(V2_TASKS['Acme'], 'Acme', jobs=[board_job(model.EMPLOYER_SOURCE, 'a1', company='Acme')]),
+            PortalTask(V2_TASKS['Booking.com'], 'Booking.com', status='error', reason='dns',
+                       error='DNS lookup failed for jobs.booking.test'),
+            PortalTask(V2_TASKS['Legacy Bank'], 'Legacy Bank', status='empty')])
+        text = self.report()
+        for needle in (f'Run `{summary["run_id"]}`: mode **full**, status **partial**',
+                       'Scannable sources configured: 3', 'Requested in this run: 3', 'Attempted (actually started): 3',
+                       'Completed without needing attention: 2', 'New jobs: 1 (1 in Bengaluru, 1 at product or GCC',
+                       '| error | 1 |', '| Booking.com | error |', 'DNS lookup failed for jobs.booking.test',
+                       '## Coverage before and after', '| Acme | never attempted | ok | yes |',
+                       '| Booking.com | never attempted | error | yes |', '| Legacy Bank | never attempted | empty | yes |',
+                       '| dns | 1 |', 'Attempted in the latest run: 3', 'Never attempted: 0; not reached within the time budget: 0',
+                       'Latest outcome ok or empty: 2; partial: 0; blocked: 0; maintenance: 0; error: 1',
+                       '| Toyota | wrong scope only | wrong scope only | no |',
+                       '| target: Mystery Systems | identity unresolved | identity unresolved | no |',
+                       'Original target rows: 6', 'still a gap, not coverage'):
+            self.assertIn(needle, text)
+
+    def test_a_failed_latest_attempt_is_stated_above_the_last_good_run(self):
+        good = self.run_scan([PortalTask('ats:workday:acme', 'Acme', status='empty')])
+        later = '2099-01-01T00:00:00+00:00'
+        with mock.patch('radar.store.now_iso', return_value=later), mock.patch('radar.scan.now_iso', return_value=later):
+            self.run_scan([PortalTask('ats:workday:acme', 'Acme')], only=['Nobody'])
+        text = self.report()
+        self.assertIn('failed', text.split('\n')[2])
+        self.assertIn(f'Run `{good["run_id"]}`', text)
+
+
+class CliV2Test(CliCase):
+    def setUp(self):
+        super().setUp()
+        self.companies = self.data.parent / 'companies.json'
+        self.targets = self.data.parent / 'targets.json'
+        self.companies.write_text(json.dumps({'companies': V2_COMPANIES}), encoding='utf-8')
+        self.targets.write_text(json.dumps(V2_TARGETS), encoding='utf-8')
+        for name, path in (('COMPANIES_PATH', self.companies), ('TARGETS_PATH', self.targets)):
+            patcher = mock.patch.object(self.cli, name, path)
+            patcher.start()
+            self.addCleanup(patcher.stop)
+
+    def test_scan_flags_reach_run_scan(self):
+        from radar import scan as scan_module
+        summary = {'status': 'complete', 'attention': [], 'mode': 'retry', 'attempted': 1, 'requested': 2, 'completed': 1,
+                   'new': 0, 'unmatched': ['Nobody'], 'not_attempted': ['Gamma']}
+        for argv, expected in ((['scan', '--retry-incomplete'], {'minutes': None, 'only': None, 'mode': 'retry'}),
+                               (['scan', '--only', 'Acme, Booking.com ,'],
+                                {'minutes': None, 'only': ['Acme', 'Booking.com'], 'mode': 'full'})):
+            with mock.patch.object(scan_module, 'run_scan', return_value=summary) as run, \
+                    mock.patch.object(scan_module, 'setup_console_logging'):
+                code, output = self.invoke(*argv)
+            self.assertEqual((code, run.call_args.kwargs), (0, expected))
+            self.assertIn('1 of 2 requested sources attempted', output)
+            self.assertIn('No source matches: Nobody', output)
+            self.assertIn('--retry-incomplete', output)
+
+    def test_verify_writes_reports_and_promote_updates_the_registry(self):
+        from radar import acceptance as module
+        probes = []
+
+        def probe(http, employer, portal):
+            probes.append((employer['name'], http.user_agent))
+            return GOOD_PROBE
+        fake_sources = mock.MagicMock(probe_portal=probe)
+        with mock.patch.dict(sys.modules, {'radar.sources': fake_sources}):
+            code, output = self.invoke('verify', '--minutes', '1')
+        self.assertEqual(code, 0)
+        self.assertEqual(probes, [('Booking.com', model.DEFAULT_CONFIG['http']['user_agent'])])
+        self.assertIn('1 portals checked: 1 passed, 0 inconclusive, 0 failed', output)
+        self.assertEqual(len(list((self.data / 'acceptance').glob('verify-*.json'))), 1)
+        self.assertEqual(len(list((self.data / 'acceptance').glob('verify-*.md'))), 1)
+        self.assertEqual(len(Store(self.data / 'radar.sqlite3').kv_get(module.KV_VERIFICATION)), 1)
+        self.assertEqual(json.loads(self.companies.read_text(encoding='utf-8'))['companies'][1]['portals'][0]['state'],
+                         'candidate')
+
+        code, output = self.invoke('verify', '--promote')                  # no network: reads the stored results
+        self.assertEqual(code, 0)
+        self.assertIn('verified: Booking.com (icims)', output)
+        self.assertEqual(json.loads(self.companies.read_text(encoding='utf-8'))['companies'][1]['portals'][0]['state'],
+                         'verified')
+        self.assertEqual(len(list((self.data / 'backups').glob('companies-*.json'))), 1)
+        code, output = self.invoke('verify', '--promote')
+        self.assertIn('0 portals marked verified', output)
+
+    def test_verify_with_nothing_to_check_exits_1(self):
+        with mock.patch.dict(sys.modules, {'radar.sources': mock.MagicMock(probe_portal=lambda *args: GOOD_PROBE)}):
+            code, output = self.invoke('verify', '--only', 'Nobody Inc')
+        self.assertEqual(code, 1)
+        self.assertIn('0 portals checked', output)
+
+    def test_coverage_command(self):
+        code, output = self.invoke('coverage')
+        self.assertEqual(code, 0)
+        self.assertIn('8 rows: 6 employers, 3 with a scannable portal', output)
+        written = sorted(path.suffix for path in (self.data / 'acceptance').glob('coverage-*'))
+        self.assertEqual(written, ['.csv', '.md'])
+        target = self.data / 'mine' / 'table.csv'
+        self.assertEqual(self.invoke('coverage', str(target))[0], 0)
+        with open(target, encoding='utf-8-sig', newline='') as handle:
+            self.assertEqual(len(list(csv.DictReader(handle))), 8)
+        self.assertTrue(target.with_suffix('.md').exists())
+
+    def test_report_command(self):
+        code, output = self.invoke('report')
+        self.assertEqual(code, 0)
+        reports = list((self.data / 'acceptance').glob('report-*.md'))
+        self.assertEqual(len(reports), 1)
+        self.assertIn('No scan has finished yet', reports[0].read_text(encoding='utf-8'))
+        target = self.data / 'r.md'
+        self.invoke('report', str(target))
+        self.assertTrue(target.exists())
+
+    def doctor(self):
+        with mock.patch.object(self.cli, 'MODULES', ('radar.model', 'radar.acceptance')), \
+                mock.patch.object(self.cli, 'BASE', PROJECT):
+            return self.invoke('doctor')
+
+    def test_doctor_accepts_valid_portals_and_targets(self):
+        document = json.loads(self.targets.read_text(encoding='utf-8'))
+        document['rows'] = [row for row in document['rows'] if row['row'] != 5]      # row 5 names an unknown employer
+        self.targets.write_text(json.dumps(document), encoding='utf-8')
+        code, output = self.doctor()
+        self.assertEqual(code, 0, output)
+        self.assertIn('companies.json: 6 employers', output)
+        self.assertIn('portals: 1 candidate, 1 unsupported, 2 verified, 1 wrong_scope', output)
+        self.assertIn('targets.json: 5 original rows (1 added, 2 matched, 1 related, 1 unresolved)', output)
+
+    def test_doctor_reports_bad_portals_and_targets(self):
+        companies = [{'name': 'A', 'type': 'gcc', 'portals': [{'state': 'verified', 'scope': 'india'}]},
+                     {'name': 'B', 'type': 'gcc', 'portals': [{'kind': 'lever', 'state': 'trusted', 'scope': 'india'}]},
+                     {'name': 'C', 'type': 'gcc', 'portals': [{'kind': 'lever', 'state': 'verified', 'scope': 'mars'}]},
+                     {'name': 'D', 'type': 'gcc', 'portals': [{'kind': 'lever', 'state': 'unsupported', 'scope': 'unknown'}]},
+                     {'name': 'E', 'type': 'gcc', 'portals': 'workday'},
+                     {'name': 'F', 'type': 'bank'}, 'junk']
+        self.companies.write_text(json.dumps({'companies': companies}), encoding='utf-8')
+        self.targets.write_text(json.dumps({'rows': [
+            {'row': 1, 'original_name': 'A Ltd', 'employer': 'A', 'resolution': 'matched'},
+            {'row': 2, 'original_name': 'X', 'employer': 'Missing', 'resolution': 'matched'},
+            {'row': 3, 'original_name': 'Y', 'resolution': 'unresolved'},
+            {'row': 4, 'original_name': 'Z', 'employer': 'A', 'resolution': 'guess'},
+            {'row': 5}]}), encoding='utf-8')
+        code, output = self.doctor()
+        self.assertEqual(code, 1)
+        for needle in ('a portal of A has no "kind"', "portal lever of B has an unknown state 'trusted'",
+                       "portal lever of C has an unknown scope 'mars'", 'portal lever of D is unsupported and must say why',
+                       '"portals" of E must be a list', "F has an unknown type 'bank'", '1 entries are not objects',
+                       "employer 'Missing' is not in companies.json", 'an unresolved target must give its reason',
+                       "unknown resolution 'guess'", 'every row needs an "original_name"'):
+            self.assertIn(needle, output)
+
+    def test_doctor_validates_the_detail_budget(self):
+        config = self.data.parent / 'config.json'
+        with mock.patch.object(self.cli, 'CONFIG_PATH', config):
+            for value, good in ((120, True), (40.0, True), (0, False), (-5, False), ('many', False), (True, False), (None, False)):
+                config.write_text(json.dumps({'portals': {'detail_budget_per_board': value}}), encoding='utf-8')
+                code, output = self.doctor()
+                self.assertEqual('detail_budget_per_board must be a positive number' in output, not good, value)
+            config.write_text(json.dumps({'portals': 'lots'}), encoding='utf-8')
+            self.assertIn('detail_budget_per_board must be a positive number', self.doctor()[1])
+            config.write_text('{}', encoding='utf-8')                       # absent: the default of 120 applies
+            self.assertIn('at most 120 new descriptions per run', self.doctor()[1])
+        self.assertEqual(model.load_config(PROJECT / 'config.json')['portals'], {'detail_budget_per_board': 120})
+        self.assertEqual(model.DEFAULT_CONFIG['portals'], {'detail_budget_per_board': 120})
+
+    def test_doctor_without_targets_file(self):
+        self.targets.unlink()
+        code, output = self.doctor()
+        self.assertEqual(code, 0, output)
+        self.assertIn('targets.json is missing', output)
+        self.targets.write_text('{"rows": 5}', encoding='utf-8')
+        self.assertIn('targets.json must contain {"rows": [...]}', self.doctor()[1])
+
 
 
 if __name__ == '__main__':

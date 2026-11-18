@@ -1,0 +1,32 @@
+{
+  "id": "C120",
+  "company": {
+    "name": "Intel",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://jobs.intel.com",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "intel",
+        "datacentre": "wd1",
+        "site": "External",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.intel.com",
+      "checked_at": "2026-11-15T23:50:16.095366+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

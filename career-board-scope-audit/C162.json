@@ -1,0 +1,986 @@
+{
+  "id": "C162",
+  "company": {
+    "name": "Morgan Stanley",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://morganstanley.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "ms",
+        "datacentre": "wd5",
+        "site": "External",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://morganstanley.com/careers",
+      "checked_at": "2026-11-15T23:50:36.988841+00:00",
+      "links": [
+        {
+          "url": "https://www.morganstanley.com/about-us-ir",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us-newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/alumni-network",
+          "text": "Alumni"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices",
+          "text": "All"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/asia-pacific",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/europe-middle-east-africa",
+          "text": "Europe, Middle East, and Africa"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/japan",
+          "text": "Japan"
+        },
+        {
+          "url": "https://login.morganstanleyclientserv.com/ux/",
+          "text": "Morgan Stanley Online"
+        },
+        {
+          "url": "https://www.morganstanley.com/atwork/employees/login",
+          "text": "Morgan Stanley at Work"
+        },
+        {
+          "url": "https://matrix.ms.com/",
+          "text": "Matrix"
+        },
+        {
+          "url": "https://matrix.ms.com/research",
+          "text": "Research Portal"
+        },
+        {
+          "url": "https://us.etrade.com/etx/pxy/login?icid=ms-global-nav-clientlogin-etrade",
+          "text": "E*TRADE from Morgan Stanley"
+        },
+        {
+          "url": "https://login.morganstanleyclientserv.com/ux/",
+          "text": "Morgan Stanley Online"
+        },
+        {
+          "url": "https://www.morganstanley.com/atwork/employees/login",
+          "text": "Morgan Stanley at Work"
+        },
+        {
+          "url": "https://matrix.ms.com/",
+          "text": "Matrix"
+        },
+        {
+          "url": "https://matrix.ms.com/research",
+          "text": "Research Portal"
+        },
+        {
+          "url": "https://us.etrade.com/etx/pxy/login?icid=ms-global-nav-clientlogin-etrade",
+          "text": "E*TRADE from Morgan Stanley"
+        },
+        {
+          "url": "https://www.morganstanley.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do",
+          "text": "View All Businesses"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do",
+          "text": "View All Businesses"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/institutional-securities",
+          "text": "All Institutional Securities"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/investment-banking",
+          "text": "Investment Banking & Global Capital Markets"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/sales-and-trading",
+          "text": "Sales and Trading"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/research",
+          "text": "Research"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/healthcare-leaders-discuss-reshaping-industry-global-healthcare-conference-2026",
+          "text": "Investment Banking What’s Driving Healthcare Growth?"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/healthcare-consumerism-drives-26-b-opportunity-2026",
+          "text": "Research Consumers Write a New Prescription for Healthcare"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management",
+          "text": "All Wealth Management"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/financial-advisor",
+          "text": "Financial Advisor Services"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/private-wealth-management",
+          "text": "Private Wealth Management"
+        },
+        {
+          "url": "https://us.etrade.com/home?icid=ms-global-nav-wealthmanagement-etrade",
+          "text": "E*TRADE from Morgan Stanley"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/morgan-stanley-family-office",
+          "text": "Family Office"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/private-banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/products-and-investment-planning",
+          "text": "Products & Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/atwork",
+          "text": "Workplace Financial Benefits"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/institutional-consulting-solutions",
+          "text": "Institutional Consulting"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/institutional-consulting-solutions/corporate-cash-management",
+          "text": "Corporate Finance"
+        },
+        {
+          "url": "https://advisor.morganstanley.com/search?icid=ms-global-nav-wealthmanagement-featured-getmatchedfinancialadvisor",
+          "text": "Wealth Management Get Matched With a Financial Advisor"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/investment-management",
+          "text": "All Investment Management"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/alternatives.html",
+          "text": "Alternatives"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/digital-assets.html",
+          "text": "Digital Assets"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/equity.html",
+          "text": "Equities"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/fixed-income.html",
+          "text": "Fixed Income"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/campaigns/liquidity.html",
+          "text": "Liquidity"
+        },
+        {
+          "url": "https://www.eatonvance.com/taxes-and-tools/tax-center/tax-managed-solutions.html",
+          "text": "Custom Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/solutions-and-multi-asset.html",
+          "text": "Multi-Asset Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/financial-advisor/about-us/sustainable-investing.html",
+          "text": "Sustainable Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/insights/articles/cryptocurrency-exchange-traded-products.html",
+          "text": "Investment Management Cryptocurrency Exchange Traded Products"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/insights/articles/the-software-sell-off.html",
+          "text": "Investment Management Software Sell-Off: Framing Concerns About Private Credit"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve",
+          "text": "View Client Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve",
+          "text": "View Client Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/individuals",
+          "text": "Individuals"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/founders",
+          "text": "Founders"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/asset-owners",
+          "text": "Asset Owners"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/asset-managers",
+          "text": "Asset Managers"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/corporations-and-institutions",
+          "text": "Corporations & Institutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/blueprint",
+          "text": "The Morgan Stanley Blueprint Watch Our Client Stories"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights",
+          "text": "View All Insights"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights",
+          "text": "View All Insights"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/market-trends",
+          "text": "Market Trends"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/public-policy",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/artificial-intelligence",
+          "text": "Artificial Intelligence"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "text": "Personal Finance"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/podcasts/thoughts-on-the-market/bull-market-resilience-isnt-complacency-mike-wilson",
+          "text": "Thoughts on the Market Market Resilience Isn't Complacency"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/robot-almanac/physical-ai-robotics-adam-jonas",
+          "text": "The Robot Almanac What Happens When AI Enters the Physical World?"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/institute",
+          "text": "Morgan Stanley Institute"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/private-markets-investment-trends-institute-2026",
+          "text": "Morgan Stanley Institute Private Markets Are Becoming Mainstream: What This Shift Means"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/our-series",
+          "text": "View All Series"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/podcasts/thoughts-on-the-market",
+          "text": "Thoughts on the Market"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/exceptional-leaders",
+          "text": "Exceptional Leaders"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/blueprint",
+          "text": "The Blueprint"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/hard-lessons",
+          "text": "Hard Lessons"
+        },
+        {
+          "url": "https://www.morganstanley.com/newsletter/subscribe",
+          "text": "Five Ideas"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/exceptional-leaders/thermo-fisher-scientific-chairman-ceo-marc-casper",
+          "text": "Exceptional Leaders Thermo Fisher: The Company Behind the Science"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/digital-assets-next-stage-roundtable-institute-2026",
+          "text": "Morgan Stanley Institute The Signal Roundtable: The Future of Digital Assets"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us",
+          "text": "Explore About Us"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us",
+          "text": "Explore About Us"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/leadership",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices",
+          "text": "Global Locations"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/giving-back",
+          "text": "Giving Back"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/sustainability-at-morgan-stanley",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": "Diversity & Inclusion"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/inclusive-sustainable-ventures",
+          "text": "Inclusive & Sustainable Ventures"
+        },
+        {
+          "url": "https://www.morganstanley.com/sponsorships",
+          "text": "Sponsorships"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/our-suppliers",
+          "text": "Our Suppliers"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/technology",
+          "text": "TECHNOLOGY Leaders in Innovation"
+        },
+        {
+          "url": "https://www.morganstanley.com/people",
+          "text": "Explore Careers"
+        },
+        {
+          "url": "https://www.morganstanley.com/people",
+          "text": "Explore Careers"
+        },
+        {
+          "url": "https://www.morganstanley.com/people-opportunities/students-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals/financial-advisors",
+          "text": "Financial Advisors"
+        },
+        {
+          "url": "https://www.morganstanley.com/careers/career-opportunities-search",
+          "text": "Search All Opportunities"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": "ABOUT US Explore Diversity & Inclusion"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/giving-back",
+          "text": "ABOUT US See How We Give Back"
+        },
+        {
+          "url": "https://login.morganstanleyclientserv.com/ux/",
+          "text": "Morgan Stanley Online"
+        },
+        {
+          "url": "https://www.morganstanley.com/atwork/employees/login",
+          "text": "Morgan Stanley at Work"
+        },
+        {
+          "url": "https://matrix.ms.com/",
+          "text": "Matrix"
+        },
+        {
+          "url": "https://matrix.ms.com/research",
+          "text": "Research Portal"
+        },
+        {
+          "url": "https://us.etrade.com/etx/pxy/login?icid=ms-global-nav-clientlogin-etrade",
+          "text": "E*TRADE from Morgan Stanley"
+        },
+        {
+          "url": "https://www.morganstanley.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do",
+          "text": "View All Businesses"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do",
+          "text": "View All Businesses"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/institutional-securities",
+          "text": "All Institutional Securities"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/investment-banking",
+          "text": "Investment Banking & Global Capital Markets"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/sales-and-trading",
+          "text": "Sales and Trading"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/research",
+          "text": "Research"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/healthcare-leaders-discuss-reshaping-industry-global-healthcare-conference-2026",
+          "text": "Investment Banking What’s Driving Healthcare Growth?"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/healthcare-consumerism-drives-26-b-opportunity-2026",
+          "text": "Research Consumers Write a New Prescription for Healthcare"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management",
+          "text": "All Wealth Management"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/financial-advisor",
+          "text": "Financial Advisor Services"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/private-wealth-management",
+          "text": "Private Wealth Management"
+        },
+        {
+          "url": "https://us.etrade.com/home?icid=ms-global-nav-wealthmanagement-etrade",
+          "text": "E*TRADE from Morgan Stanley"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/morgan-stanley-family-office",
+          "text": "Family Office"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/private-banking",
+          "text": "Banking"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/products-and-investment-planning",
+          "text": "Products & Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/atwork",
+          "text": "Workplace Financial Benefits"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/institutional-consulting-solutions",
+          "text": "Institutional Consulting"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/institutional-consulting-solutions/corporate-cash-management",
+          "text": "Corporate Finance"
+        },
+        {
+          "url": "https://advisor.morganstanley.com/search?icid=ms-global-nav-wealthmanagement-featured-getmatchedfinancialadvisor",
+          "text": "Wealth Management Get Matched With a Financial Advisor"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/investment-management",
+          "text": "All Investment Management"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/alternatives.html",
+          "text": "Alternatives"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/digital-assets.html",
+          "text": "Digital Assets"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/equity.html",
+          "text": "Equities"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/fixed-income.html",
+          "text": "Fixed Income"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/campaigns/liquidity.html",
+          "text": "Liquidity"
+        },
+        {
+          "url": "https://www.eatonvance.com/taxes-and-tools/tax-center/tax-managed-solutions.html",
+          "text": "Custom Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/capabilities/solutions-and-multi-asset.html",
+          "text": "Multi-Asset Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/financial-advisor/about-us/sustainable-investing.html",
+          "text": "Sustainable Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/insights/articles/cryptocurrency-exchange-traded-products.html",
+          "text": "Investment Management Cryptocurrency Exchange Traded Products"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/insights/articles/the-software-sell-off.html",
+          "text": "Investment Management Software Sell-Off: Framing Concerns About Private Credit"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve",
+          "text": "View Client Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve",
+          "text": "View Client Solutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/individuals",
+          "text": "Individuals"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/founders",
+          "text": "Founders"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/asset-owners",
+          "text": "Asset Owners"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/asset-managers",
+          "text": "Asset Managers"
+        },
+        {
+          "url": "https://www.morganstanley.com/who-we-serve/corporations-and-institutions",
+          "text": "Corporations & Institutions"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/blueprint",
+          "text": "The Morgan Stanley Blueprint Watch Our Client Stories"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights",
+          "text": "View All Insights"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights",
+          "text": "View All Insights"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/market-trends",
+          "text": "Market Trends"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/public-policy",
+          "text": "Public Policy"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/artificial-intelligence",
+          "text": "Artificial Intelligence"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "text": "Personal Finance"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/podcasts/thoughts-on-the-market/bull-market-resilience-isnt-complacency-mike-wilson",
+          "text": "Thoughts on the Market Market Resilience Isn't Complacency"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/robot-almanac/physical-ai-robotics-adam-jonas",
+          "text": "The Robot Almanac What Happens When AI Enters the Physical World?"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/institute",
+          "text": "Morgan Stanley Institute"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/private-markets-investment-trends-institute-2026",
+          "text": "Morgan Stanley Institute Private Markets Are Becoming Mainstream: What This Shift Means"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/our-series",
+          "text": "View All Series"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/podcasts/thoughts-on-the-market",
+          "text": "Thoughts on the Market"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/exceptional-leaders",
+          "text": "Exceptional Leaders"
+        },
+        {
+          "url": "https://www.morganstanley.com/what-we-do/blueprint",
+          "text": "The Blueprint"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/hard-lessons",
+          "text": "Hard Lessons"
+        },
+        {
+          "url": "https://www.morganstanley.com/newsletter/subscribe",
+          "text": "Five Ideas"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/videos/exceptional-leaders/thermo-fisher-scientific-chairman-ceo-marc-casper",
+          "text": "Exceptional Leaders Thermo Fisher: The Company Behind the Science"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/articles/digital-assets-next-stage-roundtable-institute-2026",
+          "text": "Morgan Stanley Institute The Signal Roundtable: The Future of Digital Assets"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us",
+          "text": "Explore About Us"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us",
+          "text": "Explore About Us"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/leadership",
+          "text": "Leadership"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices",
+          "text": "Global Locations"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/giving-back",
+          "text": "Giving Back"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/sustainability-at-morgan-stanley",
+          "text": "Sustainability"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": "Diversity & Inclusion"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/inclusive-sustainable-ventures",
+          "text": "Inclusive & Sustainable Ventures"
+        },
+        {
+          "url": "https://www.morganstanley.com/sponsorships",
+          "text": "Sponsorships"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/our-suppliers",
+          "text": "Our Suppliers"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/technology",
+          "text": "TECHNOLOGY Leaders in Innovation"
+        },
+        {
+          "url": "https://www.morganstanley.com/people",
+          "text": "Explore Careers"
+        },
+        {
+          "url": "https://www.morganstanley.com/people",
+          "text": "Explore Careers"
+        },
+        {
+          "url": "https://www.morganstanley.com/people-opportunities/students-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals/financial-advisors",
+          "text": "Financial Advisors"
+        },
+        {
+          "url": "https://www.morganstanley.com/careers/career-opportunities-search",
+          "text": "Search All Opportunities"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": "ABOUT US Explore Diversity & Inclusion"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/giving-back",
+          "text": "ABOUT US See How We Give Back"
+        },
+        {
+          "url": "https://login.morganstanleyclientserv.com/ux/",
+          "text": "Morgan Stanley Online"
+        },
+        {
+          "url": "https://www.morganstanley.com/atwork/employees/login",
+          "text": "Morgan Stanley at Work"
+        },
+        {
+          "url": "https://matrix.ms.com/",
+          "text": "Matrix"
+        },
+        {
+          "url": "https://matrix.ms.com/research",
+          "text": "Research Portal"
+        },
+        {
+          "url": "https://us.etrade.com/etx/pxy/login?icid=ms-global-nav-clientlogin-etrade",
+          "text": "E*TRADE from Morgan Stanley"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us-ir",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us-newsroom",
+          "text": "Newsroom"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/alumni-network",
+          "text": "Alumni"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices",
+          "text": "All"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/americas",
+          "text": "Americas"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/asia-pacific",
+          "text": "Asia-Pacific"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/europe-middle-east-africa",
+          "text": "Europe, Middle East, and Africa"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices/japan",
+          "text": "Japan"
+        },
+        {
+          "url": "https://twitter.com/share?url=https://www.morganstanley.com/people&text=Careers%20in%20Finance%20and%20Investment%20Banking",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://www.morganstanley.com/people&title=Careers%20in%20Finance%20and%20Investment%20Banking&summary=Explore%20who%20we%20are%20and%20discover%20the%20right%20opportunity%20for%20you.%20We%20are%20committed%20to%20diversity%20and%20inclusion%20and%20believe%20our%20greatest%20asset%20is%20our%20people.",
+          "text": ""
+        },
+        {
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https://www.morganstanley.com/people",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.morganstanley.com/people-opportunities/students-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://www.morganstanley.com/people-opportunities/students-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://www.morganstanley.com/careers/career-opportunities-search",
+          "text": "VIEW ALL OPPORTUNITIES"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/global-offices",
+          "text": "View Global Offices"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": "Learn how we live those values."
+        },
+        {
+          "url": "https://www.morganstanley.com/sponsorships",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/inclusive-growth",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/articles/hbcu-scholars-program-employees-support",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/sponsorships",
+          "text": "Everyone Deserves a Shot at Success"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/inclusive-growth",
+          "text": "Inclusive Growth"
+        },
+        {
+          "url": "https://www.morganstanley.com/articles/hbcu-scholars-program-employees-support",
+          "text": "A Shared Past, a Common Purpose"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": "Committing to Diversity and Inclusion"
+        },
+        {
+          "url": "https://www.morganstanley.com/sponsorships",
+          "text": "Inclusive Innovation Everyone Deserves a Shot at Success"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/topics/inclusive-growth",
+          "text": "Investment Management Inclusive Growth"
+        },
+        {
+          "url": "https://www.morganstanley.com/articles/hbcu-scholars-program-employees-support",
+          "text": "Diversity A Shared Past, a Common Purpose"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/diversity",
+          "text": "Diversity Committing to Diversity and Inclusion"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/technology-professionals",
+          "text": "Technology"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/technology-professionals",
+          "text": "Technology Professionals"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/financial-advisors",
+          "text": "Wealth Management"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/financial-advisors",
+          "text": "Financial Advisors"
+        },
+        {
+          "url": "https://www.morganstanley.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us",
+          "text": "About Us"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us-governance",
+          "text": "Corporate Governance"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us-ir",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/our-suppliers",
+          "text": "Suppliers"
+        },
+        {
+          "url": "https://www.morganstanley.com/people-opportunities/students-graduates",
+          "text": "Students & Graduates"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals",
+          "text": "Experienced Professionals"
+        },
+        {
+          "url": "https://www.morganstanley.com/people/experienced-professionals/financial-advisors",
+          "text": "Financial Advisors"
+        },
+        {
+          "url": "https://login.morganstanleyclientserv.com/ux/",
+          "text": "Client Login"
+        },
+        {
+          "url": "https://advisor.morganstanley.com/search?icid=ms-global-footer-connectus-findfinancialadvisor",
+          "text": "Find a Financial Advisor"
+        },
+        {
+          "url": "https://www.morganstanley.com/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "url": "https://www.morganstanley.com/insights/our-series",
+          "text": "Subscribe to Our Series"
+        },
+        {
+          "url": "https://www.instagram.com/morgan.stanley",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.linkedin.com/company/morgan-stanley",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.facebook.com/morganstanley",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.youtube.com/user/mgstnly",
+          "text": "YouTube"
+        },
+        {
+          "url": "https://www.x.com/morganstanley",
+          "text": "X"
+        },
+        {
+          "url": "https://www.morganstanley.com/people-opportunities/eeo",
+          "text": "Equal Opportunity Employer"
+        },
+        {
+          "url": "https://www.morganstanley.com/about-us/cybersecurity-and-fraud-awareness",
+          "text": "Cybersecurity"
+        },
+        {
+          "url": "https://www.morganstanley.com/disclosures",
+          "text": "Disclosures"
+        },
+        {
+          "url": "https://www.morganstanley.com/terms",
+          "text": "Terms of Use"
+        },
+        {
+          "url": "https://www.morganstanley.com/privacy-pledge",
+          "text": "Privacy & Cookies"
+        },
+        {
+          "url": "https://www.morganstanley.com/people",
+          "text": "Your Privacy Choices"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.morganstanley.com/people",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Careers in Finance and Investment Banking | Morgan Stanley",
+      "evidence": "evidence/536b385f6bafd0f26cfb.html.gz",
+      "sha256": "71b9e4f8eaf547cc9292753b0732f42293dc100e3bc6eb8e98b6501db74bc57a"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

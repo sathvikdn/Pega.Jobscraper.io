@@ -1,0 +1,283 @@
+{
+  "id": "C112",
+  "company": {
+    "name": "IBM",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": null,
+    "portals": [],
+    "inventory_note": "Listed only as the parent of Confluent; no IBM careers source is configured."
+  },
+  "observations": [
+    {
+      "url": "https://www.ibm.com/in-en/careers",
+      "checked_at": "2026-11-15T23:51:26.443325+00:00",
+      "links": [
+        {
+          "url": "https://www.ibm.com/in-en",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/search",
+          "text": "Search Jobs"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/areas",
+          "text": "Explore our Career Areas"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/career-opportunities",
+          "text": "Explore Entry Level Opportunities"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/application-process",
+          "text": "Explore our Application Steps and Tips"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/culture",
+          "text": "Explore our Culture"
+        },
+        {
+          "url": "https://www.ibm.com/careers/blog",
+          "text": "Explore our Careers Blog"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/locations",
+          "text": "Explore our Locations"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/blog/once-an-ibmer-always-an-ibmer",
+          "text": "Learn more about Alumni program"
+        },
+        {
+          "url": "https://www.ibm.com/careers/blog/once-an-ibmer-always-an-ibmer",
+          "text": "Learn more about Alumni program"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/blog",
+          "text": "Discover more stories"
+        },
+        {
+          "url": "https://www.ibm.com/careers/blog",
+          "text": "Discover more stories"
+        },
+        {
+          "url": "https://www.ibm.com/careers/blog",
+          "text": "Discover more stories"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA",
+          "text": "Join our Talent Network"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/careers/JobAlerts?source=WEB_Search_INDIA",
+          "text": "Turn on Job Alerts"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/search",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/search",
+          "text": "Explore all roles"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers",
+          "text": "See your results"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.ibm.com/in-en/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Define your career with IBM",
+      "evidence": "evidence/3808023ccb98e1873443.html.gz",
+      "sha256": "512cf7bf06366f60708199104c4d78631981f9da97ffbbc891bbb31f7bd1b078",
+      "discovery": "Supplemental web research: official employer/ATS page; validate entity independently."
+    },
+    {
+      "url": "https://www.ibm.com/careers/search?location=India&remote=true",
+      "checked_at": "2026-11-15T23:51:27.441960+00:00",
+      "links": [
+        {
+          "url": "https://www.ibm.com/homepage",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.ibm.com/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_NA",
+          "text": "Join our Talent Network"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/careers/JobAlerts?source=WEB_Search_NA",
+          "text": "Turn on Job Alerts"
+        },
+        {
+          "url": "https://www.ibm.com/careers/search",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://www.ibm.com/careers/locations",
+          "text": "Explore our Locations"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.ibm.com/careers/search?location=India&remote=true",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Search jobs | IBM Careers",
+      "evidence": "evidence/bd5106ae9c7b449dfc7d.html.gz",
+      "sha256": "0d9b91658003c10c23018b6c20c173202c5527ec76e9dcaf48309b7db8ebecf0",
+      "discovery": "Supplemental web research: official employer/ATS page; validate entity independently."
+    },
+    {
+      "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA",
+      "checked_at": "2026-11-15T23:51:28.098760+00:00",
+      "links": [
+        {
+          "url": "https://www.ibm.com/careers/",
+          "text": "IBM Careers"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA#Navigation_9qlbr1ycj0_1712634013",
+          "text": ""
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA#navbar_Navigation_9qlbr1ycj0_1712634013",
+          "text": ""
+        },
+        {
+          "url": "https://www.ibm.com/careers/us-en/privacy-policy",
+          "text": "Privacy Policy"
+        },
+        {
+          "url": "https://www.ibm.com/us-en/privacy/ccpa",
+          "text": "notice and your privacy choices"
+        },
+        {
+          "url": "https://www.ibm.com/careers/application-process",
+          "text": "Application Info >"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/phishing-scams",
+          "text": "Recruitment Scams >"
+        },
+        {
+          "url": "https://www.ibm.com/careers/applicant-data-privacy",
+          "text": "Privacy statement >"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA#Navigation_wo1o1htc2o_1712788966",
+          "text": ""
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA#navbar_Navigation_wo1o1htc2o_1712788966",
+          "text": ""
+        },
+        {
+          "url": "https://www.linkedin.com/company/ibm/",
+          "text": ""
+        },
+        {
+          "url": "https://www.youtube.com/lifeatibm",
+          "text": ""
+        },
+        {
+          "url": "https://www.instagram.com/lifeatibm/",
+          "text": ""
+        },
+        {
+          "url": "https://www.ibm.com/contact",
+          "text": "Contact IBM"
+        },
+        {
+          "url": "https://www.ibm.com/us-en/privacy?lnk=flg-priv-usen",
+          "text": "Privacy"
+        },
+        {
+          "url": "https://www.ibm.com/legal/us/en",
+          "text": "Terms of use"
+        },
+        {
+          "url": "https://www.ibm.com/able/?lnk=flg-able-usen",
+          "text": "Accesibility"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA#Navigation_u5r10prep1_1713462196",
+          "text": ""
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA#navbar_Navigation_u5r10prep1_1713462196",
+          "text": ""
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Let's connect! - IBM",
+      "evidence": "evidence/cc7031d7b650a25631dc.html.gz",
+      "sha256": "ce9458f4582bde783f335b97731a26df1bd7e1f43392c8f417fe697bb6b75f25"
+    },
+    {
+      "url": "https://careers.ibm.com/en_US/careers/JobAlerts?source=WEB_Search_INDIA",
+      "checked_at": "2026-11-15T23:51:30.227995+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 202,
+      "final_url": "https://careers.ibm.com/en_US/careers/JobAlerts?source=WEB_Search_INDIA",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/269cbd130937de3e28bd.html.gz",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.ibm.com/in-en/careers/search",
+      "checked_at": "2026-11-15T23:51:31.461826+00:00",
+      "links": [
+        {
+          "url": "https://www.ibm.com/in-en",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers",
+          "text": "Careers"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/globalform?source=WEB_Search_INDIA",
+          "text": "Join our Talent Network"
+        },
+        {
+          "url": "https://careers.ibm.com/en_US/careers/JobAlerts?source=WEB_Search_INDIA",
+          "text": "Turn on Job Alerts"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/search",
+          "text": "Search jobs"
+        },
+        {
+          "url": "https://www.ibm.com/in-en/careers/locations",
+          "text": "Explore our Locations"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://www.ibm.com/in-en/careers/search",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Search jobs | IBM Careers",
+      "evidence": "evidence/338fb546dcc16948e6b8.html.gz",
+      "sha256": "29d9560eea4687eb221f159ce95c401bc9e5e278afe2baaf45580c7413399f8b"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

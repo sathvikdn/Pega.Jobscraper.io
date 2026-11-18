@@ -1,0 +1,156 @@
+{
+  "id": "C013",
+  "company": {
+    "name": "Ameriprise",
+    "aliases": [
+      "Ameriprise Financial"
+    ],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://www.ameriprise.com/careers",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "ameriprise",
+        "datacentre": "wd5",
+        "site": "Ameriprise",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://www.ameriprise.com/careers",
+      "checked_at": "2026-11-15T23:49:08.083718+00:00",
+      "links": [
+        {
+          "url": "https://www.ameriprise.com/main",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.ameriprise.com/careers#nav-right-link",
+          "text": "Skip to Search and Apply"
+        },
+        {
+          "url": "https://www.ameriprise.com/customer-service/contact",
+          "text": "Navigate to Contact Us"
+        },
+        {
+          "url": "https://www.ameriprise.com/experienced-financial-advisors",
+          "text": "Experienced Advisors"
+        },
+        {
+          "url": "https://www.ameriprise.com/new-financial-advisors",
+          "text": "New Advisors"
+        },
+        {
+          "url": "https://www.ameriprise.com/corporate",
+          "text": "Corporate Professionals"
+        },
+        {
+          "url": "https://www.ameriprise.com/early-careers",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://www.ameriprise.com/financial-planning/why-choose-ameriprise/ameriprise-financial-reviews-and-ratings",
+          "text": "top financial advisor companies in the industry"
+        },
+        {
+          "url": "https://www.forbes.com/lists/best-companies/",
+          "text": "https://www.forbes.com/lists/best-companies/"
+        },
+        {
+          "url": "https://www.finra.org/index.htm",
+          "text": "FINRA"
+        },
+        {
+          "url": "https://www.sipc.org/",
+          "text": "SIPC"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "ameriprise",
+          "datacentre": "wd5",
+          "site": "Ameriprise",
+          "source_link": "https://ameriprise.wd5.myworkdayjobs.com/Ameriprise"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.ameriprise.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Ameriprise Careers | Join Ameriprise",
+      "evidence": "evidence/cfbaab21887b0a8b9931.html.gz",
+      "sha256": "2c5d85dc732acda498d0dfc92d7627a93aed99d91aeb3663655bc84a5bc12861"
+    },
+    {
+      "url": "https://www.ameriprise.com/careers",
+      "checked_at": "2026-11-15T23:49:08.083718+00:00",
+      "links": [
+        {
+          "url": "https://www.ameriprise.com/main",
+          "text": "Skip to main content"
+        },
+        {
+          "url": "https://www.ameriprise.com/careers#nav-right-link",
+          "text": "Skip to Search and Apply"
+        },
+        {
+          "url": "https://www.ameriprise.com/customer-service/contact",
+          "text": "Navigate to Contact Us"
+        },
+        {
+          "url": "https://www.ameriprise.com/experienced-financial-advisors",
+          "text": "Experienced Advisors"
+        },
+        {
+          "url": "https://www.ameriprise.com/new-financial-advisors",
+          "text": "New Advisors"
+        },
+        {
+          "url": "https://www.ameriprise.com/corporate",
+          "text": "Corporate Professionals"
+        },
+        {
+          "url": "https://www.ameriprise.com/early-careers",
+          "text": "Early Careers"
+        },
+        {
+          "url": "https://www.ameriprise.com/financial-planning/why-choose-ameriprise/ameriprise-financial-reviews-and-ratings",
+          "text": "top financial advisor companies in the industry"
+        },
+        {
+          "url": "https://www.forbes.com/lists/best-companies/",
+          "text": "https://www.forbes.com/lists/best-companies/"
+        },
+        {
+          "url": "https://www.finra.org/index.htm",
+          "text": "FINRA"
+        },
+        {
+          "url": "https://www.sipc.org/",
+          "text": "SIPC"
+        }
+      ],
+      "workday_boards": [
+        {
+          "tenant": "ameriprise",
+          "datacentre": "wd5",
+          "site": "Ameriprise",
+          "source_link": "https://ameriprise.wd5.myworkdayjobs.com/Ameriprise"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://www.ameriprise.com/careers",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Ameriprise Careers | Join Ameriprise",
+      "evidence": "evidence/cfbaab21887b0a8b9931.html.gz",
+      "sha256": "2c5d85dc732acda498d0dfc92d7627a93aed99d91aeb3663655bc84a5bc12861"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "C231",
+  "company": {
+    "name": "Vanguard",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://vanguard.wd5.myworkdayjobs.com/vanguard_external",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "vanguard",
+        "datacentre": "wd5",
+        "site": "vanguard_external",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://vanguard.wd5.myworkdayjobs.com/vanguard_external",
+      "checked_at": "2026-11-15T23:51:16.311160+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "vanguard",
+          "datacentre": "wd5",
+          "site": "vanguard_external",
+          "source_link": "https://vanguard.wd5.myworkdayjobs.com/vanguard_external"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://vanguard.wd5.myworkdayjobs.com/vanguard_external",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/fef6d84df0a5b43ee816.html.gz",
+      "sha256": "ff0d1cbc9ea1304f36078c3f26a98805af7754b72354a3b784d453afad8a18a8"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

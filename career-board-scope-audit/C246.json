@@ -1,0 +1,38 @@
+{
+  "id": "C246",
+  "company": {
+    "name": "Zensar Technologies",
+    "aliases": [
+      "Zensar"
+    ],
+    "type": "services",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+    "portals": [
+      {
+        "kind": "oracle",
+        "host": "fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com",
+        "site": "CX_1",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+      "checked_at": "2026-11-15T23:51:23.206238+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Zensar",
+      "evidence": "evidence/3aafec92e55e263161c2.html.gz",
+      "sha256": "7a4a5612de99f0aba04318cee8eff3a5faee8d4b763f62b9f427d338ac6250ec"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

@@ -1,0 +1,42 @@
+{
+  "id": "C155",
+  "company": {
+    "name": "Mercedes-Benz Research and Development India",
+    "aliases": [
+      "MBRDI",
+      "Mercedes-Benz Research & Development India",
+      "Mercedes Benz Research and Development India",
+      "Mercedes Benz Research & Development India",
+      "Mercedes-Benz R&D India",
+      "Mercedes Benz R&D India"
+    ],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": false,
+    "current_employer": true,
+    "parent": "Mercedes-Benz Group",
+    "career_url": "https://jobs.mercedes-benz.com",
+    "portals": [
+      {
+        "kind": "beesite",
+        "api": "https://jobs.api.mercedes-benz.com/search",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Mercedes-Benz group job board (BeeSite); the API address comes from the earlier scanner because the site could not be reached in the 15 Nov audit, so verify must confirm it",
+        "business_unit": "Mercedes-Benz Research and Development India"
+      }
+    ],
+    "inventory_note": "The user's current employer."
+  },
+  "observations": [
+    {
+      "url": "https://jobs.mercedes-benz.com",
+      "checked_at": "2026-11-15T23:50:32.752014+00:00",
+      "links": [],
+      "workday_boards": [],
+      "outcome": "network/TLS error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

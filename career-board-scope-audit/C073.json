@@ -1,0 +1,409 @@
+{
+  "id": "C073",
+  "company": {
+    "name": "Deutsche Bank",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "career_url": "https://careers.db.com",
+    "portals": [
+      {
+        "kind": "beesite",
+        "api": "https://api-deutschebank.beesite.de/search/",
+        "state": "candidate",
+        "scope": "global",
+        "note": "API address taken from the earlier scanner; the 15 Nov audit found no provider markers on careers.db.com, so verify must confirm it"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://careers.db.com",
+      "checked_at": "2026-11-15T23:49:54.284408+00:00",
+      "links": [
+        {
+          "url": "https://careers.db.com/",
+          "text": ""
+        },
+        {
+          "url": "https://www.db.com/media?language_id=1",
+          "text": "Media"
+        },
+        {
+          "url": "https://careers.db.com?language_id=1",
+          "text": "Careers"
+        },
+        {
+          "url": "https://www.db.com/ir",
+          "text": "Investor Relations"
+        },
+        {
+          "url": "https://www.dbresearch.com/",
+          "text": "Research"
+        },
+        {
+          "url": "https://www.db.com/responsibility",
+          "text": "Responsibility"
+        },
+        {
+          "url": "https://db.com/contact",
+          "text": "Contact"
+        },
+        {
+          "url": "https://www.db.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.db.com?language_id=1",
+          "text": "Deutsche Bank"
+        },
+        {
+          "url": "https://corporates.db.com?language_id=1",
+          "text": "Corporates/Institutions"
+        },
+        {
+          "url": "https://www.db.com/start",
+          "text": "Private Clients"
+        },
+        {
+          "url": "https://www.db.com/logins",
+          "text": "Client logins"
+        },
+        {
+          "url": "https://www.db.com/who-we-are/global-network?language_id=1",
+          "text": "Locations"
+        },
+        {
+          "url": "https://careers.db.com?language_id=1",
+          "text": "Careers"
+        },
+        {
+          "url": "https://careers.db.com/index?language_id=1",
+          "text": "Home"
+        },
+        {
+          "url": "https://careers.db.com/this-is-db",
+          "text": "This is DB"
+        },
+        {
+          "url": "https://careers.db.com/this-is-db/our-leadership",
+          "text": "Our Leadership"
+        },
+        {
+          "url": "https://careers.db.com/this-is-db/training-development",
+          "text": "Training & Development"
+        },
+        {
+          "url": "https://careers.db.com/this-is-db/well-being-benefits",
+          "text": "Well-being & Benefits"
+        },
+        {
+          "url": "https://careers.db.com/this-is-db/inclusion",
+          "text": "Inclusion"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank",
+          "text": "Our Business"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/business-overview",
+          "text": "Business Overview"
+        },
+        {
+          "url": "https://www.db.com/what-we-do/products-and-services/corporate-bank?language_id=1",
+          "text": "Corporate Bank"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/business-overview/investment-bank",
+          "text": "Investment Bank"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/business-overview/private-bank",
+          "text": "Private Bank"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/business-overview/dws",
+          "text": "DWS"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/business-overview/infrastructure",
+          "text": "Infrastructure"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/business-overview/technology",
+          "text": "Technology"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/business-overview/db-direkt",
+          "text": "DB Direkt"
+        },
+        {
+          "url": "https://careers.db.com/professionals",
+          "text": "Professionals"
+        },
+        {
+          "url": "https://careers.db.com/professionals/search-roles",
+          "text": "Search Roles"
+        },
+        {
+          "url": "https://careers.db.com/professionals/Your-Application",
+          "text": "Your Application"
+        },
+        {
+          "url": "https://careers.db.com/professionals/Your-Application/faq",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://careers.db.com/professionals/returners",
+          "text": "Returners"
+        },
+        {
+          "url": "https://careers.db.com/professionals/a-notice-on-recruitment-scams",
+          "text": "A notice on Recruitment Scams"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates",
+          "text": "Students and Graduates"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/graduate-programme",
+          "text": "Graduate Programme"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/internship-programme",
+          "text": "Internship Programme"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/insight-programmes",
+          "text": "Insight Programmes"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/employability-hub",
+          "text": "Employability Hub"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/Events",
+          "text": "Events"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/Search-Programmes",
+          "text": "Search Programmes"
+        },
+        {
+          "url": "https://www.unofficialguidetobanking.com/",
+          "text": "Unofficial Guide to Banking"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/your-application",
+          "text": "Your Application"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/your-application/faq",
+          "text": "FAQ"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/technology",
+          "text": "Technology"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/a-notice-on-recruitment-scams",
+          "text": "A notice on Recruitment Scams"
+        },
+        {
+          "url": "https://careers.db.com/Schuelerinnen",
+          "text": "School leavers GER"
+        },
+        {
+          "url": "https://careers.db.com/Schuelerinnen/deine-ausbildung",
+          "text": "Deine Ausbildung"
+        },
+        {
+          "url": "https://careers.db.com/Schuelerinnen/dein-duales-studium",
+          "text": "Dein Duales Studium"
+        },
+        {
+          "url": "https://careers.db.com/Schuelerinnen/dein-schul-fos-und-berufsorientierungs-praktikum",
+          "text": "Dein Schul-, FOS- und Berufsorientierungs-Praktikum"
+        },
+        {
+          "url": "https://careers.db.com/Schuelerinnen/deine-bewerbung",
+          "text": "Deine Bewerbung"
+        },
+        {
+          "url": "https://careers.db.com/Schuelerinnen/dein-weg-uns-kennenzulernen",
+          "text": "Dein Weg uns kennenzulernen"
+        },
+        {
+          "url": "https://careers.db.com/School-leavers-uk",
+          "text": "School leavers UK"
+        },
+        {
+          "url": "https://careers.db.com/School-leavers-uk/tdi-apprenticeship-programme",
+          "text": "Technology, Data & Innovation Apprenticeship"
+        },
+        {
+          "url": "https://careers.db.com/School-leavers-uk/investment-bank-apprenticeship-programme",
+          "text": "Investment Bank Apprenticeship"
+        },
+        {
+          "url": "https://careers.db.com/School-leavers-uk/corporate-bank-apprenticeship-programme-",
+          "text": "Corporate Bank Apprenticeship"
+        },
+        {
+          "url": "https://careers.db.com",
+          "text": "Play"
+        },
+        {
+          "url": "https://careers.db.com/this-is-db/",
+          "text": "Explore how we create anenvironment that allows everyone to unleash their full potential. Explore how we create anenvironment that allows everyone to "
+        },
+        {
+          "url": "https://careers.db.com/this-is-db/",
+          "text": "Explore how we create anenvironment that allows everyone to unleash their full potential. more"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/working-environment/inclusive-culture/index?language_id=1",
+          "text": ""
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/working-environment/inclusive-culture/index?language_id=1",
+          "text": "to inclusive culture Discover how we are placing inclusion at the heart of our culture"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/working-environment/inclusive-culture/index?language_id=1",
+          "text": "to inclusive culture more"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/careers-in-technology/index?language_id=1",
+          "text": ""
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/careers-in-technology/index?language_id=1",
+          "text": "to careers in technology Discover careers in technology"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/careers-in-technology/index?language_id=1",
+          "text": "to careers in technology more"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/careers-in-technology/women-in-technology/",
+          "text": ""
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/careers-in-technology/women-in-technology/",
+          "text": "More about Women in Technology Discover how we’re challenging the gender imbalance in technology"
+        },
+        {
+          "url": "https://careers.db.com/explore-the-bank/careers-in-technology/women-in-technology/",
+          "text": "More about Women in Technology more"
+        },
+        {
+          "url": "https://careers.db.com/professionals/index?language_id=1#/professional/",
+          "text": "Professionals Professionals"
+        },
+        {
+          "url": "https://careers.db.com/professionals/index?language_id=1#/professional/",
+          "text": "Professionals more"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/index?language_id=1#/graduate/",
+          "text": "Students and Graduates Students and Graduates"
+        },
+        {
+          "url": "https://careers.db.com/students-graduates/index?language_id=1#/graduate/",
+          "text": "Students and Graduates more"
+        },
+        {
+          "url": "https://careers.db.com/School-leavers-uk/index?language_id=1",
+          "text": "Apprentices School leavers"
+        },
+        {
+          "url": "https://careers.db.com/School-leavers-uk/index?language_id=1",
+          "text": "Apprentices more"
+        },
+        {
+          "url": "https://www.x.com/intent/tweet?url=https://careers.db.com/index?language_id=1",
+          "text": "X"
+        },
+        {
+          "url": "https://www.facebook.com/sharer.php?u=https://careers.db.com/index?language_id=1",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.xing.com/spi/shares/new?url=https://careers.db.com/index?language_id=1",
+          "text": "XING"
+        },
+        {
+          "url": "https://www.db.com/imprint",
+          "text": "Imprint"
+        },
+        {
+          "url": "https://www.db.com/legal-resources",
+          "text": "Legal Resources"
+        },
+        {
+          "url": "https://careers.db.com/data-privacy?language_id=1#/",
+          "text": "Data Privacy Statement"
+        },
+        {
+          "url": "https://www.db.com/accessibility",
+          "text": "Accessibility"
+        },
+        {
+          "url": "https://careers.db.com/tools/sitemap?language_id=1",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://careers.db.com/tools/contact?language_id=1",
+          "text": "Contact"
+        },
+        {
+          "url": "https://careers.db.com/index?language_id=3",
+          "text": "DE Deutsch"
+        },
+        {
+          "url": "https://careers.db.com",
+          "text": "Search"
+        },
+        {
+          "url": "https://careers.db.com/tools/contact",
+          "text": "contact"
+        },
+        {
+          "url": "https://careers.db.com/tools/sitemap",
+          "text": "Sitemap"
+        },
+        {
+          "url": "https://careers.db.com",
+          "text": "Share"
+        },
+        {
+          "url": "https://www.linkedin.com/company/deutsche-bank",
+          "text": "LinkedIn"
+        },
+        {
+          "url": "https://www.instagram.com/DeutscheBank",
+          "text": "Instagram"
+        },
+        {
+          "url": "https://www.facebook.com/DeutscheBank",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://www.tiktok.com/@deutschebank",
+          "text": "TikTok"
+        }
+      ],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://careers.db.com",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Home – Deutsche Bank Careers",
+      "evidence": "evidence/f6fb7918bc2a4ee07297.html.gz",
+      "sha256": "93b70fe1ea815ca715ed307cc67d5737b5dde386596a232deb9b6852602287ea"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

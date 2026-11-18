@@ -1,0 +1,37 @@
+{
+  "id": "C063",
+  "company": {
+    "name": "Confluent",
+    "aliases": [],
+    "type": "product",
+    "bengaluru": null,
+    "linkedin_query": false,
+    "parent": "IBM",
+    "career_url": "https://jobs.ashbyhq.com/confluent",
+    "portals": [
+      {
+        "kind": "ashby",
+        "org": "confluent",
+        "state": "candidate",
+        "scope": "global",
+        "note": "Confluent's own board; it does not cover IBM"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://jobs.ashbyhq.com/confluent",
+      "checked_at": "2026-11-15T23:49:49.261774+00:00",
+      "links": [],
+      "workday_boards": [],
+      "status": 200,
+      "final_url": "https://jobs.ashbyhq.com/confluent",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "Confluent Jobs",
+      "evidence": "evidence/dc48e60c3f429e5e309b.html.gz",
+      "sha256": "e1d90d686b4357492f4875f5122dbf04e6678bab264f701d1d3854ad53c8afc2"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

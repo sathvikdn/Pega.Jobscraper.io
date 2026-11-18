@@ -39,6 +39,9 @@
     "minutes": 40,
     "workers": 6
   },
+  "portals": {
+    "detail_budget_per_board": 120
+  },
   "server": {
     "port": 8765
   },

@@ -1,0 +1,44 @@
+{
+  "id": "C172",
+  "company": {
+    "name": "Northern Trust",
+    "aliases": [],
+    "type": "gcc",
+    "bengaluru": true,
+    "linkedin_query": true,
+    "career_url": "https://ntrs.wd1.myworkdayjobs.com/northerntrust",
+    "portals": [
+      {
+        "kind": "workday",
+        "tenant": "ntrs",
+        "datacentre": "wd1",
+        "site": "northerntrust",
+        "state": "verified",
+        "scope": "global"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "url": "https://ntrs.wd1.myworkdayjobs.com/northerntrust",
+      "checked_at": "2026-11-15T23:50:44.157948+00:00",
+      "links": [],
+      "workday_boards": [
+        {
+          "tenant": "ntrs",
+          "datacentre": "wd1",
+          "site": "northerntrust",
+          "source_link": "https://ntrs.wd1.myworkdayjobs.com/northerntrust"
+        }
+      ],
+      "status": 200,
+      "final_url": "https://ntrs.wd1.myworkdayjobs.com/northerntrust",
+      "truncated": false,
+      "outcome": "page reachable",
+      "title": "",
+      "evidence": "evidence/ebde380be47b6134f382.html.gz",
+      "sha256": "584c0c4b640e85523a2de48b579cd229a7a76fac1bf9de41ef2312d0aef7de7a"
+    }
+  ],
+  "audit_limits": "At most seed pages plus four linked pages; no exhaustive inventory guarantee."
+}

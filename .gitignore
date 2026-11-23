@@ -1,3 +1,7 @@
 pega-radar/data/
 pega-radar/**/__pycache__/
 pega-radar/**/*.pyc
+
+# Personal documents must never be committed
+CompensationLetter*.pdf
+offer*.pdf

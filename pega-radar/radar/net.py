@@ -60,7 +60,12 @@ def _network_failure(error, host, timeout):
     cause = error.reason if isinstance(getattr(error, 'reason', None), BaseException) else error
     detail = f'{type(cause).__name__}: {str(cause)[:140]}'
     if isinstance(cause, ssl.SSLCertVerificationError):
-        return 'tls', f'TLS certificate could not be verified — check proxy/antivirus certificate ({host})'
+        # Keep OpenSSL's own words: "unable to get local issuer certificate" usually means the site sends
+        # an incomplete chain (browsers repair that, Python does not) or a proxy re-signs the traffic;
+        # "certificate has expired" or "hostname mismatch" point at the site itself.
+        why = str(getattr(cause, 'verify_message', '') or '').strip()
+        return 'tls', (f'TLS certificate could not be verified — check proxy/antivirus certificate ({host})'
+                       + (f': {why}' if why else ''))
     if isinstance(cause, ssl.SSLError):
         return 'tls', f'TLS connection to {host} failed ({detail})'
     if isinstance(cause, socket.gaierror):

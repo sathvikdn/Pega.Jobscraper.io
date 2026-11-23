@@ -89,7 +89,7 @@ def _result(company, outcomes, requests):
     else:
         status = 'partial'
     return make_result(SOURCE, company, 'ats', status=status, jobs=jobs, found=sum(outcome.found for outcome in outcomes),
-                       requests=requests, error='; '.join(outcome.error for outcome in outcomes if outcome.error) or None,
+                       requests=requests, error='; '.join(dict.fromkeys(outcome.error for outcome in outcomes if outcome.error)) or None,
                        reason=next((outcome.reason for outcome in outcomes if outcome.reason), ''),
                        pages_complete=all(outcome.pages for outcome in outcomes),
                        details_complete=all(outcome.details for outcome in outcomes))

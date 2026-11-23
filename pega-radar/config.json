@@ -33,7 +33,10 @@
       "Kolkata, West Bengal, India"
     ],
     "detail_budget": 300,
-    "pacing_seconds": 1.0
+    "pacing_seconds": 1.0,
+    "minutes": 15,
+    "throttle_limit": 8,
+    "detail_minutes": 5
   },
   "scan": {
     "minutes": 40,

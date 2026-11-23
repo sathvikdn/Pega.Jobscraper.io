@@ -11,7 +11,9 @@ jobs are saved, so a run that is killed or whose save fails is simply repeated.
 """
 from __future__ import annotations
 
+import logging
 import re
+import time
 import urllib.parse
 from collections import namedtuple
 from datetime import date, datetime, timedelta, timezone
@@ -19,6 +21,8 @@ from datetime import date, datetime, timedelta, timezone
 from ..model import (company_key, is_bengaluru, is_pega, make_job, make_result, now_iso, outside_india,
                      strip_html)
 from . import FALLBACK_TITLE, FOCUS_TYPES, day, is_focus
+
+logger = logging.getLogger('radar.linkedin')   # a child of the scan log, so lines land in data/logs
 
 SOURCE = 'LinkedIn'
 HOST = 'www.linkedin.com'
@@ -37,6 +41,21 @@ DEFAULT_OTHER_CITIES = ['Hyderabad, Telangana, India', 'Pune, Maharashtra, India
                         'Mumbai, Maharashtra, India', 'Gurugram, Haryana, India', 'Noida, Uttar Pradesh, India',
                         'Kolkata, West Bengal, India']
 DEFAULT_DETAIL_BUDGET = 300
+# LinkedIn's share of a scan. Without it a throttled sweep crawls (8 s pacing, retry pauses) until the
+# whole scan budget is gone while every other source has long finished. The checkpoint and backlog
+# carry unfinished work to the next run, so stopping early costs time, never a posting.
+DEFAULT_MINUTES = 15
+# Requests still refused with 429/999 after the client's own retries. The client's breaker only opens
+# after 5 refusals in a row, and the odd success in between resets it, so a feed that throttles most
+# requests never trips it; counting refusals across the run does.
+DEFAULT_THROTTLE_LIMIT = 8
+# Minutes of LinkedIn's share kept for reading descriptions. Searches alone can fill the whole share
+# (the 21 Nov evening run spent all 15 minutes on 40 searches and read none of 423 waiting
+# descriptions), and a posting without its description cannot be scored for Pega work or pay.
+# Searches stop when only this much is left; whatever they leave unused also goes to descriptions.
+DEFAULT_DETAIL_MINUTES = 5
+THROTTLE_STATUSES = (429, 999)
+PROGRESS_EVERY = 10          # log a progress line every this many searches
 MAX_PAGES = 40
 RESULT_CAP = 990             # LinkedIn's own limit: the guest endpoint stops serving results near 1,000
 CHECKPOINT_KEY = 'linkedin_checkpoint'
@@ -148,11 +167,86 @@ def _halted(http):
     return http.expired() or not http.host_open(HOST)
 
 
+WALLED = 'LinkedIn sent its sign-in page instead of results (a soft block)'
+
+
+def _walled(response):
+    """True when a guest API call was redirected away from /jobs-guest/ (sign-in page, authwall, home page).
+
+    LinkedIn's soft block answers 200 OK with its sign-in page, so neither the status nor the
+    client's breaker sees it; only the final URL gives it away.
+    """
+    url = str(getattr(response, 'url', '') or '')
+    if not getattr(response, 'ok', False) or '://' not in url:
+        return False
+    parts = urllib.parse.urlsplit(url)
+    return (parts.hostname or '').endswith('linkedin.com') and not parts.path.startswith('/jobs-guest/')
+
+
+def _setting(settings, key, default, cast):
+    try:
+        value = cast(settings.get(key, default))
+    except (TypeError, ValueError):
+        return default
+    return value if value > 0 else default
+
+
+class _Guard:
+    """When LinkedIn work must stop: the scan's own limits, LinkedIn's share of time, or repeated throttling."""
+
+    def __init__(self, http, settings):
+        self.http = http
+        clock = getattr(http, '_clock', None)
+        self.clock = clock if callable(clock) else time.monotonic
+        self.minutes = _setting(settings, 'minutes', DEFAULT_MINUTES, float)
+        self.limit = _setting(settings, 'throttle_limit', DEFAULT_THROTTLE_LIMIT, int)
+        # At most half the share, so searches always get time of their own.
+        self.detail_minutes = min(_setting(settings, 'detail_minutes', DEFAULT_DETAIL_MINUTES, float),
+                                  self.minutes / 2)
+        self.started = self.clock()
+        self.until = self.started + self.minutes * 60
+        self.search_until = self.until - self.detail_minutes * 60
+        self.throttled = 0
+        self.why = ''          # every LinkedIn request must stop
+        self.search_why = ''   # only searches stop; descriptions use the time kept for them
+
+    def note(self, response):
+        if getattr(response, 'status', None) in THROTTLE_STATUSES or _walled(response):
+            self.throttled += 1
+
+    def elapsed_minutes(self):
+        return (self.clock() - self.started) / 60
+
+    def halted(self):
+        if self.why:
+            return True
+        if _halted(self.http):
+            return True
+        if self.throttled >= self.limit:
+            self.why = (f'LinkedIn rate-limited or sign-in-walled {self.throttled} requests, so it was left '
+                        'for the next run instead of waiting out the scan budget')
+        elif self.clock() >= self.until:
+            self.why = f"LinkedIn's {self.minutes:g}-minute share of the scan ran out"
+        if self.why:
+            logger.warning('LinkedIn stopped early: %s', self.why)
+        return bool(self.why)
+
+    def search_halted(self):
+        if self.halted():
+            return True
+        if not self.search_why and self.clock() >= self.search_until:
+            self.search_why = (f"LinkedIn's search time ran out ({self.minutes - self.detail_minutes:g} of "
+                               f'{self.minutes:g} minutes; the rest is kept for reading descriptions)')
+            logger.info('LinkedIn: searches paused: %s', self.search_why)
+        return bool(self.search_why)
+
+
 class _Search:
     """Pages search queries and collects the cards they return, keyed by posting id."""
 
-    def __init__(self, http, window_seconds):
+    def __init__(self, http, window_seconds, guard=None):
         self.http, self.window = http, window_seconds
+        self.guard = guard
         self.cards = {}
         self.pages_read = 0
         self.blocked = 0
@@ -167,11 +261,17 @@ class _Search:
         """
         start = quiet = pages = 0
         while pages < MAX_PAGES and start < RESULT_CAP:
-            if _halted(self.http):
+            if (self.guard.search_halted() if self.guard else _halted(self.http)):
                 return HALTED
             parameters = urllib.parse.urlencode({'keywords': query.keywords, 'location': query.location,
                                                  'f_TPR': f'r{self.window}', 'sortBy': 'DD', 'start': start})
             response = self.http.get(SEARCH_URL + '?' + parameters, accept=HTML)
+            if self.guard:
+                self.guard.note(response)
+            if _walled(response):
+                self.blocked += 1
+                self.errors.append(f'{query.keywords} / {query.location}: {WALLED}')
+                return FAILED
             if not response.ok:
                 if response.status == 400 and pages:
                     return DONE  # LinkedIn answers 400 once the offset runs past the last result
@@ -288,14 +388,22 @@ def run(http, ctx, companies=()):
     known = set(store.known_ids(SOURCE))
     plan = query_plan(settings, companies, profile.get('current_employer') or '')
 
-    search = _Search(http, int(ctx.get('window_days') or 3) * 86400)
+    guard = _Guard(http, settings)
+    search = _Search(http, int(ctx.get('window_days') or 3) * 86400, guard)
     endings = {}
-    for query in plan:
-        if query.id in checkpoint['done']:
-            continue
-        if _halted(http):
+    todo = [query for query in plan if query.id not in checkpoint['done']]
+    logger.info('LinkedIn: %d of %d searches to run (%d resumed from an earlier run), limit %g minutes',
+                len(todo), len(plan), len(plan) - len(todo), guard.minutes)
+    for number, query in enumerate(todo, 1):
+        if guard.search_halted():
             break
         endings[query.id] = search.run(query)
+        if endings[query.id] in (FAILED, UNPARSED):
+            logger.info('LinkedIn: search %d of %d %s (%s)', number, len(todo), endings[query.id],
+                        search.errors[-1] if search.errors and endings[query.id] == FAILED else query.id)
+        if number % PROGRESS_EVERY == 0 or number == len(todo):
+            logger.info('LinkedIn: %d of %d searches done, %d postings seen, %d rate-limited, %.1f minutes',
+                        number, len(todo), len(search.cards), guard.throttled, guard.elapsed_minutes())
     capped = [query for query, ending in endings.items() if ending == CAPPED]
     finished = checkpoint['done'] + [query for query, ending in endings.items() if ending in (DONE, CAPPED)]
     unfinished = len(plan) - len(set(finished) & {query.id for query in plan})
@@ -312,17 +420,25 @@ def run(http, ctx, companies=()):
     given_up = {posting for posting, card in backlog.items() if card['since'] < cutoff}
     order = _detail_order(cards.values(), known | set(rejected) | set(unreadable) | given_up, companies)
     budget = _budget(settings)
+    if order and not guard.halted():
+        logger.info('LinkedIn: reading up to %d of %d descriptions', min(budget, len(order)), len(order))
     details, unread, refused, failed, waiting = {}, 0, 0, 0, []
     for position, card in enumerate(order):
-        if position >= budget or _halted(http):
+        if position >= budget or guard.halted():
             unread += 1
             waiting.append(card)
             continue
+        if position and position % 50 == 0:
+            logger.info('LinkedIn: %d descriptions read, %d rate-limited, %.1f minutes',
+                        position, guard.throttled, guard.elapsed_minutes())
         response = http.get(DETAIL_URL + card['id'], accept=HTML)
-        detail = parse_detail(response.text) if response.ok else None
+        guard.note(response)
+        walled = _walled(response)
+        detail = parse_detail(response.text) if response.ok and not walled else None
         if detail and detail['description']:
             details[card['id']] = detail
-        elif response.blocked:
+        elif response.blocked or walled:
+            # A sign-in page is a refusal, not a broken posting: it must not count towards "unreadable".
             refused += 1
             waiting.append(card)
         elif response.status in GONE_STATUSES:
@@ -359,8 +475,8 @@ def run(http, ctx, companies=()):
 
     notes = []
     if unfinished:
-        reason = (search.errors[0] if search.errors else NO_CARDS if unparsed
-                  else 'LinkedIn stopped answering' if not http.host_open(HOST) else 'the time budget ran out')
+        reason = (guard.why or guard.search_why or (search.errors[0] if search.errors else NO_CARDS if unparsed
+                  else 'LinkedIn stopped answering' if not http.host_open(HOST) else 'the time budget ran out'))
         notes.append(f'{unfinished} of {len(plan)} searches not finished ({reason}); the next run resumes them')
     if capped:
         notes.append(f'{len(capped)} searches stopped at the page limit ({MAX_PAGES} pages or {RESULT_CAP} results) '

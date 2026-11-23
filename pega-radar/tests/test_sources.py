@@ -597,6 +597,131 @@ class LinkedInResilienceTests(unittest.TestCase):
         result = sweep(FakeHttp(search_route(pages, {'1': 429})))
         self.assertEqual((result['status'], result['kept']), ('partial', 1))
 
+    def test_repeated_throttling_stops_linkedin_even_when_some_requests_get_through(self):
+        # The client's breaker needs 5 refusals in a row; here every other search answers, so it
+        # would never open and the sweep would crawl until the whole scan budget was gone.
+        keywords = [f'k{n}' for n in range(6)]
+
+        def route(url, payload):
+            query = urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
+            if query['keywords'][0] in ('k0', 'k2', 'k4'):
+                return 429
+            return card('1', 'Pega Developer') if query['start'][0] == '0' else ''
+
+        store = FakeStore()
+        http = FakeHttp(route)
+        with self.assertLogs('radar.linkedin', level='INFO') as logs:
+            result = sweep(http, store, keywords=keywords, throttle_limit=3)
+        first_pages = [start for _, start in searched(http) if start == 0]
+        self.assertEqual(len(first_pages), 5)              # k0..k4 in Bengaluru, then it stopped
+        self.assertEqual(result['status'], 'partial')
+        self.assertIn('10 of 12 searches not finished (LinkedIn rate-limited or sign-in-walled 3 requests', result['error'])
+        # The two searches that answered are checkpointed; the next run resumes with the rest.
+        self.assertEqual(len(store.kv['linkedin_checkpoint']['done']), 2)
+        self.assertTrue(any('stopped early' in line for line in logs.output))
+
+    def test_linkedin_stops_when_its_share_of_the_scan_runs_out(self):
+        ticks = iter(range(0, 10_000, 30))                  # every clock reading is 30 seconds later
+        http = FakeHttp(search_route({}))
+        with mock.patch.object(linkedin.time, 'monotonic', lambda: next(ticks)):
+            result = sweep(http, keywords=[f'k{n}' for n in range(10)], minutes=10)
+        self.assertLess(len(searched(http)), 20)
+        self.assertGreater(len(searched(http)), 0)
+        # With nothing to read, the searches' own time (10 - 5 kept for descriptions) is what ends the sweep.
+        self.assertIn("LinkedIn's search time ran out (5 of 10 minutes", result['error'])
+        self.assertFalse(result['sweep_complete'])
+
+    def test_throttled_descriptions_stop_early_and_wait_in_the_backlog(self):
+        pages = {('India', 0): ''.join(card(str(n), 'Pega Developer') for n in range(10))}
+        store = FakeStore()
+        http = FakeHttp(search_route(pages, {str(n): 429 for n in range(10)}))
+        result = sweep(http, store, throttle_limit=2)
+        self.assertEqual(len(detailed(http)), 2)
+        self.assertEqual((result['status'], result['kept']), ('partial', 10))
+        self.assertEqual(len(store.kv['linkedin_backlog']), 10)
+
+    def test_a_sign_in_wall_counts_as_a_refusal_and_never_marks_postings_unreadable(self):
+        # LinkedIn's soft block: 200 OK, redirected to its home page, no job cards.
+        wall = 'https://www.linkedin.com/'
+        home = '<html><body><li>Sign in</li><li>Join now</li></body></html>'
+
+        def route(url, payload):
+            return FakeResponse(200, home, wall)
+
+        store = FakeStore()
+        http = FakeHttp(route)
+        result = sweep(http, store, keywords=[f'k{n}' for n in range(10)], throttle_limit=3)
+        self.assertEqual(len(searched(http)), 3)
+        self.assertEqual(result['status'], 'blocked')
+        self.assertIn('sign-in', result['error'])
+
+        # Descriptions behind the wall wait in the backlog with no failed try counted against them.
+        pages = {('India', 0): card('1', 'Pega Developer')}
+        store = FakeStore()
+        result = sweep(FakeHttp(lambda url, payload: FakeResponse(200, home, wall) if '/jobPosting/' in url
+                                else search_route(pages)(url, payload)), store)
+        self.assertEqual(store.kv['linkedin_backlog']['1']['tries'], 0)
+        self.assertNotIn('1', store.kv.get('linkedin_unreadable', {}))
+        self.assertIn('description requests were refused', result['error'])
+
+    def test_a_normal_guest_page_is_not_a_sign_in_wall(self):
+        good = FakeResponse(200, '', 'https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/1')
+        self.assertFalse(linkedin._walled(good))
+        self.assertFalse(linkedin._walled(FakeResponse(200, '', '')))
+        self.assertTrue(linkedin._walled(FakeResponse(200, '', 'https://www.linkedin.com/authwall?trk=x')))
+        self.assertFalse(linkedin._walled(FakeResponse(429, '', 'https://www.linkedin.com/')))
+
+    def test_searches_stop_early_enough_to_leave_time_for_descriptions(self):
+        # Each search page costs a minute, each description a second: without the reserve the
+        # searches would fill all 10 minutes and no description would be read.
+        now = [0.0]
+        cards = {('Bengaluru, Karnataka, India', 0): ''.join(card(str(n), 'Pega Developer') for n in range(5))}
+        inner = search_route(cards, {str(n): detail('Pega work') for n in range(5)})
+
+        def route(url, payload):
+            now[0] += 1 if '/jobPosting/' in url else 60
+            return inner(url, payload)
+
+        http = FakeHttp(route)
+        store = FakeStore()
+        with mock.patch.object(linkedin.time, 'monotonic', lambda: now[0]):
+            result = sweep(http, store, keywords=[f'k{n}' for n in range(10)], minutes=10, detail_minutes=4)
+        self.assertLessEqual(now[0] - 5, 6 * 60 + 60)           # searches stopped near the 6-minute mark
+        self.assertEqual(len(detailed(http)), 5)                 # and every description was read
+        self.assertEqual(result['kept'], 5)
+        self.assertIn("LinkedIn's search time ran out (6 of 10 minutes", result['error'])
+        self.assertFalse(result['sweep_complete'])
+        self.assertEqual(store.kv.get('linkedin_backlog', {}), {})
+
+    def test_time_kept_for_descriptions_is_capped_at_half_the_share(self):
+        guard = linkedin._Guard(FakeHttp(lambda url, payload: ''), {'minutes': 6, 'detail_minutes': 30})
+        self.assertEqual(guard.detail_minutes, 3)
+        self.assertAlmostEqual(guard.search_until - guard.started, 180)
+
+    def test_searches_that_finish_early_leave_all_remaining_time_to_descriptions(self):
+        http = FakeHttp(search_route({('India', 0): card('1', 'Pega Developer')}, {'1': detail('Pega work')}))
+        result = sweep(http)
+        self.assertEqual(len(detailed(http)), 1)
+        self.assertTrue(result['sweep_complete'])
+        self.assertNotIn('search time', result.get('error') or '')
+
+    def test_linkedin_logs_its_progress(self):
+        http = FakeHttp(search_route({('India', 0): card('1', 'Pega Developer')}, {'1': detail('Pega work')}))
+        with self.assertLogs('radar.linkedin', level='INFO') as logs:
+            sweep(http, keywords=[f'k{n}' for n in range(6)])
+        text = '\n'.join(logs.output)
+        self.assertIn('12 of 12 searches to run', text)
+        self.assertIn('10 of 12 searches done', text)
+        self.assertIn('12 of 12 searches done', text)
+        self.assertIn('reading up to 1 of 1 descriptions', text)
+
+    def test_bad_linkedin_limits_fall_back_to_the_defaults(self):
+        for value in (0, -3, 'soon', None):
+            guard = linkedin._Guard(FakeHttp(lambda url, payload: ''), {'minutes': value, 'throttle_limit': value})
+            self.assertEqual((guard.minutes, guard.limit), (linkedin.DEFAULT_MINUTES, linkedin.DEFAULT_THROTTLE_LIMIT))
+            guard = linkedin._Guard(FakeHttp(lambda url, payload: ''), {'detail_minutes': value})
+            self.assertEqual(guard.detail_minutes, linkedin.DEFAULT_DETAIL_MINUTES)
+
 
 # ───────────────────────────── employer sites ─────────────────────────────
 
@@ -1797,7 +1922,8 @@ class CompaniesFileTests(unittest.TestCase):
         self.assertEqual(by_name['Mercedes-Benz Mobility']['parent'], 'Mercedes-Benz Group')
         self.assertEqual(by_name['Toyota Financial Services']['parent'], 'Toyota')
         # The CARIAD address saved for VW Digital Solutions is not used as its portal or careers link.
-        self.assertEqual((self.portals('VW Digital Solutions'), by_name['VW Digital Solutions']['career_url']), ([], None))
+        self.assertEqual((self.portals('VW Digital Solutions'), by_name['VW Digital Solutions']['career_url']),
+                         ([], 'https://vwg-digitalsolutions.in/'))   # official India site, no portal resolved
         self.assertFalse(any('cariad' in json.dumps(company).lower() and 'portals' in company and company['portals']
                              for company in self.companies))
         self.assertEqual(by_name['Renault Nissan Technology']['parent'], 'Renault Group')

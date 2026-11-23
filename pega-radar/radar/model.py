@@ -347,6 +347,9 @@ DEFAULT_CONFIG = {
                          'Kolkata, West Bengal, India'],
         'detail_budget': 300,
         'pacing_seconds': 1.0,
+        'minutes': 15,           # LinkedIn's share of a scan (see sources/linkedin.py)
+        'throttle_limit': 8,     # rate-limited requests before LinkedIn is left for the next run
+        'detail_minutes': 5,     # of those minutes, kept for reading descriptions
     },
     'scan': {'minutes': 40, 'workers': 6},
     # The most new descriptions one employer board reads per run; a loose board catches up over a few runs.
